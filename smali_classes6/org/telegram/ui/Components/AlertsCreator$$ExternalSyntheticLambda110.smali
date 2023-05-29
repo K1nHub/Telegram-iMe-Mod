@@ -2,40 +2,42 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/iMe/fork/utils/Callbacks$Callback1;
+.implements Landroid/view/View$OnTouchListener;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/AlertDialog;
-
-.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/BaseFragment;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda110;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BaseFragment;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda110;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda110;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda110;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda110;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda110;->f$0:Lorg/telegram/ui/ActionBar/AlertDialog;
-
-    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda110;->f$1:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
-    .locals 2
+.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda110;->f$0:Lorg/telegram/ui/ActionBar/AlertDialog;
+    invoke-static {p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$Lj5J_pqdXeN3MHBZqr3lTH8Bc-0(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda110;->f$1:Lorg/telegram/ui/ActionBar/BaseFragment;
+    move-result p1
 
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$gmMb5E6WE2PqPfyIqwDeMXPm2iE(Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/Boolean;)V
-
-    return-void
+    return p1
 .end method

@@ -47,7 +47,7 @@ public class ClientData {
         }
 
         /* renamed from: clone */
-        public Builder m1037clone() {
+        public Builder m1045clone() {
             return new Builder(this.zza, this.zzb, this.zzc, this.zzd);
         }
 

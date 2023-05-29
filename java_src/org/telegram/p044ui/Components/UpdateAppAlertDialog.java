@@ -21,7 +21,7 @@ import androidx.core.widget.NestedScrollView;
 import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
@@ -65,7 +65,7 @@ public class UpdateAppAlertDialog extends BottomSheet {
             View view = new View(context);
             this.background = view;
             if (this.hasBackground) {
-                view.setBackground(Theme.AdaptiveRipple.filledRect("featuredStickers_addButton", 4.0f));
+                view.setBackground(Theme.AdaptiveRipple.filledRectByKey(Theme.key_featuredStickers_addButton, 4.0f));
             }
             addView(this.background, LayoutHelper.createFrame(-1, -1, 0, 16, z ? 0 : 16, 16, 16));
             for (int i = 0; i < 2; i++) {
@@ -76,13 +76,13 @@ public class UpdateAppAlertDialog extends BottomSheet {
                 this.textView[i].setEllipsize(TextUtils.TruncateAt.END);
                 this.textView[i].setGravity(17);
                 if (this.hasBackground) {
-                    this.textView[i].setTextColor(Theme.getColor("featuredStickers_buttonText"));
+                    this.textView[i].setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
                     this.textView[i].setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                 } else {
-                    this.textView[i].setTextColor(Theme.getColor("featuredStickers_addButton"));
+                    this.textView[i].setTextColor(Theme.getColor(Theme.key_featuredStickers_addButton));
                 }
                 this.textView[i].setTextSize(1, 14.0f);
-                this.textView[i].setPadding(0, 0, 0, this.hasBackground ? 0 : AndroidUtilities.m50dp(13));
+                this.textView[i].setPadding(0, 0, 0, this.hasBackground ? 0 : AndroidUtilities.m54dp(13));
                 addView(this.textView[i], LayoutHelper.createFrame(-2, -2, 17));
                 if (i == 1) {
                     this.textView[i].setAlpha(BitmapDescriptorFactory.HUE_RED);
@@ -92,7 +92,7 @@ public class UpdateAppAlertDialog extends BottomSheet {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(this.hasBackground ? 80 : 50), 1073741824));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(this.hasBackground ? 80 : 50), 1073741824));
         }
 
         public void setText(CharSequence charSequence, boolean z) {
@@ -105,7 +105,7 @@ public class UpdateAppAlertDialog extends BottomSheet {
             AnimatorSet animatorSet = new AnimatorSet();
             animatorSet.setDuration(180L);
             animatorSet.setInterpolator(CubicBezierInterpolator.EASE_OUT);
-            animatorSet.playTogether(ObjectAnimator.ofFloat(this.textView[0], View.ALPHA, 1.0f, BitmapDescriptorFactory.HUE_RED), ObjectAnimator.ofFloat(this.textView[0], View.TRANSLATION_Y, BitmapDescriptorFactory.HUE_RED, -AndroidUtilities.m50dp(10)), ObjectAnimator.ofFloat(this.textView[1], View.ALPHA, BitmapDescriptorFactory.HUE_RED, 1.0f), ObjectAnimator.ofFloat(this.textView[1], View.TRANSLATION_Y, AndroidUtilities.m50dp(10), BitmapDescriptorFactory.HUE_RED));
+            animatorSet.playTogether(ObjectAnimator.ofFloat(this.textView[0], View.ALPHA, 1.0f, BitmapDescriptorFactory.HUE_RED), ObjectAnimator.ofFloat(this.textView[0], View.TRANSLATION_Y, BitmapDescriptorFactory.HUE_RED, -AndroidUtilities.m54dp(10)), ObjectAnimator.ofFloat(this.textView[1], View.ALPHA, BitmapDescriptorFactory.HUE_RED, 1.0f), ObjectAnimator.ofFloat(this.textView[1], View.TRANSLATION_Y, AndroidUtilities.m54dp(10), BitmapDescriptorFactory.HUE_RED));
             animatorSet.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.UpdateAppAlertDialog.BottomSheetCell.1
                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                 public void onAnimationEnd(Animator animator) {
@@ -127,9 +127,9 @@ public class UpdateAppAlertDialog extends BottomSheet {
         setCanceledOnTouchOutside(false);
         setApplyTopPadding(false);
         setApplyBottomPadding(false);
-        Drawable mutate = context.getResources().getDrawable(C3242R.C3244drawable.sheet_shadow_round).mutate();
+        Drawable mutate = context.getResources().getDrawable(C3290R.C3292drawable.sheet_shadow_round).mutate();
         this.shadowDrawable = mutate;
-        mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor("dialogBackground"), PorterDuff.Mode.MULTIPLY));
+        mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_dialogBackground), PorterDuff.Mode.MULTIPLY));
         FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.Components.UpdateAppAlertDialog.1
             @Override // android.view.View
             public void setTranslationY(float f) {
@@ -169,7 +169,7 @@ public class UpdateAppAlertDialog extends BottomSheet {
                 measureChildWithMargins(UpdateAppAlertDialog.this.linearLayout, i2, 0, i3, 0);
                 int measuredHeight = UpdateAppAlertDialog.this.linearLayout.getMeasuredHeight();
                 int i4 = (size / 5) * 2;
-                if (measuredHeight - (size - i4) < AndroidUtilities.m50dp(90) || measuredHeight < (size / 2) + AndroidUtilities.m50dp(90)) {
+                if (measuredHeight - (size - i4) < AndroidUtilities.m54dp(90) || measuredHeight < (size / 2) + AndroidUtilities.m54dp(90)) {
                     i4 = size - measuredHeight;
                 }
                 if (i4 < 0) {
@@ -217,7 +217,7 @@ public class UpdateAppAlertDialog extends BottomSheet {
         this.scrollView.addView(this.linearLayout, LayoutHelper.createScroll(-1, -2, 51));
         if (this.appUpdate.sticker != null) {
             BackupImageView backupImageView = new BackupImageView(context);
-            SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(this.appUpdate.sticker.thumbs, "windowBackgroundGray", 1.0f);
+            SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(this.appUpdate.sticker.thumbs, Theme.key_windowBackgroundGray, 1.0f);
             ImageLocation forDocument = ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(this.appUpdate.sticker.thumbs, 90), this.appUpdate.sticker);
             if (svgThumb != null) {
                 backupImageView.setImage(ImageLocation.getForDocument(this.appUpdate.sticker), "250_250", svgThumb, 0, "update");
@@ -229,28 +229,30 @@ public class UpdateAppAlertDialog extends BottomSheet {
         TextView textView = new TextView(context);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setTextSize(1, 20.0f);
-        textView.setTextColor(Theme.getColor("dialogTextBlack"));
+        int i2 = Theme.key_dialogTextBlack;
+        textView.setTextColor(Theme.getColor(i2));
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setText(LocaleController.getString("AppUpdate", C3242R.string.AppUpdate));
+        textView.setText(LocaleController.getString("AppUpdate", C3290R.string.AppUpdate));
         this.linearLayout.addView(textView, LayoutHelper.createLinear(-2, -2, 49, 23, 16, 23, 0));
         TextView textView2 = new TextView(getContext());
-        textView2.setTextColor(Theme.getColor("dialogTextGray3"));
+        textView2.setTextColor(Theme.getColor(Theme.key_dialogTextGray3));
         textView2.setTextSize(1, 14.0f);
         textView2.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
-        textView2.setLinkTextColor(Theme.getColor("dialogTextLink"));
-        int i2 = C3242R.string.AppUpdateVersionAndSize;
+        int i3 = Theme.key_dialogTextLink;
+        textView2.setLinkTextColor(Theme.getColor(i3));
+        int i4 = C3290R.string.AppUpdateVersionAndSize;
         TLRPC$TL_help_appUpdate tLRPC$TL_help_appUpdate2 = this.appUpdate;
-        textView2.setText(LocaleController.formatString("AppUpdateVersionAndSize", i2, tLRPC$TL_help_appUpdate2.version, AndroidUtilities.formatFileSize(tLRPC$TL_help_appUpdate2.document.size)));
+        textView2.setText(LocaleController.formatString("AppUpdateVersionAndSize", i4, tLRPC$TL_help_appUpdate2.version, AndroidUtilities.formatFileSize(tLRPC$TL_help_appUpdate2.document.size)));
         textView2.setGravity(49);
         this.linearLayout.addView(textView2, LayoutHelper.createLinear(-2, -2, 49, 23, 0, 23, 5));
         TextView textView3 = new TextView(getContext());
-        textView3.setTextColor(Theme.getColor("dialogTextBlack"));
+        textView3.setTextColor(Theme.getColor(i2));
         textView3.setTextSize(1, 14.0f);
         textView3.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
-        textView3.setLinkTextColor(Theme.getColor("dialogTextLink"));
+        textView3.setLinkTextColor(Theme.getColor(i3));
         if (TextUtils.isEmpty(this.appUpdate.text)) {
-            textView3.setText(AndroidUtilities.replaceTags(LocaleController.getString("AppUpdateChangelogEmpty", C3242R.string.AppUpdateChangelogEmpty)));
+            textView3.setText(AndroidUtilities.replaceTags(LocaleController.getString("AppUpdateChangelogEmpty", C3290R.string.AppUpdateChangelogEmpty)));
         } else {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.appUpdate.text);
             MessageObject.addEntitiesToText(spannableStringBuilder, tLRPC$TL_help_appUpdate.entities, false, false, false, false);
@@ -259,15 +261,15 @@ public class UpdateAppAlertDialog extends BottomSheet {
         textView3.setGravity(51);
         this.linearLayout.addView(textView3, LayoutHelper.createLinear(-2, -2, 51, 23, 15, 23, 0));
         FrameLayout.LayoutParams layoutParams = new FrameLayout.LayoutParams(-1, AndroidUtilities.getShadowHeight(), 83);
-        layoutParams.bottomMargin = AndroidUtilities.m50dp((int) TsExtractor.TS_STREAM_TYPE_HDMV_DTS);
+        layoutParams.bottomMargin = AndroidUtilities.m54dp((int) TsExtractor.TS_STREAM_TYPE_HDMV_DTS);
         View view = new View(context);
         this.shadow = view;
-        view.setBackgroundColor(Theme.getColor("dialogShadowLine"));
+        view.setBackgroundColor(Theme.getColor(Theme.key_dialogShadowLine));
         this.shadow.setAlpha(BitmapDescriptorFactory.HUE_RED);
         this.shadow.setTag(1);
         frameLayout.addView(this.shadow, layoutParams);
         BottomSheetCell bottomSheetCell = new BottomSheetCell(context, false);
-        bottomSheetCell.setText(LocaleController.formatString("AppUpdateDownloadNow", C3242R.string.AppUpdateDownloadNow, new Object[0]), false);
+        bottomSheetCell.setText(LocaleController.formatString("AppUpdateDownloadNow", C3290R.string.AppUpdateDownloadNow, new Object[0]), false);
         bottomSheetCell.background.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.UpdateAppAlertDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
@@ -276,7 +278,7 @@ public class UpdateAppAlertDialog extends BottomSheet {
         });
         frameLayout.addView(bottomSheetCell, LayoutHelper.createFrame(-1, 50, 83, 0, 0, 0, 50));
         BottomSheetCell bottomSheetCell2 = new BottomSheetCell(context, true);
-        bottomSheetCell2.setText(LocaleController.getString("AppUpdateRemindMeLater", C3242R.string.AppUpdateRemindMeLater), false);
+        bottomSheetCell2.setText(LocaleController.getString("AppUpdateRemindMeLater", C3290R.string.AppUpdateRemindMeLater), false);
         bottomSheetCell2.background.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.UpdateAppAlertDialog$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
@@ -345,8 +347,8 @@ public class UpdateAppAlertDialog extends BottomSheet {
     /* JADX INFO: Access modifiers changed from: private */
     public void updateLayout() {
         this.linearLayout.getChildAt(0).getLocationInWindow(this.location);
-        int max = Math.max(this.location[1] - AndroidUtilities.m50dp(24), 0);
-        if (this.location[1] + this.linearLayout.getMeasuredHeight() <= (this.container.getMeasuredHeight() - AndroidUtilities.m50dp(113)) + this.containerView.getTranslationY()) {
+        int max = Math.max(this.location[1] - AndroidUtilities.m54dp(24), 0);
+        if (this.location[1] + this.linearLayout.getMeasuredHeight() <= (this.container.getMeasuredHeight() - AndroidUtilities.m54dp(113)) + this.containerView.getTranslationY()) {
             runShadowAnimation(0, false);
         } else {
             runShadowAnimation(0, true);

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout;)V
     .locals 0
 
-    .line 2761
+    .line 2770
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$18;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 
     move v2, v0
 
-    .line 2765
+    .line 2774
     :goto_0
     iget-object v3, p0, Lorg/telegram/ui/Components/SharedMediaLayout$18;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -62,7 +62,7 @@
 
     if-ge v2, v3, :cond_1
 
-    .line 2766
+    .line 2775
     iget-object v3, p0, Lorg/telegram/ui/Components/SharedMediaLayout$18;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$600(Lorg/telegram/ui/Components/SharedMediaLayout;)[Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaData;
@@ -92,7 +92,7 @@
 
     goto :goto_0
 
-    .line 2770
+    .line 2779
     :cond_1
     iget-object v2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$18;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -104,7 +104,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 2772
+    .line 2781
     invoke-static {v2}, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->access$200(Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;)Lorg/telegram/ui/Components/ExtendedGridLayoutManager;
 
     move-result-object p2
@@ -113,7 +113,7 @@
 
     goto :goto_1
 
-    .line 2774
+    .line 2783
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$18;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -124,10 +124,10 @@
     :goto_1
     if-eqz v2, :cond_3
 
-    .line 2777
+    .line 2786
     iput p1, v2, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->highlightMessageId:I
 
-    .line 2778
+    .line 2787
     iput-boolean v0, v2, Lorg/telegram/ui/Components/SharedMediaLayout$MediaPage;->highlightAnimation:Z
 
     :cond_3

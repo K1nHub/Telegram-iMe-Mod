@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/StickerMasksAlert$StickersGridAdapter;Landroid/content/Context;Z)V
     .locals 0
 
-    .line 1401
+    .line 1403
     iput-object p1, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersGridAdapter;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Cells/StickerEmojiCell;-><init>(Landroid/content/Context;Z)V
@@ -35,7 +35,7 @@
 .method public onMeasure(II)V
     .locals 1
 
-    .line 1403
+    .line 1405
     iget-object p2, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersGridAdapter$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersGridAdapter;
 
     iget-object p2, p2, Lorg/telegram/ui/Components/StickerMasksAlert$StickersGridAdapter;->this$0:Lorg/telegram/ui/Components/StickerMasksAlert;
@@ -48,7 +48,7 @@
 
     if-ne p2, v0, :cond_0
 
-    .line 1404
+    .line 1406
     invoke-super {p0, p1, p1}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     goto :goto_0
@@ -56,7 +56,7 @@
     :cond_0
     const/16 p2, 0x52
 
-    .line 1406
+    .line 1408
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2

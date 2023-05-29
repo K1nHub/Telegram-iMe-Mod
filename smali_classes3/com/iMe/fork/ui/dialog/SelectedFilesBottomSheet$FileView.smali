@@ -334,9 +334,9 @@
     .line 487
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v3, "chat_replyPanelClose"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_replyPanelClose:I
 
-    invoke-static {v1, v3}, Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet;->access$getThemedColor(Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet;Ljava/lang/String;)I
+    invoke-static {v1, v3}, Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet;->access$getThemedColor(Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet;I)I
 
     move-result v3
 
@@ -367,10 +367,10 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    const-string v2, "listSelectorSDK21"
-
     .line 492
-    invoke-static {v1, v2}, Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet;->access$getThemedColor(Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet;Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
+    invoke-static {v1, v2}, Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet;->access$getThemedColor(Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet;I)I
 
     move-result v1
 
@@ -415,10 +415,10 @@
 
     move-result-object v2
 
-    const-string v3, "chat_outMediaIcon"
-
     .line 468
-    invoke-static {v1, v3}, Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet;->access$getThemedColor(Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet;Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outMediaIcon:I
+
+    invoke-static {v1, v3}, Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet;->access$getThemedColor(Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet;I)I
 
     move-result v3
 
@@ -426,10 +426,10 @@
 
     invoke-static {v2, v3, v4}, Lorg/telegram/ui/ActionBar/Theme;->setCombinedDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
 
-    const-string v3, "chat_inMediaIcon"
-
     .line 469
-    invoke-static {v1, v3}, Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet;->access$getThemedColor(Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet;Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inMediaIcon:I
+
+    invoke-static {v1, v3}, Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet;->access$getThemedColor(Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet;I)I
 
     move-result v1
 
@@ -464,10 +464,10 @@
     .line 474
     invoke-virtual {v0, v2, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v2, "windowBackgroundWhiteBlackText"
-
     .line 475
-    invoke-static {v1, v2}, Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet;->access$getThemedColor(Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet;Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v1, v2}, Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet;->access$getThemedColor(Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet;I)I
 
     move-result v1
 
@@ -508,10 +508,10 @@
     .line 482
     invoke-virtual {v0, v2, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v2, "windowBackgroundWhiteGrayText"
-
     .line 483
-    invoke-static {v1, v2}, Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet;->access$getThemedColor(Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet;Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
+
+    invoke-static {v1, v2}, Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet;->access$getThemedColor(Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet;I)I
 
     move-result v1
 

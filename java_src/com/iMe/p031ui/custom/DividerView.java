@@ -29,7 +29,7 @@ public final class DividerView extends View {
     }
 
     public final void setupColors() {
-        setBackgroundColor(Theme.getColor("dialogShadowLine"));
+        setBackgroundColor(Theme.getColor(Theme.key_dialogShadowLine));
     }
 
     @Override // android.view.View

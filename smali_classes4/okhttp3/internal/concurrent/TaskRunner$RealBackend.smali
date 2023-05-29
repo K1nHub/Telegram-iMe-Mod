@@ -29,7 +29,7 @@
 .method public constructor <init>(Ljava/util/concurrent/ThreadFactory;)V
     .locals 9
 
-    const-string v0, "threadFactory"
+    const-string/jumbo v0, "threadFactory"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -70,7 +70,7 @@
 .method public coordinatorNotify(Lokhttp3/internal/concurrent/TaskRunner;)V
     .locals 1
 
-    const-string v0, "taskRunner"
+    const-string/jumbo v0, "taskRunner"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -88,7 +88,7 @@
         }
     .end annotation
 
-    const-string v0, "taskRunner"
+    const-string/jumbo v0, "taskRunner"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

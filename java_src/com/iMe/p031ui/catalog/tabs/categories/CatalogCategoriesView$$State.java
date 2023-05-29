@@ -15,7 +15,7 @@ import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 import org.telegram.tgnet.TLRPC$Chat;
 /* renamed from: com.iMe.ui.catalog.tabs.categories.CatalogCategoriesView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class CatalogCategoriesView$$State extends MvpViewState<CatalogCategoriesView> implements CatalogCategoriesView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -161,7 +161,7 @@ public class CatalogCategoriesView$$State extends MvpViewState<CatalogCategories
 
     /* compiled from: CatalogCategoriesView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.categories.CatalogCategoriesView$$State$RenderNodesCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class RenderNodesCommand extends ViewCommand<CatalogCategoriesView> {
         public final List<BaseNode> nodes;
 
@@ -178,7 +178,7 @@ public class CatalogCategoriesView$$State extends MvpViewState<CatalogCategories
 
     /* compiled from: CatalogCategoriesView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.categories.CatalogCategoriesView$$State$OpenCampaignDetailsScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class OpenCampaignDetailsScreenCommand extends ViewCommand<CatalogCategoriesView> {
         public final CampaignItem campaign;
         public final TLRPC$Chat chat;
@@ -199,7 +199,7 @@ public class CatalogCategoriesView$$State extends MvpViewState<CatalogCategories
 
     /* compiled from: CatalogCategoriesView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.categories.CatalogCategoriesView$$State$ShowToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ShowToastCommand extends ViewCommand<CatalogCategoriesView> {
         public final String text;
 
@@ -216,7 +216,7 @@ public class CatalogCategoriesView$$State extends MvpViewState<CatalogCategories
 
     /* compiled from: CatalogCategoriesView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.categories.CatalogCategoriesView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<CatalogCategoriesView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -237,7 +237,7 @@ public class CatalogCategoriesView$$State extends MvpViewState<CatalogCategories
 
     /* compiled from: CatalogCategoriesView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.categories.CatalogCategoriesView$$State$ShowErrorToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<CatalogCategoriesView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -256,7 +256,7 @@ public class CatalogCategoriesView$$State extends MvpViewState<CatalogCategories
 
     /* compiled from: CatalogCategoriesView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.categories.CatalogCategoriesView$$State$OnLoadMoreItemsCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class OnLoadMoreItemsCommand extends ViewCommand<CatalogCategoriesView> {
         public final List<BaseNode> items;
 
@@ -273,7 +273,7 @@ public class CatalogCategoriesView$$State extends MvpViewState<CatalogCategories
 
     /* compiled from: CatalogCategoriesView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.categories.CatalogCategoriesView$$State$OnLoadMoreCompleteCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class OnLoadMoreCompleteCommand extends ViewCommand<CatalogCategoriesView> {
         OnLoadMoreCompleteCommand(CatalogCategoriesView$$State catalogCategoriesView$$State) {
             super("onLoadMoreComplete", AddToEndSingleStrategy.class);
@@ -287,7 +287,7 @@ public class CatalogCategoriesView$$State extends MvpViewState<CatalogCategories
 
     /* compiled from: CatalogCategoriesView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.categories.CatalogCategoriesView$$State$OnLoadMoreErrorCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class OnLoadMoreErrorCommand extends ViewCommand<CatalogCategoriesView> {
         OnLoadMoreErrorCommand(CatalogCategoriesView$$State catalogCategoriesView$$State) {
             super("onLoadMoreError", AddToEndSingleStrategy.class);
@@ -301,7 +301,7 @@ public class CatalogCategoriesView$$State extends MvpViewState<CatalogCategories
 
     /* compiled from: CatalogCategoriesView$$State.java */
     /* renamed from: com.iMe.ui.catalog.tabs.categories.CatalogCategoriesView$$State$ResetLoadMoreCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public class ResetLoadMoreCommand extends ViewCommand<CatalogCategoriesView> {
         ResetLoadMoreCommand(CatalogCategoriesView$$State catalogCategoriesView$$State) {
             super("resetLoadMore", AddToEndSingleStrategy.class);

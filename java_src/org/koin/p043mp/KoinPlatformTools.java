@@ -9,7 +9,7 @@ import kotlin.jvm.JvmClassMappingKt;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.reflect.KClass;
-import kotlin.text.StringsKt;
+import kotlin.text.StringsKt__StringsKt;
 import org.koin.core.context.GlobalContext;
 import org.koin.core.context.KoinContext;
 import p034j$.util.concurrent.ConcurrentHashMap;
@@ -24,7 +24,7 @@ public final class KoinPlatformTools {
 
     public final String getStackTrace(Exception e) {
         String joinToString$default;
-        String className;
+        boolean contains$default;
         Intrinsics.checkNotNullParameter(e, "e");
         StringBuilder sb = new StringBuilder();
         sb.append(e);
@@ -33,8 +33,10 @@ public final class KoinPlatformTools {
         Intrinsics.checkNotNullExpressionValue(stackTrace, "e.stackTrace");
         ArrayList arrayList = new ArrayList();
         for (StackTraceElement stackTraceElement : stackTrace) {
-            Intrinsics.checkNotNullExpressionValue(stackTraceElement.getClassName(), "it.className");
-            if (!(!StringsKt.contains$default((CharSequence) className, (CharSequence) "sun.reflect", false, 2, (Object) null))) {
+            String className = stackTraceElement.getClassName();
+            Intrinsics.checkNotNullExpressionValue(className, "it.className");
+            contains$default = StringsKt__StringsKt.contains$default((CharSequence) className, (CharSequence) "sun.reflect", false, 2, (Object) null);
+            if (!(!contains$default)) {
                 break;
             }
             arrayList.add(stackTraceElement);
@@ -66,7 +68,7 @@ public final class KoinPlatformTools {
     }
 
     /* renamed from: synchronized  reason: not valid java name */
-    public final <R> R m1573synchronized(Object lock, Function0<? extends R> block) {
+    public final <R> R m1612synchronized(Object lock, Function0<? extends R> block) {
         R invoke;
         Intrinsics.checkNotNullParameter(lock, "lock");
         Intrinsics.checkNotNullParameter(block, "block");

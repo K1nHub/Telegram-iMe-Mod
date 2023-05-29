@@ -58,7 +58,7 @@
 
     move-result v0
 
-    const-string v1, "startHash == null"
+    const-string/jumbo v1, "startHash == null"
 
     invoke-static {p1, v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -291,7 +291,7 @@
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string p3, "startHash needs to be "
+    const-string/jumbo p3, "startHash needs to be "
 
     invoke-virtual {p2, p3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -595,7 +595,7 @@
     :cond_0
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "size of publicSeed needs to be equal to size of digest"
+    const-string/jumbo p2, "size of publicSeed needs to be equal to size of digest"
 
     invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -604,7 +604,7 @@
     :cond_1
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string p2, "size of secretKeySeed needs to be equal to size of digest"
+    const-string/jumbo p2, "size of secretKeySeed needs to be equal to size of digest"
 
     invoke-direct {p1, p2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

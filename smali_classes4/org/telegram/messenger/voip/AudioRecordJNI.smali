@@ -453,7 +453,7 @@
     :cond_1
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "thread already started"
+    const-string/jumbo v1, "thread already started"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

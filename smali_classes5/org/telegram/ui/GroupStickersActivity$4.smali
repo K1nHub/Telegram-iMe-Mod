@@ -43,7 +43,7 @@
 
 
 # virtual methods
-.method public getCustomButtonColorKey()Ljava/lang/String;
+.method public getCustomButtonColorKey()I
     .locals 1
 
     .line 249
@@ -51,18 +51,18 @@
 
     if-nez v0, :cond_0
 
-    const-string v0, "featuredStickers_addButton"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 v0, -0x1
 
     :goto_0
-    return-object v0
+    return v0
 .end method
 
-.method public getCustomButtonRippleColorKey()Ljava/lang/String;
+.method public getCustomButtonRippleColorKey()I
     .locals 1
 
     .line 244
@@ -70,15 +70,15 @@
 
     if-nez v0, :cond_0
 
-    const-string v0, "featuredStickers_addButtonPressed"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButtonPressed:I
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    const/4 v0, -0x1
 
     :goto_0
-    return-object v0
+    return v0
 .end method
 
 .method public getCustomButtonText()Ljava/lang/String;
@@ -104,7 +104,7 @@
     return-object v0
 .end method
 
-.method public getCustomButtonTextColorKey()Ljava/lang/String;
+.method public getCustomButtonTextColorKey()I
     .locals 1
 
     .line 239
@@ -112,15 +112,15 @@
 
     if-eqz v0, :cond_0
 
-    const-string v0, "dialogTextRed"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
     goto :goto_0
 
     :cond_0
-    const-string v0, "featuredStickers_buttonText"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
 
     :goto_0
-    return-object v0
+    return v0
 .end method
 
 .method public onCustomButtonPressed()Z

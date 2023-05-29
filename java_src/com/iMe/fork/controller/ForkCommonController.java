@@ -23,6 +23,7 @@ public final class ForkCommonController extends BaseController {
     private boolean isPremiumAnimateAvatars;
     private boolean isPremiumAnimateStickers;
     private boolean isQuickReactionEnabled;
+    private boolean isRevokeByDefault;
     private boolean isShowPremiumBadgeEnabled;
     private boolean isShowPremiumStatusEnabled;
     private int lastFilterTab;
@@ -47,6 +48,7 @@ public final class ForkCommonController extends BaseController {
         this.isShowPremiumStatusEnabled = TelegramPreferenceKeys.User.Default.isShowPremiumStatusEnabled();
         this.isPremiumAnimateAvatars = TelegramPreferenceKeys.User.Default.isPremiumAnimateAvatars();
         this.selectedContactsFilter = TelegramPreferenceKeys.User.Default.selectedContactsFilter();
+        this.isRevokeByDefault = TelegramPreferenceKeys.User.Default.isRevokeByDefault();
     }
 
     public final String getWalletRefreshToken() {
@@ -138,6 +140,14 @@ public final class ForkCommonController extends BaseController {
         this.selectedContactsFilter = contactsFilter;
     }
 
+    public final boolean isRevokeByDefault() {
+        return this.isRevokeByDefault;
+    }
+
+    public final void setRevokeByDefault(boolean z) {
+        this.isRevokeByDefault = z;
+    }
+
     public final void loadConfig(SharedPreferences preferences) {
         Intrinsics.checkNotNullParameter(preferences, "preferences");
         this.walletRefreshToken = preferences.getString(TelegramPreferenceKeys.User.walletRefreshToken(), TelegramPreferenceKeys.User.Default.walletRefreshToken());
@@ -151,6 +161,7 @@ public final class ForkCommonController extends BaseController {
         this.isShowPremiumStatusEnabled = preferences.getBoolean(TelegramPreferenceKeys.User.isShowPremiumStatusEnabled(), TelegramPreferenceKeys.User.Default.isShowPremiumStatusEnabled());
         this.isPremiumAnimateAvatars = preferences.getBoolean(TelegramPreferenceKeys.User.isPremiumAnimateAvatars(), TelegramPreferenceKeys.User.Default.isPremiumAnimateAvatars());
         this.selectedContactsFilter = ContactsFilter.Companion.mapNameToEnum(preferences.getString(TelegramPreferenceKeys.User.selectedContactsFilter(), TelegramPreferenceKeys.User.Default.selectedContactsFilter().name()));
+        this.isRevokeByDefault = preferences.getBoolean(TelegramPreferenceKeys.User.isRevokeByDefault(), TelegramPreferenceKeys.User.Default.isRevokeByDefault());
     }
 
     public final void saveConfig() {
@@ -166,6 +177,7 @@ public final class ForkCommonController extends BaseController {
         edit.putBoolean(TelegramPreferenceKeys.User.isShowPremiumStatusEnabled(), this.isShowPremiumStatusEnabled);
         edit.putBoolean(TelegramPreferenceKeys.User.isPremiumAnimateAvatars(), this.isPremiumAnimateAvatars);
         edit.putString(TelegramPreferenceKeys.User.selectedContactsFilter(), this.selectedContactsFilter.name());
+        edit.putBoolean(TelegramPreferenceKeys.User.isRevokeByDefault(), this.isRevokeByDefault);
         edit.apply();
     }
 
@@ -188,6 +200,9 @@ public final class ForkCommonController extends BaseController {
         }
         if (backup.getSelectedContactsFilter() != null) {
             this.selectedContactsFilter = ContactsFilter.Companion.mapNameToEnum(backup.getSelectedContactsFilter());
+        }
+        if (backup.isRevokeByDefault() != null) {
+            this.isRevokeByDefault = backup.isRevokeByDefault().booleanValue();
         }
         saveConfig();
     }

@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$8\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n129#2,5:434\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$8\n*L\n152#1:434,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$8\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,432:1\n129#2,5:433\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$8\n*L\n153#1:433,5\n*E\n"
 .end annotation
 
 
@@ -72,7 +72,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 152
+    .line 153
     new-instance p2, Lcom/iMe/ui/wallet/settings/WalletSettingsPresenter;
 
     .line 133
@@ -90,7 +90,7 @@
 
     check-cast p1, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
-    .line 152
+    .line 153
     invoke-direct {p2, p1}, Lcom/iMe/ui/wallet/settings/WalletSettingsPresenter;-><init>(Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;)V
 
     return-object p2
@@ -99,7 +99,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 152
+    .line 153
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

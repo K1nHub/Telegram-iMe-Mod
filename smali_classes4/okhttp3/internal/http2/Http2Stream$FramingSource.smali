@@ -263,7 +263,7 @@
 
     move-wide/from16 v2, p2
 
-    const-string v4, "sink"
+    const-string/jumbo v4, "sink"
 
     invoke-static {v0, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -528,7 +528,7 @@
     :try_start_3
     new-instance v0, Ljava/io/IOException;
 
-    const-string v2, "stream closed"
+    const-string/jumbo v2, "stream closed"
 
     invoke-direct {v0, v2}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
@@ -596,7 +596,7 @@
         }
     .end annotation
 
-    const-string v0, "source"
+    const-string/jumbo v0, "source"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

@@ -44,9 +44,9 @@
 
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v1, "chat_unreadMessagesStartBackground"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_unreadMessagesStartBackground:I
 
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Cells/ChatUnreadCell;->getColor(Ljava/lang/String;)I
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Cells/ChatUnreadCell;->getColor(I)I
 
     move-result v1
 
@@ -96,9 +96,9 @@
 
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v1, "chat_unreadMessagesStartArrowIcon"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_unreadMessagesStartArrowIcon:I
 
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Cells/ChatUnreadCell;->getColor(Ljava/lang/String;)I
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Cells/ChatUnreadCell;->getColor(I)I
 
     move-result v1
 
@@ -168,9 +168,9 @@
     .line 50
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatUnreadCell;->textView:Landroid/widget/TextView;
 
-    const-string p2, "chat_unreadMessagesStartText"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_unreadMessagesStartText:I
 
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Cells/ChatUnreadCell;->getColor(Ljava/lang/String;)I
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Cells/ChatUnreadCell;->getColor(I)I
 
     move-result p2
 
@@ -203,7 +203,7 @@
     return-void
 .end method
 
-.method private getColor(Ljava/lang/String;)I
+.method private getColor(I)I
     .locals 1
 
     .line 77
@@ -211,7 +211,11 @@
 
     if-eqz v0, :cond_0
 
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
+    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(I)I
+
+    move-result v0
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
@@ -231,7 +235,7 @@
     goto :goto_1
 
     :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 

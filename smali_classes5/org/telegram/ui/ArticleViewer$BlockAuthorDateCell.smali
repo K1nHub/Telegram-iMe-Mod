@@ -35,22 +35,22 @@
 .method public constructor <init>(Lorg/telegram/ui/ArticleViewer;Landroid/content/Context;Lorg/telegram/ui/ArticleViewer$WebpageAdapter;)V
     .locals 0
 
-    .line 10771
+    .line 10784
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockAuthorDateCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
-    .line 10772
+    .line 10785
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     const/16 p1, 0x8
 
-    .line 10765
+    .line 10778
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/ArticleViewer$BlockAuthorDateCell;->textY:I
 
-    .line 10773
+    .line 10786
     iput-object p3, p0, Lorg/telegram/ui/ArticleViewer$BlockAuthorDateCell;->parentAdapter:Lorg/telegram/ui/ArticleViewer$WebpageAdapter;
 
     return-void
@@ -69,12 +69,12 @@
         }
     .end annotation
 
-    .line 10867
+    .line 10880
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockAuthorDateCell;->textLayout:Lorg/telegram/ui/ArticleViewer$DrawingText;
 
     if-eqz v0, :cond_0
 
-    .line 10868
+    .line 10881
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_0
@@ -84,23 +84,23 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 2
 
-    .line 10844
+    .line 10857
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockAuthorDateCell;->currentBlock:Lorg/telegram/tgnet/TLRPC$TL_pageBlockAuthorDate;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 10847
+    .line 10860
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockAuthorDateCell;->textLayout:Lorg/telegram/ui/ArticleViewer$DrawingText;
 
     if-eqz v0, :cond_1
 
-    .line 10848
+    .line 10861
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 10849
+    .line 10862
     iget v0, p0, Lorg/telegram/ui/ArticleViewer$BlockAuthorDateCell;->textX:I
 
     int-to-float v0, v0
@@ -111,17 +111,17 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 10850
+    .line 10863
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockAuthorDateCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-static {v0, p1, p0}, Lorg/telegram/ui/ArticleViewer;->access$14700(Lorg/telegram/ui/ArticleViewer;Landroid/graphics/Canvas;Lorg/telegram/ui/Cells/TextSelectionHelper$ArticleSelectableView;)V
 
-    .line 10851
+    .line 10864
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockAuthorDateCell;->textLayout:Lorg/telegram/ui/ArticleViewer$DrawingText;
 
     invoke-virtual {v0, p1, p0}, Lorg/telegram/ui/ArticleViewer$DrawingText;->draw(Landroid/graphics/Canvas;Landroid/view/View;)V
 
-    .line 10852
+    .line 10865
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_1
@@ -131,22 +131,22 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
 
-    .line 10858
+    .line 10871
     invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     const/4 v0, 0x1
 
-    .line 10859
+    .line 10872
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setEnabled(Z)V
 
-    .line 10860
+    .line 10873
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockAuthorDateCell;->textLayout:Lorg/telegram/ui/ArticleViewer$DrawingText;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 10862
+    .line 10875
     :cond_0
     invoke-virtual {v0}, Lorg/telegram/ui/ArticleViewer$DrawingText;->getText()Ljava/lang/CharSequence;
 
@@ -160,19 +160,19 @@
 .method protected onMeasure(II)V
     .locals 13
 
-    .line 10788
+    .line 10801
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    .line 10791
+    .line 10804
     iget-object v5, p0, Lorg/telegram/ui/ArticleViewer$BlockAuthorDateCell;->currentBlock:Lorg/telegram/tgnet/TLRPC$TL_pageBlockAuthorDate;
 
     const/4 p2, 0x1
 
     if-eqz v5, :cond_6
 
-    .line 10793
+    .line 10806
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockAuthorDateCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$BlockAuthorDateCell;->parentAdapter:Lorg/telegram/ui/ArticleViewer$WebpageAdapter;
@@ -189,7 +189,7 @@
 
     move-result-object v0
 
-    .line 10796
+    .line 10809
     instance-of v1, v0, Landroid/text/Spannable;
 
     const/4 v2, 0x0
@@ -198,12 +198,12 @@
 
     if-eqz v1, :cond_0
 
-    .line 10797
+    .line 10810
     move-object v2, v0
 
     check-cast v2, Landroid/text/Spannable;
 
-    .line 10798
+    .line 10811
     invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
 
     move-result v1
@@ -227,7 +227,7 @@
     :cond_0
     move-object v1, v2
 
-    .line 10803
+    .line 10816
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/ArticleViewer$BlockAuthorDateCell;->currentBlock:Lorg/telegram/tgnet/TLRPC$TL_pageBlockAuthorDate;
 
@@ -243,7 +243,7 @@
 
     if-nez v4, :cond_1
 
-    .line 10804
+    .line 10817
     sget v4, Lorg/telegram/messenger/R$string;->ArticleDateByAuthor:I
 
     const/4 v7, 0x2
@@ -280,7 +280,7 @@
 
     goto :goto_1
 
-    .line 10805
+    .line 10818
     :cond_1
     invoke-static {v0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
@@ -288,7 +288,7 @@
 
     if-nez v4, :cond_2
 
-    .line 10806
+    .line 10819
     sget v4, Lorg/telegram/messenger/R$string;->ArticleByAuthor:I
 
     new-array p2, p2, [Ljava/lang/Object;
@@ -303,7 +303,7 @@
 
     goto :goto_1
 
-    .line 10808
+    .line 10821
     :cond_2
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
@@ -326,13 +326,13 @@
     :goto_1
     if-eqz v2, :cond_3
 
-    .line 10811
+    .line 10824
     :try_start_0
     array-length v4, v2
 
     if-lez v4, :cond_3
 
-    .line 10812
+    .line 10825
     invoke-static {p2, v0}, Landroid/text/TextUtils;->indexOf(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)I
 
     move-result v0
@@ -341,7 +341,7 @@
 
     if-eq v0, v4, :cond_3
 
-    .line 10814
+    .line 10827
     invoke-static {}, Landroid/text/Spannable$Factory;->getInstance()Landroid/text/Spannable$Factory;
 
     move-result-object v4
@@ -352,13 +352,13 @@
 
     move v4, v3
 
-    .line 10816
+    .line 10829
     :goto_2
     array-length v5, v2
 
     if-ge v4, v5, :cond_3
 
-    .line 10817
+    .line 10830
     aget-object v5, v2, v4
 
     aget-object v6, v2, v4
@@ -390,13 +390,13 @@
     :catch_0
     move-exception v0
 
-    .line 10822
+    .line 10835
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_3
     move-object v6, p2
 
-    .line 10824
+    .line 10837
     iget-object v4, p0, Lorg/telegram/ui/ArticleViewer$BlockAuthorDateCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     const/4 v7, 0x0
@@ -427,7 +427,7 @@
 
     const/16 p2, 0x10
 
-    .line 10826
+    .line 10839
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -442,7 +442,7 @@
 
     add-int/2addr v0, v3
 
-    .line 10827
+    .line 10840
     iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$BlockAuthorDateCell;->parentAdapter:Lorg/telegram/ui/ArticleViewer$WebpageAdapter;
 
     invoke-static {v1}, Lorg/telegram/ui/ArticleViewer$WebpageAdapter;->access$7100(Lorg/telegram/ui/ArticleViewer$WebpageAdapter;)Z
@@ -453,7 +453,15 @@
 
     int-to-float v1, p1
 
-    .line 10828
+    .line 10841
+    iget-object v2, p0, Lorg/telegram/ui/ArticleViewer$BlockAuthorDateCell;->textLayout:Lorg/telegram/ui/ArticleViewer$DrawingText;
+
+    invoke-virtual {v2, v3}, Lorg/telegram/ui/ArticleViewer$DrawingText;->getLineLeft(I)F
+
+    move-result v2
+
+    sub-float/2addr v1, v2
+
     iget-object v2, p0, Lorg/telegram/ui/ArticleViewer$BlockAuthorDateCell;->textLayout:Lorg/telegram/ui/ArticleViewer$DrawingText;
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/ArticleViewer$DrawingText;->getLineWidth(I)F
@@ -485,14 +493,14 @@
     :cond_4
     const/16 p2, 0x12
 
-    .line 10830
+    .line 10843
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
 
     iput p2, p0, Lorg/telegram/ui/ArticleViewer$BlockAuthorDateCell;->textX:I
 
-    .line 10832
+    .line 10845
     :goto_3
     iget-object p2, p0, Lorg/telegram/ui/ArticleViewer$BlockAuthorDateCell;->textLayout:Lorg/telegram/ui/ArticleViewer$DrawingText;
 
@@ -500,7 +508,7 @@
 
     iput v1, p2, Lorg/telegram/ui/ArticleViewer$DrawingText;->x:I
 
-    .line 10833
+    .line 10846
     iget v1, p0, Lorg/telegram/ui/ArticleViewer$BlockAuthorDateCell;->textY:I
 
     iput v1, p2, Lorg/telegram/ui/ArticleViewer$DrawingText;->y:I
@@ -512,7 +520,7 @@
     :cond_5
     move p2, v3
 
-    .line 10839
+    .line 10852
     :cond_6
     :goto_4
     invoke-virtual {p0, p1, p2}, Landroid/view/View;->setMeasuredDimension(II)V
@@ -523,7 +531,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 7
 
-    .line 10783
+    .line 10796
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockAuthorDateCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$BlockAuthorDateCell;->parentAdapter:Lorg/telegram/ui/ArticleViewer$WebpageAdapter;
@@ -568,10 +576,10 @@
 .method public setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockAuthorDate;)V
     .locals 0
 
-    .line 10777
+    .line 10790
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockAuthorDateCell;->currentBlock:Lorg/telegram/tgnet/TLRPC$TL_pageBlockAuthorDate;
 
-    .line 10778
+    .line 10791
     invoke-virtual {p0}, Landroid/view/View;->requestLayout()V
 
     return-void

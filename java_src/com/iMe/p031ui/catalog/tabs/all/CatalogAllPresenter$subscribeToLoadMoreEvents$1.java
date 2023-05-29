@@ -6,7 +6,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: CatalogAllPresenter.kt */
 /* renamed from: com.iMe.ui.catalog.tabs.all.CatalogAllPresenter$subscribeToLoadMoreEvents$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class CatalogAllPresenter$subscribeToLoadMoreEvents$1 extends Lambda implements Function1<Pair<? extends Long, ? extends String>, String> {
     public static final CatalogAllPresenter$subscribeToLoadMoreEvents$1 INSTANCE = new CatalogAllPresenter$subscribeToLoadMoreEvents$1();
 

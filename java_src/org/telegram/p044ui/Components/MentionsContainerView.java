@@ -113,10 +113,10 @@ public class MentionsContainerView extends BlurredFrameLayout {
         this.isTopView = false;
         setVisibility(8);
         setWillNotDraw(false);
-        this.listViewPadding = (int) Math.min(AndroidUtilities.m51dp(126.0f), AndroidUtilities.displaySize.y * 0.22f);
+        this.listViewPadding = (int) Math.min(AndroidUtilities.m55dp(126.0f), AndroidUtilities.displaySize.y * 0.22f);
         MentionsListView mentionsListView = new MentionsListView(context, resourcesProvider);
         this.listView = mentionsListView;
-        mentionsListView.setTranslationY(AndroidUtilities.m50dp(6));
+        mentionsListView.setTranslationY(AndroidUtilities.m54dp(6));
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(context) { // from class: org.telegram.ui.Components.MentionsContainerView.1
             @Override // androidx.recyclerview.widget.LinearLayoutManager, androidx.recyclerview.widget.RecyclerView.LayoutManager
             public boolean supportsPredictiveItemAnimations() {
@@ -126,7 +126,7 @@ public class MentionsContainerView extends BlurredFrameLayout {
             @Override // androidx.recyclerview.widget.LinearLayoutManager
             public void setReverseLayout(boolean z) {
                 super.setReverseLayout(z);
-                MentionsContainerView.this.listView.setTranslationY((z ? -1 : 1) * AndroidUtilities.m50dp(6));
+                MentionsContainerView.this.listView.setTranslationY((z ? -1 : 1) * AndroidUtilities.m54dp(6));
             }
         };
         this.linearLayoutManager = linearLayoutManager;
@@ -153,14 +153,14 @@ public class MentionsContainerView extends BlurredFrameLayout {
                         if (tLRPC$Document != null) {
                             TLRPC$PhotoSize closestPhotoSizeWithSize2 = FileLoader.getClosestPhotoSizeWithSize(tLRPC$Document.thumbs, 90);
                             Size size2 = this.size;
-                            size2.width = closestPhotoSizeWithSize2 != null ? closestPhotoSizeWithSize2.f1458w : 100.0f;
-                            size2.height = closestPhotoSizeWithSize2 != null ? closestPhotoSizeWithSize2.f1457h : 100.0f;
+                            size2.width = closestPhotoSizeWithSize2 != null ? closestPhotoSizeWithSize2.f1464w : 100.0f;
+                            size2.height = closestPhotoSizeWithSize2 != null ? closestPhotoSizeWithSize2.f1463h : 100.0f;
                             while (i4 < tLRPC$BotInlineResult.document.attributes.size()) {
                                 TLRPC$DocumentAttribute tLRPC$DocumentAttribute = tLRPC$BotInlineResult.document.attributes.get(i4);
                                 if ((tLRPC$DocumentAttribute instanceof TLRPC$TL_documentAttributeImageSize) || (tLRPC$DocumentAttribute instanceof TLRPC$TL_documentAttributeVideo)) {
                                     Size size3 = this.size;
-                                    size3.width = tLRPC$DocumentAttribute.f1438w;
-                                    size3.height = tLRPC$DocumentAttribute.f1437h;
+                                    size3.width = tLRPC$DocumentAttribute.f1444w;
+                                    size3.height = tLRPC$DocumentAttribute.f1443h;
                                     break;
                                 }
                                 i4++;
@@ -170,8 +170,8 @@ public class MentionsContainerView extends BlurredFrameLayout {
                                 TLRPC$DocumentAttribute tLRPC$DocumentAttribute2 = tLRPC$BotInlineResult.content.attributes.get(i4);
                                 if ((tLRPC$DocumentAttribute2 instanceof TLRPC$TL_documentAttributeImageSize) || (tLRPC$DocumentAttribute2 instanceof TLRPC$TL_documentAttributeVideo)) {
                                     Size size4 = this.size;
-                                    size4.width = tLRPC$DocumentAttribute2.f1438w;
-                                    size4.height = tLRPC$DocumentAttribute2.f1437h;
+                                    size4.width = tLRPC$DocumentAttribute2.f1444w;
+                                    size4.height = tLRPC$DocumentAttribute2.f1443h;
                                     break;
                                 }
                                 i4++;
@@ -181,8 +181,8 @@ public class MentionsContainerView extends BlurredFrameLayout {
                                 TLRPC$DocumentAttribute tLRPC$DocumentAttribute3 = tLRPC$BotInlineResult.thumb.attributes.get(i4);
                                 if ((tLRPC$DocumentAttribute3 instanceof TLRPC$TL_documentAttributeImageSize) || (tLRPC$DocumentAttribute3 instanceof TLRPC$TL_documentAttributeVideo)) {
                                     Size size5 = this.size;
-                                    size5.width = tLRPC$DocumentAttribute3.f1438w;
-                                    size5.height = tLRPC$DocumentAttribute3.f1437h;
+                                    size5.width = tLRPC$DocumentAttribute3.f1444w;
+                                    size5.height = tLRPC$DocumentAttribute3.f1443h;
                                     break;
                                 }
                                 i4++;
@@ -191,8 +191,8 @@ public class MentionsContainerView extends BlurredFrameLayout {
                             TLRPC$Photo tLRPC$Photo = tLRPC$BotInlineResult.photo;
                             if (tLRPC$Photo != null && (closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(tLRPC$Photo.sizes, AndroidUtilities.photoSize.intValue())) != null) {
                                 Size size6 = this.size;
-                                size6.width = closestPhotoSizeWithSize.f1458w;
-                                size6.height = closestPhotoSizeWithSize.f1457h;
+                                size6.width = closestPhotoSizeWithSize.f1464w;
+                                size6.height = closestPhotoSizeWithSize.f1463h;
                             }
                         }
                     }
@@ -345,8 +345,8 @@ public class MentionsContainerView extends BlurredFrameLayout {
         float min;
         PaddedListAdapter paddedListAdapter2;
         boolean isReversed = isReversed();
-        this.containerPadding = AndroidUtilities.m50dp(((this.adapter.isStickers() || this.adapter.isBotContext()) && this.adapter.isMediaLayout() && this.adapter.getBotContextSwitch() == null && this.adapter.getBotWebViewSwitch() == null ? 2 : 0) + 2);
-        float m50dp = AndroidUtilities.m50dp(4);
+        this.containerPadding = AndroidUtilities.m54dp(((this.adapter.isStickers() || this.adapter.isBotContext()) && this.adapter.isMediaLayout() && this.adapter.getBotContextSwitch() == null && this.adapter.getBotWebViewSwitch() == null ? 2 : 0) + 2);
+        float m54dp = AndroidUtilities.m54dp(4);
         if (isReversed) {
             float min2 = Math.min(Math.max((float) BitmapDescriptorFactory.HUE_RED, (this.paddedAdapter.paddingViewAttached ? paddedListAdapter2.paddingView.getTop() : getHeight()) + this.listView.getTranslationY()) + this.containerPadding, (1.0f - this.hideT) * getHeight());
             Rect rect = this.rect;
@@ -355,14 +355,14 @@ public class MentionsContainerView extends BlurredFrameLayout {
             int measuredWidth = getMeasuredWidth();
             this.containerBottom = min2;
             rect.set(0, i, measuredWidth, (int) min2);
-            min = Math.min(m50dp, Math.abs(getMeasuredHeight() - this.containerBottom));
+            min = Math.min(m54dp, Math.abs(getMeasuredHeight() - this.containerBottom));
             if (min > BitmapDescriptorFactory.HUE_RED) {
                 this.rect.top -= (int) min;
             }
         } else {
             if (this.listView.getLayoutManager() == this.gridLayoutManager) {
-                this.containerPadding += AndroidUtilities.m50dp(2);
-                m50dp += AndroidUtilities.m50dp(2);
+                this.containerPadding += AndroidUtilities.m54dp(2);
+                m54dp += AndroidUtilities.m54dp(2);
             }
             float max = Math.max((float) BitmapDescriptorFactory.HUE_RED, (this.paddedAdapter.paddingViewAttached ? paddedListAdapter.paddingView.getBottom() : 0) + this.listView.getTranslationY()) - this.containerPadding;
             this.containerTop = max;
@@ -373,7 +373,7 @@ public class MentionsContainerView extends BlurredFrameLayout {
             float measuredHeight = getMeasuredHeight();
             this.containerBottom = measuredHeight;
             rect2.set(0, (int) max2, measuredWidth2, (int) measuredHeight);
-            min = Math.min(m50dp, Math.abs(this.containerTop));
+            min = Math.min(m54dp, Math.abs(this.containerTop));
             if (min > BitmapDescriptorFactory.HUE_RED) {
                 this.rect.bottom += (int) min;
             }
@@ -381,11 +381,11 @@ public class MentionsContainerView extends BlurredFrameLayout {
         if (this.paint == null) {
             Paint paint = new Paint(1);
             this.paint = paint;
-            paint.setShadowLayer(AndroidUtilities.m50dp(4), BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, 503316480);
+            paint.setShadowLayer(AndroidUtilities.m54dp(4), BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, 503316480);
         }
         Paint paint2 = this.paint;
         Integer num = this.color;
-        paint2.setColor(num != null ? num.intValue() : getThemedColor("chat_messagePanelBackground"));
+        paint2.setColor(num != null ? num.intValue() : getThemedColor(Theme.key_chat_messagePanelBackground));
         if (SharedConfig.chatBlurEnabled() && this.sizeNotifierFrameLayout != null) {
             int i2 = (min > BitmapDescriptorFactory.HUE_RED ? 1 : (min == BitmapDescriptorFactory.HUE_RED ? 0 : -1));
             if (i2 > 0) {
@@ -451,7 +451,7 @@ public class MentionsContainerView extends BlurredFrameLayout {
                 if (getVisibility() == 8) {
                     this.hideT = 1.0f;
                     MentionsListView mentionsListView = this.listView;
-                    mentionsListView.setTranslationY(isReversed ? -(this.listViewPadding + AndroidUtilities.m50dp(12)) : mentionsListView.computeVerticalScrollOffset() + this.listViewPadding);
+                    mentionsListView.setTranslationY(isReversed ? -(this.listViewPadding + AndroidUtilities.m54dp(12)) : mentionsListView.computeVerticalScrollOffset() + this.listViewPadding);
                 }
             }
             setVisibility(0);
@@ -487,7 +487,7 @@ public class MentionsContainerView extends BlurredFrameLayout {
         } else {
             boolean isReversed = isReversed();
             if (z) {
-                f = (-this.containerPadding) - AndroidUtilities.m50dp(6);
+                f = (-this.containerPadding) - AndroidUtilities.m54dp(6);
             } else {
                 int computeVerticalScrollRange = this.listView.computeVerticalScrollRange();
                 float padding = (computeVerticalScrollRange - this.paddedAdapter.getPadding()) + this.containerPadding;
@@ -627,16 +627,16 @@ public class MentionsContainerView extends BlurredFrameLayout {
                         return;
                     }
                     if (MentionsContainerView.this.adapter.getBotContextSwitch() == null && MentionsContainerView.this.adapter.getBotWebViewSwitch() == null) {
-                        rect.top = AndroidUtilities.m50dp(2);
+                        rect.top = AndroidUtilities.m54dp(2);
                     } else if (i == 0) {
                         return;
                     } else {
                         i--;
                         if (!MentionsContainerView.this.gridLayoutManager.isFirstRow(i)) {
-                            rect.top = AndroidUtilities.m50dp(2);
+                            rect.top = AndroidUtilities.m54dp(2);
                         }
                     }
-                    rect.right = MentionsContainerView.this.gridLayoutManager.isLastInRow(i) ? 0 : AndroidUtilities.m50dp(2);
+                    rect.right = MentionsContainerView.this.gridLayoutManager.isLastInRow(i) ? 0 : AndroidUtilities.m54dp(2);
                 }
             });
         }
@@ -722,7 +722,7 @@ public class MentionsContainerView extends BlurredFrameLayout {
             if (MentionsContainerView.this.paddedAdapter != null) {
                 MentionsContainerView.this.paddedAdapter.setPadding(size);
             }
-            MentionsContainerView.this.listViewPadding = (int) Math.min(AndroidUtilities.m51dp(126.0f), AndroidUtilities.displaySize.y * 0.22f);
+            MentionsContainerView.this.listViewPadding = (int) Math.min(AndroidUtilities.m55dp(126.0f), AndroidUtilities.displaySize.y * 0.22f);
             super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(size + ((int) MentionsContainerView.this.listViewPadding), 1073741824));
         }
 
@@ -733,9 +733,7 @@ public class MentionsContainerView extends BlurredFrameLayout {
         }
     }
 
-    private int getThemedColor(String str) {
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-        return color != null ? color.intValue() : Theme.getColor(str);
+    private int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 }

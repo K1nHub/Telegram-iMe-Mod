@@ -28,19 +28,19 @@
 .method private constructor <init>(IIII)V
     .locals 0
 
-    .line 288
+    .line 294
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 289
+    .line 295
     iput p1, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;->fromAlign:I
 
-    .line 290
+    .line 296
     iput p2, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;->toAlign:I
 
-    .line 291
+    .line 297
     iput p3, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;->fromFrame:I
 
-    .line 292
+    .line 298
     iput p4, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;->toFrame:I
 
     return-void
@@ -49,7 +49,7 @@
 .method synthetic constructor <init>(IIIILorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$1;)V
     .locals 0
 
-    .line 282
+    .line 288
     invoke-direct {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;-><init>(IIII)V
 
     return-void
@@ -58,7 +58,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;)I
     .locals 0
 
-    .line 282
+    .line 288
     iget p0, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;->toAlign:I
 
     return p0
@@ -67,7 +67,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;)I
     .locals 0
 
-    .line 282
+    .line 288
     iget p0, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;->toFrame:I
 
     return p0
@@ -76,7 +76,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;)I
     .locals 0
 
-    .line 282
+    .line 288
     iget p0, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;->fromAlign:I
 
     return p0
@@ -85,7 +85,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;)I
     .locals 0
 
-    .line 282
+    .line 288
     iget p0, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$AlignFramePair;->fromFrame:I
 
     return p0

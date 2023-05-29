@@ -22,8 +22,8 @@
 
 
 # virtual methods
-.method public final didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
-    .locals 6
+.method public final didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
+    .locals 7
 
     iget-object v0, p0, Lorg/telegram/ui/WallpapersListActivity$2$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/ui/WallpapersListActivity$2;
 
@@ -37,7 +37,9 @@
 
     move-object v5, p5
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/WallpapersListActivity$2;->$r8$lambda$-Qn_hFhdDCWI9WxVmwoYZ_gyJxU(Lorg/telegram/ui/WallpapersListActivity$2;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
+    move-object v6, p6
+
+    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/WallpapersListActivity$2;->$r8$lambda$L9VXa37RJClNGyVmn_8IBzkg_RQ(Lorg/telegram/ui/WallpapersListActivity$2;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
 
     move-result p1
 

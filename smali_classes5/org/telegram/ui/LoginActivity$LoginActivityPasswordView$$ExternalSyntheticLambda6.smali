@@ -8,18 +8,14 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;
 
-.field public final synthetic f$1:Ljava/lang/String;
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;Ljava/lang/String;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda6;->f$0:Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;
-
-    iput-object p2, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda6;->f$1:Ljava/lang/String;
 
     return-void
 .end method
@@ -27,13 +23,11 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda6;->f$0:Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;
 
-    iget-object v1, p0, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView$$ExternalSyntheticLambda6;->f$1:Ljava/lang/String;
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->$r8$lambda$3DPiGDQ7BYq0bDnB3nyDS1aOIPM(Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;Ljava/lang/String;)V
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;->$r8$lambda$wW_oR7eP_KJAA-ybMjY5vTBIVR8(Lorg/telegram/ui/LoginActivity$LoginActivityPasswordView;)V
 
     return-void
 .end method

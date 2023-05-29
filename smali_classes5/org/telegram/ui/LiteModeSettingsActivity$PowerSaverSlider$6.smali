@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;F)V
     .locals 0
 
-    .line 916
+    .line 953
     iput-object p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$6;->this$1:Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;
 
     iput p2, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$6;->val$activeT:F
@@ -39,22 +39,22 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 4
 
-    .line 919
+    .line 956
     iget-object p1, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$6;->this$1:Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;
 
     iget-object p1, p1, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->leftTextView:Landroid/widget/TextView;
 
-    const-string v0, "windowBackgroundWhiteGrayText"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
-    .line 920
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    .line 957
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
-    const-string v1, "windowBackgroundWhiteBlueText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText:I
 
-    .line 921
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    .line 958
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -62,12 +62,12 @@
 
     iget v3, p0, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider$6;->val$activeT:F
 
-    .line 922
+    .line 959
     invoke-static {v2, v3}, Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;->access$702(Lorg/telegram/ui/LiteModeSettingsActivity$PowerSaverSlider;F)F
 
     move-result v2
 
-    .line 919
+    .line 956
     invoke-static {v0, v1, v2}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v0

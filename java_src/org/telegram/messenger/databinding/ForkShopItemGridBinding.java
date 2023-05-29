@@ -9,7 +9,7 @@ import android.widget.TextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 /* loaded from: classes4.dex */
 public final class ForkShopItemGridBinding implements ViewBinding {
     public final ImageView botAvatar;
@@ -34,7 +34,7 @@ public final class ForkShopItemGridBinding implements ViewBinding {
     }
 
     public static ForkShopItemGridBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3242R.layout.fork_shop_item_grid, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3290R.layout.fork_shop_item_grid, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -42,22 +42,22 @@ public final class ForkShopItemGridBinding implements ViewBinding {
     }
 
     public static ForkShopItemGridBinding bind(View view) {
-        int i = C3242R.C3245id.bot_avatar;
+        int i = C3290R.C3293id.bot_avatar;
         ImageView imageView = (ImageView) ViewBindings.findChildViewById(view, i);
         if (imageView != null) {
-            i = C3242R.C3245id.bot_installed_icon;
+            i = C3290R.C3293id.bot_installed_icon;
             ImageView imageView2 = (ImageView) ViewBindings.findChildViewById(view, i);
             if (imageView2 != null) {
-                i = C3242R.C3245id.bot_name;
+                i = C3290R.C3293id.bot_name;
                 TextView textView = (TextView) ViewBindings.findChildViewById(view, i);
                 if (textView != null) {
-                    i = C3242R.C3245id.bot_new_label;
+                    i = C3290R.C3293id.bot_new_label;
                     TextView textView2 = (TextView) ViewBindings.findChildViewById(view, i);
                     if (textView2 != null) {
-                        i = C3242R.C3245id.bot_status;
+                        i = C3290R.C3293id.bot_status;
                         TextView textView3 = (TextView) ViewBindings.findChildViewById(view, i);
                         if (textView3 != null) {
-                            i = C3242R.C3245id.layoutLabel;
+                            i = C3290R.C3293id.layoutLabel;
                             FrameLayout frameLayout = (FrameLayout) ViewBindings.findChildViewById(view, i);
                             if (frameLayout != null) {
                                 return new ForkShopItemGridBinding((ConstraintLayout) view, imageView, imageView2, textView, textView2, textView3, frameLayout);

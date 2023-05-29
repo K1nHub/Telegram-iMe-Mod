@@ -4,7 +4,7 @@ import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import com.iMe.storage.domain.model.crypto.wallet_connect.WalletConnectProcessedTransaction;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 /* compiled from: WalletConnectTransactionScreenType.kt */
 /* loaded from: classes3.dex */
 public abstract class WalletConnectTransactionScreenType {
@@ -90,7 +90,7 @@ public abstract class WalletConnectTransactionScreenType {
         }
 
         public int hashCode() {
-            return (((BotsDbModel$$ExternalSyntheticBackport0.m702m(getRequestId()) * 31) + getSessionItem().hashCode()) * 31) + getTransaction().hashCode();
+            return (((BotsDbModel$$ExternalSyntheticBackport0.m706m(getRequestId()) * 31) + getSessionItem().hashCode()) * 31) + getTransaction().hashCode();
         }
 
         public String toString() {
@@ -114,7 +114,7 @@ public abstract class WalletConnectTransactionScreenType {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Send(long j, WalletConnectSessionItem sessionItem, WalletConnectProcessedTransaction transaction) {
-            super(j, sessionItem, transaction, C3242R.string.wallet_connect_transaction_button_sign_and_send, null);
+            super(j, sessionItem, transaction, C3290R.string.wallet_connect_transaction_button_sign_and_send, null);
             Intrinsics.checkNotNullParameter(sessionItem, "sessionItem");
             Intrinsics.checkNotNullParameter(transaction, "transaction");
             this.requestId = j;
@@ -173,7 +173,7 @@ public abstract class WalletConnectTransactionScreenType {
         }
 
         public int hashCode() {
-            return (((BotsDbModel$$ExternalSyntheticBackport0.m702m(getRequestId()) * 31) + getSessionItem().hashCode()) * 31) + getTransaction().hashCode();
+            return (((BotsDbModel$$ExternalSyntheticBackport0.m706m(getRequestId()) * 31) + getSessionItem().hashCode()) * 31) + getTransaction().hashCode();
         }
 
         public String toString() {
@@ -197,7 +197,7 @@ public abstract class WalletConnectTransactionScreenType {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Sign(long j, WalletConnectSessionItem sessionItem, WalletConnectProcessedTransaction transaction) {
-            super(j, sessionItem, transaction, C3242R.string.wallet_connect_transaction_button_sign, null);
+            super(j, sessionItem, transaction, C3290R.string.wallet_connect_transaction_button_sign, null);
             Intrinsics.checkNotNullParameter(sessionItem, "sessionItem");
             Intrinsics.checkNotNullParameter(transaction, "transaction");
             this.requestId = j;

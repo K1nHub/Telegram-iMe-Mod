@@ -11,7 +11,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.LayoutHelper;
@@ -27,11 +27,11 @@ public class DialogsHintCell extends FrameLayout {
     public DialogsHintCell(Context context) {
         super(context);
         setWillNotDraw(false);
-        setPadding(AndroidUtilities.m50dp(16), AndroidUtilities.m50dp(8), AndroidUtilities.m50dp(16), AndroidUtilities.m50dp(8));
+        setPadding(AndroidUtilities.m54dp(16), AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(16), AndroidUtilities.m54dp(8));
         LinearLayout linearLayout = new LinearLayout(context);
         this.contentView = linearLayout;
         linearLayout.setOrientation(1);
-        this.contentView.setPadding(LocaleController.isRTL ? AndroidUtilities.m50dp(24) : 0, 0, LocaleController.isRTL ? 0 : AndroidUtilities.m50dp(24), 0);
+        this.contentView.setPadding(LocaleController.isRTL ? AndroidUtilities.m54dp(24) : 0, 0, LocaleController.isRTL ? 0 : AndroidUtilities.m54dp(24), 0);
         addView(this.contentView, LayoutHelper.createFrame(-1, -1));
         TextView textView = new TextView(context);
         this.titleView = textView;
@@ -47,16 +47,15 @@ public class DialogsHintCell extends FrameLayout {
         this.contentView.addView(this.messageView, LayoutHelper.createLinear(-1, -2, BitmapDescriptorFactory.HUE_RED, 48));
         ImageView imageView = new ImageView(context);
         this.chevronView = imageView;
-        imageView.setImageResource(C3242R.C3244drawable.arrow_newchat);
-        this.chevronView.setColorFilter(Theme.getColor("windowBackgroundWhiteGrayText"), PorterDuff.Mode.SRC_IN);
+        imageView.setImageResource(C3290R.C3292drawable.arrow_newchat);
+        this.chevronView.setColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText), PorterDuff.Mode.SRC_IN);
         addView(this.chevronView, LayoutHelper.createFrame(16, 16, (LocaleController.isRTL ? 3 : 5) | 16));
         updateColors();
     }
 
     public void updateColors() {
-        this.titleView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
-        this.messageView.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText"));
-        setBackground(Theme.AdaptiveRipple.filledRect());
+        this.titleView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
+        this.messageView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText));
     }
 
     public void setText(CharSequence charSequence, CharSequence charSequence2) {
@@ -87,7 +86,7 @@ public class DialogsHintCell extends FrameLayout {
             return 0;
         }
         if (this.height <= 0) {
-            this.height = AndroidUtilities.m50dp(72) + 1;
+            this.height = AndroidUtilities.m54dp(72) + 1;
         }
         return this.height;
     }

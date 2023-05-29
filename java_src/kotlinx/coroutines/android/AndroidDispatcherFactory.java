@@ -10,7 +10,7 @@ import kotlinx.coroutines.internal.MainDispatcherFactory;
 public final class AndroidDispatcherFactory implements MainDispatcherFactory {
     @Override // kotlinx.coroutines.internal.MainDispatcherFactory
     public int getLoadPriority() {
-        return IdFabric$RequestCode.file_saving_directory;
+        return IdFabric$RequestCode.FILE_SAVING_DIRECTORY;
     }
 
     @Override // kotlinx.coroutines.internal.MainDispatcherFactory

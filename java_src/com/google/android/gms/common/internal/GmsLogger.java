@@ -37,7 +37,7 @@ public final class GmsLogger {
 
     @KeepForSdk
     /* renamed from: d */
-    public void m785d(String str, String str2) {
+    public void m789d(String str, String str2) {
         if (canLog(3)) {
             Log.d(str, zza(str2));
         }
@@ -45,7 +45,7 @@ public final class GmsLogger {
 
     @KeepForSdk
     /* renamed from: e */
-    public void m783e(String str, String str2) {
+    public void m787e(String str, String str2) {
         if (canLog(6)) {
             Log.e(str, zza(str2));
         }
@@ -60,7 +60,7 @@ public final class GmsLogger {
 
     @KeepForSdk
     /* renamed from: i */
-    public void m781i(String str, String str2) {
+    public void m785i(String str, String str2) {
         if (canLog(4)) {
             Log.i(str, zza(str2));
         }
@@ -76,7 +76,7 @@ public final class GmsLogger {
 
     @KeepForSdk
     /* renamed from: v */
-    public void m779v(String str, String str2) {
+    public void m783v(String str, String str2) {
         if (canLog(2)) {
             Log.v(str, zza(str2));
         }
@@ -84,7 +84,7 @@ public final class GmsLogger {
 
     @KeepForSdk
     /* renamed from: w */
-    public void m777w(String str, String str2) {
+    public void m781w(String str, String str2) {
         if (canLog(5)) {
             Log.w(str, zza(str2));
         }
@@ -119,7 +119,7 @@ public final class GmsLogger {
 
     @KeepForSdk
     /* renamed from: d */
-    public void m784d(String str, String str2, Throwable th) {
+    public void m788d(String str, String str2, Throwable th) {
         if (canLog(3)) {
             Log.d(str, zza(str2), th);
         }
@@ -127,7 +127,7 @@ public final class GmsLogger {
 
     @KeepForSdk
     /* renamed from: e */
-    public void m782e(String str, String str2, Throwable th) {
+    public void m786e(String str, String str2, Throwable th) {
         if (canLog(6)) {
             Log.e(str, zza(str2), th);
         }
@@ -135,7 +135,7 @@ public final class GmsLogger {
 
     @KeepForSdk
     /* renamed from: i */
-    public void m780i(String str, String str2, Throwable th) {
+    public void m784i(String str, String str2, Throwable th) {
         if (canLog(4)) {
             Log.i(str, zza(str2), th);
         }
@@ -143,7 +143,7 @@ public final class GmsLogger {
 
     @KeepForSdk
     /* renamed from: v */
-    public void m778v(String str, String str2, Throwable th) {
+    public void m782v(String str, String str2, Throwable th) {
         if (canLog(2)) {
             Log.v(str, zza(str2), th);
         }
@@ -151,7 +151,7 @@ public final class GmsLogger {
 
     @KeepForSdk
     /* renamed from: w */
-    public void m776w(String str, String str2, Throwable th) {
+    public void m780w(String str, String str2, Throwable th) {
         if (canLog(5)) {
             Log.w(str, zza(str2), th);
         }

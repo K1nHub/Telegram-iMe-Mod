@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
-    .line 6799
+    .line 6600
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -89,19 +89,6 @@
     .locals 1
 
     invoke-static {p0}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate$-CC;->$default$hasScheduledMessages(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)Z
-
-    move-result v0
-
-    return v0
-.end method
-
-.method public isCustomForward()Z
-    .locals 1
-
-    .line 6807
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-virtual {v0}, Lorg/telegram/ui/DialogsActivity;->isCustomForward()Z
 
     move-result v0
 
@@ -205,12 +192,12 @@
 .end method
 
 .method public onMessageSend(Ljava/lang/CharSequence;ZILjava/lang/String;)V
-    .locals 6
+    .locals 7
 
-    .line 6816
+    .line 6604
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/DialogsActivity;->access$32200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;
+    invoke-static {p2}, Lorg/telegram/ui/DialogsActivity;->access$31000(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;
 
     move-result-object p2
 
@@ -218,7 +205,7 @@
 
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/DialogsActivity;->access$900(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
+    invoke-static {p2}, Lorg/telegram/ui/DialogsActivity;->access$2500(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
 
     move-result-object p2
 
@@ -230,7 +217,7 @@
 
     goto :goto_1
 
-    .line 6819
+    .line 6607
     :cond_0
     new-instance v2, Ljava/util/ArrayList;
 
@@ -240,11 +227,11 @@
 
     move p3, p2
 
-    .line 6820
+    .line 6608
     :goto_0
     iget-object p4, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p4}, Lorg/telegram/ui/DialogsActivity;->access$900(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
+    invoke-static {p4}, Lorg/telegram/ui/DialogsActivity;->access$2500(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
 
     move-result-object p4
 
@@ -254,10 +241,10 @@
 
     if-ge p3, p4, :cond_1
 
-    .line 6821
+    .line 6609
     iget-object p4, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p4}, Lorg/telegram/ui/DialogsActivity;->access$900(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
+    invoke-static {p4}, Lorg/telegram/ui/DialogsActivity;->access$2500(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
 
     move-result-object p4
 
@@ -281,11 +268,11 @@
 
     goto :goto_0
 
-    .line 6823
+    .line 6611
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$35;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/DialogsActivity;->access$32200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;
+    invoke-static {p2}, Lorg/telegram/ui/DialogsActivity;->access$31000(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;
 
     move-result-object v0
 
@@ -295,9 +282,11 @@
 
     const/4 v5, 0x0
 
+    const/4 v6, 0x0
+
     move-object v3, p1
 
-    invoke-interface/range {v0 .. v5}, Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;->didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
+    invoke-interface/range {v0 .. v6}, Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;->didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
 
     :cond_2
     :goto_1

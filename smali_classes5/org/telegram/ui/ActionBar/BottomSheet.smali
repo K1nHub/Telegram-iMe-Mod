@@ -38,7 +38,7 @@
 
 .field protected behindKeyboardColor:I
 
-.field protected behindKeyboardColorKey:Ljava/lang/String;
+.field protected behindKeyboardColorKey:I
 
 .field private bigTitle:Z
 
@@ -128,13 +128,15 @@
 
 .field protected navBarColor:I
 
-.field protected navBarColorKey:Ljava/lang/String;
+.field protected navBarColorKey:I
 
 .field protected navigationBarAlpha:F
 
 .field protected navigationBarAnimation:Landroid/animation/ValueAnimator;
 
 .field protected nestedScrollChild:Landroid/view/View;
+
+.field private notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
 
 .field private onClickListener:Landroid/content/DialogInterface$OnClickListener;
 
@@ -144,9 +146,13 @@
 
 .field private openNoDelay:Z
 
+.field protected openedLayerNum:I
+
 .field private overlayDrawNavBarColor:I
 
 .field public pauseAllHeavyOperations:Z
+
+.field protected playingImagesLayerNum:I
 
 .field protected resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
@@ -157,6 +163,8 @@
 .field protected shadowDrawable:Landroid/graphics/drawable/Drawable;
 
 .field private showWithoutAnimation:Z
+
+.field showing:Z
 
 .field public smoothKeyboardAnimationEnabled:Z
 
@@ -171,6 +179,8 @@
 .field private titleView:Landroid/widget/TextView;
 
 .field private touchSlop:I
+
+.field private transitionFromRight:Z
 
 .field public useBackgroundTopPadding:Z
 
@@ -245,7 +255,7 @@
 
     const/4 v0, 0x0
 
-    .line 969
+    .line 989
     invoke-direct {p0, p1, p2, v0}, Lorg/telegram/ui/ActionBar/BottomSheet;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -254,25 +264,25 @@
 .method public constructor <init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 7
 
-    .line 973
+    .line 993
     sget v0, Lorg/telegram/messenger/R$style;->TransparentDialog:I
 
     invoke-direct {p0, p1, v0}, Landroid/app/Dialog;-><init>(Landroid/content/Context;I)V
 
-    .line 102
+    .line 103
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     iput v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     const/4 v0, 0x1
 
-    .line 120
+    .line 121
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->allowDrawContent:Z
 
-    .line 122
+    .line 123
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->useHardwareLayer:Z
 
-    .line 138
+    .line 139
     new-instance v1, Lorg/telegram/ui/ActionBar/BottomSheet$1;
 
     const/high16 v2, -0x1000000
@@ -281,55 +291,55 @@
 
     iput-object v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backDrawable:Landroid/graphics/drawable/ColorDrawable;
 
-    .line 146
+    .line 147
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->useLightStatusBar:Z
 
-    const-string v1, "dialogBackground"
+    .line 150
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    .line 149
-    iput-object v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->behindKeyboardColorKey:Ljava/lang/String;
+    iput v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->behindKeyboardColorKey:I
 
-    .line 152
+    .line 153
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->canDismissWithSwipe:Z
 
-    .line 154
+    .line 155
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->allowCustomAnimation:Z
 
-    .line 157
+    .line 159
     sget v2, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     iput v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->statusBarHeight:I
 
-    .line 163
+    .line 165
     sget-object v2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     iput-object v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->openInterpolator:Landroid/view/animation/Interpolator;
 
-    .line 169
+    .line 171
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->dimBehind:Z
 
     const/16 v2, 0x33
 
-    .line 170
+    .line 172
     iput v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->dimBehindAlpha:I
 
-    .line 172
+    .line 174
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->allowNestedScroll:Z
 
-    .line 178
+    .line 180
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->applyTopPadding:Z
 
-    .line 179
+    .line 181
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->applyBottomPadding:Z
 
-    .line 181
+    .line 183
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->itemViews:Ljava/util/ArrayList;
 
-    .line 183
+    .line 185
     new-instance v3, Lorg/telegram/ui/ActionBar/BottomSheet$$ExternalSyntheticLambda6;
 
     invoke-direct {v3, p0}, Lorg/telegram/ui/ActionBar/BottomSheet$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/ActionBar/BottomSheet;)V
@@ -338,27 +348,34 @@
 
     const/4 v3, 0x0
 
-    .line 190
+    .line 192
     iput v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->navigationBarAlpha:F
 
-    const-string v3, "windowBackgroundGray"
+    .line 198
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    .line 196
-    iput-object v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->navBarColorKey:Ljava/lang/String;
+    iput v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->navBarColorKey:I
 
-    .line 202
+    .line 204
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->pauseAllHeavyOperations:Z
 
-    .line 213
+    .line 205
+    new-instance v3, Lorg/telegram/messenger/AnimationNotificationsLocker;
+
+    invoke-direct {v3}, Lorg/telegram/messenger/AnimationNotificationsLocker;-><init>()V
+
+    iput-object v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
+
+    .line 218
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->useBackgroundTopPadding:Z
 
-    .line 214
+    .line 219
     iput v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->customViewGravity:I
 
-    .line 974
+    .line 994
     iput-object p3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 976
+    .line 996
     sget p3, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x15
@@ -367,7 +384,7 @@
 
     if-lt p3, v3, :cond_0
 
-    .line 977
+    .line 997
     invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v4
@@ -381,7 +398,7 @@
     :cond_0
     if-lt p3, v2, :cond_1
 
-    .line 979
+    .line 999
     invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v4
@@ -390,26 +407,26 @@
 
     invoke-virtual {v4, v5}, Landroid/view/Window;->addFlags(I)V
 
-    .line 981
+    .line 1001
     :cond_1
     :goto_0
     invoke-static {p1}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object v4
 
-    .line 982
+    .line 1002
     invoke-virtual {v4}, Landroid/view/ViewConfiguration;->getScaledTouchSlop()I
 
     move-result v4
 
     iput v4, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->touchSlop:I
 
-    .line 984
+    .line 1004
     new-instance v4, Landroid/graphics/Rect;
 
     invoke-direct {v4}, Landroid/graphics/Rect;-><init>()V
 
-    .line 985
+    .line 1005
     invoke-virtual {p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
     move-result-object p1
@@ -426,10 +443,10 @@
 
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->shadowDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 986
+    .line 1006
     new-instance v5, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v1
 
@@ -439,22 +456,22 @@
 
     invoke-virtual {p1, v5}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 987
+    .line 1007
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->shadowDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p1, v4}, Landroid/graphics/drawable/Drawable;->getPadding(Landroid/graphics/Rect;)Z
 
-    .line 988
+    .line 1008
     iget p1, v4, Landroid/graphics/Rect;->left:I
 
     iput p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingLeft:I
 
-    .line 989
+    .line 1009
     iget p1, v4, Landroid/graphics/Rect;->top:I
 
     iput p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingTop:I
 
-    .line 991
+    .line 1011
     new-instance p1, Lorg/telegram/ui/ActionBar/BottomSheet$2;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -465,22 +482,22 @@
 
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
-    .line 1016
+    .line 1036
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backDrawable:Landroid/graphics/drawable/ColorDrawable;
 
     invoke-virtual {p1, v1}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1017
+    .line 1037
     iput-boolean p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->focusable:Z
 
     if-lt p3, v2, :cond_3
 
-    .line 1019
+    .line 1039
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setFitsSystemWindows(Z)V
 
-    .line 1020
+    .line 1040
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     new-instance p2, Lorg/telegram/ui/ActionBar/BottomSheet$$ExternalSyntheticLambda3;
@@ -491,7 +508,7 @@
 
     if-lt p3, v3, :cond_2
 
-    .line 1034
+    .line 1054
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     const/16 p2, 0x700
@@ -500,7 +517,7 @@
 
     goto :goto_1
 
-    .line 1036
+    .line 1056
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
@@ -508,7 +525,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setSystemUiVisibility(I)V
 
-    .line 1040
+    .line 1060
     :cond_3
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backDrawable:Landroid/graphics/drawable/ColorDrawable;
@@ -523,7 +540,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/ActionBar/BottomSheet;)Z
     .locals 0
 
-    .line 68
+    .line 69
     iget-boolean p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->dismissed:Z
 
     return p0
@@ -532,7 +549,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/ActionBar/BottomSheet;)Z
     .locals 0
 
-    .line 68
+    .line 69
     iget-boolean p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->allowCustomAnimation:Z
 
     return p0
@@ -541,7 +558,7 @@
 .method static synthetic access$1000(Lorg/telegram/ui/ActionBar/BottomSheet;)I
     .locals 0
 
-    .line 68
+    .line 69
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->rightInset:I
 
     return p0
@@ -550,7 +567,7 @@
 .method static synthetic access$1002(Lorg/telegram/ui/ActionBar/BottomSheet;I)I
     .locals 0
 
-    .line 68
+    .line 69
     iput p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->rightInset:I
 
     return p1
@@ -559,7 +576,7 @@
 .method static synthetic access$102(Lorg/telegram/ui/ActionBar/BottomSheet;Z)Z
     .locals 0
 
-    .line 68
+    .line 69
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->allowCustomAnimation:Z
 
     return p1
@@ -568,7 +585,7 @@
 .method static synthetic access$1100(Lorg/telegram/ui/ActionBar/BottomSheet;)I
     .locals 0
 
-    .line 68
+    .line 69
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->getAdditionalMandatoryOffsets()I
 
     move-result p0
@@ -579,7 +596,7 @@
 .method static synthetic access$1200(Lorg/telegram/ui/ActionBar/BottomSheet;)I
     .locals 0
 
-    .line 68
+    .line 69
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->layoutCount:I
 
     return p0
@@ -588,7 +605,7 @@
 .method static synthetic access$1210(Lorg/telegram/ui/ActionBar/BottomSheet;)I
     .locals 2
 
-    .line 68
+    .line 69
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->layoutCount:I
 
     add-int/lit8 v1, v0, -0x1
@@ -601,7 +618,7 @@
 .method static synthetic access$1300(Lorg/telegram/ui/ActionBar/BottomSheet;)Landroid/animation/ValueAnimator;
     .locals 0
 
-    .line 68
+    .line 69
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->keyboardContentAnimator:Landroid/animation/ValueAnimator;
 
     return-object p0
@@ -610,7 +627,7 @@
 .method static synthetic access$1302(Lorg/telegram/ui/ActionBar/BottomSheet;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
     .locals 0
 
-    .line 68
+    .line 69
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->keyboardContentAnimator:Landroid/animation/ValueAnimator;
 
     return-object p1
@@ -619,26 +636,26 @@
 .method static synthetic access$1400(Lorg/telegram/ui/ActionBar/BottomSheet;)F
     .locals 0
 
-    .line 68
+    .line 69
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentPanTranslationY:F
 
     return p0
 .end method
 
-.method static synthetic access$1500(Lorg/telegram/ui/ActionBar/BottomSheet;)I
+.method static synthetic access$1500(Lorg/telegram/ui/ActionBar/BottomSheet;)Z
     .locals 0
 
-    .line 68
-    iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->overlayDrawNavBarColor:I
+    .line 69
+    iget-boolean p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->transitionFromRight:Z
 
     return p0
 .end method
 
-.method static synthetic access$1600(Lorg/telegram/ui/ActionBar/BottomSheet;)Z
+.method static synthetic access$1600(Lorg/telegram/ui/ActionBar/BottomSheet;)I
     .locals 0
 
-    .line 68
-    iget-boolean p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->allowDrawContent:Z
+    .line 69
+    iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->overlayDrawNavBarColor:I
 
     return p0
 .end method
@@ -646,43 +663,52 @@
 .method static synthetic access$1700(Lorg/telegram/ui/ActionBar/BottomSheet;)Z
     .locals 0
 
-    .line 68
+    .line 69
+    iget-boolean p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->allowDrawContent:Z
+
+    return p0
+.end method
+
+.method static synthetic access$1800(Lorg/telegram/ui/ActionBar/BottomSheet;)Z
+    .locals 0
+
+    .line 69
     iget-boolean p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->multipleLinesTitle:Z
 
     return p0
 .end method
 
-.method static synthetic access$1702(Lorg/telegram/ui/ActionBar/BottomSheet;Z)Z
+.method static synthetic access$1802(Lorg/telegram/ui/ActionBar/BottomSheet;Z)Z
     .locals 0
 
-    .line 68
+    .line 69
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->multipleLinesTitle:Z
 
     return p1
 .end method
 
-.method static synthetic access$1800(Lorg/telegram/ui/ActionBar/BottomSheet;)Landroid/view/View;
+.method static synthetic access$1900(Lorg/telegram/ui/ActionBar/BottomSheet;)Landroid/view/View;
     .locals 0
 
-    .line 68
+    .line 69
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->customView:Landroid/view/View;
 
     return-object p0
 .end method
 
-.method static synthetic access$1802(Lorg/telegram/ui/ActionBar/BottomSheet;Landroid/view/View;)Landroid/view/View;
+.method static synthetic access$1902(Lorg/telegram/ui/ActionBar/BottomSheet;Landroid/view/View;)Landroid/view/View;
     .locals 0
 
-    .line 68
+    .line 69
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->customView:Landroid/view/View;
 
     return-object p1
 .end method
 
-.method static synthetic access$1900(Lorg/telegram/ui/ActionBar/BottomSheet;)V
+.method static synthetic access$2000(Lorg/telegram/ui/ActionBar/BottomSheet;)V
     .locals 0
 
-    .line 68
+    .line 69
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->startOpenAnimation()V
 
     return-void
@@ -691,124 +717,133 @@
 .method static synthetic access$202(Lorg/telegram/ui/ActionBar/BottomSheet;Z)Z
     .locals 0
 
-    .line 68
+    .line 69
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->useFastDismiss:Z
 
     return p1
 .end method
 
-.method static synthetic access$2300(Lorg/telegram/ui/ActionBar/BottomSheet;)Landroid/content/DialogInterface$OnClickListener;
+.method static synthetic access$2200(Lorg/telegram/ui/ActionBar/BottomSheet;)Lorg/telegram/messenger/AnimationNotificationsLocker;
     .locals 0
 
-    .line 68
+    .line 69
+    iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
+
+    return-object p0
+.end method
+
+.method static synthetic access$2500(Lorg/telegram/ui/ActionBar/BottomSheet;)Landroid/content/DialogInterface$OnClickListener;
+    .locals 0
+
+    .line 69
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->onClickListener:Landroid/content/DialogInterface$OnClickListener;
 
     return-object p0
 .end method
 
-.method static synthetic access$2302(Lorg/telegram/ui/ActionBar/BottomSheet;Landroid/content/DialogInterface$OnClickListener;)Landroid/content/DialogInterface$OnClickListener;
+.method static synthetic access$2502(Lorg/telegram/ui/ActionBar/BottomSheet;Landroid/content/DialogInterface$OnClickListener;)Landroid/content/DialogInterface$OnClickListener;
     .locals 0
 
-    .line 68
+    .line 69
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->onClickListener:Landroid/content/DialogInterface$OnClickListener;
 
     return-object p1
 .end method
 
-.method static synthetic access$2400(Lorg/telegram/ui/ActionBar/BottomSheet;)Landroid/content/DialogInterface$OnDismissListener;
+.method static synthetic access$2600(Lorg/telegram/ui/ActionBar/BottomSheet;)Landroid/content/DialogInterface$OnDismissListener;
     .locals 0
 
-    .line 68
+    .line 69
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->onHideListener:Landroid/content/DialogInterface$OnDismissListener;
 
     return-object p0
 .end method
 
-.method static synthetic access$2502(Lorg/telegram/ui/ActionBar/BottomSheet;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+.method static synthetic access$2702(Lorg/telegram/ui/ActionBar/BottomSheet;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
     .locals 0
 
-    .line 68
+    .line 69
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->description:Ljava/lang/CharSequence;
 
     return-object p1
 .end method
 
-.method static synthetic access$2602(Lorg/telegram/ui/ActionBar/BottomSheet;[Ljava/lang/CharSequence;)[Ljava/lang/CharSequence;
+.method static synthetic access$2802(Lorg/telegram/ui/ActionBar/BottomSheet;[Ljava/lang/CharSequence;)[Ljava/lang/CharSequence;
     .locals 0
 
-    .line 68
+    .line 69
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->items:[Ljava/lang/CharSequence;
 
     return-object p1
 .end method
 
-.method static synthetic access$2702(Lorg/telegram/ui/ActionBar/BottomSheet;[Z)[Z
+.method static synthetic access$2902(Lorg/telegram/ui/ActionBar/BottomSheet;[Z)[Z
     .locals 0
 
-    .line 68
+    .line 69
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->dividers:[Z
 
     return-object p1
 .end method
 
-.method static synthetic access$2802(Lorg/telegram/ui/ActionBar/BottomSheet;[I)[I
+.method static synthetic access$3002(Lorg/telegram/ui/ActionBar/BottomSheet;[I)[I
     .locals 0
 
-    .line 68
+    .line 69
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->itemIcons:[I
 
     return-object p1
 .end method
 
-.method static synthetic access$2902(Lorg/telegram/ui/ActionBar/BottomSheet;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
+.method static synthetic access$3102(Lorg/telegram/ui/ActionBar/BottomSheet;Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
     .locals 0
 
-    .line 68
+    .line 69
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->title:Ljava/lang/CharSequence;
 
     return-object p1
 .end method
 
-.method static synthetic access$3002(Lorg/telegram/ui/ActionBar/BottomSheet;Z)Z
+.method static synthetic access$3202(Lorg/telegram/ui/ActionBar/BottomSheet;Z)Z
     .locals 0
 
-    .line 68
+    .line 69
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->bigTitle:Z
 
     return p1
 .end method
 
-.method static synthetic access$3102(Lorg/telegram/ui/ActionBar/BottomSheet;I)I
+.method static synthetic access$3302(Lorg/telegram/ui/ActionBar/BottomSheet;I)I
     .locals 0
 
-    .line 68
+    .line 69
     iput p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->tag:I
 
     return p1
 .end method
 
-.method static synthetic access$3202(Lorg/telegram/ui/ActionBar/BottomSheet;Z)Z
+.method static synthetic access$3402(Lorg/telegram/ui/ActionBar/BottomSheet;Z)Z
     .locals 0
 
-    .line 68
+    .line 69
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->applyTopPadding:Z
 
     return p1
 .end method
 
-.method static synthetic access$3302(Lorg/telegram/ui/ActionBar/BottomSheet;Z)Z
+.method static synthetic access$3502(Lorg/telegram/ui/ActionBar/BottomSheet;Z)Z
     .locals 0
 
-    .line 68
+    .line 69
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->applyBottomPadding:Z
 
     return p1
 .end method
 
-.method static synthetic access$3400(Lorg/telegram/ui/ActionBar/BottomSheet;)Ljava/lang/Runnable;
+.method static synthetic access$3600(Lorg/telegram/ui/ActionBar/BottomSheet;)Ljava/lang/Runnable;
     .locals 0
 
-    .line 68
+    .line 69
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->dismissRunnable:Ljava/lang/Runnable;
 
     return-object p0
@@ -817,7 +852,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/ActionBar/BottomSheet;)Z
     .locals 0
 
-    .line 68
+    .line 69
     iget-boolean p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->disableScroll:Z
 
     return p0
@@ -826,7 +861,7 @@
 .method static synthetic access$500(Lorg/telegram/ui/ActionBar/BottomSheet;)I
     .locals 0
 
-    .line 68
+    .line 69
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->touchSlop:I
 
     return p0
@@ -835,7 +870,7 @@
 .method static synthetic access$600(Lorg/telegram/ui/ActionBar/BottomSheet;)F
     .locals 0
 
-    .line 68
+    .line 69
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->hideSystemVerticalInsetsProgress:F
 
     return p0
@@ -844,7 +879,7 @@
 .method static synthetic access$700(Lorg/telegram/ui/ActionBar/BottomSheet;)I
     .locals 0
 
-    .line 68
+    .line 69
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->bottomInset:I
 
     return p0
@@ -853,7 +888,7 @@
 .method static synthetic access$702(Lorg/telegram/ui/ActionBar/BottomSheet;I)I
     .locals 0
 
-    .line 68
+    .line 69
     iput p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->bottomInset:I
 
     return p1
@@ -862,7 +897,7 @@
 .method static synthetic access$712(Lorg/telegram/ui/ActionBar/BottomSheet;I)I
     .locals 1
 
-    .line 68
+    .line 69
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->bottomInset:I
 
     add-int/2addr v0, p1
@@ -875,7 +910,7 @@
 .method static synthetic access$720(Lorg/telegram/ui/ActionBar/BottomSheet;I)I
     .locals 1
 
-    .line 68
+    .line 69
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->bottomInset:I
 
     sub-int/2addr v0, p1
@@ -888,7 +923,7 @@
 .method static synthetic access$800(Lorg/telegram/ui/ActionBar/BottomSheet;)Landroid/view/WindowInsets;
     .locals 0
 
-    .line 68
+    .line 69
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->lastInsets:Landroid/view/WindowInsets;
 
     return-object p0
@@ -897,7 +932,7 @@
 .method static synthetic access$802(Lorg/telegram/ui/ActionBar/BottomSheet;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
     .locals 0
 
-    .line 68
+    .line 69
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->lastInsets:Landroid/view/WindowInsets;
 
     return-object p1
@@ -906,7 +941,7 @@
 .method static synthetic access$900(Lorg/telegram/ui/ActionBar/BottomSheet;)I
     .locals 0
 
-    .line 68
+    .line 69
     iget p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->leftInset:I
 
     return p0
@@ -915,7 +950,7 @@
 .method static synthetic access$902(Lorg/telegram/ui/ActionBar/BottomSheet;I)I
     .locals 0
 
-    .line 68
+    .line 69
     iput p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->leftInset:I
 
     return p1
@@ -924,7 +959,7 @@
 .method private getAdditionalMandatoryOffsets()I
     .locals 3
 
-    .line 775
+    .line 796
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->calcMandatoryInsets:Z
 
     const/4 v1, 0x0
@@ -944,13 +979,13 @@
 
     goto :goto_0
 
-    .line 778
+    .line 799
     :cond_1
     invoke-virtual {v0}, Landroid/view/WindowInsets;->getSystemGestureInsets()Landroid/graphics/Insets;
 
     move-result-object v0
 
-    .line 779
+    .line 800
     :goto_0
     iget-boolean v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->keyboardVisible:Z
 
@@ -981,7 +1016,7 @@
 .method private synthetic lambda$dismiss$5(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 1634
+    .line 1669
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -994,12 +1029,12 @@
 
     iput p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->navigationBarAlpha:F
 
-    .line 1635
+    .line 1670
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     if-eqz p1, :cond_0
 
-    .line 1636
+    .line 1671
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
     :cond_0
@@ -1009,14 +1044,14 @@
 .method private synthetic lambda$new$1(Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
     .locals 2
 
-    .line 1021
+    .line 1041
     invoke-virtual {p2}, Landroid/view/WindowInsets;->getSystemWindowInsetTop()I
 
     move-result v0
 
     if-nez v0, :cond_0
 
-    .line 1022
+    .line 1042
     sget-boolean v1, Lorg/telegram/messenger/AndroidUtilities;->isInMultiwindow:Z
 
     if-eqz v1, :cond_1
@@ -1026,29 +1061,29 @@
 
     if-eq v1, v0, :cond_1
 
-    .line 1023
+    .line 1043
     iput v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->statusBarHeight:I
 
-    .line 1025
+    .line 1045
     :cond_1
     iput-object p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->lastInsets:Landroid/view/WindowInsets;
 
-    .line 1026
+    .line 1046
     invoke-virtual {p1}, Landroid/view/View;->requestLayout()V
 
-    .line 1027
+    .line 1047
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v0, 0x1e
 
     if-lt p1, v0, :cond_2
 
-    .line 1028
+    .line 1048
     sget-object p1, Landroid/view/WindowInsets;->CONSUMED:Landroid/view/WindowInsets;
 
     return-object p1
 
-    .line 1030
+    .line 1050
     :cond_2
     invoke-virtual {p2}, Landroid/view/WindowInsets;->consumeSystemWindowInsets()Landroid/view/WindowInsets;
 
@@ -1068,7 +1103,7 @@
 .method private synthetic lambda$onCreate$3(Landroid/view/View;)V
     .locals 0
 
-    .line 1197
+    .line 1217
     invoke-virtual {p1}, Landroid/view/View;->getTag()Ljava/lang/Object;
 
     move-result-object p1
@@ -1087,7 +1122,7 @@
 .method private synthetic lambda$setHideSystemVerticalInsets$0(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 766
+    .line 787
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -1100,12 +1135,12 @@
 
     iput p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->hideSystemVerticalInsetsProgress:F
 
-    .line 767
+    .line 788
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->requestLayout()V
 
-    .line 768
+    .line 789
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->requestLayout()V
@@ -1116,7 +1151,7 @@
 .method private synthetic lambda$startOpenAnimation$4(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 1431
+    .line 1454
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -1129,29 +1164,100 @@
 
     iput p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->navigationBarAlpha:F
 
-    .line 1432
+    .line 1455
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     if-eqz p1, :cond_0
 
-    .line 1433
+    .line 1456
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
     :cond_0
     return-void
 .end method
 
-.method private startOpenAnimation()V
-    .locals 9
+.method private setShowing(Z)V
+    .locals 4
 
-    .line 1415
+    .line 1999
+    iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->showing:Z
+
+    if-ne v0, p1, :cond_0
+
+    return-void
+
+    .line 2002
+    :cond_0
+    iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->showing:Z
+
+    .line 2003
+    iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->openedLayerNum:I
+
+    if-lez v0, :cond_2
+
+    const/4 v0, 0x0
+
+    const/4 v1, 0x1
+
+    if-eqz p1, :cond_1
+
+    .line 2005
+    invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
+
+    move-result-object p1
+
+    sget v2, Lorg/telegram/messenger/NotificationCenter;->stopAllHeavyOperations:I
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    iget v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->openedLayerNum:I
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v0
+
+    invoke-virtual {p1, v2, v1}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
+
+    goto :goto_0
+
+    .line 2007
+    :cond_1
+    invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
+
+    move-result-object p1
+
+    sget v2, Lorg/telegram/messenger/NotificationCenter;->startAllHeavyOperations:I
+
+    new-array v1, v1, [Ljava/lang/Object;
+
+    iget v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->openedLayerNum:I
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    aput-object v3, v1, v0
+
+    invoke-virtual {p1, v2, v1}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
+
+    :cond_2
+    :goto_0
+    return-void
+.end method
+
+.method private startOpenAnimation()V
+    .locals 10
+
+    .line 1432
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->dismissed:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 1418
+    .line 1435
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
@@ -1159,14 +1265,14 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 1420
+    .line 1437
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->onCustomOpenAnimation()Z
 
     move-result v0
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_9
 
-    .line 1421
+    .line 1438
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v2, 0x14
@@ -1179,190 +1285,291 @@
 
     if-eqz v0, :cond_1
 
-    .line 1422
+    .line 1439
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     const/4 v2, 0x0
 
     invoke-virtual {v0, v3, v2}, Landroid/widget/FrameLayout;->setLayerType(ILandroid/graphics/Paint;)V
 
-    .line 1424
+    .line 1441
     :cond_1
+    iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->transitionFromRight:Z
+
+    const/4 v2, 0x0
+
+    if-eqz v0, :cond_2
+
+    .line 1442
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->getContainerViewHeight()I
-
-    move-result v2
-
-    iget-object v4, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
-
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;->access$2000(Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;)I
-
-    move-result v4
-
-    add-int/2addr v2, v4
-
-    const/16 v4, 0xa
+    const/16 v4, 0x30
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
-    add-int/2addr v2, v4
+    int-to-float v4, v4
 
-    iget-boolean v4, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->scrollNavBar:Z
+    invoke-virtual {v0, v4}, Landroid/view/ViewGroup;->setTranslationX(F)V
 
-    if-eqz v4, :cond_2
+    .line 1443
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
-    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->getBottomInset()I
+    invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->setAlpha(F)V
 
-    move-result v4
-
-    goto :goto_0
-
-    :cond_2
-    move v4, v1
-
-    :goto_0
-    add-int/2addr v2, v4
-
-    int-to-float v2, v2
+    .line 1444
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->setTranslationY(F)V
 
-    const/4 v0, 0x1
+    goto :goto_1
 
-    .line 1425
-    iput v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimationType:I
+    .line 1446
+    :cond_2
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
-    .line 1426
-    iget-object v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->navigationBarAnimation:Landroid/animation/ValueAnimator;
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->getContainerViewHeight()I
 
-    if-eqz v2, :cond_3
+    move-result v4
 
-    .line 1427
-    invoke-virtual {v2}, Landroid/animation/ValueAnimator;->cancel()V
+    iget-object v5, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
+
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;->access$2100(Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;)I
+
+    move-result v5
+
+    add-int/2addr v4, v5
+
+    const/16 v5, 0xa
+
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v5
+
+    add-int/2addr v4, v5
+
+    iget-boolean v5, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->scrollNavBar:Z
+
+    if-eqz v5, :cond_3
+
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->getBottomInset()I
+
+    move-result v5
+
+    goto :goto_0
 
     :cond_3
-    new-array v2, v3, [F
+    move v5, v1
 
-    .line 1429
-    iget v4, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->navigationBarAlpha:F
+    :goto_0
+    add-int/2addr v4, v5
 
-    aput v4, v2, v1
+    int-to-float v4, v4
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    invoke-virtual {v0, v4}, Landroid/view/ViewGroup;->setTranslationY(F)V
 
-    aput v4, v2, v0
+    :goto_1
+    const/4 v0, 0x1
 
-    invoke-static {v2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
+    .line 1448
+    iput v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimationType:I
+
+    .line 1449
+    iget-object v4, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->navigationBarAnimation:Landroid/animation/ValueAnimator;
+
+    if-eqz v4, :cond_4
+
+    .line 1450
+    invoke-virtual {v4}, Landroid/animation/ValueAnimator;->cancel()V
+
+    :cond_4
+    new-array v4, v3, [F
+
+    .line 1452
+    iget v5, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->navigationBarAlpha:F
+
+    aput v5, v4, v1
+
+    const/high16 v5, 0x3f800000    # 1.0f
+
+    aput v5, v4, v0
+
+    invoke-static {v4}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
+
+    move-result-object v4
+
+    iput-object v4, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->navigationBarAnimation:Landroid/animation/ValueAnimator;
+
+    .line 1453
+    new-instance v6, Lorg/telegram/ui/ActionBar/BottomSheet$$ExternalSyntheticLambda0;
+
+    invoke-direct {v6, p0}, Lorg/telegram/ui/ActionBar/BottomSheet$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ActionBar/BottomSheet;)V
+
+    invoke-virtual {v4, v6}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+
+    .line 1459
+    new-instance v4, Landroid/animation/AnimatorSet;
+
+    invoke-direct {v4}, Landroid/animation/AnimatorSet;-><init>()V
+
+    iput-object v4, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
+
+    const/4 v6, 0x5
+
+    new-array v6, v6, [Landroid/animation/Animator;
+
+    .line 1460
+    iget-object v7, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
+
+    sget-object v8, Landroid/view/View;->TRANSLATION_X:Landroid/util/Property;
+
+    new-array v9, v0, [F
+
+    aput v2, v9, v1
+
+    .line 1461
+    invoke-static {v7, v8, v9}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v7
+
+    aput-object v7, v6, v1
+
+    iget-object v7, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
+
+    sget-object v8, Landroid/view/View;->ALPHA:Landroid/util/Property;
+
+    new-array v9, v0, [F
+
+    aput v5, v9, v1
+
+    .line 1462
+    invoke-static {v7, v8, v9}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v5
+
+    aput-object v5, v6, v0
+
+    iget-object v5, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
+
+    sget-object v7, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
+
+    new-array v8, v0, [F
+
+    aput v2, v8, v1
+
+    .line 1463
+    invoke-static {v5, v7, v8}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v2
 
-    iput-object v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->navigationBarAnimation:Landroid/animation/ValueAnimator;
+    aput-object v2, v6, v3
 
-    .line 1430
-    new-instance v4, Lorg/telegram/ui/ActionBar/BottomSheet$$ExternalSyntheticLambda0;
+    const/4 v2, 0x3
 
-    invoke-direct {v4, p0}, Lorg/telegram/ui/ActionBar/BottomSheet$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ActionBar/BottomSheet;)V
+    iget-object v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backDrawable:Landroid/graphics/drawable/ColorDrawable;
 
-    invoke-virtual {v2, v4}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
-
-    .line 1436
-    new-instance v2, Landroid/animation/AnimatorSet;
-
-    invoke-direct {v2}, Landroid/animation/AnimatorSet;-><init>()V
-
-    iput-object v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
-
-    const/4 v4, 0x3
-
-    new-array v4, v4, [Landroid/animation/Animator;
-
-    .line 1437
-    iget-object v5, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
-
-    sget-object v6, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
-
-    new-array v7, v0, [F
-
-    const/4 v8, 0x0
-
-    aput v8, v7, v1
-
-    .line 1438
-    invoke-static {v5, v6, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
-
-    move-result-object v5
-
-    aput-object v5, v4, v1
-
-    iget-object v5, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backDrawable:Landroid/graphics/drawable/ColorDrawable;
-
-    sget-object v6, Lorg/telegram/ui/Components/AnimationProperties;->COLOR_DRAWABLE_ALPHA:Landroid/util/Property;
+    sget-object v5, Lorg/telegram/ui/Components/AnimationProperties;->COLOR_DRAWABLE_ALPHA:Landroid/util/Property;
 
     new-array v7, v0, [I
 
-    .line 1439
+    .line 1464
     iget-boolean v8, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->dimBehind:Z
 
-    if-eqz v8, :cond_4
+    if-eqz v8, :cond_5
 
     iget v8, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->dimBehindAlpha:I
 
-    goto :goto_1
+    goto :goto_2
 
-    :cond_4
+    :cond_5
     move v8, v1
 
-    :goto_1
+    :goto_2
     aput v8, v7, v1
 
-    invoke-static {v5, v6, v7}, Landroid/animation/ObjectAnimator;->ofInt(Ljava/lang/Object;Landroid/util/Property;[I)Landroid/animation/ObjectAnimator;
+    invoke-static {v3, v5, v7}, Landroid/animation/ObjectAnimator;->ofInt(Ljava/lang/Object;Landroid/util/Property;[I)Landroid/animation/ObjectAnimator;
 
-    move-result-object v5
+    move-result-object v3
 
-    aput-object v5, v4, v0
+    aput-object v3, v6, v2
 
-    iget-object v5, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->navigationBarAnimation:Landroid/animation/ValueAnimator;
+    const/4 v2, 0x4
 
-    aput-object v5, v4, v3
+    iget-object v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->navigationBarAnimation:Landroid/animation/ValueAnimator;
 
-    .line 1437
-    invoke-virtual {v2, v4}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
+    aput-object v3, v6, v2
 
-    .line 1442
+    .line 1460
+    invoke-virtual {v4, v6}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
+
+    .line 1467
+    iget-boolean v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->transitionFromRight:Z
+
+    if-eqz v2, :cond_6
+
+    .line 1468
+    iget-object v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
+
+    const-wide/16 v3, 0xfa
+
+    invoke-virtual {v2, v3, v4}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
+
+    .line 1469
+    iget-object v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
+
+    sget-object v3, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+
+    invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+
+    goto :goto_3
+
+    .line 1471
+    :cond_6
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
 
     const-wide/16 v3, 0x190
 
     invoke-virtual {v2, v3, v4}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1443
-    iget-object v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
-
-    iget-boolean v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->waitingKeyboard:Z
-
-    if-eqz v3, :cond_5
-
-    const-wide/16 v3, 0x0
-
-    goto :goto_2
-
-    :cond_5
-    const-wide/16 v3, 0x14
-
-    :goto_2
-    invoke-virtual {v2, v3, v4}, Landroid/animation/AnimatorSet;->setStartDelay(J)V
-
-    .line 1444
+    .line 1472
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
 
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->openInterpolator:Landroid/view/animation/Interpolator;
 
     invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1445
+    .line 1474
+    :goto_3
+    iget-object v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
+
+    iget-boolean v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->waitingKeyboard:Z
+
+    if-eqz v3, :cond_7
+
+    const-wide/16 v3, 0x0
+
+    goto :goto_4
+
+    :cond_7
+    const-wide/16 v3, 0x14
+
+    :goto_4
+    invoke-virtual {v2, v3, v4}, Landroid/animation/AnimatorSet;->setStartDelay(J)V
+
+    .line 1475
+    iget-object v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
+
+    iget-object v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->openInterpolator:Landroid/view/animation/Interpolator;
+
+    invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+
+    .line 1477
+    iget-object v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
+
+    invoke-virtual {v2}, Lorg/telegram/messenger/AnimationNotificationsLocker;->lock()V
+
+    .line 1478
     iget-object v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
 
     new-instance v3, Lorg/telegram/ui/ActionBar/BottomSheet$6;
@@ -1371,12 +1578,12 @@
 
     invoke-virtual {v2, v3}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1477
+    .line 1512
     iget-boolean v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->pauseAllHeavyOperations:Z
 
-    if-eqz v2, :cond_6
+    if-eqz v2, :cond_8
 
-    .line 1478
+    .line 1513
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v2
@@ -1395,13 +1602,13 @@
 
     invoke-virtual {v2, v3, v0}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 1480
-    :cond_6
+    .line 1515
+    :cond_8
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
-    :cond_7
+    :cond_9
     return-void
 .end method
 
@@ -1410,7 +1617,7 @@
 .method protected canDismissWithSwipe()Z
     .locals 1
 
-    .line 1336
+    .line 1353
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->canDismissWithSwipe:Z
 
     return v0
@@ -1427,23 +1634,23 @@
 .method protected cancelSheetAnimation()V
     .locals 1
 
-    .line 1399
+    .line 1416
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_0
 
-    .line 1400
+    .line 1417
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
 
     const/4 v0, 0x0
 
-    .line 1401
+    .line 1418
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
 
     :cond_0
     const/4 v0, 0x0
 
-    .line 1403
+    .line 1420
     iput v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimationType:I
 
     return-void
@@ -1452,7 +1659,7 @@
 .method public dismiss()V
     .locals 10
 
-    .line 1614
+    .line 1649
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->delegate:Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetDelegateInterface;
 
     if-eqz v0, :cond_0
@@ -1465,7 +1672,7 @@
 
     return-void
 
-    .line 1617
+    .line 1652
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->dismissed:Z
 
@@ -1476,28 +1683,30 @@
     :cond_1
     const/4 v0, 0x1
 
-    .line 1620
+    .line 1655
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->dismissed:Z
 
-    .line 1621
+    .line 1656
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->onHideListener:Landroid/content/DialogInterface$OnDismissListener;
 
     if-eqz v1, :cond_2
 
-    .line 1622
+    .line 1657
     invoke-interface {v1, p0}, Landroid/content/DialogInterface$OnDismissListener;->onDismiss(Landroid/content/DialogInterface;)V
 
-    .line 1624
+    .line 1659
     :cond_2
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->cancelSheetAnimation()V
 
-    .line 1626
+    .line 1661
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->onDismissAnimationStart()V
 
-    .line 1627
+    .line 1662
     iget-boolean v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->allowCustomAnimation:Z
 
     const-wide/16 v2, 0x0
+
+    const/4 v4, 0x0
 
     if-eqz v1, :cond_4
 
@@ -1510,38 +1719,36 @@
     goto :goto_0
 
     :cond_3
-    move-wide v6, v2
+    move-wide v5, v2
 
-    goto/16 :goto_2
+    goto/16 :goto_4
 
     :cond_4
     :goto_0
     const/4 v1, 0x2
 
-    .line 1628
+    .line 1663
     iput v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimationType:I
 
-    .line 1629
-    iget-object v4, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->navigationBarAnimation:Landroid/animation/ValueAnimator;
+    .line 1664
+    iget-object v5, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->navigationBarAnimation:Landroid/animation/ValueAnimator;
 
-    if-eqz v4, :cond_5
+    if-eqz v5, :cond_5
 
-    .line 1630
-    invoke-virtual {v4}, Landroid/animation/ValueAnimator;->cancel()V
+    .line 1665
+    invoke-virtual {v5}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_5
     new-array v1, v1, [F
 
-    .line 1632
-    iget v4, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->navigationBarAlpha:F
+    .line 1667
+    iget v5, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->navigationBarAlpha:F
+
+    aput v5, v1, v4
 
     const/4 v5, 0x0
 
-    aput v4, v1, v5
-
-    const/4 v4, 0x0
-
-    aput v4, v1, v0
+    aput v5, v1, v0
 
     invoke-static {v1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
@@ -1549,32 +1756,76 @@
 
     iput-object v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->navigationBarAnimation:Landroid/animation/ValueAnimator;
 
-    .line 1633
-    new-instance v4, Lorg/telegram/ui/ActionBar/BottomSheet$$ExternalSyntheticLambda2;
+    .line 1668
+    new-instance v6, Lorg/telegram/ui/ActionBar/BottomSheet$$ExternalSyntheticLambda2;
 
-    invoke-direct {v4, p0}, Lorg/telegram/ui/ActionBar/BottomSheet$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/ActionBar/BottomSheet;)V
+    invoke-direct {v6, p0}, Lorg/telegram/ui/ActionBar/BottomSheet$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/ActionBar/BottomSheet;)V
 
-    invoke-virtual {v1, v4}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+    invoke-virtual {v1, v6}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1639
+    .line 1674
     new-instance v1, Landroid/animation/AnimatorSet;
 
     invoke-direct {v1}, Landroid/animation/AnimatorSet;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
 
-    .line 1640
+    .line 1675
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1641
-    iget-object v4, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
+    .line 1676
+    iget-object v6, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
-    if-eqz v4, :cond_7
+    if-eqz v6, :cond_8
 
-    .line 1642
-    sget-object v6, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
+    .line 1677
+    iget-boolean v7, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->transitionFromRight:Z
+
+    if-eqz v7, :cond_6
+
+    .line 1678
+    sget-object v7, Landroid/view/View;->TRANSLATION_X:Landroid/util/Property;
+
+    new-array v8, v0, [F
+
+    const/16 v9, 0x30
+
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v9
+
+    int-to-float v9, v9
+
+    aput v9, v8, v4
+
+    invoke-static {v6, v7, v8}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v6
+
+    invoke-virtual {v1, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 1679
+    iget-object v6, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
+
+    sget-object v7, Landroid/view/View;->ALPHA:Landroid/util/Property;
+
+    new-array v8, v0, [F
+
+    aput v5, v8, v4
+
+    invoke-static {v6, v7, v8}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+
+    move-result-object v5
+
+    invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    goto :goto_2
+
+    .line 1681
+    :cond_6
+    sget-object v5, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
 
     new-array v7, v0, [F
 
@@ -1584,7 +1835,7 @@
 
     iget-object v9, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;->access$2000(Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;)I
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;->access$2100(Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;)I
 
     move-result v9
 
@@ -1600,7 +1851,7 @@
 
     iget-boolean v9, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->scrollNavBar:Z
 
-    if-eqz v9, :cond_6
+    if-eqz v9, :cond_7
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->getBottomInset()I
 
@@ -1608,77 +1859,103 @@
 
     goto :goto_1
 
-    :cond_6
-    move v9, v5
+    :cond_7
+    move v9, v4
 
     :goto_1
     add-int/2addr v8, v9
 
     int-to-float v8, v8
 
-    aput v8, v7, v5
+    aput v8, v7, v4
 
-    invoke-static {v4, v6, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+    invoke-static {v6, v5, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1644
-    :cond_7
-    iget-object v4, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backDrawable:Landroid/graphics/drawable/ColorDrawable;
+    .line 1684
+    :cond_8
+    :goto_2
+    iget-object v5, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backDrawable:Landroid/graphics/drawable/ColorDrawable;
 
     sget-object v6, Lorg/telegram/ui/Components/AnimationProperties;->COLOR_DRAWABLE_ALPHA:Landroid/util/Property;
 
     new-array v7, v0, [I
 
-    aput v5, v7, v5
+    aput v4, v7, v4
 
-    invoke-static {v4, v6, v7}, Landroid/animation/ObjectAnimator;->ofInt(Ljava/lang/Object;Landroid/util/Property;[I)Landroid/animation/ObjectAnimator;
+    invoke-static {v5, v6, v7}, Landroid/animation/ObjectAnimator;->ofInt(Ljava/lang/Object;Landroid/util/Property;[I)Landroid/animation/ObjectAnimator;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1645
-    iget-object v4, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->navigationBarAnimation:Landroid/animation/ValueAnimator;
+    .line 1685
+    iget-object v5, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->navigationBarAnimation:Landroid/animation/ValueAnimator;
 
-    invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1646
-    iget-object v4, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
+    .line 1686
+    iget-object v5, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
 
-    invoke-virtual {v4, v1}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
+    invoke-virtual {v5, v1}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
 
-    .line 1653
+    .line 1688
+    iget-boolean v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->transitionFromRight:Z
+
+    if-eqz v1, :cond_9
+
+    .line 1689
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
 
-    const-wide/16 v6, 0xfa
+    const-wide/16 v5, 0xc8
 
-    invoke-virtual {v1, v6, v7}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
+    invoke-virtual {v1, v5, v6}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1655
+    .line 1690
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
 
-    sget-object v4, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+    sget-object v5, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
-    invoke-virtual {v1, v4}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+    invoke-virtual {v1, v5}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1656
+    move-wide v5, v2
+
+    goto :goto_3
+
+    .line 1692
+    :cond_9
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
 
-    new-instance v4, Lorg/telegram/ui/ActionBar/BottomSheet$8;
+    const-wide/16 v5, 0xfa
 
-    invoke-direct {v4, p0}, Lorg/telegram/ui/ActionBar/BottomSheet$8;-><init>(Lorg/telegram/ui/ActionBar/BottomSheet;)V
+    invoke-virtual {v1, v5, v6}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    invoke-virtual {v1, v4}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    .line 1693
+    iget-object v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
 
-    .line 1681
+    sget-object v7, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
+
+    invoke-virtual {v1, v7}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+
+    .line 1695
+    :goto_3
+    iget-object v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
+
+    new-instance v7, Lorg/telegram/ui/ActionBar/BottomSheet$8;
+
+    invoke-direct {v7, p0}, Lorg/telegram/ui/ActionBar/BottomSheet$8;-><init>(Lorg/telegram/ui/ActionBar/BottomSheet;)V
+
+    invoke-virtual {v1, v7}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    .line 1720
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v1
 
-    sget v4, Lorg/telegram/messenger/NotificationCenter;->stopAllHeavyOperations:I
+    sget v7, Lorg/telegram/messenger/NotificationCenter;->stopAllHeavyOperations:I
 
     new-array v0, v0, [Ljava/lang/Object;
 
@@ -1688,35 +1965,35 @@
 
     move-result-object v8
 
-    aput-object v8, v0, v5
+    aput-object v8, v0, v4
 
-    invoke-virtual {v1, v4, v0}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
+    invoke-virtual {v1, v7, v0}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 1682
+    .line 1721
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 1685
-    :goto_2
+    .line 1724
+    :goto_4
     invoke-static {}, Lorg/telegram/ui/Components/Bulletin;->getVisibleBulletin()Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object v0
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_b
 
-    .line 1686
+    .line 1725
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Bulletin;->isShowing()Z
 
     move-result v1
 
-    if-eqz v1, :cond_9
+    if-eqz v1, :cond_b
 
-    cmp-long v1, v6, v2
+    cmp-long v1, v5, v2
 
-    if-lez v1, :cond_8
+    if-lez v1, :cond_a
 
-    long-to-float v1, v6
+    long-to-float v1, v5
 
     const v2, 0x3f19999a    # 0.6f
 
@@ -1724,24 +2001,27 @@
 
     float-to-long v1, v1
 
-    .line 1688
+    .line 1727
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/Bulletin;->hide(J)V
 
-    goto :goto_3
+    goto :goto_5
 
-    .line 1690
-    :cond_8
+    .line 1729
+    :cond_a
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Bulletin;->hide()V
 
-    :cond_9
-    :goto_3
+    .line 1732
+    :cond_b
+    :goto_5
+    invoke-direct {p0, v4}, Lorg/telegram/ui/ActionBar/BottomSheet;->setShowing(Z)V
+
     return-void
 .end method
 
 .method public dismissInternal()V
     .locals 2
 
-    .line 1701
+    .line 1741
     :try_start_0
     invoke-super {p0}, Landroid/app/Dialog;->dismiss()V
     :try_end_0
@@ -1754,7 +2034,7 @@
 
     const/4 v1, 0x0
 
-    .line 1704
+    .line 1744
     invoke-static {v0, v1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
     :goto_0
@@ -1764,7 +2044,7 @@
 .method public dismissWithButtonClick(I)V
     .locals 9
 
-    .line 1547
+    .line 1582
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->dismissed:Z
 
     if-eqz v0, :cond_0
@@ -1774,18 +2054,18 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 1550
+    .line 1585
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->dismissed:Z
 
-    .line 1551
+    .line 1586
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->cancelSheetAnimation()V
 
     const/4 v1, 0x2
 
-    .line 1552
+    .line 1587
     iput v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimationType:I
 
-    .line 1553
+    .line 1588
     new-instance v2, Landroid/animation/AnimatorSet;
 
     invoke-direct {v2}, Landroid/animation/AnimatorSet;-><init>()V
@@ -1794,21 +2074,21 @@
 
     new-array v1, v1, [Landroid/animation/Animator;
 
-    .line 1554
+    .line 1589
     iget-object v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     sget-object v4, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
 
     new-array v5, v0, [F
 
-    .line 1555
+    .line 1590
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->getContainerViewHeight()I
 
     move-result v6
 
     iget-object v7, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;->access$2000(Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;)I
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;->access$2100(Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;)I
 
     move-result v7
 
@@ -1858,31 +2138,31 @@
 
     aput v8, v5, v8
 
-    .line 1556
+    .line 1591
     invoke-static {v3, v4, v5}, Landroid/animation/ObjectAnimator;->ofInt(Ljava/lang/Object;Landroid/util/Property;[I)Landroid/animation/ObjectAnimator;
 
     move-result-object v3
 
     aput-object v3, v1, v0
 
-    .line 1554
+    .line 1589
     invoke-virtual {v2, v1}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 1558
+    .line 1593
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
 
     const-wide/16 v2, 0xb4
 
     invoke-virtual {v1, v2, v3}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 1559
+    .line 1594
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
 
     sget-object v2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v1, v2}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1560
+    .line 1595
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
 
     new-instance v2, Lorg/telegram/ui/ActionBar/BottomSheet$7;
@@ -1891,7 +2171,7 @@
 
     invoke-virtual {v1, v2}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1591
+    .line 1626
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -1910,7 +2190,7 @@
 
     invoke-virtual {p1, v1, v0}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 1592
+    .line 1627
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimation:Landroid/animation/AnimatorSet;
 
     invoke-virtual {p1}, Landroid/animation/AnimatorSet;->start()V
@@ -1921,7 +2201,7 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 1597
+    .line 1632
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->dismissed:Z
 
     if-eqz v0, :cond_0
@@ -1930,7 +2210,7 @@
 
     return p1
 
-    .line 1600
+    .line 1635
     :cond_0
     invoke-super {p0, p1}, Landroid/app/Dialog;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -1942,10 +2222,10 @@
 .method public fixNavigationBar()V
     .locals 1
 
-    const-string v0, "dialogBackground"
+    .line 1068
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    .line 1048
-    invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v0
 
@@ -1959,21 +2239,21 @@
 
     const/4 v0, 0x1
 
-    .line 1052
+    .line 1072
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->drawNavigationBar:Z
 
-    .line 1053
+    .line 1073
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->drawDoubleNavigationBar:Z
 
-    .line 1054
+    .line 1074
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->scrollNavBar:Z
 
-    const/4 v0, 0x0
+    const/4 v0, -0x1
 
-    .line 1055
-    iput-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->navBarColorKey:Ljava/lang/String;
+    .line 1075
+    iput v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->navBarColorKey:I
 
-    .line 1056
+    .line 1076
     iput p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->navBarColor:I
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->setOverlayNavBarColor(I)V
@@ -1984,7 +2264,7 @@
 .method public getBackDrawable()Landroid/graphics/drawable/ColorDrawable;
     .locals 1
 
-    .line 1320
+    .line 1337
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backDrawable:Landroid/graphics/drawable/ColorDrawable;
 
     return-object v0
@@ -1993,7 +2273,7 @@
 .method public getBackgroundPaddingLeft()I
     .locals 1
 
-    .line 1956
+    .line 1995
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingLeft:I
 
     return v0
@@ -2002,7 +2282,7 @@
 .method public getBackgroundPaddingTop()I
     .locals 1
 
-    .line 1324
+    .line 1341
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingTop:I
 
     return v0
@@ -2011,7 +2291,7 @@
 .method public getBottomInset()I
     .locals 3
 
-    .line 1899
+    .line 1939
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->bottomInset:I
 
     int-to-float v0, v0
@@ -2045,7 +2325,7 @@
 
     const/16 p3, 0x1e0
 
-    .line 755
+    .line 776
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p3
@@ -2069,7 +2349,7 @@
 .method public getContainer()Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
     .locals 1
 
-    .line 1489
+    .line 1524
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     return-object v0
@@ -2078,7 +2358,7 @@
 .method public getContainerView()Landroid/view/ViewGroup;
     .locals 1
 
-    .line 1939
+    .line 1979
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     return-object v0
@@ -2087,7 +2367,7 @@
 .method public getContainerViewHeight()I
     .locals 1
 
-    .line 1606
+    .line 1641
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     if-nez v0, :cond_0
@@ -2096,7 +2376,7 @@
 
     return v0
 
-    .line 1609
+    .line 1644
     :cond_0
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getMeasuredHeight()I
 
@@ -2108,7 +2388,7 @@
 .method public getCurrentAccount()I
     .locals 1
 
-    .line 1943
+    .line 1983
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
 
     return v0
@@ -2117,7 +2397,7 @@
 .method public getDescription()Ljava/lang/CharSequence;
     .locals 1
 
-    .line 85
+    .line 86
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->description:Ljava/lang/CharSequence;
 
     return-object v0
@@ -2134,7 +2414,7 @@
         }
     .end annotation
 
-    .line 1526
+    .line 1561
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->itemViews:Ljava/util/ArrayList;
 
     return-object v0
@@ -2143,7 +2423,7 @@
 .method public getLeftInset()I
     .locals 3
 
-    .line 1869
+    .line 1909
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->lastInsets:Landroid/view/WindowInsets;
 
     if-eqz v0, :cond_0
@@ -2154,7 +2434,7 @@
 
     if-lt v1, v2, :cond_0
 
-    .line 1874
+    .line 1914
     invoke-virtual {v0}, Landroid/view/WindowInsets;->getSystemWindowInsetLeft()I
 
     move-result v0
@@ -2182,7 +2462,7 @@
 .method public getOnClickListener()Landroid/content/DialogInterface$OnClickListener;
     .locals 1
 
-    .line 93
+    .line 94
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->onClickListener:Landroid/content/DialogInterface$OnClickListener;
 
     return-object v0
@@ -2191,7 +2471,7 @@
 .method public getRightInset()I
     .locals 3
 
-    .line 1882
+    .line 1922
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->lastInsets:Landroid/view/WindowInsets;
 
     if-eqz v0, :cond_0
@@ -2202,7 +2482,7 @@
 
     if-lt v1, v2, :cond_0
 
-    .line 1887
+    .line 1927
     invoke-virtual {v0}, Landroid/view/WindowInsets;->getSystemWindowInsetRight()I
 
     move-result v0
@@ -2230,7 +2510,7 @@
 .method public getSheetAnimationType()I
     .locals 1
 
-    .line 1696
+    .line 1736
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentSheetAnimationType:I
 
     return v0
@@ -2239,7 +2519,7 @@
 .method public getSheetContainer()Landroid/view/ViewGroup;
     .locals 1
 
-    .line 1493
+    .line 1528
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     return-object v0
@@ -2248,7 +2528,7 @@
 .method public getStatusBarHeight()I
     .locals 3
 
-    .line 1895
+    .line 1935
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->statusBarHeight:I
 
     int-to-float v0, v0
@@ -2269,7 +2549,7 @@
 .method public getTag()I
     .locals 1
 
-    .line 1497
+    .line 1532
     iget v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->tag:I
 
     return v0
@@ -2299,46 +2579,23 @@
     return-object v0
 .end method
 
-.method protected getThemedColor(Ljava/lang/String;)I
+.method protected getThemedColor(I)I
     .locals 1
 
-    .line 1947
+    .line 1987
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 1948
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
 .method public getTitleView()Landroid/widget/TextView;
     .locals 1
 
-    .line 1391
+    .line 1408
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->titleView:Landroid/widget/TextView;
 
     return-object v0
@@ -2347,7 +2604,7 @@
 .method public isDismissed()Z
     .locals 1
 
-    .line 1543
+    .line 1578
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->dismissed:Z
 
     return v0
@@ -2356,7 +2613,7 @@
 .method public isFocusable()Z
     .locals 1
 
-    .line 1249
+    .line 1269
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->focusable:Z
 
     return v0
@@ -2399,20 +2656,20 @@
 
     move-object/from16 v0, p0
 
-    .line 1061
+    .line 1081
     invoke-super/range {p0 .. p1}, Landroid/app/Dialog;->onCreate(Landroid/os/Bundle;)V
 
-    .line 1063
+    .line 1083
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v1
 
-    .line 1064
+    .line 1084
     sget v2, Lorg/telegram/messenger/R$style;->DialogNoAnimation:I
 
     invoke-virtual {v1, v2}, Landroid/view/Window;->setWindowAnimations(I)V
 
-    .line 1065
+    .line 1085
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     new-instance v3, Landroid/view/ViewGroup$LayoutParams;
@@ -2423,7 +2680,7 @@
 
     invoke-virtual {v0, v2, v3}, Landroid/app/Dialog;->setContentView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1067
+    .line 1087
     iget-boolean v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->useLightStatusBar:Z
 
     const/4 v3, 0x0
@@ -2438,16 +2695,16 @@
 
     if-lt v2, v6, :cond_0
 
-    const-string v2, "actionBarDefault"
+    .line 1088
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
 
-    .line 1068
-    invoke-static {v2, v3, v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;[ZZ)I
+    invoke-static {v2, v3, v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I[ZZ)I
 
     move-result v2
 
     if-ne v2, v4, :cond_0
 
-    .line 1070
+    .line 1090
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     invoke-virtual {v2}, Landroid/widget/FrameLayout;->getSystemUiVisibility()I
@@ -2456,12 +2713,12 @@
 
     or-int/lit16 v2, v2, 0x2000
 
-    .line 1072
+    .line 1092
     iget-object v6, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     invoke-virtual {v6, v2}, Landroid/widget/FrameLayout;->setSystemUiVisibility(I)V
 
-    .line 1075
+    .line 1095
     :cond_0
     iget-boolean v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->useLightNavBar:Z
 
@@ -2475,14 +2732,14 @@
 
     if-lt v2, v7, :cond_1
 
-    .line 1076
+    .line 1096
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v2
 
     invoke-static {v2, v6}, Lorg/telegram/messenger/AndroidUtilities;->setLightNavigationBar(Landroid/view/Window;Z)V
 
-    .line 1079
+    .line 1099
     :cond_1
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
@@ -2490,7 +2747,7 @@
 
     if-nez v2, :cond_4
 
-    .line 1080
+    .line 1100
     new-instance v2, Lorg/telegram/ui/ActionBar/BottomSheet$3;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -2501,12 +2758,12 @@
 
     iput-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
-    .line 1092
+    .line 1112
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->shadowDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v2, v8}, Landroid/view/ViewGroup;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1093
+    .line 1113
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     iget v8, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->backgroundPaddingLeft:I
@@ -2549,7 +2806,7 @@
     :goto_1
     invoke-virtual {v2, v8, v9, v10, v11}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 1095
+    .line 1115
     :cond_4
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
@@ -2557,7 +2814,7 @@
 
     invoke-virtual {v2, v8}, Landroid/view/ViewGroup;->setVisibility(I)V
 
-    .line 1096
+    .line 1116
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     iget-object v8, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
@@ -2572,7 +2829,7 @@
 
     invoke-virtual {v2, v8, v6, v9}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;ILandroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1099
+    .line 1119
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->title:Ljava/lang/CharSequence;
 
     const/16 v8, 0x30
@@ -2583,7 +2840,7 @@
 
     if-eqz v2, :cond_a
 
-    .line 1100
+    .line 1120
     new-instance v2, Lorg/telegram/ui/ActionBar/BottomSheet$4;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -2594,35 +2851,35 @@
 
     iput-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->titleView:Landroid/widget/TextView;
 
-    .line 1121
+    .line 1141
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->title:Ljava/lang/CharSequence;
 
     invoke-virtual {v2, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1122
+    .line 1142
     iget-boolean v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->bigTitle:Z
 
     if-eqz v2, :cond_6
 
-    .line 1123
+    .line 1143
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->titleView:Landroid/widget/TextView;
 
-    const-string v12, "dialogTextBlack"
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
-    invoke-virtual {v0, v12}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v12}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v12
 
     invoke-virtual {v2, v12}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1124
+    .line 1144
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->titleView:Landroid/widget/TextView;
 
     const/high16 v12, 0x41a00000    # 20.0f
 
     invoke-virtual {v2, v5, v12}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1125
+    .line 1145
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->titleView:Landroid/widget/TextView;
 
     const-string v12, "fonts/rmedium.ttf"
@@ -2633,7 +2890,7 @@
 
     invoke-virtual {v2, v12}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 1126
+    .line 1146
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->titleView:Landroid/widget/TextView;
 
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -2668,26 +2925,26 @@
 
     goto :goto_4
 
-    .line 1128
+    .line 1148
     :cond_6
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->titleView:Landroid/widget/TextView;
 
-    const-string v12, "dialogTextGray2"
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray2:I
 
-    invoke-virtual {v0, v12}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v12}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v12
 
     invoke-virtual {v2, v12}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1129
+    .line 1149
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->titleView:Landroid/widget/TextView;
 
     const/high16 v12, 0x41800000    # 16.0f
 
     invoke-virtual {v2, v5, v12}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1130
+    .line 1150
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->titleView:Landroid/widget/TextView;
 
     invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -2720,25 +2977,25 @@
 
     invoke-virtual {v2, v12, v13, v14, v15}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 1132
+    .line 1152
     :goto_4
     iget-boolean v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->multipleLinesTitle:Z
 
     if-eqz v2, :cond_8
 
-    .line 1133
+    .line 1153
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->titleView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v6}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 1134
+    .line 1154
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->titleView:Landroid/widget/TextView;
 
     const/4 v12, 0x5
 
     invoke-virtual {v2, v12}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 1135
+    .line 1155
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->titleView:Landroid/widget/TextView;
 
     sget-object v12, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
@@ -2747,31 +3004,31 @@
 
     goto :goto_5
 
-    .line 1137
+    .line 1157
     :cond_8
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->titleView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v5}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 1138
+    .line 1158
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->titleView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v5}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 1139
+    .line 1159
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->titleView:Landroid/widget/TextView;
 
     sget-object v12, Landroid/text/TextUtils$TruncateAt;->MIDDLE:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v2, v12}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 1141
+    .line 1161
     :goto_5
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->titleView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v11}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 1142
+    .line 1162
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->titleView:Landroid/widget/TextView;
@@ -2794,12 +3051,12 @@
 
     invoke-virtual {v2, v12, v13}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1144
+    .line 1164
     iget-boolean v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->isTitleClickable:Z
 
     if-nez v2, :cond_b
 
-    .line 1145
+    .line 1165
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->titleView:Landroid/widget/TextView;
 
     sget-object v12, Lorg/telegram/ui/ActionBar/BottomSheet$$ExternalSyntheticLambda5;->INSTANCE:Lorg/telegram/ui/ActionBar/BottomSheet$$ExternalSyntheticLambda5;
@@ -2811,14 +3068,14 @@
     :cond_a
     move v8, v6
 
-    .line 1149
+    .line 1169
     :cond_b
     :goto_7
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->description:Ljava/lang/CharSequence;
 
     if-eqz v2, :cond_c
 
-    .line 1150
+    .line 1170
     new-instance v2, Landroid/widget/TextView;
 
     invoke-virtual/range {p0 .. p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -2831,47 +3088,47 @@
 
     const/4 v12, 0x3
 
-    .line 1151
+    .line 1171
     invoke-virtual {v2, v12}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 1152
+    .line 1172
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->descriptionView:Landroid/widget/TextView;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->description:Ljava/lang/CharSequence;
 
     invoke-virtual {v2, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 1153
+    .line 1173
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->descriptionView:Landroid/widget/TextView;
 
-    const-string v12, "dialogTextGray3"
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray3:I
 
-    invoke-virtual {v0, v12}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v12}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v12
 
     invoke-virtual {v2, v12}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1154
+    .line 1174
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->descriptionView:Landroid/widget/TextView;
 
     const/high16 v12, 0x41600000    # 14.0f
 
     invoke-virtual {v2, v5, v12}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 1155
+    .line 1175
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->descriptionView:Landroid/widget/TextView;
 
     sget-object v12, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v2, v12}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 1156
+    .line 1176
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->descriptionView:Landroid/widget/TextView;
 
     invoke-virtual {v2, v11}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 1157
+    .line 1177
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->descriptionView:Landroid/widget/TextView;
 
     sget-object v12, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
@@ -2898,7 +3155,7 @@
 
     invoke-virtual {v2, v12, v13}, Landroid/widget/TextView;->measure(II)V
 
-    .line 1159
+    .line 1179
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->descriptionView:Landroid/widget/TextView;
 
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -2921,7 +3178,7 @@
 
     invoke-virtual {v2, v12, v13, v14, v15}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 1160
+    .line 1180
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->descriptionView:Landroid/widget/TextView;
@@ -2932,7 +3189,7 @@
 
     invoke-virtual {v2, v12, v10}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1161
+    .line 1181
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->descriptionView:Landroid/widget/TextView;
 
     invoke-virtual {v2}, Landroid/widget/TextView;->getMeasuredHeight()I
@@ -2949,20 +3206,20 @@
 
     add-int/2addr v8, v2
 
-    .line 1164
+    .line 1184
     :cond_c
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->customView:Landroid/view/View;
 
     if-eqz v2, :cond_f
 
-    .line 1165
+    .line 1185
     invoke-virtual {v2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v2
 
     if-eqz v2, :cond_d
 
-    .line 1166
+    .line 1186
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->customView:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
@@ -2971,38 +3228,38 @@
 
     check-cast v2, Landroid/view/ViewGroup;
 
-    .line 1167
+    .line 1187
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->customView:Landroid/view/View;
 
     invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
 
-    .line 1169
+    .line 1189
     :cond_d
     iget-boolean v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->useBackgroundTopPadding:Z
 
     if-nez v2, :cond_e
 
-    .line 1170
+    .line 1190
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     invoke-virtual {v2, v6}, Landroid/view/ViewGroup;->setClipToPadding(Z)V
 
-    .line 1171
+    .line 1191
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     invoke-virtual {v2, v6}, Landroid/view/ViewGroup;->setClipChildren(Z)V
 
-    .line 1172
+    .line 1192
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     invoke-virtual {v2, v6}, Landroid/widget/FrameLayout;->setClipToPadding(Z)V
 
-    .line 1173
+    .line 1193
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     invoke-virtual {v2, v6}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
 
-    .line 1174
+    .line 1194
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->customView:Landroid/view/View;
@@ -3027,7 +3284,7 @@
 
     invoke-virtual {v2, v3, v6}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1175
+    .line 1195
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->customView:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -3050,7 +3307,7 @@
 
     goto/16 :goto_b
 
-    .line 1177
+    .line 1197
     :cond_e
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
@@ -3078,7 +3335,7 @@
 
     goto :goto_b
 
-    .line 1180
+    .line 1200
     :cond_f
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->items:[Ljava/lang/CharSequence;
 
@@ -3086,7 +3343,7 @@
 
     move v2, v6
 
-    .line 1183
+    .line 1203
     :goto_8
     iget-object v7, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->items:[Ljava/lang/CharSequence;
 
@@ -3094,14 +3351,14 @@
 
     if-ge v2, v10, :cond_13
 
-    .line 1184
+    .line 1204
     aget-object v7, v7, v2
 
     if-nez v7, :cond_10
 
     goto :goto_a
 
-    .line 1187
+    .line 1207
     :cond_10
     new-instance v7, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;
 
@@ -3113,17 +3370,17 @@
 
     invoke-direct {v7, v10, v6, v12}, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 1189
+    .line 1209
     iget-object v10, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->dividers:[Z
 
     if-eqz v10, :cond_11
 
-    .line 1190
+    .line 1210
     aget-boolean v10, v10, v2
 
     invoke-virtual {v7, v10}, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->setNeedDivider(Z)V
 
-    .line 1193
+    .line 1213
     :cond_11
     iget-object v10, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->items:[Ljava/lang/CharSequence;
 
@@ -3145,7 +3402,7 @@
 
     invoke-virtual {v7, v10, v12, v3, v13}, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->setTextAndIcon(Ljava/lang/CharSequence;ILandroid/graphics/drawable/Drawable;Z)V
 
-    .line 1194
+    .line 1214
     iget-object v10, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     const/4 v12, -0x1
@@ -3170,21 +3427,21 @@
 
     add-int/lit8 v8, v8, 0x30
 
-    .line 1196
+    .line 1216
     invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v10
 
     invoke-virtual {v7, v10}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 1197
+    .line 1217
     new-instance v10, Lorg/telegram/ui/ActionBar/BottomSheet$$ExternalSyntheticLambda4;
 
     invoke-direct {v10, v0}, Lorg/telegram/ui/ActionBar/BottomSheet$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/ActionBar/BottomSheet;)V
 
     invoke-virtual {v7, v10}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1198
+    .line 1218
     iget-object v10, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->itemViews:Ljava/util/ArrayList;
 
     invoke-virtual {v10, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -3194,39 +3451,39 @@
 
     goto :goto_8
 
-    .line 1203
+    .line 1223
     :cond_13
     :goto_b
     invoke-virtual {v1}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v2
 
-    .line 1204
+    .line 1224
     iput v4, v2, Landroid/view/WindowManager$LayoutParams;->width:I
 
     const/16 v3, 0x33
 
-    .line 1205
+    .line 1225
     iput v3, v2, Landroid/view/WindowManager$LayoutParams;->gravity:I
 
     const/4 v3, 0x0
 
-    .line 1206
+    .line 1226
     iput v3, v2, Landroid/view/WindowManager$LayoutParams;->dimAmount:F
 
-    .line 1207
+    .line 1227
     iget v3, v2, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     and-int/lit8 v3, v3, -0x3
 
     iput v3, v2, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 1208
+    .line 1228
     iget-boolean v6, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->focusable:Z
 
     if-eqz v6, :cond_14
 
-    .line 1209
+    .line 1229
     iput v11, v2, Landroid/view/WindowManager$LayoutParams;->softInputMode:I
 
     goto :goto_c
@@ -3236,21 +3493,21 @@
 
     or-int/2addr v3, v6
 
-    .line 1211
+    .line 1231
     iput v3, v2, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 1213
+    .line 1233
     :goto_c
     iget-boolean v3, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->isFullscreen:Z
 
     if-eqz v3, :cond_16
 
-    .line 1214
+    .line 1234
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
     if-lt v3, v9, :cond_15
 
-    .line 1215
+    .line 1235
     iget v3, v2, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     const v6, -0x7ffeff00
@@ -3259,7 +3516,7 @@
 
     iput v3, v2, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 1219
+    .line 1239
     :cond_15
     iget v3, v2, Landroid/view/WindowManager$LayoutParams;->flags:I
 
@@ -3267,28 +3524,28 @@
 
     iput v3, v2, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 1220
+    .line 1240
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     const/16 v6, 0x504
 
     invoke-virtual {v3, v6}, Landroid/widget/FrameLayout;->setSystemUiVisibility(I)V
 
-    .line 1222
+    .line 1242
     :cond_16
     iput v4, v2, Landroid/view/WindowManager$LayoutParams;->height:I
 
-    .line 1223
+    .line 1243
     sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v4, 0x1c
 
     if-lt v3, v4, :cond_17
 
-    .line 1224
+    .line 1244
     iput v5, v2, Landroid/view/WindowManager$LayoutParams;->layoutInDisplayCutoutMode:I
 
-    .line 1226
+    .line 1246
     :cond_17
     invoke-virtual {v1, v2}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
@@ -3336,8 +3593,14 @@
 .method protected onDismissWithTouchOutside()V
     .locals 0
 
-    .line 1383
+    .line 1400
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
+
+    return-void
+.end method
+
+.method public onOpenAnimationEnd()V
+    .locals 0
 
     return-void
 .end method
@@ -3365,7 +3628,7 @@
 .method protected onStart()V
     .locals 0
 
-    .line 1231
+    .line 1251
     invoke-super {p0}, Landroid/app/Dialog;->onStart()V
 
     return-void
@@ -3374,15 +3637,15 @@
 .method public setAllowDrawContent(Z)V
     .locals 1
 
-    .line 1328
+    .line 1345
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->allowDrawContent:Z
 
     if-eq v0, p1, :cond_1
 
-    .line 1329
+    .line 1346
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->allowDrawContent:Z
 
-    .line 1330
+    .line 1347
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     if-eqz p1, :cond_0
@@ -3397,7 +3660,7 @@
     :goto_0
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 1331
+    .line 1348
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
@@ -3409,12 +3672,12 @@
 .method public setAllowNestedScroll(Z)V
     .locals 1
 
-    .line 962
+    .line 982
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->allowNestedScroll:Z
 
     if-nez p1, :cond_0
 
-    .line 964
+    .line 984
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     const/4 v0, 0x0
@@ -3428,7 +3691,7 @@
 .method public setApplyBottomPadding(Z)V
     .locals 0
 
-    .line 1371
+    .line 1388
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->applyBottomPadding:Z
 
     return-void
@@ -3437,7 +3700,7 @@
 .method public setApplyTopPadding(Z)V
     .locals 0
 
-    .line 1367
+    .line 1384
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->applyTopPadding:Z
 
     return-void
@@ -3446,7 +3709,7 @@
 .method public setBackgroundColor(I)V
     .locals 2
 
-    .line 1274
+    .line 1294
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->shadowDrawable:Landroid/graphics/drawable/Drawable;
 
     sget-object v1, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
@@ -3459,10 +3722,10 @@
 .method public setCalcMandatoryInsets(Z)V
     .locals 0
 
-    .line 789
+    .line 810
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->calcMandatoryInsets:Z
 
-    .line 790
+    .line 811
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->drawNavigationBar:Z
 
     return-void
@@ -3471,7 +3734,7 @@
 .method public setCanDismissWithSwipe(Z)V
     .locals 0
 
-    .line 1340
+    .line 1357
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->canDismissWithSwipe:Z
 
     return-void
@@ -3480,10 +3743,10 @@
 .method public setCurrentPanTranslationY(F)V
     .locals 0
 
-    .line 1915
+    .line 1955
     iput p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentPanTranslationY:F
 
-    .line 1916
+    .line 1956
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
@@ -3494,7 +3757,7 @@
 .method public setCustomView(Landroid/view/View;)V
     .locals 0
 
-    .line 1354
+    .line 1371
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->customView:Landroid/view/View;
 
     return-void
@@ -3503,7 +3766,7 @@
 .method public setDelegate(Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetDelegateInterface;)V
     .locals 0
 
-    .line 1485
+    .line 1520
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->delegate:Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetDelegateInterface;
 
     return-void
@@ -3512,7 +3775,7 @@
 .method public setDescription(Ljava/lang/CharSequence;)V
     .locals 0
 
-    .line 81
+    .line 82
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->description:Ljava/lang/CharSequence;
 
     return-void
@@ -3521,7 +3784,7 @@
 .method public setDimBehind(Z)V
     .locals 0
 
-    .line 1501
+    .line 1536
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->dimBehind:Z
 
     return-void
@@ -3530,7 +3793,7 @@
 .method public setDimBehindAlpha(I)V
     .locals 0
 
-    .line 1505
+    .line 1540
     iput p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->dimBehindAlpha:I
 
     return-void
@@ -3539,7 +3802,7 @@
 .method public setDisableScroll(Z)V
     .locals 0
 
-    .line 205
+    .line 210
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->disableScroll:Z
 
     return-void
@@ -3548,38 +3811,38 @@
 .method public setFocusable(Z)V
     .locals 3
 
-    .line 1253
+    .line 1273
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->focusable:Z
 
     if-ne v0, p1, :cond_0
 
     return-void
 
-    .line 1256
+    .line 1276
     :cond_0
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->focusable:Z
 
-    .line 1257
+    .line 1277
     invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object p1
 
-    .line 1258
+    .line 1278
     invoke-virtual {p1}, Landroid/view/Window;->getAttributes()Landroid/view/WindowManager$LayoutParams;
 
     move-result-object v0
 
-    .line 1259
+    .line 1279
     iget-boolean v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->focusable:Z
 
     if-eqz v1, :cond_1
 
     const/16 v1, 0x10
 
-    .line 1260
+    .line 1280
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->softInputMode:I
 
-    .line 1261
+    .line 1281
     iget v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     const v2, -0x20001
@@ -3593,10 +3856,10 @@
     :cond_1
     const/16 v1, 0x30
 
-    .line 1263
+    .line 1283
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->softInputMode:I
 
-    .line 1264
+    .line 1284
     iget v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
     const/high16 v2, 0x20000
@@ -3605,7 +3868,7 @@
 
     iput v1, v0, Landroid/view/WindowManager$LayoutParams;->flags:I
 
-    .line 1266
+    .line 1286
     :goto_0
     invoke-virtual {p1, v0}, Landroid/view/Window;->setAttributes(Landroid/view/WindowManager$LayoutParams;)V
 
@@ -3619,7 +3882,7 @@
 
     new-array v0, v0, [F
 
-    .line 763
+    .line 784
     iget v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->hideSystemVerticalInsetsProgress:F
 
     const/4 v2, 0x0
@@ -3650,20 +3913,32 @@
 
     move-result-object p1
 
-    .line 764
+    .line 785
     sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 765
+    .line 786
     new-instance v0, Lorg/telegram/ui/ActionBar/BottomSheet$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ActionBar/BottomSheet$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/ActionBar/BottomSheet;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 770
+    .line 791
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
+
+    return-void
+.end method
+
+.method public setImageReceiverNumLevel(II)V
+    .locals 0
+
+    .line 2013
+    iput p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->playingImagesLayerNum:I
+
+    .line 2014
+    iput p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->openedLayerNum:I
 
     return-void
 .end method
@@ -3673,7 +3948,7 @@
 
     if-ltz p1, :cond_1
 
-    .line 1517
+    .line 1552
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->itemViews:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -3684,7 +3959,7 @@
 
     goto :goto_0
 
-    .line 1520
+    .line 1555
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->itemViews:Ljava/util/ArrayList;
 
@@ -3694,15 +3969,15 @@
 
     check-cast p1, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;
 
-    .line 1521
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->access$2100(Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;)Landroid/widget/TextView;
+    .line 1556
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->access$2300(Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;)Landroid/widget/TextView;
 
     move-result-object v0
 
     invoke-virtual {v0, p2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 1522
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->access$2200(Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;)Landroid/widget/ImageView;
+    .line 1557
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->access$2400(Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;)Landroid/widget/ImageView;
 
     move-result-object p1
 
@@ -3724,7 +3999,7 @@
 
     if-ltz p1, :cond_1
 
-    .line 1509
+    .line 1544
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->itemViews:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -3735,7 +4010,7 @@
 
     goto :goto_0
 
-    .line 1512
+    .line 1547
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->itemViews:Ljava/util/ArrayList;
 
@@ -3745,8 +4020,8 @@
 
     check-cast p1, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;
 
-    .line 1513
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->access$2100(Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;)Landroid/widget/TextView;
+    .line 1548
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->access$2300(Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;)Landroid/widget/TextView;
 
     move-result-object p1
 
@@ -3760,13 +4035,13 @@
 .method public setItems([Ljava/lang/CharSequence;[ILandroid/content/DialogInterface$OnClickListener;)V
     .locals 0
 
-    .line 1530
+    .line 1565
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->items:[Ljava/lang/CharSequence;
 
-    .line 1531
+    .line 1566
     iput-object p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->itemIcons:[I
 
-    .line 1532
+    .line 1567
     iput-object p3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->onClickListener:Landroid/content/DialogInterface$OnClickListener;
 
     return-void
@@ -3775,7 +4050,7 @@
 .method public setOnHideListener(Landroid/content/DialogInterface$OnDismissListener;)V
     .locals 0
 
-    .line 1407
+    .line 1424
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->onHideListener:Landroid/content/DialogInterface$OnDismissListener;
 
     return-void
@@ -3784,7 +4059,7 @@
 .method public setOpenNoDelay(Z)V
     .locals 0
 
-    .line 1952
+    .line 1991
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->openNoDelay:Z
 
     return-void
@@ -3793,18 +4068,18 @@
 .method public setOverlayNavBarColor(I)V
     .locals 4
 
-    .line 1922
+    .line 1962
     iput p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->overlayDrawNavBarColor:I
 
-    .line 1923
+    .line 1963
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     if-eqz p1, :cond_0
 
-    .line 1924
+    .line 1964
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 1934
+    .line 1974
     :cond_0
     invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
@@ -3814,7 +4089,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/messenger/AndroidUtilities;->setNavigationBarColor(Landroid/view/Window;I)V
 
-    .line 1935
+    .line 1975
     invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object p1
@@ -3849,7 +4124,7 @@
 .method public setShowWithoutAnimation(Z)V
     .locals 0
 
-    .line 1270
+    .line 1290
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->showWithoutAnimation:Z
 
     return-void
@@ -3860,7 +4135,7 @@
 
     const/4 v0, 0x0
 
-    .line 1358
+    .line 1375
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->setTitle(Ljava/lang/CharSequence;Z)V
 
     return-void
@@ -3869,10 +4144,10 @@
 .method public setTitle(Ljava/lang/CharSequence;Z)V
     .locals 0
 
-    .line 1362
+    .line 1379
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->title:Ljava/lang/CharSequence;
 
-    .line 1363
+    .line 1380
     iput-boolean p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->bigTitle:Z
 
     return-void
@@ -3881,7 +4156,7 @@
 .method public setTitleClickable(Z)V
     .locals 0
 
-    .line 89
+    .line 90
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->isTitleClickable:Z
 
     return-void
@@ -3890,14 +4165,14 @@
 .method public setTitleColor(I)V
     .locals 1
 
-    .line 1536
+    .line 1571
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->titleView:Landroid/widget/TextView;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 1539
+    .line 1574
     :cond_0
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(I)V
 
@@ -3907,35 +4182,35 @@
 .method public setUseLightStatusBar(Z)V
     .locals 2
 
-    .line 1235
+    .line 1255
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->useLightStatusBar:Z
 
-    .line 1236
+    .line 1256
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v0, 0x17
 
     if-lt p1, v0, :cond_1
 
-    const/4 p1, 0x0
+    .line 1257
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
 
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
-    const-string v1, "actionBarDefault"
+    const/4 v1, 0x1
 
-    .line 1237
-    invoke-static {v1, p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;[ZZ)I
+    invoke-static {p1, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I[ZZ)I
 
     move-result p1
 
-    .line 1238
+    .line 1258
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getSystemUiVisibility()I
 
     move-result v0
 
-    .line 1239
+    .line 1259
     iget-boolean v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->useLightStatusBar:Z
 
     if-eqz v1, :cond_0
@@ -3951,7 +4226,7 @@
     :cond_0
     and-int/lit16 p1, v0, -0x2001
 
-    .line 1244
+    .line 1264
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->container:Lorg/telegram/ui/ActionBar/BottomSheet$ContainerView;
 
@@ -3972,15 +4247,20 @@
 .method public show()V
     .locals 6
 
-    .line 1279
+    .line 1299
     invoke-super {p0}, Landroid/app/Dialog;->show()V
 
-    .line 1280
+    const/4 v0, 0x1
+
+    .line 1300
+    invoke-direct {p0, v0}, Lorg/telegram/ui/ActionBar/BottomSheet;->setShowing(Z)V
+
+    .line 1301
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->focusable:Z
 
     if-eqz v0, :cond_0
 
-    .line 1281
+    .line 1302
     invoke-virtual {p0}, Landroid/app/Dialog;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -3992,20 +4272,20 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 1283
+    .line 1304
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->dismissed:Z
 
-    .line 1284
+    .line 1305
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->cancelSheetAnimation()V
 
-    .line 1286
+    .line 1307
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     if-nez v1, :cond_1
 
     return-void
 
-    .line 1290
+    .line 1311
     :cond_1
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
@@ -4035,14 +4315,14 @@
 
     invoke-virtual {v1, v2, v3}, Landroid/view/ViewGroup;->measure(II)V
 
-    .line 1291
+    .line 1312
     iget-boolean v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->showWithoutAnimation:Z
 
     const/4 v2, 0x0
 
     if-eqz v1, :cond_3
 
-    .line 1292
+    .line 1313
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backDrawable:Landroid/graphics/drawable/ColorDrawable;
 
     iget-boolean v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->dimBehind:Z
@@ -4054,60 +4334,55 @@
     :cond_2
     invoke-virtual {v1, v0}, Landroid/graphics/drawable/ColorDrawable;->setAlpha(I)V
 
-    .line 1293
+    .line 1314
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
 
     invoke-virtual {v0, v2}, Landroid/view/ViewGroup;->setTranslationY(F)V
 
     return-void
 
-    .line 1296
+    .line 1317
     :cond_3
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->backDrawable:Landroid/graphics/drawable/ColorDrawable;
 
     invoke-virtual {v1, v0}, Landroid/graphics/drawable/ColorDrawable;->setAlpha(I)V
 
-    .line 1297
-    sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v3, 0x12
-
-    if-lt v1, v3, :cond_8
-
-    .line 1298
+    .line 1318
     iput v4, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->layoutCount:I
 
-    .line 1299
-    iget-object v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
+    .line 1319
+    iget-object v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->containerView:Landroid/view/ViewGroup;
+
+    sget v3, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v4, 0x15
 
-    if-lt v1, v4, :cond_4
+    if-lt v3, v4, :cond_4
 
-    sget v1, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
+    sget v2, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
-    int-to-float v1, v1
+    int-to-float v2, v2
 
-    const/high16 v2, 0x3f800000    # 1.0f
+    const/high16 v3, 0x3f800000    # 1.0f
 
     iget v4, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->hideSystemVerticalInsetsProgress:F
 
-    sub-float/2addr v2, v4
+    sub-float/2addr v3, v4
 
-    mul-float/2addr v2, v1
+    mul-float/2addr v2, v3
 
     :cond_4
-    invoke-virtual {v3}, Landroid/view/ViewGroup;->getMeasuredHeight()I
+    invoke-virtual {v1}, Landroid/view/ViewGroup;->getMeasuredHeight()I
 
-    move-result v1
+    move-result v3
 
-    int-to-float v1, v1
+    int-to-float v3, v3
 
-    add-float/2addr v2, v1
+    add-float/2addr v2, v3
 
-    iget-boolean v1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->scrollNavBar:Z
+    iget-boolean v3, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->scrollNavBar:Z
 
-    if-eqz v1, :cond_5
+    if-eqz v3, :cond_5
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->getBottomInset()I
 
@@ -4118,9 +4393,9 @@
 
     add-float/2addr v2, v0
 
-    invoke-virtual {v3, v2}, Landroid/view/ViewGroup;->setTranslationY(F)V
+    invoke-virtual {v1, v2}, Landroid/view/ViewGroup;->setTranslationY(F)V
 
-    .line 1300
+    .line 1320
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->openNoDelay:Z
 
     if-eqz v0, :cond_6
@@ -4132,7 +4407,7 @@
     :cond_6
     const-wide/16 v0, 0x96
 
-    .line 1301
+    .line 1321
     :goto_0
     iget-boolean v2, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->waitingKeyboard:Z
 
@@ -4140,7 +4415,7 @@
 
     const-wide/16 v0, 0x1f4
 
-    .line 1304
+    .line 1324
     :cond_7
     new-instance v2, Lorg/telegram/ui/ActionBar/BottomSheet$5;
 
@@ -4150,12 +4425,14 @@
 
     invoke-static {v2, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    goto :goto_1
+    return-void
+.end method
 
-    .line 1315
-    :cond_8
-    invoke-direct {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->startOpenAnimation()V
+.method public transitionFromRight(Z)V
+    .locals 0
 
-    :goto_1
+    .line 223
+    iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet;->transitionFromRight:Z
+
     return-void
 .end method

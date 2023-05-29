@@ -12,9 +12,9 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public class SourceDirectTransferResult extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<SourceDirectTransferResult> CREATOR = new zza();
-    @SafeParcelable.Field(getter = "getStatus", m775id = 1)
+    @SafeParcelable.Field(getter = "getStatus", m779id = 1)
     private final Status zza;
-    @SafeParcelable.Field(getter = "getAuthorizationType", m775id = 2)
+    @SafeParcelable.Field(getter = "getAuthorizationType", m779id = 2)
     private final int zzb;
 
     public SourceDirectTransferResult(Status status) {
@@ -34,7 +34,7 @@ public class SourceDirectTransferResult extends AbstractSafeParcelable implement
     }
 
     @SafeParcelable.Constructor
-    public SourceDirectTransferResult(@SafeParcelable.Param(m774id = 1) Status status, @SafeParcelable.Param(m774id = 2) int i) {
+    public SourceDirectTransferResult(@SafeParcelable.Param(m778id = 1) Status status, @SafeParcelable.Param(m778id = 2) int i) {
         this.zza = status;
         this.zzb = i;
     }

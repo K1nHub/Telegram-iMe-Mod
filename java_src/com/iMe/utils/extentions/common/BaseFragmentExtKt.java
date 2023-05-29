@@ -110,7 +110,7 @@ public final class BaseFragmentExtKt {
                 baseFragment.getParentActivity().getWindow().clearFlags(8192);
             }
         } catch (Exception e) {
-            Timber.m4e(e);
+            Timber.m6e(e);
         }
     }
 }

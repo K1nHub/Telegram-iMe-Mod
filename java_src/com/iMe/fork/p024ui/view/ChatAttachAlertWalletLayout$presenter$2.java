@@ -23,7 +23,7 @@ final class ChatAttachAlertWalletLayout$presenter$2 extends Lambda implements Fu
     @Override // kotlin.jvm.functions.Function0
     public final WalletAttachAlertPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C1463x5059aa3c(this.this$0, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C1532x5059aa3c(this.this$0, null, null));
         return (WalletAttachAlertPresenter) lazy.getValue();
     }
 }

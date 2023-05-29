@@ -13,7 +13,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nStakingCalculatorPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingCalculatorPresenter.kt\ncom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter\n+ 2 CommonExt.kt\ncom/iMe/storage/data/utils/extentions/CommonExtKt\n+ 3 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,258:1\n6#2,6:259\n39#3,8:265\n39#3,8:273\n1549#4:281\n1620#4,3:282\n*S KotlinDebug\n*F\n+ 1 StakingCalculatorPresenter.kt\ncom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter\n*L\n116#1:259,6\n153#1:265,8\n180#1:273,8\n229#1:281\n229#1:282,3\n*E\n"
+    value = "SMAP\nStakingCalculatorPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 StakingCalculatorPresenter.kt\ncom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter\n+ 2 CommonExt.kt\ncom/iMe/storage/data/utils/extentions/CommonExtKt\n+ 3 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,259:1\n6#2,6:260\n39#3,8:266\n39#3,8:274\n1549#4:282\n1620#4,3:283\n*S KotlinDebug\n*F\n+ 1 StakingCalculatorPresenter.kt\ncom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter\n*L\n117#1:260,6\n154#1:266,8\n181#1:274,8\n230#1:282\n230#1:283,3\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -92,30 +92,30 @@
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 45
+    .line 46
     invoke-direct {p0}, Lcom/iMe/ui/base/mvp/base/BasePresenter;-><init>()V
 
-    .line 41
+    .line 42
     iput-object p2, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->accountLevelInteractor:Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;
 
-    .line 42
+    .line 43
     iput-object p3, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 43
+    .line 44
     iput-object p4, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 44
+    .line 45
     iput-object p5, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->walletInteractor:Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;
 
     const-string p2, ""
 
-    .line 80
+    .line 81
     iput-object p2, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->tokenProfitText:Ljava/lang/String;
 
-    .line 86
+    .line 87
     iput-object p1, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->selectedStakingProgramme:Lcom/iMe/model/staking/StakingDetailsItem;
 
-    .line 92
+    .line 93
     invoke-static {}, Lio/reactivex/subjects/BehaviorSubject;->create()Lio/reactivex/subjects/BehaviorSubject;
 
     move-result-object p1
@@ -132,7 +132,7 @@
 .method public static final synthetic access$mapProfitPrognosis(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;)Lorg/telegram/ui/StatisticActivity$ChartViewData;
     .locals 0
 
-    .line 38
+    .line 39
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->mapProfitPrognosis()Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
     move-result-object p0
@@ -143,7 +143,7 @@
 .method public static final synthetic access$openStakingCheckingAccountLevel(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;Lcom/iMe/model/staking/StakingDetailsItem;Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;)V
     .locals 0
 
-    .line 38
+    .line 39
     invoke-direct {p0, p1, p2}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->openStakingCheckingAccountLevel(Lcom/iMe/model/staking/StakingDetailsItem;Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;)V
 
     return-void
@@ -152,7 +152,7 @@
 .method public static final synthetic access$setChartViewData$p(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;Lorg/telegram/ui/StatisticActivity$ChartViewData;)V
     .locals 0
 
-    .line 38
+    .line 39
     iput-object p1, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->chartViewData:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
     return-void
@@ -161,7 +161,7 @@
 .method public static final synthetic access$setSelectedAmount$p(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;D)V
     .locals 0
 
-    .line 38
+    .line 39
     iput-wide p1, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->selectedAmount:D
 
     return-void
@@ -170,7 +170,7 @@
 .method public static final synthetic access$setTokenBalance$p(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;)V
     .locals 0
 
-    .line 38
+    .line 39
     iput-object p1, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->tokenBalance:Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
     return-void
@@ -179,7 +179,7 @@
 .method public static final synthetic access$showCommonErrorToast(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;Lcom/iMe/storage/data/network/model/error/ErrorModel;)V
     .locals 0
 
-    .line 38
+    .line 39
     invoke-direct {p0, p1}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->showCommonErrorToast(Lcom/iMe/storage/data/network/model/error/ErrorModel;)V
 
     return-void
@@ -188,7 +188,7 @@
 .method private final loadAccountLevelAndOpenStaking(Lcom/iMe/model/staking/StakingDetailsItem;)V
     .locals 5
 
-    .line 150
+    .line 151
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->accountLevelInteractor:Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;
 
     const-wide/16 v1, 0x0
@@ -197,27 +197,17 @@
 
     const/4 v4, 0x0
 
-    .line 151
+    .line 152
     invoke-static {v0, v1, v2, v3, v4}, Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;->getAccountLevelRemote$default(Lcom/iMe/storage/domain/interactor/crypto/level/AccountLevelInteractor;JILjava/lang/Object;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 152
-    iget-object v1, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
-
-    invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Lio/reactivex/Observable;->observeOn(Lio/reactivex/Scheduler;)Lio/reactivex/Observable;
+    .line 153
+    invoke-static {v0}, Lcom/iMe/utils/extentions/rx/SchedulersExtKt;->scheduleIO(Lio/reactivex/Observable;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    const-string v1, "accountLevelInteractor\n \u2026(schedulersProvider.ui())"
-
-    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    .line 153
+    .line 154
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v1
@@ -252,7 +242,7 @@
     .line 46
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 160
+    .line 161
     invoke-static {p0, p1, v4, v3, v4}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -261,15 +251,15 @@
 .method private final loadBalance()V
     .locals 6
 
-    .line 174
+    .line 175
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->walletInteractor:Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;
 
-    .line 176
+    .line 177
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     move-result-object v1
 
-    .line 177
+    .line 178
     iget-object v2, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->selectedStakingProgramme:Lcom/iMe/model/staking/StakingDetailsItem;
 
     if-eqz v2, :cond_1
@@ -289,12 +279,12 @@
 
     const/4 v2, 0x0
 
-    .line 175
+    .line 176
     invoke-static/range {v0 .. v5}, Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;->getTokenBalance$default(Lcom/iMe/storage/domain/interactor/wallet/WalletInteractor;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;ZLcom/iMe/storage/domain/model/crypto/NetworkType;ILjava/lang/Object;)Lio/reactivex/Observable;
 
     move-result-object v0
 
-    .line 179
+    .line 180
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -309,7 +299,7 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 180
+    .line 181
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v1
@@ -348,7 +338,7 @@
 
     const/4 v2, 0x0
 
-    .line 190
+    .line 191
     invoke-static {p0, v0, v2, v1, v2}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     :cond_1
@@ -361,7 +351,7 @@
 
     move-object/from16 v0, p0
 
-    .line 221
+    .line 222
     iget-object v1, v0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->selectedStakingProgramme:Lcom/iMe/model/staking/StakingDetailsItem;
 
     if-nez v1, :cond_0
@@ -370,7 +360,7 @@
 
     return-object v1
 
-    .line 223
+    .line 224
     :cond_0
     iget-wide v2, v0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->selectedAmount:D
 
@@ -384,7 +374,7 @@
 
     add-double/2addr v2, v4
 
-    .line 224
+    .line 225
     invoke-virtual {v1}, Lcom/iMe/model/staking/StakingDetailsItem;->getCompoundAccrualThreshold()Ljava/math/BigDecimal;
 
     move-result-object v4
@@ -404,7 +394,7 @@
     :cond_1
     const/4 v4, 0x0
 
-    .line 225
+    .line 226
     :goto_0
     invoke-virtual {v1}, Lcom/iMe/model/staking/StakingDetailsItem;->getStartsAtISO()Ljava/lang/String;
 
@@ -422,7 +412,7 @@
 
     move-result-wide v7
 
-    .line 226
+    .line 227
     invoke-virtual {v1}, Lcom/iMe/model/staking/StakingDetailsItem;->getIncomePercent()D
 
     move-result-wide v9
@@ -431,7 +421,7 @@
 
     div-double/2addr v9, v11
 
-    .line 227
+    .line 228
     sget-object v13, Ljava/util/concurrent/TimeUnit;->SECONDS:Ljava/util/concurrent/TimeUnit;
 
     invoke-virtual {v1}, Lcom/iMe/model/staking/StakingDetailsItem;->getIncomePeriod()J
@@ -442,7 +432,7 @@
 
     move-result-wide v13
 
-    .line 228
+    .line 229
     new-instance v15, Lkotlin/ranges/LongRange;
 
     invoke-virtual {v1}, Lcom/iMe/model/staking/StakingDetailsItem;->getEndsAtISO()Ljava/lang/String;
@@ -507,12 +497,12 @@
 
     sub-long v20, v18, v7
 
-    .line 230
+    .line 231
     div-long v5, v20, v13
 
     long-to-int v5, v5
 
-    .line 231
+    .line 232
     rem-long v20, v7, v13
 
     rem-long v18, v18, v13
@@ -536,7 +526,7 @@
 
     int-to-double v4, v5
 
-    .line 233
+    .line 234
     invoke-static {v6, v7, v4, v5}, Ljava/lang/Math;->pow(DD)D
 
     move-result-wide v4
@@ -581,7 +571,7 @@
 
     div-double/2addr v4, v7
 
-    .line 237
+    .line 238
     invoke-static {v4, v5}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
     move-result-object v4
@@ -595,7 +585,7 @@
 
     goto :goto_1
 
-    .line 239
+    .line 240
     :cond_4
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -617,7 +607,7 @@
 
     const/16 v17, 0x0
 
-    .line 240
+    .line 241
     invoke-static {v11}, Lkotlin/collections/CollectionsKt;->last(Ljava/util/List;)Ljava/lang/Object;
 
     move-result-object v3
@@ -644,14 +634,14 @@
 
     move-result-object v3
 
-    .line 241
+    .line 242
     iget-object v4, v0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-static {v3, v4}, Lcom/iMe/utils/extentions/model/wallet/TokenBalanceExtKt;->getTotalBalanceShortText(Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 239
+    .line 240
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -660,7 +650,7 @@
 
     iput-object v2, v0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->tokenProfitText:Ljava/lang/String;
 
-    .line 242
+    .line 243
     new-instance v2, Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
     iget-object v3, v0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -675,28 +665,28 @@
 
     invoke-direct {v2, v3, v5}, Lorg/telegram/ui/StatisticActivity$ChartViewData;-><init>(Ljava/lang/String;I)V
 
-    .line 244
+    .line 245
     new-instance v3, Lorg/telegram/ui/Charts/data/ChartData;
 
-    .line 245
+    .line 246
     sget-object v5, Lcom/iMe/model/common/TelegramStatisticsChartData;->Companion:Lcom/iMe/model/common/TelegramStatisticsChartData$Companion;
 
-    .line 246
+    .line 247
     iget-object v6, v0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     invoke-interface {v6, v4}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 245
+    .line 246
     invoke-virtual {v5, v4, v1, v11}, Lcom/iMe/model/common/TelegramStatisticsChartData$Companion;->generateJSONObject(Ljava/lang/String;Ljava/util/List;Ljava/util/List;)Lorg/json/JSONObject;
 
     move-result-object v1
 
-    .line 244
+    .line 245
     invoke-direct {v3, v1}, Lorg/telegram/ui/Charts/data/ChartData;-><init>(Lorg/json/JSONObject;)V
 
-    .line 243
+    .line 244
     invoke-virtual {v2, v3}, Lorg/telegram/ui/StatisticActivity$ChartViewData;->setup(Lorg/telegram/ui/Charts/data/ChartData;)V
 
     return-object v2
@@ -705,7 +695,7 @@
 .method private final openStakingCheckingAccountLevel(Lcom/iMe/model/staking/StakingDetailsItem;Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;)V
     .locals 2
 
-    .line 165
+    .line 166
     invoke-virtual {p1}, Lcom/iMe/model/staking/StakingDetailsItem;->getMinimalRank()Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;
 
     move-result-object v0
@@ -716,7 +706,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 166
+    .line 167
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p1
@@ -736,7 +726,7 @@
 
     goto :goto_0
 
-    .line 168
+    .line 169
     :cond_1
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
@@ -757,10 +747,10 @@
 .method private final setupAmountListener()V
     .locals 4
 
-    .line 205
+    .line 206
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->amountSubject:Lio/reactivex/subjects/BehaviorSubject;
 
-    .line 206
+    .line 207
     sget-object v1, Ljava/util/concurrent/TimeUnit;->MILLISECONDS:Ljava/util/concurrent/TimeUnit;
 
     const-wide/16 v2, 0x1f4
@@ -769,7 +759,7 @@
 
     move-result-object v0
 
-    .line 207
+    .line 208
     new-instance v1, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter$setupAmountListener$1;
 
     invoke-direct {v1, p0}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter$setupAmountListener$1;-><init>(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;)V
@@ -782,7 +772,7 @@
 
     move-result-object v0
 
-    .line 211
+    .line 212
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->io()Lio/reactivex/Scheduler;
@@ -793,7 +783,7 @@
 
     move-result-object v0
 
-    .line 212
+    .line 213
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->schedulersProvider:Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     invoke-interface {v1}, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;->ui()Lio/reactivex/Scheduler;
@@ -804,7 +794,7 @@
 
     move-result-object v0
 
-    .line 213
+    .line 214
     new-instance v1, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter$setupAmountListener$2;
 
     invoke-direct {v1, p0}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter$setupAmountListener$2;-><init>(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;)V
@@ -825,7 +815,7 @@
 
     const/4 v2, 0x1
 
-    .line 217
+    .line 218
     invoke-static {p0, v0, v1, v2, v1}, Lcom/iMe/ui/base/mvp/base/BasePresenter;->autoDispose$default(Lcom/iMe/ui/base/mvp/base/BasePresenter;Lio/reactivex/disposables/Disposable;Lio/reactivex/disposables/CompositeDisposable;ILjava/lang/Object;)V
 
     return-void
@@ -838,7 +828,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 207
+    .line 208
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object p0
@@ -855,7 +845,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 213
+    .line 214
     invoke-interface {p0, p1}, Lkotlin/jvm/functions/Function1;->invoke(Ljava/lang/Object;)Ljava/lang/Object;
 
     return-void
@@ -864,14 +854,14 @@
 .method private final showCommonErrorToast(Lcom/iMe/storage/data/network/model/error/ErrorModel;)V
     .locals 2
 
-    .line 195
+    .line 196
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object v0
 
     check-cast v0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView;
 
-    .line 196
+    .line 197
     invoke-virtual {p1}, Lcom/iMe/storage/data/network/model/error/ErrorModel;->isNoConnectionStatus()Z
 
     move-result v1
@@ -888,7 +878,7 @@
 
     goto :goto_1
 
-    .line 197
+    .line 198
     :cond_0
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
@@ -912,7 +902,7 @@
     :goto_0
     if-eqz v1, :cond_2
 
-    .line 198
+    .line 199
     iget-object p1, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     sget v1, Lorg/telegram/messenger/R$string;->common_error_unexpected:I
@@ -921,7 +911,7 @@
 
     move-result-object p1
 
-    .line 195
+    .line 196
     :cond_2
     :goto_1
     invoke-interface {v0, p1}, Lcom/iMe/ui/base/mvp/base/BaseView;->showToast(Ljava/lang/String;)V
@@ -934,12 +924,12 @@
 .method public final checkAmountReset()Z
     .locals 2
 
-    .line 102
+    .line 103
     iget-boolean v0, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->shouldResetAmount:Z
 
     const/4 v1, 0x0
 
-    .line 103
+    .line 104
     iput-boolean v1, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->shouldResetAmount:Z
 
     return v0
@@ -948,7 +938,7 @@
 .method public final getChartViewData()Lorg/telegram/ui/StatisticActivity$ChartViewData;
     .locals 1
 
-    .line 82
+    .line 83
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->chartViewData:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
     return-object v0
@@ -957,12 +947,12 @@
 .method public final getCompoundThresholdProgress()F
     .locals 5
 
-    .line 98
+    .line 99
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->selectedStakingProgramme:Lcom/iMe/model/staking/StakingDetailsItem;
 
     if-eqz v0, :cond_0
 
-    .line 99
+    .line 100
     invoke-virtual {v0}, Lcom/iMe/model/staking/StakingDetailsItem;->getImpact()Ljava/math/BigDecimal;
 
     move-result-object v1
@@ -981,7 +971,7 @@
 
     move-result-object v1
 
-    const-string v2, "this.add(other)"
+    const-string/jumbo v2, "this.add(other)"
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1018,7 +1008,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 100
+    .line 101
     :goto_0
     invoke-static {v0}, Lcom/iMe/storage/data/utils/extentions/NumberExtKt;->orZero(Ljava/lang/Float;)F
 
@@ -1030,14 +1020,14 @@
 .method public final getDatesText()Ljava/lang/String;
     .locals 7
 
-    .line 57
+    .line 58
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->selectedStakingProgramme:Lcom/iMe/model/staking/StakingDetailsItem;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 58
+    .line 59
     new-instance v2, Ljava/util/Date;
 
     invoke-virtual {v0}, Lcom/iMe/model/staking/StakingDetailsItem;->getStartsAtISO()Ljava/lang/String;
@@ -1058,7 +1048,7 @@
 
     invoke-direct {v2, v3, v4}, Ljava/util/Date;-><init>(J)V
 
-    .line 59
+    .line 60
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -1077,12 +1067,12 @@
 
     invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 63
+    .line 64
     invoke-virtual {v0}, Lcom/iMe/model/staking/StakingDetailsItem;->getEndsAt()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 59
+    .line 60
     invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -1101,15 +1091,15 @@
 .method public final getModeText()Ljava/lang/String;
     .locals 6
 
-    .line 73
+    .line 74
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->selectedStakingProgramme:Lcom/iMe/model/staking/StakingDetailsItem;
 
     if-eqz v0, :cond_1
 
-    .line 74
+    .line 75
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    .line 75
+    .line 76
     iget-wide v2, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->selectedAmount:D
 
     invoke-virtual {v0}, Lcom/iMe/model/staking/StakingDetailsItem;->getCompoundAccrualThreshold()Ljava/math/BigDecimal;
@@ -1128,17 +1118,17 @@
 
     goto :goto_0
 
-    .line 76
+    .line 77
     :cond_0
     sget v0, Lorg/telegram/messenger/R$string;->staking_details_apr:I
 
-    .line 74
+    .line 75
     :goto_0
     invoke-interface {v1, v0}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 78
+    .line 79
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1174,12 +1164,12 @@
 .method public final getPercentageText()Ljava/lang/String;
     .locals 5
 
-    .line 66
+    .line 67
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->selectedStakingProgramme:Lcom/iMe/model/staking/StakingDetailsItem;
 
     if-eqz v0, :cond_1
 
-    .line 68
+    .line 69
     iget-wide v1, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->selectedAmount:D
 
     invoke-virtual {v0}, Lcom/iMe/model/staking/StakingDetailsItem;->getImpact()Ljava/math/BigDecimal;
@@ -1210,13 +1200,13 @@
 
     goto :goto_0
 
-    .line 69
+    .line 70
     :cond_0
     invoke-virtual {v0}, Lcom/iMe/model/staking/StakingDetailsItem;->getFormattedAPR()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 70
+    .line 71
     :goto_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -1249,7 +1239,7 @@
 .method public final getSelectedStakingProgramme()Lcom/iMe/model/staking/StakingDetailsItem;
     .locals 1
 
-    .line 86
+    .line 87
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->selectedStakingProgramme:Lcom/iMe/model/staking/StakingDetailsItem;
 
     return-object v0
@@ -1258,12 +1248,12 @@
 .method public final getStakingAnnualPercentageData()Lcom/iMe/model/staking/StakingAnnualPercentageData;
     .locals 5
 
-    .line 49
+    .line 50
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->selectedStakingProgramme:Lcom/iMe/model/staking/StakingDetailsItem;
 
     if-eqz v0, :cond_0
 
-    .line 50
+    .line 51
     new-instance v1, Lcom/iMe/model/staking/StakingAnnualPercentageData;
 
     invoke-virtual {v0}, Lcom/iMe/model/staking/StakingDetailsItem;->getFormattedAPR()Ljava/lang/String;
@@ -1300,7 +1290,7 @@
 .method public final getTokenBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
     .locals 1
 
-    .line 84
+    .line 85
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->tokenBalance:Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;
 
     return-object v0
@@ -1309,7 +1299,7 @@
 .method public final getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
     .locals 2
 
-    .line 53
+    .line 54
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;
 
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->selectedStakingProgramme:Lcom/iMe/model/staking/StakingDetailsItem;
@@ -1341,7 +1331,7 @@
 .method public final getTokenInfo()Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;
     .locals 2
 
-    .line 55
+    .line 56
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;
 
     invoke-virtual {p0}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->getTokenCode()Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
@@ -1358,7 +1348,7 @@
 .method public final getTokenProfitText()Ljava/lang/String;
     .locals 1
 
-    .line 80
+    .line 81
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->tokenProfitText:Ljava/lang/String;
 
     return-object v0
@@ -1371,7 +1361,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 117
+    .line 118
     :try_start_0
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
@@ -1393,13 +1383,13 @@
 
     goto :goto_1
 
-    .line 118
+    .line 119
     :cond_1
     invoke-static {p1}, Ljava/lang/Double;->parseDouble(Ljava/lang/String;)D
 
     move-result-wide v0
 
-    .line 119
+    .line 120
     :goto_1
     invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
 
@@ -1411,7 +1401,7 @@
 
     if-nez p1, :cond_2
 
-    .line 120
+    .line 121
     iget-object p1, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->amountSubject:Lio/reactivex/subjects/BehaviorSubject;
 
     invoke-static {v0, v1}, Ljava/lang/Double;->valueOf(D)Ljava/lang/Double;
@@ -1438,10 +1428,10 @@
 .method public final onDepositClick()V
     .locals 2
 
-    .line 126
+    .line 127
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->accountLevel:Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;
 
-    .line 127
+    .line 128
     iget-object v1, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->selectedStakingProgramme:Lcom/iMe/model/staking/StakingDetailsItem;
 
     if-nez v1, :cond_0
@@ -1451,12 +1441,12 @@
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 129
+    .line 130
     invoke-direct {p0, v1, v0}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->openStakingCheckingAccountLevel(Lcom/iMe/model/staking/StakingDetailsItem;Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;)V
 
     goto :goto_0
 
-    .line 131
+    .line 132
     :cond_1
     invoke-direct {p0, v1}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->loadAccountLevelAndOpenStaking(Lcom/iMe/model/staking/StakingDetailsItem;)V
 
@@ -1467,13 +1457,13 @@
 .method protected onFirstViewAttach()V
     .locals 0
 
-    .line 140
+    .line 141
     invoke-super {p0}, Lmoxy/MvpPresenter;->onFirstViewAttach()V
 
-    .line 141
+    .line 142
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->loadBalance()V
 
-    .line 142
+    .line 143
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->setupAmountListener()V
 
     return-void
@@ -1482,29 +1472,29 @@
 .method public final onStakingSelected(Lcom/iMe/model/staking/StakingDetailsItem;)V
     .locals 2
 
-    const-string v0, "stakingDetails"
+    const-string/jumbo v0, "stakingDetails"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 107
+    .line 108
     iput-object p1, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->selectedStakingProgramme:Lcom/iMe/model/staking/StakingDetailsItem;
 
     const-wide/16 v0, 0x0
 
-    .line 108
+    .line 109
     iput-wide v0, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->selectedAmount:D
 
     const/4 p1, 0x0
 
-    .line 109
+    .line 110
     iput-object p1, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->chartViewData:Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
     const/4 p1, 0x1
 
-    .line 110
+    .line 111
     iput-boolean p1, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->shouldResetAmount:Z
 
-    .line 111
+    .line 112
     invoke-virtual {p0}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;
 
     move-result-object p1
@@ -1513,7 +1503,7 @@
 
     invoke-interface {p1}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorView;->updateStakingCalculatorViews()V
 
-    .line 112
+    .line 113
     invoke-direct {p0}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->loadBalance()V
 
     return-void

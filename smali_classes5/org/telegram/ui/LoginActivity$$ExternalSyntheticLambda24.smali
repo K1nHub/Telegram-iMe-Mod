@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/SizeNotifierFrameLayout$SizeNotifierFrameLayoutDelegate;
+.implements Lorg/telegram/tgnet/RequestDelegate;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final onSizeChanged(IZ)V
+.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$$ExternalSyntheticLambda24;->f$0:Lorg/telegram/ui/LoginActivity;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/LoginActivity;->$r8$lambda$M3p_JC12s02LrxsbYdWwFqJT-pY(Lorg/telegram/ui/LoginActivity;IZ)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/LoginActivity;->$r8$lambda$v7eyHqjIuIoRXGqlWFM9XrYa2zU(Lorg/telegram/ui/LoginActivity;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

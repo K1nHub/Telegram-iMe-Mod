@@ -59,9 +59,9 @@
 
     move-result v0
 
-    const-string v1, "dialogSearchBackground"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogSearchBackground:I
 
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/SearchField;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/SearchField;->getThemedColor(I)I
 
     move-result v1
 
@@ -144,9 +144,9 @@
 
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v1, "dialogSearchIcon"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogSearchIcon:I
 
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/SearchField;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/SearchField;->getThemedColor(I)I
 
     move-result v1
 
@@ -333,9 +333,9 @@
     .line 102
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const-string p3, "dialogSearchHint"
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogSearchHint:I
 
-    invoke-direct {p0, p3}, Lorg/telegram/ui/Components/SearchField;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p3}, Lorg/telegram/ui/Components/SearchField;->getThemedColor(I)I
 
     move-result p3
 
@@ -344,9 +344,9 @@
     .line 103
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const-string p3, "dialogSearchText"
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogSearchText:I
 
-    invoke-direct {p0, p3}, Lorg/telegram/ui/Components/SearchField;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p3}, Lorg/telegram/ui/Components/SearchField;->getThemedColor(I)I
 
     move-result p3
 
@@ -410,9 +410,9 @@
     .line 111
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const-string p3, "featuredStickers_addedIcon"
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addedIcon:I
 
-    invoke-direct {p0, p3}, Lorg/telegram/ui/Components/SearchField;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p3}, Lorg/telegram/ui/Components/SearchField;->getThemedColor(I)I
 
     move-result p3
 
@@ -506,11 +506,11 @@
     return-void
 .end method
 
-.method static synthetic access$000(Lorg/telegram/ui/Components/SearchField;Ljava/lang/String;)I
+.method static synthetic access$000(Lorg/telegram/ui/Components/SearchField;I)I
     .locals 0
 
     .line 25
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/SearchField;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/SearchField;->getThemedColor(I)I
 
     move-result p0
 
@@ -535,39 +535,16 @@
     return-object p0
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
+.method private getThemedColor(I)I
     .locals 1
 
     .line 202
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchField;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 203
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
@@ -694,6 +671,8 @@
 
     sget v4, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUNDFILTER:I
 
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_dialogSearchBackground:I
+
     const/4 v5, 0x0
 
     const/4 v6, 0x0
@@ -702,11 +681,9 @@
 
     const/4 v8, 0x0
 
-    const-string v9, "dialogSearchBackground"
-
     move-object v2, v10
 
-    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-interface {v1, v10}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -717,6 +694,8 @@
 
     sget v13, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_IMAGECOLOR:I
 
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_dialogSearchIcon:I
+
     const/4 v14, 0x0
 
     const/4 v15, 0x0
@@ -725,11 +704,11 @@
 
     const/16 v17, 0x0
 
-    const-string v18, "dialogSearchIcon"
-
     move-object v11, v2
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move/from16 v18, v10
+
+    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -742,11 +721,9 @@
 
     const/4 v9, 0x0
 
-    const-string v10, "dialogSearchIcon"
-
     move-object v3, v2
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -757,11 +734,11 @@
 
     sget v13, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
 
-    const-string v18, "dialogSearchText"
+    sget v18, Lorg/telegram/ui/ActionBar/Theme;->key_dialogSearchText:I
 
     move-object v11, v2
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -772,11 +749,11 @@
 
     sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_HINTTEXTCOLOR:I
 
-    const-string v10, "dialogSearchHint"
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_dialogSearchHint:I
 
     move-object v3, v2
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
@@ -787,11 +764,11 @@
 
     sget v13, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CURSORCOLOR:I
 
-    const-string v18, "featuredStickers_addedIcon"
+    sget v18, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addedIcon:I
 
     move-object v11, v2
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-interface {v1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 

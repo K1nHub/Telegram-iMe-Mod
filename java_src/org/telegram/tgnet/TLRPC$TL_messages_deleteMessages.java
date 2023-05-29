@@ -7,7 +7,7 @@ public class TLRPC$TL_messages_deleteMessages extends TLObject {
     public int flags;
 
     /* renamed from: id */
-    public ArrayList<Integer> f1509id = new ArrayList<>();
+    public ArrayList<Integer> f1515id = new ArrayList<>();
     public boolean revoke;
 
     public static TLRPC$TL_messages_deleteMessages TLdeserialize(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -41,7 +41,7 @@ public class TLRPC$TL_messages_deleteMessages extends TLObject {
         }
         int readInt323 = abstractSerializedData.readInt32(z);
         for (int i = 0; i < readInt323; i++) {
-            this.f1509id.add(Integer.valueOf(abstractSerializedData.readInt32(z)));
+            this.f1515id.add(Integer.valueOf(abstractSerializedData.readInt32(z)));
         }
     }
 
@@ -52,10 +52,10 @@ public class TLRPC$TL_messages_deleteMessages extends TLObject {
         this.flags = i;
         abstractSerializedData.writeInt32(i);
         abstractSerializedData.writeInt32(481674261);
-        int size = this.f1509id.size();
+        int size = this.f1515id.size();
         abstractSerializedData.writeInt32(size);
         for (int i2 = 0; i2 < size; i2++) {
-            abstractSerializedData.writeInt32(this.f1509id.get(i2).intValue());
+            abstractSerializedData.writeInt32(this.f1515id.get(i2).intValue());
         }
     }
 }

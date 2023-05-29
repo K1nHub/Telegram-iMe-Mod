@@ -30,5 +30,8 @@
 .method public abstract onCameraOpened()V
 .end method
 
+.method public abstract onWallpaperSelected(Ljava/lang/Object;)V
+.end method
+
 .method public abstract openAvatarsSearch()V
 .end method

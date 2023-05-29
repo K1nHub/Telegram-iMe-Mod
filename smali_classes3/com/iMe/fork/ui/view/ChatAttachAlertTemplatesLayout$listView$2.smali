@@ -48,7 +48,7 @@
 .method public final invoke()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListView$1;
     .locals 1
 
-    .line 52
+    .line 53
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$listView$2;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->access$initListView(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListView$1;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 52
+    .line 53
     invoke-virtual {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$listView$2;->invoke()Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListView$1;
 
     move-result-object v0

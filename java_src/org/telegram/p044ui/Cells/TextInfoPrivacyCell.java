@@ -25,7 +25,7 @@ public class TextInfoPrivacyCell extends FrameLayout {
     private int bottomPadding;
     private int fixedSize;
     private boolean isRTL;
-    private String linkTextColorKey;
+    private int linkTextColorKey;
     private LinkSpanDrawable.LinkCollector links;
     private final Theme.ResourcesProvider resourcesProvider;
     private CharSequence text;
@@ -52,7 +52,7 @@ public class TextInfoPrivacyCell extends FrameLayout {
 
     public TextInfoPrivacyCell(Context context, int i, Theme.ResourcesProvider resourcesProvider) {
         super(context);
-        this.linkTextColorKey = "windowBackgroundWhiteLinkText";
+        this.linkTextColorKey = Theme.key_windowBackgroundWhiteLinkText;
         this.topPadding = 10;
         this.bottomPadding = 17;
         this.resourcesProvider = resourcesProvider;
@@ -69,9 +69,9 @@ public class TextInfoPrivacyCell extends FrameLayout {
         this.textView = linksTextView;
         linksTextView.setTextSize(1, 14.0f);
         this.textView.setGravity(LocaleController.isRTL ? 5 : 3);
-        this.textView.setPadding(0, AndroidUtilities.m50dp(10), 0, AndroidUtilities.m50dp(17));
+        this.textView.setPadding(0, AndroidUtilities.m54dp(10), 0, AndroidUtilities.m54dp(17));
         this.textView.setMovementMethod(LinkMovementMethod.getInstance());
-        this.textView.setTextColor(getThemedColor("windowBackgroundWhiteGrayText4"));
+        this.textView.setTextColor(getThemedColor(Theme.key_windowBackgroundWhiteGrayText4));
         this.textView.setLinkTextColor(getThemedColor(this.linkTextColorKey));
         this.textView.setImportantForAccessibility(2);
         addView(this.textView, LayoutHelper.createFrame(-1, -2, (LocaleController.isRTL ? 5 : 3) | 48, i, 0, i, 0));
@@ -105,14 +105,14 @@ public class TextInfoPrivacyCell extends FrameLayout {
         super.onDraw(canvas);
     }
 
-    public void setLinkTextColorKey(String str) {
-        this.linkTextColorKey = str;
+    public void setLinkTextColorKey(int i) {
+        this.linkTextColorKey = i;
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         if (this.fixedSize != 0) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(this.fixedSize), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(this.fixedSize), 1073741824));
         } else {
             super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(0, 0));
         }
@@ -136,9 +136,9 @@ public class TextInfoPrivacyCell extends FrameLayout {
         }
         this.text = charSequence;
         if (charSequence == null) {
-            this.textView.setPadding(0, AndroidUtilities.m50dp(2), 0, 0);
+            this.textView.setPadding(0, AndroidUtilities.m54dp(2), 0, 0);
         } else {
-            this.textView.setPadding(0, AndroidUtilities.m50dp(this.topPadding), 0, AndroidUtilities.m50dp(this.bottomPadding));
+            this.textView.setPadding(0, AndroidUtilities.m54dp(this.topPadding), 0, AndroidUtilities.m54dp(this.bottomPadding));
         }
         SpannableString spannableString = null;
         if (charSequence != null) {
@@ -166,9 +166,9 @@ public class TextInfoPrivacyCell extends FrameLayout {
         this.textView.setTextColor(i);
     }
 
-    public void setTextColor(String str) {
-        this.textView.setTextColor(getThemedColor(str));
-        this.textView.setTag(str);
+    public void setTextColorByKey(int i) {
+        this.textView.setTextColor(getThemedColor(i));
+        this.textView.setTag(Integer.valueOf(i));
     }
 
     public TextView getTextView() {
@@ -198,9 +198,7 @@ public class TextInfoPrivacyCell extends FrameLayout {
         accessibilityNodeInfo.setText(this.text);
     }
 
-    private int getThemedColor(String str) {
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-        return color != null ? color.intValue() : Theme.getColor(str);
+    private int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 }

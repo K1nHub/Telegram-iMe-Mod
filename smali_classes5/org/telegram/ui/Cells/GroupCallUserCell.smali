@@ -41,7 +41,7 @@
 
 .field private fullAboutTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-.field private grayIconColor:Ljava/lang/String;
+.field private grayIconColor:I
 
 .field private hasAvatar:Z
 
@@ -150,7 +150,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;)V
-    .locals 29
+    .locals 27
 
     move-object/from16 v0, p0
 
@@ -180,199 +180,335 @@
 
     iput-object v3, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->raiseHandCallback:Ljava/lang/Runnable;
 
-    const-string v3, "voipgroup_mutedIcon"
-
     .line 128
-    iput-object v3, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->grayIconColor:Ljava/lang/String;
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_mutedIcon:I
+
+    iput v3, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->grayIconColor:I
 
     .line 130
-    new-instance v4, Lorg/telegram/ui/Cells/GroupCallUserCell$$ExternalSyntheticLambda3;
+    new-instance v3, Lorg/telegram/ui/Cells/GroupCallUserCell$$ExternalSyntheticLambda3;
 
-    invoke-direct {v4, v0}, Lorg/telegram/ui/Cells/GroupCallUserCell$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Cells/GroupCallUserCell;)V
+    invoke-direct {v3, v0}, Lorg/telegram/ui/Cells/GroupCallUserCell$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Cells/GroupCallUserCell;)V
 
-    iput-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->checkRaiseRunnable:Ljava/lang/Runnable;
+    iput-object v3, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->checkRaiseRunnable:Ljava/lang/Runnable;
 
     .line 132
-    new-instance v4, Lorg/telegram/ui/Cells/GroupCallUserCell$$ExternalSyntheticLambda6;
+    new-instance v3, Lorg/telegram/ui/Cells/GroupCallUserCell$$ExternalSyntheticLambda6;
 
-    invoke-direct {v4, v0}, Lorg/telegram/ui/Cells/GroupCallUserCell$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/Cells/GroupCallUserCell;)V
+    invoke-direct {v3, v0}, Lorg/telegram/ui/Cells/GroupCallUserCell$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/Cells/GroupCallUserCell;)V
 
-    iput-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->updateRunnable:Ljava/lang/Runnable;
+    iput-object v3, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->updateRunnable:Ljava/lang/Runnable;
 
     .line 138
-    new-instance v4, Lorg/telegram/ui/Cells/GroupCallUserCell$$ExternalSyntheticLambda5;
+    new-instance v3, Lorg/telegram/ui/Cells/GroupCallUserCell$$ExternalSyntheticLambda5;
 
-    invoke-direct {v4, v0}, Lorg/telegram/ui/Cells/GroupCallUserCell$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Cells/GroupCallUserCell;)V
+    invoke-direct {v3, v0}, Lorg/telegram/ui/Cells/GroupCallUserCell$$ExternalSyntheticLambda5;-><init>(Lorg/telegram/ui/Cells/GroupCallUserCell;)V
 
-    iput-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->updateVoiceRunnable:Ljava/lang/Runnable;
+    iput-object v3, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->updateVoiceRunnable:Ljava/lang/Runnable;
 
     .line 259
-    new-instance v4, Landroid/graphics/Paint;
+    new-instance v3, Landroid/graphics/Paint;
 
-    invoke-direct {v4}, Landroid/graphics/Paint;-><init>()V
+    invoke-direct {v3}, Landroid/graphics/Paint;-><init>()V
 
-    iput-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->dividerPaint:Landroid/graphics/Paint;
-
-    const-string v5, "voipgroup_actionBar"
+    iput-object v3, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->dividerPaint:Landroid/graphics/Paint;
 
     .line 260
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_actionBar:I
+
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v4
+
+    invoke-virtual {v3, v4}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 262
+    new-instance v3, Lorg/telegram/ui/Components/AvatarDrawable;
+
+    invoke-direct {v3}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>()V
+
+    iput-object v3, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
+
+    const/4 v3, 0x0
+
+    .line 263
+    invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
+
+    .line 265
+    new-instance v4, Lorg/telegram/ui/Components/BackupImageView;
+
+    invoke-direct {v4, v1}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
+
+    iput-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
+
+    const/16 v5, 0x18
+
+    .line 266
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
 
-    invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 262
-    new-instance v4, Lorg/telegram/ui/Components/AvatarDrawable;
-
-    invoke-direct {v4}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>()V
-
-    iput-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
-
-    const/4 v4, 0x0
-
-    .line 263
-    invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
-
-    .line 265
-    new-instance v5, Lorg/telegram/ui/Components/BackupImageView;
-
-    invoke-direct {v5, v1}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
-
-    iput-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
-
-    const/16 v6, 0x18
-
-    .line 266
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v6
-
-    invoke-virtual {v5, v6}, Lorg/telegram/ui/Components/BackupImageView;->setRoundRadius(I)V
+    invoke-virtual {v4, v5}, Lorg/telegram/ui/Components/BackupImageView;->setRoundRadius(I)V
 
     .line 267
-    iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
+    iget-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->avatarImageView:Lorg/telegram/ui/Components/BackupImageView;
 
-    sget-boolean v6, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+    sget-boolean v5, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    const/4 v7, 0x3
+    const/4 v6, 0x3
 
-    if-eqz v6, :cond_0
+    if-eqz v5, :cond_0
 
-    move v8, v2
+    move v7, v2
 
     goto :goto_0
 
     :cond_0
-    move v8, v7
+    move v7, v6
 
     :goto_0
-    or-int/lit8 v11, v8, 0x30
+    or-int/lit8 v10, v7, 0x30
 
-    const/16 v8, 0xb
+    const/16 v7, 0xb
 
-    if-eqz v6, :cond_1
+    if-eqz v5, :cond_1
 
-    move v12, v4
+    move v11, v3
 
     goto :goto_1
 
     :cond_1
-    move v12, v8
+    move v11, v7
 
     :goto_1
-    const/4 v13, 0x6
+    const/4 v12, 0x6
 
-    if-eqz v6, :cond_2
+    if-eqz v5, :cond_2
 
-    move v14, v8
+    move v13, v7
 
     goto :goto_2
 
     :cond_2
-    move v14, v4
+    move v13, v3
 
     :goto_2
-    const/4 v15, 0x0
+    const/4 v14, 0x0
+
+    const/16 v8, 0x2e
 
     const/16 v9, 0x2e
 
-    const/16 v10, 0x2e
+    invoke-static/range {v8 .. v14}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    invoke-static/range {v9 .. v15}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    move-result-object v5
 
-    move-result-object v6
-
-    invoke-virtual {v0, v5, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v4, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 269
-    new-instance v5, Lorg/telegram/ui/Cells/GroupCallUserCell$1;
+    new-instance v4, Lorg/telegram/ui/Cells/GroupCallUserCell$1;
 
-    invoke-direct {v5, v0, v1}, Lorg/telegram/ui/Cells/GroupCallUserCell$1;-><init>(Lorg/telegram/ui/Cells/GroupCallUserCell;Landroid/content/Context;)V
+    invoke-direct {v4, v0, v1}, Lorg/telegram/ui/Cells/GroupCallUserCell$1;-><init>(Lorg/telegram/ui/Cells/GroupCallUserCell;Landroid/content/Context;)V
 
-    iput-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->avatarProgressView:Lorg/telegram/ui/Components/RadialProgressView;
+    iput-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->avatarProgressView:Lorg/telegram/ui/Components/RadialProgressView;
 
-    const/16 v6, 0x1a
+    const/16 v5, 0x1a
 
     .line 285
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v9
+    move-result v8
 
-    invoke-virtual {v5, v9}, Lorg/telegram/ui/Components/RadialProgressView;->setSize(I)V
+    invoke-virtual {v4, v8}, Lorg/telegram/ui/Components/RadialProgressView;->setSize(I)V
 
     .line 286
-    iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->avatarProgressView:Lorg/telegram/ui/Components/RadialProgressView;
+    iget-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->avatarProgressView:Lorg/telegram/ui/Components/RadialProgressView;
 
-    const/4 v9, -0x1
+    const/4 v8, -0x1
 
-    invoke-virtual {v5, v9}, Lorg/telegram/ui/Components/RadialProgressView;->setProgressColor(I)V
+    invoke-virtual {v4, v8}, Lorg/telegram/ui/Components/RadialProgressView;->setProgressColor(I)V
 
     .line 287
-    iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->avatarProgressView:Lorg/telegram/ui/Components/RadialProgressView;
+    iget-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->avatarProgressView:Lorg/telegram/ui/Components/RadialProgressView;
 
-    invoke-virtual {v5, v4}, Lorg/telegram/ui/Components/RadialProgressView;->setNoProgress(Z)V
+    invoke-virtual {v4, v3}, Lorg/telegram/ui/Components/RadialProgressView;->setNoProgress(Z)V
 
     .line 288
-    iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->avatarProgressView:Lorg/telegram/ui/Components/RadialProgressView;
+    iget-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->avatarProgressView:Lorg/telegram/ui/Components/RadialProgressView;
 
-    const/16 v9, 0x2e
+    const/16 v8, 0x2e
 
-    sget-boolean v11, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+    sget-boolean v10, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    if-eqz v11, :cond_3
+    if-eqz v10, :cond_3
 
-    move v12, v2
+    move v11, v2
 
     goto :goto_3
 
     :cond_3
-    move v12, v7
+    move v11, v6
 
     :goto_3
-    or-int/lit8 v12, v12, 0x30
+    or-int/lit8 v11, v11, 0x30
 
-    if-eqz v11, :cond_4
+    if-eqz v10, :cond_4
 
-    move v13, v4
+    move v12, v3
 
     goto :goto_4
 
     :cond_4
-    move v13, v8
+    move v12, v7
 
     :goto_4
-    const/4 v14, 0x6
+    const/4 v13, 0x6
 
-    if-eqz v11, :cond_5
+    if-eqz v10, :cond_5
 
     goto :goto_5
 
     :cond_5
-    move v8, v4
+    move v7, v3
 
     :goto_5
-    const/4 v15, 0x0
+    const/4 v14, 0x0
+
+    move v10, v11
+
+    move v11, v12
+
+    move v12, v13
+
+    move v13, v7
+
+    invoke-static/range {v8 .. v14}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+
+    move-result-object v7
+
+    invoke-virtual {v0, v4, v7}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 289
+    iget-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->avatarProgressView:Lorg/telegram/ui/Components/RadialProgressView;
+
+    const/high16 v7, 0x3f800000    # 1.0f
+
+    invoke-static {v4, v3, v7, v3}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZ)V
+
+    .line 291
+    new-instance v4, Lorg/telegram/ui/ActionBar/SimpleTextView;
+
+    invoke-direct {v4, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;-><init>(Landroid/content/Context;)V
+
+    iput-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+
+    .line 292
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_nameText:I
+
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v7
+
+    invoke-virtual {v4, v7}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
+
+    .line 293
+    iget-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+
+    const-string v7, "fonts/rmedium.ttf"
+
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
+
+    move-result-object v7
+
+    invoke-virtual {v4, v7}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTypeface(Landroid/graphics/Typeface;)V
+
+    .line 294
+    iget-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+
+    const/16 v7, 0x10
+
+    invoke-virtual {v4, v7}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
+
+    .line 295
+    iget-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+
+    const/4 v8, 0x6
+
+    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v8
+
+    invoke-virtual {v4, v8}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setDrawablePadding(I)V
+
+    .line 296
+    iget-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+
+    sget-boolean v8, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+
+    if-eqz v8, :cond_6
+
+    move v8, v2
+
+    goto :goto_6
+
+    :cond_6
+    move v8, v6
+
+    :goto_6
+    or-int/lit8 v8, v8, 0x30
+
+    invoke-virtual {v4, v8}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
+
+    .line 297
+    iget-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+
+    const/4 v8, -0x1
+
+    const/16 v9, 0x14
+
+    sget-boolean v10, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+
+    if-eqz v10, :cond_7
+
+    move v11, v2
+
+    goto :goto_7
+
+    :cond_7
+    move v11, v6
+
+    :goto_7
+    or-int/lit8 v11, v11, 0x30
+
+    const/16 v15, 0x36
+
+    const/16 v16, 0x43
+
+    if-eqz v10, :cond_8
+
+    move v12, v15
+
+    goto :goto_8
+
+    :cond_8
+    move/from16 v12, v16
+
+    :goto_8
+    const/16 v13, 0xa
+
+    if-eqz v10, :cond_9
+
+    move/from16 v14, v16
+
+    goto :goto_9
+
+    :cond_9
+    move v14, v15
+
+    :goto_9
+    const/16 v17, 0x0
+
+    move v10, v11
 
     move v11, v12
 
@@ -380,703 +516,573 @@
 
     move v13, v14
 
-    move v14, v8
+    move/from16 v14, v17
 
-    invoke-static/range {v9 .. v15}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
-
-    move-result-object v8
-
-    invoke-virtual {v0, v5, v8}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 289
-    iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->avatarProgressView:Lorg/telegram/ui/Components/RadialProgressView;
-
-    const/high16 v8, 0x3f800000    # 1.0f
-
-    invoke-static {v5, v4, v8, v4}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZ)V
-
-    .line 291
-    new-instance v5, Lorg/telegram/ui/ActionBar/SimpleTextView;
-
-    invoke-direct {v5, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;-><init>(Landroid/content/Context;)V
-
-    iput-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
-
-    const-string v8, "voipgroup_nameText"
-
-    .line 292
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v8
-
-    invoke-virtual {v5, v8}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
-
-    .line 293
-    iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
-
-    const-string v8, "fonts/rmedium.ttf"
-
-    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
+    invoke-static/range {v8 .. v14}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v8
 
-    invoke-virtual {v5, v8}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v0, v4, v8}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 294
-    iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+    .line 298
+    new-instance v4, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
-    const/16 v8, 0x10
+    iget-object v8, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    invoke-virtual {v5, v8}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
-
-    .line 295
-    iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
-
-    const/4 v9, 0x6
+    const/16 v9, 0x14
 
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
 
-    invoke-virtual {v5, v9}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setDrawablePadding(I)V
+    const/16 v10, 0x9
 
-    .line 296
-    iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+    invoke-direct {v4, v8, v9, v10}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;-><init>(Landroid/view/View;II)V
 
-    sget-boolean v9, Lorg/telegram/messenger/LocaleController;->isRTL:Z
-
-    if-eqz v9, :cond_6
-
-    move v9, v2
-
-    goto :goto_6
-
-    :cond_6
-    move v9, v7
-
-    :goto_6
-    or-int/lit8 v9, v9, 0x30
-
-    invoke-virtual {v5, v9}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
-
-    .line 297
-    iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
-
-    const/4 v9, -0x1
-
-    const/16 v10, 0x14
-
-    sget-boolean v11, Lorg/telegram/messenger/LocaleController;->isRTL:Z
-
-    if-eqz v11, :cond_7
-
-    move v12, v2
-
-    goto :goto_7
-
-    :cond_7
-    move v12, v7
-
-    :goto_7
-    or-int/lit8 v12, v12, 0x30
-
-    const/16 v16, 0x36
-
-    const/16 v17, 0x43
-
-    if-eqz v11, :cond_8
-
-    move/from16 v13, v16
-
-    goto :goto_8
-
-    :cond_8
-    move/from16 v13, v17
-
-    :goto_8
-    const/16 v14, 0xa
-
-    if-eqz v11, :cond_9
-
-    move/from16 v15, v17
-
-    goto :goto_9
-
-    :cond_9
-    move/from16 v15, v16
-
-    :goto_9
-    const/16 v18, 0x0
-
-    move v11, v12
-
-    move v12, v13
-
-    move v13, v14
-
-    move v14, v15
-
-    move/from16 v15, v18
-
-    invoke-static/range {v9 .. v15}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
-
-    move-result-object v9
-
-    invoke-virtual {v0, v5, v9}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 298
-    new-instance v5, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
-
-    iget-object v9, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
-
-    const/16 v10, 0x14
-
-    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v10
-
-    const/16 v11, 0x9
-
-    invoke-direct {v5, v9, v10, v11}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;-><init>(Landroid/view/View;II)V
-
-    iput-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->rightDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
+    iput-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->rightDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
     .line 300
     invoke-virtual/range {p1 .. p1}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v5
+    move-result-object v4
 
-    sget v9, Lorg/telegram/messenger/R$drawable;->voice_volume_mini:I
+    sget v8, Lorg/telegram/messenger/R$drawable;->voice_volume_mini:I
 
-    invoke-virtual {v5, v9}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v4, v8}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v5
+    move-result-object v4
 
-    iput-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->speakingDrawable:Landroid/graphics/drawable/Drawable;
+    iput-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->speakingDrawable:Landroid/graphics/drawable/Drawable;
 
     .line 301
-    new-instance v9, Landroid/graphics/PorterDuffColorFilter;
+    new-instance v8, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v10, "voipgroup_speakingText"
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_speakingText:I
 
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v11
+    move-result v9
 
-    sget-object v12, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
+    sget-object v10, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-direct {v9, v11, v12}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    invoke-direct {v8, v9, v10}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
-    invoke-virtual {v5, v9}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
+    invoke-virtual {v4, v8}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    move v5, v4
+    move v4, v3
 
     .line 303
     :goto_a
-    iget-object v9, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iget-object v8, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    array-length v11, v9
+    array-length v9, v8
 
-    const/16 v12, 0xf
+    const/16 v10, 0xf
 
-    const/4 v13, 0x2
+    const/4 v11, 0x2
 
-    const/4 v14, 0x1
+    const/4 v12, 0x1
 
-    if-ge v5, v11, :cond_16
+    if-ge v4, v9, :cond_16
 
     .line 305
-    new-instance v11, Lorg/telegram/ui/Cells/GroupCallUserCell$2;
+    new-instance v9, Lorg/telegram/ui/Cells/GroupCallUserCell$2;
 
-    invoke-direct {v11, v0, v1, v5}, Lorg/telegram/ui/Cells/GroupCallUserCell$2;-><init>(Lorg/telegram/ui/Cells/GroupCallUserCell;Landroid/content/Context;I)V
+    invoke-direct {v9, v0, v1, v4}, Lorg/telegram/ui/Cells/GroupCallUserCell$2;-><init>(Lorg/telegram/ui/Cells/GroupCallUserCell;Landroid/content/Context;I)V
 
-    aput-object v11, v9, v5
+    aput-object v9, v8, v4
 
     .line 349
-    iget-object v9, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iget-object v8, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v9, v9, v5
+    aget-object v8, v8, v4
 
-    invoke-virtual {v9, v12}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
+    invoke-virtual {v8, v10}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
 
     .line 350
-    iget-object v9, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iget-object v8, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v9, v9, v5
+    aget-object v8, v8, v4
 
-    sget-boolean v11, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+    sget-boolean v9, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    if-eqz v11, :cond_a
+    if-eqz v9, :cond_a
 
-    move v11, v2
+    move v9, v2
 
     goto :goto_b
 
     :cond_a
-    move v11, v7
+    move v9, v6
 
     :goto_b
-    or-int/lit8 v11, v11, 0x30
+    or-int/lit8 v9, v9, 0x30
 
-    invoke-virtual {v9, v11}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
+    invoke-virtual {v8, v9}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
 
-    const/4 v9, 0x4
+    const/4 v8, 0x4
 
-    if-ne v5, v9, :cond_e
+    if-ne v4, v8, :cond_e
 
     .line 352
-    iget-object v9, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iget-object v8, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v9, v9, v5
+    aget-object v8, v8, v4
 
-    invoke-virtual {v9, v14}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setBuildFullLayout(Z)V
+    invoke-virtual {v8, v12}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setBuildFullLayout(Z)V
 
     .line 353
-    iget-object v9, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iget-object v8, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v9, v9, v5
+    aget-object v8, v8, v4
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_mutedIcon:I
 
-    move-result v11
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v9, v11}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
+    move-result v9
+
+    invoke-virtual {v8, v9}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
     .line 354
-    iget-object v9, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iget-object v8, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v9, v9, v5
+    aget-object v8, v8, v4
 
-    const/16 v18, -0x1
+    const/16 v17, -0x1
 
-    const/16 v19, -0x2
+    const/16 v18, -0x2
 
-    sget-boolean v11, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+    sget-boolean v9, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    if-eqz v11, :cond_b
+    if-eqz v9, :cond_b
 
-    move v12, v2
+    move v10, v2
 
     goto :goto_c
 
     :cond_b
-    move v12, v7
+    move v10, v6
 
     :goto_c
-    or-int/lit8 v20, v12, 0x30
+    or-int/lit8 v19, v10, 0x30
 
-    if-eqz v11, :cond_c
+    if-eqz v9, :cond_c
 
-    move/from16 v21, v16
+    move/from16 v20, v15
 
     goto :goto_d
 
     :cond_c
-    move/from16 v21, v17
+    move/from16 v20, v16
 
     :goto_d
-    const/16 v22, 0x20
+    const/16 v21, 0x20
 
-    if-eqz v11, :cond_d
+    if-eqz v9, :cond_d
 
-    move/from16 v23, v17
+    move/from16 v22, v16
 
     goto :goto_e
 
     :cond_d
-    move/from16 v23, v16
+    move/from16 v22, v15
 
     :goto_e
-    const/16 v24, 0x0
+    const/16 v23, 0x0
 
-    invoke-static/range {v18 .. v24}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v17 .. v23}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v11
+    move-result-object v9
 
-    invoke-virtual {v0, v9, v11}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v8, v9}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     goto/16 :goto_13
 
     :cond_e
-    const-string v9, "voipgroup_listeningText"
-
-    if-nez v5, :cond_f
+    if-nez v4, :cond_f
 
     .line 357
-    iget-object v11, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iget-object v8, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v11, v11, v5
+    aget-object v8, v8, v4
 
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_listeningText:I
+
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 
-    invoke-virtual {v11, v9}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
+    invoke-virtual {v8, v9}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
     .line 358
-    iget-object v9, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iget-object v8, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v9, v9, v5
+    aget-object v8, v8, v4
 
-    sget v11, Lorg/telegram/messenger/R$string;->Listening:I
+    sget v9, Lorg/telegram/messenger/R$string;->Listening:I
 
-    const-string v12, "Listening"
+    const-string v10, "Listening"
 
-    invoke-static {v12, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v10, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v9
 
-    invoke-virtual {v9, v11}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v8, v9}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
     goto :goto_f
 
     :cond_f
-    if-ne v5, v14, :cond_10
+    if-ne v4, v12, :cond_10
 
     .line 360
-    iget-object v9, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iget-object v8, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v9, v9, v5
+    aget-object v8, v8, v4
 
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_speakingText:I
 
-    move-result v11
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v9, v11}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
+    move-result v9
+
+    invoke-virtual {v8, v9}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
     .line 361
-    iget-object v9, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iget-object v8, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v9, v9, v5
+    aget-object v8, v8, v4
 
-    sget v11, Lorg/telegram/messenger/R$string;->Speaking:I
+    sget v9, Lorg/telegram/messenger/R$string;->Speaking:I
 
-    const-string v12, "Speaking"
+    const-string v10, "Speaking"
 
-    invoke-static {v12, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v10, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v9
 
-    invoke-virtual {v9, v11}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v8, v9}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
     .line 362
-    iget-object v9, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iget-object v8, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v9, v9, v5
+    aget-object v8, v8, v4
 
-    invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v11
+    move-result v9
 
-    invoke-virtual {v9, v11}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setDrawablePadding(I)V
+    invoke-virtual {v8, v9}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setDrawablePadding(I)V
 
     goto :goto_f
 
     :cond_10
-    if-ne v5, v13, :cond_11
+    if-ne v4, v11, :cond_11
 
     .line 364
-    iget-object v9, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iget-object v8, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v9, v9, v5
+    aget-object v8, v8, v4
 
-    const-string v11, "voipgroup_mutedByAdminIcon"
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_mutedByAdminIcon:I
 
-    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v11
+    move-result v9
 
-    invoke-virtual {v9, v11}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
+    invoke-virtual {v8, v9}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
     .line 365
-    iget-object v9, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iget-object v8, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v9, v9, v5
+    aget-object v8, v8, v4
 
-    sget v11, Lorg/telegram/messenger/R$string;->VoipGroupMutedForMe:I
+    sget v9, Lorg/telegram/messenger/R$string;->VoipGroupMutedForMe:I
 
-    const-string v12, "VoipGroupMutedForMe"
+    const-string v10, "VoipGroupMutedForMe"
 
-    invoke-static {v12, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v10, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v9
 
-    invoke-virtual {v9, v11}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v8, v9}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
     goto :goto_f
 
     :cond_11
-    if-ne v5, v7, :cond_12
+    if-ne v4, v6, :cond_12
 
     .line 367
-    iget-object v11, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iget-object v8, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v11, v11, v5
+    aget-object v8, v8, v4
 
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_listeningText:I
+
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 
-    invoke-virtual {v11, v9}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
+    invoke-virtual {v8, v9}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
     .line 368
-    iget-object v9, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iget-object v8, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v9, v9, v5
+    aget-object v8, v8, v4
 
-    sget v11, Lorg/telegram/messenger/R$string;->WantsToSpeak:I
+    sget v9, Lorg/telegram/messenger/R$string;->WantsToSpeak:I
 
-    const-string v12, "WantsToSpeak"
+    const-string v10, "WantsToSpeak"
 
-    invoke-static {v12, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v10, v9}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v9
 
-    invoke-virtual {v9, v11}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v8, v9}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
     .line 370
     :cond_12
     :goto_f
-    iget-object v9, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iget-object v8, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v9, v9, v5
+    aget-object v8, v8, v4
 
-    const/16 v18, -0x1
+    const/16 v17, -0x1
 
-    const/16 v19, 0x14
+    const/16 v18, 0x14
 
-    sget-boolean v11, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+    sget-boolean v9, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    if-eqz v11, :cond_13
+    if-eqz v9, :cond_13
 
-    move v12, v2
+    move v10, v2
 
     goto :goto_10
 
     :cond_13
-    move v12, v7
+    move v10, v6
 
     :goto_10
-    or-int/lit8 v20, v12, 0x30
+    or-int/lit8 v19, v10, 0x30
 
-    if-eqz v11, :cond_14
+    if-eqz v9, :cond_14
 
-    move/from16 v21, v16
+    move/from16 v20, v15
 
     goto :goto_11
 
     :cond_14
-    move/from16 v21, v17
+    move/from16 v20, v16
 
     :goto_11
-    const/16 v22, 0x20
+    const/16 v21, 0x20
 
-    if-eqz v11, :cond_15
+    if-eqz v9, :cond_15
 
-    move/from16 v23, v17
+    move/from16 v22, v16
 
     goto :goto_12
 
     :cond_15
-    move/from16 v23, v16
+    move/from16 v22, v15
 
     :goto_12
-    const/16 v24, 0x0
+    const/16 v23, 0x0
 
-    invoke-static/range {v18 .. v24}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v17 .. v23}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v11
+    move-result-object v9
 
-    invoke-virtual {v0, v9, v11}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v8, v9}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     :goto_13
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v4, v4, 0x1
 
     goto/16 :goto_a
 
     .line 374
     :cond_16
-    new-instance v5, Lorg/telegram/ui/ActionBar/SimpleTextView;
+    new-instance v4, Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    invoke-direct {v5, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v4, v1}, Lorg/telegram/ui/ActionBar/SimpleTextView;-><init>(Landroid/content/Context;)V
 
-    iput-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->fullAboutTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iput-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->fullAboutTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     .line 375
-    invoke-virtual {v5, v7}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setMaxLines(I)V
+    invoke-virtual {v4, v6}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setMaxLines(I)V
 
     .line 376
-    iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->fullAboutTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iget-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->fullAboutTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    invoke-virtual {v5, v12}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
+    invoke-virtual {v4, v10}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
 
     .line 377
-    iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->fullAboutTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iget-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->fullAboutTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_mutedIcon:I
 
-    move-result v3
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v5, v3}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
+    move-result v8
+
+    invoke-virtual {v4, v8}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
     .line 378
-    iget-object v3, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->fullAboutTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iget-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->fullAboutTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const/16 v5, 0x8
+    const/16 v8, 0x8
 
-    invoke-virtual {v3, v5}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {v4, v8}, Landroid/view/View;->setVisibility(I)V
 
     .line 379
-    iget-object v3, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->fullAboutTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iget-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->fullAboutTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const/4 v15, -0x1
+    const/4 v13, -0x1
 
-    const/16 v16, 0x3c
+    const/16 v14, 0x3c
 
-    sget-boolean v5, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+    sget-boolean v8, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    if-eqz v5, :cond_17
+    if-eqz v8, :cond_17
 
-    move v5, v2
+    move v8, v2
 
     goto :goto_14
 
     :cond_17
-    move v5, v7
+    move v8, v6
 
     :goto_14
-    or-int/lit8 v17, v5, 0x30
+    or-int/lit8 v15, v8, 0x30
+
+    const/16 v16, 0xe
+
+    const/16 v17, 0x20
 
     const/16 v18, 0xe
 
-    const/16 v19, 0x20
+    const/16 v19, 0x0
 
-    const/16 v20, 0xe
+    invoke-static/range {v13 .. v19}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    const/16 v21, 0x0
+    move-result-object v8
 
-    invoke-static/range {v15 .. v21}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
-
-    move-result-object v5
-
-    invoke-virtual {v0, v3, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v4, v8}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 381
-    new-instance v3, Lorg/telegram/ui/Components/RLottieDrawable;
+    new-instance v4, Lorg/telegram/ui/Components/RLottieDrawable;
 
-    sget v5, Lorg/telegram/messenger/R$raw;->voice_outlined2:I
+    sget v14, Lorg/telegram/messenger/R$raw;->voice_outlined2:I
 
-    new-instance v9, Ljava/lang/StringBuilder;
+    new-instance v8, Ljava/lang/StringBuilder;
 
-    invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v8}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v10, ""
+    const-string v9, ""
 
-    invoke-virtual {v9, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v9, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v8, v14}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v9}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v8}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v17
+    move-result-object v15
 
-    const/16 v9, 0x22
+    const/16 v8, 0x22
 
-    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v18
+    move-result v16
 
-    const/16 v11, 0x20
+    const/16 v10, 0x20
 
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v19
+    move-result v17
 
-    const/16 v20, 0x1
+    const/16 v18, 0x1
 
-    const/16 v21, 0x0
+    const/16 v19, 0x0
 
-    move-object v15, v3
+    move-object v13, v4
 
-    move/from16 v16, v5
+    invoke-direct/range {v13 .. v19}, Lorg/telegram/ui/Components/RLottieDrawable;-><init>(ILjava/lang/String;IIZ[I)V
 
-    invoke-direct/range {v15 .. v21}, Lorg/telegram/ui/Components/RLottieDrawable;-><init>(ILjava/lang/String;IIZ[I)V
-
-    iput-object v3, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->muteDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
+    iput-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->muteDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     .line 382
-    new-instance v3, Lorg/telegram/ui/Components/RLottieDrawable;
+    new-instance v4, Lorg/telegram/ui/Components/RLottieDrawable;
 
-    sget v5, Lorg/telegram/messenger/R$raw;->hand_1:I
+    sget v13, Lorg/telegram/messenger/R$raw;->hand_1:I
 
-    new-instance v12, Ljava/lang/StringBuilder;
+    new-instance v14, Ljava/lang/StringBuilder;
 
-    invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v14}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v12, v10}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v9}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v12, v5}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v14, v13}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v12}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v14}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v24
+    move-result-object v22
 
-    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v25
+    move-result v23
 
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v26
+    move-result v24
 
-    const/16 v27, 0x1
+    const/16 v25, 0x1
 
-    const/16 v28, 0x0
+    const/16 v26, 0x0
 
-    move-object/from16 v22, v3
+    move-object/from16 v20, v4
 
-    move/from16 v23, v5
+    move/from16 v21, v13
 
-    invoke-direct/range {v22 .. v28}, Lorg/telegram/ui/Components/RLottieDrawable;-><init>(ILjava/lang/String;IIZ[I)V
+    invoke-direct/range {v20 .. v26}, Lorg/telegram/ui/Components/RLottieDrawable;-><init>(ILjava/lang/String;IIZ[I)V
 
-    iput-object v3, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->shakeHandDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
+    iput-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->shakeHandDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     .line 384
-    new-instance v3, Lorg/telegram/ui/Components/RLottieImageView;
+    new-instance v4, Lorg/telegram/ui/Components/RLottieImageView;
 
-    invoke-direct {v3, v1}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v4, v1}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
 
-    iput-object v3, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
+    iput-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     .line 385
     sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
-    invoke-virtual {v3, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
+    invoke-virtual {v4, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
     .line 386
     iget-object v1, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
 
-    iget-object v3, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->muteDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
+    iget-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->muteDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(Lorg/telegram/ui/Components/RLottieDrawable;)V
+    invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(Lorg/telegram/ui/Components/RLottieDrawable;)V
 
     .line 387
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
-    const/16 v3, 0x15
+    const/16 v4, 0x15
 
-    if-lt v1, v3, :cond_18
+    if-lt v1, v4, :cond_18
 
     .line 388
-    iget-object v1, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->grayIconColor:Ljava/lang/String;
+    iget v1, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->grayIconColor:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
-    const v3, 0x24ffffff
+    const v4, 0x24ffffff
 
-    and-int/2addr v1, v3
+    and-int/2addr v1, v4
 
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(I)Landroid/graphics/drawable/Drawable;
 
@@ -1088,41 +1094,41 @@
     invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->setRippleDrawableForceSoftware(Landroid/graphics/drawable/RippleDrawable;)V
 
     .line 390
-    iget-object v3, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
+    iget-object v4, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
 
-    invoke-virtual {v3, v1}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v4, v1}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     .line 392
     :cond_18
     iget-object v1, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
 
-    invoke-virtual {v1, v13}, Landroid/widget/ImageView;->setImportantForAccessibility(I)V
+    invoke-virtual {v1, v11}, Landroid/widget/ImageView;->setImportantForAccessibility(I)V
 
     .line 393
     iget-object v1, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
 
-    const/16 v15, 0x30
+    const/16 v13, 0x30
 
-    const/16 v16, -0x1
+    const/4 v14, -0x1
 
-    sget-boolean v3, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+    sget-boolean v4, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    if-eqz v3, :cond_19
+    if-eqz v4, :cond_19
 
-    move v2, v7
+    move v2, v6
 
     :cond_19
-    or-int/lit8 v17, v2, 0x10
+    or-int/lit8 v15, v2, 0x10
+
+    const/16 v16, 0x6
+
+    const/16 v17, 0x0
 
     const/16 v18, 0x6
 
     const/16 v19, 0x0
 
-    const/16 v20, 0x6
-
-    const/16 v21, 0x0
-
-    invoke-static/range {v15 .. v21}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v13 .. v19}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v2
 
@@ -1140,25 +1146,25 @@
     .line 396
     new-instance v1, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;
 
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
-    const/16 v3, 0x1d
+    const/16 v4, 0x1d
 
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v3
+    move-result v4
 
-    invoke-direct {v1, v2, v3}, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;-><init>(II)V
+    invoke-direct {v1, v2, v4}, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;-><init>(II)V
 
     iput-object v1, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->avatarWavesDrawable:Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;
 
     .line 398
-    invoke-virtual {v0, v4}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
+    invoke-virtual {v0, v3}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
     .line 400
-    invoke-virtual {v0, v14}, Landroid/widget/FrameLayout;->setFocusable(Z)V
+    invoke-virtual {v0, v12}, Landroid/widget/FrameLayout;->setFocusable(Z)V
 
     return-void
 .end method
@@ -1218,7 +1224,7 @@
 .end method
 
 .method private applyParticipantChanges(ZZ)V
-    .locals 20
+    .locals 18
 
     move-object/from16 v0, p0
 
@@ -1503,11 +1509,7 @@
 
     iget-boolean v11, v10, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;->muted:Z
 
-    const-string v13, "voipgroup_listeningText"
-
-    const/4 v14, 0x2
-
-    const/4 v15, 0x4
+    const/4 v14, 0x4
 
     if-eqz v11, :cond_f
 
@@ -1526,13 +1528,13 @@
 
     if-eqz v3, :cond_11
 
-    goto :goto_8
+    goto :goto_7
 
     .line 699
     :cond_11
-    iget-object v2, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->grayIconColor:Ljava/lang/String;
+    iget v2, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->grayIconColor:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -1541,24 +1543,17 @@
 
     if-eqz v9, :cond_12
 
-    move v3, v15
+    move v3, v14
 
-    goto :goto_7
+    goto/16 :goto_d
 
     :cond_12
     move v3, v6
 
-    :goto_7
-    move v4, v3
-
-    move v3, v6
-
-    move-object/from16 v18, v13
-
-    goto/16 :goto_e
+    goto/16 :goto_d
 
     :cond_13
-    :goto_8
+    :goto_7
     if-nez v2, :cond_14
 
     .line 685
@@ -1570,31 +1565,31 @@
 
     move v2, v7
 
-    goto :goto_9
+    goto :goto_8
 
     :cond_14
     move v2, v6
 
-    :goto_9
+    :goto_8
     if-eqz v2, :cond_19
 
     .line 686
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_listeningText:I
+
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v10
 
     .line 687
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
-    move-result-wide v16
+    move-result-wide v15
 
     iget-object v11, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->participant:Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;
 
-    move-object/from16 v18, v13
-
     iget-wide v12, v11, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;->lastRaiseHandDate:J
 
-    sub-long v16, v16, v12
+    sub-long/2addr v15, v12
 
     cmp-long v4, v12, v4
 
@@ -1602,43 +1597,43 @@
 
     const-wide/16 v4, 0x1388
 
-    cmp-long v11, v16, v4
+    cmp-long v11, v15, v4
 
     if-lez v11, :cond_15
 
-    goto :goto_a
+    goto :goto_9
 
     .line 692
     :cond_15
     iget-object v3, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->checkRaiseRunnable:Ljava/lang/Runnable;
 
-    sub-long v4, v4, v16
+    sub-long/2addr v4, v15
 
     invoke-static {v3, v4, v5}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     const/4 v3, 0x3
 
-    goto :goto_b
+    goto :goto_a
 
     :cond_16
-    :goto_a
+    :goto_9
     if-eqz v3, :cond_17
 
-    move v3, v14
+    const/4 v3, 0x2
 
-    goto :goto_b
+    goto :goto_a
 
     :cond_17
     if-eqz v9, :cond_18
 
-    move v3, v15
+    move v3, v14
 
-    goto :goto_b
+    goto :goto_a
 
     :cond_18
     move v3, v6
 
-    :goto_b
+    :goto_a
     move v4, v3
 
     move v3, v2
@@ -1647,57 +1642,53 @@
 
     goto :goto_e
 
-    :cond_19
-    move-object/from16 v18, v13
-
-    const-string v4, "voipgroup_mutedByAdminIcon"
-
     .line 695
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    :cond_19
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_mutedByAdminIcon:I
+
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
     if-eqz v3, :cond_1a
 
-    move v3, v14
+    const/4 v3, 0x2
 
-    goto :goto_c
+    goto :goto_b
 
     :cond_1a
     if-eqz v9, :cond_1b
 
-    move v3, v15
+    move v3, v14
 
-    goto :goto_c
+    goto :goto_b
 
     :cond_1b
     move v3, v6
 
-    :goto_c
-    move/from16 v19, v3
+    :goto_b
+    move/from16 v17, v3
 
     move v3, v2
 
     move v2, v4
 
-    move/from16 v4, v19
+    move/from16 v4, v17
 
     goto :goto_e
 
-    :cond_1c
-    move-object/from16 v18, v13
-
     .line 704
+    :cond_1c
     iget-boolean v3, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->isSpeaking:Z
 
     if-eqz v3, :cond_1d
 
     if-eqz v2, :cond_1d
 
-    const-string v2, "voipgroup_speakingText"
-
     .line 705
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_speakingText:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -1709,25 +1700,26 @@
 
     .line 708
     :cond_1d
-    iget-object v2, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->grayIconColor:Ljava/lang/String;
+    iget v2, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->grayIconColor:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
     if-eqz v9, :cond_1e
 
-    move v3, v15
+    move v3, v14
 
-    goto :goto_d
+    goto :goto_c
 
     :cond_1e
     move v3, v6
 
     .line 710
-    :goto_d
+    :goto_c
     iput-boolean v7, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->currentIconGray:Z
 
+    :goto_d
     move v4, v3
 
     move v3, v6
@@ -1743,11 +1735,11 @@
     .line 715
     iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v5, v5, v15
+    aget-object v5, v5, v14
 
-    iget-object v10, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->grayIconColor:Ljava/lang/String;
+    iget v10, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->grayIconColor:I
 
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v10
 
@@ -1776,7 +1768,7 @@
     .line 721
     iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v5, v5, v15
+    aget-object v5, v5, v14
 
     sget v10, Lorg/telegram/messenger/R$string;->TapToAddPhotoOrBio:I
 
@@ -1794,7 +1786,7 @@
     :cond_20
     iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v5, v5, v15
+    aget-object v5, v5, v14
 
     sget v10, Lorg/telegram/messenger/R$string;->TapToAddPhotoOrDescription:I
 
@@ -1810,11 +1802,11 @@
     :goto_f
     iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v5, v5, v15
+    aget-object v5, v5, v14
 
-    iget-object v10, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->grayIconColor:Ljava/lang/String;
+    iget v10, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->grayIconColor:I
 
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v10
 
@@ -1833,7 +1825,7 @@
     .line 728
     iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v5, v5, v15
+    aget-object v5, v5, v14
 
     sget v10, Lorg/telegram/messenger/R$string;->TapToAddBio:I
 
@@ -1851,7 +1843,7 @@
     :cond_22
     iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v5, v5, v15
+    aget-object v5, v5, v14
 
     sget v10, Lorg/telegram/messenger/R$string;->TapToAddDescription:I
 
@@ -1867,11 +1859,11 @@
     :goto_10
     iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v5, v5, v15
+    aget-object v5, v5, v14
 
-    iget-object v10, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->grayIconColor:Ljava/lang/String;
+    iget v10, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->grayIconColor:I
 
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v10
 
@@ -1888,7 +1880,7 @@
     .line 734
     iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v5, v5, v15
+    aget-object v5, v5, v14
 
     sget v10, Lorg/telegram/messenger/R$string;->TapToAddPhoto:I
 
@@ -1903,11 +1895,11 @@
     .line 735
     iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v5, v5, v15
+    aget-object v5, v5, v14
 
-    iget-object v10, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->grayIconColor:Ljava/lang/String;
+    iget v10, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->grayIconColor:I
 
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v10
 
@@ -1919,7 +1911,7 @@
     :cond_24
     iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v5, v5, v15
+    aget-object v5, v5, v14
 
     sget v10, Lorg/telegram/messenger/R$string;->ThisIsYou:I
 
@@ -1934,9 +1926,11 @@
     .line 738
     iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v5, v5, v15
+    aget-object v5, v5, v14
 
-    invoke-static/range {v18 .. v18}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_listeningText:I
+
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v10
 
@@ -1961,9 +1955,9 @@
     .line 742
     iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->fullAboutTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const-string v9, "voipgroup_mutedIcon"
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_mutedIcon:I
 
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 
@@ -2008,7 +2002,7 @@
     .line 748
     iget-object v9, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v9, v9, v15
+    aget-object v9, v9, v14
 
     iget-object v10, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->participant:Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipant;
 
@@ -2031,7 +2025,7 @@
     :cond_27
     iget-object v9, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v9, v9, v15
+    aget-object v9, v9, v14
 
     invoke-virtual {v9, v5}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
@@ -2080,17 +2074,25 @@
     iput-object v10, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->animatorSet:Landroid/animation/AnimatorSet;
 
     :cond_2b
-    if-eqz v1, :cond_2c
+    if-eqz v1, :cond_2d
 
     .line 766
     iget v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->lastMuteColor:I
 
-    if-ne v5, v2, :cond_2c
+    if-ne v5, v2, :cond_2d
 
-    if-eqz v9, :cond_2e
+    if-eqz v9, :cond_2c
+
+    goto :goto_14
 
     :cond_2c
-    if-eqz v1, :cond_2d
+    const/4 v12, 0x2
+
+    goto :goto_15
+
+    :cond_2d
+    :goto_14
+    if-eqz v1, :cond_2e
 
     .line 768
     new-instance v5, Ljava/util/ArrayList;
@@ -2103,38 +2105,42 @@
     .line 770
     iput v2, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->lastMuteColor:I
 
-    new-array v12, v14, [F
+    const/4 v12, 0x2
+
+    new-array v13, v12, [F
 
     .line 771
-    fill-array-data v12, :array_0
+    fill-array-data v13, :array_0
 
-    invoke-static {v12}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
+    invoke-static {v13}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
-    move-result-object v12
+    move-result-object v13
 
     .line 772
-    new-instance v13, Lorg/telegram/ui/Cells/GroupCallUserCell$$ExternalSyntheticLambda0;
+    new-instance v15, Lorg/telegram/ui/Cells/GroupCallUserCell$$ExternalSyntheticLambda0;
 
-    invoke-direct {v13, v0, v11, v2}, Lorg/telegram/ui/Cells/GroupCallUserCell$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Cells/GroupCallUserCell;II)V
+    invoke-direct {v15, v0, v11, v2}, Lorg/telegram/ui/Cells/GroupCallUserCell$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Cells/GroupCallUserCell;II)V
 
-    invoke-virtual {v12, v13}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
+    invoke-virtual {v13, v15}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
     .line 778
-    invoke-virtual {v5, v12}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {v5, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    goto :goto_14
+    goto :goto_16
+
+    :cond_2e
+    const/4 v12, 0x2
 
     .line 780
-    :cond_2d
     iget-object v5, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     new-instance v11, Landroid/graphics/PorterDuffColorFilter;
 
     iput v2, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->lastMuteColor:I
 
-    sget-object v12, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
+    sget-object v13, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-direct {v11, v2, v12}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    invoke-direct {v11, v2, v13}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
     invoke-virtual {v5, v11}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
@@ -2151,10 +2157,10 @@
 
     invoke-static {v5, v2, v7}, Lorg/telegram/ui/ActionBar/Theme;->setSelectorDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
 
-    :cond_2e
+    :goto_15
     move-object v5, v10
 
-    :goto_14
+    :goto_16
     if-ne v4, v7, :cond_31
 
     .line 785
@@ -2167,29 +2173,29 @@
     .line 786
     div-int/lit8 v11, v2, 0x64
 
-    const/16 v12, 0x64
+    const/16 v13, 0x64
 
-    if-eq v11, v12, :cond_30
+    if-eq v11, v13, :cond_30
 
     .line 788
-    iget-object v13, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iget-object v15, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v13, v13, v7
+    aget-object v15, v15, v7
 
-    iget-object v14, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->speakingDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object v12, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->speakingDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v13, v14}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setLeftDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v15, v12}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setLeftDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 789
-    iget-object v13, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
+    iget-object v12, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    aget-object v13, v13, v7
+    aget-object v12, v12, v7
 
-    sget v14, Lorg/telegram/messenger/R$string;->SpeakingWithVolume:I
+    sget v15, Lorg/telegram/messenger/R$string;->SpeakingWithVolume:I
 
-    new-array v15, v7, [Ljava/lang/Object;
+    new-array v14, v7, [Ljava/lang/Object;
 
-    if-ge v2, v12, :cond_2f
+    if-ge v2, v13, :cond_2f
 
     move v11, v7
 
@@ -2198,17 +2204,17 @@
 
     move-result-object v2
 
-    aput-object v2, v15, v6
+    aput-object v2, v14, v6
 
     const-string v2, "SpeakingWithVolume"
 
-    invoke-static {v2, v14, v15}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v2, v15, v14}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
-    invoke-virtual {v13, v2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v12, v2}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    goto :goto_15
+    goto :goto_17
 
     .line 791
     :cond_30
@@ -2235,7 +2241,7 @@
 
     .line 795
     :cond_31
-    :goto_15
+    :goto_17
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Cells/GroupCallUserCell;->isSelfUser()Z
 
     move-result v2
@@ -2249,7 +2255,7 @@
     .line 796
     invoke-direct {v0, v2}, Lorg/telegram/ui/Cells/GroupCallUserCell;->applyStatus(I)V
 
-    goto/16 :goto_1d
+    goto/16 :goto_1f
 
     :cond_32
     if-eqz v1, :cond_33
@@ -2279,7 +2285,7 @@
     move v12, v6
 
     .line 806
-    :goto_16
+    :goto_18
     iget-object v13, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     array-length v14, v13
@@ -2297,7 +2303,7 @@
 
     move v2, v11
 
-    goto :goto_17
+    goto :goto_19
 
     :cond_35
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -2306,7 +2312,7 @@
 
     int-to-float v2, v2
 
-    :goto_17
+    :goto_19
     aput v2, v15, v6
 
     invoke-static {v13, v14, v15}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
@@ -2328,12 +2334,12 @@
 
     const/high16 v15, 0x3f800000    # 1.0f
 
-    goto :goto_18
+    goto :goto_1a
 
     :cond_36
     move v15, v11
 
-    :goto_18
+    :goto_1a
     aput v15, v14, v6
 
     invoke-static {v2, v13, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
@@ -2344,13 +2350,13 @@
 
     add-int/lit8 v12, v12, 0x1
 
-    goto :goto_16
+    goto :goto_18
 
     :cond_37
     move v2, v6
 
     .line 811
-    :goto_19
+    :goto_1b
     iget-object v12, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->statusTextView:[Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     array-length v13, v12
@@ -2368,26 +2374,26 @@
 
     move v15, v11
 
-    goto :goto_1b
+    goto :goto_1d
 
     :cond_38
     if-nez v2, :cond_39
 
     const/4 v15, 0x2
 
-    goto :goto_1a
+    goto :goto_1c
 
     :cond_39
     move v15, v9
 
-    :goto_1a
+    :goto_1c
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v15
 
     int-to-float v15, v15
 
-    :goto_1b
+    :goto_1d
     aput v15, v14, v6
 
     invoke-static {v12, v13, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
@@ -2409,12 +2415,12 @@
 
     const/high16 v15, 0x3f800000    # 1.0f
 
-    goto :goto_1c
+    goto :goto_1e
 
     :cond_3a
     move v15, v11
 
-    :goto_1c
+    :goto_1e
     aput v15, v14, v6
 
     invoke-static {v12, v13, v14}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
@@ -2425,7 +2431,7 @@
 
     add-int/lit8 v2, v2, 0x1
 
-    goto :goto_19
+    goto :goto_1b
 
     .line 817
     :cond_3b
@@ -2437,7 +2443,7 @@
 
     .line 821
     :cond_3d
-    :goto_1d
+    :goto_1f
     iget-object v2, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->avatarWavesDrawable:Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;
 
     invoke-virtual {v2, v4, v1}, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->setMuted(IZ)V
@@ -2524,7 +2530,7 @@
 
     invoke-virtual {v9, v10, v12}, Lorg/telegram/ui/Components/RLottieDrawable;->setOnFinishCallback(Ljava/lang/Runnable;I)V
 
-    goto :goto_1f
+    goto :goto_21
 
     .line 849
     :cond_41
@@ -2532,7 +2538,7 @@
 
     invoke-virtual {v9, v10, v6}, Lorg/telegram/ui/Components/RLottieDrawable;->setOnFinishCallback(Ljava/lang/Runnable;I)V
 
-    goto :goto_1f
+    goto :goto_21
 
     .line 852
     :cond_42
@@ -2561,7 +2567,7 @@
 
     move-result v5
 
-    goto :goto_1f
+    goto :goto_21
 
     .line 857
     :cond_43
@@ -2571,17 +2577,17 @@
 
     const/16 v9, 0x40
 
-    goto :goto_1e
+    goto :goto_20
 
     :cond_44
     const/16 v9, 0x2a
 
-    :goto_1e
+    :goto_20
     invoke-virtual {v5, v9}, Lorg/telegram/ui/Components/RLottieDrawable;->setCustomEndFrame(I)Z
 
     move-result v5
 
-    :goto_1f
+    :goto_21
     if-eqz v1, :cond_49
 
     if-eqz v5, :cond_48
@@ -2597,7 +2603,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(I)V
 
-    goto :goto_20
+    goto :goto_22
 
     :cond_45
     if-eqz v8, :cond_46
@@ -2614,7 +2620,7 @@
 
     invoke-virtual {v1, v6}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(I)V
 
-    goto :goto_20
+    goto :goto_22
 
     :cond_46
     if-eqz v8, :cond_47
@@ -2626,7 +2632,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/RLottieDrawable;->setCurrentFrame(I)V
 
-    goto :goto_20
+    goto :goto_22
 
     .line 870
     :cond_47
@@ -2636,12 +2642,12 @@
 
     .line 874
     :cond_48
-    :goto_20
+    :goto_22
     iget-object v1, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->muteButton:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
 
-    goto :goto_21
+    goto :goto_23
 
     .line 876
     :cond_49
@@ -2661,7 +2667,7 @@
     invoke-virtual {v1}, Landroid/widget/ImageView;->invalidate()V
 
     .line 879
-    :goto_21
+    :goto_23
     iput-boolean v8, v0, Lorg/telegram/ui/Cells/GroupCallUserCell;->lastMuted:Z
 
     .line 880
@@ -2700,8 +2706,6 @@
     invoke-virtual {v1, v6, v0}, Lorg/telegram/ui/Cells/GroupCallUserCell$AvatarWavesDrawable;->setShowWaves(ZLandroid/view/View;)V
 
     return-void
-
-    nop
 
     :array_0
     .array-data 4
@@ -4150,9 +4154,9 @@
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->rightDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
-    const-string p3, "premiumGradient1"
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient1:I
 
-    invoke-static {p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p3
 
@@ -4410,17 +4414,13 @@
     return-void
 .end method
 
-.method public setGrayIconColor(Ljava/lang/String;I)V
+.method public setGrayIconColor(II)V
     .locals 2
 
     .line 593
-    iget-object v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->grayIconColor:Ljava/lang/String;
+    iget v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->grayIconColor:I
 
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_1
+    if-eq v0, p1, :cond_1
 
     .line 594
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->currentIconGray:Z
@@ -4428,7 +4428,7 @@
     if-eqz v0, :cond_0
 
     .line 595
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -4436,7 +4436,7 @@
 
     .line 597
     :cond_0
-    iput-object p1, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->grayIconColor:Ljava/lang/String;
+    iput p1, p0, Lorg/telegram/ui/Cells/GroupCallUserCell;->grayIconColor:I
 
     .line 599
     :cond_1

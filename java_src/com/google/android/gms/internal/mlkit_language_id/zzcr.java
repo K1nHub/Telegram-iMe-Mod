@@ -8,7 +8,7 @@ import com.google.android.gms.internal.mlkit_language_id.zzy;
 import com.google.firebase.components.Component;
 import com.google.firebase.components.Dependency;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public class zzcr implements zzcv.zzb {
     private final ClearcutLogger zzc;
     private static final GmsLogger zzb = new GmsLogger("ClearcutTransport", "");
@@ -25,11 +25,11 @@ public class zzcr implements zzcv.zzb {
         StringBuilder sb = new StringBuilder(valueOf.length() + 30);
         sb.append("Logging FirebaseMlSdkLogEvent ");
         sb.append(valueOf);
-        gmsLogger.m785d("ClearcutTransport", sb.toString());
+        gmsLogger.m789d("ClearcutTransport", sb.toString());
         try {
             this.zzc.newEvent(zzadVar.zzf()).log();
         } catch (SecurityException e) {
-            zzb.m782e("ClearcutTransport", "Exception thrown from the logging side", e);
+            zzb.m786e("ClearcutTransport", "Exception thrown from the logging side", e);
         }
     }
 }

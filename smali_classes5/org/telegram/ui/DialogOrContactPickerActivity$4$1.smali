@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogOrContactPickerActivity$4;)V
     .locals 0
 
-    .line 437
+    .line 443
     iput-object p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$4$1;->this$1:Lorg/telegram/ui/DialogOrContactPickerActivity$4;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 5
 
-    .line 440
+    .line 446
     iget-object p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$4$1;->this$1:Lorg/telegram/ui/DialogOrContactPickerActivity$4;
 
     iget-object p1, p1, Lorg/telegram/ui/DialogOrContactPickerActivity$4;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
@@ -44,7 +44,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$2102(Lorg/telegram/ui/DialogOrContactPickerActivity;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 441
+    .line 447
     iget-object p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$4$1;->this$1:Lorg/telegram/ui/DialogOrContactPickerActivity$4;
 
     iget-object p1, p1, Lorg/telegram/ui/DialogOrContactPickerActivity$4;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
@@ -61,7 +61,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 442
+    .line 448
     iget-object p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$4$1;->this$1:Lorg/telegram/ui/DialogOrContactPickerActivity$4;
 
     iget-object p1, p1, Lorg/telegram/ui/DialogOrContactPickerActivity$4;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
@@ -76,7 +76,7 @@
 
     goto :goto_1
 
-    .line 444
+    .line 450
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$4$1;->this$1:Lorg/telegram/ui/DialogOrContactPickerActivity$4;
 
@@ -88,7 +88,7 @@
 
     aget-object p1, p1, v2
 
-    .line 445
+    .line 451
     iget-object v3, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$4$1;->this$1:Lorg/telegram/ui/DialogOrContactPickerActivity$4;
 
     iget-object v3, v3, Lorg/telegram/ui/DialogOrContactPickerActivity$4;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
@@ -109,7 +109,7 @@
 
     aput-object v4, v3, v2
 
-    .line 446
+    .line 452
     iget-object v3, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$4$1;->this$1:Lorg/telegram/ui/DialogOrContactPickerActivity$4;
 
     iget-object v3, v3, Lorg/telegram/ui/DialogOrContactPickerActivity$4;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
@@ -120,7 +120,7 @@
 
     aput-object p1, v3, v1
 
-    .line 447
+    .line 453
     iget-object p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$4$1;->this$1:Lorg/telegram/ui/DialogOrContactPickerActivity$4;
 
     iget-object p1, p1, Lorg/telegram/ui/DialogOrContactPickerActivity$4;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
@@ -133,7 +133,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 448
+    .line 454
     iget-object p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$4$1;->this$1:Lorg/telegram/ui/DialogOrContactPickerActivity$4;
 
     iget-object p1, p1, Lorg/telegram/ui/DialogOrContactPickerActivity$4;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
@@ -172,7 +172,7 @@
     :goto_0
     invoke-static {p1, v0}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$502(Lorg/telegram/ui/DialogOrContactPickerActivity;Z)Z
 
-    .line 449
+    .line 455
     iget-object p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$4$1;->this$1:Lorg/telegram/ui/DialogOrContactPickerActivity$4;
 
     iget-object p1, p1, Lorg/telegram/ui/DialogOrContactPickerActivity$4;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
@@ -199,7 +199,7 @@
 
     invoke-virtual {p1, v0, v3}, Lorg/telegram/ui/Components/ScrollSlidingTextTabStrip;->selectTabWithId(IF)V
 
-    .line 451
+    .line 457
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$4$1;->this$1:Lorg/telegram/ui/DialogOrContactPickerActivity$4;
 
@@ -207,17 +207,17 @@
 
     invoke-static {p1, v2}, Lorg/telegram/ui/DialogOrContactPickerActivity;->access$1902(Lorg/telegram/ui/DialogOrContactPickerActivity;Z)Z
 
-    .line 452
+    .line 458
     iget-object p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$4$1;->this$1:Lorg/telegram/ui/DialogOrContactPickerActivity$4;
 
     invoke-static {p1, v2}, Lorg/telegram/ui/DialogOrContactPickerActivity$4;->access$2802(Lorg/telegram/ui/DialogOrContactPickerActivity$4;Z)Z
 
-    .line 453
+    .line 459
     iget-object p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$4$1;->this$1:Lorg/telegram/ui/DialogOrContactPickerActivity$4;
 
     invoke-static {p1, v2}, Lorg/telegram/ui/DialogOrContactPickerActivity$4;->access$2902(Lorg/telegram/ui/DialogOrContactPickerActivity$4;Z)Z
 
-    .line 454
+    .line 460
     iget-object p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$4$1;->this$1:Lorg/telegram/ui/DialogOrContactPickerActivity$4;
 
     iget-object p1, p1, Lorg/telegram/ui/DialogOrContactPickerActivity$4;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;
@@ -228,7 +228,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setEnabled(Z)V
 
-    .line 455
+    .line 461
     iget-object p1, p0, Lorg/telegram/ui/DialogOrContactPickerActivity$4$1;->this$1:Lorg/telegram/ui/DialogOrContactPickerActivity$4;
 
     iget-object p1, p1, Lorg/telegram/ui/DialogOrContactPickerActivity$4;->this$0:Lorg/telegram/ui/DialogOrContactPickerActivity;

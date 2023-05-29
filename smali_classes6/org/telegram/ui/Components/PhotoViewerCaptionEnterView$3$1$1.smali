@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1;Landroid/content/Context;)V
     .locals 0
 
-    .line 665
+    .line 681
     iput-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1$1;->this$2:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1;
 
     invoke-direct {p0, p2}, Landroid/app/Dialog;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method public dismiss()V
     .locals 2
 
-    .line 668
+    .line 684
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1$1;->this$2:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1;->getParentActivity()Landroid/app/Activity;
@@ -60,7 +60,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 669
+    .line 685
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1$1;->this$2:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1;->getParentActivity()Landroid/app/Activity;
@@ -75,7 +75,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1;->access$1502(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1;Lorg/telegram/ui/ActionBar/INavigationLayout;)Lorg/telegram/ui/ActionBar/INavigationLayout;
 
-    .line 670
+    .line 686
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1$1;->this$2:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1;->access$1600(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1;)Lorg/telegram/ui/ActionBar/INavigationLayout;
@@ -112,7 +112,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 671
+    .line 687
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1$1;->this$2:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1;->access$1900(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1;)Lorg/telegram/ui/ActionBar/INavigationLayout;
@@ -127,12 +127,12 @@
 
     move-result-object v0
 
-    .line 672
+    .line 688
     instance-of v1, v0, Lorg/telegram/ui/Components/ChatAttachAlert;
 
     if-eqz v1, :cond_0
 
-    .line 673
+    .line 689
     check-cast v0, Lorg/telegram/ui/Components/ChatAttachAlert;
 
     const/4 v1, 0x1
@@ -141,11 +141,11 @@
 
     goto :goto_0
 
-    .line 675
+    .line 691
     :cond_0
     invoke-virtual {v0}, Landroid/app/Dialog;->dismiss()V
 
-    .line 679
+    .line 695
     :cond_1
     :goto_0
     invoke-static {}, Lorg/telegram/ui/PhotoViewer;->getInstance()Lorg/telegram/ui/PhotoViewer;

@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$6\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n44#2:434\n129#3,5:435\n129#3,5:440\n129#3,5:445\n129#3,5:450\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$6\n*L\n143#1:434\n145#1:435,5\n146#1:440,5\n147#1:445,5\n148#1:450,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$6\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,432:1\n44#2:433\n129#3,5:434\n129#3,5:439\n129#3,5:444\n129#3,5:449\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$6\n*L\n144#1:433\n146#1:434,5\n147#1:439,5\n148#1:444,5\n149#1:449,5\n*E\n"
 .end annotation
 
 
@@ -102,7 +102,7 @@
 
     move-result-object p2
 
-    .line 145
+    .line 146
     move-object v2, p2
 
     check-cast v2, Lcom/iMe/manager/TelegramApi;
@@ -118,7 +118,7 @@
 
     move-result-object p2
 
-    .line 145
+    .line 146
     move-object v4, p2
 
     check-cast v4, Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -134,7 +134,7 @@
 
     move-result-object p2
 
-    .line 146
+    .line 147
     move-object v5, p2
 
     check-cast v5, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor;
@@ -150,7 +150,7 @@
 
     move-result-object p2
 
-    .line 146
+    .line 147
     move-object v7, p2
 
     check-cast v7, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
@@ -166,7 +166,7 @@
 
     move-result-object p2
 
-    .line 146
+    .line 147
     move-object v8, p2
 
     check-cast v8, Lcom/iMe/storage/domain/interactor/google/GoogleServicesInteractor;
@@ -182,7 +182,7 @@
 
     move-result-object p2
 
-    .line 147
+    .line 148
     move-object v9, p2
 
     check-cast v9, Lcom/iMe/manager/crypto/pay/BinancePayProcessManager;
@@ -198,7 +198,7 @@
 
     move-result-object p2
 
-    .line 147
+    .line 148
     move-object v10, p2
 
     check-cast v10, Lcom/iMe/storage/domain/gateway/TelegramGateway;
@@ -214,7 +214,7 @@
 
     move-result-object p2
 
-    .line 147
+    .line 148
     move-object v11, p2
 
     check-cast v11, Lcom/iMe/manager/multireply/MultiReplyInteractor;
@@ -230,7 +230,7 @@
 
     move-result-object p2
 
-    .line 148
+    .line 149
     move-object v12, p2
 
     check-cast v12, Lcom/iMe/storage/domain/interactor/translate/TranslationInteractor;
@@ -246,7 +246,7 @@
 
     move-result-object p2
 
-    .line 148
+    .line 149
     move-object v6, p2
 
     check-cast v6, Lcom/iMe/storage/domain/interactor/crypto/donations/DonationsInteractor;
@@ -262,12 +262,12 @@
 
     move-result-object p1
 
-    .line 148
+    .line 149
     move-object v3, p1
 
     check-cast v3, Lcom/iMe/storage/domain/utils/rx/RxEventBus;
 
-    .line 144
+    .line 145
     new-instance p1, Lcom/iMe/ui/chat/ChatPresenter;
 
     move-object v0, p1
@@ -280,7 +280,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 143
+    .line 144
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

@@ -85,16 +85,16 @@
 
     if-eqz p3, :cond_0
 
-    const-string v3, "dialogTextBlack"
+    .line 72
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
     goto :goto_0
 
     :cond_0
-    const-string v3, "windowBackgroundWhiteBlackText"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    .line 72
     :goto_0
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -216,16 +216,16 @@
 
     if-eqz p3, :cond_5
 
-    const-string v3, "dialogIcon"
+    .line 82
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogIcon:I
 
     goto :goto_5
 
     :cond_5
-    const-string v3, "windowBackgroundWhiteGrayText2"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
-    .line 82
     :goto_5
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -370,13 +370,13 @@
     .line 96
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextCheckbox2Cell;->checkbox:Lorg/telegram/ui/Components/CheckBox2;
 
-    const-string v2, "radioBackgroundChecked"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_radioBackgroundChecked:I
 
-    const-string v4, "checkboxDisabled"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxDisabled:I
 
-    const-string v7, "checkboxCheck"
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxCheck:I
 
-    invoke-virtual {v1, v2, v4, v7}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v1, v2, v4, v7}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
     .line 97
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextCheckbox2Cell;->checkbox:Lorg/telegram/ui/Components/CheckBox2;

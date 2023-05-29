@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$10\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,77:1\n129#2,5:78\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$10\n*L\n48#1:78,5\n*E\n"
+    value = "SMAP\nInteractorModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$10\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,81:1\n129#2,5:82\n*S KotlinDebug\n*F\n+ 1 InteractorModule.kt\ncom/iMe/storage/domain/di/module/InteractorModuleKt$interactorModule$1$10\n*L\n52#1:82,5\n*E\n"
 .end annotation
 
 
@@ -72,7 +72,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 48
+    .line 52
     new-instance p2, Lcom/iMe/storage/domain/interactor/twitter/TwitterInteractor;
 
     .line 133
@@ -90,7 +90,7 @@
 
     check-cast v0, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    const-class v2, Lcom/iMe/storage/domain/repository/twitter/TwitterRepository;
+    const-class v2, Lcom/iMe/storage/domain/repository/socialMedia/TwitterRepository;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -100,7 +100,7 @@
 
     move-result-object v2
 
-    check-cast v2, Lcom/iMe/storage/domain/repository/twitter/TwitterRepository;
+    check-cast v2, Lcom/iMe/storage/domain/repository/socialMedia/TwitterRepository;
 
     const-class v3, Lcom/iMe/storage/domain/storage/TwitterPreferenceHelper;
 
@@ -114,8 +114,8 @@
 
     check-cast p1, Lcom/iMe/storage/domain/storage/TwitterPreferenceHelper;
 
-    .line 48
-    invoke-direct {p2, v0, v2, p1}, Lcom/iMe/storage/domain/interactor/twitter/TwitterInteractor;-><init>(Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/storage/domain/repository/twitter/TwitterRepository;Lcom/iMe/storage/domain/storage/TwitterPreferenceHelper;)V
+    .line 52
+    invoke-direct {p2, v0, v2, p1}, Lcom/iMe/storage/domain/interactor/twitter/TwitterInteractor;-><init>(Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/storage/domain/repository/socialMedia/TwitterRepository;Lcom/iMe/storage/domain/storage/TwitterPreferenceHelper;)V
 
     return-object p2
 .end method
@@ -123,7 +123,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 48
+    .line 52
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

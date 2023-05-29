@@ -144,7 +144,7 @@
 
     if-ge v1, v2, :cond_0
 
-    const-string v2, "shortcut_widget"
+    const-string/jumbo v2, "shortcut_widget"
 
     .line 35
     invoke-virtual {p1, v2, v0}, Landroid/content/Context;->getSharedPreferences(Ljava/lang/String;I)Landroid/content/SharedPreferences;

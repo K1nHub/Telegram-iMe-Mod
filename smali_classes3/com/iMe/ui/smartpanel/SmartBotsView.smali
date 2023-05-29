@@ -335,9 +335,9 @@
     .line 225
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->layoutBottom:Landroid/widget/FrameLayout;
 
-    const-string v2, "chat_emojiPanelBackground"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelBackground:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -350,15 +350,15 @@
 
     sget v3, Lorg/telegram/messenger/R$drawable;->fork_ic_bots_responses:I
 
-    const-string v4, "chat_emojiBottomPanelIcon"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiBottomPanelIcon:I
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
-    const-string v6, "chat_emojiPanelIconSelected"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelIconSelected:I
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -367,7 +367,7 @@
     move-result-object v1
 
     .line 227
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -376,7 +376,7 @@
     invoke-static {v1, v3, v5}, Lorg/telegram/ui/ActionBar/Theme;->setEmojiVectorDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
 
     .line 228
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -396,11 +396,11 @@
 
     sget v3, Lorg/telegram/messenger/R$drawable;->smiles_tab_gif:I
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 
@@ -409,14 +409,14 @@
     move-result-object v1
 
     .line 231
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
     invoke-static {v1, v3, v5}, Lorg/telegram/ui/ActionBar/Theme;->setEmojiDrawableColor(Landroid/graphics/drawable/Drawable;IZ)V
 
     .line 232
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -442,9 +442,9 @@
 
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v4, "chat_emojiPanelBackspace"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelBackspace:I
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
@@ -459,7 +459,7 @@
 
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -541,16 +541,16 @@
     .line 259
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->tabs:Lcom/google/android/material/tabs/TabLayout;
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
     invoke-virtual {v1, v2}, Landroid/widget/HorizontalScrollView;->setBackgroundColor(I)V
 
-    const-string v1, "windowBackgroundGray"
-
     .line 260
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -559,9 +559,9 @@
     .line 261
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->divider1:Landroid/view/View;
 
-    const-string v2, "divider"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -570,7 +570,7 @@
     .line 262
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkPanelViewBinding;->divider2:Landroid/view/View;
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -822,9 +822,9 @@
 
     sget v3, Lorg/telegram/messenger/R$drawable;->ic_bots_recent:I
 
-    const-string v4, "chats_actionBackground"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -1027,7 +1027,7 @@
 
     const/4 v13, 0x0
 
-    invoke-static/range {v7 .. v13}, Lcom/iMe/ui/smartpanel/extension/ImageViewExtKt;->loadFrom$default(Landroid/widget/ImageView;Ljava/lang/String;Landroid/content/Context;Landroid/graphics/drawable/Drawable;ZILjava/lang/Object;)V
+    invoke-static/range {v7 .. v13}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->loadFrom$default(Landroid/widget/ImageView;Ljava/lang/String;Landroid/content/Context;Landroid/graphics/drawable/Drawable;ZILjava/lang/Object;)V
 
     goto :goto_2
 
@@ -1141,9 +1141,9 @@
 
     move-result v3
 
-    const-string v6, "chats_actionBackground"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 

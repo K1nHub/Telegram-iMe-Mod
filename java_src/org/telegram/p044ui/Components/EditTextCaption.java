@@ -28,7 +28,7 @@ import androidx.core.view.accessibility.AccessibilityNodeInfoCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -162,23 +162,23 @@ public class EditTextCaption extends EditTextBoldCursor {
     public void makeSelectedUrl() {
         final int selectionEnd;
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext(), this.resourcesProvider);
-        builder.setTitle(LocaleController.getString("CreateLink", C3242R.string.CreateLink));
+        builder.setTitle(LocaleController.getString("CreateLink", C3290R.string.CreateLink));
         final EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(this, getContext()) { // from class: org.telegram.ui.Components.EditTextCaption.2
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // org.telegram.p044ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
             public void onMeasure(int i, int i2) {
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(64), 1073741824));
+                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(64), 1073741824));
             }
         };
         editTextBoldCursor.setTextSize(1, 18.0f);
         editTextBoldCursor.setText("http://");
-        editTextBoldCursor.setTextColor(getThemedColor("dialogTextBlack"));
-        editTextBoldCursor.setHintText(LocaleController.getString("URL", C3242R.string.URL));
-        editTextBoldCursor.setHeaderHintColor(getThemedColor("windowBackgroundWhiteBlueHeader"));
+        editTextBoldCursor.setTextColor(getThemedColor(Theme.key_dialogTextBlack));
+        editTextBoldCursor.setHintText(LocaleController.getString("URL", C3290R.string.URL));
+        editTextBoldCursor.setHeaderHintColor(getThemedColor(Theme.key_windowBackgroundWhiteBlueHeader));
         editTextBoldCursor.setSingleLine(true);
         editTextBoldCursor.setFocusable(true);
         editTextBoldCursor.setTransformHintToHeader(true);
-        editTextBoldCursor.setLineColors(getThemedColor("windowBackgroundWhiteInputField"), getThemedColor("windowBackgroundWhiteInputFieldActivated"), getThemedColor("windowBackgroundWhiteRedText3"));
+        editTextBoldCursor.setLineColors(getThemedColor(Theme.key_windowBackgroundWhiteInputField), getThemedColor(Theme.key_windowBackgroundWhiteInputFieldActivated), getThemedColor(Theme.key_text_RedRegular));
         editTextBoldCursor.setImeOptions(6);
         editTextBoldCursor.setBackgroundDrawable(null);
         editTextBoldCursor.requestFocus();
@@ -192,13 +192,13 @@ public class EditTextCaption extends EditTextBoldCursor {
             i = getSelectionStart();
             selectionEnd = getSelectionEnd();
         }
-        builder.setPositiveButton(LocaleController.getString("OK", C3242R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda0
+        builder.setPositiveButton(LocaleController.getString("OK", C3290R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i2) {
                 EditTextCaption.this.lambda$makeSelectedUrl$0(i, selectionEnd, editTextBoldCursor, dialogInterface, i2);
             }
         });
-        builder.setNegativeButton(LocaleController.getString("Cancel", C3242R.string.Cancel), null);
+        builder.setNegativeButton(LocaleController.getString("Cancel", C3290R.string.Cancel), null);
         builder.show().setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.Components.EditTextCaption$$ExternalSyntheticLambda1
             @Override // android.content.DialogInterface.OnShowListener
             public final void onShow(DialogInterface dialogInterface) {
@@ -210,10 +210,10 @@ public class EditTextCaption extends EditTextBoldCursor {
             if (marginLayoutParams instanceof FrameLayout.LayoutParams) {
                 ((FrameLayout.LayoutParams) marginLayoutParams).gravity = 1;
             }
-            int m50dp = AndroidUtilities.m50dp(24);
-            marginLayoutParams.leftMargin = m50dp;
-            marginLayoutParams.rightMargin = m50dp;
-            marginLayoutParams.height = AndroidUtilities.m50dp(36);
+            int m54dp = AndroidUtilities.m54dp(24);
+            marginLayoutParams.leftMargin = m54dp;
+            marginLayoutParams.rightMargin = m54dp;
+            marginLayoutParams.height = AndroidUtilities.m54dp(36);
             editTextBoldCursor.setLayoutParams(marginLayoutParams);
         }
         editTextBoldCursor.setSelection(0, editTextBoldCursor.getText().length());
@@ -286,7 +286,7 @@ public class EditTextCaption extends EditTextBoldCursor {
             try {
                 super.onWindowFocusChanged(z);
             } catch (Throwable th) {
-                FileLog.m45e(th);
+                FileLog.m49e(th);
             }
         }
     }
@@ -360,28 +360,28 @@ public class EditTextCaption extends EditTextBoldCursor {
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean performMenuAction(int i) {
-        if (i == C3242R.C3245id.menu_regular) {
+        if (i == C3290R.C3293id.menu_regular) {
             makeSelectedRegular();
             return true;
-        } else if (i == C3242R.C3245id.menu_bold) {
+        } else if (i == C3290R.C3293id.menu_bold) {
             makeSelectedBold();
             return true;
-        } else if (i == C3242R.C3245id.menu_italic) {
+        } else if (i == C3290R.C3293id.menu_italic) {
             makeSelectedItalic();
             return true;
-        } else if (i == C3242R.C3245id.menu_mono) {
+        } else if (i == C3290R.C3293id.menu_mono) {
             makeSelectedMono();
             return true;
-        } else if (i == C3242R.C3245id.menu_link) {
+        } else if (i == C3290R.C3293id.menu_link) {
             makeSelectedUrl();
             return true;
-        } else if (i == C3242R.C3245id.menu_strike) {
+        } else if (i == C3290R.C3293id.menu_strike) {
             makeSelectedStrike();
             return true;
-        } else if (i == C3242R.C3245id.menu_underline) {
+        } else if (i == C3290R.C3293id.menu_underline) {
             makeSelectedUnderline();
             return true;
-        } else if (i == C3242R.C3245id.menu_spoiler) {
+        } else if (i == C3290R.C3293id.menu_spoiler) {
             makeSelectedSpoiler();
             return true;
         } else {
@@ -411,8 +411,8 @@ public class EditTextCaption extends EditTextBoldCursor {
             }
             this.isInitLineCount = false;
         } catch (Exception e) {
-            setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m50dp(51));
-            FileLog.m45e(e);
+            setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m54dp(51));
+            FileLog.m49e(e);
         }
         this.captionLayout = null;
         String str = this.caption;
@@ -437,9 +437,9 @@ public class EditTextCaption extends EditTextBoldCursor {
             if (staticLayout.getLineCount() > 0) {
                 this.xOffset = (int) (this.xOffset + (-this.captionLayout.getLineLeft(0)));
             }
-            this.yOffset = ((getMeasuredHeight() - this.captionLayout.getLineBottom(0)) / 2) + AndroidUtilities.m51dp(0.5f);
+            this.yOffset = ((getMeasuredHeight() - this.captionLayout.getLineBottom(0)) / 2) + AndroidUtilities.m55dp(0.5f);
         } catch (Exception e2) {
-            FileLog.m45e(e2);
+            FileLog.m49e(e2);
         }
     }
 
@@ -481,7 +481,7 @@ public class EditTextCaption extends EditTextBoldCursor {
                 paint.setColor(color);
             }
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
         canvas.restore();
     }
@@ -508,14 +508,14 @@ public class EditTextCaption extends EditTextBoldCursor {
             i++;
         }
         if (hasSelection()) {
-            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3242R.C3245id.menu_spoiler, LocaleController.getString("Spoiler", C3242R.string.Spoiler)));
-            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3242R.C3245id.menu_bold, LocaleController.getString("Bold", C3242R.string.Bold)));
-            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3242R.C3245id.menu_italic, LocaleController.getString("Italic", C3242R.string.Italic)));
-            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3242R.C3245id.menu_mono, LocaleController.getString("Mono", C3242R.string.Mono)));
-            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3242R.C3245id.menu_strike, LocaleController.getString("Strike", C3242R.string.Strike)));
-            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3242R.C3245id.menu_underline, LocaleController.getString("Underline", C3242R.string.Underline)));
-            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3242R.C3245id.menu_link, LocaleController.getString("CreateLink", C3242R.string.CreateLink)));
-            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3242R.C3245id.menu_regular, LocaleController.getString("Regular", C3242R.string.Regular)));
+            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3290R.C3293id.menu_spoiler, LocaleController.getString("Spoiler", C3290R.string.Spoiler)));
+            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3290R.C3293id.menu_bold, LocaleController.getString("Bold", C3290R.string.Bold)));
+            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3290R.C3293id.menu_italic, LocaleController.getString("Italic", C3290R.string.Italic)));
+            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3290R.C3293id.menu_mono, LocaleController.getString("Mono", C3290R.string.Mono)));
+            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3290R.C3293id.menu_strike, LocaleController.getString("Strike", C3290R.string.Strike)));
+            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3290R.C3293id.menu_underline, LocaleController.getString("Underline", C3290R.string.Underline)));
+            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3290R.C3293id.menu_link, LocaleController.getString("CreateLink", C3290R.string.CreateLink)));
+            wrap.addAction(new AccessibilityNodeInfoCompat.AccessibilityActionCompat(C3290R.C3293id.menu_regular, LocaleController.getString("Regular", C3290R.string.Regular)));
         }
     }
 
@@ -524,10 +524,8 @@ public class EditTextCaption extends EditTextBoldCursor {
         return performMenuAction(i) || super.performAccessibilityAction(i, bundle);
     }
 
-    private int getThemedColor(String str) {
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-        return color != null ? color.intValue() : Theme.getColor(str);
+    private int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 
     @Override // android.widget.TextView
@@ -537,7 +535,7 @@ public class EditTextCaption extends EditTextBoldCursor {
             if (primaryClip != null && primaryClip.getItemCount() == 1 && primaryClip.getDescription().hasMimeType("text/html")) {
                 try {
                     Spannable fromHTML = CopyUtilities.fromHTML(primaryClip.getItemAt(0).getHtmlText());
-                    Emoji.replaceEmoji((CharSequence) fromHTML, getPaint().getFontMetricsInt(), AndroidUtilities.m50dp(20), false, (int[]) null);
+                    Emoji.replaceEmoji((CharSequence) fromHTML, getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(20), false, (int[]) null);
                     AnimatedEmojiSpan[] animatedEmojiSpanArr = (AnimatedEmojiSpan[]) fromHTML.getSpans(0, fromHTML.length(), AnimatedEmojiSpan.class);
                     if (animatedEmojiSpanArr != null) {
                         for (AnimatedEmojiSpan animatedEmojiSpan : animatedEmojiSpanArr) {
@@ -549,7 +547,7 @@ public class EditTextCaption extends EditTextBoldCursor {
                     setSelection(fromHTML.length() + max, max + fromHTML.length());
                     return true;
                 } catch (Exception e) {
-                    FileLog.m45e(e);
+                    FileLog.m49e(e);
                 }
             }
         } else {

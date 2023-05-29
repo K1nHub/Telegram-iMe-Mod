@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;Ljava/util/ArrayList;)V
     .locals 0
 
-    .line 8137
+    .line 7858
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter$2;->val$prevRowHashCodes:Ljava/util/ArrayList;
@@ -47,7 +47,7 @@
 .method public areItemsTheSame(II)Z
     .locals 1
 
-    .line 8150
+    .line 7871
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter$2;->val$prevRowHashCodes:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -58,7 +58,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->access$19800(Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->access$19000(Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -76,10 +76,10 @@
 .method public getNewListSize()I
     .locals 1
 
-    .line 8145
+    .line 7866
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->access$19800(Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;->access$19000(Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -93,7 +93,7 @@
 .method public getOldListSize()I
     .locals 1
 
-    .line 8140
+    .line 7861
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$EmojiGridAdapter$2;->val$prevRowHashCodes:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I

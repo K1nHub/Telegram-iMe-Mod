@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 4444
+    .line 4514
     invoke-direct {p0, p2}, Lorg/telegram/ui/ProfileActivity$AvatarImageView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,10 +29,10 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 0
 
-    .line 4461
+    .line 4531
     invoke-super {p0, p1}, Landroid/view/View;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 4462
+    .line 4532
     iget-object p1, p0, Lorg/telegram/ui/Components/BackupImageView;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     if-eqz p1, :cond_0
@@ -43,7 +43,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 4463
+    .line 4533
     iget-object p1, p0, Lorg/telegram/ui/Components/BackupImageView;->animatedEmojiDrawable:Lorg/telegram/ui/Components/AnimatedEmojiDrawable;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
@@ -59,10 +59,10 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 4
 
-    .line 4447
+    .line 4517
     invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 4448
+    .line 4518
     invoke-virtual {p0}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v0
@@ -73,7 +73,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 4449
+    .line 4519
     sget v0, Lorg/telegram/messenger/R$string;->AccDescrProfilePicture:I
 
     const-string v1, "AccDescrProfilePicture"
@@ -84,14 +84,14 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
 
-    .line 4450
+    .line 4520
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
 
     if-lt v0, v1, :cond_1
 
-    .line 4451
+    .line 4521
     new-instance v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     const/16 v1, 0x10
@@ -108,7 +108,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->addAction(Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;)V
 
-    .line 4452
+    .line 4522
     new-instance v0, Landroid/view/accessibility/AccessibilityNodeInfo$AccessibilityAction;
 
     const/16 v1, 0x20
@@ -130,7 +130,7 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 4455
+    .line 4525
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setVisibleToUser(Z)V
 
     :cond_1

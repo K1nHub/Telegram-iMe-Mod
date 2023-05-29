@@ -3,7 +3,7 @@
 .source "ChatActivity.java"
 
 # interfaces
-.implements Lorg/telegram/messenger/NotificationCenter$PostponeNotificationCallback;
+.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 2822
+    .line 2687
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$10;->this$0:Lorg/telegram/ui/ChatActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -35,48 +35,39 @@
 
 
 # virtual methods
-.method public needPostpone(II[Ljava/lang/Object;)Z
-    .locals 3
+.method public run()V
+    .locals 1
 
-    .line 2825
-    sget p2, Lorg/telegram/messenger/NotificationCenter;->didReceiveNewMessages:I
+    .line 2690
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$10;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    const/4 v0, 0x0
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$2100(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
 
-    if-ne p1, p2, :cond_0
+    move-result-object v0
 
-    .line 2826
-    aget-object p1, p3, v0
+    if-eqz v0, :cond_0
 
-    check-cast p1, Ljava/lang/Long;
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$10;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$2100(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
 
-    move-result-wide p1
+    move-result-object v0
 
-    .line 2827
-    iget-object p3, p0, Lorg/telegram/ui/ChatActivity$10;->this$0:Lorg/telegram/ui/ChatActivity;
+    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->isRunning()Z
 
-    invoke-static {p3}, Lorg/telegram/ui/ChatActivity;->access$2100(Lorg/telegram/ui/ChatActivity;)Z
+    move-result v0
 
-    move-result p3
+    if-nez v0, :cond_0
 
-    if-eqz p3, :cond_0
+    .line 2691
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$10;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    iget-object p3, p0, Lorg/telegram/ui/ChatActivity$10;->this$0:Lorg/telegram/ui/ChatActivity;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$2100(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
 
-    invoke-static {p3}, Lorg/telegram/ui/ChatActivity;->access$2200(Lorg/telegram/ui/ChatActivity;)J
+    move-result-object v0
 
-    move-result-wide v1
-
-    cmp-long p1, p1, v1
-
-    if-nez p1, :cond_0
-
-    const/4 p1, 0x1
-
-    return p1
+    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
     :cond_0
-    return v0
+    return-void
 .end method

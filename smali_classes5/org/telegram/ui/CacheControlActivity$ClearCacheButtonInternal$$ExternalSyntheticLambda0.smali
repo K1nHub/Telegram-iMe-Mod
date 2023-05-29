@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final onClick(Landroid/view/View;)V
+.method public final onClick(Landroid/content/DialogInterface;I)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;->$r8$lambda$inc9wJiv4cBWeI-HU5NqytFztw4(Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;Landroid/view/View;)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;->$r8$lambda$y1iQi6YyWEBu60u6lSQfUDwGcLU(Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

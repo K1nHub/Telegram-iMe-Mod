@@ -177,11 +177,11 @@
     .line 75
     iget-object v0, v1, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
 
-    const v2, 0x3e4ccccd    # 0.2f
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_emptyListPlaceholder:I
 
-    const-string v3, "emptyListPlaceholder"
+    const v3, 0x3e4ccccd    # 0.2f
 
-    invoke-static {v0, v3, v2}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Ljava/util/ArrayList;Ljava/lang/String;F)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+    invoke-static {v0, v2, v3}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Ljava/util/ArrayList;IF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     move-result-object v0
 

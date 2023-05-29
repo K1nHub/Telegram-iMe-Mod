@@ -67,26 +67,26 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;Landroid/content/Context;)V
     .locals 0
 
-    .line 1113
+    .line 1114
     iput-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchAdapter;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
-
-    .line 1108
-    new-instance p1, Ljava/util/ArrayList;
-
-    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchAdapter;->searchResult:Ljava/util/ArrayList;
 
     .line 1109
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
+    iput-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchAdapter;->searchResult:Ljava/util/ArrayList;
+
+    .line 1110
+    new-instance p1, Ljava/util/ArrayList;
+
+    invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
+
     iput-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchAdapter;->searchNames:Ljava/util/ArrayList;
 
-    .line 1114
+    .line 1115
     iput-object p2, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchAdapter;->context:Landroid/content/Context;
 
     return-void
@@ -287,7 +287,7 @@
 .method private searchDialogsInternal(Ljava/lang/String;I)V
     .locals 12
 
-    .line 1158
+    .line 1159
     :try_start_0
     invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
@@ -297,7 +297,7 @@
 
     move-result-object p1
 
-    .line 1159
+    .line 1160
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -306,10 +306,10 @@
 
     const/4 p1, -0x1
 
-    .line 1160
+    .line 1161
     iput p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchAdapter;->lastSearchId:I
 
-    .line 1161
+    .line 1162
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -324,7 +324,7 @@
 
     return-void
 
-    .line 1164
+    .line 1165
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
@@ -334,7 +334,7 @@
 
     move-result-object v0
 
-    .line 1165
+    .line 1166
     invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v1
@@ -367,29 +367,29 @@
     :goto_0
     add-int/2addr v3, v2
 
-    .line 1168
+    .line 1169
     new-array v4, v3, [Ljava/lang/String;
 
-    .line 1169
+    .line 1170
     aput-object p1, v4, v1
 
     if-eqz v0, :cond_4
 
-    .line 1171
+    .line 1172
     aput-object v0, v4, v2
 
-    .line 1174
+    .line 1175
     :cond_4
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1175
+    .line 1176
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1176
+    .line 1177
     iget-object v2, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchAdapter;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;->access$500(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;)Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ListAdapter;
@@ -409,7 +409,7 @@
     :goto_1
     if-ge v5, v2, :cond_7
 
-    .line 1177
+    .line 1178
     iget-object v6, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$SearchAdapter;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     invoke-static {v6}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;->access$500(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;)Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$ListAdapter;
@@ -426,18 +426,22 @@
 
     check-cast v6, Ljava/util/ArrayList;
 
-    .line 1178
+    .line 1179
     invoke-virtual {v6, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v7
 
     check-cast v7, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    invoke-virtual {v7}, Lorg/telegram/ui/ActionBar/ThemeDescription;->getCurrentKey()Ljava/lang/String;
+    invoke-virtual {v7}, Lorg/telegram/ui/ActionBar/ThemeDescription;->getCurrentKey()I
+
+    move-result v7
+
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/ThemeColors;->getStringName(I)Ljava/lang/String;
 
     move-result-object v7
 
-    .line 1179
+    .line 1180
     invoke-virtual {v7}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v8
@@ -528,7 +532,7 @@
 .method public generateSearchName(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/CharSequence;
     .locals 8
 
-    .line 1118
+    .line 1119
     invoke-static {p1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v0
@@ -539,18 +543,18 @@
 
     return-object p1
 
-    .line 1121
+    .line 1122
     :cond_0
     new-instance v0, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v0}, Landroid/text/SpannableStringBuilder;-><init>()V
 
-    .line 1122
+    .line 1123
     invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 1123
+    .line 1124
     invoke-virtual {p1}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v1
@@ -559,7 +563,7 @@
 
     move v3, v2
 
-    .line 1127
+    .line 1128
     :goto_0
     invoke-virtual {v1, p2, v3}, Ljava/lang/String;->indexOf(Ljava/lang/String;I)I
 
@@ -569,7 +573,7 @@
 
     if-eq v4, v5, :cond_4
 
-    .line 1128
+    .line 1129
     invoke-virtual {p2}, Ljava/lang/String;->length()I
 
     move-result v5
@@ -582,7 +586,7 @@
 
     if-eq v3, v6, :cond_1
 
-    .line 1131
+    .line 1132
     invoke-virtual {p1, v3, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v3
@@ -596,14 +600,14 @@
 
     if-eqz v4, :cond_2
 
-    .line 1133
+    .line 1134
     invoke-virtual {p1, v2, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v0, v3}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 1136
+    .line 1137
     :cond_2
     :goto_1
     invoke-virtual {p1}, Ljava/lang/String;->length()I
@@ -620,31 +624,31 @@
 
     const-string v4, " "
 
-    .line 1137
+    .line 1138
     invoke-virtual {v3, v4}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
     move-result v6
 
     if-eqz v6, :cond_3
 
-    .line 1138
+    .line 1139
     invoke-virtual {v0, v4}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 1140
+    .line 1141
     :cond_3
     invoke-virtual {v3}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v3
 
-    .line 1142
+    .line 1143
     invoke-virtual {v0}, Landroid/text/SpannableStringBuilder;->length()I
 
     move-result v4
 
-    .line 1143
+    .line 1144
     invoke-virtual {v0, v3}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 1144
+    .line 1145
     new-instance v6, Landroid/text/style/ForegroundColorSpan;
 
     const v7, -0xb27c4d
@@ -668,14 +672,14 @@
     :cond_4
     if-eq v3, v5, :cond_5
 
-    .line 1149
+    .line 1150
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result p2
 
     if-ge v3, p2, :cond_5
 
-    .line 1150
+    .line 1151
     invoke-virtual {p1, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object p1
@@ -812,17 +816,13 @@
     check-cast v0, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     .line 1282
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ThemeDescription;->getCurrentKey()Ljava/lang/String;
-
-    move-result-object v2
-
-    const-string v3, "chat_wallpaper"
-
-    invoke-virtual {v2, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/ThemeDescription;->getCurrentKey()I
 
     move-result v2
 
-    if-eqz v2, :cond_0
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper:I
+
+    if-ne v2, v3, :cond_0
 
     goto :goto_0
 

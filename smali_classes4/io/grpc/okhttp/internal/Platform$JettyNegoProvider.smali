@@ -98,7 +98,7 @@
     sget-object p3, Lio/grpc/okhttp/internal/Util;->EMPTY_STRING_ARRAY:[Ljava/lang/String;
 
     :cond_0
-    const-string v1, "supports"
+    const-string/jumbo v1, "supports"
 
     .line 559
     invoke-virtual {p1, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

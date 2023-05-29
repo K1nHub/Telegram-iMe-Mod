@@ -39,9 +39,9 @@ public final class SetMutation extends Mutation {
     @Override // com.google.firebase.firestore.model.mutation.Mutation
     public void applyToRemoteDocument(MutableDocument mutableDocument, MutationResult mutationResult) {
         verifyKeyMatches(mutableDocument);
-        ObjectValue m1080clone = this.value.m1080clone();
-        m1080clone.setAll(serverTransformResults(mutableDocument, mutationResult.getTransformResults()));
-        mutableDocument.convertToFoundDocument(mutationResult.getVersion(), m1080clone).setHasCommittedMutations();
+        ObjectValue m1088clone = this.value.m1088clone();
+        m1088clone.setAll(serverTransformResults(mutableDocument, mutationResult.getTransformResults()));
+        mutableDocument.convertToFoundDocument(mutationResult.getVersion(), m1088clone).setHasCommittedMutations();
     }
 
     @Override // com.google.firebase.firestore.model.mutation.Mutation
@@ -49,9 +49,9 @@ public final class SetMutation extends Mutation {
         verifyKeyMatches(mutableDocument);
         if (getPrecondition().isValidFor(mutableDocument)) {
             Map<FieldPath, Value> localTransformResults = localTransformResults(timestamp, mutableDocument);
-            ObjectValue m1080clone = this.value.m1080clone();
-            m1080clone.setAll(localTransformResults);
-            mutableDocument.convertToFoundDocument(mutableDocument.getVersion(), m1080clone).setHasLocalMutations();
+            ObjectValue m1088clone = this.value.m1088clone();
+            m1088clone.setAll(localTransformResults);
+            mutableDocument.convertToFoundDocument(mutableDocument.getVersion(), m1088clone).setHasLocalMutations();
         }
     }
 

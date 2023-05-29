@@ -95,10 +95,10 @@
 
     check-cast p2, Lcom/iMe/storage/domain/model/filters/FilterFab;
 
-    const-string v1, "chats_actionBackground"
-
     .line 169
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

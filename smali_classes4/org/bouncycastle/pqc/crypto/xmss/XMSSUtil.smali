@@ -161,7 +161,7 @@
 
     invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
-    const-string v0, "src == null"
+    const-string/jumbo v0, "src == null"
 
     invoke-static {p1, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 
@@ -198,7 +198,7 @@
     :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    const-string p1, "src length + offset must not be greater than size of destination"
+    const-string/jumbo p1, "src length + offset must not be greater than size of destination"
 
     invoke-direct {p0, p1}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -271,7 +271,7 @@
 .method public static extractBytesAtOffset([BII)[B
     .locals 3
 
-    const-string v0, "src == null"
+    const-string/jumbo v0, "src == null"
 
     invoke-static {p0, v0}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;
 

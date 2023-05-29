@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPreferenceTwitterTelegramIdMappedData.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PreferenceTwitterTelegramIdMappedData.kt\ncom/iMe/storage/domain/model/twitter/PreferenceTwitterTelegramIdMappedData\n+ 2 GsonExt.kt\ncom/iMe/storage/data/utils/extentions/GsonExtKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,34:1\n25#2,2:35\n1#3:37\n*S KotlinDebug\n*F\n+ 1 PreferenceTwitterTelegramIdMappedData.kt\ncom/iMe/storage/domain/model/twitter/PreferenceTwitterTelegramIdMappedData\n*L\n16#1:35,2\n*E\n"
+    value = "SMAP\nPreferenceTwitterTelegramIdMappedData.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PreferenceTwitterTelegramIdMappedData.kt\ncom/iMe/storage/domain/model/twitter/PreferenceTwitterTelegramIdMappedData\n+ 2 GsonExt.kt\ncom/iMe/storage/data/utils/extentions/GsonExtKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,35:1\n25#2,2:36\n1#3:38\n*S KotlinDebug\n*F\n+ 1 PreferenceTwitterTelegramIdMappedData.kt\ncom/iMe/storage/domain/model/twitter/PreferenceTwitterTelegramIdMappedData\n*L\n17#1:36,2\n*E\n"
 .end annotation
 
 
@@ -54,13 +54,13 @@
     .line 8
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 9
+    .line 10
     iput-object p1, p0, Lcom/iMe/storage/domain/model/twitter/PreferenceTwitterTelegramIdMappedData;->gson:Lcom/google/gson/Gson;
 
-    .line 10
+    .line 11
     iput-object p2, p0, Lcom/iMe/storage/domain/model/twitter/PreferenceTwitterTelegramIdMappedData;->prefs:Landroid/content/SharedPreferences;
 
-    .line 11
+    .line 12
     iput-object p3, p0, Lcom/iMe/storage/domain/model/twitter/PreferenceTwitterTelegramIdMappedData;->preferenceKeyGetter:Lkotlin/jvm/functions/Function0;
 
     return-void
@@ -141,7 +141,7 @@
         }
     .end annotation
 
-    .line 16
+    .line 17
     iget-object v0, p0, Lcom/iMe/storage/domain/model/twitter/PreferenceTwitterTelegramIdMappedData;->gson:Lcom/google/gson/Gson;
 
     iget-object v1, p0, Lcom/iMe/storage/domain/model/twitter/PreferenceTwitterTelegramIdMappedData;->prefs:Landroid/content/SharedPreferences;
@@ -285,7 +285,7 @@
 .method public final getDataByTelegramId(J)Lcom/iMe/storage/domain/model/twitter/TwitterAccountData;
     .locals 1
 
-    .line 20
+    .line 21
     invoke-direct {p0}, Lcom/iMe/storage/domain/model/twitter/PreferenceTwitterTelegramIdMappedData;->getData()Ljava/util/Map;
 
     move-result-object v0
@@ -342,7 +342,7 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 23
+    .line 24
     invoke-direct {p0}, Lcom/iMe/storage/domain/model/twitter/PreferenceTwitterTelegramIdMappedData;->getData()Ljava/util/Map;
 
     move-result-object v0
@@ -357,7 +357,7 @@
 
     invoke-interface {v0, p1, p3}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 24
+    .line 25
     iget-object p1, p0, Lcom/iMe/storage/domain/model/twitter/PreferenceTwitterTelegramIdMappedData;->prefs:Landroid/content/SharedPreferences;
 
     invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
@@ -390,7 +390,7 @@
 .method public final remove(J)V
     .locals 2
 
-    .line 28
+    .line 29
     invoke-direct {p0}, Lcom/iMe/storage/domain/model/twitter/PreferenceTwitterTelegramIdMappedData;->getData()Ljava/util/Map;
 
     move-result-object v0
@@ -405,7 +405,7 @@
 
     invoke-interface {v0, p1}, Ljava/util/Map;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 29
+    .line 30
     iget-object p1, p0, Lcom/iMe/storage/domain/model/twitter/PreferenceTwitterTelegramIdMappedData;->prefs:Landroid/content/SharedPreferences;
 
     invoke-interface {p1}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;

@@ -770,14 +770,14 @@
 
     invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    const-string v2, "syncContacts"
+    const-string/jumbo v2, "syncContacts"
 
     .line 217
     iget-boolean v3, p0, Lorg/telegram/messenger/UserConfig;->syncContacts:Z
 
     invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    const-string v2, "suggestContacts"
+    const-string/jumbo v2, "suggestContacts"
 
     .line 218
     iget-boolean v3, p0, Lorg/telegram/messenger/UserConfig;->suggestContacts:Z
@@ -819,7 +819,7 @@
 
     invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    const-string v2, "sharingMyLocationUntil"
+    const-string/jumbo v2, "sharingMyLocationUntil"
 
     .line 224
     iget v3, p0, Lorg/telegram/messenger/UserConfig;->sharingMyLocationUntil:I
@@ -998,7 +998,7 @@
 
     invoke-virtual {v2, v4}, Lorg/telegram/tgnet/TLRPC$TL_help_termsOfService;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    const-string v2, "terms"
+    const-string/jumbo v2, "terms"
 
     .line 255
     invoke-virtual {v4}, Lorg/telegram/tgnet/SerializedData;->toByteArray()[B
@@ -1021,7 +1021,7 @@
 
     :cond_4
     :try_start_2
-    const-string v2, "terms"
+    const-string/jumbo v2, "terms"
 
     .line 261
     invoke-interface {v1, v2}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
@@ -2752,7 +2752,7 @@
 
     iput v2, p0, Lorg/telegram/messenger/UserConfig;->loginTime:I
 
-    const-string v2, "syncContacts"
+    const-string/jumbo v2, "syncContacts"
 
     const/4 v5, 0x1
 
@@ -2763,7 +2763,7 @@
 
     iput-boolean v2, p0, Lorg/telegram/messenger/UserConfig;->syncContacts:Z
 
-    const-string v2, "suggestContacts"
+    const-string/jumbo v2, "suggestContacts"
 
     .line 386
     invoke-interface {v1, v2, v5}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
@@ -2841,7 +2841,7 @@
     :goto_1
     iput-boolean v2, p0, Lorg/telegram/messenger/UserConfig;->hasValidDialogLoadIds:Z
 
-    const-string v2, "sharingMyLocationUntil"
+    const-string/jumbo v2, "sharingMyLocationUntil"
 
     .line 392
     invoke-interface {v1, v2, v3}, Landroid/content/SharedPreferences;->getInt(Ljava/lang/String;I)I
@@ -2971,7 +2971,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     :try_start_1
-    const-string v2, "terms"
+    const-string/jumbo v2, "terms"
 
     .line 415
     invoke-interface {v1, v2, v8}, Landroid/content/SharedPreferences;->getString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;

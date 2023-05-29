@@ -1,11 +1,14 @@
 .class Lorg/telegram/ui/Components/ShareAlert$26;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 .source "ShareAlert.java"
+
+# interfaces
+.implements Landroid/view/View$OnTouchListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/ShareAlert;->showCommentTextView(Z)Z
+    value = Lorg/telegram/ui/Components/ShareAlert;->onSendLongClick(Landroid/view/View;)Z
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,103 +18,100 @@
 
 
 # instance fields
-.field final synthetic this$0:Lorg/telegram/ui/Components/ShareAlert;
+.field private popupRect:Landroid/graphics/Rect;
 
-.field final synthetic val$show:Z
+.field final synthetic this$0:Lorg/telegram/ui/Components/ShareAlert;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/ShareAlert;Z)V
+.method constructor <init>(Lorg/telegram/ui/Components/ShareAlert;)V
     .locals 0
 
-    .line 2258
+    .line 2079
     iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$26;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
-    iput-boolean p2, p0, Lorg/telegram/ui/Components/ShareAlert$26;->val$show:Z
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    .line 2080
+    new-instance p1, Landroid/graphics/Rect;
+
+    invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$26;->popupRect:Landroid/graphics/Rect;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationCancel(Landroid/animation/Animator;)V
+.method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 2272
+    .line 2084
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 2085
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$26;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ShareAlert;->access$12100(Lorg/telegram/ui/Components/ShareAlert;)Landroid/animation/AnimatorSet;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ShareAlert;->access$12200(Lorg/telegram/ui/Components/ShareAlert;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    if-eqz v0, :cond_0
 
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    .line 2273
-    iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$26;->this$0:Lorg/telegram/ui/Components/ShareAlert;
-
-    const/4 v0, 0x0
-
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/ShareAlert;->access$12102(Lorg/telegram/ui/Components/ShareAlert;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
-
-    :cond_0
-    return-void
-.end method
-
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
-
-    .line 2261
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$26;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ShareAlert;->access$12100(Lorg/telegram/ui/Components/ShareAlert;)Landroid/animation/AnimatorSet;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ShareAlert;->access$12200(Lorg/telegram/ui/Components/ShareAlert;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     move-result-object v0
 
-    invoke-virtual {p1, v0}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v0}, Landroid/widget/PopupWindow;->isShowing()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 2086
+    iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$26;->popupRect:Landroid/graphics/Rect;
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
+
+    .line 2087
+    iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$26;->popupRect:Landroid/graphics/Rect;
+
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
+
+    move-result v0
+
+    float-to-int v0, v0
+
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
+
+    move-result p2
+
+    float-to-int p2, p2
+
+    invoke-virtual {p1, v0, p2}, Landroid/graphics/Rect;->contains(II)Z
 
     move-result p1
-
-    if-eqz p1, :cond_1
-
-    .line 2262
-    iget-boolean p1, p0, Lorg/telegram/ui/Components/ShareAlert$26;->val$show:Z
 
     if-nez p1, :cond_0
 
-    .line 2263
+    .line 2088
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$26;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert;->access$4600(Lorg/telegram/ui/Components/ShareAlert;)Landroid/widget/FrameLayout;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert;->access$12200(Lorg/telegram/ui/Components/ShareAlert;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     move-result-object p1
 
-    const/4 v0, 0x4
+    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
 
-    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
-
-    .line 2264
-    iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$26;->this$0:Lorg/telegram/ui/Components/ShareAlert;
-
-    invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert;->access$4800(Lorg/telegram/ui/Components/ShareAlert;)Landroid/widget/FrameLayout;
-
-    move-result-object p1
-
-    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
-
-    .line 2266
     :cond_0
-    iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$26;->this$0:Lorg/telegram/ui/Components/ShareAlert;
+    const/4 p1, 0x0
 
-    const/4 v0, 0x0
-
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/ShareAlert;->access$12102(Lorg/telegram/ui/Components/ShareAlert;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
-
-    :cond_1
-    return-void
+    return p1
 .end method

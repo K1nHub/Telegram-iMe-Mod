@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ArticleViewer$BlockCollageCell;Lorg/telegram/ui/ArticleViewer;)V
     .locals 0
 
-    .line 8345
+    .line 8358
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockCollageCell$5;->this$1:Lorg/telegram/ui/ArticleViewer$BlockCollageCell;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 8385
+    .line 8398
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockCollageCell$5;->this$1:Lorg/telegram/ui/ArticleViewer$BlockCollageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockCollageCell;->access$16800(Lorg/telegram/ui/ArticleViewer$BlockCollageCell;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockCollage;
@@ -48,7 +48,7 @@
 
     return v0
 
-    .line 8388
+    .line 8401
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockCollageCell$5;->this$1:Lorg/telegram/ui/ArticleViewer$BlockCollageCell;
 
@@ -68,7 +68,7 @@
 .method public getItemViewType(I)I
     .locals 2
 
-    .line 8393
+    .line 8406
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockCollageCell$5;->this$1:Lorg/telegram/ui/ArticleViewer$BlockCollageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockCollageCell;->access$16800(Lorg/telegram/ui/ArticleViewer$BlockCollageCell;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockCollage;
@@ -101,7 +101,7 @@
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$PageBlock;
 
-    .line 8394
+    .line 8407
     instance-of v0, v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPhoto;
 
     if-eqz v0, :cond_0
@@ -115,7 +115,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 2
 
-    .line 8365
+    .line 8378
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockCollageCell$5;->this$1:Lorg/telegram/ui/ArticleViewer$BlockCollageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockCollageCell;->access$16800(Lorg/telegram/ui/ArticleViewer$BlockCollageCell;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockCollage;
@@ -148,19 +148,19 @@
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$PageBlock;
 
-    .line 8366
+    .line 8379
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 8375
+    .line 8388
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;
 
-    .line 8376
+    .line 8389
     iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$BlockCollageCell$5;->this$1:Lorg/telegram/ui/ArticleViewer$BlockCollageCell;
 
     invoke-static {v1}, Lorg/telegram/ui/ArticleViewer$BlockCollageCell;->access$17200(Lorg/telegram/ui/ArticleViewer$BlockCollageCell;)Lorg/telegram/ui/ArticleViewer$BlockCollageCell$GroupedMessages;
@@ -177,20 +177,20 @@
 
     invoke-static {p1, v1}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->access$17502(Lorg/telegram/ui/ArticleViewer$BlockVideoCell;Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;)Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;
 
-    .line 8377
+    .line 8390
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;
 
     invoke-virtual {p1, v0, p2, p2}, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockVideo;ZZ)V
 
     goto :goto_0
 
-    .line 8368
+    .line 8381
     :cond_0
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ArticleViewer$BlockPhotoCell;
 
-    .line 8369
+    .line 8382
     iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$BlockCollageCell$5;->this$1:Lorg/telegram/ui/ArticleViewer$BlockCollageCell;
 
     invoke-static {v1}, Lorg/telegram/ui/ArticleViewer$BlockCollageCell;->access$17200(Lorg/telegram/ui/ArticleViewer$BlockCollageCell;)Lorg/telegram/ui/ArticleViewer$BlockCollageCell$GroupedMessages;
@@ -207,7 +207,7 @@
 
     invoke-static {p1, v1}, Lorg/telegram/ui/ArticleViewer$BlockPhotoCell;->access$17402(Lorg/telegram/ui/ArticleViewer$BlockPhotoCell;Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;)Lorg/telegram/messenger/MessageObject$GroupedMessagePosition;
 
-    .line 8370
+    .line 8383
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_pageBlockPhoto;
 
     invoke-virtual {p1, v0, p2, p2}, Lorg/telegram/ui/ArticleViewer$BlockPhotoCell;->setBlock(Lorg/telegram/tgnet/TLRPC$TL_pageBlockPhoto;ZZ)V
@@ -223,7 +223,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 8356
+    .line 8369
     new-instance p2, Lorg/telegram/ui/ArticleViewer$BlockVideoCell;
 
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockCollageCell$5;->this$1:Lorg/telegram/ui/ArticleViewer$BlockCollageCell;
@@ -244,7 +244,7 @@
 
     goto :goto_0
 
-    .line 8351
+    .line 8364
     :cond_0
     new-instance p2, Lorg/telegram/ui/ArticleViewer$BlockPhotoCell;
 
@@ -264,7 +264,7 @@
 
     invoke-direct {p2, v1, v0, v2, p1}, Lorg/telegram/ui/ArticleViewer$BlockPhotoCell;-><init>(Lorg/telegram/ui/ArticleViewer;Landroid/content/Context;Lorg/telegram/ui/ArticleViewer$WebpageAdapter;I)V
 
-    .line 8360
+    .line 8373
     :goto_0
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 

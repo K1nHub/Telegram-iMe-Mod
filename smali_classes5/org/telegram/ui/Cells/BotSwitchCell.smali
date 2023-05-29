@@ -31,9 +31,9 @@
     .line 32
     iget-object v0, p0, Lorg/telegram/ui/Cells/BotSwitchCell;->textView:Landroid/widget/TextView;
 
-    const-string v1, "chat_botSwitchToInlineText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_botSwitchToInlineText:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

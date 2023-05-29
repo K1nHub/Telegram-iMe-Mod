@@ -38,10 +38,10 @@
 
     iput-object p3, p0, Lorg/telegram/ui/Cells/AvailableReactionCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const-string v0, "windowBackgroundWhiteBlackText"
-
     .line 47
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -147,9 +147,9 @@
 
     invoke-virtual {p0, p3, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    const/4 p3, -0x1
+    const/4 p3, 0x0
 
-    const/4 v0, 0x0
+    const/4 v0, -0x1
 
     if-eqz p2, :cond_0
 
@@ -165,19 +165,19 @@
     iput-object p2, p0, Lorg/telegram/ui/Cells/AvailableReactionCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     .line 62
-    invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/CheckBox2;->setDrawUnchecked(Z)V
+    invoke-virtual {p2, p3}, Lorg/telegram/ui/Components/CheckBox2;->setDrawUnchecked(Z)V
 
     .line 63
     iget-object p2, p0, Lorg/telegram/ui/Cells/AvailableReactionCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
-    const-string v1, "radioBackgroundChecked"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_radioBackgroundChecked:I
 
-    invoke-virtual {p2, v2, v2, v1}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p2, v0, v0, v1}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
     .line 64
     iget-object p2, p0, Lorg/telegram/ui/Cells/AvailableReactionCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
-    invoke-virtual {p2, p3}, Lorg/telegram/ui/Components/CheckBox2;->setDrawBackgroundAsArc(I)V
+    invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/CheckBox2;->setDrawBackgroundAsArc(I)V
 
     .line 65
     iget-object p2, p0, Lorg/telegram/ui/Cells/AvailableReactionCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
@@ -212,16 +212,16 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Cells/AvailableReactionCell;->switchView:Lorg/telegram/ui/Components/Switch;
 
-    const-string v1, "switchTrack"
-
-    const-string v2, "switchTrackChecked"
-
-    const-string v3, "switchTrackBlueThumb"
-
-    const-string v4, "switchTrackBlueThumbChecked"
-
     .line 68
-    invoke-virtual {p2, v1, v2, v3, v4}, Lorg/telegram/ui/Components/Switch;->setColors(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrack:I
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackChecked:I
+
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackBlueThumb:I
+
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackBlueThumbChecked:I
+
+    invoke-virtual {p2, v1, v2, v3, v4}, Lorg/telegram/ui/Components/Switch;->setColors(IIII)V
 
     .line 69
     iget-object p2, p0, Lorg/telegram/ui/Cells/AvailableReactionCell;->switchView:Lorg/telegram/ui/Components/Switch;
@@ -255,7 +255,7 @@
     iput-object p2, p0, Lorg/telegram/ui/Cells/AvailableReactionCell;->overlaySelectorView:Landroid/view/View;
 
     .line 72
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
+    invoke-static {p3}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
@@ -264,14 +264,14 @@
     .line 73
     iget-object p1, p0, Lorg/telegram/ui/Cells/AvailableReactionCell;->overlaySelectorView:Landroid/view/View;
 
-    invoke-static {p3, p3}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static {v0, v0}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p2
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 74
-    invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
+    invoke-virtual {p0, p3}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
     return-void
 .end method
@@ -323,11 +323,11 @@
     .line 94
     iget-object v3, p1, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->static_icon:Lorg/telegram/tgnet/TLRPC$Document;
 
-    const/high16 v4, 0x3f800000    # 1.0f
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    const-string v5, "windowBackgroundGray"
+    const/high16 v5, 0x3f800000    # 1.0f
 
-    invoke-static {v3, v5, v4}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;F)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+    invoke-static {v3, v4, v5}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;IF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     move-result-object v10
 
@@ -391,9 +391,9 @@
     .line 100
     new-instance p3, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v0, "stickers_menu"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_stickers_menu:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -462,10 +462,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 11
 
-    const-string v0, "windowBackgroundWhite"
-
     .line 144
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

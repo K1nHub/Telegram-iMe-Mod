@@ -31,11 +31,11 @@ public class RadioButton extends View {
 
     public RadioButton(Context context) {
         super(context);
-        this.size = AndroidUtilities.m50dp(16);
+        this.size = AndroidUtilities.m54dp(16);
         if (paint == null) {
             Paint paint2 = new Paint(1);
             paint = paint2;
-            paint2.setStrokeWidth(AndroidUtilities.m50dp(2));
+            paint2.setStrokeWidth(AndroidUtilities.m54dp(2));
             paint.setStyle(Paint.Style.STROKE);
             checkedPaint = new Paint(1);
             Paint paint3 = new Paint(1);
@@ -44,10 +44,10 @@ public class RadioButton extends View {
             eraser.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.CLEAR));
         }
         try {
-            this.bitmap = Bitmap.createBitmap(AndroidUtilities.m50dp(this.size), AndroidUtilities.m50dp(this.size), Bitmap.Config.ARGB_4444);
+            this.bitmap = Bitmap.createBitmap(AndroidUtilities.m54dp(this.size), AndroidUtilities.m54dp(this.size), Bitmap.Config.ARGB_4444);
             this.bitmapCanvas = new Canvas(this.bitmap);
         } catch (Throwable th) {
-            FileLog.m45e(th);
+            FileLog.m49e(th);
         }
     }
 
@@ -152,7 +152,7 @@ public class RadioButton extends View {
                 this.bitmap = Bitmap.createBitmap(getMeasuredWidth(), getMeasuredHeight(), Bitmap.Config.ARGB_8888);
                 this.bitmapCanvas = new Canvas(this.bitmap);
             } catch (Throwable th) {
-                FileLog.m45e(th);
+                FileLog.m49e(th);
             }
         }
         float f2 = this.progress;
@@ -176,10 +176,10 @@ public class RadioButton extends View {
             float f4 = (this.size / 2) - ((f + 1.0f) * AndroidUtilities.density);
             this.bitmapCanvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, f4, paint);
             if (this.progress <= 0.5f) {
-                this.bitmapCanvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, f4 - AndroidUtilities.m50dp(1), checkedPaint);
-                this.bitmapCanvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, (f4 - AndroidUtilities.m50dp(1)) * (1.0f - f), eraser);
+                this.bitmapCanvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, f4 - AndroidUtilities.m54dp(1), checkedPaint);
+                this.bitmapCanvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, (f4 - AndroidUtilities.m54dp(1)) * (1.0f - f), eraser);
             } else {
-                this.bitmapCanvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, (this.size / 4) + (((f4 - AndroidUtilities.m50dp(1)) - (this.size / 4)) * f), checkedPaint);
+                this.bitmapCanvas.drawCircle(getMeasuredWidth() / 2, getMeasuredHeight() / 2, (this.size / 4) + (((f4 - AndroidUtilities.m54dp(1)) - (this.size / 4)) * f), checkedPaint);
             }
             canvas.drawBitmap(this.bitmap, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, (Paint) null);
         }

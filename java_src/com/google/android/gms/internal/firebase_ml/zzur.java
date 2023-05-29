@@ -69,7 +69,7 @@ public final class zzur {
     private static final /* synthetic */ zzur[] zzbsf;
 
     /* renamed from: id */
-    private final int f151id;
+    private final int f154id;
     private final zzvg zzbrz;
     private final zzut zzbsa;
     private final Class<?> zzbsb;
@@ -81,7 +81,7 @@ public final class zzur {
 
     private zzur(String str, int i, int i2, zzut zzutVar, zzvg zzvgVar) {
         int i3;
-        this.f151id = i2;
+        this.f154id = i2;
         this.zzbsa = zzutVar;
         this.zzbrz = zzvgVar;
         int i4 = zzuq.zzbpy[zzutVar.ordinal()];
@@ -97,8 +97,8 @@ public final class zzur {
     }
 
     /* renamed from: id */
-    public final int m762id() {
-        return this.f151id;
+    public final int m766id() {
+        return this.f154id;
     }
 
     static {
@@ -221,7 +221,7 @@ public final class zzur {
         zzur[] values = values();
         zzbsd = new zzur[values.length];
         for (zzur zzurVar52 : values) {
-            zzbsd[zzurVar52.f151id] = zzurVar52;
+            zzbsd[zzurVar52.f154id] = zzurVar52;
         }
     }
 }

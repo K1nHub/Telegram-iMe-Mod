@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatUsersActivity;Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
-    .line 1019
+    .line 1024
     iput-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$10;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/GigagroupConvertAlert;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/BaseFragment;)V
@@ -43,19 +43,19 @@
 
     if-eqz p1, :cond_1
 
-    .line 1023
+    .line 1028
     iget-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$10;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatUsersActivity;->access$10400(Lorg/telegram/ui/ChatUsersActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+    invoke-static {p1}, Lorg/telegram/ui/ChatUsersActivity;->access$10500(Lorg/telegram/ui/ChatUsersActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object p1
 
     if-eqz p1, :cond_1
 
-    .line 1024
+    .line 1029
     iget-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$10;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatUsersActivity;->access$10600(Lorg/telegram/ui/ChatUsersActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+    invoke-static {p1}, Lorg/telegram/ui/ChatUsersActivity;->access$10700(Lorg/telegram/ui/ChatUsersActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object p1
 
@@ -65,7 +65,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ChatUsersActivity$10;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatUsersActivity;->access$10500(Lorg/telegram/ui/ChatUsersActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+    invoke-static {v0}, Lorg/telegram/ui/ChatUsersActivity;->access$10600(Lorg/telegram/ui/ChatUsersActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object v0
 
@@ -85,20 +85,20 @@
 
     check-cast p1, Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    .line 1025
+    .line 1030
     instance-of v0, p1, Lorg/telegram/ui/ChatEditActivity;
 
     if-eqz v0, :cond_0
 
-    .line 1026
+    .line 1031
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V
 
-    .line 1028
+    .line 1033
     new-instance p1, Landroid/os/Bundle;
 
     invoke-direct {p1}, Landroid/os/Bundle;-><init>()V
 
-    .line 1029
+    .line 1034
     iget-object v0, p0, Lorg/telegram/ui/ChatUsersActivity$10;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChatUsersActivity;->access$2300(Lorg/telegram/ui/ChatUsersActivity;)J
@@ -109,12 +109,12 @@
 
     invoke-virtual {p1, v2, v0, v1}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 1030
+    .line 1035
     new-instance v0, Lorg/telegram/ui/ChatEditActivity;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/ChatEditActivity;-><init>(Landroid/os/Bundle;)V
 
-    .line 1031
+    .line 1036
     iget-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$10;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChatUsersActivity;->access$1700(Lorg/telegram/ui/ChatUsersActivity;)Lorg/telegram/tgnet/TLRPC$ChatFull;
@@ -123,16 +123,16 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ChatEditActivity;->setInfo(Lorg/telegram/tgnet/TLRPC$ChatFull;)V
 
-    .line 1032
+    .line 1037
     iget-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$10;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatUsersActivity;->access$10800(Lorg/telegram/ui/ChatUsersActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+    invoke-static {p1}, Lorg/telegram/ui/ChatUsersActivity;->access$10900(Lorg/telegram/ui/ChatUsersActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object p1
 
     iget-object v1, p0, Lorg/telegram/ui/ChatUsersActivity$10;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatUsersActivity;->access$10700(Lorg/telegram/ui/ChatUsersActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
+    invoke-static {v1}, Lorg/telegram/ui/ChatUsersActivity;->access$10800(Lorg/telegram/ui/ChatUsersActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
 
     move-result-object v1
 
@@ -148,17 +148,17 @@
 
     invoke-interface {p1, v0, v1}, Lorg/telegram/ui/ActionBar/INavigationLayout;->addFragmentToStack(Lorg/telegram/ui/ActionBar/BaseFragment;I)Z
 
-    .line 1033
+    .line 1038
     iget-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$10;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
-    .line 1034
+    .line 1039
     invoke-virtual {v0}, Lorg/telegram/ui/ChatEditActivity;->showConvertTooltip()V
 
     goto :goto_0
 
-    .line 1036
+    .line 1041
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$10;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
@@ -180,7 +180,7 @@
 .method protected onCovert()V
     .locals 5
 
-    .line 1022
+    .line 1027
     iget-object v0, p0, Lorg/telegram/ui/ChatUsersActivity$10;->this$0:Lorg/telegram/ui/ChatUsersActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;

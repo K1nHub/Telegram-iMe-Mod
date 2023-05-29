@@ -34,7 +34,7 @@
 
 .field private needDelay:Z
 
-.field notificationsIndex:I
+.field notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
 
 .field onPreDrawListener:Landroid/view/ViewTreeObserver$OnPreDrawListener;
 
@@ -83,7 +83,7 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 39
+    .line 38
     sget-object v0, Landroidx/recyclerview/widget/ChatListItemAnimator;->DEFAULT_INTERPOLATOR:Landroid/view/animation/Interpolator;
 
     sput-object v0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->keyboardInterpolator:Landroid/view/animation/Interpolator;
@@ -94,7 +94,7 @@
 .method public constructor <init>(Landroid/view/View;)V
     .locals 1
 
-    .line 269
+    .line 268
     sget-boolean v0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->USE_ANDROID11_INSET_ANIMATOR:Z
 
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;-><init>(Landroid/view/View;Z)V
@@ -105,15 +105,15 @@
 .method public constructor <init>(Landroid/view/View;Z)V
     .locals 1
 
-    .line 272
+    .line 271
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x0
 
-    .line 47
+    .line 46
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->usingInsetAnimator:Z
 
-    .line 50
+    .line 49
     new-instance v0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper$1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper$1;-><init>(Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;)V
@@ -122,23 +122,30 @@
 
     const/4 v0, -0x1
 
-    .line 67
+    .line 66
     iput v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->previousHeight:I
 
-    .line 68
+    .line 67
     iput v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->previousContentHeight:I
 
-    .line 69
+    .line 68
     iput v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->previousStartOffset:I
 
-    .line 76
+    .line 73
+    new-instance v0, Lorg/telegram/messenger/AnimationNotificationsLocker;
+
+    invoke-direct {v0}, Lorg/telegram/messenger/AnimationNotificationsLocker;-><init>()V
+
+    iput-object v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
+
+    .line 75
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->viewsToHeightSet:Ljava/util/ArrayList;
 
-    .line 86
+    .line 85
     new-instance v0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper$2;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper$2;-><init>(Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;)V
@@ -147,16 +154,16 @@
 
     const/4 v0, 0x1
 
-    .line 336
+    .line 335
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->enabled:Z
 
-    .line 273
+    .line 272
     iput-boolean p2, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->useInsetsAnimator:Z
 
-    .line 274
+    .line 273
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->parent:Landroid/view/View;
 
-    .line 275
+    .line 274
     new-instance p1, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper$$ExternalSyntheticLambda1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;)V
@@ -169,7 +176,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;)Landroid/view/View;
     .locals 0
 
-    .line 34
+    .line 33
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->parent:Landroid/view/View;
 
     return-object p0
@@ -178,7 +185,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;)Landroid/view/ViewGroup;
     .locals 0
 
-    .line 34
+    .line 33
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->contentView:Landroid/view/ViewGroup;
 
     return-object p0
@@ -187,7 +194,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;)Z
     .locals 0
 
-    .line 34
+    .line 33
     iget-boolean p0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->usingInsetAnimator:Z
 
     return p0
@@ -196,7 +203,7 @@
 .method static synthetic access$202(Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;Z)Z
     .locals 0
 
-    .line 34
+    .line 33
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->usingInsetAnimator:Z
 
     return p1
@@ -205,7 +212,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;IIZ)V
     .locals 0
 
-    .line 34
+    .line 33
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->animateHeight(IIZ)V
 
     return-void
@@ -214,28 +221,28 @@
 .method static synthetic access$400(Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;)Z
     .locals 0
 
-    .line 34
+    .line 33
     iget-boolean p0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->animationInProgress:Z
 
     return p0
 .end method
 
 .method private animateHeight(IIZ)V
-    .locals 4
+    .locals 2
 
-    .line 125
+    .line 124
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->ignoreOnce:Z
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 126
+    .line 125
     iput-boolean v1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->ignoreOnce:Z
 
     return-void
 
-    .line 129
+    .line 128
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->enabled:Z
 
@@ -243,11 +250,11 @@
 
     return-void
 
-    .line 132
+    .line 131
     :cond_1
     invoke-virtual {p0, p1, p2, p3}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->startTransition(IIZ)V
 
-    .line 133
+    .line 132
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->animator:Landroid/animation/ValueAnimator;
 
     new-instance p2, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper$$ExternalSyntheticLambda0;
@@ -256,56 +263,46 @@
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 138
+    .line 137
     sget p1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
-    .line 139
-    iget-object p2, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->animator:Landroid/animation/ValueAnimator;
+    .line 138
+    iget-object p1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->animator:Landroid/animation/ValueAnimator;
 
-    new-instance p3, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper$3;
+    new-instance p2, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper$3;
 
-    invoke-direct {p3, p0}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper$3;-><init>(Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;)V
+    invoke-direct {p2, p0}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper$3;-><init>(Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;)V
 
-    invoke-virtual {p2, p3}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+    invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    .line 146
+    iget-object p1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->animator:Landroid/animation/ValueAnimator;
+
+    const-wide/16 p2, 0xfa
+
+    invoke-virtual {p1, p2, p3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
     .line 147
-    iget-object p2, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->animator:Landroid/animation/ValueAnimator;
+    iget-object p1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->animator:Landroid/animation/ValueAnimator;
 
-    const-wide/16 v2, 0xfa
+    sget-object p2, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->keyboardInterpolator:Landroid/view/animation/Interpolator;
 
-    invoke-virtual {p2, v2, v3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
+    invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 148
-    iget-object p2, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->animator:Landroid/animation/ValueAnimator;
+    .line 149
+    iget-object p1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
 
-    sget-object p3, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->keyboardInterpolator:Landroid/view/animation/Interpolator;
-
-    invoke-virtual {p2, p3}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+    invoke-virtual {p1}, Lorg/telegram/messenger/AnimationNotificationsLocker;->lock()V
 
     .line 150
-    invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
-
-    move-result-object p1
-
-    iget p2, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->notificationsIndex:I
-
-    const/4 p3, 0x0
-
-    invoke-virtual {p1, p2, p3}, Lorg/telegram/messenger/NotificationCenter;->setAnimationInProgress(I[I)I
-
-    move-result p1
-
-    iput p1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->notificationsIndex:I
-
-    .line 151
     iget-boolean p1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->needDelay:Z
 
     if-eqz p1, :cond_2
 
-    .line 152
+    .line 151
     iput-boolean v1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->needDelay:Z
 
-    .line 153
+    .line 152
     invoke-static {}, Landroid/os/SystemClock;->elapsedRealtime()J
 
     move-result-wide p1
@@ -316,14 +313,14 @@
 
     iput-wide p1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->startAfter:J
 
-    .line 154
+    .line 153
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->delayedAnimationRunnable:Ljava/lang/Runnable;
 
     invoke-static {p1, v0, v1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
     goto :goto_0
 
-    .line 156
+    .line 155
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->animator:Landroid/animation/ValueAnimator;
 
@@ -331,7 +328,7 @@
 
     const-wide/16 p1, -0x1
 
-    .line 157
+    .line 156
     iput-wide p1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->startAfter:J
 
     :goto_0
@@ -341,7 +338,7 @@
 .method private findResizableView(Landroid/view/View;)Landroid/view/View;
     .locals 2
 
-    .line 306
+    .line 305
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->resizableViewToSet:Landroid/view/View;
 
     if-eqz v0, :cond_0
@@ -354,7 +351,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 311
+    .line 310
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v1
@@ -365,7 +362,7 @@
 
     return-object p1
 
-    .line 314
+    .line 313
     :cond_1
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
@@ -375,7 +372,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 315
+    .line 314
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object p1
@@ -391,23 +388,23 @@
 .method private getActivity(Landroid/content/Context;)Landroid/app/Activity;
     .locals 1
 
-    .line 297
+    .line 296
     instance-of v0, p1, Landroid/app/Activity;
 
     if-eqz v0, :cond_0
 
-    .line 298
+    .line 297
     check-cast p1, Landroid/app/Activity;
 
     return-object p1
 
-    .line 299
+    .line 298
     :cond_0
     instance-of v0, p1, Landroid/view/ContextThemeWrapper;
 
     if-eqz v0, :cond_1
 
-    .line 300
+    .line 299
     check-cast p1, Landroid/view/ContextThemeWrapper;
 
     invoke-virtual {p1}, Landroid/view/ContextThemeWrapper;->getBaseContext()Landroid/content/Context;
@@ -429,12 +426,12 @@
 .method private synthetic lambda$animateHeight$0(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 134
+    .line 133
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->usingInsetAnimator:Z
 
     if-nez v0, :cond_0
 
-    .line 135
+    .line 134
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -454,14 +451,14 @@
 .method private setupNewCallback()V
     .locals 3
 
-    .line 399
+    .line 398
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->resizableView:Landroid/view/View;
 
     if-nez v0, :cond_0
 
     return-void
 
-    .line 402
+    .line 401
     :cond_0
     new-instance v1, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper$4;
 
@@ -479,7 +476,7 @@
 .method public animationInProgress()Z
     .locals 1
 
-    .line 381
+    .line 380
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->animationInProgress:Z
 
     return v0
@@ -490,7 +487,7 @@
 
     const/4 v0, 0x1
 
-    .line 389
+    .line 388
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->needDelay:Z
 
     return-void
@@ -499,7 +496,7 @@
 .method public getViewsToSetHeight(Landroid/view/View;)V
     .locals 1
 
-    .line 253
+    .line 252
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->viewsToHeightSet:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
@@ -507,19 +504,19 @@
     :goto_0
     if-eqz p1, :cond_2
 
-    .line 256
+    .line 255
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->viewsToHeightSet:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 257
+    .line 256
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->resizableView:Landroid/view/View;
 
     if-ne p1, v0, :cond_0
 
     return-void
 
-    .line 260
+    .line 259
     :cond_0
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
@@ -529,7 +526,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 261
+    .line 260
     invoke-virtual {p1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object p1
@@ -560,7 +557,7 @@
 
     const/4 v0, 0x1
 
-    .line 343
+    .line 342
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->ignoreOnce:Z
 
     return-void
@@ -569,24 +566,24 @@
 .method public onAttach()V
     .locals 2
 
-    .line 279
+    .line 278
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->onDetach()V
 
-    .line 280
+    .line 279
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->parent:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getContext()Landroid/content/Context;
 
     move-result-object v0
 
-    .line 281
+    .line 280
     invoke-direct {p0, v0}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->getActivity(Landroid/content/Context;)Landroid/app/Activity;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 283
+    .line 282
     invoke-virtual {v0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
@@ -599,7 +596,7 @@
 
     const v1, 0x1020002
 
-    .line 284
+    .line 283
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->findViewById(I)Landroid/view/View;
 
     move-result-object v0
@@ -608,7 +605,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->contentView:Landroid/view/ViewGroup;
 
-    .line 286
+    .line 285
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->parent:Landroid/view/View;
 
@@ -620,10 +617,10 @@
 
     if-eqz v0, :cond_1
 
-    .line 288
+    .line 287
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->parentForListener:Landroid/view/View;
 
-    .line 289
+    .line 288
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v0
@@ -632,7 +629,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/ViewTreeObserver;->addOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 291
+    .line 290
     :cond_1
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->useInsetsAnimator:Z
 
@@ -644,7 +641,7 @@
 
     if-lt v0, v1, :cond_2
 
-    .line 292
+    .line 291
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->setupNewCallback()V
 
     :cond_2
@@ -654,15 +651,15 @@
 .method public onDetach()V
     .locals 4
 
-    .line 324
+    .line 323
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->animator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 325
+    .line 324
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 327
+    .line 326
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->parentForListener:Landroid/view/View;
 
@@ -670,7 +667,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 328
+    .line 327
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
     move-result-object v0
@@ -679,10 +676,10 @@
 
     invoke-virtual {v0, v2}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 329
+    .line 328
     iput-object v1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->parentForListener:Landroid/view/View;
 
-    .line 331
+    .line 330
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->parent:Landroid/view/View;
 
@@ -698,7 +695,7 @@
 
     if-lt v2, v3, :cond_2
 
-    .line 332
+    .line 331
     invoke-virtual {v0, v1}, Landroid/view/View;->setWindowInsetsAnimationCallback(Landroid/view/WindowInsetsAnimation$Callback;)V
 
     :cond_2
@@ -726,7 +723,7 @@
 .method protected onTransitionStart(ZII)V
     .locals 0
 
-    .line 365
+    .line 364
     invoke-virtual {p0, p1, p3}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->onTransitionStart(ZI)V
 
     return-void
@@ -735,12 +732,12 @@
 .method public runDelayedAnimation()V
     .locals 1
 
-    .line 393
+    .line 392
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->delayedAnimationRunnable:Ljava/lang/Runnable;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 394
+    .line 393
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->delayedAnimationRunnable:Ljava/lang/Runnable;
 
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
@@ -751,7 +748,7 @@
 .method public setCheckHierarchyHeight(Z)V
     .locals 0
 
-    .line 385
+    .line 384
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->checkHierarchyHeight:Z
 
     return-void
@@ -760,7 +757,7 @@
 .method public setResizableView(Landroid/widget/FrameLayout;)V
     .locals 0
 
-    .line 377
+    .line 376
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->resizableViewToSet:Landroid/view/View;
 
     return-void
@@ -771,7 +768,7 @@
 
     const/4 v0, 0x0
 
-    .line 242
+    .line 241
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->viewsToHeightSet:Ljava/util/ArrayList;
 
@@ -781,7 +778,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 243
+    .line 242
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->viewsToHeightSet:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -796,7 +793,7 @@
 
     iput p1, v1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 244
+    .line 243
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->viewsToHeightSet:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -826,45 +823,45 @@
 .method public startTransition(IIZ)V
     .locals 5
 
-    .line 162
+    .line 161
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->animator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 163
+    .line 162
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 166
+    .line 165
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->startOffset()I
 
     move-result v0
 
-    .line 167
+    .line 166
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->parent:Landroid/view/View;
 
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->getViewsToSetHeight(Landroid/view/View;)V
 
-    .line 169
+    .line 168
     iget-boolean v1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->checkHierarchyHeight:Z
 
     const/4 v2, 0x0
 
     if-eqz v1, :cond_1
 
-    .line 170
+    .line 169
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->parent:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v1
 
-    .line 171
+    .line 170
     instance-of v3, v1, Landroid/view/View;
 
     if-eqz v3, :cond_1
 
-    .line 172
+    .line 171
     check-cast v1, Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getHeight()I
@@ -881,26 +878,26 @@
     :goto_0
     add-int/2addr v1, p2
 
-    .line 175
+    .line 174
     invoke-static {p1, v1}, Ljava/lang/Math;->max(II)I
 
     move-result v1
 
     invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->setViewHeight(I)V
 
-    .line 176
+    .line 175
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->resizableView:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->requestLayout()V
 
-    .line 178
+    .line 177
     invoke-virtual {p0, p3, p1, p2}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->onTransitionStart(ZII)V
 
     sub-int v1, p2, p1
 
     int-to-float v1, v1
 
-    .line 181
+    .line 180
     invoke-static {v1}, Ljava/lang/Math;->abs(F)F
 
     move-result v3
@@ -909,7 +906,7 @@
 
     const/4 v3, 0x1
 
-    .line 183
+    .line 182
     iput-boolean v3, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->animationInProgress:Z
 
     const/4 v4, 0x0
@@ -920,7 +917,7 @@
 
     sub-float/2addr v1, p1
 
-    .line 186
+    .line 185
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->parent:Landroid/view/View;
 
     neg-float p2, v1
@@ -929,21 +926,21 @@
 
     const/high16 p1, 0x3f800000    # 1.0f
 
-    .line 187
+    .line 186
     invoke-virtual {p0, v1, p1, p3}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->onPanTranslationUpdate(FFZ)V
 
-    .line 188
+    .line 187
     iput p2, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->from:F
 
-    .line 189
+    .line 188
     iput v4, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->to:F
 
-    .line 190
+    .line 189
     iput-boolean v3, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->inverse:Z
 
     goto :goto_1
 
-    .line 192
+    .line 191
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->parent:Landroid/view/View;
 
@@ -953,7 +950,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 193
+    .line 192
     iget p1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->previousStartOffset:I
 
     neg-int p1, p1
@@ -962,7 +959,7 @@
 
     invoke-virtual {p0, p1, v4, p3}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->onPanTranslationUpdate(FFZ)V
 
-    .line 194
+    .line 193
     iget p1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->previousStartOffset:I
 
     neg-int p1, p1
@@ -971,10 +968,10 @@
 
     iput p1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->to:F
 
-    .line 195
+    .line 194
     iput v1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->from:F
 
-    .line 196
+    .line 195
     iput-boolean v2, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->inverse:Z
 
     :goto_1
@@ -982,7 +979,7 @@
 
     new-array p1, p1, [F
 
-    .line 198
+    .line 197
     fill-array-data p1, :array_0
 
     invoke-static {p1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -991,7 +988,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->animator:Landroid/animation/ValueAnimator;
 
-    .line 199
+    .line 198
     iput-boolean v2, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->usingInsetAnimator:Z
 
     return-void
@@ -1008,55 +1005,49 @@
 .method public stopTransition()V
     .locals 3
 
-    .line 212
+    .line 211
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->animator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 213
+    .line 212
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_0
     const/4 v0, 0x0
 
-    .line 215
+    .line 214
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->animationInProgress:Z
 
-    .line 216
+    .line 215
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->usingInsetAnimator:Z
 
-    .line 217
-    sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
+    .line 216
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
 
-    invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
-
-    move-result-object v0
-
-    iget v1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->notificationsIndex:I
-
-    invoke-virtual {v0, v1}, Lorg/telegram/messenger/NotificationCenter;->onAnimationFinish(I)V
+    invoke-virtual {v0}, Lorg/telegram/messenger/AnimationNotificationsLocker;->unlock()V
 
     const/4 v0, 0x0
 
-    .line 218
+    .line 217
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->animator:Landroid/animation/ValueAnimator;
 
     const/4 v0, -0x1
 
-    .line 219
+    .line 218
     invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->setViewHeight(I)V
 
-    .line 220
+    .line 219
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->viewsToHeightSet:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 221
+    .line 220
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->resizableView:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->requestLayout()V
 
-    .line 222
+    .line 221
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->isKeyboardVisible:Z
 
     const/4 v1, 0x0
@@ -1073,12 +1064,12 @@
     :goto_0
     invoke-virtual {p0, v1, v2, v0}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->onPanTranslationUpdate(FFZ)V
 
-    .line 223
+    .line 222
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->parent:Landroid/view/View;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 224
+    .line 223
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->onTransitionEnd()V
 
     return-void
@@ -1087,7 +1078,7 @@
 .method public updateTransition(F)V
     .locals 3
 
-    .line 203
+    .line 202
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->inverse:Z
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -1096,7 +1087,7 @@
 
     sub-float p1, v1, p1
 
-    .line 206
+    .line 205
     :cond_0
     iget v0, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->from:F
 
@@ -1114,14 +1105,14 @@
 
     int-to-float v0, v0
 
-    .line 207
+    .line 206
     iget-object v1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->parent:Landroid/view/View;
 
     invoke-virtual {v1, v0}, Landroid/view/View;->setTranslationY(F)V
 
     neg-float v0, v0
 
-    .line 208
+    .line 207
     iget-boolean v1, p0, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->isKeyboardVisible:Z
 
     invoke-virtual {p0, v0, p1, v1}, Lorg/telegram/ui/ActionBar/AdjustPanLayoutHelper;->onPanTranslationUpdate(FFZ)V

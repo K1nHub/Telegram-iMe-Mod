@@ -326,10 +326,10 @@ public class EntityView extends FrameLayout {
 
     public void pan(float f, float f2) {
         Point point = this.position;
-        float f3 = point.f1686x + f;
-        point.f1686x = f3;
-        float f4 = point.f1687y + f2;
-        point.f1687y = f4;
+        float f3 = point.f1693x + f;
+        point.f1693x = f3;
+        float f4 = point.f1694y + f2;
+        point.f1694y = f4;
         if (this.hasFromStickyXAnimation) {
             this.fromStickyX = f3;
         }
@@ -339,7 +339,7 @@ public class EntityView extends FrameLayout {
         View view = (View) getParent();
         if (view != null) {
             if (!this.hasStickyX) {
-                if (Math.abs(this.position.f1686x - (view.getMeasuredWidth() / 2.0f)) <= AndroidUtilities.m51dp(16.0f)) {
+                if (Math.abs(this.position.f1693x - (view.getMeasuredWidth() / 2.0f)) <= AndroidUtilities.m55dp(16.0f)) {
                     this.hasStickyX = true;
                     try {
                         performHapticFeedback(3, 2);
@@ -352,11 +352,11 @@ public class EntityView extends FrameLayout {
                     if (valueAnimator != null) {
                         valueAnimator.cancel();
                     }
-                    this.fromStickyX = this.position.f1686x;
+                    this.fromStickyX = this.position.f1693x;
                     this.hasFromStickyXAnimation = false;
                     runStickyXAnimator(BitmapDescriptorFactory.HUE_RED, 1.0f);
                 }
-            } else if (Math.abs(this.position.f1686x - (view.getMeasuredWidth() / 2.0f)) > AndroidUtilities.m51dp(48.0f)) {
+            } else if (Math.abs(this.position.f1693x - (view.getMeasuredWidth() / 2.0f)) > AndroidUtilities.m55dp(48.0f)) {
                 this.hasStickyX = false;
                 if (getParent() instanceof EntitiesContainerView) {
                     ((EntitiesContainerView) getParent()).invalidate();
@@ -369,7 +369,7 @@ public class EntityView extends FrameLayout {
                 runStickyXAnimator(1.0f, BitmapDescriptorFactory.HUE_RED);
             }
             if (!this.hasStickyY) {
-                if (Math.abs(this.position.f1687y - (view.getMeasuredHeight() / 2.0f)) <= AndroidUtilities.m51dp(16.0f)) {
+                if (Math.abs(this.position.f1694y - (view.getMeasuredHeight() / 2.0f)) <= AndroidUtilities.m55dp(16.0f)) {
                     this.hasStickyY = true;
                     try {
                         performHapticFeedback(3, 2);
@@ -382,11 +382,11 @@ public class EntityView extends FrameLayout {
                     if (valueAnimator3 != null) {
                         valueAnimator3.cancel();
                     }
-                    this.fromStickyY = this.position.f1687y;
+                    this.fromStickyY = this.position.f1694y;
                     this.hasFromStickyYAnimation = false;
                     runStickyYAnimator(BitmapDescriptorFactory.HUE_RED, 1.0f);
                 }
-            } else if (Math.abs(this.position.f1687y - (view.getMeasuredHeight() / 2.0f)) > AndroidUtilities.m51dp(48.0f)) {
+            } else if (Math.abs(this.position.f1694y - (view.getMeasuredHeight() / 2.0f)) > AndroidUtilities.m55dp(48.0f)) {
                 this.hasStickyY = false;
                 if (getParent() instanceof EntitiesContainerView) {
                     ((EntitiesContainerView) getParent()).invalidate();
@@ -404,7 +404,7 @@ public class EntityView extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public float getPositionX() {
-        float f = this.position.f1686x;
+        float f = this.position.f1693x;
         if (getParent() != null) {
             View view = (View) getParent();
             if (this.stickyXAnimator != null) {
@@ -417,7 +417,7 @@ public class EntityView extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public float getPositionY() {
-        float f = this.position.f1687y;
+        float f = this.position.f1694y;
         if (getParent() != null) {
             View view = (View) getParent();
             if (this.stickyYAnimator != null) {
@@ -618,22 +618,22 @@ public class EntityView extends FrameLayout {
             setWillNotDraw(false);
             this.paint.setColor(-1);
             this.paint.setStyle(Paint.Style.STROKE);
-            this.paint.setStrokeWidth(AndroidUtilities.m50dp(2));
+            this.paint.setStrokeWidth(AndroidUtilities.m54dp(2));
             this.paint.setStrokeCap(Paint.Cap.ROUND);
-            this.paint.setPathEffect(new DashPathEffect(new float[]{AndroidUtilities.m50dp(10), AndroidUtilities.m50dp(10)}, 0.5f));
-            this.paint.setShadowLayer(AndroidUtilities.m51dp(0.75f), BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m50dp(1), 1879048192);
+            this.paint.setPathEffect(new DashPathEffect(new float[]{AndroidUtilities.m54dp(10), AndroidUtilities.m54dp(10)}, 0.5f));
+            this.paint.setShadowLayer(AndroidUtilities.m55dp(0.75f), BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(1), 1879048192);
             this.dotPaint.setColor(-12793105);
             this.dotStrokePaint.setColor(-1);
             this.dotStrokePaint.setStyle(Paint.Style.STROKE);
-            this.dotStrokePaint.setStrokeWidth(AndroidUtilities.m50dp(2));
-            this.dotStrokePaint.setShadowLayer(AndroidUtilities.m51dp(0.75f), BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m50dp(1), 1879048192);
+            this.dotStrokePaint.setStrokeWidth(AndroidUtilities.m54dp(2));
+            this.dotStrokePaint.setShadowLayer(AndroidUtilities.m55dp(0.75f), BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(1), 1879048192);
         }
 
         protected void updatePosition() {
             Rect selectionBounds = EntityView.this.getSelectionBounds();
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) getLayoutParams();
-            layoutParams.leftMargin = (int) selectionBounds.f1727x;
-            layoutParams.topMargin = (int) selectionBounds.f1728y;
+            layoutParams.leftMargin = (int) selectionBounds.f1734x;
+            layoutParams.topMargin = (int) selectionBounds.f1735y;
             layoutParams.width = (int) selectionBounds.width;
             layoutParams.height = (int) selectionBounds.height;
             setLayoutParams(layoutParams);

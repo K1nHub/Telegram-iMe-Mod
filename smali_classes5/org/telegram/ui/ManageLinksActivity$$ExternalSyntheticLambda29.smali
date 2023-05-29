@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda29;->f$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$eMgyfHV70WeiPFGziRgrGPUzUuc(Lorg/telegram/ui/ManageLinksActivity;)Lorg/koin/core/parameter/ParametersHolder;
+    invoke-static {v0}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$ymI84yrDTXyx1qbIy9IJvIduqJM(Lorg/telegram/ui/ManageLinksActivity;)Lorg/koin/core/parameter/ParametersHolder;
 
     move-result-object v0
 

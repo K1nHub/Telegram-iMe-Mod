@@ -4,7 +4,7 @@ import com.google.android.gms.common.internal.LibraryVersion;
 import java.util.concurrent.Callable;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final /* synthetic */ class zzcu implements Callable {
     static final Callable zza = new zzcu();
 

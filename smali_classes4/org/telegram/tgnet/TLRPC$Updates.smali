@@ -91,31 +91,31 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 48047
+    .line 49046
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 48048
+    .line 49047
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$Updates;->updates:Ljava/util/ArrayList;
 
-    .line 48049
+    .line 49048
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$Updates;->users:Ljava/util/ArrayList;
 
-    .line 48050
+    .line 49049
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$Updates;->chats:Ljava/util/ArrayList;
 
-    .line 48066
+    .line 49065
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -134,7 +134,7 @@
 
     goto :goto_0
 
-    .line 48087
+    .line 49086
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateShort;
 
@@ -142,7 +142,7 @@
 
     goto :goto_0
 
-    .line 48078
+    .line 49077
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updates;
 
@@ -150,7 +150,7 @@
 
     goto :goto_0
 
-    .line 48093
+    .line 49092
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updatesCombined;
 
@@ -158,7 +158,7 @@
 
     goto :goto_0
 
-    .line 48090
+    .line 49089
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateShortChatMessage;
 
@@ -166,7 +166,7 @@
 
     goto :goto_0
 
-    .line 48081
+    .line 49080
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateShortMessage;
 
@@ -174,7 +174,7 @@
 
     goto :goto_0
 
-    .line 48096
+    .line 49095
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updatesTooLong;
 
@@ -182,7 +182,7 @@
 
     goto :goto_0
 
-    .line 48084
+    .line 49083
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_updateShortSentMessage;
 
@@ -195,7 +195,7 @@
 
     goto :goto_1
 
-    .line 48100
+    .line 49099
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -225,7 +225,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 48103
+    .line 49102
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

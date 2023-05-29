@@ -16,6 +16,8 @@
     .end annotation
 .end field
 
+.field private final __preparedStmtOfDeleteAllHiddenChatsByUserId:Landroidx/room/SharedSQLiteStatement;
+
 
 # direct methods
 .method public constructor <init>(Landroidx/room/RoomDatabase;)V
@@ -29,28 +31,44 @@
         }
     .end annotation
 
-    .line 36
+    .line 39
     invoke-direct {p0}, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao;-><init>()V
 
-    .line 37
+    .line 40
     iput-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
-    .line 38
+    .line 41
     new-instance v0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl$1;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl$1;-><init>(Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;Landroidx/room/RoomDatabase;)V
 
     iput-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->__insertionAdapterOfHiddenChatsDb:Landroidx/room/EntityInsertionAdapter;
 
-    .line 50
+    .line 53
     new-instance v0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl$2;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl$2;-><init>(Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;Landroidx/room/RoomDatabase;)V
 
-    .line 62
+    .line 65
     new-instance v0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl$3;
 
     invoke-direct {v0, p0, p1}, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl$3;-><init>(Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;Landroidx/room/RoomDatabase;)V
+
+    .line 79
+    new-instance v0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl$4;
+
+    invoke-direct {v0, p0, p1}, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl$4;-><init>(Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;Landroidx/room/RoomDatabase;)V
+
+    iput-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->__preparedStmtOfDeleteAllHiddenChatsByUserId:Landroidx/room/SharedSQLiteStatement;
+
+    return-void
+.end method
+
+.method static synthetic access$401(Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;JLjava/util/List;)V
+    .locals 0
+
+    .line 28
+    invoke-super {p0, p1, p2, p3}, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao;->restoreBackup(JLjava/util/List;)V
 
     return-void
 .end method
@@ -66,7 +84,7 @@
         }
     .end annotation
 
-    .line 283
+    .line 320
     invoke-static {}, Ljava/util/Collections;->emptyList()Ljava/util/List;
 
     move-result-object v0
@@ -76,6 +94,79 @@
 
 
 # virtual methods
+.method public deleteAllHiddenChatsByUserId(J)V
+    .locals 2
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10
+        }
+        names = {
+            "userId"
+        }
+    .end annotation
+
+    .line 247
+    iget-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
+
+    .line 248
+    iget-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->__preparedStmtOfDeleteAllHiddenChatsByUserId:Landroidx/room/SharedSQLiteStatement;
+
+    invoke-virtual {v0}, Landroidx/room/SharedSQLiteStatement;->acquire()Landroidx/sqlite/db/SupportSQLiteStatement;
+
+    move-result-object v0
+
+    const/4 v1, 0x1
+
+    .line 250
+    invoke-interface {v0, v1, p1, p2}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
+
+    .line 251
+    iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {p1}, Landroidx/room/RoomDatabase;->beginTransaction()V
+
+    .line 253
+    :try_start_0
+    invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteStatement;->executeUpdateDelete()I
+
+    .line 254
+    iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {p1}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 256
+    iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {p1}, Landroidx/room/RoomDatabase;->endTransaction()V
+
+    .line 257
+    iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->__preparedStmtOfDeleteAllHiddenChatsByUserId:Landroidx/room/SharedSQLiteStatement;
+
+    invoke-virtual {p1, v0}, Landroidx/room/SharedSQLiteStatement;->release(Landroidx/sqlite/db/SupportSQLiteStatement;)V
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    .line 256
+    iget-object p2, p0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {p2}, Landroidx/room/RoomDatabase;->endTransaction()V
+
+    .line 257
+    iget-object p2, p0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->__preparedStmtOfDeleteAllHiddenChatsByUserId:Landroidx/room/SharedSQLiteStatement;
+
+    invoke-virtual {p2, v0}, Landroidx/room/SharedSQLiteStatement;->release(Landroidx/sqlite/db/SupportSQLiteStatement;)V
+
+    .line 258
+    throw p1
+.end method
+
 .method public deleteByIdList(Ljava/util/List;J)I
     .locals 6
     .annotation system Ldalvik/annotation/MethodParameters;
@@ -98,52 +189,52 @@
         }
     .end annotation
 
-    .line 252
+    .line 289
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
 
-    .line 253
+    .line 290
     invoke-static {}, Landroidx/room/util/StringUtil;->newStringBuilder()Ljava/lang/StringBuilder;
 
     move-result-object v0
 
     const-string v1, "DELETE FROM HiddenChatsDb WHERE dialogId IN ("
 
-    .line 254
+    .line 291
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 255
+    .line 292
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result v1
 
-    .line 256
+    .line 293
     invoke-static {v0, v1}, Landroidx/room/util/StringUtil;->appendPlaceholders(Ljava/lang/StringBuilder;I)V
 
     const-string v2, ") AND userId = "
 
-    .line 257
+    .line 294
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v2, "?"
 
-    .line 258
+    .line 295
     invoke-virtual {v0, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 259
+    .line 296
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v0
 
-    .line 260
+    .line 297
     iget-object v2, p0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {v2, v0}, Landroidx/room/RoomDatabase;->compileStatement(Ljava/lang/String;)Landroidx/sqlite/db/SupportSQLiteStatement;
 
     move-result-object v0
 
-    .line 262
+    .line 299
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -167,12 +258,12 @@
 
     if-nez v4, :cond_0
 
-    .line 264
+    .line 301
     invoke-interface {v0, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindNull(I)V
 
     goto :goto_1
 
-    .line 266
+    .line 303
     :cond_0
     invoke-virtual {v4}, Ljava/lang/Long;->longValue()J
 
@@ -188,28 +279,28 @@
     :cond_1
     add-int/2addr v1, v2
 
-    .line 271
+    .line 308
     invoke-interface {v0, v1, p2, p3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
-    .line 272
+    .line 309
     iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {p1}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
-    .line 274
+    .line 311
     :try_start_0
     invoke-interface {v0}, Landroidx/sqlite/db/SupportSQLiteStatement;->executeUpdateDelete()I
 
     move-result p1
 
-    .line 275
+    .line 312
     iget-object p2, p0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {p2}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 278
+    .line 315
     iget-object p2, p0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {p2}, Landroidx/room/RoomDatabase;->endTransaction()V
@@ -223,7 +314,7 @@
 
     invoke-virtual {p2}, Landroidx/room/RoomDatabase;->endTransaction()V
 
-    .line 279
+    .line 316
     throw p1
 .end method
 
@@ -251,20 +342,20 @@
 
     const/4 v1, 0x1
 
-    .line 227
+    .line 264
     invoke-static {v0, v1}, Landroidx/room/RoomSQLiteQuery;->acquire(Ljava/lang/String;I)Landroidx/room/RoomSQLiteQuery;
 
     move-result-object v0
 
-    .line 229
+    .line 266
     invoke-virtual {v0, v1, p1, p2}, Landroidx/room/RoomSQLiteQuery;->bindLong(IJ)V
 
-    .line 230
+    .line 267
     iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {p1}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
 
-    .line 231
+    .line 268
     iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     const/4 p2, 0x0
@@ -275,7 +366,7 @@
 
     move-result-object p1
 
-    .line 233
+    .line 270
     :try_start_0
     new-instance v2, Ljava/util/ArrayList;
 
@@ -285,7 +376,7 @@
 
     invoke-direct {v2, v3}, Ljava/util/ArrayList;-><init>(I)V
 
-    .line 234
+    .line 271
     :goto_0
     invoke-interface {p1}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -293,7 +384,7 @@
 
     if-eqz v3, :cond_1
 
-    .line 236
+    .line 273
     invoke-interface {p1, p2}, Landroid/database/Cursor;->isNull(I)Z
 
     move-result v3
@@ -304,7 +395,7 @@
 
     goto :goto_1
 
-    .line 239
+    .line 276
     :cond_0
     invoke-interface {p1, p2}, Landroid/database/Cursor;->getLong(I)J
 
@@ -314,7 +405,7 @@
 
     move-result-object v3
 
-    .line 241
+    .line 278
     :goto_1
     invoke-interface {v2, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
     :try_end_0
@@ -322,11 +413,11 @@
 
     goto :goto_0
 
-    .line 245
+    .line 282
     :cond_1
     invoke-interface {p1}, Landroid/database/Cursor;->close()V
 
-    .line 246
+    .line 283
     invoke-virtual {v0}, Landroidx/room/RoomSQLiteQuery;->release()V
 
     return-object v2
@@ -334,13 +425,13 @@
     :catchall_0
     move-exception p2
 
-    .line 245
+    .line 282
     invoke-interface {p1}, Landroid/database/Cursor;->close()V
 
-    .line 246
+    .line 283
     invoke-virtual {v0}, Landroidx/room/RoomSQLiteQuery;->release()V
 
-    .line 247
+    .line 284
     throw p2
 .end method
 
@@ -365,30 +456,30 @@
         }
     .end annotation
 
-    .line 105
+    .line 115
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->assertNotSuspendingTransaction()V
 
-    .line 106
+    .line 116
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->beginTransaction()V
 
-    .line 108
+    .line 118
     :try_start_0
     iget-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->__insertionAdapterOfHiddenChatsDb:Landroidx/room/EntityInsertionAdapter;
 
     invoke-virtual {v0, p1}, Landroidx/room/EntityInsertionAdapter;->insert(Ljava/lang/Iterable;)V
 
-    .line 109
+    .line 119
     iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {p1}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 111
+    .line 121
     iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->__db:Landroidx/room/RoomDatabase;
 
     invoke-virtual {p1}, Landroidx/room/RoomDatabase;->endTransaction()V
@@ -402,6 +493,62 @@
 
     invoke-virtual {v0}, Landroidx/room/RoomDatabase;->endTransaction()V
 
-    .line 112
+    .line 122
+    throw p1
+.end method
+
+.method public restoreBackup(JLjava/util/List;)V
+    .locals 1
+    .annotation system Ldalvik/annotation/MethodParameters;
+        accessFlags = {
+            0x10,
+            0x10
+        }
+        names = {
+            "userId",
+            "hiddenChatDialogs"
+        }
+    .end annotation
+
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(J",
+            "Ljava/util/List<",
+            "Ljava/lang/Long;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 236
+    iget-object v0, p0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {v0}, Landroidx/room/RoomDatabase;->beginTransaction()V
+
+    .line 238
+    :try_start_0
+    invoke-static {p0, p1, p2, p3}, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->access$401(Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;JLjava/util/List;)V
+
+    .line 239
+    iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {p1}, Landroidx/room/RoomDatabase;->setTransactionSuccessful()V
+    :try_end_0
+    .catchall {:try_start_0 .. :try_end_0} :catchall_0
+
+    .line 241
+    iget-object p1, p0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {p1}, Landroidx/room/RoomDatabase;->endTransaction()V
+
+    return-void
+
+    :catchall_0
+    move-exception p1
+
+    iget-object p2, p0, Lcom/iMe/storage/data/locale/db/dao/main/HiddenChatsDao_Impl;->__db:Landroidx/room/RoomDatabase;
+
+    invoke-virtual {p2}, Landroidx/room/RoomDatabase;->endTransaction()V
+
+    .line 242
     throw p1
 .end method

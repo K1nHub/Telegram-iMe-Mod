@@ -81,13 +81,13 @@ public interface CameraVideoCapturer extends VideoCapturer {
                 @Override // java.lang.Runnable
                 public void run() {
                     int round = Math.round((CameraStatistics.this.frameCount * 1000.0f) / 2000.0f);
-                    Logging.m18d(CameraStatistics.TAG, "Camera fps: " + round + ".");
+                    Logging.m20d(CameraStatistics.TAG, "Camera fps: " + round + ".");
                     if (CameraStatistics.this.frameCount != 0) {
                         CameraStatistics.this.freezePeriodCount = 0;
                     } else {
                         CameraStatistics.access$104(CameraStatistics.this);
                         if (CameraStatistics.this.freezePeriodCount * 2000 >= 4000 && CameraStatistics.this.eventsHandler != null) {
-                            Logging.m17e(CameraStatistics.TAG, "Camera freezed.");
+                            Logging.m19e(CameraStatistics.TAG, "Camera freezed.");
                             if (CameraStatistics.this.surfaceTextureHelper.isTextureInUse()) {
                                 CameraStatistics.this.eventsHandler.onCameraFreezed("Camera failure. Client must return video buffers.");
                                 return;

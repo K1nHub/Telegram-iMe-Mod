@@ -106,25 +106,25 @@ public class TypingDotsDrawable extends StatusDrawable {
 
     @Override // android.graphics.drawable.Drawable
     public void draw(Canvas canvas) {
-        int m51dp;
+        int m55dp;
         int i;
         if (this.isChat) {
-            m51dp = AndroidUtilities.m51dp(8.5f);
+            m55dp = AndroidUtilities.m55dp(8.5f);
             i = getBounds().top;
         } else {
-            m51dp = AndroidUtilities.m51dp(9.3f);
+            m55dp = AndroidUtilities.m55dp(9.3f);
             i = getBounds().top;
         }
-        int i2 = m51dp + i;
+        int i2 = m55dp + i;
         Paint paint = this.currentPaint;
         if (paint == null) {
             paint = Theme.chat_statusPaint;
             paint.setAlpha(255);
         }
         float f = i2;
-        canvas.drawCircle(AndroidUtilities.m50dp(3), f, this.scales[0] * AndroidUtilities.density, paint);
-        canvas.drawCircle(AndroidUtilities.m50dp(9), f, this.scales[1] * AndroidUtilities.density, paint);
-        canvas.drawCircle(AndroidUtilities.m50dp(15), f, this.scales[2] * AndroidUtilities.density, paint);
+        canvas.drawCircle(AndroidUtilities.m54dp(3), f, this.scales[0] * AndroidUtilities.density, paint);
+        canvas.drawCircle(AndroidUtilities.m54dp(9), f, this.scales[1] * AndroidUtilities.density, paint);
+        canvas.drawCircle(AndroidUtilities.m54dp(15), f, this.scales[2] * AndroidUtilities.density, paint);
         checkUpdate();
     }
 
@@ -146,11 +146,11 @@ public class TypingDotsDrawable extends StatusDrawable {
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicWidth() {
-        return AndroidUtilities.m50dp(18);
+        return AndroidUtilities.m54dp(18);
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicHeight() {
-        return AndroidUtilities.m50dp(18);
+        return AndroidUtilities.m54dp(18);
     }
 }

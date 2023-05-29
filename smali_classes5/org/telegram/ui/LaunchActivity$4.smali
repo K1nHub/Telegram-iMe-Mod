@@ -1,14 +1,11 @@
 .class Lorg/telegram/ui/LaunchActivity$4;
-.super Ljava/lang/Object;
+.super Landroid/widget/FrameLayout;
 .source "LaunchActivity.java"
-
-# interfaces
-.implements Lj$/util/function/Consumer;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingClass;
-    value = Lorg/telegram/ui/LaunchActivity;
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Lorg/telegram/ui/LaunchActivity;->onCreate(Landroid/os/Bundle;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -16,58 +13,35 @@
     name = null
 .end annotation
 
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Ljava/lang/Object;",
-        "Lj$/util/function/Consumer<",
-        "Ljava/lang/Boolean;",
-        ">;"
-    }
-.end annotation
+
+# instance fields
+.field final synthetic this$0:Lorg/telegram/ui/LaunchActivity;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/LaunchActivity;)V
+.method constructor <init>(Lorg/telegram/ui/LaunchActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 733
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 752
+    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$4;->this$0:Lorg/telegram/ui/LaunchActivity;
+
+    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public accept(Ljava/lang/Boolean;)V
-    .locals 0
+.method protected dispatchDraw(Landroid/graphics/Canvas;)V
+    .locals 1
 
-    .line 736
-    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
+    .line 755
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    move-result p1
+    .line 756
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$4;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    sput-boolean p1, Lorg/telegram/ui/LaunchActivity;->systemBlurEnabled:Z
-
-    return-void
-.end method
-
-.method public bridge synthetic accept(Ljava/lang/Object;)V
-    .locals 0
-
-    .line 733
-    check-cast p1, Ljava/lang/Boolean;
-
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/LaunchActivity$4;->accept(Ljava/lang/Boolean;)V
+    invoke-static {v0, p1, p0}, Lorg/telegram/ui/LaunchActivity;->access$500(Lorg/telegram/ui/LaunchActivity;Landroid/graphics/Canvas;Landroid/view/View;)V
 
     return-void
-.end method
-
-.method public synthetic andThen(Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
-
-    move-result-object p1
-
-    return-object p1
 .end method

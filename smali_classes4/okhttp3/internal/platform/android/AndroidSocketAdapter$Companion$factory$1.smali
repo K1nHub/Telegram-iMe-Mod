@@ -38,7 +38,7 @@
 .method public create(Ljavax/net/ssl/SSLSocket;)Lokhttp3/internal/platform/android/SocketAdapter;
     .locals 1
 
-    const-string v0, "sslSocket"
+    const-string/jumbo v0, "sslSocket"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -59,7 +59,7 @@
 .method public matchesSocket(Ljavax/net/ssl/SSLSocket;)Z
     .locals 4
 
-    const-string v0, "sslSocket"
+    const-string/jumbo v0, "sslSocket"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -72,7 +72,7 @@
 
     move-result-object p1
 
-    const-string v0, "sslSocket.javaClass.name"
+    const-string/jumbo v0, "sslSocket.javaClass.name"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

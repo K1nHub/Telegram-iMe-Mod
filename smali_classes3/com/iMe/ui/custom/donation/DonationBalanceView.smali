@@ -134,7 +134,7 @@
 .end method
 
 .method private final setupView()V
-    .locals 2
+    .locals 4
 
     .line 73
     invoke-virtual {p0}, Lcom/iMe/ui/custom/donation/DonationBalanceView;->setupColors()V
@@ -148,7 +148,13 @@
 
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    invoke-static {v0, v1, v2, v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 75
     iget-object v0, p0, Lcom/iMe/ui/custom/donation/DonationBalanceView;->binding:Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokenBalanceBinding;
@@ -285,9 +291,9 @@
 
     move-result-object v1
 
-    const-string v2, "windowBackgroundWhite"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -346,9 +352,9 @@
     :cond_0
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokenBalanceBinding;->textAccountBalanceInDollars:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v2, "windowBackgroundWhiteGrayText2"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -357,9 +363,9 @@
     .line 54
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokenBalanceBinding;->textAccountTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v2, "chats_actionBackground"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -368,9 +374,9 @@
     .line 55
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkRecycleItemWalletTokenBalanceBinding;->textAccountBalance:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v2, "chat_messagePanelText"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelText:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 

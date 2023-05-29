@@ -11,7 +11,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: StakingProgrammeProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.StakingProgrammeProvider$convert$1$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class StakingProgrammeProvider$convert$1$1 extends Lambda implements Function1<CoinTickerView, Unit> {
     final /* synthetic */ StakingProgrammeItem $this_with;
     final /* synthetic */ StakingProgrammeProvider this$0;

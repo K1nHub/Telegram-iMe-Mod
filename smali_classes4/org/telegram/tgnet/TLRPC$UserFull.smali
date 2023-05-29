@@ -68,15 +68,17 @@
 
 .field public voice_messages_forbidden:Z
 
+.field public wallpaper:Lorg/telegram/tgnet/TLRPC$WallPaper;
+
 
 # direct methods
 .method public constructor <init>()V
     .locals 1
 
-    .line 47095
+    .line 47950
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 47123
+    .line 47978
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -95,7 +97,7 @@
 
     goto :goto_0
 
-    .line 47151
+    .line 48010
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userFull_layer101;
 
@@ -103,7 +105,7 @@
 
     goto :goto_0
 
-    .line 47148
+    .line 48007
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userFull_layer131;
 
@@ -111,15 +113,15 @@
 
     goto :goto_0
 
-    .line 47130
+    .line 47989
     :sswitch_2
-    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userFull;
+    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userFull_layer156;
 
-    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_userFull;-><init>()V
+    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_userFull_layer156;-><init>()V
 
     goto :goto_0
 
-    .line 47157
+    .line 48016
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userFull_layer123;
 
@@ -127,7 +129,7 @@
 
     goto :goto_0
 
-    .line 47133
+    .line 47992
     :sswitch_4
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userFull_layer150_rev2;
 
@@ -135,7 +137,7 @@
 
     goto :goto_0
 
-    .line 47145
+    .line 48004
     :sswitch_5
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userFull_layer134;
 
@@ -143,7 +145,7 @@
 
     goto :goto_0
 
-    .line 47142
+    .line 48001
     :sswitch_6
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userFull_layer139;
 
@@ -151,7 +153,7 @@
 
     goto :goto_0
 
-    .line 47136
+    .line 47995
     :sswitch_7
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userFull_layer150;
 
@@ -159,16 +161,24 @@
 
     goto :goto_0
 
-    .line 47154
+    .line 47986
     :sswitch_8
+    new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userFull;
+
+    invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_userFull;-><init>()V
+
+    goto :goto_0
+
+    .line 48013
+    :sswitch_9
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userFull_layer98;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_userFull_layer98;-><init>()V
 
     goto :goto_0
 
-    .line 47139
-    :sswitch_9
+    .line 47998
+    :sswitch_a
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_userFull_layer143;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_userFull_layer143;-><init>()V
@@ -180,7 +190,7 @@
 
     goto :goto_1
 
-    .line 47161
+    .line 48020
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -210,7 +220,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 47164
+    .line 48023
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2
@@ -220,8 +230,9 @@
 
     :sswitch_data_0
     .sparse-switch
-        -0x738d157f -> :sswitch_9
-        -0x715b577f -> :sswitch_8
+        -0x738d157f -> :sswitch_a
+        -0x715b577f -> :sswitch_9
+        -0x6c1524ad -> :sswitch_8
         -0x3b4e03c1 -> :sswitch_7
         -0x30c99adf -> :sswitch_6
         -0x296800fb -> :sswitch_5

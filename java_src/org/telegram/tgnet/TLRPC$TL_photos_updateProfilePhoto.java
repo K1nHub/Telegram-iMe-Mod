@@ -1,10 +1,13 @@
 package org.telegram.tgnet;
 /* loaded from: classes4.dex */
 public class TLRPC$TL_photos_updateProfilePhoto extends TLObject {
-    public static int constructor = 1926525996;
+    public static int constructor = 166207545;
+    public TLRPC$InputUser bot;
+    public boolean fallback;
+    public int flags;
 
     /* renamed from: id */
-    public TLRPC$InputPhoto f1552id;
+    public TLRPC$InputPhoto f1559id;
 
     @Override // org.telegram.tgnet.TLObject
     public TLObject deserializeResponse(AbstractSerializedData abstractSerializedData, int i, boolean z) {
@@ -14,6 +17,12 @@ public class TLRPC$TL_photos_updateProfilePhoto extends TLObject {
     @Override // org.telegram.tgnet.TLObject
     public void serializeToStream(AbstractSerializedData abstractSerializedData) {
         abstractSerializedData.writeInt32(constructor);
-        this.f1552id.serializeToStream(abstractSerializedData);
+        int i = this.fallback ? this.flags | 1 : this.flags & (-2);
+        this.flags = i;
+        abstractSerializedData.writeInt32(i);
+        if ((this.flags & 2) != 0) {
+            this.bot.serializeToStream(abstractSerializedData);
+        }
+        this.f1559id.serializeToStream(abstractSerializedData);
     }
 }

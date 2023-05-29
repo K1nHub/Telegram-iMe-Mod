@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final onClick(Landroid/view/View;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda7;->f$0:Lorg/telegram/ui/FilterCreateActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/FilterCreateActivity;->$r8$lambda$4jkh9k54CIJFMmtN8pjW1MtCRO0(Lorg/telegram/ui/FilterCreateActivity;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/FilterCreateActivity;->$r8$lambda$FH5XHOLUEQz3A44OK9Cnhft6lEk(Lorg/telegram/ui/FilterCreateActivity;Landroid/view/View;)V
 
     return-void
 .end method

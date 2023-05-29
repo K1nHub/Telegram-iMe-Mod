@@ -125,10 +125,10 @@
     .line 85
     invoke-virtual {v5, v2, v6}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v6, "dialogTextBlack"
-
     .line 86
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
@@ -249,9 +249,9 @@
     .line 100
     new-instance v10, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v11, "dialogTextGray3"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray3:I
 
-    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v12
 
@@ -277,7 +277,7 @@
     invoke-virtual {v10, v2, v12}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 105
-    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v11
 
@@ -488,10 +488,10 @@
     .line 145
     invoke-virtual {v3, v2, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v1, "dialogTextBlue2"
-
     .line 146
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlue2:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

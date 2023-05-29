@@ -101,6 +101,8 @@
     <string name="mtrl_picker_toggle_to_day_selection">Klepnutím prepnete na výber dňa</string>
     <string name="mtrl_picker_toggle_to_text_input_mode">Prepnúť na textový režim vstupu</string>
     <string name="mtrl_picker_toggle_to_year_selection">Klepnutím prepnete na výber roka</string>
+    <string name="nav_app_bar_navigate_up_description">Prejsť hore</string>
+    <string name="nav_app_bar_open_drawer_description">Otvoriť navigačný vysúvací panel</string>
     <string name="password_toggle_content_description">Zobraziť heslo</string>
     <string name="search_menu_title">Hľadať</string>
     <string name="status_bar_notification_info_overflow">999+</string>

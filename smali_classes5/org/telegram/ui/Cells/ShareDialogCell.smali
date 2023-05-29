@@ -57,7 +57,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
-    .locals 20
+    .locals 18
 
     move-object/from16 v0, p0
 
@@ -176,34 +176,30 @@
     .line 96
     iget-object v6, v0, Lorg/telegram/ui/Cells/ShareDialogCell;->nameTextView:Landroid/widget/TextView;
 
-    const-string v7, "voipgroup_nameText"
+    const/4 v7, 0x1
 
-    const-string v8, "dialogTextBlack"
+    if-ne v2, v7, :cond_1
 
-    const/4 v9, 0x1
-
-    if-ne v2, v9, :cond_1
-
-    move-object v10, v7
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_nameText:I
 
     goto :goto_1
 
     :cond_1
-    move-object v10, v8
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
     :goto_1
-    invoke-direct {v0, v10}, Lorg/telegram/ui/Cells/ShareDialogCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v0, v8}, Lorg/telegram/ui/Cells/ShareDialogCell;->getThemedColor(I)I
 
-    move-result v10
+    move-result v8
 
-    invoke-virtual {v6, v10}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v6, v8}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 97
     iget-object v6, v0, Lorg/telegram/ui/Cells/ShareDialogCell;->nameTextView:Landroid/widget/TextView;
 
-    const/high16 v10, 0x41400000    # 12.0f
+    const/high16 v8, 0x41400000    # 12.0f
 
-    invoke-virtual {v6, v9, v10}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-virtual {v6, v7, v8}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 98
     iget-object v6, v0, Lorg/telegram/ui/Cells/ShareDialogCell;->nameTextView:Landroid/widget/TextView;
@@ -213,9 +209,9 @@
     .line 99
     iget-object v6, v0, Lorg/telegram/ui/Cells/ShareDialogCell;->nameTextView:Landroid/widget/TextView;
 
-    const/16 v10, 0x31
+    const/16 v8, 0x31
 
-    invoke-virtual {v6, v10}, Landroid/widget/TextView;->setGravity(I)V
+    invoke-virtual {v6, v8}, Landroid/widget/TextView;->setGravity(I)V
 
     .line 100
     iget-object v6, v0, Lorg/telegram/ui/Cells/ShareDialogCell;->nameTextView:Landroid/widget/TextView;
@@ -225,46 +221,46 @@
     .line 101
     iget-object v6, v0, Lorg/telegram/ui/Cells/ShareDialogCell;->nameTextView:Landroid/widget/TextView;
 
-    sget-object v11, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
+    sget-object v9, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
-    invoke-virtual {v6, v11}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
+    invoke-virtual {v6, v9}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
     .line 102
     iget-object v6, v0, Lorg/telegram/ui/Cells/ShareDialogCell;->nameTextView:Landroid/widget/TextView;
 
-    const/4 v11, -0x1
+    const/4 v9, -0x1
 
-    const/4 v12, -0x2
+    const/4 v10, -0x2
 
-    const/16 v13, 0x33
+    const/16 v11, 0x33
 
-    const/4 v14, 0x6
+    const/4 v12, 0x6
 
-    iget v15, v0, Lorg/telegram/ui/Cells/ShareDialogCell;->currentType:I
+    iget v13, v0, Lorg/telegram/ui/Cells/ShareDialogCell;->currentType:I
 
-    const/16 v18, 0x3a
+    const/16 v16, 0x3a
 
-    const/16 v19, 0x42
+    const/16 v17, 0x42
 
-    if-ne v15, v5, :cond_2
+    if-ne v13, v5, :cond_2
 
-    move/from16 v15, v18
+    move/from16 v13, v16
 
     goto :goto_2
 
     :cond_2
-    move/from16 v15, v19
+    move/from16 v13, v17
 
     :goto_2
-    const/16 v16, 0x6
+    const/4 v14, 0x6
 
-    const/16 v17, 0x0
+    const/4 v15, 0x0
 
-    invoke-static/range {v11 .. v17}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v9 .. v15}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v11
+    move-result-object v9
 
-    invoke-virtual {v0, v6, v11}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v6, v9}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 104
     new-instance v6, Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -273,27 +269,29 @@
 
     iput-object v6, v0, Lorg/telegram/ui/Cells/ShareDialogCell;->topicTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    if-ne v2, v9, :cond_3
+    if-ne v2, v7, :cond_3
+
+    .line 105
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_nameText:I
 
     goto :goto_3
 
     :cond_3
-    move-object v7, v8
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
-    .line 105
     :goto_3
-    invoke-direct {v0, v7}, Lorg/telegram/ui/Cells/ShareDialogCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v0, v9}, Lorg/telegram/ui/Cells/ShareDialogCell;->getThemedColor(I)I
 
-    move-result v7
+    move-result v9
 
-    invoke-virtual {v6, v7}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
+    invoke-virtual {v6, v9}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextColor(I)V
 
     .line 106
     iget-object v6, v0, Lorg/telegram/ui/Cells/ShareDialogCell;->topicTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const/16 v7, 0xc
+    const/16 v9, 0xc
 
-    invoke-virtual {v6, v7}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
+    invoke-virtual {v6, v9}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setTextSize(I)V
 
     .line 107
     iget-object v6, v0, Lorg/telegram/ui/Cells/ShareDialogCell;->topicTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -303,73 +301,73 @@
     .line 108
     iget-object v6, v0, Lorg/telegram/ui/Cells/ShareDialogCell;->topicTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    invoke-virtual {v6, v10}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
+    invoke-virtual {v6, v8}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setGravity(I)V
 
     .line 109
     iget-object v6, v0, Lorg/telegram/ui/Cells/ShareDialogCell;->topicTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    sget-object v7, Landroid/text/Layout$Alignment;->ALIGN_CENTER:Landroid/text/Layout$Alignment;
+    sget-object v8, Landroid/text/Layout$Alignment;->ALIGN_CENTER:Landroid/text/Layout$Alignment;
 
-    invoke-virtual {v6, v7}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setAlignment(Landroid/text/Layout$Alignment;)V
+    invoke-virtual {v6, v8}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setAlignment(Landroid/text/Layout$Alignment;)V
 
     .line 110
     iget-object v6, v0, Lorg/telegram/ui/Cells/ShareDialogCell;->topicTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const/4 v10, -0x1
+    const/4 v8, -0x1
 
-    const/4 v11, -0x2
+    const/4 v9, -0x2
 
-    const/16 v12, 0x33
+    const/16 v10, 0x33
 
-    const/4 v13, 0x6
+    const/4 v11, 0x6
 
-    iget v7, v0, Lorg/telegram/ui/Cells/ShareDialogCell;->currentType:I
+    iget v12, v0, Lorg/telegram/ui/Cells/ShareDialogCell;->currentType:I
 
-    if-ne v7, v5, :cond_4
+    if-ne v12, v5, :cond_4
 
-    move/from16 v14, v18
+    move/from16 v12, v16
 
     goto :goto_4
 
     :cond_4
-    move/from16 v14, v19
+    move/from16 v12, v17
 
     :goto_4
-    const/4 v15, 0x6
+    const/4 v13, 0x6
 
-    const/16 v16, 0x0
+    const/4 v14, 0x0
 
-    invoke-static/range {v10 .. v16}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v8 .. v14}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v0, v6, v7}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v0, v6, v8}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 112
     new-instance v6, Lorg/telegram/ui/Components/CheckBox2;
 
-    const/16 v7, 0x15
+    const/16 v8, 0x15
 
-    invoke-direct {v6, v1, v7, v3}, Lorg/telegram/ui/Components/CheckBox2;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {v6, v1, v8, v3}, Lorg/telegram/ui/Components/CheckBox2;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     iput-object v6, v0, Lorg/telegram/ui/Cells/ShareDialogCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
-    if-ne v2, v9, :cond_5
+    .line 113
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogRoundCheckBox:I
 
-    const-string v1, "voipgroup_inviteMembersBackground"
+    if-ne v2, v7, :cond_5
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_inviteMembersBackground:I
 
     goto :goto_5
 
     :cond_5
-    const-string v1, "dialogBackground"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
     :goto_5
-    const-string v2, "dialogRoundCheckBox"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogRoundCheckBoxCheck:I
 
-    const-string v3, "dialogRoundCheckBoxCheck"
-
-    .line 113
-    invoke-virtual {v6, v2, v1, v3}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v6, v1, v2, v3}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
     .line 114
     iget-object v1, v0, Lorg/telegram/ui/Cells/ShareDialogCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
@@ -427,10 +425,10 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    const-string v1, "listSelectorSDK21"
-
     .line 124
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -451,39 +449,16 @@
     return-void
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
+.method private getThemedColor(I)I
     .locals 1
 
     .line 298
     iget-object v0, p0, Lorg/telegram/ui/Cells/ShareDialogCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 299
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
@@ -756,15 +731,15 @@
 
     if-ne v6, v0, :cond_5
 
-    const-string v0, "voipgroup_inviteMembersBackground"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_inviteMembersBackground:I
 
     goto :goto_1
 
     :cond_5
-    const-string v0, "windowBackgroundWhite"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     :goto_1
-    invoke-direct {p0, v0}, Lorg/telegram/ui/Cells/ShareDialogCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v0}, Lorg/telegram/ui/Cells/ShareDialogCell;->getThemedColor(I)I
 
     move-result v0
 
@@ -794,9 +769,9 @@
     .line 258
     sget-object v4, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    const-string v5, "chats_onlineCircle"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chats_onlineCircle:I
 
-    invoke-direct {p0, v5}, Lorg/telegram/ui/Cells/ShareDialogCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v5}, Lorg/telegram/ui/Cells/ShareDialogCell;->getThemedColor(I)I
 
     move-result v5
 
@@ -948,9 +923,9 @@
     .line 289
     sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->checkboxSquare_checkPaint:Landroid/graphics/Paint;
 
-    const-string v4, "dialogRoundCheckBox"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogRoundCheckBox:I
 
-    invoke-direct {p0, v4}, Lorg/telegram/ui/Cells/ShareDialogCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v4}, Lorg/telegram/ui/Cells/ShareDialogCell;->getThemedColor(I)I
 
     move-result v4
 
@@ -1047,10 +1022,10 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
 
-    .line 304
+    .line 303
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 305
+    .line 304
     iget-object v0, p0, Lorg/telegram/ui/Cells/ShareDialogCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/CheckBox2;->isChecked()Z
@@ -1061,7 +1036,7 @@
 
     const/4 v0, 0x1
 
-    .line 306
+    .line 305
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setSelected(Z)V
 
     :cond_0

@@ -10,7 +10,7 @@
 
     const-string v1, "BC"
 
-    const-string v2, "threadLocalEcImplicitlyCa"
+    const-string/jumbo v2, "threadLocalEcImplicitlyCa"
 
     invoke-direct {v0, v1, v2}, Lorg/bouncycastle/jcajce/provider/config/ProviderConfigurationPermission;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 
@@ -22,7 +22,7 @@
 
     new-instance v0, Lorg/bouncycastle/jcajce/provider/config/ProviderConfigurationPermission;
 
-    const-string v2, "threadLocalDhDefaultParams"
+    const-string/jumbo v2, "threadLocalDhDefaultParams"
 
     invoke-direct {v0, v1, v2}, Lorg/bouncycastle/jcajce/provider/config/ProviderConfigurationPermission;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 

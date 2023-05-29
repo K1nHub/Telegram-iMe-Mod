@@ -57,7 +57,7 @@ final class RtpOpusReader implements RtpPayloadReader {
             } else {
                 int nextSequenceNumber = RtpPacket.getNextSequenceNumber(this.previousSequenceNumber);
                 if (i != nextSequenceNumber) {
-                    Log.m792w(TAG, Util.formatInvariant("Received RTP packet with unexpected sequence number. Expected: %d; received: %d.", Integer.valueOf(nextSequenceNumber), Integer.valueOf(i)));
+                    Log.m796w(TAG, Util.formatInvariant("Received RTP packet with unexpected sequence number. Expected: %d; received: %d.", Integer.valueOf(nextSequenceNumber), Integer.valueOf(i)));
                 }
                 int bytesLeft = parsableByteArray.bytesLeft();
                 this.trackOutput.sampleData(parsableByteArray, bytesLeft);

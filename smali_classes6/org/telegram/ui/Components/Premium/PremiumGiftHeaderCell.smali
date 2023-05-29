@@ -99,9 +99,9 @@
     .line 46
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/PremiumGiftHeaderCell;->titleView:Landroid/widget/TextView;
 
-    const-string v3, "windowBackgroundWhiteBlackText"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -150,7 +150,7 @@
     .line 52
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/PremiumGiftHeaderCell;->subtitleView:Landroid/widget/TextView;
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

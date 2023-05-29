@@ -37,99 +37,95 @@
     return-void
 .end method
 
-.method public getColor(Ljava/lang/String;)Ljava/lang/Integer;
-    .locals 2
+.method public contains(I)Z
+    .locals 0
 
-    .line 257
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
+.method public getColor(I)I
+    .locals 3
+
+    .line 260
     sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->isPinnedPlayerThemeOverridden:Z
 
     if-eqz v0, :cond_2
 
-    .line 258
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$000()Ljava/util/HashMap;
+    .line 261
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$000()Landroid/util/SparseIntArray;
 
     move-result-object v0
 
-    invoke-virtual {v0, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    const/4 v1, -0x1
 
-    move-result-object v0
+    invoke-virtual {v0, p1, v1}, Landroid/util/SparseIntArray;->get(II)I
 
-    check-cast v0, Ljava/lang/Integer;
+    move-result v0
 
-    if-nez v0, :cond_1
+    if-ne v0, v1, :cond_1
 
-    .line 260
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$100()Ljava/util/HashMap;
+    .line 263
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$100()Landroid/util/SparseIntArray;
 
-    move-result-object v1
+    move-result-object v2
 
-    invoke-virtual {v1, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-virtual {v2, p1, v1}, Landroid/util/SparseIntArray;->get(II)I
 
-    move-result-object v1
+    move-result v2
 
-    check-cast v1, Ljava/lang/String;
-
-    if-eqz v1, :cond_0
-
-    .line 262
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$000()Ljava/util/HashMap;
-
-    move-result-object v0
-
-    invoke-virtual {v0, v1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Ljava/lang/Integer;
-
-    :cond_0
-    if-nez v0, :cond_1
+    if-eq v2, v1, :cond_0
 
     .line 265
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getDefaultColor(Ljava/lang/String;)I
+    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->access$000()Landroid/util/SparseIntArray;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v2, v1}, Landroid/util/SparseIntArray;->get(II)I
+
+    move-result v0
+
+    :cond_0
+    if-ne v0, v1, :cond_1
+
+    .line 268
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getDefaultColor(I)I
 
     move-result p1
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    return-object p1
+    return p1
 
     :cond_1
-    return-object v0
+    return v0
 
-    .line 270
+    .line 273
     :cond_2
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public synthetic getColorOrDefault(Ljava/lang/String;)I
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getColorOrDefault(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/String;)I
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
     return p1
 .end method
 
-.method public synthetic getCurrentColor(Ljava/lang/String;)Ljava/lang/Integer;
+.method public synthetic getColorOrDefault(I)I
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getCurrentColor(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/String;)Ljava/lang/Integer;
+    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getColorOrDefault(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)I
 
-    move-result-object p1
+    move-result p1
 
-    return-object p1
+    return p1
+.end method
+
+.method public synthetic getCurrentColor(I)I
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getCurrentColor(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)I
+
+    move-result p1
+
+    return p1
 .end method
 
 .method public synthetic getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
@@ -162,10 +158,10 @@
     return v0
 .end method
 
-.method public synthetic setAnimatedColor(Ljava/lang/String;I)V
+.method public synthetic setAnimatedColor(II)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$setAnimatedColor(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/String;I)V
+    invoke-static {p0, p1, p2}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$setAnimatedColor(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;II)V
 
     return-void
 .end method

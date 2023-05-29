@@ -30,7 +30,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapError$1\n+ 2 TwitterInteractor.kt\ncom/iMe/storage/domain/interactor/twitter/TwitterInteractor\n+ 3 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n*L\n1#1,80:1\n104#2,4:81\n14#3:85\n*S KotlinDebug\n*F\n+ 1 TwitterInteractor.kt\ncom/iMe/storage/domain/interactor/twitter/TwitterInteractor\n*L\n107#1:85\n*E\n"
+    value = "SMAP\nObservableExt.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt$flatMapError$1\n+ 2 TwitterInteractor.kt\ncom/iMe/storage/domain/interactor/twitter/TwitterInteractor\n+ 3 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n*L\n1#1,80:1\n68#2,4:81\n14#3:85\n*S KotlinDebug\n*F\n+ 1 TwitterInteractor.kt\ncom/iMe/storage/domain/interactor/twitter/TwitterInteractor\n*L\n71#1:85\n*E\n"
 .end annotation
 
 
@@ -124,14 +124,14 @@
     .line 81
     iget-object p1, p0, Lcom/iMe/storage/domain/interactor/twitter/TwitterInteractor$handleTokenError$$inlined$flatMapError$1;->this$0:Lcom/iMe/storage/domain/interactor/twitter/TwitterInteractor;
 
-    invoke-static {p1}, Lcom/iMe/storage/domain/interactor/twitter/TwitterInteractor;->access$getTwitterRepository$p(Lcom/iMe/storage/domain/interactor/twitter/TwitterInteractor;)Lcom/iMe/storage/domain/repository/twitter/TwitterRepository;
+    invoke-static {p1}, Lcom/iMe/storage/domain/interactor/twitter/TwitterInteractor;->access$getTwitterRepository$p(Lcom/iMe/storage/domain/interactor/twitter/TwitterInteractor;)Lcom/iMe/storage/domain/repository/socialMedia/TwitterRepository;
 
     move-result-object p1
 
     .line 82
     iget-wide v0, p0, Lcom/iMe/storage/domain/interactor/twitter/TwitterInteractor$handleTokenError$$inlined$flatMapError$1;->$profileId$inlined:J
 
-    invoke-interface {p1, v0, v1}, Lcom/iMe/storage/domain/repository/twitter/TwitterRepository;->getRefreshToken(J)Lio/reactivex/Observable;
+    invoke-interface {p1, v0, v1}, Lcom/iMe/storage/domain/repository/socialMedia/TwitterRepository;->getRefreshToken(J)Lio/reactivex/Observable;
 
     move-result-object p1
 

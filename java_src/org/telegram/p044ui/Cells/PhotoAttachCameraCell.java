@@ -12,7 +12,7 @@ import android.widget.ImageView;
 import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.LayoutHelper;
 /* renamed from: org.telegram.ui.Cells.PhotoAttachCameraCell */
@@ -33,15 +33,15 @@ public class PhotoAttachCameraCell extends FrameLayout {
         ImageView imageView2 = new ImageView(context);
         this.imageView = imageView2;
         imageView2.setScaleType(ImageView.ScaleType.CENTER);
-        this.imageView.setImageResource(C3242R.C3244drawable.instant_camera);
+        this.imageView.setImageResource(C3290R.C3292drawable.instant_camera);
         addView(this.imageView, LayoutHelper.createFrame(80, 80));
         setFocusable(true);
-        this.itemSize = AndroidUtilities.m50dp(0);
+        this.itemSize = AndroidUtilities.m54dp(0);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.itemSize + AndroidUtilities.m50dp(5), 1073741824), View.MeasureSpec.makeMeasureSpec(this.itemSize + AndroidUtilities.m50dp(5), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.itemSize + AndroidUtilities.m54dp(5), 1073741824), View.MeasureSpec.makeMeasureSpec(this.itemSize + AndroidUtilities.m54dp(5), 1073741824));
     }
 
     public void setItemSize(int i) {
@@ -63,7 +63,7 @@ public class PhotoAttachCameraCell extends FrameLayout {
     @Override // android.view.ViewGroup, android.view.View
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.imageView.setColorFilter(new PorterDuffColorFilter(getThemedColor("dialogCameraIcon"), PorterDuff.Mode.MULTIPLY));
+        this.imageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_dialogCameraIcon), PorterDuff.Mode.MULTIPLY));
     }
 
     public void updateBitmap() {
@@ -76,7 +76,7 @@ public class PhotoAttachCameraCell extends FrameLayout {
         if (bitmap != null) {
             this.backgroundView.setImageBitmap(bitmap);
         } else {
-            this.backgroundView.setImageResource(C3242R.C3244drawable.icplaceholder);
+            this.backgroundView.setImageResource(C3290R.C3292drawable.icplaceholder);
         }
     }
 
@@ -84,9 +84,7 @@ public class PhotoAttachCameraCell extends FrameLayout {
         return this.backgroundView.getDrawable();
     }
 
-    protected int getThemedColor(String str) {
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-        return color != null ? color.intValue() : Theme.getColor(str);
+    protected int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 }

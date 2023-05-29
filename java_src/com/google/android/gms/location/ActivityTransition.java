@@ -17,9 +17,9 @@ public class ActivityTransition extends AbstractSafeParcelable {
     public static final int ACTIVITY_TRANSITION_ENTER = 0;
     public static final int ACTIVITY_TRANSITION_EXIT = 1;
     public static final Parcelable.Creator<ActivityTransition> CREATOR = new zze();
-    @SafeParcelable.Field(getter = "getActivityType", m775id = 1)
+    @SafeParcelable.Field(getter = "getActivityType", m779id = 1)
     private final int zza;
-    @SafeParcelable.Field(getter = "getTransitionType", m775id = 2)
+    @SafeParcelable.Field(getter = "getTransitionType", m779id = 2)
     private final int zzb;
 
     /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
@@ -54,7 +54,7 @@ public class ActivityTransition extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public ActivityTransition(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) int i2) {
+    public ActivityTransition(@SafeParcelable.Param(m778id = 1) int i, @SafeParcelable.Param(m778id = 2) int i2) {
         this.zza = i;
         this.zzb = i2;
     }

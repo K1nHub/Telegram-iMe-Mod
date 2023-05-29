@@ -79,7 +79,7 @@ public class ChartPickerDelegate {
     public class CapturesData {
 
         /* renamed from: a */
-        ValueAnimator f1599a;
+        ValueAnimator f1606a;
         public float aValue = BitmapDescriptorFactory.HUE_RED;
         public int capturedX;
         public float end;
@@ -94,16 +94,16 @@ public class ChartPickerDelegate {
 
         public void captured() {
             ValueAnimator ofFloat = ValueAnimator.ofFloat(BitmapDescriptorFactory.HUE_RED, 1.0f);
-            this.f1599a = ofFloat;
+            this.f1606a = ofFloat;
             ofFloat.setDuration(600L);
-            this.f1599a.setInterpolator(BaseChartView.INTERPOLATOR);
-            this.f1599a.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Charts.ChartPickerDelegate$CapturesData$$ExternalSyntheticLambda0
+            this.f1606a.setInterpolator(BaseChartView.INTERPOLATOR);
+            this.f1606a.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Charts.ChartPickerDelegate$CapturesData$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
                     ChartPickerDelegate.CapturesData.this.lambda$captured$0(valueAnimator);
                 }
             });
-            this.f1599a.start();
+            this.f1606a.start();
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -113,7 +113,7 @@ public class ChartPickerDelegate {
         }
 
         public void uncapture() {
-            ValueAnimator valueAnimator = this.f1599a;
+            ValueAnimator valueAnimator = this.f1606a;
             if (valueAnimator != null) {
                 valueAnimator.cancel();
             }
@@ -304,7 +304,7 @@ public class ChartPickerDelegate {
                 this.tryMoveTo = false;
                 float x = this.moveToX - motionEvent.getX();
                 float y = this.moveToY - motionEvent.getY();
-                if (motionEvent.getAction() == 1 && System.currentTimeMillis() - this.startTapTime < 300 && Math.sqrt((x * x) + (y * y)) < AndroidUtilities.m50dp(10)) {
+                if (motionEvent.getAction() == 1 && System.currentTimeMillis() - this.startTapTime < 300 && Math.sqrt((x * x) + (y * y)) < AndroidUtilities.m54dp(10)) {
                     float f3 = (this.moveToX - BaseChartView.HORIZONTAL_PADDING) / this.pickerWidth;
                     final float f4 = this.pickerEnd;
                     final float f5 = this.pickerStart;

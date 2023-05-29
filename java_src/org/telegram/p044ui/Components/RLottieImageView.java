@@ -17,6 +17,7 @@ import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.SvgHelper;
+import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.tgnet.TLRPC$Document;
 import org.telegram.tgnet.TLRPC$PhotoSize;
 /* renamed from: org.telegram.ui.Components.RLottieImageView */
@@ -78,7 +79,7 @@ public class RLottieImageView extends ImageView {
     }
 
     public void setAnimation(int i, int i2, int i3, int[] iArr) {
-        setAnimation(new RLottieDrawable(i, "" + i, AndroidUtilities.m50dp(i2), AndroidUtilities.m50dp(i3), false, iArr));
+        setAnimation(new RLottieDrawable(i, "" + i, AndroidUtilities.m54dp(i2), AndroidUtilities.m54dp(i3), false, iArr));
     }
 
     public void setOnAnimationEndListener(Runnable runnable) {
@@ -154,7 +155,7 @@ public class RLottieImageView extends ImageView {
                 sb.append(ImageLoader.AUTOPLAY_FILTER);
                 imageReceiver3.setImage(forDocument2, sb.toString(), ImageLocation.getForDocument(closestPhotoSizeWithSize, tLRPC$Document), null, null, tLRPC$Document.size, null, tLRPC$Document, 1);
             } else {
-                SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(tLRPC$Document.thumbs, "windowBackgroundWhiteGrayIcon", 0.2f);
+                SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(tLRPC$Document.thumbs, Theme.key_windowBackgroundWhiteGrayIcon, 0.2f);
                 if (svgThumb != null) {
                     svgThumb.overrideWidthAndHeight(512, 512);
                 }
@@ -191,7 +192,7 @@ public class RLottieImageView extends ImageView {
             @Override // android.graphics.drawable.Drawable
             public void draw(Canvas canvas) {
                 Rect rect = AndroidUtilities.rectTmp2;
-                rect.set(getBounds().centerX() - (AndroidUtilities.m50dp(i) / 2), getBounds().centerY() - (AndroidUtilities.m50dp(i2) / 2), getBounds().centerX() + (AndroidUtilities.m50dp(i) / 2), getBounds().centerY() + (AndroidUtilities.m50dp(i2) / 2));
+                rect.set(getBounds().centerX() - (AndroidUtilities.m54dp(i) / 2), getBounds().centerY() - (AndroidUtilities.m54dp(i2) / 2), getBounds().centerX() + (AndroidUtilities.m54dp(i) / 2), getBounds().centerY() + (AndroidUtilities.m54dp(i2) / 2));
                 RLottieImageView.this.imageReceiver.setImageCoords(rect);
                 RLottieImageView.this.imageReceiver.draw(canvas);
             }

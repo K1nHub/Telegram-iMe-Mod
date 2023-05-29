@@ -46,10 +46,10 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/KiklikoGifView;->mutedIconView$delegate:Lkotlin/Lazy;
 
-    const-string p1, "chat_emojiSearchBackground"
-
     .line 29
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiSearchBackground:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 

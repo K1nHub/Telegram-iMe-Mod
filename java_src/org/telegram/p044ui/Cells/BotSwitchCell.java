@@ -19,7 +19,7 @@ public class BotSwitchCell extends FrameLayout {
         TextView textView = new TextView(context);
         this.textView = textView;
         textView.setTextSize(1, 15.0f);
-        this.textView.setTextColor(Theme.getColor("chat_botSwitchToInlineText"));
+        this.textView.setTextColor(Theme.getColor(Theme.key_chat_botSwitchToInlineText));
         this.textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.textView.setSingleLine(true);
         this.textView.setEllipsize(TextUtils.TruncateAt.END);
@@ -30,7 +30,7 @@ public class BotSwitchCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(36), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(36), 1073741824));
     }
 
     public void setText(String str) {

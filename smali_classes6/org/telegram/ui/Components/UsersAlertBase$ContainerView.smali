@@ -94,9 +94,9 @@
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    const-string v1, "dialogBackground"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/UsersAlertBase;->access$2100(Lorg/telegram/ui/Components/UsersAlertBase;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/UsersAlertBase;->access$2100(Lorg/telegram/ui/Components/UsersAlertBase;I)I
 
     move-result v0
 
@@ -125,9 +125,9 @@
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    const-string v5, "actionBarDefault"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
 
-    invoke-static {v4, v5}, Lorg/telegram/ui/Components/UsersAlertBase;->access$2200(Lorg/telegram/ui/Components/UsersAlertBase;Ljava/lang/String;)I
+    invoke-static {v4, v5}, Lorg/telegram/ui/Components/UsersAlertBase;->access$2200(Lorg/telegram/ui/Components/UsersAlertBase;I)I
 
     move-result v4
 
@@ -626,9 +626,9 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/UsersAlertBase$ContainerView;->this$0:Lorg/telegram/ui/Components/UsersAlertBase;
 
-    iget-object v1, v1, Lorg/telegram/ui/Components/UsersAlertBase;->keyScrollUp:Ljava/lang/String;
+    iget v1, v1, Lorg/telegram/ui/Components/UsersAlertBase;->keyScrollUp:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

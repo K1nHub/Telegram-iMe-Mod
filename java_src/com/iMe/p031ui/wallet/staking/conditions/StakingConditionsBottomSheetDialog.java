@@ -17,7 +17,7 @@ import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentStakingConditionsBinding;
 import org.telegram.p044ui.ActionBar.BaseFragment;
@@ -125,15 +125,15 @@ public final class StakingConditionsBottomSheetDialog extends MvpBottomSheet imp
         Intrinsics.checkNotNullParameter(finishedFeeText, "finishedFeeText");
         ForkContentStakingConditionsBinding binding = getBinding();
         binding.viewHeader.setupViewData(i, Integer.valueOf(i2), name, author);
-        binding.viewAnnualPercentageCell.setupViewData(getResourceManager().getString(C3242R.string.staking_details_apy_apr), annualPercentage, C3242R.C3244drawable.fork_ic_percent, true);
-        binding.viewStartDateCell.setupViewData(getResourceManager().getString(C3242R.string.staking_conditions_start), startDate, C3242R.C3244drawable.fork_ic_start, true);
-        binding.viewCompletionDateCell.setupViewData(getResourceManager().getString(C3242R.string.staking_conditions_completion), completionDate, C3242R.C3244drawable.fork_ic_done_24, true);
-        binding.viewThresholdCell.setupViewData(getResourceManager().getString(C3242R.string.staking_conditions_compound_threshold), compoundThreshold, C3242R.C3244drawable.fork_ic_donations_24, true);
-        binding.viewPlannedWithdrawalFeeCell.setupViewData(getResourceManager().getString(C3242R.string.staking_conditions_planned_withdrawal), plannedWithdrawalFeeText, C3242R.C3244drawable.fork_ic_transactions_24, true);
-        binding.viewImmediateWithdrawalFeeCell.setupViewData(getResourceManager().getString(C3242R.string.staking_conditions_immediate_withdrawal), immediateWithdrawalFeeText, C3242R.C3244drawable.fork_ic_ask_transfer_24, true);
+        binding.viewAnnualPercentageCell.setupViewData(getResourceManager().getString(C3290R.string.staking_details_apy_apr), annualPercentage, C3290R.C3292drawable.fork_ic_percent, true);
+        binding.viewStartDateCell.setupViewData(getResourceManager().getString(C3290R.string.staking_conditions_start), startDate, C3290R.C3292drawable.fork_ic_start, true);
+        binding.viewCompletionDateCell.setupViewData(getResourceManager().getString(C3290R.string.staking_conditions_completion), completionDate, C3290R.C3292drawable.fork_ic_done_24, true);
+        binding.viewThresholdCell.setupViewData(getResourceManager().getString(C3290R.string.staking_conditions_compound_threshold), compoundThreshold, C3290R.C3292drawable.fork_ic_donations_24, true);
+        binding.viewPlannedWithdrawalFeeCell.setupViewData(getResourceManager().getString(C3290R.string.staking_conditions_planned_withdrawal), plannedWithdrawalFeeText, C3290R.C3292drawable.fork_ic_transactions_24, true);
+        binding.viewImmediateWithdrawalFeeCell.setupViewData(getResourceManager().getString(C3290R.string.staking_conditions_immediate_withdrawal), immediateWithdrawalFeeText, C3290R.C3292drawable.fork_ic_ask_transfer_24, true);
         DetailsIconCellView viewFinishedFeeCell = binding.viewFinishedFeeCell;
         Intrinsics.checkNotNullExpressionValue(viewFinishedFeeCell, "viewFinishedFeeCell");
-        DetailsIconCellView.setupViewData$default(viewFinishedFeeCell, getResourceManager().getString(C3242R.string.staking_conditions_end_output), finishedFeeText, C3242R.C3244drawable.fork_ic_end_24, false, 8, null);
+        DetailsIconCellView.setupViewData$default(viewFinishedFeeCell, getResourceManager().getString(C3290R.string.staking_conditions_end_output), finishedFeeText, C3290R.C3292drawable.fork_ic_end_24, false, 8, null);
     }
 
     private final void setupColors() {
@@ -143,11 +143,11 @@ public final class StakingConditionsBottomSheetDialog extends MvpBottomSheet imp
         binding.viewStartDateCell.setupColors();
         binding.viewCompletionDateCell.setupColors();
         binding.viewThresholdCell.setupColors();
-        binding.buttonOk.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m50dp(4), Theme.getColor("featuredStickers_addButton"), ViewExtKt.withAlpha(Theme.getColor("windowBackgroundWhite"), 120)));
+        binding.buttonOk.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(4), Theme.getColor(Theme.key_featuredStickers_addButton), ViewExtKt.withAlpha(Theme.getColor(Theme.key_windowBackgroundWhite), 120)));
     }
 
     private final void setupTexts() {
-        getBinding().buttonOk.setText(LocaleController.getString("OK", C3242R.string.OK));
+        getBinding().buttonOk.setText(LocaleController.getString("OK", C3290R.string.OK));
     }
 
     private final void setupListeners() {

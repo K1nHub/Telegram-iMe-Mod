@@ -16,6 +16,6 @@ final class ProgressView$lineY$2 extends Lambda implements Function0<Float> {
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // kotlin.jvm.functions.Function0
     public final Float invoke() {
-        return Float.valueOf(AndroidUtilities.m50dp(15));
+        return Float.valueOf(AndroidUtilities.m54dp(15));
     }
 }

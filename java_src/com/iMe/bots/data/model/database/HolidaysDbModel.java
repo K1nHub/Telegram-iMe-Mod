@@ -42,7 +42,7 @@ public final class HolidaysDbModel {
     }
 
     public int hashCode() {
-        return (BotsDbModel$$ExternalSyntheticBackport0.m702m(this.userId) * 31) + this.tags.hashCode();
+        return (BotsDbModel$$ExternalSyntheticBackport0.m706m(this.userId) * 31) + this.tags.hashCode();
     }
 
     public String toString() {

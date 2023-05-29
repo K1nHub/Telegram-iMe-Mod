@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;)V
     .locals 0
 
-    .line 1223
+    .line 1224
     iput-object p1, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$15;->this$0:Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +35,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1226
+    .line 1227
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 1227
+    .line 1228
     iget-object p1, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$15;->this$0:Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
 
     const/4 v0, 0x0
@@ -47,10 +47,10 @@
 
     const/4 v0, 0x0
 
-    .line 1228
+    .line 1229
     iput v0, p1, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;->swipeToBackDy:F
 
-    .line 1229
+    .line 1230
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void

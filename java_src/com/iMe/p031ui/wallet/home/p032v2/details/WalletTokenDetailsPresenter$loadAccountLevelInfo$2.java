@@ -11,7 +11,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: WalletTokenDetailsPresenter.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsPresenter$loadAccountLevelInfo$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class WalletTokenDetailsPresenter$loadAccountLevelInfo$2 extends Lambda implements Function1<Observable<Result<? extends AccountLevelInformation>>, ObservableSource<Result<? extends AccountLevelInformation>>> {
     final /* synthetic */ boolean $isWithLoading;
     final /* synthetic */ WalletTokenDetailsPresenter this$0;

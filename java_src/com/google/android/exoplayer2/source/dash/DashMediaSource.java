@@ -6,7 +6,7 @@ import android.os.Looper;
 import android.os.SystemClock;
 import android.text.TextUtils;
 import android.util.SparseArray;
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.exoplayer2.DefaultLoadControl;
 import com.google.android.exoplayer2.ExoPlayerLibraryInfo;
 import com.google.android.exoplayer2.MediaItem;
@@ -211,8 +211,8 @@ public final class DashMediaSource extends BaseMediaSource {
         this.manifestUriLock = new Object();
         this.periodsById = new SparseArray<>();
         this.playerEmsgCallback = new DefaultPlayerEmsgCallback();
-        this.expiredManifestPublishTimeUs = C0470C.TIME_UNSET;
-        this.elapsedRealtimeOffsetMs = C0470C.TIME_UNSET;
+        this.expiredManifestPublishTimeUs = C0475C.TIME_UNSET;
+        this.elapsedRealtimeOffsetMs = C0475C.TIME_UNSET;
         if (z) {
             Assertions.checkState(true ^ dashManifest.dynamic);
             this.manifestCallback = null;
@@ -279,7 +279,7 @@ public final class DashMediaSource extends BaseMediaSource {
         int intValue = ((Integer) mediaPeriodId.periodUid).intValue() - this.firstPeriodId;
         MediaSourceEventListener.EventDispatcher createEventDispatcher = createEventDispatcher(mediaPeriodId, this.manifest.getPeriod(intValue).startMs);
         DashMediaPeriod dashMediaPeriod = new DashMediaPeriod(intValue + this.firstPeriodId, this.manifest, this.baseUrlExclusionList, intValue, this.chunkSourceFactory, this.mediaTransferListener, this.drmSessionManager, createDrmEventDispatcher(mediaPeriodId), this.loadErrorHandlingPolicy, createEventDispatcher, this.elapsedRealtimeOffsetMs, this.manifestLoadErrorThrower, allocator, this.compositeSequenceableLoaderFactory, this.playerEmsgCallback, getPlayerId());
-        this.periodsById.put(dashMediaPeriod.f126id, dashMediaPeriod);
+        this.periodsById.put(dashMediaPeriod.f129id, dashMediaPeriod);
         return dashMediaPeriod;
     }
 
@@ -287,7 +287,7 @@ public final class DashMediaSource extends BaseMediaSource {
     public void releasePeriod(MediaPeriod mediaPeriod) {
         DashMediaPeriod dashMediaPeriod = (DashMediaPeriod) mediaPeriod;
         dashMediaPeriod.release();
-        this.periodsById.remove(dashMediaPeriod.f126id);
+        this.periodsById.remove(dashMediaPeriod.f129id);
     }
 
     @Override // com.google.android.exoplayer2.source.BaseMediaSource
@@ -309,9 +309,9 @@ public final class DashMediaSource extends BaseMediaSource {
             handler.removeCallbacksAndMessages(null);
             this.handler = null;
         }
-        this.elapsedRealtimeOffsetMs = C0470C.TIME_UNSET;
+        this.elapsedRealtimeOffsetMs = C0475C.TIME_UNSET;
         this.staleManifestReloadAttempt = 0;
-        this.expiredManifestPublishTimeUs = C0470C.TIME_UNSET;
+        this.expiredManifestPublishTimeUs = C0475C.TIME_UNSET;
         this.firstPeriodId = 0;
         this.periodsById.clear();
         this.baseUrlExclusionList.reset();
@@ -325,7 +325,7 @@ public final class DashMediaSource extends BaseMediaSource {
 
     void onDashManifestPublishTimeExpired(long j) {
         long j2 = this.expiredManifestPublishTimeUs;
-        if (j2 == C0470C.TIME_UNSET || j2 < j) {
+        if (j2 == C0475C.TIME_UNSET || j2 < j) {
             this.expiredManifestPublishTimeUs = j;
         }
     }
@@ -348,7 +348,7 @@ public final class DashMediaSource extends BaseMediaSource {
         Loader.LoadErrorAction createRetryAction;
         LoadEventInfo loadEventInfo = new LoadEventInfo(parsingLoadable.loadTaskId, parsingLoadable.dataSpec, parsingLoadable.getUri(), parsingLoadable.getResponseHeaders(), j, j2, parsingLoadable.bytesLoaded());
         long retryDelayMsFor = this.loadErrorHandlingPolicy.getRetryDelayMsFor(new LoadErrorHandlingPolicy.LoadErrorInfo(loadEventInfo, new MediaLoadData(parsingLoadable.type), iOException, i));
-        if (retryDelayMsFor == C0470C.TIME_UNSET) {
+        if (retryDelayMsFor == C0475C.TIME_UNSET) {
             createRetryAction = Loader.DONT_RETRY_FATAL;
         } else {
             createRetryAction = Loader.createRetryAction(false, retryDelayMsFor);
@@ -430,7 +430,7 @@ public final class DashMediaSource extends BaseMediaSource {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void onUtcTimestampResolutionError(IOException iOException) {
-        Log.m795e("DashMediaSource", "Failed to resolve time offset.", iOException);
+        Log.m799e("DashMediaSource", "Failed to resolve time offset.", iOException);
         processManifest(true);
     }
 
@@ -454,14 +454,14 @@ public final class DashMediaSource extends BaseMediaSource {
         boolean z2 = this.manifest.dynamic && !isIndexExplicit(period3);
         if (z2) {
             long j3 = this.manifest.timeShiftBufferDepthMs;
-            if (j3 != C0470C.TIME_UNSET) {
+            if (j3 != C0475C.TIME_UNSET) {
                 availableStartTimeInManifestUs = Math.max(availableStartTimeInManifestUs, availableEndTimeInManifestUs - Util.msToUs(j3));
             }
         }
         long j4 = availableEndTimeInManifestUs - availableStartTimeInManifestUs;
         DashManifest dashManifest = this.manifest;
         if (dashManifest.dynamic) {
-            Assertions.checkState(dashManifest.availabilityStartTimeMs != C0470C.TIME_UNSET);
+            Assertions.checkState(dashManifest.availabilityStartTimeMs != C0475C.TIME_UNSET);
             long msToUs2 = (msToUs - Util.msToUs(this.manifest.availabilityStartTimeMs)) - availableStartTimeInManifestUs;
             updateLiveConfiguration(msToUs2, j4);
             long usToMs = this.manifest.availabilityStartTimeMs + Util.usToMs(availableStartTimeInManifestUs);
@@ -472,7 +472,7 @@ public final class DashMediaSource extends BaseMediaSource {
             period = period2;
         } else {
             period = period2;
-            j = C0470C.TIME_UNSET;
+            j = C0475C.TIME_UNSET;
             j2 = 0;
         }
         long msToUs4 = availableStartTimeInManifestUs - Util.msToUs(period.startMs);
@@ -491,7 +491,7 @@ public final class DashMediaSource extends BaseMediaSource {
             DashManifest dashManifest3 = this.manifest;
             if (dashManifest3.dynamic) {
                 long j5 = dashManifest3.minUpdatePeriodMs;
-                if (j5 != C0470C.TIME_UNSET) {
+                if (j5 != C0475C.TIME_UNSET) {
                     if (j5 == 0) {
                         j5 = 5000;
                     }
@@ -681,7 +681,7 @@ public final class DashMediaSource extends BaseMediaSource {
         @Override // com.google.android.exoplayer2.Timeline
         public Timeline.Period getPeriod(int i, Timeline.Period period, boolean z) {
             Assertions.checkIndex(i, 0, getPeriodCount());
-            return period.set(z ? this.manifest.getPeriod(i).f129id : null, z ? Integer.valueOf(this.firstPeriodId + i) : null, 0, this.manifest.getPeriodDurationUs(i), Util.msToUs(this.manifest.getPeriod(i).startMs - this.manifest.getPeriod(0).startMs) - this.offsetInFirstPeriodUs);
+            return period.set(z ? this.manifest.getPeriod(i).f132id : null, z ? Integer.valueOf(this.firstPeriodId + i) : null, 0, this.manifest.getPeriodDurationUs(i), Util.msToUs(this.manifest.getPeriod(i).startMs - this.manifest.getPeriod(0).startMs) - this.offsetInFirstPeriodUs);
         }
 
         @Override // com.google.android.exoplayer2.Timeline
@@ -710,7 +710,7 @@ public final class DashMediaSource extends BaseMediaSource {
                 if (j > 0) {
                     j2 += j;
                     if (j2 > this.windowDurationUs) {
-                        return C0470C.TIME_UNSET;
+                        return C0475C.TIME_UNSET;
                     }
                 }
                 long j3 = this.offsetInFirstPeriodUs + j2;
@@ -735,7 +735,7 @@ public final class DashMediaSource extends BaseMediaSource {
         }
 
         private static boolean isMovingLiveWindow(DashManifest dashManifest) {
-            return dashManifest.dynamic && dashManifest.minUpdatePeriodMs != C0470C.TIME_UNSET && dashManifest.durationMs == C0470C.TIME_UNSET;
+            return dashManifest.dynamic && dashManifest.minUpdatePeriodMs != C0475C.TIME_UNSET && dashManifest.durationMs == C0475C.TIME_UNSET;
         }
     }
 

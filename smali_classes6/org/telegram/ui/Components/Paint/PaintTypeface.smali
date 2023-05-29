@@ -14,7 +14,7 @@
 
 
 # static fields
-.field private static final BUILT_IN_FONTS:Ljava/util/List;
+.field public static final BUILT_IN_FONTS:Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "Ljava/util/List<",
@@ -79,7 +79,7 @@
 .method static constructor <clinit>()V
     .locals 10
 
-    .line 32
+    .line 33
     new-instance v0, Lorg/telegram/ui/Components/Paint/PaintTypeface;
 
     const-string v1, "fonts/rmedium.ttf"
@@ -96,7 +96,7 @@
 
     sput-object v0, Lorg/telegram/ui/Components/Paint/PaintTypeface;->ROBOTO_MEDIUM:Lorg/telegram/ui/Components/Paint/PaintTypeface;
 
-    .line 33
+    .line 34
     new-instance v1, Lorg/telegram/ui/Components/Paint/PaintTypeface;
 
     const-string v2, "fonts/rmediumitalic.ttf"
@@ -113,7 +113,7 @@
 
     sput-object v1, Lorg/telegram/ui/Components/Paint/PaintTypeface;->ROBOTO_ITALIC:Lorg/telegram/ui/Components/Paint/PaintTypeface;
 
-    .line 34
+    .line 35
     new-instance v2, Lorg/telegram/ui/Components/Paint/PaintTypeface;
 
     const-string v3, "serif"
@@ -130,7 +130,7 @@
 
     sput-object v2, Lorg/telegram/ui/Components/Paint/PaintTypeface;->ROBOTO_SERIF:Lorg/telegram/ui/Components/Paint/PaintTypeface;
 
-    .line 35
+    .line 36
     new-instance v3, Lorg/telegram/ui/Components/Paint/PaintTypeface;
 
     const-string v5, "fonts/rmono.ttf"
@@ -147,7 +147,7 @@
 
     sput-object v3, Lorg/telegram/ui/Components/Paint/PaintTypeface;->ROBOTO_MONO:Lorg/telegram/ui/Components/Paint/PaintTypeface;
 
-    .line 36
+    .line 37
     new-instance v5, Lorg/telegram/ui/Components/Paint/PaintTypeface;
 
     const-string v6, "fonts/mw_bold.ttf"
@@ -164,7 +164,7 @@
 
     sput-object v5, Lorg/telegram/ui/Components/Paint/PaintTypeface;->MW_BOLD:Lorg/telegram/ui/Components/Paint/PaintTypeface;
 
-    .line 37
+    .line 38
     new-instance v6, Lorg/telegram/ui/Components/Paint/PaintTypeface;
 
     const-string v7, "fonts/courier_new_bold.ttf"
@@ -207,7 +207,7 @@
 
     aput-object v6, v7, v0
 
-    .line 39
+    .line 40
     invoke-static {v7}, Ljava/util/Arrays;->asList([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
@@ -226,7 +226,7 @@
 
     const-string v6, "Coming Soon"
 
-    .line 41
+    .line 42
     filled-new-array/range {v1 .. v6}, [Ljava/lang/String;
 
     move-result-object v0
@@ -243,21 +243,21 @@
 .method constructor <init>(Landroid/graphics/fonts/Font;Ljava/lang/String;)V
     .locals 0
 
-    .line 66
+    .line 67
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 67
+    .line 68
     iput-object p2, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface;->key:Ljava/lang/String;
 
-    .line 68
+    .line 69
     iput-object p2, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface;->name:Ljava/lang/String;
 
     const/4 p2, 0x0
 
-    .line 69
+    .line 70
     iput-object p2, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface;->nameKey:Ljava/lang/String;
 
-    .line 70
+    .line 71
     invoke-virtual {p1}, Landroid/graphics/fonts/Font;->getFile()Ljava/io/File;
 
     move-result-object p1
@@ -274,21 +274,21 @@
 .method constructor <init>(Ljava/lang/String;Ljava/lang/String;Landroid/graphics/Typeface;)V
     .locals 0
 
-    .line 57
+    .line 58
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 58
+    .line 59
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface;->key:Ljava/lang/String;
 
-    .line 59
+    .line 60
     iput-object p2, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface;->nameKey:Ljava/lang/String;
 
     const/4 p1, 0x0
 
-    .line 60
+    .line 61
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface;->name:Ljava/lang/String;
 
-    .line 61
+    .line 62
     iput-object p3, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface;->typeface:Landroid/graphics/Typeface;
 
     return-void
@@ -297,7 +297,7 @@
 .method public static fetched(Ljava/lang/Runnable;)Z
     .locals 2
 
-    .line 169
+    .line 161
     sget-object v0, Lorg/telegram/ui/Components/Paint/PaintTypeface;->typefaces:Ljava/util/List;
 
     if-nez v0, :cond_1
@@ -306,7 +306,7 @@
 
     goto :goto_0
 
-    .line 172
+    .line 164
     :cond_0
     sget-object v0, Lorg/telegram/messenger/Utilities;->themeQueue:Lorg/telegram/messenger/DispatchQueue;
 
@@ -334,7 +334,7 @@
 
     if-eqz p0, :cond_4
 
-    .line 150
+    .line 142
     invoke-static {p0}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v1
@@ -343,16 +343,16 @@
 
     goto :goto_1
 
-    .line 153
+    .line 145
     :cond_0
     sget-object v1, Lorg/telegram/ui/Components/Paint/PaintTypeface;->typefaces:Ljava/util/List;
 
     if-nez v1, :cond_1
 
-    .line 154
+    .line 146
     invoke-static {}, Lorg/telegram/ui/Components/Paint/PaintTypeface;->get()Ljava/util/List;
 
-    .line 156
+    .line 148
     :cond_1
     sget-object v1, Lorg/telegram/ui/Components/Paint/PaintTypeface;->typefaces:Ljava/util/List;
 
@@ -363,7 +363,7 @@
     :cond_2
     const/4 v1, 0x0
 
-    .line 159
+    .line 151
     :goto_0
     sget-object v2, Lorg/telegram/ui/Components/Paint/PaintTypeface;->typefaces:Ljava/util/List;
 
@@ -373,7 +373,7 @@
 
     if-ge v1, v2, :cond_4
 
-    .line 160
+    .line 152
     sget-object v2, Lorg/telegram/ui/Components/Paint/PaintTypeface;->typefaces:Ljava/util/List;
 
     invoke-interface {v2, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -384,7 +384,7 @@
 
     if-eqz v2, :cond_3
 
-    .line 161
+    .line 153
     iget-object v3, v2, Lorg/telegram/ui/Components/Paint/PaintTypeface;->key:Ljava/lang/String;
 
     invoke-static {p0, v3}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
@@ -416,12 +416,12 @@
         }
     .end annotation
 
-    .line 107
+    .line 108
     sget-object v0, Lorg/telegram/ui/Components/Paint/PaintTypeface;->typefaces:Ljava/util/List;
 
     if-nez v0, :cond_5
 
-    .line 108
+    .line 109
     new-instance v0, Ljava/util/ArrayList;
 
     sget-object v1, Lorg/telegram/ui/Components/Paint/PaintTypeface;->BUILT_IN_FONTS:Ljava/util/List;
@@ -430,29 +430,29 @@
 
     sput-object v0, Lorg/telegram/ui/Components/Paint/PaintTypeface;->typefaces:Ljava/util/List;
 
-    .line 109
+    .line 110
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x1d
 
     if-lt v0, v1, :cond_5
 
-    .line 110
+    .line 111
     invoke-static {}, Landroid/graphics/fonts/SystemFonts;->getAvailableFonts()Ljava/util/Set;
 
     move-result-object v0
 
-    .line 111
+    .line 112
     invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
 
     move-result-object v0
 
-    .line 112
+    .line 113
     new-instance v1, Ljava/util/HashMap;
 
     invoke-direct {v1}, Ljava/util/HashMap;-><init>()V
 
-    .line 113
+    .line 114
     :cond_0
     :goto_0
     invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
@@ -461,14 +461,14 @@
 
     if-eqz v2, :cond_3
 
-    .line 114
+    .line 115
     invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Landroid/graphics/fonts/Font;
 
-    .line 115
+    .line 116
     invoke-virtual {v2}, Landroid/graphics/fonts/Font;->getFile()Ljava/io/File;
 
     move-result-object v3
@@ -487,7 +487,7 @@
 
     goto :goto_0
 
-    .line 117
+    .line 118
     :cond_1
     invoke-static {v2}, Lorg/telegram/ui/Components/Paint/PaintTypeface;->parseFont(Landroid/graphics/fonts/Font;)Lorg/telegram/ui/Components/Paint/PaintTypeface$FontData;
 
@@ -495,7 +495,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 119
+    .line 120
     iget-object v3, v2, Lorg/telegram/ui/Components/Paint/PaintTypeface$FontData;->family:Ljava/lang/String;
 
     invoke-virtual {v1, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -506,17 +506,17 @@
 
     if-nez v3, :cond_2
 
-    .line 121
+    .line 122
     new-instance v3, Lorg/telegram/ui/Components/Paint/PaintTypeface$Family;
 
     invoke-direct {v3}, Lorg/telegram/ui/Components/Paint/PaintTypeface$Family;-><init>()V
 
-    .line 122
+    .line 123
     iget-object v4, v2, Lorg/telegram/ui/Components/Paint/PaintTypeface$FontData;->family:Ljava/lang/String;
 
     invoke-virtual {v1, v4, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 124
+    .line 125
     :cond_2
     iget-object v3, v3, Lorg/telegram/ui/Components/Paint/PaintTypeface$Family;->fonts:Ljava/util/ArrayList;
 
@@ -524,7 +524,7 @@
 
     goto :goto_0
 
-    .line 136
+    .line 129
     :cond_3
     sget-object v0, Lorg/telegram/ui/Components/Paint/PaintTypeface;->preferable:Ljava/util/List;
 
@@ -546,7 +546,7 @@
 
     check-cast v2, Ljava/lang/String;
 
-    .line 137
+    .line 130
     invoke-virtual {v1, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v2
@@ -555,12 +555,12 @@
 
     if-eqz v2, :cond_4
 
-    .line 139
+    .line 132
     invoke-virtual {v2}, Lorg/telegram/ui/Components/Paint/PaintTypeface$Family;->getRegular()Lorg/telegram/ui/Components/Paint/PaintTypeface$FontData;
 
     move-result-object v2
 
-    .line 140
+    .line 133
     sget-object v3, Lorg/telegram/ui/Components/Paint/PaintTypeface;->typefaces:Ljava/util/List;
 
     new-instance v4, Lorg/telegram/ui/Components/Paint/PaintTypeface;
@@ -577,7 +577,7 @@
 
     goto :goto_1
 
-    .line 146
+    .line 138
     :cond_5
     sget-object v0, Lorg/telegram/ui/Components/Paint/PaintTypeface;->typefaces:Ljava/util/List;
 
@@ -587,10 +587,10 @@
 .method private static synthetic lambda$fetched$0(Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 173
+    .line 165
     invoke-static {}, Lorg/telegram/ui/Components/Paint/PaintTypeface;->get()Ljava/util/List;
 
-    .line 174
+    .line 166
     invoke-static {p0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
     return-void
@@ -605,7 +605,7 @@
 
     return-object v0
 
-    .line 254
+    .line 246
     :cond_0
     invoke-virtual {p0}, Landroid/graphics/fonts/Font;->getFile()Ljava/io/File;
 
@@ -615,7 +615,7 @@
 
     return-object v0
 
-    .line 260
+    .line 252
     :cond_1
     :try_start_0
     new-instance v2, Ljava/io/RandomAccessFile;
@@ -627,7 +627,7 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_3
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 261
+    .line 253
     :try_start_1
     invoke-virtual {v2}, Ljava/io/RandomAccessFile;->readInt()I
 
@@ -644,7 +644,7 @@
 
     if-eq v1, v3, :cond_2
 
-    .line 296
+    .line 288
     :try_start_2
     invoke-virtual {v2}, Ljava/io/RandomAccessFile;->close()V
     :try_end_2
@@ -653,7 +653,7 @@
     :catch_0
     return-object v0
 
-    .line 265
+    .line 257
     :cond_2
     :try_start_3
     invoke-virtual {v2}, Ljava/io/RandomAccessFile;->readUnsignedShort()I
@@ -662,7 +662,7 @@
 
     const/4 v3, 0x6
 
-    .line 266
+    .line 258
     invoke-virtual {v2, v3}, Ljava/io/RandomAccessFile;->skipBytes(I)I
 
     const/4 v3, 0x0
@@ -672,22 +672,22 @@
     :goto_0
     if-ge v4, v1, :cond_5
 
-    .line 268
+    .line 260
     invoke-virtual {v2}, Ljava/io/RandomAccessFile;->readInt()I
 
     move-result v5
 
     const/4 v6, 0x4
 
-    .line 269
+    .line 261
     invoke-virtual {v2, v6}, Ljava/io/RandomAccessFile;->skipBytes(I)I
 
-    .line 270
+    .line 262
     invoke-virtual {v2}, Ljava/io/RandomAccessFile;->readInt()I
 
     move-result v6
 
-    .line 271
+    .line 263
     invoke-virtual {v2}, Ljava/io/RandomAccessFile;->readInt()I
 
     const v7, 0x6e616d65
@@ -698,20 +698,20 @@
 
     int-to-long v4, v1
 
-    .line 274
+    .line 266
     invoke-virtual {v2, v4, v5}, Ljava/io/RandomAccessFile;->seek(J)V
 
-    .line 275
+    .line 267
     invoke-virtual {v2}, Ljava/io/RandomAccessFile;->readUnsignedShort()I
 
     move-result v1
 
-    .line 276
+    .line 268
     invoke-virtual {v2}, Ljava/io/RandomAccessFile;->readUnsignedShort()I
 
     move-result v4
 
-    .line 278
+    .line 270
     new-instance v5, Ljava/util/HashMap;
 
     invoke-direct {v5}, Ljava/util/HashMap;-><init>()V
@@ -719,12 +719,12 @@
     :goto_1
     if-ge v3, v1, :cond_3
 
-    .line 280
+    .line 272
     new-instance v7, Lorg/telegram/ui/Components/Paint/PaintTypeface$NameRecord;
 
     invoke-direct {v7, v2}, Lorg/telegram/ui/Components/Paint/PaintTypeface$NameRecord;-><init>(Ljava/io/RandomAccessFile;)V
 
-    .line 281
+    .line 273
     iget v8, v7, Lorg/telegram/ui/Components/Paint/PaintTypeface$NameRecord;->nameID:I
 
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -737,20 +737,20 @@
 
     goto :goto_1
 
-    .line 284
+    .line 276
     :cond_3
     new-instance v1, Lorg/telegram/ui/Components/Paint/PaintTypeface$FontData;
 
     invoke-direct {v1}, Lorg/telegram/ui/Components/Paint/PaintTypeface$FontData;-><init>()V
 
-    .line 285
+    .line 277
     iput-object p0, v1, Lorg/telegram/ui/Components/Paint/PaintTypeface$FontData;->font:Landroid/graphics/fonts/Font;
 
     add-int/2addr v6, v4
 
     const/4 p0, 0x1
 
-    .line 286
+    .line 278
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p0
@@ -769,7 +769,7 @@
 
     const/4 p0, 0x2
 
-    .line 287
+    .line 279
     invoke-static {p0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p0
@@ -789,7 +789,7 @@
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_2
     .catchall {:try_start_3 .. :try_end_3} :catchall_1
 
-    .line 296
+    .line 288
     :try_start_4
     invoke-virtual {v2}, Ljava/io/RandomAccessFile;->close()V
     :try_end_4
@@ -827,7 +827,7 @@
 
     move-object v2, v0
 
-    .line 292
+    .line 284
     :goto_3
     :try_start_6
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
@@ -851,13 +851,13 @@
     :goto_5
     if-eqz v0, :cond_7
 
-    .line 296
+    .line 288
     :try_start_7
     invoke-virtual {v0}, Ljava/io/RandomAccessFile;->close()V
     :try_end_7
     .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_7} :catch_5
 
-    .line 299
+    .line 291
     :catch_5
     :cond_7
     throw p0
@@ -877,7 +877,7 @@
 
     return-object p0
 
-    .line 246
+    .line 238
     :cond_0
     invoke-virtual {p2, p0, p1}, Lorg/telegram/ui/Components/Paint/PaintTypeface$NameRecord;->read(Ljava/io/RandomAccessFile;I)Ljava/lang/String;
 
@@ -891,7 +891,7 @@
 .method public getKey()Ljava/lang/String;
     .locals 1
 
-    .line 91
+    .line 92
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface;->key:Ljava/lang/String;
 
     return-object v0
@@ -900,14 +900,14 @@
 .method public getName()Ljava/lang/String;
     .locals 1
 
-    .line 99
+    .line 100
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface;->name:Ljava/lang/String;
 
     if-eqz v0, :cond_0
 
     return-object v0
 
-    .line 102
+    .line 103
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface;->nameKey:Ljava/lang/String;
 
@@ -921,7 +921,7 @@
 .method public getTypeface()Landroid/graphics/Typeface;
     .locals 1
 
-    .line 95
+    .line 96
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/PaintTypeface;->typeface:Landroid/graphics/Typeface;
 
     return-object v0

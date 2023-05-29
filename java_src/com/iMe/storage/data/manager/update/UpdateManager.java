@@ -89,7 +89,7 @@ public final class UpdateManager {
             }
         }
         if (installState.installStatus() == 11) {
-            Timber.m7d("An update has been downloaded", new Object[0]);
+            Timber.m9d("An update has been downloaded", new Object[0]);
             this$0.popupSnackbarForCompleteUpdate();
         }
     }
@@ -124,7 +124,7 @@ public final class UpdateManager {
     }
 
     private final void checkUpdate() {
-        Timber.m7d("Checking for updates", new Object[0]);
+        Timber.m9d("Checking for updates", new Object[0]);
         Task<AppUpdateInfo> task = this.appUpdateInfoTask;
         final UpdateManager$checkUpdate$1 updateManager$checkUpdate$1 = new UpdateManager$checkUpdate$1(this);
         task.addOnSuccessListener(new OnSuccessListener() { // from class: com.iMe.storage.data.manager.update.UpdateManager$$ExternalSyntheticLambda3
@@ -144,7 +144,7 @@ public final class UpdateManager {
     /* JADX INFO: Access modifiers changed from: private */
     public final void startUpdate(AppUpdateInfo appUpdateInfo) {
         try {
-            Timber.m7d("Starting update", new Object[0]);
+            Timber.m9d("Starting update", new Object[0]);
             AppUpdateManager appUpdateManager = this.appUpdateManager;
             int i = this.mode;
             Activity activity = getActivity();
@@ -152,7 +152,7 @@ public final class UpdateManager {
             appUpdateManager.startUpdateFlowForResult(appUpdateInfo, i, activity, 777);
             updateLastUpdateMetadata(true, false);
         } catch (IntentSender.SendIntentException e) {
-            Timber.m6d(e);
+            Timber.m8d(e);
         }
     }
 
@@ -230,7 +230,7 @@ public final class UpdateManager {
             return;
         }
         appUpdateManager.unregisterListener(installStateUpdatedListener);
-        Timber.m7d("Unregistered the install state listener", new Object[0]);
+        Timber.m9d("Unregistered the install state listener", new Object[0]);
     }
 
     /* compiled from: UpdateManager.kt */

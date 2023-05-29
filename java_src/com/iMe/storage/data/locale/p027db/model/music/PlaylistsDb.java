@@ -23,7 +23,7 @@ public final class PlaylistsDb {
     }
 
     public int hashCode() {
-        return (((this.messageIds.hashCode() * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.dialogId)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.userId);
+        return (((this.messageIds.hashCode() * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.dialogId)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.userId);
     }
 
     public String toString() {

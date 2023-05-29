@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/CounterView$CounterDrawable;)V
     .locals 0
 
-    .line 261
+    .line 260
     iput-object p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable$1;->this$0:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 264
+    .line 263
     iget-object p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable$1;->this$0:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
     const/high16 v0, 0x3f800000    # 1.0f
@@ -44,20 +44,20 @@
 
     const/4 v0, 0x0
 
-    .line 265
+    .line 264
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->access$302(Lorg/telegram/ui/Components/CounterView$CounterDrawable;Landroid/text/StaticLayout;)Landroid/text/StaticLayout;
 
-    .line 266
+    .line 265
     iget-object p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable$1;->this$0:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->access$402(Lorg/telegram/ui/Components/CounterView$CounterDrawable;Landroid/text/StaticLayout;)Landroid/text/StaticLayout;
 
-    .line 267
+    .line 266
     iget-object p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable$1;->this$0:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->access$502(Lorg/telegram/ui/Components/CounterView$CounterDrawable;Landroid/text/StaticLayout;)Landroid/text/StaticLayout;
 
-    .line 268
+    .line 267
     iget-object p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable$1;->this$0:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->access$600(Lorg/telegram/ui/Components/CounterView$CounterDrawable;)Landroid/view/View;
@@ -66,7 +66,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 269
+    .line 268
     iget-object p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable$1;->this$0:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
     iget v0, p1, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->currentCount:I
@@ -77,7 +77,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 270
+    .line 269
     invoke-static {p1}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->access$600(Lorg/telegram/ui/Components/CounterView$CounterDrawable;)Landroid/view/View;
 
     move-result-object p1
@@ -86,7 +86,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 272
+    .line 271
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable$1;->this$0:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
@@ -96,7 +96,7 @@
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    .line 274
+    .line 273
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/CounterView$CounterDrawable$1;->this$0:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 

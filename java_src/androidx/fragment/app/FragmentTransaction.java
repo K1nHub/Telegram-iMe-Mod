@@ -1,13 +1,17 @@
 package androidx.fragment.app;
 
+import android.view.View;
 import android.view.ViewGroup;
+import androidx.core.view.ViewCompat;
 import androidx.fragment.app.strictmode.FragmentStrictMode;
 import androidx.lifecycle.Lifecycle;
 import java.lang.reflect.Modifier;
 import java.util.ArrayList;
+import java.util.Iterator;
 /* loaded from: classes.dex */
 public abstract class FragmentTransaction {
     boolean mAddToBackStack;
+    boolean mAllowAddToBackStack;
     int mBreadCrumbShortTitleRes;
     CharSequence mBreadCrumbShortTitleText;
     int mBreadCrumbTitleRes;
@@ -16,13 +20,13 @@ public abstract class FragmentTransaction {
     int mEnterAnim;
     int mExitAnim;
     String mName;
+    ArrayList<C0212Op> mOps;
     int mPopEnterAnim;
     int mPopExitAnim;
+    boolean mReorderingAllowed;
     ArrayList<String> mSharedElementSourceNames;
     ArrayList<String> mSharedElementTargetNames;
     int mTransition;
-    ArrayList<C0212Op> mOps = new ArrayList<>();
-    boolean mReorderingAllowed = false;
 
     public abstract int commit();
 
@@ -69,14 +73,64 @@ public abstract class FragmentTransaction {
             this.mOldMaxState = state;
             this.mCurrentMaxState = state;
         }
+
+        C0212Op(C0212Op c0212Op) {
+            this.mCmd = c0212Op.mCmd;
+            this.mFragment = c0212Op.mFragment;
+            this.mFromExpandedOp = c0212Op.mFromExpandedOp;
+            this.mEnterAnim = c0212Op.mEnterAnim;
+            this.mExitAnim = c0212Op.mExitAnim;
+            this.mPopEnterAnim = c0212Op.mPopEnterAnim;
+            this.mPopExitAnim = c0212Op.mPopExitAnim;
+            this.mOldMaxState = c0212Op.mOldMaxState;
+            this.mCurrentMaxState = c0212Op.mCurrentMaxState;
+        }
     }
 
     @Deprecated
     public FragmentTransaction() {
+        this.mOps = new ArrayList<>();
+        this.mAllowAddToBackStack = true;
+        this.mReorderingAllowed = false;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public FragmentTransaction(FragmentFactory fragmentFactory, ClassLoader classLoader) {
+        this.mOps = new ArrayList<>();
+        this.mAllowAddToBackStack = true;
+        this.mReorderingAllowed = false;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public FragmentTransaction(FragmentFactory fragmentFactory, ClassLoader classLoader, FragmentTransaction fragmentTransaction) {
+        this(fragmentFactory, classLoader);
+        Iterator<C0212Op> it = fragmentTransaction.mOps.iterator();
+        while (it.hasNext()) {
+            this.mOps.add(new C0212Op(it.next()));
+        }
+        this.mEnterAnim = fragmentTransaction.mEnterAnim;
+        this.mExitAnim = fragmentTransaction.mExitAnim;
+        this.mPopEnterAnim = fragmentTransaction.mPopEnterAnim;
+        this.mPopExitAnim = fragmentTransaction.mPopExitAnim;
+        this.mTransition = fragmentTransaction.mTransition;
+        this.mAddToBackStack = fragmentTransaction.mAddToBackStack;
+        this.mAllowAddToBackStack = fragmentTransaction.mAllowAddToBackStack;
+        this.mName = fragmentTransaction.mName;
+        this.mBreadCrumbShortTitleRes = fragmentTransaction.mBreadCrumbShortTitleRes;
+        this.mBreadCrumbShortTitleText = fragmentTransaction.mBreadCrumbShortTitleText;
+        this.mBreadCrumbTitleRes = fragmentTransaction.mBreadCrumbTitleRes;
+        this.mBreadCrumbTitleText = fragmentTransaction.mBreadCrumbTitleText;
+        if (fragmentTransaction.mSharedElementSourceNames != null) {
+            ArrayList<String> arrayList = new ArrayList<>();
+            this.mSharedElementSourceNames = arrayList;
+            arrayList.addAll(fragmentTransaction.mSharedElementSourceNames);
+        }
+        if (fragmentTransaction.mSharedElementTargetNames != null) {
+            ArrayList<String> arrayList2 = new ArrayList<>();
+            this.mSharedElementTargetNames = arrayList2;
+            arrayList2.addAll(fragmentTransaction.mSharedElementTargetNames);
+        }
+        this.mReorderingAllowed = fragmentTransaction.mReorderingAllowed;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -153,10 +207,53 @@ public abstract class FragmentTransaction {
         return this;
     }
 
+    public FragmentTransaction setPrimaryNavigationFragment(Fragment fragment) {
+        addOp(new C0212Op(8, fragment));
+        return this;
+    }
+
+    public FragmentTransaction setCustomAnimations(int i, int i2, int i3, int i4) {
+        this.mEnterAnim = i;
+        this.mExitAnim = i2;
+        this.mPopEnterAnim = i3;
+        this.mPopExitAnim = i4;
+        return this;
+    }
+
+    public FragmentTransaction addSharedElement(View view, String str) {
+        if (FragmentTransition.supportsTransition()) {
+            String transitionName = ViewCompat.getTransitionName(view);
+            if (transitionName == null) {
+                throw new IllegalArgumentException("Unique transitionNames are required for all sharedElements");
+            }
+            if (this.mSharedElementSourceNames == null) {
+                this.mSharedElementSourceNames = new ArrayList<>();
+                this.mSharedElementTargetNames = new ArrayList<>();
+            } else if (this.mSharedElementTargetNames.contains(str)) {
+                throw new IllegalArgumentException("A shared element with the target name '" + str + "' has already been added to the transaction.");
+            } else if (this.mSharedElementSourceNames.contains(transitionName)) {
+                throw new IllegalArgumentException("A shared element with the source name '" + transitionName + "' has already been added to the transaction.");
+            }
+            this.mSharedElementSourceNames.add(transitionName);
+            this.mSharedElementTargetNames.add(str);
+        }
+        return this;
+    }
+
+    public FragmentTransaction addToBackStack(String str) {
+        if (!this.mAllowAddToBackStack) {
+            throw new IllegalStateException("This FragmentTransaction is not allowed to be added to the back stack.");
+        }
+        this.mAddToBackStack = true;
+        this.mName = str;
+        return this;
+    }
+
     public FragmentTransaction disallowAddToBackStack() {
         if (this.mAddToBackStack) {
             throw new IllegalStateException("This transaction is already being added to the back stack");
         }
+        this.mAllowAddToBackStack = false;
         return this;
     }
 

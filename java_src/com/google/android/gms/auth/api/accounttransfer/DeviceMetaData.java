@@ -10,18 +10,18 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public class DeviceMetaData extends AbstractSafeParcelable {
     public static final Parcelable.Creator<DeviceMetaData> CREATOR = new zzy();
-    @SafeParcelable.VersionField(m772id = 1)
+    @SafeParcelable.VersionField(m776id = 1)
     final int zza;
-    @SafeParcelable.Field(getter = "isLockScreenSolved", m775id = 2)
+    @SafeParcelable.Field(getter = "isLockScreenSolved", m779id = 2)
     private boolean zzb;
-    @SafeParcelable.Field(getter = "getMinAgeOfLockScreen", m775id = 3)
+    @SafeParcelable.Field(getter = "getMinAgeOfLockScreen", m779id = 3)
     private long zzc;
-    @SafeParcelable.Field(getter = "isChallengeAllowed", m775id = 4)
+    @SafeParcelable.Field(getter = "isChallengeAllowed", m779id = 4)
     private final boolean zzd;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public DeviceMetaData(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) boolean z, @SafeParcelable.Param(m774id = 3) long j, @SafeParcelable.Param(m774id = 4) boolean z2) {
+    public DeviceMetaData(@SafeParcelable.Param(m778id = 1) int i, @SafeParcelable.Param(m778id = 2) boolean z, @SafeParcelable.Param(m778id = 3) long j, @SafeParcelable.Param(m778id = 4) boolean z2) {
         this.zza = i;
         this.zzb = z;
         this.zzc = j;

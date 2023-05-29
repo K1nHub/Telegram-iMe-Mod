@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$StickerSet;)V
     .locals 0
 
-    .line 4760
+    .line 4471
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$36;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     iput-object p6, p0, Lorg/telegram/ui/Components/EmojiView$36;->val$set:Lorg/telegram/tgnet/TLRPC$StickerSet;
@@ -39,14 +39,14 @@
 .method public dismiss()V
     .locals 2
 
-    .line 4763
+    .line 4474
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$36;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->access$15002(Lorg/telegram/ui/Components/EmojiView;Z)Z
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->access$14402(Lorg/telegram/ui/Components/EmojiView;Z)Z
 
-    .line 4764
+    .line 4475
     invoke-super {p0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->dismiss()V
 
     return-void
@@ -57,7 +57,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 4770
+    .line 4481
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$36;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/EmojiView;->installedEmojiSets:Ljava/util/ArrayList;
@@ -76,7 +76,7 @@
 
     if-nez p1, :cond_1
 
-    .line 4771
+    .line 4482
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$36;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/EmojiView;->installedEmojiSets:Ljava/util/ArrayList;
@@ -93,7 +93,7 @@
 
     goto :goto_0
 
-    .line 4774
+    .line 4485
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$36;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -109,12 +109,12 @@
 
     invoke-virtual {p1, v0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 4776
+    .line 4487
     :cond_1
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$36;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$15100(Lorg/telegram/ui/Components/EmojiView;)V
+    invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$14500(Lorg/telegram/ui/Components/EmojiView;)V
 
     return-void
 .end method

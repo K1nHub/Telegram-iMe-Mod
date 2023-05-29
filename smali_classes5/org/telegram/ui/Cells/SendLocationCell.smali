@@ -67,14 +67,24 @@
 
     if-eqz p2, :cond_0
 
-    const-string v0, "location_sendLiveLocationBackgroundlocation_sendLiveLocationIcon"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_location_sendLiveLocationBackground:I
+
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_location_sendLiveLocationIcon:I
 
     goto :goto_0
 
     :cond_0
-    const-string v0, "location_sendLocationBackgroundlocation_sendLocationIcon"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_location_sendLocationBackground:I
+
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_location_sendLocationIcon:I
 
     :goto_0
+    add-int/2addr v0, v1
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
+
     invoke-virtual {p3, v0}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
     const/16 p3, 0x2a
@@ -84,37 +94,35 @@
 
     move-result v0
 
-    const-string v1, "location_sendLiveLocationBackground"
-
-    const-string v2, "location_sendLocationBackground"
-
     if-eqz p2, :cond_1
 
-    move-object v3, v1
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_location_sendLiveLocationBackground:I
 
     goto :goto_1
 
     :cond_1
-    move-object v3, v2
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_location_sendLocationBackground:I
 
     :goto_1
-    invoke-direct {p0, v3}, Lorg/telegram/ui/Cells/SendLocationCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Cells/SendLocationCell;->getThemedColor(I)I
 
-    move-result v3
+    move-result v1
 
     if-eqz p2, :cond_2
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_location_sendLiveLocationBackground:I
 
     goto :goto_2
 
     :cond_2
-    move-object v1, v2
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_location_sendLocationBackground:I
 
     :goto_2
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Cells/SendLocationCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Cells/SendLocationCell;->getThemedColor(I)I
 
-    move-result v1
+    move-result v2
 
-    invoke-static {v0, v3, v1}, Lorg/telegram/ui/ActionBar/Theme;->createSimpleSelectorCircleDrawable(III)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->createSimpleSelectorCircleDrawable(III)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -139,9 +147,9 @@
     .line 67
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v4, "location_sendLiveLocationIcon"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_location_sendLiveLocationIcon:I
 
-    invoke-direct {p0, v4}, Lorg/telegram/ui/Cells/SendLocationCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v4}, Lorg/telegram/ui/Cells/SendLocationCell;->getThemedColor(I)I
 
     move-result v4
 
@@ -199,9 +207,9 @@
     .line 75
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v4, "location_sendLocationIcon"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_location_sendLocationIcon:I
 
-    invoke-direct {p0, v4}, Lorg/telegram/ui/Cells/SendLocationCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v4}, Lorg/telegram/ui/Cells/SendLocationCell;->getThemedColor(I)I
 
     move-result v4
 
@@ -319,34 +327,36 @@
     .line 85
     iget-object p3, p0, Lorg/telegram/ui/Cells/SendLocationCell;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const-string v1, "location_sendLiveLocationText"
-
-    const-string v2, "location_sendLocationText"
-
     if-eqz p2, :cond_7
 
-    move-object v3, v1
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_location_sendLiveLocationText:I
 
     goto :goto_6
 
     :cond_7
-    move-object v3, v2
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_location_sendLocationText:I
 
     :goto_6
-    invoke-virtual {p3, v3}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
+    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {p3, v1}, Landroid/view/View;->setTag(Ljava/lang/Object;)V
 
     .line 86
     iget-object p3, p0, Lorg/telegram/ui/Cells/SendLocationCell;->titleTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     if-eqz p2, :cond_8
 
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_location_sendLiveLocationText:I
+
     goto :goto_7
 
     :cond_8
-    move-object v1, v2
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_location_sendLocationText:I
 
     :goto_7
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Cells/SendLocationCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Cells/SendLocationCell;->getThemedColor(I)I
 
     move-result p2
 
@@ -448,9 +458,9 @@
     .line 93
     iget-object p1, p0, Lorg/telegram/ui/Cells/SendLocationCell;->accurateTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const-string p2, "windowBackgroundWhiteGrayText3"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText3:I
 
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Cells/SendLocationCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Cells/SendLocationCell;->getThemedColor(I)I
 
     move-result p2
 
@@ -638,39 +648,16 @@
     return-object v0
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
+.method private getThemedColor(I)I
     .locals 1
 
     .line 186
     iget-object v0, p0, Lorg/telegram/ui/Cells/SendLocationCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 187
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
@@ -853,11 +840,11 @@
 
     invoke-virtual {v3, v7, v6, v5, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    :goto_0
-    const-string v3, "location_liveLocationProgress"
-
     .line 172
-    invoke-direct {p0, v3}, Lorg/telegram/ui/Cells/SendLocationCell;->getThemedColor(Ljava/lang/String;)I
+    :goto_0
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_location_liveLocationProgress:I
+
+    invoke-direct {p0, v3}, Lorg/telegram/ui/Cells/SendLocationCell;->getThemedColor(I)I
 
     move-result v3
 

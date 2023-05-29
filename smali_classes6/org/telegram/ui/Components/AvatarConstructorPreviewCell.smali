@@ -426,9 +426,9 @@
     .line 133
     iget-object p1, p0, Lorg/telegram/ui/Components/AvatarConstructorPreviewCell;->textView:Landroid/widget/TextView;
 
-    const-string p2, "avatar_text"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_text:I
 
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 

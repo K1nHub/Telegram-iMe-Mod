@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.ext.opus;
 
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.exoplayer2.decoder.CryptoConfig;
 import com.google.android.exoplayer2.decoder.CryptoException;
 import com.google.android.exoplayer2.decoder.CryptoInfo;
@@ -156,7 +156,7 @@ public final class OpusDecoder extends SimpleDecoder<DecoderInputBuffer, SimpleD
         ByteBuffer byteBuffer = (ByteBuffer) Util.castNonNull(decoderInputBuffer.data);
         CryptoInfo cryptoInfo = decoderInputBuffer.cryptoInfo;
         if (decoderInputBuffer.isEncrypted()) {
-            opusDecode = opusSecureDecode(this.nativeDecoderContext, decoderInputBuffer.timeUs, byteBuffer, byteBuffer.limit(), simpleDecoderOutputBuffer, 48000, this.cryptoConfig, cryptoInfo.mode, (byte[]) Assertions.checkNotNull(cryptoInfo.key), (byte[]) Assertions.checkNotNull(cryptoInfo.f104iv), cryptoInfo.numSubSamples, cryptoInfo.numBytesOfClearData, cryptoInfo.numBytesOfEncryptedData);
+            opusDecode = opusSecureDecode(this.nativeDecoderContext, decoderInputBuffer.timeUs, byteBuffer, byteBuffer.limit(), simpleDecoderOutputBuffer, 48000, this.cryptoConfig, cryptoInfo.mode, (byte[]) Assertions.checkNotNull(cryptoInfo.key), (byte[]) Assertions.checkNotNull(cryptoInfo.f107iv), cryptoInfo.numSubSamples, cryptoInfo.numBytesOfClearData, cryptoInfo.numBytesOfEncryptedData);
             opusDecoder = this;
             decoderInputBuffer2 = decoderInputBuffer;
         } else {
@@ -207,14 +207,14 @@ public final class OpusDecoder extends SimpleDecoder<DecoderInputBuffer, SimpleD
 
     static int getPreSkipSamples(List<byte[]> list) {
         if (list.size() == 3) {
-            return (int) ((ByteBuffer.wrap(list.get(1)).order(ByteOrder.nativeOrder()).getLong() * 48000) / C0470C.NANOS_PER_SECOND);
+            return (int) ((ByteBuffer.wrap(list.get(1)).order(ByteOrder.nativeOrder()).getLong() * 48000) / C0475C.NANOS_PER_SECOND);
         }
         byte[] bArr = list.get(0);
         return (bArr[10] & 255) | ((bArr[11] & 255) << 8);
     }
 
     static int getSeekPreRollSamples(List<byte[]> list) {
-        return list.size() == 3 ? (int) ((ByteBuffer.wrap(list.get(2)).order(ByteOrder.nativeOrder()).getLong() * 48000) / C0470C.NANOS_PER_SECOND) : DEFAULT_SEEK_PRE_ROLL_SAMPLES;
+        return list.size() == 3 ? (int) ((ByteBuffer.wrap(list.get(2)).order(ByteOrder.nativeOrder()).getLong() * 48000) / C0475C.NANOS_PER_SECOND) : DEFAULT_SEEK_PRE_ROLL_SAMPLES;
     }
 
     static int getDiscardPaddingSamples(ByteBuffer byteBuffer) {
@@ -225,7 +225,7 @@ public final class OpusDecoder extends SimpleDecoder<DecoderInputBuffer, SimpleD
         if (j < 0) {
             return 0;
         }
-        return (int) ((j * 48000) / C0470C.NANOS_PER_SECOND);
+        return (int) ((j * 48000) / C0475C.NANOS_PER_SECOND);
     }
 
     private static int readSignedLittleEndian16(byte[] bArr, int i) {

@@ -117,7 +117,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    .line 126
+    .line 125
     new-instance v0, Landroid/view/animation/AccelerateInterpolator;
 
     const/high16 v1, 0x3f000000    # 0.5f
@@ -134,7 +134,7 @@
 
     const/4 v1, 0x0
 
-    .line 135
+    .line 134
     invoke-direct {p0, p1, v0, v1}, Lorg/telegram/ui/Cells/ContextLinkCell;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -143,17 +143,17 @@
 .method public constructor <init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 10
 
-    .line 143
+    .line 142
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 83
+    .line 82
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     iput v0, p0, Lorg/telegram/ui/Cells/ContextLinkCell;->currentAccount:I
 
     const/4 v0, 0x7
 
-    .line 99
+    .line 98
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -162,7 +162,7 @@
 
     const/16 v0, 0x1b
 
-    .line 102
+    .line 101
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -183,10 +183,10 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/ContextLinkCell;->IMAGE_SCALE:Landroid/util/Property;
 
-    .line 144
+    .line 143
     iput-object p3, p0, Lorg/telegram/ui/Cells/ContextLinkCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 146
+    .line 145
     new-instance v0, Lorg/telegram/messenger/ImageReceiver;
 
     invoke-direct {v0, p0}, Lorg/telegram/messenger/ImageReceiver;-><init>(Landroid/view/View;)V
@@ -195,7 +195,12 @@
 
     const/4 v1, 0x1
 
+    .line 146
+    invoke-virtual {v0, v1}, Lorg/telegram/messenger/ImageReceiver;->setAllowLoadingOnAttachedOnly(Z)V
+
     .line 147
+    iget-object v0, p0, Lorg/telegram/ui/Cells/ContextLinkCell;->linkImageView:Lorg/telegram/messenger/ImageReceiver;
+
     invoke-virtual {v0, v1}, Lorg/telegram/messenger/ImageReceiver;->setLayerNum(I)V
 
     .line 148
@@ -244,10 +249,10 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Cells/ContextLinkCell;->backgroundPaint:Landroid/graphics/Paint;
 
-    const-string v0, "sharedMedia_photoPlaceholder"
-
     .line 156
-    invoke-static {v0, p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_sharedMedia_photoPlaceholder:I
+
+    invoke-static {v0, p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v3
 
@@ -270,11 +275,11 @@
     .line 160
     iget-object p1, p0, Lorg/telegram/ui/Cells/ContextLinkCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
-    const/4 p2, 0x0
+    const/4 p2, -0x1
 
-    const-string p3, "checkboxCheck"
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxCheck:I
 
-    invoke-virtual {p1, p2, v0, p3}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p1, p2, v0, p3}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
     .line 161
     iget-object p1, p0, Lorg/telegram/ui/Cells/ContextLinkCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
@@ -319,7 +324,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Cells/ContextLinkCell;)I
     .locals 0
 
-    .line 64
+    .line 63
     iget p0, p0, Lorg/telegram/ui/Cells/ContextLinkCell;->documentAttachType:I
 
     return p0
@@ -328,7 +333,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Cells/ContextLinkCell;)Lorg/telegram/tgnet/TLRPC$Document;
     .locals 0
 
-    .line 64
+    .line 63
     iget-object p0, p0, Lorg/telegram/ui/Cells/ContextLinkCell;->documentAttach:Lorg/telegram/tgnet/TLRPC$Document;
 
     return-object p0
@@ -337,7 +342,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Cells/ContextLinkCell;)I
     .locals 0
 
-    .line 64
+    .line 63
     iget p0, p0, Lorg/telegram/ui/Cells/ContextLinkCell;->currentAccount:I
 
     return p0
@@ -346,7 +351,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Cells/ContextLinkCell;)Lorg/telegram/tgnet/TLRPC$BotInlineResult;
     .locals 0
 
-    .line 64
+    .line 63
     iget-object p0, p0, Lorg/telegram/ui/Cells/ContextLinkCell;->inlineResult:Lorg/telegram/tgnet/TLRPC$BotInlineResult;
 
     return-object p0
@@ -355,7 +360,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/Cells/ContextLinkCell;)Z
     .locals 0
 
-    .line 64
+    .line 63
     iget-boolean p0, p0, Lorg/telegram/ui/Cells/ContextLinkCell;->mediaWebpage:Z
 
     return p0
@@ -364,7 +369,7 @@
 .method static synthetic access$500(Lorg/telegram/ui/Cells/ContextLinkCell;)Lorg/telegram/tgnet/TLRPC$PhotoSize;
     .locals 0
 
-    .line 64
+    .line 63
     iget-object p0, p0, Lorg/telegram/ui/Cells/ContextLinkCell;->currentPhotoObject:Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     return-object p0
@@ -373,7 +378,7 @@
 .method static synthetic access$502(Lorg/telegram/ui/Cells/ContextLinkCell;Lorg/telegram/tgnet/TLRPC$PhotoSize;)Lorg/telegram/tgnet/TLRPC$PhotoSize;
     .locals 0
 
-    .line 64
+    .line 63
     iput-object p1, p0, Lorg/telegram/ui/Cells/ContextLinkCell;->currentPhotoObject:Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
     return-object p1
@@ -382,7 +387,7 @@
 .method static synthetic access$600(Lorg/telegram/ui/Cells/ContextLinkCell;)F
     .locals 0
 
-    .line 64
+    .line 63
     iget p0, p0, Lorg/telegram/ui/Cells/ContextLinkCell;->imageScale:F
 
     return p0
@@ -391,7 +396,7 @@
 .method static synthetic access$602(Lorg/telegram/ui/Cells/ContextLinkCell;F)F
     .locals 0
 
-    .line 64
+    .line 63
     iput p1, p0, Lorg/telegram/ui/Cells/ContextLinkCell;->imageScale:F
 
     return p1
@@ -400,7 +405,7 @@
 .method static synthetic access$700(Lorg/telegram/ui/Cells/ContextLinkCell;)Landroid/animation/AnimatorSet;
     .locals 0
 
-    .line 64
+    .line 63
     iget-object p0, p0, Lorg/telegram/ui/Cells/ContextLinkCell;->animator:Landroid/animation/AnimatorSet;
 
     return-object p0
@@ -409,7 +414,7 @@
 .method static synthetic access$702(Lorg/telegram/ui/Cells/ContextLinkCell;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
     .locals 0
 
-    .line 64
+    .line 63
     iput-object p1, p0, Lorg/telegram/ui/Cells/ContextLinkCell;->animator:Landroid/animation/AnimatorSet;
 
     return-object p1
@@ -676,15 +681,15 @@
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/ContextLinkCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
 
-    const-string v2, "chat_mediaLoaderPhoto"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_mediaLoaderPhoto:I
 
-    const-string v4, "chat_mediaLoaderPhotoSelected"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_mediaLoaderPhotoSelected:I
 
-    const-string v5, "chat_mediaLoaderPhotoIcon"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chat_mediaLoaderPhotoIcon:I
 
-    const-string v6, "chat_mediaLoaderPhotoIconSelected"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_mediaLoaderPhotoIconSelected:I
 
-    invoke-virtual {v0, v2, v4, v5, v6}, Lorg/telegram/ui/Components/RadialProgress2;->setColors(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v2, v4, v5, v6}, Lorg/telegram/ui/Components/RadialProgress2;->setColorKeys(IIII)V
 
     .line 870
     iget v0, p0, Lorg/telegram/ui/Cells/ContextLinkCell;->buttonState:I
@@ -701,15 +706,15 @@
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/ContextLinkCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
 
-    const-string v4, "chat_inLoader"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inLoader:I
 
-    const-string v5, "chat_inLoaderSelected"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inLoaderSelected:I
 
-    const-string v6, "chat_inMediaIcon"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inMediaIcon:I
 
-    const-string v7, "chat_inMediaIconSelected"
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inMediaIconSelected:I
 
-    invoke-virtual {v0, v4, v5, v6, v7}, Lorg/telegram/ui/Components/RadialProgress2;->setColors(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v4, v5, v6, v7}, Lorg/telegram/ui/Components/RadialProgress2;->setColorKeys(IIII)V
 
     .line 860
     iget v0, p0, Lorg/telegram/ui/Cells/ContextLinkCell;->buttonState:I
@@ -1601,11 +1606,11 @@
     .line 752
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->chat_contextResult_descriptionTextPaint:Landroid/text/TextPaint;
 
-    iget-object v3, v0, Lorg/telegram/ui/Cells/ContextLinkCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
-    const-string v4, "windowBackgroundWhiteGrayText2"
+    iget-object v4, v0, Lorg/telegram/ui/Cells/ContextLinkCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v4, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v3, v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v3
 
@@ -1656,11 +1661,11 @@
     .line 760
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->chat_contextResult_descriptionTextPaint:Landroid/text/TextPaint;
 
-    iget-object v3, v0, Lorg/telegram/ui/Cells/ContextLinkCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteLinkText:I
 
-    const-string v4, "windowBackgroundWhiteLinkText"
+    iget-object v4, v0, Lorg/telegram/ui/Cells/ContextLinkCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v4, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v3, v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v3
 
@@ -2244,17 +2249,17 @@
 
     if-eqz v2, :cond_10
 
-    const-string v2, "chat_inAudioSelectedProgress"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inAudioSelectedProgress:I
 
     goto :goto_5
 
     :cond_10
-    const-string v2, "chat_inAudioProgress"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inAudioProgress:I
 
     :goto_5
     iget-object v3, v0, Lorg/telegram/ui/Cells/ContextLinkCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v2, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v2, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v2
 
@@ -4471,11 +4476,11 @@
     .line 359
     iget-object v6, v7, Lorg/telegram/ui/Cells/ContextLinkCell;->documentAttach:Lorg/telegram/tgnet/TLRPC$Document;
 
-    const/high16 v9, 0x3f800000    # 1.0f
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    const-string v11, "windowBackgroundGray"
+    const/high16 v11, 0x3f800000    # 1.0f
 
-    invoke-static {v6, v11, v9}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;F)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+    invoke-static {v6, v9, v11}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;IF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     move-result-object v24
 

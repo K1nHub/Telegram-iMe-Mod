@@ -33,7 +33,7 @@ public class FileUploadOperation {
     private boolean isLastPart;
 
     /* renamed from: iv */
-    private byte[] f1358iv;
+    private byte[] f1364iv;
     private byte[] ivChange;
     private byte[] key;
     protected long lastProgressUpdateTime;
@@ -75,7 +75,7 @@ public class FileUploadOperation {
         private long bytesOffset;
 
         /* renamed from: iv */
-        private byte[] f1359iv;
+        private byte[] f1365iv;
 
         private UploadCachedResult() {
         }
@@ -117,7 +117,7 @@ public class FileUploadOperation {
         this.preferences = ApplicationLoader.applicationContext.getSharedPreferences("uploadinfo", 0);
         this.slowNetwork = ApplicationLoader.isConnectionSlow();
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m48d("start upload on slow network = " + this.slowNetwork);
+            FileLog.m52d("start upload on slow network = " + this.slowNetwork);
         }
         int i = this.slowNetwork ? 1 : 8;
         for (int i2 = 0; i2 < i; i2++) {
@@ -143,7 +143,7 @@ public class FileUploadOperation {
         if (this.slowNetwork != z) {
             this.slowNetwork = z;
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m48d("network changed to slow = " + this.slowNetwork);
+                FileLog.m52d("network changed to slow = " + this.slowNetwork);
             }
             int i = 0;
             while (true) {
@@ -163,7 +163,7 @@ public class FileUploadOperation {
             this.uploadedBytesCount = 0L;
             this.saveInfoTimes = 0;
             this.key = null;
-            this.f1358iv = null;
+            this.f1364iv = null;
             this.ivChange = null;
             this.currentUploadRequetsCount = 0;
             this.lastSavedPartNum = 0;
@@ -219,7 +219,7 @@ public class FileUploadOperation {
                 this.stream = null;
             }
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
         AutoDeleteMediaTask.unlockFile(this.uploadingFilePath);
     }
@@ -260,7 +260,7 @@ public class FileUploadOperation {
         edit.putLong(this.fileKey + "_id", this.currentFileId);
         edit.remove(this.fileKey + "_uploaded");
         if (this.isEncrypted) {
-            edit.putString(this.fileKey + "_iv", Utilities.bytesToHex(this.f1358iv));
+            edit.putString(this.fileKey + "_iv", Utilities.bytesToHex(this.f1364iv));
             edit.putString(this.fileKey + "_ivc", Utilities.bytesToHex(this.ivChange));
             edit.putString(this.fileKey + "_key", Utilities.bytesToHex(this.key));
         }
@@ -289,36 +289,39 @@ public class FileUploadOperation {
     }
 
     /* JADX WARN: Multi-variable type inference failed */
-    /* JADX WARN: Removed duplicated region for block: B:124:0x02dd A[Catch: Exception -> 0x04f5, TryCatch #2 {Exception -> 0x04f5, blocks: (B:5:0x0008, B:7:0x0016, B:13:0x004e, B:15:0x0054, B:17:0x005d, B:19:0x0061, B:21:0x006a, B:22:0x006c, B:24:0x0085, B:26:0x008e, B:27:0x0097, B:31:0x00a0, B:34:0x00b9, B:36:0x00bd, B:37:0x00c0, B:38:0x00c2, B:42:0x00ca, B:44:0x00d7, B:45:0x00e1, B:47:0x00e5, B:48:0x00ef, B:52:0x0110, B:54:0x0145, B:56:0x0149, B:58:0x014f, B:60:0x0155, B:62:0x01a7, B:65:0x01dd, B:68:0x01ef, B:70:0x01f2, B:72:0x01f5, B:77:0x0205, B:79:0x0209, B:89:0x0229, B:92:0x0236, B:94:0x0241, B:96:0x024d, B:98:0x0251, B:100:0x0259, B:102:0x0264, B:105:0x026d, B:109:0x027a, B:110:0x0281, B:111:0x0298, B:104:0x026b, B:112:0x02a0, B:114:0x02a9, B:116:0x02c4, B:118:0x02cc, B:120:0x02cf, B:121:0x02d5, B:124:0x02dd, B:126:0x02e1, B:127:0x0301, B:129:0x030d, B:131:0x0311, B:133:0x0317, B:134:0x031a, B:143:0x0351, B:145:0x035d, B:147:0x0361, B:149:0x0378, B:148:0x036f, B:142:0x034e, B:83:0x0215, B:16:0x0057, B:150:0x037b, B:151:0x0383, B:152:0x0384, B:154:0x038a, B:157:0x0397, B:159:0x039b, B:161:0x03a4, B:163:0x03b9, B:168:0x03c9, B:170:0x03cd, B:172:0x03d1, B:174:0x03d9, B:176:0x03e4, B:178:0x03e8, B:180:0x03ee, B:186:0x0401, B:190:0x040e, B:191:0x0415, B:193:0x0442, B:195:0x0446, B:197:0x0459, B:199:0x0460, B:201:0x0478, B:203:0x047c, B:205:0x0480, B:207:0x0491, B:198:0x045c, B:200:0x0466, B:182:0x03f5, B:184:0x03f9, B:185:0x03ff, B:162:0x03ae, B:164:0x03bc, B:136:0x031e, B:139:0x0339, B:8:0x0026), top: B:223:0x0008, inners: #0 }] */
-    /* JADX WARN: Removed duplicated region for block: B:145:0x035d A[Catch: Exception -> 0x04f5, TryCatch #2 {Exception -> 0x04f5, blocks: (B:5:0x0008, B:7:0x0016, B:13:0x004e, B:15:0x0054, B:17:0x005d, B:19:0x0061, B:21:0x006a, B:22:0x006c, B:24:0x0085, B:26:0x008e, B:27:0x0097, B:31:0x00a0, B:34:0x00b9, B:36:0x00bd, B:37:0x00c0, B:38:0x00c2, B:42:0x00ca, B:44:0x00d7, B:45:0x00e1, B:47:0x00e5, B:48:0x00ef, B:52:0x0110, B:54:0x0145, B:56:0x0149, B:58:0x014f, B:60:0x0155, B:62:0x01a7, B:65:0x01dd, B:68:0x01ef, B:70:0x01f2, B:72:0x01f5, B:77:0x0205, B:79:0x0209, B:89:0x0229, B:92:0x0236, B:94:0x0241, B:96:0x024d, B:98:0x0251, B:100:0x0259, B:102:0x0264, B:105:0x026d, B:109:0x027a, B:110:0x0281, B:111:0x0298, B:104:0x026b, B:112:0x02a0, B:114:0x02a9, B:116:0x02c4, B:118:0x02cc, B:120:0x02cf, B:121:0x02d5, B:124:0x02dd, B:126:0x02e1, B:127:0x0301, B:129:0x030d, B:131:0x0311, B:133:0x0317, B:134:0x031a, B:143:0x0351, B:145:0x035d, B:147:0x0361, B:149:0x0378, B:148:0x036f, B:142:0x034e, B:83:0x0215, B:16:0x0057, B:150:0x037b, B:151:0x0383, B:152:0x0384, B:154:0x038a, B:157:0x0397, B:159:0x039b, B:161:0x03a4, B:163:0x03b9, B:168:0x03c9, B:170:0x03cd, B:172:0x03d1, B:174:0x03d9, B:176:0x03e4, B:178:0x03e8, B:180:0x03ee, B:186:0x0401, B:190:0x040e, B:191:0x0415, B:193:0x0442, B:195:0x0446, B:197:0x0459, B:199:0x0460, B:201:0x0478, B:203:0x047c, B:205:0x0480, B:207:0x0491, B:198:0x045c, B:200:0x0466, B:182:0x03f5, B:184:0x03f9, B:185:0x03ff, B:162:0x03ae, B:164:0x03bc, B:136:0x031e, B:139:0x0339, B:8:0x0026), top: B:223:0x0008, inners: #0 }] */
-    /* JADX WARN: Removed duplicated region for block: B:221:0x031e A[EXC_TOP_SPLITTER, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:87:0x0225  */
+    /* JADX WARN: Removed duplicated region for block: B:126:0x02f3 A[Catch: Exception -> 0x0540, TryCatch #3 {Exception -> 0x0540, blocks: (B:5:0x0008, B:7:0x0015, B:13:0x004d, B:15:0x0053, B:17:0x005c, B:19:0x0060, B:21:0x0069, B:22:0x006b, B:24:0x0084, B:26:0x008d, B:27:0x0096, B:31:0x009f, B:34:0x00b8, B:36:0x00bc, B:37:0x00bf, B:38:0x00c1, B:42:0x00c9, B:44:0x00d6, B:45:0x00e0, B:47:0x00e4, B:48:0x00ee, B:52:0x010f, B:54:0x0145, B:56:0x0149, B:58:0x0151, B:60:0x0157, B:62:0x01ad, B:65:0x01e5, B:68:0x01f7, B:70:0x01fa, B:72:0x01fd, B:77:0x020d, B:79:0x0211, B:89:0x0233, B:92:0x0240, B:94:0x024b, B:96:0x0257, B:98:0x025b, B:100:0x0263, B:102:0x026e, B:105:0x0277, B:109:0x0284, B:110:0x028b, B:111:0x02a2, B:104:0x0275, B:112:0x02ac, B:114:0x02b5, B:116:0x02d1, B:118:0x02d9, B:126:0x02f3, B:128:0x02f7, B:129:0x0317, B:131:0x0323, B:133:0x0327, B:135:0x032f, B:136:0x0332, B:145:0x0369, B:147:0x0375, B:149:0x0379, B:151:0x0390, B:150:0x0387, B:155:0x039d, B:157:0x03a5, B:160:0x03b2, B:162:0x03b6, B:164:0x03c1, B:166:0x03d6, B:171:0x03e6, B:173:0x03ea, B:175:0x03ee, B:177:0x03f6, B:179:0x0401, B:181:0x0405, B:183:0x040d, B:189:0x0420, B:193:0x042d, B:194:0x0434, B:196:0x0461, B:198:0x0465, B:200:0x047a, B:202:0x0481, B:204:0x0499, B:206:0x049d, B:208:0x04a1, B:209:0x04b0, B:201:0x047d, B:203:0x0487, B:185:0x0414, B:187:0x0418, B:188:0x041e, B:165:0x03cb, B:167:0x03d9, B:144:0x0366, B:120:0x02dc, B:121:0x02e4, B:83:0x021d, B:16:0x0056, B:152:0x0393, B:153:0x039b, B:8:0x0025, B:138:0x0336, B:141:0x0351), top: B:228:0x0008 }] */
+    /* JADX WARN: Removed duplicated region for block: B:147:0x0375 A[Catch: Exception -> 0x0540, TryCatch #3 {Exception -> 0x0540, blocks: (B:5:0x0008, B:7:0x0015, B:13:0x004d, B:15:0x0053, B:17:0x005c, B:19:0x0060, B:21:0x0069, B:22:0x006b, B:24:0x0084, B:26:0x008d, B:27:0x0096, B:31:0x009f, B:34:0x00b8, B:36:0x00bc, B:37:0x00bf, B:38:0x00c1, B:42:0x00c9, B:44:0x00d6, B:45:0x00e0, B:47:0x00e4, B:48:0x00ee, B:52:0x010f, B:54:0x0145, B:56:0x0149, B:58:0x0151, B:60:0x0157, B:62:0x01ad, B:65:0x01e5, B:68:0x01f7, B:70:0x01fa, B:72:0x01fd, B:77:0x020d, B:79:0x0211, B:89:0x0233, B:92:0x0240, B:94:0x024b, B:96:0x0257, B:98:0x025b, B:100:0x0263, B:102:0x026e, B:105:0x0277, B:109:0x0284, B:110:0x028b, B:111:0x02a2, B:104:0x0275, B:112:0x02ac, B:114:0x02b5, B:116:0x02d1, B:118:0x02d9, B:126:0x02f3, B:128:0x02f7, B:129:0x0317, B:131:0x0323, B:133:0x0327, B:135:0x032f, B:136:0x0332, B:145:0x0369, B:147:0x0375, B:149:0x0379, B:151:0x0390, B:150:0x0387, B:155:0x039d, B:157:0x03a5, B:160:0x03b2, B:162:0x03b6, B:164:0x03c1, B:166:0x03d6, B:171:0x03e6, B:173:0x03ea, B:175:0x03ee, B:177:0x03f6, B:179:0x0401, B:181:0x0405, B:183:0x040d, B:189:0x0420, B:193:0x042d, B:194:0x0434, B:196:0x0461, B:198:0x0465, B:200:0x047a, B:202:0x0481, B:204:0x0499, B:206:0x049d, B:208:0x04a1, B:209:0x04b0, B:201:0x047d, B:203:0x0487, B:185:0x0414, B:187:0x0418, B:188:0x041e, B:165:0x03cb, B:167:0x03d9, B:144:0x0366, B:120:0x02dc, B:121:0x02e4, B:83:0x021d, B:16:0x0056, B:152:0x0393, B:153:0x039b, B:8:0x0025, B:138:0x0336, B:141:0x0351), top: B:228:0x0008 }] */
+    /* JADX WARN: Removed duplicated region for block: B:226:0x0336 A[EXC_TOP_SPLITTER, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:87:0x022d  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     private void startUploadRequest() {
         /*
-            Method dump skipped, instructions count: 1285
+            Method dump skipped, instructions count: 1360
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.FileUploadOperation.startUploadRequest():void");
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:107:0x0293  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x0091  */
-    /* JADX WARN: Removed duplicated region for block: B:31:0x00a1  */
+    /* JADX WARN: Code restructure failed: missing block: B:26:0x0099, code lost:
+        if (r21.uploadingFilePath.toLowerCase().endsWith(r9) != false) goto L117;
+     */
+    /* JADX WARN: Removed duplicated region for block: B:111:0x02bc  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00b9  */
+    /* JADX WARN: Removed duplicated region for block: B:36:0x00c9  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public /* synthetic */ void lambda$startUploadRequest$4(int r22, int r23, byte[] r24, int r25, int r26, int r27, long r28, org.telegram.tgnet.TLObject r30, org.telegram.tgnet.TLRPC$TL_error r31) {
+    public /* synthetic */ void lambda$startUploadRequest$4(int r22, int[] r23, int r24, byte[] r25, int r26, int r27, int r28, long r29, org.telegram.tgnet.TLObject r31, org.telegram.tgnet.TLRPC$TL_error r32) {
         /*
-            Method dump skipped, instructions count: 671
+            Method dump skipped, instructions count: 712
             To view this dump add '--comments-level debug' option
         */
-        throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.FileUploadOperation.lambda$startUploadRequest$4(int, int, byte[], int, int, int, long, org.telegram.tgnet.TLObject, org.telegram.tgnet.TLRPC$TL_error):void");
+        throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.FileUploadOperation.lambda$startUploadRequest$4(int, int[], int, byte[], int, int, int, long, org.telegram.tgnet.TLObject, org.telegram.tgnet.TLRPC$TL_error):void");
     }
 
     /* JADX INFO: Access modifiers changed from: private */

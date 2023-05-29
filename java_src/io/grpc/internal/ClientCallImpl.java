@@ -1,6 +1,6 @@
 package io.grpc.internal;
 
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.common.base.MoreObjects;
 import com.google.common.base.Preconditions;
 import com.google.common.util.concurrent.MoreExecutors;
@@ -53,7 +53,7 @@ public final class ClientCallImpl<ReqT, RespT> extends ClientCall<ReqT, RespT> {
     private final Tag tag;
     private final boolean unaryRequest;
     private static final Logger log = Logger.getLogger(ClientCallImpl.class.getName());
-    private static final byte[] FULL_STREAM_DECOMPRESSION_ENCODINGS = "gzip".getBytes(Charset.forName(C0470C.ASCII_NAME));
+    private static final byte[] FULL_STREAM_DECOMPRESSION_ENCODINGS = "gzip".getBytes(Charset.forName(C0475C.ASCII_NAME));
     static final long DEADLINE_EXPIRATION_CANCEL_DELAY_NANOS = TimeUnit.SECONDS.toNanos(1);
     private DecompressorRegistry decompressorRegistry = DecompressorRegistry.getDefaultInstance();
     private CompressorRegistry compressorRegistry = CompressorRegistry.getDefaultInstance();

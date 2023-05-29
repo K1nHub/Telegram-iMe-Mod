@@ -74,7 +74,7 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     :try_start_1
-    const-string v3, "sum"
+    const-string/jumbo v3, "sum"
 
     new-array v4, v5, [Ljava/lang/Class;
 

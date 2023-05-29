@@ -9,11 +9,10 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: HeaderWithNetworkSwitcherProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.HeaderWithNetworkSwitcherProvider$convert$1 */
-/* loaded from: classes3.dex */
-public final class HeaderWithNetworkSwitcherProvider$convert$1 extends Lambda implements Function1<NetworkTypeView, Unit> {
+/* loaded from: classes.dex */
+final class HeaderWithNetworkSwitcherProvider$convert$1 extends Lambda implements Function1<NetworkTypeView, Unit> {
     final /* synthetic */ HeaderItemWithNetworkSwitcher $item;
     final /* synthetic */ HeaderWithNetworkSwitcherProvider this$0;
 

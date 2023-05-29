@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletHomeFragment.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.WalletHomeFragment$pageTabs$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletHomeFragment$pageTabs$2 extends Lambda implements Function0<List<WalletHomeNavigationTab>> {
     final /* synthetic */ WalletHomeFragment this$0;
 

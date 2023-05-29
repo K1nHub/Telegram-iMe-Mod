@@ -50,9 +50,9 @@ public class LoadingStickerDrawable extends Drawable {
         this.parentView = view;
     }
 
-    public void setColors(String str, String str2) {
-        int color = Theme.getColor(str);
-        int color2 = Theme.getColor(str2);
+    public void setColors(int i, int i2) {
+        int color = Theme.getColor(i);
+        int color2 = Theme.getColor(i2);
         if (this.currentColor0 == color && this.currentColor1 == color2) {
             return;
         }
@@ -60,9 +60,9 @@ public class LoadingStickerDrawable extends Drawable {
         this.currentColor1 = color2;
         int averageColor = AndroidUtilities.getAverageColor(color2, color);
         this.placeholderPaint.setColor(color2);
-        float m50dp = AndroidUtilities.m50dp(500);
-        this.gradientWidth = m50dp;
-        LinearGradient linearGradient = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, m50dp, (float) BitmapDescriptorFactory.HUE_RED, new int[]{color2, averageColor, color2}, new float[]{BitmapDescriptorFactory.HUE_RED, 0.18f, 0.36f}, Shader.TileMode.REPEAT);
+        float m54dp = AndroidUtilities.m54dp(500);
+        this.gradientWidth = m54dp;
+        LinearGradient linearGradient = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, m54dp, (float) BitmapDescriptorFactory.HUE_RED, new int[]{color2, averageColor, color2}, new float[]{BitmapDescriptorFactory.HUE_RED, 0.18f, 0.36f}, Shader.TileMode.REPEAT);
         this.placeholderGradient = linearGradient;
         linearGradient.setLocalMatrix(this.placeholderMatrix);
         Bitmap bitmap = this.bitmap;
@@ -75,7 +75,7 @@ public class LoadingStickerDrawable extends Drawable {
         if (this.bitmap == null) {
             return;
         }
-        setColors("dialogBackground", "dialogBackgroundGray");
+        setColors(Theme.key_dialogBackground, Theme.key_dialogBackgroundGray);
         Rect bounds = getBounds();
         canvas.drawRect(bounds.left, bounds.top, bounds.right, bounds.bottom, this.placeholderPaint);
         long elapsedRealtime = SystemClock.elapsedRealtime();

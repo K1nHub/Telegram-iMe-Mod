@@ -607,7 +607,7 @@
 .end method
 
 .method public final setStateView(Ljava/lang/String;Landroid/view/View;)V
-    .locals 1
+    .locals 2
 
     const-string v0, "state"
 
@@ -639,35 +639,39 @@
 
     invoke-interface {v0, p1, p2}, Ljava/util/Map;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
+    const/4 p1, 0x0
+
     if-eqz p2, :cond_1
 
     .line 41
     invoke-virtual {p2}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
-    move-result-object p1
+    move-result-object v0
 
     goto :goto_0
 
     :cond_1
-    const/4 p1, 0x0
+    move-object v0, p1
 
     :goto_0
-    if-nez p1, :cond_2
+    if-nez v0, :cond_2
 
     .line 42
     invoke-virtual {p0, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
     :cond_2
+    const/4 v0, 0x1
+
     if-eqz p2, :cond_3
 
-    .line 44
-    invoke-static {p2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    const/4 v1, 0x0
 
-    :cond_3
-    const/4 p1, 0x1
+    .line 44
+    invoke-static {p2, v1, v0, p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 45
-    iput-boolean p1, p0, Lcom/iMe/ui/custom/state/StatefulLayout;->mDirtyFlag:Z
+    :cond_3
+    iput-boolean v0, p0, Lcom/iMe/ui/custom/state/StatefulLayout;->mDirtyFlag:Z
 
     return-void
 .end method

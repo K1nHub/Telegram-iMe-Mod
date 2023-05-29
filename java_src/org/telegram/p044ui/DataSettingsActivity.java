@@ -19,7 +19,7 @@ import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.LocaleController;
@@ -29,7 +29,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.p044ui.ActionBar.AlertDialog;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Cells.HeaderCell;
@@ -75,7 +75,6 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
     private int proxyRow;
     private int proxySection2Row;
     private int proxySectionRow;
-    private int quickRepliesRow;
     private int roamingRow;
     private int rowCount;
     private int saveToGalleryChannelsRow;
@@ -100,6 +99,7 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
     private int autoplayGifsRow = -1;
     private int autoplayVideoRow = -1;
     private int autoplaySectionRow = -1;
+    private int quickRepliesRow = -1;
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate
     public void didReceivedNotification(int i, int i2, Object... objArr) {
@@ -110,7 +110,7 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
         if (alertDialog != null) {
             alertDialog.dismiss();
         }
-        BulletinFactory.m27of(this).createSimpleBulletin(C3242R.raw.info, AndroidUtilities.replaceTags(LocaleController.getInternalString(C3242R.string.cloud_albums_undo_forward_cloud))).show();
+        BulletinFactory.m29of(this).createSimpleBulletin(C3290R.raw.info, AndroidUtilities.replaceTags(LocaleController.getInternalString(C3290R.string.cloud_albums_undo_forward_cloud))).show();
     }
 
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
@@ -251,24 +251,21 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
         this.useLessDataForCallsRow = i29;
         int i31 = i30 + 1;
         this.rowCount = i31;
-        this.quickRepliesRow = i30;
+        this.callsSection2Row = i30;
         int i32 = i31 + 1;
         this.rowCount = i32;
-        this.callsSection2Row = i31;
+        this.proxySectionRow = i31;
         int i33 = i32 + 1;
         this.rowCount = i33;
-        this.proxySectionRow = i32;
+        this.proxyRow = i32;
         int i34 = i33 + 1;
         this.rowCount = i34;
-        this.proxyRow = i33;
+        this.proxySection2Row = i33;
         int i35 = i34 + 1;
         this.rowCount = i35;
-        this.proxySection2Row = i34;
-        int i36 = i35 + 1;
-        this.rowCount = i36;
-        this.clearDraftsRow = i35;
-        this.rowCount = i36 + 1;
-        this.clearDraftsSectionRow = i36;
+        this.clearDraftsRow = i34;
+        this.rowCount = i35 + 1;
+        this.clearDraftsSectionRow = i35;
         ListAdapter listAdapter2 = this.listAdapter;
         if (listAdapter2 == null || !z) {
             return;
@@ -351,14 +348,14 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
 
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public View createView(final Context context) {
-        this.actionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
-        this.actionBar.setTitle(LocaleController.getString("DataSettings", C3242R.string.DataSettings));
+        this.actionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        this.actionBar.setTitle(LocaleController.getString("DataSettings", C3290R.string.DataSettings));
         if (AndroidUtilities.isTablet()) {
             this.actionBar.setOccupyStatusBar(false);
         }
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.DataSettingsActivity.1
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.DataSettingsActivity.1
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     DataSettingsActivity.this.finishFragment();
@@ -368,14 +365,14 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
         this.listAdapter = new ListAdapter(context);
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        frameLayout.setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+        frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         RecyclerListView recyclerListView = new RecyclerListView(context) { // from class: org.telegram.ui.DataSettingsActivity.2
             @Override // org.telegram.p044ui.Components.RecyclerListView
             public Integer getSelectorColor(int i) {
                 if (i == DataSettingsActivity.this.resetDownloadRow) {
-                    return Integer.valueOf(Theme.multAlpha(getThemedColor("windowBackgroundWhiteRedText2"), 0.1f));
+                    return Integer.valueOf(Theme.multAlpha(getThemedColor(Theme.key_text_RedRegular), 0.1f));
                 }
-                return Integer.valueOf(getThemedColor("listSelectorSDK21"));
+                return Integer.valueOf(getThemedColor(Theme.key_listSelector));
             }
         };
         this.listView = recyclerListView;
@@ -416,7 +413,7 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
     */
     public /* synthetic */ void lambda$createView$9(android.content.Context r21, android.view.View r22, final int r23, float r24, float r25) {
         /*
-            Method dump skipped, instructions count: 1319
+            Method dump skipped, instructions count: 1321
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.DataSettingsActivity.lambda$createView$9(android.content.Context, android.view.View, int, float, float):void");
@@ -496,16 +493,16 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
         }
         if (!z) {
             AlertDialog.Builder builder2 = new AlertDialog.Builder(getContext());
-            builder2.setTitle(LocaleController.getString("DecreaseSpeed", C3242R.string.DecreaseSpeed));
-            builder2.setMessage(LocaleController.getString("SdCardAlert", C3242R.string.SdCardAlert));
-            builder2.setPositiveButton(LocaleController.getString("Proceed", C3242R.string.Proceed), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.DataSettingsActivity.3
+            builder2.setTitle(LocaleController.getString("DecreaseSpeed", C3290R.string.DecreaseSpeed));
+            builder2.setMessage(LocaleController.getString("SdCardAlert", C3290R.string.SdCardAlert));
+            builder2.setPositiveButton(LocaleController.getString("Proceed", C3290R.string.Proceed), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.DataSettingsActivity.3
                 @Override // android.content.DialogInterface.OnClickListener
                 public void onClick(DialogInterface dialogInterface, int i) {
                     DataSettingsActivity.this.setStorageDirectory(str);
                     builder.getDismissRunnable().run();
                 }
             });
-            builder2.setNegativeButton(LocaleController.getString("Back", C3242R.string.Back), null);
+            builder2.setNegativeButton(LocaleController.getString("Back", C3290R.string.Back), null);
             builder2.show();
             return;
         }
@@ -590,8 +587,8 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
         }
 
         /* JADX WARN: Multi-variable type inference failed */
-        /* JADX WARN: Removed duplicated region for block: B:116:0x03b8  */
-        /* JADX WARN: Removed duplicated region for block: B:76:0x02eb  */
+        /* JADX WARN: Removed duplicated region for block: B:116:0x03b7  */
+        /* JADX WARN: Removed duplicated region for block: B:76:0x02e9  */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -599,7 +596,7 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
         */
         public void onBindViewHolder(androidx.recyclerview.widget.RecyclerView.ViewHolder r20, int r21) {
             /*
-                Method dump skipped, instructions count: 1568
+                Method dump skipped, instructions count: 1570
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.DataSettingsActivity.ListAdapter.onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder, int):void");
@@ -653,22 +650,22 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
                 shadowSectionCell = new ShadowSectionCell(this.mContext);
             } else if (i == 1) {
                 shadowSectionCell = new TextSettingsCell(this.mContext);
-                shadowSectionCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                shadowSectionCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
             } else if (i == 2) {
                 shadowSectionCell = new HeaderCell(this.mContext, 22);
-                shadowSectionCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                shadowSectionCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
             } else if (i == 3) {
                 shadowSectionCell = new TextCheckCell(this.mContext);
-                shadowSectionCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                shadowSectionCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
             } else if (i == 4) {
                 shadowSectionCell = new TextInfoPrivacyCell(this.mContext);
-                shadowSectionCell.setBackgroundDrawable(Theme.getThemedDrawable(this.mContext, C3242R.C3244drawable.greydivider, "windowBackgroundGrayShadow"));
+                shadowSectionCell.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3290R.C3292drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
             } else if (i == 5) {
                 shadowSectionCell = new NotificationsCheckCell(this.mContext);
-                shadowSectionCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                shadowSectionCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
             } else {
                 shadowSectionCell = new TextCell(this.mContext);
-                shadowSectionCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                shadowSectionCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
             }
             shadowSectionCell.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
             return new RecyclerListView.Holder(shadowSectionCell);
@@ -698,29 +695,37 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayList = new ArrayList<>();
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextSettingsCell.class, TextCheckCell.class, HeaderCell.class, NotificationsCheckCell.class}, null, null, null, "windowBackgroundWhite"));
-        arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "windowBackgroundGray"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, "actionBarDefault"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{NotificationsCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{NotificationsCheckCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayText2"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{NotificationsCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrack"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{NotificationsCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackChecked"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_SELECTOR, null, null, null, null, "listSelectorSDK21"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, Theme.dividerPaint, null, null, "divider"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{ShadowSectionCell.class}, null, null, null, "windowBackgroundGrayShadow"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextSettingsCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextSettingsCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteValueText"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlueHeader"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayText2"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrack"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackChecked"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, "windowBackgroundGrayShadow"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayText4"));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextSettingsCell.class, TextCheckCell.class, HeaderCell.class, NotificationsCheckCell.class}, null, null, null, Theme.key_windowBackgroundWhite));
+        arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray));
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        int i = ThemeDescription.FLAG_BACKGROUND;
+        int i2 = Theme.key_actionBarDefault;
+        arrayList.add(new ThemeDescription(c3356ActionBar, i, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector));
+        int i3 = Theme.key_windowBackgroundWhiteBlackText;
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{NotificationsCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3));
+        int i4 = Theme.key_windowBackgroundWhiteGrayText2;
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{NotificationsCheckCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i4));
+        int i5 = Theme.key_switchTrack;
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{NotificationsCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i5));
+        int i6 = Theme.key_switchTrackChecked;
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{NotificationsCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i6));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider));
+        int i7 = Theme.key_windowBackgroundGrayShadow;
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{ShadowSectionCell.class}, null, null, null, i7));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextSettingsCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextSettingsCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteValueText));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i4));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i5));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i6));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, i7));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4));
         return arrayList;
     }
 }

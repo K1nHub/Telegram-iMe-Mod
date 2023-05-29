@@ -26,7 +26,7 @@
 .method public constructor <init>(Lcom/iMe/model/staking/StakingDetailsItem;Lcom/iMe/storage/domain/utils/system/ResourceManager;)V
     .locals 1
 
-    const-string v0, "stakingDetails"
+    const-string/jumbo v0, "stakingDetails"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

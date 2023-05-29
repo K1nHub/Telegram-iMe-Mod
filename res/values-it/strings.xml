@@ -4667,6 +4667,8 @@ Se dimentichi la tua password, perderai l'accesso al tuo account Telegram. Non c
     <string name="mtrl_picker_toggle_to_day_selection">Tocca per passare alla selezione di un giorno</string>
     <string name="mtrl_picker_toggle_to_text_input_mode">Passa alla modalità di immissione Testo</string>
     <string name="mtrl_picker_toggle_to_year_selection">Tocca per passare alla selezione di un anno</string>
+    <string name="nav_app_bar_navigate_up_description">Torna indietro</string>
+    <string name="nav_app_bar_open_drawer_description">Apri riquadro di navigazione</string>
     <string name="password_toggle_content_description">Mostra password</string>
     <string name="search_menu_title">Cerca</string>
     <string name="status_bar_notification_info_overflow">999+</string>

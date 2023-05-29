@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView$StickersSearchGridAdapter;Landroid/content/Context;Z)V
     .locals 0
 
-    .line 9681
+    .line 9402
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Cells/StickerEmojiCell;-><init>(Landroid/content/Context;Z)V
 
     return-void
@@ -31,7 +31,7 @@
 
     const/16 p2, 0x52
 
-    .line 9683
+    .line 9404
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2

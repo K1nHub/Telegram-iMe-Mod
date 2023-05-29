@@ -101,6 +101,8 @@
     <string name="mtrl_picker_toggle_to_day_selection">"Tik om oor te skakel na die kies van 'n dag"</string>
     <string name="mtrl_picker_toggle_to_text_input_mode">Skakel oor na teksinvoermodus</string>
     <string name="mtrl_picker_toggle_to_year_selection">"Tik om oor te skakel na die kies van 'n jaar"</string>
+    <string name="nav_app_bar_navigate_up_description">Gaan op</string>
+    <string name="nav_app_bar_open_drawer_description">Maak navigasielaai oop</string>
     <string name="password_toggle_content_description">Wys wagwoord</string>
     <string name="search_menu_title">Soek</string>
     <string name="status_bar_notification_info_overflow">999+</string>

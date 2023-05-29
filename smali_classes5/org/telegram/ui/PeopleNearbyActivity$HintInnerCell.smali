@@ -80,9 +80,9 @@
 
     move-result v2
 
-    const-string v3, "chats_archiveBackground"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chats_archiveBackground:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -140,10 +140,10 @@
 
     iput-object v0, p0, Lorg/telegram/ui/PeopleNearbyActivity$HintInnerCell;->titleTextView:Landroid/widget/TextView;
 
-    const-string v2, "windowBackgroundWhiteBlackText"
-
     .line 882
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -214,10 +214,10 @@
 
     iput-object v0, p0, Lorg/telegram/ui/PeopleNearbyActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
 
-    const-string p2, "windowBackgroundWhiteGrayText"
-
     .line 889
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 

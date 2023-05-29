@@ -58,7 +58,7 @@ public class MenuDrawable extends Drawable {
         this.interpolator = new DecelerateInterpolator();
         this.rect = new RectF();
         this.alpha = 255;
-        this.paint.setStrokeWidth(AndroidUtilities.m50dp(2));
+        this.paint.setStrokeWidth(AndroidUtilities.m54dp(2));
         this.backPaint.setStrokeWidth(AndroidUtilities.density * 1.66f);
         this.backPaint.setStrokeCap(Paint.Cap.ROUND);
         this.backPaint.setStyle(Paint.Style.STROKE);
@@ -167,12 +167,12 @@ public class MenuDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicWidth() {
-        return AndroidUtilities.m50dp(24);
+        return AndroidUtilities.m54dp(24);
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicHeight() {
-        return AndroidUtilities.m50dp(24);
+        return AndroidUtilities.m54dp(24);
     }
 
     public void setIconColor(int i) {

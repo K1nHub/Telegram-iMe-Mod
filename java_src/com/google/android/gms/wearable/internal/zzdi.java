@@ -21,16 +21,16 @@ import java.util.Map;
 /* loaded from: classes3.dex */
 public final class zzdi extends AbstractSafeParcelable implements DataItem {
     public static final Parcelable.Creator<zzdi> CREATOR = new zzdj();
-    @SafeParcelable.Field(getter = "getUri", m775id = 2)
+    @SafeParcelable.Field(getter = "getUri", m779id = 2)
     private final Uri zza;
-    @SafeParcelable.Field(getter = "getAssetsInternal", m775id = 4, type = "android.os.Bundle")
+    @SafeParcelable.Field(getter = "getAssetsInternal", m779id = 4, type = "android.os.Bundle")
     private final Map zzb;
-    @SafeParcelable.Field(getter = "getData", m775id = 5)
+    @SafeParcelable.Field(getter = "getData", m779id = 5)
     private byte[] zzc;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzdi(@SafeParcelable.Param(m774id = 2) Uri uri, @SafeParcelable.Param(m774id = 4) Bundle bundle, @SafeParcelable.Param(m774id = 5) byte[] bArr) {
+    public zzdi(@SafeParcelable.Param(m778id = 2) Uri uri, @SafeParcelable.Param(m778id = 4) Bundle bundle, @SafeParcelable.Param(m778id = 5) byte[] bArr) {
         this.zza = uri;
         HashMap hashMap = new HashMap();
         bundle.setClassLoader((ClassLoader) Preconditions.checkNotNull(DataItemAssetParcelable.class.getClassLoader()));

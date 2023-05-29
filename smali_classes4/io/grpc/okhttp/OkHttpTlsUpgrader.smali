@@ -89,17 +89,17 @@
         }
     .end annotation
 
-    const-string v0, "sslSocketFactory"
+    const-string/jumbo v0, "sslSocketFactory"
 
     .line 57
     invoke-static {p0, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v0, "socket"
+    const-string/jumbo v0, "socket"
 
     .line 58
     invoke-static {p2, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    const-string v0, "spec"
+    const-string/jumbo v0, "spec"
 
     .line 59
     invoke-static {p5, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

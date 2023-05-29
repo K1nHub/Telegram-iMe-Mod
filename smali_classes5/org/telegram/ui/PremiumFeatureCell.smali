@@ -61,10 +61,10 @@
     .line 65
     invoke-virtual {v2, v1, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v3, "windowBackgroundWhiteBlackText"
-
     .line 66
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -93,10 +93,10 @@
     .line 70
     invoke-virtual {v2, v1, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v1, "windowBackgroundWhiteGrayText"
-
     .line 71
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -209,10 +209,10 @@
 
     invoke-virtual {v1, v2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    const-string v2, "switchTrack"
-
     .line 84
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrack:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -257,12 +257,12 @@
 
     iput-object v0, p0, Lorg/telegram/ui/PremiumFeatureCell;->checkBox:Lorg/telegram/ui/Components/Switch;
 
-    const-string p1, "switchTrackChecked"
-
-    const-string v1, "windowBackgroundWhite"
-
     .line 91
-    invoke-virtual {v0, v2, p1, v1, v1}, Lorg/telegram/ui/Components/Switch;->setColors(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackChecked:I
+
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-virtual {v0, v2, p1, v1, v1}, Lorg/telegram/ui/Components/Switch;->setColors(IIII)V
 
     .line 92
     iget-object p1, p0, Lorg/telegram/ui/PremiumFeatureCell;->checkBox:Lorg/telegram/ui/Components/Switch;

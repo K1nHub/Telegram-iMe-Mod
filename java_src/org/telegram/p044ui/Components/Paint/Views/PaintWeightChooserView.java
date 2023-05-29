@@ -104,9 +104,9 @@ public class PaintWeightChooserView extends View {
             }
         });
         this.colorPaint.setColor(-1);
-        this.colorPaint.setShadowLayer(AndroidUtilities.m50dp(4), BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m50dp(2), 1342177280);
+        this.colorPaint.setShadowLayer(AndroidUtilities.m54dp(4), BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(2), 1342177280);
         this.backgroundPaint.setColor(1090519039);
-        this.backgroundPaint.setShadowLayer(AndroidUtilities.m50dp(3), BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m50dp(1), 637534208);
+        this.backgroundPaint.setShadowLayer(AndroidUtilities.m54dp(3), BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(1), 637534208);
     }
 
     public void setShowPreview(boolean z) {
@@ -140,7 +140,7 @@ public class PaintWeightChooserView extends View {
             setTranslationY(f);
             int lerp = AndroidUtilities.lerp(this.fromContentHeight, this.newContentHeight, this.panProgress);
             int i = (int) (lerp * 0.3f);
-            this.touchRect.set(BitmapDescriptorFactory.HUE_RED, (lerp - i) / 2.0f, AndroidUtilities.m50dp(32), (lerp + i) / 2.0f);
+            this.touchRect.set(BitmapDescriptorFactory.HUE_RED, (lerp - i) / 2.0f, AndroidUtilities.m54dp(32), (lerp + i) / 2.0f);
             invalidate();
         }
     }
@@ -186,7 +186,7 @@ public class PaintWeightChooserView extends View {
             return;
         }
         int height = (int) (getHeight() * 0.3f);
-        this.touchRect.set(BitmapDescriptorFactory.HUE_RED, (getHeight() - height) / 2.0f, AndroidUtilities.m50dp(32), (getHeight() + height) / 2.0f);
+        this.touchRect.set(BitmapDescriptorFactory.HUE_RED, (getHeight() - height) / 2.0f, AndroidUtilities.m54dp(32), (getHeight() + height) / 2.0f);
     }
 
     public void setViewHidden(boolean z) {
@@ -216,7 +216,7 @@ public class PaintWeightChooserView extends View {
     private void drawCircleWithShadow(Canvas canvas, float f, float f2, float f3, boolean z) {
         if (z) {
             RectF rectF = AndroidUtilities.rectTmp;
-            rectF.set((f - f3) - AndroidUtilities.m50dp(6), (f2 - f3) - AndroidUtilities.m50dp(6), f + f3 + AndroidUtilities.m50dp(6), f2 + f3 + AndroidUtilities.m50dp(6));
+            rectF.set((f - f3) - AndroidUtilities.m54dp(6), (f2 - f3) - AndroidUtilities.m54dp(6), f + f3 + AndroidUtilities.m54dp(6), f2 + f3 + AndroidUtilities.m54dp(6));
             canvas.saveLayerAlpha(rectF, (int) (this.showProgress * 255.0f), 31);
         }
         canvas.drawCircle(f, f2, f3, this.colorPaint);

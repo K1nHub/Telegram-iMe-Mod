@@ -106,9 +106,9 @@ public class GroupedPhotosListView extends View implements GestureDetector.OnGes
         this.animateBackground = true;
         this.gestureDetector = new GestureDetector(context, this);
         this.scroll = new Scroller(context);
-        this.itemWidth = AndroidUtilities.m50dp(42);
-        this.itemHeight = AndroidUtilities.m50dp(56);
-        this.itemSpacing = AndroidUtilities.m50dp(1);
+        this.itemWidth = AndroidUtilities.m54dp(42);
+        this.itemHeight = AndroidUtilities.m54dp(56);
+        this.itemSpacing = AndroidUtilities.m54dp(1);
         this.itemY = i;
         this.backgroundPaint.setColor(2130706432);
     }
@@ -149,6 +149,14 @@ public class GroupedPhotosListView extends View implements GestureDetector.OnGes
         invalidate();
     }
 
+    public int getCount() {
+        return this.currentPhotos.size();
+    }
+
+    public int getIndex() {
+        return this.currentImage;
+    }
+
     public void setMoveProgress(float f) {
         if (this.scrolling || this.animateToItem >= 0) {
             return;
@@ -184,6 +192,7 @@ public class GroupedPhotosListView extends View implements GestureDetector.OnGes
         ImageReceiver imageReceiver;
         if (this.unusedReceivers.isEmpty()) {
             imageReceiver = new ImageReceiver(this);
+            imageReceiver.setAllowLoadingOnAttachedOnly(false);
         } else {
             imageReceiver = this.unusedReceivers.get(0);
             this.unusedReceivers.remove(0);
@@ -498,16 +507,16 @@ public class GroupedPhotosListView extends View implements GestureDetector.OnGes
             int size = this.imagesToDraw.size();
             int i8 = this.drawDx;
             int i9 = (int) (this.itemWidth * 2.0f);
-            int m50dp = AndroidUtilities.m50dp(8);
+            int m54dp = AndroidUtilities.m54dp(8);
             ImageLocation imageLocation = this.currentPhotos.get(this.currentImage);
             if (imageLocation != null && (tLRPC$PhotoSize2 = imageLocation.photoSize) != null) {
-                i = Math.max(this.itemWidth, (int) (tLRPC$PhotoSize2.f1458w * (this.itemHeight / tLRPC$PhotoSize2.f1457h)));
+                i = Math.max(this.itemWidth, (int) (tLRPC$PhotoSize2.f1464w * (this.itemHeight / tLRPC$PhotoSize2.f1463h)));
             } else {
                 i = this.itemHeight;
             }
             int min = Math.min(i9, i);
             int i10 = 2;
-            float f2 = m50dp * 2;
+            float f2 = m54dp * 2;
             float f3 = this.currentItemProgress;
             int i11 = (int) (f2 * f3);
             int i12 = this.itemWidth + ((int) ((min - i2) * f3)) + i11;
@@ -515,7 +524,7 @@ public class GroupedPhotosListView extends View implements GestureDetector.OnGes
             if (i13 >= 0 && i13 < this.currentPhotos.size()) {
                 ImageLocation imageLocation2 = this.currentPhotos.get(this.nextImage);
                 if (imageLocation2 != null && (tLRPC$PhotoSize = imageLocation2.photoSize) != null) {
-                    i3 = Math.max(this.itemWidth, (int) (tLRPC$PhotoSize.f1458w * (this.itemHeight / tLRPC$PhotoSize.f1457h)));
+                    i3 = Math.max(this.itemWidth, (int) (tLRPC$PhotoSize.f1464w * (this.itemHeight / tLRPC$PhotoSize.f1463h)));
                 } else {
                     i3 = this.itemHeight;
                 }
@@ -569,7 +578,7 @@ public class GroupedPhotosListView extends View implements GestureDetector.OnGes
                     }
                 }
                 imageReceiver.setAlpha(this.drawAlpha);
-                imageReceiver.setRoundRadius(AndroidUtilities.m50dp(i7));
+                imageReceiver.setRoundRadius(AndroidUtilities.m54dp(i7));
                 imageReceiver.draw(canvas);
                 i17++;
                 i10 = i7;

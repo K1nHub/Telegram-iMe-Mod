@@ -17,7 +17,7 @@
 # instance fields
 .field public clear:Z
 
-.field public color:Ljava/lang/String;
+.field public colorKey:I
 
 .field firstDraw:Z
 

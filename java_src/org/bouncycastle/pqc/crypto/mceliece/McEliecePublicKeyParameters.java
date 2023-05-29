@@ -5,30 +5,30 @@ import org.bouncycastle.pqc.math.linearalgebra.GF2Matrix;
 public class McEliecePublicKeyParameters extends McElieceKeyParameters {
 
     /* renamed from: g */
-    private GF2Matrix f1332g;
+    private GF2Matrix f1337g;
 
     /* renamed from: n */
-    private int f1333n;
+    private int f1338n;
 
     /* renamed from: t */
-    private int f1334t;
+    private int f1339t;
 
     public McEliecePublicKeyParameters(int i, int i2, GF2Matrix gF2Matrix) {
         super(false, null);
-        this.f1333n = i;
-        this.f1334t = i2;
-        this.f1332g = new GF2Matrix(gF2Matrix);
+        this.f1338n = i;
+        this.f1339t = i2;
+        this.f1337g = new GF2Matrix(gF2Matrix);
     }
 
     public GF2Matrix getG() {
-        return this.f1332g;
+        return this.f1337g;
     }
 
     public int getN() {
-        return this.f1333n;
+        return this.f1338n;
     }
 
     public int getT() {
-        return this.f1334t;
+        return this.f1339t;
     }
 }

@@ -5,7 +5,7 @@ import kotlin.jvm.internal.Lambda;
 import moxy.MvpDelegate;
 /* compiled from: MvpNoParentCustomView.kt */
 /* renamed from: com.iMe.ui.base.mvp.view.MvpNoParentCustomView$mMvpDelegate$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class MvpNoParentCustomView$mMvpDelegate$2 extends Lambda implements Function0<MvpDelegate<MvpNoParentCustomView>> {
     final /* synthetic */ MvpNoParentCustomView this$0;
 

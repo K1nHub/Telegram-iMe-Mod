@@ -33,7 +33,7 @@ import com.iMe.common.IdFabric$CustomType;
 import com.iMe.fork.controller.FiltersController;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -60,6 +60,7 @@ public class UndoView extends FrameLayout {
     private Runnable currentCancelRunnable;
     private ArrayList<Long> currentDialogIds;
     private Object currentInfoObject;
+    private Object currentInfoObject2;
     float enterOffset;
     private int enterOffsetMargin;
     private boolean fromTop;
@@ -107,12 +108,24 @@ public class UndoView extends FrameLayout {
     protected void onRemoveDialogAction(long j, int i) {
     }
 
-    public void showInfo(String str) {
-        showWithAction(0L, 18, str, Integer.valueOf(C3242R.raw.info), (Runnable) null, (Runnable) null);
+    public void showInfo(CharSequence charSequence) {
+        showInfo(charSequence, null);
     }
 
-    public void showError(String str) {
-        showWithAction(0L, 18, str, Integer.valueOf(C3242R.raw.error), (Runnable) null, (Runnable) null);
+    public void showInfo(CharSequence charSequence, Runnable runnable) {
+        showWithAction(0L, 18, charSequence, Integer.valueOf(C3290R.raw.info), (Runnable) null, runnable);
+    }
+
+    public void showError(CharSequence charSequence) {
+        showWithAction(0L, 18, charSequence, Integer.valueOf(C3290R.raw.error), (Runnable) null, (Runnable) null);
+    }
+
+    private boolean isFoldersHidden() {
+        return FiltersController.getInstance(this.currentAccount).isFoldersHidden();
+    }
+
+    private boolean isSortingDisabled() {
+        return FiltersController.getInstance(this.currentAccount).getActiveSortingTabsCount(false) == 0;
     }
 
     /* renamed from: org.telegram.ui.Components.UndoView$LinkMovementMethodMy */
@@ -138,7 +151,7 @@ public class UndoView extends FrameLayout {
                 }
                 return super.onTouchEvent(textView, spannable, motionEvent);
             } catch (Exception e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
                 return false;
             }
         }
@@ -157,7 +170,7 @@ public class UndoView extends FrameLayout {
         this.currentAccount = UserConfig.selectedAccount;
         this.currentAction = -1;
         this.hideAnimationType = 1;
-        this.enterOffsetMargin = AndroidUtilities.m50dp(8);
+        this.enterOffsetMargin = AndroidUtilities.m54dp(8);
         this.timeReplaceProgress = 1.0f;
         this.resourcesProvider = resourcesProvider;
         this.parentFragment = baseFragment;
@@ -165,15 +178,19 @@ public class UndoView extends FrameLayout {
         TextView textView = new TextView(context);
         this.infoTextView = textView;
         textView.setTextSize(1, 15.0f);
-        this.infoTextView.setTextColor(getThemedColor("undo_infoColor"));
-        this.infoTextView.setLinkTextColor(getThemedColor("undo_cancelColor"));
+        TextView textView2 = this.infoTextView;
+        int i = Theme.key_undo_infoColor;
+        textView2.setTextColor(getThemedColor(i));
+        TextView textView3 = this.infoTextView;
+        int i2 = Theme.key_undo_cancelColor;
+        textView3.setLinkTextColor(getThemedColor(i2));
         this.infoTextView.setMovementMethod(new LinkMovementMethodMy());
         addView(this.infoTextView, LayoutHelper.createFrame(-2, -2, 51, 45, 13, 0, 0));
-        TextView textView2 = new TextView(context);
-        this.subinfoTextView = textView2;
-        textView2.setTextSize(1, 13.0f);
-        this.subinfoTextView.setTextColor(getThemedColor("undo_infoColor"));
-        this.subinfoTextView.setLinkTextColor(getThemedColor("undo_cancelColor"));
+        TextView textView4 = new TextView(context);
+        this.subinfoTextView = textView4;
+        textView4.setTextSize(1, 13.0f);
+        this.subinfoTextView.setTextColor(getThemedColor(i));
+        this.subinfoTextView.setLinkTextColor(getThemedColor(i2));
         this.subinfoTextView.setHighlightColor(0);
         this.subinfoTextView.setSingleLine(true);
         this.subinfoTextView.setEllipsize(TextUtils.TruncateAt.END);
@@ -182,30 +199,32 @@ public class UndoView extends FrameLayout {
         RLottieImageView rLottieImageView = new RLottieImageView(context);
         this.leftImageView = rLottieImageView;
         rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
-        this.leftImageView.setLayerColor("info1.**", getThemedColor("undo_background") | (-16777216));
-        this.leftImageView.setLayerColor("info2.**", getThemedColor("undo_background") | (-16777216));
-        this.leftImageView.setLayerColor("luc12.**", getThemedColor("undo_infoColor"));
-        this.leftImageView.setLayerColor("luc11.**", getThemedColor("undo_infoColor"));
-        this.leftImageView.setLayerColor("luc10.**", getThemedColor("undo_infoColor"));
-        this.leftImageView.setLayerColor("luc9.**", getThemedColor("undo_infoColor"));
-        this.leftImageView.setLayerColor("luc8.**", getThemedColor("undo_infoColor"));
-        this.leftImageView.setLayerColor("luc7.**", getThemedColor("undo_infoColor"));
-        this.leftImageView.setLayerColor("luc6.**", getThemedColor("undo_infoColor"));
-        this.leftImageView.setLayerColor("luc5.**", getThemedColor("undo_infoColor"));
-        this.leftImageView.setLayerColor("luc4.**", getThemedColor("undo_infoColor"));
-        this.leftImageView.setLayerColor("luc3.**", getThemedColor("undo_infoColor"));
-        this.leftImageView.setLayerColor("luc2.**", getThemedColor("undo_infoColor"));
-        this.leftImageView.setLayerColor("luc1.**", getThemedColor("undo_infoColor"));
-        this.leftImageView.setLayerColor("Oval.**", getThemedColor("undo_infoColor"));
+        RLottieImageView rLottieImageView2 = this.leftImageView;
+        int i3 = Theme.key_undo_background;
+        rLottieImageView2.setLayerColor("info1.**", getThemedColor(i3) | (-16777216));
+        this.leftImageView.setLayerColor("info2.**", getThemedColor(i3) | (-16777216));
+        this.leftImageView.setLayerColor("luc12.**", getThemedColor(i));
+        this.leftImageView.setLayerColor("luc11.**", getThemedColor(i));
+        this.leftImageView.setLayerColor("luc10.**", getThemedColor(i));
+        this.leftImageView.setLayerColor("luc9.**", getThemedColor(i));
+        this.leftImageView.setLayerColor("luc8.**", getThemedColor(i));
+        this.leftImageView.setLayerColor("luc7.**", getThemedColor(i));
+        this.leftImageView.setLayerColor("luc6.**", getThemedColor(i));
+        this.leftImageView.setLayerColor("luc5.**", getThemedColor(i));
+        this.leftImageView.setLayerColor("luc4.**", getThemedColor(i));
+        this.leftImageView.setLayerColor("luc3.**", getThemedColor(i));
+        this.leftImageView.setLayerColor("luc2.**", getThemedColor(i));
+        this.leftImageView.setLayerColor("luc1.**", getThemedColor(i));
+        this.leftImageView.setLayerColor("Oval.**", getThemedColor(i));
         addView(this.leftImageView, LayoutHelper.createFrame(54, -2, 19, 3, 0, 0, 0));
         BackupImageView backupImageView = new BackupImageView(context);
         this.avatarImageView = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m50dp(15));
+        backupImageView.setRoundRadius(AndroidUtilities.m54dp(15));
         addView(this.avatarImageView, LayoutHelper.createFrame(30, 30, 19, 15, 0, 0, 0));
         LinearLayout linearLayout = new LinearLayout(context);
         this.undoButton = linearLayout;
         linearLayout.setOrientation(0);
-        this.undoButton.setBackground(Theme.createRadSelectorDrawable(getThemedColor("undo_cancelColor") & 587202559, AndroidUtilities.m50dp(2), AndroidUtilities.m50dp(2)));
+        this.undoButton.setBackground(Theme.createRadSelectorDrawable(getThemedColor(i2) & 587202559, AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2)));
         addView(this.undoButton, LayoutHelper.createFrame(-2, -2, 21, 0, 0, 11, 0));
         this.undoButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.UndoView$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
@@ -215,30 +234,30 @@ public class UndoView extends FrameLayout {
         });
         ImageView imageView = new ImageView(context);
         this.undoImageView = imageView;
-        imageView.setImageResource(C3242R.C3244drawable.chats_undo);
-        this.undoImageView.setColorFilter(new PorterDuffColorFilter(getThemedColor("undo_cancelColor"), PorterDuff.Mode.MULTIPLY));
+        imageView.setImageResource(C3290R.C3292drawable.chats_undo);
+        this.undoImageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(i2), PorterDuff.Mode.MULTIPLY));
         this.undoButton.addView(this.undoImageView, LayoutHelper.createLinear(-2, -2, 19, 4, 4, 0, 4));
-        TextView textView3 = new TextView(context);
-        this.undoTextView = textView3;
-        textView3.setTextSize(1, 14.0f);
+        TextView textView5 = new TextView(context);
+        this.undoTextView = textView5;
+        textView5.setTextSize(1, 14.0f);
         this.undoTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.undoTextView.setTextColor(getThemedColor("undo_cancelColor"));
-        this.undoTextView.setText(LocaleController.getString("Undo", C3242R.string.Undo));
+        this.undoTextView.setTextColor(getThemedColor(i2));
+        this.undoTextView.setText(LocaleController.getString("Undo", C3290R.string.Undo));
         this.undoButton.addView(this.undoTextView, LayoutHelper.createLinear(-2, -2, 19, 6, 4, 8, 4));
-        this.rect = new RectF(AndroidUtilities.m50dp(15), AndroidUtilities.m50dp(15), AndroidUtilities.m50dp(33), AndroidUtilities.m50dp(33));
+        this.rect = new RectF(AndroidUtilities.m54dp(15), AndroidUtilities.m54dp(15), AndroidUtilities.m54dp(33), AndroidUtilities.m54dp(33));
         Paint paint = new Paint(1);
         this.progressPaint = paint;
         paint.setStyle(Paint.Style.STROKE);
-        this.progressPaint.setStrokeWidth(AndroidUtilities.m50dp(2));
+        this.progressPaint.setStrokeWidth(AndroidUtilities.m54dp(2));
         this.progressPaint.setStrokeCap(Paint.Cap.ROUND);
-        this.progressPaint.setColor(getThemedColor("undo_infoColor"));
+        this.progressPaint.setColor(getThemedColor(i));
         TextPaint textPaint = new TextPaint(1);
         this.textPaint = textPaint;
-        textPaint.setTextSize(AndroidUtilities.m50dp(12));
+        textPaint.setTextSize(AndroidUtilities.m54dp(12));
         this.textPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.textPaint.setColor(getThemedColor("undo_infoColor"));
+        this.textPaint.setColor(getThemedColor(i));
         setWillNotDraw(false);
-        this.backgroundDrawable = Theme.createRoundRectDrawable(AndroidUtilities.m50dp(10), getThemedColor("undo_background"));
+        this.backgroundDrawable = Theme.createRoundRectDrawable(AndroidUtilities.m54dp(10), getThemedColor(i3));
         setOnTouchListener(UndoView$$ExternalSyntheticLambda3.INSTANCE);
         setVisibility(4);
     }
@@ -261,14 +280,21 @@ public class UndoView extends FrameLayout {
 
     private boolean isTooltipAction() {
         int i = this.currentAction;
-        return i == IdFabric$CustomType.UNDO_MOVE_TO_FOLDER || i == 6 || i == 3 || i == 5 || i == 7 || i == 8 || i == 87 || i == 9 || i == 10 || i == 13 || i == 14 || i == 19 || i == 20 || i == 21 || i == 22 || i == 23 || i == 30 || i == 31 || i == 32 || i == 33 || i == 34 || i == 35 || i == 36 || i == 74 || i == 37 || i == 38 || i == 39 || i == 40 || i == 42 || i == 43 || i == 77 || i == 44 || i == 78 || i == 79 || i == 100 || i == 101 || i == ACTION_RINGTONE_ADDED || i == IdFabric$CustomType.ACTION_HIDDEN_CHATS_UNDO_VIEW_HINT || i == IdFabric$CustomType.ACTION_HIDDEN_CHATS_UNDO_VIEW_PINNED || i == IdFabric$CustomType.ACTION_HIDDEN_CHATS_UNDO_VIEW_UNPINNED || i == IdFabric$CustomType.ACTION_HIDDEN_CHATS_UNDO_VIEW_FEW_HINT;
+        if (i == 23 || i == IdFabric$CustomType.UNDO_ACTION_CHAT_UNARCHIVED_FEW) {
+            return false;
+        }
+        if (i == IdFabric$CustomType.UNDO_MOVE_TO_FOLDER) {
+            return true;
+        }
+        return i == 6 || i == 3 || i == 5 || i == 7 || i == 8 || i == 87 || i == 9 || i == 10 || i == 13 || i == 14 || i == 19 || i == 20 || i == 21 || i == 22 || i == 23 || i == 30 || i == 31 || i == 32 || i == 33 || i == 34 || i == 35 || i == 36 || i == 74 || i == 37 || i == 38 || i == 39 || i == 40 || i == 42 || i == 43 || i == 77 || i == 44 || i == 78 || i == 79 || i == 100 || i == 101 || i == ACTION_RINGTONE_ADDED;
     }
 
     private boolean hasSubInfo() {
         int i;
         int i2;
+        Object obj;
         int i3 = this.currentAction;
-        return i3 == 11 || i3 == 24 || i3 == 6 || i3 == 3 || i3 == 5 || i3 == 13 || i3 == 14 || i3 == 74 || (i3 == 7 && ((FiltersController.getInstance(this.currentAccount).isHideFoldersEnabled() || MessagesController.getInstance(this.currentAccount).dialogFilters.isEmpty() || (i2 = this.currentAction) == IdFabric$CustomType.ACTION_HIDDEN_CHATS_UNDO_VIEW_PINNED || i2 == IdFabric$CustomType.ACTION_HIDDEN_CHATS_UNDO_VIEW_UNPINNED || i2 == IdFabric$CustomType.ACTION_HIDDEN_CHATS_UNDO_VIEW_HINT || i2 == IdFabric$CustomType.ACTION_HIDDEN_CHATS_UNDO_VIEW_FEW_HINT) && FiltersController.getInstance(this.currentAccount).getActiveSortingTabsCount(false) == 0)) || (i = this.currentAction) == ACTION_RINGTONE_ADDED || i == 85;
+        return i3 == 11 || i3 == 24 || i3 == 6 || (i3 == 3 && isSortingDisabled() && (isFoldersHidden() || MessagesController.getInstance(this.currentAccount).dialogFilters.isEmpty())) || ((this.currentAction == 5 && isSortingDisabled() && (isFoldersHidden() || MessagesController.getInstance(this.currentAccount).dialogFilters.isEmpty())) || (i = this.currentAction) == 13 || i == 14 || i == 74 || ((i == 7 && isSortingDisabled() && (isFoldersHidden() || MessagesController.getInstance(this.currentAccount).dialogFilters.isEmpty())) || (i2 = this.currentAction) == ACTION_RINGTONE_ADDED || i2 == 85 || (i2 == 88 && (obj = this.currentInfoObject2) != null && ((Integer) obj).intValue() > 0)));
     }
 
     public boolean isMultilineSubInfo() {
@@ -290,6 +316,7 @@ public class UndoView extends FrameLayout {
     public void hide(boolean z, int i) {
         if (getVisibility() == 0 && this.isShown) {
             this.currentInfoObject = null;
+            this.currentInfoObject2 = null;
             this.isShown = false;
             Runnable runnable = this.currentActionRunnable;
             if (runnable != null) {
@@ -368,19 +395,19 @@ public class UndoView extends FrameLayout {
         showWithAction(arrayList, i, obj, obj2, runnable, runnable2);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:659:0x1832  */
-    /* JADX WARN: Removed duplicated region for block: B:662:0x1852  */
-    /* JADX WARN: Removed duplicated region for block: B:665:0x1879  */
-    /* JADX WARN: Removed duplicated region for block: B:669:0x18be  */
-    /* JADX WARN: Removed duplicated region for block: B:700:0x1971  */
-    /* JADX WARN: Removed duplicated region for block: B:727:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:750:0x19dc  */
+    /* JADX WARN: Removed duplicated region for block: B:753:0x19fc  */
+    /* JADX WARN: Removed duplicated region for block: B:756:0x1a23  */
+    /* JADX WARN: Removed duplicated region for block: B:760:0x1a68  */
+    /* JADX WARN: Removed duplicated region for block: B:791:0x1b1b  */
+    /* JADX WARN: Removed duplicated region for block: B:818:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public void showWithAction(java.util.ArrayList<java.lang.Long> r19, int r20, java.lang.Object r21, java.lang.Object r22, java.lang.Runnable r23, java.lang.Runnable r24) {
+    public void showWithAction(java.util.ArrayList<java.lang.Long> r22, int r23, java.lang.Object r24, java.lang.Object r25, java.lang.Runnable r26, java.lang.Runnable r27) {
         /*
-            Method dump skipped, instructions count: 6603
+            Method dump skipped, instructions count: 7029
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Components.UndoView.showWithAction(java.util.ArrayList, int, java.lang.Object, java.lang.Object, java.lang.Runnable, java.lang.Runnable):void");
@@ -395,7 +422,7 @@ public class UndoView extends FrameLayout {
     public /* synthetic */ void lambda$showWithAction$6(TLRPC$Message tLRPC$Message, View view) {
         hide(true, 1);
         TLRPC$TL_payments_getPaymentReceipt tLRPC$TL_payments_getPaymentReceipt = new TLRPC$TL_payments_getPaymentReceipt();
-        tLRPC$TL_payments_getPaymentReceipt.msg_id = tLRPC$Message.f1451id;
+        tLRPC$TL_payments_getPaymentReceipt.msg_id = tLRPC$Message.f1457id;
         tLRPC$TL_payments_getPaymentReceipt.peer = this.parentFragment.getMessagesController().getInputPeer(tLRPC$Message.peer_id);
         this.parentFragment.getConnectionsManager().sendRequest(tLRPC$TL_payments_getPaymentReceipt, new RequestDelegate() { // from class: org.telegram.ui.Components.UndoView$$ExternalSyntheticLambda7
             @Override // org.telegram.tgnet.RequestDelegate
@@ -441,7 +468,7 @@ public class UndoView extends FrameLayout {
     protected void dispatchDraw(Canvas canvas) {
         if (this.additionalTranslationY != BitmapDescriptorFactory.HUE_RED) {
             canvas.save();
-            float measuredHeight = (getMeasuredHeight() - this.enterOffset) + AndroidUtilities.m50dp(9);
+            float measuredHeight = (getMeasuredHeight() - this.enterOffset) + AndroidUtilities.m54dp(9);
             if (measuredHeight > BitmapDescriptorFactory.HUE_RED) {
                 canvas.clipRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), measuredHeight);
                 super.dispatchDraw(canvas);
@@ -456,7 +483,7 @@ public class UndoView extends FrameLayout {
     protected void onDraw(Canvas canvas) {
         if (this.additionalTranslationY != BitmapDescriptorFactory.HUE_RED) {
             canvas.save();
-            float measuredHeight = (getMeasuredHeight() - this.enterOffset) + this.enterOffsetMargin + AndroidUtilities.m50dp(1);
+            float measuredHeight = (getMeasuredHeight() - this.enterOffset) + this.enterOffsetMargin + AndroidUtilities.m54dp(1);
             if (measuredHeight > BitmapDescriptorFactory.HUE_RED) {
                 canvas.clipRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), measuredHeight);
                 super.dispatchDraw(canvas);
@@ -467,7 +494,7 @@ public class UndoView extends FrameLayout {
             this.backgroundDrawable.draw(canvas);
         }
         int i = this.currentAction;
-        if (i == 1 || i == 0 || i == 27 || i == 26 || i == 81) {
+        if (i == 1 || i == 0 || i == 27 || i == 26 || i == 81 || i == 88) {
             long j = this.timeLeft;
             int ceil = j > 0 ? (int) Math.ceil(((float) j) / 1000.0f) : 0;
             if (this.prevSeconds != ceil) {
@@ -498,7 +525,7 @@ public class UndoView extends FrameLayout {
                 if (f3 < 1.0f) {
                     this.textPaint.setAlpha((int) (alpha * (1.0f - f3)));
                     canvas.save();
-                    canvas.translate(this.rect.centerX() - (this.textWidth / 2), AndroidUtilities.m51dp(17.2f) + (AndroidUtilities.m50dp(10) * this.timeReplaceProgress));
+                    canvas.translate(this.rect.centerX() - (this.textWidth / 2), AndroidUtilities.m55dp(17.2f) + (AndroidUtilities.m54dp(10) * this.timeReplaceProgress));
                     this.timeLayoutOut.draw(canvas);
                     this.textPaint.setAlpha(alpha);
                     canvas.restore();
@@ -510,7 +537,7 @@ public class UndoView extends FrameLayout {
                     this.textPaint.setAlpha((int) (alpha * f4));
                 }
                 canvas.save();
-                canvas.translate(this.rect.centerX() - (this.textWidth / 2), AndroidUtilities.m51dp(17.2f) - (AndroidUtilities.m50dp(10) * (1.0f - this.timeReplaceProgress)));
+                canvas.translate(this.rect.centerX() - (this.textWidth / 2), AndroidUtilities.m55dp(17.2f) - (AndroidUtilities.m54dp(10) * (1.0f - this.timeReplaceProgress)));
                 this.timeLayout.draw(canvas);
                 if (this.timeReplaceProgress != 1.0f) {
                     this.textPaint.setAlpha(alpha);
@@ -560,7 +587,7 @@ public class UndoView extends FrameLayout {
     }
 
     private void updatePosition() {
-        setTranslationY(((this.enterOffset - this.enterOffsetMargin) + AndroidUtilities.m50dp(8)) - this.additionalTranslationY);
+        setTranslationY(((this.enterOffset - this.enterOffsetMargin) + AndroidUtilities.m54dp(8)) - this.additionalTranslationY);
         invalidate();
     }
 
@@ -569,9 +596,7 @@ public class UndoView extends FrameLayout {
         return this.backgroundDrawable;
     }
 
-    private int getThemedColor(String str) {
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-        return color != null ? color.intValue() : Theme.getColor(str);
+    private int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 }

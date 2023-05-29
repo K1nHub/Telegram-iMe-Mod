@@ -8,7 +8,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.state.GlobalStateLayout;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 /* loaded from: classes4.dex */
 public final class ForkFragmentWalletNotificationsBinding implements ViewBinding {
     public final GlobalStateLayout globalStateLayout;
@@ -31,7 +31,7 @@ public final class ForkFragmentWalletNotificationsBinding implements ViewBinding
     }
 
     public static ForkFragmentWalletNotificationsBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3242R.layout.fork_fragment_wallet_notifications, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3290R.layout.fork_fragment_wallet_notifications, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -39,10 +39,10 @@ public final class ForkFragmentWalletNotificationsBinding implements ViewBinding
     }
 
     public static ForkFragmentWalletNotificationsBinding bind(View view) {
-        int i = C3242R.C3245id.global_state_layout;
+        int i = C3290R.C3293id.global_state_layout;
         GlobalStateLayout globalStateLayout = (GlobalStateLayout) ViewBindings.findChildViewById(view, i);
         if (globalStateLayout != null) {
-            i = C3242R.C3245id.recycle_notifications;
+            i = C3290R.C3293id.recycle_notifications;
             RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
             if (recyclerView != null) {
                 return new ForkFragmentWalletNotificationsBinding((SwipeRefreshLayout) view, globalStateLayout, recyclerView);

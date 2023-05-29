@@ -38,8 +38,9 @@ public abstract class ContinuationImpl extends BaseContinuationImpl {
         return continuation;
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
     @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
-    protected void releaseIntercepted() {
+    public void releaseIntercepted() {
         Continuation<?> continuation = this.intercepted;
         if (continuation != null && continuation != this) {
             CoroutineContext.Element element = getContext().get(ContinuationInterceptor.Key);

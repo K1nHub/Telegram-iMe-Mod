@@ -2,6 +2,7 @@ package com.iMe.fork.models.backup;
 
 import com.iMe.fork.enums.DrawerHolidayIconType;
 import com.iMe.fork.models.DrawerHeaderSettings;
+import com.iMe.storage.domain.model.HistoryDialogModel;
 import com.iMe.storage.domain.model.bookmarks.BookmarksModel;
 import com.iMe.storage.domain.model.dialogs.DialogTranslationSettings;
 import com.iMe.storage.domain.model.filters.FilterFab;
@@ -33,6 +34,7 @@ public final class Backup {
     private final String filterTabsWidthMode;
     private final List<FilterSettingsModel> filters;
     private final Boolean foldersFirst;
+    private final List<Long> hiddenChatDialogs;
     private final Boolean hideFolders;
     private final Boolean iconInsteadAllChatsTabTitle;
     private final Boolean isActionBarAccountSwitchEnabled;
@@ -48,7 +50,6 @@ public final class Backup {
     private final Boolean isChatSortingEnabledByDefault;
     private final Boolean isChatThemesEnabled;
     private final Boolean isCombineMessagesEnabled;
-    private final Boolean isCustomSharingModeEnabled;
     private final Boolean isDeleteCloudConfirmationEnabled;
     private final Boolean isDialogsCompactModeEnabled;
     private final Boolean isExtendedAvatarPreviewerByTapEnabled;
@@ -74,7 +75,7 @@ public final class Backup {
     private final Boolean isPremiumShowBadge;
     private final Boolean isPremiumShowStatus;
     private final Boolean isProfileInfoHidden;
-    private final Boolean isProxyButtonForceVisible;
+    private final Boolean isProxyButtonVisible;
     private final Boolean isQuickReactionEnabled;
     private final Boolean isReactionsEnabled;
     private final Boolean isReactionsInSendPopupEnabled;
@@ -100,6 +101,7 @@ public final class Backup {
     private final Map<String, List<MultiPanelButtonStateBackup>> multiPanelSettings;
     private final Map<Long, PlaylistModel> musicPlaylists;
     private final Boolean noTopicFirst;
+    private final List<HistoryDialogModel> pinnedRecentChats;
     private final Boolean rememberLastFilterTab;
     private final String selectedAutoBackupInterval;
     private final String selectedAutoUpdateCatalogInterval;
@@ -127,12 +129,12 @@ public final class Backup {
     private final Integer version;
 
     public Backup() {
-        this(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, -1, -1, -1, 8191, null);
+        this(null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, -1, -1, -1, 16383, null);
     }
 
-    public final Backup copy(Boolean bool, String str, Boolean bool2, Boolean bool3, String str2, Boolean bool4, Boolean bool5, Boolean bool6, Boolean bool7, Boolean bool8, Boolean bool9, String str3, Boolean bool10, Boolean bool11, Boolean bool12, Boolean bool13, DrawerHeaderSettings drawerHeaderSettings, Set<String> set, Boolean bool14, Boolean bool15, Boolean bool16, Boolean bool17, Boolean bool18, Set<String> set2, Boolean bool19, Boolean bool20, Boolean bool21, Map<String, Set<String>> map, Boolean bool22, Boolean bool23, Set<String> set3, List<String> list, Boolean bool24, Boolean bool25, Boolean bool26, Boolean bool27, Boolean bool28, Boolean bool29, Boolean bool30, Boolean bool31, String str4, Boolean bool32, Set<String> set4, Boolean bool33, Set<String> set5, Boolean bool34, Boolean bool35, Boolean bool36, String str5, Boolean bool37, Boolean bool38, Boolean bool39, Boolean bool40, String str6, Boolean bool41, Boolean bool42, Set<String> set6, Boolean bool43, Set<String> set7, Boolean bool44, Boolean bool45, DrawerHolidayIconType drawerHolidayIconType, Boolean bool46, Boolean bool47, Map<String, List<MultiPanelButtonStateBackup>> map2, Boolean bool48, String str7, String str8, Boolean bool49, Boolean bool50, Boolean bool51, List<FilterSettingsModel> list2, Boolean bool52, Boolean bool53, Boolean bool54, Set<String> set8, Boolean bool55, List<SortingTabStateBackup> list3, Boolean bool56, List<SortingTabStateBackup> list4, Map<String, Pair<List<Long>, List<Integer>>> map3, Map<String, Pair<List<Long>, List<Integer>>> map4, Boolean bool57, Boolean bool58, Boolean bool59, Boolean bool60, List<Long> list5, Map<Long, BookmarksModel> map5, List<DialogTranslationSettings> list6, Boolean bool61, Boolean bool62, Boolean bool63, Boolean bool64, Boolean bool65, String str9, Map<Long, PlaylistModel> map6, String str10, String str11, Long l, List<TemplateModel> list7, Boolean bool66, Boolean bool67, Boolean bool68, String str12, Boolean bool69, List<TopicBackup> list8, Integer num, String allChatsTabFab, List<FilterFab> list9) {
+    public final Backup copy(Boolean bool, String str, Boolean bool2, Boolean bool3, String str2, Boolean bool4, Boolean bool5, Boolean bool6, Boolean bool7, Boolean bool8, Boolean bool9, String str3, Boolean bool10, Boolean bool11, Boolean bool12, Boolean bool13, DrawerHeaderSettings drawerHeaderSettings, Set<String> set, Boolean bool14, Boolean bool15, Boolean bool16, Boolean bool17, Boolean bool18, Set<String> set2, Boolean bool19, Boolean bool20, Boolean bool21, Map<String, Set<String>> map, Boolean bool22, Boolean bool23, Set<String> set3, List<String> list, Boolean bool24, Boolean bool25, Boolean bool26, Boolean bool27, Boolean bool28, Boolean bool29, Boolean bool30, Boolean bool31, String str4, Boolean bool32, Set<String> set4, Boolean bool33, Set<String> set5, Boolean bool34, Boolean bool35, String str5, Boolean bool36, Boolean bool37, Boolean bool38, Boolean bool39, String str6, Boolean bool40, Boolean bool41, Set<String> set6, Boolean bool42, Set<String> set7, Boolean bool43, Boolean bool44, DrawerHolidayIconType drawerHolidayIconType, Boolean bool45, Boolean bool46, Map<String, List<MultiPanelButtonStateBackup>> map2, Boolean bool47, String str7, String str8, Boolean bool48, Boolean bool49, Boolean bool50, List<FilterSettingsModel> list2, Boolean bool51, Boolean bool52, Boolean bool53, Set<String> set8, Boolean bool54, List<SortingTabStateBackup> list3, Boolean bool55, List<SortingTabStateBackup> list4, Map<String, Pair<List<Long>, List<Integer>>> map3, Map<String, Pair<List<Long>, List<Integer>>> map4, Boolean bool56, Boolean bool57, Boolean bool58, Boolean bool59, List<Long> list5, Map<Long, BookmarksModel> map5, List<DialogTranslationSettings> list6, Boolean bool60, Boolean bool61, Boolean bool62, Boolean bool63, Boolean bool64, String str9, Map<Long, PlaylistModel> map6, String str10, String str11, Long l, List<TemplateModel> list7, Boolean bool65, Boolean bool66, Boolean bool67, String str12, Boolean bool68, List<TopicBackup> list8, Integer num, String allChatsTabFab, List<FilterFab> list9, List<Long> list10, List<HistoryDialogModel> list11) {
         Intrinsics.checkNotNullParameter(allChatsTabFab, "allChatsTabFab");
-        return new Backup(bool, str, bool2, bool3, str2, bool4, bool5, bool6, bool7, bool8, bool9, str3, bool10, bool11, bool12, bool13, drawerHeaderSettings, set, bool14, bool15, bool16, bool17, bool18, set2, bool19, bool20, bool21, map, bool22, bool23, set3, list, bool24, bool25, bool26, bool27, bool28, bool29, bool30, bool31, str4, bool32, set4, bool33, set5, bool34, bool35, bool36, str5, bool37, bool38, bool39, bool40, str6, bool41, bool42, set6, bool43, set7, bool44, bool45, drawerHolidayIconType, bool46, bool47, map2, bool48, str7, str8, bool49, bool50, bool51, list2, bool52, bool53, bool54, set8, bool55, list3, bool56, list4, map3, map4, bool57, bool58, bool59, bool60, list5, map5, list6, bool61, bool62, bool63, bool64, bool65, str9, map6, str10, str11, l, list7, bool66, bool67, bool68, str12, bool69, list8, num, allChatsTabFab, list9);
+        return new Backup(bool, str, bool2, bool3, str2, bool4, bool5, bool6, bool7, bool8, bool9, str3, bool10, bool11, bool12, bool13, drawerHeaderSettings, set, bool14, bool15, bool16, bool17, bool18, set2, bool19, bool20, bool21, map, bool22, bool23, set3, list, bool24, bool25, bool26, bool27, bool28, bool29, bool30, bool31, str4, bool32, set4, bool33, set5, bool34, bool35, str5, bool36, bool37, bool38, bool39, str6, bool40, bool41, set6, bool42, set7, bool43, bool44, drawerHolidayIconType, bool45, bool46, map2, bool47, str7, str8, bool48, bool49, bool50, list2, bool51, bool52, bool53, set8, bool54, list3, bool55, list4, map3, map4, bool56, bool57, bool58, bool59, list5, map5, list6, bool60, bool61, bool62, bool63, bool64, str9, map6, str10, str11, l, list7, bool65, bool66, bool67, str12, bool68, list8, num, allChatsTabFab, list9, list10, list11);
     }
 
     public boolean equals(Object obj) {
@@ -141,7 +143,7 @@ public final class Backup {
         }
         if (obj instanceof Backup) {
             Backup backup = (Backup) obj;
-            return Intrinsics.areEqual(this.isAutoBackupEnabled, backup.isAutoBackupEnabled) && Intrinsics.areEqual(this.selectedAutoBackupInterval, backup.selectedAutoBackupInterval) && Intrinsics.areEqual(this.isFilesSendingPreviewAndCaptionEnabled, backup.isFilesSendingPreviewAndCaptionEnabled) && Intrinsics.areEqual(this.isVibrationEnabled, backup.isVibrationEnabled) && Intrinsics.areEqual(this.selectedStickersSize, backup.selectedStickersSize) && Intrinsics.areEqual(this.isQuickReactionEnabled, backup.isQuickReactionEnabled) && Intrinsics.areEqual(this.isPremiumAnimateStickers, backup.isPremiumAnimateStickers) && Intrinsics.areEqual(this.isPremiumShowBadge, backup.isPremiumShowBadge) && Intrinsics.areEqual(this.isPremiumShowStatus, backup.isPremiumShowStatus) && Intrinsics.areEqual(this.isPremiumAnimateAvatars, backup.isPremiumAnimateAvatars) && Intrinsics.areEqual(this.isProxyButtonForceVisible, backup.isProxyButtonForceVisible) && Intrinsics.areEqual(this.selectedContactsFilter, backup.selectedContactsFilter) && Intrinsics.areEqual(this.isReadAllChatsConfirmationShown, backup.isReadAllChatsConfirmationShown) && Intrinsics.areEqual(this.isProfileInfoHidden, backup.isProfileInfoHidden) && Intrinsics.areEqual(this.isMultiForwardingOptionsHintShown, backup.isMultiForwardingOptionsHintShown) && Intrinsics.areEqual(this.isSuggestPremiumReactionsEmoji, backup.isSuggestPremiumReactionsEmoji) && Intrinsics.areEqual(this.drawerHeaderSettings, backup.drawerHeaderSettings) && Intrinsics.areEqual(this.drawerItems, backup.drawerItems) && Intrinsics.areEqual(this.isActionBarAccountSwitchEnabled, backup.isActionBarAccountSwitchEnabled) && Intrinsics.areEqual(this.isMainActionBarMenuEnabled, backup.isMainActionBarMenuEnabled) && Intrinsics.areEqual(this.isDialogsCompactModeEnabled, backup.isDialogsCompactModeEnabled) && Intrinsics.areEqual(this.isSwipeToGoToNextUnreadDialogEnabled, backup.isSwipeToGoToNextUnreadDialogEnabled) && Intrinsics.areEqual(this.isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled, backup.isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled) && Intrinsics.areEqual(this.swipeToGoToNextUnreadDialogTypes, backup.swipeToGoToNextUnreadDialogTypes) && Intrinsics.areEqual(this.isShowChannelBottomPanel, backup.isShowChannelBottomPanel) && Intrinsics.areEqual(this.isHideChatKeyboardOnScrollEnabled, backup.isHideChatKeyboardOnScrollEnabled) && Intrinsics.areEqual(this.isChatThemesEnabled, backup.isChatThemesEnabled) && Intrinsics.areEqual(this.chatAttachAlertButtons, backup.chatAttachAlertButtons) && Intrinsics.areEqual(this.isExtendedAvatarPreviewerEnabled, backup.isExtendedAvatarPreviewerEnabled) && Intrinsics.areEqual(this.isExtendedAvatarPreviewerByTapEnabled, backup.isExtendedAvatarPreviewerByTapEnabled) && Intrinsics.areEqual(this.selectedExtendedAvatarPreviewerItems, backup.selectedExtendedAvatarPreviewerItems) && Intrinsics.areEqual(this.messagePopupItems, backup.messagePopupItems) && Intrinsics.areEqual(this.isMessagePopupAggregatorEnabled, backup.isMessagePopupAggregatorEnabled) && Intrinsics.areEqual(this.isChannelWidePostsEnabled, backup.isChannelWidePostsEnabled) && Intrinsics.areEqual(this.isCallsConfirmationEnabled, backup.isCallsConfirmationEnabled) && Intrinsics.areEqual(this.isDeleteCloudConfirmationEnabled, backup.isDeleteCloudConfirmationEnabled) && Intrinsics.areEqual(this.isSendingGifConfirmationEnabled, backup.isSendingGifConfirmationEnabled) && Intrinsics.areEqual(this.isSendingStickerConfirmationEnabled, backup.isSendingStickerConfirmationEnabled) && Intrinsics.areEqual(this.isSpeakWithoutHoldEnabled, backup.isSpeakWithoutHoldEnabled) && Intrinsics.areEqual(this.isVideoSpeakWithoutHoldEnabled, backup.isVideoSpeakWithoutHoldEnabled) && Intrinsics.areEqual(this.selectedVideoVoiceCamera, backup.selectedVideoVoiceCamera) && Intrinsics.areEqual(this.isRecentChatsEnabled, backup.isRecentChatsEnabled) && Intrinsics.areEqual(this.selectedRecentChatsDialogTypes, backup.selectedRecentChatsDialogTypes) && Intrinsics.areEqual(this.isSaveArchiveRecentChatsEnabled, backup.isSaveArchiveRecentChatsEnabled) && Intrinsics.areEqual(this.selectedDrawStatusTypes, backup.selectedDrawStatusTypes) && Intrinsics.areEqual(this.isOpenForwardingOptionsAutomaticallyEnabled, backup.isOpenForwardingOptionsAutomaticallyEnabled) && Intrinsics.areEqual(this.isCustomSharingModeEnabled, backup.isCustomSharingModeEnabled) && Intrinsics.areEqual(this.isMultiReplyEnabled, backup.isMultiReplyEnabled) && Intrinsics.areEqual(this.selectedChatProfileTelegramIdMode, backup.selectedChatProfileTelegramIdMode) && Intrinsics.areEqual(this.isMessageQuickTranslateEnabled, backup.isMessageQuickTranslateEnabled) && Intrinsics.areEqual(this.isBotHelpTranslateEnabled, backup.isBotHelpTranslateEnabled) && Intrinsics.areEqual(this.isTranslateInSendPopupEnabled, backup.isTranslateInSendPopupEnabled) && Intrinsics.areEqual(this.isSilentSendingEnabled, backup.isSilentSendingEnabled) && Intrinsics.areEqual(this.selectedSentMessageFont, backup.selectedSentMessageFont) && Intrinsics.areEqual(this.isRememberLastDialogEnabled, backup.isRememberLastDialogEnabled) && Intrinsics.areEqual(this.isCombineMessagesEnabled, backup.isCombineMessagesEnabled) && Intrinsics.areEqual(this.selectedPhotoViewerMenuItems, backup.selectedPhotoViewerMenuItems) && Intrinsics.areEqual(this.isReactionsEnabled, backup.isReactionsEnabled) && Intrinsics.areEqual(this.selectedDialogTypesForMessagePopupReactions, backup.selectedDialogTypesForMessagePopupReactions) && Intrinsics.areEqual(this.isReactionsInSendPopupEnabled, backup.isReactionsInSendPopupEnabled) && Intrinsics.areEqual(this.isRevokeByDefault, backup.isRevokeByDefault) && this.drawerHolidayIconType == backup.drawerHolidayIconType && Intrinsics.areEqual(this.isMultiPanelEnabled, backup.isMultiPanelEnabled) && Intrinsics.areEqual(this.isHideMultiPanelOnScrollEnabled, backup.isHideMultiPanelOnScrollEnabled) && Intrinsics.areEqual(this.multiPanelSettings, backup.multiPanelSettings) && Intrinsics.areEqual(this.filterTabsAtBottom, backup.filterTabsAtBottom) && Intrinsics.areEqual(this.filterTabsNotificationMode, backup.filterTabsNotificationMode) && Intrinsics.areEqual(this.filterTabsWidthMode, backup.filterTabsWidthMode) && Intrinsics.areEqual(this.rememberLastFilterTab, backup.rememberLastFilterTab) && Intrinsics.areEqual(this.hideFolders, backup.hideFolders) && Intrinsics.areEqual(this.foldersFirst, backup.foldersFirst) && Intrinsics.areEqual(this.filters, backup.filters) && Intrinsics.areEqual(this.isChatSortingEnabledByDefault, backup.isChatSortingEnabledByDefault) && Intrinsics.areEqual(this.isAllChatsTabEnabled, backup.isAllChatsTabEnabled) && Intrinsics.areEqual(this.iconInsteadAllChatsTabTitle, backup.iconInsteadAllChatsTabTitle) && Intrinsics.areEqual(this.allChatsTabFabs, backup.allChatsTabFabs) && Intrinsics.areEqual(this.isSortingChatsEnabled, backup.isSortingChatsEnabled) && Intrinsics.areEqual(this.sortingSettings, backup.sortingSettings) && Intrinsics.areEqual(this.isArchiveSortingChatsEnabled, backup.isArchiveSortingChatsEnabled) && Intrinsics.areEqual(this.archiveSortingSettings, backup.archiveSortingSettings) && Intrinsics.areEqual(this.sortingPinnedChats, backup.sortingPinnedChats) && Intrinsics.areEqual(this.archiveSortingPinnedChats, backup.archiveSortingPinnedChats) && Intrinsics.areEqual(this.isCLoudAlbumsEnabled, backup.isCLoudAlbumsEnabled) && Intrinsics.areEqual(this.isAlbumsIntroShown, backup.isAlbumsIntroShown) && Intrinsics.areEqual(this.isSortCloudAlbumsByNameEnabled, backup.isSortCloudAlbumsByNameEnabled) && Intrinsics.areEqual(this.isOpenAlbumsInsteadCloudEnabled, backup.isOpenAlbumsInsteadCloudEnabled) && Intrinsics.areEqual(this.albums, backup.albums) && Intrinsics.areEqual(this.bookmarks, backup.bookmarks) && Intrinsics.areEqual(this.dialogSettings, backup.dialogSettings) && Intrinsics.areEqual(this.isPlayerPinned, backup.isPlayerPinned) && Intrinsics.areEqual(this.isPinnedPlayerMinimized, backup.isPinnedPlayerMinimized) && Intrinsics.areEqual(this.isPinnedPlayerThemeOverridden, backup.isPinnedPlayerThemeOverridden) && Intrinsics.areEqual(this.isPinnedPlayerNightThemeEnabled, backup.isPinnedPlayerNightThemeEnabled) && Intrinsics.areEqual(this.isMusicIntroShown, backup.isMusicIntroShown) && Intrinsics.areEqual(this.selectedMusicTab, backup.selectedMusicTab) && Intrinsics.areEqual(this.musicPlaylists, backup.musicPlaylists) && Intrinsics.areEqual(this.templatesMode, backup.templatesMode) && Intrinsics.areEqual(this.selectedTemplatesSortingType, backup.selectedTemplatesSortingType) && Intrinsics.areEqual(this.templatesChannelId, backup.templatesChannelId) && Intrinsics.areEqual(this.templates, backup.templates) && Intrinsics.areEqual(this.topicsEnabled, backup.topicsEnabled) && Intrinsics.areEqual(this.topicsBarAtBottom, backup.topicsBarAtBottom) && Intrinsics.areEqual(this.isAutoUpdateCatalogEnabled, backup.isAutoUpdateCatalogEnabled) && Intrinsics.areEqual(this.selectedAutoUpdateCatalogInterval, backup.selectedAutoUpdateCatalogInterval) && Intrinsics.areEqual(this.noTopicFirst, backup.noTopicFirst) && Intrinsics.areEqual(this.topics, backup.topics) && Intrinsics.areEqual(this.version, backup.version) && Intrinsics.areEqual(this.allChatsTabFab, backup.allChatsTabFab) && Intrinsics.areEqual(this.allChatsTabMultiFabs, backup.allChatsTabMultiFabs);
+            return Intrinsics.areEqual(this.isAutoBackupEnabled, backup.isAutoBackupEnabled) && Intrinsics.areEqual(this.selectedAutoBackupInterval, backup.selectedAutoBackupInterval) && Intrinsics.areEqual(this.isFilesSendingPreviewAndCaptionEnabled, backup.isFilesSendingPreviewAndCaptionEnabled) && Intrinsics.areEqual(this.isVibrationEnabled, backup.isVibrationEnabled) && Intrinsics.areEqual(this.selectedStickersSize, backup.selectedStickersSize) && Intrinsics.areEqual(this.isQuickReactionEnabled, backup.isQuickReactionEnabled) && Intrinsics.areEqual(this.isPremiumAnimateStickers, backup.isPremiumAnimateStickers) && Intrinsics.areEqual(this.isPremiumShowBadge, backup.isPremiumShowBadge) && Intrinsics.areEqual(this.isPremiumShowStatus, backup.isPremiumShowStatus) && Intrinsics.areEqual(this.isPremiumAnimateAvatars, backup.isPremiumAnimateAvatars) && Intrinsics.areEqual(this.isProxyButtonVisible, backup.isProxyButtonVisible) && Intrinsics.areEqual(this.selectedContactsFilter, backup.selectedContactsFilter) && Intrinsics.areEqual(this.isReadAllChatsConfirmationShown, backup.isReadAllChatsConfirmationShown) && Intrinsics.areEqual(this.isProfileInfoHidden, backup.isProfileInfoHidden) && Intrinsics.areEqual(this.isMultiForwardingOptionsHintShown, backup.isMultiForwardingOptionsHintShown) && Intrinsics.areEqual(this.isSuggestPremiumReactionsEmoji, backup.isSuggestPremiumReactionsEmoji) && Intrinsics.areEqual(this.drawerHeaderSettings, backup.drawerHeaderSettings) && Intrinsics.areEqual(this.drawerItems, backup.drawerItems) && Intrinsics.areEqual(this.isActionBarAccountSwitchEnabled, backup.isActionBarAccountSwitchEnabled) && Intrinsics.areEqual(this.isMainActionBarMenuEnabled, backup.isMainActionBarMenuEnabled) && Intrinsics.areEqual(this.isDialogsCompactModeEnabled, backup.isDialogsCompactModeEnabled) && Intrinsics.areEqual(this.isSwipeToGoToNextUnreadDialogEnabled, backup.isSwipeToGoToNextUnreadDialogEnabled) && Intrinsics.areEqual(this.isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled, backup.isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled) && Intrinsics.areEqual(this.swipeToGoToNextUnreadDialogTypes, backup.swipeToGoToNextUnreadDialogTypes) && Intrinsics.areEqual(this.isShowChannelBottomPanel, backup.isShowChannelBottomPanel) && Intrinsics.areEqual(this.isHideChatKeyboardOnScrollEnabled, backup.isHideChatKeyboardOnScrollEnabled) && Intrinsics.areEqual(this.isChatThemesEnabled, backup.isChatThemesEnabled) && Intrinsics.areEqual(this.chatAttachAlertButtons, backup.chatAttachAlertButtons) && Intrinsics.areEqual(this.isExtendedAvatarPreviewerEnabled, backup.isExtendedAvatarPreviewerEnabled) && Intrinsics.areEqual(this.isExtendedAvatarPreviewerByTapEnabled, backup.isExtendedAvatarPreviewerByTapEnabled) && Intrinsics.areEqual(this.selectedExtendedAvatarPreviewerItems, backup.selectedExtendedAvatarPreviewerItems) && Intrinsics.areEqual(this.messagePopupItems, backup.messagePopupItems) && Intrinsics.areEqual(this.isMessagePopupAggregatorEnabled, backup.isMessagePopupAggregatorEnabled) && Intrinsics.areEqual(this.isChannelWidePostsEnabled, backup.isChannelWidePostsEnabled) && Intrinsics.areEqual(this.isCallsConfirmationEnabled, backup.isCallsConfirmationEnabled) && Intrinsics.areEqual(this.isDeleteCloudConfirmationEnabled, backup.isDeleteCloudConfirmationEnabled) && Intrinsics.areEqual(this.isSendingGifConfirmationEnabled, backup.isSendingGifConfirmationEnabled) && Intrinsics.areEqual(this.isSendingStickerConfirmationEnabled, backup.isSendingStickerConfirmationEnabled) && Intrinsics.areEqual(this.isSpeakWithoutHoldEnabled, backup.isSpeakWithoutHoldEnabled) && Intrinsics.areEqual(this.isVideoSpeakWithoutHoldEnabled, backup.isVideoSpeakWithoutHoldEnabled) && Intrinsics.areEqual(this.selectedVideoVoiceCamera, backup.selectedVideoVoiceCamera) && Intrinsics.areEqual(this.isRecentChatsEnabled, backup.isRecentChatsEnabled) && Intrinsics.areEqual(this.selectedRecentChatsDialogTypes, backup.selectedRecentChatsDialogTypes) && Intrinsics.areEqual(this.isSaveArchiveRecentChatsEnabled, backup.isSaveArchiveRecentChatsEnabled) && Intrinsics.areEqual(this.selectedDrawStatusTypes, backup.selectedDrawStatusTypes) && Intrinsics.areEqual(this.isOpenForwardingOptionsAutomaticallyEnabled, backup.isOpenForwardingOptionsAutomaticallyEnabled) && Intrinsics.areEqual(this.isMultiReplyEnabled, backup.isMultiReplyEnabled) && Intrinsics.areEqual(this.selectedChatProfileTelegramIdMode, backup.selectedChatProfileTelegramIdMode) && Intrinsics.areEqual(this.isMessageQuickTranslateEnabled, backup.isMessageQuickTranslateEnabled) && Intrinsics.areEqual(this.isBotHelpTranslateEnabled, backup.isBotHelpTranslateEnabled) && Intrinsics.areEqual(this.isTranslateInSendPopupEnabled, backup.isTranslateInSendPopupEnabled) && Intrinsics.areEqual(this.isSilentSendingEnabled, backup.isSilentSendingEnabled) && Intrinsics.areEqual(this.selectedSentMessageFont, backup.selectedSentMessageFont) && Intrinsics.areEqual(this.isRememberLastDialogEnabled, backup.isRememberLastDialogEnabled) && Intrinsics.areEqual(this.isCombineMessagesEnabled, backup.isCombineMessagesEnabled) && Intrinsics.areEqual(this.selectedPhotoViewerMenuItems, backup.selectedPhotoViewerMenuItems) && Intrinsics.areEqual(this.isReactionsEnabled, backup.isReactionsEnabled) && Intrinsics.areEqual(this.selectedDialogTypesForMessagePopupReactions, backup.selectedDialogTypesForMessagePopupReactions) && Intrinsics.areEqual(this.isReactionsInSendPopupEnabled, backup.isReactionsInSendPopupEnabled) && Intrinsics.areEqual(this.isRevokeByDefault, backup.isRevokeByDefault) && this.drawerHolidayIconType == backup.drawerHolidayIconType && Intrinsics.areEqual(this.isMultiPanelEnabled, backup.isMultiPanelEnabled) && Intrinsics.areEqual(this.isHideMultiPanelOnScrollEnabled, backup.isHideMultiPanelOnScrollEnabled) && Intrinsics.areEqual(this.multiPanelSettings, backup.multiPanelSettings) && Intrinsics.areEqual(this.filterTabsAtBottom, backup.filterTabsAtBottom) && Intrinsics.areEqual(this.filterTabsNotificationMode, backup.filterTabsNotificationMode) && Intrinsics.areEqual(this.filterTabsWidthMode, backup.filterTabsWidthMode) && Intrinsics.areEqual(this.rememberLastFilterTab, backup.rememberLastFilterTab) && Intrinsics.areEqual(this.hideFolders, backup.hideFolders) && Intrinsics.areEqual(this.foldersFirst, backup.foldersFirst) && Intrinsics.areEqual(this.filters, backup.filters) && Intrinsics.areEqual(this.isChatSortingEnabledByDefault, backup.isChatSortingEnabledByDefault) && Intrinsics.areEqual(this.isAllChatsTabEnabled, backup.isAllChatsTabEnabled) && Intrinsics.areEqual(this.iconInsteadAllChatsTabTitle, backup.iconInsteadAllChatsTabTitle) && Intrinsics.areEqual(this.allChatsTabFabs, backup.allChatsTabFabs) && Intrinsics.areEqual(this.isSortingChatsEnabled, backup.isSortingChatsEnabled) && Intrinsics.areEqual(this.sortingSettings, backup.sortingSettings) && Intrinsics.areEqual(this.isArchiveSortingChatsEnabled, backup.isArchiveSortingChatsEnabled) && Intrinsics.areEqual(this.archiveSortingSettings, backup.archiveSortingSettings) && Intrinsics.areEqual(this.sortingPinnedChats, backup.sortingPinnedChats) && Intrinsics.areEqual(this.archiveSortingPinnedChats, backup.archiveSortingPinnedChats) && Intrinsics.areEqual(this.isCLoudAlbumsEnabled, backup.isCLoudAlbumsEnabled) && Intrinsics.areEqual(this.isAlbumsIntroShown, backup.isAlbumsIntroShown) && Intrinsics.areEqual(this.isSortCloudAlbumsByNameEnabled, backup.isSortCloudAlbumsByNameEnabled) && Intrinsics.areEqual(this.isOpenAlbumsInsteadCloudEnabled, backup.isOpenAlbumsInsteadCloudEnabled) && Intrinsics.areEqual(this.albums, backup.albums) && Intrinsics.areEqual(this.bookmarks, backup.bookmarks) && Intrinsics.areEqual(this.dialogSettings, backup.dialogSettings) && Intrinsics.areEqual(this.isPlayerPinned, backup.isPlayerPinned) && Intrinsics.areEqual(this.isPinnedPlayerMinimized, backup.isPinnedPlayerMinimized) && Intrinsics.areEqual(this.isPinnedPlayerThemeOverridden, backup.isPinnedPlayerThemeOverridden) && Intrinsics.areEqual(this.isPinnedPlayerNightThemeEnabled, backup.isPinnedPlayerNightThemeEnabled) && Intrinsics.areEqual(this.isMusicIntroShown, backup.isMusicIntroShown) && Intrinsics.areEqual(this.selectedMusicTab, backup.selectedMusicTab) && Intrinsics.areEqual(this.musicPlaylists, backup.musicPlaylists) && Intrinsics.areEqual(this.templatesMode, backup.templatesMode) && Intrinsics.areEqual(this.selectedTemplatesSortingType, backup.selectedTemplatesSortingType) && Intrinsics.areEqual(this.templatesChannelId, backup.templatesChannelId) && Intrinsics.areEqual(this.templates, backup.templates) && Intrinsics.areEqual(this.topicsEnabled, backup.topicsEnabled) && Intrinsics.areEqual(this.topicsBarAtBottom, backup.topicsBarAtBottom) && Intrinsics.areEqual(this.isAutoUpdateCatalogEnabled, backup.isAutoUpdateCatalogEnabled) && Intrinsics.areEqual(this.selectedAutoUpdateCatalogInterval, backup.selectedAutoUpdateCatalogInterval) && Intrinsics.areEqual(this.noTopicFirst, backup.noTopicFirst) && Intrinsics.areEqual(this.topics, backup.topics) && Intrinsics.areEqual(this.version, backup.version) && Intrinsics.areEqual(this.allChatsTabFab, backup.allChatsTabFab) && Intrinsics.areEqual(this.allChatsTabMultiFabs, backup.allChatsTabMultiFabs) && Intrinsics.areEqual(this.hiddenChatDialogs, backup.hiddenChatDialogs) && Intrinsics.areEqual(this.pinnedRecentChats, backup.pinnedRecentChats);
         }
         return false;
     }
@@ -167,7 +169,7 @@ public final class Backup {
         int hashCode9 = (hashCode8 + (bool7 == null ? 0 : bool7.hashCode())) * 31;
         Boolean bool8 = this.isPremiumAnimateAvatars;
         int hashCode10 = (hashCode9 + (bool8 == null ? 0 : bool8.hashCode())) * 31;
-        Boolean bool9 = this.isProxyButtonForceVisible;
+        Boolean bool9 = this.isProxyButtonVisible;
         int hashCode11 = (hashCode10 + (bool9 == null ? 0 : bool9.hashCode())) * 31;
         String str3 = this.selectedContactsFilter;
         int hashCode12 = (hashCode11 + (str3 == null ? 0 : str3.hashCode())) * 31;
@@ -239,137 +241,139 @@ public final class Backup {
         int hashCode45 = (hashCode44 + (set5 == null ? 0 : set5.hashCode())) * 31;
         Boolean bool34 = this.isOpenForwardingOptionsAutomaticallyEnabled;
         int hashCode46 = (hashCode45 + (bool34 == null ? 0 : bool34.hashCode())) * 31;
-        Boolean bool35 = this.isCustomSharingModeEnabled;
+        Boolean bool35 = this.isMultiReplyEnabled;
         int hashCode47 = (hashCode46 + (bool35 == null ? 0 : bool35.hashCode())) * 31;
-        Boolean bool36 = this.isMultiReplyEnabled;
-        int hashCode48 = (hashCode47 + (bool36 == null ? 0 : bool36.hashCode())) * 31;
         String str5 = this.selectedChatProfileTelegramIdMode;
-        int hashCode49 = (hashCode48 + (str5 == null ? 0 : str5.hashCode())) * 31;
-        Boolean bool37 = this.isMessageQuickTranslateEnabled;
+        int hashCode48 = (hashCode47 + (str5 == null ? 0 : str5.hashCode())) * 31;
+        Boolean bool36 = this.isMessageQuickTranslateEnabled;
+        int hashCode49 = (hashCode48 + (bool36 == null ? 0 : bool36.hashCode())) * 31;
+        Boolean bool37 = this.isBotHelpTranslateEnabled;
         int hashCode50 = (hashCode49 + (bool37 == null ? 0 : bool37.hashCode())) * 31;
-        Boolean bool38 = this.isBotHelpTranslateEnabled;
+        Boolean bool38 = this.isTranslateInSendPopupEnabled;
         int hashCode51 = (hashCode50 + (bool38 == null ? 0 : bool38.hashCode())) * 31;
-        Boolean bool39 = this.isTranslateInSendPopupEnabled;
+        Boolean bool39 = this.isSilentSendingEnabled;
         int hashCode52 = (hashCode51 + (bool39 == null ? 0 : bool39.hashCode())) * 31;
-        Boolean bool40 = this.isSilentSendingEnabled;
-        int hashCode53 = (hashCode52 + (bool40 == null ? 0 : bool40.hashCode())) * 31;
         String str6 = this.selectedSentMessageFont;
-        int hashCode54 = (hashCode53 + (str6 == null ? 0 : str6.hashCode())) * 31;
-        Boolean bool41 = this.isRememberLastDialogEnabled;
+        int hashCode53 = (hashCode52 + (str6 == null ? 0 : str6.hashCode())) * 31;
+        Boolean bool40 = this.isRememberLastDialogEnabled;
+        int hashCode54 = (hashCode53 + (bool40 == null ? 0 : bool40.hashCode())) * 31;
+        Boolean bool41 = this.isCombineMessagesEnabled;
         int hashCode55 = (hashCode54 + (bool41 == null ? 0 : bool41.hashCode())) * 31;
-        Boolean bool42 = this.isCombineMessagesEnabled;
-        int hashCode56 = (hashCode55 + (bool42 == null ? 0 : bool42.hashCode())) * 31;
         Set<String> set6 = this.selectedPhotoViewerMenuItems;
-        int hashCode57 = (hashCode56 + (set6 == null ? 0 : set6.hashCode())) * 31;
-        Boolean bool43 = this.isReactionsEnabled;
-        int hashCode58 = (hashCode57 + (bool43 == null ? 0 : bool43.hashCode())) * 31;
+        int hashCode56 = (hashCode55 + (set6 == null ? 0 : set6.hashCode())) * 31;
+        Boolean bool42 = this.isReactionsEnabled;
+        int hashCode57 = (hashCode56 + (bool42 == null ? 0 : bool42.hashCode())) * 31;
         Set<String> set7 = this.selectedDialogTypesForMessagePopupReactions;
-        int hashCode59 = (hashCode58 + (set7 == null ? 0 : set7.hashCode())) * 31;
-        Boolean bool44 = this.isReactionsInSendPopupEnabled;
+        int hashCode58 = (hashCode57 + (set7 == null ? 0 : set7.hashCode())) * 31;
+        Boolean bool43 = this.isReactionsInSendPopupEnabled;
+        int hashCode59 = (hashCode58 + (bool43 == null ? 0 : bool43.hashCode())) * 31;
+        Boolean bool44 = this.isRevokeByDefault;
         int hashCode60 = (hashCode59 + (bool44 == null ? 0 : bool44.hashCode())) * 31;
-        Boolean bool45 = this.isRevokeByDefault;
-        int hashCode61 = (hashCode60 + (bool45 == null ? 0 : bool45.hashCode())) * 31;
         DrawerHolidayIconType drawerHolidayIconType = this.drawerHolidayIconType;
-        int hashCode62 = (hashCode61 + (drawerHolidayIconType == null ? 0 : drawerHolidayIconType.hashCode())) * 31;
-        Boolean bool46 = this.isMultiPanelEnabled;
+        int hashCode61 = (hashCode60 + (drawerHolidayIconType == null ? 0 : drawerHolidayIconType.hashCode())) * 31;
+        Boolean bool45 = this.isMultiPanelEnabled;
+        int hashCode62 = (hashCode61 + (bool45 == null ? 0 : bool45.hashCode())) * 31;
+        Boolean bool46 = this.isHideMultiPanelOnScrollEnabled;
         int hashCode63 = (hashCode62 + (bool46 == null ? 0 : bool46.hashCode())) * 31;
-        Boolean bool47 = this.isHideMultiPanelOnScrollEnabled;
-        int hashCode64 = (hashCode63 + (bool47 == null ? 0 : bool47.hashCode())) * 31;
         Map<String, List<MultiPanelButtonStateBackup>> map2 = this.multiPanelSettings;
-        int hashCode65 = (hashCode64 + (map2 == null ? 0 : map2.hashCode())) * 31;
-        Boolean bool48 = this.filterTabsAtBottom;
-        int hashCode66 = (hashCode65 + (bool48 == null ? 0 : bool48.hashCode())) * 31;
+        int hashCode64 = (hashCode63 + (map2 == null ? 0 : map2.hashCode())) * 31;
+        Boolean bool47 = this.filterTabsAtBottom;
+        int hashCode65 = (hashCode64 + (bool47 == null ? 0 : bool47.hashCode())) * 31;
         String str7 = this.filterTabsNotificationMode;
-        int hashCode67 = (hashCode66 + (str7 == null ? 0 : str7.hashCode())) * 31;
+        int hashCode66 = (hashCode65 + (str7 == null ? 0 : str7.hashCode())) * 31;
         String str8 = this.filterTabsWidthMode;
-        int hashCode68 = (hashCode67 + (str8 == null ? 0 : str8.hashCode())) * 31;
-        Boolean bool49 = this.rememberLastFilterTab;
+        int hashCode67 = (hashCode66 + (str8 == null ? 0 : str8.hashCode())) * 31;
+        Boolean bool48 = this.rememberLastFilterTab;
+        int hashCode68 = (hashCode67 + (bool48 == null ? 0 : bool48.hashCode())) * 31;
+        Boolean bool49 = this.hideFolders;
         int hashCode69 = (hashCode68 + (bool49 == null ? 0 : bool49.hashCode())) * 31;
-        Boolean bool50 = this.hideFolders;
+        Boolean bool50 = this.foldersFirst;
         int hashCode70 = (hashCode69 + (bool50 == null ? 0 : bool50.hashCode())) * 31;
-        Boolean bool51 = this.foldersFirst;
-        int hashCode71 = (hashCode70 + (bool51 == null ? 0 : bool51.hashCode())) * 31;
         List<FilterSettingsModel> list2 = this.filters;
-        int hashCode72 = (hashCode71 + (list2 == null ? 0 : list2.hashCode())) * 31;
-        Boolean bool52 = this.isChatSortingEnabledByDefault;
+        int hashCode71 = (hashCode70 + (list2 == null ? 0 : list2.hashCode())) * 31;
+        Boolean bool51 = this.isChatSortingEnabledByDefault;
+        int hashCode72 = (hashCode71 + (bool51 == null ? 0 : bool51.hashCode())) * 31;
+        Boolean bool52 = this.isAllChatsTabEnabled;
         int hashCode73 = (hashCode72 + (bool52 == null ? 0 : bool52.hashCode())) * 31;
-        Boolean bool53 = this.isAllChatsTabEnabled;
+        Boolean bool53 = this.iconInsteadAllChatsTabTitle;
         int hashCode74 = (hashCode73 + (bool53 == null ? 0 : bool53.hashCode())) * 31;
-        Boolean bool54 = this.iconInsteadAllChatsTabTitle;
-        int hashCode75 = (hashCode74 + (bool54 == null ? 0 : bool54.hashCode())) * 31;
         Set<String> set8 = this.allChatsTabFabs;
-        int hashCode76 = (hashCode75 + (set8 == null ? 0 : set8.hashCode())) * 31;
-        Boolean bool55 = this.isSortingChatsEnabled;
-        int hashCode77 = (hashCode76 + (bool55 == null ? 0 : bool55.hashCode())) * 31;
+        int hashCode75 = (hashCode74 + (set8 == null ? 0 : set8.hashCode())) * 31;
+        Boolean bool54 = this.isSortingChatsEnabled;
+        int hashCode76 = (hashCode75 + (bool54 == null ? 0 : bool54.hashCode())) * 31;
         List<SortingTabStateBackup> list3 = this.sortingSettings;
-        int hashCode78 = (hashCode77 + (list3 == null ? 0 : list3.hashCode())) * 31;
-        Boolean bool56 = this.isArchiveSortingChatsEnabled;
-        int hashCode79 = (hashCode78 + (bool56 == null ? 0 : bool56.hashCode())) * 31;
+        int hashCode77 = (hashCode76 + (list3 == null ? 0 : list3.hashCode())) * 31;
+        Boolean bool55 = this.isArchiveSortingChatsEnabled;
+        int hashCode78 = (hashCode77 + (bool55 == null ? 0 : bool55.hashCode())) * 31;
         List<SortingTabStateBackup> list4 = this.archiveSortingSettings;
-        int hashCode80 = (hashCode79 + (list4 == null ? 0 : list4.hashCode())) * 31;
+        int hashCode79 = (hashCode78 + (list4 == null ? 0 : list4.hashCode())) * 31;
         Map<String, Pair<List<Long>, List<Integer>>> map3 = this.sortingPinnedChats;
-        int hashCode81 = (hashCode80 + (map3 == null ? 0 : map3.hashCode())) * 31;
+        int hashCode80 = (hashCode79 + (map3 == null ? 0 : map3.hashCode())) * 31;
         Map<String, Pair<List<Long>, List<Integer>>> map4 = this.archiveSortingPinnedChats;
-        int hashCode82 = (hashCode81 + (map4 == null ? 0 : map4.hashCode())) * 31;
-        Boolean bool57 = this.isCLoudAlbumsEnabled;
+        int hashCode81 = (hashCode80 + (map4 == null ? 0 : map4.hashCode())) * 31;
+        Boolean bool56 = this.isCLoudAlbumsEnabled;
+        int hashCode82 = (hashCode81 + (bool56 == null ? 0 : bool56.hashCode())) * 31;
+        Boolean bool57 = this.isAlbumsIntroShown;
         int hashCode83 = (hashCode82 + (bool57 == null ? 0 : bool57.hashCode())) * 31;
-        Boolean bool58 = this.isAlbumsIntroShown;
+        Boolean bool58 = this.isSortCloudAlbumsByNameEnabled;
         int hashCode84 = (hashCode83 + (bool58 == null ? 0 : bool58.hashCode())) * 31;
-        Boolean bool59 = this.isSortCloudAlbumsByNameEnabled;
+        Boolean bool59 = this.isOpenAlbumsInsteadCloudEnabled;
         int hashCode85 = (hashCode84 + (bool59 == null ? 0 : bool59.hashCode())) * 31;
-        Boolean bool60 = this.isOpenAlbumsInsteadCloudEnabled;
-        int hashCode86 = (hashCode85 + (bool60 == null ? 0 : bool60.hashCode())) * 31;
         List<Long> list5 = this.albums;
-        int hashCode87 = (hashCode86 + (list5 == null ? 0 : list5.hashCode())) * 31;
+        int hashCode86 = (hashCode85 + (list5 == null ? 0 : list5.hashCode())) * 31;
         Map<Long, BookmarksModel> map5 = this.bookmarks;
-        int hashCode88 = (hashCode87 + (map5 == null ? 0 : map5.hashCode())) * 31;
+        int hashCode87 = (hashCode86 + (map5 == null ? 0 : map5.hashCode())) * 31;
         List<DialogTranslationSettings> list6 = this.dialogSettings;
-        int hashCode89 = (hashCode88 + (list6 == null ? 0 : list6.hashCode())) * 31;
-        Boolean bool61 = this.isPlayerPinned;
+        int hashCode88 = (hashCode87 + (list6 == null ? 0 : list6.hashCode())) * 31;
+        Boolean bool60 = this.isPlayerPinned;
+        int hashCode89 = (hashCode88 + (bool60 == null ? 0 : bool60.hashCode())) * 31;
+        Boolean bool61 = this.isPinnedPlayerMinimized;
         int hashCode90 = (hashCode89 + (bool61 == null ? 0 : bool61.hashCode())) * 31;
-        Boolean bool62 = this.isPinnedPlayerMinimized;
+        Boolean bool62 = this.isPinnedPlayerThemeOverridden;
         int hashCode91 = (hashCode90 + (bool62 == null ? 0 : bool62.hashCode())) * 31;
-        Boolean bool63 = this.isPinnedPlayerThemeOverridden;
+        Boolean bool63 = this.isPinnedPlayerNightThemeEnabled;
         int hashCode92 = (hashCode91 + (bool63 == null ? 0 : bool63.hashCode())) * 31;
-        Boolean bool64 = this.isPinnedPlayerNightThemeEnabled;
+        Boolean bool64 = this.isMusicIntroShown;
         int hashCode93 = (hashCode92 + (bool64 == null ? 0 : bool64.hashCode())) * 31;
-        Boolean bool65 = this.isMusicIntroShown;
-        int hashCode94 = (hashCode93 + (bool65 == null ? 0 : bool65.hashCode())) * 31;
         String str9 = this.selectedMusicTab;
-        int hashCode95 = (hashCode94 + (str9 == null ? 0 : str9.hashCode())) * 31;
+        int hashCode94 = (hashCode93 + (str9 == null ? 0 : str9.hashCode())) * 31;
         Map<Long, PlaylistModel> map6 = this.musicPlaylists;
-        int hashCode96 = (hashCode95 + (map6 == null ? 0 : map6.hashCode())) * 31;
+        int hashCode95 = (hashCode94 + (map6 == null ? 0 : map6.hashCode())) * 31;
         String str10 = this.templatesMode;
-        int hashCode97 = (hashCode96 + (str10 == null ? 0 : str10.hashCode())) * 31;
+        int hashCode96 = (hashCode95 + (str10 == null ? 0 : str10.hashCode())) * 31;
         String str11 = this.selectedTemplatesSortingType;
-        int hashCode98 = (hashCode97 + (str11 == null ? 0 : str11.hashCode())) * 31;
+        int hashCode97 = (hashCode96 + (str11 == null ? 0 : str11.hashCode())) * 31;
         Long l = this.templatesChannelId;
-        int hashCode99 = (hashCode98 + (l == null ? 0 : l.hashCode())) * 31;
+        int hashCode98 = (hashCode97 + (l == null ? 0 : l.hashCode())) * 31;
         List<TemplateModel> list7 = this.templates;
-        int hashCode100 = (hashCode99 + (list7 == null ? 0 : list7.hashCode())) * 31;
-        Boolean bool66 = this.topicsEnabled;
+        int hashCode99 = (hashCode98 + (list7 == null ? 0 : list7.hashCode())) * 31;
+        Boolean bool65 = this.topicsEnabled;
+        int hashCode100 = (hashCode99 + (bool65 == null ? 0 : bool65.hashCode())) * 31;
+        Boolean bool66 = this.topicsBarAtBottom;
         int hashCode101 = (hashCode100 + (bool66 == null ? 0 : bool66.hashCode())) * 31;
-        Boolean bool67 = this.topicsBarAtBottom;
+        Boolean bool67 = this.isAutoUpdateCatalogEnabled;
         int hashCode102 = (hashCode101 + (bool67 == null ? 0 : bool67.hashCode())) * 31;
-        Boolean bool68 = this.isAutoUpdateCatalogEnabled;
-        int hashCode103 = (hashCode102 + (bool68 == null ? 0 : bool68.hashCode())) * 31;
         String str12 = this.selectedAutoUpdateCatalogInterval;
-        int hashCode104 = (hashCode103 + (str12 == null ? 0 : str12.hashCode())) * 31;
-        Boolean bool69 = this.noTopicFirst;
-        int hashCode105 = (hashCode104 + (bool69 == null ? 0 : bool69.hashCode())) * 31;
+        int hashCode103 = (hashCode102 + (str12 == null ? 0 : str12.hashCode())) * 31;
+        Boolean bool68 = this.noTopicFirst;
+        int hashCode104 = (hashCode103 + (bool68 == null ? 0 : bool68.hashCode())) * 31;
         List<TopicBackup> list8 = this.topics;
-        int hashCode106 = (hashCode105 + (list8 == null ? 0 : list8.hashCode())) * 31;
+        int hashCode105 = (hashCode104 + (list8 == null ? 0 : list8.hashCode())) * 31;
         Integer num = this.version;
-        int hashCode107 = (((hashCode106 + (num == null ? 0 : num.hashCode())) * 31) + this.allChatsTabFab.hashCode()) * 31;
+        int hashCode106 = (((hashCode105 + (num == null ? 0 : num.hashCode())) * 31) + this.allChatsTabFab.hashCode()) * 31;
         List<FilterFab> list9 = this.allChatsTabMultiFabs;
-        return hashCode107 + (list9 != null ? list9.hashCode() : 0);
+        int hashCode107 = (hashCode106 + (list9 == null ? 0 : list9.hashCode())) * 31;
+        List<Long> list10 = this.hiddenChatDialogs;
+        int hashCode108 = (hashCode107 + (list10 == null ? 0 : list10.hashCode())) * 31;
+        List<HistoryDialogModel> list11 = this.pinnedRecentChats;
+        return hashCode108 + (list11 != null ? list11.hashCode() : 0);
     }
 
     public String toString() {
-        return "Backup(isAutoBackupEnabled=" + this.isAutoBackupEnabled + ", selectedAutoBackupInterval=" + this.selectedAutoBackupInterval + ", isFilesSendingPreviewAndCaptionEnabled=" + this.isFilesSendingPreviewAndCaptionEnabled + ", isVibrationEnabled=" + this.isVibrationEnabled + ", selectedStickersSize=" + this.selectedStickersSize + ", isQuickReactionEnabled=" + this.isQuickReactionEnabled + ", isPremiumAnimateStickers=" + this.isPremiumAnimateStickers + ", isPremiumShowBadge=" + this.isPremiumShowBadge + ", isPremiumShowStatus=" + this.isPremiumShowStatus + ", isPremiumAnimateAvatars=" + this.isPremiumAnimateAvatars + ", isProxyButtonForceVisible=" + this.isProxyButtonForceVisible + ", selectedContactsFilter=" + this.selectedContactsFilter + ", isReadAllChatsConfirmationShown=" + this.isReadAllChatsConfirmationShown + ", isProfileInfoHidden=" + this.isProfileInfoHidden + ", isMultiForwardingOptionsHintShown=" + this.isMultiForwardingOptionsHintShown + ", isSuggestPremiumReactionsEmoji=" + this.isSuggestPremiumReactionsEmoji + ", drawerHeaderSettings=" + this.drawerHeaderSettings + ", drawerItems=" + this.drawerItems + ", isActionBarAccountSwitchEnabled=" + this.isActionBarAccountSwitchEnabled + ", isMainActionBarMenuEnabled=" + this.isMainActionBarMenuEnabled + ", isDialogsCompactModeEnabled=" + this.isDialogsCompactModeEnabled + ", isSwipeToGoToNextUnreadDialogEnabled=" + this.isSwipeToGoToNextUnreadDialogEnabled + ", isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled=" + this.isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled + ", swipeToGoToNextUnreadDialogTypes=" + this.swipeToGoToNextUnreadDialogTypes + ", isShowChannelBottomPanel=" + this.isShowChannelBottomPanel + ", isHideChatKeyboardOnScrollEnabled=" + this.isHideChatKeyboardOnScrollEnabled + ", isChatThemesEnabled=" + this.isChatThemesEnabled + ", chatAttachAlertButtons=" + this.chatAttachAlertButtons + ", isExtendedAvatarPreviewerEnabled=" + this.isExtendedAvatarPreviewerEnabled + ", isExtendedAvatarPreviewerByTapEnabled=" + this.isExtendedAvatarPreviewerByTapEnabled + ", selectedExtendedAvatarPreviewerItems=" + this.selectedExtendedAvatarPreviewerItems + ", messagePopupItems=" + this.messagePopupItems + ", isMessagePopupAggregatorEnabled=" + this.isMessagePopupAggregatorEnabled + ", isChannelWidePostsEnabled=" + this.isChannelWidePostsEnabled + ", isCallsConfirmationEnabled=" + this.isCallsConfirmationEnabled + ", isDeleteCloudConfirmationEnabled=" + this.isDeleteCloudConfirmationEnabled + ", isSendingGifConfirmationEnabled=" + this.isSendingGifConfirmationEnabled + ", isSendingStickerConfirmationEnabled=" + this.isSendingStickerConfirmationEnabled + ", isSpeakWithoutHoldEnabled=" + this.isSpeakWithoutHoldEnabled + ", isVideoSpeakWithoutHoldEnabled=" + this.isVideoSpeakWithoutHoldEnabled + ", selectedVideoVoiceCamera=" + this.selectedVideoVoiceCamera + ", isRecentChatsEnabled=" + this.isRecentChatsEnabled + ", selectedRecentChatsDialogTypes=" + this.selectedRecentChatsDialogTypes + ", isSaveArchiveRecentChatsEnabled=" + this.isSaveArchiveRecentChatsEnabled + ", selectedDrawStatusTypes=" + this.selectedDrawStatusTypes + ", isOpenForwardingOptionsAutomaticallyEnabled=" + this.isOpenForwardingOptionsAutomaticallyEnabled + ", isCustomSharingModeEnabled=" + this.isCustomSharingModeEnabled + ", isMultiReplyEnabled=" + this.isMultiReplyEnabled + ", selectedChatProfileTelegramIdMode=" + this.selectedChatProfileTelegramIdMode + ", isMessageQuickTranslateEnabled=" + this.isMessageQuickTranslateEnabled + ", isBotHelpTranslateEnabled=" + this.isBotHelpTranslateEnabled + ", isTranslateInSendPopupEnabled=" + this.isTranslateInSendPopupEnabled + ", isSilentSendingEnabled=" + this.isSilentSendingEnabled + ", selectedSentMessageFont=" + this.selectedSentMessageFont + ", isRememberLastDialogEnabled=" + this.isRememberLastDialogEnabled + ", isCombineMessagesEnabled=" + this.isCombineMessagesEnabled + ", selectedPhotoViewerMenuItems=" + this.selectedPhotoViewerMenuItems + ", isReactionsEnabled=" + this.isReactionsEnabled + ", selectedDialogTypesForMessagePopupReactions=" + this.selectedDialogTypesForMessagePopupReactions + ", isReactionsInSendPopupEnabled=" + this.isReactionsInSendPopupEnabled + ", isRevokeByDefault=" + this.isRevokeByDefault + ", drawerHolidayIconType=" + this.drawerHolidayIconType + ", isMultiPanelEnabled=" + this.isMultiPanelEnabled + ", isHideMultiPanelOnScrollEnabled=" + this.isHideMultiPanelOnScrollEnabled + ", multiPanelSettings=" + this.multiPanelSettings + ", filterTabsAtBottom=" + this.filterTabsAtBottom + ", filterTabsNotificationMode=" + this.filterTabsNotificationMode + ", filterTabsWidthMode=" + this.filterTabsWidthMode + ", rememberLastFilterTab=" + this.rememberLastFilterTab + ", hideFolders=" + this.hideFolders + ", foldersFirst=" + this.foldersFirst + ", filters=" + this.filters + ", isChatSortingEnabledByDefault=" + this.isChatSortingEnabledByDefault + ", isAllChatsTabEnabled=" + this.isAllChatsTabEnabled + ", iconInsteadAllChatsTabTitle=" + this.iconInsteadAllChatsTabTitle + ", allChatsTabFabs=" + this.allChatsTabFabs + ", isSortingChatsEnabled=" + this.isSortingChatsEnabled + ", sortingSettings=" + this.sortingSettings + ", isArchiveSortingChatsEnabled=" + this.isArchiveSortingChatsEnabled + ", archiveSortingSettings=" + this.archiveSortingSettings + ", sortingPinnedChats=" + this.sortingPinnedChats + ", archiveSortingPinnedChats=" + this.archiveSortingPinnedChats + ", isCLoudAlbumsEnabled=" + this.isCLoudAlbumsEnabled + ", isAlbumsIntroShown=" + this.isAlbumsIntroShown + ", isSortCloudAlbumsByNameEnabled=" + this.isSortCloudAlbumsByNameEnabled + ", isOpenAlbumsInsteadCloudEnabled=" + this.isOpenAlbumsInsteadCloudEnabled + ", albums=" + this.albums + ", bookmarks=" + this.bookmarks + ", dialogSettings=" + this.dialogSettings + ", isPlayerPinned=" + this.isPlayerPinned + ", isPinnedPlayerMinimized=" + this.isPinnedPlayerMinimized + ", isPinnedPlayerThemeOverridden=" + this.isPinnedPlayerThemeOverridden + ", isPinnedPlayerNightThemeEnabled=" + this.isPinnedPlayerNightThemeEnabled + ", isMusicIntroShown=" + this.isMusicIntroShown + ", selectedMusicTab=" + this.selectedMusicTab + ", musicPlaylists=" + this.musicPlaylists + ", templatesMode=" + this.templatesMode + ", selectedTemplatesSortingType=" + this.selectedTemplatesSortingType + ", templatesChannelId=" + this.templatesChannelId + ", templates=" + this.templates + ", topicsEnabled=" + this.topicsEnabled + ", topicsBarAtBottom=" + this.topicsBarAtBottom + ", isAutoUpdateCatalogEnabled=" + this.isAutoUpdateCatalogEnabled + ", selectedAutoUpdateCatalogInterval=" + this.selectedAutoUpdateCatalogInterval + ", noTopicFirst=" + this.noTopicFirst + ", topics=" + this.topics + ", version=" + this.version + ", allChatsTabFab=" + this.allChatsTabFab + ", allChatsTabMultiFabs=" + this.allChatsTabMultiFabs + ')';
+        return "Backup(isAutoBackupEnabled=" + this.isAutoBackupEnabled + ", selectedAutoBackupInterval=" + this.selectedAutoBackupInterval + ", isFilesSendingPreviewAndCaptionEnabled=" + this.isFilesSendingPreviewAndCaptionEnabled + ", isVibrationEnabled=" + this.isVibrationEnabled + ", selectedStickersSize=" + this.selectedStickersSize + ", isQuickReactionEnabled=" + this.isQuickReactionEnabled + ", isPremiumAnimateStickers=" + this.isPremiumAnimateStickers + ", isPremiumShowBadge=" + this.isPremiumShowBadge + ", isPremiumShowStatus=" + this.isPremiumShowStatus + ", isPremiumAnimateAvatars=" + this.isPremiumAnimateAvatars + ", isProxyButtonVisible=" + this.isProxyButtonVisible + ", selectedContactsFilter=" + this.selectedContactsFilter + ", isReadAllChatsConfirmationShown=" + this.isReadAllChatsConfirmationShown + ", isProfileInfoHidden=" + this.isProfileInfoHidden + ", isMultiForwardingOptionsHintShown=" + this.isMultiForwardingOptionsHintShown + ", isSuggestPremiumReactionsEmoji=" + this.isSuggestPremiumReactionsEmoji + ", drawerHeaderSettings=" + this.drawerHeaderSettings + ", drawerItems=" + this.drawerItems + ", isActionBarAccountSwitchEnabled=" + this.isActionBarAccountSwitchEnabled + ", isMainActionBarMenuEnabled=" + this.isMainActionBarMenuEnabled + ", isDialogsCompactModeEnabled=" + this.isDialogsCompactModeEnabled + ", isSwipeToGoToNextUnreadDialogEnabled=" + this.isSwipeToGoToNextUnreadDialogEnabled + ", isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled=" + this.isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled + ", swipeToGoToNextUnreadDialogTypes=" + this.swipeToGoToNextUnreadDialogTypes + ", isShowChannelBottomPanel=" + this.isShowChannelBottomPanel + ", isHideChatKeyboardOnScrollEnabled=" + this.isHideChatKeyboardOnScrollEnabled + ", isChatThemesEnabled=" + this.isChatThemesEnabled + ", chatAttachAlertButtons=" + this.chatAttachAlertButtons + ", isExtendedAvatarPreviewerEnabled=" + this.isExtendedAvatarPreviewerEnabled + ", isExtendedAvatarPreviewerByTapEnabled=" + this.isExtendedAvatarPreviewerByTapEnabled + ", selectedExtendedAvatarPreviewerItems=" + this.selectedExtendedAvatarPreviewerItems + ", messagePopupItems=" + this.messagePopupItems + ", isMessagePopupAggregatorEnabled=" + this.isMessagePopupAggregatorEnabled + ", isChannelWidePostsEnabled=" + this.isChannelWidePostsEnabled + ", isCallsConfirmationEnabled=" + this.isCallsConfirmationEnabled + ", isDeleteCloudConfirmationEnabled=" + this.isDeleteCloudConfirmationEnabled + ", isSendingGifConfirmationEnabled=" + this.isSendingGifConfirmationEnabled + ", isSendingStickerConfirmationEnabled=" + this.isSendingStickerConfirmationEnabled + ", isSpeakWithoutHoldEnabled=" + this.isSpeakWithoutHoldEnabled + ", isVideoSpeakWithoutHoldEnabled=" + this.isVideoSpeakWithoutHoldEnabled + ", selectedVideoVoiceCamera=" + this.selectedVideoVoiceCamera + ", isRecentChatsEnabled=" + this.isRecentChatsEnabled + ", selectedRecentChatsDialogTypes=" + this.selectedRecentChatsDialogTypes + ", isSaveArchiveRecentChatsEnabled=" + this.isSaveArchiveRecentChatsEnabled + ", selectedDrawStatusTypes=" + this.selectedDrawStatusTypes + ", isOpenForwardingOptionsAutomaticallyEnabled=" + this.isOpenForwardingOptionsAutomaticallyEnabled + ", isMultiReplyEnabled=" + this.isMultiReplyEnabled + ", selectedChatProfileTelegramIdMode=" + this.selectedChatProfileTelegramIdMode + ", isMessageQuickTranslateEnabled=" + this.isMessageQuickTranslateEnabled + ", isBotHelpTranslateEnabled=" + this.isBotHelpTranslateEnabled + ", isTranslateInSendPopupEnabled=" + this.isTranslateInSendPopupEnabled + ", isSilentSendingEnabled=" + this.isSilentSendingEnabled + ", selectedSentMessageFont=" + this.selectedSentMessageFont + ", isRememberLastDialogEnabled=" + this.isRememberLastDialogEnabled + ", isCombineMessagesEnabled=" + this.isCombineMessagesEnabled + ", selectedPhotoViewerMenuItems=" + this.selectedPhotoViewerMenuItems + ", isReactionsEnabled=" + this.isReactionsEnabled + ", selectedDialogTypesForMessagePopupReactions=" + this.selectedDialogTypesForMessagePopupReactions + ", isReactionsInSendPopupEnabled=" + this.isReactionsInSendPopupEnabled + ", isRevokeByDefault=" + this.isRevokeByDefault + ", drawerHolidayIconType=" + this.drawerHolidayIconType + ", isMultiPanelEnabled=" + this.isMultiPanelEnabled + ", isHideMultiPanelOnScrollEnabled=" + this.isHideMultiPanelOnScrollEnabled + ", multiPanelSettings=" + this.multiPanelSettings + ", filterTabsAtBottom=" + this.filterTabsAtBottom + ", filterTabsNotificationMode=" + this.filterTabsNotificationMode + ", filterTabsWidthMode=" + this.filterTabsWidthMode + ", rememberLastFilterTab=" + this.rememberLastFilterTab + ", hideFolders=" + this.hideFolders + ", foldersFirst=" + this.foldersFirst + ", filters=" + this.filters + ", isChatSortingEnabledByDefault=" + this.isChatSortingEnabledByDefault + ", isAllChatsTabEnabled=" + this.isAllChatsTabEnabled + ", iconInsteadAllChatsTabTitle=" + this.iconInsteadAllChatsTabTitle + ", allChatsTabFabs=" + this.allChatsTabFabs + ", isSortingChatsEnabled=" + this.isSortingChatsEnabled + ", sortingSettings=" + this.sortingSettings + ", isArchiveSortingChatsEnabled=" + this.isArchiveSortingChatsEnabled + ", archiveSortingSettings=" + this.archiveSortingSettings + ", sortingPinnedChats=" + this.sortingPinnedChats + ", archiveSortingPinnedChats=" + this.archiveSortingPinnedChats + ", isCLoudAlbumsEnabled=" + this.isCLoudAlbumsEnabled + ", isAlbumsIntroShown=" + this.isAlbumsIntroShown + ", isSortCloudAlbumsByNameEnabled=" + this.isSortCloudAlbumsByNameEnabled + ", isOpenAlbumsInsteadCloudEnabled=" + this.isOpenAlbumsInsteadCloudEnabled + ", albums=" + this.albums + ", bookmarks=" + this.bookmarks + ", dialogSettings=" + this.dialogSettings + ", isPlayerPinned=" + this.isPlayerPinned + ", isPinnedPlayerMinimized=" + this.isPinnedPlayerMinimized + ", isPinnedPlayerThemeOverridden=" + this.isPinnedPlayerThemeOverridden + ", isPinnedPlayerNightThemeEnabled=" + this.isPinnedPlayerNightThemeEnabled + ", isMusicIntroShown=" + this.isMusicIntroShown + ", selectedMusicTab=" + this.selectedMusicTab + ", musicPlaylists=" + this.musicPlaylists + ", templatesMode=" + this.templatesMode + ", selectedTemplatesSortingType=" + this.selectedTemplatesSortingType + ", templatesChannelId=" + this.templatesChannelId + ", templates=" + this.templates + ", topicsEnabled=" + this.topicsEnabled + ", topicsBarAtBottom=" + this.topicsBarAtBottom + ", isAutoUpdateCatalogEnabled=" + this.isAutoUpdateCatalogEnabled + ", selectedAutoUpdateCatalogInterval=" + this.selectedAutoUpdateCatalogInterval + ", noTopicFirst=" + this.noTopicFirst + ", topics=" + this.topics + ", version=" + this.version + ", allChatsTabFab=" + this.allChatsTabFab + ", allChatsTabMultiFabs=" + this.allChatsTabMultiFabs + ", hiddenChatDialogs=" + this.hiddenChatDialogs + ", pinnedRecentChats=" + this.pinnedRecentChats + ')';
     }
 
-    public Backup(Boolean bool, String str, Boolean bool2, Boolean bool3, String str2, Boolean bool4, Boolean bool5, Boolean bool6, Boolean bool7, Boolean bool8, Boolean bool9, String str3, Boolean bool10, Boolean bool11, Boolean bool12, Boolean bool13, DrawerHeaderSettings drawerHeaderSettings, Set<String> set, Boolean bool14, Boolean bool15, Boolean bool16, Boolean bool17, Boolean bool18, Set<String> set2, Boolean bool19, Boolean bool20, Boolean bool21, Map<String, Set<String>> map, Boolean bool22, Boolean bool23, Set<String> set3, List<String> list, Boolean bool24, Boolean bool25, Boolean bool26, Boolean bool27, Boolean bool28, Boolean bool29, Boolean bool30, Boolean bool31, String str4, Boolean bool32, Set<String> set4, Boolean bool33, Set<String> set5, Boolean bool34, Boolean bool35, Boolean bool36, String str5, Boolean bool37, Boolean bool38, Boolean bool39, Boolean bool40, String str6, Boolean bool41, Boolean bool42, Set<String> set6, Boolean bool43, Set<String> set7, Boolean bool44, Boolean bool45, DrawerHolidayIconType drawerHolidayIconType, Boolean bool46, Boolean bool47, Map<String, List<MultiPanelButtonStateBackup>> map2, Boolean bool48, String str7, String str8, Boolean bool49, Boolean bool50, Boolean bool51, List<FilterSettingsModel> list2, Boolean bool52, Boolean bool53, Boolean bool54, Set<String> set8, Boolean bool55, List<SortingTabStateBackup> list3, Boolean bool56, List<SortingTabStateBackup> list4, Map<String, Pair<List<Long>, List<Integer>>> map3, Map<String, Pair<List<Long>, List<Integer>>> map4, Boolean bool57, Boolean bool58, Boolean bool59, Boolean bool60, List<Long> list5, Map<Long, BookmarksModel> map5, List<DialogTranslationSettings> list6, Boolean bool61, Boolean bool62, Boolean bool63, Boolean bool64, Boolean bool65, String str9, Map<Long, PlaylistModel> map6, String str10, String str11, Long l, List<TemplateModel> list7, Boolean bool66, Boolean bool67, Boolean bool68, String str12, Boolean bool69, List<TopicBackup> list8, Integer num, String allChatsTabFab, List<FilterFab> list9) {
+    public Backup(Boolean bool, String str, Boolean bool2, Boolean bool3, String str2, Boolean bool4, Boolean bool5, Boolean bool6, Boolean bool7, Boolean bool8, Boolean bool9, String str3, Boolean bool10, Boolean bool11, Boolean bool12, Boolean bool13, DrawerHeaderSettings drawerHeaderSettings, Set<String> set, Boolean bool14, Boolean bool15, Boolean bool16, Boolean bool17, Boolean bool18, Set<String> set2, Boolean bool19, Boolean bool20, Boolean bool21, Map<String, Set<String>> map, Boolean bool22, Boolean bool23, Set<String> set3, List<String> list, Boolean bool24, Boolean bool25, Boolean bool26, Boolean bool27, Boolean bool28, Boolean bool29, Boolean bool30, Boolean bool31, String str4, Boolean bool32, Set<String> set4, Boolean bool33, Set<String> set5, Boolean bool34, Boolean bool35, String str5, Boolean bool36, Boolean bool37, Boolean bool38, Boolean bool39, String str6, Boolean bool40, Boolean bool41, Set<String> set6, Boolean bool42, Set<String> set7, Boolean bool43, Boolean bool44, DrawerHolidayIconType drawerHolidayIconType, Boolean bool45, Boolean bool46, Map<String, List<MultiPanelButtonStateBackup>> map2, Boolean bool47, String str7, String str8, Boolean bool48, Boolean bool49, Boolean bool50, List<FilterSettingsModel> list2, Boolean bool51, Boolean bool52, Boolean bool53, Set<String> set8, Boolean bool54, List<SortingTabStateBackup> list3, Boolean bool55, List<SortingTabStateBackup> list4, Map<String, Pair<List<Long>, List<Integer>>> map3, Map<String, Pair<List<Long>, List<Integer>>> map4, Boolean bool56, Boolean bool57, Boolean bool58, Boolean bool59, List<Long> list5, Map<Long, BookmarksModel> map5, List<DialogTranslationSettings> list6, Boolean bool60, Boolean bool61, Boolean bool62, Boolean bool63, Boolean bool64, String str9, Map<Long, PlaylistModel> map6, String str10, String str11, Long l, List<TemplateModel> list7, Boolean bool65, Boolean bool66, Boolean bool67, String str12, Boolean bool68, List<TopicBackup> list8, Integer num, String allChatsTabFab, List<FilterFab> list9, List<Long> list10, List<HistoryDialogModel> list11) {
         Intrinsics.checkNotNullParameter(allChatsTabFab, "allChatsTabFab");
         this.isAutoBackupEnabled = bool;
         this.selectedAutoBackupInterval = str;
@@ -381,7 +385,7 @@ public final class Backup {
         this.isPremiumShowBadge = bool6;
         this.isPremiumShowStatus = bool7;
         this.isPremiumAnimateAvatars = bool8;
-        this.isProxyButtonForceVisible = bool9;
+        this.isProxyButtonVisible = bool9;
         this.selectedContactsFilter = str3;
         this.isReadAllChatsConfirmationShown = bool10;
         this.isProfileInfoHidden = bool11;
@@ -417,69 +421,70 @@ public final class Backup {
         this.isSaveArchiveRecentChatsEnabled = bool33;
         this.selectedDrawStatusTypes = set5;
         this.isOpenForwardingOptionsAutomaticallyEnabled = bool34;
-        this.isCustomSharingModeEnabled = bool35;
-        this.isMultiReplyEnabled = bool36;
+        this.isMultiReplyEnabled = bool35;
         this.selectedChatProfileTelegramIdMode = str5;
-        this.isMessageQuickTranslateEnabled = bool37;
-        this.isBotHelpTranslateEnabled = bool38;
-        this.isTranslateInSendPopupEnabled = bool39;
-        this.isSilentSendingEnabled = bool40;
+        this.isMessageQuickTranslateEnabled = bool36;
+        this.isBotHelpTranslateEnabled = bool37;
+        this.isTranslateInSendPopupEnabled = bool38;
+        this.isSilentSendingEnabled = bool39;
         this.selectedSentMessageFont = str6;
-        this.isRememberLastDialogEnabled = bool41;
-        this.isCombineMessagesEnabled = bool42;
+        this.isRememberLastDialogEnabled = bool40;
+        this.isCombineMessagesEnabled = bool41;
         this.selectedPhotoViewerMenuItems = set6;
-        this.isReactionsEnabled = bool43;
+        this.isReactionsEnabled = bool42;
         this.selectedDialogTypesForMessagePopupReactions = set7;
-        this.isReactionsInSendPopupEnabled = bool44;
-        this.isRevokeByDefault = bool45;
+        this.isReactionsInSendPopupEnabled = bool43;
+        this.isRevokeByDefault = bool44;
         this.drawerHolidayIconType = drawerHolidayIconType;
-        this.isMultiPanelEnabled = bool46;
-        this.isHideMultiPanelOnScrollEnabled = bool47;
+        this.isMultiPanelEnabled = bool45;
+        this.isHideMultiPanelOnScrollEnabled = bool46;
         this.multiPanelSettings = map2;
-        this.filterTabsAtBottom = bool48;
+        this.filterTabsAtBottom = bool47;
         this.filterTabsNotificationMode = str7;
         this.filterTabsWidthMode = str8;
-        this.rememberLastFilterTab = bool49;
-        this.hideFolders = bool50;
-        this.foldersFirst = bool51;
+        this.rememberLastFilterTab = bool48;
+        this.hideFolders = bool49;
+        this.foldersFirst = bool50;
         this.filters = list2;
-        this.isChatSortingEnabledByDefault = bool52;
-        this.isAllChatsTabEnabled = bool53;
-        this.iconInsteadAllChatsTabTitle = bool54;
+        this.isChatSortingEnabledByDefault = bool51;
+        this.isAllChatsTabEnabled = bool52;
+        this.iconInsteadAllChatsTabTitle = bool53;
         this.allChatsTabFabs = set8;
-        this.isSortingChatsEnabled = bool55;
+        this.isSortingChatsEnabled = bool54;
         this.sortingSettings = list3;
-        this.isArchiveSortingChatsEnabled = bool56;
+        this.isArchiveSortingChatsEnabled = bool55;
         this.archiveSortingSettings = list4;
         this.sortingPinnedChats = map3;
         this.archiveSortingPinnedChats = map4;
-        this.isCLoudAlbumsEnabled = bool57;
-        this.isAlbumsIntroShown = bool58;
-        this.isSortCloudAlbumsByNameEnabled = bool59;
-        this.isOpenAlbumsInsteadCloudEnabled = bool60;
+        this.isCLoudAlbumsEnabled = bool56;
+        this.isAlbumsIntroShown = bool57;
+        this.isSortCloudAlbumsByNameEnabled = bool58;
+        this.isOpenAlbumsInsteadCloudEnabled = bool59;
         this.albums = list5;
         this.bookmarks = map5;
         this.dialogSettings = list6;
-        this.isPlayerPinned = bool61;
-        this.isPinnedPlayerMinimized = bool62;
-        this.isPinnedPlayerThemeOverridden = bool63;
-        this.isPinnedPlayerNightThemeEnabled = bool64;
-        this.isMusicIntroShown = bool65;
+        this.isPlayerPinned = bool60;
+        this.isPinnedPlayerMinimized = bool61;
+        this.isPinnedPlayerThemeOverridden = bool62;
+        this.isPinnedPlayerNightThemeEnabled = bool63;
+        this.isMusicIntroShown = bool64;
         this.selectedMusicTab = str9;
         this.musicPlaylists = map6;
         this.templatesMode = str10;
         this.selectedTemplatesSortingType = str11;
         this.templatesChannelId = l;
         this.templates = list7;
-        this.topicsEnabled = bool66;
-        this.topicsBarAtBottom = bool67;
-        this.isAutoUpdateCatalogEnabled = bool68;
+        this.topicsEnabled = bool65;
+        this.topicsBarAtBottom = bool66;
+        this.isAutoUpdateCatalogEnabled = bool67;
         this.selectedAutoUpdateCatalogInterval = str12;
-        this.noTopicFirst = bool69;
+        this.noTopicFirst = bool68;
         this.topics = list8;
         this.version = num;
         this.allChatsTabFab = allChatsTabFab;
         this.allChatsTabMultiFabs = list9;
+        this.hiddenChatDialogs = list10;
+        this.pinnedRecentChats = list11;
     }
 
     public final Boolean isAutoBackupEnabled() {
@@ -522,8 +527,8 @@ public final class Backup {
         return this.isPremiumAnimateAvatars;
     }
 
-    public final Boolean isProxyButtonForceVisible() {
-        return this.isProxyButtonForceVisible;
+    public final Boolean isProxyButtonVisible() {
+        return this.isProxyButtonVisible;
     }
 
     public final String getSelectedContactsFilter() {
@@ -664,10 +669,6 @@ public final class Backup {
 
     public final Boolean isOpenForwardingOptionsAutomaticallyEnabled() {
         return this.isOpenForwardingOptionsAutomaticallyEnabled;
-    }
-
-    public final Boolean isCustomSharingModeEnabled() {
-        return this.isCustomSharingModeEnabled;
     }
 
     public final Boolean isMultiReplyEnabled() {
@@ -915,12 +916,12 @@ public final class Backup {
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public /* synthetic */ Backup(java.lang.Boolean r107, java.lang.String r108, java.lang.Boolean r109, java.lang.Boolean r110, java.lang.String r111, java.lang.Boolean r112, java.lang.Boolean r113, java.lang.Boolean r114, java.lang.Boolean r115, java.lang.Boolean r116, java.lang.Boolean r117, java.lang.String r118, java.lang.Boolean r119, java.lang.Boolean r120, java.lang.Boolean r121, java.lang.Boolean r122, com.iMe.fork.models.DrawerHeaderSettings r123, java.util.Set r124, java.lang.Boolean r125, java.lang.Boolean r126, java.lang.Boolean r127, java.lang.Boolean r128, java.lang.Boolean r129, java.util.Set r130, java.lang.Boolean r131, java.lang.Boolean r132, java.lang.Boolean r133, java.util.Map r134, java.lang.Boolean r135, java.lang.Boolean r136, java.util.Set r137, java.util.List r138, java.lang.Boolean r139, java.lang.Boolean r140, java.lang.Boolean r141, java.lang.Boolean r142, java.lang.Boolean r143, java.lang.Boolean r144, java.lang.Boolean r145, java.lang.Boolean r146, java.lang.String r147, java.lang.Boolean r148, java.util.Set r149, java.lang.Boolean r150, java.util.Set r151, java.lang.Boolean r152, java.lang.Boolean r153, java.lang.Boolean r154, java.lang.String r155, java.lang.Boolean r156, java.lang.Boolean r157, java.lang.Boolean r158, java.lang.Boolean r159, java.lang.String r160, java.lang.Boolean r161, java.lang.Boolean r162, java.util.Set r163, java.lang.Boolean r164, java.util.Set r165, java.lang.Boolean r166, java.lang.Boolean r167, com.iMe.fork.enums.DrawerHolidayIconType r168, java.lang.Boolean r169, java.lang.Boolean r170, java.util.Map r171, java.lang.Boolean r172, java.lang.String r173, java.lang.String r174, java.lang.Boolean r175, java.lang.Boolean r176, java.lang.Boolean r177, java.util.List r178, java.lang.Boolean r179, java.lang.Boolean r180, java.lang.Boolean r181, java.util.Set r182, java.lang.Boolean r183, java.util.List r184, java.lang.Boolean r185, java.util.List r186, java.util.Map r187, java.util.Map r188, java.lang.Boolean r189, java.lang.Boolean r190, java.lang.Boolean r191, java.lang.Boolean r192, java.util.List r193, java.util.Map r194, java.util.List r195, java.lang.Boolean r196, java.lang.Boolean r197, java.lang.Boolean r198, java.lang.Boolean r199, java.lang.Boolean r200, java.lang.String r201, java.util.Map r202, java.lang.String r203, java.lang.String r204, java.lang.Long r205, java.util.List r206, java.lang.Boolean r207, java.lang.Boolean r208, java.lang.Boolean r209, java.lang.String r210, java.lang.Boolean r211, java.util.List r212, java.lang.Integer r213, java.lang.String r214, java.util.List r215, int r216, int r217, int r218, int r219, kotlin.jvm.internal.DefaultConstructorMarker r220) {
+    public /* synthetic */ Backup(java.lang.Boolean r108, java.lang.String r109, java.lang.Boolean r110, java.lang.Boolean r111, java.lang.String r112, java.lang.Boolean r113, java.lang.Boolean r114, java.lang.Boolean r115, java.lang.Boolean r116, java.lang.Boolean r117, java.lang.Boolean r118, java.lang.String r119, java.lang.Boolean r120, java.lang.Boolean r121, java.lang.Boolean r122, java.lang.Boolean r123, com.iMe.fork.models.DrawerHeaderSettings r124, java.util.Set r125, java.lang.Boolean r126, java.lang.Boolean r127, java.lang.Boolean r128, java.lang.Boolean r129, java.lang.Boolean r130, java.util.Set r131, java.lang.Boolean r132, java.lang.Boolean r133, java.lang.Boolean r134, java.util.Map r135, java.lang.Boolean r136, java.lang.Boolean r137, java.util.Set r138, java.util.List r139, java.lang.Boolean r140, java.lang.Boolean r141, java.lang.Boolean r142, java.lang.Boolean r143, java.lang.Boolean r144, java.lang.Boolean r145, java.lang.Boolean r146, java.lang.Boolean r147, java.lang.String r148, java.lang.Boolean r149, java.util.Set r150, java.lang.Boolean r151, java.util.Set r152, java.lang.Boolean r153, java.lang.Boolean r154, java.lang.String r155, java.lang.Boolean r156, java.lang.Boolean r157, java.lang.Boolean r158, java.lang.Boolean r159, java.lang.String r160, java.lang.Boolean r161, java.lang.Boolean r162, java.util.Set r163, java.lang.Boolean r164, java.util.Set r165, java.lang.Boolean r166, java.lang.Boolean r167, com.iMe.fork.enums.DrawerHolidayIconType r168, java.lang.Boolean r169, java.lang.Boolean r170, java.util.Map r171, java.lang.Boolean r172, java.lang.String r173, java.lang.String r174, java.lang.Boolean r175, java.lang.Boolean r176, java.lang.Boolean r177, java.util.List r178, java.lang.Boolean r179, java.lang.Boolean r180, java.lang.Boolean r181, java.util.Set r182, java.lang.Boolean r183, java.util.List r184, java.lang.Boolean r185, java.util.List r186, java.util.Map r187, java.util.Map r188, java.lang.Boolean r189, java.lang.Boolean r190, java.lang.Boolean r191, java.lang.Boolean r192, java.util.List r193, java.util.Map r194, java.util.List r195, java.lang.Boolean r196, java.lang.Boolean r197, java.lang.Boolean r198, java.lang.Boolean r199, java.lang.Boolean r200, java.lang.String r201, java.util.Map r202, java.lang.String r203, java.lang.String r204, java.lang.Long r205, java.util.List r206, java.lang.Boolean r207, java.lang.Boolean r208, java.lang.Boolean r209, java.lang.String r210, java.lang.Boolean r211, java.util.List r212, java.lang.Integer r213, java.lang.String r214, java.util.List r215, java.util.List r216, java.util.List r217, int r218, int r219, int r220, int r221, kotlin.jvm.internal.DefaultConstructorMarker r222) {
         /*
-            Method dump skipped, instructions count: 1305
+            Method dump skipped, instructions count: 1317
             To view this dump add '--comments-level debug' option
         */
-        throw new UnsupportedOperationException("Method not decompiled: com.iMe.fork.models.backup.Backup.<init>(java.lang.Boolean, java.lang.String, java.lang.Boolean, java.lang.Boolean, java.lang.String, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.String, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, com.iMe.fork.models.DrawerHeaderSettings, java.util.Set, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.util.Set, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.util.Map, java.lang.Boolean, java.lang.Boolean, java.util.Set, java.util.List, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.String, java.lang.Boolean, java.util.Set, java.lang.Boolean, java.util.Set, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.String, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.String, java.lang.Boolean, java.lang.Boolean, java.util.Set, java.lang.Boolean, java.util.Set, java.lang.Boolean, java.lang.Boolean, com.iMe.fork.enums.DrawerHolidayIconType, java.lang.Boolean, java.lang.Boolean, java.util.Map, java.lang.Boolean, java.lang.String, java.lang.String, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.util.List, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.util.Set, java.lang.Boolean, java.util.List, java.lang.Boolean, java.util.List, java.util.Map, java.util.Map, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.util.List, java.util.Map, java.util.List, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.String, java.util.Map, java.lang.String, java.lang.String, java.lang.Long, java.util.List, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.String, java.lang.Boolean, java.util.List, java.lang.Integer, java.lang.String, java.util.List, int, int, int, int, kotlin.jvm.internal.DefaultConstructorMarker):void");
+        throw new UnsupportedOperationException("Method not decompiled: com.iMe.fork.models.backup.Backup.<init>(java.lang.Boolean, java.lang.String, java.lang.Boolean, java.lang.Boolean, java.lang.String, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.String, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, com.iMe.fork.models.DrawerHeaderSettings, java.util.Set, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.util.Set, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.util.Map, java.lang.Boolean, java.lang.Boolean, java.util.Set, java.util.List, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.String, java.lang.Boolean, java.util.Set, java.lang.Boolean, java.util.Set, java.lang.Boolean, java.lang.Boolean, java.lang.String, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.String, java.lang.Boolean, java.lang.Boolean, java.util.Set, java.lang.Boolean, java.util.Set, java.lang.Boolean, java.lang.Boolean, com.iMe.fork.enums.DrawerHolidayIconType, java.lang.Boolean, java.lang.Boolean, java.util.Map, java.lang.Boolean, java.lang.String, java.lang.String, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.util.List, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.util.Set, java.lang.Boolean, java.util.List, java.lang.Boolean, java.util.List, java.util.Map, java.util.Map, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.util.List, java.util.Map, java.util.List, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.String, java.util.Map, java.lang.String, java.lang.String, java.lang.Long, java.util.List, java.lang.Boolean, java.lang.Boolean, java.lang.Boolean, java.lang.String, java.lang.Boolean, java.util.List, java.lang.Integer, java.lang.String, java.util.List, java.util.List, java.util.List, int, int, int, int, kotlin.jvm.internal.DefaultConstructorMarker):void");
     }
 
     public final String getAllChatsTabFab() {
@@ -929,5 +930,13 @@ public final class Backup {
 
     public final List<FilterFab> getAllChatsTabMultiFabs() {
         return this.allChatsTabMultiFabs;
+    }
+
+    public final List<Long> getHiddenChatDialogs() {
+        return this.hiddenChatDialogs;
+    }
+
+    public final List<HistoryDialogModel> getPinnedRecentChats() {
+        return this.pinnedRecentChats;
     }
 }

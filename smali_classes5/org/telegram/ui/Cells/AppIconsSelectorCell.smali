@@ -69,10 +69,10 @@
     .line 63
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->setFocusable(Z)V
 
-    const-string p3, "windowBackgroundWhite"
-
     .line 64
-    invoke-static {p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p3
 

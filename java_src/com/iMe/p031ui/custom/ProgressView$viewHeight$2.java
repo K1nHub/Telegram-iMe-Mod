@@ -16,6 +16,6 @@ final class ProgressView$viewHeight$2 extends Lambda implements Function0<Intege
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // kotlin.jvm.functions.Function0
     public final Integer invoke() {
-        return Integer.valueOf(AndroidUtilities.m50dp(24));
+        return Integer.valueOf(AndroidUtilities.m54dp(24));
     }
 }

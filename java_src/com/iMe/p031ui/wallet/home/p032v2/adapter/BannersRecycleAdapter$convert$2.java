@@ -10,7 +10,7 @@ import org.telegram.p044ui.Components.RLottieImageView;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: BannersRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.adapter.BannersRecycleAdapter$convert$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BannersRecycleAdapter$convert$2 extends Lambda implements Function1<RLottieImageView, Unit> {
     final /* synthetic */ BaseViewHolder $holder;
     final /* synthetic */ SlideItem $item;

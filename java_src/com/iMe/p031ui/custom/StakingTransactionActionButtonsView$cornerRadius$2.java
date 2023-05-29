@@ -16,6 +16,6 @@ final class StakingTransactionActionButtonsView$cornerRadius$2 extends Lambda im
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // kotlin.jvm.functions.Function0
     public final Integer invoke() {
-        return Integer.valueOf(AndroidUtilities.m51dp(4.0f));
+        return Integer.valueOf(AndroidUtilities.m55dp(4.0f));
     }
 }

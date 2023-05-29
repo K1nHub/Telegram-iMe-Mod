@@ -26,17 +26,17 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 10
 
-    .line 5888
+    .line 5904
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 5889
+    .line 5905
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$EmptyStubView;->emptyTextView:Landroid/widget/TextView;
 
-    .line 5890
+    .line 5906
     new-instance v1, Landroid/widget/ImageView;
 
     invoke-direct {v1, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
@@ -45,43 +45,43 @@
 
     const/4 p1, 0x1
 
-    .line 5892
+    .line 5908
     invoke-virtual {p0, p1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/16 v2, 0x11
 
-    .line 5893
+    .line 5909
     invoke-virtual {p0, v2}, Landroid/widget/LinearLayout;->setGravity(I)V
 
     const/4 v3, -0x2
 
-    .line 5895
+    .line 5911
     invoke-static {v3, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v3
 
     invoke-virtual {p0, v1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    const-string v1, "windowBackgroundWhiteGrayText2"
+    .line 5913
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
-    .line 5897
-    invoke-static {v1, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v1, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p2
 
     invoke-virtual {v0, p2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 5898
+    .line 5914
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setGravity(I)V
 
     const/high16 p2, 0x41880000    # 17.0f
 
-    .line 5899
+    .line 5915
     invoke-virtual {v0, p1, p2}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const/16 p1, 0x28
 
-    .line 5900
+    .line 5916
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -114,7 +114,7 @@
 
     const/4 v9, 0x0
 
-    .line 5901
+    .line 5917
     invoke-static/range {v3 .. v9}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object p1
@@ -129,7 +129,7 @@
 .method protected onMeasure(II)V
     .locals 6
 
-    .line 5906
+    .line 5922
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string v1, "window"
@@ -140,7 +140,7 @@
 
     check-cast v0, Landroid/view/WindowManager;
 
-    .line 5907
+    .line 5923
     invoke-interface {v0}, Landroid/view/WindowManager;->getDefaultDisplay()Landroid/view/Display;
 
     move-result-object v0
@@ -151,10 +151,10 @@
 
     const/4 v1, 0x1
 
-    .line 5908
+    .line 5924
     iput-boolean v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$EmptyStubView;->ignoreRequestLayout:Z
 
-    .line 5909
+    .line 5925
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v2
@@ -167,7 +167,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 5910
+    .line 5926
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$EmptyStubView;->emptyTextView:Landroid/widget/TextView;
 
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -195,7 +195,7 @@
 
     goto :goto_0
 
-    .line 5915
+    .line 5931
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$EmptyStubView;->emptyTextView:Landroid/widget/TextView;
 
@@ -215,7 +215,7 @@
 
     goto :goto_1
 
-    .line 5913
+    .line 5929
     :cond_2
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$EmptyStubView;->emptyTextView:Landroid/widget/TextView;
@@ -230,11 +230,11 @@
 
     invoke-virtual {v0, v1, v4, v2, v4}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 5918
+    .line 5934
     :goto_1
     iput-boolean v4, p0, Lorg/telegram/ui/Components/SharedMediaLayout$EmptyStubView;->ignoreRequestLayout:Z
 
-    .line 5919
+    .line 5935
     invoke-super {p0, p1, p2}, Landroid/widget/LinearLayout;->onMeasure(II)V
 
     return-void
@@ -243,14 +243,14 @@
 .method public requestLayout()V
     .locals 1
 
-    .line 5924
+    .line 5940
     iget-boolean v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$EmptyStubView;->ignoreRequestLayout:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 5927
+    .line 5943
     :cond_0
     invoke-super {p0}, Landroid/widget/LinearLayout;->requestLayout()V
 

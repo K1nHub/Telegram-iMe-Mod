@@ -6,7 +6,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.AvatarDrawable;
@@ -29,19 +29,21 @@ public class PremiumGiftHeaderCell extends LinearLayout {
         this.avatarDrawable = new AvatarDrawable();
         BackupImageView backupImageView = new BackupImageView(context);
         this.avatarImageView = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m50dp(50));
+        backupImageView.setRoundRadius(AndroidUtilities.m54dp(50));
         addView(this.avatarImageView, LayoutHelper.createLinear(100, 100, 1, 0, 28, 0, 0));
         TextView textView = new TextView(context);
         this.titleView = textView;
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.titleView.setTextSize(1, 22.0f);
-        this.titleView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        TextView textView2 = this.titleView;
+        int i = Theme.key_windowBackgroundWhiteBlackText;
+        textView2.setTextColor(Theme.getColor(i));
         this.titleView.setGravity(1);
         addView(this.titleView, LayoutHelper.createLinear(-2, -2, 1, 24, 24, 24, 0));
-        TextView textView2 = new TextView(context);
-        this.subtitleView = textView2;
-        textView2.setTextSize(1, 15.0f);
-        this.subtitleView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        TextView textView3 = new TextView(context);
+        this.subtitleView = textView3;
+        textView3.setTextSize(1, 15.0f);
+        this.subtitleView.setTextColor(Theme.getColor(i));
         this.subtitleView.setGravity(1);
         addView(this.subtitleView, LayoutHelper.createFrame(-2, -2, 1, 24, 8, 24, 28));
         setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
@@ -57,9 +59,9 @@ public class PremiumGiftHeaderCell extends LinearLayout {
     protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
         super.onLayout(z, i, i2, i3, i4);
         float x = this.avatarImageView.getX() + (this.avatarImageView.getWidth() / 2.0f);
-        float paddingTop = ((this.avatarImageView.getPaddingTop() + this.avatarImageView.getY()) + (this.avatarImageView.getHeight() / 2.0f)) - AndroidUtilities.m50dp(3);
-        float m50dp = AndroidUtilities.m50dp(32);
-        this.drawable.rect.set(x - m50dp, paddingTop - m50dp, x + m50dp, paddingTop + m50dp);
+        float paddingTop = ((this.avatarImageView.getPaddingTop() + this.avatarImageView.getY()) + (this.avatarImageView.getHeight() / 2.0f)) - AndroidUtilities.m54dp(3);
+        float m54dp = AndroidUtilities.m54dp(32);
+        this.drawable.rect.set(x - m54dp, paddingTop - m54dp, x + m54dp, paddingTop + m54dp);
         if (z) {
             this.drawable.resetPositions();
         }
@@ -75,7 +77,7 @@ public class PremiumGiftHeaderCell extends LinearLayout {
     public void bind(TLRPC$User tLRPC$User) {
         this.avatarDrawable.setInfo(tLRPC$User);
         this.avatarImageView.setForUserOrChat(tLRPC$User, this.avatarDrawable);
-        this.titleView.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3242R.string.GiftTelegramPremiumTitle)));
-        this.subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.formatString(C3242R.string.GiftTelegramPremiumDescription, tLRPC$User.first_name)));
+        this.titleView.setText(AndroidUtilities.replaceTags(LocaleController.getString(C3290R.string.GiftTelegramPremiumTitle)));
+        this.subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.formatString(C3290R.string.GiftTelegramPremiumDescription, tLRPC$User.first_name)));
     }
 }

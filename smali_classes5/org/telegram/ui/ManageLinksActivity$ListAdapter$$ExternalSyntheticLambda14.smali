@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$ListAdapter$$ExternalSyntheticLambda14;->f$0:Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;
 
-    invoke-virtual {v0}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->onActionClick()V
+    invoke-virtual {v0}, Lcom/iMe/ui/wallet/staking/transaction/StakingTransactionPresenter;->setMaxAmount()V
 
     return-void
 .end method

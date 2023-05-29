@@ -346,7 +346,7 @@ public class ChatListItemAnimator extends DefaultItemAnimator {
     @Override // androidx.recyclerview.widget.DefaultItemAnimator, androidx.recyclerview.widget.SimpleItemAnimator
     public boolean animateRemove(RecyclerView.ViewHolder viewHolder, RecyclerView.ItemAnimator.ItemHolderInfo itemHolderInfo) {
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m48d("animate remove");
+            FileLog.m52d("animate remove");
         }
         boolean animateRemove = super.animateRemove(viewHolder, itemHolderInfo);
         if (animateRemove && itemHolderInfo != null) {
@@ -959,7 +959,7 @@ public class ChatListItemAnimator extends DefaultItemAnimator {
     @Override // androidx.recyclerview.widget.DefaultItemAnimator, androidx.recyclerview.widget.RecyclerView.ItemAnimator
     public void endAnimations() {
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m48d("end animations");
+            FileLog.m52d("end animations");
         }
         Iterator<MessageObject.GroupedMessages> it = this.willChangedGroups.iterator();
         while (it.hasNext()) {
@@ -1040,7 +1040,7 @@ public class ChatListItemAnimator extends DefaultItemAnimator {
     @Override // androidx.recyclerview.widget.DefaultItemAnimator
     protected boolean endChangeAnimationIfNecessary(DefaultItemAnimator.ChangeInfo changeInfo, RecyclerView.ViewHolder viewHolder) {
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m48d("end change if necessary");
+            FileLog.m52d("end change if necessary");
         }
         Animator remove = this.animators.remove(viewHolder);
         if (remove != null) {
@@ -1134,7 +1134,7 @@ public class ChatListItemAnimator extends DefaultItemAnimator {
     @Override // androidx.recyclerview.widget.DefaultItemAnimator
     protected void animateRemoveImpl(final RecyclerView.ViewHolder viewHolder) {
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m48d("animate remove impl");
+            FileLog.m52d("animate remove impl");
         }
         final View view = viewHolder.itemView;
         this.mRemoveAnimations.add(viewHolder);

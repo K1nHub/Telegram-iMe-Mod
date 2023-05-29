@@ -41,7 +41,7 @@ public class TextColorCell extends FrameLayout {
         }
         TextView textView = new TextView(context);
         this.textView = textView;
-        textView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText", resourcesProvider));
+        textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, resourcesProvider));
         this.textView.setTextSize(1, 16.0f);
         this.textView.setLines(1);
         this.textView.setMaxLines(1);
@@ -65,7 +65,7 @@ public class TextColorCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(50) + (this.needDivider ? 1 : 0), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(50) + (this.needDivider ? 1 : 0), 1073741824));
     }
 
     public void setTextAndColor(String str, int i, boolean z) {
@@ -97,13 +97,13 @@ public class TextColorCell extends FrameLayout {
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         if (this.needDivider) {
-            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m50dp(20), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m50dp(20) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m54dp(20), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m54dp(20) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
         }
         int i = this.currentColor;
         if (i != 0) {
             colorPaint.setColor(i);
             colorPaint.setAlpha((int) (this.alpha * 255.0f));
-            canvas.drawCircle(LocaleController.isRTL ? AndroidUtilities.m50dp(33) : getMeasuredWidth() - AndroidUtilities.m50dp(33), getMeasuredHeight() / 2, AndroidUtilities.m50dp(10), colorPaint);
+            canvas.drawCircle(LocaleController.isRTL ? AndroidUtilities.m54dp(33) : getMeasuredWidth() - AndroidUtilities.m54dp(33), getMeasuredHeight() / 2, AndroidUtilities.m54dp(10), colorPaint);
         }
     }
 }

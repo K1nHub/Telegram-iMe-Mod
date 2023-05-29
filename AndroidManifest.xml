@@ -17,6 +17,7 @@
         <package android:name="com.whatsapp"/>
         <package android:name="com.whatsapp.w4b"/>
         <package android:name="com.viber.voip"/>
+        <package android:name="com.iMe.quicklogin"/>
         <package android:name="org.telegram.messenger"/>
         <package android:name="org.telegram.messenger.web"/>
         <package android:name="org.telegram.messenger.beta"/>
@@ -466,6 +467,7 @@
         <activity android:configChanges="keyboard|keyboardHidden|navigation|orientation|screenLayout|screenSize|smallestScreenSize|uiMode" android:excludeFromRecents="true" android:launchMode="singleTask" android:name="org.telegram.ui.PopupNotificationActivity" android:resizeableActivity="false" android:taskAffinity="" android:theme="@style/Theme.TMessages.PopupNotification" android:windowSoftInputMode="adjustResize|stateHidden"/>
         <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode" android:excludeFromRecents="true" android:name="org.telegram.ui.VoIPPermissionActivity" android:taskAffinity="com.iMe.android.voip" android:theme="@style/Theme.TMessages.Transparent"/>
         <activity android:configChanges="keyboard|keyboardHidden|orientation|screenSize|uiMode" android:excludeFromRecents="true" android:name="org.telegram.ui.VoIPFeedbackActivity" android:taskAffinity="com.iMe.android.voip_feedback" android:theme="@style/Theme.TMessages.TransparentWithAlerts"/>
+        <activity android:configChanges="keyboardHidden|orientation" android:exported="false" android:name="com.iMe.feature.navigation.NavigationScreen" android:screenOrientation="portrait"/>
         <receiver android:exported="false" android:name="org.telegram.messenger.AutoMessageHeardReceiver">
             <intent-filter>
                 <action android:name="org.telegram.messenger.ACTION_MESSAGE_HEARD"/>
@@ -619,9 +621,9 @@
             <meta-data android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
             <meta-data android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
             <meta-data android:name="com.google.firebase.components:com.google.firebase.abt.component.AbtRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
             <meta-data android:name="com.google.firebase.components:com.google.firebase.ktx.FirebaseCommonKtxRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
             <meta-data android:name="com.google.firebase.components:com.google.firebase.dynamiclinks.internal.FirebaseDynamicLinkRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
-            <meta-data android:name="com.google.firebase.components:com.google.firebase.firestore.FirestoreRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
         </service>
         <service android:directBootAware="true" android:exported="false" android:name="com.google.mlkit.common.internal.MlKitComponentDiscoveryService">
             <meta-data android:name="com.google.firebase.components:com.google.mlkit.nl.languageid.LanguageIdRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
@@ -645,6 +647,8 @@
                 <action android:name="android.service.chooser.ChooserTargetService"/>
             </intent-filter>
         </service>
+        <uses-library android:name="androidx.window.extensions" android:required="false"/>
+        <uses-library android:name="androidx.window.sidecar" android:required="false"/>
         <meta-data android:name="com.google.android.play.billingclient.version" android:value="5.1.0"/>
         <activity android:configChanges="keyboard|keyboardHidden|orientation|screenLayout|screenSize" android:exported="false" android:name="com.android.billingclient.api.ProxyBillingActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
         <activity android:exported="false" android:name="com.jakewharton.processphoenix.ProcessPhoenix" android:process=":phoenix" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>

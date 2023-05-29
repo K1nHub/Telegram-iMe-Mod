@@ -3,12 +3,12 @@
 .source "ChatActivityEnterView.java"
 
 # interfaces
-.implements Landroid/view/ViewTreeObserver$OnPreDrawListener;
+.implements Landroid/view/View$OnTouchListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->lambda$createSenderSelectView$23(Landroid/app/Dialog;Lorg/telegram/ui/Components/SimpleAvatarView;FFLandroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
+    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->onSendLongClick(Landroid/view/View;)Z
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,63 +18,100 @@
 
 
 # instance fields
-.field final synthetic this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+.field private popupRect:Landroid/graphics/Rect;
 
-.field final synthetic val$d:Landroid/app/Dialog;
+.field final synthetic this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/app/Dialog;)V
+.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
     .locals 0
 
-    .line 3680
+    .line 3949
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$26;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    iput-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$26;->val$d:Landroid/app/Dialog;
-
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    .line 3951
+    new-instance p1, Landroid/graphics/Rect;
+
+    invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$26;->popupRect:Landroid/graphics/Rect;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onPreDraw()Z
-    .locals 5
+.method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .locals 1
 
-    .line 3683
+    .line 3955
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 3956
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$26;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$15500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/SenderSelectView;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$8500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     move-result-object v0
 
-    invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
+    if-eqz v0, :cond_0
 
-    move-result-object v0
-
-    invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
-
-    .line 3684
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$26;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$15500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/SenderSelectView;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$8500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     move-result-object v0
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$26;->val$d:Landroid/app/Dialog;
+    invoke-virtual {v0}, Landroid/widget/PopupWindow;->isShowing()Z
 
-    invoke-static {v1}, Ljava/util/Objects;->requireNonNull(Ljava/lang/Object;)Ljava/lang/Object;
+    move-result v0
 
-    new-instance v2, Lorg/telegram/ui/Components/ChatActivityEnterView$24$$ExternalSyntheticLambda0;
+    if-eqz v0, :cond_0
 
-    invoke-direct {v2, v1}, Lorg/telegram/ui/Components/ChatActivityEnterView$24$$ExternalSyntheticLambda0;-><init>(Landroid/app/Dialog;)V
+    .line 3957
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$26;->popupRect:Landroid/graphics/Rect;
 
-    const-wide/16 v3, 0x64
+    invoke-virtual {p1, v0}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
-    invoke-virtual {v0, v2, v3, v4}, Landroid/view/View;->postDelayed(Ljava/lang/Runnable;J)Z
+    .line 3958
+    iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$26;->popupRect:Landroid/graphics/Rect;
 
-    const/4 v0, 0x1
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
 
-    return v0
+    move-result v0
+
+    float-to-int v0, v0
+
+    invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
+
+    move-result p2
+
+    float-to-int p2, p2
+
+    invoke-virtual {p1, v0, p2}, Landroid/graphics/Rect;->contains(II)Z
+
+    move-result p1
+
+    if-nez p1, :cond_0
+
+    .line 3959
+    iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$26;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    invoke-static {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$8500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return p1
 .end method

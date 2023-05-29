@@ -5,6 +5,7 @@ import androidx.room.EntityDeletionOrUpdateAdapter;
 import androidx.room.EntityInsertionAdapter;
 import androidx.room.RoomDatabase;
 import androidx.room.RoomSQLiteQuery;
+import androidx.room.SharedSQLiteStatement;
 import androidx.room.util.DBUtil;
 import androidx.room.util.StringUtil;
 import androidx.sqlite.p011db.SupportSQLiteStatement;
@@ -17,6 +18,7 @@ import java.util.List;
 public final class HiddenChatsDao_Impl extends HiddenChatsDao {
     private final RoomDatabase __db;
     private final EntityInsertionAdapter<HiddenChatsDb> __insertionAdapterOfHiddenChatsDb;
+    private final SharedSQLiteStatement __preparedStmtOfDeleteAllHiddenChatsByUserId;
 
     public HiddenChatsDao_Impl(RoomDatabase __db) {
         this.__db = __db;
@@ -58,6 +60,12 @@ public final class HiddenChatsDao_Impl extends HiddenChatsDao {
                 stmt.bindLong(4, value.getDialogId());
             }
         };
+        this.__preparedStmtOfDeleteAllHiddenChatsByUserId = new SharedSQLiteStatement(this, __db) { // from class: com.iMe.storage.data.locale.db.dao.main.HiddenChatsDao_Impl.4
+            @Override // androidx.room.SharedSQLiteStatement
+            public String createQuery() {
+                return "DELETE FROM HiddenChatsDb WHERE userId = ?";
+            }
+        };
     }
 
     @Override // com.iMe.storage.data.locale.p027db.dao.base.BaseDao
@@ -69,6 +77,32 @@ public final class HiddenChatsDao_Impl extends HiddenChatsDao {
             this.__db.setTransactionSuccessful();
         } finally {
             this.__db.endTransaction();
+        }
+    }
+
+    @Override // com.iMe.storage.data.locale.p027db.dao.main.HiddenChatsDao
+    public void restoreBackup(final long userId, final List<Long> hiddenChatDialogs) {
+        this.__db.beginTransaction();
+        try {
+            super.restoreBackup(userId, hiddenChatDialogs);
+            this.__db.setTransactionSuccessful();
+        } finally {
+            this.__db.endTransaction();
+        }
+    }
+
+    @Override // com.iMe.storage.data.locale.p027db.dao.main.HiddenChatsDao
+    public void deleteAllHiddenChatsByUserId(final long userId) {
+        this.__db.assertNotSuspendingTransaction();
+        SupportSQLiteStatement acquire = this.__preparedStmtOfDeleteAllHiddenChatsByUserId.acquire();
+        acquire.bindLong(1, userId);
+        this.__db.beginTransaction();
+        try {
+            acquire.executeUpdateDelete();
+            this.__db.setTransactionSuccessful();
+        } finally {
+            this.__db.endTransaction();
+            this.__preparedStmtOfDeleteAllHiddenChatsByUserId.release(acquire);
         }
     }
 

@@ -321,6 +321,70 @@
     return-void
 .end method
 
+.method public final indexSecondaryTypes(Lorg/koin/core/instance/InstanceFactory;)V
+    .locals 5
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lorg/koin/core/instance/InstanceFactory<",
+            "*>;)V"
+        }
+    .end annotation
+
+    const-string v0, "instanceFactory"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 125
+    invoke-virtual {p1}, Lorg/koin/core/instance/InstanceFactory;->getBeanDefinition()Lorg/koin/core/definition/BeanDefinition;
+
+    move-result-object v0
+
+    .line 126
+    invoke-virtual {v0}, Lorg/koin/core/definition/BeanDefinition;->getSecondaryTypes()Ljava/util/List;
+
+    move-result-object v1
+
+    .line 1855
+    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v1
+
+    :goto_0
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_0
+
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lkotlin/reflect/KClass;
+
+    .line 127
+    invoke-virtual {v0}, Lorg/koin/core/definition/BeanDefinition;->getQualifier()Lorg/koin/core/qualifier/Qualifier;
+
+    move-result-object v3
+
+    invoke-virtual {v0}, Lorg/koin/core/definition/BeanDefinition;->getScopeQualifier()Lorg/koin/core/qualifier/Qualifier;
+
+    move-result-object v4
+
+    invoke-static {v2, v3, v4}, Lorg/koin/core/definition/BeanDefinitionKt;->indexKey(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lorg/koin/core/qualifier/Qualifier;)Ljava/lang/String;
+
+    move-result-object v2
+
+    .line 128
+    invoke-virtual {p0, v2, p1}, Lorg/koin/core/module/Module;->saveMapping(Ljava/lang/String;Lorg/koin/core/instance/InstanceFactory;)V
+
+    goto :goto_0
+
+    :cond_0
+    return-void
+.end method
+
 .method public final prepareForCreationAtStart(Lorg/koin/core/instance/SingleInstanceFactory;)V
     .locals 1
     .annotation system Ldalvik/annotation/Signature;

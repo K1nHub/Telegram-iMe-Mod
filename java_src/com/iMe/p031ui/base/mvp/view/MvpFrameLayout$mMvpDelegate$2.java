@@ -5,7 +5,7 @@ import kotlin.jvm.internal.Lambda;
 import moxy.MvpDelegate;
 /* compiled from: MvpFrameLayout.kt */
 /* renamed from: com.iMe.ui.base.mvp.view.MvpFrameLayout$mMvpDelegate$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class MvpFrameLayout$mMvpDelegate$2 extends Lambda implements Function0<MvpDelegate<MvpFrameLayout>> {
     final /* synthetic */ MvpFrameLayout this$0;
 

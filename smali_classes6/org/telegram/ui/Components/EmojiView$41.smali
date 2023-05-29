@@ -26,7 +26,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView;Landroidx/recyclerview/widget/GridLayoutManager;Lorg/telegram/ui/Components/RecyclerListView;)V
     .locals 0
 
-    .line 5368
+    .line 5088
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$41;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/EmojiView$41;->val$layoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
@@ -43,10 +43,10 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 5390
+    .line 5110
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$41;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$15200(Lorg/telegram/ui/Components/EmojiView;)Landroid/animation/AnimatorSet;
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$14600(Lorg/telegram/ui/Components/EmojiView;)Landroid/animation/AnimatorSet;
 
     move-result-object v0
 
@@ -56,12 +56,12 @@
 
     if-eqz p1, :cond_0
 
-    .line 5391
+    .line 5111
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$41;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/EmojiView;->access$15202(Lorg/telegram/ui/Components/EmojiView;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/EmojiView;->access$14602(Lorg/telegram/ui/Components/EmojiView;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
     :cond_0
     return-void
@@ -70,10 +70,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 6
 
-    .line 5371
+    .line 5091
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$41;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$15200(Lorg/telegram/ui/Components/EmojiView;)Landroid/animation/AnimatorSet;
+    invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$14600(Lorg/telegram/ui/Components/EmojiView;)Landroid/animation/AnimatorSet;
 
     move-result-object v0
 
@@ -83,26 +83,26 @@
 
     if-eqz p1, :cond_5
 
-    .line 5372
+    .line 5092
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$41;->val$layoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/LinearLayoutManager;->findFirstVisibleItemPosition()I
 
     move-result p1
 
-    .line 5373
+    .line 5093
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$41;->val$gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setTranslationY(F)V
 
-    .line 5374
+    .line 5094
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$41;->val$gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$41;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiView;->access$10100(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiView;->access$9500(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v1
 
@@ -118,7 +118,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$41;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiView;->access$12100(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {v1}, Lorg/telegram/ui/Components/EmojiView;->access$11500(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v1
 
@@ -126,7 +126,7 @@
 
     goto :goto_0
 
-    .line 5376
+    .line 5096
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$41;->val$gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -138,7 +138,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 5377
+    .line 5097
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$41;->val$gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/EmojiView$41;->this$0:Lorg/telegram/ui/Components/EmojiView;
@@ -155,7 +155,7 @@
 
     goto :goto_1
 
-    .line 5378
+    .line 5098
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$41;->val$gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -167,7 +167,7 @@
 
     if-ne v0, v1, :cond_3
 
-    .line 5379
+    .line 5099
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$41;->val$gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/4 v1, 0x5
@@ -192,7 +192,7 @@
 
     goto :goto_1
 
-    .line 5375
+    .line 5095
     :cond_2
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$41;->val$gridView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -213,18 +213,18 @@
 
     if-eq p1, v0, :cond_4
 
-    .line 5382
+    .line 5102
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$41;->val$layoutManager:Landroidx/recyclerview/widget/GridLayoutManager;
 
     invoke-virtual {v0, p1, v4}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V
 
-    .line 5384
+    .line 5104
     :cond_4
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$41;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/EmojiView;->access$15202(Lorg/telegram/ui/Components/EmojiView;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/EmojiView;->access$14602(Lorg/telegram/ui/Components/EmojiView;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
     :cond_5
     return-void

@@ -24,24 +24,24 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
 
-    .line 228
+    .line 234
     invoke-direct {p0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     const/4 p1, -0x1
 
-    .line 230
+    .line 236
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setTextColor(I)V
 
     const/4 p1, 0x1
 
     const/high16 v0, 0x41600000    # 14.0f
 
-    .line 231
+    .line 237
     invoke-virtual {p0, p1, v0}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const/4 p1, 0x0
 
-    .line 232
+    .line 238
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$TypefaceCell;->setCurrent(Z)V
 
     return-void
@@ -52,14 +52,14 @@
 .method public bind(Lorg/telegram/ui/Components/Paint/PaintTypeface;)V
     .locals 1
 
-    .line 267
+    .line 273
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Paint/PaintTypeface;->getTypeface()Landroid/graphics/Typeface;
 
     move-result-object v0
 
     invoke-virtual {p0, v0}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 268
+    .line 274
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Paint/PaintTypeface;->getName()Ljava/lang/String;
 
     move-result-object p1
@@ -72,15 +72,15 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 6
 
-    .line 237
+    .line 243
     invoke-super {p0, p1}, Landroid/widget/TextView;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 239
+    .line 245
     iget-boolean v0, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$TypefaceCell;->isCurrent:Z
 
     if-eqz v0, :cond_1
 
-    .line 240
+    .line 246
     invoke-virtual {p0}, Landroid/widget/TextView;->getHeight()I
 
     move-result v0
@@ -95,7 +95,7 @@
 
     div-int/lit8 v0, v0, 0x2
 
-    .line 241
+    .line 247
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/16 v3, 0xc
@@ -104,7 +104,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 242
+    .line 248
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$TypefaceCell;->expandDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -125,7 +125,7 @@
 
     goto :goto_0
 
-    .line 244
+    .line 250
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$TypefaceCell;->expandDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -157,7 +157,7 @@
 
     invoke-virtual {v2, v5, v0, v4, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 246
+    .line 252
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$TypefaceCell;->expandDrawable:Landroid/graphics/drawable/Drawable;
 
@@ -170,14 +170,14 @@
 .method public setCurrent(Z)V
     .locals 5
 
-    .line 251
+    .line 257
     iput-boolean p1, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$TypefaceCell;->isCurrent:Z
 
     const/16 v0, 0xe
 
     if-eqz p1, :cond_2
 
-    .line 253
+    .line 259
     sget-boolean p1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/16 v1, 0x26
@@ -232,7 +232,7 @@
 
     const/16 v2, 0x20
 
-    .line 254
+    .line 260
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -252,7 +252,7 @@
     :cond_2
     const/16 p1, 0x18
 
-    .line 256
+    .line 262
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -273,14 +273,14 @@
 
     const p1, -0xd7d7d7
 
-    .line 257
+    .line 263
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->rect(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 
     invoke-virtual {p0, p1}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 259
+    .line 265
     :goto_2
     iget-boolean p1, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$TypefaceCell;->isCurrent:Z
 
@@ -290,7 +290,7 @@
 
     if-nez p1, :cond_3
 
-    .line 260
+    .line 266
     invoke-virtual {p0}, Landroid/widget/TextView;->getContext()Landroid/content/Context;
 
     move-result-object p1
@@ -303,7 +303,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/Paint/Views/PaintTextOptionsView$TypefaceCell;->expandDrawable:Landroid/graphics/drawable/Drawable;
 
-    .line 261
+    .line 267
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
     const v1, -0x66000001
@@ -314,7 +314,7 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 263
+    .line 269
     :cond_3
     invoke-virtual {p0}, Landroid/widget/TextView;->invalidate()V
 

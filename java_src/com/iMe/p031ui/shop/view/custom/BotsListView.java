@@ -36,10 +36,10 @@ public final class BotsListView extends LinearLayout {
         recyclerListView.setAdapter(botsPreviewAdapter);
         recyclerListView.setNestedScrollingEnabled(false);
         recyclerListView.setClipToPadding(false);
-        recyclerListView.setPadding(AndroidUtilities.m51dp(6.0f), 0, AndroidUtilities.m51dp(6.0f), 0);
+        recyclerListView.setPadding(AndroidUtilities.m55dp(6.0f), 0, AndroidUtilities.m55dp(6.0f), 0);
         addView(recyclerListView, LayoutHelper.createLinear(-1, -2, BitmapDescriptorFactory.HUE_RED, 17, 0, 12, 0, 0));
         View view = new View(context);
-        view.setBackgroundColor(Theme.getColor("divider"));
+        view.setBackgroundColor(Theme.getColor(Theme.key_divider));
         addView(view, LayoutHelper.createLinear(-1, 1, BitmapDescriptorFactory.HUE_RED, 80, 16, 13, 8, 12));
     }
 

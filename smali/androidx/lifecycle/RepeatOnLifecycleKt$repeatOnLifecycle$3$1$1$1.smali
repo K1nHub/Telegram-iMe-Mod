@@ -6,6 +6,17 @@
 .implements Landroidx/lifecycle/LifecycleEventObserver;
 
 
+# annotations
+.annotation system Ldalvik/annotation/EnclosingMethod;
+    value = Landroidx/lifecycle/RepeatOnLifecycleKt$repeatOnLifecycle$3$1;->invokeSuspend(Ljava/lang/Object;)Ljava/lang/Object;
+.end annotation
+
+.annotation system Ldalvik/annotation/InnerClass;
+    accessFlags = 0x18
+    name = null
+.end annotation
+
+
 # instance fields
 .field final synthetic $$this$coroutineScope:Lkotlinx/coroutines/CoroutineScope;
 
@@ -49,6 +60,56 @@
 .field final synthetic $mutex:Lkotlinx/coroutines/sync/Mutex;
 
 .field final synthetic $startWorkEvent:Landroidx/lifecycle/Lifecycle$Event;
+
+
+# direct methods
+.method constructor <init>(Landroidx/lifecycle/Lifecycle$Event;Lkotlin/jvm/internal/Ref$ObjectRef;Lkotlinx/coroutines/CoroutineScope;Landroidx/lifecycle/Lifecycle$Event;Lkotlinx/coroutines/CancellableContinuation;Lkotlinx/coroutines/sync/Mutex;Lkotlin/jvm/functions/Function2;)V
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroidx/lifecycle/Lifecycle$Event;",
+            "Lkotlin/jvm/internal/Ref$ObjectRef<",
+            "Lkotlinx/coroutines/Job;",
+            ">;",
+            "Lkotlinx/coroutines/CoroutineScope;",
+            "Landroidx/lifecycle/Lifecycle$Event;",
+            "Lkotlinx/coroutines/CancellableContinuation<",
+            "-",
+            "Lkotlin/Unit;",
+            ">;",
+            "Lkotlinx/coroutines/sync/Mutex;",
+            "Lkotlin/jvm/functions/Function2<",
+            "-",
+            "Lkotlinx/coroutines/CoroutineScope;",
+            "-",
+            "Lkotlin/coroutines/Continuation<",
+            "-",
+            "Lkotlin/Unit;",
+            ">;+",
+            "Ljava/lang/Object;",
+            ">;)V"
+        }
+    .end annotation
+
+    iput-object p1, p0, Landroidx/lifecycle/RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1;->$startWorkEvent:Landroidx/lifecycle/Lifecycle$Event;
+
+    iput-object p2, p0, Landroidx/lifecycle/RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1;->$launchedJob:Lkotlin/jvm/internal/Ref$ObjectRef;
+
+    iput-object p3, p0, Landroidx/lifecycle/RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1;->$$this$coroutineScope:Lkotlinx/coroutines/CoroutineScope;
+
+    iput-object p4, p0, Landroidx/lifecycle/RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1;->$cancelWorkEvent:Landroidx/lifecycle/Lifecycle$Event;
+
+    iput-object p5, p0, Landroidx/lifecycle/RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1;->$cont:Lkotlinx/coroutines/CancellableContinuation;
+
+    iput-object p6, p0, Landroidx/lifecycle/RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1;->$mutex:Lkotlinx/coroutines/sync/Mutex;
+
+    iput-object p7, p0, Landroidx/lifecycle/RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1;->$block:Lkotlin/jvm/functions/Function2;
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    return-void
+.end method
 
 
 # virtual methods

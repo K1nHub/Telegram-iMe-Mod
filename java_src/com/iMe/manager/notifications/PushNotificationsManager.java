@@ -41,7 +41,7 @@ import kotlin.ranges.IntRange;
 import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.text.StringsKt__StringsJVMKt;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
@@ -203,7 +203,7 @@ public final class PushNotificationsManager {
                     }
                 });
                 Intrinsics.checkNotNullExpressionValue(doFinally, "notificationInteractor\n …{ subscriptions.clear() }");
-                Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1523x6e1faa35(arrayList2, this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1524x6e1faa36(null)));
+                Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1592x6e1faa35(arrayList2, this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1593x6e1faa36(null)));
                 Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
                 RxExtKt.autoDispose(subscribe, this.subscriptions);
             }
@@ -265,7 +265,7 @@ public final class PushNotificationsManager {
                     }.getType());
                 case 3:
                     Gson globalGson3 = GsonExtKt.getGlobalGson();
-                    return (PushNotificationModel) globalGson3.fromJson(globalGson3.toJson(map), new TypeToken<PushNotificationModel.CryptoTransfer.C1532In>() { // from class: com.iMe.manager.notifications.PushNotificationsManager$convertMapParamsToModel$$inlined$toDataClass$default$3
+                    return (PushNotificationModel) globalGson3.fromJson(globalGson3.toJson(map), new TypeToken<PushNotificationModel.CryptoTransfer.C1601In>() { // from class: com.iMe.manager.notifications.PushNotificationsManager$convertMapParamsToModel$$inlined$toDataClass$default$3
                     }.getType());
                 case 4:
                     Gson globalGson4 = GsonExtKt.getGlobalGson();
@@ -273,7 +273,7 @@ public final class PushNotificationsManager {
                     }.getType());
                 case 5:
                     Gson globalGson5 = GsonExtKt.getGlobalGson();
-                    return (PushNotificationModel) globalGson5.fromJson(globalGson5.toJson(map), new TypeToken<PushNotificationModel.Donation.C1533In>() { // from class: com.iMe.manager.notifications.PushNotificationsManager$convertMapParamsToModel$$inlined$toDataClass$default$5
+                    return (PushNotificationModel) globalGson5.fromJson(globalGson5.toJson(map), new TypeToken<PushNotificationModel.Donation.C1602In>() { // from class: com.iMe.manager.notifications.PushNotificationsManager$convertMapParamsToModel$$inlined$toDataClass$default$5
                     }.getType());
                 case 6:
                     Gson globalGson6 = GsonExtKt.getGlobalGson();
@@ -323,9 +323,9 @@ public final class PushNotificationsManager {
         intent.putExtra("userId", pushNotificationModel.getUserId());
         PendingIntent activity = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent, 1107296256);
         if (Build.VERSION.SDK_INT >= 26 && from.getNotificationChannel("iMe Messenger") == null) {
-            from.createNotificationChannel(new NotificationChannel("iMe Messenger", LocaleController.getString("AppName", C3242R.string.AppName), 3));
+            from.createNotificationChannel(new NotificationChannel("iMe Messenger", LocaleController.getString("AppName", C3290R.string.AppName), 3));
         }
-        Notification build = new NotificationCompat.Builder(ApplicationLoader.applicationContext, "iMe Messenger").setContentTitle(LocaleController.getString("AppName", C3242R.string.AppName)).setContentText(pushNotificationModel.getMessage()).setSmallIcon(C3242R.C3244drawable.fork_notification).setAutoCancel(true).setGroupSummary(true).setGroup(LocaleController.getInternalString(C3242R.string.drawer_wallet_item_title)).setContentIntent(activity).setColor(ContextCompat.getColor(ApplicationLoader.applicationContext, C3242R.C3243color.fork_color)).setCategory("msg").build();
+        Notification build = new NotificationCompat.Builder(ApplicationLoader.applicationContext, "iMe Messenger").setContentTitle(LocaleController.getString("AppName", C3290R.string.AppName)).setContentText(pushNotificationModel.getMessage()).setSmallIcon(C3290R.C3292drawable.fork_notification).setAutoCancel(true).setGroupSummary(true).setGroup(LocaleController.getInternalString(C3290R.string.drawer_wallet_item_title)).setContentIntent(activity).setColor(ContextCompat.getColor(ApplicationLoader.applicationContext, C3290R.C3291color.fork_color)).setCategory("msg").build();
         Intrinsics.checkNotNullExpressionValue(build, "Builder(ApplicationLoade…\n                .build()");
         from.notify((int) System.currentTimeMillis(), build);
     }

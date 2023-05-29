@@ -576,7 +576,7 @@
 
     move-result-object v15
 
-    const-string v1, "this as java.lang.String).substring(startIndex)"
+    const-string/jumbo v1, "this as java.lang.String).substring(startIndex)"
 
     invoke-static {v15, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

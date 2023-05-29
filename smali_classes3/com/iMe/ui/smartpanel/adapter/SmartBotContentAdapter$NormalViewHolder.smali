@@ -67,10 +67,10 @@
 
     invoke-direct {v2}, Landroid/graphics/drawable/GradientDrawable;-><init>()V
 
-    const-string v3, "chats_actionBackground"
-
     .line 296
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 

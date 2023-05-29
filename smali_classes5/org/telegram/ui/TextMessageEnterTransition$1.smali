@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/TextMessageEnterTransition;Lorg/telegram/ui/MessageEnterTransitionContainer;Lorg/telegram/ui/Cells/ChatMessageCell;Lorg/telegram/ui/Components/ChatActivityEnterView;Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 392
+    .line 391
     iput-object p1, p0, Lorg/telegram/ui/TextMessageEnterTransition$1;->this$0:Lorg/telegram/ui/TextMessageEnterTransition;
 
     iput-object p2, p0, Lorg/telegram/ui/TextMessageEnterTransition$1;->val$container:Lorg/telegram/ui/MessageEnterTransitionContainer;
@@ -51,40 +51,30 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 5
 
-    .line 395
+    .line 394
     iget-object p1, p0, Lorg/telegram/ui/TextMessageEnterTransition$1;->this$0:Lorg/telegram/ui/TextMessageEnterTransition;
 
-    invoke-static {p1}, Lorg/telegram/ui/TextMessageEnterTransition;->access$100(Lorg/telegram/ui/TextMessageEnterTransition;)I
-
-    move-result p1
-
-    invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
+    invoke-static {p1}, Lorg/telegram/ui/TextMessageEnterTransition;->access$000(Lorg/telegram/ui/TextMessageEnterTransition;)Lorg/telegram/messenger/AnimationNotificationsLocker;
 
     move-result-object p1
 
-    iget-object v0, p0, Lorg/telegram/ui/TextMessageEnterTransition$1;->this$0:Lorg/telegram/ui/TextMessageEnterTransition;
+    invoke-virtual {p1}, Lorg/telegram/messenger/AnimationNotificationsLocker;->unlock()V
 
-    invoke-static {v0}, Lorg/telegram/ui/TextMessageEnterTransition;->access$000(Lorg/telegram/ui/TextMessageEnterTransition;)I
-
-    move-result v0
-
-    invoke-virtual {p1, v0}, Lorg/telegram/messenger/NotificationCenter;->onAnimationFinish(I)V
-
-    .line 396
+    .line 395
     iget-object p1, p0, Lorg/telegram/ui/TextMessageEnterTransition$1;->val$container:Lorg/telegram/ui/MessageEnterTransitionContainer;
 
     iget-object v0, p0, Lorg/telegram/ui/TextMessageEnterTransition$1;->this$0:Lorg/telegram/ui/TextMessageEnterTransition;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/MessageEnterTransitionContainer;->removeTransition(Lorg/telegram/ui/MessageEnterTransitionContainer$Transition;)V
 
-    .line 397
+    .line 396
     iget-object p1, p0, Lorg/telegram/ui/TextMessageEnterTransition$1;->val$messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->setEnterTransitionInProgress(Z)V
 
-    .line 398
+    .line 397
     iget-object p1, p0, Lorg/telegram/ui/TextMessageEnterTransition$1;->val$messageView:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getTransitionParams()Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;
@@ -119,12 +109,12 @@
 
     invoke-virtual {p1, v1, v2, v3, v4}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 399
+    .line 398
     iget-object p1, p0, Lorg/telegram/ui/TextMessageEnterTransition$1;->val$chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->setTextTransitionIsRunning(Z)V
 
-    .line 400
+    .line 399
     iget-object p1, p0, Lorg/telegram/ui/TextMessageEnterTransition$1;->val$chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->getEditField()Lorg/telegram/ui/Components/EditTextCaption;
@@ -135,7 +125,7 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/EditText;->setAlpha(F)V
 
-    .line 401
+    .line 400
     iget-object p1, p0, Lorg/telegram/ui/TextMessageEnterTransition$1;->val$chatActivity:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->getReplyNameTextView()Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -144,7 +134,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 402
+    .line 401
     iget-object p1, p0, Lorg/telegram/ui/TextMessageEnterTransition$1;->val$chatActivity:Lorg/telegram/ui/ChatActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ChatActivity;->getReplyObjectTextView()Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -153,10 +143,10 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 403
+    .line 402
     iget-object p1, p0, Lorg/telegram/ui/TextMessageEnterTransition$1;->this$0:Lorg/telegram/ui/TextMessageEnterTransition;
 
-    invoke-static {p1}, Lorg/telegram/ui/TextMessageEnterTransition;->access$200(Lorg/telegram/ui/TextMessageEnterTransition;)Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
+    invoke-static {p1}, Lorg/telegram/ui/TextMessageEnterTransition;->access$100(Lorg/telegram/ui/TextMessageEnterTransition;)Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
     move-result-object p1
 

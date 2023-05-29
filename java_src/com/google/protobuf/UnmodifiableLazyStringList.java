@@ -41,7 +41,7 @@ public class UnmodifiableLazyStringList extends AbstractList<String> implements 
 
     /* renamed from: com.google.protobuf.UnmodifiableLazyStringList$1 */
     /* loaded from: classes3.dex */
-    class C12051 implements ListIterator<String>, Iterator {
+    class C12101 implements ListIterator<String>, Iterator {
         ListIterator<String> iter;
         final /* synthetic */ int val$index;
 
@@ -50,7 +50,7 @@ public class UnmodifiableLazyStringList extends AbstractList<String> implements 
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
 
-        C12051(int i) {
+        C12101(int i) {
             this.val$index = i;
             this.iter = UnmodifiableLazyStringList.this.list.listIterator(i);
         }
@@ -103,12 +103,12 @@ public class UnmodifiableLazyStringList extends AbstractList<String> implements 
 
     @Override // java.util.AbstractList, java.util.List
     public ListIterator<String> listIterator(int i) {
-        return new C12051(i);
+        return new C12101(i);
     }
 
     /* renamed from: com.google.protobuf.UnmodifiableLazyStringList$2 */
     /* loaded from: classes3.dex */
-    class C12062 implements java.util.Iterator<String>, Iterator {
+    class C12112 implements java.util.Iterator<String>, Iterator {
         java.util.Iterator<String> iter;
 
         @Override // p034j$.util.Iterator
@@ -116,7 +116,7 @@ public class UnmodifiableLazyStringList extends AbstractList<String> implements 
             Iterator.CC.$default$forEachRemaining(this, consumer);
         }
 
-        C12062() {
+        C12112() {
             this.iter = UnmodifiableLazyStringList.this.list.iterator();
         }
 
@@ -138,7 +138,7 @@ public class UnmodifiableLazyStringList extends AbstractList<String> implements 
 
     @Override // java.util.AbstractList, java.util.AbstractCollection, java.util.Collection, java.lang.Iterable, java.util.List
     public java.util.Iterator<String> iterator() {
-        return new C12062();
+        return new C12112();
     }
 
     @Override // com.google.protobuf.LazyStringList

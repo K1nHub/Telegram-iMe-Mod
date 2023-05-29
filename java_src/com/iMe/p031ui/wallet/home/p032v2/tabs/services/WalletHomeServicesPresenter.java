@@ -12,7 +12,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 /* compiled from: WalletHomeServicesPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.home.v2.tabs.services.WalletHomeServicesPresenter */
@@ -49,7 +49,7 @@ public final class WalletHomeServicesPresenter extends BasePresenter<WalletHomeS
 
     private final List<BaseNode> configureBalancesWithHeaders() {
         List<BaseNode> mutableListOf;
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new HeaderItem(this.resourceManager.getString(C3242R.string.wallet_internal_point_basic_services)), new ServicesBasicItem(ServicesCategory.STAKING, C3242R.C3244drawable.fork_ic_internal_point_staking, C3242R.string.wallet_internal_point_staking_title, C3242R.string.wallet_internal_point_staking_subtitle), new ServicesBasicItem(ServicesCategory.CHANNELS, C3242R.C3244drawable.fork_ic_internal_point_channels_catalog, C3242R.string.wallet_internal_point_channels_catalog_title, C3242R.string.wallet_internal_point_channels_catalog_subtitle), new ServicesBasicItem(ServicesCategory.NEUROBOTS, C3242R.C3244drawable.fork_ic_internal_point_neurobots_store, C3242R.string.wallet_internal_point_neurobots_store_title, C3242R.string.wallet_internal_point_neurobots_store_subtitle), new HeaderItem(this.resourceManager.getString(C3242R.string.wallet_internal_point_subscriptions)), new ServicesBasicItem(ServicesCategory.PREMIUM, C3242R.C3244drawable.fork_ic_internal_point_premium_account, C3242R.string.wallet_internal_point_premium_account_title, C3242R.string.wallet_internal_point_premium_account_subtitle), new ServicesBasicItem(ServicesCategory.ADS, C3242R.C3244drawable.fork_ic_internal_point_ads, C3242R.string.wallet_internal_point_ads_title, C3242R.string.wallet_internal_point_ads_subtitle));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new HeaderItem(this.resourceManager.getString(C3290R.string.wallet_internal_point_basic_services)), new ServicesBasicItem(ServicesCategory.STAKING, C3290R.C3292drawable.fork_ic_internal_point_staking, C3290R.string.wallet_internal_point_staking_title, C3290R.string.wallet_internal_point_staking_subtitle), new ServicesBasicItem(ServicesCategory.CHANNELS, C3290R.C3292drawable.fork_ic_internal_point_channels_catalog, C3290R.string.wallet_internal_point_channels_catalog_title, C3290R.string.wallet_internal_point_channels_catalog_subtitle), new ServicesBasicItem(ServicesCategory.NEUROBOTS, C3290R.C3292drawable.fork_ic_internal_point_neurobots_store, C3290R.string.wallet_internal_point_neurobots_store_title, C3290R.string.wallet_internal_point_neurobots_store_subtitle), new HeaderItem(this.resourceManager.getString(C3290R.string.wallet_internal_point_subscriptions)), new ServicesBasicItem(ServicesCategory.PREMIUM, C3290R.C3292drawable.fork_ic_internal_point_premium_account, C3290R.string.wallet_internal_point_premium_account_title, C3290R.string.wallet_internal_point_premium_account_subtitle), new ServicesBasicItem(ServicesCategory.ADS, C3290R.C3292drawable.fork_ic_internal_point_ads, C3290R.string.wallet_internal_point_ads_title, C3290R.string.wallet_internal_point_ads_subtitle));
         return mutableListOf;
     }
 }

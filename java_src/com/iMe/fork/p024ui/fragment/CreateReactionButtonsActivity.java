@@ -62,7 +62,7 @@ import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p043mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
@@ -70,7 +70,7 @@ import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p044ui.ActionBar.AlertDialog;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Cells.HeaderCell;
@@ -184,8 +184,8 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         this.reactions = new ArrayList<>();
         this.buttons = new UrlButton[12];
         this.buttonsRowsType = ReactionButtonsRowsType.SINGLE;
-        this.keyboardHeight = MessagesController.getGlobalEmojiSettings().getInt("kbd_height", AndroidUtilities.m51dp(200.0f));
-        this.keyboardHeightLand = MessagesController.getGlobalEmojiSettings().getInt("kbd_height_land3", AndroidUtilities.m51dp(200.0f));
+        this.keyboardHeight = MessagesController.getGlobalEmojiSettings().getInt("kbd_height", AndroidUtilities.m55dp(200.0f));
+        this.keyboardHeightLand = MessagesController.getGlobalEmojiSettings().getInt("kbd_height_land3", AndroidUtilities.m55dp(200.0f));
     }
 
     static {
@@ -319,11 +319,8 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
             Intrinsics.checkNotNull(obj4, "null cannot be cast to non-null type kotlin.String");
             String str3 = (String) obj4;
             MessageObject messageObject2 = this.messageObject;
-            if (messageObject2 != null && (tLRPC$Message = messageObject2.messageOwner) != null) {
-                str = tLRPC$Message.attachPath;
-            }
-            if (Intrinsics.areEqual(str, str3)) {
-                ViewExtKt.invisible(getUploadView());
+            if (Intrinsics.areEqual((messageObject2 == null || (tLRPC$Message = messageObject2.messageOwner) == null) ? null : tLRPC$Message.attachPath, str3)) {
+                ViewExtKt.invisible$default(getUploadView(), false, 1, null);
             }
         }
     }
@@ -333,8 +330,8 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         Intrinsics.checkNotNullParameter(buttonPosition, "buttonPosition");
         showEmojiView$default(this, false, null, 2, null);
         final AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-        builder.setTitle(getResourceManager().getString(C3242R.string.chat_reaction_button_position));
-        builder.setNegativeButton(getResourceManager().getString(C3242R.string.common_cancel), null);
+        builder.setTitle(getResourceManager().getString(C3290R.string.chat_reaction_button_position));
+        builder.setNegativeButton(getResourceManager().getString(C3290R.string.common_cancel), null);
         LinearLayout linearLayout = new LinearLayout(getParentActivity());
         linearLayout.setOrientation(1);
         builder.setView(linearLayout);
@@ -343,9 +340,9 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         for (int i = 0; i < length; i++) {
             ReactionButtonsRowsType reactionButtonsRowsType = values[i];
             RadioColorCell radioColorCell = new RadioColorCell(getParentActivity());
-            radioColorCell.setPadding(AndroidUtilities.m51dp(4.0f), 0, AndroidUtilities.m51dp(4.0f), 0);
+            radioColorCell.setPadding(AndroidUtilities.m55dp(4.0f), 0, AndroidUtilities.m55dp(4.0f), 0);
             radioColorCell.setTag(Integer.valueOf(reactionButtonsRowsType.ordinal()));
-            radioColorCell.setCheckColor(Theme.getColor("radioBackground"), Theme.getColor("dialogRadioBackgroundChecked"));
+            radioColorCell.setCheckColor(Theme.getColor(Theme.key_radioBackground), Theme.getColor(Theme.key_dialogRadioBackgroundChecked));
             radioColorCell.setTextAndValue(getResourceManager().getString(reactionButtonsRowsType.getResource()), buttonPosition == reactionButtonsRowsType);
             radioColorCell.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
@@ -391,7 +388,15 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, "dialogScrollGlow"), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, "dialogScrollGlow"), new ThemeDescription(getListView(), ThemeDescription.FLAG_HINTTEXTCOLOR, new Class[]{MovingReactionCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteHintText"), new ThemeDescription(getListView(), ThemeDescription.FLAG_HINTTEXTCOLOR, new Class[]{MovingReactionCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayText2"), new ThemeDescription(getListView(), ThemeDescription.FLAG_HINTTEXTCOLOR, new Class[]{MovingReactionCell.class}, new String[]{"deleteImageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayIcon"), new ThemeDescription(getListView(), ThemeDescription.FLAG_HINTTEXTCOLOR, new Class[]{MovingReactionCell.class}, new String[]{"moveImageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayIcon"), new ThemeDescription(getListView(), ThemeDescription.FLAG_TEXTCOLOR, new Class[]{MovingReactionCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{MovingReactionCell.class}, null, null, null, "windowBackgroundWhite"), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, "windowBackgroundGrayShadow"), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER | ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextInfoPrivacyCell.class}, null, null, null, "windowBackgroundGray"), new ThemeDescription(getListView(), 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayText4"), new ThemeDescription(getListView(), 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlueHeader"), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{HeaderCell.class}, new String[]{"textView2"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteRedText5"), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{HeaderCell.class}, new String[]{"textView2"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayText3"), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{HeaderCell.class}, null, null, null, "windowBackgroundWhite"), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, "divider"), new ThemeDescription(getListView(), 0, new Class[]{TextCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlueText4"), new ThemeDescription(getListView(), 0, new Class[]{TextCell.class}, new String[]{"imageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "checkboxCheck"), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextCell.class}, new String[]{"imageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackChecked"), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextCell.class}, null, null, null, "windowBackgroundWhite"), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextSettingsCell.class}, null, null, null, "windowBackgroundWhite"), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER | ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextInfoPrivacyCell.class}, null, null, null, "windowBackgroundGray"), new ThemeDescription(getListView(), ThemeDescription.FLAG_TEXTCOLOR, new Class[]{TextSettingsCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"), new ThemeDescription(getListView(), ThemeDescription.FLAG_HINTTEXTCOLOR, new Class[]{TextSettingsCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlueHeader"), new ThemeDescription(getRootView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{FrameLayout.class}, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$$ExternalSyntheticLambda4
+        RecyclerListView listView = getListView();
+        int i = ThemeDescription.FLAG_LISTGLOWCOLOR;
+        int i2 = Theme.key_dialogScrollGlow;
+        int i3 = Theme.key_windowBackgroundWhiteGrayIcon;
+        int i4 = Theme.key_windowBackgroundWhiteBlackText;
+        int i5 = Theme.key_windowBackgroundWhite;
+        int i6 = Theme.key_windowBackgroundGray;
+        int i7 = Theme.key_windowBackgroundWhiteBlueHeader;
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(listView, i, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_HINTTEXTCOLOR, new Class[]{MovingReactionCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteHintText), new ThemeDescription(getListView(), ThemeDescription.FLAG_HINTTEXTCOLOR, new Class[]{MovingReactionCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText2), new ThemeDescription(getListView(), ThemeDescription.FLAG_HINTTEXTCOLOR, new Class[]{MovingReactionCell.class}, new String[]{"deleteImageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), ThemeDescription.FLAG_HINTTEXTCOLOR, new Class[]{MovingReactionCell.class}, new String[]{"moveImageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i3), new ThemeDescription(getListView(), ThemeDescription.FLAG_TEXTCOLOR, new Class[]{MovingReactionCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i4), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{MovingReactionCell.class}, null, null, null, i5), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, Theme.key_windowBackgroundGrayShadow), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER | ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextInfoPrivacyCell.class}, null, null, null, i6), new ThemeDescription(getListView(), 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4), new ThemeDescription(getListView(), 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i7), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{HeaderCell.class}, new String[]{"textView2"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_text_RedRegular), new ThemeDescription(getListView(), ThemeDescription.FLAG_CHECKTAG, new Class[]{HeaderCell.class}, new String[]{"textView2"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText3), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{HeaderCell.class}, null, null, null, i5), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider), new ThemeDescription(getListView(), 0, new Class[]{TextCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueText4), new ThemeDescription(getListView(), 0, new Class[]{TextCell.class}, new String[]{"imageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_checkboxCheck), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextCell.class}, new String[]{"imageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackChecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextCell.class}, null, null, null, i5), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextSettingsCell.class}, null, null, null, i5), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER | ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextInfoPrivacyCell.class}, null, null, null, i6), new ThemeDescription(getListView(), ThemeDescription.FLAG_TEXTCOLOR, new Class[]{TextSettingsCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i4), new ThemeDescription(getListView(), ThemeDescription.FLAG_HINTTEXTCOLOR, new Class[]{TextSettingsCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i7), new ThemeDescription(getRootView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{FrameLayout.class}, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$$ExternalSyntheticLambda4
             @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 CreateReactionButtonsActivity.getThemeDescriptions$lambda$7(CreateReactionButtonsActivity.this);
@@ -401,7 +406,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, "windowBackgroundGray"));
+        }, i6));
         return arrayListOf;
     }
 
@@ -414,7 +419,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
     /* JADX INFO: Access modifiers changed from: private */
     public final FrameLayout initRootView() {
         FrameLayout frameLayout = new FrameLayout(getParentActivity());
-        frameLayout.setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+        frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         return frameLayout;
     }
 
@@ -638,16 +643,16 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
             protected void onLayout(boolean z, int i, int i2, int i3, int i4) {
                 RadialProgress uploadProgressBar;
                 super.onLayout(z, i, i2, i3, i4);
-                int m51dp = AndroidUtilities.m51dp(45.0f);
-                int i5 = ((i3 - i) - m51dp) / 2;
-                int i6 = ((i4 - i2) - m51dp) / 2;
+                int m55dp = AndroidUtilities.m55dp(45.0f);
+                int i5 = ((i3 - i) - m55dp) / 2;
+                int i6 = ((i4 - i2) - m55dp) / 2;
                 uploadProgressBar = CreateReactionButtonsActivity.this.getUploadProgressBar();
-                uploadProgressBar.setProgressRect(i5, i6, i5 + m51dp, m51dp + i6);
+                uploadProgressBar.setProgressRect(i5, i6, i5 + m55dp, m55dp + i6);
             }
         };
-        ViewExtKt.invisible(r1);
+        ViewExtKt.invisible$default(r1, false, 1, null);
         r1.setLayoutParams(LayoutHelper.createFrame(-1, -1.0f));
-        r1.setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+        r1.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         r1.addView(getUploadCircleView(), LayoutHelper.createFrame(45, 45, 17));
         r1.addView(getUploadProgressTextView(), LayoutHelper.createFrame(-2, -2.0f, 17, (float) BitmapDescriptorFactory.HUE_RED, 35.0f, (float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED));
         r1.addView(getUploadTextView(), LayoutHelper.createFrame(-2, -2.0f, 17, (float) BitmapDescriptorFactory.HUE_RED, 55.0f, (float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED));
@@ -657,7 +662,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
     /* JADX INFO: Access modifiers changed from: private */
     public final View initProgressCircleView() {
         View view = new View(getParentActivity());
-        view.setBackground(Theme.createServiceDrawable(AndroidUtilities.m51dp(18.0f), view, this.fragmentView));
+        view.setBackground(Theme.createServiceDrawable(AndroidUtilities.m55dp(18.0f), view, this.fragmentView));
         return view;
     }
 
@@ -665,17 +670,17 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
     public final TextView uploadProgressTextView() {
         TextView textView = new TextView(getParentActivity());
         textView.setTextSize(1, 13.0f);
-        textView.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText4"));
+        textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText4));
         return textView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initUploadTextView() {
         TextView textView = new TextView(getParentActivity());
-        textView.setText(getResourceManager().getString(C3242R.string.chat_reaction_text_loader));
+        textView.setText(getResourceManager().getString(C3290R.string.chat_reaction_text_loader));
         textView.setTextSize(1, 16.0f);
         textView.setTextSize(1, 16.0f);
-        textView.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText4"));
+        textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText4));
         return textView;
     }
 
@@ -683,17 +688,17 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
     public final RadialProgress initUploadProgressBar() {
         RadialProgress radialProgress = new RadialProgress(getUploadView());
         radialProgress.setProgress(1.0f, true);
-        radialProgress.setProgressColor(Theme.getColor("windowBackgroundWhiteBlueHeader"));
+        radialProgress.setProgressColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueHeader));
         radialProgress.setBackground(null, true, false);
         return radialProgress;
     }
 
     private final void setupActionBar() {
-        C3306ActionBar c3306ActionBar = this.actionBar;
-        c3306ActionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
-        c3306ActionBar.setTitle(getResourceManager().getString(C3242R.string.chat_reaction_title));
-        c3306ActionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        c3356ActionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        c3356ActionBar.setTitle(getResourceManager().getString(C3290R.string.chat_reaction_title));
+        c3356ActionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$setupActionBar$1$1
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == 1) {
                     CreateReactionButtonsActivity.this.createMessage();
@@ -702,9 +707,9 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
                 }
             }
         });
-        ActionBarMenuItem setupActionBar$lambda$20$lambda$19$lambda$18 = c3306ActionBar.createMenu().addItem(1, getResourceManager().getString(C3242R.string.chat_reaction_create));
+        ActionBarMenuItem setupActionBar$lambda$20$lambda$19$lambda$18 = c3356ActionBar.createMenu().addItem(1, getResourceManager().getString(C3290R.string.chat_reaction_create));
         Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$20$lambda$19$lambda$18, "setupActionBar$lambda$20$lambda$19$lambda$18");
-        ViewExtKt.invisible(setupActionBar$lambda$20$lambda$19$lambda$18);
+        ViewExtKt.invisible$default(setupActionBar$lambda$20$lambda$19$lambda$18, false, 1, null);
         this.doneItem = setupActionBar$lambda$20$lambda$19$lambda$18;
     }
 
@@ -734,7 +739,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
     /* JADX INFO: Access modifiers changed from: private */
     public final void createMessage() {
         if (!getListAdapter().isAllButtonsValid()) {
-            showToast(getResourceManager().getString(C3242R.string.chat_reaction_empty_field_warning));
+            showToast(getResourceManager().getString(C3290R.string.chat_reaction_empty_field_warning));
         } else {
             getPresenter().prepareTextMessage(getListAdapter().getFixedEmotions(), getListAdapter().getAllButtons(), this.messageText, getListAdapter().getButtonLine(), this.attachedFile, this.replyMessageObject);
         }
@@ -752,7 +757,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         String format = String.format("%d/%d", Arrays.copyOf(new Object[]{Long.valueOf(j2 / j3), Long.valueOf(j / j3)}, 2));
         Intrinsics.checkNotNullExpressionValue(format, "format(format, *args)");
         uploadProgressTextView.setText(format);
-        ViewExtKt.visible(getUploadView());
+        ViewExtKt.visible$default(getUploadView(), false, 1, null);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -766,7 +771,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // org.telegram.p044ui.Components.EditTextBoldCursor, android.widget.TextView, android.view.View
             public void onMeasure(int i2, int i3) {
-                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m51dp(64.0f), 1073741824));
+                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m55dp(64.0f), 1073741824));
             }
         };
         ViewExtKt.singleLine(editTextBoldCursor);
@@ -782,11 +787,11 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         }
         editTextBoldCursor.setText(str);
         editTextBoldCursor.setTextSize(1, 18.0f);
-        editTextBoldCursor.setTextColor(Theme.getColor("dialogTextBlack"));
-        editTextBoldCursor.setHintText(LocaleController.getString("URL", C3242R.string.URL));
-        editTextBoldCursor.setHeaderHintColor(Theme.getColor("windowBackgroundWhiteBlueHeader"));
+        editTextBoldCursor.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
+        editTextBoldCursor.setHintText(LocaleController.getString("URL", C3290R.string.URL));
+        editTextBoldCursor.setHeaderHintColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueHeader));
         editTextBoldCursor.setTransformHintToHeader(true);
-        editTextBoldCursor.setLineColors(Theme.getColor("windowBackgroundWhiteInputField"), Theme.getColor("windowBackgroundWhiteInputFieldActivated"), Theme.getColor("windowBackgroundWhiteRedText3"));
+        editTextBoldCursor.setLineColors(Theme.getColor(Theme.key_windowBackgroundWhiteInputField), Theme.getColor(Theme.key_windowBackgroundWhiteInputFieldActivated), Theme.getColor(Theme.key_text_RedRegular));
         editTextBoldCursor.setSelection(0, editTextBoldCursor.getText().length());
         editTextBoldCursor.requestFocus();
         editTextBoldCursor.setPadding(0, 0, 0, 0);
@@ -795,15 +800,15 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         ViewExtKt.setHorizontalPadding(frameLayout, 24);
         frameLayout.addView(editTextBoldCursor);
         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-        builder.setTitle(LocaleController.getString("CreateLink", C3242R.string.CreateLink));
+        builder.setTitle(LocaleController.getString("CreateLink", C3290R.string.CreateLink));
         builder.setView(frameLayout);
-        builder.setPositiveButton(LocaleController.getString("OK", C3242R.string.OK), new DialogInterface.OnClickListener() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$$ExternalSyntheticLambda0
+        builder.setPositiveButton(LocaleController.getString("OK", C3290R.string.OK), new DialogInterface.OnClickListener() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i2) {
                 CreateReactionButtonsActivity.showURLButtonDialog$lambda$27$lambda$25(CreateReactionButtonsActivity.this, i, editTextBoldCursor, dialogInterface, i2);
             }
         });
-        builder.setNegativeButton(LocaleController.getString("Cancel", C3242R.string.Cancel), CreateReactionButtonsActivity$$ExternalSyntheticLambda1.INSTANCE);
+        builder.setNegativeButton(LocaleController.getString("Cancel", C3290R.string.Cancel), CreateReactionButtonsActivity$$ExternalSyntheticLambda1.INSTANCE);
         AlertDialog create = builder.create();
         create.setDismissDialogByButtons(false);
         create.setOnShowListener(new DialogInterface.OnShowListener() { // from class: com.iMe.fork.ui.fragment.CreateReactionButtonsActivity$$ExternalSyntheticLambda2
@@ -1026,15 +1031,15 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int i) {
             MovingReactionCell movingReactionCell;
             Intrinsics.checkNotNullParameter(parent, "parent");
-            if (i == IdFabric$ViewTypes.HEADER) {
+            if (i == IdFabric$ViewTypes.HEADER_CELL) {
                 FrameLayout headerCell = new HeaderCell(this.this$0.getContext());
-                headerCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                headerCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 movingReactionCell = headerCell;
-            } else if (i == IdFabric$ViewTypes.TEXT_INFO_PRIVACY) {
+            } else if (i == IdFabric$ViewTypes.TEXT_INFO_PRIVACY_CELL) {
                 movingReactionCell = new TextInfoPrivacyCell(this.this$0.getContext(), 21);
-            } else if (i == IdFabric$ViewTypes.TEXT) {
+            } else if (i == IdFabric$ViewTypes.TEXT_CELL) {
                 FrameLayout textCell = new TextCell(this.this$0.getContext());
-                textCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                textCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 movingReactionCell = textCell;
             } else if (i == IdFabric$ViewTypes.MOVING_REACTION) {
                 Context context = this.this$0.getContext();
@@ -1085,7 +1090,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
                 movingReactionCell = movingReactionCell3;
             } else {
                 FrameLayout textSettingsCell = new TextSettingsCell(this.this$0.getContext());
-                textSettingsCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                textSettingsCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 movingReactionCell = textSettingsCell;
             }
             return new RecyclerListView.Holder(movingReactionCell);
@@ -1140,11 +1145,11 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
                 if (i == createReactionButtonsActivity.reactionsSectionRow) {
                     if (6 - createReactionButtonsActivity.reactions.size() > 1) {
                         StringCompanionObject stringCompanionObject = StringCompanionObject.INSTANCE;
-                        format2 = String.format(this.resourceManager.getString(C3242R.string.chat_reaction_max_reaction_value_info), Arrays.copyOf(new Object[]{Integer.valueOf(6 - createReactionButtonsActivity.reactions.size())}, 1));
+                        format2 = String.format(this.resourceManager.getString(C3290R.string.chat_reaction_max_reaction_value_info), Arrays.copyOf(new Object[]{Integer.valueOf(6 - createReactionButtonsActivity.reactions.size())}, 1));
                         Intrinsics.checkNotNullExpressionValue(format2, "format(format, *args)");
                     } else {
                         StringCompanionObject stringCompanionObject2 = StringCompanionObject.INSTANCE;
-                        format2 = String.format(this.resourceManager.getString(C3242R.string.chat_reaction_max_reaction_value_info_single), Arrays.copyOf(new Object[]{Integer.valueOf(6 - createReactionButtonsActivity.reactions.size())}, 1));
+                        format2 = String.format(this.resourceManager.getString(C3290R.string.chat_reaction_max_reaction_value_info_single), Arrays.copyOf(new Object[]{Integer.valueOf(6 - createReactionButtonsActivity.reactions.size())}, 1));
                         Intrinsics.checkNotNullExpressionValue(format2, "format(format, *args)");
                     }
                     textInfoPrivacyCell.setText(format2);
@@ -1152,11 +1157,11 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
                 }
                 if (12 - createReactionButtonsActivity.buttonsCount > 1) {
                     StringCompanionObject stringCompanionObject3 = StringCompanionObject.INSTANCE;
-                    format = String.format(this.resourceManager.getString(C3242R.string.chat_reaction_max_button_value_info), Arrays.copyOf(new Object[]{Integer.valueOf(12 - createReactionButtonsActivity.buttonsCount)}, 1));
+                    format = String.format(this.resourceManager.getString(C3290R.string.chat_reaction_max_button_value_info), Arrays.copyOf(new Object[]{Integer.valueOf(12 - createReactionButtonsActivity.buttonsCount)}, 1));
                     Intrinsics.checkNotNullExpressionValue(format, "format(format, *args)");
                 } else {
                     StringCompanionObject stringCompanionObject4 = StringCompanionObject.INSTANCE;
-                    format = String.format(this.resourceManager.getString(C3242R.string.chat_reaction_max_button_value_info_single), Arrays.copyOf(new Object[]{Integer.valueOf(12 - createReactionButtonsActivity.buttonsCount)}, 1));
+                    format = String.format(this.resourceManager.getString(C3290R.string.chat_reaction_max_button_value_info_single), Arrays.copyOf(new Object[]{Integer.valueOf(12 - createReactionButtonsActivity.buttonsCount)}, 1));
                     Intrinsics.checkNotNullExpressionValue(format, "format(format, *args)");
                 }
                 textInfoPrivacyCell.setText(format);
@@ -1164,14 +1169,14 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
                 Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
                 CreateReactionButtonsActivity createReactionButtonsActivity2 = this.this$0;
                 TextCell textCell = (TextCell) view;
-                textCell.setColors(null, "windowBackgroundWhiteBlueText4");
-                Drawable drawable2 = AppCompatResources.getDrawable(textCell.getContext(), C3242R.C3244drawable.poll_add_circle);
-                if (drawable2 == null || (drawable = AppCompatResources.getDrawable(textCell.getContext(), C3242R.C3244drawable.poll_add_plus)) == null) {
+                textCell.setColors(-1, Theme.key_windowBackgroundWhiteBlueText4);
+                Drawable drawable2 = AppCompatResources.getDrawable(textCell.getContext(), C3290R.C3292drawable.poll_add_circle);
+                if (drawable2 == null || (drawable = AppCompatResources.getDrawable(textCell.getContext(), C3290R.C3292drawable.poll_add_plus)) == null) {
                     return;
                 }
-                drawable2.setColorFilter(new PorterDuffColorFilter(Theme.getColor("switchTrackChecked"), PorterDuff.Mode.MULTIPLY));
-                drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor("checkboxCheck"), PorterDuff.Mode.MULTIPLY));
-                textCell.setTextAndIcon(this.resourceManager.getString(createReactionButtonsActivity2.reactionsAddRow == i ? C3242R.string.chat_reaction_select_emoji : C3242R.string.chat_reaction_create_button), (Drawable) new CombinedDrawable(drawable2, drawable), false);
+                drawable2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_switchTrackChecked), PorterDuff.Mode.MULTIPLY));
+                drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_checkboxCheck), PorterDuff.Mode.MULTIPLY));
+                textCell.setTextAndIcon(this.resourceManager.getString(createReactionButtonsActivity2.reactionsAddRow == i ? C3290R.string.chat_reaction_select_emoji : C3290R.string.chat_reaction_create_button), (Drawable) new CombinedDrawable(drawable2, drawable), false);
             } else if (view instanceof MovingReactionCell) {
                 Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
                 CreateReactionButtonsActivity createReactionButtonsActivity3 = this.this$0;
@@ -1193,7 +1198,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
                 }
             } else if (view instanceof TextSettingsCell) {
                 Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
-                ((TextSettingsCell) view).setTextAndValue(this.resourceManager.getString(C3242R.string.chat_reaction_button_position), this.resourceManager.getString(this.this$0.buttonsRowsType.getResource()), false);
+                ((TextSettingsCell) view).setTextAndValue(this.resourceManager.getString(C3290R.string.chat_reaction_button_position), this.resourceManager.getString(this.this$0.buttonsRowsType.getResource()), false);
             }
         }
 
@@ -1214,22 +1219,22 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         public int getItemViewType(int i) {
             boolean z = false;
             if ((i == this.this$0.reactionHeaderRow || i == this.this$0.buttonsHeaderRow) || i == this.this$0.settingsHeaderRow) {
-                return IdFabric$ViewTypes.HEADER;
+                return IdFabric$ViewTypes.HEADER_CELL;
             }
             if (i < this.this$0.reactionsEndRow && this.this$0.reactionsStartRow <= i) {
                 return IdFabric$ViewTypes.MOVING_REACTION;
             }
             if (i == this.this$0.reactionsAddRow || i == this.this$0.buttonsAddRow) {
-                return IdFabric$ViewTypes.TEXT;
+                return IdFabric$ViewTypes.TEXT_CELL;
             }
             if (i == this.this$0.reactionsSectionRow || i == this.this$0.buttonsSectionRow) {
-                return IdFabric$ViewTypes.TEXT_INFO_PRIVACY;
+                return IdFabric$ViewTypes.TEXT_INFO_PRIVACY_CELL;
             }
             int i2 = this.this$0.buttonsStartRow;
             if (i < this.this$0.buttonsEndRow && i2 <= i) {
                 z = true;
             }
-            return z ? IdFabric$ViewTypes.URL_BUTTON : IdFabric$ViewTypes.TEXT_SETTINGS;
+            return z ? IdFabric$ViewTypes.URL_BUTTON : IdFabric$ViewTypes.TEXT_SETTINGS_CELL;
         }
 
         private final int getSectionPosition(ColumnType columnType, int i) {
@@ -1302,7 +1307,7 @@ public final class CreateReactionButtonsActivity extends MvpFragment implements 
         }
 
         private final String updateHeader(int i) {
-            return i == this.this$0.reactionHeaderRow ? this.resourceManager.getString(C3242R.string.chat_reaction_create_a_reaction) : i == this.this$0.buttonsHeaderRow ? this.resourceManager.getString(C3242R.string.chat_reaction_create_button) : this.resourceManager.getString(C3242R.string.chat_reaction_settings);
+            return i == this.this$0.reactionHeaderRow ? this.resourceManager.getString(C3290R.string.chat_reaction_create_a_reaction) : i == this.this$0.buttonsHeaderRow ? this.resourceManager.getString(C3290R.string.chat_reaction_create_button) : this.resourceManager.getString(C3290R.string.chat_reaction_settings);
         }
 
         private final void removeUrlItem(int i) {

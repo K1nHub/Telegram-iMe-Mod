@@ -2,32 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/WallpaperParallaxEffect$Callback;
+.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ThemePreviewActivity;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/ThemePreviewActivity$$ExternalSyntheticLambda26;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/ThemePreviewActivity$$ExternalSyntheticLambda26;
+
+    invoke-direct {v0}, Lorg/telegram/ui/ThemePreviewActivity$$ExternalSyntheticLambda26;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/ThemePreviewActivity$$ExternalSyntheticLambda26;->INSTANCE:Lorg/telegram/ui/ThemePreviewActivity$$ExternalSyntheticLambda26;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$$ExternalSyntheticLambda26;->f$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onOffsetsChanged(IIF)V
-    .locals 1
+.method public final onItemClick(Landroid/view/View;I)V
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$$ExternalSyntheticLambda26;->f$0:Lorg/telegram/ui/ThemePreviewActivity;
-
-    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/ThemePreviewActivity;->$r8$lambda$rcqVmzH0BWIhl7XYa_Y--x9TFTs(Lorg/telegram/ui/ThemePreviewActivity;IIF)V
+    invoke-static {p1, p2}, Lorg/telegram/ui/ThemePreviewActivity;->$r8$lambda$8LjdXzfNQXOGiSVtpZM8KoAagJo(Landroid/view/View;I)V
 
     return-void
 .end method

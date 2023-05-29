@@ -5,14 +5,14 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.AvatarDrawable;
 import org.telegram.p044ui.Components.BackupImageView;
 import org.telegram.tgnet.TLRPC$User;
 /* compiled from: CryptoAccountProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.CryptoAccountProvider$convert$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class CryptoAccountProvider$convert$2 extends Lambda implements Function1<BackupImageView, Unit> {
     final /* synthetic */ CryptoAccountItem $item;
 
@@ -32,10 +32,10 @@ final class CryptoAccountProvider$convert$2 extends Lambda implements Function1<
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2(BackupImageView applyForView) {
         Intrinsics.checkNotNullParameter(applyForView, "$this$applyForView");
-        applyForView.getImageReceiver().setRoundRadius(applyForView.getResources().getDimensionPixelSize(C3242R.dimen.telegram_avatar_size_medium) / 2);
+        applyForView.getImageReceiver().setRoundRadius(applyForView.getResources().getDimensionPixelSize(C3290R.dimen.telegram_avatar_size_medium) / 2);
         TLRPC$User user = this.$item.getUser();
         AvatarDrawable avatarDrawable = new AvatarDrawable(this.$item.getUser());
-        avatarDrawable.setColor(Theme.getColor("avatar_backgroundInProfileBlue"));
+        avatarDrawable.setColor(Theme.getColor(Theme.key_avatar_backgroundInProfileBlue));
         Unit unit = Unit.INSTANCE;
         applyForView.setForUserOrChat(user, avatarDrawable);
     }

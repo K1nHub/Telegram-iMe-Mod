@@ -46,7 +46,7 @@ public final class SavedStateHandle {
             arrayList.add(str);
             arrayList2.add(this$0.regular.get(str));
         }
-        return BundleKt.bundleOf(TuplesKt.m80to("keys", arrayList), TuplesKt.m80to("values", arrayList2));
+        return BundleKt.bundleOf(TuplesKt.m85to("keys", arrayList), TuplesKt.m85to("values", arrayList2));
     }
 
     public SavedStateHandle(Map<String, ? extends Object> initialState) {

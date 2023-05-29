@@ -1,6 +1,7 @@
 package org.telegram.messenger;
 
 import android.content.SharedPreferences;
+import org.telegram.p044ui.NotificationsSoundActivity;
 import org.telegram.tgnet.ConnectionsManager;
 import org.telegram.tgnet.TLRPC$Dialog;
 import org.telegram.tgnet.TLRPC$NotificationSound;
@@ -108,15 +109,15 @@ public class NotificationsSettingsFacade {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:57:0x0192  */
-    /* JADX WARN: Removed duplicated region for block: B:58:0x019d  */
+    /* JADX WARN: Removed duplicated region for block: B:57:0x0193  */
+    /* JADX WARN: Removed duplicated region for block: B:58:0x019e  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public /* synthetic */ void lambda$applyDialogNotificationsSettings$1(long r18, int r20, org.telegram.tgnet.TLRPC$PeerNotifySettings r21) {
         /*
-            Method dump skipped, instructions count: 416
+            Method dump skipped, instructions count: 417
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.NotificationsSettingsFacade.lambda$applyDialogNotificationsSettings$1(long, int, org.telegram.tgnet.TLRPC$PeerNotifySettings):void");
@@ -153,6 +154,20 @@ public class NotificationsSettingsFacade {
             str2 = "ChannelSoundDocId";
             str3 = "ChannelSoundPath";
         }
+        if (tLRPC$NotificationSound instanceof TLRPC$TL_notificationSoundLocal) {
+            TLRPC$TL_notificationSoundLocal tLRPC$TL_notificationSoundLocal = (TLRPC$TL_notificationSoundLocal) tLRPC$NotificationSound;
+            if ("Default".equalsIgnoreCase(tLRPC$TL_notificationSoundLocal.data)) {
+                tLRPC$NotificationSound = new TLRPC$TL_notificationSoundDefault();
+            } else if ("NoSound".equalsIgnoreCase(tLRPC$TL_notificationSoundLocal.data)) {
+                tLRPC$NotificationSound = new TLRPC$TL_notificationSoundNone();
+            } else {
+                String findRingtonePathByName = NotificationsSoundActivity.findRingtonePathByName(tLRPC$TL_notificationSoundLocal.title);
+                if (findRingtonePathByName == null) {
+                    return;
+                }
+                tLRPC$TL_notificationSoundLocal.data = findRingtonePathByName;
+            }
+        }
         if (tLRPC$NotificationSound instanceof TLRPC$TL_notificationSoundDefault) {
             editor.putString(str, "Default");
             editor.putString(str3, "Default");
@@ -162,18 +177,18 @@ public class NotificationsSettingsFacade {
             editor.putString(str3, "NoSound");
             editor.remove(str2);
         } else if (tLRPC$NotificationSound instanceof TLRPC$TL_notificationSoundLocal) {
-            TLRPC$TL_notificationSoundLocal tLRPC$TL_notificationSoundLocal = (TLRPC$TL_notificationSoundLocal) tLRPC$NotificationSound;
-            editor.putString(str, tLRPC$TL_notificationSoundLocal.title);
-            editor.putString(str3, tLRPC$TL_notificationSoundLocal.data);
+            TLRPC$TL_notificationSoundLocal tLRPC$TL_notificationSoundLocal2 = (TLRPC$TL_notificationSoundLocal) tLRPC$NotificationSound;
+            editor.putString(str, tLRPC$TL_notificationSoundLocal2.title);
+            editor.putString(str3, tLRPC$TL_notificationSoundLocal2.data);
             editor.remove(str2);
         } else if (tLRPC$NotificationSound instanceof TLRPC$TL_notificationSoundRingtone) {
             TLRPC$TL_notificationSoundRingtone tLRPC$TL_notificationSoundRingtone = (TLRPC$TL_notificationSoundRingtone) tLRPC$NotificationSound;
-            editor.putLong(str2, tLRPC$TL_notificationSoundRingtone.f1540id);
-            MediaDataController.getInstance(this.currentAccount).checkRingtones();
+            editor.putLong(str2, tLRPC$TL_notificationSoundRingtone.f1547id);
+            MediaDataController.getInstance(this.currentAccount).checkRingtones(true);
             if (z && i3 != 0) {
                 editor.putBoolean("custom_" + j, true);
             }
-            MediaDataController.getInstance(this.currentAccount).ringtoneDataStore.getDocument(tLRPC$TL_notificationSoundRingtone.f1540id);
+            MediaDataController.getInstance(this.currentAccount).ringtoneDataStore.getDocument(tLRPC$TL_notificationSoundRingtone.f1547id);
         }
     }
 

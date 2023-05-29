@@ -34,7 +34,7 @@ public class Camera2Enumerator implements CameraEnumerator {
         try {
             return this.cameraManager.getCameraIdList();
         } catch (AndroidException e) {
-            Logging.m17e(TAG, "Camera access exception: " + e);
+            Logging.m19e(TAG, "Camera access exception: " + e);
             return new String[0];
         }
     }
@@ -65,7 +65,7 @@ public class Camera2Enumerator implements CameraEnumerator {
         try {
             return this.cameraManager.getCameraCharacteristics(str);
         } catch (AndroidException e) {
-            Logging.m17e(TAG, "Camera access exception: " + e);
+            Logging.m19e(TAG, "Camera access exception: " + e);
             return null;
         }
     }
@@ -83,7 +83,7 @@ public class Camera2Enumerator implements CameraEnumerator {
             }
             return true;
         } catch (Throwable th) {
-            Logging.m17e(TAG, "Camera access exception: " + th);
+            Logging.m19e(TAG, "Camera access exception: " + th);
             return false;
         }
     }
@@ -121,7 +121,7 @@ public class Camera2Enumerator implements CameraEnumerator {
             if (map.containsKey(str)) {
                 return map.get(str);
             }
-            Logging.m18d(TAG, "Get supported formats for camera index " + str + ".");
+            Logging.m20d(TAG, "Get supported formats for camera index " + str + ".");
             long elapsedRealtime = SystemClock.elapsedRealtime();
             try {
                 CameraCharacteristics cameraCharacteristics = cameraManager.getCameraCharacteristics(str);
@@ -142,14 +142,14 @@ public class Camera2Enumerator implements CameraEnumerator {
                     }
                     int round = j == 0 ? i : ((int) Math.round(NANO_SECONDS_PER_SECOND / j)) * 1000;
                     arrayList.add(new CameraEnumerationAndroid.CaptureFormat(size.width, size.height, 0, round));
-                    Logging.m18d(TAG, "Format: " + size.width + "x" + size.height + "@" + round);
+                    Logging.m20d(TAG, "Format: " + size.width + "x" + size.height + "@" + round);
                 }
                 cachedSupportedFormats.put(str, arrayList);
                 long elapsedRealtime2 = SystemClock.elapsedRealtime();
-                Logging.m18d(TAG, "Get supported formats for camera index " + str + " done. Time spent: " + (elapsedRealtime2 - elapsedRealtime) + " ms.");
+                Logging.m20d(TAG, "Get supported formats for camera index " + str + " done. Time spent: " + (elapsedRealtime2 - elapsedRealtime) + " ms.");
                 return arrayList;
             } catch (Exception e) {
-                Logging.m17e(TAG, "getCameraCharacteristics(): " + e);
+                Logging.m19e(TAG, "getCameraCharacteristics(): " + e);
                 return new ArrayList();
             }
         }

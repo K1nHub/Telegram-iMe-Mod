@@ -110,7 +110,7 @@ public class Logging {
         } else if (loggingEnabled) {
             nativeLog(severity.ordinal(), str, str2);
         } else {
-            int i = C66461.$SwitchMap$org$webrtc$Logging$Severity[severity.ordinal()];
+            int i = C67481.$SwitchMap$org$webrtc$Logging$Severity[severity.ordinal()];
             if (i == 1) {
                 level = Level.SEVERE;
             } else if (i == 2) {
@@ -128,7 +128,7 @@ public class Logging {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.webrtc.Logging$1 */
     /* loaded from: classes6.dex */
-    public static /* synthetic */ class C66461 {
+    public static /* synthetic */ class C67481 {
         static final /* synthetic */ int[] $SwitchMap$org$webrtc$Logging$Severity;
 
         static {
@@ -150,22 +150,22 @@ public class Logging {
     }
 
     /* renamed from: d */
-    public static void m18d(String str, String str2) {
+    public static void m20d(String str, String str2) {
         log(Severity.LS_INFO, str, str2);
     }
 
     /* renamed from: e */
-    public static void m17e(String str, String str2) {
+    public static void m19e(String str, String str2) {
         log(Severity.LS_ERROR, str, str2);
     }
 
     /* renamed from: w */
-    public static void m14w(String str, String str2) {
+    public static void m16w(String str, String str2) {
         log(Severity.LS_WARNING, str, str2);
     }
 
     /* renamed from: e */
-    public static void m16e(String str, String str2, Throwable th) {
+    public static void m18e(String str, String str2, Throwable th) {
         Severity severity = Severity.LS_ERROR;
         log(severity, str, str2);
         log(severity, str, th.toString());
@@ -173,7 +173,7 @@ public class Logging {
     }
 
     /* renamed from: w */
-    public static void m13w(String str, String str2, Throwable th) {
+    public static void m15w(String str, String str2, Throwable th) {
         Severity severity = Severity.LS_WARNING;
         log(severity, str, str2);
         log(severity, str, th.toString());
@@ -181,7 +181,7 @@ public class Logging {
     }
 
     /* renamed from: v */
-    public static void m15v(String str, String str2) {
+    public static void m17v(String str, String str2) {
         log(Severity.LS_VERBOSE, str, str2);
     }
 

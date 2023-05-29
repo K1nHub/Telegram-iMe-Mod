@@ -39,9 +39,9 @@ public class TextCheckBoxCell extends FrameLayout {
         TextView textView = new TextView(context);
         this.textView = textView;
         if (resourcesProvider != null) {
-            textView.setTextColor(resourcesProvider.getColor(z ? "dialogTextBlack" : "windowBackgroundWhiteBlackText").intValue());
+            textView.setTextColor(resourcesProvider.getColor(z ? Theme.key_dialogTextBlack : Theme.key_windowBackgroundWhiteBlackText));
         } else {
-            textView.setTextColor(Theme.getColor(z ? "dialogTextBlack" : "windowBackgroundWhiteBlackText"));
+            textView.setTextColor(Theme.getColor(z ? Theme.key_dialogTextBlack : Theme.key_windowBackgroundWhiteBlackText));
         }
         this.textView.setTextSize(1, 16.0f);
         this.textView.setLines(1);
@@ -68,7 +68,7 @@ public class TextCheckBoxCell extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.widget.FrameLayout, android.view.View
     public void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(50) + (this.needDivider ? 1 : 0), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(50) + (this.needDivider ? 1 : 0), 1073741824));
     }
 
     public void setTextAndCheck(String str, boolean z, boolean z2) {
@@ -89,7 +89,7 @@ public class TextCheckBoxCell extends FrameLayout {
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         if (this.needDivider) {
-            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m50dp(20), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m50dp(20) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m54dp(20), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m54dp(20) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
         }
     }
 

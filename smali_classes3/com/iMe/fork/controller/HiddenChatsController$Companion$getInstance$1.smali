@@ -53,7 +53,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 112
+    .line 121
     new-instance p1, Lcom/iMe/fork/controller/HiddenChatsController;
 
     iget v0, p0, Lcom/iMe/fork/controller/HiddenChatsController$Companion$getInstance$1;->$accountIndex:I
@@ -66,7 +66,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 112
+    .line 121
     check-cast p1, Ljava/lang/Integer;
 
     invoke-virtual {p0, p1}, Lcom/iMe/fork/controller/HiddenChatsController$Companion$getInstance$1;->invoke(Ljava/lang/Integer;)Lcom/iMe/fork/controller/HiddenChatsController;

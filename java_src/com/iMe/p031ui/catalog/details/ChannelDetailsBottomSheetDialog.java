@@ -20,11 +20,11 @@ import com.iMe.model.catalog.CampaignItem;
 import com.iMe.p031ui.base.mvp.MvpBottomSheet;
 import com.iMe.p031ui.custom.BigActionButton;
 import com.iMe.p031ui.custom.ChannelTagView;
-import com.iMe.p031ui.smartpanel.extension.ImageViewExtKt;
 import com.iMe.storage.domain.model.catalog.ChatType;
 import com.iMe.storage.domain.model.topics.TopicModel;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.ContextExtKt;
+import com.iMe.utils.extentions.common.ImageViewExtKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import com.iMe.utils.extentions.delegate.ResettableLazy;
 import kotlin.Lazy;
@@ -36,20 +36,21 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import kotlin.text.StringsKt__StringsJVMKt;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkContentChannelDetailsBinding;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p044ui.ActionBar.BaseFragment;
+import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.LayoutHelper;
 import org.telegram.p044ui.Components.URLSpanNoUnderline;
 import org.telegram.p044ui.QrActivity;
 import org.telegram.tgnet.TLRPC$Chat;
 /* compiled from: ChannelDetailsBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.catalog.details.ChannelDetailsBottomSheetDialog */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implements ChannelDetailsView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(ChannelDetailsBottomSheetDialog.class, "presenter", "getPresenter()Lcom/iMe/ui/catalog/details/ChannelDetailsPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(ChannelDetailsBottomSheetDialog.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkContentChannelDetailsBinding;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -61,7 +62,7 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
 
     /* compiled from: ChannelDetailsBottomSheetDialog.kt */
     /* renamed from: com.iMe.ui.catalog.details.ChannelDetailsBottomSheetDialog$WhenMappings */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -172,7 +173,7 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
         String photo = campaignItem.getPhoto();
         Context context = getContext();
         Intrinsics.checkNotNullExpressionValue(context, "context");
-        ImageViewExtKt.loadFromWithPlaceholderResId(imageAvatar, photo, context, Integer.valueOf(C3242R.C3244drawable.photo_placeholder_in), true);
+        ImageViewExtKt.loadFromWithPlaceholderResId(imageAvatar, photo, context, Integer.valueOf(C3290R.C3292drawable.photo_placeholder_in), true);
         AppCompatImageView imageVerified = binding.imageVerified;
         Intrinsics.checkNotNullExpressionValue(imageVerified, "imageVerified");
         imageVerified.setVisibility(campaignItem.isVerified() ? 0 : 8);
@@ -215,14 +216,14 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
                 throw new NoWhenBranchMatchedException();
             }
             if (z) {
-                string = LocaleController.getString("JoinGroup", C3242R.string.JoinGroup);
+                string = LocaleController.getString("JoinGroup", C3290R.string.JoinGroup);
             } else {
-                string = LocaleController.getString("LeaveMegaMenu", C3242R.string.LeaveMegaMenu);
+                string = LocaleController.getString("LeaveMegaMenu", C3290R.string.LeaveMegaMenu);
             }
         } else if (z) {
-            string = LocaleController.getString("ChannelJoin", C3242R.string.ChannelJoin);
+            string = LocaleController.getString("ChannelJoin", C3290R.string.ChannelJoin);
         } else {
-            string = LocaleController.getString("LeaveChannel", C3242R.string.LeaveChannel);
+            string = LocaleController.getString("LeaveChannel", C3290R.string.LeaveChannel);
         }
         bigActionButton.setText(string);
     }
@@ -252,31 +253,35 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
         ForkContentChannelDetailsBinding binding = getBinding();
         binding.buttonSubscribe.applyColors();
         ActionBarMenuItem setupColors$lambda$13$lambda$8 = binding.buttonMore;
-        setupColors$lambda$13$lambda$8.setIconColor(getThemedColor("windowBackgroundWhiteGrayIcon"));
+        int i = Theme.key_windowBackgroundWhiteGrayIcon;
+        setupColors$lambda$13$lambda$8.setIconColor(getThemedColor(i));
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$13$lambda$8, "setupColors$lambda$13$lambda$8");
         ViewExtKt.setCircleRippleBackground(setupColors$lambda$13$lambda$8);
         AppCompatTextView setupColors$lambda$13$lambda$9 = binding.textName;
-        setupColors$lambda$13$lambda$9.setTextColor(getThemedColor("windowBackgroundWhiteBlackText"));
+        int i2 = Theme.key_windowBackgroundWhiteBlackText;
+        setupColors$lambda$13$lambda$9.setTextColor(getThemedColor(i2));
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$13$lambda$9, "setupColors$lambda$13$lambda$9");
         ViewExtKt.withMediumTypeface(setupColors$lambda$13$lambda$9);
         AppCompatTextView appCompatTextView = binding.textNickname;
-        appCompatTextView.setLinkTextColor(getThemedColor("chats_actionBackground"));
-        appCompatTextView.setTextColor(getThemedColor("chats_actionBackground"));
+        int i3 = Theme.key_chats_actionBackground;
+        appCompatTextView.setLinkTextColor(getThemedColor(i3));
+        appCompatTextView.setTextColor(getThemedColor(i3));
         AppCompatTextView setupColors$lambda$13$lambda$11 = binding.textSubscribersCount;
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$13$lambda$11, "setupColors$lambda$13$lambda$11");
-        ViewExtKt.setCompoundDrawablesColor(setupColors$lambda$13$lambda$11, getThemedColor("windowBackgroundWhiteGrayText"));
-        setupColors$lambda$13$lambda$11.setTextColor(getThemedColor("windowBackgroundWhiteGrayText"));
+        int i4 = Theme.key_windowBackgroundWhiteGrayText;
+        ViewExtKt.setCompoundDrawablesColor(setupColors$lambda$13$lambda$11, getThemedColor(i4));
+        setupColors$lambda$13$lambda$11.setTextColor(getThemedColor(i4));
         AppCompatTextView appCompatTextView2 = binding.textDescription;
-        appCompatTextView2.setTextColor(getThemedColor("windowBackgroundWhiteBlackText"));
-        appCompatTextView2.setLinkTextColor(getThemedColor("chats_actionBackground"));
-        binding.textLanguageValue.setTextColor(getThemedColor("windowBackgroundWhiteBlackText"));
+        appCompatTextView2.setTextColor(getThemedColor(i2));
+        appCompatTextView2.setLinkTextColor(getThemedColor(i3));
+        binding.textLanguageValue.setTextColor(getThemedColor(i2));
         AppCompatTextView textLanguageTitle = binding.textLanguageTitle;
         Intrinsics.checkNotNullExpressionValue(textLanguageTitle, "textLanguageTitle");
         AppCompatTextView textTags = binding.textTags;
         Intrinsics.checkNotNullExpressionValue(textTags, "textTags");
-        ViewExtKt.setTextsColor("windowBackgroundWhiteGrayText", textLanguageTitle, textTags);
-        binding.imageLanguage.setColorFilter(new PorterDuffColorFilter(getThemedColor("windowBackgroundWhiteGrayIcon"), PorterDuff.Mode.SRC_IN));
-        binding.imageTags.setColorFilter(new PorterDuffColorFilter(getThemedColor("windowBackgroundWhiteGrayIcon"), PorterDuff.Mode.SRC_IN));
+        ViewExtKt.setTextsColor(i4, textLanguageTitle, textTags);
+        binding.imageLanguage.setColorFilter(new PorterDuffColorFilter(getThemedColor(i), PorterDuff.Mode.SRC_IN));
+        binding.imageTags.setColorFilter(new PorterDuffColorFilter(getThemedColor(i), PorterDuff.Mode.SRC_IN));
     }
 
     private final void setupViews() {
@@ -285,8 +290,8 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
         AppCompatTextView appCompatTextView = binding.textDescription;
         appCompatTextView.setMovementMethod(LinkMovementMethod.getInstance());
         appCompatTextView.setOnTouchListener(ChannelDetailsBottomSheetDialog$$ExternalSyntheticLambda1.INSTANCE);
-        binding.textLanguageTitle.setText(getResourceManager().getString(C3242R.string.catalog_channel_details_language));
-        binding.textTags.setText(getResourceManager().getString(C3242R.string.catalog_channel_details_tags));
+        binding.textLanguageTitle.setText(getResourceManager().getString(C3290R.string.catalog_channel_details_language));
+        binding.textTags.setText(getResourceManager().getString(C3290R.string.catalog_channel_details_tags));
         setupButtonMore();
     }
 
@@ -305,23 +310,23 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
         final ActionBarMenuItem setupButtonMore$lambda$18 = getBinding().buttonMore;
         setupButtonMore$lambda$18.setLongClickEnabled(false);
         setupButtonMore$lambda$18.setSubMenuOpenSide(2);
-        setupButtonMore$lambda$18.setIcon(C3242R.C3244drawable.ic_ab_other);
+        setupButtonMore$lambda$18.setIcon(C3290R.C3292drawable.ic_ab_other);
         Intrinsics.checkNotNullExpressionValue(setupButtonMore$lambda$18, "setupButtonMore$lambda$18");
         ViewExtKt.setCircleRippleBackground(setupButtonMore$lambda$18);
-        setupButtonMore$lambda$18.addSubItem(IdFabric$Menu.SHARE, C3242R.C3244drawable.share, LocaleController.getString("ShareLink", C3242R.string.ShareLink));
-        setupButtonMore$lambda$18.addSubItem(IdFabric$Menu.COPY, C3242R.C3244drawable.msg_link2, LocaleController.getString("CopyLink", C3242R.string.CopyLink));
-        setupButtonMore$lambda$18.addSubItem(IdFabric$Menu.f251QR, C3242R.C3244drawable.msg_qrcode, LocaleController.getString("GetQRCode", C3242R.string.GetQRCode));
-        setupButtonMore$lambda$18.redrawPopup(getThemedColor("actionBarDefaultSubmenuBackground"));
-        setupButtonMore$lambda$18.setPopupItemsColor(getThemedColor("actionBarDefaultSubmenuItem"), false);
-        setupButtonMore$lambda$18.setPopupItemsColor(getThemedColor("actionBarDefaultSubmenuItemIcon"), true);
-        setupButtonMore$lambda$18.setupPopupRadialSelectors(getThemedColor("listSelectorSDK21"));
+        setupButtonMore$lambda$18.addSubItem(IdFabric$Menu.SHARE, C3290R.C3292drawable.share, LocaleController.getString("ShareLink", C3290R.string.ShareLink));
+        setupButtonMore$lambda$18.addSubItem(IdFabric$Menu.COPY, C3290R.C3292drawable.msg_link2, LocaleController.getString("CopyLink", C3290R.string.CopyLink));
+        setupButtonMore$lambda$18.addSubItem(IdFabric$Menu.f254QR, C3290R.C3292drawable.msg_qrcode, LocaleController.getString("GetQRCode", C3290R.string.GetQRCode));
+        setupButtonMore$lambda$18.redrawPopup(getThemedColor(Theme.key_actionBarDefaultSubmenuBackground));
+        setupButtonMore$lambda$18.setPopupItemsColor(getThemedColor(Theme.key_actionBarDefaultSubmenuItem), false);
+        setupButtonMore$lambda$18.setPopupItemsColor(getThemedColor(Theme.key_actionBarDefaultSubmenuItemIcon), true);
+        setupButtonMore$lambda$18.setupPopupRadialSelectors(getThemedColor(Theme.key_listSelector));
         setupButtonMore$lambda$18.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.catalog.details.ChannelDetailsBottomSheetDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ChannelDetailsBottomSheetDialog.setupButtonMore$lambda$18$lambda$17(ActionBarMenuItem.this, view);
             }
         });
-        setupButtonMore$lambda$18.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3242R.string.AccDescrMoreOptions));
+        setupButtonMore$lambda$18.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3290R.string.AccDescrMoreOptions));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -335,7 +340,7 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
             getPresenter().shareChannelLink();
         } else if (i == IdFabric$Menu.COPY) {
             getPresenter().copyChannelLink();
-        } else if (i == IdFabric$Menu.f251QR) {
+        } else if (i == IdFabric$Menu.f254QR) {
             getPresenter().createChannelQr();
         }
     }
@@ -361,7 +366,7 @@ public final class ChannelDetailsBottomSheetDialog extends MvpBottomSheet implem
 
     /* compiled from: ChannelDetailsBottomSheetDialog.kt */
     /* renamed from: com.iMe.ui.catalog.details.ChannelDetailsBottomSheetDialog$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -2,32 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$OnDispatchKeyEventListener;
+.implements Lorg/telegram/messenger/MessagesController$ErrorDelegate;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
+.field public final synthetic f$0:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
+.method public synthetic constructor <init>(Ljava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda130;->f$0:Lorg/telegram/ui/DialogsActivity;
+    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda130;->f$0:Ljava/lang/Runnable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onDispatchKeyEvent(Landroid/view/KeyEvent;)V
+.method public final run(Lorg/telegram/tgnet/TLRPC$TL_error;)Z
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda130;->f$0:Lorg/telegram/ui/DialogsActivity;
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda130;->f$0:Ljava/lang/Runnable;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$32RtK78b6skauze_E2c05tTvixs(Lorg/telegram/ui/DialogsActivity;Landroid/view/KeyEvent;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$IXyaye2jlFqB2wdVDtzEaPk6pcE(Ljava/lang/Runnable;Lorg/telegram/tgnet/TLRPC$TL_error;)Z
 
-    return-void
+    move-result p1
+
+    return p1
 .end method

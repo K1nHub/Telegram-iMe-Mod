@@ -2,42 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/NumberPicker$Formatter;
+.implements Lorg/telegram/ui/ActionBar/ActionBarMenuItem$ActionBarMenuItemDelegate;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda142;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
+
+.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda142;
-
-    invoke-direct {v0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda142;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda142;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda142;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda142;->f$0:Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
+
+    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda142;->f$1:Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final format(I)Ljava/lang/String;
-    .locals 0
+.method public final onItemClick(I)V
+    .locals 2
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$7Oo_ZJb7-927QMhPGhrlsbTT2vk(I)Ljava/lang/String;
+    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda142;->f$0:Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
 
-    move-result-object p1
+    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda142;->f$1:Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    return-object p1
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$VxdeQ-EtOiiBcpk9StFTYZ24Y-Q(Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Lorg/telegram/ui/ActionBar/BottomSheet$Builder;I)V
+
+    return-void
 .end method

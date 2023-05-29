@@ -19,6 +19,8 @@
 
 
 # instance fields
+.field private _createdAtStart:Z
+
 .field private callbacks:Lorg/koin/core/definition/Callbacks;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -294,6 +296,15 @@
     iget-object v0, p0, Lorg/koin/core/definition/BeanDefinition;->secondaryTypes:Ljava/util/List;
 
     return-object v0
+.end method
+
+.method public final get_createdAtStart()Z
+    .locals 1
+
+    .line 45
+    iget-boolean v0, p0, Lorg/koin/core/definition/BeanDefinition;->_createdAtStart:Z
+
+    return v0
 .end method
 
 .method public hashCode()I

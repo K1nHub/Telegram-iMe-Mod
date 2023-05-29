@@ -179,9 +179,9 @@
     .line 128
     iget-object v11, v0, Lorg/telegram/ui/Cells/UserCell;->addButton:Landroid/widget/TextView;
 
-    const-string v13, "featuredStickers_buttonText"
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
 
-    invoke-static {v13, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v13, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v13
 
@@ -204,15 +204,15 @@
     .line 131
     iget-object v11, v0, Lorg/telegram/ui/Cells/UserCell;->addButton:Landroid/widget/TextView;
 
-    new-array v13, v6, [F
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
-    const/high16 v14, 0x40800000    # 4.0f
+    new-array v14, v6, [F
 
-    aput v14, v13, v10
+    const/high16 v15, 0x40800000    # 4.0f
 
-    const-string v14, "featuredStickers_addButton"
+    aput v15, v14, v10
 
-    invoke-static {v14, v13}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRect(Ljava/lang/String;[F)Landroid/graphics/drawable/Drawable;
+    invoke-static {v13, v14}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRectByKey(I[F)Landroid/graphics/drawable/Drawable;
 
     move-result-object v13
 
@@ -353,20 +353,20 @@
     :cond_3
     move v11, v10
 
-    :goto_3
-    const-string v12, "windowBackgroundWhiteGrayText"
-
     .line 140
-    invoke-static {v12, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    :goto_3
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
+
+    invoke-static {v12, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v12
 
     iput v12, v0, Lorg/telegram/ui/Cells/UserCell;->statusColor:I
 
-    const-string v12, "windowBackgroundWhiteBlueText"
-
     .line 141
-    invoke-static {v12, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText:I
+
+    invoke-static {v12, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v12
 
@@ -465,10 +465,10 @@
 
     iput-object v12, v0, Lorg/telegram/ui/Cells/UserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const-string v13, "windowBackgroundWhiteBlackText"
-
     .line 150
-    invoke-static {v13, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v13, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v13
 
@@ -722,9 +722,9 @@
 
     new-instance v11, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v13, "windowBackgroundWhiteGrayIcon"
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
 
-    invoke-static {v13, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v13, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v13
 
@@ -874,15 +874,15 @@
     .line 175
     iget-object v2, v0, Lorg/telegram/ui/Cells/UserCell;->checkBox:Lorg/telegram/ui/Components/CheckBox;
 
-    const-string v4, "checkbox"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_checkbox:I
 
-    invoke-static {v4, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v4, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v4
 
-    const-string v8, "checkboxCheck"
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxCheck:I
 
-    invoke-static {v8, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v8, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v8
 
@@ -960,9 +960,9 @@
     .line 182
     iget-object v1, v0, Lorg/telegram/ui/Cells/UserCell;->adminTextView:Landroid/widget/TextView;
 
-    const-string v2, "profile_creatorIcon"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_profile_creatorIcon:I
 
-    invoke-static {v2, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v2, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v2
 
@@ -3157,32 +3157,30 @@
     if-eqz v6, :cond_29
 
     :cond_23
-    const-string v8, "chats_verifiedBackground"
-
     if-eqz v6, :cond_24
 
     .line 512
-    iget-object v9, v1, Lorg/telegram/tgnet/TLRPC$User;->emoji_status:Lorg/telegram/tgnet/TLRPC$EmojiStatus;
+    iget-object v8, v1, Lorg/telegram/tgnet/TLRPC$User;->emoji_status:Lorg/telegram/tgnet/TLRPC$EmojiStatus;
 
-    instance-of v10, v9, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;
+    instance-of v9, v8, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;
 
-    if-eqz v10, :cond_24
+    if-eqz v9, :cond_24
 
-    check-cast v9, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;
+    check-cast v8, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;
 
-    iget v9, v9, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;->until:I
+    iget v8, v8, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;->until:I
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
-    move-result-wide v10
+    move-result-wide v9
 
-    const-wide/16 v14, 0x3e8
+    const-wide/16 v11, 0x3e8
 
-    div-long/2addr v10, v14
+    div-long/2addr v9, v11
 
-    long-to-int v10, v10
+    long-to-int v9, v9
 
-    if-le v9, v10, :cond_24
+    if-le v8, v9, :cond_24
 
     .line 513
     iget-object v3, v0, Lorg/telegram/ui/Cells/UserCell;->emojiStatus:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
@@ -3193,16 +3191,18 @@
 
     iget-wide v5, v5, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;->document_id:J
 
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
-    invoke-virtual {v3, v5, v6, v9}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(JZ)V
+    invoke-virtual {v3, v5, v6, v8}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(JZ)V
 
     .line 514
     iget-object v3, v0, Lorg/telegram/ui/Cells/UserCell;->emojiStatus:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
-    iget-object v5, v0, Lorg/telegram/ui/Cells/UserCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chats_verifiedBackground:I
 
-    invoke-static {v8, v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    iget-object v6, v0, Lorg/telegram/ui/Cells/UserCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v5, v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v5
 
@@ -3219,7 +3219,7 @@
 
     invoke-virtual {v3, v5}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setRightDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    goto :goto_c
+    goto/16 :goto_c
 
     :cond_24
     if-eqz v6, :cond_25
@@ -3227,9 +3227,9 @@
     .line 516
     iget-object v6, v1, Lorg/telegram/tgnet/TLRPC$User;->emoji_status:Lorg/telegram/tgnet/TLRPC$EmojiStatus;
 
-    instance-of v9, v6, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;
+    instance-of v8, v6, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;
 
-    if-eqz v9, :cond_25
+    if-eqz v8, :cond_25
 
     .line 517
     iget-object v3, v0, Lorg/telegram/ui/Cells/UserCell;->emojiStatus:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
@@ -3238,16 +3238,18 @@
 
     iget-wide v5, v6, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;->document_id:J
 
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
-    invoke-virtual {v3, v5, v6, v9}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(JZ)V
+    invoke-virtual {v3, v5, v6, v8}, Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;->set(JZ)V
 
     .line 518
     iget-object v3, v0, Lorg/telegram/ui/Cells/UserCell;->emojiStatus:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
-    iget-object v5, v0, Lorg/telegram/ui/Cells/UserCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chats_verifiedBackground:I
 
-    invoke-static {v8, v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    iget-object v6, v0, Lorg/telegram/ui/Cells/UserCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v5, v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v5
 
@@ -3281,9 +3283,9 @@
 
     move-result-object v6
 
-    sget v9, Lorg/telegram/messenger/R$drawable;->msg_premium_liststar:I
+    sget v8, Lorg/telegram/messenger/R$drawable;->msg_premium_liststar:I
 
-    invoke-virtual {v6, v9}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v6, v8}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v6
 
@@ -3296,34 +3298,36 @@
     .line 523
     new-instance v6, Lorg/telegram/ui/Cells/UserCell$1;
 
-    iget-object v9, v0, Lorg/telegram/ui/Cells/UserCell;->premiumDrawable:Landroid/graphics/drawable/Drawable;
+    iget-object v8, v0, Lorg/telegram/ui/Cells/UserCell;->premiumDrawable:Landroid/graphics/drawable/Drawable;
+
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v9
 
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
 
-    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v11
-
-    invoke-direct {v6, v0, v9, v10, v11}, Lorg/telegram/ui/Cells/UserCell$1;-><init>(Lorg/telegram/ui/Cells/UserCell;Landroid/graphics/drawable/Drawable;II)V
+    invoke-direct {v6, v0, v8, v9, v10}, Lorg/telegram/ui/Cells/UserCell$1;-><init>(Lorg/telegram/ui/Cells/UserCell;Landroid/graphics/drawable/Drawable;II)V
 
     iput-object v6, v0, Lorg/telegram/ui/Cells/UserCell;->premiumDrawable:Landroid/graphics/drawable/Drawable;
 
     .line 532
-    new-instance v9, Landroid/graphics/PorterDuffColorFilter;
+    new-instance v8, Landroid/graphics/PorterDuffColorFilter;
+
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_chats_verifiedBackground:I
 
     iget-object v10, v0, Lorg/telegram/ui/Cells/UserCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v8, v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v9, v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
-    move-result v8
+    move-result v9
 
     sget-object v10, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-direct {v9, v8, v10}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    invoke-direct {v8, v9, v10}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
-    invoke-virtual {v6, v9}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
+    invoke-virtual {v6, v8}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     :cond_26
     if-nez v5, :cond_27
@@ -3699,11 +3703,11 @@
     .line 587
     iget-object v1, v0, Lorg/telegram/ui/Cells/UserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    iget-object v2, v0, Lorg/telegram/ui/Cells/UserCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    const-string v3, "windowBackgroundWhiteBlackText"
+    iget-object v3, v0, Lorg/telegram/ui/Cells/UserCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v3, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v2, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v2
 
@@ -3715,11 +3719,11 @@
     if-eqz v1, :cond_39
 
     .line 589
-    iget-object v2, v0, Lorg/telegram/ui/Cells/UserCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_profile_creatorIcon:I
 
-    const-string v3, "profile_creatorIcon"
+    iget-object v3, v0, Lorg/telegram/ui/Cells/UserCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v3, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v2, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v2
 
@@ -3727,8 +3731,6 @@
 
     :cond_39
     return-void
-
-    nop
 
     :sswitch_data_0
     .sparse-switch

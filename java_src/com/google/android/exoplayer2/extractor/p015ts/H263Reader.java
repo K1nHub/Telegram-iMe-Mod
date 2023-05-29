@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.p015ts;
 
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
 import com.google.android.exoplayer2.extractor.TrackOutput;
@@ -57,7 +57,7 @@ public final class H263Reader implements ElementaryStreamReader {
         this.userDataReader = userDataReader;
         this.prefixFlags = new boolean[4];
         this.csdBuffer = new CsdBuffer(128);
-        this.pesTimeUs = C0470C.TIME_UNSET;
+        this.pesTimeUs = C0475C.TIME_UNSET;
         if (userDataReader != null) {
             this.userData = new NalUnitTargetBuffer(START_CODE_VALUE_USER_DATA, 128);
             this.userDataParsable = new ParsableByteArray();
@@ -80,7 +80,7 @@ public final class H263Reader implements ElementaryStreamReader {
             nalUnitTargetBuffer.reset();
         }
         this.totalBytesWritten = 0L;
-        this.pesTimeUs = C0470C.TIME_UNSET;
+        this.pesTimeUs = C0475C.TIME_UNSET;
     }
 
     @Override // com.google.android.exoplayer2.extractor.p015ts.ElementaryStreamReader
@@ -98,7 +98,7 @@ public final class H263Reader implements ElementaryStreamReader {
 
     @Override // com.google.android.exoplayer2.extractor.p015ts.ElementaryStreamReader
     public void packetStarted(long j, int i) {
-        if (j != C0470C.TIME_UNSET) {
+        if (j != C0475C.TIME_UNSET) {
             this.pesTimeUs = j;
         }
     }
@@ -181,7 +181,7 @@ public final class H263Reader implements ElementaryStreamReader {
             int readBits2 = parsableBitArray.readBits(8);
             int readBits3 = parsableBitArray.readBits(8);
             if (readBits3 == 0) {
-                Log.m792w(TAG, "Invalid aspect ratio");
+                Log.m796w(TAG, "Invalid aspect ratio");
             } else {
                 f = readBits2 / readBits3;
             }
@@ -190,7 +190,7 @@ public final class H263Reader implements ElementaryStreamReader {
             if (readBits < fArr.length) {
                 f = fArr[readBits];
             } else {
-                Log.m792w(TAG, "Invalid aspect ratio");
+                Log.m796w(TAG, "Invalid aspect ratio");
             }
         }
         if (parsableBitArray.readBit()) {
@@ -211,14 +211,14 @@ public final class H263Reader implements ElementaryStreamReader {
             }
         }
         if (parsableBitArray.readBits(2) != 0) {
-            Log.m792w(TAG, "Unhandled video object layer shape");
+            Log.m796w(TAG, "Unhandled video object layer shape");
         }
         parsableBitArray.skipBit();
         int readBits4 = parsableBitArray.readBits(16);
         parsableBitArray.skipBit();
         if (parsableBitArray.readBit()) {
             if (readBits4 == 0) {
-                Log.m792w(TAG, "Invalid vop_increment_time_resolution");
+                Log.m796w(TAG, "Invalid vop_increment_time_resolution");
             } else {
                 int i2 = 0;
                 for (int i3 = readBits4 - 1; i3 > 0; i3 >>= 1) {
@@ -285,20 +285,20 @@ public final class H263Reader implements ElementaryStreamReader {
                                 return true;
                             }
                         } else if ((i & PsExtractor.VIDEO_STREAM_MASK) != 32) {
-                            Log.m792w(H263Reader.TAG, "Unexpected start code value");
+                            Log.m796w(H263Reader.TAG, "Unexpected start code value");
                             reset();
                         } else {
                             this.volStartPosition = this.length;
                             this.state = 4;
                         }
                     } else if (i > 31) {
-                        Log.m792w(H263Reader.TAG, "Unexpected start code value");
+                        Log.m796w(H263Reader.TAG, "Unexpected start code value");
                         reset();
                     } else {
                         this.state = 3;
                     }
                 } else if (i != H263Reader.START_CODE_VALUE_VISUAL_OBJECT) {
-                    Log.m792w(H263Reader.TAG, "Unexpected start code value");
+                    Log.m796w(H263Reader.TAG, "Unexpected start code value");
                     reset();
                 } else {
                     this.state = 2;
@@ -377,7 +377,7 @@ public final class H263Reader implements ElementaryStreamReader {
         public void onDataEnd(long j, int i, boolean z) {
             if (this.startCodeValue == H263Reader.START_CODE_VALUE_VOP && z && this.readingSample) {
                 long j2 = this.sampleTimeUs;
-                if (j2 != C0470C.TIME_UNSET) {
+                if (j2 != C0475C.TIME_UNSET) {
                     this.output.sampleMetadata(j2, this.sampleIsKeyframe ? 1 : 0, (int) (j - this.samplePosition), i, null);
                 }
             }

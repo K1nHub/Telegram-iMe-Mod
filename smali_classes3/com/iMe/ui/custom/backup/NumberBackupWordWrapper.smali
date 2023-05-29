@@ -109,9 +109,9 @@
     .line 39
     iget-object p2, v0, Lorg/telegram/messenger/databinding/ForkContentBackupNumberWordBinding;->textNumber:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v1, "windowBackgroundWhiteGrayText2"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -145,9 +145,9 @@
     .line 27
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentBackupNumberWordBinding;->textNumber:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v2, "windowBackgroundWhiteGrayText2"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 

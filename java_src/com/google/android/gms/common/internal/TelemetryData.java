@@ -14,13 +14,13 @@ import java.util.List;
 /* loaded from: classes.dex */
 public class TelemetryData extends AbstractSafeParcelable {
     public static final Parcelable.Creator<TelemetryData> CREATOR = new zaab();
-    @SafeParcelable.Field(getter = "getTelemetryConfigVersion", m775id = 1)
+    @SafeParcelable.Field(getter = "getTelemetryConfigVersion", m779id = 1)
     private final int zaa;
-    @SafeParcelable.Field(getter = "getMethodInvocations", m775id = 2)
+    @SafeParcelable.Field(getter = "getMethodInvocations", m779id = 2)
     private List zab;
 
     @SafeParcelable.Constructor
-    public TelemetryData(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) List list) {
+    public TelemetryData(@SafeParcelable.Param(m778id = 1) int i, @SafeParcelable.Param(m778id = 2) List list) {
         this.zaa = i;
         this.zab = list;
     }

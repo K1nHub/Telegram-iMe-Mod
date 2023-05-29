@@ -49,7 +49,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;Lcom/iMe/storage/domain/model/crypto/level/AccountLevelInformation;Lcom/iMe/fork/ui/dialog/AccountLevelAlert$OnVisibilityChangedListener;)V
-    .locals 20
+    .locals 19
 
     move-object/from16 v0, p0
 
@@ -149,56 +149,56 @@
     move v8, v7
 
     :goto_0
-    const-string v9, "dialogTextBlack"
-
-    const/4 v10, 0x2
+    const/4 v9, 0x2
 
     if-ge v8, v6, :cond_1
 
-    aget-object v11, v3, v8
+    aget-object v10, v3, v8
 
     .line 38
-    new-instance v12, Landroid/widget/TextView;
+    new-instance v11, Landroid/widget/TextView;
 
     invoke-virtual {v2}, Landroid/widget/LinearLayout;->getContext()Landroid/content/Context;
 
-    move-result-object v13
+    move-result-object v12
 
-    invoke-direct {v12, v13}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v11, v12}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     .line 39
-    sget v13, Lorg/telegram/messenger/R$string;->wallet_account_level_description:I
+    sget v12, Lorg/telegram/messenger/R$string;->wallet_account_level_description:I
 
-    new-array v10, v10, [Ljava/lang/Object;
+    new-array v9, v9, [Ljava/lang/Object;
 
-    invoke-virtual {v11}, Ljava/lang/Enum;->name()Ljava/lang/String;
+    invoke-virtual {v10}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v13
 
-    aput-object v14, v10, v7
+    aput-object v13, v9, v7
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/dialog/AccountLevelAlert;->getResourceManager()Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    move-result-object v14
+    move-result-object v13
 
-    invoke-virtual {v11, v14}, Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;->getFullDescription(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
+    invoke-virtual {v10, v13}, Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;->getFullDescription(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;
 
-    move-result-object v14
+    move-result-object v13
 
-    aput-object v14, v10, v4
+    aput-object v13, v9, v4
 
-    invoke-static {v13, v10}, Lorg/telegram/messenger/LocaleController;->formatStringInternal(I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v12, v9}, Lorg/telegram/messenger/LocaleController;->formatStringInternal(I[Ljava/lang/Object;)Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v9
 
-    invoke-virtual {v12, v10}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v11, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 40
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 
-    invoke-virtual {v12, v9}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v11, v9}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 41
     sget v9, Lorg/telegram/messenger/R$drawable;->fork_account_level_badge_20:I
@@ -216,21 +216,21 @@
     if-eqz v9, :cond_0
 
     .line 42
-    new-instance v10, Landroid/graphics/PorterDuffColorFilter;
+    new-instance v12, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-virtual {v11}, Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;->getColorResId()I
+    invoke-virtual {v10}, Lcom/iMe/storage/domain/model/crypto/level/AccountLevel;->getColorResId()I
 
-    move-result v11
+    move-result v10
 
-    invoke-static {v1, v11}, Landroidx/core/content/ContextCompat;->getColor(Landroid/content/Context;I)I
+    invoke-static {v1, v10}, Landroidx/core/content/ContextCompat;->getColor(Landroid/content/Context;I)I
 
-    move-result v11
+    move-result v10
 
     sget-object v13, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-direct {v10, v11, v13}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    invoke-direct {v12, v10, v13}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
-    invoke-virtual {v9, v10}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
+    invoke-virtual {v9, v12}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     goto :goto_1
 
@@ -239,12 +239,12 @@
 
     .line 41
     :goto_1
-    invoke-virtual {v12, v9, v5, v5, v5}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v11, v9, v5, v5, v5}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     const/high16 v9, 0x41800000    # 16.0f
 
     .line 44
-    invoke-virtual {v12, v4, v9}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-virtual {v11, v4, v9}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const/high16 v9, 0x41200000    # 10.0f
 
@@ -253,28 +253,28 @@
 
     move-result v9
 
-    invoke-virtual {v12, v9}, Landroid/widget/TextView;->setCompoundDrawablePadding(I)V
+    invoke-virtual {v11, v9}, Landroid/widget/TextView;->setCompoundDrawablePadding(I)V
+
+    const/4 v12, -0x2
 
     const/4 v13, -0x2
 
-    const/4 v14, -0x2
+    const/16 v14, 0x30
 
-    const/16 v15, 0x30
+    const/16 v15, 0x17
 
-    const/16 v16, 0x17
+    const/16 v16, 0x6
 
-    const/16 v17, 0x6
+    const/16 v17, 0x0
 
-    const/16 v18, 0x0
-
-    const/16 v19, 0xc
+    const/16 v18, 0xc
 
     .line 47
-    invoke-static/range {v13 .. v19}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static/range {v12 .. v18}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v9
 
-    invoke-virtual {v2, v12, v9}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v2, v11, v9}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     add-int/lit8 v8, v8, 0x1
 
@@ -288,7 +288,7 @@
 
     move-result-object v3
 
-    invoke-direct {v1, v3, v10}, Lorg/telegram/ui/Cells/CheckBoxCell;-><init>(Landroid/content/Context;I)V
+    invoke-direct {v1, v3, v9}, Lorg/telegram/ui/Cells/CheckBoxCell;-><init>(Landroid/content/Context;I)V
 
     .line 50
     invoke-virtual {v1, v4}, Lorg/telegram/ui/Cells/CheckBoxCell;->setMultiline(Z)V
@@ -309,7 +309,9 @@
     invoke-virtual {v1, v3, v5, v4, v7}, Lorg/telegram/ui/Cells/CheckBoxCell;->setText(Ljava/lang/CharSequence;Ljava/lang/String;ZZ)V
 
     .line 52
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 

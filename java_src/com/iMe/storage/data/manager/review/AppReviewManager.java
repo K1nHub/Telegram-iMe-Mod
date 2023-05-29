@@ -77,7 +77,7 @@ public final class AppReviewManager {
             }
             return;
         }
-        Timber.m4e(task.getException());
+        Timber.m6e(task.getException());
     }
 
     /* JADX INFO: Access modifiers changed from: private */

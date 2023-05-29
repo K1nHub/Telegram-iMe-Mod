@@ -12,6 +12,18 @@
 .end annotation
 
 
+# instance fields
+.field private internalScopeRef:Ljava/util/concurrent/atomic/AtomicReference;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/concurrent/atomic/AtomicReference<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+.end field
+
+
 # direct methods
 .method public constructor <init>()V
     .locals 1
@@ -24,6 +36,8 @@
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
 
+    iput-object v0, p0, Landroidx/lifecycle/Lifecycle;->internalScopeRef:Ljava/util/concurrent/atomic/AtomicReference;
+
     return-void
 .end method
 
@@ -33,6 +47,23 @@
 .end method
 
 .method public abstract getCurrentState()Landroidx/lifecycle/Lifecycle$State;
+.end method
+
+.method public final getInternalScopeRef()Ljava/util/concurrent/atomic/AtomicReference;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/concurrent/atomic/AtomicReference<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+
+    .line 55
+    iget-object v0, p0, Landroidx/lifecycle/Lifecycle;->internalScopeRef:Ljava/util/concurrent/atomic/AtomicReference;
+
+    return-object v0
 .end method
 
 .method public abstract removeObserver(Landroidx/lifecycle/LifecycleObserver;)V

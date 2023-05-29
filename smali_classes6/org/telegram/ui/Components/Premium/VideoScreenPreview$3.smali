@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/VideoScreenPreview;)V
     .locals 0
 
-    .line 542
+    .line 543
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview$3;->this$0:Lorg/telegram/ui/Components/Premium/VideoScreenPreview;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,21 +44,21 @@
 .method public onRenderedFirstFrame()V
     .locals 3
 
-    .line 565
+    .line 566
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview$3;->this$0:Lorg/telegram/ui/Components/Premium/VideoScreenPreview;
 
     iget-boolean v1, v0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->firstFrameRendered:Z
 
     if-nez v1, :cond_0
 
-    .line 566
+    .line 567
     iget-object v0, v0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->textureView:Landroid/view/TextureView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/view/TextureView;->setAlpha(F)V
 
-    .line 567
+    .line 568
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview$3;->this$0:Lorg/telegram/ui/Components/Premium/VideoScreenPreview;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->textureView:Landroid/view/TextureView;
@@ -83,7 +83,7 @@
 
     const-wide/16 v1, 0xc8
 
-    .line 573
+    .line 574
     invoke-virtual {v0, v1, v2}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
 
     :cond_0
@@ -121,7 +121,7 @@
 
     if-ne p2, p1, :cond_0
 
-    .line 546
+    .line 547
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview$3;->this$0:Lorg/telegram/ui/Components/Premium/VideoScreenPreview;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
@@ -130,7 +130,7 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Components/VideoPlayer;->seekTo(J)V
 
-    .line 547
+    .line 548
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview$3;->this$0:Lorg/telegram/ui/Components/Premium/VideoScreenPreview;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;
@@ -144,7 +144,7 @@
 
     if-ne p2, p1, :cond_1
 
-    .line 549
+    .line 550
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/VideoScreenPreview$3;->this$0:Lorg/telegram/ui/Components/Premium/VideoScreenPreview;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/Premium/VideoScreenPreview;->videoPlayer:Lorg/telegram/ui/Components/VideoPlayer;

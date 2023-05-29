@@ -41,7 +41,7 @@
 
 
 # instance fields
-.field private final colorKey:Ljava/lang/String;
+.field private final colorKey:I
 
 .field private final iconResId:I
 
@@ -102,122 +102,129 @@
 .method static constructor <clinit>()V
     .locals 5
 
-    .line 13
+    .line 12
     new-instance v0, Lcom/iMe/fork/enums/ChatAttachAlertButton;
 
-    .line 14
+    .line 13
     sget v1, Lorg/telegram/messenger/R$raw;->attach_file:I
 
-    const-string v2, "DOCUMENTS"
+    .line 14
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_attachFileBackground:I
 
-    const/4 v3, 0x0
+    const-string v3, "DOCUMENTS"
 
-    const-string v4, "chat_attachFileBackground"
+    const/4 v4, 0x0
 
-    .line 13
-    invoke-direct {v0, v2, v3, v1, v4}, Lcom/iMe/fork/enums/ChatAttachAlertButton;-><init>(Ljava/lang/String;IILjava/lang/String;)V
+    .line 12
+    invoke-direct {v0, v3, v4, v1, v2}, Lcom/iMe/fork/enums/ChatAttachAlertButton;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Lcom/iMe/fork/enums/ChatAttachAlertButton;->DOCUMENTS:Lcom/iMe/fork/enums/ChatAttachAlertButton;
 
-    .line 17
+    .line 16
     new-instance v0, Lcom/iMe/fork/enums/ChatAttachAlertButton;
 
-    .line 18
+    .line 17
     sget v1, Lorg/telegram/messenger/R$raw;->fork_attach_wallet:I
 
-    const-string v2, "WALLET"
+    .line 18
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_attachWalletBackground:I
 
-    const/4 v3, 0x1
+    const-string v3, "WALLET"
 
-    const-string v4, "iMe_chat_attach_walletBackground"
+    const/4 v4, 0x1
 
-    .line 17
-    invoke-direct {v0, v2, v3, v1, v4}, Lcom/iMe/fork/enums/ChatAttachAlertButton;-><init>(Ljava/lang/String;IILjava/lang/String;)V
+    .line 16
+    invoke-direct {v0, v3, v4, v1, v2}, Lcom/iMe/fork/enums/ChatAttachAlertButton;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Lcom/iMe/fork/enums/ChatAttachAlertButton;->WALLET:Lcom/iMe/fork/enums/ChatAttachAlertButton;
 
-    .line 21
+    .line 20
     new-instance v0, Lcom/iMe/fork/enums/ChatAttachAlertButton;
 
-    .line 22
+    .line 21
     sget v1, Lorg/telegram/messenger/R$raw;->fork_attach_binance:I
 
-    const-string v2, "BINANCE"
+    .line 22
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_attachBinanceBackground:I
 
-    const/4 v3, 0x2
+    const-string v3, "BINANCE"
 
-    const-string v4, "iMe_chat_attach_binanceBackground"
+    const/4 v4, 0x2
 
-    .line 21
-    invoke-direct {v0, v2, v3, v1, v4}, Lcom/iMe/fork/enums/ChatAttachAlertButton;-><init>(Ljava/lang/String;IILjava/lang/String;)V
+    .line 20
+    invoke-direct {v0, v3, v4, v1, v2}, Lcom/iMe/fork/enums/ChatAttachAlertButton;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Lcom/iMe/fork/enums/ChatAttachAlertButton;->BINANCE:Lcom/iMe/fork/enums/ChatAttachAlertButton;
 
-    .line 25
+    .line 24
     new-instance v0, Lcom/iMe/fork/enums/ChatAttachAlertButton;
 
-    .line 26
+    .line 25
     sget v1, Lorg/telegram/messenger/R$raw;->attach_location:I
 
-    const-string v2, "GEO"
+    .line 26
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_attachLocationBackground:I
 
-    const/4 v3, 0x3
+    const-string v3, "GEO"
 
-    const-string v4, "chat_attachLocationBackground"
+    const/4 v4, 0x3
 
-    .line 25
-    invoke-direct {v0, v2, v3, v1, v4}, Lcom/iMe/fork/enums/ChatAttachAlertButton;-><init>(Ljava/lang/String;IILjava/lang/String;)V
+    .line 24
+    invoke-direct {v0, v3, v4, v1, v2}, Lcom/iMe/fork/enums/ChatAttachAlertButton;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Lcom/iMe/fork/enums/ChatAttachAlertButton;->GEO:Lcom/iMe/fork/enums/ChatAttachAlertButton;
 
-    .line 29
+    .line 28
     new-instance v0, Lcom/iMe/fork/enums/ChatAttachAlertButton;
 
-    .line 30
+    .line 29
     sget v1, Lorg/telegram/messenger/R$raw;->attach_poll:I
 
-    const-string v2, "POLL"
+    .line 30
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_attachPollBackground:I
 
-    const/4 v3, 0x4
+    const-string v3, "POLL"
 
-    const-string v4, "chat_attachPollBackground"
+    const/4 v4, 0x4
 
-    .line 29
-    invoke-direct {v0, v2, v3, v1, v4}, Lcom/iMe/fork/enums/ChatAttachAlertButton;-><init>(Ljava/lang/String;IILjava/lang/String;)V
+    .line 28
+    invoke-direct {v0, v3, v4, v1, v2}, Lcom/iMe/fork/enums/ChatAttachAlertButton;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Lcom/iMe/fork/enums/ChatAttachAlertButton;->POLL:Lcom/iMe/fork/enums/ChatAttachAlertButton;
 
-    .line 33
+    .line 32
     new-instance v0, Lcom/iMe/fork/enums/ChatAttachAlertButton;
 
-    .line 34
+    .line 33
     sget v1, Lorg/telegram/messenger/R$raw;->attach_music:I
 
-    const-string v2, "MUSIC"
+    .line 34
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_attachAudioBackground:I
 
-    const/4 v3, 0x5
+    const-string v3, "MUSIC"
 
-    const-string v4, "chat_attachAudioBackground"
+    const/4 v4, 0x5
 
-    .line 33
-    invoke-direct {v0, v2, v3, v1, v4}, Lcom/iMe/fork/enums/ChatAttachAlertButton;-><init>(Ljava/lang/String;IILjava/lang/String;)V
+    .line 32
+    invoke-direct {v0, v3, v4, v1, v2}, Lcom/iMe/fork/enums/ChatAttachAlertButton;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Lcom/iMe/fork/enums/ChatAttachAlertButton;->MUSIC:Lcom/iMe/fork/enums/ChatAttachAlertButton;
 
-    .line 37
+    .line 36
     new-instance v0, Lcom/iMe/fork/enums/ChatAttachAlertButton;
 
-    .line 38
+    .line 37
     sget v1, Lorg/telegram/messenger/R$raw;->attach_contact:I
 
-    const-string v2, "CONTACT"
+    .line 38
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_attachContactBackground:I
 
-    const/4 v3, 0x6
+    const-string v3, "CONTACT"
 
-    const-string v4, "chat_attachContactBackground"
+    const/4 v4, 0x6
 
-    .line 37
-    invoke-direct {v0, v2, v3, v1, v4}, Lcom/iMe/fork/enums/ChatAttachAlertButton;-><init>(Ljava/lang/String;IILjava/lang/String;)V
+    .line 36
+    invoke-direct {v0, v3, v4, v1, v2}, Lcom/iMe/fork/enums/ChatAttachAlertButton;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Lcom/iMe/fork/enums/ChatAttachAlertButton;->CONTACT:Lcom/iMe/fork/enums/ChatAttachAlertButton;
 
@@ -238,24 +245,22 @@
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;IILjava/lang/String;)V
+.method private constructor <init>(Ljava/lang/String;III)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(I",
-            "Ljava/lang/String;",
-            ")V"
+            "(II)V"
         }
     .end annotation
 
-    .line 9
+    .line 8
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 10
+    .line 9
     iput p3, p0, Lcom/iMe/fork/enums/ChatAttachAlertButton;->iconResId:I
 
-    .line 11
-    iput-object p4, p0, Lcom/iMe/fork/enums/ChatAttachAlertButton;->colorKey:Ljava/lang/String;
+    .line 10
+    iput p4, p0, Lcom/iMe/fork/enums/ChatAttachAlertButton;->colorKey:I
 
     return-void
 .end method
@@ -337,19 +342,19 @@
 
 
 # virtual methods
-.method public final getColorKey()Ljava/lang/String;
+.method public final getColorKey()I
     .locals 1
 
-    .line 11
-    iget-object v0, p0, Lcom/iMe/fork/enums/ChatAttachAlertButton;->colorKey:Ljava/lang/String;
+    .line 10
+    iget v0, p0, Lcom/iMe/fork/enums/ChatAttachAlertButton;->colorKey:I
 
-    return-object v0
+    return v0
 .end method
 
 .method public final getIconResId()I
     .locals 1
 
-    .line 10
+    .line 9
     iget v0, p0, Lcom/iMe/fork/enums/ChatAttachAlertButton;->iconResId:I
 
     return v0
@@ -358,7 +363,7 @@
 .method public final getTitle()Ljava/lang/String;
     .locals 2
 
-    .line 42
+    .line 41
     sget-object v0, Lcom/iMe/fork/enums/ChatAttachAlertButton$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
@@ -369,7 +374,7 @@
 
     packed-switch v0, :pswitch_data_0
 
-    .line 49
+    .line 48
     new-instance v0, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {v0}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
@@ -391,7 +396,7 @@
 
     goto :goto_0
 
-    .line 48
+    .line 47
     :pswitch_1
     sget v0, Lorg/telegram/messenger/R$string;->AttachMusic:I
 
@@ -407,7 +412,7 @@
 
     goto :goto_0
 
-    .line 47
+    .line 46
     :pswitch_2
     sget v0, Lorg/telegram/messenger/R$string;->Poll:I
 
@@ -423,7 +428,7 @@
 
     goto :goto_0
 
-    .line 46
+    .line 45
     :pswitch_3
     sget v0, Lorg/telegram/messenger/R$string;->ChatLocation:I
 
@@ -439,7 +444,7 @@
 
     goto :goto_0
 
-    .line 45
+    .line 44
     :pswitch_4
     sget v0, Lorg/telegram/messenger/R$string;->wallet_binance_attach_title:I
 
@@ -453,7 +458,7 @@
 
     goto :goto_0
 
-    .line 44
+    .line 43
     :pswitch_5
     sget v0, Lorg/telegram/messenger/R$string;->drawer_wallet_item_title:I
 
@@ -467,7 +472,7 @@
 
     goto :goto_0
 
-    .line 43
+    .line 42
     :pswitch_6
     sget v0, Lorg/telegram/messenger/R$string;->ChatDocument:I
 

@@ -23,9 +23,9 @@ public class FlickerLoadingView extends View {
     private Paint backgroundPaint;
     private int color0;
     private int color1;
-    private String colorKey1;
-    private String colorKey2;
-    private String colorKey3;
+    private int colorKey1;
+    private int colorKey2;
+    private int colorKey3;
     FlickerLoadingView globalGradientView;
     private LinearGradient gradient;
     private int gradientWidth;
@@ -78,10 +78,10 @@ public class FlickerLoadingView extends View {
         return this.viewType;
     }
 
-    public void setColors(String str, String str2, String str3) {
-        this.colorKey1 = str;
-        this.colorKey2 = str2;
-        this.colorKey3 = str3;
+    public void setColors(int i, int i2, int i3) {
+        this.colorKey1 = i;
+        this.colorKey2 = i2;
+        this.colorKey3 = i3;
         invalidate();
     }
 
@@ -95,8 +95,8 @@ public class FlickerLoadingView extends View {
         this.headerPaint = new Paint();
         this.rectF = new RectF();
         this.showDate = true;
-        this.colorKey1 = "actionBarDefaultSubmenuBackground";
-        this.colorKey2 = "listSelectorSDK21";
+        this.colorKey1 = Theme.key_actionBarDefaultSubmenuBackground;
+        this.colorKey2 = Theme.key_listSelector;
         this.itemsCount = 1;
         this.resourcesProvider = resourcesProvider;
         this.matrix = new Matrix();
@@ -123,22 +123,22 @@ public class FlickerLoadingView extends View {
     /* JADX INFO: Access modifiers changed from: protected */
     @Override // android.view.View
     public void onDraw(Canvas canvas) {
-        int m50dp;
-        int m50dp2;
-        int m50dp3;
-        int m50dp4;
-        int m50dp5;
-        int m50dp6;
-        int m50dp7;
-        int m50dp8;
-        int m50dp9;
-        int m50dp10;
-        int m50dp11;
-        int m50dp12;
-        int m50dp13;
-        int m50dp14;
-        int m50dp15;
-        int m50dp16;
+        int m54dp;
+        int m54dp2;
+        int m54dp3;
+        int m54dp4;
+        int m54dp5;
+        int m54dp6;
+        int m54dp7;
+        int m54dp8;
+        int m54dp9;
+        int m54dp10;
+        int m54dp11;
+        int m54dp12;
+        int m54dp13;
+        int m54dp14;
+        int m54dp15;
+        int m54dp16;
         int measuredWidth;
         int i;
         Paint paint = this.paint;
@@ -154,341 +154,341 @@ public class FlickerLoadingView extends View {
         updateGradient();
         int i2 = this.paddingTop;
         if (this.useHeaderOffset) {
-            int m50dp17 = i2 + AndroidUtilities.m50dp(32);
-            String str = this.colorKey3;
-            if (str != null) {
-                this.headerPaint.setColor(getThemedColor(str));
+            int m54dp17 = i2 + AndroidUtilities.m54dp(32);
+            int i3 = this.colorKey3;
+            if (i3 >= 0) {
+                this.headerPaint.setColor(getThemedColor(i3));
             }
-            canvas.drawRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), AndroidUtilities.m50dp(32), this.colorKey3 != null ? this.headerPaint : paint2);
-            i2 = m50dp17;
+            canvas.drawRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), AndroidUtilities.m54dp(32), this.colorKey3 >= 0 ? this.headerPaint : paint2);
+            i2 = m54dp17;
         }
-        int i3 = 8;
+        int i4 = 8;
         if (getViewType() == 100) {
             int cellHeight = getCellHeight(getMeasuredWidth()) / 2;
-            int m50dp18 = AndroidUtilities.m50dp(18);
-            int m50dp19 = AndroidUtilities.m50dp(16);
-            int m50dp20 = AndroidUtilities.m50dp(4);
-            int m50dp21 = AndroidUtilities.m50dp(6);
-            int m50dp22 = AndroidUtilities.m50dp(6);
-            int m50dp23 = AndroidUtilities.m50dp(8);
-            int i4 = m50dp18 + m50dp19;
-            int i5 = cellHeight - m50dp22;
-            int i6 = m50dp22 + cellHeight;
+            int m54dp18 = AndroidUtilities.m54dp(18);
+            int m54dp19 = AndroidUtilities.m54dp(16);
+            int m54dp20 = AndroidUtilities.m54dp(4);
+            int m54dp21 = AndroidUtilities.m54dp(6);
+            int m54dp22 = AndroidUtilities.m54dp(6);
+            int m54dp23 = AndroidUtilities.m54dp(8);
+            int i5 = m54dp18 + m54dp19;
+            int i6 = cellHeight - m54dp22;
+            int i7 = m54dp22 + cellHeight;
             float f = cellHeight;
-            canvas.drawCircle(checkRtl(i4), f, m50dp19, paint2);
-            float f2 = i4 * 2;
-            this.rectF.set(f2, i5 - m50dp21, (measuredWidth / 4) + i, i5);
+            canvas.drawCircle(checkRtl(i5), f, m54dp19, paint2);
+            float f2 = i5 * 2;
+            this.rectF.set(f2, i6 - m54dp21, (measuredWidth / 4) + i, i6);
             checkRtl(this.rectF);
-            float f3 = m50dp20;
+            float f3 = m54dp20;
             canvas.drawRoundRect(this.rectF, f3, f3, paint2);
-            this.rectF.set(f2, i6, (measuredWidth / 2) + i, m50dp21 + i6);
+            this.rectF.set(f2, i7, (measuredWidth / 2) + i, m54dp21 + i7);
             checkRtl(this.rectF);
             canvas.drawRoundRect(this.rectF, f3, f3, paint2);
-            canvas.drawCircle(checkRtl((measuredWidth - m50dp18) - m50dp23), f, m50dp23, paint2);
+            canvas.drawCircle(checkRtl((measuredWidth - m54dp18) - m54dp23), f, m54dp23, paint2);
         } else {
-            int i7 = 24;
-            int i8 = 0;
-            int i9 = 1;
+            int i8 = 24;
+            int i9 = 0;
+            int i10 = 1;
             if (getViewType() == 7) {
                 while (i2 <= getMeasuredHeight()) {
                     int cellHeight2 = getCellHeight(getMeasuredWidth());
-                    canvas.drawCircle(checkRtl(AndroidUtilities.m50dp(10) + m50dp16), (cellHeight2 >> 1) + i2, AndroidUtilities.m50dp(28), paint2);
-                    this.rectF.set(AndroidUtilities.m50dp(76), AndroidUtilities.m50dp(16) + i2, AndroidUtilities.m50dp(148), AndroidUtilities.m50dp(24) + i2);
+                    canvas.drawCircle(checkRtl(AndroidUtilities.m54dp(10) + m54dp16), (cellHeight2 >> 1) + i2, AndroidUtilities.m54dp(28), paint2);
+                    this.rectF.set(AndroidUtilities.m54dp(76), AndroidUtilities.m54dp(16) + i2, AndroidUtilities.m54dp(148), AndroidUtilities.m54dp(24) + i2);
                     checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                    this.rectF.set(AndroidUtilities.m50dp(76), AndroidUtilities.m50dp(38) + i2, AndroidUtilities.m50dp(268), AndroidUtilities.m50dp(46) + i2);
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                    this.rectF.set(AndroidUtilities.m54dp(76), AndroidUtilities.m54dp(38) + i2, AndroidUtilities.m54dp(268), AndroidUtilities.m54dp(46) + i2);
                     checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
                     if (SharedConfig.useThreeLinesLayout) {
-                        this.rectF.set(AndroidUtilities.m50dp(76), AndroidUtilities.m50dp(54) + i2, AndroidUtilities.m50dp(220), AndroidUtilities.m50dp(62) + i2);
+                        this.rectF.set(AndroidUtilities.m54dp(76), AndroidUtilities.m54dp(54) + i2, AndroidUtilities.m54dp(220), AndroidUtilities.m54dp(62) + i2);
                         checkRtl(this.rectF);
-                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
+                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
                     }
                     if (this.showDate) {
-                        this.rectF.set(getMeasuredWidth() - AndroidUtilities.m50dp(50), AndroidUtilities.m50dp(16) + i2, getMeasuredWidth() - AndroidUtilities.m50dp(12), AndroidUtilities.m50dp(24) + i2);
+                        this.rectF.set(getMeasuredWidth() - AndroidUtilities.m54dp(50), AndroidUtilities.m54dp(16) + i2, getMeasuredWidth() - AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(24) + i2);
                         checkRtl(this.rectF);
-                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
+                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
                     }
                     i2 += getCellHeight(getMeasuredWidth());
-                    int i10 = i8 + 1;
-                    if (this.isSingleCell && i10 >= this.itemsCount) {
-                        break;
-                    }
-                    i8 = i10;
-                }
-            } else if (getViewType() == 24) {
-                while (i2 <= getMeasuredHeight()) {
-                    canvas.drawCircle(checkRtl(AndroidUtilities.m50dp(10) + m50dp15), AndroidUtilities.m50dp(10) + i2 + m50dp15, AndroidUtilities.m50dp(14), paint2);
-                    canvas.save();
-                    canvas.translate(BitmapDescriptorFactory.HUE_RED, -AndroidUtilities.m50dp(4));
-                    this.rectF.set(AndroidUtilities.m50dp(50), AndroidUtilities.m50dp(16) + i2, AndroidUtilities.m50dp(148), AndroidUtilities.m50dp(24) + i2);
-                    checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                    this.rectF.set(AndroidUtilities.m50dp(50), AndroidUtilities.m50dp(38) + i2, AndroidUtilities.m50dp(268), AndroidUtilities.m50dp(46) + i2);
-                    checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                    if (SharedConfig.useThreeLinesLayout) {
-                        this.rectF.set(AndroidUtilities.m50dp(50), AndroidUtilities.m50dp(54) + i2, AndroidUtilities.m50dp(220), AndroidUtilities.m50dp(62) + i2);
-                        checkRtl(this.rectF);
-                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                    }
-                    if (this.showDate) {
-                        this.rectF.set(getMeasuredWidth() - AndroidUtilities.m50dp(50), AndroidUtilities.m50dp(16) + i2, getMeasuredWidth() - AndroidUtilities.m50dp(12), AndroidUtilities.m50dp(24) + i2);
-                        checkRtl(this.rectF);
-                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                    }
-                    canvas.restore();
-                    i2 += getCellHeight(getMeasuredWidth());
-                    int i11 = i8 + 1;
+                    int i11 = i9 + 1;
                     if (this.isSingleCell && i11 >= this.itemsCount) {
                         break;
                     }
-                    i8 = i11;
+                    i9 = i11;
+                }
+            } else if (getViewType() == 24) {
+                while (i2 <= getMeasuredHeight()) {
+                    canvas.drawCircle(checkRtl(AndroidUtilities.m54dp(10) + m54dp15), AndroidUtilities.m54dp(10) + i2 + m54dp15, AndroidUtilities.m54dp(14), paint2);
+                    canvas.save();
+                    canvas.translate(BitmapDescriptorFactory.HUE_RED, -AndroidUtilities.m54dp(4));
+                    this.rectF.set(AndroidUtilities.m54dp(50), AndroidUtilities.m54dp(16) + i2, AndroidUtilities.m54dp(148), AndroidUtilities.m54dp(24) + i2);
+                    checkRtl(this.rectF);
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                    this.rectF.set(AndroidUtilities.m54dp(50), AndroidUtilities.m54dp(38) + i2, AndroidUtilities.m54dp(268), AndroidUtilities.m54dp(46) + i2);
+                    checkRtl(this.rectF);
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                    if (SharedConfig.useThreeLinesLayout) {
+                        this.rectF.set(AndroidUtilities.m54dp(50), AndroidUtilities.m54dp(54) + i2, AndroidUtilities.m54dp(220), AndroidUtilities.m54dp(62) + i2);
+                        checkRtl(this.rectF);
+                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                    }
+                    if (this.showDate) {
+                        this.rectF.set(getMeasuredWidth() - AndroidUtilities.m54dp(50), AndroidUtilities.m54dp(16) + i2, getMeasuredWidth() - AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(24) + i2);
+                        checkRtl(this.rectF);
+                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                    }
+                    canvas.restore();
+                    i2 += getCellHeight(getMeasuredWidth());
+                    int i12 = i9 + 1;
+                    if (this.isSingleCell && i12 >= this.itemsCount) {
+                        break;
+                    }
+                    i9 = i12;
                 }
             } else if (getViewType() == 18) {
-                int i12 = i2;
-                while (i12 <= getMeasuredHeight()) {
-                    canvas.drawCircle(checkRtl(this.paddingLeft + AndroidUtilities.m50dp(9) + m50dp14), AndroidUtilities.m50dp(32) + i12, AndroidUtilities.m50dp(25), paint2);
-                    int i13 = (i8 % 2 == 0 ? 52 : 72) + 76;
-                    this.rectF.set(AndroidUtilities.m50dp(76), AndroidUtilities.m50dp(20) + i12, AndroidUtilities.m50dp(i13), AndroidUtilities.m50dp(28) + i12);
+                int i13 = i2;
+                while (i13 <= getMeasuredHeight()) {
+                    canvas.drawCircle(checkRtl(this.paddingLeft + AndroidUtilities.m54dp(9) + m54dp14), AndroidUtilities.m54dp(32) + i13, AndroidUtilities.m54dp(25), paint2);
+                    int i14 = (i9 % 2 == 0 ? 52 : 72) + 76;
+                    this.rectF.set(AndroidUtilities.m54dp(76), AndroidUtilities.m54dp(20) + i13, AndroidUtilities.m54dp(i14), AndroidUtilities.m54dp(28) + i13);
                     checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                    int i14 = i13 + 8;
-                    this.rectF.set(AndroidUtilities.m50dp(i14), AndroidUtilities.m50dp(20) + i12, AndroidUtilities.m50dp(i14 + 84), AndroidUtilities.m50dp(28) + i12);
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                    int i15 = i14 + 8;
+                    this.rectF.set(AndroidUtilities.m54dp(i15), AndroidUtilities.m54dp(20) + i13, AndroidUtilities.m54dp(i15 + 84), AndroidUtilities.m54dp(28) + i13);
                     checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                    this.rectF.set(AndroidUtilities.m50dp(76), AndroidUtilities.m50dp(42) + i12, AndroidUtilities.m50dp(140), AndroidUtilities.m50dp(50) + i12);
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                    this.rectF.set(AndroidUtilities.m54dp(76), AndroidUtilities.m54dp(42) + i13, AndroidUtilities.m54dp(140), AndroidUtilities.m54dp(50) + i13);
                     checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                    canvas.drawLine(AndroidUtilities.m50dp(76), getCellHeight(getMeasuredWidth()) + i12, getMeasuredWidth(), getCellHeight(getMeasuredWidth()) + i12, paint2);
-                    i12 += getCellHeight(getMeasuredWidth());
-                    int i15 = i8 + 1;
-                    if (this.isSingleCell && i15 >= this.itemsCount) {
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                    canvas.drawLine(AndroidUtilities.m54dp(76), getCellHeight(getMeasuredWidth()) + i13, getMeasuredWidth(), getCellHeight(getMeasuredWidth()) + i13, paint2);
+                    i13 += getCellHeight(getMeasuredWidth());
+                    int i16 = i9 + 1;
+                    if (this.isSingleCell && i16 >= this.itemsCount) {
                         break;
                     }
-                    i8 = i15;
+                    i9 = i16;
                 }
             } else if (getViewType() == 19) {
-                int i16 = i2;
-                while (i16 <= getMeasuredHeight()) {
-                    canvas.drawCircle(checkRtl(this.paddingLeft + AndroidUtilities.m50dp(9) + m50dp13), AndroidUtilities.m50dp(29) + i16, AndroidUtilities.m50dp(20), paint2);
-                    this.rectF.set(AndroidUtilities.m50dp(76), AndroidUtilities.m50dp(16) + i16, AndroidUtilities.m50dp((i8 % 2 == 0 ? 92 : 128) + 76), AndroidUtilities.m50dp(i7) + i16);
+                int i17 = i2;
+                while (i17 <= getMeasuredHeight()) {
+                    canvas.drawCircle(checkRtl(this.paddingLeft + AndroidUtilities.m54dp(9) + m54dp13), AndroidUtilities.m54dp(29) + i17, AndroidUtilities.m54dp(20), paint2);
+                    this.rectF.set(AndroidUtilities.m54dp(76), AndroidUtilities.m54dp(16) + i17, AndroidUtilities.m54dp((i9 % 2 == 0 ? 92 : 128) + 76), AndroidUtilities.m54dp(i8) + i17);
                     checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                    this.rectF.set(AndroidUtilities.m50dp(76), AndroidUtilities.m50dp(38) + i16, AndroidUtilities.m50dp((int) PsExtractor.VIDEO_STREAM_MASK), AndroidUtilities.m50dp(46) + i16);
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                    this.rectF.set(AndroidUtilities.m54dp(76), AndroidUtilities.m54dp(38) + i17, AndroidUtilities.m54dp((int) PsExtractor.VIDEO_STREAM_MASK), AndroidUtilities.m54dp(46) + i17);
                     checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                    int i17 = i7;
-                    canvas.drawLine(AndroidUtilities.m50dp(76), getCellHeight(getMeasuredWidth()) + i16, getMeasuredWidth(), getCellHeight(getMeasuredWidth()) + i16, paint2);
-                    i16 += getCellHeight(getMeasuredWidth());
-                    int i18 = i8 + 1;
-                    if (this.isSingleCell && i18 >= this.itemsCount) {
-                        break;
-                    }
-                    i8 = i18;
-                    i7 = i17;
-                }
-            } else if (getViewType() == 1) {
-                while (i2 <= getMeasuredHeight()) {
-                    canvas.drawCircle(checkRtl(AndroidUtilities.m50dp(9) + m50dp12), (AndroidUtilities.m50dp(78) >> 1) + i2, AndroidUtilities.m50dp(25), paint2);
-                    this.rectF.set(AndroidUtilities.m50dp(68), AndroidUtilities.m50dp(20) + i2, AndroidUtilities.m50dp(140), AndroidUtilities.m50dp(28) + i2);
-                    checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                    this.rectF.set(AndroidUtilities.m50dp(68), AndroidUtilities.m50dp(42) + i2, AndroidUtilities.m50dp(260), AndroidUtilities.m50dp(50) + i2);
-                    checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                    if (this.showDate) {
-                        this.rectF.set(getMeasuredWidth() - AndroidUtilities.m50dp(50), AndroidUtilities.m50dp(20) + i2, getMeasuredWidth() - AndroidUtilities.m50dp(12), AndroidUtilities.m50dp(28) + i2);
-                        checkRtl(this.rectF);
-                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                    }
-                    i2 += getCellHeight(getMeasuredWidth());
-                    int i19 = i8 + 1;
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                    int i18 = i8;
+                    canvas.drawLine(AndroidUtilities.m54dp(76), getCellHeight(getMeasuredWidth()) + i17, getMeasuredWidth(), getCellHeight(getMeasuredWidth()) + i17, paint2);
+                    i17 += getCellHeight(getMeasuredWidth());
+                    int i19 = i9 + 1;
                     if (this.isSingleCell && i19 >= this.itemsCount) {
                         break;
                     }
-                    i8 = i19;
+                    i9 = i19;
+                    i8 = i18;
                 }
-            } else if (getViewType() == 2) {
-                int measuredWidth2 = (getMeasuredWidth() - (AndroidUtilities.m50dp(2) * (getColumnsCount() - 1))) / getColumnsCount();
-                int i20 = i2;
-                int i21 = 0;
-                while (true) {
-                    if (i20 >= getMeasuredHeight() && !this.isSingleCell) {
+            } else if (getViewType() == 1) {
+                while (i2 <= getMeasuredHeight()) {
+                    canvas.drawCircle(checkRtl(AndroidUtilities.m54dp(9) + m54dp12), (AndroidUtilities.m54dp(78) >> 1) + i2, AndroidUtilities.m54dp(25), paint2);
+                    this.rectF.set(AndroidUtilities.m54dp(68), AndroidUtilities.m54dp(20) + i2, AndroidUtilities.m54dp(140), AndroidUtilities.m54dp(28) + i2);
+                    checkRtl(this.rectF);
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                    this.rectF.set(AndroidUtilities.m54dp(68), AndroidUtilities.m54dp(42) + i2, AndroidUtilities.m54dp(260), AndroidUtilities.m54dp(50) + i2);
+                    checkRtl(this.rectF);
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                    if (this.showDate) {
+                        this.rectF.set(getMeasuredWidth() - AndroidUtilities.m54dp(50), AndroidUtilities.m54dp(20) + i2, getMeasuredWidth() - AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(28) + i2);
+                        checkRtl(this.rectF);
+                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                    }
+                    i2 += getCellHeight(getMeasuredWidth());
+                    int i20 = i9 + 1;
+                    if (this.isSingleCell && i20 >= this.itemsCount) {
                         break;
                     }
-                    for (int i22 = 0; i22 < getColumnsCount(); i22++) {
-                        if (i21 != 0 || i22 >= this.skipDrawItemsCount) {
-                            canvas.drawRect((measuredWidth2 + AndroidUtilities.m50dp(2)) * i22, i20, m50dp11 + measuredWidth2, i20 + measuredWidth2, paint2);
+                    i9 = i20;
+                }
+            } else if (getViewType() == 2) {
+                int measuredWidth2 = (getMeasuredWidth() - (AndroidUtilities.m54dp(2) * (getColumnsCount() - 1))) / getColumnsCount();
+                int i21 = i2;
+                int i22 = 0;
+                while (true) {
+                    if (i21 >= getMeasuredHeight() && !this.isSingleCell) {
+                        break;
+                    }
+                    for (int i23 = 0; i23 < getColumnsCount(); i23++) {
+                        if (i22 != 0 || i23 >= this.skipDrawItemsCount) {
+                            canvas.drawRect((measuredWidth2 + AndroidUtilities.m54dp(2)) * i23, i21, m54dp11 + measuredWidth2, i21 + measuredWidth2, paint2);
                         }
                     }
-                    i20 += measuredWidth2 + AndroidUtilities.m50dp(2);
-                    i21++;
-                    if (this.isSingleCell && i21 >= 2) {
+                    i21 += measuredWidth2 + AndroidUtilities.m54dp(2);
+                    i22++;
+                    if (this.isSingleCell && i22 >= 2) {
                         break;
                     }
                 }
             } else if (getViewType() == 3) {
                 while (i2 <= getMeasuredHeight()) {
-                    this.rectF.set(AndroidUtilities.m50dp(12), AndroidUtilities.m50dp(8) + i2, AndroidUtilities.m50dp(52), AndroidUtilities.m50dp(48) + i2);
+                    this.rectF.set(AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(8) + i2, AndroidUtilities.m54dp(52), AndroidUtilities.m54dp(48) + i2);
                     checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                    this.rectF.set(AndroidUtilities.m50dp(68), AndroidUtilities.m50dp(12) + i2, AndroidUtilities.m50dp(140), AndroidUtilities.m50dp(20) + i2);
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                    this.rectF.set(AndroidUtilities.m54dp(68), AndroidUtilities.m54dp(12) + i2, AndroidUtilities.m54dp(140), AndroidUtilities.m54dp(20) + i2);
                     checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                    this.rectF.set(AndroidUtilities.m50dp(68), AndroidUtilities.m50dp(34) + i2, AndroidUtilities.m50dp(260), AndroidUtilities.m50dp(42) + i2);
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                    this.rectF.set(AndroidUtilities.m54dp(68), AndroidUtilities.m54dp(34) + i2, AndroidUtilities.m54dp(260), AndroidUtilities.m54dp(42) + i2);
                     checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
                     if (this.showDate) {
-                        this.rectF.set(getMeasuredWidth() - AndroidUtilities.m50dp(50), AndroidUtilities.m50dp(12) + i2, getMeasuredWidth() - AndroidUtilities.m50dp(12), AndroidUtilities.m50dp(20) + i2);
+                        this.rectF.set(getMeasuredWidth() - AndroidUtilities.m54dp(50), AndroidUtilities.m54dp(12) + i2, getMeasuredWidth() - AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(20) + i2);
                         checkRtl(this.rectF);
-                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
+                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
                     }
                     i2 += getCellHeight(getMeasuredWidth());
-                    int i23 = i8 + 1;
-                    if (this.isSingleCell && i23 >= this.itemsCount) {
-                        break;
-                    }
-                    i8 = i23;
-                }
-            } else if (getViewType() == 4) {
-                while (i2 <= getMeasuredHeight()) {
-                    canvas.drawCircle(checkRtl(AndroidUtilities.m50dp(12) + m50dp10), AndroidUtilities.m50dp(6) + i2 + m50dp10, AndroidUtilities.m50dp(44) >> 1, paint2);
-                    this.rectF.set(AndroidUtilities.m50dp(68), AndroidUtilities.m50dp(12) + i2, AndroidUtilities.m50dp(140), AndroidUtilities.m50dp(20) + i2);
-                    checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                    this.rectF.set(AndroidUtilities.m50dp(68), AndroidUtilities.m50dp(34) + i2, AndroidUtilities.m50dp(260), AndroidUtilities.m50dp(42) + i2);
-                    checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                    if (this.showDate) {
-                        this.rectF.set(getMeasuredWidth() - AndroidUtilities.m50dp(50), AndroidUtilities.m50dp(12) + i2, getMeasuredWidth() - AndroidUtilities.m50dp(12), AndroidUtilities.m50dp(20) + i2);
-                        checkRtl(this.rectF);
-                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                    }
-                    i2 += getCellHeight(getMeasuredWidth());
-                    int i24 = i8 + 1;
+                    int i24 = i9 + 1;
                     if (this.isSingleCell && i24 >= this.itemsCount) {
                         break;
                     }
-                    i8 = i24;
+                    i9 = i24;
                 }
-            } else if (getViewType() == 5) {
+            } else if (getViewType() == 4) {
                 while (i2 <= getMeasuredHeight()) {
-                    this.rectF.set(AndroidUtilities.m50dp(10), AndroidUtilities.m50dp(11) + i2, AndroidUtilities.m50dp(62), AndroidUtilities.m50dp(63) + i2);
+                    canvas.drawCircle(checkRtl(AndroidUtilities.m54dp(12) + m54dp10), AndroidUtilities.m54dp(6) + i2 + m54dp10, AndroidUtilities.m54dp(44) >> 1, paint2);
+                    this.rectF.set(AndroidUtilities.m54dp(68), AndroidUtilities.m54dp(12) + i2, AndroidUtilities.m54dp(140), AndroidUtilities.m54dp(20) + i2);
                     checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                    this.rectF.set(AndroidUtilities.m50dp(68), AndroidUtilities.m50dp(12) + i2, AndroidUtilities.m50dp(140), AndroidUtilities.m50dp(20) + i2);
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                    this.rectF.set(AndroidUtilities.m54dp(68), AndroidUtilities.m54dp(34) + i2, AndroidUtilities.m54dp(260), AndroidUtilities.m54dp(42) + i2);
                     checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                    this.rectF.set(AndroidUtilities.m50dp(68), AndroidUtilities.m50dp(34) + i2, AndroidUtilities.m50dp(268), AndroidUtilities.m50dp(42) + i2);
-                    checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                    this.rectF.set(AndroidUtilities.m50dp(68), AndroidUtilities.m50dp(54) + i2, AndroidUtilities.m50dp((int) TsExtractor.TS_PACKET_SIZE), AndroidUtilities.m50dp(62) + i2);
-                    checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
                     if (this.showDate) {
-                        this.rectF.set(getMeasuredWidth() - AndroidUtilities.m50dp(50), AndroidUtilities.m50dp(12) + i2, getMeasuredWidth() - AndroidUtilities.m50dp(12), AndroidUtilities.m50dp(20) + i2);
+                        this.rectF.set(getMeasuredWidth() - AndroidUtilities.m54dp(50), AndroidUtilities.m54dp(12) + i2, getMeasuredWidth() - AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(20) + i2);
                         checkRtl(this.rectF);
-                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
+                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
                     }
                     i2 += getCellHeight(getMeasuredWidth());
-                    int i25 = i8 + 1;
+                    int i25 = i9 + 1;
                     if (this.isSingleCell && i25 >= this.itemsCount) {
                         break;
                     }
-                    i8 = i25;
+                    i9 = i25;
                 }
-            } else if (getViewType() == 6 || getViewType() == 10) {
+            } else if (getViewType() == 5) {
                 while (i2 <= getMeasuredHeight()) {
-                    canvas.drawCircle(checkRtl(this.paddingLeft + AndroidUtilities.m50dp(9) + m50dp), (AndroidUtilities.m50dp(64) >> 1) + i2, AndroidUtilities.m50dp(23), paint2);
-                    this.rectF.set(this.paddingLeft + AndroidUtilities.m50dp(68), AndroidUtilities.m50dp(17) + i2, this.paddingLeft + AndroidUtilities.m50dp(260), AndroidUtilities.m50dp(25) + i2);
+                    this.rectF.set(AndroidUtilities.m54dp(10), AndroidUtilities.m54dp(11) + i2, AndroidUtilities.m54dp(62), AndroidUtilities.m54dp(63) + i2);
                     checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                    this.rectF.set(this.paddingLeft + AndroidUtilities.m50dp(68), AndroidUtilities.m50dp(39) + i2, this.paddingLeft + AndroidUtilities.m50dp(140), AndroidUtilities.m50dp(47) + i2);
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                    this.rectF.set(AndroidUtilities.m54dp(68), AndroidUtilities.m54dp(12) + i2, AndroidUtilities.m54dp(140), AndroidUtilities.m54dp(20) + i2);
                     checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                    this.rectF.set(AndroidUtilities.m54dp(68), AndroidUtilities.m54dp(34) + i2, AndroidUtilities.m54dp(268), AndroidUtilities.m54dp(42) + i2);
+                    checkRtl(this.rectF);
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                    this.rectF.set(AndroidUtilities.m54dp(68), AndroidUtilities.m54dp(54) + i2, AndroidUtilities.m54dp((int) TsExtractor.TS_PACKET_SIZE), AndroidUtilities.m54dp(62) + i2);
+                    checkRtl(this.rectF);
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
                     if (this.showDate) {
-                        this.rectF.set(getMeasuredWidth() - AndroidUtilities.m50dp(50), AndroidUtilities.m50dp(20) + i2, getMeasuredWidth() - AndroidUtilities.m50dp(12), AndroidUtilities.m50dp(28) + i2);
+                        this.rectF.set(getMeasuredWidth() - AndroidUtilities.m54dp(50), AndroidUtilities.m54dp(12) + i2, getMeasuredWidth() - AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(20) + i2);
                         checkRtl(this.rectF);
-                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
+                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
                     }
                     i2 += getCellHeight(getMeasuredWidth());
-                    int i26 = i8 + 1;
+                    int i26 = i9 + 1;
                     if (this.isSingleCell && i26 >= this.itemsCount) {
                         break;
                     }
-                    i8 = i26;
+                    i9 = i26;
                 }
-            } else if (getViewType() == 8) {
+            } else if (getViewType() == 6 || getViewType() == 10) {
                 while (i2 <= getMeasuredHeight()) {
-                    canvas.drawCircle(checkRtl(this.paddingLeft + AndroidUtilities.m50dp(11) + m50dp9), (AndroidUtilities.m50dp(64) >> 1) + i2, AndroidUtilities.m50dp(23), paint2);
-                    this.rectF.set(this.paddingLeft + AndroidUtilities.m50dp(68), AndroidUtilities.m50dp(17) + i2, this.paddingLeft + AndroidUtilities.m50dp(140), AndroidUtilities.m50dp(25) + i2);
+                    canvas.drawCircle(checkRtl(this.paddingLeft + AndroidUtilities.m54dp(9) + m54dp), (AndroidUtilities.m54dp(64) >> 1) + i2, AndroidUtilities.m54dp(23), paint2);
+                    this.rectF.set(this.paddingLeft + AndroidUtilities.m54dp(68), AndroidUtilities.m54dp(17) + i2, this.paddingLeft + AndroidUtilities.m54dp(260), AndroidUtilities.m54dp(25) + i2);
                     checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                    this.rectF.set(this.paddingLeft + AndroidUtilities.m50dp(68), AndroidUtilities.m50dp(39) + i2, this.paddingLeft + AndroidUtilities.m50dp(260), AndroidUtilities.m50dp(47) + i2);
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                    this.rectF.set(this.paddingLeft + AndroidUtilities.m54dp(68), AndroidUtilities.m54dp(39) + i2, this.paddingLeft + AndroidUtilities.m54dp(140), AndroidUtilities.m54dp(47) + i2);
                     checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
                     if (this.showDate) {
-                        this.rectF.set(getMeasuredWidth() - AndroidUtilities.m50dp(50), AndroidUtilities.m50dp(20) + i2, getMeasuredWidth() - AndroidUtilities.m50dp(12), AndroidUtilities.m50dp(28) + i2);
+                        this.rectF.set(getMeasuredWidth() - AndroidUtilities.m54dp(50), AndroidUtilities.m54dp(20) + i2, getMeasuredWidth() - AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(28) + i2);
                         checkRtl(this.rectF);
-                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
+                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
                     }
                     i2 += getCellHeight(getMeasuredWidth());
-                    int i27 = i8 + 1;
+                    int i27 = i9 + 1;
                     if (this.isSingleCell && i27 >= this.itemsCount) {
                         break;
                     }
-                    i8 = i27;
+                    i9 = i27;
                 }
-            } else if (getViewType() == 9) {
+            } else if (getViewType() == 8) {
                 while (i2 <= getMeasuredHeight()) {
-                    canvas.drawCircle(checkRtl(AndroidUtilities.m50dp(35)), (getCellHeight(getMeasuredWidth()) >> 1) + i2, AndroidUtilities.m50dp(32) / 2, paint2);
-                    this.rectF.set(AndroidUtilities.m50dp(72), AndroidUtilities.m50dp(16) + i2, AndroidUtilities.m50dp(268), i2 + AndroidUtilities.m50dp(24));
+                    canvas.drawCircle(checkRtl(this.paddingLeft + AndroidUtilities.m54dp(11) + m54dp9), (AndroidUtilities.m54dp(64) >> 1) + i2, AndroidUtilities.m54dp(23), paint2);
+                    this.rectF.set(this.paddingLeft + AndroidUtilities.m54dp(68), AndroidUtilities.m54dp(17) + i2, this.paddingLeft + AndroidUtilities.m54dp(140), AndroidUtilities.m54dp(25) + i2);
                     checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                    this.rectF.set(AndroidUtilities.m50dp(72), AndroidUtilities.m50dp(38) + i2, AndroidUtilities.m50dp(140), AndroidUtilities.m50dp(46) + i2);
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                    this.rectF.set(this.paddingLeft + AndroidUtilities.m54dp(68), AndroidUtilities.m54dp(39) + i2, this.paddingLeft + AndroidUtilities.m54dp(260), AndroidUtilities.m54dp(47) + i2);
                     checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
                     if (this.showDate) {
-                        this.rectF.set(getMeasuredWidth() - AndroidUtilities.m50dp(50), AndroidUtilities.m50dp(16) + i2, getMeasuredWidth() - AndroidUtilities.m50dp(12), AndroidUtilities.m50dp(24) + i2);
+                        this.rectF.set(getMeasuredWidth() - AndroidUtilities.m54dp(50), AndroidUtilities.m54dp(20) + i2, getMeasuredWidth() - AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(28) + i2);
                         checkRtl(this.rectF);
-                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
+                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
                     }
                     i2 += getCellHeight(getMeasuredWidth());
-                    int i28 = i8 + 1;
+                    int i28 = i9 + 1;
                     if (this.isSingleCell && i28 >= this.itemsCount) {
                         break;
                     }
-                    i8 = i28;
+                    i9 = i28;
+                }
+            } else if (getViewType() == 9) {
+                while (i2 <= getMeasuredHeight()) {
+                    canvas.drawCircle(checkRtl(AndroidUtilities.m54dp(35)), (getCellHeight(getMeasuredWidth()) >> 1) + i2, AndroidUtilities.m54dp(32) / 2, paint2);
+                    this.rectF.set(AndroidUtilities.m54dp(72), AndroidUtilities.m54dp(16) + i2, AndroidUtilities.m54dp(268), i2 + AndroidUtilities.m54dp(24));
+                    checkRtl(this.rectF);
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                    this.rectF.set(AndroidUtilities.m54dp(72), AndroidUtilities.m54dp(38) + i2, AndroidUtilities.m54dp(140), AndroidUtilities.m54dp(46) + i2);
+                    checkRtl(this.rectF);
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                    if (this.showDate) {
+                        this.rectF.set(getMeasuredWidth() - AndroidUtilities.m54dp(50), AndroidUtilities.m54dp(16) + i2, getMeasuredWidth() - AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(24) + i2);
+                        checkRtl(this.rectF);
+                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                    }
+                    i2 += getCellHeight(getMeasuredWidth());
+                    int i29 = i9 + 1;
+                    if (this.isSingleCell && i29 >= this.itemsCount) {
+                        break;
+                    }
+                    i9 = i29;
                 }
             } else if (getViewType() == 11) {
-                int i29 = 0;
+                int i30 = 0;
                 while (i2 <= getMeasuredHeight()) {
-                    this.rectF.set(AndroidUtilities.m50dp(18), AndroidUtilities.m51dp(14.0f), (getMeasuredWidth() * 0.5f) + AndroidUtilities.m51dp(this.randomParams[0] * 40.0f), AndroidUtilities.m51dp(14.0f) + AndroidUtilities.m50dp(8));
+                    this.rectF.set(AndroidUtilities.m54dp(18), AndroidUtilities.m55dp(14.0f), (getMeasuredWidth() * 0.5f) + AndroidUtilities.m55dp(this.randomParams[0] * 40.0f), AndroidUtilities.m55dp(14.0f) + AndroidUtilities.m54dp(8));
                     checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                    this.rectF.set(getMeasuredWidth() - AndroidUtilities.m50dp(18), AndroidUtilities.m51dp(14.0f), (getMeasuredWidth() - (getMeasuredWidth() * 0.2f)) - AndroidUtilities.m51dp(this.randomParams[0] * 20.0f), AndroidUtilities.m51dp(14.0f) + AndroidUtilities.m50dp(8));
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                    this.rectF.set(getMeasuredWidth() - AndroidUtilities.m54dp(18), AndroidUtilities.m55dp(14.0f), (getMeasuredWidth() - (getMeasuredWidth() * 0.2f)) - AndroidUtilities.m55dp(this.randomParams[0] * 20.0f), AndroidUtilities.m55dp(14.0f) + AndroidUtilities.m54dp(8));
                     checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
                     i2 += getCellHeight(getMeasuredWidth());
-                    i29++;
-                    if (this.isSingleCell && i29 >= this.itemsCount) {
+                    i30++;
+                    if (this.isSingleCell && i30 >= this.itemsCount) {
                         break;
                     }
                 }
             } else if (getViewType() == 12) {
-                int m50dp24 = i2 + AndroidUtilities.m50dp(14);
-                while (m50dp24 <= getMeasuredHeight()) {
+                int m54dp24 = i2 + AndroidUtilities.m54dp(14);
+                while (m54dp24 <= getMeasuredHeight()) {
                     int measuredWidth3 = getMeasuredWidth() / 4;
-                    for (int i30 = 0; i30 < 4; i30++) {
-                        float f4 = (measuredWidth3 * i30) + (measuredWidth3 / 2.0f);
-                        canvas.drawCircle(f4, AndroidUtilities.m50dp(7) + m50dp24 + (AndroidUtilities.m50dp(56) / 2.0f), AndroidUtilities.m51dp(28.0f), paint2);
-                        float m50dp25 = AndroidUtilities.m50dp(7) + m50dp24 + AndroidUtilities.m50dp(56) + AndroidUtilities.m50dp(16);
+                    for (int i31 = 0; i31 < 4; i31++) {
+                        float f4 = (measuredWidth3 * i31) + (measuredWidth3 / 2.0f);
+                        canvas.drawCircle(f4, AndroidUtilities.m54dp(7) + m54dp24 + (AndroidUtilities.m54dp(56) / 2.0f), AndroidUtilities.m55dp(28.0f), paint2);
+                        float m54dp25 = AndroidUtilities.m54dp(7) + m54dp24 + AndroidUtilities.m54dp(56) + AndroidUtilities.m54dp(16);
                         RectF rectF = AndroidUtilities.rectTmp;
-                        rectF.set(f4 - AndroidUtilities.m50dp(24), m50dp25 - AndroidUtilities.m50dp(4), f4 + AndroidUtilities.m50dp(24), m50dp25 + AndroidUtilities.m50dp(4));
-                        canvas.drawRoundRect(rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
+                        rectF.set(f4 - AndroidUtilities.m54dp(24), m54dp25 - AndroidUtilities.m54dp(4), f4 + AndroidUtilities.m54dp(24), m54dp25 + AndroidUtilities.m54dp(4));
+                        canvas.drawRoundRect(rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
                     }
-                    m50dp24 += getCellHeight(getMeasuredWidth());
+                    m54dp24 += getCellHeight(getMeasuredWidth());
                     if (this.isSingleCell) {
                         break;
                     }
@@ -496,159 +496,159 @@ public class FlickerLoadingView extends View {
             } else if (getViewType() == 13) {
                 float measuredHeight = getMeasuredHeight() / 2.0f;
                 RectF rectF2 = AndroidUtilities.rectTmp;
-                rectF2.set(AndroidUtilities.m50dp(40), measuredHeight - AndroidUtilities.m50dp(4), getMeasuredWidth() - AndroidUtilities.m50dp(120), AndroidUtilities.m50dp(4) + measuredHeight);
-                canvas.drawRoundRect(rectF2, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
+                rectF2.set(AndroidUtilities.m54dp(40), measuredHeight - AndroidUtilities.m54dp(4), getMeasuredWidth() - AndroidUtilities.m54dp(120), AndroidUtilities.m54dp(4) + measuredHeight);
+                canvas.drawRoundRect(rectF2, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
                 if (this.backgroundPaint == null) {
                     Paint paint3 = new Paint(1);
                     this.backgroundPaint = paint3;
-                    paint3.setColor(Theme.getColor("actionBarDefaultSubmenuBackground"));
+                    paint3.setColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuBackground));
                 }
-                for (int i31 = 0; i31 < 3; i31++) {
-                    canvas.drawCircle((getMeasuredWidth() - AndroidUtilities.m50dp(56)) + AndroidUtilities.m50dp(13) + (AndroidUtilities.m50dp(12) * i31), measuredHeight, AndroidUtilities.m51dp(13.0f), this.backgroundPaint);
-                    canvas.drawCircle((getMeasuredWidth() - AndroidUtilities.m50dp(56)) + AndroidUtilities.m50dp(13) + (AndroidUtilities.m50dp(12) * i31), measuredHeight, AndroidUtilities.m51dp(12.0f), paint2);
+                for (int i32 = 0; i32 < 3; i32++) {
+                    canvas.drawCircle((getMeasuredWidth() - AndroidUtilities.m54dp(56)) + AndroidUtilities.m54dp(13) + (AndroidUtilities.m54dp(12) * i32), measuredHeight, AndroidUtilities.m55dp(13.0f), this.backgroundPaint);
+                    canvas.drawCircle((getMeasuredWidth() - AndroidUtilities.m54dp(56)) + AndroidUtilities.m54dp(13) + (AndroidUtilities.m54dp(12) * i32), measuredHeight, AndroidUtilities.m55dp(12.0f), paint2);
                 }
             } else if (getViewType() == 14 || getViewType() == 17) {
-                int m50dp26 = AndroidUtilities.m50dp(12);
-                int m50dp27 = AndroidUtilities.m50dp(77);
-                int m50dp28 = AndroidUtilities.m50dp(4);
-                float m50dp29 = AndroidUtilities.m50dp(21);
-                float m50dp30 = AndroidUtilities.m50dp(41);
-                while (m50dp26 < getMeasuredWidth()) {
+                int m54dp26 = AndroidUtilities.m54dp(12);
+                int m54dp27 = AndroidUtilities.m54dp(77);
+                int m54dp28 = AndroidUtilities.m54dp(4);
+                float m54dp29 = AndroidUtilities.m54dp(21);
+                float m54dp30 = AndroidUtilities.m54dp(41);
+                while (m54dp26 < getMeasuredWidth()) {
                     if (this.backgroundPaint == null) {
-                        this.backgroundPaint = new Paint(i9);
+                        this.backgroundPaint = new Paint(i10);
                     }
-                    this.backgroundPaint.setColor(Theme.getColor("dialogBackground", this.resourcesProvider));
+                    this.backgroundPaint.setColor(Theme.getColor(Theme.key_dialogBackground, this.resourcesProvider));
                     RectF rectF3 = AndroidUtilities.rectTmp;
-                    int i32 = m50dp26 + m50dp27;
-                    rectF3.set(AndroidUtilities.m50dp(4) + m50dp26, AndroidUtilities.m50dp(4), i32 - AndroidUtilities.m50dp(4), getMeasuredHeight() - AndroidUtilities.m50dp(4));
-                    canvas.drawRoundRect(rectF3, AndroidUtilities.m50dp(6), AndroidUtilities.m50dp(6), paint2);
+                    int i33 = m54dp26 + m54dp27;
+                    rectF3.set(AndroidUtilities.m54dp(4) + m54dp26, AndroidUtilities.m54dp(4), i33 - AndroidUtilities.m54dp(4), getMeasuredHeight() - AndroidUtilities.m54dp(4));
+                    canvas.drawRoundRect(rectF3, AndroidUtilities.m54dp(6), AndroidUtilities.m54dp(6), paint2);
                     if (getViewType() == 14) {
-                        float m50dp31 = AndroidUtilities.m50dp(i3) + m50dp28;
-                        float f5 = m50dp26;
-                        float m50dp32 = AndroidUtilities.m50dp(22) + m50dp28 + f5;
-                        this.rectF.set(m50dp32, m50dp31, m50dp32 + m50dp30, m50dp31 + m50dp29);
+                        float m54dp31 = AndroidUtilities.m54dp(i4) + m54dp28;
+                        float f5 = m54dp26;
+                        float m54dp32 = AndroidUtilities.m54dp(22) + m54dp28 + f5;
+                        this.rectF.set(m54dp32, m54dp31, m54dp32 + m54dp30, m54dp31 + m54dp29);
                         RectF rectF4 = this.rectF;
                         canvas.drawRoundRect(rectF4, rectF4.height() * 0.5f, this.rectF.height() * 0.5f, this.backgroundPaint);
-                        float m50dp33 = m50dp31 + AndroidUtilities.m50dp(4) + m50dp29;
-                        float m50dp34 = f5 + AndroidUtilities.m50dp(5) + m50dp28;
-                        this.rectF.set(m50dp34, m50dp33, m50dp34 + m50dp30, m50dp33 + m50dp29);
+                        float m54dp33 = m54dp31 + AndroidUtilities.m54dp(4) + m54dp29;
+                        float m54dp34 = f5 + AndroidUtilities.m54dp(5) + m54dp28;
+                        this.rectF.set(m54dp34, m54dp33, m54dp34 + m54dp30, m54dp33 + m54dp29);
                         RectF rectF5 = this.rectF;
                         canvas.drawRoundRect(rectF5, rectF5.height() * 0.5f, this.rectF.height() * 0.5f, this.backgroundPaint);
                     } else if (getViewType() == 17) {
-                        float m50dp35 = AndroidUtilities.m50dp(5);
-                        float m50dp36 = AndroidUtilities.m50dp(32);
-                        float f6 = m50dp26 + ((m50dp27 - m50dp36) / 2.0f);
-                        rectF3.set(f6, AndroidUtilities.m50dp(21), m50dp36 + f6, m50dp2 + AndroidUtilities.m50dp(32));
-                        canvas.drawRoundRect(rectF3, m50dp35, m50dp35, this.backgroundPaint);
+                        float m54dp35 = AndroidUtilities.m54dp(5);
+                        float m54dp36 = AndroidUtilities.m54dp(32);
+                        float f6 = m54dp26 + ((m54dp27 - m54dp36) / 2.0f);
+                        rectF3.set(f6, AndroidUtilities.m54dp(21), m54dp36 + f6, m54dp2 + AndroidUtilities.m54dp(32));
+                        canvas.drawRoundRect(rectF3, m54dp35, m54dp35, this.backgroundPaint);
                     }
-                    canvas.drawCircle(m50dp26 + (m50dp27 / 2), getMeasuredHeight() - AndroidUtilities.m50dp(20), AndroidUtilities.m50dp(8), this.backgroundPaint);
-                    i3 = 8;
-                    m50dp26 = i32;
-                    i9 = 1;
+                    canvas.drawCircle(m54dp26 + (m54dp27 / 2), getMeasuredHeight() - AndroidUtilities.m54dp(20), AndroidUtilities.m54dp(8), this.backgroundPaint);
+                    i4 = 8;
+                    m54dp26 = i33;
+                    i10 = 1;
                 }
             } else if (getViewType() == 15) {
-                int m50dp37 = AndroidUtilities.m50dp(23);
-                int m50dp38 = AndroidUtilities.m50dp(4);
+                int m54dp37 = AndroidUtilities.m54dp(23);
+                int m54dp38 = AndroidUtilities.m54dp(4);
                 while (i2 <= getMeasuredHeight()) {
-                    float f7 = m50dp37;
-                    canvas.drawCircle(checkRtl(this.paddingLeft + AndroidUtilities.m50dp(12)) + f7, AndroidUtilities.m50dp(8) + i2 + m50dp37, f7, paint2);
-                    this.rectF.set(this.paddingLeft + AndroidUtilities.m50dp(74), AndroidUtilities.m50dp(12) + i2, this.paddingLeft + AndroidUtilities.m50dp(260), AndroidUtilities.m50dp(20) + i2);
+                    float f7 = m54dp37;
+                    canvas.drawCircle(checkRtl(this.paddingLeft + AndroidUtilities.m54dp(12)) + f7, AndroidUtilities.m54dp(8) + i2 + m54dp37, f7, paint2);
+                    this.rectF.set(this.paddingLeft + AndroidUtilities.m54dp(74), AndroidUtilities.m54dp(12) + i2, this.paddingLeft + AndroidUtilities.m54dp(260), AndroidUtilities.m54dp(20) + i2);
                     checkRtl(this.rectF);
-                    float f8 = m50dp38;
+                    float f8 = m54dp38;
                     canvas.drawRoundRect(this.rectF, f8, f8, paint2);
-                    this.rectF.set(this.paddingLeft + AndroidUtilities.m50dp(74), AndroidUtilities.m50dp(36) + i2, this.paddingLeft + AndroidUtilities.m50dp(140), AndroidUtilities.m50dp(42) + i2);
+                    this.rectF.set(this.paddingLeft + AndroidUtilities.m54dp(74), AndroidUtilities.m54dp(36) + i2, this.paddingLeft + AndroidUtilities.m54dp(140), AndroidUtilities.m54dp(42) + i2);
                     checkRtl(this.rectF);
                     canvas.drawRoundRect(this.rectF, f8, f8, paint2);
                     i2 += getCellHeight(getMeasuredWidth());
-                    int i33 = i8 + 1;
-                    if (this.isSingleCell && i33 >= this.itemsCount) {
-                        break;
-                    }
-                    i8 = i33;
-                }
-            } else if (getViewType() == 16 || getViewType() == 23) {
-                int i34 = 0;
-                while (i2 <= getMeasuredHeight()) {
-                    canvas.drawCircle(checkRtl(this.paddingLeft + AndroidUtilities.m50dp(8) + m50dp3), AndroidUtilities.m50dp(24) + i2, AndroidUtilities.m50dp(18), paint2);
-                    this.rectF.set(this.paddingLeft + AndroidUtilities.m50dp(58), AndroidUtilities.m50dp(20) + i2, getWidth() - AndroidUtilities.m50dp(53), AndroidUtilities.m50dp(28) + i2);
-                    checkRtl(this.rectF);
-                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(8), AndroidUtilities.m50dp(8), paint2);
-                    if (i34 < 4) {
-                        canvas.drawCircle(checkRtl((getWidth() - AndroidUtilities.m50dp(12)) - m50dp4), AndroidUtilities.m50dp(24) + i2, AndroidUtilities.m50dp(12), paint2);
-                    }
-                    i2 += getCellHeight(getMeasuredWidth());
-                    i34++;
+                    int i34 = i9 + 1;
                     if (this.isSingleCell && i34 >= this.itemsCount) {
                         break;
                     }
+                    i9 = i34;
                 }
-                this.rectF.set(this.paddingLeft + AndroidUtilities.m50dp(8), AndroidUtilities.m50dp(20) + i2, getWidth() - AndroidUtilities.m50dp(8), AndroidUtilities.m50dp(28) + i2);
-                checkRtl(this.rectF);
-                canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(8), AndroidUtilities.m50dp(8), paint2);
-                this.rectF.set(this.paddingLeft + AndroidUtilities.m50dp(8), AndroidUtilities.m50dp(36) + i2, getWidth() - AndroidUtilities.m50dp(53), i2 + AndroidUtilities.m50dp(44));
-                checkRtl(this.rectF);
-                canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(8), AndroidUtilities.m50dp(8), paint2);
-            } else {
-                int i35 = this.viewType;
-                if (i35 == 21) {
-                    while (i2 <= getMeasuredHeight()) {
-                        canvas.drawCircle(checkRtl(AndroidUtilities.m50dp(20) + m50dp8), (AndroidUtilities.m50dp(58) >> 1) + i2, AndroidUtilities.m50dp(46) >> 1, paint2);
-                        this.rectF.set(AndroidUtilities.m50dp(74), AndroidUtilities.m50dp(16) + i2, AndroidUtilities.m50dp(140), AndroidUtilities.m50dp(24) + i2);
-                        checkRtl(this.rectF);
-                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                        this.rectF.set(AndroidUtilities.m50dp(74), AndroidUtilities.m50dp(38) + i2, AndroidUtilities.m50dp(260), AndroidUtilities.m50dp(46) + i2);
-                        checkRtl(this.rectF);
-                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                        i2 += getCellHeight(getMeasuredWidth());
-                        int i36 = i8 + 1;
-                        if (this.isSingleCell && i36 >= this.itemsCount) {
-                            break;
-                        }
-                        i8 = i36;
+            } else if (getViewType() == 16 || getViewType() == 23) {
+                int i35 = 0;
+                while (i2 <= getMeasuredHeight()) {
+                    canvas.drawCircle(checkRtl(this.paddingLeft + AndroidUtilities.m54dp(8) + m54dp3), AndroidUtilities.m54dp(24) + i2, AndroidUtilities.m54dp(18), paint2);
+                    this.rectF.set(this.paddingLeft + AndroidUtilities.m54dp(58), AndroidUtilities.m54dp(20) + i2, getWidth() - AndroidUtilities.m54dp(53), AndroidUtilities.m54dp(28) + i2);
+                    checkRtl(this.rectF);
+                    canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(8), paint2);
+                    if (i35 < 4) {
+                        canvas.drawCircle(checkRtl((getWidth() - AndroidUtilities.m54dp(12)) - m54dp4), AndroidUtilities.m54dp(24) + i2, AndroidUtilities.m54dp(12), paint2);
                     }
-                } else if (i35 == 22) {
+                    i2 += getCellHeight(getMeasuredWidth());
+                    i35++;
+                    if (this.isSingleCell && i35 >= this.itemsCount) {
+                        break;
+                    }
+                }
+                this.rectF.set(this.paddingLeft + AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(20) + i2, getWidth() - AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(28) + i2);
+                checkRtl(this.rectF);
+                canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(8), paint2);
+                this.rectF.set(this.paddingLeft + AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(36) + i2, getWidth() - AndroidUtilities.m54dp(53), i2 + AndroidUtilities.m54dp(44));
+                checkRtl(this.rectF);
+                canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(8), paint2);
+            } else {
+                int i36 = this.viewType;
+                if (i36 == 21) {
                     while (i2 <= getMeasuredHeight()) {
-                        canvas.drawCircle(checkRtl(AndroidUtilities.m50dp(20) + m50dp7), AndroidUtilities.m50dp(6) + i2 + m50dp7, AndroidUtilities.m50dp(48) >> 1, paint2);
-                        this.rectF.set(AndroidUtilities.m50dp(76), AndroidUtilities.m50dp(16) + i2, AndroidUtilities.m50dp(140), AndroidUtilities.m50dp(24) + i2);
+                        canvas.drawCircle(checkRtl(AndroidUtilities.m54dp(20) + m54dp8), (AndroidUtilities.m54dp(58) >> 1) + i2, AndroidUtilities.m54dp(46) >> 1, paint2);
+                        this.rectF.set(AndroidUtilities.m54dp(74), AndroidUtilities.m54dp(16) + i2, AndroidUtilities.m54dp(140), AndroidUtilities.m54dp(24) + i2);
                         checkRtl(this.rectF);
-                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                        this.rectF.set(AndroidUtilities.m50dp(76), AndroidUtilities.m50dp(38) + i2, AndroidUtilities.m50dp(260), AndroidUtilities.m50dp(46) + i2);
+                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                        this.rectF.set(AndroidUtilities.m54dp(74), AndroidUtilities.m54dp(38) + i2, AndroidUtilities.m54dp(260), AndroidUtilities.m54dp(46) + i2);
                         checkRtl(this.rectF);
-                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
+                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
                         i2 += getCellHeight(getMeasuredWidth());
-                        int i37 = i8 + 1;
+                        int i37 = i9 + 1;
                         if (this.isSingleCell && i37 >= this.itemsCount) {
                             break;
                         }
-                        i8 = i37;
+                        i9 = i37;
                     }
-                } else if (i35 == 25) {
+                } else if (i36 == 22) {
                     while (i2 <= getMeasuredHeight()) {
-                        canvas.drawCircle(AndroidUtilities.m50dp(17) + m50dp6, AndroidUtilities.m50dp(6) + i2 + m50dp6, AndroidUtilities.m50dp(38) >> 1, paint2);
-                        this.rectF.set(AndroidUtilities.m50dp(76), AndroidUtilities.m50dp(21) + i2, AndroidUtilities.m50dp(220), AndroidUtilities.m50dp(29) + i2);
-                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
+                        canvas.drawCircle(checkRtl(AndroidUtilities.m54dp(20) + m54dp7), AndroidUtilities.m54dp(6) + i2 + m54dp7, AndroidUtilities.m54dp(48) >> 1, paint2);
+                        this.rectF.set(AndroidUtilities.m54dp(76), AndroidUtilities.m54dp(16) + i2, AndroidUtilities.m54dp(140), AndroidUtilities.m54dp(24) + i2);
+                        checkRtl(this.rectF);
+                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                        this.rectF.set(AndroidUtilities.m54dp(76), AndroidUtilities.m54dp(38) + i2, AndroidUtilities.m54dp(260), AndroidUtilities.m54dp(46) + i2);
+                        checkRtl(this.rectF);
+                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
                         i2 += getCellHeight(getMeasuredWidth());
-                        int i38 = i8 + 1;
+                        int i38 = i9 + 1;
                         if (this.isSingleCell && i38 >= this.itemsCount) {
                             break;
                         }
-                        i8 = i38;
+                        i9 = i38;
                     }
-                } else if (i35 == 26) {
+                } else if (i36 == 25) {
                     while (i2 <= getMeasuredHeight()) {
-                        canvas.drawCircle(LocaleController.isRTL ? (getMeasuredWidth() - AndroidUtilities.m50dp(21)) - m50dp5 : AndroidUtilities.m50dp(21) + m50dp5, AndroidUtilities.m50dp(16) + i2 + m50dp5, AndroidUtilities.m50dp(21) >> 1, paint2);
-                        this.rectF.set(AndroidUtilities.m50dp(60), AndroidUtilities.m50dp(21) + i2, AndroidUtilities.m50dp(190), AndroidUtilities.m50dp(29) + i2);
-                        checkRtl(this.rectF);
-                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
-                        this.rectF.set(getMeasuredWidth() - AndroidUtilities.m50dp(16), AndroidUtilities.m50dp(21) + i2, getMeasuredWidth() - AndroidUtilities.m50dp(62), AndroidUtilities.m50dp(29) + i2);
-                        checkRtl(this.rectF);
-                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint2);
+                        canvas.drawCircle(AndroidUtilities.m54dp(17) + m54dp6, AndroidUtilities.m54dp(6) + i2 + m54dp6, AndroidUtilities.m54dp(38) >> 1, paint2);
+                        this.rectF.set(AndroidUtilities.m54dp(76), AndroidUtilities.m54dp(21) + i2, AndroidUtilities.m54dp(220), AndroidUtilities.m54dp(29) + i2);
+                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
                         i2 += getCellHeight(getMeasuredWidth());
-                        int i39 = i8 + 1;
+                        int i39 = i9 + 1;
                         if (this.isSingleCell && i39 >= this.itemsCount) {
                             break;
                         }
-                        i8 = i39;
+                        i9 = i39;
+                    }
+                } else if (i36 == 26) {
+                    while (i2 <= getMeasuredHeight()) {
+                        canvas.drawCircle(LocaleController.isRTL ? (getMeasuredWidth() - AndroidUtilities.m54dp(21)) - m54dp5 : AndroidUtilities.m54dp(21) + m54dp5, AndroidUtilities.m54dp(16) + i2 + m54dp5, AndroidUtilities.m54dp(21) >> 1, paint2);
+                        this.rectF.set(AndroidUtilities.m54dp(60), AndroidUtilities.m54dp(21) + i2, AndroidUtilities.m54dp(190), AndroidUtilities.m54dp(29) + i2);
+                        checkRtl(this.rectF);
+                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                        this.rectF.set(getMeasuredWidth() - AndroidUtilities.m54dp(16), AndroidUtilities.m54dp(21) + i2, getMeasuredWidth() - AndroidUtilities.m54dp(62), AndroidUtilities.m54dp(29) + i2);
+                        checkRtl(this.rectF);
+                        canvas.drawRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint2);
+                        i2 += getCellHeight(getMeasuredWidth());
+                        int i40 = i9 + 1;
+                        if (this.isSingleCell && i40 >= this.itemsCount) {
+                            break;
+                        }
+                        i9 = i40;
                     }
                 }
             }
@@ -715,13 +715,13 @@ public class FlickerLoadingView extends View {
         this.color0 = themedColor;
         this.color1 = themedColor2;
         if (this.isSingleCell || (i = this.viewType) == 13 || i == 14 || i == 17) {
-            int m50dp = AndroidUtilities.m50dp(200);
-            this.gradientWidth = m50dp;
-            this.gradient = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, m50dp, (float) BitmapDescriptorFactory.HUE_RED, new int[]{themedColor2, themedColor, themedColor, themedColor2}, new float[]{BitmapDescriptorFactory.HUE_RED, 0.4f, 0.6f, 1.0f}, Shader.TileMode.CLAMP);
+            int m54dp = AndroidUtilities.m54dp(200);
+            this.gradientWidth = m54dp;
+            this.gradient = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, m54dp, (float) BitmapDescriptorFactory.HUE_RED, new int[]{themedColor2, themedColor, themedColor, themedColor2}, new float[]{BitmapDescriptorFactory.HUE_RED, 0.4f, 0.6f, 1.0f}, Shader.TileMode.CLAMP);
         } else {
-            int m50dp2 = AndroidUtilities.m50dp(600);
-            this.gradientWidth = m50dp2;
-            this.gradient = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, m50dp2, new int[]{themedColor2, themedColor, themedColor, themedColor2}, new float[]{BitmapDescriptorFactory.HUE_RED, 0.4f, 0.6f, 1.0f}, Shader.TileMode.CLAMP);
+            int m54dp2 = AndroidUtilities.m54dp(600);
+            this.gradientWidth = m54dp2;
+            this.gradient = new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, m54dp2, new int[]{themedColor2, themedColor, themedColor, themedColor2}, new float[]{BitmapDescriptorFactory.HUE_RED, 0.4f, 0.6f, 1.0f}, Shader.TileMode.CLAMP);
         }
         this.paint.setShader(this.gradient);
     }
@@ -739,33 +739,33 @@ public class FlickerLoadingView extends View {
 
     private int getCellHeight(int i) {
         if (getViewType() == 100) {
-            return AndroidUtilities.m50dp(60);
+            return AndroidUtilities.m54dp(60);
         }
         switch (getViewType()) {
             case 1:
-                return AndroidUtilities.m50dp(78) + 1;
+                return AndroidUtilities.m54dp(78) + 1;
             case 2:
-                return ((i - (AndroidUtilities.m50dp(2) * (getColumnsCount() - 1))) / getColumnsCount()) + AndroidUtilities.m50dp(2);
+                return ((i - (AndroidUtilities.m54dp(2) * (getColumnsCount() - 1))) / getColumnsCount()) + AndroidUtilities.m54dp(2);
             case 3:
             case 4:
-                return AndroidUtilities.m50dp(56);
+                return AndroidUtilities.m54dp(56);
             case 5:
-                return AndroidUtilities.m50dp(80);
+                return AndroidUtilities.m54dp(80);
             case 6:
             case 18:
-                return AndroidUtilities.m50dp(64);
+                return AndroidUtilities.m54dp(64);
             case 7:
-                return AndroidUtilities.m50dp((SharedConfig.isDialogsCompactModeEnabled ? 48 : SharedConfig.useThreeLinesLayout ? 78 : 72) + 1);
+                return AndroidUtilities.m54dp((SharedConfig.isDialogsCompactModeEnabled ? 48 : SharedConfig.useThreeLinesLayout ? 78 : 72) + 1);
             case 8:
-                return AndroidUtilities.m50dp(61);
+                return AndroidUtilities.m54dp(61);
             case 9:
-                return AndroidUtilities.m50dp(66);
+                return AndroidUtilities.m54dp(66);
             case 10:
-                return AndroidUtilities.m50dp(58);
+                return AndroidUtilities.m54dp(58);
             case 11:
-                return AndroidUtilities.m50dp(36);
+                return AndroidUtilities.m54dp(36);
             case 12:
-                return AndroidUtilities.m50dp(103);
+                return AndroidUtilities.m54dp(103);
             case 13:
             case 14:
             case 17:
@@ -773,25 +773,25 @@ public class FlickerLoadingView extends View {
             default:
                 return 0;
             case 15:
-                return AndroidUtilities.m50dp(107);
+                return AndroidUtilities.m54dp(107);
             case 16:
             case 23:
-                return AndroidUtilities.m50dp(50);
+                return AndroidUtilities.m54dp(50);
             case 19:
-                return AndroidUtilities.m50dp(58);
+                return AndroidUtilities.m54dp(58);
             case 21:
-                return AndroidUtilities.m50dp(58);
+                return AndroidUtilities.m54dp(58);
             case 22:
-                return AndroidUtilities.m50dp(60);
+                return AndroidUtilities.m54dp(60);
             case 24:
                 if (!SharedConfig.isDialogsCompactModeEnabled) {
                     r2 = (SharedConfig.useThreeLinesLayout ? 76 : 64) + 1;
                 }
-                return AndroidUtilities.m50dp(r2);
+                return AndroidUtilities.m54dp(r2);
             case 25:
-                return AndroidUtilities.m50dp(51);
+                return AndroidUtilities.m54dp(51);
             case 26:
-                return AndroidUtilities.m50dp(50) + 1;
+                return AndroidUtilities.m54dp(50) + 1;
         }
     }
 
@@ -821,10 +821,8 @@ public class FlickerLoadingView extends View {
         this.itemsCount = i;
     }
 
-    private int getThemedColor(String str) {
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-        return color != null ? color.intValue() : Theme.getColor(str);
+    private int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 
     public void setGlobalGradientView(FlickerLoadingView flickerLoadingView) {

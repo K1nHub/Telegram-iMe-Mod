@@ -806,10 +806,10 @@
 
     iput-object v3, v0, Lorg/telegram/ui/Components/PhonebookShareAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    const-string v5, "dialogBackground"
-
     .line 598
-    invoke-virtual {v0, v5}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
+
+    invoke-virtual {v0, v5}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v5
 
@@ -825,9 +825,9 @@
     .line 600
     iget-object v3, v0, Lorg/telegram/ui/Components/PhonebookShareAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    const-string v5, "dialogTextBlack"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
-    invoke-virtual {v0, v5}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v5}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v10
 
@@ -836,9 +836,9 @@
     .line 601
     iget-object v3, v0, Lorg/telegram/ui/Components/PhonebookShareAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    const-string v10, "dialogButtonSelector"
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_dialogButtonSelector:I
 
-    invoke-virtual {v0, v10}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v10}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v10
 
@@ -847,7 +847,7 @@
     .line 602
     iget-object v3, v0, Lorg/telegram/ui/Components/PhonebookShareAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    invoke-virtual {v0, v5}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v5}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v5
 
@@ -933,9 +933,9 @@
     .line 622
     iget-object v3, v0, Lorg/telegram/ui/Components/PhonebookShareAlert;->actionBarShadow:Landroid/view/View;
 
-    const-string v8, "dialogShadowLine"
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_dialogShadowLine:I
 
-    invoke-virtual {v0, v8}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v8}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v12
 
@@ -960,7 +960,7 @@
     iput-object v3, v0, Lorg/telegram/ui/Components/PhonebookShareAlert;->shadow:Landroid/view/View;
 
     .line 626
-    invoke-virtual {v0, v8}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v8}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v8
 
@@ -1040,9 +1040,9 @@
     .line 633
     iget-object v1, v0, Lorg/telegram/ui/Components/PhonebookShareAlert;->buttonTextView:Landroid/widget/TextView;
 
-    const-string v3, "featuredStickers_buttonText"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
 
-    invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v3
 
@@ -1106,15 +1106,15 @@
 
     move-result v3
 
-    const-string v5, "featuredStickers_addButton"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
-    invoke-virtual {v0, v5}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v5}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v5
 
-    const-string v6, "featuredStickers_addButtonPressed"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButtonPressed:I
 
-    invoke-virtual {v0, v6}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v6}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v6
 
@@ -1373,11 +1373,11 @@
     return-object p0
 .end method
 
-.method static synthetic access$2600(Lorg/telegram/ui/Components/PhonebookShareAlert;Ljava/lang/String;)I
+.method static synthetic access$2600(Lorg/telegram/ui/Components/PhonebookShareAlert;I)I
     .locals 0
 
     .line 61
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 
@@ -1438,11 +1438,11 @@
     return p0
 .end method
 
-.method static synthetic access$3200(Lorg/telegram/ui/Components/PhonebookShareAlert;Ljava/lang/String;)I
+.method static synthetic access$3200(Lorg/telegram/ui/Components/PhonebookShareAlert;I)I
     .locals 0
 
     .line 61
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 
@@ -1503,11 +1503,11 @@
     return-object p1
 .end method
 
-.method static synthetic access$400(Lorg/telegram/ui/Components/PhonebookShareAlert;Ljava/lang/String;)I
+.method static synthetic access$400(Lorg/telegram/ui/Components/PhonebookShareAlert;I)I
     .locals 0
 
     .line 61
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 
@@ -1568,22 +1568,22 @@
     return-object p0
 .end method
 
-.method static synthetic access$500(Lorg/telegram/ui/Components/PhonebookShareAlert;Ljava/lang/String;)I
+.method static synthetic access$500(Lorg/telegram/ui/Components/PhonebookShareAlert;I)I
     .locals 0
 
     .line 61
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 
     return p0
 .end method
 
-.method static synthetic access$600(Lorg/telegram/ui/Components/PhonebookShareAlert;Ljava/lang/String;)I
+.method static synthetic access$600(Lorg/telegram/ui/Components/PhonebookShareAlert;I)I
     .locals 0
 
     .line 61
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 
@@ -1599,22 +1599,22 @@
     return p0
 .end method
 
-.method static synthetic access$800(Lorg/telegram/ui/Components/PhonebookShareAlert;Ljava/lang/String;)I
+.method static synthetic access$800(Lorg/telegram/ui/Components/PhonebookShareAlert;I)I
     .locals 0
 
     .line 61
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 
     return p0
 .end method
 
-.method static synthetic access$900(Lorg/telegram/ui/Components/PhonebookShareAlert;Ljava/lang/String;)I
+.method static synthetic access$900(Lorg/telegram/ui/Components/PhonebookShareAlert;I)I
     .locals 0
 
     .line 61
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 
@@ -2005,11 +2005,11 @@
     :cond_9
     move v1, v2
 
-    :goto_2
-    const-string p1, "featuredStickers_buttonText"
-
     .line 543
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    :goto_2
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
+
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p1
 

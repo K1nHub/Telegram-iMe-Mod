@@ -22,7 +22,7 @@
 .method private constructor <init>(Lorg/telegram/ui/ChangeUsernameActivity;)V
     .locals 0
 
-    .line 426
+    .line 465
     iput-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
@@ -33,7 +33,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/ChangeUsernameActivity;Lorg/telegram/ui/ChangeUsernameActivity$1;)V
     .locals 0
 
-    .line 426
+    .line 465
     invoke-direct {p0, p1}, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;-><init>(Lorg/telegram/ui/ChangeUsernameActivity;)V
 
     return-void
@@ -50,14 +50,14 @@
         }
     .end annotation
 
-    .line 536
+    .line 575
     invoke-interface {p1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_username;
 
-    .line 537
+    .line 576
     invoke-interface {p1, p3}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -66,7 +66,7 @@
 
     invoke-interface {p1, p2, v1}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 538
+    .line 577
     invoke-interface {p1, p3, v0}, Ljava/util/List;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
     return-void
@@ -77,7 +77,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 488
+    .line 527
     iget-object v0, p0, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChangeUsernameActivity;->access$200(Lorg/telegram/ui/ChangeUsernameActivity;)Ljava/util/ArrayList;
@@ -145,7 +145,7 @@
 
     return v0
 
-    .line 501
+    .line 540
     :cond_3
     invoke-virtual {p0}, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->getItemCount()I
 
@@ -166,7 +166,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 1
 
-    .line 510
+    .line 549
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -193,7 +193,7 @@
 
     add-int/lit8 v1, p2, -0x4
 
-    .line 544
+    .line 583
     iget-object v2, p0, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChangeUsernameActivity;->access$200(Lorg/telegram/ui/ChangeUsernameActivity;)Ljava/util/ArrayList;
@@ -220,7 +220,7 @@
 
     goto :goto_1
 
-    .line 548
+    .line 587
     :cond_0
     iget-object v2, p0, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
@@ -234,7 +234,7 @@
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_username;
 
-    .line 549
+    .line 588
     iget-object v2, p0, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChangeUsernameActivity;->access$200(Lorg/telegram/ui/ChangeUsernameActivity;)Ljava/util/ArrayList;
@@ -243,12 +243,12 @@
 
     invoke-virtual {v2, v1, v0}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 551
+    .line 590
     invoke-virtual {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemMoved(II)V
 
     const/4 p1, 0x0
 
-    .line 553
+    .line 592
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
@@ -264,7 +264,7 @@
 
     add-int/lit8 p2, p1, 0x4
 
-    .line 554
+    .line 593
     invoke-virtual {p0, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
 
     add-int/lit8 p1, p1, 0x1
@@ -277,34 +277,36 @@
 .end method
 
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
-    .locals 6
+    .locals 11
 
-    .line 458
+    .line 497
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
 
-    if-eqz v0, :cond_6
+    const-wide/16 v1, 0x0
 
-    const/4 v1, 0x2
+    if-eqz v0, :cond_7
 
-    if-eq v0, v1, :cond_5
+    const/4 v3, 0x2
 
-    const/4 v2, 0x3
+    if-eq v0, v3, :cond_5
 
-    const/4 v3, 0x1
+    const/4 v1, 0x3
 
-    const/4 v4, 0x0
+    const/4 v2, 0x0
 
-    if-eq v0, v2, :cond_4
+    const/4 v4, 0x1
 
-    const/4 v2, 0x4
+    if-eq v0, v1, :cond_4
 
-    if-eq v0, v2, :cond_0
+    const/4 v1, 0x4
 
-    goto/16 :goto_3
+    if-eq v0, v1, :cond_0
 
-    .line 468
+    goto/16 :goto_5
+
+    .line 507
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
@@ -312,83 +314,97 @@
 
     move-result-object v0
 
-    add-int/lit8 v2, p2, -0x4
+    add-int/lit8 v1, p2, -0x4
 
-    invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v0
 
-    check-cast v0, Lorg/telegram/tgnet/TLRPC$TL_username;
+    move-object v6, v0
 
-    .line 469
+    check-cast v6, Lorg/telegram/tgnet/TLRPC$TL_username;
+
+    .line 508
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    check-cast p1, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;
+    move-object v5, p1
 
-    .line 470
-    iget-boolean v2, v0, Lorg/telegram/tgnet/TLRPC$TL_username;->editable:Z
+    check-cast v5, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;
 
-    if-eqz v2, :cond_1
+    .line 509
+    iget-boolean p1, v6, Lorg/telegram/tgnet/TLRPC$TL_username;->editable:Z
 
-    .line 471
-    iget-object v2, p0, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
+    if-eqz p1, :cond_1
 
-    invoke-static {v2, p1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1202(Lorg/telegram/ui/ChangeUsernameActivity;Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;)Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;
+    .line 510
+    iget-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
+
+    invoke-static {p1, v5}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1402(Lorg/telegram/ui/ChangeUsernameActivity;Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;)Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;
 
     goto :goto_0
 
-    .line 472
+    .line 511
     :cond_1
-    iget-object v2, p0, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
+    iget-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
-    invoke-static {v2}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1200(Lorg/telegram/ui/ChangeUsernameActivity;)Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;
+    invoke-static {p1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1400(Lorg/telegram/ui/ChangeUsernameActivity;)Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;
 
-    move-result-object v2
+    move-result-object p1
 
-    if-ne v2, p1, :cond_2
+    if-ne p1, v5, :cond_2
 
-    .line 473
-    iget-object v2, p0, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
+    .line 512
+    iget-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
-    const/4 v5, 0x0
+    const/4 v0, 0x0
 
-    invoke-static {v2, v5}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1202(Lorg/telegram/ui/ChangeUsernameActivity;Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;)Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;
+    invoke-static {p1, v0}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1402(Lorg/telegram/ui/ChangeUsernameActivity;Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;)Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;
 
-    .line 475
+    .line 514
     :cond_2
     :goto_0
     invoke-virtual {p0}, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->getItemCount()I
 
-    move-result v2
+    move-result p1
 
-    sub-int/2addr v2, v1
+    sub-int/2addr p1, v3
 
-    if-ge p2, v2, :cond_3
+    if-ge p2, p1, :cond_3
+
+    move v7, v4
 
     goto :goto_1
 
     :cond_3
-    move v3, v4
+    move v7, v2
 
     :goto_1
-    invoke-virtual {p1, v0, v3, v4}, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->set(Lorg/telegram/tgnet/TLRPC$TL_username;ZZ)V
+    const/4 v8, 0x0
 
-    goto :goto_3
+    iget-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
-    .line 460
+    invoke-static {p1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$400(Lorg/telegram/ui/ChangeUsernameActivity;)J
+
+    move-result-wide v9
+
+    invoke-virtual/range {v5 .. v10}, Lorg/telegram/ui/ChangeUsernameActivity$UsernameCell;->set(Lorg/telegram/tgnet/TLRPC$TL_username;ZZJ)V
+
+    goto/16 :goto_5
+
+    .line 499
     :cond_4
     iget-object p2, p0, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
-    invoke-static {p2, v3}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1002(Lorg/telegram/ui/ChangeUsernameActivity;Z)Z
+    invoke-static {p2, v4}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1202(Lorg/telegram/ui/ChangeUsernameActivity;Z)Z
 
-    .line 461
+    .line 500
     iget-object p2, p0, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/ChangeUsernameActivity$InputCell;
 
-    invoke-static {p2, p1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1102(Lorg/telegram/ui/ChangeUsernameActivity;Lorg/telegram/ui/ChangeUsernameActivity$InputCell;)Lorg/telegram/ui/ChangeUsernameActivity$InputCell;
+    invoke-static {p2, p1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1302(Lorg/telegram/ui/ChangeUsernameActivity;Lorg/telegram/ui/ChangeUsernameActivity$InputCell;)Lorg/telegram/ui/ChangeUsernameActivity$InputCell;
 
     move-result-object p1
 
@@ -396,36 +412,50 @@
 
     iget-object p2, p0, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/ChangeUsernameActivity;->access$900(Lorg/telegram/ui/ChangeUsernameActivity;)Ljava/lang/String;
+    invoke-static {p2}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1100(Lorg/telegram/ui/ChangeUsernameActivity;)Ljava/lang/String;
 
     move-result-object p2
 
     invoke-virtual {p1, p2}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 462
+    .line 501
     iget-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
-    invoke-static {p1, v4}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1002(Lorg/telegram/ui/ChangeUsernameActivity;Z)Z
+    invoke-static {p1, v2}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1202(Lorg/telegram/ui/ChangeUsernameActivity;Z)Z
 
-    goto :goto_3
+    goto :goto_5
 
-    .line 480
+    .line 519
     :cond_5
     iget-object p2, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p2, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
+    iget-object v0, p0, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ChangeUsernameActivity;->access$400(Lorg/telegram/ui/ChangeUsernameActivity;)J
+
+    move-result-wide v3
+
+    cmp-long v0, v3, v1
+
+    if-eqz v0, :cond_6
+
+    sget v0, Lorg/telegram/messenger/R$string;->BotUsernamesHelp:I
+
+    goto :goto_2
+
+    :cond_6
     sget v0, Lorg/telegram/messenger/R$string;->UsernamesProfileHelp:I
 
-    const-string v1, "UsernamesProfileHelp"
-
-    invoke-static {v1, v0}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    :goto_2
+    invoke-static {v0}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v0
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 481
+    .line 520
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
@@ -438,43 +468,61 @@
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    const-string v1, "windowBackgroundGrayShadow"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
-    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    goto :goto_3
+    goto :goto_5
 
-    .line 465
-    :cond_6
+    .line 504
+    :cond_7
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/HeaderCell;
 
-    if-nez p2, :cond_7
+    if-nez p2, :cond_9
 
+    iget-object p2, p0, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
+
+    invoke-static {p2}, Lorg/telegram/ui/ChangeUsernameActivity;->access$400(Lorg/telegram/ui/ChangeUsernameActivity;)J
+
+    move-result-wide v3
+
+    cmp-long p2, v3, v1
+
+    if-eqz p2, :cond_8
+
+    sget p2, Lorg/telegram/messenger/R$string;->BotSetPublicLinkHeader:I
+
+    goto :goto_3
+
+    :cond_8
     sget p2, Lorg/telegram/messenger/R$string;->SetUsernameHeader:I
 
-    const-string v0, "SetUsernameHeader"
+    :goto_3
+    invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
-    goto :goto_2
+    move-result-object p2
 
-    :cond_7
+    goto :goto_4
+
+    :cond_9
     sget p2, Lorg/telegram/messenger/R$string;->UsernamesProfileHeader:I
 
     const-string v0, "UsernamesProfileHeader"
 
-    :goto_2
     invoke-static {v0, p2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p2
 
+    :goto_4
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
-    :goto_3
+    :goto_5
     return-void
 .end method
 
@@ -503,7 +551,7 @@
 
     return-object p1
 
-    .line 443
+    .line 482
     :cond_0
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
@@ -527,7 +575,7 @@
 
     return-object p1
 
-    .line 441
+    .line 480
     :cond_1
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
@@ -545,7 +593,7 @@
 
     return-object p1
 
-    .line 439
+    .line 478
     :cond_2
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
@@ -563,7 +611,7 @@
 
     return-object p1
 
-    .line 437
+    .line 476
     :cond_3
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
@@ -581,7 +629,7 @@
 
     return-object p1
 
-    .line 433
+    .line 472
     :cond_4
     new-instance p1, Lorg/telegram/ui/Cells/HeaderCell;
 
@@ -593,18 +641,18 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;)V
 
-    .line 434
+    .line 473
     iget-object p2, p0, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
-    const-string v0, "windowBackgroundWhite"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-virtual {p2, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p2, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setBackgroundColor(I)V
 
-    .line 435
+    .line 474
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
@@ -619,7 +667,7 @@
 
     add-int/lit8 v1, p2, -0x4
 
-    .line 517
+    .line 556
     iget-object v2, p0, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChangeUsernameActivity;->access$200(Lorg/telegram/ui/ChangeUsernameActivity;)Ljava/util/ArrayList;
@@ -651,12 +699,12 @@
 
     if-eq p1, p2, :cond_1
 
-    .line 521
+    .line 560
     iget-object v3, p0, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
-    invoke-static {v3, v2}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1302(Lorg/telegram/ui/ChangeUsernameActivity;Z)Z
+    invoke-static {v3, v2}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1502(Lorg/telegram/ui/ChangeUsernameActivity;Z)Z
 
-    .line 524
+    .line 563
     :cond_1
     iget-object v3, p0, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
@@ -666,10 +714,10 @@
 
     invoke-direct {p0, v3, v0, v1}, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->swapListElements(Ljava/util/List;II)V
 
-    .line 526
+    .line 565
     invoke-virtual {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemMoved(II)V
 
-    .line 528
+    .line 567
     iget-object v0, p0, Lorg/telegram/ui/ChangeUsernameActivity$Adapter;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChangeUsernameActivity;->access$200(Lorg/telegram/ui/ChangeUsernameActivity;)Ljava/util/ArrayList;
@@ -691,14 +739,14 @@
     :cond_2
     const/4 v0, 0x3
 
-    .line 530
+    .line 569
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
 
     invoke-virtual {p0, p1, v1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(ILjava/lang/Object;)V
 
-    .line 531
+    .line 570
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1

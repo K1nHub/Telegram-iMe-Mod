@@ -9,12 +9,12 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.AlertDialog;
 import org.telegram.p044ui.ActionBar.BaseFragment;
 import org.telegram.p044ui.ActionBar.BottomSheet;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.CacheControlActivity;
 import org.telegram.p044ui.CachedMediaLayout;
@@ -58,7 +58,7 @@ public class DilogCacheBottomSheet extends BottomSheetWithRecyclerListView {
     @Override // org.telegram.p044ui.Components.BottomSheetWithRecyclerListView
     protected CharSequence getTitle() {
         if (this.isArchive) {
-            return LocaleController.getString("ArchivedChats", C3242R.string.ArchivedChats);
+            return LocaleController.getString("ArchivedChats", C3290R.string.ArchivedChats);
         }
         return getBaseFragment().getMessagesController().getFullName(this.dialogId);
     }
@@ -94,7 +94,7 @@ public class DilogCacheBottomSheet extends BottomSheetWithRecyclerListView {
                 } else {
                     TextInfoPrivacyCell textInfoPrivacyCell = new TextInfoPrivacyCell(viewGroup.getContext());
                     textInfoPrivacyCell.setFixedSize(12);
-                    CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor("windowBackgroundGray")), Theme.getThemedDrawable(viewGroup.getContext(), C3242R.C3244drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                    CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(viewGroup.getContext(), C3290R.C3292drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
                     combinedDrawable.setFullsize(true);
                     textInfoPrivacyCell.setBackgroundDrawable(combinedDrawable);
                     view = textInfoPrivacyCell;
@@ -112,8 +112,8 @@ public class DilogCacheBottomSheet extends BottomSheetWithRecyclerListView {
     public DilogCacheBottomSheet(BaseFragment baseFragment, CacheControlActivity.DialogFileEntities dialogFileEntities, final CacheModel cacheModel, final Delegate delegate, boolean z, boolean z2) {
         super(baseFragment, false, false, !cacheModel.isEmpty(), null);
         String string;
+        int i;
         String str;
-        String str2;
         long j;
         this.clearViewData = new StorageDiagramView.ClearViewData[8];
         this.checkBoxes = new CheckBoxCell[8];
@@ -143,59 +143,59 @@ public class DilogCacheBottomSheet extends BottomSheetWithRecyclerListView {
         storageDiagramView.setNotClickableAvatar(z);
         this.linearLayout.addView(storageDiagramView, LayoutHelper.createLinear(-2, -2, 1, 0, 16, 0, 16));
         CheckBoxCell checkBoxCell = null;
-        for (int i = 0; i < 7; i++) {
-            if (i == 0) {
-                string = LocaleController.getString("LocalPhotoCache", C3242R.string.LocalPhotoCache);
-                str = "statisticChartLine_lightblue";
-            } else if (i == 1) {
-                string = LocaleController.getString("LocalVideoCache", C3242R.string.LocalVideoCache);
-                str = "statisticChartLine_blue";
-            } else if (i == 2) {
-                string = LocaleController.getString("LocalDocumentCache", C3242R.string.LocalDocumentCache);
-                str = "statisticChartLine_green";
-            } else if (i == 3) {
-                string = LocaleController.getString("LocalMusicCache", C3242R.string.LocalMusicCache);
-                str = "statisticChartLine_red";
-            } else if (i == 4) {
-                string = LocaleController.getString("LocalAudioCache", C3242R.string.LocalAudioCache);
-                str = "statisticChartLine_lightgreen";
-            } else if (i == 5) {
-                string = LocaleController.getString("LocalStickersCache", C3242R.string.LocalStickersCache);
-                str = "statisticChartLine_orange";
+        for (int i2 = 0; i2 < 7; i2++) {
+            if (i2 == 0) {
+                string = LocaleController.getString("LocalPhotoCache", C3290R.string.LocalPhotoCache);
+                i = Theme.key_statisticChartLine_lightblue;
+            } else if (i2 == 1) {
+                string = LocaleController.getString("LocalVideoCache", C3290R.string.LocalVideoCache);
+                i = Theme.key_statisticChartLine_blue;
+            } else if (i2 == 2) {
+                string = LocaleController.getString("LocalDocumentCache", C3290R.string.LocalDocumentCache);
+                i = Theme.key_statisticChartLine_green;
+            } else if (i2 == 3) {
+                string = LocaleController.getString("LocalMusicCache", C3290R.string.LocalMusicCache);
+                i = Theme.key_statisticChartLine_red;
+            } else if (i2 == 4) {
+                string = LocaleController.getString("LocalAudioCache", C3290R.string.LocalAudioCache);
+                i = Theme.key_statisticChartLine_lightgreen;
+            } else if (i2 == 5) {
+                string = LocaleController.getString("LocalStickersCache", C3290R.string.LocalStickersCache);
+                i = Theme.key_statisticChartLine_orange;
             } else {
-                string = LocaleController.getString("LocalMiscellaneousCache", C3242R.string.LocalMiscellaneousCache);
-                str = "statisticChartLine_purple";
+                string = LocaleController.getString("LocalMiscellaneousCache", C3290R.string.LocalMiscellaneousCache);
+                i = Theme.key_statisticChartLine_purple;
             }
-            CacheControlActivity.FileEntities fileEntities = dialogFileEntities.entitiesByType.get(i);
+            CacheControlActivity.FileEntities fileEntities = dialogFileEntities.entitiesByType.get(i2);
             if (fileEntities != null) {
-                str2 = string;
+                str = string;
                 j = fileEntities.totalSize;
             } else {
-                str2 = string;
+                str = string;
                 j = 0;
             }
             if (j > 0) {
-                this.clearViewData[i] = new StorageDiagramView.ClearViewData(this.circleDiagramView);
+                this.clearViewData[i2] = new StorageDiagramView.ClearViewData(this.circleDiagramView);
                 StorageDiagramView.ClearViewData[] clearViewDataArr = this.clearViewData;
-                clearViewDataArr[i].size = j;
-                clearViewDataArr[i].color = str;
+                clearViewDataArr[i2].size = j;
+                clearViewDataArr[i2].colorKey = i;
                 checkBoxCell = new CheckBoxCell(context, 4, 21, null);
-                checkBoxCell.setTag(Integer.valueOf(i));
+                checkBoxCell.setTag(Integer.valueOf(i2));
                 checkBoxCell.setBackgroundDrawable(Theme.getSelectorDrawable(false));
                 this.linearLayout.addView(checkBoxCell, LayoutHelper.createLinear(-1, 50));
-                checkBoxCell.setText(str2, AndroidUtilities.formatFileSize(j), true, true);
-                checkBoxCell.setTextColor(Theme.getColor("dialogTextBlack"));
-                checkBoxCell.setCheckBoxColor(str, "windowBackgroundWhiteGrayIcon", "checkboxCheck");
+                checkBoxCell.setText(str, AndroidUtilities.formatFileSize(j), true, true);
+                checkBoxCell.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
+                checkBoxCell.setCheckBoxColor(i, Theme.key_windowBackgroundWhiteGrayIcon, Theme.key_checkboxCheck);
                 checkBoxCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.DilogCacheBottomSheet$$ExternalSyntheticLambda3
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
                         DilogCacheBottomSheet.this.lambda$new$0(cacheModel, view);
                     }
                 });
-                this.checkBoxes[i] = checkBoxCell;
+                this.checkBoxes[i2] = checkBoxCell;
             } else {
-                this.clearViewData[i] = null;
-                this.checkBoxes[i] = null;
+                this.clearViewData[i2] = null;
+                this.checkBoxes[i2] = null;
             }
         }
         if (checkBoxCell != null) {
@@ -205,12 +205,12 @@ public class DilogCacheBottomSheet extends BottomSheetWithRecyclerListView {
         CachedMediaLayout cachedMediaLayout = new CachedMediaLayout(getContext(), baseFragment) { // from class: org.telegram.ui.DilogCacheBottomSheet.3
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // org.telegram.p044ui.CachedMediaLayout, android.widget.FrameLayout, android.view.View
-            public void onMeasure(int i2, int i3) {
-                super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec((((BottomSheetWithRecyclerListView) DilogCacheBottomSheet.this).contentHeight - C3306ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight, 1073741824));
+            public void onMeasure(int i3, int i4) {
+                super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec((((BottomSheetWithRecyclerListView) DilogCacheBottomSheet.this).contentHeight - C3356ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight, 1073741824));
             }
         };
         this.cachedMediaLayout = cachedMediaLayout;
-        cachedMediaLayout.setBottomPadding(AndroidUtilities.m50dp(80));
+        cachedMediaLayout.setBottomPadding(AndroidUtilities.m54dp(80));
         this.cachedMediaLayout.setCacheModel(cacheModel);
         this.cachedMediaLayout.setDelegate(new CachedMediaLayout.Delegate() { // from class: org.telegram.ui.DilogCacheBottomSheet.4
             @Override // org.telegram.p044ui.CachedMediaLayout.Delegate
@@ -356,15 +356,15 @@ public class DilogCacheBottomSheet extends BottomSheetWithRecyclerListView {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createButton$3(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle(LocaleController.getString("ClearCache", C3242R.string.ClearCache));
-        builder.setMessage(LocaleController.getString("ClearCacheForChat", C3242R.string.ClearCacheForChat));
-        builder.setNegativeButton(LocaleController.getString("Cancel", C3242R.string.Cancel), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.DilogCacheBottomSheet$$ExternalSyntheticLambda0
+        builder.setTitle(LocaleController.getString("ClearCache", C3290R.string.ClearCache));
+        builder.setMessage(LocaleController.getString("ClearCacheForChat", C3290R.string.ClearCacheForChat));
+        builder.setNegativeButton(LocaleController.getString("Cancel", C3290R.string.Cancel), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.DilogCacheBottomSheet$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 DilogCacheBottomSheet.this.lambda$createButton$1(dialogInterface, i);
             }
         });
-        builder.setPositiveButton(LocaleController.getString("Clear", C3242R.string.Clear), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.DilogCacheBottomSheet$$ExternalSyntheticLambda1
+        builder.setPositiveButton(LocaleController.getString("Clear", C3290R.string.Clear), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.DilogCacheBottomSheet$$ExternalSyntheticLambda1
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 DilogCacheBottomSheet.this.lambda$createButton$2(dialogInterface, i);

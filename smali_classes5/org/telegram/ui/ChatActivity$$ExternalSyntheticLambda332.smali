@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/PollCreateActivity$PollCreateActivityDelegate;
+.implements Lorg/telegram/ui/PinchToZoomHelper$ClipBoundsListener;
 
 
 # instance fields
@@ -22,22 +22,12 @@
 
 
 # virtual methods
-.method public final sendPoll(Lorg/telegram/tgnet/TLRPC$TL_messageMediaPoll;Ljava/util/HashMap;ZILjava/lang/String;)V
-    .locals 6
+.method public final getClipTopBottom([F)V
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda332;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    move-object v1, p1
-
-    move-object v2, p2
-
-    move v3, p3
-
-    move v4, p4
-
-    move-object v5, p5
-
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$PhzGPJYxvLAnF7PKTOS6719yKzQ(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$TL_messageMediaPoll;Ljava/util/HashMap;ZILjava/lang/String;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$xY8Sw8K62wb2IRY0ePDeuWU82AQ(Lorg/telegram/ui/ChatActivity;[F)V
 
     return-void
 .end method

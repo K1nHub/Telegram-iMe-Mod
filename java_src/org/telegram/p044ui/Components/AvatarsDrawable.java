@@ -76,7 +76,7 @@ public class AvatarsDrawable {
         for (int i = 0; i < 3; i++) {
             DrawingState[] drawingStateArr2 = this.currentStates;
             drawingStateArr[i] = drawingStateArr2[i];
-            if (drawingStateArr2[i].f1612id != this.animatingStates[i].f1612id) {
+            if (drawingStateArr2[i].f1619id != this.animatingStates[i].f1619id) {
                 z4 = true;
             } else {
                 this.currentStates[i].lastSpeakTime = this.animatingStates[i].lastSpeakTime;
@@ -92,7 +92,7 @@ public class AvatarsDrawable {
                 if (i3 >= 3) {
                     z3 = false;
                     break;
-                } else if (this.currentStates[i3].f1612id == this.animatingStates[i2].f1612id) {
+                } else if (this.currentStates[i3].f1619id == this.animatingStates[i2].f1619id) {
                     drawingStateArr[i3] = null;
                     if (i2 == i3) {
                         this.animatingStates[i2].animationType = -1;
@@ -240,7 +240,7 @@ public class AvatarsDrawable {
         private AvatarDrawable avatarDrawable;
 
         /* renamed from: id */
-        private long f1612id;
+        private long f1619id;
         private ImageReceiver imageReceiver;
         private long lastSpeakTime;
         private long lastUpdateTime;
@@ -260,14 +260,14 @@ public class AvatarsDrawable {
         for (int i = 0; i < 3; i++) {
             this.currentStates[i] = new DrawingState();
             this.currentStates[i].imageReceiver = new ImageReceiver(view);
-            this.currentStates[i].imageReceiver.setRoundRadius(AndroidUtilities.m50dp(12));
+            this.currentStates[i].imageReceiver.setRoundRadius(AndroidUtilities.m54dp(12));
             this.currentStates[i].avatarDrawable = new AvatarDrawable();
-            this.currentStates[i].avatarDrawable.setTextSize(AndroidUtilities.m50dp(12));
+            this.currentStates[i].avatarDrawable.setTextSize(AndroidUtilities.m54dp(12));
             this.animatingStates[i] = new DrawingState();
             this.animatingStates[i].imageReceiver = new ImageReceiver(view);
-            this.animatingStates[i].imageReceiver.setRoundRadius(AndroidUtilities.m50dp(12));
+            this.animatingStates[i].imageReceiver.setRoundRadius(AndroidUtilities.m54dp(12));
             this.animatingStates[i].avatarDrawable = new AvatarDrawable();
-            this.animatingStates[i].avatarDrawable.setTextSize(AndroidUtilities.m50dp(12));
+            this.animatingStates[i].avatarDrawable.setTextSize(AndroidUtilities.m54dp(12));
         }
         this.isInCall = z;
         this.xRefP.setColor(0);
@@ -290,7 +290,7 @@ public class AvatarsDrawable {
     public void setObject(int i, int i2, TLObject tLObject) {
         TLRPC$Chat tLRPC$Chat;
         TLRPC$Chat chat;
-        this.animatingStates[i].f1612id = 0L;
+        this.animatingStates[i].f1619id = 0L;
         DrawingState[] drawingStateArr = this.animatingStates;
         TLRPC$User tLRPC$User = null;
         drawingStateArr[i].participant = null;
@@ -324,7 +324,7 @@ public class AvatarsDrawable {
             } else {
                 this.animatingStates[i].lastSpeakTime = tLRPC$TL_groupCallParticipant.active_date;
             }
-            this.animatingStates[i].f1612id = peerId;
+            this.animatingStates[i].f1619id = peerId;
             tLRPC$Chat = chat;
         } else if (tLObject instanceof TLRPC$User) {
             TLRPC$User tLRPC$User2 = (TLRPC$User) tLObject;
@@ -336,7 +336,7 @@ public class AvatarsDrawable {
                 this.animatingStates[i].avatarDrawable.setAvatarType(1);
                 this.animatingStates[i].avatarDrawable.setScaleSize(0.6f);
             }
-            this.animatingStates[i].f1612id = tLRPC$User2.f1567id;
+            this.animatingStates[i].f1619id = tLRPC$User2.f1574id;
             tLRPC$User = tLRPC$User2;
             tLRPC$Chat = null;
         } else {
@@ -344,7 +344,7 @@ public class AvatarsDrawable {
             this.animatingStates[i].avatarDrawable.setAvatarType(0);
             this.animatingStates[i].avatarDrawable.setScaleSize(1.0f);
             this.animatingStates[i].avatarDrawable.setInfo(tLRPC$Chat);
-            this.animatingStates[i].f1612id = -tLRPC$Chat.f1427id;
+            this.animatingStates[i].f1619id = -tLRPC$Chat.f1433id;
         }
         if (tLRPC$User == null) {
             this.animatingStates[i].imageReceiver.setForUserOrChat(tLRPC$Chat, this.animatingStates[i].avatarDrawable);
@@ -357,7 +357,7 @@ public class AvatarsDrawable {
         if (i3 != 4 && i3 != 10) {
             z = false;
         }
-        this.animatingStates[i].imageReceiver.setRoundRadius(AndroidUtilities.m50dp(z ? 16 : 12));
+        this.animatingStates[i].imageReceiver.setRoundRadius(AndroidUtilities.m54dp(z ? 16 : 12));
         float size = getSize();
         this.animatingStates[i].imageReceiver.setImageCoords(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, size, size);
         invalidate();
@@ -365,20 +365,20 @@ public class AvatarsDrawable {
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:154:0x0250  */
-    /* JADX WARN: Removed duplicated region for block: B:223:0x04d6  */
-    /* JADX WARN: Removed duplicated region for block: B:224:0x04eb  */
-    /* JADX WARN: Removed duplicated region for block: B:226:0x04f0  */
-    /* JADX WARN: Removed duplicated region for block: B:242:0x04f3 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:223:0x04d8  */
+    /* JADX WARN: Removed duplicated region for block: B:224:0x04ed  */
+    /* JADX WARN: Removed duplicated region for block: B:226:0x04f2  */
+    /* JADX WARN: Removed duplicated region for block: B:242:0x04f5 A[SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r9v2, types: [int, boolean] */
-    /* JADX WARN: Type inference failed for: r9v34 */
     /* JADX WARN: Type inference failed for: r9v35 */
+    /* JADX WARN: Type inference failed for: r9v36 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public void onDraw(android.graphics.Canvas r32) {
+    public void onDraw(android.graphics.Canvas r33) {
         /*
-            Method dump skipped, instructions count: 1296
+            Method dump skipped, instructions count: 1298
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Components.AvatarsDrawable.onDraw(android.graphics.Canvas):void");
@@ -390,7 +390,7 @@ public class AvatarsDrawable {
             return i;
         }
         int i2 = this.currentStyle;
-        return AndroidUtilities.m50dp(i2 == 4 || i2 == 10 ? 32 : 24);
+        return AndroidUtilities.m54dp(i2 == 4 || i2 == 10 ? 32 : 24);
     }
 
     public void onDetachedFromWindow() {

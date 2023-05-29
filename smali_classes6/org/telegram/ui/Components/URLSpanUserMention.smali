@@ -60,10 +60,10 @@
 
     if-ne v0, v1, :cond_0
 
-    const-string v0, "windowBackgroundWhiteLinkText"
-
     .line 40
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteLinkText:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -88,10 +88,10 @@
 
     if-ne v0, v1, :cond_2
 
-    const-string v0, "chat_messageLinkOut"
-
     .line 44
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messageLinkOut:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -99,11 +99,11 @@
 
     goto :goto_0
 
-    :cond_2
-    const-string v0, "chat_messageLinkIn"
-
     .line 46
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    :cond_2
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messageLinkIn:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

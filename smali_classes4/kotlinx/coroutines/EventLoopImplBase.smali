@@ -10,6 +10,7 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Lkotlinx/coroutines/EventLoopImplBase$DelayedTask;,
+        Lkotlinx/coroutines/EventLoopImplBase$DelayedResumeTask;,
         Lkotlinx/coroutines/EventLoopImplBase$DelayedTaskQueue;
     }
 .end annotation
@@ -934,6 +935,53 @@
 
     :cond_3
     :goto_0
+    return-void
+.end method
+
+.method public scheduleResumeAfterDelay(JLkotlinx/coroutines/CancellableContinuation;)V
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(J",
+            "Lkotlinx/coroutines/CancellableContinuation<",
+            "-",
+            "Lkotlin/Unit;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 235
+    invoke-static {p1, p2}, Lkotlinx/coroutines/EventLoop_commonKt;->delayToNanos(J)J
+
+    move-result-wide p1
+
+    const-wide v0, 0x3fffffffffffffffL    # 1.9999999999999998
+
+    cmp-long v0, p1, v0
+
+    if-gez v0, :cond_0
+
+    .line 237
+    invoke-static {}, Lkotlinx/coroutines/AbstractTimeSourceKt;->getTimeSource()Lkotlinx/coroutines/AbstractTimeSource;
+
+    invoke-static {}, Ljava/lang/System;->nanoTime()J
+
+    move-result-wide v0
+
+    .line 238
+    new-instance v2, Lkotlinx/coroutines/EventLoopImplBase$DelayedResumeTask;
+
+    add-long/2addr p1, v0
+
+    invoke-direct {v2, p0, p1, p2, p3}, Lkotlinx/coroutines/EventLoopImplBase$DelayedResumeTask;-><init>(Lkotlinx/coroutines/EventLoopImplBase;JLkotlinx/coroutines/CancellableContinuation;)V
+
+    .line 244
+    invoke-virtual {p0, v0, v1, v2}, Lkotlinx/coroutines/EventLoopImplBase;->schedule(JLkotlinx/coroutines/EventLoopImplBase$DelayedTask;)V
+
+    .line 245
+    invoke-static {p3, v2}, Lkotlinx/coroutines/CancellableContinuationKt;->disposeOnCancellation(Lkotlinx/coroutines/CancellableContinuation;Lkotlinx/coroutines/DisposableHandle;)V
+
+    :cond_0
     return-void
 .end method
 

@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->$r8$lambda$E-lnEpjRTxa2AZllw31KfFhBCwY(Lorg/telegram/ui/Components/ChatThemeBottomSheet;Landroid/content/DialogInterface;I)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->$r8$lambda$1Qm7SS2BRAFw0qSrXstLpjkJ_KE(Lorg/telegram/ui/Components/ChatThemeBottomSheet;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

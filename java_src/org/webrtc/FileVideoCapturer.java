@@ -2,7 +2,7 @@ package org.webrtc;
 
 import android.content.Context;
 import android.os.SystemClock;
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 import java.nio.ByteBuffer;
@@ -79,7 +79,7 @@ public class FileVideoCapturer implements VideoCapturer {
                             i = Integer.parseInt(str3.substring(1));
                         }
                     }
-                    Logging.m18d(TAG, "Color space: " + str2);
+                    Logging.m20d(TAG, "Color space: " + str2);
                     if (!str2.equals("420") && !str2.equals("420mpeg2")) {
                         throw new IllegalArgumentException("Does not support any other color space than I420 or I420mpeg2");
                     }
@@ -88,7 +88,7 @@ public class FileVideoCapturer implements VideoCapturer {
                     }
                     this.frameWidth = i;
                     this.frameHeight = i2;
-                    Logging.m18d(TAG, "frame dim: (" + i + ", " + i2 + ")");
+                    Logging.m20d(TAG, "frame dim: (" + i + ", " + i2 + ")");
                     return;
                 }
             }
@@ -114,7 +114,7 @@ public class FileVideoCapturer implements VideoCapturer {
                         throw new RuntimeException("Error looping video");
                     }
                 }
-                String str = new String(allocate2.array(), Charset.forName(C0470C.ASCII_NAME));
+                String str = new String(allocate2.array(), Charset.forName(C0475C.ASCII_NAME));
                 if (!str.equals("FRAME\n")) {
                     throw new RuntimeException("Frames should be delimited by FRAME plus newline, found delimter was: '" + str + "'");
                 }
@@ -132,7 +132,7 @@ public class FileVideoCapturer implements VideoCapturer {
             try {
                 this.mediaFile.close();
             } catch (IOException e) {
-                Logging.m16e(TAG, "Problem closing file", e);
+                Logging.m18e(TAG, "Problem closing file", e);
             }
         }
     }
@@ -141,7 +141,7 @@ public class FileVideoCapturer implements VideoCapturer {
         try {
             this.videoReader = new VideoReaderY4M(str);
         } catch (IOException e) {
-            Logging.m18d(TAG, "Could not open video file: " + str);
+            Logging.m20d(TAG, "Could not open video file: " + str);
             throw e;
         }
     }

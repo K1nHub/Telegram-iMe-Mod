@@ -81,7 +81,7 @@ public final class TelegramPreferenceKeys {
             return TelegramPreferenceKeys.INSTANCE.withForkPrefix("stickersSize");
         }
 
-        public static final String isProxyButtonForceVisible() {
+        public static final String isProxyButtonEnabled() {
             return TelegramPreferenceKeys.INSTANCE.withForkPrefix("isProxyButtonForceVisible");
         }
 
@@ -187,10 +187,6 @@ public final class TelegramPreferenceKeys {
 
         public static final String isOpenForwardingOptionsAutomaticallyEnabled() {
             return TelegramPreferenceKeys.INSTANCE.withForkPrefix("autoOpenForwardingOptions");
-        }
-
-        public static final String isCustomSharingModeEnabled() {
-            return TelegramPreferenceKeys.INSTANCE.withForkPrefix("customSharingMode");
         }
 
         public static final String isMultiReplyEnabled() {
@@ -352,10 +348,6 @@ public final class TelegramPreferenceKeys {
                 return false;
             }
 
-            public static final boolean isCustomSharingModeEnabled() {
-                return true;
-            }
-
             public static final boolean isDebugThemeSwitchEnabled() {
                 return true;
             }
@@ -444,7 +436,7 @@ public final class TelegramPreferenceKeys {
                 return false;
             }
 
-            public static final boolean isProxyButtonForceVisible() {
+            public static final boolean isProxyButtonEnabled() {
                 return false;
             }
 
@@ -641,7 +633,7 @@ public final class TelegramPreferenceKeys {
             return TelegramPreferenceKeys.INSTANCE.withForkPrefix("lastAutoBackupTime");
         }
 
-        public static final String isHideFoldersEnabled() {
+        public static final String isFoldersHidden() {
             return TelegramPreferenceKeys.INSTANCE.withForkPrefix("hideFolders");
         }
 
@@ -962,12 +954,12 @@ public final class TelegramPreferenceKeys {
                 return false;
             }
 
-            public static final boolean isHiddenChatsHidden() {
-                return true;
+            public static final boolean isFoldersHidden() {
+                return false;
             }
 
-            public static final boolean isHideFoldersEnabled() {
-                return false;
+            public static final boolean isHiddenChatsHidden() {
+                return true;
             }
 
             public static final boolean isHideMultiPanelOnScrollEnabled() {

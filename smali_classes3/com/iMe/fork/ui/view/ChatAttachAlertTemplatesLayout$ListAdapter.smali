@@ -27,7 +27,7 @@
         }
     .end annotation
 
-    .line 362
+    .line 363
     iput-object p1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$ListAdapter;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
@@ -40,7 +40,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 366
+    .line 367
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$ListAdapter;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->access$getRowCount$p(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)I
@@ -53,20 +53,20 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 396
+    .line 397
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$ListAdapter;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;
 
-    invoke-static {v0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->access$getPaddingRow$p(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)I
+    invoke-static {v0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->access$getTopPaddingRow$p(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)I
 
     move-result v0
 
     if-ne p1, v0, :cond_0
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->CHAT_ATTACH_HEADER:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TOP_PADDING:I
 
     goto :goto_0
 
-    .line 397
+    .line 398
     :cond_0
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$ListAdapter;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;
 
@@ -76,25 +76,25 @@
 
     if-ne p1, v0, :cond_1
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL:I
 
     goto :goto_0
 
-    .line 398
+    .line 399
     :cond_1
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$ListAdapter;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;
 
-    invoke-static {v0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->access$getEmptyRow$p(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)I
+    invoke-static {v0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->access$getBottomPaddingRow$p(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)I
 
     move-result v0
 
     if-ne p1, v0, :cond_2
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->CHAT_ATTACH_FOOTER:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->BOTTOM_PADDING:I
 
     goto :goto_0
 
-    .line 399
+    .line 400
     :cond_2
     sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEMPLATE:I
 
@@ -109,7 +109,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 368
+    .line 369
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -136,17 +136,17 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 386
+    .line 387
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
-    .line 387
+    .line 388
     instance-of v0, p1, Lorg/telegram/ui/Cells/HeaderCell;
 
     if-eqz v0, :cond_1
 
     check-cast p1, Lorg/telegram/ui/Cells/HeaderCell;
 
-    .line 388
+    .line 389
     iget-object p2, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$ListAdapter;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;
 
     invoke-static {p2}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->access$getTemplates$p(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)Ljava/util/List;
@@ -163,11 +163,11 @@
 
     goto :goto_0
 
-    .line 389
+    .line 390
     :cond_0
     sget p2, Lorg/telegram/messenger/R$string;->chat_templates:I
 
-    .line 387
+    .line 388
     :goto_0
     invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
@@ -177,7 +177,7 @@
 
     goto :goto_1
 
-    .line 391
+    .line 392
     :cond_1
     instance-of v0, p1, Lcom/iMe/fork/ui/view/TemplateCell;
 
@@ -221,7 +221,7 @@
 .method public bridge synthetic onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 0
 
-    .line 362
+    .line 363
     invoke-virtual {p0, p1, p2}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$ListAdapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     move-result-object p1
@@ -236,8 +236,8 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 371
-    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->CHAT_ATTACH_HEADER:I
+    .line 372
+    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TOP_PADDING:I
 
     if-ne p2, v0, :cond_0
 
@@ -253,9 +253,9 @@
 
     goto :goto_0
 
-    .line 376
+    .line 377
     :cond_0
-    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER:I
+    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL:I
 
     if-ne p2, v0, :cond_1
 
@@ -264,6 +264,8 @@
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object v2
+
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
 
     const/16 v4, 0x15
 
@@ -277,13 +279,11 @@
 
     move-result-object v7
 
-    const-string v3, "windowBackgroundWhiteBlueHeader"
-
     move-object v1, p2
 
-    invoke-direct/range {v1 .. v7}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;Ljava/lang/String;IIZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct/range {v1 .. v7}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;IIIZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 377
+    .line 378
     invoke-virtual {p2}, Lorg/telegram/ui/Cells/HeaderCell;->getTextView()Landroid/widget/TextView;
 
     move-result-object p1
@@ -294,39 +294,14 @@
 
     goto :goto_0
 
-    .line 379
+    .line 380
     :cond_1
-    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEMPLATE:I
+    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->BOTTOM_PADDING:I
 
     const-string v1, "parent.context"
 
     if-ne p2, v0, :cond_2
 
-    new-instance p2, Lcom/iMe/fork/ui/view/TemplateCell;
-
-    invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
-
-    move-result-object p1
-
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    invoke-direct {p2, p1}, Lcom/iMe/fork/ui/view/TemplateCell;-><init>(Landroid/content/Context;)V
-
-    .line 380
-    new-instance p1, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
-
-    const/4 v0, -0x1
-
-    const/4 v1, -0x2
-
-    invoke-direct {p1, v0, v1}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(II)V
-
-    invoke-virtual {p2, p1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
-
-    goto :goto_0
-
-    .line 382
-    :cond_2
     new-instance p2, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$EmptyView;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -337,7 +312,32 @@
 
     invoke-direct {p2, p1}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$EmptyView;-><init>(Landroid/content/Context;)V
 
-    .line 370
+    goto :goto_0
+
+    .line 381
+    :cond_2
+    new-instance p2, Lcom/iMe/fork/ui/view/TemplateCell;
+
+    invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
+
+    move-result-object p1
+
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-direct {p2, p1}, Lcom/iMe/fork/ui/view/TemplateCell;-><init>(Landroid/content/Context;)V
+
+    .line 382
+    new-instance p1, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
+
+    const/4 v0, -0x1
+
+    const/4 v1, -0x2
+
+    invoke-direct {p1, v0, v1}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(II)V
+
+    invoke-virtual {p2, p1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 371
     :goto_0
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 

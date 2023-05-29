@@ -12,10 +12,11 @@ import com.iMe.utils.extentions.common.RecycleViewExtKt;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
+import org.telegram.p044ui.ActionBar.Theme;
 /* compiled from: StakingOperationProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.StakingOperationProvider */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class StakingOperationProvider extends BaseNodeProvider<StakingOperationItem> {
     private float extraPadding;
     private final int itemViewType;
@@ -28,7 +29,7 @@ public final class StakingOperationProvider extends BaseNodeProvider<StakingOper
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
         this.itemViewType = IdFabric$ViewTypes.STAKING_OPERATION;
-        this.layoutId = C3242R.layout.fork_recycle_item_wallet_transaction;
+        this.layoutId = C3290R.layout.fork_recycle_item_wallet_transaction;
         lazy = LazyKt__LazyJVMKt.lazy(new StakingOperationProvider$networkIconCornerSize$2(this));
         this.networkIconCornerSize$delegate = lazy;
     }
@@ -53,22 +54,22 @@ public final class StakingOperationProvider extends BaseNodeProvider<StakingOper
         BaseViewHolder padding;
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3242R.C3245id.linear_root;
+        int i = C3290R.C3293id.linear_root;
         BaseViewHolder rippleForeground = BaseQuickAdapterExtKt.setRippleForeground(helper, i, false);
-        int i2 = C3242R.C3245id.text_date;
-        BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(rippleForeground, i2, "chats_date");
-        int i3 = C3242R.C3245id.text_amount;
-        BaseViewHolder themedTextColor2 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i3, "chats_name");
-        int i4 = C3242R.C3245id.text_status;
+        int i2 = C3290R.C3293id.text_date;
+        BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(rippleForeground, i2, Theme.key_chats_date);
+        int i3 = C3290R.C3293id.text_amount;
+        BaseViewHolder themedTextColor2 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i3, Theme.key_chats_name);
+        int i4 = C3290R.C3293id.text_status;
         BaseViewHolder themedTextColor3 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor2, i4, item.getStatusColor());
-        int i5 = C3242R.C3245id.text_transaction_type_title;
-        BaseViewHolder themedTextColor4 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor3, i5, "chats_message");
-        int i6 = C3242R.C3245id.view_divider;
+        int i5 = C3290R.C3293id.text_transaction_type_title;
+        BaseViewHolder themedTextColor4 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor3, i5, Theme.key_chats_message);
+        int i6 = C3290R.C3293id.view_divider;
         BaseNodeAdapter<StakingOperationItem> adapter = getAdapter();
         Intrinsics.checkNotNull(adapter);
         BaseViewHolder visibleElseGone = BaseQuickAdapterExtKt.setVisibleElseGone(themedTextColor4, i6, !RecycleViewExtKt.isLastItem(helper, adapter));
-        int i7 = C3242R.C3245id.image_staking_icon;
-        BaseViewHolder mediumTypeface = BaseQuickAdapterExtKt.setMediumTypeface(visibleElseGone.setVisible(i7, item.isBadgeVisible()).setImageResource(C3242R.C3245id.image_transaction_type_icon, item.getIcon()).setImageResource(i7, item.getStakingIconResId()), i3);
+        int i7 = C3290R.C3293id.image_staking_icon;
+        BaseViewHolder mediumTypeface = BaseQuickAdapterExtKt.setMediumTypeface(visibleElseGone.setVisible(i7, item.isBadgeVisible()).setImageResource(C3290R.C3293id.image_transaction_type_icon, item.getIcon()).setImageResource(i7, item.getStakingIconResId()), i3);
         float f = this.extraPadding;
         padding = BaseQuickAdapterExtKt.setPadding(mediumTypeface, i, (r13 & 2) != 0 ? 0.0f : f, (r13 & 4) != 0 ? 0.0f : BitmapDescriptorFactory.HUE_RED, (r13 & 8) != 0 ? 0.0f : f, (r13 & 16) != 0 ? 0.0f : BitmapDescriptorFactory.HUE_RED);
         BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.applyForView(padding.setText(i4, item.getStatusText(this.resourceManager)).setText(i3, item.getAmount(this.resourceManager)).setText(i5, item.getTransactionTitle(this.resourceManager)), i2, new StakingOperationProvider$convert$1(item)), i7, new StakingOperationProvider$convert$2(this));

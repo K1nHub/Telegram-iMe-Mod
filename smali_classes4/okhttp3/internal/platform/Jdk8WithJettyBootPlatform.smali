@@ -115,7 +115,7 @@
 
     const-string v0, "failed to remove ALPN"
 
-    const-string v1, "sslSocket"
+    const-string/jumbo v1, "sslSocket"
 
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -177,7 +177,7 @@
 
     const-string p2, "failed to set ALPN"
 
-    const-string v0, "sslSocket"
+    const-string/jumbo v0, "sslSocket"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -270,7 +270,7 @@
 
     const-string v0, "failed to get ALPN selected protocol"
 
-    const-string v1, "sslSocket"
+    const-string/jumbo v1, "sslSocket"
 
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

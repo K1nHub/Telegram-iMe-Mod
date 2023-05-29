@@ -37,10 +37,10 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/SettingsSearchCell;->textView:Landroid/widget/TextView;
 
-    const-string v1, "windowBackgroundWhiteBlackText"
-
     .line 78
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -158,10 +158,10 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/SettingsSearchCell;->valueTextView:Landroid/widget/TextView;
 
-    const-string v2, "windowBackgroundWhiteGrayText2"
-
     .line 88
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -272,9 +272,9 @@
 
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v1, "windowBackgroundWhiteGrayIcon"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -514,9 +514,9 @@
     .line 157
     new-instance v7, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v8, "windowBackgroundWhiteBlackText"
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 
@@ -634,9 +634,9 @@
     .line 174
     new-instance v7, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v8, "windowBackgroundWhiteGrayText2"
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 
@@ -877,9 +877,9 @@
     .line 120
     new-instance v7, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v8, "windowBackgroundWhiteGrayText2"
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 

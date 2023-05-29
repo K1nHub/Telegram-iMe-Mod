@@ -38,7 +38,7 @@
     throw p0
 
     :pswitch_0
-    sget p0, Lorg/telegram/messenger/R$drawable;->fork_plus:I
+    sget p0, Lorg/telegram/messenger/R$drawable;->msg_add:I
 
     goto :goto_0
 

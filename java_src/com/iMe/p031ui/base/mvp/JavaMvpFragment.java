@@ -8,7 +8,7 @@ import org.koin.core.Koin;
 import org.koin.java.KoinJavaComponent;
 /* compiled from: JavaMvpFragment.kt */
 /* renamed from: com.iMe.ui.base.mvp.JavaMvpFragment */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class JavaMvpFragment extends MvpFragment {
     @Override // com.iMe.p031ui.base.mvp.MvpFragment
     public void onViewReady() {

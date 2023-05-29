@@ -8,7 +8,8 @@ import org.telegram.messenger.ApplicationLoader;
 public enum ExternalApp {
     WHATSAPP("com.whatsapp"),
     WHATSAPP_BUSINESS("com.whatsapp.w4b"),
-    VIBER("com.viber.voip");
+    VIBER("com.viber.voip"),
+    QUICK_LOGIN("com.iMe.quicklogin");
     
     public static final Companion Companion = new Companion(null);
     private final String packageName;

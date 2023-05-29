@@ -178,7 +178,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                                         str2 = str3;
                                         cameraInfo4.previewSizes.add(new Size(i10, i2));
                                         if (BuildVars.LOGS_ENABLED) {
-                                            FileLog.m48d("preview size = " + size.width + " " + size.height);
+                                            FileLog.m52d("preview size = " + size.width + " " + size.height);
                                         }
                                         i9++;
                                         cameraInfo3 = cameraInfo;
@@ -195,7 +195,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                                 } catch (Exception e) {
                                     e = e;
                                     cameraController = this;
-                                    FileLog.m44e(e, !str.equals(e.getMessage()));
+                                    FileLog.m48e(e, !str.equals(e.getMessage()));
                                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.camera.CameraController$$ExternalSyntheticLambda12
                                         @Override // java.lang.Runnable
                                         public final void run() {
@@ -213,7 +213,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                                 if (!"samsung".equals(Build.MANUFACTURER) || !"jflteuc".equals(Build.PRODUCT) || size2.width < 2048) {
                                     cameraInfo4.pictureSizes.add(new Size(size2.width, size2.height));
                                     if (BuildVars.LOGS_ENABLED) {
-                                        FileLog.m48d("picture size = " + size2.width + " " + size2.height);
+                                        FileLog.m52d("picture size = " + size2.width + " " + size2.height);
                                     }
                                 }
                             }
@@ -231,7 +231,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                             e = e2;
                             str = str4;
                             cameraController = this;
-                            FileLog.m44e(e, !str.equals(e.getMessage()));
+                            FileLog.m48e(e, !str.equals(e.getMessage()));
                             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.camera.CameraController$$ExternalSyntheticLambda12
                                 @Override // java.lang.Runnable
                                 public final void run() {
@@ -272,7 +272,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                     cameraController.cameraInfos = arrayList;
                 } catch (Exception e3) {
                     e = e3;
-                    FileLog.m44e(e, !str.equals(e.getMessage()));
+                    FileLog.m48e(e, !str.equals(e.getMessage()));
                     AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.camera.CameraController$$ExternalSyntheticLambda12
                         @Override // java.lang.Runnable
                         public final void run() {
@@ -364,7 +364,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
             try {
                 countDownLatch.await();
             } catch (Exception e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
             }
         }
     }
@@ -380,12 +380,12 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                 camera.stopPreview();
                 cameraSession.cameraInfo.camera.setPreviewCallbackWithBuffer(null);
             } catch (Exception e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
             }
             try {
                 cameraSession.cameraInfo.camera.release();
             } catch (Exception e2) {
-                FileLog.m45e(e2);
+                FileLog.m49e(e2);
             }
             cameraSession.cameraInfo.camera = null;
         }
@@ -528,7 +528,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
             });
             return true;
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
             return false;
         }
     }
@@ -546,13 +546,13 @@ public class CameraController implements MediaRecorder.OnInfoListener {
             options.inPurgeable = true;
             bitmap = BitmapFactory.decodeByteArray(bArr, 0, bArr.length, options);
         } catch (Throwable th) {
-            FileLog.m45e(th);
+            FileLog.m49e(th);
             bitmap = null;
         }
         Bitmap bitmap2 = bitmap;
         try {
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
         if (cameraInfo.frontCamera != 0 && z) {
             Matrix matrix = new Matrix();
@@ -613,7 +613,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                 if (camera != null) {
                     camera.release();
                 }
-                FileLog.m45e(e);
+                FileLog.m49e(e);
                 return;
             }
         }
@@ -646,7 +646,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                 if (camera != null) {
                     camera.release();
                 }
-                FileLog.m45e(e);
+                FileLog.m49e(e);
                 return;
             }
         }
@@ -656,7 +656,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
     public void openRound(final CameraSession cameraSession, final SurfaceTexture surfaceTexture, final Runnable runnable, final Runnable runnable2) {
         if (cameraSession == null || surfaceTexture == null) {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m48d("failed to open round " + cameraSession + " tex = " + surfaceTexture);
+                FileLog.m52d("failed to open round " + cameraSession + " tex = " + surfaceTexture);
                 return;
             }
             return;
@@ -674,7 +674,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
         Camera camera = cameraSession.cameraInfo.camera;
         try {
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m48d("start creating round camera session");
+                FileLog.m52d("start creating round camera session");
             }
             if (camera == null) {
                 CameraInfo cameraInfo = cameraSession.cameraInfo;
@@ -693,14 +693,14 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                 AndroidUtilities.runOnUIThread(runnable2);
             }
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m48d("round camera session created");
+                FileLog.m52d("round camera session created");
             }
         } catch (Exception e) {
             cameraSession.cameraInfo.camera = null;
             if (camera != null) {
                 camera.release();
             }
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
     }
 
@@ -730,7 +730,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                 if (camera != null) {
                     camera.release();
                 }
-                FileLog.m45e(e);
+                FileLog.m49e(e);
                 return;
             }
         }
@@ -792,7 +792,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                     camera.setParameters(parameters);
                     cameraSession.onStartRecord();
                 } catch (Exception e) {
-                    FileLog.m45e(e);
+                    FileLog.m49e(e);
                 }
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.camera.CameraController$$ExternalSyntheticLambda11
                     @Override // java.lang.Runnable
@@ -802,7 +802,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                 });
             }
         } catch (Exception e2) {
-            FileLog.m45e(e2);
+            FileLog.m49e(e2);
         }
     }
 
@@ -828,7 +828,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                     parameters.setFlashMode(cameraSession.getCurrentFlashMode().equals("on") ? "torch" : "off");
                     camera.setParameters(parameters);
                 } catch (Exception e) {
-                    FileLog.m45e(e);
+                    FileLog.m49e(e);
                 }
                 camera.unlock();
                 try {
@@ -857,10 +857,10 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                 } catch (Exception e2) {
                     this.recorder.release();
                     this.recorder = null;
-                    FileLog.m45e(e2);
+                    FileLog.m49e(e2);
                 }
             } catch (Exception e3) {
-                FileLog.m45e(e3);
+                FileLog.m49e(e3);
             }
         }
     }
@@ -911,14 +911,14 @@ public class CameraController implements MediaRecorder.OnInfoListener {
             r4 = move-exception
             r3 = r0
         L33:
-            org.telegram.messenger.FileLog.m45e(r4)     // Catch: java.lang.Throwable -> Lc1
+            org.telegram.messenger.FileLog.m49e(r4)     // Catch: java.lang.Throwable -> Lc1
             if (r3 == 0) goto L40
             r3.release()     // Catch: java.lang.Exception -> L3c
             goto L40
         L3c:
             r3 = move-exception
         L3d:
-            org.telegram.messenger.FileLog.m45e(r3)
+            org.telegram.messenger.FileLog.m49e(r3)
         L40:
             r8 = r1
             java.lang.String r1 = r10.recordedFile
@@ -970,7 +970,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
             goto Lb3
         Laf:
             r0 = move-exception
-            org.telegram.messenger.FileLog.m45e(r0)
+            org.telegram.messenger.FileLog.m49e(r0)
         Lb3:
             org.telegram.messenger.SharedConfig.saveConfig()
             org.telegram.messenger.camera.CameraController$$ExternalSyntheticLambda7 r0 = new org.telegram.messenger.camera.CameraController$$ExternalSyntheticLambda7
@@ -987,7 +987,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
             goto Lcc
         Lc8:
             r1 = move-exception
-            org.telegram.messenger.FileLog.m45e(r1)
+            org.telegram.messenger.FileLog.m49e(r1)
         Lcc:
             throw r0
         */
@@ -1046,23 +1046,23 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                 try {
                     mediaRecorder.stop();
                 } catch (Exception e) {
-                    FileLog.m45e(e);
+                    FileLog.m49e(e);
                 }
                 try {
                     mediaRecorder.release();
                 } catch (Exception e2) {
-                    FileLog.m45e(e2);
+                    FileLog.m49e(e2);
                 }
                 try {
                     camera.reconnect();
                     camera.startPreview();
                 } catch (Exception e3) {
-                    FileLog.m45e(e3);
+                    FileLog.m49e(e3);
                 }
                 try {
                     cameraSession.stopVideoRecording();
                 } catch (Exception e4) {
-                    FileLog.m45e(e4);
+                    FileLog.m49e(e4);
                 }
             }
             try {
@@ -1070,7 +1070,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
                 parameters.setFlashMode("off");
                 camera.setParameters(parameters);
             } catch (Exception e5) {
-                FileLog.m45e(e5);
+                FileLog.m49e(e5);
             }
             this.threadPool.execute(new Runnable() { // from class: org.telegram.messenger.camera.CameraController$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
@@ -1094,7 +1094,7 @@ public class CameraController implements MediaRecorder.OnInfoListener {
             parameters.setFlashMode(cameraSession.getCurrentFlashMode());
             camera.setParameters(parameters);
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
     }
 

@@ -289,7 +289,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY_CELL:I
 
     goto :goto_6
 
@@ -325,7 +325,7 @@
     :goto_3
     if-eqz v0, :cond_5
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->VIEW_TYPE_EXPANDABLE_SWITCH:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL_2:I
 
     goto :goto_6
 
@@ -359,13 +359,13 @@
     :goto_5
     if-eqz v1, :cond_8
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
     goto :goto_6
 
     .line 229
     :cond_8
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->VIEW_TYPE_INNER_CHECK:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->CHECK_BOX_CELL:I
 
     :goto_6
     return p1
@@ -425,7 +425,7 @@
     invoke-static {p1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 255
-    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->VIEW_TYPE_INNER_CHECK:I
+    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->CHECK_BOX_CELL:I
 
     const/4 v3, 0x0
 
@@ -587,7 +587,7 @@
 
     .line 266
     :cond_2
-    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->VIEW_TYPE_EXPANDABLE_SWITCH:I
+    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL_2:I
 
     if-ne v1, v2, :cond_6
 
@@ -759,7 +759,7 @@
 
     .line 308
     :cond_6
-    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
     if-ne v1, v2, :cond_8
 
@@ -833,7 +833,7 @@
 
     .line 319
     :cond_8
-    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY:I
+    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY_CELL:I
 
     if-ne v1, v0, :cond_a
 
@@ -850,8 +850,6 @@
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;->access$getEnableSectionRow$p(Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;)I
 
     move-result v1
-
-    const-string v2, "windowBackgroundGrayShadow"
 
     if-ne p2, v1, :cond_9
 
@@ -872,7 +870,9 @@
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    invoke-static {p2, v0, v2}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
@@ -900,7 +900,9 @@
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider:I
 
-    invoke-static {p2, v0, v2}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
@@ -933,16 +935,14 @@
 .end method
 
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Lorg/telegram/ui/Components/RecyclerListView$Holder;
-    .locals 4
+    .locals 3
 
     const-string v0, "parent"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 235
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->VIEW_TYPE_INNER_CHECK:I
-
-    const-string v0, "windowBackgroundWhite"
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->CHECK_BOX_CELL:I
 
     if-ne p2, p1, :cond_0
 
@@ -954,43 +954,43 @@
 
     move-result-object p2
 
-    const/4 v1, 0x4
+    const/4 v0, 0x4
 
-    const/16 v2, 0x14
+    const/16 v1, 0x14
 
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v2
+    move-result v1
 
-    iget-object v3, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
+    iget-object v2, p0, Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity$ListAdapter;->this$0:Lcom/iMe/fork/ui/fragment/RecentChatsDialogTypeSettingsActivity;
 
-    invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-direct {p1, p2, v1, v2, v3}, Lorg/telegram/ui/Cells/CheckBoxCell;-><init>(Landroid/content/Context;IILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {p1, p2, v0, v1, v2}, Lorg/telegram/ui/Cells/CheckBoxCell;-><init>(Landroid/content/Context;IILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     .line 236
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/CheckBoxCell;->getCheckBoxRound()Lorg/telegram/ui/Components/CheckBox2;
 
     move-result-object p2
 
-    const/16 v1, 0xe
+    const/16 v0, 0xe
 
-    invoke-virtual {p2, v1}, Lorg/telegram/ui/Components/CheckBox2;->setDrawBackgroundAsArc(I)V
+    invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/CheckBox2;->setDrawBackgroundAsArc(I)V
 
     .line 237
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/CheckBoxCell;->getCheckBoxRound()Lorg/telegram/ui/Components/CheckBox2;
 
     move-result-object p2
 
-    const-string v1, "switch2TrackChecked"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_switch2TrackChecked:I
 
-    const-string v2, "radioBackground"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_radioBackground:I
 
-    const-string v3, "checkboxCheck"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxCheck:I
 
-    invoke-virtual {p2, v1, v2, v3}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p2, v0, v1, v2}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
     const/4 p2, 0x1
 
@@ -998,7 +998,9 @@
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/CheckBoxCell;->setEnabled(Z)V
 
     .line 239
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -1008,7 +1010,7 @@
 
     .line 241
     :cond_0
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
     if-ne p2, p1, :cond_1
 
@@ -1026,7 +1028,7 @@
 
     .line 242
     :cond_1
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY_CELL:I
 
     if-ne p2, p1, :cond_2
 
@@ -1055,7 +1057,9 @@
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextCheckCell2;-><init>(Landroid/content/Context;)V
 
     .line 244
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 

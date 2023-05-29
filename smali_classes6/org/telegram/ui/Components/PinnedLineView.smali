@@ -69,27 +69,27 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 9
 
-    .line 55
+    .line 53
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     const/4 p1, -0x1
 
-    .line 26
+    .line 24
     iput p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->selectedPosition:I
 
     const/4 v0, 0x0
 
-    .line 27
+    .line 25
     iput v0, p0, Lorg/telegram/ui/Components/PinnedLineView;->totalCount:I
 
-    .line 41
+    .line 39
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/PinnedLineView;->rectF:Landroid/graphics/RectF;
 
-    .line 48
+    .line 46
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x1
@@ -98,55 +98,55 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/PinnedLineView;->paint:Landroid/graphics/Paint;
 
-    .line 49
+    .line 47
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/PinnedLineView;->selectedPaint:Landroid/graphics/Paint;
 
-    .line 50
+    .line 48
     iput p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->nextPosition:I
 
-    .line 56
+    .line 54
     iput-object p2, p0, Lorg/telegram/ui/Components/PinnedLineView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 58
+    .line 56
     iget-object p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->paint:Landroid/graphics/Paint;
 
     sget-object p2, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
     invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
+
+    .line 57
+    iget-object p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->paint:Landroid/graphics/Paint;
+
+    sget-object p2, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
+
+    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
     .line 59
-    iget-object p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->paint:Landroid/graphics/Paint;
-
-    sget-object p2, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
-
-    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
-
-    .line 61
     iget-object p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->selectedPaint:Landroid/graphics/Paint;
 
     sget-object p2, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
 
     invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 62
+    .line 60
     iget-object p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->selectedPaint:Landroid/graphics/Paint;
 
     sget-object p2, Landroid/graphics/Paint$Cap;->ROUND:Landroid/graphics/Paint$Cap;
 
     invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setStrokeCap(Landroid/graphics/Paint$Cap;)V
 
-    .line 64
+    .line 62
     new-instance p1, Landroid/graphics/Paint;
 
     invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->fadePaint:Landroid/graphics/Paint;
 
-    .line 65
+    .line 63
     new-instance p1, Landroid/graphics/LinearGradient;
 
     const/4 p2, 0x6
@@ -179,12 +179,12 @@
 
     invoke-direct/range {v0 .. v7}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
 
-    .line 66
+    .line 64
     iget-object v0, p0, Lorg/telegram/ui/Components/PinnedLineView;->fadePaint:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 67
+    .line 65
     iget-object p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->fadePaint:Landroid/graphics/Paint;
 
     new-instance v0, Landroid/graphics/PorterDuffXfermode;
@@ -195,14 +195,14 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 69
+    .line 67
     new-instance p1, Landroid/graphics/Paint;
 
     invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->fadePaint2:Landroid/graphics/Paint;
 
-    .line 70
+    .line 68
     new-instance p1, Landroid/graphics/LinearGradient;
 
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -227,12 +227,12 @@
 
     invoke-direct/range {v0 .. v7}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
 
-    .line 71
+    .line 69
     iget-object p2, p0, Lorg/telegram/ui/Components/PinnedLineView;->fadePaint2:Landroid/graphics/Paint;
 
     invoke-virtual {p2, p1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 72
+    .line 70
     iget-object p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->fadePaint2:Landroid/graphics/Paint;
 
     new-instance p2, Landroid/graphics/PorterDuffXfermode;
@@ -243,7 +243,7 @@
 
     invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 74
+    .line 72
     invoke-virtual {p0}, Lorg/telegram/ui/Components/PinnedLineView;->updateColors()V
 
     return-void
@@ -278,7 +278,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Components/PinnedLineView;)I
     .locals 0
 
-    .line 24
+    .line 22
     iget p0, p0, Lorg/telegram/ui/Components/PinnedLineView;->nextPosition:I
 
     return p0
@@ -287,7 +287,7 @@
 .method static synthetic access$002(Lorg/telegram/ui/Components/PinnedLineView;I)I
     .locals 0
 
-    .line 24
+    .line 22
     iput p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->nextPosition:I
 
     return p1
@@ -296,52 +296,29 @@
 .method static synthetic access$100(Lorg/telegram/ui/Components/PinnedLineView;I)V
     .locals 0
 
-    .line 24
+    .line 22
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/PinnedLineView;->selectPosition(I)V
 
     return-void
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
+.method private getThemedColor(I)I
     .locals 1
 
-    .line 288
+    .line 286
     iget-object v0, p0, Lorg/telegram/ui/Components/PinnedLineView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 289
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
 .method private synthetic lambda$selectPosition$0(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 106
+    .line 104
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -354,7 +331,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->animationProgress:F
 
-    .line 107
+    .line 105
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -363,7 +340,7 @@
 .method private synthetic lambda$set$1(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 263
+    .line 261
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -376,7 +353,7 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->animationProgress:F
 
-    .line 264
+    .line 262
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -385,39 +362,39 @@
 .method private selectPosition(I)V
     .locals 3
 
-    .line 84
+    .line 82
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PinnedLineView;->replaceInProgress:Z
 
     if-eqz v0, :cond_0
 
-    .line 85
+    .line 83
     iput p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->nextPosition:I
 
     return-void
 
-    .line 88
+    .line 86
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PinnedLineView;->animationInProgress:Z
 
     if-eqz v0, :cond_3
 
-    .line 89
+    .line 87
     iget v0, p0, Lorg/telegram/ui/Components/PinnedLineView;->animateToPosition:I
 
     if-ne v0, p1, :cond_1
 
     return-void
 
-    .line 92
+    .line 90
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/PinnedLineView;->animator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_2
 
-    .line 93
+    .line 91
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 95
+    .line 93
     :cond_2
     iget v0, p0, Lorg/telegram/ui/Components/PinnedLineView;->animateFromPosition:F
 
@@ -441,7 +418,7 @@
 
     goto :goto_0
 
-    .line 97
+    .line 95
     :cond_3
     iget v0, p0, Lorg/telegram/ui/Components/PinnedLineView;->selectedPosition:I
 
@@ -449,33 +426,33 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/PinnedLineView;->animateFromPosition:F
 
-    .line 99
+    .line 97
     :goto_0
     iget v0, p0, Lorg/telegram/ui/Components/PinnedLineView;->selectedPosition:I
 
     if-eq p1, v0, :cond_4
 
-    .line 100
+    .line 98
     iput p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->animateToPosition:I
 
     const/4 p1, 0x1
 
-    .line 101
+    .line 99
     iput-boolean p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->animationInProgress:Z
 
     const/4 p1, 0x0
 
-    .line 102
+    .line 100
     iput p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->animationProgress:F
 
-    .line 103
+    .line 101
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     const/4 p1, 0x2
 
     new-array p1, p1, [F
 
-    .line 104
+    .line 102
     fill-array-data p1, :array_0
 
     invoke-static {p1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -484,14 +461,14 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->animator:Landroid/animation/ValueAnimator;
 
-    .line 105
+    .line 103
     new-instance v0, Lorg/telegram/ui/Components/PinnedLineView$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/PinnedLineView$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/PinnedLineView;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 109
+    .line 107
     iget-object p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->animator:Landroid/animation/ValueAnimator;
 
     new-instance v0, Lorg/telegram/ui/Components/PinnedLineView$1;
@@ -500,21 +477,21 @@
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 121
+    .line 119
     iget-object p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->animator:Landroid/animation/ValueAnimator;
 
     sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 122
+    .line 120
     iget-object p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->animator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v0, 0xdc
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 123
+    .line 121
     iget-object p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->animator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -540,10 +517,10 @@
 
     move-object/from16 v8, p1
 
-    .line 129
+    .line 127
     invoke-super/range {p0 .. p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 130
+    .line 128
     iget v1, v0, Lorg/telegram/ui/Components/PinnedLineView;->selectedPosition:I
 
     if-ltz v1, :cond_12
@@ -554,7 +531,7 @@
 
     goto/16 :goto_8
 
-    .line 133
+    .line 131
     :cond_0
     iget-boolean v2, v0, Lorg/telegram/ui/Components/PinnedLineView;->replaceInProgress:Z
 
@@ -591,7 +568,7 @@
 
     const/4 v3, 0x0
 
-    .line 135
+    .line 133
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
@@ -615,19 +592,19 @@
     :cond_3
     const/16 v1, 0x8
 
-    .line 137
+    .line 135
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
-    .line 139
+    .line 137
     iget-boolean v2, v0, Lorg/telegram/ui/Components/PinnedLineView;->replaceInProgress:Z
 
     const/high16 v3, 0x3f800000    # 1.0f
 
     if-eqz v2, :cond_4
 
-    .line 140
+    .line 138
     iget v2, v0, Lorg/telegram/ui/Components/PinnedLineView;->lineHFrom:I
 
     int-to-float v2, v2
@@ -648,7 +625,7 @@
 
     goto :goto_1
 
-    .line 142
+    .line 140
     :cond_4
     iget v2, v0, Lorg/telegram/ui/Components/PinnedLineView;->totalCount:I
 
@@ -656,7 +633,7 @@
 
     return-void
 
-    .line 145
+    .line 143
     :cond_5
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
 
@@ -690,17 +667,17 @@
     :cond_6
     const v4, 0x3f333333    # 0.7f
 
-    .line 150
+    .line 148
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v4
 
-    .line 153
+    .line 151
     iget-boolean v5, v0, Lorg/telegram/ui/Components/PinnedLineView;->replaceInProgress:Z
 
     if-eqz v5, :cond_7
 
-    .line 154
+    .line 152
     iget v5, v0, Lorg/telegram/ui/Components/PinnedLineView;->startOffsetFrom:F
 
     iget v6, v0, Lorg/telegram/ui/Components/PinnedLineView;->animationProgress:F
@@ -717,20 +694,20 @@
 
     goto :goto_3
 
-    .line 156
+    .line 154
     :cond_7
     iget-boolean v5, v0, Lorg/telegram/ui/Components/PinnedLineView;->animationInProgress:Z
 
     if-eqz v5, :cond_8
 
-    .line 157
+    .line 155
     iget v5, v0, Lorg/telegram/ui/Components/PinnedLineView;->animateFromPosition:F
 
     sub-float/2addr v5, v3
 
     mul-float/2addr v5, v2
 
-    .line 158
+    .line 156
     iget v6, v0, Lorg/telegram/ui/Components/PinnedLineView;->animateToPosition:I
 
     sub-int/2addr v6, v11
@@ -739,7 +716,7 @@
 
     mul-float/2addr v6, v2
 
-    .line 159
+    .line 157
     iget v10, v0, Lorg/telegram/ui/Components/PinnedLineView;->animationProgress:F
 
     sub-float v13, v3, v10
@@ -752,7 +729,7 @@
 
     goto :goto_2
 
-    .line 161
+    .line 159
     :cond_8
     iget v5, v0, Lorg/telegram/ui/Components/PinnedLineView;->selectedPosition:I
 
@@ -774,7 +751,7 @@
     :cond_9
     int-to-float v6, v1
 
-    .line 166
+    .line 164
     iget v10, v0, Lorg/telegram/ui/Components/PinnedLineView;->totalCount:I
 
     sub-int/2addr v10, v11
@@ -801,7 +778,7 @@
 
     if-gez v10, :cond_a
 
-    .line 167
+    .line 165
     iget v5, v0, Lorg/telegram/ui/Components/PinnedLineView;->totalCount:I
 
     sub-int/2addr v5, v11
@@ -824,7 +801,7 @@
 
     sub-float v5, v6, v5
 
-    .line 171
+    .line 169
     :cond_a
     :goto_3
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
@@ -847,14 +824,14 @@
 
     float-to-int v10, v10
 
-    .line 173
+    .line 171
     invoke-static {v9, v10}, Ljava/lang/Math;->max(II)I
 
     move-result v9
 
     add-int/lit8 v10, v9, 0x6
 
-    .line 174
+    .line 172
     iget-boolean v11, v0, Lorg/telegram/ui/Components/PinnedLineView;->replaceInProgress:Z
 
     if-eqz v11, :cond_b
@@ -894,7 +871,7 @@
 
     if-ltz v14, :cond_f
 
-    .line 177
+    .line 175
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v14
@@ -907,7 +884,7 @@
 
     goto/16 :goto_6
 
-    .line 180
+    .line 178
     :cond_c
     iget-object v14, v0, Lorg/telegram/ui/Components/PinnedLineView;->rectF:Landroid/graphics/RectF;
 
@@ -923,7 +900,7 @@
 
     invoke-virtual {v14, v7, v11, v15, v13}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 181
+    .line 179
     iget-boolean v11, v0, Lorg/telegram/ui/Components/PinnedLineView;->replaceInProgress:Z
 
     const/high16 v13, 0x42980000    # 76.0f
@@ -936,7 +913,7 @@
 
     if-lt v9, v15, :cond_d
 
-    .line 182
+    .line 180
     iget-object v11, v0, Lorg/telegram/ui/Components/PinnedLineView;->paint:Landroid/graphics/Paint;
 
     iget v15, v0, Lorg/telegram/ui/Components/PinnedLineView;->color:I
@@ -965,14 +942,14 @@
 
     invoke-virtual {v11, v7}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 183
+    .line 181
     iget-object v7, v0, Lorg/telegram/ui/Components/PinnedLineView;->rectF:Landroid/graphics/RectF;
 
     iget-object v11, v0, Lorg/telegram/ui/Components/PinnedLineView;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v8, v7, v6, v6, v11}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 184
+    .line 182
     iget-object v7, v0, Lorg/telegram/ui/Components/PinnedLineView;->paint:Landroid/graphics/Paint;
 
     iget v11, v0, Lorg/telegram/ui/Components/PinnedLineView;->color:I
@@ -1002,12 +979,12 @@
     :cond_d
     if-eqz v11, :cond_e
 
-    .line 185
+    .line 183
     iget v7, v0, Lorg/telegram/ui/Components/PinnedLineView;->animateFromTotal:I
 
     if-lt v9, v7, :cond_e
 
-    .line 186
+    .line 184
     iget-object v7, v0, Lorg/telegram/ui/Components/PinnedLineView;->paint:Landroid/graphics/Paint;
 
     iget v11, v0, Lorg/telegram/ui/Components/PinnedLineView;->color:I
@@ -1036,14 +1013,14 @@
 
     invoke-virtual {v7, v11}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 187
+    .line 185
     iget-object v7, v0, Lorg/telegram/ui/Components/PinnedLineView;->rectF:Landroid/graphics/RectF;
 
     iget-object v11, v0, Lorg/telegram/ui/Components/PinnedLineView;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v8, v7, v6, v6, v11}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 188
+    .line 186
     iget-object v7, v0, Lorg/telegram/ui/Components/PinnedLineView;->paint:Landroid/graphics/Paint;
 
     iget v11, v0, Lorg/telegram/ui/Components/PinnedLineView;->color:I
@@ -1070,7 +1047,7 @@
 
     goto :goto_6
 
-    .line 190
+    .line 188
     :cond_e
     iget-object v7, v0, Lorg/telegram/ui/Components/PinnedLineView;->rectF:Landroid/graphics/RectF;
 
@@ -1086,13 +1063,13 @@
 
     goto/16 :goto_5
 
-    .line 195
+    .line 193
     :cond_10
     iget-boolean v7, v0, Lorg/telegram/ui/Components/PinnedLineView;->animationInProgress:Z
 
     if-eqz v7, :cond_11
 
-    .line 196
+    .line 194
     iget v7, v0, Lorg/telegram/ui/Components/PinnedLineView;->animateFromPosition:F
 
     iget v9, v0, Lorg/telegram/ui/Components/PinnedLineView;->animationProgress:F
@@ -1115,7 +1092,7 @@
 
     sub-float/2addr v1, v5
 
-    .line 197
+    .line 195
     iget-object v3, v0, Lorg/telegram/ui/Components/PinnedLineView;->rectF:Landroid/graphics/RectF;
 
     add-float v5, v1, v4
@@ -1134,7 +1111,7 @@
 
     invoke-virtual {v3, v2, v5, v7, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 198
+    .line 196
     iget-object v1, v0, Lorg/telegram/ui/Components/PinnedLineView;->rectF:Landroid/graphics/RectF;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/PinnedLineView;->selectedPaint:Landroid/graphics/Paint;
@@ -1143,7 +1120,7 @@
 
     goto :goto_7
 
-    .line 200
+    .line 198
     :cond_11
     iget v3, v0, Lorg/telegram/ui/Components/PinnedLineView;->selectedPosition:I
 
@@ -1155,7 +1132,7 @@
 
     sub-float/2addr v1, v5
 
-    .line 201
+    .line 199
     iget-object v3, v0, Lorg/telegram/ui/Components/PinnedLineView;->rectF:Landroid/graphics/RectF;
 
     add-float v5, v1, v4
@@ -1174,7 +1151,7 @@
 
     invoke-virtual {v3, v2, v5, v7, v1}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 202
+    .line 200
     iget-object v1, v0, Lorg/telegram/ui/Components/PinnedLineView;->rectF:Landroid/graphics/RectF;
 
     iget-object v2, v0, Lorg/telegram/ui/Components/PinnedLineView;->selectedPaint:Landroid/graphics/Paint;
@@ -1188,7 +1165,7 @@
 
     const/4 v3, 0x0
 
-    .line 206
+    .line 204
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
@@ -1209,7 +1186,7 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 207
+    .line 205
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v1
@@ -1240,7 +1217,7 @@
 
     invoke-virtual/range {v1 .. v6}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
 
-    .line 209
+    .line 207
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v1
@@ -1261,7 +1238,7 @@
 
     const/4 v3, 0x0
 
-    .line 210
+    .line 208
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
@@ -1288,7 +1265,7 @@
 .method public set(IIZ)V
     .locals 7
 
-    .line 215
+    .line 213
     iget v0, p0, Lorg/telegram/ui/Components/PinnedLineView;->selectedPosition:I
 
     const/4 v1, 0x0
@@ -1307,27 +1284,27 @@
     :cond_1
     if-nez p3, :cond_3
 
-    .line 219
+    .line 217
     iget-object p3, p0, Lorg/telegram/ui/Components/PinnedLineView;->animator:Landroid/animation/ValueAnimator;
 
     if-eqz p3, :cond_2
 
-    .line 220
+    .line 218
     invoke-virtual {p3}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 222
+    .line 220
     :cond_2
     iput p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->selectedPosition:I
 
-    .line 223
+    .line 221
     iput p2, p0, Lorg/telegram/ui/Components/PinnedLineView;->totalCount:I
 
-    .line 224
+    .line 222
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     goto/16 :goto_3
 
-    .line 226
+    .line 224
     :cond_3
     iget p3, p0, Lorg/telegram/ui/Components/PinnedLineView;->totalCount:I
 
@@ -1353,34 +1330,34 @@
 
     goto :goto_0
 
-    .line 282
+    .line 280
     :cond_4
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/PinnedLineView;->selectPosition(I)V
 
     goto/16 :goto_3
 
-    .line 227
+    .line 225
     :cond_5
     :goto_0
     iget-object p3, p0, Lorg/telegram/ui/Components/PinnedLineView;->animator:Landroid/animation/ValueAnimator;
 
     if-eqz p3, :cond_6
 
-    .line 228
+    .line 226
     iput v1, p0, Lorg/telegram/ui/Components/PinnedLineView;->nextPosition:I
 
-    .line 229
+    .line 227
     invoke-virtual {p3}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_6
     const/16 p3, 0x8
 
-    .line 231
+    .line 229
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p3
 
-    .line 232
+    .line 230
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
@@ -1401,7 +1378,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/PinnedLineView;->lineHFrom:I
 
-    .line 233
+    .line 231
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
@@ -1416,7 +1393,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/PinnedLineView;->lineHTo:I
 
-    .line 235
+    .line 233
     iget v0, p0, Lorg/telegram/ui/Components/PinnedLineView;->selectedPosition:I
 
     const/4 v1, 0x1
@@ -1437,12 +1414,12 @@
 
     if-gez v5, :cond_7
 
-    .line 237
+    .line 235
     iput v4, p0, Lorg/telegram/ui/Components/PinnedLineView;->startOffsetFrom:F
 
     goto :goto_1
 
-    .line 238
+    .line 236
     :cond_7
     iget v5, p0, Lorg/telegram/ui/Components/PinnedLineView;->totalCount:I
 
@@ -1472,7 +1449,7 @@
 
     if-gez v0, :cond_8
 
-    .line 239
+    .line 237
     iget v0, p0, Lorg/telegram/ui/Components/PinnedLineView;->totalCount:I
 
     sub-int/2addr v0, v1
@@ -1501,7 +1478,7 @@
     :goto_1
     add-int/lit8 v0, p1, -0x1
 
-    .line 242
+    .line 240
     iget v3, p0, Lorg/telegram/ui/Components/PinnedLineView;->lineHTo:I
 
     mul-int/2addr v0, v3
@@ -1514,7 +1491,7 @@
 
     if-gez v5, :cond_9
 
-    .line 244
+    .line 242
     iput v4, p0, Lorg/telegram/ui/Components/PinnedLineView;->startOffsetTo:F
 
     goto :goto_2
@@ -1530,7 +1507,7 @@
 
     sub-float/2addr v3, v0
 
-    .line 245
+    .line 243
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
@@ -1551,7 +1528,7 @@
 
     add-int/2addr v5, p3
 
-    .line 246
+    .line 244
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
@@ -1568,7 +1545,7 @@
 
     iput p3, p0, Lorg/telegram/ui/Components/PinnedLineView;->startOffsetTo:F
 
-    .line 248
+    .line 246
     :cond_a
     :goto_2
     iget p3, p0, Lorg/telegram/ui/Components/PinnedLineView;->selectedPosition:I
@@ -1577,38 +1554,38 @@
 
     iput p3, p0, Lorg/telegram/ui/Components/PinnedLineView;->animateFromPosition:F
 
-    .line 249
+    .line 247
     iput p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->animateToPosition:I
 
-    .line 251
+    .line 249
     iput p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->selectedPosition:I
 
-    .line 252
+    .line 250
     iget p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->totalCount:I
 
     iput p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->animateFromTotal:I
 
-    .line 253
+    .line 251
     iput p2, p0, Lorg/telegram/ui/Components/PinnedLineView;->animateToTotal:I
 
-    .line 254
+    .line 252
     iput p2, p0, Lorg/telegram/ui/Components/PinnedLineView;->totalCount:I
 
-    .line 256
+    .line 254
     iput-boolean v1, p0, Lorg/telegram/ui/Components/PinnedLineView;->replaceInProgress:Z
 
-    .line 257
+    .line 255
     iput-boolean v1, p0, Lorg/telegram/ui/Components/PinnedLineView;->animationInProgress:Z
 
-    .line 258
+    .line 256
     iput v4, p0, Lorg/telegram/ui/Components/PinnedLineView;->animationProgress:F
 
-    .line 260
+    .line 258
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     new-array p1, v2, [F
 
-    .line 261
+    .line 259
     fill-array-data p1, :array_0
 
     invoke-static {p1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -1617,14 +1594,14 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->animator:Landroid/animation/ValueAnimator;
 
-    .line 262
+    .line 260
     new-instance p2, Lorg/telegram/ui/Components/PinnedLineView$$ExternalSyntheticLambda1;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Components/PinnedLineView$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/PinnedLineView;)V
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 266
+    .line 264
     iget-object p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->animator:Landroid/animation/ValueAnimator;
 
     new-instance p2, Lorg/telegram/ui/Components/PinnedLineView$2;
@@ -1633,21 +1610,21 @@
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 278
+    .line 276
     iget-object p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->animator:Landroid/animation/ValueAnimator;
 
     sget-object p2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 279
+    .line 277
     iget-object p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->animator:Landroid/animation/ValueAnimator;
 
     const-wide/16 p2, 0xdc
 
     invoke-virtual {p1, p2, p3}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 280
+    .line 278
     iget-object p1, p0, Lorg/telegram/ui/Components/PinnedLineView;->animator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -1665,16 +1642,16 @@
 .method public updateColors()V
     .locals 4
 
-    const-string v0, "chat_topPanelLine"
+    .line 76
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_topPanelLine:I
 
-    .line 78
-    invoke-direct {p0, v0}, Lorg/telegram/ui/Components/PinnedLineView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v0}, Lorg/telegram/ui/Components/PinnedLineView;->getThemedColor(I)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Components/PinnedLineView;->color:I
 
-    .line 79
+    .line 77
     iget-object v1, p0, Lorg/telegram/ui/Components/PinnedLineView;->paint:Landroid/graphics/Paint;
 
     invoke-static {v0}, Landroid/graphics/Color;->alpha(I)I
@@ -1699,7 +1676,7 @@
 
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 80
+    .line 78
     iget-object v0, p0, Lorg/telegram/ui/Components/PinnedLineView;->selectedPaint:Landroid/graphics/Paint;
 
     iget v1, p0, Lorg/telegram/ui/Components/PinnedLineView;->color:I

@@ -2,8 +2,6 @@ package com.iMe.storage.domain.storage;
 /* compiled from: BasePreferenceHelper.kt */
 /* loaded from: classes3.dex */
 public interface BasePreferenceHelper {
-    void clear();
-
     boolean isKeyContains(String str);
 
     void remove(String str);

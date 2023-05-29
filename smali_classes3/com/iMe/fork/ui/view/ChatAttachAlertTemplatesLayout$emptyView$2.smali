@@ -48,7 +48,7 @@
 .method public final invoke()Landroid/widget/LinearLayout;
     .locals 1
 
-    .line 49
+    .line 50
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$emptyView$2;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->access$initEmptyView(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)Landroid/widget/LinearLayout;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 49
+    .line 50
     invoke-virtual {p0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$emptyView$2;->invoke()Landroid/widget/LinearLayout;
 
     move-result-object v0

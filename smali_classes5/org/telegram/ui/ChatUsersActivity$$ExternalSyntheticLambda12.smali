@@ -2,38 +2,56 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ChatUsersActivity;
 
+.field public final synthetic f$1:J
+
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+
+.field public final synthetic f$3:Ljava/lang/String;
+
+.field public final synthetic f$4:Lorg/telegram/tgnet/TLObject;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatUsersActivity;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatUsersActivity;JLorg/telegram/tgnet/TLRPC$TL_chatBannedRights;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$$ExternalSyntheticLambda12;->f$0:Lorg/telegram/ui/ChatUsersActivity;
 
+    iput-wide p2, p0, Lorg/telegram/ui/ChatUsersActivity$$ExternalSyntheticLambda12;->f$1:J
+
+    iput-object p4, p0, Lorg/telegram/ui/ChatUsersActivity$$ExternalSyntheticLambda12;->f$2:Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
+
+    iput-object p5, p0, Lorg/telegram/ui/ChatUsersActivity$$ExternalSyntheticLambda12;->f$3:Ljava/lang/String;
+
+    iput-object p6, p0, Lorg/telegram/ui/ChatUsersActivity$$ExternalSyntheticLambda12;->f$4:Lorg/telegram/tgnet/TLObject;
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 1
+.method public final run()V
+    .locals 6
 
     iget-object v0, p0, Lorg/telegram/ui/ChatUsersActivity$$ExternalSyntheticLambda12;->f$0:Lorg/telegram/ui/ChatUsersActivity;
 
-    check-cast p1, Lorg/telegram/tgnet/TLObject;
+    iget-wide v1, p0, Lorg/telegram/ui/ChatUsersActivity$$ExternalSyntheticLambda12;->f$1:J
 
-    check-cast p2, Lorg/telegram/tgnet/TLObject;
+    iget-object v3, p0, Lorg/telegram/ui/ChatUsersActivity$$ExternalSyntheticLambda12;->f$2:Lorg/telegram/tgnet/TLRPC$TL_chatBannedRights;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ChatUsersActivity;->$r8$lambda$3yeuA8-3TX61qnliSe8HOKeoU_s(Lorg/telegram/ui/ChatUsersActivity;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLObject;)I
+    iget-object v4, p0, Lorg/telegram/ui/ChatUsersActivity$$ExternalSyntheticLambda12;->f$3:Ljava/lang/String;
 
-    move-result p1
+    iget-object v5, p0, Lorg/telegram/ui/ChatUsersActivity$$ExternalSyntheticLambda12;->f$4:Lorg/telegram/tgnet/TLObject;
 
-    return p1
+    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/ChatUsersActivity;->$r8$lambda$83cuvWTvEomVCiH_ck3NovlPseQ(Lorg/telegram/ui/ChatUsersActivity;JLorg/telegram/tgnet/TLRPC$TL_chatBannedRights;Ljava/lang/String;Lorg/telegram/tgnet/TLObject;)V
+
+    return-void
 .end method

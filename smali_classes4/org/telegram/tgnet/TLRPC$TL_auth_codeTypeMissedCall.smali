@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 45156
+    .line 46011
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$auth_CodeType;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 45161
+    .line 46016
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_auth_codeTypeMissedCall;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

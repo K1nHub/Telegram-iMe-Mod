@@ -2,7 +2,7 @@ package com.google.android.exoplayer2.source.rtsp;
 
 import android.net.Uri;
 import android.os.Handler;
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.FormatHolder;
 import com.google.android.exoplayer2.SeekParameters;
@@ -110,9 +110,9 @@ public final class RtspMediaPeriod implements MediaPeriod {
         this.rtspClient = new RtspClient(internalListener, internalListener, str, uri, socketFactory, z);
         this.rtspLoaderWrappers = new ArrayList();
         this.selectedLoadInfos = new ArrayList();
-        this.pendingSeekPositionUs = C0470C.TIME_UNSET;
-        this.requestedSeekPositionUs = C0470C.TIME_UNSET;
-        this.pendingSeekPositionUsForTcpRetry = C0470C.TIME_UNSET;
+        this.pendingSeekPositionUs = C0475C.TIME_UNSET;
+        this.requestedSeekPositionUs = C0475C.TIME_UNSET;
+        this.pendingSeekPositionUsForTcpRetry = C0475C.TIME_UNSET;
     }
 
     public void release() {
@@ -150,7 +150,7 @@ public final class RtspMediaPeriod implements MediaPeriod {
 
     @Override // com.google.android.exoplayer2.source.MediaPeriod
     public ImmutableList<StreamKey> getStreamKeys(List<ExoTrackSelection> list) {
-        return ImmutableList.m740of();
+        return ImmutableList.m744of();
     }
 
     @Override // com.google.android.exoplayer2.source.MediaPeriod
@@ -208,7 +208,7 @@ public final class RtspMediaPeriod implements MediaPeriod {
             this.notifyDiscontinuity = false;
             return 0L;
         }
-        return C0470C.TIME_UNSET;
+        return C0475C.TIME_UNSET;
     }
 
     @Override // com.google.android.exoplayer2.source.MediaPeriod
@@ -248,7 +248,7 @@ public final class RtspMediaPeriod implements MediaPeriod {
             return Long.MIN_VALUE;
         }
         long j = this.requestedSeekPositionUs;
-        if (j != C0470C.TIME_UNSET) {
+        if (j != C0475C.TIME_UNSET) {
             return j;
         }
         long j2 = Long.MAX_VALUE;
@@ -318,7 +318,7 @@ public final class RtspMediaPeriod implements MediaPeriod {
 
     /* JADX INFO: Access modifiers changed from: private */
     public boolean isSeekPending() {
-        return this.pendingSeekPositionUs != C0470C.TIME_UNSET;
+        return this.pendingSeekPositionUs != C0475C.TIME_UNSET;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -450,7 +450,7 @@ public final class RtspMediaPeriod implements MediaPeriod {
 
         @Override // com.google.android.exoplayer2.source.rtsp.RtspClient.PlaybackEventListener
         public void onRtspSetupCompleted() {
-            RtspMediaPeriod.this.rtspClient.startPlayback(RtspMediaPeriod.this.pendingSeekPositionUs != C0470C.TIME_UNSET ? Util.usToMs(RtspMediaPeriod.this.pendingSeekPositionUs) : RtspMediaPeriod.this.pendingSeekPositionUsForTcpRetry != C0470C.TIME_UNSET ? Util.usToMs(RtspMediaPeriod.this.pendingSeekPositionUsForTcpRetry) : 0L);
+            RtspMediaPeriod.this.rtspClient.startPlayback(RtspMediaPeriod.this.pendingSeekPositionUs != C0475C.TIME_UNSET ? Util.usToMs(RtspMediaPeriod.this.pendingSeekPositionUs) : RtspMediaPeriod.this.pendingSeekPositionUsForTcpRetry != C0475C.TIME_UNSET ? Util.usToMs(RtspMediaPeriod.this.pendingSeekPositionUsForTcpRetry) : 0L);
         }
 
         @Override // com.google.android.exoplayer2.source.rtsp.RtspClient.PlaybackEventListener
@@ -464,9 +464,9 @@ public final class RtspMediaPeriod implements MediaPeriod {
                     RtspMediaPeriod.this.listener.onSeekingUnsupported();
                     if (RtspMediaPeriod.this.isSeekPending()) {
                         RtspMediaPeriod.this.notifyDiscontinuity = true;
-                        RtspMediaPeriod.this.pendingSeekPositionUs = C0470C.TIME_UNSET;
-                        RtspMediaPeriod.this.requestedSeekPositionUs = C0470C.TIME_UNSET;
-                        RtspMediaPeriod.this.pendingSeekPositionUsForTcpRetry = C0470C.TIME_UNSET;
+                        RtspMediaPeriod.this.pendingSeekPositionUs = C0475C.TIME_UNSET;
+                        RtspMediaPeriod.this.requestedSeekPositionUs = C0475C.TIME_UNSET;
+                        RtspMediaPeriod.this.pendingSeekPositionUsForTcpRetry = C0475C.TIME_UNSET;
                     }
                 }
             }
@@ -483,17 +483,17 @@ public final class RtspMediaPeriod implements MediaPeriod {
             }
             if (RtspMediaPeriod.this.isSeekPending()) {
                 if (RtspMediaPeriod.this.pendingSeekPositionUs == RtspMediaPeriod.this.requestedSeekPositionUs) {
-                    RtspMediaPeriod.this.pendingSeekPositionUs = C0470C.TIME_UNSET;
-                    RtspMediaPeriod.this.requestedSeekPositionUs = C0470C.TIME_UNSET;
+                    RtspMediaPeriod.this.pendingSeekPositionUs = C0475C.TIME_UNSET;
+                    RtspMediaPeriod.this.requestedSeekPositionUs = C0475C.TIME_UNSET;
                     return;
                 }
-                RtspMediaPeriod.this.pendingSeekPositionUs = C0470C.TIME_UNSET;
+                RtspMediaPeriod.this.pendingSeekPositionUs = C0475C.TIME_UNSET;
                 RtspMediaPeriod rtspMediaPeriod = RtspMediaPeriod.this;
                 rtspMediaPeriod.seekToUs(rtspMediaPeriod.requestedSeekPositionUs);
-            } else if (RtspMediaPeriod.this.pendingSeekPositionUsForTcpRetry != C0470C.TIME_UNSET && RtspMediaPeriod.this.isUsingRtpTcp) {
+            } else if (RtspMediaPeriod.this.pendingSeekPositionUsForTcpRetry != C0475C.TIME_UNSET && RtspMediaPeriod.this.isUsingRtpTcp) {
                 RtspMediaPeriod rtspMediaPeriod2 = RtspMediaPeriod.this;
                 rtspMediaPeriod2.seekToUs(rtspMediaPeriod2.pendingSeekPositionUsForTcpRetry);
-                RtspMediaPeriod.this.pendingSeekPositionUsForTcpRetry = C0470C.TIME_UNSET;
+                RtspMediaPeriod.this.pendingSeekPositionUsForTcpRetry = C0475C.TIME_UNSET;
             }
         }
 

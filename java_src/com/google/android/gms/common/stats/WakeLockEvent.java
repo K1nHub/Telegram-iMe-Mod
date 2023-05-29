@@ -14,41 +14,41 @@ import java.util.List;
 /* loaded from: classes.dex */
 public final class WakeLockEvent extends StatsEvent {
     public static final Parcelable.Creator<WakeLockEvent> CREATOR = new zza();
-    @SafeParcelable.VersionField(m772id = 1)
+    @SafeParcelable.VersionField(m776id = 1)
     final int zza;
-    @SafeParcelable.Field(getter = "getTimeMillis", m775id = 2)
+    @SafeParcelable.Field(getter = "getTimeMillis", m779id = 2)
     private final long zzb;
-    @SafeParcelable.Field(getter = "getEventType", m775id = 11)
+    @SafeParcelable.Field(getter = "getEventType", m779id = 11)
     private int zzc;
-    @SafeParcelable.Field(getter = "getWakeLockName", m775id = 4)
+    @SafeParcelable.Field(getter = "getWakeLockName", m779id = 4)
     private final String zzd;
-    @SafeParcelable.Field(getter = "getSecondaryWakeLockName", m775id = 10)
+    @SafeParcelable.Field(getter = "getSecondaryWakeLockName", m779id = 10)
     private final String zze;
-    @SafeParcelable.Field(getter = "getCodePackage", m775id = 17)
+    @SafeParcelable.Field(getter = "getCodePackage", m779id = 17)
     private final String zzf;
-    @SafeParcelable.Field(getter = "getWakeLockType", m775id = 5)
+    @SafeParcelable.Field(getter = "getWakeLockType", m779id = 5)
     private final int zzg;
-    @SafeParcelable.Field(getter = "getCallingPackages", m775id = 6)
+    @SafeParcelable.Field(getter = "getCallingPackages", m779id = 6)
     private final List zzh;
-    @SafeParcelable.Field(getter = "getEventKey", m775id = 12)
+    @SafeParcelable.Field(getter = "getEventKey", m779id = 12)
     private final String zzi;
-    @SafeParcelable.Field(getter = "getElapsedRealtime", m775id = 8)
+    @SafeParcelable.Field(getter = "getElapsedRealtime", m779id = 8)
     private final long zzj;
-    @SafeParcelable.Field(getter = "getDeviceState", m775id = 14)
+    @SafeParcelable.Field(getter = "getDeviceState", m779id = 14)
     private int zzk;
-    @SafeParcelable.Field(getter = "getHostPackage", m775id = 13)
+    @SafeParcelable.Field(getter = "getHostPackage", m779id = 13)
     private final String zzl;
-    @SafeParcelable.Field(getter = "getBeginPowerPercentage", m775id = 15)
+    @SafeParcelable.Field(getter = "getBeginPowerPercentage", m779id = 15)
     private final float zzm;
-    @SafeParcelable.Field(getter = "getTimeout", m775id = 16)
+    @SafeParcelable.Field(getter = "getTimeout", m779id = 16)
     private final long zzn;
-    @SafeParcelable.Field(getter = "getAcquiredWithTimeout", m775id = 18)
+    @SafeParcelable.Field(getter = "getAcquiredWithTimeout", m779id = 18)
     private final boolean zzo;
     private long zzp = -1;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public WakeLockEvent(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) long j, @SafeParcelable.Param(m774id = 11) int i2, @SafeParcelable.Param(m774id = 4) String str, @SafeParcelable.Param(m774id = 5) int i3, @SafeParcelable.Param(m774id = 6) List list, @SafeParcelable.Param(m774id = 12) String str2, @SafeParcelable.Param(m774id = 8) long j2, @SafeParcelable.Param(m774id = 14) int i4, @SafeParcelable.Param(m774id = 10) String str3, @SafeParcelable.Param(m774id = 13) String str4, @SafeParcelable.Param(m774id = 15) float f, @SafeParcelable.Param(m774id = 16) long j3, @SafeParcelable.Param(m774id = 17) String str5, @SafeParcelable.Param(m774id = 18) boolean z) {
+    public WakeLockEvent(@SafeParcelable.Param(m778id = 1) int i, @SafeParcelable.Param(m778id = 2) long j, @SafeParcelable.Param(m778id = 11) int i2, @SafeParcelable.Param(m778id = 4) String str, @SafeParcelable.Param(m778id = 5) int i3, @SafeParcelable.Param(m778id = 6) List list, @SafeParcelable.Param(m778id = 12) String str2, @SafeParcelable.Param(m778id = 8) long j2, @SafeParcelable.Param(m778id = 14) int i4, @SafeParcelable.Param(m778id = 10) String str3, @SafeParcelable.Param(m778id = 13) String str4, @SafeParcelable.Param(m778id = 15) float f, @SafeParcelable.Param(m778id = 16) long j3, @SafeParcelable.Param(m778id = 17) String str5, @SafeParcelable.Param(m778id = 18) boolean z) {
         this.zza = i;
         this.zzb = j;
         this.zzc = i2;

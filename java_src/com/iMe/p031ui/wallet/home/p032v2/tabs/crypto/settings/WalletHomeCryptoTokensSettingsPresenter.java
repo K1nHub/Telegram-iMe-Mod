@@ -81,7 +81,7 @@ public final class WalletHomeCryptoTokensSettingsPresenter extends BasePresenter
                 break;
             }
         }
-        return TuplesKt.m80to(selectableToken, (WalletCryptoTokensSettingsTokenState) obj);
+        return TuplesKt.m85to(selectableToken, (WalletCryptoTokensSettingsTokenState) obj);
     }
 
     public static /* synthetic */ void saveSettings$default(WalletHomeCryptoTokensSettingsPresenter walletHomeCryptoTokensSettingsPresenter, boolean z, int i, Object obj) {

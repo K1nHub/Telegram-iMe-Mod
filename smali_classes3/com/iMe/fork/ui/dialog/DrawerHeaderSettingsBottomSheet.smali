@@ -482,10 +482,10 @@
     .line 166
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v1, "dialogTextBlue2"
-
     .line 167
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlue2:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -875,7 +875,7 @@
     :goto_0
     check-cast p2, Lorg/telegram/ui/Cells/NotificationsCheckCell;
 
-    invoke-virtual {p2, p4}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->checkSwitchLocation(F)Z
+    invoke-virtual {p2, p4}, Lorg/telegram/ui/Cells/NotificationsCheckCell;->isInSwitch(F)Z
 
     move-result p4
 
@@ -986,7 +986,7 @@
     .line 135
     check-cast p2, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    invoke-virtual {p2}, Lorg/telegram/ui/Cells/TextCheckCell;->toggleCheckbox()V
+    invoke-virtual {p2}, Lorg/telegram/ui/Cells/TextCheckCell;->toggleCheckBox()V
 
     .line 136
     iget p1, p0, Lcom/iMe/fork/ui/dialog/DrawerHeaderSettingsBottomSheet;->avatarRow:I
@@ -1150,10 +1150,10 @@
     .line 84
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    const-string v1, "windowBackgroundWhite"
-
     .line 85
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

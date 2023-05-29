@@ -24,10 +24,10 @@
 
     const/4 p1, 0x0
 
-    .line 310
+    .line 316
     invoke-direct {p0, p2, p1}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
-    .line 311
+    .line 317
     iput-object p3, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment$Item;->exception:Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;
 
     return-void
@@ -36,7 +36,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/CacheChatsExceptionsFragment;ILorg/telegram/messenger/CacheByChatsController$KeepMediaException;Lorg/telegram/ui/CacheChatsExceptionsFragment$1;)V
     .locals 0
 
-    .line 306
+    .line 312
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/CacheChatsExceptionsFragment$Item;-><init>(Lorg/telegram/ui/CacheChatsExceptionsFragment;ILorg/telegram/messenger/CacheByChatsController$KeepMediaException;)V
 
     return-void
@@ -58,7 +58,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 317
+    .line 323
     const-class v2, Lorg/telegram/ui/CacheChatsExceptionsFragment$Item;
 
     invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
@@ -69,11 +69,11 @@
 
     goto :goto_1
 
-    .line 318
+    .line 324
     :cond_1
     check-cast p1, Lorg/telegram/ui/CacheChatsExceptionsFragment$Item;
 
-    .line 319
+    .line 325
     iget v2, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
     iget v3, p1, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
@@ -82,7 +82,7 @@
 
     return v1
 
-    .line 322
+    .line 328
     :cond_2
     iget-object v2, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment$Item;->exception:Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;
 
@@ -92,7 +92,7 @@
 
     if-eqz p1, :cond_4
 
-    .line 323
+    .line 329
     iget-wide v2, v2, Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;->dialogId:J
 
     iget-wide v4, p1, Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;->dialogId:J

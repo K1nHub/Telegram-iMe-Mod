@@ -32,7 +32,7 @@ public class ChatActivityBotWebViewButton extends FrameLayout {
     public ChatActivityBotWebViewButton(Context context) {
         super(context);
         this.path = new Path();
-        this.buttonColor = Theme.getColor("featuredStickers_addButton");
+        this.buttonColor = Theme.getColor(Theme.key_featuredStickers_addButton);
         TextView textView = new TextView(context);
         this.textView = textView;
         textView.setTextSize(1, 14.0f);
@@ -43,14 +43,14 @@ public class ChatActivityBotWebViewButton extends FrameLayout {
         addView(this.textView, LayoutHelper.createFrame(-1, -1, 3, 0, 0, 0, 0));
         RadialProgressView radialProgressView = new RadialProgressView(context);
         this.progressView = radialProgressView;
-        radialProgressView.setSize(AndroidUtilities.m50dp(18));
+        radialProgressView.setSize(AndroidUtilities.m54dp(18));
         this.progressView.setAlpha(BitmapDescriptorFactory.HUE_RED);
         this.progressView.setScaleX(BitmapDescriptorFactory.HUE_RED);
         this.progressView.setScaleY(BitmapDescriptorFactory.HUE_RED);
         addView(this.progressView, LayoutHelper.createFrame(28, 28, 21, 0, 0, 12, 0));
         View view = new View(context);
         this.rippleView = view;
-        view.setBackground(Theme.createSelectorDrawable(Theme.getColor("featuredStickers_addButtonPressed"), 2));
+        view.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_featuredStickers_addButtonPressed), 2));
         addView(this.rippleView, LayoutHelper.createFrame(-1, -1, 3, 0, 0, 0, 0));
         setWillNotDraw(false);
     }
@@ -67,6 +67,7 @@ public class ChatActivityBotWebViewButton extends FrameLayout {
         this.textView.setTextColor(i2);
         this.buttonColor = i;
         this.rippleView.setBackground(Theme.createSelectorDrawable(BotWebViewContainer.getMainButtonRippleColor(i), 2));
+        invalidate();
         this.progressView.setProgressColor(i2);
         if (this.progressWasVisible != z2) {
             this.progressWasVisible = z2;
@@ -95,7 +96,7 @@ public class ChatActivityBotWebViewButton extends FrameLayout {
 
     public void setProgress(float f) {
         this.progress = f;
-        this.backgroundColor = ColorUtils.blendARGB(Theme.getColor("chat_messagePanelVoiceBackground"), this.buttonColor, f);
+        this.backgroundColor = ColorUtils.blendARGB(Theme.getColor(Theme.key_chat_messagePanelVoiceBackground), this.buttonColor, f);
         for (int i = 0; i < getChildCount(); i++) {
             getChildAt(i).setAlpha(f);
         }
@@ -110,17 +111,17 @@ public class ChatActivityBotWebViewButton extends FrameLayout {
     @Override // android.view.View
     public void draw(Canvas canvas) {
         canvas.save();
-        float height = (getHeight() - AndroidUtilities.m50dp(32)) / 2.0f;
-        float max = Math.max((getWidth() - this.menuButtonWidth) - AndroidUtilities.m50dp(4), getHeight()) * this.progress;
-        float m50dp = AndroidUtilities.m50dp(16) + max;
+        float height = (getHeight() - AndroidUtilities.m54dp(32)) / 2.0f;
+        float max = Math.max((getWidth() - this.menuButtonWidth) - AndroidUtilities.m54dp(4), getHeight()) * this.progress;
+        float m54dp = AndroidUtilities.m54dp(16) + max;
         RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(AndroidUtilities.m50dp(14) - max, (AndroidUtilities.m50dp(4) + height) - max, AndroidUtilities.m50dp(6) + this.menuButtonWidth + max, (getHeight() - AndroidUtilities.m50dp(12)) + max);
+        rectF.set(AndroidUtilities.m54dp(14) - max, (AndroidUtilities.m54dp(4) + height) - max, AndroidUtilities.m54dp(6) + this.menuButtonWidth + max, (getHeight() - AndroidUtilities.m54dp(12)) + max);
         this.path.rewind();
-        this.path.addRoundRect(rectF, m50dp, m50dp, Path.Direction.CW);
+        this.path.addRoundRect(rectF, m54dp, m54dp, Path.Direction.CW);
         canvas.clipPath(this.path);
         canvas.drawColor(this.backgroundColor);
         canvas.saveLayerAlpha(rectF, (int) ((1.0f - (Math.min(0.5f, this.progress) / 0.5f)) * 255.0f), 31);
-        canvas.translate(AndroidUtilities.m50dp(10), height);
+        canvas.translate(AndroidUtilities.m54dp(10), height);
         BotCommandsMenuView botCommandsMenuView = this.menuButton;
         if (botCommandsMenuView != null) {
             botCommandsMenuView.setDrawBackgroundDrawable(false);
@@ -128,7 +129,7 @@ public class ChatActivityBotWebViewButton extends FrameLayout {
             this.menuButton.setDrawBackgroundDrawable(true);
         }
         canvas.restore();
-        canvas.translate((-AndroidUtilities.m50dp(8)) * (1.0f - this.progress), BitmapDescriptorFactory.HUE_RED);
+        canvas.translate((-AndroidUtilities.m54dp(8)) * (1.0f - this.progress), BitmapDescriptorFactory.HUE_RED);
         super.draw(canvas);
         canvas.restore();
     }

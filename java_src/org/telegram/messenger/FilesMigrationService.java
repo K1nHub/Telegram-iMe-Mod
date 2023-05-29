@@ -52,9 +52,9 @@ public class FilesMigrationService extends Service {
     @Override // android.app.Service
     public int onStartCommand(Intent intent, int i, int i2) {
         NotificationsController.checkOtherNotificationsChannel();
-        Notification build = new Notification.Builder(this, NotificationsController.OTHER_NOTIFICATIONS_CHANNEL).setContentTitle(getText(C3242R.string.MigratingFiles)).setAutoCancel(false).setSmallIcon(C3242R.C3244drawable.notification).setSmallIcon(C3242R.C3244drawable.fork_notification).build();
+        Notification build = new Notification.Builder(this, NotificationsController.OTHER_NOTIFICATIONS_CHANNEL).setContentTitle(getText(C3290R.string.MigratingFiles)).setAutoCancel(false).setSmallIcon(C3290R.C3292drawable.notification).setSmallIcon(C3290R.C3292drawable.fork_notification).build();
         isRunning = true;
-        new C31871().start();
+        new C32351().start();
         startForeground(301, build);
         return super.onStartCommand(intent, i, i2);
     }
@@ -62,8 +62,8 @@ public class FilesMigrationService extends Service {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.messenger.FilesMigrationService$1 */
     /* loaded from: classes4.dex */
-    public class C31871 extends Thread {
-        C31871() {
+    public class C32351 extends Thread {
+        C32351() {
         }
 
         @Override // java.lang.Thread, java.lang.Runnable
@@ -72,7 +72,7 @@ public class FilesMigrationService extends Service {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.messenger.FilesMigrationService$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    FilesMigrationService.C31871.this.lambda$run$0();
+                    FilesMigrationService.C32351.this.lambda$run$0();
                 }
             });
         }
@@ -110,7 +110,7 @@ public class FilesMigrationService extends Service {
         if (file3.canRead() && file3.canWrite()) {
             moveDirectory(file3, file2);
         }
-        FileLog.m48d("move time = " + (System.currentTimeMillis() - currentTimeMillis));
+        FileLog.m52d("move time = " + (System.currentTimeMillis() - currentTimeMillis));
         ApplicationLoader.applicationContext.getSharedPreferences("systemConfig", 0).edit().putBoolean("migration_to_scoped_storage_finished", true).apply();
     }
 
@@ -144,12 +144,12 @@ public class FilesMigrationService extends Service {
                     });
                     convert.close();
                 } catch (Exception e) {
-                    FileLog.m45e(e);
+                    FileLog.m49e(e);
                 }
                 try {
                     file.delete();
                 } catch (Exception e2) {
-                    FileLog.m45e(e2);
+                    FileLog.m49e(e2);
                 }
             }
         }
@@ -165,11 +165,11 @@ public class FilesMigrationService extends Service {
         try {
             Files.move(path, file2.toPath(), new CopyOption[0]);
         } catch (Exception e) {
-            FileLog.m44e((Throwable) e, false);
+            FileLog.m48e((Throwable) e, false);
             try {
                 path.toFile().delete();
             } catch (Exception e2) {
-                FileLog.m45e(e2);
+                FileLog.m49e(e2);
             }
         }
         this.movedFilesCount++;
@@ -190,7 +190,7 @@ public class FilesMigrationService extends Service {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$updateProgress$1(int i) {
-        ((NotificationManager) getSystemService("notification")).notify(301, new Notification.Builder(this, NotificationsController.OTHER_NOTIFICATIONS_CHANNEL).setContentTitle(getText(C3242R.string.MigratingFiles)).setContentText(String.format("%s/%s", Integer.valueOf(i), Integer.valueOf(this.totalFilesCount))).setSmallIcon(C3242R.C3244drawable.notification).setSmallIcon(C3242R.C3244drawable.fork_notification).setAutoCancel(false).setProgress(this.totalFilesCount, i, false).build());
+        ((NotificationManager) getSystemService("notification")).notify(301, new Notification.Builder(this, NotificationsController.OTHER_NOTIFICATIONS_CHANNEL).setContentTitle(getText(C3290R.string.MigratingFiles)).setContentText(String.format("%s/%s", Integer.valueOf(i), Integer.valueOf(this.totalFilesCount))).setSmallIcon(C3290R.C3292drawable.notification).setSmallIcon(C3290R.C3292drawable.fork_notification).setAutoCancel(false).setProgress(this.totalFilesCount, i, false).build());
     }
 
     public static void checkBottomSheet(BaseFragment baseFragment) {
@@ -256,25 +256,26 @@ public class FilesMigrationService extends Service {
             linearLayout.addView(stickerImageView, LayoutHelper.createLinear(144, 144, 1, 0, 16, 0, 0));
             TextView textView = new TextView(parentActivity);
             textView.setGravity(8388611);
-            textView.setTextColor(Theme.getColor("dialogTextBlack"));
+            int i = Theme.key_dialogTextBlack;
+            textView.setTextColor(Theme.getColor(i));
             textView.setTextSize(1, 20.0f);
             textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-            textView.setText(LocaleController.getString("MigrateOldFolderTitle", C3242R.string.MigrateOldFolderTitle));
+            textView.setText(LocaleController.getString("MigrateOldFolderTitle", C3290R.string.MigrateOldFolderTitle));
             linearLayout.addView(textView, LayoutHelper.createFrame(-1, -2, 0, 21, 30, 21, 0));
             TextView textView2 = new TextView(parentActivity);
             textView2.setGravity(8388611);
             textView2.setTextSize(1, 15.0f);
-            textView2.setTextColor(Theme.getColor("dialogTextBlack"));
-            textView2.setText(AndroidUtilities.replaceTags(LocaleController.getString("MigrateOldFolderDescription", C3242R.string.MigrateOldFolderDescription)));
+            textView2.setTextColor(Theme.getColor(i));
+            textView2.setText(AndroidUtilities.replaceTags(LocaleController.getString("MigrateOldFolderDescription", C3290R.string.MigrateOldFolderDescription)));
             linearLayout.addView(textView2, LayoutHelper.createFrame(-1, -2, 0, 21, 15, 21, 16));
             TextView textView3 = new TextView(parentActivity);
-            textView3.setPadding(AndroidUtilities.m50dp(34), 0, AndroidUtilities.m50dp(34), 0);
+            textView3.setPadding(AndroidUtilities.m54dp(34), 0, AndroidUtilities.m54dp(34), 0);
             textView3.setGravity(17);
             textView3.setTextSize(1, 14.0f);
             textView3.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-            textView3.setText(LocaleController.getString("MigrateOldFolderButton", C3242R.string.MigrateOldFolderButton));
-            textView3.setTextColor(Theme.getColor("featuredStickers_buttonText"));
-            textView3.setBackground(Theme.AdaptiveRipple.filledRect("featuredStickers_addButton", 6.0f));
+            textView3.setText(LocaleController.getString("MigrateOldFolderButton", C3290R.string.MigrateOldFolderButton));
+            textView3.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
+            textView3.setBackground(Theme.AdaptiveRipple.filledRectByKey(Theme.key_featuredStickers_addButton, 6.0f));
             linearLayout.addView(textView3, LayoutHelper.createFrame(-1, 48, 0, 16, 15, 16, 16));
             textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.FilesMigrationService$FilesMigrationBottomSheet$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener

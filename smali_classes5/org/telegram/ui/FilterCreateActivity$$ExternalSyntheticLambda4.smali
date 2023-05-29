@@ -8,20 +8,20 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/FilterCreateActivity;
 
-.field public final synthetic f$1:I
+.field public final synthetic f$1:Lorg/telegram/ui/FilterCreateActivity$ItemInner;
 
 .field public final synthetic f$2:Z
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/FilterCreateActivity;IZ)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/FilterCreateActivity;Lorg/telegram/ui/FilterCreateActivity$ItemInner;Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda4;->f$0:Lorg/telegram/ui/FilterCreateActivity;
 
-    iput p2, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda4;->f$1:I
+    iput-object p2, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda4;->f$1:Lorg/telegram/ui/FilterCreateActivity$ItemInner;
 
     iput-boolean p3, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda4;->f$2:Z
 
@@ -35,11 +35,11 @@
 
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda4;->f$0:Lorg/telegram/ui/FilterCreateActivity;
 
-    iget v1, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda4;->f$1:I
+    iget-object v1, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda4;->f$1:Lorg/telegram/ui/FilterCreateActivity$ItemInner;
 
     iget-boolean v2, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda4;->f$2:Z
 
-    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/ui/FilterCreateActivity;->$r8$lambda$2y3SumCpjzlV9UkKZJny69zjmLs(Lorg/telegram/ui/FilterCreateActivity;IZLandroid/content/DialogInterface;I)V
+    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/ui/FilterCreateActivity;->$r8$lambda$x-2OPcRopWYl6hPOTIeCF9000M0(Lorg/telegram/ui/FilterCreateActivity;Lorg/telegram/ui/FilterCreateActivity$ItemInner;ZLandroid/content/DialogInterface;I)V
 
     return-void
 .end method

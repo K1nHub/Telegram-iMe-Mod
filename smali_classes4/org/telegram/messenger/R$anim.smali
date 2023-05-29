@@ -74,67 +74,85 @@
 
 .field public static final design_snackbar_out:I = 0x7f01001d
 
-.field public static final fragment_fast_out_extra_slow_in:I = 0x7f01001e
+.field public static final fork_drop_down_from_top:I = 0x7f01001e
 
-.field public static final ft_avd_toarrow_rectangle_1_pivot_0_animation:I = 0x7f01001f
+.field public static final fork_fall_in:I = 0x7f01001f
 
-.field public static final ft_avd_toarrow_rectangle_2_pivot_0_animation:I = 0x7f010020
+.field public static final fork_fall_out:I = 0x7f010020
 
-.field public static final ft_avd_toarrow_rectangle_3_pivot_0_animation:I = 0x7f010021
+.field public static final fragment_fast_out_extra_slow_in:I = 0x7f010021
 
-.field public static final ft_avd_toarrow_rectangle_4_animation:I = 0x7f010022
+.field public static final ft_avd_toarrow_rectangle_1_pivot_0_animation:I = 0x7f010022
 
-.field public static final ft_avd_toarrow_rectangle_5_animation:I = 0x7f010023
+.field public static final ft_avd_toarrow_rectangle_2_pivot_0_animation:I = 0x7f010023
 
-.field public static final ft_avd_toarrow_rectangle_6_animation:I = 0x7f010024
+.field public static final ft_avd_toarrow_rectangle_3_pivot_0_animation:I = 0x7f010024
 
-.field public static final ft_avd_toarrow_rectangle_path_4_animation:I = 0x7f010025
+.field public static final ft_avd_toarrow_rectangle_4_animation:I = 0x7f010025
 
-.field public static final ft_avd_toarrow_rectangle_path_5_animation:I = 0x7f010026
+.field public static final ft_avd_toarrow_rectangle_5_animation:I = 0x7f010026
 
-.field public static final ft_avd_toarrow_rectangle_path_6_animation:I = 0x7f010027
+.field public static final ft_avd_toarrow_rectangle_6_animation:I = 0x7f010027
 
-.field public static final ft_avd_tooverflow_rectangle_1_animation:I = 0x7f010028
+.field public static final ft_avd_toarrow_rectangle_path_4_animation:I = 0x7f010028
 
-.field public static final ft_avd_tooverflow_rectangle_1_pivot_animation:I = 0x7f010029
+.field public static final ft_avd_toarrow_rectangle_path_5_animation:I = 0x7f010029
 
-.field public static final ft_avd_tooverflow_rectangle_2_animation:I = 0x7f01002a
+.field public static final ft_avd_toarrow_rectangle_path_6_animation:I = 0x7f01002a
 
-.field public static final ft_avd_tooverflow_rectangle_2_pivot_animation:I = 0x7f01002b
+.field public static final ft_avd_tooverflow_rectangle_1_animation:I = 0x7f01002b
 
-.field public static final ft_avd_tooverflow_rectangle_3_animation:I = 0x7f01002c
+.field public static final ft_avd_tooverflow_rectangle_1_pivot_animation:I = 0x7f01002c
 
-.field public static final ft_avd_tooverflow_rectangle_3_pivot_animation:I = 0x7f01002d
+.field public static final ft_avd_tooverflow_rectangle_2_animation:I = 0x7f01002d
 
-.field public static final ft_avd_tooverflow_rectangle_path_1_animation:I = 0x7f01002e
+.field public static final ft_avd_tooverflow_rectangle_2_pivot_animation:I = 0x7f01002e
 
-.field public static final ft_avd_tooverflow_rectangle_path_2_animation:I = 0x7f01002f
+.field public static final ft_avd_tooverflow_rectangle_3_animation:I = 0x7f01002f
 
-.field public static final ft_avd_tooverflow_rectangle_path_3_animation:I = 0x7f010030
+.field public static final ft_avd_tooverflow_rectangle_3_pivot_animation:I = 0x7f010030
 
-.field public static final mtrl_bottom_sheet_slide_in:I = 0x7f010031
+.field public static final ft_avd_tooverflow_rectangle_path_1_animation:I = 0x7f010031
 
-.field public static final mtrl_bottom_sheet_slide_out:I = 0x7f010032
+.field public static final ft_avd_tooverflow_rectangle_path_2_animation:I = 0x7f010032
 
-.field public static final mtrl_card_lowers_interpolator:I = 0x7f010033
+.field public static final ft_avd_tooverflow_rectangle_path_3_animation:I = 0x7f010033
 
-.field public static final no_animation:I = 0x7f010034
+.field public static final mtrl_bottom_sheet_slide_in:I = 0x7f010034
 
-.field public static final popup_context_in:I = 0x7f010035
+.field public static final mtrl_bottom_sheet_slide_out:I = 0x7f010035
 
-.field public static final popup_in:I = 0x7f010036
+.field public static final mtrl_card_lowers_interpolator:I = 0x7f010036
 
-.field public static final popup_out:I = 0x7f010037
+.field public static final nav_default_enter_anim:I = 0x7f010037
 
-.field public static final scale_in:I = 0x7f010038
+.field public static final nav_default_exit_anim:I = 0x7f010038
 
-.field public static final scale_out:I = 0x7f010039
+.field public static final nav_default_pop_enter_anim:I = 0x7f010039
 
-.field public static final text_in:I = 0x7f01003a
+.field public static final nav_default_pop_exit_anim:I = 0x7f01003a
 
-.field public static final text_out:I = 0x7f01003b
+.field public static final no_animation:I = 0x7f01003b
 
-.field public static final text_out_down:I = 0x7f01003c
+.field public static final popup_context_in:I = 0x7f01003c
+
+.field public static final popup_in:I = 0x7f01003d
+
+.field public static final popup_out:I = 0x7f01003e
+
+.field public static final scale_in:I = 0x7f01003f
+
+.field public static final scale_out:I = 0x7f010040
+
+.field public static final slide_from_bottom:I = 0x7f010041
+
+.field public static final slide_to_bottom:I = 0x7f010042
+
+.field public static final text_in:I = 0x7f010043
+
+.field public static final text_out:I = 0x7f010044
+
+.field public static final text_out_down:I = 0x7f010045
 
 
 # direct methods

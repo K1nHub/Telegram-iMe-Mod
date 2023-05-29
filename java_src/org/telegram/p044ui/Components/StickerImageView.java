@@ -88,9 +88,9 @@ public class StickerImageView extends BackupImageView implements NotificationCen
         L32:
             if (r1 == 0) goto L3f
             java.util.ArrayList<org.telegram.tgnet.TLRPC$PhotoSize> r0 = r1.thumbs
-            r2 = 1045220557(0x3e4ccccd, float:0.2)
-            java.lang.String r3 = "emptyListPlaceholder"
-            org.telegram.messenger.SvgHelper$SvgDrawable r0 = org.telegram.messenger.DocumentObject.getSvgThumb(r0, r3, r2)
+            int r2 = org.telegram.p044ui.ActionBar.Theme.key_emptyListPlaceholder
+            r3 = 1045220557(0x3e4ccccd, float:0.2)
+            org.telegram.messenger.SvgHelper$SvgDrawable r0 = org.telegram.messenger.DocumentObject.getSvgThumb(r0, r2, r3)
         L3f:
             r5 = r0
             if (r5 == 0) goto L47

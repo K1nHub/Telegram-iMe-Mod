@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChannelAdminLogActivity;)V
     .locals 0
 
-    .line 212
+    .line 220
     iput-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$1;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer$EmptyPhotoViewerProvider;-><init>()V
@@ -35,7 +35,7 @@
 .method public getPlaceForPhoto(Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$FileLocation;IZ)Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;
     .locals 11
 
-    .line 216
+    .line 224
     iget-object p3, p0, Lorg/telegram/ui/ChannelAdminLogActivity$1;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p3}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$000(Lorg/telegram/ui/ChannelAdminLogActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -55,7 +55,7 @@
 
     if-ge v0, p3, :cond_6
 
-    .line 220
+    .line 228
     iget-object v2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$1;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$000(Lorg/telegram/ui/ChannelAdminLogActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -66,26 +66,26 @@
 
     move-result-object v2
 
-    .line 221
+    .line 229
     instance-of v3, v2, Lorg/telegram/ui/Cells/ChatMessageCell;
 
     if-eqz v3, :cond_0
 
     if-eqz p1, :cond_3
 
-    .line 223
+    .line 231
     move-object v3, v2
 
     check-cast v3, Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    .line 224
+    .line 232
     invoke-virtual {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
     move-result-object v4
 
     if-eqz v4, :cond_3
 
-    .line 225
+    .line 233
     invoke-virtual {v4}, Lorg/telegram/messenger/MessageObject;->getId()I
 
     move-result v4
@@ -96,25 +96,25 @@
 
     if-ne v4, v5, :cond_3
 
-    .line 226
+    .line 234
     invoke-virtual {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->getPhotoImage()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v1
 
     goto :goto_2
 
-    .line 229
+    .line 237
     :cond_0
     instance-of v3, v2, Lorg/telegram/ui/Cells/ChatActionCell;
 
     if-eqz v3, :cond_3
 
-    .line 230
+    .line 238
     move-object v3, v2
 
     check-cast v3, Lorg/telegram/ui/Cells/ChatActionCell;
 
-    .line 231
+    .line 239
     invoke-virtual {v3}, Lorg/telegram/ui/Cells/ChatActionCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
     move-result-object v4
@@ -123,7 +123,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 234
+    .line 242
     invoke-virtual {v4}, Lorg/telegram/messenger/MessageObject;->getId()I
 
     move-result v4
@@ -134,7 +134,7 @@
 
     if-ne v4, v5, :cond_3
 
-    .line 235
+    .line 243
     invoke-virtual {v3}, Lorg/telegram/ui/Cells/ChatActionCell;->getPhotoImage()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v1
@@ -144,14 +144,14 @@
     :cond_1
     if-eqz p2, :cond_3
 
-    .line 237
+    .line 245
     iget-object v5, v4, Lorg/telegram/messenger/MessageObject;->photoThumbs:Ljava/util/ArrayList;
 
     if-eqz v5, :cond_3
 
     move v5, p4
 
-    .line 238
+    .line 246
     :goto_1
     iget-object v6, v4, Lorg/telegram/messenger/MessageObject;->photoThumbs:Ljava/util/ArrayList;
 
@@ -161,7 +161,7 @@
 
     if-ge v5, v6, :cond_3
 
-    .line 239
+    .line 247
     iget-object v6, v4, Lorg/telegram/messenger/MessageObject;->photoThumbs:Ljava/util/ArrayList;
 
     invoke-virtual {v6, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -170,7 +170,7 @@
 
     check-cast v6, Lorg/telegram/tgnet/TLRPC$PhotoSize;
 
-    .line 240
+    .line 248
     iget-object v6, v6, Lorg/telegram/tgnet/TLRPC$PhotoSize;->location:Lorg/telegram/tgnet/TLRPC$FileLocation;
 
     iget-wide v7, v6, Lorg/telegram/tgnet/TLRPC$FileLocation;->volume_id:J
@@ -187,7 +187,7 @@
 
     if-ne v6, v7, :cond_2
 
-    .line 241
+    .line 249
     invoke-virtual {v3}, Lorg/telegram/ui/Cells/ChatActionCell;->getPhotoImage()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v1
@@ -207,22 +207,22 @@
 
     new-array p1, p1, [I
 
-    .line 251
+    .line 259
     invoke-virtual {v2, p1}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 252
+    .line 260
     new-instance p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;
 
     invoke-direct {p2}, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;-><init>()V
 
-    .line 253
+    .line 261
     aget p3, p1, p4
 
     iput p3, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->viewX:I
 
     const/4 p3, 0x1
 
-    .line 254
+    .line 262
     aget p1, p1, p3
 
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
@@ -241,7 +241,7 @@
 
     iput p1, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->viewY:I
 
-    .line 255
+    .line 263
     iget-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$1;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$000(Lorg/telegram/ui/ChannelAdminLogActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -250,24 +250,24 @@
 
     iput-object p1, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->parentView:Landroid/view/View;
 
-    .line 256
+    .line 264
     iput-object v1, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 257
+    .line 265
     invoke-virtual {v1}, Lorg/telegram/messenger/ImageReceiver;->getBitmapSafe()Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
     move-result-object p1
 
     iput-object p1, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->thumb:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
-    .line 258
+    .line 266
     invoke-virtual {v1}, Lorg/telegram/messenger/ImageReceiver;->getRoundRadius()[I
 
     move-result-object p1
 
     iput-object p1, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->radius:[I
 
-    .line 259
+    .line 267
     iput-boolean p3, p2, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->isEvent:Z
 
     return-object p2

@@ -19,22 +19,22 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 34005
+    .line 34854
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 34007
+    .line 34856
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$messages_AllStickers;->sets:Ljava/util/ArrayList;
 
-    .line 34008
+    .line 34857
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 34009
+    .line 34858
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -57,7 +57,7 @@
 
     goto :goto_0
 
-    .line 34018
+    .line 34867
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_allStickersNotModified;
 
@@ -65,7 +65,7 @@
 
     goto :goto_0
 
-    .line 34015
+    .line 34864
     :cond_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_allStickers;
 
@@ -78,7 +78,7 @@
 
     goto :goto_1
 
-    .line 34022
+    .line 34871
     :cond_2
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -108,7 +108,7 @@
     :goto_1
     if-eqz v0, :cond_4
 
-    .line 34025
+    .line 34874
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_4

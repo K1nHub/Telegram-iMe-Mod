@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;Lorg/telegram/ui/Components/RecyclerListView;)V
     .locals 0
 
-    .line 1028
+    .line 1032
     iput-object p1, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/GestureDetectorFixDoubleTap$OnGestureListener;-><init>()V
@@ -37,7 +37,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 1067
+    .line 1071
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
@@ -58,18 +58,18 @@
 
     if-eqz v0, :cond_3
 
-    .line 1068
+    .line 1072
     :cond_0
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
 
     move-result v5
 
-    .line 1069
+    .line 1073
     invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
 
     move-result v6
 
-    .line 1070
+    .line 1074
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
@@ -78,7 +78,7 @@
 
     invoke-virtual {v0, p1, v5, v6, v1}, Lorg/telegram/ui/Components/RecyclerListView;->onChildPressed(Landroid/view/View;FFZ)V
 
-    .line 1072
+    .line 1076
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
@@ -87,7 +87,7 @@
 
     move-result v4
 
-    .line 1073
+    .line 1077
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
@@ -104,13 +104,13 @@
 
     if-eq v4, v0, :cond_2
 
-    .line 1074
+    .line 1078
     invoke-virtual {p1, v7}, Landroid/view/View;->playSoundEffect(I)V
 
-    .line 1075
+    .line 1079
     invoke-virtual {p1, v1}, Landroid/view/View;->sendAccessibilityEvent(I)V
 
-    .line 1076
+    .line 1080
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
@@ -121,7 +121,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1077
+    .line 1081
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
@@ -134,7 +134,7 @@
 
     goto :goto_0
 
-    .line 1078
+    .line 1082
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 
@@ -146,7 +146,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 1079
+    .line 1083
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
@@ -169,7 +169,7 @@
 
     invoke-interface {v0, p1, v4, v1, v2}, Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended;->onItemClick(Landroid/view/View;IFF)V
 
-    .line 1082
+    .line 1086
     :cond_2
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
@@ -190,17 +190,17 @@
 
     move-result-object v0
 
-    .line 1103
+    .line 1107
     invoke-static {}, Landroid/view/ViewConfiguration;->getPressedStateDuration()I
 
     move-result v1
 
     int-to-long v1, v1
 
-    .line 1082
+    .line 1086
     invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 1105
+    .line 1109
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
@@ -211,7 +211,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 1106
+    .line 1110
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
@@ -222,7 +222,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1107
+    .line 1111
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
@@ -231,21 +231,21 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->access$1202(Lorg/telegram/ui/Components/RecyclerListView;Ljava/lang/Runnable;)Ljava/lang/Runnable;
 
-    .line 1108
+    .line 1112
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->access$602(Lorg/telegram/ui/Components/RecyclerListView;Landroid/view/View;)Landroid/view/View;
 
-    .line 1109
+    .line 1113
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-static {v0, v7}, Lorg/telegram/ui/Components/RecyclerListView;->access$1302(Lorg/telegram/ui/Components/RecyclerListView;Z)Z
 
-    .line 1110
+    .line 1114
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
@@ -261,7 +261,7 @@
 .method public hasDoubleTap()Z
     .locals 1
 
-    .line 1144
+    .line 1148
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
@@ -286,7 +286,7 @@
 .method public onDoubleTap(Landroid/view/MotionEvent;)Z
     .locals 4
 
-    .line 1058
+    .line 1062
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->doubleTapView:Landroid/view/View;
 
     if-eqz v0, :cond_0
@@ -325,7 +325,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1059
+    .line 1063
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
@@ -356,7 +356,7 @@
 
     const/4 p1, 0x0
 
-    .line 1060
+    .line 1064
     iput-object p1, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->doubleTapView:Landroid/view/View;
 
     const/4 p1, 0x1
@@ -380,7 +380,7 @@
 .method public onLongPress(Landroid/view/MotionEvent;)V
     .locals 8
 
-    .line 1117
+    .line 1121
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
@@ -425,7 +425,7 @@
 
     goto/16 :goto_0
 
-    .line 1120
+    .line 1124
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 
@@ -435,7 +435,7 @@
 
     move-result-object v0
 
-    .line 1122
+    .line 1126
     :try_start_0
     iget-object v1, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 
@@ -451,7 +451,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 1123
+    .line 1127
     iget-object p1, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
@@ -482,15 +482,15 @@
 
     if-eqz p1, :cond_2
 
-    .line 1124
+    .line 1128
     invoke-virtual {v0, v3}, Landroid/view/View;->performHapticFeedback(I)Z
 
-    .line 1125
+    .line 1129
     invoke-virtual {v0, v2}, Landroid/view/View;->sendAccessibilityEvent(I)V
 
     goto :goto_0
 
-    .line 1128
+    .line 1132
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 
@@ -558,13 +558,13 @@
 
     if-eqz p1, :cond_2
 
-    .line 1129
+    .line 1133
     invoke-virtual {v0, v3}, Landroid/view/View;->performHapticFeedback(I)Z
 
-    .line 1130
+    .line 1134
     invoke-virtual {v0, v2}, Landroid/view/View;->sendAccessibilityEvent(I)V
 
-    .line 1131
+    .line 1135
     iget-object p1, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
@@ -584,7 +584,7 @@
 .method public onSingleTapConfirmed(Landroid/view/MotionEvent;)Z
     .locals 3
 
-    .line 1046
+    .line 1050
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->doubleTapView:Landroid/view/View;
 
     if-eqz v0, :cond_0
@@ -599,7 +599,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1047
+    .line 1051
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
@@ -624,14 +624,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 1048
+    .line 1052
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->doubleTapView:Landroid/view/View;
 
     invoke-direct {p0, v0, p1}, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->onPressItem(Landroid/view/View;Landroid/view/MotionEvent;)V
 
     const/4 p1, 0x0
 
-    .line 1049
+    .line 1053
     iput-object p1, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->doubleTapView:Landroid/view/View;
 
     const/4 p1, 0x1
@@ -647,7 +647,7 @@
 .method public onSingleTapUp(Landroid/view/MotionEvent;)Z
     .locals 4
 
-    .line 1033
+    .line 1037
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
@@ -660,7 +660,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 1034
+    .line 1038
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
@@ -701,7 +701,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1035
+    .line 1039
     iget-object p1, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
@@ -714,7 +714,7 @@
 
     goto :goto_0
 
-    .line 1037
+    .line 1041
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener$1;->this$1:Lorg/telegram/ui/Components/RecyclerListView$RecyclerListViewItemClickListener;
 

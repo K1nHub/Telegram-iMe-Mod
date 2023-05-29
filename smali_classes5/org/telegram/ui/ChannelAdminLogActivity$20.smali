@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChannelAdminLogActivity;)V
     .locals 0
 
-    .line 1920
+    .line 1928
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$ChannelParticipant;-><init>()V
 
     return-void

@@ -38,13 +38,13 @@
     .line 471
     iget-object p1, p0, Lorg/telegram/ui/Components/ColorPicker$5;->this$0:Lorg/telegram/ui/Components/ColorPicker;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ColorPicker;->access$900(Lorg/telegram/ui/Components/ColorPicker;)I
+    invoke-static {p1}, Lorg/telegram/ui/Components/ColorPicker;->access$1000(Lorg/telegram/ui/Components/ColorPicker;)I
 
     move-result p1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ColorPicker$5;->this$0:Lorg/telegram/ui/Components/ColorPicker;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ColorPicker;->access$1100(Lorg/telegram/ui/Components/ColorPicker;)I
+    invoke-static {v0}, Lorg/telegram/ui/Components/ColorPicker;->access$1200(Lorg/telegram/ui/Components/ColorPicker;)I
 
     move-result v0
 
@@ -53,7 +53,7 @@
     .line 472
     iget-object p1, p0, Lorg/telegram/ui/Components/ColorPicker$5;->this$0:Lorg/telegram/ui/Components/ColorPicker;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ColorPicker;->access$1200(Lorg/telegram/ui/Components/ColorPicker;)Landroid/widget/ImageView;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ColorPicker;->access$1300(Lorg/telegram/ui/Components/ColorPicker;)Landroid/widget/ImageView;
 
     move-result-object p1
 
@@ -67,7 +67,7 @@
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/ColorPicker;->access$1002(Lorg/telegram/ui/Components/ColorPicker;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/ColorPicker;->access$1102(Lorg/telegram/ui/Components/ColorPicker;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
     return-void
 .end method

@@ -57,16 +57,16 @@ public class PinnedLineView extends View {
         this.selectedPaint.setStyle(Paint.Style.FILL);
         this.selectedPaint.setStrokeCap(Paint.Cap.ROUND);
         this.fadePaint = new Paint();
-        this.fadePaint.setShader(new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m50dp(6), new int[]{-1, 0}, new float[]{BitmapDescriptorFactory.HUE_RED, 1.0f}, Shader.TileMode.CLAMP));
+        this.fadePaint.setShader(new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(6), new int[]{-1, 0}, new float[]{BitmapDescriptorFactory.HUE_RED, 1.0f}, Shader.TileMode.CLAMP));
         this.fadePaint.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
         this.fadePaint2 = new Paint();
-        this.fadePaint2.setShader(new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m50dp(6), new int[]{0, -1}, new float[]{BitmapDescriptorFactory.HUE_RED, 1.0f}, Shader.TileMode.CLAMP));
+        this.fadePaint2.setShader(new LinearGradient((float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, (float) BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(6), new int[]{0, -1}, new float[]{BitmapDescriptorFactory.HUE_RED, 1.0f}, Shader.TileMode.CLAMP));
         this.fadePaint2.setXfermode(new PorterDuffXfermode(PorterDuff.Mode.DST_OUT));
         updateColors();
     }
 
     public void updateColors() {
-        int themedColor = getThemedColor("chat_topPanelLine");
+        int themedColor = getThemedColor(Theme.key_chat_topPanelLine);
         this.color = themedColor;
         this.paint.setColor(ColorUtils.setAlphaComponent(themedColor, (int) ((Color.alpha(themedColor) / 255.0f) * 112.0f)));
         this.selectedPaint.setColor(this.color);
@@ -151,14 +151,14 @@ public class PinnedLineView extends View {
         if (z) {
             canvas.saveLayerAlpha(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), getMeasuredHeight(), 255, 31);
         }
-        int m50dp = AndroidUtilities.m50dp(8);
+        int m54dp = AndroidUtilities.m54dp(8);
         if (this.replaceInProgress) {
             float f2 = this.animationProgress;
             measuredHeight = (this.lineHFrom * (1.0f - f2)) + (this.lineHTo * f2);
         } else if (this.totalCount == 0) {
             return;
         } else {
-            measuredHeight = (getMeasuredHeight() - (m50dp * 2)) / Math.min(this.totalCount, 3);
+            measuredHeight = (getMeasuredHeight() - (m54dp * 2)) / Math.min(this.totalCount, 3);
         }
         float f3 = BitmapDescriptorFactory.HUE_RED;
         if (measuredHeight == BitmapDescriptorFactory.HUE_RED) {
@@ -179,14 +179,14 @@ public class PinnedLineView extends View {
             if (f < BitmapDescriptorFactory.HUE_RED) {
                 f = 0.0f;
             } else {
-                float f7 = m50dp;
-                if ((((this.totalCount - 1) * measuredHeight) + f7) - f < (getMeasuredHeight() - m50dp) - measuredHeight) {
-                    f = (f7 + ((this.totalCount - 1) * measuredHeight)) - ((getMeasuredHeight() - m50dp) - measuredHeight);
+                float f7 = m54dp;
+                if ((((this.totalCount - 1) * measuredHeight) + f7) - f < (getMeasuredHeight() - m54dp) - measuredHeight) {
+                    f = (f7 + ((this.totalCount - 1) * measuredHeight)) - ((getMeasuredHeight() - m54dp) - measuredHeight);
                 }
             }
         }
         float measuredWidth = getMeasuredWidth() / 2.0f;
-        float f8 = m50dp;
+        float f8 = m54dp;
         int max = Math.max(0, (int) (((f8 + f) / measuredHeight) - 1.0f));
         int min = Math.min(max + 6, this.replaceInProgress ? Math.max(this.animateFromTotal, this.animateToTotal) : this.totalCount);
         while (max < min) {
@@ -222,15 +222,15 @@ public class PinnedLineView extends View {
             canvas.drawRoundRect(this.rectF, measuredWidth, measuredWidth, this.selectedPaint);
         }
         if (z) {
-            canvas.drawRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), AndroidUtilities.m50dp(6), this.fadePaint);
-            canvas.drawRect(BitmapDescriptorFactory.HUE_RED, getMeasuredHeight() - AndroidUtilities.m50dp(6), getMeasuredWidth(), getMeasuredHeight(), this.fadePaint);
-            canvas.translate(BitmapDescriptorFactory.HUE_RED, getMeasuredHeight() - AndroidUtilities.m50dp(6));
-            canvas.drawRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), AndroidUtilities.m50dp(6), this.fadePaint2);
+            canvas.drawRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), AndroidUtilities.m54dp(6), this.fadePaint);
+            canvas.drawRect(BitmapDescriptorFactory.HUE_RED, getMeasuredHeight() - AndroidUtilities.m54dp(6), getMeasuredWidth(), getMeasuredHeight(), this.fadePaint);
+            canvas.translate(BitmapDescriptorFactory.HUE_RED, getMeasuredHeight() - AndroidUtilities.m54dp(6));
+            canvas.drawRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), AndroidUtilities.m54dp(6), this.fadePaint2);
         }
     }
 
     public void set(int i, int i2, boolean z) {
-        int m50dp;
+        int m54dp;
         int i3;
         int i4;
         int i5 = this.selectedPosition;
@@ -251,17 +251,17 @@ public class PinnedLineView extends View {
                 this.nextPosition = 0;
                 valueAnimator2.cancel();
             }
-            int m50dp2 = AndroidUtilities.m50dp(8) * 2;
-            this.lineHFrom = (getMeasuredHeight() - m50dp2) / Math.min(this.totalCount, 3);
-            this.lineHTo = (getMeasuredHeight() - m50dp2) / Math.min(i2, 3);
+            int m54dp2 = AndroidUtilities.m54dp(8) * 2;
+            this.lineHFrom = (getMeasuredHeight() - m54dp2) / Math.min(this.totalCount, 3);
+            this.lineHTo = (getMeasuredHeight() - m54dp2) / Math.min(i2, 3);
             float f = (this.selectedPosition - 1) * this.lineHFrom;
             this.startOffsetFrom = f;
             if (f < BitmapDescriptorFactory.HUE_RED) {
                 this.startOffsetFrom = BitmapDescriptorFactory.HUE_RED;
             } else {
                 int i6 = this.lineHFrom;
-                if ((((this.totalCount - 1) * i3) + m50dp) - f < (getMeasuredHeight() - m50dp) - i6) {
-                    this.startOffsetFrom = (((this.totalCount - 1) * i6) + m50dp) - ((getMeasuredHeight() - m50dp) - this.lineHFrom);
+                if ((((this.totalCount - 1) * i3) + m54dp) - f < (getMeasuredHeight() - m54dp) - i6) {
+                    this.startOffsetFrom = (((this.totalCount - 1) * i6) + m54dp) - ((getMeasuredHeight() - m54dp) - this.lineHFrom);
                 }
             }
             float f2 = (i - 1) * this.lineHTo;
@@ -271,8 +271,8 @@ public class PinnedLineView extends View {
             } else {
                 int i7 = i2 - 1;
                 int i8 = this.lineHTo;
-                if (((i4 * i7) + m50dp) - f2 < (getMeasuredHeight() - m50dp) - i8) {
-                    this.startOffsetTo = ((i7 * i8) + m50dp) - ((getMeasuredHeight() - m50dp) - this.lineHTo);
+                if (((i4 * i7) + m54dp) - f2 < (getMeasuredHeight() - m54dp) - i8) {
+                    this.startOffsetTo = ((i7 * i8) + m54dp) - ((getMeasuredHeight() - m54dp) - this.lineHTo);
                 }
             }
             this.animateFromPosition = this.selectedPosition;
@@ -321,9 +321,7 @@ public class PinnedLineView extends View {
         invalidate();
     }
 
-    private int getThemedColor(String str) {
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-        return color != null ? color.intValue() : Theme.getColor(str);
+    private int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 }

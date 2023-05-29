@@ -67,7 +67,7 @@
     return v0
 .end method
 
-.method public onMemberClick(Lorg/telegram/tgnet/TLRPC$ChatParticipant;ZZ)Z
+.method public onMemberClick(Lorg/telegram/tgnet/TLRPC$ChatParticipant;ZZLandroid/view/View;)Z
     .locals 0
 
     const/4 p1, 0x0

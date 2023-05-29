@@ -16,7 +16,6 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
-import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.p044ui.Components.LayoutHelper;
 import org.telegram.p044ui.Components.RecyclerListView;
@@ -29,10 +28,6 @@ public final class DialogTypeTopicsBar extends FrameLayout {
     private final Function1<DialogType, Unit> delegate;
     private final Lazy listAdapter$delegate;
     private final Lazy listView$delegate;
-
-    static {
-        new Companion(null);
-    }
 
     public final List<DialogType> getData() {
         return this.data;
@@ -102,8 +97,7 @@ public final class DialogTypeTopicsBar extends FrameLayout {
         recyclerListView.setClipChildren(false);
         recyclerListView.setLayoutManager(new LinearLayoutManager(recyclerListView.getContext(), 0, false));
         recyclerListView.setAdapter(getListAdapter());
-        ViewExtKt.setHorizontalPadding(recyclerListView, 12);
-        ViewExtKt.setVerticalPadding(recyclerListView, 5);
+        ViewExtKt.setHorizontalPadding(recyclerListView, 7);
         return recyclerListView;
     }
 
@@ -163,7 +157,7 @@ public final class DialogTypeTopicsBar extends FrameLayout {
             Context context = DialogTypeTopicsBar.this.getContext();
             Intrinsics.checkNotNullExpressionValue(context, "context");
             TopicView topicView = new TopicView(context, null, 0, 16, 6, null);
-            topicView.setLayoutParams(LayoutHelper.createRecycler(-2, 24, 8, 6, 8, 6));
+            topicView.setLayoutParams(LayoutHelper.createRecycler(-2, -1));
             return new RecyclerListView.Holder(topicView);
         }
 
@@ -175,18 +169,6 @@ public final class DialogTypeTopicsBar extends FrameLayout {
             TopicView topicView = (TopicView) view;
             DialogTypeTopicsBar dialogTypeTopicsBar = DialogTypeTopicsBar.this;
             topicView.setDialogType(dialogTypeTopicsBar.getData().get(i), dialogTypeTopicsBar.getData().get(i) == dialogTypeTopicsBar.getCurrentDialogType());
-        }
-    }
-
-    /* compiled from: DialogTypeTopicsBar.kt */
-    /* renamed from: com.iMe.fork.ui.view.DialogTypeTopicsBar$Companion */
-    /* loaded from: classes3.dex */
-    public static final class Companion {
-        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-            this();
-        }
-
-        private Companion() {
         }
     }
 }

@@ -12,7 +12,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: CatalogUserChannelsView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.catalog.tabs.user_channels.CatalogUserChannelsView */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface CatalogUserChannelsView extends BaseView, GlobalStateView, LoadMoreView<CampaignItem>, SwipeRefreshView {
     @OneExecution
     void openAddChannelScreen();

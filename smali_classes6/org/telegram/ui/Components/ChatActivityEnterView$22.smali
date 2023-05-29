@@ -1,11 +1,14 @@
 .class Lorg/telegram/ui/Components/ChatActivityEnterView$22;
-.super Lorg/telegram/ui/Components/SenderSelectPopup;
+.super Ljava/lang/Object;
 .source "ChatActivityEnterView.java"
+
+# interfaces
+.implements Landroid/view/ViewTreeObserver$OnDrawListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->lambda$createSenderSelectView$26(Landroid/view/View;)V
+    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->lambda$createSenderSelectView$26(Lorg/telegram/ui/Components/SimpleAvatarView;[ILorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,135 +18,68 @@
 
 
 # instance fields
-.field final synthetic this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+.field final synthetic val$avatar:Lorg/telegram/ui/Components/SimpleAvatarView;
 
-.field final synthetic val$fl:Landroid/view/ViewGroup;
+.field final synthetic val$senderView:Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/content/Context;Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$ChatFull;Lorg/telegram/tgnet/TLRPC$TL_channels_sendAsPeers;Lorg/telegram/ui/Components/SenderSelectPopup$OnSelectCallback;Landroid/view/ViewGroup;)V
-    .locals 7
+.method public static synthetic $r8$lambda$wEX8Vtu0fKk_uUpcZxlMj95ZeZI(Lorg/telegram/ui/Components/ChatActivityEnterView$22;Lorg/telegram/ui/Components/SimpleAvatarView;Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
+    .locals 0
 
-    .line 3699
-    iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$22;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ChatActivityEnterView$22;->lambda$onDraw$0(Lorg/telegram/ui/Components/SimpleAvatarView;Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
 
-    iput-object p8, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$22;->val$fl:Landroid/view/ViewGroup;
+    return-void
+.end method
 
-    move-object v0, p0
+.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Lorg/telegram/ui/Components/SimpleAvatarView;Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
+    .locals 0
 
-    move-object v1, p2
+    .line 3525
+    iput-object p2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$22;->val$avatar:Lorg/telegram/ui/Components/SimpleAvatarView;
 
-    move-object v2, p3
+    iput-object p3, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$22;->val$senderView:Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;
 
-    move-object v3, p4
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    move-object v4, p5
+    return-void
+.end method
 
-    move-object v5, p6
+.method private synthetic lambda$onDraw$0(Lorg/telegram/ui/Components/SimpleAvatarView;Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
+    .locals 0
 
-    move-object v6, p7
+    .line 3529
+    invoke-virtual {p1}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
-    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Components/SenderSelectPopup;-><init>(Landroid/content/Context;Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$ChatFull;Lorg/telegram/tgnet/TLRPC$TL_channels_sendAsPeers;Lorg/telegram/ui/Components/SenderSelectPopup$OnSelectCallback;)V
+    move-result-object p1
+
+    invoke-virtual {p1, p0}, Landroid/view/ViewTreeObserver;->removeOnDrawListener(Landroid/view/ViewTreeObserver$OnDrawListener;)V
+
+    .line 3530
+    iget-object p1, p2, Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;->avatar:Lorg/telegram/ui/Components/SimpleAvatarView;
+
+    const/4 p2, 0x1
+
+    invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/SimpleAvatarView;->setHideAvatar(Z)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public dismiss()V
+.method public onDraw()V
     .locals 3
 
-    .line 3702
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$22;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    .line 3528
+    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$22;->val$avatar:Lorg/telegram/ui/Components/SimpleAvatarView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$17300(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/SenderSelectPopup;
+    iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$22;->val$senderView:Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;
 
-    move-result-object v0
+    new-instance v2, Lorg/telegram/ui/Components/ChatActivityEnterView$22$$ExternalSyntheticLambda0;
 
-    if-eq v0, p0, :cond_0
+    invoke-direct {v2, p0, v0, v1}, Lorg/telegram/ui/Components/ChatActivityEnterView$22$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ChatActivityEnterView$22;Lorg/telegram/ui/Components/SimpleAvatarView;Lorg/telegram/ui/Components/SenderSelectPopup$SenderView;)V
 
-    .line 3703
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$22;->val$fl:Landroid/view/ViewGroup;
+    invoke-virtual {v0, v2}, Landroid/view/View;->post(Ljava/lang/Runnable;)Z
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/SenderSelectPopup;->dimView:Landroid/view/View;
-
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
-
-    .line 3704
-    invoke-super {p0}, Lorg/telegram/ui/Components/SenderSelectPopup;->dismiss()V
-
-    return-void
-
-    .line 3708
-    :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$22;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$17302(Lorg/telegram/ui/Components/ChatActivityEnterView;Lorg/telegram/ui/Components/SenderSelectPopup;)Lorg/telegram/ui/Components/SenderSelectPopup;
-
-    .line 3710
-    iget-boolean v0, p0, Lorg/telegram/ui/Components/SenderSelectPopup;->runningCustomSprings:Z
-
-    if-nez v0, :cond_1
-
-    const/4 v0, 0x0
-
-    new-array v0, v0, [Landroidx/dynamicanimation/animation/SpringAnimation;
-
-    .line 3711
-    invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/SenderSelectPopup;->startDismissAnimation([Landroidx/dynamicanimation/animation/SpringAnimation;)V
-
-    .line 3712
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$22;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$15500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/SenderSelectView;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    const/4 v2, 0x1
-
-    invoke-virtual {v0, v1, v2, v2}, Lorg/telegram/ui/Components/SenderSelectView;->setProgress(FZZ)V
-
-    goto :goto_1
-
-    .line 3714
-    :cond_1
-    iget-object v0, p0, Lorg/telegram/ui/Components/SenderSelectPopup;->springAnimations:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->iterator()Ljava/util/Iterator;
-
-    move-result-object v0
-
-    :goto_0
-    invoke-interface {v0}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_2
-
-    invoke-interface {v0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v1
-
-    check-cast v1, Landroidx/dynamicanimation/animation/SpringAnimation;
-
-    .line 3715
-    invoke-virtual {v1}, Landroidx/dynamicanimation/animation/DynamicAnimation;->cancel()V
-
-    goto :goto_0
-
-    .line 3717
-    :cond_2
-    iget-object v0, p0, Lorg/telegram/ui/Components/SenderSelectPopup;->springAnimations:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->clear()V
-
-    .line 3718
-    invoke-super {p0}, Lorg/telegram/ui/Components/SenderSelectPopup;->dismiss()V
-
-    :goto_1
     return-void
 .end method

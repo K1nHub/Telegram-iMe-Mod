@@ -379,7 +379,11 @@
 
     move-result-object v6
 
-    iput-object v6, v3, Lorg/telegram/ui/Charts/data/ChartData$Line;->colorKey:Ljava/lang/String;
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/ThemeColors;->stringKeyToInt(Ljava/lang/String;)I
+
+    move-result v6
+
+    iput v6, v3, Lorg/telegram/ui/Charts/data/ChartData$Line;->colorKey:I
 
     :cond_6
     const/4 v6, 0x2

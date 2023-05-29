@@ -2,40 +2,46 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;
+.implements Ljava/util/Comparator;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/CacheControlActivity;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda24;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/CacheControlActivity;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda24;
+
+    invoke-direct {v0}, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda24;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda24;->INSTANCE:Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda24;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda24;->f$0:Lorg/telegram/ui/CacheControlActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSetColor()V
-    .locals 1
-
-    iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$$ExternalSyntheticLambda24;->f$0:Lorg/telegram/ui/CacheControlActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->$r8$lambda$-9GBRQdkS8S6sDBpGv5QLZvAiD8(Lorg/telegram/ui/CacheControlActivity;)V
-
-    return-void
-.end method
-
-.method public synthetic onAnimationProgress(F)V
+.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate$-CC;->$default$onAnimationProgress(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;F)V
+    check-cast p1, Lorg/telegram/ui/CacheControlActivity$ItemInner;
 
-    return-void
+    check-cast p2, Lorg/telegram/ui/CacheControlActivity$ItemInner;
+
+    invoke-static {p1, p2}, Lorg/telegram/ui/CacheControlActivity;->$r8$lambda$alt38x9LlBeqE9sbDI2-9gNLseI(Lorg/telegram/ui/CacheControlActivity$ItemInner;Lorg/telegram/ui/CacheControlActivity$ItemInner;)I
+
+    move-result p1
+
+    return p1
 .end method

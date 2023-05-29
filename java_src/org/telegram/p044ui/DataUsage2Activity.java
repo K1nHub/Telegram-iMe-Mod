@@ -30,13 +30,13 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.StatsController;
 import org.telegram.p044ui.ActionBar.AlertDialog;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Cells.HeaderCell;
 import org.telegram.p044ui.Cells.TextCell;
@@ -56,9 +56,9 @@ public class DataUsage2Activity extends BaseFragment {
     private ViewPagerFixed pager;
     private Theme.ResourcesProvider resourcesProvider;
     private ViewPagerFixed.TabsView tabsView;
-    private static String[] colors = {"statisticChartLine_blue", "statisticChartLine_green", "statisticChartLine_lightblue", "statisticChartLine_golden", "statisticChartLine_red", "statisticChartLine_purple", "statisticChartLine_cyan"};
-    private static int[] particles = {C3242R.C3244drawable.msg_filled_data_videos, C3242R.C3244drawable.msg_filled_data_files, C3242R.C3244drawable.msg_filled_data_photos, C3242R.C3244drawable.msg_filled_data_messages, C3242R.C3244drawable.msg_filled_data_music, C3242R.C3244drawable.msg_filled_data_voice, C3242R.C3244drawable.msg_filled_data_calls};
-    private static int[] titles = {C3242R.string.LocalVideoCache, C3242R.string.LocalDocumentCache, C3242R.string.LocalPhotoCache, C3242R.string.MessagesSettings, C3242R.string.LocalMusicCache, C3242R.string.LocalAudioCache, C3242R.string.CallsDataUsage};
+    private static int[] colors = {Theme.key_statisticChartLine_blue, Theme.key_statisticChartLine_green, Theme.key_statisticChartLine_lightblue, Theme.key_statisticChartLine_golden, Theme.key_statisticChartLine_red, Theme.key_statisticChartLine_purple, Theme.key_statisticChartLine_cyan};
+    private static int[] particles = {C3290R.C3292drawable.msg_filled_data_videos, C3290R.C3292drawable.msg_filled_data_files, C3290R.C3292drawable.msg_filled_data_photos, C3290R.C3292drawable.msg_filled_data_messages, C3290R.C3292drawable.msg_filled_data_music, C3290R.C3292drawable.msg_filled_data_voice, C3290R.C3292drawable.msg_filled_data_calls};
+    private static int[] titles = {C3290R.string.LocalVideoCache, C3290R.string.LocalDocumentCache, C3290R.string.LocalPhotoCache, C3290R.string.MessagesSettings, C3290R.string.LocalMusicCache, C3290R.string.LocalAudioCache, C3290R.string.CallsDataUsage};
     private static int[] stats = {2, 5, 4, 1, 7, 3, 0};
 
     public DataUsage2Activity() {
@@ -71,25 +71,29 @@ public class DataUsage2Activity extends BaseFragment {
 
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
-        this.actionBar.setTitle(LocaleController.getString("NetworkUsage", C3242R.string.NetworkUsage));
-        this.actionBar.setBackgroundColor(getThemedColor("actionBarActionModeDefault"));
-        this.actionBar.setTitleColor(getThemedColor("windowBackgroundWhiteBlackText"));
-        this.actionBar.setItemsColor(getThemedColor("windowBackgroundWhiteBlackText"), false);
-        this.actionBar.setItemsBackgroundColor(getThemedColor("listSelectorSDK21"), false);
+        this.actionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        this.actionBar.setTitle(LocaleController.getString("NetworkUsage", C3290R.string.NetworkUsage));
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        int i = Theme.key_actionBarActionModeDefault;
+        c3356ActionBar.setBackgroundColor(getThemedColor(i));
+        C3356ActionBar c3356ActionBar2 = this.actionBar;
+        int i2 = Theme.key_windowBackgroundWhiteBlackText;
+        c3356ActionBar2.setTitleColor(getThemedColor(i2));
+        this.actionBar.setItemsColor(getThemedColor(i2), false);
+        this.actionBar.setItemsBackgroundColor(getThemedColor(Theme.key_listSelector), false);
         this.actionBar.setCastShadows(false);
-        this.actionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.DataUsage2Activity.1
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
-            public void onItemClick(int i) {
-                if (i == -1) {
+        this.actionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.DataUsage2Activity.1
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
+            public void onItemClick(int i3) {
+                if (i3 == -1) {
                     DataUsage2Activity.this.finishFragment();
                 }
             }
         });
         FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.DataUsage2Activity.2
             @Override // android.widget.FrameLayout, android.view.View
-            protected void onMeasure(int i, int i2) {
-                super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), 1073741824));
+            protected void onMeasure(int i3, int i4) {
+                super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i4), 1073741824));
             }
 
             @Override // android.view.ViewGroup, android.view.View
@@ -102,13 +106,13 @@ public class DataUsage2Activity extends BaseFragment {
                 canvas.drawLine(BitmapDescriptorFactory.HUE_RED, measuredHeight, getWidth(), measuredHeight, Theme.dividerPaint);
             }
         };
-        frameLayout.setBackgroundColor(getThemedColor("windowBackgroundGray"));
+        frameLayout.setBackgroundColor(getThemedColor(Theme.key_windowBackgroundGray));
         ViewPagerFixed viewPagerFixed = new ViewPagerFixed(context);
         this.pager = viewPagerFixed;
         viewPagerFixed.setAdapter(new PageAdapter());
         ViewPagerFixed.TabsView createTabsView = this.pager.createTabsView(true, 8);
         this.tabsView = createTabsView;
-        createTabsView.setBackgroundColor(getThemedColor("actionBarActionModeDefault"));
+        createTabsView.setBackgroundColor(getThemedColor(i));
         frameLayout.addView(this.tabsView, LayoutHelper.createFrame(-1, 48, 55));
         frameLayout.addView(this.pager, LayoutHelper.createFrame(-1, -1, 119, 0, 48, 0, 0));
         this.fragmentView = frameLayout;
@@ -134,14 +138,14 @@ public class DataUsage2Activity extends BaseFragment {
         @Override // org.telegram.p044ui.Components.ViewPagerFixed.Adapter
         public View createView(int i) {
             DataUsage2Activity dataUsage2Activity = DataUsage2Activity.this;
-            return new C5403ListView(dataUsage2Activity.getContext());
+            return new C5479ListView(dataUsage2Activity.getContext());
         }
 
         @Override // org.telegram.p044ui.Components.ViewPagerFixed.Adapter
         public void bindView(View view, int i, int i2) {
-            C5403ListView c5403ListView = (C5403ListView) view;
-            c5403ListView.setType(i);
-            c5403ListView.scrollToPosition(0);
+            C5479ListView c5479ListView = (C5479ListView) view;
+            c5479ListView.setType(i);
+            c5479ListView.scrollToPosition(0);
         }
 
         @Override // org.telegram.p044ui.Components.ViewPagerFixed.Adapter
@@ -149,20 +153,20 @@ public class DataUsage2Activity extends BaseFragment {
             if (i != 0) {
                 if (i != 1) {
                     if (i != 2) {
-                        return i != 3 ? "" : LocaleController.getString("NetworkUsageRoamingTab", C3242R.string.NetworkUsageRoamingTab);
+                        return i != 3 ? "" : LocaleController.getString("NetworkUsageRoamingTab", C3290R.string.NetworkUsageRoamingTab);
                     }
-                    return LocaleController.getString("NetworkUsageWiFiTab", C3242R.string.NetworkUsageWiFiTab);
+                    return LocaleController.getString("NetworkUsageWiFiTab", C3290R.string.NetworkUsageWiFiTab);
                 }
-                return LocaleController.getString("NetworkUsageMobileTab", C3242R.string.NetworkUsageMobileTab);
+                return LocaleController.getString("NetworkUsageMobileTab", C3290R.string.NetworkUsageMobileTab);
             }
-            return LocaleController.getString("NetworkUsageAllTab", C3242R.string.NetworkUsageAllTab);
+            return LocaleController.getString("NetworkUsageAllTab", C3290R.string.NetworkUsageAllTab);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.DataUsage2Activity$ListView */
     /* loaded from: classes5.dex */
-    public class C5403ListView extends RecyclerListView {
+    public class C5479ListView extends RecyclerListView {
         Adapter adapter;
         private boolean animateChart;
         private CacheChart chart;
@@ -180,7 +184,7 @@ public class DataUsage2Activity extends BaseFragment {
         private long totalSizeIn;
         private long totalSizeOut;
 
-        public C5403ListView(Context context) {
+        public C5479ListView(Context context) {
             super(context);
             this.animateChart = false;
             this.currentType = 0;
@@ -197,7 +201,7 @@ public class DataUsage2Activity extends BaseFragment {
             setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.DataUsage2Activity$ListView$$ExternalSyntheticLambda2
                 @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemClickListener
                 public final void onItemClick(View view, int i) {
-                    DataUsage2Activity.C5403ListView.this.lambda$new$1(view, i);
+                    DataUsage2Activity.C5479ListView.this.lambda$new$1(view, i);
                 }
             });
             DefaultItemAnimator defaultItemAnimator = new DefaultItemAnimator();
@@ -224,20 +228,20 @@ public class DataUsage2Activity extends BaseFragment {
                 }
             } else if (view instanceof TextCell) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(DataUsage2Activity.this.getParentActivity());
-                builder.setTitle(LocaleController.getString("ResetStatisticsAlertTitle", C3242R.string.ResetStatisticsAlertTitle));
-                builder.setMessage(LocaleController.getString("ResetStatisticsAlert", C3242R.string.ResetStatisticsAlert));
-                builder.setPositiveButton(LocaleController.getString("Reset", C3242R.string.Reset), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.DataUsage2Activity$ListView$$ExternalSyntheticLambda0
+                builder.setTitle(LocaleController.getString("ResetStatisticsAlertTitle", C3290R.string.ResetStatisticsAlertTitle));
+                builder.setMessage(LocaleController.getString("ResetStatisticsAlert", C3290R.string.ResetStatisticsAlert));
+                builder.setPositiveButton(LocaleController.getString("Reset", C3290R.string.Reset), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.DataUsage2Activity$ListView$$ExternalSyntheticLambda0
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i3) {
-                        DataUsage2Activity.C5403ListView.this.lambda$new$0(dialogInterface, i3);
+                        DataUsage2Activity.C5479ListView.this.lambda$new$0(dialogInterface, i3);
                     }
                 });
-                builder.setNegativeButton(LocaleController.getString("Cancel", C3242R.string.Cancel), null);
+                builder.setNegativeButton(LocaleController.getString("Cancel", C3290R.string.Cancel), null);
                 AlertDialog create = builder.create();
                 DataUsage2Activity.this.showDialog(create);
                 TextView textView = (TextView) create.getButton(-1);
                 if (textView != null) {
-                    textView.setTextColor(Theme.getColor("dialogTextRed"));
+                    textView.setTextColor(Theme.getColor(Theme.key_text_RedBold));
                 }
             }
         }
@@ -315,7 +319,7 @@ public class DataUsage2Activity extends BaseFragment {
             int outCount;
             long outSize;
 
-            public Size(C5403ListView c5403ListView, int i, long j, long j2, long j3, int i2, int i3) {
+            public Size(C5479ListView c5479ListView, int i, long j, long j2, long j3, int i2, int i3) {
                 this.index = i;
                 this.size = j;
                 this.selected = true;
@@ -335,9 +339,9 @@ public class DataUsage2Activity extends BaseFragment {
             this.itemInners.add(new ItemInner(0));
             long j = 0;
             if (this.totalSize > 0) {
-                formatString = LocaleController.formatString("YourNetworkUsageSince", C3242R.string.YourNetworkUsageSince, LocaleController.getInstance().formatterStats.format(getResetStatsDate()));
+                formatString = LocaleController.formatString("YourNetworkUsageSince", C3290R.string.YourNetworkUsageSince, LocaleController.getInstance().formatterStats.format(getResetStatsDate()));
             } else {
-                formatString = LocaleController.formatString("NoNetworkUsageSince", C3242R.string.NoNetworkUsageSince, LocaleController.getInstance().formatterStats.format(getResetStatsDate()));
+                formatString = LocaleController.formatString("NoNetworkUsageSince", C3290R.string.NoNetworkUsageSince, LocaleController.getInstance().formatterStats.format(getResetStatsDate()));
             }
             this.itemInners.add(ItemInner.asSubtitle(formatString));
             ArrayList arrayList = new ArrayList();
@@ -363,63 +367,64 @@ public class DataUsage2Activity extends BaseFragment {
             }
             if (!arrayList.isEmpty()) {
                 SpannableString spannableString2 = new SpannableString("^");
-                Drawable mutate = getContext().getResources().getDrawable(C3242R.C3244drawable.msg_mini_upload).mutate();
-                mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor("windowBackgroundWhiteBlackText"), PorterDuff.Mode.MULTIPLY));
-                mutate.setBounds(0, AndroidUtilities.m50dp(2), AndroidUtilities.m50dp(16), AndroidUtilities.m50dp(18));
+                Drawable mutate = getContext().getResources().getDrawable(C3290R.C3292drawable.msg_mini_upload).mutate();
+                int i4 = Theme.key_windowBackgroundWhiteBlackText;
+                mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor(i4), PorterDuff.Mode.MULTIPLY));
+                mutate.setBounds(0, AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(16), AndroidUtilities.m54dp(18));
                 spannableString2.setSpan(new ImageSpan(mutate, 2), 0, 1, 33);
                 SpannableString spannableString3 = new SpannableString("v");
-                Drawable mutate2 = getContext().getResources().getDrawable(C3242R.C3244drawable.msg_mini_download).mutate();
-                mutate2.setColorFilter(new PorterDuffColorFilter(getThemedColor("windowBackgroundWhiteBlackText"), PorterDuff.Mode.MULTIPLY));
-                mutate2.setBounds(0, AndroidUtilities.m50dp(2), AndroidUtilities.m50dp(16), AndroidUtilities.m50dp(18));
+                Drawable mutate2 = getContext().getResources().getDrawable(C3290R.C3292drawable.msg_mini_download).mutate();
+                mutate2.setColorFilter(new PorterDuffColorFilter(getThemedColor(i4), PorterDuff.Mode.MULTIPLY));
+                mutate2.setBounds(0, AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(16), AndroidUtilities.m54dp(18));
                 spannableString3.setSpan(new ImageSpan(mutate2, 2), 0, 1, 33);
-                int i4 = 0;
-                while (i4 < arrayList.size()) {
-                    int i5 = ((ItemInner) arrayList.get(i4)).index;
-                    if (i5 >= 0 && !this.collapsed[i5]) {
-                        Size size = this.segments[i5];
+                int i5 = 0;
+                while (i5 < arrayList.size()) {
+                    int i6 = ((ItemInner) arrayList.get(i5)).index;
+                    if (i6 >= 0 && !this.collapsed[i6]) {
+                        Size size = this.segments[i6];
                         if (DataUsage2Activity.stats[size.index] != 0) {
                             if (DataUsage2Activity.stats[size.index] != 1) {
                                 if (size.outSize > 0 || size.outCount > 0) {
-                                    i4++;
-                                    arrayList.add(i4, ItemInner.asCell(-1, 0, 0, TextUtils.concat(spannableString2, " ", AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("FilesSentCount", size.outCount))), AndroidUtilities.formatFileSize(size.outSize)));
+                                    i5++;
+                                    arrayList.add(i5, ItemInner.asCell(-1, 0, 0, TextUtils.concat(spannableString2, " ", AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("FilesSentCount", size.outCount))), AndroidUtilities.formatFileSize(size.outSize)));
                                 }
                                 if (size.inSize > 0 || size.inCount > 0) {
-                                    i4++;
-                                    arrayList.add(i4, ItemInner.asCell(-1, 0, 0, TextUtils.concat(spannableString3, " ", AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("FilesReceivedCount", size.inCount))), AndroidUtilities.formatFileSize(size.inSize)));
+                                    i5++;
+                                    arrayList.add(i5, ItemInner.asCell(-1, 0, 0, TextUtils.concat(spannableString3, " ", AndroidUtilities.replaceTags(LocaleController.formatPluralStringComma("FilesReceivedCount", size.inCount))), AndroidUtilities.formatFileSize(size.inSize)));
                                 }
                             } else {
                                 if (size.outSize > 0 || size.outCount > 0) {
-                                    i4++;
-                                    arrayList.add(i4, ItemInner.asCell(-1, 0, 0, TextUtils.concat(spannableString2, " ", LocaleController.getString("BytesSent", C3242R.string.BytesSent)), AndroidUtilities.formatFileSize(size.outSize)));
+                                    i5++;
+                                    arrayList.add(i5, ItemInner.asCell(-1, 0, 0, TextUtils.concat(spannableString2, " ", LocaleController.getString("BytesSent", C3290R.string.BytesSent)), AndroidUtilities.formatFileSize(size.outSize)));
                                 }
                                 if (size.inSize > 0 || size.inCount > 0) {
-                                    i4++;
-                                    arrayList.add(i4, ItemInner.asCell(-1, 0, 0, TextUtils.concat(spannableString3, " ", LocaleController.getString("BytesReceived", C3242R.string.BytesReceived)), AndroidUtilities.formatFileSize(size.inSize)));
+                                    i5++;
+                                    arrayList.add(i5, ItemInner.asCell(-1, 0, 0, TextUtils.concat(spannableString3, " ", LocaleController.getString("BytesReceived", C3290R.string.BytesReceived)), AndroidUtilities.formatFileSize(size.inSize)));
                                 }
-                                i4++;
+                                i5++;
                             }
                         } else {
                             if (size.outSize > 0 || size.outCount > 0) {
-                                i4++;
-                                arrayList.add(i4, ItemInner.asCell(-1, 0, 0, LocaleController.formatPluralStringComma("OutgoingCallsCount", size.outCount), AndroidUtilities.formatFileSize(size.outSize)));
+                                i5++;
+                                arrayList.add(i5, ItemInner.asCell(-1, 0, 0, LocaleController.formatPluralStringComma("OutgoingCallsCount", size.outCount), AndroidUtilities.formatFileSize(size.outSize)));
                             }
                             if (size.inSize > 0 || size.inCount > 0) {
-                                i4++;
-                                arrayList.add(i4, ItemInner.asCell(-1, 0, 0, LocaleController.formatPluralStringComma("IncomingCallsCount", size.inCount), AndroidUtilities.formatFileSize(size.inSize)));
+                                i5++;
+                                arrayList.add(i5, ItemInner.asCell(-1, 0, 0, LocaleController.formatPluralStringComma("IncomingCallsCount", size.inCount), AndroidUtilities.formatFileSize(size.inSize)));
                             }
                         }
                     }
-                    i4++;
+                    i5++;
                 }
                 this.itemInners.addAll(arrayList);
                 if (!this.empty) {
-                    this.itemInners.add(ItemInner.asSeparator(LocaleController.getString("DataUsageSectionsInfo", C3242R.string.DataUsageSectionsInfo)));
+                    this.itemInners.add(ItemInner.asSeparator(LocaleController.getString("DataUsageSectionsInfo", C3290R.string.DataUsageSectionsInfo)));
                 }
             }
             if (!this.empty) {
-                this.itemInners.add(ItemInner.asHeader(LocaleController.getString("TotalNetworkUsage", C3242R.string.TotalNetworkUsage)));
-                this.itemInners.add(ItemInner.asCell(-1, C3242R.C3244drawable.msg_filled_data_sent, getThemedColor("statisticChartLine_lightblue"), LocaleController.getString("BytesSent", C3242R.string.BytesSent), AndroidUtilities.formatFileSize(this.totalSizeOut)));
-                this.itemInners.add(ItemInner.asCell(-1, C3242R.C3244drawable.msg_filled_data_received, getThemedColor("statisticChartLine_green"), LocaleController.getString("BytesReceived", C3242R.string.BytesReceived), AndroidUtilities.formatFileSize(this.totalSizeIn)));
+                this.itemInners.add(ItemInner.asHeader(LocaleController.getString("TotalNetworkUsage", C3290R.string.TotalNetworkUsage)));
+                this.itemInners.add(ItemInner.asCell(-1, C3290R.C3292drawable.msg_filled_data_sent, getThemedColor(Theme.key_statisticChartLine_lightblue), LocaleController.getString("BytesSent", C3290R.string.BytesSent), AndroidUtilities.formatFileSize(this.totalSizeOut)));
+                this.itemInners.add(ItemInner.asCell(-1, C3290R.C3292drawable.msg_filled_data_received, getThemedColor(Theme.key_statisticChartLine_green), LocaleController.getString("BytesReceived", C3290R.string.BytesReceived), AndroidUtilities.formatFileSize(this.totalSizeIn)));
             }
             if (!arrayList.isEmpty()) {
                 this.itemInners.add(ItemInner.asSeparator(formatString));
@@ -428,19 +433,19 @@ public class DataUsage2Activity extends BaseFragment {
                 if (arrayList.isEmpty()) {
                     this.itemInners.add(ItemInner.asSeparator());
                 }
-                this.itemInners.add(ItemInner.asCell(-2, C3242R.C3244drawable.msg_download_settings, getThemedColor("statisticChartLine_lightblue"), LocaleController.getString("AutomaticDownloadSettings", C3242R.string.AutomaticDownloadSettings), null));
-                int i6 = this.currentType;
-                if (i6 == 1) {
-                    string = LocaleController.getString("AutomaticDownloadSettingsInfoMobile", C3242R.string.AutomaticDownloadSettingsInfoMobile);
-                } else if (i6 == 3) {
-                    string = LocaleController.getString("AutomaticDownloadSettingsInfoRoaming", C3242R.string.AutomaticDownloadSettingsInfoRoaming);
+                this.itemInners.add(ItemInner.asCell(-2, C3290R.C3292drawable.msg_download_settings, getThemedColor(Theme.key_statisticChartLine_lightblue), LocaleController.getString("AutomaticDownloadSettings", C3290R.string.AutomaticDownloadSettings), null));
+                int i7 = this.currentType;
+                if (i7 == 1) {
+                    string = LocaleController.getString("AutomaticDownloadSettingsInfoMobile", C3290R.string.AutomaticDownloadSettingsInfoMobile);
+                } else if (i7 == 3) {
+                    string = LocaleController.getString("AutomaticDownloadSettingsInfoRoaming", C3290R.string.AutomaticDownloadSettingsInfoRoaming);
                 } else {
-                    string = LocaleController.getString("AutomaticDownloadSettingsInfoWiFi", C3242R.string.AutomaticDownloadSettingsInfoWiFi);
+                    string = LocaleController.getString("AutomaticDownloadSettingsInfoWiFi", C3290R.string.AutomaticDownloadSettingsInfoWiFi);
                 }
                 this.itemInners.add(ItemInner.asSeparator(string));
             }
             if (!arrayList.isEmpty()) {
-                this.itemInners.add(new ItemInner(5, LocaleController.getString("ResetStatistics", C3242R.string.ResetStatistics)));
+                this.itemInners.add(new ItemInner(5, LocaleController.getString("ResetStatistics", C3290R.string.ResetStatistics)));
             }
             this.itemInners.add(ItemInner.asSeparator());
             Adapter adapter = this.adapter;
@@ -462,7 +467,7 @@ public class DataUsage2Activity extends BaseFragment {
 
             /* renamed from: org.telegram.ui.DataUsage2Activity$ListView$Adapter$1 */
             /* loaded from: classes5.dex */
-            class C54041 extends CacheChart {
+            class C54801 extends CacheChart {
                 /* JADX INFO: Access modifiers changed from: private */
                 public static /* synthetic */ int lambda$onSectionDown$0(int i) {
                     return i;
@@ -478,24 +483,24 @@ public class DataUsage2Activity extends BaseFragment {
                     return 10;
                 }
 
-                C54041(Context context, int i, String[] strArr, int i2, int[] iArr) {
-                    super(context, i, strArr, i2, iArr);
+                C54801(Context context, int i, int[] iArr, int i2, int[] iArr2) {
+                    super(context, i, iArr, i2, iArr2);
                 }
 
                 @Override // org.telegram.p044ui.Components.CacheChart
                 protected void onSectionDown(int i, boolean z) {
                     final int i2;
                     if (z) {
-                        if (i < 0 || i >= C5403ListView.this.segments.length) {
+                        if (i < 0 || i >= C5479ListView.this.segments.length) {
                             return;
                         }
                         int i3 = 0;
                         while (true) {
                             i2 = -1;
-                            if (i3 >= C5403ListView.this.segments.length) {
+                            if (i3 >= C5479ListView.this.segments.length) {
                                 i3 = -1;
                                 break;
-                            } else if (C5403ListView.this.segments[i3].index == i) {
+                            } else if (C5479ListView.this.segments[i3].index == i) {
                                 break;
                             } else {
                                 i3++;
@@ -503,8 +508,8 @@ public class DataUsage2Activity extends BaseFragment {
                         }
                         int i4 = 0;
                         while (true) {
-                            if (i4 < C5403ListView.this.itemInners.size()) {
-                                ItemInner itemInner = (ItemInner) C5403ListView.this.itemInners.get(i4);
+                            if (i4 < C5479ListView.this.itemInners.size()) {
+                                ItemInner itemInner = (ItemInner) C5479ListView.this.itemInners.get(i4);
                                 if (itemInner != null && itemInner.viewType == 2 && itemInner.index == i3) {
                                     i2 = i4;
                                     break;
@@ -515,21 +520,21 @@ public class DataUsage2Activity extends BaseFragment {
                             }
                         }
                         if (i2 >= 0) {
-                            C5403ListView.this.highlightRow(new RecyclerListView.IntReturnCallback() { // from class: org.telegram.ui.DataUsage2Activity$ListView$Adapter$1$$ExternalSyntheticLambda0
+                            C5479ListView.this.highlightRow(new RecyclerListView.IntReturnCallback() { // from class: org.telegram.ui.DataUsage2Activity$ListView$Adapter$1$$ExternalSyntheticLambda0
                                 @Override // org.telegram.p044ui.Components.RecyclerListView.IntReturnCallback
                                 public final int run() {
                                     int lambda$onSectionDown$0;
-                                    lambda$onSectionDown$0 = DataUsage2Activity.C5403ListView.Adapter.C54041.lambda$onSectionDown$0(i2);
+                                    lambda$onSectionDown$0 = DataUsage2Activity.C5479ListView.Adapter.C54801.lambda$onSectionDown$0(i2);
                                     return lambda$onSectionDown$0;
                                 }
                             }, 0);
                             return;
                         } else {
-                            C5403ListView.this.removeHighlightRow();
+                            C5479ListView.this.removeHighlightRow();
                             return;
                         }
                     }
-                    C5403ListView.this.removeHighlightRow();
+                    C5479ListView.this.removeHighlightRow();
                 }
             }
 
@@ -537,39 +542,39 @@ public class DataUsage2Activity extends BaseFragment {
             public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
                 TextCell textCell;
                 if (i == 0) {
-                    C5403ListView.this.chart = new C54041(C5403ListView.this.getContext(), DataUsage2Activity.colors.length, DataUsage2Activity.colors, 1, DataUsage2Activity.particles);
-                    C5403ListView.this.chart.setInterceptTouch(false);
-                    textCell = C5403ListView.this.chart;
+                    C5479ListView.this.chart = new C54801(C5479ListView.this.getContext(), DataUsage2Activity.colors.length, DataUsage2Activity.colors, 1, DataUsage2Activity.particles);
+                    C5479ListView.this.chart.setInterceptTouch(false);
+                    textCell = C5479ListView.this.chart;
                 } else if (i == 1) {
-                    C5403ListView c5403ListView = C5403ListView.this;
-                    textCell = new SubtitleCell(DataUsage2Activity.this, c5403ListView.getContext());
+                    C5479ListView c5479ListView = C5479ListView.this;
+                    textCell = new SubtitleCell(DataUsage2Activity.this, c5479ListView.getContext());
                 } else if (i == 3) {
-                    textCell = new TextInfoPrivacyCell(C5403ListView.this.getContext());
+                    textCell = new TextInfoPrivacyCell(C5479ListView.this.getContext());
                 } else if (i == 4) {
-                    View headerCell = new HeaderCell(C5403ListView.this.getContext());
-                    headerCell.setBackgroundColor(C5403ListView.this.getThemedColor("windowBackgroundWhite"));
+                    View headerCell = new HeaderCell(C5479ListView.this.getContext());
+                    headerCell.setBackgroundColor(C5479ListView.this.getThemedColor(Theme.key_windowBackgroundWhite));
                     textCell = headerCell;
                 } else if (i == 5) {
-                    TextCell textCell2 = new TextCell(C5403ListView.this.getContext());
-                    textCell2.setTextColor(C5403ListView.this.getThemedColor("windowBackgroundWhiteRedText5"));
-                    textCell2.setBackgroundColor(C5403ListView.this.getThemedColor("windowBackgroundWhite"));
+                    TextCell textCell2 = new TextCell(C5479ListView.this.getContext());
+                    textCell2.setTextColor(C5479ListView.this.getThemedColor(Theme.key_text_RedRegular));
+                    textCell2.setBackgroundColor(C5479ListView.this.getThemedColor(Theme.key_windowBackgroundWhite));
                     textCell = textCell2;
                 } else if (i == 6) {
-                    textCell = new RoundingCell(C5403ListView.this.getContext());
+                    textCell = new RoundingCell(C5479ListView.this.getContext());
                 } else if (i == 7) {
-                    textCell = new View(C5403ListView.this.getContext()) { // from class: org.telegram.ui.DataUsage2Activity.ListView.Adapter.2
+                    textCell = new View(C5479ListView.this.getContext()) { // from class: org.telegram.ui.DataUsage2Activity.ListView.Adapter.2
                         {
-                            setBackgroundColor(C5403ListView.this.getThemedColor("windowBackgroundWhite"));
+                            setBackgroundColor(C5479ListView.this.getThemedColor(Theme.key_windowBackgroundWhite));
                         }
 
                         @Override // android.view.View
                         protected void onMeasure(int i2, int i3) {
-                            super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(4), 1073741824));
+                            super.onMeasure(i2, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(4), 1073741824));
                         }
                     };
                 } else {
-                    C5403ListView c5403ListView2 = C5403ListView.this;
-                    textCell = new Cell(DataUsage2Activity.this, c5403ListView2.getContext());
+                    C5479ListView c5479ListView2 = C5479ListView.this;
+                    textCell = new Cell(DataUsage2Activity.this, c5479ListView2.getContext());
                 }
                 return new RecyclerListView.Holder(textCell);
             }
@@ -578,15 +583,15 @@ public class DataUsage2Activity extends BaseFragment {
             public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
                 int i2;
                 int i3;
-                ItemInner itemInner = (ItemInner) C5403ListView.this.itemInners.get(viewHolder.getAdapterPosition());
+                ItemInner itemInner = (ItemInner) C5479ListView.this.itemInners.get(viewHolder.getAdapterPosition());
                 int itemViewType = viewHolder.getItemViewType();
                 boolean z = false;
                 if (itemViewType == 0) {
                     CacheChart cacheChart = (CacheChart) viewHolder.itemView;
-                    if (C5403ListView.this.segments != null) {
-                        cacheChart.setSegments(C5403ListView.this.totalSize, C5403ListView.this.animateChart, C5403ListView.this.chartSegments);
+                    if (C5479ListView.this.segments != null) {
+                        cacheChart.setSegments(C5479ListView.this.totalSize, C5479ListView.this.animateChart, C5479ListView.this.chartSegments);
                     }
-                    C5403ListView.this.animateChart = false;
+                    C5479ListView.this.animateChart = false;
                     return;
                 }
                 Boolean bool = null;
@@ -594,20 +599,20 @@ public class DataUsage2Activity extends BaseFragment {
                     SubtitleCell subtitleCell = (SubtitleCell) viewHolder.itemView;
                     subtitleCell.setText(itemInner.text);
                     int i4 = i + 1;
-                    if (i4 < C5403ListView.this.itemInners.size() && (i3 = ((ItemInner) C5403ListView.this.itemInners.get(i4)).viewType) != itemInner.viewType && i3 != 3 && i3 != 6) {
+                    if (i4 < C5479ListView.this.itemInners.size() && (i3 = ((ItemInner) C5479ListView.this.itemInners.get(i4)).viewType) != itemInner.viewType && i3 != 3 && i3 != 6) {
                         z = true;
                     }
                     if (z) {
-                        subtitleCell.setBackground(Theme.getThemedDrawable(C5403ListView.this.getContext(), C3242R.C3244drawable.greydivider_top, "windowBackgroundGrayShadow"));
+                        subtitleCell.setBackground(Theme.getThemedDrawableByKey(C5479ListView.this.getContext(), C3290R.C3292drawable.greydivider_top, Theme.key_windowBackgroundGrayShadow));
                     } else {
                         subtitleCell.setBackground(null);
                     }
                 } else if (itemViewType == 2) {
                     Cell cell = (Cell) viewHolder.itemView;
                     int i5 = i + 1;
-                    cell.set(itemInner.imageColor, itemInner.imageResId, itemInner.text, itemInner.valueText, i5 < getItemCount() && ((ItemInner) C5403ListView.this.itemInners.get(i5)).viewType == itemViewType);
-                    if (!itemInner.pad && (i2 = itemInner.index) >= 0 && (i2 >= C5403ListView.this.segments.length || C5403ListView.this.segments[itemInner.index].size > 0)) {
-                        bool = Boolean.valueOf(C5403ListView.this.collapsed[itemInner.index]);
+                    cell.set(itemInner.imageColor, itemInner.imageResId, itemInner.text, itemInner.valueText, i5 < getItemCount() && ((ItemInner) C5479ListView.this.itemInners.get(i5)).viewType == itemViewType);
+                    if (!itemInner.pad && (i2 = itemInner.index) >= 0 && (i2 >= C5479ListView.this.segments.length || C5479ListView.this.segments[itemInner.index].size > 0)) {
+                        bool = Boolean.valueOf(C5479ListView.this.collapsed[itemInner.index]);
                     }
                     cell.setArrow(bool);
                 } else if (itemViewType != 3) {
@@ -620,17 +625,17 @@ public class DataUsage2Activity extends BaseFragment {
                     }
                 } else {
                     TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) viewHolder.itemView;
-                    boolean z2 = i > 0 && itemInner.viewType != ((ItemInner) C5403ListView.this.itemInners.get(i + (-1))).viewType;
+                    boolean z2 = i > 0 && itemInner.viewType != ((ItemInner) C5479ListView.this.itemInners.get(i + (-1))).viewType;
                     int i6 = i + 1;
-                    if (i6 < C5403ListView.this.itemInners.size() && ((ItemInner) C5403ListView.this.itemInners.get(i6)).viewType != itemInner.viewType) {
+                    if (i6 < C5479ListView.this.itemInners.size() && ((ItemInner) C5479ListView.this.itemInners.get(i6)).viewType != itemInner.viewType) {
                         z = true;
                     }
                     if (z2 && z) {
-                        textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(C5403ListView.this.getContext(), C3242R.C3244drawable.greydivider, "windowBackgroundGrayShadow"));
+                        textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(C5479ListView.this.getContext(), C3290R.C3292drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                     } else if (z2) {
-                        textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(C5403ListView.this.getContext(), C3242R.C3244drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                        textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(C5479ListView.this.getContext(), C3290R.C3292drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
                     } else if (z) {
-                        textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(C5403ListView.this.getContext(), C3242R.C3244drawable.greydivider_top, "windowBackgroundGrayShadow"));
+                        textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(C5479ListView.this.getContext(), C3290R.C3292drawable.greydivider_top, Theme.key_windowBackgroundGrayShadow));
                     } else {
                         textInfoPrivacyCell.setBackground(null);
                     }
@@ -640,17 +645,17 @@ public class DataUsage2Activity extends BaseFragment {
 
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter
             public int getItemCount() {
-                return C5403ListView.this.itemInners.size();
+                return C5479ListView.this.itemInners.size();
             }
 
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter
             public int getItemViewType(int i) {
-                return ((ItemInner) C5403ListView.this.itemInners.get(i)).viewType;
+                return ((ItemInner) C5479ListView.this.itemInners.get(i)).viewType;
             }
 
             @Override // org.telegram.p044ui.Components.RecyclerListView.SelectionAdapter
             public boolean isEnabled(RecyclerView.ViewHolder viewHolder) {
-                ItemInner itemInner = (ItemInner) C5403ListView.this.itemInners.get(viewHolder.getAdapterPosition());
+                ItemInner itemInner = (ItemInner) C5479ListView.this.itemInners.get(viewHolder.getAdapterPosition());
                 int i = itemInner.viewType;
                 return i == 5 || (i == 2 && itemInner.index != -1);
             }
@@ -783,7 +788,7 @@ public class DataUsage2Activity extends BaseFragment {
             this.textView = textView;
             textView.setGravity(17);
             this.textView.setTextSize(1, 13.0f);
-            this.textView.setTextColor(dataUsage2Activity.getThemedColor("windowBackgroundWhiteGrayText"));
+            this.textView.setTextColor(dataUsage2Activity.getThemedColor(Theme.key_windowBackgroundWhiteGrayText));
             addView(this.textView, LayoutHelper.createFrame(-1, -2, 119, 24, 0, 24, 14));
         }
 
@@ -810,24 +815,24 @@ public class DataUsage2Activity extends BaseFragment {
             Paint paint = new Paint(1);
             this.paint = paint;
             this.top = true;
-            paint.setShadowLayer(AndroidUtilities.m50dp(1), BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m51dp(-0.66f), AndroidUtilities.LIGHT_STATUS_BAR_OVERLAY);
-            this.paint.setColor(Theme.getColor("windowBackgroundWhite"));
+            paint.setShadowLayer(AndroidUtilities.m54dp(1), BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m55dp(-0.66f), AndroidUtilities.LIGHT_STATUS_BAR_OVERLAY);
+            this.paint.setColor(Theme.getColor(Theme.key_windowBackgroundWhite));
         }
 
         public void setTop(boolean z) {
             this.path.rewind();
             this.top = z;
             if (z) {
-                float m50dp = AndroidUtilities.m50dp(14);
+                float m54dp = AndroidUtilities.m54dp(14);
                 RectF rectF = AndroidUtilities.rectTmp;
-                rectF.set(BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m50dp(4), getMeasuredWidth(), AndroidUtilities.m50dp(4) + (getMeasuredHeight() * 2));
-                this.path.addRoundRect(rectF, m50dp, m50dp, Path.Direction.CW);
+                rectF.set(BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(4), getMeasuredWidth(), AndroidUtilities.m54dp(4) + (getMeasuredHeight() * 2));
+                this.path.addRoundRect(rectF, m54dp, m54dp, Path.Direction.CW);
                 return;
             }
-            float m50dp2 = AndroidUtilities.m50dp(8);
+            float m54dp2 = AndroidUtilities.m54dp(8);
             RectF rectF2 = AndroidUtilities.rectTmp;
-            rectF2.set(BitmapDescriptorFactory.HUE_RED, ((-getMeasuredHeight()) * 2) - AndroidUtilities.m50dp(4), getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.m50dp(4));
-            this.path.addRoundRect(rectF2, m50dp2, m50dp2, Path.Direction.CW);
+            rectF2.set(BitmapDescriptorFactory.HUE_RED, ((-getMeasuredHeight()) * 2) - AndroidUtilities.m54dp(4), getMeasuredWidth(), getMeasuredHeight() - AndroidUtilities.m54dp(4));
+            this.path.addRoundRect(rectF2, m54dp2, m54dp2, Path.Direction.CW);
         }
 
         @Override // android.view.View
@@ -838,7 +843,7 @@ public class DataUsage2Activity extends BaseFragment {
 
         @Override // android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(13), 1073741824));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(13), 1073741824));
             setTop(this.top);
         }
 
@@ -863,7 +868,7 @@ public class DataUsage2Activity extends BaseFragment {
 
         public Cell(DataUsage2Activity dataUsage2Activity, Context context) {
             super(context);
-            setBackgroundColor(dataUsage2Activity.getThemedColor("windowBackgroundWhite"));
+            setBackgroundColor(dataUsage2Activity.getThemedColor(Theme.key_windowBackgroundWhite));
             ImageView imageView = new ImageView(context);
             this.imageView = imageView;
             imageView.setScaleType(ImageView.ScaleType.CENTER);
@@ -883,16 +888,18 @@ public class DataUsage2Activity extends BaseFragment {
             TextView textView = new TextView(context);
             this.textView = textView;
             textView.setTextSize(1, 16.0f);
-            this.textView.setTextColor(dataUsage2Activity.getThemedColor("windowBackgroundWhiteBlackText"));
+            TextView textView2 = this.textView;
+            int i = Theme.key_windowBackgroundWhiteBlackText;
+            textView2.setTextColor(dataUsage2Activity.getThemedColor(i));
             this.textView.setEllipsize(TextUtils.TruncateAt.END);
             this.textView.setSingleLine();
             this.textView.setLines(1);
             ImageView imageView2 = new ImageView(context);
             this.arrowView = imageView2;
             imageView2.setScaleType(ImageView.ScaleType.FIT_CENTER);
-            this.arrowView.setImageResource(C3242R.C3244drawable.arrow_more);
-            this.arrowView.setColorFilter(new PorterDuffColorFilter(dataUsage2Activity.getThemedColor("windowBackgroundWhiteBlackText"), PorterDuff.Mode.MULTIPLY));
-            this.arrowView.setTranslationY(AndroidUtilities.m50dp(1));
+            this.arrowView.setImageResource(C3290R.C3292drawable.arrow_more);
+            this.arrowView.setColorFilter(new PorterDuffColorFilter(dataUsage2Activity.getThemedColor(i), PorterDuff.Mode.MULTIPLY));
+            this.arrowView.setTranslationY(AndroidUtilities.m54dp(1));
             this.arrowView.setVisibility(8);
             if (LocaleController.isRTL) {
                 this.linearLayout2.addView(this.arrowView, LayoutHelper.createLinear(16, 16, 21, 3, 0, 0, 0));
@@ -901,10 +908,10 @@ public class DataUsage2Activity extends BaseFragment {
                 this.linearLayout2.addView(this.textView, LayoutHelper.createLinear(-2, -2, 16));
                 this.linearLayout2.addView(this.arrowView, LayoutHelper.createLinear(16, 16, 16, 3, 0, 0, 0));
             }
-            TextView textView2 = new TextView(context);
-            this.valueTextView = textView2;
-            textView2.setTextSize(1, 16.0f);
-            this.valueTextView.setTextColor(dataUsage2Activity.getThemedColor("windowBackgroundWhiteBlueText2"));
+            TextView textView3 = new TextView(context);
+            this.valueTextView = textView3;
+            textView3.setTextSize(1, 16.0f);
+            this.valueTextView.setTextColor(dataUsage2Activity.getThemedColor(Theme.key_windowBackgroundWhiteBlueText2));
             this.valueTextView.setGravity(LocaleController.isRTL ? 3 : 5);
             if (LocaleController.isRTL) {
                 this.linearLayout.addView(this.valueTextView, LayoutHelper.createLinear(-2, -2, 19));
@@ -920,7 +927,7 @@ public class DataUsage2Activity extends BaseFragment {
                 this.imageView.setVisibility(8);
             } else {
                 this.imageView.setVisibility(0);
-                this.imageView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m50dp(9), i));
+                this.imageView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m54dp(9), i));
                 this.imageView.setImageResource(i2);
             }
             this.textView.setText(charSequence);
@@ -942,13 +949,13 @@ public class DataUsage2Activity extends BaseFragment {
         protected void onDraw(Canvas canvas) {
             super.onDraw(canvas);
             if (this.divider) {
-                canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m50dp(64), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m50dp(64) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+                canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m54dp(64), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m54dp(64) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
             }
         }
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(48), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(48), 1073741824));
         }
     }
 
@@ -985,13 +992,13 @@ public class DataUsage2Activity extends BaseFragment {
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public boolean isLightStatusBar() {
         if (this.changeStatusBar) {
-            return AndroidUtilities.computePerceivedBrightness(Theme.getColor("actionBarActionModeDefault")) > 0.721f;
+            return AndroidUtilities.computePerceivedBrightness(Theme.getColor(Theme.key_actionBarActionModeDefault)) > 0.721f;
         }
         return super.isLightStatusBar();
     }
 
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public boolean isSwipeBackEnabled(MotionEvent motionEvent) {
-        return motionEvent.getY() <= ((float) (C3306ActionBar.getCurrentActionBarHeight() + AndroidUtilities.m50dp(48))) || this.pager.getCurrentPosition() == 0;
+        return motionEvent.getY() <= ((float) (C3356ActionBar.getCurrentActionBarHeight() + AndroidUtilities.m54dp(48))) || this.pager.getCurrentPosition() == 0;
     }
 }

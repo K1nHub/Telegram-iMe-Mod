@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/WallpaperCheckBoxView;Ljava/lang/String;)V
     .locals 0
 
-    .line 42
+    .line 43
     iput-object p1, p0, Lorg/telegram/ui/Components/WallpaperCheckBoxView$1;->this$0:Lorg/telegram/ui/Components/WallpaperCheckBoxView;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/AnimationProperties$FloatProperty;-><init>(Ljava/lang/String;)V
@@ -43,7 +43,7 @@
 .method public get(Lorg/telegram/ui/Components/WallpaperCheckBoxView;)Ljava/lang/Float;
     .locals 0
 
-    .line 51
+    .line 52
     iget-object p1, p0, Lorg/telegram/ui/Components/WallpaperCheckBoxView$1;->this$0:Lorg/telegram/ui/Components/WallpaperCheckBoxView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/WallpaperCheckBoxView;->access$000(Lorg/telegram/ui/Components/WallpaperCheckBoxView;)F
@@ -60,7 +60,7 @@
 .method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 42
+    .line 43
     check-cast p1, Lorg/telegram/ui/Components/WallpaperCheckBoxView;
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/WallpaperCheckBoxView$1;->get(Lorg/telegram/ui/Components/WallpaperCheckBoxView;)Ljava/lang/Float;
@@ -73,7 +73,7 @@
 .method public bridge synthetic setValue(Ljava/lang/Object;F)V
     .locals 0
 
-    .line 42
+    .line 43
     check-cast p1, Lorg/telegram/ui/Components/WallpaperCheckBoxView;
 
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Components/WallpaperCheckBoxView$1;->setValue(Lorg/telegram/ui/Components/WallpaperCheckBoxView;F)V
@@ -84,12 +84,12 @@
 .method public setValue(Lorg/telegram/ui/Components/WallpaperCheckBoxView;F)V
     .locals 0
 
-    .line 45
+    .line 46
     iget-object p1, p0, Lorg/telegram/ui/Components/WallpaperCheckBoxView$1;->this$0:Lorg/telegram/ui/Components/WallpaperCheckBoxView;
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/WallpaperCheckBoxView;->access$002(Lorg/telegram/ui/Components/WallpaperCheckBoxView;F)F
 
-    .line 46
+    .line 47
     iget-object p1, p0, Lorg/telegram/ui/Components/WallpaperCheckBoxView$1;->this$0:Lorg/telegram/ui/Components/WallpaperCheckBoxView;
 
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V

@@ -82,12 +82,13 @@ public final class ProgressView extends View {
 
     public final void setupColors() {
         Paint paint = this.backgroundPaint;
-        paint.setColor(Theme.getColor("player_progress"));
+        int i = Theme.key_player_progress;
+        paint.setColor(Theme.getColor(i));
         paint.setAlpha(46);
         Paint paint2 = this.progressPaint;
-        paint2.setColor(Theme.getColor("player_progress"));
+        paint2.setColor(Theme.getColor(i));
         paint2.setAlpha(255);
-        this.dividerPaint.setColor(Theme.getColor("windowBackgroundWhite"));
+        this.dividerPaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhite));
         invalidate();
     }
 

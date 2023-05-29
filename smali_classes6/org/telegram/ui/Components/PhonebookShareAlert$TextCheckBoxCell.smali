@@ -46,10 +46,10 @@
 
     iput-object v3, v0, Lorg/telegram/ui/Components/PhonebookShareAlert$TextCheckBoxCell;->textView:Landroid/widget/TextView;
 
-    const-string v4, "windowBackgroundWhiteBlackText"
-
     .line 155
-    invoke-static {v1, v4}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$600(Lorg/telegram/ui/Components/PhonebookShareAlert;Ljava/lang/String;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v1, v4}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$600(Lorg/telegram/ui/Components/PhonebookShareAlert;I)I
 
     move-result v4
 
@@ -189,10 +189,10 @@
 
     iput-object v3, v0, Lorg/telegram/ui/Components/PhonebookShareAlert$TextCheckBoxCell;->valueTextView:Landroid/widget/TextView;
 
-    const-string v6, "windowBackgroundWhiteGrayText2"
-
     .line 163
-    invoke-static {v1, v6}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$800(Lorg/telegram/ui/Components/PhonebookShareAlert;Ljava/lang/String;)I
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
+
+    invoke-static {v1, v6}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$800(Lorg/telegram/ui/Components/PhonebookShareAlert;I)I
 
     move-result v6
 
@@ -327,9 +327,9 @@
 
     new-instance v4, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v6, "windowBackgroundWhiteGrayIcon"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
 
-    invoke-static {v1, v6}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$900(Lorg/telegram/ui/Components/PhonebookShareAlert;Ljava/lang/String;)I
+    invoke-static {v1, v6}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$900(Lorg/telegram/ui/Components/PhonebookShareAlert;I)I
 
     move-result v6
 
@@ -406,14 +406,14 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Components/PhonebookShareAlert$TextCheckBoxCell;->checkBox:Lorg/telegram/ui/Components/Switch;
 
-    const-string v2, "switchTrack"
-
-    const-string v3, "switchTrackChecked"
-
-    const-string v4, "windowBackgroundWhite"
-
     .line 178
-    invoke-virtual {v1, v2, v3, v4, v4}, Lorg/telegram/ui/Components/Switch;->setColors(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrack:I
+
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackChecked:I
+
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-virtual {v1, v2, v3, v4, v4}, Lorg/telegram/ui/Components/Switch;->setColors(IIII)V
 
     .line 179
     iget-object v1, v0, Lorg/telegram/ui/Components/PhonebookShareAlert$TextCheckBoxCell;->checkBox:Lorg/telegram/ui/Components/Switch;

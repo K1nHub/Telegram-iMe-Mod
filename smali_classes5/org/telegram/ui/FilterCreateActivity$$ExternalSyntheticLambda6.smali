@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/iMe/fork/utils/Callbacks$Callback2;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
@@ -22,16 +22,12 @@
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)V
+.method public final onClick(Landroid/view/View;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda6;->f$0:Lorg/telegram/ui/FilterCreateActivity;
 
-    check-cast p1, Lcom/iMe/storage/domain/model/filters/FilterIcon;
-
-    check-cast p2, Lcom/iMe/storage/data/repository/topics/Topic;
-
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/FilterCreateActivity;->$r8$lambda$wTwFg9kXM1JczH3_j3gZ6zAvoVo(Lorg/telegram/ui/FilterCreateActivity;Lcom/iMe/storage/domain/model/filters/FilterIcon;Lcom/iMe/storage/data/repository/topics/Topic;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/FilterCreateActivity;->$r8$lambda$8rp96sC60S26ymMcT7M8bGnkMu0(Lorg/telegram/ui/FilterCreateActivity;Landroid/view/View;)V
 
     return-void
 .end method

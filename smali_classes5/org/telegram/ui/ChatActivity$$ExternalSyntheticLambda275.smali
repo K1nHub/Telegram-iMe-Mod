@@ -2,36 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/ToIntFunction;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
+.field public final synthetic f$0:[Lorg/telegram/ui/ActionBar/AlertDialog;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;)V
+.method public synthetic constructor <init>([Lorg/telegram/ui/ActionBar/AlertDialog;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda275;->f$0:Lorg/telegram/ui/ChatActivity;
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda275;->f$0:[Lorg/telegram/ui/ActionBar/AlertDialog;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final applyAsInt(Ljava/lang/Object;)I
+.method public final run()V
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda275;->f$0:Lorg/telegram/ui/ChatActivity;
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda275;->f$0:[Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    check-cast p1, Lorg/telegram/messenger/MessageObject;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$dUiksdbGRns5jxmiSNyJej2FmDY([Lorg/telegram/ui/ActionBar/AlertDialog;)V
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$L2hIOnEye_yaYzcILLi4XwfnW30(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject;)I
-
-    move-result p1
-
-    return p1
+    return-void
 .end method

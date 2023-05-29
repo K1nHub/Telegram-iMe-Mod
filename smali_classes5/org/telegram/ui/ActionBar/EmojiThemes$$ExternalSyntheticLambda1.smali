@@ -41,7 +41,7 @@
 
     move v6, p4
 
-    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/ActionBar/EmojiThemes;->$r8$lambda$9_M74kkgluYjTLciIhaWDDIncdw(Lorg/telegram/tgnet/ResultCallback;JLorg/telegram/messenger/ImageReceiver;ZZZ)V
+    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/ActionBar/EmojiThemes;->$r8$lambda$qftbg4aRFN10GJMc33Cvr1U0df8(Lorg/telegram/tgnet/ResultCallback;JLorg/telegram/messenger/ImageReceiver;ZZZ)V
 
     return-void
 .end method

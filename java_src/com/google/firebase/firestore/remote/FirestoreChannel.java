@@ -26,8 +26,8 @@ public class FirestoreChannel {
 
     static {
         Metadata.AsciiMarshaller<String> asciiMarshaller = Metadata.ASCII_STRING_MARSHALLER;
-        X_GOOG_API_CLIENT_HEADER = Metadata.Key.m680of("x-goog-api-client", asciiMarshaller);
-        RESOURCE_PREFIX_HEADER = Metadata.Key.m680of("google-cloud-resource-prefix", asciiMarshaller);
+        X_GOOG_API_CLIENT_HEADER = Metadata.Key.m685of("x-goog-api-client", asciiMarshaller);
+        RESOURCE_PREFIX_HEADER = Metadata.Key.m685of("google-cloud-resource-prefix", asciiMarshaller);
         clientLanguage = "gl-java/";
     }
 

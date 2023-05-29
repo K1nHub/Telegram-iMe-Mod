@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lkotlin/jvm/functions/Function1;
+.implements Landroid/view/View$OnTouchListener;
 
 
 # static fields
@@ -32,18 +32,12 @@
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)Ljava/lang/Object;
+.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 0
 
-    check-cast p1, Lorg/telegram/ui/DialogsActivity;
-
-    invoke-virtual {p1}, Lorg/telegram/ui/DialogsActivity;->isArchive()Z
+    invoke-static {p1, p2}, Lorg/telegram/ui/ChatEditActivity;->$r8$lambda$DZ9c_Xtx6di58wVsbEUk-T4s0j8(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     move-result p1
 
-    invoke-static {p1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
-
-    move-result-object p1
-
-    return-object p1
+    return p1
 .end method

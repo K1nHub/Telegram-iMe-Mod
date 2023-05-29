@@ -46,17 +46,17 @@
 .method private constructor <init>()V
     .locals 1
 
-    .line 182
+    .line 189
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 185
+    .line 192
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/ImageLoader$ThumbGenerateInfo;->imageReceiverArray:Ljava/util/ArrayList;
 
-    .line 186
+    .line 193
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -69,7 +69,7 @@
 .method synthetic constructor <init>(Lorg/telegram/messenger/ImageLoader$1;)V
     .locals 0
 
-    .line 182
+    .line 189
     invoke-direct {p0}, Lorg/telegram/messenger/ImageLoader$ThumbGenerateInfo;-><init>()V
 
     return-void
@@ -78,7 +78,7 @@
 .method static synthetic access$1000(Lorg/telegram/messenger/ImageLoader$ThumbGenerateInfo;)Lorg/telegram/tgnet/TLRPC$Document;
     .locals 0
 
-    .line 182
+    .line 189
     iget-object p0, p0, Lorg/telegram/messenger/ImageLoader$ThumbGenerateInfo;->parentDocument:Lorg/telegram/tgnet/TLRPC$Document;
 
     return-object p0
@@ -87,7 +87,7 @@
 .method static synthetic access$1002(Lorg/telegram/messenger/ImageLoader$ThumbGenerateInfo;Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/tgnet/TLRPC$Document;
     .locals 0
 
-    .line 182
+    .line 189
     iput-object p1, p0, Lorg/telegram/messenger/ImageLoader$ThumbGenerateInfo;->parentDocument:Lorg/telegram/tgnet/TLRPC$Document;
 
     return-object p1
@@ -96,7 +96,7 @@
 .method static synthetic access$1100(Lorg/telegram/messenger/ImageLoader$ThumbGenerateInfo;)Z
     .locals 0
 
-    .line 182
+    .line 189
     iget-boolean p0, p0, Lorg/telegram/messenger/ImageLoader$ThumbGenerateInfo;->big:Z
 
     return p0
@@ -105,7 +105,7 @@
 .method static synthetic access$1102(Lorg/telegram/messenger/ImageLoader$ThumbGenerateInfo;Z)Z
     .locals 0
 
-    .line 182
+    .line 189
     iput-boolean p1, p0, Lorg/telegram/messenger/ImageLoader$ThumbGenerateInfo;->big:Z
 
     return p1
@@ -114,7 +114,7 @@
 .method static synthetic access$1200(Lorg/telegram/messenger/ImageLoader$ThumbGenerateInfo;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 182
+    .line 189
     iget-object p0, p0, Lorg/telegram/messenger/ImageLoader$ThumbGenerateInfo;->imageReceiverArray:Ljava/util/ArrayList;
 
     return-object p0
@@ -123,7 +123,7 @@
 .method static synthetic access$1300(Lorg/telegram/messenger/ImageLoader$ThumbGenerateInfo;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 182
+    .line 189
     iget-object p0, p0, Lorg/telegram/messenger/ImageLoader$ThumbGenerateInfo;->imageReceiverGuidsArray:Ljava/util/ArrayList;
 
     return-object p0
@@ -132,7 +132,7 @@
 .method static synthetic access$1400(Lorg/telegram/messenger/ImageLoader$ThumbGenerateInfo;)Ljava/lang/String;
     .locals 0
 
-    .line 182
+    .line 189
     iget-object p0, p0, Lorg/telegram/messenger/ImageLoader$ThumbGenerateInfo;->filter:Ljava/lang/String;
 
     return-object p0
@@ -141,7 +141,7 @@
 .method static synthetic access$1402(Lorg/telegram/messenger/ImageLoader$ThumbGenerateInfo;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
 
-    .line 182
+    .line 189
     iput-object p1, p0, Lorg/telegram/messenger/ImageLoader$ThumbGenerateInfo;->filter:Ljava/lang/String;
 
     return-object p1

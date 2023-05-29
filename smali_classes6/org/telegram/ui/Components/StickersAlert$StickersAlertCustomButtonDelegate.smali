@@ -15,16 +15,16 @@
 
 
 # virtual methods
-.method public abstract getCustomButtonColorKey()Ljava/lang/String;
+.method public abstract getCustomButtonColorKey()I
 .end method
 
-.method public abstract getCustomButtonRippleColorKey()Ljava/lang/String;
+.method public abstract getCustomButtonRippleColorKey()I
 .end method
 
 .method public abstract getCustomButtonText()Ljava/lang/String;
 .end method
 
-.method public abstract getCustomButtonTextColorKey()Ljava/lang/String;
+.method public abstract getCustomButtonTextColorKey()I
 .end method
 
 .method public abstract onCustomButtonPressed()Z

@@ -31,7 +31,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ImageUpdater;Ljava/util/HashMap;Ljava/util/ArrayList;)V
     .locals 0
 
-    .line 380
+    .line 381
     iput-object p1, p0, Lorg/telegram/ui/Components/ImageUpdater$1;->this$0:Lorg/telegram/ui/Components/ImageUpdater;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/ImageUpdater$1;->val$photos:Ljava/util/HashMap;
@@ -48,7 +48,7 @@
 .method public actionButtonPressed(ZZILjava/lang/String;Z)V
     .locals 0
 
-    .line 395
+    .line 396
     iget-object p2, p0, Lorg/telegram/ui/Components/ImageUpdater$1;->val$photos:Ljava/util/HashMap;
 
     invoke-virtual {p2}, Ljava/util/HashMap;->isEmpty()Z
@@ -76,17 +76,17 @@
     :cond_0
     const/4 p1, 0x1
 
-    .line 398
+    .line 399
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ImageUpdater$1;->sendPressed:Z
 
-    .line 400
+    .line 401
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     const/4 p2, 0x0
 
-    .line 401
+    .line 402
     :goto_0
     iget-object p3, p0, Lorg/telegram/ui/Components/ImageUpdater$1;->val$order:Ljava/util/ArrayList;
 
@@ -96,7 +96,7 @@
 
     if-ge p2, p3, :cond_4
 
-    .line 402
+    .line 403
     iget-object p3, p0, Lorg/telegram/ui/Components/ImageUpdater$1;->val$photos:Ljava/util/HashMap;
 
     iget-object p4, p0, Lorg/telegram/ui/Components/ImageUpdater$1;->val$order:Ljava/util/ArrayList;
@@ -109,48 +109,48 @@
 
     move-result-object p3
 
-    .line 403
+    .line 404
     new-instance p4, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;
 
     invoke-direct {p4}, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;-><init>()V
 
-    .line 404
+    .line 405
     invoke-virtual {p1, p4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 405
+    .line 406
     instance-of p5, p3, Lorg/telegram/messenger/MediaController$SearchImage;
 
     if-eqz p5, :cond_3
 
-    .line 406
+    .line 407
     check-cast p3, Lorg/telegram/messenger/MediaController$SearchImage;
 
-    .line 407
+    .line 408
     iget-object p5, p3, Lorg/telegram/messenger/MediaController$MediaEditState;->imagePath:Ljava/lang/String;
 
     if-eqz p5, :cond_1
 
-    .line 408
+    .line 409
     iput-object p5, p4, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->path:Ljava/lang/String;
 
     goto :goto_1
 
-    .line 410
+    .line 411
     :cond_1
     iput-object p3, p4, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->searchImage:Lorg/telegram/messenger/MediaController$SearchImage;
 
-    .line 412
+    .line 413
     :goto_1
     iget-object p5, p3, Lorg/telegram/messenger/MediaController$MediaEditState;->editedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
     iput-object p5, p4, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->videoEditedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
-    .line 413
+    .line 414
     iget-object p5, p3, Lorg/telegram/messenger/MediaController$MediaEditState;->thumbPath:Ljava/lang/String;
 
     iput-object p5, p4, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->thumbPath:Ljava/lang/String;
 
-    .line 414
+    .line 415
     iget-object p5, p3, Lorg/telegram/messenger/MediaController$SearchImage;->caption:Ljava/lang/CharSequence;
 
     if-eqz p5, :cond_2
@@ -167,17 +167,17 @@
     :goto_2
     iput-object p5, p4, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->caption:Ljava/lang/String;
 
-    .line 415
+    .line 416
     iget-object p5, p3, Lorg/telegram/messenger/MediaController$MediaEditState;->entities:Ljava/util/ArrayList;
 
     iput-object p5, p4, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->entities:Ljava/util/ArrayList;
 
-    .line 416
+    .line 417
     iget-object p5, p3, Lorg/telegram/messenger/MediaController$MediaEditState;->stickers:Ljava/util/ArrayList;
 
     iput-object p5, p4, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->masks:Ljava/util/ArrayList;
 
-    .line 417
+    .line 418
     iget p3, p3, Lorg/telegram/messenger/MediaController$MediaEditState;->ttl:I
 
     iput p3, p4, Lorg/telegram/messenger/SendMessagesHelper$SendingMediaInfo;->ttl:I
@@ -187,7 +187,7 @@
 
     goto :goto_0
 
-    .line 420
+    .line 421
     :cond_4
     iget-object p2, p0, Lorg/telegram/ui/Components/ImageUpdater$1;->this$0:Lorg/telegram/ui/Components/ImageUpdater;
 
@@ -201,7 +201,7 @@
 .method public canFinishFragment()Z
     .locals 1
 
-    .line 430
+    .line 431
     iget-object v0, p0, Lorg/telegram/ui/Components/ImageUpdater$1;->this$0:Lorg/telegram/ui/Components/ImageUpdater;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ImageUpdater;->access$000(Lorg/telegram/ui/Components/ImageUpdater;)Lorg/telegram/ui/Components/ImageUpdater$ImageUpdaterDelegate;

@@ -16,8 +16,9 @@ import android.widget.Checkable;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
+import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
@@ -32,7 +33,9 @@ import org.telegram.p044ui.Components.ViewHelper;
 import org.telegram.tgnet.TLObject;
 import org.telegram.tgnet.TLRPC$Document;
 import org.telegram.tgnet.TLRPC$PhotoSize;
+import org.telegram.tgnet.TLRPC$StickerSet;
 import org.telegram.tgnet.TLRPC$StickerSetCovered;
+import org.telegram.tgnet.TLRPC$TL_stickerSetFullCovered;
 /* renamed from: org.telegram.ui.Cells.ArchivedStickerSetCell */
 /* loaded from: classes5.dex */
 public class ArchivedStickerSetCell extends FrameLayout implements Checkable {
@@ -62,21 +65,22 @@ public class ArchivedStickerSetCell extends FrameLayout implements Checkable {
             ProgressButton progressButton = new ProgressButton(context);
             this.addButton = progressButton;
             this.currentButton = progressButton;
-            progressButton.setText(LocaleController.getString("Add", C3242R.string.Add));
-            progressButton.setTextColor(Theme.getColor("featuredStickers_buttonText"));
-            progressButton.setProgressColor(Theme.getColor("featuredStickers_buttonProgress"));
-            progressButton.setBackgroundRoundRect(Theme.getColor("featuredStickers_addButton"), Theme.getColor("featuredStickers_addButtonPressed"));
+            progressButton.setText(LocaleController.getString("Add", C3290R.string.Add));
+            progressButton.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
+            progressButton.setProgressColor(Theme.getColor(Theme.key_featuredStickers_buttonProgress));
+            progressButton.setBackgroundRoundRect(Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed));
             addView(progressButton, LayoutHelper.createFrameRelatively(-2.0f, 28.0f, 8388661, BitmapDescriptorFactory.HUE_RED, 18.0f, 14.0f, BitmapDescriptorFactory.HUE_RED));
-            int m50dp = AndroidUtilities.m50dp(60);
+            int m54dp = AndroidUtilities.m54dp(60);
             ProgressButton progressButton2 = new ProgressButton(context);
             this.deleteButton = progressButton2;
             progressButton2.setAllCaps(false);
-            progressButton2.setMinWidth(m50dp);
-            progressButton2.setMinimumWidth(m50dp);
+            progressButton2.setMinWidth(m54dp);
+            progressButton2.setMinimumWidth(m54dp);
             progressButton2.setTextSize(1, 14.0f);
-            progressButton2.setTextColor(Theme.getColor("featuredStickers_removeButtonText"));
-            progressButton2.setText(LocaleController.getString("StickersRemove", C3242R.string.StickersRemove));
-            progressButton2.setBackground(Theme.getRoundRectSelectorDrawable(Theme.getColor("featuredStickers_removeButtonText")));
+            int i = Theme.key_featuredStickers_removeButtonText;
+            progressButton2.setTextColor(Theme.getColor(i));
+            progressButton2.setText(LocaleController.getString("StickersRemove", C3290R.string.StickersRemove));
+            progressButton2.setBackground(Theme.getRoundRectSelectorDrawable(Theme.getColor(i)));
             progressButton2.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             ViewHelper.setPadding(progressButton2, 8.0f, BitmapDescriptorFactory.HUE_RED, 8.0f, BitmapDescriptorFactory.HUE_RED);
             if (Build.VERSION.SDK_INT >= 21) {
@@ -98,7 +102,7 @@ public class ArchivedStickerSetCell extends FrameLayout implements Checkable {
         }
         TextView textView = new TextView(context);
         this.textView = textView;
-        textView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         textView.setTextSize(1, 16.0f);
         textView.setLines(1);
         textView.setMaxLines(1);
@@ -108,7 +112,7 @@ public class ArchivedStickerSetCell extends FrameLayout implements Checkable {
         addView(textView, LayoutHelper.createFrameRelatively(-2.0f, -2.0f, 8388611, 71.0f, 10.0f, 21.0f, BitmapDescriptorFactory.HUE_RED));
         TextView textView2 = new TextView(context);
         this.valueTextView = textView2;
-        textView2.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
+        textView2.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
         textView2.setTextSize(1, 13.0f);
         textView2.setLines(1);
         textView2.setMaxLines(1);
@@ -129,7 +133,7 @@ public class ArchivedStickerSetCell extends FrameLayout implements Checkable {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(64) + (this.needDivider ? 1 : 0), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(64) + (this.needDivider ? 1 : 0), 1073741824));
     }
 
     @Override // android.view.ViewGroup
@@ -160,17 +164,49 @@ public class ArchivedStickerSetCell extends FrameLayout implements Checkable {
         this.stickersSet = tLRPC$StickerSetCovered;
         setWillNotDraw(!z);
         this.textView.setText(this.stickersSet.set.title);
-        this.valueTextView.setText(LocaleController.formatPluralString("Stickers", tLRPC$StickerSetCovered.set.count, new Object[0]));
-        TLRPC$Document tLRPC$Document = tLRPC$StickerSetCovered.cover;
-        if (tLRPC$Document == null) {
-            tLRPC$Document = !tLRPC$StickerSetCovered.covers.isEmpty() ? tLRPC$StickerSetCovered.covers.get(0) : null;
+        TLRPC$StickerSet tLRPC$StickerSet = tLRPC$StickerSetCovered.set;
+        if (tLRPC$StickerSet.emojis) {
+            this.valueTextView.setText(LocaleController.formatPluralString("EmojiCount", tLRPC$StickerSet.count, new Object[0]));
+        } else {
+            this.valueTextView.setText(LocaleController.formatPluralString("Stickers", tLRPC$StickerSet.count, new Object[0]));
+        }
+        TLRPC$Document tLRPC$Document = null;
+        if (tLRPC$StickerSetCovered instanceof TLRPC$TL_stickerSetFullCovered) {
+            ArrayList<TLRPC$Document> arrayList = ((TLRPC$TL_stickerSetFullCovered) tLRPC$StickerSetCovered).documents;
+            if (arrayList == null) {
+                return;
+            }
+            long j = tLRPC$StickerSetCovered.set.thumb_document_id;
+            int i = 0;
+            while (true) {
+                if (i < arrayList.size()) {
+                    TLRPC$Document tLRPC$Document2 = arrayList.get(i);
+                    if (tLRPC$Document2 != null && tLRPC$Document2.f1441id == j) {
+                        tLRPC$Document = tLRPC$Document2;
+                        break;
+                    }
+                    i++;
+                } else {
+                    break;
+                }
+            }
+            if (tLRPC$Document == null && !arrayList.isEmpty()) {
+                tLRPC$Document = arrayList.get(0);
+            }
+        } else {
+            TLRPC$Document tLRPC$Document3 = tLRPC$StickerSetCovered.cover;
+            if (tLRPC$Document3 != null) {
+                tLRPC$Document = tLRPC$Document3;
+            } else if (!tLRPC$StickerSetCovered.covers.isEmpty()) {
+                tLRPC$Document = tLRPC$StickerSetCovered.covers.get(0);
+            }
         }
         if (tLRPC$Document != null) {
             TLObject closestPhotoSizeWithSize = FileLoader.getClosestPhotoSizeWithSize(tLRPC$StickerSetCovered.set.thumbs, 90);
             if (closestPhotoSizeWithSize == null) {
                 closestPhotoSizeWithSize = tLRPC$Document;
             }
-            SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(tLRPC$StickerSetCovered.set.thumbs, "windowBackgroundGray", 1.0f);
+            SvgHelper.SvgDrawable svgThumb = DocumentObject.getSvgThumb(tLRPC$StickerSetCovered.set.thumbs, Theme.key_windowBackgroundGray, 1.0f);
             boolean z2 = closestPhotoSizeWithSize instanceof TLRPC$Document;
             if (z2) {
                 forSticker = ImageLocation.getForDocument(FileLoader.getClosestPhotoSizeWithSize(tLRPC$Document.thumbs, 90), tLRPC$Document);

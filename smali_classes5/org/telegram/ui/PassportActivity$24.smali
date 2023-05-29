@@ -262,6 +262,14 @@
     return-void
 .end method
 
+.method public synthetic onWallpaperSelected(Ljava/lang/Object;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate$-CC;->$default$onWallpaperSelected(Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate;Ljava/lang/Object;)V
+
+    return-void
+.end method
+
 .method public synthetic openAvatarsSearch()V
     .locals 0
 

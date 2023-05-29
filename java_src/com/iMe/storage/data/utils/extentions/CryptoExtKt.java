@@ -37,7 +37,7 @@ public final class CryptoExtKt {
             Intrinsics.checkNotNullExpressionValue(decode, "decode(AESUtil.decrypt(t…assword), Base64.DEFAULT)");
             return new String(decode, Charsets.UTF_8);
         } catch (Exception e) {
-            Timber.m4e(e);
+            Timber.m6e(e);
             return "";
         }
     }

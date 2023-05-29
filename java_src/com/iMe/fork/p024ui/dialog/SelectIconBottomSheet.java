@@ -26,7 +26,7 @@ import kotlin.collections.ArraysKt___ArraysKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.BottomSheet;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -113,7 +113,7 @@ public final class SelectIconBottomSheet extends BottomSheet {
         this.listView$delegate = lazy3;
         lazy4 = LazyKt__LazyJVMKt.lazy(new SelectIconBottomSheet$deleteButton$2(this));
         this.deleteButton$delegate = lazy4;
-        setTitle(LocaleController.getInternalString(C3242R.string.select_icon), true);
+        setTitle(LocaleController.getInternalString(C3290R.string.select_icon), true);
         setCustomView(getRootView());
         setupListeners();
     }
@@ -183,7 +183,7 @@ public final class SelectIconBottomSheet extends BottomSheet {
                 SelectIconBottomSheet.initDeleteButton$lambda$3$lambda$2(SelectIconBottomSheet.this, view);
             }
         });
-        bottomSheetCell.setText(LocaleController.getString("Delete", C3242R.string.Delete));
+        bottomSheetCell.setText(LocaleController.getString("Delete", C3290R.string.Delete));
         return bottomSheetCell;
     }
 
@@ -318,7 +318,7 @@ public final class SelectIconBottomSheet extends BottomSheet {
             if (z) {
                 gradientDrawable = new GradientDrawable();
                 gradientDrawable.setShape(1);
-                gradientDrawable.setStroke(AndroidUtilities.m51dp(2.0f), Theme.getColor("chats_actionBackground"));
+                gradientDrawable.setStroke(AndroidUtilities.m55dp(2.0f), Theme.getColor(Theme.key_chats_actionBackground));
             } else {
                 gradientDrawable = null;
             }
@@ -341,14 +341,14 @@ public final class SelectIconBottomSheet extends BottomSheet {
         public final ImageView initImageView() {
             ImageView imageView = new ImageView(getContext());
             imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("chats_actionBackground"), PorterDuff.Mode.SRC_IN));
+            imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_actionBackground), PorterDuff.Mode.SRC_IN));
             return imageView;
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public final CheckBox2 initCheckBox() {
             CheckBox2 checkBox2 = new CheckBox2(getContext(), 18);
-            checkBox2.setColor(null, "windowBackgroundWhite", "checkboxCheck");
+            checkBox2.setColor(-1, Theme.key_windowBackgroundWhite, Theme.key_checkboxCheck);
             checkBox2.setDrawUnchecked(false);
             return checkBox2;
         }

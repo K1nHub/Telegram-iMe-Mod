@@ -21,15 +21,15 @@ import com.google.android.gms.wearable.ChannelClient;
 /* loaded from: classes3.dex */
 public final class zzbq extends AbstractSafeParcelable implements Channel, ChannelClient.Channel {
     public static final Parcelable.Creator<zzbq> CREATOR = new zzbr();
-    @SafeParcelable.Field(getter = "getToken", m775id = 2)
+    @SafeParcelable.Field(getter = "getToken", m779id = 2)
     private final String zza;
-    @SafeParcelable.Field(getter = "getNodeId", m775id = 3)
+    @SafeParcelable.Field(getter = "getNodeId", m779id = 3)
     private final String zzb;
-    @SafeParcelable.Field(getter = "getPath", m775id = 4)
+    @SafeParcelable.Field(getter = "getPath", m779id = 4)
     private final String zzc;
 
     @SafeParcelable.Constructor
-    public zzbq(@SafeParcelable.Param(m774id = 2) String str, @SafeParcelable.Param(m774id = 3) String str2, @SafeParcelable.Param(m774id = 4) String str3) {
+    public zzbq(@SafeParcelable.Param(m778id = 2) String str, @SafeParcelable.Param(m778id = 3) String str2, @SafeParcelable.Param(m778id = 4) String str3) {
         this.zza = (String) Preconditions.checkNotNull(str);
         this.zzb = (String) Preconditions.checkNotNull(str2);
         this.zzc = (String) Preconditions.checkNotNull(str3);

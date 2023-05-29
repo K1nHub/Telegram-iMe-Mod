@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
-import org.telegram.PhoneFormat.C3159PhoneFormat;
+import org.telegram.PhoneFormat.C3207PhoneFormat;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.p044ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.CodeFieldContainer */
@@ -38,9 +38,9 @@ public class CodeFieldContainer extends LinearLayout {
     protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
         Paint paint = this.paint;
-        float m51dp = AndroidUtilities.m51dp(1.5f);
-        this.strokeWidth = m51dp;
-        paint.setStrokeWidth(m51dp);
+        float m55dp = AndroidUtilities.m55dp(1.5f);
+        this.strokeWidth = m55dp;
+        paint.setStrokeWidth(m55dp);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -57,7 +57,7 @@ public class CodeFieldContainer extends LinearLayout {
                     }
                 }
                 float successProgress = codeNumberField.getSuccessProgress();
-                this.paint.setColor(ColorUtils.blendARGB(ColorUtils.blendARGB(ColorUtils.blendARGB(Theme.getColor("windowBackgroundWhiteInputField"), Theme.getColor("windowBackgroundWhiteInputFieldActivated"), codeNumberField.getFocusedProgress()), Theme.getColor("dialogTextRed"), codeNumberField.getErrorProgress()), Theme.getColor("checkbox"), successProgress));
+                this.paint.setColor(ColorUtils.blendARGB(ColorUtils.blendARGB(ColorUtils.blendARGB(Theme.getColor(Theme.key_windowBackgroundWhiteInputField), Theme.getColor(Theme.key_windowBackgroundWhiteInputFieldActivated), codeNumberField.getFocusedProgress()), Theme.getColor(Theme.key_text_RedBold), codeNumberField.getErrorProgress()), Theme.getColor(Theme.key_checkbox), successProgress));
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(childAt.getLeft(), childAt.getTop(), childAt.getRight(), childAt.getBottom());
                 float f = this.strokeWidth;
@@ -66,7 +66,7 @@ public class CodeFieldContainer extends LinearLayout {
                     float f2 = -Math.max((float) BitmapDescriptorFactory.HUE_RED, this.strokeWidth * (codeNumberField.getSuccessScaleProgress() - 1.0f));
                     rectF.inset(f2, f2);
                 }
-                canvas.drawRoundRect(rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), this.paint);
+                canvas.drawRoundRect(rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), this.paint);
             }
         }
         super.dispatchDraw(canvas);
@@ -141,7 +141,7 @@ public class CodeFieldContainer extends LinearLayout {
         while (true) {
             CodeNumberField[] codeNumberFieldArr = this.codeField;
             if (i < codeNumberFieldArr.length) {
-                sb.append(C3159PhoneFormat.stripExceptNumbers(codeNumberFieldArr[i].getText().toString()));
+                sb.append(C3207PhoneFormat.stripExceptNumbers(codeNumberFieldArr[i].getText().toString()));
                 i++;
             } else {
                 return sb.toString();

@@ -35,7 +35,7 @@
 
 .field private delegate:Lorg/telegram/ui/PhotoPickerActivity$PhotoPickerActivityDelegate;
 
-.field private final dialogBackgroundKey:Ljava/lang/String;
+.field private final dialogBackgroundKey:I
 
 .field private emptyView:Lorg/telegram/ui/Components/StickerEmptyView;
 
@@ -153,7 +153,7 @@
     .end annotation
 .end field
 
-.field private final selectorKey:Ljava/lang/String;
+.field private final selectorKey:I
 
 .field private sendPopupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
@@ -169,7 +169,7 @@
 
 .field private sizeNotifierFrameLayout:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
-.field private final textKey:Ljava/lang/String;
+.field private final textKey:I
 
 .field private textPaint:Landroid/text/TextPaint;
 
@@ -429,38 +429,38 @@
     :cond_0
     if-eqz p8, :cond_1
 
-    const-string p1, "voipgroup_dialogBackground"
-
     .line 465
-    iput-object p1, p0, Lorg/telegram/ui/PhotoPickerActivity;->dialogBackgroundKey:Ljava/lang/String;
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_dialogBackground:I
 
-    const-string p1, "voipgroup_actionBarItems"
+    iput p1, p0, Lorg/telegram/ui/PhotoPickerActivity;->dialogBackgroundKey:I
 
     .line 466
-    iput-object p1, p0, Lorg/telegram/ui/PhotoPickerActivity;->textKey:Ljava/lang/String;
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_actionBarItems:I
 
-    const-string p1, "voipgroup_actionBarItemsSelector"
+    iput p1, p0, Lorg/telegram/ui/PhotoPickerActivity;->textKey:I
 
     .line 467
-    iput-object p1, p0, Lorg/telegram/ui/PhotoPickerActivity;->selectorKey:Ljava/lang/String;
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_actionBarItemsSelector:I
+
+    iput p1, p0, Lorg/telegram/ui/PhotoPickerActivity;->selectorKey:I
 
     goto :goto_0
 
-    :cond_1
-    const-string p1, "dialogBackground"
-
     .line 469
-    iput-object p1, p0, Lorg/telegram/ui/PhotoPickerActivity;->dialogBackgroundKey:Ljava/lang/String;
+    :cond_1
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    const-string p1, "dialogTextBlack"
+    iput p1, p0, Lorg/telegram/ui/PhotoPickerActivity;->dialogBackgroundKey:I
 
     .line 470
-    iput-object p1, p0, Lorg/telegram/ui/PhotoPickerActivity;->textKey:Ljava/lang/String;
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
-    const-string p1, "dialogButtonSelector"
+    iput p1, p0, Lorg/telegram/ui/PhotoPickerActivity;->textKey:I
 
     .line 471
-    iput-object p1, p0, Lorg/telegram/ui/PhotoPickerActivity;->selectorKey:Ljava/lang/String;
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogButtonSelector:I
+
+    iput p1, p0, Lorg/telegram/ui/PhotoPickerActivity;->selectorKey:I
 
     :goto_0
     return-void
@@ -819,13 +819,13 @@
     return-object p0
 .end method
 
-.method static synthetic access$3700(Lorg/telegram/ui/PhotoPickerActivity;)Ljava/lang/String;
+.method static synthetic access$3700(Lorg/telegram/ui/PhotoPickerActivity;)I
     .locals 0
 
     .line 107
-    iget-object p0, p0, Lorg/telegram/ui/PhotoPickerActivity;->dialogBackgroundKey:Ljava/lang/String;
+    iget p0, p0, Lorg/telegram/ui/PhotoPickerActivity;->dialogBackgroundKey:I
 
-    return-object p0
+    return p0
 .end method
 
 .method static synthetic access$3800(Lorg/telegram/ui/PhotoPickerActivity;)Landroid/graphics/Paint;
@@ -927,13 +927,13 @@
     return p0
 .end method
 
-.method static synthetic access$4700(Lorg/telegram/ui/PhotoPickerActivity;)Ljava/lang/String;
+.method static synthetic access$4700(Lorg/telegram/ui/PhotoPickerActivity;)I
     .locals 0
 
     .line 107
-    iget-object p0, p0, Lorg/telegram/ui/PhotoPickerActivity;->textKey:Ljava/lang/String;
+    iget p0, p0, Lorg/telegram/ui/PhotoPickerActivity;->textKey:I
 
-    return-object p0
+    return p0
 .end method
 
 .method static synthetic access$500(Lorg/telegram/ui/PhotoPickerActivity;)Ljava/util/HashMap;
@@ -1564,10 +1564,10 @@
 
     if-eqz p1, :cond_2
 
-    const-string p2, "dialogTextRed"
-
     .line 838
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -2479,9 +2479,9 @@
     :cond_11
     iget-object v2, v0, Lorg/telegram/ui/PhotoPickerActivity;->sendPopupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    iget-object v4, v0, Lorg/telegram/ui/PhotoPickerActivity;->selectorKey:Ljava/lang/String;
+    iget v4, v0, Lorg/telegram/ui/PhotoPickerActivity;->selectorKey:I
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -4794,9 +4794,9 @@
     .line 503
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    iget-object v2, v0, Lorg/telegram/ui/PhotoPickerActivity;->dialogBackgroundKey:Ljava/lang/String;
+    iget v2, v0, Lorg/telegram/ui/PhotoPickerActivity;->dialogBackgroundKey:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -4805,9 +4805,9 @@
     .line 504
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    iget-object v2, v0, Lorg/telegram/ui/PhotoPickerActivity;->textKey:Ljava/lang/String;
+    iget v2, v0, Lorg/telegram/ui/PhotoPickerActivity;->textKey:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -4816,9 +4816,9 @@
     .line 505
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    iget-object v2, v0, Lorg/telegram/ui/PhotoPickerActivity;->textKey:Ljava/lang/String;
+    iget v2, v0, Lorg/telegram/ui/PhotoPickerActivity;->textKey:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -4827,9 +4827,9 @@
     .line 506
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    iget-object v2, v0, Lorg/telegram/ui/PhotoPickerActivity;->selectorKey:Ljava/lang/String;
+    iget v2, v0, Lorg/telegram/ui/PhotoPickerActivity;->selectorKey:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -5004,27 +5004,27 @@
     move-result-object v1
 
     .line 600
-    iget-object v4, v0, Lorg/telegram/ui/PhotoPickerActivity;->textKey:Ljava/lang/String;
+    iget v4, v0, Lorg/telegram/ui/PhotoPickerActivity;->textKey:I
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
     invoke-virtual {v1, v4}, Landroid/widget/EditText;->setTextColor(I)V
 
     .line 601
-    iget-object v4, v0, Lorg/telegram/ui/PhotoPickerActivity;->textKey:Ljava/lang/String;
+    iget v4, v0, Lorg/telegram/ui/PhotoPickerActivity;->textKey:I
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
     invoke-virtual {v1, v4}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
 
-    const-string v4, "chat_messagePanelHint"
-
     .line 602
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelHint:I
+
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -5078,9 +5078,9 @@
     iput-object v1, v0, Lorg/telegram/ui/PhotoPickerActivity;->sizeNotifierFrameLayout:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     .line 782
-    iget-object v2, v0, Lorg/telegram/ui/PhotoPickerActivity;->dialogBackgroundKey:Ljava/lang/String;
+    iget v2, v0, Lorg/telegram/ui/PhotoPickerActivity;->dialogBackgroundKey:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -5201,9 +5201,9 @@
     .line 810
     iget-object v1, v0, Lorg/telegram/ui/PhotoPickerActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    iget-object v2, v0, Lorg/telegram/ui/PhotoPickerActivity;->dialogBackgroundKey:Ljava/lang/String;
+    iget v2, v0, Lorg/telegram/ui/PhotoPickerActivity;->dialogBackgroundKey:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -5315,9 +5315,9 @@
 
     iget-object v1, v1, Lorg/telegram/ui/Components/StickerEmptyView;->title:Landroid/widget/TextView;
 
-    const-string v2, "windowBackgroundWhiteGrayText"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
-    invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v2
 
@@ -5480,9 +5480,9 @@
     iput-object v1, v0, Lorg/telegram/ui/PhotoPickerActivity;->frameLayout2:Landroid/widget/FrameLayout;
 
     .line 1003
-    iget-object v3, v0, Lorg/telegram/ui/PhotoPickerActivity;->dialogBackgroundKey:Ljava/lang/String;
+    iget v3, v0, Lorg/telegram/ui/PhotoPickerActivity;->dialogBackgroundKey:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -5730,9 +5730,9 @@
 
     move-result v3
 
-    const-string v4, "dialogFloatingButton"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogFloatingButton:I
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -5742,10 +5742,10 @@
 
     if-lt v6, v12, :cond_d
 
-    const-string v4, "dialogFloatingButtonPressed"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogFloatingButtonPressed:I
 
     :cond_d
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -5829,9 +5829,9 @@
 
     new-instance v4, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v5, "dialogFloatingIcon"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_dialogFloatingIcon:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -6109,7 +6109,7 @@
 
     sget v4, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
-    iget-object v9, v0, Lorg/telegram/ui/PhotoPickerActivity;->dialogBackgroundKey:Ljava/lang/String;
+    iget v9, v0, Lorg/telegram/ui/PhotoPickerActivity;->dialogBackgroundKey:I
 
     const/4 v5, 0x0
 
@@ -6121,7 +6121,7 @@
 
     move-object v2, v10
 
-    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -6132,7 +6132,7 @@
 
     sget v13, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
-    iget-object v3, v0, Lorg/telegram/ui/PhotoPickerActivity;->dialogBackgroundKey:Ljava/lang/String;
+    iget v3, v0, Lorg/telegram/ui/PhotoPickerActivity;->dialogBackgroundKey:I
 
     const/4 v14, 0x0
 
@@ -6144,9 +6144,9 @@
 
     move-object v11, v2
 
-    move-object/from16 v18, v3
+    move/from16 v18, v3
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -6157,7 +6157,7 @@
 
     sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_ITEMSCOLOR:I
 
-    iget-object v11, v0, Lorg/telegram/ui/PhotoPickerActivity;->textKey:Ljava/lang/String;
+    iget v11, v0, Lorg/telegram/ui/PhotoPickerActivity;->textKey:I
 
     const/4 v9, 0x0
 
@@ -6165,7 +6165,7 @@
 
     move-object v4, v2
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -6176,15 +6176,15 @@
 
     sget v14, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_TITLECOLOR:I
 
-    iget-object v3, v0, Lorg/telegram/ui/PhotoPickerActivity;->textKey:Ljava/lang/String;
+    iget v3, v0, Lorg/telegram/ui/PhotoPickerActivity;->textKey:I
 
     const/16 v18, 0x0
 
     move-object v12, v2
 
-    move-object/from16 v19, v3
+    move/from16 v19, v3
 
-    invoke-direct/range {v12 .. v19}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v12 .. v19}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -6195,11 +6195,11 @@
 
     sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_SELECTORCOLOR:I
 
-    iget-object v11, v0, Lorg/telegram/ui/PhotoPickerActivity;->selectorKey:Ljava/lang/String;
+    iget v11, v0, Lorg/telegram/ui/PhotoPickerActivity;->selectorKey:I
 
     move-object v4, v2
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -6210,13 +6210,13 @@
 
     sget v14, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_SEARCH:I
 
-    iget-object v3, v0, Lorg/telegram/ui/PhotoPickerActivity;->textKey:Ljava/lang/String;
+    iget v3, v0, Lorg/telegram/ui/PhotoPickerActivity;->textKey:I
 
     move-object v12, v2
 
-    move-object/from16 v19, v3
+    move/from16 v19, v3
 
-    invoke-direct/range {v12 .. v19}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v12 .. v19}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -6227,11 +6227,11 @@
 
     sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_SEARCHPLACEHOLDER:I
 
-    const-string v11, "chat_messagePanelHint"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelHint:I
 
     move-object v4, v2
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -6264,13 +6264,13 @@
 
     const/16 v18, 0x0
 
-    iget-object v3, v0, Lorg/telegram/ui/PhotoPickerActivity;->textKey:Ljava/lang/String;
+    iget v3, v0, Lorg/telegram/ui/PhotoPickerActivity;->textKey:I
 
     move-object v12, v2
 
-    move-object/from16 v19, v3
+    move/from16 v19, v3
 
-    invoke-direct/range {v12 .. v19}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v12 .. v19}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -6289,11 +6289,11 @@
 
     const/4 v10, 0x0
 
-    iget-object v11, v0, Lorg/telegram/ui/PhotoPickerActivity;->dialogBackgroundKey:Ljava/lang/String;
+    iget v11, v0, Lorg/telegram/ui/PhotoPickerActivity;->dialogBackgroundKey:I
 
     move-object v4, v2
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -6320,13 +6320,13 @@
 
     aput-object v6, v4, v5
 
-    const-string v19, "chat_attachEmptyImage"
+    sget v19, Lorg/telegram/ui/ActionBar/Theme;->key_chat_attachEmptyImage:I
 
     move-object v12, v2
 
     move-object/from16 v17, v4
 
-    invoke-direct/range {v12 .. v19}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v12 .. v19}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -6349,7 +6349,7 @@
 
     const/16 v26, 0x0
 
-    const-string v27, "chat_attachPhotoBackground"
+    sget v27, Lorg/telegram/ui/ActionBar/Theme;->key_chat_attachPhotoBackground:I
 
     move-object/from16 v20, v2
 
@@ -6357,7 +6357,7 @@
 
     move-object/from16 v23, v3
 
-    invoke-direct/range {v20 .. v27}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v20 .. v27}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -6367,10 +6367,10 @@
 .method public isLightStatusBar()Z
     .locals 2
 
-    const-string v0, "windowBackgroundGray"
-
     .line 2064
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

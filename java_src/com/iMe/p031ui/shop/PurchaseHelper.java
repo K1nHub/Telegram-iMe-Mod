@@ -98,7 +98,7 @@ public final class PurchaseHelper {
     }
 
     public final void preloadPurchasesInfo() {
-        Single<List<String>> observeOn = this.aigramBotsManager.getAvailableSkus().subscribeOn(Schedulers.m674io()).observeOn(AndroidSchedulers.mainThread());
+        Single<List<String>> observeOn = this.aigramBotsManager.getAvailableSkus().subscribeOn(Schedulers.m679io()).observeOn(AndroidSchedulers.mainThread());
         final PurchaseHelper$preloadPurchasesInfo$1 purchaseHelper$preloadPurchasesInfo$1 = new PurchaseHelper$preloadPurchasesInfo$1(this);
         Consumer<? super List<String>> consumer = new Consumer() { // from class: com.iMe.ui.shop.PurchaseHelper$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
@@ -232,12 +232,12 @@ public final class PurchaseHelper {
         List<Sku> skus = product.getSkus();
         Intrinsics.checkNotNullExpressionValue(skus, "inAppProduct.skus");
         for (Sku sku : skus) {
-            String str = sku.f1350id.code;
+            String str = sku.f1356id.code;
             Intrinsics.checkNotNullExpressionValue(str, "it.id.code");
             String str2 = sku.price;
             Intrinsics.checkNotNullExpressionValue(str2, "it.price");
             boolean isPurchased = product.isPurchased(sku);
-            String str3 = sku.f1350id.code;
+            String str3 = sku.f1356id.code;
             Intrinsics.checkNotNullExpressionValue(str3, "it.id.code");
             List<Purchase> purchases = product.getPurchases();
             Intrinsics.checkNotNullExpressionValue(purchases, "inAppProduct.purchases");
@@ -259,7 +259,7 @@ public final class PurchaseHelper {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void storeProductsInfo() {
-        Completable observeOn = this.aigramBotsManager.storeActualPurchases(getProducts()).subscribeOn(Schedulers.m674io()).observeOn(AndroidSchedulers.mainThread());
+        Completable observeOn = this.aigramBotsManager.storeActualPurchases(getProducts()).subscribeOn(Schedulers.m679io()).observeOn(AndroidSchedulers.mainThread());
         PurchaseHelper$$ExternalSyntheticLambda1 purchaseHelper$$ExternalSyntheticLambda1 = PurchaseHelper$$ExternalSyntheticLambda1.INSTANCE;
         final PurchaseHelper$storeProductsInfo$2 purchaseHelper$storeProductsInfo$2 = PurchaseHelper$storeProductsInfo$2.INSTANCE;
         this.disposable.add(observeOn.subscribe(purchaseHelper$$ExternalSyntheticLambda1, new Consumer() { // from class: com.iMe.ui.shop.PurchaseHelper$$ExternalSyntheticLambda2
@@ -331,7 +331,7 @@ public final class PurchaseHelper {
             String str4 = purchase.sku;
             Intrinsics.checkNotNullExpressionValue(str4, "it.sku");
             long j = purchase.time;
-            int i = purchase.state.f1349id;
+            int i = purchase.state.f1355id;
             String str5 = purchase.token;
             Intrinsics.checkNotNullExpressionValue(str5, "it.token");
             return new ShopProduct.Receipt(str2, str3, str4, j, i, str5);

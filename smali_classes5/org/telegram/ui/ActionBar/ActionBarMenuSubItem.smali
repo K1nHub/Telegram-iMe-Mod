@@ -75,28 +75,28 @@
     .line 87
     iput-boolean p4, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->bottom:Z
 
-    const-string p3, "actionBarDefaultSubmenuItem"
-
     .line 89
-    invoke-direct {p0, p3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->getThemedColor(Ljava/lang/String;)I
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
+
+    invoke-direct {p0, p3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->getThemedColor(I)I
 
     move-result p3
 
     iput p3, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->textColor:I
 
-    const-string p3, "actionBarDefaultSubmenuItemIcon"
-
     .line 90
-    invoke-direct {p0, p3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->getThemedColor(Ljava/lang/String;)I
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItemIcon:I
+
+    invoke-direct {p0, p3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->getThemedColor(I)I
 
     move-result p3
 
     iput p3, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->iconColor:I
 
-    const-string p3, "dialogButtonSelector"
-
     .line 91
-    invoke-direct {p0, p3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->getThemedColor(Ljava/lang/String;)I
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogButtonSelector:I
+
+    invoke-direct {p0, p3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->getThemedColor(I)I
 
     move-result p3
 
@@ -269,18 +269,16 @@
     .line 113
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->checkView:Lorg/telegram/ui/Components/CheckBox2;
 
-    const/4 p3, 0x0
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_radioBackgroundChecked:I
 
-    const-string p5, "radioBackgroundChecked"
+    const/4 p5, -0x1
 
-    invoke-virtual {p1, p3, p3, p5}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p1, p5, p5, p3}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
     .line 114
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->checkView:Lorg/telegram/ui/Components/CheckBox2;
 
-    const/4 p3, -0x1
-
-    invoke-virtual {p1, p3}, Lorg/telegram/ui/Components/CheckBox2;->setDrawBackgroundAsArc(I)V
+    invoke-virtual {p1, p5}, Lorg/telegram/ui/Components/CheckBox2;->setDrawBackgroundAsArc(I)V
 
     if-ne p2, p4, :cond_5
 
@@ -307,7 +305,7 @@
     :goto_4
     or-int/lit8 p2, v1, 0x10
 
-    invoke-static {p6, p3, p2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static {p6, p5, p2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p2
 
@@ -336,7 +334,7 @@
     :cond_7
     or-int/lit8 p2, v1, 0x10
 
-    invoke-static {p6, p3, p2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static {p6, p5, p2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p2
 
@@ -467,39 +465,16 @@
     return-void
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
+.method private getThemedColor(I)I
     .locals 1
 
     .line 289
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 290
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
@@ -508,7 +483,7 @@
 .method public getCheckView()Lorg/telegram/ui/Components/CheckBox2;
     .locals 1
 
-    .line 294
+    .line 293
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->checkView:Lorg/telegram/ui/Components/CheckBox2;
 
     return-object v0
@@ -526,7 +501,7 @@
 .method public getRightIcon()Landroid/widget/ImageView;
     .locals 1
 
-    .line 304
+    .line 303
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->rightIcon:Landroid/widget/ImageView;
 
     return-object v0
@@ -646,12 +621,12 @@
 .method public openSwipeBack()V
     .locals 1
 
-    .line 298
+    .line 297
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->openSwipeBackLayout:Ljava/lang/Runnable;
 
     if-eqz v0, :cond_0
 
-    .line 299
+    .line 298
     invoke-interface {v0}, Ljava/lang/Runnable;->run()V
 
     :cond_0
@@ -671,15 +646,15 @@
     return-void
 .end method
 
-.method public setCheckColor(Ljava/lang/String;)V
+.method public setCheckColor(I)V
     .locals 2
 
     .line 152
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->checkView:Lorg/telegram/ui/Components/CheckBox2;
 
-    const/4 v1, 0x0
+    const/4 v1, -0x1
 
-    invoke-virtual {v0, v1, v1, p1}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, v1, p1}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
     return-void
 .end method
@@ -946,9 +921,9 @@
     .line 243
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->subtextView:Landroid/widget/TextView;
 
-    const-string v5, "groupcreate_sectionText"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_groupcreate_sectionText:I
 
-    invoke-direct {p0, v5}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v5}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->getThemedColor(I)I
 
     move-result v5
 

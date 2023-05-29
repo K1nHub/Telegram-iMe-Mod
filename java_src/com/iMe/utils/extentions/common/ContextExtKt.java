@@ -8,7 +8,7 @@ import android.widget.Toast;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import timber.log.Timber;
 /* compiled from: ContextExt.kt */
@@ -26,7 +26,7 @@ public final class ContextExtKt {
         try {
             Toast.makeText(ApplicationLoader.applicationContext, text, 0).show();
         } catch (Exception e) {
-            Timber.m4e(e);
+            Timber.m6e(e);
         }
     }
 
@@ -35,7 +35,7 @@ public final class ContextExtKt {
         try {
             Toast.makeText(ApplicationLoader.applicationContext, text, 1).show();
         } catch (Exception e) {
-            Timber.m4e(e);
+            Timber.m6e(e);
         }
     }
 
@@ -46,15 +46,15 @@ public final class ContextExtKt {
             Intent intent = new Intent("android.intent.action.SEND");
             intent.setType("text/plain");
             intent.putExtra("android.intent.extra.TEXT", text);
-            activity.startActivityForResult(Intent.createChooser(intent, LocaleController.getString("ShareTelegram", C3242R.string.ShareTelegram)), 500);
+            activity.startActivityForResult(Intent.createChooser(intent, LocaleController.getString("ShareTelegram", C3290R.string.ShareTelegram)), 500);
         } catch (Exception e) {
-            Timber.m4e(e);
+            Timber.m6e(e);
         }
     }
 
     public static /* synthetic */ void copyToClipboard$default(String str, String str2, int i, Object obj) {
         if ((i & 2) != 0) {
-            str2 = LocaleController.getString("TextCopied", C3242R.string.TextCopied);
+            str2 = LocaleController.getString("TextCopied", C3290R.string.TextCopied);
             Intrinsics.checkNotNullExpressionValue(str2, "getString(\"TextCopied\", R.string.TextCopied)");
         }
         copyToClipboard(str, str2);

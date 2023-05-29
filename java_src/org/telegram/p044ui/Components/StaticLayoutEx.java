@@ -88,7 +88,7 @@ public class StaticLayoutEx {
                 } else {
                     offsetForHorizontal = staticLayout2.getOffsetForHorizontal(i10, lineWidth);
                 }
-                if (lineWidth < i4 - AndroidUtilities.m50dp(10)) {
+                if (lineWidth < i4 - AndroidUtilities.m54dp(10)) {
                     offsetForHorizontal += 3;
                 }
                 SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(charSequence.subSequence(0, Math.max(0, offsetForHorizontal - 3)));
@@ -102,7 +102,7 @@ public class StaticLayoutEx {
             e = e3;
             staticLayout = 0;
         }
-        FileLog.m45e(e);
+        FileLog.m49e(e);
         return staticLayout;
     }
 }

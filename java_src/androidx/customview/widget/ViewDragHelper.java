@@ -23,6 +23,7 @@ public class ViewDragHelper {
     };
     private final Callback mCallback;
     private View mCapturedView;
+    private final int mDefaultEdgeSize;
     private int mDragState;
     private int[] mEdgeDragsInProgress;
     private int[] mEdgeDragsLocked;
@@ -109,7 +110,9 @@ public class ViewDragHelper {
         this.mParentView = viewGroup;
         this.mCallback = callback;
         ViewConfiguration viewConfiguration = ViewConfiguration.get(context);
-        this.mEdgeSize = (int) ((context.getResources().getDisplayMetrics().density * 20.0f) + 0.5f);
+        int i = (int) ((context.getResources().getDisplayMetrics().density * 20.0f) + 0.5f);
+        this.mDefaultEdgeSize = i;
+        this.mEdgeSize = i;
         this.mTouchSlop = viewConfiguration.getScaledTouchSlop();
         this.mMaxVelocity = viewConfiguration.getScaledMaximumFlingVelocity();
         this.mMinVelocity = viewConfiguration.getScaledMinimumFlingVelocity();

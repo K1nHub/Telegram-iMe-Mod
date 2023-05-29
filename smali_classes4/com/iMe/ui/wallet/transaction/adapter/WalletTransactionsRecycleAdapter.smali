@@ -33,7 +33,7 @@
 .method public constructor <init>(Lcom/iMe/ui/adapter/provider/StakingOperationProvider;Lcom/iMe/ui/adapter/provider/GlobalStateProvider;Lcom/iMe/ui/adapter/provider/HeaderProvider;Lcom/iMe/ui/adapter/provider/TokenTransactionProvider;)V
     .locals 2
 
-    const-string v0, "stakingOperationProvider"
+    const-string/jumbo v0, "stakingOperationProvider"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -174,7 +174,7 @@
 
     if-eqz p1, :cond_3
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL:I
 
     goto :goto_0
 

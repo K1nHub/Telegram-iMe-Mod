@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Map;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class zzga {
     /* JADX INFO: Access modifiers changed from: package-private */
     public static String zza(zzfz zzfzVar, String str) {

@@ -26,6 +26,10 @@
 .end annotation
 
 
+# static fields
+.field private static final synthetic _reusableCancellableContinuation$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+
 # instance fields
 .field private volatile synthetic _reusableCancellableContinuation:Ljava/lang/Object;
 
@@ -56,6 +60,10 @@
     const-string v2, "_reusableCancellableContinuation"
 
     invoke-static {v0, v1, v2}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->newUpdater(Ljava/lang/Class;Ljava/lang/Class;Ljava/lang/String;)Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    move-result-object v0
+
+    sput-object v0, Lkotlinx/coroutines/internal/DispatchedContinuation;->_reusableCancellableContinuation$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
 
     return-void
 .end method
@@ -172,6 +180,94 @@
     return-void
 .end method
 
+.method public final claimReusableCancellableContinuation()Lkotlinx/coroutines/CancellableContinuationImpl;
+    .locals 4
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Lkotlinx/coroutines/CancellableContinuationImpl<",
+            "TT;>;"
+        }
+    .end annotation
+
+    .line 321
+    :cond_0
+    :goto_0
+    iget-object v0, p0, Lkotlinx/coroutines/internal/DispatchedContinuation;->_reusableCancellableContinuation:Ljava/lang/Object;
+
+    if-nez v0, :cond_1
+
+    .line 112
+    sget-object v0, Lkotlinx/coroutines/internal/DispatchedContinuationKt;->REUSABLE_CLAIMED:Lkotlinx/coroutines/internal/Symbol;
+
+    iput-object v0, p0, Lkotlinx/coroutines/internal/DispatchedContinuation;->_reusableCancellableContinuation:Ljava/lang/Object;
+
+    const/4 v0, 0x0
+
+    return-object v0
+
+    .line 116
+    :cond_1
+    instance-of v1, v0, Lkotlinx/coroutines/CancellableContinuationImpl;
+
+    if-eqz v1, :cond_2
+
+    .line 117
+    sget-object v1, Lkotlinx/coroutines/internal/DispatchedContinuation;->_reusableCancellableContinuation$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    sget-object v2, Lkotlinx/coroutines/internal/DispatchedContinuationKt;->REUSABLE_CLAIMED:Lkotlinx/coroutines/internal/Symbol;
+
+    invoke-virtual {v1, p0, v0, v2}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    .line 118
+    check-cast v0, Lkotlinx/coroutines/CancellableContinuationImpl;
+
+    return-object v0
+
+    .line 121
+    :cond_2
+    sget-object v1, Lkotlinx/coroutines/internal/DispatchedContinuationKt;->REUSABLE_CLAIMED:Lkotlinx/coroutines/internal/Symbol;
+
+    if-eq v0, v1, :cond_0
+
+    .line 125
+    instance-of v1, v0, Ljava/lang/Throwable;
+
+    if-eqz v1, :cond_3
+
+    goto :goto_0
+
+    :cond_3
+    new-instance v1, Ljava/lang/IllegalStateException;
+
+    .line 129
+    new-instance v2, Ljava/lang/StringBuilder;
+
+    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v3, "Inconsistent state "
+
+    invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {v1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw v1
+.end method
+
 .method public getCallerFrame()Lkotlin/coroutines/jvm/internal/CoroutineStackFrame;
     .locals 2
 
@@ -243,6 +339,60 @@
 
     :goto_0
     return v0
+.end method
+
+.method public final postponeCancellation(Ljava/lang/Throwable;)Z
+    .locals 4
+
+    .line 325
+    :cond_0
+    iget-object v0, p0, Lkotlinx/coroutines/internal/DispatchedContinuation;->_reusableCancellableContinuation:Ljava/lang/Object;
+
+    .line 171
+    sget-object v1, Lkotlinx/coroutines/internal/DispatchedContinuationKt;->REUSABLE_CLAIMED:Lkotlinx/coroutines/internal/Symbol;
+
+    invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v2
+
+    const/4 v3, 0x1
+
+    if-eqz v2, :cond_1
+
+    .line 172
+    sget-object v0, Lkotlinx/coroutines/internal/DispatchedContinuation;->_reusableCancellableContinuation$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    invoke-virtual {v0, p0, v1, p1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return v3
+
+    .line 175
+    :cond_1
+    instance-of v1, v0, Ljava/lang/Throwable;
+
+    if-eqz v1, :cond_2
+
+    return v3
+
+    .line 178
+    :cond_2
+    sget-object v1, Lkotlinx/coroutines/internal/DispatchedContinuation;->_reusableCancellableContinuation$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    const/4 v2, 0x0
+
+    invoke-virtual {v1, p0, v0, v2}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 p1, 0x0
+
+    return p1
 .end method
 
 .method public final release()V
@@ -503,4 +653,99 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public final tryReleaseClaimedContinuation(Lkotlinx/coroutines/CancellableContinuation;)Ljava/lang/Throwable;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lkotlinx/coroutines/CancellableContinuation<",
+            "*>;)",
+            "Ljava/lang/Throwable;"
+        }
+    .end annotation
+
+    .line 323
+    :cond_0
+    iget-object v0, p0, Lkotlinx/coroutines/internal/DispatchedContinuation;->_reusableCancellableContinuation:Ljava/lang/Object;
+
+    .line 152
+    sget-object v1, Lkotlinx/coroutines/internal/DispatchedContinuationKt;->REUSABLE_CLAIMED:Lkotlinx/coroutines/internal/Symbol;
+
+    const/4 v2, 0x0
+
+    if-ne v0, v1, :cond_1
+
+    .line 153
+    sget-object v0, Lkotlinx/coroutines/internal/DispatchedContinuation;->_reusableCancellableContinuation$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    invoke-virtual {v0, p0, v1, p1}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    return-object v2
+
+    .line 155
+    :cond_1
+    instance-of p1, v0, Ljava/lang/Throwable;
+
+    if-eqz p1, :cond_3
+
+    .line 156
+    sget-object p1, Lkotlinx/coroutines/internal/DispatchedContinuation;->_reusableCancellableContinuation$FU:Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;
+
+    invoke-virtual {p1, p0, v0, v2}, Ljava/util/concurrent/atomic/AtomicReferenceFieldUpdater;->compareAndSet(Ljava/lang/Object;Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_2
+
+    .line 157
+    check-cast v0, Ljava/lang/Throwable;
+
+    return-object v0
+
+    .line 156
+    :cond_2
+    new-instance p1, Ljava/lang/IllegalArgumentException;
+
+    const-string v0, "Failed requirement."
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
+
+    throw p1
+
+    .line 157
+    :cond_3
+    new-instance p1, Ljava/lang/IllegalStateException;
+
+    .line 159
+    new-instance v1, Ljava/lang/StringBuilder;
+
+    invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
+
+    const-string v2, "Inconsistent state "
+
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v1}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Ljava/lang/Object;->toString()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-direct {p1, v0}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
+
+    throw p1
 .end method

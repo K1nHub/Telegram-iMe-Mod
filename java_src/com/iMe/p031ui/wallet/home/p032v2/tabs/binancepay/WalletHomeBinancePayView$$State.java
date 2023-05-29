@@ -17,7 +17,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class WalletHomeBinancePayView$$State extends MvpViewState<WalletHomeBinancePayView> implements WalletHomeBinancePayView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -247,7 +247,7 @@ public class WalletHomeBinancePayView$$State extends MvpViewState<WalletHomeBina
 
     /* compiled from: WalletHomeBinancePayView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayView$$State$RenderCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class RenderCommand extends ViewCommand<WalletHomeBinancePayView> {
         public final List<BaseNode> nodes;
 
@@ -264,7 +264,7 @@ public class WalletHomeBinancePayView$$State extends MvpViewState<WalletHomeBina
 
     /* compiled from: WalletHomeBinancePayView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayView$$State$ShowUserInfoCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowUserInfoCommand extends ViewCommand<WalletHomeBinancePayView> {
         public final BinanceAccountItem userInfo;
 
@@ -281,7 +281,7 @@ public class WalletHomeBinancePayView$$State extends MvpViewState<WalletHomeBina
 
     /* compiled from: WalletHomeBinancePayView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayView$$State$ShowLoginGuideDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowLoginGuideDialogCommand extends ViewCommand<WalletHomeBinancePayView> {
         public final Function0<Unit> action;
         public final DialogModel model;
@@ -300,7 +300,7 @@ public class WalletHomeBinancePayView$$State extends MvpViewState<WalletHomeBina
 
     /* compiled from: WalletHomeBinancePayView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayView$$State$ShowConfirmLogOutDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowConfirmLogOutDialogCommand extends ViewCommand<WalletHomeBinancePayView> {
         public final Function0<Unit> action;
         public final DialogModel model;
@@ -319,7 +319,7 @@ public class WalletHomeBinancePayView$$State extends MvpViewState<WalletHomeBina
 
     /* compiled from: WalletHomeBinancePayView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayView$$State$OpenPayScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenPayScreenCommand extends ViewCommand<WalletHomeBinancePayView> {
         OpenPayScreenCommand(WalletHomeBinancePayView$$State walletHomeBinancePayView$$State) {
             super("openPayScreen", OneExecutionStateStrategy.class);
@@ -333,7 +333,7 @@ public class WalletHomeBinancePayView$$State extends MvpViewState<WalletHomeBina
 
     /* compiled from: WalletHomeBinancePayView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayView$$State$OpenConvertScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenConvertScreenCommand extends ViewCommand<WalletHomeBinancePayView> {
         OpenConvertScreenCommand(WalletHomeBinancePayView$$State walletHomeBinancePayView$$State) {
             super("openConvertScreen", OneExecutionStateStrategy.class);
@@ -347,7 +347,7 @@ public class WalletHomeBinancePayView$$State extends MvpViewState<WalletHomeBina
 
     /* compiled from: WalletHomeBinancePayView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayView$$State$OpenHistoryScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenHistoryScreenCommand extends ViewCommand<WalletHomeBinancePayView> {
         OpenHistoryScreenCommand(WalletHomeBinancePayView$$State walletHomeBinancePayView$$State) {
             super("openHistoryScreen", OneExecutionStateStrategy.class);
@@ -361,7 +361,7 @@ public class WalletHomeBinancePayView$$State extends MvpViewState<WalletHomeBina
 
     /* compiled from: WalletHomeBinancePayView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayView$$State$OpenReplenishScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenReplenishScreenCommand extends ViewCommand<WalletHomeBinancePayView> {
         public final NetworkType networkType;
 
@@ -378,7 +378,7 @@ public class WalletHomeBinancePayView$$State extends MvpViewState<WalletHomeBina
 
     /* compiled from: WalletHomeBinancePayView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayView$$State$ShowRequiredVerifyDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowRequiredVerifyDialogCommand extends ViewCommand<WalletHomeBinancePayView> {
         ShowRequiredVerifyDialogCommand(WalletHomeBinancePayView$$State walletHomeBinancePayView$$State) {
             super("showRequiredVerifyDialog", OneExecutionStateStrategy.class);
@@ -392,7 +392,7 @@ public class WalletHomeBinancePayView$$State extends MvpViewState<WalletHomeBina
 
     /* compiled from: WalletHomeBinancePayView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayView$$State$ShowRequiredWalletCreatedDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowRequiredWalletCreatedDialogCommand extends ViewCommand<WalletHomeBinancePayView> {
         ShowRequiredWalletCreatedDialogCommand(WalletHomeBinancePayView$$State walletHomeBinancePayView$$State) {
             super("showRequiredWalletCreatedDialog", OneExecutionStateStrategy.class);
@@ -406,7 +406,7 @@ public class WalletHomeBinancePayView$$State extends MvpViewState<WalletHomeBina
 
     /* compiled from: WalletHomeBinancePayView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayView$$State$ShowToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowToastCommand extends ViewCommand<WalletHomeBinancePayView> {
         public final String text;
 
@@ -423,7 +423,7 @@ public class WalletHomeBinancePayView$$State extends MvpViewState<WalletHomeBina
 
     /* compiled from: WalletHomeBinancePayView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletHomeBinancePayView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -444,7 +444,7 @@ public class WalletHomeBinancePayView$$State extends MvpViewState<WalletHomeBina
 
     /* compiled from: WalletHomeBinancePayView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayView$$State$ShowErrorToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletHomeBinancePayView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -463,7 +463,7 @@ public class WalletHomeBinancePayView$$State extends MvpViewState<WalletHomeBina
 
     /* compiled from: WalletHomeBinancePayView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayView$$State$ShowRefreshingCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowRefreshingCommand extends ViewCommand<WalletHomeBinancePayView> {
         public final boolean show;
 
@@ -480,7 +480,7 @@ public class WalletHomeBinancePayView$$State extends MvpViewState<WalletHomeBina
 
     /* compiled from: WalletHomeBinancePayView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayView$$State$ShowConfirmPaymentDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowConfirmPaymentDialogCommand extends ViewCommand<WalletHomeBinancePayView> {
         public final Callbacks$Callback action;
         public final DialogModel model;
@@ -499,7 +499,7 @@ public class WalletHomeBinancePayView$$State extends MvpViewState<WalletHomeBina
 
     /* compiled from: WalletHomeBinancePayView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayView$$State$ShowSuccessPaymentProcessedDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowSuccessPaymentProcessedDialogCommand extends ViewCommand<WalletHomeBinancePayView> {
         public final String btnText;
         public final String message;
@@ -520,7 +520,7 @@ public class WalletHomeBinancePayView$$State extends MvpViewState<WalletHomeBina
 
     /* compiled from: WalletHomeBinancePayView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayView$$State$NotifyDataSetChangedCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class NotifyDataSetChangedCommand extends ViewCommand<WalletHomeBinancePayView> {
         NotifyDataSetChangedCommand(WalletHomeBinancePayView$$State walletHomeBinancePayView$$State) {
             super("notifyDataSetChanged", OneExecutionStateStrategy.class);

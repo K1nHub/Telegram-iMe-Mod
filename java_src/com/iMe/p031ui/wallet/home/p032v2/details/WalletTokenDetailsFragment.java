@@ -21,6 +21,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.material.appbar.AppBarLayout;
 import com.google.android.material.appbar.MaterialToolbar;
+import com.iMe.common.IdFabric$CustomType;
 import com.iMe.common.IdFabric$Menu;
 import com.iMe.fork.p024ui.dialog.AccountLevelAlert;
 import com.iMe.fork.p024ui.view.AccountLevelBadgeView;
@@ -104,7 +105,7 @@ import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p043mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkFragmentWalletTokenDetailsBinding;
@@ -112,6 +113,7 @@ import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p044ui.ActionBar.AlertDialog;
 import org.telegram.p044ui.ActionBar.BaseFragment;
 import org.telegram.p044ui.ActionBar.INavigationLayout;
+import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Cells.TextDetailCell;
 import org.telegram.p044ui.Components.QRCodeBottomSheet;
@@ -119,7 +121,7 @@ import org.telegram.p044ui.Components.ViewPagerFixed;
 import org.telegram.p044ui.ManageLinksActivity;
 /* compiled from: WalletTokenDetailsFragment.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsFragment */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletTokenDetailsFragment extends WalletAuthFragment implements WalletTokenDetailsView, NavigationViewConfiguration, TabbedViewPagerDelegate<TabbedFragmentPage<MvpFragment>> {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(WalletTokenDetailsFragment.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/home/v2/details/WalletTokenDetailsPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(WalletTokenDetailsFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletTokenDetailsBinding;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -131,7 +133,7 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
     private final Lazy navigationRouter$delegate;
     private final Lazy pageTabs$delegate;
     private final MoxyKtxDelegate presenter$delegate;
-    private String statusTextColorKey;
+    private int statusTextColorKey;
     private final Lazy tokenBuyCoordinator$delegate;
 
     @Override // com.iMe.fork.utils.TabbedViewPagerDelegate
@@ -172,7 +174,7 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
         this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new WalletTokenDetailsFragment$binding$2(this), 1, (Object) null);
         lazy3 = LazyKt__LazyJVMKt.lazy(new WalletTokenDetailsFragment$pageTabs$2(this));
         this.pageTabs$delegate = lazy3;
-        this.statusTextColorKey = "windowBackgroundWhiteBlueText";
+        this.statusTextColorKey = Theme.key_windowBackgroundWhiteBlueText;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -293,17 +295,17 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
         binding.textAccountBalance.setText(balanceText);
         LinearLayoutCompat linearStakingInfo = binding.linearStakingInfo;
         Intrinsics.checkNotNullExpressionValue(linearStakingInfo, "linearStakingInfo");
-        ViewExtKt.visible(linearStakingInfo);
-        binding.textStakingInfo.setText(getResourceManager().getString(C3242R.string.staking_details_info));
-        binding.imageStakingInfo.setImageResource(C3242R.C3244drawable.msg_info);
+        ViewExtKt.visible$default(linearStakingInfo, false, 1, null);
+        binding.textStakingInfo.setText(getResourceManager().getString(C3290R.string.staking_details_info));
+        binding.imageStakingInfo.setImageResource(C3290R.C3292drawable.msg_info);
         binding.viewAnnualPercentageCell.setTextAndValue(annualValueText, annualTitleText, true);
         TextDetailCell textDetailCell = binding.viewProfitCell;
-        textDetailCell.setTextAndValue(profitText, getResourceManager().getString(C3242R.string.staking_details_profit), true);
+        textDetailCell.setTextAndValue(profitText, getResourceManager().getString(C3290R.string.staking_details_profit), true);
         this.isProfitTextColored = z;
-        textDetailCell.getTextView().setTextColor(getThemedColor(this.isProfitTextColored ? "chat_inDownCall" : "windowBackgroundWhiteBlackText"));
+        textDetailCell.getTextView().setTextColor(getThemedColor(this.isProfitTextColored ? Theme.key_chat_inGreenCall : Theme.key_windowBackgroundWhiteBlackText));
         this.statusTextColorKey = status.getColorKey();
         TextDetailCell textDetailCell2 = binding.viewFinishedCell;
-        textDetailCell2.setTextAndValue(getResourceManager().getString(status.getTextResId()), getResourceManager().getString(C3242R.string.wallet_transaction_details_status_title), false);
+        textDetailCell2.setTextAndValue(getResourceManager().getString(status.getTextResId()), getResourceManager().getString(C3290R.string.wallet_transaction_details_status_title), false);
         textDetailCell2.getTextView().setTextColor(getThemedColor(this.statusTextColorKey));
     }
 
@@ -442,7 +444,7 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         AlertDialog createDialog$default = DialogUtils.createDialog$default(parentActivity, dialogModel, action, null, 8, null);
-        DialogExtKt.makeClickableDescription$default(createDialog$default, null, walletAddress, new C2207xbd1ed966(walletAddress), 1, null);
+        DialogExtKt.makeClickableDescription$default(createDialog$default, null, walletAddress, new C2246xbd1ed966(walletAddress), 1, null);
         showDialog(createDialog$default);
     }
 
@@ -539,8 +541,8 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
         TabbedViewPager tabbedViewPager = getBinding().transactionsPager;
         tabbedViewPager.init(this, ViewPagerFixed.TabsView.TabType.TITLE);
         ViewPagerFixed.TabsView tabsView = tabbedViewPager.getTabsView();
-        tabsView.setElevation(AndroidUtilities.m50dp(2));
-        tabsView.setColors("profile_tabSelectedLine", "profile_tabSelectedText", "profile_tabText", "profile_tabSelector", "actionBarActionModeDefault");
+        tabsView.setElevation(AndroidUtilities.m54dp(2));
+        tabsView.setColors(Theme.key_profile_tabSelectedLine, Theme.key_profile_tabSelectedText, Theme.key_profile_tabText, Theme.key_profile_tabSelector, Theme.key_actionBarActionModeDefault);
     }
 
     @Override // com.iMe.fork.utils.TabbedViewPagerDelegate
@@ -575,6 +577,8 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
         ForkFragmentWalletTokenDetailsBinding binding = getBinding();
+        int i = Theme.key_windowBackgroundWhiteBlackText;
+        int i2 = Theme.key_windowBackgroundWhiteGrayText2;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(binding.getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsFragment$$ExternalSyntheticLambda10
             @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
@@ -585,7 +589,7 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, "windowBackgroundGray"), new ThemeDescription(binding.viewAnnualPercentageCell, 0, new Class[]{TextDetailCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"), new ThemeDescription(binding.viewAnnualPercentageCell, 0, new Class[]{TextDetailCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayText2"), new ThemeDescription(binding.viewProfitCell, 0, new Class[]{TextDetailCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"), new ThemeDescription(binding.viewProfitCell, 0, new Class[]{TextDetailCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayText2"), new ThemeDescription(binding.viewFinishedCell, 0, new Class[]{TextDetailCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"), new ThemeDescription(binding.viewFinishedCell, 0, new Class[]{TextDetailCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, this.statusTextColorKey));
+        }, Theme.key_windowBackgroundGray), new ThemeDescription(binding.viewAnnualPercentageCell, 0, new Class[]{TextDetailCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i), new ThemeDescription(binding.viewAnnualPercentageCell, 0, new Class[]{TextDetailCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i2), new ThemeDescription(binding.viewProfitCell, 0, new Class[]{TextDetailCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i), new ThemeDescription(binding.viewProfitCell, 0, new Class[]{TextDetailCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i2), new ThemeDescription(binding.viewFinishedCell, 0, new Class[]{TextDetailCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i), new ThemeDescription(binding.viewFinishedCell, 0, new Class[]{TextDetailCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, this.statusTextColorKey));
         arrayListOf.addAll(binding.transactionsPager.getThemeDescription());
         for (MvpFragment mvpFragment : getNavigationRouter().getScreenStack()) {
             arrayListOf.addAll(mvpFragment.getThemeDescriptions());
@@ -636,17 +640,21 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
     public final void setupColors() {
         ForkFragmentWalletTokenDetailsBinding binding = getBinding();
         SwipeRefreshLayout root = getBinding().getRoot();
-        root.setBackgroundColor(getThemedColor("windowBackgroundWhite"));
-        root.setColorSchemeColors(getThemedColor("chats_actionBackground"));
-        binding.dividerStaking.setBackgroundColor(getThemedColor("windowBackgroundGray"));
-        binding.linearStakingInfo.setBackgroundColor(getThemedColor("windowBackgroundWhite"));
+        int i = Theme.key_windowBackgroundWhite;
+        root.setBackgroundColor(getThemedColor(i));
+        root.setColorSchemeColors(getThemedColor(Theme.key_chats_actionBackground));
+        View view = binding.dividerStaking;
+        int i2 = Theme.key_windowBackgroundGray;
+        view.setBackgroundColor(getThemedColor(i2));
+        binding.linearStakingInfo.setBackgroundColor(getThemedColor(i));
         AppCompatTextView setupColors$lambda$32$lambda$25 = binding.textStakingInfo;
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$32$lambda$25, "setupColors$lambda$32$lambda$25");
         ViewExtKt.withMediumTypeface(setupColors$lambda$32$lambda$25);
-        setupColors$lambda$32$lambda$25.setTextColor(getThemedColor("profile_tabSelectedText"));
+        int i3 = Theme.key_profile_tabSelectedText;
+        setupColors$lambda$32$lambda$25.setTextColor(getThemedColor(i3));
         AppCompatImageView setupColors$lambda$32$lambda$26 = binding.imageStakingInfo;
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$32$lambda$26, "setupColors$lambda$32$lambda$26");
-        ViewExtKt.setImageColor(setupColors$lambda$32$lambda$26, getThemedColor("profile_tabSelectedText"));
+        ViewExtKt.setImageColor(setupColors$lambda$32$lambda$26, getThemedColor(i3));
         ViewExtKt.setCircleRippleBackground(setupColors$lambda$32$lambda$26);
         TextView textView = binding.viewAnnualPercentageCell.getTextView();
         Intrinsics.checkNotNullExpressionValue(textView, "viewAnnualPercentageCell.textView");
@@ -654,25 +662,29 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
         TextView setupColors$lambda$32$lambda$27 = binding.viewProfitCell.getTextView();
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$32$lambda$27, "setupColors$lambda$32$lambda$27");
         ViewExtKt.withMediumTypeface(setupColors$lambda$32$lambda$27);
-        setupColors$lambda$32$lambda$27.setTextColor(getThemedColor(this.isProfitTextColored ? "chat_inDownCall" : "windowBackgroundWhiteBlackText"));
+        setupColors$lambda$32$lambda$27.setTextColor(getThemedColor(this.isProfitTextColored ? Theme.key_chat_inGreenCall : Theme.key_windowBackgroundWhiteBlackText));
         TextView setupColors$lambda$32$lambda$28 = binding.viewFinishedCell.getTextView();
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$32$lambda$28, "setupColors$lambda$32$lambda$28");
         ViewExtKt.withMediumTypeface(setupColors$lambda$32$lambda$28);
         setupColors$lambda$32$lambda$28.setTextColor(getThemedColor(this.statusTextColorKey));
-        binding.appbar.setBackgroundColor(getThemedColor("actionBarDefault"));
-        binding.constraintLayoutHeader.setBackgroundColor(getThemedColor("actionBarDefault"));
-        binding.dividerActionButtons.setBackgroundColor(getThemedColor("windowBackgroundGray"));
-        binding.headerUnderlay.setBackgroundColor(getThemedColor("actionBarActionModeDefault"));
-        binding.linearContent.setBackgroundColor(getThemedColor("actionBarActionModeDefault"));
-        binding.linearHeader.setBackgroundColor(getThemedColor("actionBarDefault"));
+        AppBarLayout appBarLayout = binding.appbar;
+        int i4 = Theme.key_actionBarDefault;
+        appBarLayout.setBackgroundColor(getThemedColor(i4));
+        binding.constraintLayoutHeader.setBackgroundColor(getThemedColor(i4));
+        binding.dividerActionButtons.setBackgroundColor(getThemedColor(i2));
+        View view2 = binding.headerUnderlay;
+        int i5 = Theme.key_actionBarActionModeDefault;
+        view2.setBackgroundColor(getThemedColor(i5));
+        binding.linearContent.setBackgroundColor(getThemedColor(i5));
+        binding.linearHeader.setBackgroundColor(getThemedColor(i4));
         HorizontalActionButtonsView horizontalActionButtonsView = binding.horizontalActionButtons;
-        horizontalActionButtonsView.setBackgroundColor(getThemedColor("windowBackgroundWhite"));
+        horizontalActionButtonsView.setBackgroundColor(getThemedColor(i));
         horizontalActionButtonsView.setupColors();
         ActionBarMenuItem setupColors$lambda$32$lambda$30 = binding.itemMoreOptions;
-        setupColors$lambda$32$lambda$30.redrawPopup(getThemedColor("actionBarDefaultSubmenuBackground"));
-        setupColors$lambda$32$lambda$30.setPopupItemsColor(getThemedColor("actionBarDefaultSubmenuItem"), false);
-        setupColors$lambda$32$lambda$30.setPopupItemsColor(getThemedColor("actionBarDefaultSubmenuItemIcon"), true);
-        setupColors$lambda$32$lambda$30.setupPopupRadialSelectors(getThemedColor("listSelectorSDK21"));
+        setupColors$lambda$32$lambda$30.redrawPopup(getThemedColor(Theme.key_actionBarDefaultSubmenuBackground));
+        setupColors$lambda$32$lambda$30.setPopupItemsColor(getThemedColor(Theme.key_actionBarDefaultSubmenuItem), false);
+        setupColors$lambda$32$lambda$30.setPopupItemsColor(getThemedColor(Theme.key_actionBarDefaultSubmenuItemIcon), true);
+        setupColors$lambda$32$lambda$30.setupPopupRadialSelectors(getThemedColor(Theme.key_listSelector));
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$32$lambda$30, "setupColors$lambda$32$lambda$30");
         ViewExtKt.setCircleRippleBackground(setupColors$lambda$32$lambda$30);
         AppCompatTextView textAccountBalance = binding.textAccountBalance;
@@ -681,23 +693,29 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
         AppCompatTextView setupColors$lambda$32$lambda$31 = binding.textTransactions;
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$32$lambda$31, "setupColors$lambda$32$lambda$31");
         ViewExtKt.withMediumTypeface(setupColors$lambda$32$lambda$31);
-        setupColors$lambda$32$lambda$31.setTextColor(getThemedColor("profile_tabSelectedText"));
+        setupColors$lambda$32$lambda$31.setTextColor(getThemedColor(i3));
         setupCollapsingToolbarColors();
     }
 
     private final void setupCollapsingToolbarColors() {
         ForkFragmentWalletTokenDetailsBinding binding = getBinding();
         if (this.isAppBarCollapsed) {
-            binding.itemBack.setIconColor(getThemedColor("actionBarActionModeDefaultIcon"));
-            binding.itemMoreOptions.setIconColor(getThemedColor("actionBarActionModeDefaultIcon"));
-            binding.textAccountTitle.setTextColor(getThemedColor("actionBarActionModeDefaultIcon"));
-            binding.textAccountBalance.setTextColor(getThemedColor("actionBarActionModeDefaultIcon"));
+            ActionBarMenuItem actionBarMenuItem = binding.itemBack;
+            int i = Theme.key_actionBarActionModeDefaultIcon;
+            actionBarMenuItem.setIconColor(getThemedColor(i));
+            binding.itemMoreOptions.setIconColor(getThemedColor(i));
+            binding.textAccountTitle.setTextColor(getThemedColor(i));
+            binding.textAccountBalance.setTextColor(getThemedColor(i));
             return;
         }
-        binding.itemBack.setIconColor(getThemedColor("actionBarDefaultIcon"));
-        binding.itemMoreOptions.setIconColor(getThemedColor("actionBarDefaultIcon"));
-        binding.textAccountTitle.setTextColor(getThemedColor("actionBarDefaultTitle"));
-        binding.textAccountBalance.setTextColor(getThemedColor("actionBarDefaultTitle"));
+        ActionBarMenuItem actionBarMenuItem2 = binding.itemBack;
+        int i2 = Theme.key_actionBarDefaultIcon;
+        actionBarMenuItem2.setIconColor(getThemedColor(i2));
+        binding.itemMoreOptions.setIconColor(getThemedColor(i2));
+        AppCompatTextView appCompatTextView = binding.textAccountTitle;
+        int i3 = Theme.key_actionBarDefaultTitle;
+        appCompatTextView.setTextColor(getThemedColor(i3));
+        binding.textAccountBalance.setTextColor(getThemedColor(i3));
     }
 
     private final void setupActionBar() {
@@ -705,7 +723,7 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
         ForkFragmentWalletTokenDetailsBinding binding = getBinding();
         ActionBarMenuItem setupActionBar$lambda$39$lambda$35 = binding.itemBack;
         setupActionBar$lambda$39$lambda$35.setLongClickEnabled(false);
-        setupActionBar$lambda$39$lambda$35.setIcon(C3242R.C3244drawable.ic_ab_back);
+        setupActionBar$lambda$39$lambda$35.setIcon(C3290R.C3292drawable.ic_ab_back);
         Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$39$lambda$35, "setupActionBar$lambda$39$lambda$35");
         ViewExtKt.setCircleRippleBackground(setupActionBar$lambda$39$lambda$35);
         setupActionBar$lambda$39$lambda$35.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsFragment$$ExternalSyntheticLambda0
@@ -714,11 +732,11 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
                 WalletTokenDetailsFragment.setupActionBar$lambda$39$lambda$35$lambda$34(WalletTokenDetailsFragment.this, view);
             }
         });
-        setupActionBar$lambda$39$lambda$35.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3242R.string.AccDescrGoBack));
+        setupActionBar$lambda$39$lambda$35.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3290R.string.AccDescrGoBack));
         final ActionBarMenuItem setupActionBar$lambda$39$lambda$38 = binding.itemMoreOptions;
         setupActionBar$lambda$39$lambda$38.setLongClickEnabled(false);
         setupActionBar$lambda$39$lambda$38.setSubMenuOpenSide(2);
-        setupActionBar$lambda$39$lambda$38.setIcon(C3242R.C3244drawable.ic_ab_other);
+        setupActionBar$lambda$39$lambda$38.setIcon(C3290R.C3292drawable.ic_ab_other);
         Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$39$lambda$38, "setupActionBar$lambda$39$lambda$38");
         ViewExtKt.setCircleRippleBackground(setupActionBar$lambda$39$lambda$38);
         setupMenuItems(setupActionBar$lambda$39$lambda$38);
@@ -734,7 +752,7 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
                 WalletTokenDetailsFragment.setupActionBar$lambda$39$lambda$38$lambda$37(WalletTokenDetailsFragment.this, i);
             }
         });
-        setupActionBar$lambda$39$lambda$38.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3242R.string.AccDescrMoreOptions));
+        setupActionBar$lambda$39$lambda$38.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3290R.string.AccDescrMoreOptions));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -758,21 +776,21 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
     private final void setupMenuItems(ActionBarMenuItem actionBarMenuItem) {
         TokenDetailsArgs tokenDetailsArgs = this.args;
         if (tokenDetailsArgs instanceof TokenDetailsArgs.Binance) {
-            actionBarMenuItem.addSubItem(IdFabric$Menu.TOKEN_STATISTICS, C3242R.C3244drawable.fork_ic_token_statistic, getResourceManager().getString(C3242R.string.wallet_token_details_distribution_action));
+            actionBarMenuItem.addSubItem(IdFabric$Menu.TOKEN_STATISTICS, C3290R.C3292drawable.fork_ic_token_statistic, getResourceManager().getString(C3290R.string.wallet_token_details_distribution_action));
         } else if (tokenDetailsArgs instanceof TokenDetailsArgs.Crypto) {
             TokenBalance balance = ((TokenDetailsArgs.Crypto) tokenDetailsArgs).getToken().getBalance();
             if (TokenBalanceExtKt.isWithSmartContractAddress(balance)) {
-                actionBarMenuItem.addSubItem(IdFabric$Menu.TOKEN_SMART_CONTRACT_ADDRESS, C3242R.C3244drawable.fork_ic_etherscan, getResourceManager().getString(C3242R.string.wallet_transaction_details_action_view_smart_contract));
+                actionBarMenuItem.addSubItem(IdFabric$Menu.TOKEN_SMART_CONTRACT_ADDRESS, C3290R.C3292drawable.fork_ic_etherscan, getResourceManager().getString(C3290R.string.wallet_transaction_details_action_view_smart_contract));
             }
             if (TokenBalanceExtKt.isWithWebsite(balance)) {
-                actionBarMenuItem.addSubItem(IdFabric$Menu.TOKEN_SITE, C3242R.C3244drawable.fork_ic_web_26, getResourceManager().getString(C3242R.string.wallet_token_details_site_action));
+                actionBarMenuItem.addSubItem(IdFabric$Menu.TOKEN_SITE, C3290R.C3292drawable.fork_ic_web_26, getResourceManager().getString(C3290R.string.wallet_token_details_site_action));
             }
             Unit unit = Unit.INSTANCE;
         } else if (!(tokenDetailsArgs instanceof TokenDetailsArgs.Staking)) {
             throw new NoWhenBranchMatchedException();
         } else {
-            actionBarMenuItem.addSubItem(IdFabric$Menu.STAKING_CONTRACT, C3242R.C3244drawable.fork_ic_etherscan, getResourceManager().getString(C3242R.string.staking_details_contract_action));
-            actionBarMenuItem.addSubItem(IdFabric$Menu.STAKING_WEBSITE, C3242R.C3244drawable.fork_ic_web_26, getResourceManager().getString(C3242R.string.wallet_token_details_site_action));
+            actionBarMenuItem.addSubItem(IdFabric$Menu.STAKING_CONTRACT, C3290R.C3292drawable.fork_ic_etherscan, getResourceManager().getString(C3290R.string.staking_details_contract_action));
+            actionBarMenuItem.addSubItem(IdFabric$Menu.STAKING_WEBSITE, C3290R.C3292drawable.fork_ic_web_26, getResourceManager().getString(C3290R.string.wallet_token_details_site_action));
         }
     }
 
@@ -799,7 +817,7 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
     }
 
     private final void setupTexts() {
-        getBinding().textTransactions.setText(getResourceManager().getString(C3242R.string.wallet_token_details_transactions));
+        getBinding().textTransactions.setText(getResourceManager().getString(C3290R.string.wallet_token_details_transactions));
     }
 
     private final void setupRootView() {
@@ -839,7 +857,7 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
                     appCompatImageView.setPivotY(appCompatImageView.getPivotX() / 2);
                     ForkFragmentWalletTokenDetailsBinding forkFragmentWalletTokenDetailsBinding = ForkFragmentWalletTokenDetailsBinding.this;
                     View view2 = forkFragmentWalletTokenDetailsBinding.headerUnderlay;
-                    int measuredHeight = forkFragmentWalletTokenDetailsBinding.toolbar.getMeasuredHeight() + AndroidUtilities.statusBarHeight + AndroidUtilities.m50dp(10);
+                    int measuredHeight = forkFragmentWalletTokenDetailsBinding.toolbar.getMeasuredHeight() + AndroidUtilities.statusBarHeight + AndroidUtilities.m54dp(10);
                     Intrinsics.checkNotNullExpressionValue(view2, "setupCollapsingToolbar$l…da$50$lambda$49$lambda$48");
                     ViewGroup.LayoutParams layoutParams4 = view2.getLayoutParams();
                     Objects.requireNonNull(layoutParams4, "null cannot be cast to non-null type android.view.ViewGroup.LayoutParams");
@@ -865,7 +883,7 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
             appCompatImageView.setPivotX(appCompatImageView.getMeasuredHeight());
             appCompatImageView.setPivotY(appCompatImageView.getPivotX() / 2);
             View view = binding.headerUnderlay;
-            int measuredHeight = binding.toolbar.getMeasuredHeight() + AndroidUtilities.statusBarHeight + AndroidUtilities.m50dp(10);
+            int measuredHeight = binding.toolbar.getMeasuredHeight() + AndroidUtilities.statusBarHeight + AndroidUtilities.m54dp(10);
             Intrinsics.checkNotNullExpressionValue(view, "setupCollapsingToolbar$l…da$50$lambda$49$lambda$48");
             ViewGroup.LayoutParams layoutParams3 = view.getLayoutParams();
             Objects.requireNonNull(layoutParams3, "null cannot be cast to non-null type android.view.ViewGroup.LayoutParams");
@@ -920,17 +938,17 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
         }
         AppCompatTextView appCompatTextView = this_with.textAccountTitle;
         appCompatTextView.setTranslationX(f);
-        appCompatTextView.setTranslationY(AndroidUtilities.m50dp(32) * abs);
+        appCompatTextView.setTranslationY(AndroidUtilities.m54dp(32) * abs);
         AppCompatTextView appCompatTextView2 = this_with.textAccountBalance;
         appCompatTextView2.setScaleX(f3);
         appCompatTextView2.setScaleY(f3);
         appCompatTextView2.setTranslationX(f);
-        appCompatTextView2.setTranslationY(AndroidUtilities.m50dp(30) * abs);
+        appCompatTextView2.setTranslationY(AndroidUtilities.m54dp(30) * abs);
         AppCompatImageView appCompatImageView = this_with.imageCoinIcon;
         appCompatImageView.setScaleX(f3);
         appCompatImageView.setScaleY(f3);
         appCompatImageView.setTranslationX(f);
-        appCompatImageView.setTranslationY(AndroidUtilities.m50dp(28) * abs);
+        appCompatImageView.setTranslationY(AndroidUtilities.m54dp(28) * abs);
         this_with.constraintLayoutHeader.setTranslationY(this$0.headerMaxTranslationY * abs);
         this$0.setupCollapsingToolbarColors();
         View view = this_with.headerUnderlay;
@@ -1006,7 +1024,7 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
 
             /* compiled from: WalletTokenDetailsFragment.kt */
             /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsFragment$showQrReceiveDialog$1$WhenMappings */
-            /* loaded from: classes3.dex */
+            /* loaded from: classes4.dex */
             public /* synthetic */ class WhenMappings {
                 public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -1025,11 +1043,6 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
             }
 
             @Override // org.telegram.p044ui.Components.QRCodeBottomSheet
-            public int getType() {
-                return 1;
-            }
-
-            @Override // org.telegram.p044ui.Components.QRCodeBottomSheet
             public int getCustomQrCenterImageRes() {
                 int i = WhenMappings.$EnumSwitchMapping$0[networkType.ordinal()];
                 if (i != 1) {
@@ -1040,14 +1053,19 @@ public final class WalletTokenDetailsFragment extends WalletAuthFragment impleme
                 }
                 return TokenInfo.Crypto.Ethereum.ETH.INSTANCE.getLogo();
             }
+
+            @Override // org.telegram.p044ui.Components.QRCodeBottomSheet
+            public int getType() {
+                return IdFabric$CustomType.QR_BOTTOM_SHEET_WALLET_RECEIVE;
+            }
         };
-        qRCodeBottomSheet.setupWalletTypeReceive(getResourceManager().getString(C3242R.string.wallet_receive_dialog_title), getResourceManager().getString(C3242R.string.wallet_receive_dialog_btn_text), str, tokenCode, networkType.getBlockchainType());
+        qRCodeBottomSheet.setupWalletTypeReceive(getResourceManager().getString(C3290R.string.wallet_receive_dialog_title), getResourceManager().getString(C3290R.string.wallet_receive_dialog_btn_text), str);
         showDialog(qRCodeBottomSheet);
     }
 
     /* compiled from: WalletTokenDetailsFragment.kt */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsFragment$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

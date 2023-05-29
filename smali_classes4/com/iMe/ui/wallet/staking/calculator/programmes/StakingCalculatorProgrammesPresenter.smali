@@ -56,7 +56,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "stakingInteractor"
+    const-string/jumbo v0, "stakingInteractor"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -241,7 +241,7 @@
 
     move-result-object v1
 
-    const-string v2, "stakingInteractor\n      \u2026(schedulersProvider.ui())"
+    const-string/jumbo v2, "stakingInteractor\n      \u2026(schedulersProvider.ui())"
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -301,7 +301,7 @@
 .method public final onStakingInfoClick(Lcom/iMe/model/staking/StakingProgrammeItem;)V
     .locals 6
 
-    const-string v0, "stakingProgrammeItem"
+    const-string/jumbo v0, "stakingProgrammeItem"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -385,7 +385,7 @@
 .method public final onStakingProgrammeClick(Lcom/iMe/model/staking/StakingProgrammeItem;)V
     .locals 6
 
-    const-string v0, "stakingProgrammeItem"
+    const-string/jumbo v0, "stakingProgrammeItem"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

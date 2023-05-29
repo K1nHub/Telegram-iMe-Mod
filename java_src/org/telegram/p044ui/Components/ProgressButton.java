@@ -28,23 +28,23 @@ public class ProgressButton extends Button {
             setOutlineProvider(null);
         }
         ViewHelper.setPadding(this, 8.0f, BitmapDescriptorFactory.HUE_RED, 8.0f, BitmapDescriptorFactory.HUE_RED);
-        int m50dp = AndroidUtilities.m50dp(60);
-        setMinWidth(m50dp);
-        setMinimumWidth(m50dp);
+        int m54dp = AndroidUtilities.m54dp(60);
+        setMinWidth(m54dp);
+        setMinimumWidth(m54dp);
         this.progressRect = new RectF();
         Paint paint = new Paint(1);
         this.progressPaint = paint;
         paint.setStrokeCap(Paint.Cap.ROUND);
         paint.setStyle(Paint.Style.STROKE);
-        paint.setStrokeWidth(AndroidUtilities.m50dp(2));
+        paint.setStrokeWidth(AndroidUtilities.m54dp(2));
     }
 
     @Override // android.widget.TextView, android.view.View
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         if (this.drawProgress || this.progressAlpha != BitmapDescriptorFactory.HUE_RED) {
-            int measuredWidth = getMeasuredWidth() - AndroidUtilities.m50dp(11);
-            this.progressRect.set(measuredWidth, AndroidUtilities.m50dp(3), measuredWidth + AndroidUtilities.m50dp(8), AndroidUtilities.m50dp(11));
+            int measuredWidth = getMeasuredWidth() - AndroidUtilities.m54dp(11);
+            this.progressRect.set(measuredWidth, AndroidUtilities.m54dp(3), measuredWidth + AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(11));
             this.progressPaint.setAlpha(Math.min(255, (int) (this.progressAlpha * 255.0f)));
             canvas.drawArc(this.progressRect, this.angle, 220.0f, false, this.progressPaint);
             long currentTimeMillis = System.currentTimeMillis();

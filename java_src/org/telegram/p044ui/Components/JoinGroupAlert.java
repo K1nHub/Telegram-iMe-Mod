@@ -14,7 +14,7 @@ import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
@@ -57,7 +57,7 @@ public class JoinGroupAlert extends BottomSheet {
         String str4;
         setApplyBottomPadding(false);
         setApplyTopPadding(false);
-        fixNavigationBar(getThemedColor("windowBackgroundWhite"));
+        fixNavigationBar(getThemedColor(Theme.key_windowBackgroundWhite));
         this.fragment = baseFragment;
         if (tLObject instanceof TLRPC$ChatInvite) {
             this.chatInvite = (TLRPC$ChatInvite) tLObject;
@@ -74,20 +74,20 @@ public class JoinGroupAlert extends BottomSheet {
         nestedScrollView.addView(frameLayout);
         setCustomView(nestedScrollView);
         ImageView imageView = new ImageView(context);
-        imageView.setBackground(Theme.createSelectorDrawable(getThemedColor("listSelectorSDK21")));
-        imageView.setColorFilter(getThemedColor("key_sheet_other"));
-        imageView.setImageResource(C3242R.C3244drawable.ic_layer_close);
+        imageView.setBackground(Theme.createSelectorDrawable(getThemedColor(Theme.key_listSelector)));
+        imageView.setColorFilter(getThemedColor(Theme.key_sheet_other));
+        imageView.setImageResource(C3290R.C3292drawable.ic_layer_close);
         imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.JoinGroupAlert$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 JoinGroupAlert.this.lambda$new$0(view);
             }
         });
-        int m50dp = AndroidUtilities.m50dp(8);
-        imageView.setPadding(m50dp, m50dp, m50dp, m50dp);
+        int m54dp = AndroidUtilities.m54dp(8);
+        imageView.setPadding(m54dp, m54dp, m54dp, m54dp);
         frameLayout.addView(imageView, LayoutHelper.createFrame(36, 36, 8388661, 6, 8, 6, 0));
         BackupImageView backupImageView = new BackupImageView(context);
-        backupImageView.setRoundRadius(AndroidUtilities.m50dp(35));
+        backupImageView.setRoundRadius(AndroidUtilities.m54dp(35));
         linearLayout.addView(backupImageView, LayoutHelper.createLinear(70, 70, 49, 0, 29, 0, 0));
         TLRPC$ChatInvite tLRPC$ChatInvite = this.chatInvite;
         if (tLRPC$ChatInvite != null) {
@@ -112,7 +112,7 @@ public class JoinGroupAlert extends BottomSheet {
         } else if (this.currentChat != null) {
             AvatarDrawable avatarDrawable3 = new AvatarDrawable(this.currentChat);
             String str7 = this.currentChat.title;
-            TLRPC$ChatFull chatFull = MessagesController.getInstance(this.currentAccount).getChatFull(this.currentChat.f1427id);
+            TLRPC$ChatFull chatFull = MessagesController.getInstance(this.currentAccount).getChatFull(this.currentChat.f1433id);
             r9 = chatFull != null ? chatFull.about : null;
             i = Math.max(this.currentChat.participants_count, chatFull != null ? chatFull.participants_count : 0);
             TLRPC$Chat tLRPC$Chat2 = this.currentChat;
@@ -126,7 +126,8 @@ public class JoinGroupAlert extends BottomSheet {
         TextView textView = new TextView(context);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setTextSize(1, 17.0f);
-        textView.setTextColor(getThemedColor("dialogTextBlack"));
+        int i4 = Theme.key_dialogTextBlack;
+        textView.setTextColor(getThemedColor(i4));
         textView.setText(r9);
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
@@ -137,7 +138,7 @@ public class JoinGroupAlert extends BottomSheet {
         if (i > 0) {
             TextView textView2 = new TextView(context);
             textView2.setTextSize(1, 14.0f);
-            textView2.setTextColor(getThemedColor("dialogTextGray3"));
+            textView2.setTextColor(getThemedColor(Theme.key_dialogTextGray3));
             textView2.setSingleLine(true);
             textView2.setEllipsize(TextUtils.TruncateAt.END);
             if (z) {
@@ -151,7 +152,7 @@ public class JoinGroupAlert extends BottomSheet {
             TextView textView3 = new TextView(context);
             textView3.setGravity(17);
             textView3.setText(str2);
-            textView3.setTextColor(getThemedColor("dialogTextBlack"));
+            textView3.setTextColor(getThemedColor(i4));
             textView3.setTextSize(1, 15.0f);
             linearLayout.addView(textView3, LayoutHelper.createLinear(-1, -2, 48, 24, 10, 24, 20));
         }
@@ -160,39 +161,41 @@ public class JoinGroupAlert extends BottomSheet {
             if (tLRPC$ChatInvite5 != null) {
                 if (!tLRPC$ChatInvite5.participants.isEmpty()) {
                     RecyclerListView recyclerListView = new RecyclerListView(context);
-                    recyclerListView.setPadding(0, 0, 0, AndroidUtilities.m50dp(8));
+                    recyclerListView.setPadding(0, 0, 0, AndroidUtilities.m54dp(8));
                     recyclerListView.setNestedScrollingEnabled(false);
                     recyclerListView.setClipToPadding(false);
                     recyclerListView.setLayoutManager(new LinearLayoutManager(getContext(), 0, false));
                     recyclerListView.setHorizontalScrollBarEnabled(false);
                     recyclerListView.setVerticalScrollBarEnabled(false);
                     recyclerListView.setAdapter(new UsersAdapter(context));
-                    recyclerListView.setGlowColor(getThemedColor("dialogScrollGlow"));
+                    recyclerListView.setGlowColor(getThemedColor(Theme.key_dialogScrollGlow));
                     linearLayout.addView(recyclerListView, LayoutHelper.createLinear(-2, 90, 49, 0, 0, 0, 7));
                 }
                 View view = new View(context);
-                view.setBackgroundColor(getThemedColor("dialogShadowLine"));
+                view.setBackgroundColor(getThemedColor(Theme.key_dialogShadowLine));
                 linearLayout.addView(view, new LinearLayout.LayoutParams(-1, AndroidUtilities.getShadowHeight()));
                 PickerBottomLayout pickerBottomLayout = new PickerBottomLayout(context, false, resourcesProvider);
                 linearLayout.addView(pickerBottomLayout, LayoutHelper.createFrame(-1, 48, 83));
-                pickerBottomLayout.cancelButton.setPadding(AndroidUtilities.m50dp(18), 0, AndroidUtilities.m50dp(18), 0);
-                pickerBottomLayout.cancelButton.setTextColor(getThemedColor("dialogTextBlue2"));
-                pickerBottomLayout.cancelButton.setText(LocaleController.getString("Cancel", C3242R.string.Cancel).toUpperCase());
+                pickerBottomLayout.cancelButton.setPadding(AndroidUtilities.m54dp(18), 0, AndroidUtilities.m54dp(18), 0);
+                TextView textView4 = pickerBottomLayout.cancelButton;
+                int i5 = Theme.key_dialogTextBlue2;
+                textView4.setTextColor(getThemedColor(i5));
+                pickerBottomLayout.cancelButton.setText(LocaleController.getString("Cancel", C3290R.string.Cancel).toUpperCase());
                 pickerBottomLayout.cancelButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.JoinGroupAlert$$ExternalSyntheticLambda3
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
                         JoinGroupAlert.this.lambda$new$8(view2);
                     }
                 });
-                pickerBottomLayout.doneButton.setPadding(AndroidUtilities.m50dp(18), 0, AndroidUtilities.m50dp(18), 0);
+                pickerBottomLayout.doneButton.setPadding(AndroidUtilities.m54dp(18), 0, AndroidUtilities.m54dp(18), 0);
                 pickerBottomLayout.doneButton.setVisibility(0);
                 pickerBottomLayout.doneButtonBadgeTextView.setVisibility(8);
-                pickerBottomLayout.doneButtonTextView.setTextColor(getThemedColor("dialogTextBlue2"));
+                pickerBottomLayout.doneButtonTextView.setTextColor(getThemedColor(i5));
                 TLRPC$ChatInvite tLRPC$ChatInvite6 = this.chatInvite;
                 if ((tLRPC$ChatInvite6.channel && !tLRPC$ChatInvite6.megagroup) || (ChatObject.isChannel(tLRPC$ChatInvite6.chat) && !this.chatInvite.chat.megagroup)) {
-                    pickerBottomLayout.doneButtonTextView.setText(LocaleController.getString("ProfileJoinChannel", C3242R.string.ProfileJoinChannel).toUpperCase());
+                    pickerBottomLayout.doneButtonTextView.setText(LocaleController.getString("ProfileJoinChannel", C3290R.string.ProfileJoinChannel).toUpperCase());
                 } else {
-                    pickerBottomLayout.doneButtonTextView.setText(LocaleController.getString("JoinGroup", C3242R.string.JoinGroup));
+                    pickerBottomLayout.doneButtonTextView.setText(LocaleController.getString("JoinGroup", C3290R.string.JoinGroup));
                 }
                 pickerBottomLayout.doneButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.JoinGroupAlert$$ExternalSyntheticLambda4
                     @Override // android.view.View.OnClickListener
@@ -208,26 +211,27 @@ public class JoinGroupAlert extends BottomSheet {
         linearLayout.addView(frameLayout2, LayoutHelper.createLinear(-1, -2));
         RadialProgressView radialProgressView = new RadialProgressView(getContext(), resourcesProvider);
         this.requestProgressView = radialProgressView;
-        radialProgressView.setProgressColor(getThemedColor("featuredStickers_addButton"));
-        this.requestProgressView.setSize(AndroidUtilities.m50dp(32));
+        int i6 = Theme.key_featuredStickers_addButton;
+        radialProgressView.setProgressColor(getThemedColor(i6));
+        this.requestProgressView.setSize(AndroidUtilities.m54dp(32));
         this.requestProgressView.setVisibility(4);
         frameLayout2.addView(this.requestProgressView, LayoutHelper.createFrame(48, 48, 17));
-        TextView textView4 = new TextView(getContext());
-        this.requestTextView = textView4;
-        textView4.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m50dp(6), getThemedColor("featuredStickers_addButton"), getThemedColor("featuredStickers_addButtonPressed")));
+        TextView textView5 = new TextView(getContext());
+        this.requestTextView = textView5;
+        textView5.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(6), getThemedColor(i6), getThemedColor(Theme.key_featuredStickers_addButtonPressed)));
         this.requestTextView.setEllipsize(TextUtils.TruncateAt.END);
         this.requestTextView.setGravity(17);
         this.requestTextView.setSingleLine(true);
-        TextView textView5 = this.requestTextView;
+        TextView textView6 = this.requestTextView;
         if (z) {
-            i2 = C3242R.string.RequestToJoinChannel;
+            i2 = C3290R.string.RequestToJoinChannel;
             str3 = "RequestToJoinChannel";
         } else {
-            i2 = C3242R.string.RequestToJoinGroup;
+            i2 = C3290R.string.RequestToJoinGroup;
             str3 = "RequestToJoinGroup";
         }
-        textView5.setText(LocaleController.getString(str3, i2));
-        this.requestTextView.setTextColor(getThemedColor("featuredStickers_buttonText"));
+        textView6.setText(LocaleController.getString(str3, i2));
+        this.requestTextView.setTextColor(getThemedColor(Theme.key_featuredStickers_buttonText));
         this.requestTextView.setTextSize(1, 15.0f);
         this.requestTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.requestTextView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.JoinGroupAlert$$ExternalSyntheticLambda5
@@ -237,19 +241,19 @@ public class JoinGroupAlert extends BottomSheet {
             }
         });
         frameLayout2.addView(this.requestTextView, LayoutHelper.createLinear(-1, 48, 8388611, 16, 0, 16, 0));
-        TextView textView6 = new TextView(getContext());
-        textView6.setGravity(17);
-        textView6.setTextSize(1, 14.0f);
+        TextView textView7 = new TextView(getContext());
+        textView7.setGravity(17);
+        textView7.setTextSize(1, 14.0f);
         if (z) {
-            i3 = C3242R.string.RequestToJoinChannelDescription;
+            i3 = C3290R.string.RequestToJoinChannelDescription;
             str4 = "RequestToJoinChannelDescription";
         } else {
-            i3 = C3242R.string.RequestToJoinGroupDescription;
+            i3 = C3290R.string.RequestToJoinGroupDescription;
             str4 = "RequestToJoinGroupDescription";
         }
-        textView6.setText(LocaleController.getString(str4, i3));
-        textView6.setTextColor(getThemedColor("dialogTextGray3"));
-        linearLayout.addView(textView6, LayoutHelper.createLinear(-1, -2, 48, 24, 17, 24, 15));
+        textView7.setText(LocaleController.getString(str4, i3));
+        textView7.setTextColor(getThemedColor(Theme.key_dialogTextGray3));
+        linearLayout.addView(textView7, LayoutHelper.createLinear(-1, -2, 48, 24, 17, 24, 15));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -266,7 +270,7 @@ public class JoinGroupAlert extends BottomSheet {
             }
         }, 400L);
         if (this.chatInvite == null && this.currentChat != null) {
-            MessagesController.getInstance(this.currentAccount).addUserToChat(this.currentChat.f1427id, UserConfig.getInstance(this.currentAccount).getCurrentUser(), 0, null, null, true, new Runnable() { // from class: org.telegram.ui.Components.JoinGroupAlert$$ExternalSyntheticLambda6
+            MessagesController.getInstance(this.currentAccount).addUserToChat(this.currentChat.f1433id, UserConfig.getInstance(this.currentAccount).getCurrentUser(), 0, null, null, true, new Runnable() { // from class: org.telegram.ui.Components.JoinGroupAlert$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
                     JoinGroupAlert.this.dismiss();
@@ -403,7 +407,7 @@ public class JoinGroupAlert extends BottomSheet {
             MessagesController.getInstance(this.currentAccount).putUsers(tLRPC$Updates.users, false);
             MessagesController.getInstance(this.currentAccount).putChats(tLRPC$Updates.chats, false);
             Bundle bundle = new Bundle();
-            bundle.putLong("chat_id", tLRPC$Chat.f1427id);
+            bundle.putLong("chat_id", tLRPC$Chat.f1433id);
             if (MessagesController.getInstance(this.currentAccount).checkCanOpenChat(bundle, this.fragment)) {
                 ChatActivity chatActivity = new ChatActivity(bundle);
                 BaseFragment baseFragment2 = this.fragment;
@@ -417,13 +421,20 @@ public class JoinGroupAlert extends BottomSheet {
 
     public static void showBulletin(Context context, BaseFragment baseFragment, boolean z) {
         String string;
+        if (context == null) {
+            if (baseFragment != null) {
+                baseFragment.getContext();
+                return;
+            }
+            return;
+        }
         Bulletin.TwoLineLottieLayout twoLineLottieLayout = new Bulletin.TwoLineLottieLayout(context, baseFragment.getResourceProvider());
-        twoLineLottieLayout.imageView.setAnimation(C3242R.raw.timer_3, 28, 28);
-        twoLineLottieLayout.titleTextView.setText(LocaleController.getString("RequestToJoinSent", C3242R.string.RequestToJoinSent));
+        twoLineLottieLayout.imageView.setAnimation(C3290R.raw.timer_3, 28, 28);
+        twoLineLottieLayout.titleTextView.setText(LocaleController.getString("RequestToJoinSent", C3290R.string.RequestToJoinSent));
         if (z) {
-            string = LocaleController.getString("RequestToJoinChannelSentDescription", C3242R.string.RequestToJoinChannelSentDescription);
+            string = LocaleController.getString("RequestToJoinChannelSentDescription", C3290R.string.RequestToJoinChannelSentDescription);
         } else {
-            string = LocaleController.getString("RequestToJoinGroupSentDescription", C3242R.string.RequestToJoinGroupSentDescription);
+            string = LocaleController.getString("RequestToJoinGroupSentDescription", C3290R.string.RequestToJoinGroupSentDescription);
         }
         twoLineLottieLayout.subtitleTextView.setText(string);
         Bulletin.make(baseFragment, twoLineLottieLayout, 2750).show();
@@ -462,7 +473,7 @@ public class JoinGroupAlert extends BottomSheet {
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
             JoinSheetUserCell joinSheetUserCell = new JoinSheetUserCell(this.context);
-            joinSheetUserCell.setLayoutParams(new RecyclerView.LayoutParams(AndroidUtilities.m50dp(100), AndroidUtilities.m50dp(90)));
+            joinSheetUserCell.setLayoutParams(new RecyclerView.LayoutParams(AndroidUtilities.m54dp(100), AndroidUtilities.m54dp(90)));
             return new RecyclerListView.Holder(joinSheetUserCell);
         }
 

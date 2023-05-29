@@ -25,7 +25,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 21193
+    .line 21758
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$SecureValueError;-><init>()V
 
     return-void
@@ -36,7 +36,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 1
 
-    .line 21201
+    .line 21766
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -47,14 +47,14 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_secureValueErrorSelfie;->type:Lorg/telegram/tgnet/TLRPC$SecureValueType;
 
-    .line 21202
+    .line 21767
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readByteArray(Z)[B
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_secureValueErrorSelfie;->file_hash:[B
 
-    .line 21203
+    .line 21768
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object p1
@@ -67,22 +67,22 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 21207
+    .line 21772
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_secureValueErrorSelfie;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 21208
+    .line 21773
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_secureValueErrorSelfie;->type:Lorg/telegram/tgnet/TLRPC$SecureValueType;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 21209
+    .line 21774
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_secureValueErrorSelfie;->file_hash:[B
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeByteArray([B)V
 
-    .line 21210
+    .line 21775
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_secureValueErrorSelfie;->text:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V

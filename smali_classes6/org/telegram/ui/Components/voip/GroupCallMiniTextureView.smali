@@ -343,9 +343,9 @@
 
     sget v4, Lorg/telegram/messenger/R$drawable;->calls_video:I
 
-    const/4 v9, 0x0
+    const/4 v13, -0x1
 
-    invoke-direct {v2, v3, v4, v9}, Lorg/telegram/ui/Components/CrossOutDrawable;-><init>(Landroid/content/Context;ILjava/lang/String;)V
+    invoke-direct {v2, v3, v4, v13}, Lorg/telegram/ui/Components/CrossOutDrawable;-><init>(Landroid/content/Context;II)V
 
     iput-object v2, v6, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->pausedVideoDrawable:Lorg/telegram/ui/Components/CrossOutDrawable;
 
@@ -441,8 +441,6 @@
     int-to-float v10, v10
 
     invoke-virtual {v2, v10}, Landroid/text/TextPaint;->setTextSize(F)V
-
-    const/4 v13, -0x1
 
     .line 183
     invoke-virtual {v2, v13}, Landroid/text/TextPaint;->setColor(I)V
@@ -833,9 +831,9 @@
     .line 524
     iget-object v3, v0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->speakingPaint:Landroid/graphics/Paint;
 
-    const-string v7, "voipgroup_speakingText"
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_speakingText:I
 
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -1078,9 +1076,9 @@
     .line 564
     iget-object v1, v0, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->noRtmpStreamTextView:Landroid/widget/TextView;
 
-    const-string v6, "voipgroup_lastSeenText"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_lastSeenText:I
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
@@ -2126,10 +2124,10 @@
 
     if-eqz v0, :cond_1
 
-    const-string v0, "voipgroup_mutedByAdminIcon"
-
     .line 1508
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_mutedByAdminIcon:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -2146,12 +2144,12 @@
 
     move-result v0
 
-    const-string v1, "voipgroup_speakingText"
-
     if-eqz v0, :cond_2
 
     .line 1510
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_speakingText:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -2159,7 +2157,9 @@
 
     .line 1512
     :cond_2
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_speakingText:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -6215,9 +6215,9 @@
 
     new-instance v11, Landroid/graphics/drawable/ColorDrawable;
 
-    const-string v12, "voipgroup_listViewBackground"
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_listViewBackground:I
 
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v12
 

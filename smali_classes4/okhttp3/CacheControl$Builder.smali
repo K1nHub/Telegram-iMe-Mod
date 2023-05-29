@@ -127,7 +127,7 @@
 .method public final maxStale(ILjava/util/concurrent/TimeUnit;)Lokhttp3/CacheControl$Builder;
     .locals 2
 
-    const-string v0, "timeUnit"
+    const-string/jumbo v0, "timeUnit"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

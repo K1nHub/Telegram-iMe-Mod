@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/PhotoViewer;->closePhoto(ZZ)V
+    value = Lorg/telegram/ui/PhotoViewer;->onDraw(Landroid/graphics/Canvas;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,18 +19,10 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$r7DbyLJc9XLBc85iEoP1GGa-22c(Lorg/telegram/ui/PhotoViewer$75;)V
-    .locals 0
-
-    invoke-direct {p0}, Lorg/telegram/ui/PhotoViewer$75;->lambda$onAnimationEnd$0()V
-
-    return-void
-.end method
-
 .method constructor <init>(Lorg/telegram/ui/PhotoViewer;)V
     .locals 0
 
-    .line 14993
+    .line 16518
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$75;->this$0:Lorg/telegram/ui/PhotoViewer;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -38,49 +30,25 @@
     return-void
 .end method
 
-.method private synthetic lambda$onAnimationEnd$0()V
-    .locals 2
-
-    .line 14997
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$75;->this$0:Lorg/telegram/ui/PhotoViewer;
-
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$28000(Lorg/telegram/ui/PhotoViewer;)Ljava/lang/Runnable;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    .line 14998
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$75;->this$0:Lorg/telegram/ui/PhotoViewer;
-
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$28000(Lorg/telegram/ui/PhotoViewer;)Ljava/lang/Runnable;
-
-    move-result-object v0
-
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-
-    .line 14999
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$75;->this$0:Lorg/telegram/ui/PhotoViewer;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/PhotoViewer;->access$28002(Lorg/telegram/ui/PhotoViewer;Ljava/lang/Runnable;)Ljava/lang/Runnable;
-
-    :cond_0
-    return-void
-.end method
-
 
 # virtual methods
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 0
+    .locals 1
 
-    .line 14996
-    new-instance p1, Lorg/telegram/ui/PhotoViewer$75$$ExternalSyntheticLambda0;
+    .line 16521
+    iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$75;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-direct {p1, p0}, Lorg/telegram/ui/PhotoViewer$75$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/PhotoViewer$75;)V
+    invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$12100(Lorg/telegram/ui/PhotoViewer;)[Landroid/widget/ImageView;
 
-    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
+    move-result-object p1
+
+    const/4 v0, 0x0
+
+    aget-object p1, p1, v0
+
+    const/4 v0, 0x0
+
+    invoke-virtual {p1, v0}, Landroid/widget/ImageView;->setTag(Ljava/lang/Object;)V
 
     return-void
 .end method

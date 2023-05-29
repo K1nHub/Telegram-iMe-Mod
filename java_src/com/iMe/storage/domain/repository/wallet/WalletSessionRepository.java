@@ -16,5 +16,5 @@ public interface WalletSessionRepository {
 
     Completable logout();
 
-    Observable<Result<SessionTokens>> refreshToken(String str);
+    Observable<Result<SessionTokens>> refreshToken();
 }

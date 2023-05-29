@@ -6,36 +6,28 @@
 
 
 # instance fields
-.field public final synthetic f$0:[I
+.field public final synthetic f$0:Z
 
-.field public final synthetic f$1:I
+.field public final synthetic f$1:Landroid/content/Context;
 
-.field public final synthetic f$2:Lorg/telegram/ui/ActionBar/BaseFragment;
+.field public final synthetic f$2:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-.field public final synthetic f$3:Landroid/content/Context;
-
-.field public final synthetic f$4:J
-
-.field public final synthetic f$5:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+.field public final synthetic f$3:Landroidx/core/util/Consumer;
 
 
 # direct methods
-.method public synthetic constructor <init>([IILorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;JLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+.method public synthetic constructor <init>(ZLandroid/content/Context;Ljava/util/concurrent/atomic/AtomicBoolean;Landroidx/core/util/Consumer;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda49;->f$0:[I
+    iput-boolean p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda49;->f$0:Z
 
-    iput p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda49;->f$1:I
+    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda49;->f$1:Landroid/content/Context;
 
-    iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda49;->f$2:Lorg/telegram/ui/ActionBar/BaseFragment;
+    iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda49;->f$2:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iput-object p4, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda49;->f$3:Landroid/content/Context;
-
-    iput-wide p5, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda49;->f$4:J
-
-    iput-object p7, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda49;->f$5:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    iput-object p4, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda49;->f$3:Landroidx/core/util/Consumer;
 
     return-void
 .end method
@@ -43,25 +35,21 @@
 
 # virtual methods
 .method public final onClick(Landroid/content/DialogInterface;I)V
-    .locals 9
+    .locals 6
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda49;->f$0:[I
+    iget-boolean v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda49;->f$0:Z
 
-    iget v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda49;->f$1:I
+    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda49;->f$1:Landroid/content/Context;
 
-    iget-object v2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda49;->f$2:Lorg/telegram/ui/ActionBar/BaseFragment;
+    iget-object v2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda49;->f$2:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda49;->f$3:Landroid/content/Context;
+    iget-object v3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda49;->f$3:Landroidx/core/util/Consumer;
 
-    iget-wide v4, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda49;->f$4:J
+    move-object v4, p1
 
-    iget-object v6, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda49;->f$5:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    move v5, p2
 
-    move-object v7, p1
-
-    move v8, p2
-
-    invoke-static/range {v0 .. v8}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$4QNNAN1G-PBtzb_4bAMeY6CxwPI([IILorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;JLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Landroid/content/DialogInterface;I)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$YT8H_5T9GAJ6iXtj3Qq2ozgILp8(ZLandroid/content/Context;Ljava/util/concurrent/atomic/AtomicBoolean;Landroidx/core/util/Consumer;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

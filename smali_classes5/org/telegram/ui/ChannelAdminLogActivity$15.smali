@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChannelAdminLogActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 1388
+    .line 1396
     iput-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$15;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method public dispatchKeyEvent(Landroid/view/KeyEvent;)Z
     .locals 2
 
-    .line 1391
+    .line 1399
     invoke-virtual {p1}, Landroid/view/KeyEvent;->getKeyCode()I
 
     move-result v0
@@ -50,12 +50,12 @@
 
     if-nez v0, :cond_0
 
-    .line 1392
+    .line 1400
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$15;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$8000(Lorg/telegram/ui/ChannelAdminLogActivity;)V
 
-    .line 1394
+    .line 1402
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->dispatchKeyEvent(Landroid/view/KeyEvent;)Z
 
@@ -67,12 +67,12 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 1399
+    .line 1407
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result v0
 
-    .line 1400
+    .line 1408
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result p1
@@ -81,7 +81,7 @@
 
     if-nez v0, :cond_0
 
-    .line 1401
+    .line 1409
     iget-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$15;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$8000(Lorg/telegram/ui/ChannelAdminLogActivity;)V

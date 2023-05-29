@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Components/ChatActivityEnterView$19;
-.super Landroid/widget/ImageView;
+.super Landroid/widget/FrameLayout;
 .source "ChatActivityEnterView.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->createExpandStickersButton()V
+    value = Lorg/telegram/ui/Components/ChatActivityEnterView;->createRecordAudioPanel()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,41 +14,34 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+
 # direct methods
 .method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Landroid/content/Context;)V
     .locals 0
 
-    .line 3285
-    invoke-direct {p0, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
+    .line 3266
+    iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$19;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+
+    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 2
+.method public setVisibility(I)V
+    .locals 0
 
-    .line 3288
-    invoke-virtual {p0}, Landroid/widget/ImageView;->getAlpha()F
+    .line 3269
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    move-result v0
+    .line 3270
+    iget-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$19;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    const/4 v1, 0x0
+    invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->updateSendAsButton()V
 
-    cmpg-float v0, v0, v1
-
-    if-gtz v0, :cond_0
-
-    const/4 p1, 0x0
-
-    return p1
-
-    .line 3291
-    :cond_0
-    invoke-super {p0, p1}, Landroid/widget/ImageView;->onTouchEvent(Landroid/view/MotionEvent;)Z
-
-    move-result p1
-
-    return p1
+    return-void
 .end method

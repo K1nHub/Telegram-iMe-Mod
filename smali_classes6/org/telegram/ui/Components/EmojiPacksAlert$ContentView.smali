@@ -251,9 +251,9 @@
 
     iget-object v2, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    const-string v3, "dialogBackground"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    invoke-static {v2, v3}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;Ljava/lang/String;)I
+    invoke-static {v2, v3}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$2000(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
 
     move-result v2
 
@@ -511,9 +511,9 @@
 
     iget-object v4, v0, Lorg/telegram/ui/Components/EmojiPacksAlert$ContentView;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    const-string v6, "key_sheet_scrollUp"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_sheet_scrollUp:I
 
-    invoke-static {v4, v6}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$3000(Lorg/telegram/ui/Components/EmojiPacksAlert;Ljava/lang/String;)I
+    invoke-static {v4, v6}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$3000(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
 
     move-result v4
 

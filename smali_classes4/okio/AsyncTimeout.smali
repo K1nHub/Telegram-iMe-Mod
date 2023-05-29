@@ -266,7 +266,7 @@
     .line 170
     new-instance v0, Ljava/io/InterruptedIOException;
 
-    const-string v1, "timeout"
+    const-string/jumbo v1, "timeout"
 
     invoke-direct {v0, v1}, Ljava/io/InterruptedIOException;-><init>(Ljava/lang/String;)V
 
@@ -282,7 +282,7 @@
 .method public final sink(Lokio/Sink;)Lokio/Sink;
     .locals 1
 
-    const-string v0, "sink"
+    const-string/jumbo v0, "sink"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -297,7 +297,7 @@
 .method public final source(Lokio/Source;)Lokio/Source;
     .locals 1
 
-    const-string v0, "source"
+    const-string/jumbo v0, "source"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

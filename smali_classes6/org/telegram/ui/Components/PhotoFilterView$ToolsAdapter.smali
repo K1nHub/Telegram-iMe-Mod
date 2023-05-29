@@ -40,12 +40,12 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/PhotoFilterView;Landroid/content/Context;)V
     .locals 0
 
-    .line 1033
+    .line 1032
     iput-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 1034
+    .line 1033
     iput-object p2, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->mContext:Landroid/content/Context;
 
     return-void
@@ -54,7 +54,7 @@
 .method private synthetic lambda$onCreateViewHolder$0(II)V
     .locals 1
 
-    .line 1054
+    .line 1053
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/PhotoFilterView;->access$600(Lorg/telegram/ui/Components/PhotoFilterView;)I
@@ -63,7 +63,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 1055
+    .line 1054
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
     int-to-float p2, p2
@@ -72,7 +72,7 @@
 
     goto/16 :goto_0
 
-    .line 1056
+    .line 1055
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -82,7 +82,7 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 1057
+    .line 1056
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
     int-to-float p2, p2
@@ -91,7 +91,7 @@
 
     goto/16 :goto_0
 
-    .line 1058
+    .line 1057
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -101,7 +101,7 @@
 
     if-ne p1, v0, :cond_2
 
-    .line 1059
+    .line 1058
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
     int-to-float p2, p2
@@ -110,7 +110,7 @@
 
     goto/16 :goto_0
 
-    .line 1060
+    .line 1059
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -120,7 +120,7 @@
 
     if-ne p1, v0, :cond_3
 
-    .line 1061
+    .line 1060
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
     int-to-float p2, p2
@@ -129,7 +129,7 @@
 
     goto/16 :goto_0
 
-    .line 1062
+    .line 1061
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -139,7 +139,7 @@
 
     if-ne p1, v0, :cond_4
 
-    .line 1063
+    .line 1062
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
     int-to-float p2, p2
@@ -148,7 +148,7 @@
 
     goto :goto_0
 
-    .line 1064
+    .line 1063
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -158,7 +158,7 @@
 
     if-ne p1, v0, :cond_5
 
-    .line 1065
+    .line 1064
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
     int-to-float p2, p2
@@ -167,7 +167,7 @@
 
     goto :goto_0
 
-    .line 1066
+    .line 1065
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -177,7 +177,7 @@
 
     if-ne p1, v0, :cond_6
 
-    .line 1067
+    .line 1066
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
     int-to-float p2, p2
@@ -186,7 +186,7 @@
 
     goto :goto_0
 
-    .line 1068
+    .line 1067
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -196,7 +196,7 @@
 
     if-ne p1, v0, :cond_7
 
-    .line 1069
+    .line 1068
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
     int-to-float p2, p2
@@ -205,7 +205,7 @@
 
     goto :goto_0
 
-    .line 1070
+    .line 1069
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -215,7 +215,7 @@
 
     if-ne p1, v0, :cond_8
 
-    .line 1071
+    .line 1070
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
     int-to-float p2, p2
@@ -224,7 +224,7 @@
 
     goto :goto_0
 
-    .line 1072
+    .line 1071
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -234,7 +234,7 @@
 
     if-ne p1, v0, :cond_9
 
-    .line 1073
+    .line 1072
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
     int-to-float p2, p2
@@ -243,7 +243,7 @@
 
     goto :goto_0
 
-    .line 1074
+    .line 1073
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -253,7 +253,7 @@
 
     if-ne p1, v0, :cond_a
 
-    .line 1075
+    .line 1074
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
     int-to-float p2, p2
@@ -262,7 +262,7 @@
 
     goto :goto_0
 
-    .line 1076
+    .line 1075
     :cond_a
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -272,14 +272,14 @@
 
     if-ne p1, v0, :cond_b
 
-    .line 1077
+    .line 1076
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
     int-to-float p2, p2
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/PhotoFilterView;->access$2902(Lorg/telegram/ui/Components/PhotoFilterView;F)F
 
-    .line 1079
+    .line 1078
     :cond_b
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
@@ -290,7 +290,7 @@
 
     if-eqz p1, :cond_c
 
-    .line 1080
+    .line 1079
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/PhotoFilterView;->access$000(Lorg/telegram/ui/Components/PhotoFilterView;)Lorg/telegram/ui/Components/FilterGLThread;
@@ -308,17 +308,17 @@
 .method private synthetic lambda$onCreateViewHolder$1(Landroid/view/View;)V
     .locals 2
 
-    .line 1086
+    .line 1085
     check-cast p1, Lorg/telegram/ui/Cells/PhotoEditRadioCell;
 
-    .line 1087
+    .line 1086
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
 
     move-result-object v0
 
     check-cast v0, Ljava/lang/Integer;
 
-    .line 1088
+    .line 1087
     invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
 
     move-result v0
@@ -331,7 +331,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 1089
+    .line 1088
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/PhotoEditRadioCell;->getCurrentColor()I
@@ -342,7 +342,7 @@
 
     goto :goto_0
 
-    .line 1091
+    .line 1090
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -352,7 +352,7 @@
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/PhotoFilterView;->access$3302(Lorg/telegram/ui/Components/PhotoFilterView;I)I
 
-    .line 1093
+    .line 1092
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -362,7 +362,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 1094
+    .line 1093
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/PhotoFilterView;->access$000(Lorg/telegram/ui/Components/PhotoFilterView;)Lorg/telegram/ui/Components/FilterGLThread;
@@ -382,7 +382,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 1039
+    .line 1038
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/PhotoFilterView;->access$400(Lorg/telegram/ui/Components/PhotoFilterView;)I
@@ -403,7 +403,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 1154
+    .line 1153
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/PhotoFilterView;->access$3000(Lorg/telegram/ui/Components/PhotoFilterView;)I
@@ -445,7 +445,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 4
 
-    .line 1108
+    .line 1107
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -460,20 +460,20 @@
 
     goto/16 :goto_0
 
-    .line 1140
+    .line 1139
     :cond_0
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/PhotoEditRadioCell;
 
-    .line 1141
+    .line 1140
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 1142
+    .line 1141
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/PhotoFilterView;->access$3000(Lorg/telegram/ui/Components/PhotoFilterView;)I
@@ -482,7 +482,7 @@
 
     if-ne p2, v0, :cond_1
 
-    .line 1143
+    .line 1142
     sget p2, Lorg/telegram/messenger/R$string;->TintShadows:I
 
     const-string v0, "TintShadows"
@@ -501,7 +501,7 @@
 
     goto/16 :goto_0
 
-    .line 1144
+    .line 1143
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -511,7 +511,7 @@
 
     if-ne p2, v0, :cond_e
 
-    .line 1145
+    .line 1144
     sget p2, Lorg/telegram/messenger/R$string;->TintHighlights:I
 
     const-string v0, "TintHighlights"
@@ -530,20 +530,20 @@
 
     goto/16 :goto_0
 
-    .line 1110
+    .line 1109
     :cond_2
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/PhotoEditToolCell;
 
-    .line 1111
+    .line 1110
     invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v0
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/PhotoEditToolCell;->setTag(Ljava/lang/Object;)V
 
-    .line 1112
+    .line 1111
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/PhotoFilterView;->access$600(Lorg/telegram/ui/Components/PhotoFilterView;)I
@@ -554,7 +554,7 @@
 
     if-ne p2, v0, :cond_3
 
-    .line 1113
+    .line 1112
     sget p2, Lorg/telegram/messenger/R$string;->Enhance:I
 
     const-string v0, "Enhance"
@@ -573,7 +573,7 @@
 
     goto/16 :goto_0
 
-    .line 1114
+    .line 1113
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -585,7 +585,7 @@
 
     if-ne p2, v0, :cond_4
 
-    .line 1115
+    .line 1114
     sget p2, Lorg/telegram/messenger/R$string;->Highlights:I
 
     const-string v0, "Highlights"
@@ -604,7 +604,7 @@
 
     goto/16 :goto_0
 
-    .line 1116
+    .line 1115
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -614,7 +614,7 @@
 
     if-ne p2, v0, :cond_5
 
-    .line 1117
+    .line 1116
     sget p2, Lorg/telegram/messenger/R$string;->Contrast:I
 
     const-string v0, "Contrast"
@@ -633,7 +633,7 @@
 
     goto/16 :goto_0
 
-    .line 1118
+    .line 1117
     :cond_5
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -643,7 +643,7 @@
 
     if-ne p2, v0, :cond_6
 
-    .line 1119
+    .line 1118
     sget p2, Lorg/telegram/messenger/R$string;->Exposure:I
 
     const-string v0, "Exposure"
@@ -662,7 +662,7 @@
 
     goto/16 :goto_0
 
-    .line 1120
+    .line 1119
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -672,7 +672,7 @@
 
     if-ne p2, v0, :cond_7
 
-    .line 1121
+    .line 1120
     sget p2, Lorg/telegram/messenger/R$string;->Warmth:I
 
     const-string v0, "Warmth"
@@ -691,7 +691,7 @@
 
     goto/16 :goto_0
 
-    .line 1122
+    .line 1121
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -701,7 +701,7 @@
 
     if-ne p2, v0, :cond_8
 
-    .line 1123
+    .line 1122
     sget p2, Lorg/telegram/messenger/R$string;->Saturation:I
 
     const-string v0, "Saturation"
@@ -720,7 +720,7 @@
 
     goto/16 :goto_0
 
-    .line 1124
+    .line 1123
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -730,7 +730,7 @@
 
     if-ne p2, v0, :cond_9
 
-    .line 1125
+    .line 1124
     sget p2, Lorg/telegram/messenger/R$string;->Vignette:I
 
     const-string v0, "Vignette"
@@ -749,7 +749,7 @@
 
     goto/16 :goto_0
 
-    .line 1126
+    .line 1125
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -759,7 +759,7 @@
 
     if-ne p2, v0, :cond_a
 
-    .line 1127
+    .line 1126
     sget p2, Lorg/telegram/messenger/R$string;->Shadows:I
 
     const-string v0, "Shadows"
@@ -778,7 +778,7 @@
 
     goto :goto_0
 
-    .line 1128
+    .line 1127
     :cond_a
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -788,7 +788,7 @@
 
     if-ne p2, v0, :cond_b
 
-    .line 1129
+    .line 1128
     sget p2, Lorg/telegram/messenger/R$string;->Grain:I
 
     const-string v0, "Grain"
@@ -807,7 +807,7 @@
 
     goto :goto_0
 
-    .line 1130
+    .line 1129
     :cond_b
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -817,7 +817,7 @@
 
     if-ne p2, v0, :cond_c
 
-    .line 1131
+    .line 1130
     sget p2, Lorg/telegram/messenger/R$string;->Sharpen:I
 
     const-string v0, "Sharpen"
@@ -836,7 +836,7 @@
 
     goto :goto_0
 
-    .line 1132
+    .line 1131
     :cond_c
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -846,7 +846,7 @@
 
     if-ne p2, v0, :cond_d
 
-    .line 1133
+    .line 1132
     sget p2, Lorg/telegram/messenger/R$string;->Fade:I
 
     const-string v0, "Fade"
@@ -865,7 +865,7 @@
 
     goto :goto_0
 
-    .line 1134
+    .line 1133
     :cond_d
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->this$0:Lorg/telegram/ui/Components/PhotoFilterView;
 
@@ -875,7 +875,7 @@
 
     if-ne p2, v0, :cond_e
 
-    .line 1135
+    .line 1134
     sget p2, Lorg/telegram/messenger/R$string;->SoftenSkin:I
 
     const-string v0, "SoftenSkin"
@@ -902,7 +902,7 @@
 
     if-nez p2, :cond_0
 
-    .line 1051
+    .line 1050
     new-instance p1, Lorg/telegram/ui/Cells/PhotoEditToolCell;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;->mContext:Landroid/content/Context;
@@ -915,7 +915,7 @@
 
     invoke-direct {p1, p2, v0}, Lorg/telegram/ui/Cells/PhotoEditToolCell;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 1053
+    .line 1052
     new-instance p2, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter$$ExternalSyntheticLambda1;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;)V
@@ -924,7 +924,7 @@
 
     goto :goto_0
 
-    .line 1084
+    .line 1083
     :cond_0
     new-instance p1, Lorg/telegram/ui/Cells/PhotoEditRadioCell;
 
@@ -932,14 +932,14 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/PhotoEditRadioCell;-><init>(Landroid/content/Context;)V
 
-    .line 1085
+    .line 1084
     new-instance p2, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/PhotoFilterView$ToolsAdapter;)V
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1098
+    .line 1097
     :goto_0
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 

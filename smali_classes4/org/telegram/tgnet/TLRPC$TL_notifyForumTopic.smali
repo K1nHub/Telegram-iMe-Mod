@@ -23,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 1056
+    .line 1057
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$NotifyPeer;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 1
 
-    .line 1063
+    .line 1064
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -45,7 +45,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_notifyForumTopic;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 1064
+    .line 1065
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -58,17 +58,17 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 1068
+    .line 1069
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_notifyForumTopic;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 1069
+    .line 1070
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_notifyForumTopic;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 1070
+    .line 1071
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_notifyForumTopic;->top_msg_id:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

@@ -35,7 +35,7 @@
 .method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
     .locals 0
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$jl6KOm2XbMgq1PdumPhMUVFONNM(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    invoke-static {p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$wdsfH3_Koa88I2w5o5PXoJaqbd8(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     move-result p1
 

@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/QRCodeBottomSheet$$ExternalSyntheticLambda0;->f$1:Landroid/content/Context;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->$r8$lambda$EGy7xuUNYuqDMzo4xV51Pc8VtcY(Ljava/lang/String;Landroid/content/Context;Landroid/view/View;)V
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/QRCodeBottomSheet;->$r8$lambda$sL5vl6c0IuJE6-El6F5kMkMtkXo(Ljava/lang/String;Landroid/content/Context;Landroid/view/View;)V
 
     return-void
 .end method

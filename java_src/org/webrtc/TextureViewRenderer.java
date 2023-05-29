@@ -190,7 +190,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
         }
 
         private void logD(String str) {
-            Logging.m18d(TAG, this.name + ": " + str);
+            Logging.m20d(TAG, this.name + ": " + str);
         }
 
         @Override // org.webrtc.EglRenderer
@@ -714,7 +714,7 @@ public class TextureViewRenderer extends TextureView implements TextureView.Surf
     }
 
     private void logD(String str) {
-        Logging.m18d(TAG, this.resourceName + ": " + str);
+        Logging.m20d(TAG, this.resourceName + ": " + str);
     }
 
     public void createBackgroundSurface(SurfaceTexture surfaceTexture) {

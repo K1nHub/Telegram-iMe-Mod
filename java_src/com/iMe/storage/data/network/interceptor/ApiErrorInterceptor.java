@@ -128,7 +128,7 @@ public final class ApiErrorInterceptor implements Interceptor, KoinComponent {
             obj = this.gson.fromJson(HttpClientExtKt.getClonedBodyString(proceed.body()), new TypeToken<ApiBaseResponse<?>>() { // from class: com.iMe.storage.data.network.interceptor.ApiErrorInterceptor$intercept$lambda$0$$inlined$fromJsonTokenType$1
             }.getType());
         } catch (Exception e) {
-            Timber.m4e(e);
+            Timber.m6e(e);
             obj = null;
         }
         if (obj != null) {
@@ -212,12 +212,7 @@ public final class ApiErrorInterceptor implements Interceptor, KoinComponent {
             accessToken = "";
         }
         if (Intrinsics.areEqual(str, accessToken)) {
-            WalletSessionInteractor walletSessionInteractor = getWalletSessionInteractor();
-            String refreshToken = getAuthManager().getRefreshToken();
-            if (refreshToken == null) {
-                refreshToken = "";
-            }
-            if (walletSessionInteractor.refreshToken(refreshToken).blockingFirst().isSuccess()) {
+            if (getWalletSessionInteractor().refreshToken().blockingFirst().isSuccess()) {
                 String accessToken2 = getAuthManager().getAccessToken();
                 return processNewRequest(RtspHeaders.AUTHORIZATION, chain, request, accessToken2 != null ? accessToken2 : "");
             }

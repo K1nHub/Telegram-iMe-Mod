@@ -319,8 +319,20 @@ public abstract class FragmentManager {
         }
     }
 
+    public void restoreBackStack(String str) {
+        enqueueAction(new RestoreBackStackState(str), false);
+    }
+
+    public void saveBackStack(String str) {
+        enqueueAction(new SaveBackStackState(str), false);
+    }
+
     public boolean popBackStackImmediate() {
         return popBackStackImmediate(null, -1, 0);
+    }
+
+    public void popBackStack(String str, int i) {
+        enqueueAction(new PopBackStackState(str, -1, i), false);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -478,6 +490,10 @@ public abstract class FragmentManager {
     /* JADX INFO: Access modifiers changed from: package-private */
     public void removeRetainedFragment(Fragment fragment) {
         this.mNonConfig.removeRetainedFragment(fragment);
+    }
+
+    List<Fragment> getActiveFragments() {
+        return this.mFragmentStore.getActiveFragments();
     }
 
     private void clearBackStackStateViewModels() {
@@ -1129,6 +1145,121 @@ public abstract class FragmentManager {
         this.mBackStack.add(backStackRecord);
     }
 
+    boolean restoreBackStackState(ArrayList<BackStackRecord> arrayList, ArrayList<Boolean> arrayList2, String str) {
+        boolean z;
+        BackStackState remove = this.mBackStackStates.remove(str);
+        if (remove == null) {
+            return false;
+        }
+        HashMap hashMap = new HashMap();
+        Iterator<BackStackRecord> it = arrayList.iterator();
+        while (it.hasNext()) {
+            BackStackRecord next = it.next();
+            if (next.mBeingSaved) {
+                Iterator<FragmentTransaction.C0212Op> it2 = next.mOps.iterator();
+                while (it2.hasNext()) {
+                    Fragment fragment = it2.next().mFragment;
+                    if (fragment != null) {
+                        hashMap.put(fragment.mWho, fragment);
+                    }
+                }
+            }
+        }
+        while (true) {
+            for (BackStackRecord backStackRecord : remove.instantiate(this, hashMap)) {
+                z = backStackRecord.generateOps(arrayList, arrayList2) || z;
+            }
+            return z;
+        }
+    }
+
+    boolean saveBackStackState(ArrayList<BackStackRecord> arrayList, ArrayList<Boolean> arrayList2, String str) {
+        int i;
+        int findBackStackIndex = findBackStackIndex(str, -1, true);
+        if (findBackStackIndex < 0) {
+            return false;
+        }
+        for (int i2 = findBackStackIndex; i2 < this.mBackStack.size(); i2++) {
+            BackStackRecord backStackRecord = this.mBackStack.get(i2);
+            if (!backStackRecord.mReorderingAllowed) {
+                throwException(new IllegalArgumentException("saveBackStack(\"" + str + "\") included FragmentTransactions must use setReorderingAllowed(true) to ensure that the back stack can be restored as an atomic operation. Found " + backStackRecord + " that did not use setReorderingAllowed(true)."));
+            }
+        }
+        HashSet hashSet = new HashSet();
+        for (int i3 = findBackStackIndex; i3 < this.mBackStack.size(); i3++) {
+            BackStackRecord backStackRecord2 = this.mBackStack.get(i3);
+            HashSet hashSet2 = new HashSet();
+            HashSet hashSet3 = new HashSet();
+            Iterator<FragmentTransaction.C0212Op> it = backStackRecord2.mOps.iterator();
+            while (it.hasNext()) {
+                FragmentTransaction.C0212Op next = it.next();
+                Fragment fragment = next.mFragment;
+                if (fragment != null) {
+                    if (!next.mFromExpandedOp || (i = next.mCmd) == 1 || i == 2 || i == 8) {
+                        hashSet.add(fragment);
+                        hashSet2.add(fragment);
+                    }
+                    int i4 = next.mCmd;
+                    if (i4 == 1 || i4 == 2) {
+                        hashSet3.add(fragment);
+                    }
+                }
+            }
+            hashSet2.removeAll(hashSet3);
+            if (!hashSet2.isEmpty()) {
+                StringBuilder sb = new StringBuilder();
+                sb.append("saveBackStack(\"");
+                sb.append(str);
+                sb.append("\") must be self contained and not reference fragments from non-saved FragmentTransactions. Found reference to fragment");
+                sb.append(hashSet2.size() == 1 ? " " + hashSet2.iterator().next() : "s " + hashSet2);
+                sb.append(" in ");
+                sb.append(backStackRecord2);
+                sb.append(" that were previously added to the FragmentManager through a separate FragmentTransaction.");
+                throwException(new IllegalArgumentException(sb.toString()));
+            }
+        }
+        ArrayDeque arrayDeque = new ArrayDeque(hashSet);
+        while (!arrayDeque.isEmpty()) {
+            Fragment fragment2 = (Fragment) arrayDeque.removeFirst();
+            if (fragment2.mRetainInstance) {
+                StringBuilder sb2 = new StringBuilder();
+                sb2.append("saveBackStack(\"");
+                sb2.append(str);
+                sb2.append("\") must not contain retained fragments. Found ");
+                sb2.append(hashSet.contains(fragment2) ? "direct reference to retained " : "retained child ");
+                sb2.append("fragment ");
+                sb2.append(fragment2);
+                throwException(new IllegalArgumentException(sb2.toString()));
+            }
+            for (Fragment fragment3 : fragment2.mChildFragmentManager.getActiveFragments()) {
+                if (fragment3 != null) {
+                    arrayDeque.addLast(fragment3);
+                }
+            }
+        }
+        ArrayList arrayList3 = new ArrayList();
+        Iterator it2 = hashSet.iterator();
+        while (it2.hasNext()) {
+            arrayList3.add(((Fragment) it2.next()).mWho);
+        }
+        ArrayList arrayList4 = new ArrayList(this.mBackStack.size() - findBackStackIndex);
+        for (int i5 = findBackStackIndex; i5 < this.mBackStack.size(); i5++) {
+            arrayList4.add(null);
+        }
+        BackStackState backStackState = new BackStackState(arrayList3, arrayList4);
+        for (int size = this.mBackStack.size() - 1; size >= findBackStackIndex; size--) {
+            BackStackRecord remove = this.mBackStack.remove(size);
+            BackStackRecord backStackRecord3 = new BackStackRecord(remove);
+            backStackRecord3.collapseOps();
+            arrayList4.set(size - findBackStackIndex, new BackStackRecordState(backStackRecord3));
+            remove.mBeingSaved = true;
+            arrayList.add(remove);
+            arrayList2.add(Boolean.TRUE);
+        }
+        this.mBackStackStates.put(str, backStackState);
+        return true;
+    }
+
     boolean popBackStackState(ArrayList<BackStackRecord> arrayList, ArrayList<Boolean> arrayList2, String str, int i, int i2) {
         int findBackStackIndex = findBackStackIndex(str, i, (i2 & 1) != 0);
         if (findBackStackIndex < 0) {
@@ -1353,6 +1484,11 @@ public abstract class FragmentManager {
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
+    public FragmentStore getFragmentStore() {
+        return this.mFragmentStore;
+    }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
     public void attachController(FragmentHostCallback<?> fragmentHostCallback, FragmentContainer fragmentContainer, final Fragment fragment) {
         String str;
         if (this.mHost != null) {
@@ -1539,8 +1675,8 @@ public abstract class FragmentManager {
                         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
                         LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
                         for (String str3 : input) {
-                            Pair m80to = TuplesKt.m80to(str3, Boolean.TRUE);
-                            linkedHashMap.put(m80to.getFirst(), m80to.getSecond());
+                            Pair m85to = TuplesKt.m85to(str3, Boolean.TRUE);
+                            linkedHashMap.put(m85to.getFirst(), m85to.getSecond());
                         }
                         return new ActivityResultContract.SynchronousResult<>(linkedHashMap);
                     }
@@ -2097,6 +2233,34 @@ public abstract class FragmentManager {
                 return FragmentManager.this.popBackStackState(arrayList, arrayList2, this.mName, this.mId, this.mFlags);
             }
             return false;
+        }
+    }
+
+    /* loaded from: classes.dex */
+    private class RestoreBackStackState implements OpGenerator {
+        private final String mName;
+
+        RestoreBackStackState(String str) {
+            this.mName = str;
+        }
+
+        @Override // androidx.fragment.app.FragmentManager.OpGenerator
+        public boolean generateOps(ArrayList<BackStackRecord> arrayList, ArrayList<Boolean> arrayList2) {
+            return FragmentManager.this.restoreBackStackState(arrayList, arrayList2, this.mName);
+        }
+    }
+
+    /* loaded from: classes.dex */
+    private class SaveBackStackState implements OpGenerator {
+        private final String mName;
+
+        SaveBackStackState(String str) {
+            this.mName = str;
+        }
+
+        @Override // androidx.fragment.app.FragmentManager.OpGenerator
+        public boolean generateOps(ArrayList<BackStackRecord> arrayList, ArrayList<Boolean> arrayList2) {
+            return FragmentManager.this.saveBackStackState(arrayList, arrayList2, this.mName);
         }
     }
 

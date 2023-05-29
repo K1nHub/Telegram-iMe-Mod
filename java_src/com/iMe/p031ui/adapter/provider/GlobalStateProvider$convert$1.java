@@ -10,7 +10,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: GlobalStateProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.GlobalStateProvider$convert$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class GlobalStateProvider$convert$1 extends Lambda implements Function1<GlobalStateLayout, Unit> {
     final /* synthetic */ GlobalStateItem $item;
     final /* synthetic */ GlobalStateProvider this$0;

@@ -39,16 +39,16 @@ public final class BinaryFrame extends Id3Frame {
             return false;
         }
         BinaryFrame binaryFrame = (BinaryFrame) obj;
-        return this.f114id.equals(binaryFrame.f114id) && Arrays.equals(this.data, binaryFrame.data);
+        return this.f117id.equals(binaryFrame.f117id) && Arrays.equals(this.data, binaryFrame.data);
     }
 
     public int hashCode() {
-        return ((527 + this.f114id.hashCode()) * 31) + Arrays.hashCode(this.data);
+        return ((527 + this.f117id.hashCode()) * 31) + Arrays.hashCode(this.data);
     }
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f114id);
+        parcel.writeString(this.f117id);
         parcel.writeByteArray(this.data);
     }
 }

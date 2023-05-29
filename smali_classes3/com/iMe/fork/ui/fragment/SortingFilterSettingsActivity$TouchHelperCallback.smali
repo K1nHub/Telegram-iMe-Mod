@@ -27,7 +27,7 @@
         }
     .end annotation
 
-    .line 287
+    .line 292
     iput-object p1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$TouchHelperCallback;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;-><init>()V
@@ -48,10 +48,10 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 315
+    .line 320
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->clearView(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
 
-    .line 316
+    .line 321
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const/4 p2, 0x0
@@ -72,7 +72,7 @@
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 294
+    .line 299
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -90,7 +90,7 @@
     :cond_0
     move p1, v0
 
-    .line 293
+    .line 298
     :goto_0
     invoke-static {p1, v0}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->makeMovementFlags(II)I
 
@@ -122,7 +122,7 @@
 
     invoke-static {p3, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 299
+    .line 304
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -137,7 +137,7 @@
 
     return p1
 
-    .line 302
+    .line 307
     :cond_0
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$TouchHelperCallback;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
@@ -165,7 +165,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 308
+    .line 313
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$TouchHelperCallback;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->access$getListView(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -176,7 +176,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->cancelClickRunnables(Z)V
 
-    .line 309
+    .line 314
     invoke-static {p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;)V
 
     iget-object v0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
@@ -185,7 +185,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setPressed(Z)V
 
-    .line 311
+    .line 316
     :cond_0
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->onSelectedChanged(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
 

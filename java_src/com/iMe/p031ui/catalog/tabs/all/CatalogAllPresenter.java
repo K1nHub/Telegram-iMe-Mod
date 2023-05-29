@@ -42,7 +42,7 @@ import p034j$.util.Map;
 /* compiled from: CatalogAllPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.catalog.tabs.all.CatalogAllPresenter */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
     private final CatalogInteractor catalogInteractor;
     private final List<CategoryPreview> categories;
@@ -84,9 +84,9 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
     public final void loadCategoriesPreviews() {
         String str = this.categoriesCursor;
         boolean z = str == null;
-        Observable<Result<CategoriesPreviewsCursored>> observeOn = this.catalogInteractor.getCatalogPreview(this.chatType, str).observeOn(this.schedulersProvider.mo693ui());
+        Observable<Result<CategoriesPreviewsCursored>> observeOn = this.catalogInteractor.getCatalogPreview(this.chatType, str).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "catalogInteractor\n      …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1930xc9c80334(this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1931xc9c80335(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2002xc9c80334(this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2003xc9c80335(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -96,17 +96,17 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
         if (str == null || str.length() == 0) {
             ((CatalogAllView) getViewState()).onNestedLoadMoreComplete(j);
         } else {
-            this.loadMoreChannelsSubject.onNext(TuplesKt.m80to(Long.valueOf(j), str));
+            this.loadMoreChannelsSubject.onNext(TuplesKt.m85to(Long.valueOf(j), str));
         }
     }
 
     public final void onChannelClick(CampaignItem campaign) {
         Intrinsics.checkNotNullParameter(campaign, "campaign");
-        Observable<TLRPC$Chat> observeOn = this.telegramApi.getChatInfoByUsername(campaign.getShortname()).observeOn(this.schedulersProvider.mo693ui());
+        Observable<TLRPC$Chat> observeOn = this.telegramApi.getChatInfoByUsername(campaign.getShortname()).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "telegramApi\n            …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Intrinsics.checkNotNullExpressionValue(RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1934x8163b70b(this, campaign)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1935x8163b70c(null))), "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Intrinsics.checkNotNullExpressionValue(RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2006x8163b70b(this, campaign)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2007x8163b70c(null))), "viewState: BaseView? = n…  onError.invoke()\n    })");
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -135,7 +135,7 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
                 subscribeToLoadMoreEvents$lambda$3 = CatalogAllPresenter.subscribeToLoadMoreEvents$lambda$3(Function1.this, obj);
                 return subscribeToLoadMoreEvents$lambda$3;
             }
-        })).subscribeOn(this.schedulersProvider.mo694io()).observeOn(this.schedulersProvider.mo693ui());
+        })).subscribeOn(this.schedulersProvider.mo699io()).observeOn(this.schedulersProvider.mo698ui());
         final CatalogAllPresenter$subscribeToLoadMoreEvents$3 catalogAllPresenter$subscribeToLoadMoreEvents$3 = new CatalogAllPresenter$subscribeToLoadMoreEvents$3(this);
         Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.iMe.ui.catalog.tabs.all.CatalogAllPresenter$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
@@ -167,9 +167,9 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void loadMoreChannels(long j, String str) {
-        Observable<Result<CampaignsCursored>> observeOn = this.catalogInteractor.getCampaignsByCategoryId(j, this.chatType, str).observeOn(this.schedulersProvider.mo693ui());
+        Observable<Result<CampaignsCursored>> observeOn = this.catalogInteractor.getCampaignsByCategoryId(j, this.chatType, str).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "catalogInteractor\n      …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1932x585eb812(this, j)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1933x585eb813(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2004x585eb812(this, j)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2005x585eb813(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -188,8 +188,8 @@ public final class CatalogAllPresenter extends BasePresenter<CatalogAllView> {
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
         LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
         for (CategoryPreview categoryPreview : list) {
-            Pair m80to = TuplesKt.m80to(new CategoryWithCampaignsItem(categoryPreview.getCategory(), CatalogCampaignsUiMappingKt.mapToUi(categoryPreview.getItems()), categoryPreview.getMeta().getNextCursor() == null), categoryPreview.getMeta().getNextCursor());
-            linkedHashMap.put(m80to.getFirst(), m80to.getSecond());
+            Pair m85to = TuplesKt.m85to(new CategoryWithCampaignsItem(categoryPreview.getCategory(), CatalogCampaignsUiMappingKt.mapToUi(categoryPreview.getItems()), categoryPreview.getMeta().getNextCursor() == null), categoryPreview.getMeta().getNextCursor());
+            linkedHashMap.put(m85to.getFirst(), m85to.getSecond());
         }
         for (Map.Entry entry : linkedHashMap.entrySet()) {
             Map.EL.putIfAbsent(this.categoriesChannelsCursors, Long.valueOf(((CategoryWithCampaignsItem) entry.getKey()).getCategory().getId()), entry.getValue());

@@ -16,22 +16,14 @@
 # instance fields
 .field private animationValue:F
 
-.field private final fromKey:Ljava/lang/String;
+.field private final fromColorKey:I
 
-.field private final toKey:Ljava/lang/String;
+.field private final toColorKey:I
 
 
 # direct methods
-.method public constructor <init>(Ljava/lang/String;Ljava/lang/String;)V
+.method public constructor <init>(II)V
     .locals 1
-
-    const-string v0, "fromKey"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "toKey"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     const-string v0, "animationValue"
 
@@ -39,10 +31,10 @@
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/AnimationProperties$FloatProperty;-><init>(Ljava/lang/String;)V
 
     .line 9
-    iput-object p1, p0, Lcom/iMe/ui/common/ColorBlenderAnimator;->fromKey:Ljava/lang/String;
+    iput p1, p0, Lcom/iMe/ui/common/ColorBlenderAnimator;->fromColorKey:I
 
     .line 10
-    iput-object p2, p0, Lcom/iMe/ui/common/ColorBlenderAnimator;->toKey:Ljava/lang/String;
+    iput p2, p0, Lcom/iMe/ui/common/ColorBlenderAnimator;->toColorKey:I
 
     return-void
 .end method
@@ -56,7 +48,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 23
+    .line 22
     iget p1, p0, Lcom/iMe/ui/common/ColorBlenderAnimator;->animationValue:F
 
     invoke-static {p1}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
@@ -86,19 +78,19 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 19
+    .line 18
     iput p2, p0, Lcom/iMe/ui/common/ColorBlenderAnimator;->animationValue:F
 
-    .line 20
-    iget-object v0, p0, Lcom/iMe/ui/common/ColorBlenderAnimator;->fromKey:Ljava/lang/String;
+    .line 19
+    iget v0, p0, Lcom/iMe/ui/common/ColorBlenderAnimator;->fromColorKey:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
-    iget-object v1, p0, Lcom/iMe/ui/common/ColorBlenderAnimator;->toKey:Ljava/lang/String;
+    iget v1, p0, Lcom/iMe/ui/common/ColorBlenderAnimator;->toColorKey:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

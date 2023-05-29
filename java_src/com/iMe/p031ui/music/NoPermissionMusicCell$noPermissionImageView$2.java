@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.p044ui.ActionBar.Theme;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NoPermissionMusicCell.kt */
@@ -28,17 +28,17 @@ public final class NoPermissionMusicCell$noPermissionImageView$2 extends Lambda 
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // kotlin.jvm.functions.Function0
     public final ImageView invoke() {
-        String str;
-        String str2;
+        int i;
+        int i2;
         ImageView imageView = new ImageView(this.$context);
         NoPermissionMusicCell noPermissionMusicCell = this.this$0;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        str = noPermissionMusicCell.iconColor;
-        imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(str), PorterDuff.Mode.SRC_IN));
-        int m51dp = AndroidUtilities.m51dp(100.0f);
-        str2 = noPermissionMusicCell.iconCircleColor;
-        imageView.setBackground(Theme.createCircleDrawable(m51dp, Theme.getColor(str2)));
-        imageView.setImageResource(C3242R.C3244drawable.fork_music_device_no_storage_permission);
+        i = noPermissionMusicCell.iconColor;
+        imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.SRC_IN));
+        int m55dp = AndroidUtilities.m55dp(100.0f);
+        i2 = noPermissionMusicCell.iconCircleColor;
+        imageView.setBackground(Theme.createCircleDrawable(m55dp, Theme.getColor(i2)));
+        imageView.setImageResource(C3290R.C3292drawable.fork_music_device_no_storage_permission);
         return imageView;
     }
 }

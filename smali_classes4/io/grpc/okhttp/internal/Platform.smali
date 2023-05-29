@@ -183,7 +183,7 @@
 
     aput-object v6, v5, v3
 
-    const-string v6, "setUseSessionTickets"
+    const-string/jumbo v6, "setUseSessionTickets"
 
     invoke-direct {v4, v2, v6, v5}, Lio/grpc/okhttp/internal/OptionalMethod;-><init>(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)V
 
@@ -228,7 +228,7 @@
 
     move-result-object v0
 
-    const-string v9, "tagSocket"
+    const-string/jumbo v9, "tagSocket"
 
     new-array v10, v1, [Ljava/lang/Class;
 

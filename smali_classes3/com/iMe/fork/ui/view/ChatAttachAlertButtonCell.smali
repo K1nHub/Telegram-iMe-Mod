@@ -166,10 +166,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    const-string v1, "windowBackgroundWhiteBlackText"
-
     .line 86
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -325,11 +325,11 @@
 
     move-result v1
 
-    invoke-virtual {p1}, Lcom/iMe/fork/enums/ChatAttachAlertButton;->getColorKey()Ljava/lang/String;
+    invoke-virtual {p1}, Lcom/iMe/fork/enums/ChatAttachAlertButton;->getColorKey()I
 
-    move-result-object p1
+    move-result p1
 
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 

@@ -167,10 +167,10 @@
 
     invoke-direct {v2}, Lcom/google/android/material/shape/MaterialShapeDrawable;-><init>()V
 
-    const-string v3, "windowBackgroundWhite"
-
     .line 67
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -193,10 +193,10 @@
     .line 70
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentImageHeaderBinding;->textTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v2, "windowBackgroundWhiteBlackText"
-
     .line 71
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -212,9 +212,9 @@
     .line 74
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentImageHeaderBinding;->textSubtitle:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v1, "windowBackgroundWhiteGrayText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -224,7 +224,7 @@
 .end method
 
 .method public final setupViewData(ILjava/lang/Integer;Ljava/lang/String;Ljava/lang/String;)V
-    .locals 2
+    .locals 4
 
     const-string v0, "titleText"
 
@@ -252,7 +252,13 @@
     .line 43
     invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    invoke-static {p1, v1, v2, v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 44
     invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
@@ -316,7 +322,7 @@
 
     const/4 v4, 0x1
 
-    invoke-static {v1, p1, v2, v3, v4}, Lcom/iMe/ui/smartpanel/extension/ImageViewExtKt;->loadFromWithPlaceholderResId(Landroid/widget/ImageView;Ljava/lang/String;Landroid/content/Context;Ljava/lang/Integer;Z)V
+    invoke-static {v1, p1, v2, v3, v4}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->loadFromWithPlaceholderResId(Landroid/widget/ImageView;Ljava/lang/String;Landroid/content/Context;Ljava/lang/Integer;Z)V
 
     .line 59
     iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentImageHeaderBinding;->textTitle:Landroidx/appcompat/widget/AppCompatTextView;

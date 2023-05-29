@@ -3,7 +3,7 @@ package com.iMe.storage.domain.model.crypto;
 import com.iMe.storage.R$drawable;
 import com.iMe.storage.R$string;
 import java.util.List;
-import kotlin.collections.CollectionsKt__CollectionsKt;
+import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BlockchainType.kt */
@@ -81,9 +81,7 @@ public enum BlockchainType {
         }
 
         public final List<BlockchainType> getBip39PhraseBasedBlockchains() {
-            List<BlockchainType> listOf;
-            listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new BlockchainType[]{BlockchainType.EVM, BlockchainType.TRON});
-            return listOf;
+            return CollectionsKt.listOf((Object[]) new BlockchainType[]{BlockchainType.EVM, BlockchainType.TRON});
         }
     }
 }

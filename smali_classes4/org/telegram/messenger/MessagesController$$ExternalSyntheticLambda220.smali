@@ -8,26 +8,18 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/MessagesController;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$updates_Difference;
-
-.field public final synthetic f$2:I
-
-.field public final synthetic f$3:I
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$updates_ChannelDifference;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$updates_Difference;II)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$updates_ChannelDifference;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$1:Lorg/telegram/tgnet/TLRPC$updates_Difference;
-
-    iput p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$2:I
-
-    iput p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$3:I
+    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$1:Lorg/telegram/tgnet/TLRPC$updates_ChannelDifference;
 
     return-void
 .end method
@@ -35,17 +27,13 @@
 
 # virtual methods
 .method public final run()V
-    .locals 4
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$1:Lorg/telegram/tgnet/TLRPC$updates_Difference;
+    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$1:Lorg/telegram/tgnet/TLRPC$updates_ChannelDifference;
 
-    iget v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$2:I
-
-    iget v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda220;->f$3:I
-
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$ufNEZI6DYJYveL3AsabFj-a-XCA(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$updates_Difference;II)V
+    invoke-static {v0, v1}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$zOsCz6CfWOz5DkBOTfJK1lM5p_k(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$updates_ChannelDifference;)V
 
     return-void
 .end method

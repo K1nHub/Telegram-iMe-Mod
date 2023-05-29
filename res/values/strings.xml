@@ -221,6 +221,7 @@
     <string name="ActionAddUserYou">un1 added you</string>
     <string name="ActionAttachMenuBotAllowed">You allowed this bot to message you when you added it to your attachment menu.</string>
     <string name="ActionBotAllowed">You allowed this bot to message you when you logged in on %1$s.</string>
+    <string name="ActionBotAllowedApp">You allowed this bot to message you when you logged in on %1$s app.</string>
     <string name="ActionBotDocumentAddress">Address</string>
     <string name="ActionBotDocumentBankStatement">Bank Statement</string>
     <string name="ActionBotDocumentDriverLicence">Driver Licence</string>
@@ -271,6 +272,7 @@
     <string name="ActionGroupCallStartedByYou">You started a voice chat</string>
     <string name="ActionGroupCallYouInvited">You invited un2 to the voice chat</string>
     <string name="ActionInviteUser">un1 joined the group via invite link</string>
+    <string name="ActionInviteUserFolder">un1 joined the group via folder invite link</string>
     <string name="ActionInviteYou">You joined the group via invite link</string>
     <string name="ActionKickUser">un1 removed un2</string>
     <string name="ActionKickUserYou">un1 removed you</string>
@@ -302,6 +304,10 @@ to: %2$s"</string>
     <string name="ActionRequestedPeerChat">You shared a chat with un2</string>
     <string name="ActionRequestedPeerUser">You shared a user with un2</string>
     <string name="ActionRevokedInviteLinkClickable">un1 revoked invite link un2</string>
+    <string name="ActionSetSameWallpaperForThisChat">%s set a same wallpaper for this chat.</string>
+    <string name="ActionSetSameWallpaperForThisChatSelf">You set the same wallpaper for the chat.</string>
+    <string name="ActionSetWallpaperForThisChat">%s set a new wallpaper for this chat.</string>
+    <string name="ActionSetWallpaperForThisChatSelf">You set a new wallpaper for this chat.</string>
     <string name="ActionSkip">Skip</string>
     <string name="ActionSuggestPhoto">Suggested Photo</string>
     <string name="ActionSuggestPhotoFromYouDescription">You suggested %s to use this photo for their account.</string>
@@ -547,6 +553,7 @@ to: %2$s"</string>
     <string name="Application">Application</string>
     <string name="ApplyAvatarHint">You can change it in **Settings.**</string>
     <string name="ApplyAvatarHintTitle">**Photo updated**</string>
+    <string name="ApplyBackgroundForThisChat">APPLY FOR THIS CHAT</string>
     <string name="ApplyLocalizationFile">Apply localization file</string>
     <string name="ApplyTheme">Apply</string>
     <string name="ApplyThemeFile">Apply theme file</string>
@@ -570,6 +577,8 @@ to: %2$s"</string>
     <string name="ArchiveStickerSetsAlertTitle">Archive %1$s</string>
     <string name="ArchiveStickersAlertMessage">Are you sure you want to archive the selected sticker sets?</string>
     <string name="ArchivedChats">Archived Chats</string>
+    <string name="ArchivedEmojiInfo">"You can add up to 200 emoji packs.
+Unused packs are archived when you add more."</string>
     <string name="ArchivedEmojiPacks">Archived Emoji Packs</string>
     <string name="ArchivedEmojiPacksEmpty">No archived emoji packs</string>
     <string name="ArchivedMasks">Archived Masks</string>
@@ -870,12 +879,14 @@ Sunrise: %2$s"</string>
     <string name="BackgroundColorPreviewLine2">Salmon is a fish, not a color.</string>
     <string name="BackgroundColorSinglePreviewLine1">"Press 'Set' to apply the background."</string>
     <string name="BackgroundColorSinglePreviewLine2">Enjoy the view.</string>
+    <string name="BackgroundColorSinglePreviewLine3">Apply the wallpaper in this chat</string>
     <string name="BackgroundColors">Colors</string>
+    <string name="BackgroundDimming">Background dimming</string>
     <string name="BackgroundHexColorCode">Hex color code</string>
     <string name="BackgroundIntensity">Intensity</string>
     <string name="BackgroundMotion">Motion</string>
     <string name="BackgroundPattern">Pattern</string>
-    <string name="BackgroundPreview">Background Preview</string>
+    <string name="BackgroundPreview">Wallpaper</string>
     <string name="BackgroundPreviewLine1">Hint: some background images look better when blurred.</string>
     <string name="BackgroundPreviewLine2">Woo-hoo! Thanks</string>
     <string name="BackgroundRestricted">Background data restricted.</string>
@@ -941,10 +952,15 @@ Sunrise: %2$s"</string>
     <string name="BotCantOpenAttachMenuGroup">"This bot can't be opened in groups."</string>
     <string name="BotCantOpenAttachMenuSameBot">"This bot can't be opened in the chat with itself."</string>
     <string name="BotCantOpenAttachMenuUser">"This bot can't be opened in chats with users."</string>
+    <string name="BotChangeSettings">Change Bot Settings</string>
+    <string name="BotEditCommands">Edit Commands</string>
+    <string name="BotEditIntro">Edit Intro</string>
     <string name="BotHelp">Help</string>
     <string name="BotInfoTitle">What can this bot do?</string>
     <string name="BotInvite">Add to group</string>
+    <string name="BotManageInfo">Use @BotFather to manage this bot.</string>
     <string name="BotMessagePreview">Message Preview</string>
+    <string name="BotName">Bot Name</string>
     <string name="BotOpenPageMessage">"**%1$s** would like to open its web app to proceed.
 
 It will be able to access your **IP address** and basic device info."</string>
@@ -954,6 +970,9 @@ It will be able to access your **IP address** and basic device info."</string>
     <string name="BotOwnershipTransferChangeOwner">Change Owner</string>
     <string name="BotOwnershipTransferReadyAlertText">This will transfer the **full owner** rights for the bot to the selected user.</string>
     <string name="BotPermissionGameAlert">Allow %1$s to pass your Telegram name and id (not your phone number) to pages you open with this bot?</string>
+    <string name="BotPublicLink">Public Link</string>
+    <string name="BotPublicLinks">Public Links</string>
+    <string name="BotPublicLinksCount">%1$s/%2$s</string>
     <string name="BotRemoveFromMenu">Remove **%1$s** from the attachment menu?</string>
     <string name="BotRemoveFromMenuTitle">Remove bot</string>
     <string name="BotRemoveInlineFromMenu">Remove **%1$s** from suggestions?</string>
@@ -961,7 +980,9 @@ It will be able to access your **IP address** and basic device info."</string>
     <string name="BotRestart">Restart bot</string>
     <string name="BotRestrictionsCanDo">What can this bot do?</string>
     <string name="BotSetAttachLinkNotBot">This link does not lead to a bot.</string>
+    <string name="BotSetPublicLinkHeader">Set public link</string>
     <string name="BotSettings">Settings</string>
+    <string name="BotSettingsChangedAlert">You have changed some settings for this bot. Apply changes?</string>
     <string name="BotShare">Share</string>
     <string name="BotStart">START</string>
     <string name="BotStartAppPermission">"Do you want to start app **%1$s** from bot **%2$s**?
@@ -971,6 +992,9 @@ It will be able to access your **IP address** and basic device info."</string>
     <string name="BotStatusRead">has access to messages</string>
     <string name="BotStop">Stop bot</string>
     <string name="BotUnblock">RESTART</string>
+    <string name="BotUsernameHelp">This link cannot be edited. You can acquire additional usernames on *Fragment*.</string>
+    <string name="BotUsernamesHelp">Drag and drop links to change the order in which they will be displayed on the bot info page.</string>
+    <string name="BotWebAppInstantViewOpen">Open App</string>
     <string name="BotWebViewChangesMayNotBeSaved">Changes that you made may not be saved.</string>
     <string name="BotWebViewCloseAnyway">Close anyway</string>
     <string name="BotWebViewDeleteBot">Delete bot</string>
@@ -1005,6 +1029,7 @@ The developer of **%1$s** will be able to access your microphone when this web a
 
 Enable microphone access in Settings > Permissions > Microphone."</string>
     <string name="BotWebViewSettings">Settings</string>
+    <string name="BotWebViewStartPermission">"You will connect to this bot's website to launch its web app."</string>
     <string name="BotsMenuTitle">Menu</string>
     <string name="BroadcastGroup">Broadcast Group</string>
     <string name="BroadcastGroupConvert">Convert to Broadcast Group</string>
@@ -1297,6 +1322,7 @@ Minimum length is 5 characters."</string>
     <string name="ChatArchived">Chat archived.</string>
     <string name="ChatArchivedInfo">Hide the archive by swiping left on it.</string>
     <string name="ChatBackground">Chat Background</string>
+    <string name="ChatBackgroundHint">%s will be able to apply this wallpaper</string>
     <string name="ChatCamera">Camera</string>
     <string name="ChatDeletedUndo">Chat deleted</string>
     <string name="ChatDistanceToPeer">%1$s is %2$s</string>
@@ -1329,11 +1355,13 @@ Minimum length is 5 characters."</string>
     <string name="ChatSetPhotoOrVideo">Set Photo or Video</string>
     <string name="ChatSetThisLocation">Set this location</string>
     <string name="ChatSettings">Chat Settings</string>
+    <string name="ChatThemeApplyHint">Theme will also be applied for %s</string>
     <string name="ChatThemeChangedTo">%1$s changed the chat theme to %2$s</string>
     <string name="ChatThemeChangedYou">You changed the chat theme to %1$s</string>
-    <string name="ChatThemeDayNightSwitchTooltip">Tap here to view how **%s** will see this theme when using night mode.</string>
+    <string name="ChatThemeDaySwitchTooltip">Tap to view this theme in the day mode.</string>
     <string name="ChatThemeDisabled">%1$s disabled the chat theme</string>
     <string name="ChatThemeDisabledYou">You disabled the chat theme</string>
+    <string name="ChatThemeNightSwitchTooltip">Tap to view this theme in the night mode.</string>
     <string name="ChatThemeSaveDialogApply">Apply</string>
     <string name="ChatThemeSaveDialogDiscard">Discard</string>
     <string name="ChatThemeSaveDialogText">Do you want to apply the new theme for this chat?</string>
@@ -1405,9 +1433,12 @@ Minimum length is 5 characters."</string>
     <string name="CheckYourNewEmail">Check Your New Email</string>
     <string name="CheckYourNewEmailSubtitle">Please enter the code we have sent to your new email %1$s.</string>
     <string name="Checking">Checking...</string>
+    <string name="ChooseANewWallpaper">Choose a New Wallpaper</string>
     <string name="ChooseBackground">Choose background</string>
+    <string name="ChooseBackgroundFromGallery">Choose Wallpaper from Gallery</string>
     <string name="ChooseBot">Choose Bot</string>
     <string name="ChooseChannel">Choose Channel</string>
+    <string name="ChooseColorAsBackground">Choose Color as a Wallpaper</string>
     <string name="ChooseCountry">Choose a country</string>
     <string name="ChooseCover">Choose a cover for your profile video</string>
     <string name="ChooseDate">Choose date</string>
@@ -1619,6 +1650,7 @@ To go over the limit and get additional features, upgrade to a supergroup:
     <string name="CreateNewContact">Create New Contact</string>
     <string name="CreateNewFilter">Create New Folder</string>
     <string name="CreateNewFilterInfo">Create folders for different groups of chats and quickly switch between them.</string>
+    <string name="CreateNewInviteLink">Create a New Invite Link</string>
     <string name="CreateNewLink">Create a New Link</string>
     <string name="CreateNewLinkHelp">You can generate invite links that expire after they are used.</string>
     <string name="CreateNewTheme">Create a New Theme</string>
@@ -1762,6 +1794,7 @@ You can always switch back to the default Telegram theme here."</string>
     <string name="DeleteBackground_two">Delete %1$d backgrounds</string>
     <string name="DeleteBackground_zero">Delete %1$d backgrounds</string>
     <string name="DeleteBanUser">Ban user</string>
+    <string name="DeleteBot">Delete Bot</string>
     <string name="DeleteCalls">Delete calls</string>
     <string name="DeleteCallsForEveryone">Delete for everyone</string>
     <string name="DeleteChannelForAll">Delete for all subscribers</string>
@@ -1846,6 +1879,7 @@ You can always switch back to the default Telegram theme here."</string>
     <string name="DescriptionOptionalPlaceholder">Description (optional)</string>
     <string name="DescriptionPlaceholder">Description</string>
     <string name="Deselect">Deselect</string>
+    <string name="DeselectAll">Deselect All</string>
     <string name="DetectedLanguage">Detected Language</string>
     <string name="DeviceStorage">Device storage</string>
     <string name="Devices">Devices</string>
@@ -2380,6 +2414,7 @@ Duration: %2$s"</string>
     <string name="FilterContacts">Contacts</string>
     <string name="FilterDelete">Delete Folder</string>
     <string name="FilterDeleteAlert">Are you sure you want to delete this folder?</string>
+    <string name="FilterDeleteAlertLinks">Are you sure you want to delete this folder? This will also deactivate all the invite links used to share this folder.</string>
     <string name="FilterDeleteItem">Delete</string>
     <string name="FilterDiscardAlert">You have edited this folder. Apply changes?</string>
     <string name="FilterDiscardNewAlert">You have not finished creating the folder yet. Create now?</string>
@@ -2394,9 +2429,51 @@ Duration: %2$s"</string>
     <string name="FilterExcludeInfo">Choose chats and types of chats that will not appear in this folder.</string>
     <string name="FilterExcludeMuted">Exclude Muted</string>
     <string name="FilterExcludeRead">Exclude Read</string>
+    <string name="FilterFinishCreating">Please, finish creating this folder to share it.</string>
     <string name="FilterGroups">Groups</string>
     <string name="FilterInclude">Included Chats</string>
     <string name="FilterIncludeInfo">Choose chats and types of chats that will appear in this folder.</string>
+    <string name="FilterInviteBot">you can’t share chats with bots</string>
+    <string name="FilterInviteBotToast">You can’t put bots into shared folders.</string>
+    <string name="FilterInviteChannel">you can’t invite others here</string>
+    <string name="FilterInviteChannelToast">You don’t have the admin rights to share invite links to this channel.</string>
+    <string name="FilterInviteChats_few">Includes %d chats</string>
+    <string name="FilterInviteChats_many">Includes %d chats</string>
+    <string name="FilterInviteChats_one">Includes %d chat</string>
+    <string name="FilterInviteChats_other">Includes %d chats</string>
+    <string name="FilterInviteChats_two">Includes %d chats</string>
+    <string name="FilterInviteEditName">Name this link</string>
+    <string name="FilterInviteErrorEmpty">You can’t share empty folders.</string>
+    <string name="FilterInviteErrorEmptyName">You can’t share folders without a name.</string>
+    <string name="FilterInviteErrorExcluded">You can’t share folders with excluded chats.</string>
+    <string name="FilterInviteErrorTypes">You can’t share folders with include chat types.</string>
+    <string name="FilterInviteErrorTypesExcluded">You can only share folders without chat types and excluded chats.</string>
+    <string name="FilterInviteGroup">you can’t invite others here</string>
+    <string name="FilterInviteGroupToast">You don’t have the admin rights to share invite links to this group.</string>
+    <string name="FilterInviteHeaderChatsEmpty">No chats selected</string>
+    <string name="FilterInviteHeaderChatsNo">These chats cannot be shared</string>
+    <string name="FilterInviteHeaderChats_few">%d chats selected</string>
+    <string name="FilterInviteHeaderChats_many">%d chats selected</string>
+    <string name="FilterInviteHeaderChats_one">%d chat selected</string>
+    <string name="FilterInviteHeaderChats_other">%d chats selected</string>
+    <string name="FilterInviteHeaderChats_two">%d chats selected</string>
+    <string name="FilterInviteHeaderNo">There are no chats in this folder that you can share with others.</string>
+    <string name="FilterInviteHeader_few">Anyone with this link can add **%2$s** folder and the **%1$d** chats selected below.</string>
+    <string name="FilterInviteHeader_many">Anyone with this link can add **%2$s** folder and the **%1$d** chats selected below.</string>
+    <string name="FilterInviteHeader_one">Anyone with this link can add **%2$s** folder and the **%1$d** chat selected below.</string>
+    <string name="FilterInviteHeader_other">Anyone with this link can add **%2$s** folder and the **%1$d** chats selected below.</string>
+    <string name="FilterInviteHeader_two">Anyone with this link can add **%2$s** folder and the **%1$d** chats selected below.</string>
+    <string name="FilterInviteHint">Select group and channels that you want everyone who adds the folder via invite link to join.</string>
+    <string name="FilterInviteHintNo">You can only share groups and channels in which you are allowed to create invite links.</string>
+    <string name="FilterInviteLinks">Invite Links</string>
+    <string name="FilterInviteLinksHint">Create more links to set up different access levels for different people.</string>
+    <string name="FilterInviteLinksHintNew">Share access to some of this folder’s groups and channels with others.</string>
+    <string name="FilterInviteNameEdited">Link Name saved.</string>
+    <string name="FilterInvitePrivateChannelToast">You don’t have the admin rights to share invite links to this private channel.</string>
+    <string name="FilterInvitePrivateGroupToast">You don’t have the admin rights to share invite links to this private group.</string>
+    <string name="FilterInviteUser">you can’t share chats with users</string>
+    <string name="FilterInviteUserToast">You can’t put users into shared folders.</string>
+    <string name="FilterMuteAll">Mute All</string>
     <string name="FilterMuted">Muted</string>
     <string name="FilterNameHint">Folder name</string>
     <string name="FilterNameNonMuted">Not Muted</string>
@@ -2406,6 +2483,8 @@ Duration: %2$s"</string>
     <string name="FilterNoChats">No Chats</string>
     <string name="FilterNoChatsToDisplay">No chats found</string>
     <string name="FilterNoChatsToDisplayInfo">No chats currently belong to this folder.</string>
+    <string name="FilterNoChatsToForward">No chats found</string>
+    <string name="FilterNoChatsToForwardInfo">No chats in this folder to forward to.</string>
     <string name="FilterNonContact">Non-Contact</string>
     <string name="FilterNonContacts">Non Contacts</string>
     <string name="FilterRead">Read</string>
@@ -2422,12 +2501,16 @@ Duration: %2$s"</string>
     <string name="FilterRemoveInclusionUserText">Are you sure you want to remove \"%1$s\" from always included chats?</string>
     <string name="FilterReorder">Reorder</string>
     <string name="FilterSecretChats">Secret Chats</string>
+    <string name="FilterShare">Share Folder</string>
+    <string name="FilterShareFolder">Share folder</string>
+    <string name="FilterShareFolderButton">Create an Invite Link</string>
     <string name="FilterShowMoreChats_few">Show %1$d More Chats</string>
     <string name="FilterShowMoreChats_many">Show %1$d More Chats</string>
     <string name="FilterShowMoreChats_one">Show %1$d More Chat</string>
     <string name="FilterShowMoreChats_other">Show %1$d More Chats</string>
     <string name="FilterShowMoreChats_two">Show %1$d More Chats</string>
     <string name="FilterShowMoreChats_zero">Show %1$d More Chats</string>
+    <string name="FilterUnmuteAll">Unmute All</string>
     <string name="FilterUnread">Unread</string>
     <string name="FilterUserAddedToExisting">**%1$s** added to **%2$s**</string>
     <string name="FilterUserRemovedFrom">**%1$s** removed from **%2$s**</string>
@@ -2445,6 +2528,95 @@ Duration: %2$s"</string>
     <string name="FloodWait">Too many attempts, please try again later</string>
     <string name="FloodWaitTime">Too many attempts, please try again in %1$s</string>
     <string name="Folder">Folder</string>
+    <string name="FolderLinkAddedChats_few">%d chats added to folder</string>
+    <string name="FolderLinkAddedChats_many">%d chats added to folder</string>
+    <string name="FolderLinkAddedChats_one">Chat added to folder</string>
+    <string name="FolderLinkAddedChats_other">%d chats added to folder</string>
+    <string name="FolderLinkAddedChats_two">%d chats added to folder</string>
+    <string name="FolderLinkAddedSubtitle_few">You also joined %d chats.</string>
+    <string name="FolderLinkAddedSubtitle_many">You also joined %d chats.</string>
+    <string name="FolderLinkAddedSubtitle_one">You also joined %d chat.</string>
+    <string name="FolderLinkAddedSubtitle_other">You also joined %d chats.</string>
+    <string name="FolderLinkAddedSubtitle_two">You also joined %d chats.</string>
+    <string name="FolderLinkAddedTitle">Folder **%s** Added</string>
+    <string name="FolderLinkAlreadyJoined">You are already a member of this group.</string>
+    <string name="FolderLinkAlreadySubscribed">You already subscribed to this channel.</string>
+    <string name="FolderLinkButtonAdd">Add %s</string>
+    <string name="FolderLinkButtonJoinPlural_few">Join chats</string>
+    <string name="FolderLinkButtonJoinPlural_many">Join chats</string>
+    <string name="FolderLinkButtonJoinPlural_one">Join chat</string>
+    <string name="FolderLinkButtonJoinPlural_other">Join chats</string>
+    <string name="FolderLinkButtonJoinPlural_two">Join chats</string>
+    <string name="FolderLinkButtonNone">Do not join any chats</string>
+    <string name="FolderLinkButtonRemove">Remove Folder</string>
+    <string name="FolderLinkButtonRemoveChats">Remove Folder and Chats</string>
+    <string name="FolderLinkChatlistUpdate">It will not affect chatlist of the links of this folder.</string>
+    <string name="FolderLinkDeleted">Folder **%s** deleted.</string>
+    <string name="FolderLinkDeletedSubtitle_few">You also left %d chats.</string>
+    <string name="FolderLinkDeletedSubtitle_many">You also left %d chats.</string>
+    <string name="FolderLinkDeletedSubtitle_one">You also left %d chat.</string>
+    <string name="FolderLinkDeletedSubtitle_other">You also left %d chats.</string>
+    <string name="FolderLinkDeletedSubtitle_two">You also left %d chats.</string>
+    <string name="FolderLinkDeletedTitle">Folder %s Deleted</string>
+    <string name="FolderLinkHeaderAlready">Chats you already joined</string>
+    <string name="FolderLinkHeaderChatsJoin_few">%d chats to join</string>
+    <string name="FolderLinkHeaderChatsJoin_many">%d chats to join</string>
+    <string name="FolderLinkHeaderChatsJoin_one">%d chat to join</string>
+    <string name="FolderLinkHeaderChatsJoin_other">%d chats to join</string>
+    <string name="FolderLinkHeaderChatsJoin_two">%d chats to join</string>
+    <string name="FolderLinkHeaderChatsQuit_few">%d chats to quit</string>
+    <string name="FolderLinkHeaderChatsQuit_many">%d chats to quit</string>
+    <string name="FolderLinkHeaderChatsQuit_one">%d chat to quit</string>
+    <string name="FolderLinkHeaderChatsQuit_other">%d chats to quit</string>
+    <string name="FolderLinkHeaderChatsQuit_two">%d chats to quit</string>
+    <string name="FolderLinkHint">You can deselect the chats you don’t want to join.</string>
+    <string name="FolderLinkHintRemove">You can select the chats you want to leave.</string>
+    <string name="FolderLinkNoChatsError">You don’t have access to share any of these chats.</string>
+    <string name="FolderLinkOtherAdminLimitError">One of the groups in this folder can’t be added because one of its admins has too many groups and channels.</string>
+    <string name="FolderLinkPreviewLeft">All chats</string>
+    <string name="FolderLinkPreviewRight">Personal</string>
+    <string name="FolderLinkRemovedChats_few">%d chats removed from folder</string>
+    <string name="FolderLinkRemovedChats_many">%d chats removed from folder</string>
+    <string name="FolderLinkRemovedChats_one">Chat removed from folder</string>
+    <string name="FolderLinkRemovedChats_other">%d chats removed from folder</string>
+    <string name="FolderLinkRemovedChats_two">%d chats removed from folder</string>
+    <string name="FolderLinkShareButton">Create Invite Link</string>
+    <string name="FolderLinkShareSubtitle">You can create more links to set up different access levels for different people.</string>
+    <string name="FolderLinkShareSubtitleEmpty">Share access to some of this folder’s groups and channels with others.</string>
+    <string name="FolderLinkShareTitle">Share Folder %s</string>
+    <string name="FolderLinkSubtitle">Do you want to add a new chat folder **%s** and join its group and channels?</string>
+    <string name="FolderLinkSubtitleAlready">You have already added the folder **%s** and all its chats.</string>
+    <string name="FolderLinkSubtitleChats_few">Do you want to join **%1$d chats** and add them to the folder **%2$s**?</string>
+    <string name="FolderLinkSubtitleChats_many">Do you want to join **%1$d chats** and add them to the folder **%2$s**?</string>
+    <string name="FolderLinkSubtitleChats_one">Do you want to join **%1$d chat** and add them to the folder **%2$s**?</string>
+    <string name="FolderLinkSubtitleChats_other">Do you want to join **%1$d chats** and add them to the folder **%2$s**?</string>
+    <string name="FolderLinkSubtitleChats_two">Do you want to join **%1$d chats** and add them to the folder **%2$s**?</string>
+    <string name="FolderLinkSubtitleRemove">Do you also want to quit the chats included in this folder?</string>
+    <string name="FolderLinkTitleAdd">Add folder</string>
+    <string name="FolderLinkTitleAddChats">Add Chats to Folder</string>
+    <string name="FolderLinkTitleAlready">Folder already added</string>
+    <string name="FolderLinkTitleRemove">Remove Folder</string>
+    <string name="FolderLinkUpdatedJoinedSubtitle_few">You have joined %d new chats.</string>
+    <string name="FolderLinkUpdatedJoinedSubtitle_many">You have joined %d new chats.</string>
+    <string name="FolderLinkUpdatedJoinedSubtitle_one">You have joined %d new chat.</string>
+    <string name="FolderLinkUpdatedJoinedSubtitle_other">You have joined %d new chats.</string>
+    <string name="FolderLinkUpdatedJoinedSubtitle_two">You have joined %d new chats.</string>
+    <string name="FolderLinkUpdatedSubtitle_few">You have added %d new chats.</string>
+    <string name="FolderLinkUpdatedSubtitle_many">You have added %d new chats.</string>
+    <string name="FolderLinkUpdatedSubtitle_one">You have added %d new chat.</string>
+    <string name="FolderLinkUpdatedSubtitle_other">You have added %d new chats.</string>
+    <string name="FolderLinkUpdatedSubtitle_two">You have added %d new chats.</string>
+    <string name="FolderLinkUpdatedTitle">Folder **%s** Updated</string>
+    <string name="FolderUpdatesSubtitle_few">Tap here to view them</string>
+    <string name="FolderUpdatesSubtitle_many">Tap here to view them</string>
+    <string name="FolderUpdatesSubtitle_one">Tap here to view it</string>
+    <string name="FolderUpdatesSubtitle_other">Tap here to view them</string>
+    <string name="FolderUpdatesSubtitle_two">Tap here to view them</string>
+    <string name="FolderUpdatesTitle_few">You can join **%d new chats**</string>
+    <string name="FolderUpdatesTitle_many">You can join **%d new chats**</string>
+    <string name="FolderUpdatesTitle_one">You can join **%d new chat**</string>
+    <string name="FolderUpdatesTitle_other">You can join **%d new chats**</string>
+    <string name="FolderUpdatesTitle_two">You can join **%d new chats**</string>
     <string name="FoldersLimitSubtitle">Organize your chats into %d folders</string>
     <string name="FoldersLimitTitle">Folders</string>
     <string name="FollowersChartTitle">Followers</string>
@@ -2871,6 +3043,7 @@ until the import is completed."</string>
     <string name="InviteLinkCount_other">%1$d invite links</string>
     <string name="InviteLinkCount_two">%1$d invite links</string>
     <string name="InviteLinkCount_zero">%1$d invite links</string>
+    <string name="InviteLinkPrivate">Invite Link only works for group members</string>
     <string name="InviteLinkSentSingle">Invitation link sent to **%s**</string>
     <string name="InviteLinkSent_few">Invitation link sent to %d users</string>
     <string name="InviteLinkSent_many">Invitation link sent to %d users</string>
@@ -2952,6 +3125,7 @@ until the import is completed."</string>
     <string name="JoinUsersRequests_other">%1$d users requested to join</string>
     <string name="JoinUsersRequests_two">%1$d users requested to join</string>
     <string name="JoinUsersRequests_zero">%1$d users requested to join</string>
+    <string name="JoinedViaFolder">joined via a folder invite link</string>
     <string name="JoinedViaInviteLinkApproved">un1 joined via invite link un2, approved by un3</string>
     <string name="JoinedViaRequestApproved">un1 joined, approved by un2</string>
     <string name="July">July</string>
@@ -3051,6 +3225,10 @@ You can change your language back at any time in Settings."</string>
     <string name="LimitReachedFileSize">The document cant’t be sent, because it is larger than **%1$s**. You can double this limit to **%2$s** per document by subscribing to **Telegram Premium**.</string>
     <string name="LimitReachedFileSizeLocked">The document cant’t be sent, because it is larger than **%1$s**. We are working to let you increase this limit in the future.</string>
     <string name="LimitReachedFileSizePremium">The document cant’t be sent, because it is larger than **%1$s**.</string>
+    <string name="LimitReachedFolderLinks">"You can only create %1$d invite links.
+Upgrade to **Telegram Premium** to increase this limit to **%2$d**."</string>
+    <string name="LimitReachedFolderLinksLocked">You can only create %1$d invite links. We are working to let you increase this limit in the future.</string>
+    <string name="LimitReachedFolderLinksPremium">You can only create %1$d invite links. Try deleting some folder invite links.</string>
     <string name="LimitReachedFolders">You have reached the limit of **%1$d** folders. You can double the limit to **%2$d** folders by subscribing to **Telegram Premium**.</string>
     <string name="LimitReachedFoldersLocked">You have reached the limit of **%1$d** folders for this account. We are working to let you increase this limit in the future.</string>
     <string name="LimitReachedFoldersPremium">You have reached the limit of **%1$d** folders for this account.</string>
@@ -3062,6 +3240,10 @@ You can change your language back at any time in Settings."</string>
     <string name="LimitReachedPublicLinksLocked">You have reserved too many public links. Try revoking the link from an older group or channel. We are working to let you increase this limit in the future.</string>
     <string name="LimitReachedPublicLinksPremium">You have reserved too many public links. Try revoking the link from an older group or channel.</string>
     <string name="LimitReachedReorderFolder">Subscribe to **Telegram Premium** to move the \"%1$s\" folder.</string>
+    <string name="LimitReachedSharedFolders">"You can only have %1$d shareable folders.
+Upgrade to **Telegram Premium** to increase this limit to **%2$d**."</string>
+    <string name="LimitReachedSharedFoldersLocked">You can only have %1$d shareable folders. We are working to let you increase this limit in the future.</string>
+    <string name="LimitReachedSharedFoldersPremium">You can only have %1$d shareable folders. Try deleting some shareable folder.</string>
     <string name="LinkActionCopy">Copy</string>
     <string name="LinkActionShare">Share</string>
     <string name="LinkAvailable">%1$s is available.</string>
@@ -3255,6 +3437,7 @@ Your phone number will remain hidden."</string>
     <string name="MaxCacheSizeInfo">If your cache size exceeds this limit, the oldest media will be removed from the device.</string>
     <string name="MaxVideoSize">Maximum video size</string>
     <string name="May">May</string>
+    <string name="MediaAndSoundSettings">Media and Sound</string>
     <string name="MediaSavedHint_few">%1$d items saved to gallery</string>
     <string name="MediaSavedHint_many">%1$d items saved to gallery</string>
     <string name="MediaSavedHint_one">An item saved to gallery</string>
@@ -3463,6 +3646,7 @@ This may take a few moments. You can continue using the app while the files are 
     <string name="Months_other">%1$d months</string>
     <string name="Months_two">%1$d months</string>
     <string name="Months_zero">%1$d months</string>
+    <string name="MoreAboutThisBot">More about this bot</string>
     <string name="MoreInfo">More info</string>
     <string name="Music">Music</string>
     <string name="MusicFiles_few">%1$d music files</string>
@@ -3533,6 +3717,8 @@ This may take a few moments. You can continue using the app while the files are 
     <string name="NewThemeTitle">New Theme</string>
     <string name="NewTopic">New Topic</string>
     <string name="Next">Next</string>
+    <string name="NextMediaTap">Show next media on Tap</string>
+    <string name="NextMediaTapInfo">Tap near the edge of the screen while viewing media to navigate between photos</string>
     <string name="NoAudioFiles">No audio files</string>
     <string name="NoAudioFilesInfo">Your music library is empty.</string>
     <string name="NoAudioFound">No results found</string>
@@ -3559,6 +3745,7 @@ You can customize notifications for a chat by opening its profile and choosing '
     <string name="NoFilesFound">No results found</string>
     <string name="NoFilesFoundInfo">There are no matches with **%1$s** in current directory.</string>
     <string name="NoFilesInfo">This folder is empty.</string>
+    <string name="NoFolderFound">No chat list found.</string>
     <string name="NoGIFs">No GIFs</string>
     <string name="NoGIFsFound">No GIFs found</string>
     <string name="NoGroupsInCommon">No common groups</string>
@@ -3816,6 +4003,11 @@ The Telegram Team"</string>
     <string name="NotificationsMuted">Muted</string>
     <string name="NotificationsMutedForHint">Notifications muted for %1$s</string>
     <string name="NotificationsMutedHint">Notifications muted</string>
+    <string name="NotificationsMutedHintChats_few">Notifications muted for %d chats</string>
+    <string name="NotificationsMutedHintChats_many">Notifications muted for %d chats</string>
+    <string name="NotificationsMutedHintChats_one">Notifications muted for %d chat</string>
+    <string name="NotificationsMutedHintChats_other">Notifications muted for %d chats</string>
+    <string name="NotificationsMutedHintChats_two">Notifications muted for %d chats</string>
     <string name="NotificationsNewException">New Exception</string>
     <string name="NotificationsOff">Off</string>
     <string name="NotificationsOffUntil">Off until %1$s</string>
@@ -3840,6 +4032,11 @@ The Telegram Team"</string>
     <string name="NotificationsTurnOn">Turn On</string>
     <string name="NotificationsUnmuted">Unmuted</string>
     <string name="NotificationsUnmutedHint">Notifications unmuted</string>
+    <string name="NotificationsUnmutedHintChats_few">Notifications unmuted for %d chats</string>
+    <string name="NotificationsUnmutedHintChats_many">Notifications unmuted for %d chats</string>
+    <string name="NotificationsUnmutedHintChats_one">Notifications unmuted for %d chat</string>
+    <string name="NotificationsUnmutedHintChats_other">Notifications unmuted for %d chats</string>
+    <string name="NotificationsUnmutedHintChats_two">Notifications unmuted for %d chats</string>
     <string name="November">November</string>
     <string name="NowInContacts">%1$s is now in your contact list.</string>
     <string name="NumberUnknown">Unknown</string>
@@ -3895,6 +4092,7 @@ The Telegram Team"</string>
 
 Do not give this code to anyone."</string>
     <string name="OtherSessions">Active sessions</string>
+    <string name="OtherSettings">Other Settings</string>
     <string name="OtherStickers">More Stickers</string>
     <string name="OtherWebSessions">Connected websites</string>
     <string name="OutgoingCalls">Outgoing calls</string>
@@ -4168,6 +4366,7 @@ You can visit our *FAQ* to learn more."</string>
     <string name="PauseAll">Pause all</string>
     <string name="PauseMusicOnMedia">Pause music while playing media</string>
     <string name="PauseMusicOnRecord">Pause music while recording</string>
+    <string name="PauseMusicOnRecordInfo">Pause music when you start recording a video message</string>
     <string name="PaymentAppNotFoundForDeeplink">No app found to handle this deep link.</string>
     <string name="PaymentBillingAddress">Billing address</string>
     <string name="PaymentCardCvv">Security Code (CVV)</string>
@@ -4548,6 +4747,8 @@ We will access your location only for the duration you choose, and you can stop 
     <string name="PreviewForwardVideo_other">Forward %1$d videos</string>
     <string name="PreviewForwardVideo_two">Forward %1$d videos</string>
     <string name="PreviewForwardVideo_zero">Forward %1$d videos</string>
+    <string name="PreviewWallpaperDay">Preview this background in day mode.</string>
+    <string name="PreviewWallpaperNight">Preview this background in night mode.</string>
     <string name="PreviousPinnedMessage">Previous Message</string>
     <string name="PricePerMonth">%1$s / month</string>
     <string name="PricePerMonthMe">%1$s/month</string>
@@ -4688,6 +4889,7 @@ We will access your location only for the duration you choose, and you can stop 
     <string name="PushReactText">%2$s to your %3$s</string>
     <string name="PushReactVideo">%2$s to your video</string>
     <string name="QRCodeLinkHelpChannel">Everyone on Telegram can scan this code to join your channel.</string>
+    <string name="QRCodeLinkHelpFolder">Everyone on Telegram can scan this code to add this folder and join the chats included in this invite link.</string>
     <string name="QRCodeLinkHelpGroup">Everyone on Telegram can scan this code to join your group.</string>
     <string name="QRCodeLinkHelpProxy">Your friends can add this proxy by scanning this code with phone or in-app camera.</string>
     <string name="QRCodePermissionNoCameraWithHint">**Telegram** needs camera access so that you can scan QR codes. Tap Settings -> Permissions, and turn **Camera** on.</string>
@@ -4706,7 +4908,9 @@ We will access your location only for the duration you choose, and you can stop 
     <string name="QuizWrongAnswer">Wrong answer!</string>
     <string name="QuizWrongAnswerInfo">You missed the correct option.</string>
     <string name="RaiseToListen">Raise to Listen</string>
+    <string name="RaiseToListenInfo">Switch sound to the earpiece by raising phone to your ear</string>
     <string name="RaiseToSpeak">Raise to Speak</string>
+    <string name="RaiseToSpeakInfo">Record voice messages by raising phone to your ear</string>
     <string name="RateCallDistorted">Speech was distorted</string>
     <string name="RateCallDropped">Call ended unexpectedly</string>
     <string name="RateCallEcho">I heard my own voice</string>
@@ -4933,6 +5137,7 @@ If you reset your account, all your messages and chats will be deleted."</string
     <string name="ResetToOriginalPhoto">Reset to Original Photo</string>
     <string name="ResetToOriginalPhotoMessage">Are you sure you want to reset to the original photo from %s?</string>
     <string name="ResetToOriginalPhotoTitle">Reset Photo</string>
+    <string name="RestToDefaultBackground">Remove Wallpaper</string>
     <string name="RestartTopic">Reopen topic</string>
     <string name="RestartTopics">Reopen topics</string>
     <string name="Restore">Restore</string>
@@ -4954,6 +5159,8 @@ If you reset your account, all your messages and chats will be deleted."</string
     <string name="RestorePasswordResetPassword">RESET PASSWORD</string>
     <string name="RestorePasswordResetPasswordOk">Your 2-Step Verification password was reset.</string>
     <string name="RestorePasswordResetPasswordText">Are you sure you want to reset your 2-Step Verification password?</string>
+    <string name="RestorePremiumHintMessage">Your Telegram Premium has recently expired. Tap here to extend it.</string>
+    <string name="RestorePremiumHintTitle">Get Premium back with up to **%1$d%%** off</string>
     <string name="RestrictSavingContent">Restrict saving content</string>
     <string name="RestrictSavingContentInfoChannel">"Subscribers won't be able to forward messages from this group or save media files."</string>
     <string name="RestrictSavingContentInfoGroup">"Members won't be able to forward messages from this group or save media files."</string>
@@ -5123,6 +5330,7 @@ You may need to restart the app for this to take effect."</string>
     <string name="SecurityTitle">Security</string>
     <string name="Select">Select</string>
     <string name="SelectAccount">Select Account</string>
+    <string name="SelectAll">Select All</string>
     <string name="SelectChat">Select Chat</string>
     <string name="SelectChats">Select Chats</string>
     <string name="SelectChatsForAutoDelete">to apply the self-destruct timer</string>
@@ -5199,6 +5407,7 @@ You may need to restart the app for this to take effect."</string>
     <string name="SendSticker">SEND STICKER</string>
     <string name="SendStickerPreview">Send Sticker</string>
     <string name="SendTodayAt">"'Send today at' HH:mm"</string>
+    <string name="SendWhenOnline">Send When Online</string>
     <string name="SendWithoutCompression">Send without compression</string>
     <string name="SendWithoutGrouping">Send without grouping</string>
     <string name="SendWithoutSound">Send without sound</string>
@@ -5239,8 +5448,10 @@ Don't accept the call, Telegram will process everything automatically."</string>
     <string name="SetAsMyPhoto">Set as My Photo</string>
     <string name="SetAutoDeleteTimer">Set Auto-Delete</string>
     <string name="SetBackground">SET BACKGROUND</string>
+    <string name="SetBackgroundFromGallery">Set Background From Gallery</string>
     <string name="SetChannelPhoto">Set Channel Photo</string>
     <string name="SetColor">Set a color</string>
+    <string name="SetColorAsBackground">Set a Color as Wallpaper</string>
     <string name="SetCover">Set a cover for this video</string>
     <string name="SetCustomTime">Set Custom Time</string>
     <string name="SetEmojiStatus">Set Emoji Status</string>
@@ -5279,6 +5490,7 @@ Don't accept the call, Telegram will process everything automatically."</string>
     <string name="SetUserPhotoSelfAlertMessage">Do you want to set this photo for your profile?</string>
     <string name="SetUsernameHeader">Set username</string>
     <string name="SetVideo">Set Video</string>
+    <string name="SetWallpapers">Set Wallpaper</string>
     <string name="Settings">Settings</string>
     <string name="SettingsBrowseThemes">Browse Themes</string>
     <string name="SettingsDebug">Debug</string>
@@ -5492,7 +5704,7 @@ messages?"</string>
     <string name="StickersCopy">Copy link</string>
     <string name="StickersHide">Archive</string>
     <string name="StickersName">Stickers</string>
-    <string name="StickersNameInfo">Manage your sticker packs, emoji and reactions.</string>
+    <string name="StickersNameInfo2">Manage stickers, emoji and reactions</string>
     <string name="StickersRemove">Remove</string>
     <string name="StickersRemoved">Stickers removed.</string>
     <string name="StickersRemovedInfo">%1$s is no longer in your stickers.</string>
@@ -5908,6 +6120,8 @@ But if you're generally not OK with Telegram's modest needs, it won't be possibl
     <string name="UnpinnedDialogsCount_two">%1$d Dialogs unpinned</string>
     <string name="UnpinnedDialogsCount_zero">%1$d Dialogs unpinned</string>
     <string name="UnreadMessages">Unread Messages</string>
+    <string name="UnsavedChanges">Unsaved Changes</string>
+    <string name="UnsavedChangesMessage">You have changed the settings of this invite link. Apply changes?</string>
     <string name="UnsupportedAttachment">Unsupported attachment</string>
     <string name="UnsupportedMedia">This message is not supported on your version of Telegram. Update the app to view: https://telegram.org/update</string>
     <string name="Unvote">Retract Vote</string>
@@ -6127,6 +6341,7 @@ However, it is currently available for purchase. **Learn more…**"</string>
     <string name="Videos_zero">%1$d videos</string>
     <string name="ViewAction">View</string>
     <string name="ViewChannelStats">View Channel Stats</string>
+    <string name="ViewChatList">View Chat List</string>
     <string name="ViewContact">VIEW CONTACT</string>
     <string name="ViewDiscussion">View discussion</string>
     <string name="ViewExceptions">View Exceptions</string>
@@ -6145,6 +6360,7 @@ However, it is currently available for purchase. **Learn more…**"</string>
     <string name="ViewStats">View Stats</string>
     <string name="ViewThread">View Thread</string>
     <string name="ViewVideoAction">View Video</string>
+    <string name="ViewWallpaperAction">View Wallpaper</string>
     <string name="ViewersWatchingNobody">Nobody watching</string>
     <string name="ViewersWatching_few">%1$d watching</string>
     <string name="ViewersWatching_many">%1$d watching</string>
@@ -6444,6 +6660,9 @@ your screen"</string>
     <string name="Vote_zero">%1$d votes</string>
     <string name="WaitMore">Wait more</string>
     <string name="WaitingForNetwork">Waiting for network...</string>
+    <string name="WallpaperNotification">Set a new chat Wallpaper</string>
+    <string name="WallpaperPreview">Wallpaper</string>
+    <string name="WallpaperSameNotification">Set a same chat Wallpaper</string>
     <string name="WantsToSpeak">wants to speak</string>
     <string name="Warmth">Warmth</string>
     <string name="Warning">Warning</string>
@@ -6587,7 +6806,7 @@ To get the reward, you need to:"</string>
     <string name="already_processing">Another participants processing is already started, try again later</string>
     <string name="already_removing">Another deleting process is already started, try again later</string>
     <string name="androidx_startup">androidx.startup</string>
-    <string name="app_name">WalletConnect</string>
+    <string name="app_name">Responses</string>
     <string name="app_restart_error">We were unable to open the app ourselves. Try it yourself.</string>
     <string name="app_update_dialog_description">Update the application to use this functionality</string>
     <string name="appbar_scrolling_view_behavior">com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior</string>
@@ -6962,10 +7181,7 @@ Settings > Tools > Chats > Templates"</string>
     <string name="collection_tab_all">All</string>
     <string name="collection_tab_categories">Categories</string>
     <string name="collection_tab_my">My</string>
-    <string name="com.crashlytics.android.build_id">c5b40af57d25408cae07d9195eb0f2c5</string>
-    <string name="combine_messages_alert_message">"You send messages in a row and this can annoy other users.
-
-Enable the option so that your messages sent in a row within 30 seconds will be combined into one message?"</string>
+    <string name="com.crashlytics.android.build_id">96b50d69c1de4c748249900df49d2902</string>
     <string name="combine_messages_disable">Do not combine messages</string>
     <string name="combine_messages_enable">Combine messages</string>
     <string name="combine_messages_send_without_combine">Send without combining</string>
@@ -7129,6 +7345,8 @@ Enable the option so that your messages sent in a row within 30 seconds will be 
     <string name="currency_matic_site">https://polygon.technology/</string>
     <string name="currency_metis">Metis</string>
     <string name="currency_metis_site">https://www.metis.io/</string>
+    <string name="currency_minto">Minto</string>
+    <string name="currency_minto_site">https://minto.finance/staking/</string>
     <string name="currency_okb">OKEx: OKB Token</string>
     <string name="currency_okb_site">https://www.okex.com/</string>
     <string name="currency_olcf">OLPortal</string>
@@ -7198,6 +7416,7 @@ Enable the option so that your messages sent in a row within 30 seconds will be 
     <string name="currency_short_mana">MANA</string>
     <string name="currency_short_matic">MATIC</string>
     <string name="currency_short_metis">METIS</string>
+    <string name="currency_short_minto">BTCMT</string>
     <string name="currency_short_okb">OKB</string>
     <string name="currency_short_olcf">OLCF</string>
     <string name="currency_short_om">OM</string>
@@ -7295,15 +7514,11 @@ Enable the option so that your messages sent in a row within 30 seconds will be 
     <string name="default_web_client_id">444157464191-eatql08si0ai4bose4r53n2rg0v9r5pi.apps.googleusercontent.com</string>
     <string name="deleting_messages">Deleting messages… Processed %1$d of %2$d</string>
     <string name="deleting_messages_success">Service messages have been deleted</string>
-    <string name="dialog_message_enable_archive_in_drawer">"If you disable the All Chats tab, you will not be able to enter the Archive.
-
-Place the Archive access button in the Side Menu?"</string>
     <string name="dialog_promo_discussion_group_description">Group</string>
     <string name="dialog_promo_en_news_channel_description">English</string>
     <string name="dialog_promo_ru_news_channel_description">Russian</string>
     <string name="dialog_promo_subscribe_subtitle">Then join to our channel</string>
     <string name="dialog_promo_subscribe_title">Do you want to follow iMe news?</string>
-    <string name="dialog_title_enable_archive_in_drawer">Access to the Archive</string>
     <string name="dialogs_activity_move_to_folder">Move to folder</string>
     <string name="dialogs_albums_sort_alphabetically">Sort alphabetically</string>
     <string name="dialogs_albums_sort_date">Sort by date</string>
@@ -7361,6 +7576,7 @@ and we will try to find his Telegram account"</string>
     <string name="enter_archive_passcode">Enter your passcode to the Archive</string>
     <string name="enter_cloud_passcode">Enter your passcode to the Cloud</string>
     <string name="erasing_period">Erasing period</string>
+    <string name="error_block_failed_to_load_media">Failed to load media</string>
     <string name="error_icon_content_description">Error</string>
     <string name="error_while_image_recognition">Image not recognized</string>
     <string name="error_while_text_recognition">Text not recognized</string>
@@ -7447,13 +7663,19 @@ and we will try to find his Telegram account"</string>
     <string name="google_storage_bucket">ime-messenger.appspot.com</string>
     <string name="hidden_chats_empty">No hidden chats</string>
     <string name="hidden_chats_empty_title">"You don't have hidden chats"</string>
-    <string name="hidden_chats_hide_chats">Hide</string>
+    <string name="hidden_chats_hide_chats">Hide to Subarchive</string>
+    <string name="hidden_chats_info_search_chats">Hidden chats are sent to Subarchive with muted notifications. Pull down the chat list in Archive to get access to hidden section.</string>
+    <string name="hidden_chats_info_unhide">You can return the chat back to the chat list.</string>
     <string name="hidden_chats_pinned">Hidden chats pinned</string>
     <string name="hidden_chats_release_for_hidden_chats">Release for hidden chats</string>
     <string name="hidden_chats_swipe_for_hidden_chats">Pull down to see hidden chats</string>
     <string name="hidden_chats_title">Hidden chats</string>
-    <string name="hidden_chats_undo_chat_hidden">The chat is hidden.</string>
-    <string name="hidden_chats_undo_chats_hidden">The chats are hidden.</string>
+    <string name="hidden_chats_undo_chat_hidden">The chat is hidden to Subarchive.</string>
+    <string name="hidden_chats_undo_chat_unhidden_subtitle">Chat notifications will be disabled, when returning from hidden chats.</string>
+    <string name="hidden_chats_undo_chat_unhidden_title">The chat is unhidden</string>
+    <string name="hidden_chats_undo_chats_hidden">The chats are hidden to Subarchive.</string>
+    <string name="hidden_chats_undo_chats_unhidden_subtitle">Chat notifications will be disabled, when returning from hidden chats.</string>
+    <string name="hidden_chats_undo_chats_unhidden_title">The chats are unhidden</string>
     <string name="hidden_chats_unhide_chats">Unhide</string>
     <string name="hidden_chats_unpinned">Hidden chats unpinned</string>
     <string name="hide_bottom_view_on_scroll_behavior">com.google.android.material.behavior.HideBottomViewOnScrollBehavior</string>
@@ -7620,6 +7842,8 @@ Please switch to device access to enable this feature."</string>
 Add music to the Playlist"</string>
     <string name="music_playlists_tab">Playlists</string>
     <string name="music_tab_playlist">Playlist</string>
+    <string name="nav_app_bar_navigate_up_description">Navigate up</string>
+    <string name="nav_app_bar_open_drawer_description">Open navigation drawer</string>
     <string name="neurobots_enable_dialog_description">To enable and configure neurobots, go to settings</string>
     <string name="neurobots_enable_dialog_positive_btn_text">GO TO</string>
     <string name="neurobots_enable_dialog_title">Neurobots are disabled</string>
@@ -7788,6 +8012,7 @@ Please log out or link the Twitter account again."</string>
     <string name="release_to_go_to_unread_archived_bots">Release to go to archived bots</string>
     <string name="release_to_go_to_unread_archived_groups">Release to go to archived groups</string>
     <string name="release_to_go_to_unread_archived_personal_chats">Release to go to archived personal chats</string>
+    <string name="remember_choice">Remember choice</string>
     <string name="search_menu_title">Search</string>
     <string name="section_is_locked">Section is locked, preview is unavailable</string>
     <string name="section_passcode">Passcode</string>
@@ -7892,7 +8117,7 @@ Please log out or link the Twitter account again."</string>
     <string name="settings_interface_wide_posts_in_channel">Wide posts in channels</string>
     <string name="settings_multi_panel_item_title">Multi-panel in Chats</string>
     <string name="settings_neurobots_item_title">Neurobots Settings</string>
-    <string name="settings_proxy_button_in_toolbar">Proxy button</string>
+    <string name="settings_proxy_button_in_toolbar">Button in toolbar</string>
     <string name="settings_reactions_enable_hint">"Turn this ON to display reactions' functionality in chats"</string>
     <string name="settings_revoke_by_default">Delete from another side</string>
     <string name="settings_section_passcode_archive">Passcode in Archive</string>
@@ -7940,6 +8165,28 @@ Enable this option so that your messages sent in a row within 30 seconds will be
     <string name="short_number_k">K</string>
     <string name="short_number_m">M</string>
     <string name="short_number_t">T</string>
+    <string name="social_access_error">Access error</string>
+    <string name="social_cell_add_button">Add</string>
+    <string name="social_cell_not_connected">Not connected</string>
+    <string name="social_cell_social_networks">Social networks</string>
+    <string name="social_clear_cache_menu_item">Clear cache</string>
+    <string name="social_connect_account_message">Do you want to cancel the authorization?</string>
+    <string name="social_connect_account_negative_button">No</string>
+    <string name="social_connect_account_positive_button">Cancel</string>
+    <string name="social_connect_account_title">Connect %1$s account</string>
+    <string name="social_dialog_select_social_networks">Select social network</string>
+    <string name="social_exit_confirmation_message">Are you sure you want to exit the %1$s?</string>
+    <string name="social_exit_confirmation_title">Exit Confirmation</string>
+    <string name="social_refresh_page_menu_item">Refresh page</string>
+    <string name="social_reset_account_message">Are you sure you want to reset your %1$s account? After the reset, you can link a new account.</string>
+    <string name="social_reset_account_negative_button">Cancel</string>
+    <string name="social_reset_account_positive_button">Reset</string>
+    <string name="social_reset_account_title">Reset %1$s account</string>
+    <string name="social_reset_menu_item">Reset</string>
+    <string name="social_social_open_in_menu_item">Open in %1$s</string>
+    <string name="social_unable_to_load_page">Unable to load page</string>
+    <string name="social_web_cancel_button">Stay</string>
+    <string name="social_web_exit_button">Exit</string>
     <string name="sort_by_usage">Recently used</string>
     <string name="sorting_enable_alert_message">"Do you want to enable automatic chat sorting?
 
@@ -8228,6 +8475,9 @@ Your balance will be updated after the transaction is confirmed in the blockchai
     <string name="twitter_search_subtitle">"Enter recipient's Twitter username in the search pole"</string>
     <string name="twitter_search_title">Twitter search</string>
     <string name="twitter_title">Tweets</string>
+    <string name="undo_all_chats_tab_disabled">"**All Chats** tab disabled.
+Archive access button is in the Side Menu"</string>
+    <string name="undo_recent_chats_disabled">Recent chats disabled</string>
     <string name="unlock_premium_transcription_hint">To transcribe voice for more than 1 min, Telegram Premium is required.</string>
     <string name="user_restrictions_send_games">Games</string>
     <string name="user_restrictions_send_gifs">GIFs</string>

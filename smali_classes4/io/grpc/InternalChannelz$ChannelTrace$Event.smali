@@ -34,7 +34,7 @@
     .line 537
     iput-object p1, p0, Lio/grpc/InternalChannelz$ChannelTrace$Event;->description:Ljava/lang/String;
 
-    const-string p1, "severity"
+    const-string/jumbo p1, "severity"
 
     .line 538
     invoke-static {p2, p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -207,7 +207,7 @@
 
     iget-object v1, p0, Lio/grpc/InternalChannelz$ChannelTrace$Event;->severity:Lio/grpc/InternalChannelz$ChannelTrace$Event$Severity;
 
-    const-string v2, "severity"
+    const-string/jumbo v2, "severity"
 
     .line 566
     invoke-virtual {v0, v2, v1}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;
@@ -216,7 +216,7 @@
 
     iget-wide v1, p0, Lio/grpc/InternalChannelz$ChannelTrace$Event;->timestampNanos:J
 
-    const-string v3, "timestampNanos"
+    const-string/jumbo v3, "timestampNanos"
 
     .line 567
     invoke-virtual {v0, v3, v1, v2}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;J)Lcom/google/common/base/MoreObjects$ToStringHelper;
@@ -234,7 +234,7 @@
 
     iget-object v1, p0, Lio/grpc/InternalChannelz$ChannelTrace$Event;->subchannelRef:Lio/grpc/InternalWithLogId;
 
-    const-string v2, "subchannelRef"
+    const-string/jumbo v2, "subchannelRef"
 
     .line 569
     invoke-virtual {v0, v2, v1}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;

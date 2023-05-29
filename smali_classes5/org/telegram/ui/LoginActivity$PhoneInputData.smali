@@ -34,7 +34,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 8712
+    .line 8834
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,61 +43,61 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/LoginActivity$1;)V
     .locals 0
 
-    .line 8712
+    .line 8834
     invoke-direct {p0}, Lorg/telegram/ui/LoginActivity$PhoneInputData;-><init>()V
 
     return-void
 .end method
 
-.method static synthetic access$2000(Lorg/telegram/ui/LoginActivity$PhoneInputData;)Ljava/util/List;
+.method static synthetic access$2500(Lorg/telegram/ui/LoginActivity$PhoneInputData;)Ljava/util/List;
     .locals 0
 
-    .line 8712
+    .line 8834
     iget-object p0, p0, Lorg/telegram/ui/LoginActivity$PhoneInputData;->patterns:Ljava/util/List;
 
     return-object p0
 .end method
 
-.method static synthetic access$2002(Lorg/telegram/ui/LoginActivity$PhoneInputData;Ljava/util/List;)Ljava/util/List;
+.method static synthetic access$2502(Lorg/telegram/ui/LoginActivity$PhoneInputData;Ljava/util/List;)Ljava/util/List;
     .locals 0
 
-    .line 8712
+    .line 8834
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneInputData;->patterns:Ljava/util/List;
 
     return-object p1
 .end method
 
-.method static synthetic access$2100(Lorg/telegram/ui/LoginActivity$PhoneInputData;)Lorg/telegram/ui/CountrySelectActivity$Country;
+.method static synthetic access$2600(Lorg/telegram/ui/LoginActivity$PhoneInputData;)Lorg/telegram/ui/CountrySelectActivity$Country;
     .locals 0
 
-    .line 8712
+    .line 8834
     iget-object p0, p0, Lorg/telegram/ui/LoginActivity$PhoneInputData;->country:Lorg/telegram/ui/CountrySelectActivity$Country;
 
     return-object p0
 .end method
 
-.method static synthetic access$2102(Lorg/telegram/ui/LoginActivity$PhoneInputData;Lorg/telegram/ui/CountrySelectActivity$Country;)Lorg/telegram/ui/CountrySelectActivity$Country;
+.method static synthetic access$2602(Lorg/telegram/ui/LoginActivity$PhoneInputData;Lorg/telegram/ui/CountrySelectActivity$Country;)Lorg/telegram/ui/CountrySelectActivity$Country;
     .locals 0
 
-    .line 8712
+    .line 8834
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneInputData;->country:Lorg/telegram/ui/CountrySelectActivity$Country;
 
     return-object p1
 .end method
 
-.method static synthetic access$2200(Lorg/telegram/ui/LoginActivity$PhoneInputData;)Ljava/lang/String;
+.method static synthetic access$2700(Lorg/telegram/ui/LoginActivity$PhoneInputData;)Ljava/lang/String;
     .locals 0
 
-    .line 8712
+    .line 8834
     iget-object p0, p0, Lorg/telegram/ui/LoginActivity$PhoneInputData;->phoneNumber:Ljava/lang/String;
 
     return-object p0
 .end method
 
-.method static synthetic access$2202(Lorg/telegram/ui/LoginActivity$PhoneInputData;Ljava/lang/String;)Ljava/lang/String;
+.method static synthetic access$2702(Lorg/telegram/ui/LoginActivity$PhoneInputData;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
 
-    .line 8712
+    .line 8834
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$PhoneInputData;->phoneNumber:Ljava/lang/String;
 
     return-object p1

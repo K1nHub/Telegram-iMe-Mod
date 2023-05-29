@@ -20,7 +20,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref$IntRef;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.p044ui.ActionBar.AlertDialog;
@@ -84,9 +84,9 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
         lazy7 = LazyKt__LazyJVMKt.lazy(new PromoSubscribeAlert$skipButton$2(this));
         this.skipButton$delegate = lazy7;
         setTopHeight(166);
-        setTopImage(C3242R.C3244drawable.fork_promo_subscribe_dialog_icon, Theme.getColor("windowBackgroundGray"));
-        int m51dp = AndroidUtilities.m51dp(30.0f);
-        setTopImagePaddings(0, m51dp, AndroidUtilities.m51dp(16.0f), m51dp);
+        setTopImage(C3290R.C3292drawable.fork_promo_subscribe_dialog_icon, Theme.getColor(Theme.key_windowBackgroundGray));
+        int m55dp = AndroidUtilities.m55dp(30.0f);
+        setTopImagePaddings(0, m55dp, AndroidUtilities.m55dp(16.0f), m55dp);
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(1);
         linearLayout.addView(getTitleTextView());
@@ -144,10 +144,10 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initTitleTextView() {
         TextView textView = new TextView(getContext());
-        textView.setText(LocaleController.getInternalString(C3242R.string.dialog_promo_subscribe_title));
+        textView.setText(LocaleController.getInternalString(C3290R.string.dialog_promo_subscribe_title));
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setGravity(17);
-        textView.setTextColor(Theme.getColor("dialogTextBlack"));
+        textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
         textView.setTextSize(1, 17.0f);
         return textView;
     }
@@ -155,8 +155,8 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initSubtitleTextView() {
         TextView textView = new TextView(getContext());
-        textView.setText(LocaleController.getInternalString(C3242R.string.dialog_promo_subscribe_subtitle));
-        textView.setTextColor(Theme.getColor("dialogTextGray3"));
+        textView.setText(LocaleController.getInternalString(C3290R.string.dialog_promo_subscribe_subtitle));
+        textView.setTextColor(Theme.getColor(Theme.key_dialogTextGray3));
         textView.setTextSize(1, 14.0f);
         return textView;
     }
@@ -205,7 +205,7 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
         LaunchActivity launchActivity = this$0.activity;
         Object tag = view.getTag();
         Intrinsics.checkNotNull(tag, "null cannot be cast to non-null type com.iMe.fork.enums.PromoSubscribeChat");
-        launchActivity.lambda$runLinkRequest$83(new ChatActivity(BundleKt.bundleOf(TuplesKt.m80to("chat_id", Long.valueOf(-((PromoSubscribeChat) tag).getId())))));
+        launchActivity.lambda$runLinkRequest$82(new ChatActivity(BundleKt.bundleOf(TuplesKt.m85to("chat_id", Long.valueOf(-((PromoSubscribeChat) tag).getId())))));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -214,9 +214,9 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
         linearLayout.setGravity(17);
         linearLayout.addView(getNotShowAgainCheckBox(), LayoutHelper.createLinear(18, 18));
         TextView textView = new TextView(linearLayout.getContext());
-        textView.setText(LocaleController.getInternalString(C3242R.string.common_not_show_again));
+        textView.setText(LocaleController.getInternalString(C3290R.string.common_not_show_again));
         textView.setGravity(19);
-        textView.setTextColor(Theme.getColor("dialogTextBlack"));
+        textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
         textView.setTextSize(1, 16.0f);
         linearLayout.addView(textView, LayoutHelper.createLinear(-2, -2, 51, 17, 0, 0, 0));
         linearLayout.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.dialog.PromoSubscribeAlert$$ExternalSyntheticLambda2
@@ -242,16 +242,16 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initSkipButton() {
         TextView textView = new TextView(getContext());
-        String string = LocaleController.getString("Close", C3242R.string.Close);
+        String string = LocaleController.getString("Close", C3290R.string.Close);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Close\", R.string.Close)");
         String upperCase = string.toUpperCase(Locale.ROOT);
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
         textView.setText(upperCase);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setGravity(17);
-        textView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m51dp(6.0f), Theme.getColor("featuredStickers_addButton"), Theme.getColor("featuredStickers_addButtonPressed")));
+        textView.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m55dp(6.0f), Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed)));
         textView.setTextSize(1, 14.0f);
-        textView.setTextColor(Theme.getColor("featuredStickers_buttonText"));
+        textView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
         textView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.dialog.PromoSubscribeAlert$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -282,8 +282,8 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
 
     private final void resolvePromoUsernames() {
         PromoSubscribeChat[] values;
-        ViewExtKt.gone(getChatsView());
-        ViewExtKt.visible(getLoadingView());
+        ViewExtKt.gone$default(getChatsView(), false, 1, null);
+        ViewExtKt.visible$default(getLoadingView(), false, 1, null);
         final Ref$IntRef ref$IntRef = new Ref$IntRef();
         ref$IntRef.element = PromoSubscribeChat.values().length;
         for (PromoSubscribeChat promoSubscribeChat : PromoSubscribeChat.values()) {
@@ -324,10 +324,11 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
     }
 
     private final void endLoading() {
-        ViewExtKt.gone(getLoadingView());
+        ViewExtKt.gone$default(getLoadingView(), false, 1, null);
         LinearLayout chatsView = getChatsView();
         int childCount = chatsView.getChildCount();
-        for (int i = 0; i < childCount; i++) {
+        int i = 0;
+        while (i < childCount) {
             View childAt = chatsView.getChildAt(i);
             Intrinsics.checkNotNullExpressionValue(childAt, "getChildAt(index)");
             Intrinsics.checkNotNull(childAt, "null cannot be cast to non-null type org.telegram.ui.Cells.ProfileSearchCell");
@@ -341,13 +342,10 @@ public final class PromoSubscribeAlert extends AlertDialog.Builder {
             String lowerCase = internalString.toLowerCase(Locale.ROOT);
             Intrinsics.checkNotNullExpressionValue(lowerCase, "this as java.lang.String).toLowerCase(Locale.ROOT)");
             profileSearchCell.setData(chat, null, null, lowerCase, false, false);
-            boolean z = true;
-            if (i >= PromoSubscribeChat.values().length - 1) {
-                z = false;
-            }
-            profileSearchCell.useSeparator = z;
+            profileSearchCell.useSeparator = i < PromoSubscribeChat.values().length - 1;
+            i++;
         }
-        ViewExtKt.visible(getChatsView());
+        ViewExtKt.visible$default(getChatsView(), false, 1, null);
     }
 
     /* compiled from: PromoSubscribeAlert.kt */

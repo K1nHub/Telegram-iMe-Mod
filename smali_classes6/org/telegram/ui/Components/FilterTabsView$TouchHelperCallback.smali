@@ -32,12 +32,12 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/FilterTabsView;)V
     .locals 0
 
-    .line 2108
+    .line 2073
     iput-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$TouchHelperCallback;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;-><init>()V
 
-    .line 2144
+    .line 2109
     new-instance p1, Lorg/telegram/ui/Components/FilterTabsView$TouchHelperCallback$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/FilterTabsView$TouchHelperCallback$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/FilterTabsView$TouchHelperCallback;)V
@@ -50,7 +50,7 @@
 .method private synthetic lambda$new$0()V
     .locals 3
 
-    .line 2145
+    .line 2110
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
@@ -70,11 +70,11 @@
 
     move v1, v0
 
-    .line 2148
+    .line 2113
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView$TouchHelperCallback;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$1100(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
+    invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$4700(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
 
     move-result-object v2
 
@@ -84,10 +84,10 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 2149
+    .line 2114
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView$TouchHelperCallback;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$1100(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
+    invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$4700(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
 
     move-result-object v2
 
@@ -103,25 +103,25 @@
 
     if-eqz v1, :cond_1
 
-    .line 2150
+    .line 2115
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView$TouchHelperCallback;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$5800(Lorg/telegram/ui/Components/FilterTabsView;)Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;
+    invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$5600(Lorg/telegram/ui/Components/FilterTabsView;)Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;
 
     move-result-object v2
 
     invoke-virtual {v2, v1}, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->moveElementToStart(I)V
 
-    .line 2151
+    .line 2116
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterTabsView$TouchHelperCallback;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$4300(Lorg/telegram/ui/Components/FilterTabsView;)Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$4000(Lorg/telegram/ui/Components/FilterTabsView;)Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v1
 
     invoke-virtual {v1, v0}, Landroidx/recyclerview/widget/RecyclerView;->scrollToPosition(I)V
 
-    .line 2152
+    .line 2117
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$TouchHelperCallback;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/FilterTabsView;->onDefaultTabMoved()V
@@ -143,17 +143,17 @@
 .method public clearView(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 1
 
-    .line 2178
+    .line 2143
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->clearView(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
 
-    .line 2179
+    .line 2144
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setPressed(Z)V
 
-    .line 2180
+    .line 2145
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const/4 p2, 0x0
@@ -166,7 +166,7 @@
 .method public getMovementFlags(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)I
     .locals 2
 
-    .line 2118
+    .line 2083
     iget-object p1, p2, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     instance-of v0, p1, Lorg/telegram/ui/Components/FilterTabsView$TabView;
@@ -175,11 +175,11 @@
 
     if-eqz v0, :cond_0
 
-    .line 2119
+    .line 2084
     check-cast p1, Lorg/telegram/ui/Components/FilterTabsView$TabView;
 
-    .line 2120
-    invoke-static {p1}, Lorg/telegram/ui/Components/FilterTabsView$TabView;->access$4500(Lorg/telegram/ui/Components/FilterTabsView$TabView;)Lorg/telegram/ui/Components/FilterTabsView$Tab;
+    .line 2085
+    invoke-static {p1}, Lorg/telegram/ui/Components/FilterTabsView$TabView;->access$4200(Lorg/telegram/ui/Components/FilterTabsView$TabView;)Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     move-result-object p1
 
@@ -189,24 +189,24 @@
 
     if-nez p1, :cond_0
 
-    .line 2121
+    .line 2086
     invoke-static {v1, v1}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->makeMovementFlags(II)I
 
     move-result p1
 
     return p1
 
-    .line 2126
+    .line 2091
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$TouchHelperCallback;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/FilterTabsView;->access$5200(Lorg/telegram/ui/Components/FilterTabsView;)Z
+    invoke-static {p1}, Lorg/telegram/ui/Components/FilterTabsView;->access$5000(Lorg/telegram/ui/Components/FilterTabsView;)Z
 
     move-result p1
 
     if-eqz p1, :cond_2
 
-    .line 2127
+    .line 2092
     sget p1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -219,7 +219,7 @@
 
     iget-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$TouchHelperCallback;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/FilterTabsView;->access$800(Lorg/telegram/ui/Components/FilterTabsView;)Z
+    invoke-static {p1}, Lorg/telegram/ui/Components/FilterTabsView;->access$300(Lorg/telegram/ui/Components/FilterTabsView;)Z
 
     move-result p1
 
@@ -233,7 +233,7 @@
 
     iget-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$TouchHelperCallback;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/FilterTabsView;->access$1100(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
+    invoke-static {p1}, Lorg/telegram/ui/Components/FilterTabsView;->access$4700(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
 
     move-result-object p1
 
@@ -247,7 +247,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 2128
+    .line 2093
     :cond_1
     invoke-static {v1, v1}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->makeMovementFlags(II)I
 
@@ -258,7 +258,7 @@
     :cond_2
     const/16 p1, 0xc
 
-    .line 2130
+    .line 2095
     invoke-static {p1, v1}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->makeMovementFlags(II)I
 
     move-result p1
@@ -269,10 +269,10 @@
 .method public isLongPressDragEnabled()Z
     .locals 1
 
-    .line 2112
+    .line 2077
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$TouchHelperCallback;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$800(Lorg/telegram/ui/Components/FilterTabsView;)Z
+    invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$300(Lorg/telegram/ui/Components/FilterTabsView;)Z
 
     move-result v0
 
@@ -282,16 +282,16 @@
 .method public onMove(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 0
 
-    .line 2136
+    .line 2101
     iget-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$TouchHelperCallback;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/FilterTabsView;->access$5200(Lorg/telegram/ui/Components/FilterTabsView;)Z
+    invoke-static {p1}, Lorg/telegram/ui/Components/FilterTabsView;->access$5000(Lorg/telegram/ui/Components/FilterTabsView;)Z
 
     move-result p1
 
     if-eqz p1, :cond_1
 
-    .line 2137
+    .line 2102
     sget p1, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -319,11 +319,11 @@
 
     return p1
 
-    .line 2140
+    .line 2105
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$TouchHelperCallback;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/FilterTabsView;->access$5800(Lorg/telegram/ui/Components/FilterTabsView;)Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;
+    invoke-static {p1}, Lorg/telegram/ui/Components/FilterTabsView;->access$5600(Lorg/telegram/ui/Components/FilterTabsView;)Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;
 
     move-result-object p1
 
@@ -347,10 +347,10 @@
 
     if-eqz p2, :cond_0
 
-    .line 2161
+    .line 2126
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$TouchHelperCallback;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$4300(Lorg/telegram/ui/Components/FilterTabsView;)Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$4000(Lorg/telegram/ui/Components/FilterTabsView;)Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v0
 
@@ -358,23 +358,23 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->cancelClickRunnables(Z)V
 
-    .line 2162
+    .line 2127
     iget-object v0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setPressed(Z)V
 
-    .line 2163
+    .line 2128
     iget-object v0, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterTabsView$TouchHelperCallback;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$3100(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/lang/String;
+    invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$2800(Lorg/telegram/ui/Components/FilterTabsView;)I
 
-    move-result-object v1
+    move-result v1
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -382,20 +382,20 @@
 
     goto :goto_0
 
-    .line 2165
+    .line 2130
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$TouchHelperCallback;->resetDefaultPosition:Ljava/lang/Runnable;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 2166
+    .line 2131
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$TouchHelperCallback;->resetDefaultPosition:Ljava/lang/Runnable;
 
     const-wide/16 v1, 0x140
 
     invoke-static {v0, v1, v2}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 2168
+    .line 2133
     :goto_0
     invoke-super {p0, p1, p2}, Landroidx/recyclerview/widget/ItemTouchHelper$Callback;->onSelectedChanged(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
 

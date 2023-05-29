@@ -208,10 +208,10 @@
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Components/ColoredImageSpan;->setSize(I)V
 
-    const-string v4, "windowBackgroundWhiteGrayText5"
-
     .line 180
-    invoke-virtual {v3, v4}, Lorg/telegram/ui/Components/ColoredImageSpan;->setColorKey(Ljava/lang/String;)V
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText5:I
+
+    invoke-virtual {v3, v4}, Lorg/telegram/ui/Components/ColoredImageSpan;->setColorKey(I)V
 
     .line 181
     invoke-virtual {v0}, Landroid/text/SpannableString;->length()I

@@ -48,12 +48,13 @@ import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p043mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.databinding.ForkFragmentWalletTransactionsBinding;
 import org.telegram.p044ui.ActionBar.ActionBarMenu;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.INavigationLayout;
+import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Components.LayoutHelper;
 /* compiled from: WalletTransactionsFragment.kt */
@@ -227,7 +228,7 @@ public final class WalletTransactionsFragment extends WalletTabFragment implemen
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsFragment$$ExternalSyntheticLambda4
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsFragment$$ExternalSyntheticLambda4
             @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 WalletTransactionsFragment.getThemeDescriptions$lambda$2(WalletTransactionsFragment.this);
@@ -237,7 +238,7 @@ public final class WalletTransactionsFragment extends WalletTabFragment implemen
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, "windowBackgroundWhite"));
+        }, Theme.key_windowBackgroundWhite));
         return arrayListOf;
     }
 
@@ -247,12 +248,12 @@ public final class WalletTransactionsFragment extends WalletTabFragment implemen
     }
 
     private final void setupActionBar() {
-        C3306ActionBar c3306ActionBar = this.actionBar;
-        c3306ActionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
-        c3306ActionBar.setTitle(getResourceManager().getString(C3242R.string.wallet_transactions_toolbar_title));
-        c3306ActionBar.setAllowOverlayTitle(true);
-        c3306ActionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsFragment$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        c3356ActionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        c3356ActionBar.setTitle(getResourceManager().getString(C3290R.string.wallet_transactions_toolbar_title));
+        c3356ActionBar.setAllowOverlayTitle(true);
+        c3356ActionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsFragment$setupActionBar$1$1
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 WalletTransactionsPresenter presenter;
                 if (i == -1) {
@@ -263,13 +264,13 @@ public final class WalletTransactionsFragment extends WalletTabFragment implemen
                 }
             }
         });
-        ActionBarMenu createMenu = c3306ActionBar.createMenu();
+        ActionBarMenu createMenu = c3356ActionBar.createMenu();
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         this.networkTypeView = new NetworkTypeView(parentActivity, null, 0, 6, null);
         ActionBarMenuItem setupActionBar$lambda$5$lambda$4$lambda$3 = createMenu.addItemWithWidth(IdFabric$Menu.NETWORK_SWITCH, 0, -2);
         Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$5$lambda$4$lambda$3, "setupActionBar$lambda$5$lambda$4$lambda$3");
-        ViewExtKt.setPaddingHorizontal(setupActionBar$lambda$5$lambda$4$lambda$3, AndroidUtilities.m50dp(14));
+        ViewExtKt.setPaddingHorizontal(setupActionBar$lambda$5$lambda$4$lambda$3, AndroidUtilities.m54dp(14));
         setupActionBar$lambda$5$lambda$4$lambda$3.addView(this.networkTypeView, LayoutHelper.createFrame(-2, -2, 8388629));
     }
 
@@ -320,8 +321,8 @@ public final class WalletTransactionsFragment extends WalletTabFragment implemen
 
     private final void setupColors() {
         SwipeRefreshLayout root = getBinding().getRoot();
-        root.setBackgroundColor(getThemedColor("windowBackgroundWhite"));
-        root.setColorSchemeColors(getThemedColor("chats_actionBackground"));
+        root.setBackgroundColor(getThemedColor(Theme.key_windowBackgroundWhite));
+        root.setColorSchemeColors(getThemedColor(Theme.key_chats_actionBackground));
     }
 
     private final void setupListeners() {

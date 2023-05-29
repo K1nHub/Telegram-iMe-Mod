@@ -48,17 +48,17 @@
 .method public constructor <init>(Ljava/lang/String;III)V
     .locals 0
 
-    .line 303
+    .line 304
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 304
+    .line 305
     iput-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->slug:Ljava/lang/String;
 
     const/high16 p1, -0x1000000
 
     or-int/2addr p2, p1
 
-    .line 305
+    .line 306
     iput p2, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->color:I
 
     const/4 p2, 0x0
@@ -72,7 +72,7 @@
     :cond_0
     or-int/2addr p1, p3
 
-    .line 306
+    .line 307
     :goto_0
     iput p1, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->gradientColor1:I
 
@@ -83,13 +83,13 @@
     :cond_1
     move p4, p2
 
-    .line 307
+    .line 308
     :goto_1
     iput p4, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->gradientRotation:I
 
     const/high16 p1, 0x3f800000    # 1.0f
 
-    .line 308
+    .line 309
     iput p1, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->intensity:F
 
     return-void
@@ -98,17 +98,17 @@
 .method public constructor <init>(Ljava/lang/String;IIII)V
     .locals 0
 
-    .line 311
+    .line 312
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 312
+    .line 313
     iput-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->slug:Ljava/lang/String;
 
     const/high16 p1, -0x1000000
 
     or-int/2addr p2, p1
 
-    .line 313
+    .line 314
     iput p2, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->color:I
 
     const/4 p2, 0x0
@@ -122,7 +122,7 @@
     :cond_0
     or-int/2addr p3, p1
 
-    .line 314
+    .line 315
     :goto_0
     iput p3, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->gradientColor1:I
 
@@ -135,7 +135,7 @@
     :cond_1
     or-int p3, p4, p1
 
-    .line 315
+    .line 316
     :goto_1
     iput p3, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->gradientColor2:I
 
@@ -146,18 +146,18 @@
     :cond_2
     or-int p2, p5, p1
 
-    .line 316
+    .line 317
     :goto_2
     iput p2, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->gradientColor3:I
 
     const/high16 p1, 0x3f800000    # 1.0f
 
-    .line 317
+    .line 318
     iput p1, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->intensity:F
 
     const/4 p1, 0x1
 
-    .line 318
+    .line 319
     iput-boolean p1, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->isGradient:Z
 
     return-void
@@ -166,17 +166,17 @@
 .method public constructor <init>(Ljava/lang/String;IIIIIFZLjava/io/File;)V
     .locals 0
 
-    .line 339
+    .line 340
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 340
+    .line 341
     iput-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->slug:Ljava/lang/String;
 
     const/high16 p1, -0x1000000
 
     or-int/2addr p2, p1
 
-    .line 341
+    .line 342
     iput p2, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->color:I
 
     const/4 p2, 0x0
@@ -190,7 +190,7 @@
     :cond_0
     or-int/2addr p3, p1
 
-    .line 342
+    .line 343
     :goto_0
     iput p3, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->gradientColor1:I
 
@@ -203,7 +203,7 @@
     :cond_1
     or-int/2addr p4, p1
 
-    .line 343
+    .line 344
     :goto_1
     iput p4, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->gradientColor2:I
 
@@ -214,7 +214,7 @@
     :cond_2
     or-int p2, p5, p1
 
-    .line 344
+    .line 345
     :goto_2
     iput p2, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->gradientColor3:I
 
@@ -225,17 +225,17 @@
     :cond_3
     const/16 p6, 0x2d
 
-    .line 345
+    .line 346
     :goto_3
     iput p6, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->gradientRotation:I
 
-    .line 346
+    .line 347
     iput p7, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->intensity:F
 
-    .line 347
+    .line 348
     iput-object p9, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->path:Ljava/io/File;
 
-    .line 348
+    .line 349
     iput-boolean p8, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->motion:Z
 
     return-void
@@ -246,7 +246,7 @@
 .method public getHash()Ljava/lang/String;
     .locals 2
 
-    .line 293
+    .line 294
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -279,7 +279,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(F)Ljava/lang/StringBuilder;
 
-    .line 299
+    .line 300
     iget-object v1, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->slug:Ljava/lang/String;
 
     if-eqz v1, :cond_0
@@ -296,7 +296,7 @@
 
     move-result-object v0
 
-    .line 300
+    .line 301
     invoke-static {v0}, Lorg/telegram/messenger/Utilities;->MD5(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v0
@@ -307,7 +307,7 @@
 .method public getUrl()Ljava/lang/String;
     .locals 10
 
-    .line 352
+    .line 353
     iget v0, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->gradientColor1:I
 
     const/4 v1, 0x0
@@ -380,7 +380,7 @@
     :goto_0
     new-array v7, v4, [Ljava/lang/Object;
 
-    .line 353
+    .line 354
     iget v8, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->color:I
 
     shr-int/lit8 v8, v8, 0x10
@@ -429,7 +429,7 @@
 
     move-result-object v7
 
-    .line 354
+    .line 355
     iget v8, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->gradientColor2:I
 
     if-eqz v8, :cond_1
@@ -487,7 +487,7 @@
     :cond_1
     move-object v8, v1
 
-    .line 355
+    .line 356
     :goto_1
     iget v9, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->gradientColor3:I
 
@@ -550,7 +550,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 358
+    .line 359
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -575,7 +575,7 @@
 
     goto :goto_2
 
-    .line 360
+    .line 361
     :cond_3
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -600,7 +600,7 @@
     :cond_4
     if-eqz v0, :cond_6
 
-    .line 363
+    .line 364
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -617,12 +617,12 @@
 
     move-result-object v0
 
-    .line 364
+    .line 365
     iget-object v1, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->pattern:Lorg/telegram/tgnet/TLRPC$TL_wallPaper;
 
     if-eqz v1, :cond_5
 
-    .line 365
+    .line 366
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -647,7 +647,7 @@
 
     goto :goto_2
 
-    .line 367
+    .line 368
     :cond_5
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -671,7 +671,7 @@
 
     move-result-object v7
 
-    .line 370
+    .line 371
     :cond_6
     :goto_2
     iget-object v0, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->pattern:Lorg/telegram/tgnet/TLRPC$TL_wallPaper;
@@ -682,7 +682,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 371
+    .line 372
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -731,12 +731,12 @@
 
     move-result-object v0
 
-    .line 372
+    .line 373
     iget-boolean v1, p0, Lorg/telegram/ui/WallpapersListActivity$ColorWallpaper;->motion:Z
 
     if-eqz v1, :cond_7
 
-    .line 373
+    .line 374
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -754,7 +754,7 @@
     :cond_7
     return-object v0
 
-    .line 377
+    .line 378
     :cond_8
     new-instance v0, Ljava/lang/StringBuilder;
 

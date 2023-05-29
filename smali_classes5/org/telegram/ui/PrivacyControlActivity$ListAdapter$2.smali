@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/PrivacyControlActivity$ListAdapter;Ljava/lang/String;)V
     .locals 0
 
-    .line 1420
+    .line 1446
     iput-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity$ListAdapter$2;->this$1:Lorg/telegram/ui/PrivacyControlActivity$ListAdapter;
 
     iput-object p2, p0, Lorg/telegram/ui/PrivacyControlActivity$ListAdapter$2;->val$phoneLinkStr:Ljava/lang/String;
@@ -39,7 +39,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 2
 
-    .line 1423
+    .line 1449
     sget-object p1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string v0, "clipboard"
@@ -50,7 +50,7 @@
 
     check-cast p1, Landroid/content/ClipboardManager;
 
-    .line 1424
+    .line 1450
     iget-object v0, p0, Lorg/telegram/ui/PrivacyControlActivity$ListAdapter$2;->val$phoneLinkStr:Ljava/lang/String;
 
     const-string v1, "label"
@@ -59,10 +59,10 @@
 
     move-result-object v0
 
-    .line 1425
+    .line 1451
     invoke-virtual {p1, v0}, Landroid/content/ClipboardManager;->setPrimaryClip(Landroid/content/ClipData;)V
 
-    .line 1426
+    .line 1452
     iget-object p1, p0, Lorg/telegram/ui/PrivacyControlActivity$ListAdapter$2;->this$1:Lorg/telegram/ui/PrivacyControlActivity$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/PrivacyControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyControlActivity;

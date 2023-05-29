@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/iMe/utils/extentions/common/ViewExtKt$setSubstringClickListener$clickSpan$1;->$handler:Lcom/iMe/fork/utils/Callbacks$Callback;
 
-    .line 173
+    .line 187
     invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
 
     return-void
@@ -39,7 +39,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 175
+    .line 189
     iget-object p1, p0, Lcom/iMe/utils/extentions/common/ViewExtKt$setSubstringClickListener$clickSpan$1;->$handler:Lcom/iMe/fork/utils/Callbacks$Callback;
 
     invoke-interface {p1}, Lcom/iMe/fork/utils/Callbacks$Callback;->invoke()V
@@ -54,16 +54,16 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "chats_actionBackground"
+    .line 193
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
-    .line 179
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
     iput v0, p1, Landroid/text/TextPaint;->linkColor:I
 
-    .line 181
+    .line 195
     invoke-super {p0, p1}, Landroid/text/style/ClickableSpan;->updateDrawState(Landroid/text/TextPaint;)V
 
     return-void

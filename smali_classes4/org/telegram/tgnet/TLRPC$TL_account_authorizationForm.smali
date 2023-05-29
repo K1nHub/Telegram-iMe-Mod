@@ -63,31 +63,31 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 38406
+    .line 39255
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 38410
+    .line 39259
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;->required_types:Ljava/util/ArrayList;
 
-    .line 38411
+    .line 39260
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;->values:Ljava/util/ArrayList;
 
-    .line 38412
+    .line 39261
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;->errors:Ljava/util/ArrayList;
 
-    .line 38413
+    .line 39262
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -100,7 +100,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;
     .locals 1
 
-    .line 38417
+    .line 39266
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -111,7 +111,7 @@
 
     return-object p0
 
-    .line 38419
+    .line 39268
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -137,13 +137,13 @@
 
     throw p0
 
-    .line 38424
+    .line 39273
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;-><init>()V
 
-    .line 38425
+    .line 39274
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -154,14 +154,14 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 8
 
-    .line 38430
+    .line 39279
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;->flags:I
 
-    .line 38431
+    .line 39280
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -180,7 +180,7 @@
 
     return-void
 
-    .line 38434
+    .line 39283
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -200,7 +200,7 @@
 
     throw p1
 
-    .line 38438
+    .line 39287
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -211,7 +211,7 @@
     :goto_0
     if-ge v5, v0, :cond_3
 
-    .line 38440
+    .line 39289
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v6
@@ -224,7 +224,7 @@
 
     return-void
 
-    .line 38444
+    .line 39293
     :cond_2
     iget-object v7, p0, Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;->required_types:Ljava/util/ArrayList;
 
@@ -234,7 +234,7 @@
 
     goto :goto_0
 
-    .line 38446
+    .line 39295
     :cond_3
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -246,7 +246,7 @@
 
     return-void
 
-    .line 38449
+    .line 39298
     :cond_4
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -266,7 +266,7 @@
 
     throw p1
 
-    .line 38453
+    .line 39302
     :cond_5
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -277,7 +277,7 @@
     :goto_1
     if-ge v5, v0, :cond_7
 
-    .line 38455
+    .line 39304
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v6
@@ -290,7 +290,7 @@
 
     return-void
 
-    .line 38459
+    .line 39308
     :cond_6
     iget-object v7, p0, Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;->values:Ljava/util/ArrayList;
 
@@ -300,7 +300,7 @@
 
     goto :goto_1
 
-    .line 38461
+    .line 39310
     :cond_7
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -312,7 +312,7 @@
 
     return-void
 
-    .line 38464
+    .line 39313
     :cond_8
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -332,7 +332,7 @@
 
     throw p1
 
-    .line 38468
+    .line 39317
     :cond_9
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -343,7 +343,7 @@
     :goto_2
     if-ge v5, v0, :cond_b
 
-    .line 38470
+    .line 39319
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v6
@@ -356,7 +356,7 @@
 
     return-void
 
-    .line 38474
+    .line 39323
     :cond_a
     iget-object v7, p0, Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;->errors:Ljava/util/ArrayList;
 
@@ -366,7 +366,7 @@
 
     goto :goto_2
 
-    .line 38476
+    .line 39325
     :cond_b
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -378,7 +378,7 @@
 
     return-void
 
-    .line 38479
+    .line 39328
     :cond_c
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -398,7 +398,7 @@
 
     throw p1
 
-    .line 38483
+    .line 39332
     :cond_d
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -407,7 +407,7 @@
     :goto_3
     if-ge v3, v0, :cond_f
 
-    .line 38485
+    .line 39334
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v1
@@ -420,7 +420,7 @@
 
     return-void
 
-    .line 38489
+    .line 39338
     :cond_e
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;->users:Ljava/util/ArrayList;
 
@@ -430,7 +430,7 @@
 
     goto :goto_3
 
-    .line 38491
+    .line 39340
     :cond_f
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;->flags:I
 
@@ -438,7 +438,7 @@
 
     if-eqz v0, :cond_10
 
-    .line 38492
+    .line 39341
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object p1
@@ -452,29 +452,29 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 5
 
-    .line 38497
+    .line 39346
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 38498
+    .line 39347
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;->flags:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const v0, 0x1cb5c415
 
-    .line 38499
+    .line 39348
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 38500
+    .line 39349
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;->required_types:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 38501
+    .line 39350
     invoke-virtual {p1, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v2, 0x0
@@ -484,7 +484,7 @@
     :goto_0
     if-ge v3, v1, :cond_0
 
-    .line 38503
+    .line 39352
     iget-object v4, p0, Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;->required_types:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -499,18 +499,18 @@
 
     goto :goto_0
 
-    .line 38505
+    .line 39354
     :cond_0
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 38506
+    .line 39355
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;->values:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 38507
+    .line 39356
     invoke-virtual {p1, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     move v3, v2
@@ -518,7 +518,7 @@
     :goto_1
     if-ge v3, v1, :cond_1
 
-    .line 38509
+    .line 39358
     iget-object v4, p0, Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;->values:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -533,18 +533,18 @@
 
     goto :goto_1
 
-    .line 38511
+    .line 39360
     :cond_1
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 38512
+    .line 39361
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;->errors:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
 
-    .line 38513
+    .line 39362
     invoke-virtual {p1, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     move v3, v2
@@ -552,7 +552,7 @@
     :goto_2
     if-ge v3, v1, :cond_2
 
-    .line 38515
+    .line 39364
     iget-object v4, p0, Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;->errors:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -567,24 +567,24 @@
 
     goto :goto_2
 
-    .line 38517
+    .line 39366
     :cond_2
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 38518
+    .line 39367
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 38519
+    .line 39368
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     :goto_3
     if-ge v2, v0, :cond_3
 
-    .line 38521
+    .line 39370
     iget-object v1, p0, Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -599,7 +599,7 @@
 
     goto :goto_3
 
-    .line 38523
+    .line 39372
     :cond_3
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;->flags:I
 
@@ -607,7 +607,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 38524
+    .line 39373
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_account_authorizationForm;->privacy_policy_url:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V

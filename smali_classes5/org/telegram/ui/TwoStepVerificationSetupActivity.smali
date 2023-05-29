@@ -1423,9 +1423,9 @@
 
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v4, "chat_messagePanelIcons"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelIcons:I
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -1519,9 +1519,9 @@
 
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v4, "chat_messagePanelSend"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelSend:I
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -2245,10 +2245,10 @@
 
     if-eqz p1, :cond_2
 
-    const-string v0, "dialogTextRed"
-
     .line 397
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -2886,9 +2886,9 @@
     .line 1403
     iget-object p1, p0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText:Landroid/widget/TextView;
 
-    const-string v0, "windowBackgroundWhiteRedText4"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -7036,9 +7036,9 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const-string v1, "dialogTextRed"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -7108,7 +7108,7 @@
 .end method
 
 .method public createView(Landroid/content/Context;)Landroid/view/View;
-    .locals 24
+    .locals 25
 
     move-object/from16 v0, p0
 
@@ -7138,9 +7138,9 @@
     .line 252
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    const-string v5, "windowBackgroundWhiteBlackText"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
@@ -7149,7 +7149,7 @@
     .line 253
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
@@ -7158,9 +7158,9 @@
     .line 254
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    const-string v6, "actionBarWhiteSelector"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarWhiteSelector:I
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
@@ -7374,9 +7374,9 @@
     .line 316
     iget-object v10, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->floatingButtonIcon:Lorg/telegram/ui/Components/TransformableLoginButtonView;
 
-    const-string v12, "chats_actionIcon"
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionIcon:I
 
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v12
 
@@ -7482,15 +7482,15 @@
 
     move-result v10
 
-    const-string v11, "chats_actionBackground"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
-    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v11
 
-    const-string v13, "chats_actionPressedBackground"
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionPressedBackground:I
 
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v13
 
@@ -7557,10 +7557,10 @@
 
     iput-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->bottomSkipButton:Landroid/widget/TextView;
 
-    const-string v10, "windowBackgroundWhiteBlueText2"
-
     .line 339
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText2:I
+
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v10
 
@@ -7683,7 +7683,7 @@
     iput-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->titleTextView:Landroid/widget/TextView;
 
     .line 413
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v13
 
@@ -7721,14 +7721,14 @@
 
     iput-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText:Landroid/widget/TextView;
 
-    const-string v13, "windowBackgroundWhiteGrayText6"
-
     .line 419
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText6:I
 
-    move-result v13
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v7, v13}, Landroid/widget/TextView;->setTextColor(I)V
+    move-result v14
+
+    invoke-virtual {v7, v14}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 420
     iget-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText:Landroid/widget/TextView;
@@ -7740,20 +7740,20 @@
 
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v13
+    move-result v14
 
-    int-to-float v13, v13
+    int-to-float v14, v14
 
-    const/high16 v14, 0x3f800000    # 1.0f
+    const/high16 v3, 0x3f800000    # 1.0f
 
-    invoke-virtual {v7, v13, v14}, Landroid/widget/TextView;->setLineSpacing(FF)V
+    invoke-virtual {v7, v14, v3}, Landroid/widget/TextView;->setLineSpacing(FF)V
 
     .line 422
     iget-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText:Landroid/widget/TextView;
 
-    const/high16 v13, 0x41700000    # 15.0f
+    const/high16 v14, 0x41700000    # 15.0f
 
-    invoke-virtual {v7, v6, v13}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-virtual {v7, v6, v14}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 423
     iget-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText:Landroid/widget/TextView;
@@ -7765,102 +7765,100 @@
 
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v13
+    move-result v14
 
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v3
+    move-result v8
 
-    invoke-virtual {v7, v13, v4, v3, v4}, Landroid/widget/TextView;->setPadding(IIII)V
+    invoke-virtual {v7, v14, v4, v8, v4}, Landroid/widget/TextView;->setPadding(IIII)V
 
     .line 426
-    new-instance v3, Landroid/widget/TextView;
+    new-instance v7, Landroid/widget/TextView;
 
-    invoke-direct {v3, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v7, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    iput-object v3, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText2:Landroid/widget/TextView;
-
-    const-string v7, "windowBackgroundWhiteGrayText6"
+    iput-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText2:Landroid/widget/TextView;
 
     .line 427
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v7
+    move-result v8
 
-    invoke-virtual {v3, v7}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v7, v8}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 428
-    iget-object v3, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText2:Landroid/widget/TextView;
+    iget-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText2:Landroid/widget/TextView;
 
-    invoke-virtual {v3, v6}, Landroid/widget/TextView;->setGravity(I)V
+    invoke-virtual {v7, v6}, Landroid/widget/TextView;->setGravity(I)V
 
     .line 429
-    iget-object v3, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText2:Landroid/widget/TextView;
+    iget-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText2:Landroid/widget/TextView;
 
-    invoke-virtual {v3, v6, v10}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-virtual {v7, v6, v10}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 430
-    iget-object v3, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText2:Landroid/widget/TextView;
+    iget-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText2:Landroid/widget/TextView;
 
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v7
+    move-result v8
 
-    int-to-float v7, v7
+    int-to-float v8, v8
 
-    invoke-virtual {v3, v7, v14}, Landroid/widget/TextView;->setLineSpacing(FF)V
+    invoke-virtual {v7, v8, v3}, Landroid/widget/TextView;->setLineSpacing(FF)V
 
     .line 431
-    iget-object v3, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText2:Landroid/widget/TextView;
+    iget-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText2:Landroid/widget/TextView;
 
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v7
+    move-result v8
 
     invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v13
 
-    invoke-virtual {v3, v7, v4, v13, v4}, Landroid/widget/TextView;->setPadding(IIII)V
+    invoke-virtual {v7, v8, v4, v13, v4}, Landroid/widget/TextView;->setPadding(IIII)V
 
     .line 432
-    iget-object v3, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText2:Landroid/widget/TextView;
+    iget-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText2:Landroid/widget/TextView;
 
-    invoke-virtual {v3, v11}, Landroid/widget/TextView;->setVisibility(I)V
+    invoke-virtual {v7, v11}, Landroid/widget/TextView;->setVisibility(I)V
 
     .line 433
-    iget-object v3, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText2:Landroid/widget/TextView;
+    iget-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText2:Landroid/widget/TextView;
 
-    new-instance v7, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda10;
+    new-instance v8, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda10;
 
-    invoke-direct {v7, v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)V
+    invoke-direct {v8, v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda10;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)V
 
-    invoke-virtual {v3, v7}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v7, v8}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 443
-    new-instance v3, Landroid/widget/TextView;
+    new-instance v7, Landroid/widget/TextView;
 
-    invoke-direct {v3, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v7, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    iput-object v3, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->buttonTextView:Landroid/widget/TextView;
+    iput-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->buttonTextView:Landroid/widget/TextView;
 
-    const/16 v7, 0xdc
+    const/16 v8, 0xdc
 
     .line 444
-    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v7
+    move-result v8
 
-    invoke-virtual {v3, v7}, Landroid/widget/TextView;->setMinWidth(I)V
+    invoke-virtual {v7, v8}, Landroid/widget/TextView;->setMinWidth(I)V
 
     .line 445
-    iget-object v3, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->buttonTextView:Landroid/widget/TextView;
+    iget-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->buttonTextView:Landroid/widget/TextView;
 
-    const/16 v7, 0x22
+    const/16 v8, 0x22
 
-    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v7
+    move-result v8
 
     const/16 v13, 0x22
 
@@ -7868,125 +7866,125 @@
 
     move-result v13
 
-    invoke-virtual {v3, v7, v4, v13, v4}, Landroid/widget/TextView;->setPadding(IIII)V
+    invoke-virtual {v7, v8, v4, v13, v4}, Landroid/widget/TextView;->setPadding(IIII)V
 
     .line 446
-    iget-object v3, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->buttonTextView:Landroid/widget/TextView;
+    iget-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->buttonTextView:Landroid/widget/TextView;
 
-    const/16 v7, 0x11
+    const/16 v8, 0x11
 
-    invoke-virtual {v3, v7}, Landroid/widget/TextView;->setGravity(I)V
+    invoke-virtual {v7, v8}, Landroid/widget/TextView;->setGravity(I)V
 
     .line 447
-    iget-object v3, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->buttonTextView:Landroid/widget/TextView;
+    iget-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->buttonTextView:Landroid/widget/TextView;
 
-    const-string v7, "featuredStickers_buttonText"
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
 
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v7
+    move-result v8
 
-    invoke-virtual {v3, v7}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v7, v8}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 448
-    iget-object v3, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->buttonTextView:Landroid/widget/TextView;
+    iget-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->buttonTextView:Landroid/widget/TextView;
 
-    const/high16 v7, 0x41700000    # 15.0f
+    const/high16 v8, 0x41700000    # 15.0f
 
-    invoke-virtual {v3, v6, v7}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-virtual {v7, v6, v8}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 449
-    iget-object v3, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->buttonTextView:Landroid/widget/TextView;
+    iget-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->buttonTextView:Landroid/widget/TextView;
 
-    const-string v7, "fonts/rmedium.ttf"
+    const-string v8, "fonts/rmedium.ttf"
 
-    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
+    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v3, v7}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v7, v8}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 450
-    iget-object v3, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->buttonTextView:Landroid/widget/TextView;
+    iget-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->buttonTextView:Landroid/widget/TextView;
 
-    new-array v7, v6, [F
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
-    const/high16 v13, 0x40c00000    # 6.0f
+    new-array v13, v6, [F
 
-    aput v13, v7, v4
+    const/high16 v14, 0x40c00000    # 6.0f
 
-    const-string v13, "featuredStickers_addButton"
+    aput v14, v13, v4
 
-    invoke-static {v13, v7}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRect(Ljava/lang/String;[F)Landroid/graphics/drawable/Drawable;
+    invoke-static {v8, v13}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRectByKey(I[F)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v3, v7}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v7, v8}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     .line 451
-    iget-object v3, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->buttonTextView:Landroid/widget/TextView;
+    iget-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->buttonTextView:Landroid/widget/TextView;
 
-    new-instance v7, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda7;
+    new-instance v8, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda7;
 
-    invoke-direct {v7, v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)V
+    invoke-direct {v8, v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)V
 
-    invoke-virtual {v3, v7}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v7, v8}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 453
-    iget v3, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->currentType:I
+    iget v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->currentType:I
 
-    const/high16 v7, 0x41900000    # 18.0f
+    const/high16 v8, 0x41900000    # 18.0f
 
     const/4 v13, 0x6
 
-    if-eq v3, v13, :cond_8
+    if-eq v7, v13, :cond_8
 
-    const/4 v12, 0x7
+    const/4 v14, 0x7
 
-    if-eq v3, v12, :cond_8
+    if-eq v7, v14, :cond_8
 
-    const/16 v12, 0x9
+    const/16 v14, 0x9
 
-    if-eq v3, v12, :cond_8
+    if-eq v7, v14, :cond_8
 
     .line 461
-    iget-object v3, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->titleTextView:Landroid/widget/TextView;
+    iget-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->titleTextView:Landroid/widget/TextView;
 
-    const-string v12, "fonts/rmedium.ttf"
+    const-string v14, "fonts/rmedium.ttf"
 
-    invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
+    invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
-    move-result-object v12
+    move-result-object v14
 
-    invoke-virtual {v3, v12}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v7, v14}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 462
-    iget-object v3, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->titleTextView:Landroid/widget/TextView;
+    iget-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->titleTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v3, v6, v7}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-virtual {v7, v6, v8}, Landroid/widget/TextView;->setTextSize(IF)V
 
     goto :goto_4
 
     .line 457
     :cond_8
-    iget-object v3, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->titleTextView:Landroid/widget/TextView;
+    iget-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->titleTextView:Landroid/widget/TextView;
 
-    sget-object v12, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
+    sget-object v14, Landroid/graphics/Typeface;->DEFAULT:Landroid/graphics/Typeface;
 
-    invoke-virtual {v3, v12}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v7, v14}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 458
-    iget-object v3, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->titleTextView:Landroid/widget/TextView;
+    iget-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->titleTextView:Landroid/widget/TextView;
 
-    const/high16 v12, 0x41c00000    # 24.0f
+    const/high16 v14, 0x41c00000    # 24.0f
 
-    invoke-virtual {v3, v6, v12}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-virtual {v7, v6, v14}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 466
     :goto_4
-    iget v3, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->currentType:I
+    iget v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->currentType:I
 
-    packed-switch v3, :pswitch_data_0
+    packed-switch v7, :pswitch_data_0
 
     goto/16 :goto_9
 
@@ -8033,48 +8031,50 @@
 
     .line 546
     :pswitch_1
-    new-instance v3, Lorg/telegram/ui/TwoStepVerificationSetupActivity$4;
+    new-instance v7, Lorg/telegram/ui/TwoStepVerificationSetupActivity$4;
 
-    invoke-direct {v3, v0, v1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$4;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;Landroid/content/Context;)V
+    invoke-direct {v7, v0, v1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$4;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;Landroid/content/Context;)V
 
     .line 555
-    new-instance v12, Lorg/telegram/ui/TwoStepVerificationSetupActivity$5;
+    new-instance v14, Lorg/telegram/ui/TwoStepVerificationSetupActivity$5;
 
-    invoke-direct {v12, v0, v1, v3}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$5;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;Landroid/content/Context;Landroid/widget/FrameLayout;)V
+    invoke-direct {v14, v0, v1, v7}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$5;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;Landroid/content/Context;Landroid/widget/FrameLayout;)V
 
     .line 587
-    invoke-virtual {v12, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {v14, v7}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
     .line 589
-    new-instance v9, Lorg/telegram/ui/TwoStepVerificationSetupActivity$6;
+    new-instance v12, Lorg/telegram/ui/TwoStepVerificationSetupActivity$6;
 
-    invoke-direct {v9, v0, v1, v12}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$6;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;Landroid/content/Context;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)V
+    invoke-direct {v12, v0, v1, v14}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$6;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;Landroid/content/Context;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)V
 
     .line 611
-    new-instance v10, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;
+    new-instance v9, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;
 
-    invoke-direct {v10, v0, v1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;Landroid/content/Context;)V
+    invoke-direct {v9, v0, v1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$7;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;Landroid/content/Context;)V
 
-    iput-object v10, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->scrollView:Landroid/widget/ScrollView;
+    iput-object v9, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->scrollView:Landroid/widget/ScrollView;
 
     .line 707
-    invoke-virtual {v10, v4}, Landroid/widget/ScrollView;->setVerticalScrollBarEnabled(Z)V
+    invoke-virtual {v9, v4}, Landroid/widget/ScrollView;->setVerticalScrollBarEnabled(Z)V
 
     .line 708
-    iget-object v10, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->scrollView:Landroid/widget/ScrollView;
+    iget-object v9, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->scrollView:Landroid/widget/ScrollView;
 
     invoke-static {v15, v15}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v13
+    move-result-object v10
 
-    invoke-virtual {v3, v10, v13}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v7, v9, v10}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 709
-    iget-object v10, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->bottomSkipButton:Landroid/widget/TextView;
+    iget-object v9, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->bottomSkipButton:Landroid/widget/TextView;
 
     const/16 v16, -0x1
 
-    if-lt v2, v8, :cond_9
+    const/16 v10, 0x15
+
+    if-lt v2, v10, :cond_9
 
     const/16 v17, 0x38
 
@@ -8096,14 +8096,16 @@
 
     invoke-static/range {v16 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v13
+    move-result-object v10
 
-    invoke-virtual {v3, v10, v13}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v7, v9, v10}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 710
-    iget-object v10, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->floatingButtonContainer:Landroid/widget/FrameLayout;
+    iget-object v9, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->floatingButtonContainer:Landroid/widget/FrameLayout;
 
-    if-lt v2, v8, :cond_a
+    const/16 v10, 0x15
+
+    if-lt v2, v10, :cond_a
 
     const/16 v16, 0x38
 
@@ -8113,7 +8115,7 @@
     const/16 v16, 0x3c
 
     :goto_6
-    if-lt v2, v8, :cond_b
+    if-lt v2, v10, :cond_b
 
     const/16 v17, 0x38
 
@@ -8135,38 +8137,38 @@
 
     invoke-static/range {v16 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v13
+    move-result-object v10
 
-    invoke-virtual {v3, v10, v13}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v7, v9, v10}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 711
     invoke-static {v15, v15}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v10
+    move-result-object v9
 
-    invoke-virtual {v9, v12, v10}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v12, v14, v9}, Landroid/view/ViewGroup;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 713
-    new-instance v10, Lorg/telegram/ui/TwoStepVerificationSetupActivity$8;
+    new-instance v9, Lorg/telegram/ui/TwoStepVerificationSetupActivity$8;
 
-    invoke-direct {v10, v0, v1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$8;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;Landroid/content/Context;)V
+    invoke-direct {v9, v0, v1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$8;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;Landroid/content/Context;)V
 
     .line 722
-    invoke-virtual {v10, v6}, Landroid/widget/LinearLayout;->setOrientation(I)V
+    invoke-virtual {v9, v6}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     .line 723
-    iget-object v13, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->scrollView:Landroid/widget/ScrollView;
+    iget-object v10, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->scrollView:Landroid/widget/ScrollView;
 
-    const/16 v11, 0x33
+    const/16 v13, 0x33
 
-    invoke-static {v15, v15, v11}, Lorg/telegram/ui/Components/LayoutHelper;->createScroll(III)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static {v15, v15, v13}, Lorg/telegram/ui/Components/LayoutHelper;->createScroll(III)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v11
+    move-result-object v13
 
-    invoke-virtual {v13, v10, v11}, Landroid/widget/ScrollView;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v10, v9, v13}, Landroid/widget/ScrollView;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 725
-    iget-object v11, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
+    iget-object v10, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/16 v16, -0x2
 
@@ -8184,10 +8186,10 @@
 
     move-result-object v13
 
-    invoke-virtual {v10, v11, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v9, v10, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 726
-    iget-object v11, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->titleTextView:Landroid/widget/TextView;
+    iget-object v10, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->titleTextView:Landroid/widget/TextView;
 
     const/16 v20, 0x8
 
@@ -8195,10 +8197,10 @@
 
     move-result-object v13
 
-    invoke-virtual {v10, v11, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v9, v10, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 727
-    iget-object v11, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText:Landroid/widget/TextView;
+    iget-object v10, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText:Landroid/widget/TextView;
 
     const/16 v20, 0x9
 
@@ -8206,295 +8208,297 @@
 
     move-result-object v13
 
-    invoke-virtual {v10, v11, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v9, v10, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 729
-    new-instance v11, Lorg/telegram/ui/Components/OutlineTextContainerView;
+    new-instance v10, Lorg/telegram/ui/Components/OutlineTextContainerView;
 
-    invoke-direct {v11, v1}, Lorg/telegram/ui/Components/OutlineTextContainerView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v10, v1}, Lorg/telegram/ui/Components/OutlineTextContainerView;-><init>(Landroid/content/Context;)V
 
-    iput-object v11, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->outlineTextFirstRow:Lorg/telegram/ui/Components/OutlineTextContainerView;
+    iput-object v10, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->outlineTextFirstRow:Lorg/telegram/ui/Components/OutlineTextContainerView;
 
     .line 730
-    invoke-virtual {v11, v14, v4}, Lorg/telegram/ui/Components/OutlineTextContainerView;->animateSelection(FZ)V
+    invoke-virtual {v10, v3, v4}, Lorg/telegram/ui/Components/OutlineTextContainerView;->animateSelection(FZ)V
 
     .line 732
-    new-instance v11, Lorg/telegram/ui/Components/EditTextBoldCursor;
+    new-instance v10, Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-direct {v11, v1}, Lorg/telegram/ui/Components/EditTextBoldCursor;-><init>(Landroid/content/Context;)V
+    invoke-direct {v10, v1}, Lorg/telegram/ui/Components/EditTextBoldCursor;-><init>(Landroid/content/Context;)V
 
-    iput-object v11, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iput-object v10, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     .line 733
-    invoke-virtual {v11, v6, v7}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v10, v6, v8}, Landroid/widget/EditText;->setTextSize(IF)V
 
-    const/16 v11, 0x10
+    const/16 v10, 0x10
 
     .line 734
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v11
+    move-result v10
 
     .line 735
     iget-object v13, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-virtual {v13, v11, v11, v11, v11}, Landroid/widget/EditText;->setPadding(IIII)V
+    invoke-virtual {v13, v10, v10, v10, v10}, Landroid/widget/EditText;->setPadding(IIII)V
 
     .line 736
-    iget-object v11, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v10, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const-string v13, "windowBackgroundWhiteInputFieldActivated"
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputFieldActivated:I
 
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v13
+    move-result v11
 
-    invoke-virtual {v11, v13}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
+    invoke-virtual {v10, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
 
     .line 737
-    iget-object v11, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v10, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v13
+    move-result v11
 
-    invoke-virtual {v11, v13}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v10, v11}, Landroid/widget/EditText;->setTextColor(I)V
 
     .line 738
-    iget-object v11, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v10, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const/4 v13, 0x0
+    const/4 v11, 0x0
 
-    invoke-virtual {v11, v13}, Landroid/widget/EditText;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v10, v11}, Landroid/widget/EditText;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     .line 739
-    iget-object v11, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v10, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-virtual {v11, v6}, Landroid/widget/EditText;->setMaxLines(I)V
+    invoke-virtual {v10, v6}, Landroid/widget/EditText;->setMaxLines(I)V
 
     .line 740
-    iget-object v11, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v10, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-virtual {v11, v6}, Landroid/widget/EditText;->setLines(I)V
+    invoke-virtual {v10, v6}, Landroid/widget/EditText;->setLines(I)V
 
     .line 741
-    iget-object v11, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v10, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const/4 v13, 0x3
+    const/4 v11, 0x3
 
-    invoke-virtual {v11, v13}, Landroid/widget/EditText;->setGravity(I)V
+    invoke-virtual {v10, v11}, Landroid/widget/EditText;->setGravity(I)V
 
     .line 742
-    iget-object v11, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v10, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const/16 v13, 0x14
+    const/16 v11, 0x14
 
-    invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v13
+    move-result v11
 
-    invoke-virtual {v11, v13}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
+    invoke-virtual {v10, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
 
     .line 743
-    iget-object v11, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v10, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-virtual {v11, v6}, Landroid/widget/EditText;->setSingleLine(Z)V
+    invoke-virtual {v10, v6}, Landroid/widget/EditText;->setSingleLine(Z)V
 
     .line 744
-    iget-object v11, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v10, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const/high16 v13, 0x3fc00000    # 1.5f
+    const/high16 v11, 0x3fc00000    # 1.5f
 
-    invoke-virtual {v11, v13}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
+    invoke-virtual {v10, v11}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
 
     .line 745
-    iget-object v11, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v10, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    new-instance v13, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda17;
+    new-instance v11, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda17;
 
-    invoke-direct {v13, v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda17;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)V
+    invoke-direct {v11, v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda17;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)V
 
-    invoke-virtual {v11, v13}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
+    invoke-virtual {v10, v11}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
 
     .line 756
-    iget-object v11, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->outlineTextFirstRow:Lorg/telegram/ui/Components/OutlineTextContainerView;
+    iget-object v10, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->outlineTextFirstRow:Lorg/telegram/ui/Components/OutlineTextContainerView;
 
-    iget-object v13, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
-
-    invoke-virtual {v11, v13}, Lorg/telegram/ui/Components/OutlineTextContainerView;->attachEditText(Landroid/widget/EditText;)V
-
-    .line 757
     iget-object v11, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    new-instance v13, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda13;
+    invoke-virtual {v10, v11}, Lorg/telegram/ui/Components/OutlineTextContainerView;->attachEditText(Landroid/widget/EditText;)V
 
-    invoke-direct {v13, v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)V
+    .line 757
+    iget-object v10, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-virtual {v11, v13}, Landroid/widget/EditText;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
+    new-instance v11, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda13;
+
+    invoke-direct {v11, v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda13;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)V
+
+    invoke-virtual {v10, v11}, Landroid/widget/EditText;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
 
     .line 759
-    new-instance v11, Landroid/widget/LinearLayout;
+    new-instance v10, Landroid/widget/LinearLayout;
 
-    invoke-direct {v11, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
+    invoke-direct {v10, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     .line 760
-    invoke-virtual {v11, v4}, Landroid/widget/LinearLayout;->setOrientation(I)V
+    invoke-virtual {v10, v4}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     .line 761
-    iget-object v13, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v11, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v6, -0x2
 
-    invoke-static {v4, v6, v14}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIF)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static {v4, v6, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIF)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v11, v13, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v10, v11, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 763
-    new-instance v7, Lorg/telegram/ui/TwoStepVerificationSetupActivity$9;
+    new-instance v8, Lorg/telegram/ui/TwoStepVerificationSetupActivity$9;
 
-    invoke-direct {v7, v0, v1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$9;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;Landroid/content/Context;)V
+    invoke-direct {v8, v0, v1}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$9;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;Landroid/content/Context;)V
 
-    iput-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->showPasswordButton:Landroid/widget/ImageView;
+    iput-object v8, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->showPasswordButton:Landroid/widget/ImageView;
 
     .line 771
-    sget v13, Lorg/telegram/messenger/R$drawable;->msg_message:I
+    sget v11, Lorg/telegram/messenger/R$drawable;->msg_message:I
 
-    invoke-virtual {v7, v13}, Landroid/widget/ImageView;->setImageResource(I)V
+    invoke-virtual {v8, v11}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 772
-    iget-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->showPasswordButton:Landroid/widget/ImageView;
+    iget-object v8, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->showPasswordButton:Landroid/widget/ImageView;
 
-    sget-object v13, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
+    sget-object v11, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
-    invoke-virtual {v7, v13}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
+    invoke-virtual {v8, v11}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
     .line 773
-    iget-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->showPasswordButton:Landroid/widget/ImageView;
+    iget-object v8, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->showPasswordButton:Landroid/widget/ImageView;
 
-    sget v13, Lorg/telegram/messenger/R$string;->TwoStepVerificationShowPassword:I
+    sget v11, Lorg/telegram/messenger/R$string;->TwoStepVerificationShowPassword:I
 
-    invoke-static {v13}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+    invoke-static {v11}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v11
 
-    invoke-virtual {v7, v13}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
+    invoke-virtual {v8, v11}, Landroid/widget/ImageView;->setContentDescription(Ljava/lang/CharSequence;)V
+
+    const/16 v8, 0x15
 
     if-lt v2, v8, :cond_c
 
     .line 775
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->showPasswordButton:Landroid/widget/ImageView;
 
-    const-string v7, "listSelectorSDK21"
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v7
+    move-result v8
 
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v7
+    move-result-object v8
 
-    invoke-virtual {v2, v7}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v2, v8}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     .line 777
     :cond_c
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->showPasswordButton:Landroid/widget/ImageView;
 
-    new-instance v7, Landroid/graphics/PorterDuffColorFilter;
+    new-instance v8, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v8, "chat_messagePanelIcons"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelIcons:I
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v8
+    move-result v11
 
-    sget-object v13, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
+    sget-object v3, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-direct {v7, v8, v13}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    invoke-direct {v8, v11, v3}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
-    invoke-virtual {v2, v7}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
+    invoke-virtual {v2, v8}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     .line 778
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->showPasswordButton:Landroid/widget/ImageView;
 
-    const v7, 0x3dcccccd    # 0.1f
+    const v3, 0x3dcccccd    # 0.1f
 
-    invoke-static {v2, v4, v7, v4}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZ)V
+    invoke-static {v2, v4, v3, v4}, Lorg/telegram/messenger/AndroidUtilities;->updateViewVisibilityAnimated(Landroid/view/View;ZFZ)V
 
     .line 780
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->showPasswordButton:Landroid/widget/ImageView;
 
-    new-instance v7, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda9;
+    new-instance v3, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda9;
 
-    invoke-direct {v7, v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda9;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)V
+    invoke-direct {v3, v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda9;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)V
 
-    invoke-virtual {v2, v7}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 819
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->showPasswordButton:Landroid/widget/ImageView;
 
-    const/16 v17, 0x18
-
     const/16 v18, 0x18
 
-    const/16 v19, 0x10
+    const/16 v19, 0x18
 
-    const/16 v20, 0x0
+    const/16 v20, 0x10
 
     const/16 v21, 0x0
 
-    const/16 v22, 0x10
+    const/16 v22, 0x0
 
-    const/16 v23, 0x0
+    const/16 v23, 0x10
 
-    invoke-static/range {v17 .. v23}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
+    const/16 v24, 0x0
 
-    move-result-object v7
+    invoke-static/range {v18 .. v24}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
-    invoke-virtual {v11, v2, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    move-result-object v3
+
+    invoke-virtual {v10, v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 821
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextFirstRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    new-instance v7, Lorg/telegram/ui/TwoStepVerificationSetupActivity$10;
+    new-instance v3, Lorg/telegram/ui/TwoStepVerificationSetupActivity$10;
 
-    invoke-direct {v7, v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$10;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)V
+    invoke-direct {v3, v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$10;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)V
 
-    invoke-virtual {v2, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
+    invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
     .line 840
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->outlineTextFirstRow:Lorg/telegram/ui/Components/OutlineTextContainerView;
 
     invoke-static {v15, v6}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v7
+    move-result-object v3
 
-    invoke-virtual {v2, v11, v7}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v2, v10, v3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 841
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->outlineTextFirstRow:Lorg/telegram/ui/Components/OutlineTextContainerView;
 
-    const/16 v17, -0x1
+    const/16 v18, -0x1
 
-    const/16 v18, -0x2
+    const/16 v19, -0x2
 
-    const/16 v19, 0x31
+    const/16 v20, 0x31
 
-    const/16 v20, 0x18
+    const/16 v21, 0x18
 
-    const/16 v21, 0x20
+    const/16 v22, 0x20
 
-    const/16 v22, 0x18
+    const/16 v23, 0x18
 
-    const/16 v23, 0x20
+    const/16 v24, 0x20
 
-    invoke-static/range {v17 .. v23}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v18 .. v24}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v7
+    move-result-object v3
 
-    invoke-virtual {v10, v2, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v9, v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 843
     new-instance v2, Lorg/telegram/ui/Components/OutlineTextContainerView;
@@ -8510,12 +8514,12 @@
 
     iput-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextSecondRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const/high16 v7, 0x41900000    # 18.0f
+    const/high16 v3, 0x41900000    # 18.0f
 
     const/4 v8, 0x1
 
     .line 846
-    invoke-virtual {v2, v8, v7}, Landroid/widget/EditText;->setTextSize(IF)V
+    invoke-virtual {v2, v8, v3}, Landroid/widget/EditText;->setTextSize(IF)V
 
     const/16 v2, 0x10
 
@@ -8525,144 +8529,142 @@
     move-result v2
 
     .line 848
-    iget-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextSecondRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v3, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextSecondRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-virtual {v7, v2, v2, v2, v2}, Landroid/widget/EditText;->setPadding(IIII)V
+    invoke-virtual {v3, v2, v2, v2, v2}, Landroid/widget/EditText;->setPadding(IIII)V
 
     .line 849
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextSecondRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const-string v7, "windowBackgroundWhiteInputFieldActivated"
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    move-result v3
 
-    move-result v7
-
-    invoke-virtual {v2, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
+    invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
 
     .line 850
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextSecondRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v5
+    move-result v3
 
-    invoke-virtual {v2, v5}, Landroid/widget/EditText;->setTextColor(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/EditText;->setTextColor(I)V
 
     .line 851
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextSecondRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {v2, v5}, Landroid/widget/EditText;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v2, v3}, Landroid/widget/EditText;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     .line 852
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextSecondRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const/4 v5, 0x1
+    const/4 v3, 0x1
 
-    invoke-virtual {v2, v5}, Landroid/widget/EditText;->setMaxLines(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/EditText;->setMaxLines(I)V
 
     .line 853
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextSecondRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-virtual {v2, v5}, Landroid/widget/EditText;->setLines(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/EditText;->setLines(I)V
 
     .line 854
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextSecondRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const/4 v7, 0x3
+    const/4 v5, 0x3
 
-    invoke-virtual {v2, v7}, Landroid/widget/EditText;->setGravity(I)V
+    invoke-virtual {v2, v5}, Landroid/widget/EditText;->setGravity(I)V
 
     .line 855
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextSecondRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const/16 v7, 0x14
+    const/16 v5, 0x14
 
-    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v7
+    move-result v5
 
-    invoke-virtual {v2, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
+    invoke-virtual {v2, v5}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
 
     .line 856
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextSecondRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-virtual {v2, v5}, Landroid/widget/EditText;->setSingleLine(Z)V
+    invoke-virtual {v2, v3}, Landroid/widget/EditText;->setSingleLine(Z)V
 
     .line 857
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextSecondRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    const/high16 v5, 0x3fc00000    # 1.5f
+    const/high16 v3, 0x3fc00000    # 1.5f
 
-    invoke-virtual {v2, v5}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
+    invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
 
     .line 858
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextSecondRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    new-instance v5, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda18;
+    new-instance v3, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda18;
 
-    invoke-direct {v5, v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda18;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)V
+    invoke-direct {v3, v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda18;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)V
 
-    invoke-virtual {v2, v5}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
+    invoke-virtual {v2, v3}, Landroid/widget/EditText;->setOnEditorActionListener(Landroid/widget/TextView$OnEditorActionListener;)V
 
     .line 865
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->outlineTextSecondRow:Lorg/telegram/ui/Components/OutlineTextContainerView;
 
-    iget-object v5, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextSecondRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v3, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextSecondRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-virtual {v2, v5}, Lorg/telegram/ui/Components/OutlineTextContainerView;->attachEditText(Landroid/widget/EditText;)V
+    invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/OutlineTextContainerView;->attachEditText(Landroid/widget/EditText;)V
 
     .line 866
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextSecondRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    new-instance v5, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda14;
+    new-instance v3, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda14;
 
-    invoke-direct {v5, v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda14;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)V
+    invoke-direct {v3, v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda14;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)V
 
-    invoke-virtual {v2, v5}, Landroid/widget/EditText;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
+    invoke-virtual {v2, v3}, Landroid/widget/EditText;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
 
     .line 868
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->outlineTextSecondRow:Lorg/telegram/ui/Components/OutlineTextContainerView;
 
-    iget-object v5, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextSecondRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
+    iget-object v3, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->editTextSecondRow:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-static {v15, v6}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v7
+    move-result-object v5
 
-    invoke-virtual {v2, v5, v7}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v2, v3, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 869
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->outlineTextSecondRow:Lorg/telegram/ui/Components/OutlineTextContainerView;
 
-    const/16 v16, -0x1
+    const/16 v17, -0x1
 
-    const/16 v17, -0x2
+    const/16 v18, -0x2
 
-    const/16 v18, 0x31
+    const/16 v19, 0x31
 
-    const/16 v19, 0x18
+    const/16 v20, 0x18
 
-    const/16 v20, 0x10
+    const/16 v21, 0x10
 
-    const/16 v21, 0x18
+    const/16 v22, 0x18
 
-    const/16 v22, 0x0
+    const/16 v23, 0x0
 
-    invoke-static/range {v16 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v17 .. v23}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v5
+    move-result-object v3
 
-    invoke-virtual {v10, v2, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v9, v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 870
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->outlineTextSecondRow:Lorg/telegram/ui/Components/OutlineTextContainerView;
 
-    const/16 v5, 0x8
+    const/16 v3, 0x8
 
-    invoke-virtual {v2, v5}, Landroid/widget/FrameLayout;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     .line 872
     new-instance v2, Lorg/telegram/ui/Components/CustomPhoneKeyboardView;
@@ -8672,12 +8674,12 @@
     iput-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->keyboardView:Lorg/telegram/ui/Components/CustomPhoneKeyboardView;
 
     .line 873
-    invoke-virtual {v2, v5}, Landroid/view/ViewGroup;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/view/ViewGroup;->setVisibility(I)V
 
     .line 874
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->keyboardView:Lorg/telegram/ui/Components/CustomPhoneKeyboardView;
 
-    invoke-virtual {v12, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {v14, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
     .line 876
     new-instance v2, Lorg/telegram/ui/TwoStepVerificationSetupActivity$11;
@@ -8686,53 +8688,53 @@
 
     iput-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
-    const/4 v5, 0x6
+    const/4 v3, 0x6
 
-    const/4 v7, 0x1
+    const/4 v5, 0x1
 
     .line 882
-    invoke-virtual {v2, v5, v7}, Lorg/telegram/ui/CodeFieldContainer;->setNumbersCount(II)V
+    invoke-virtual {v2, v3, v5}, Lorg/telegram/ui/CodeFieldContainer;->setNumbersCount(II)V
 
     .line 883
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
     iget-object v2, v2, Lorg/telegram/ui/CodeFieldContainer;->codeField:[Lorg/telegram/ui/CodeNumberField;
 
-    array-length v5, v2
+    array-length v3, v2
 
     move v8, v4
 
     :goto_8
-    if-ge v8, v5, :cond_d
+    if-ge v8, v3, :cond_d
 
-    aget-object v11, v2, v8
+    aget-object v10, v2, v8
 
     .line 884
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->isCustomKeyboardVisible()Z
 
-    move-result v12
+    move-result v11
 
-    xor-int/2addr v12, v7
+    xor-int/2addr v11, v5
 
-    invoke-virtual {v11, v12}, Lorg/telegram/ui/CodeNumberField;->setShowSoftInputOnFocusCompat(Z)V
+    invoke-virtual {v10, v11}, Lorg/telegram/ui/CodeNumberField;->setShowSoftInputOnFocusCompat(Z)V
 
     .line 885
-    new-instance v7, Lorg/telegram/ui/TwoStepVerificationSetupActivity$12;
+    new-instance v5, Lorg/telegram/ui/TwoStepVerificationSetupActivity$12;
 
-    invoke-direct {v7, v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$12;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)V
+    invoke-direct {v5, v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$12;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)V
 
-    invoke-virtual {v11, v7}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
+    invoke-virtual {v10, v5}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
     .line 900
-    new-instance v7, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda15;
+    new-instance v5, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda15;
 
-    invoke-direct {v7, v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)V
+    invoke-direct {v5, v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)V
 
-    invoke-virtual {v11, v7}, Landroid/widget/EditText;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
+    invoke-virtual {v10, v5}, Landroid/widget/EditText;->setOnFocusChangeListener(Landroid/view/View$OnFocusChangeListener;)V
 
     add-int/lit8 v8, v8, 0x1
 
-    const/4 v7, 0x1
+    const/4 v5, 0x1
 
     goto :goto_8
 
@@ -8740,70 +8742,70 @@
     :cond_d
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
-    const/16 v5, 0x8
+    const/16 v3, 0x8
 
-    invoke-virtual {v2, v5}, Landroid/widget/LinearLayout;->setVisibility(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/LinearLayout;->setVisibility(I)V
 
     .line 908
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->codeFieldContainer:Lorg/telegram/ui/CodeFieldContainer;
 
-    const/16 v16, -0x2
-
     const/16 v17, -0x2
 
-    const/16 v18, 0x1
+    const/16 v18, -0x2
 
-    const/16 v19, 0x0
+    const/16 v19, 0x1
 
-    const/16 v20, 0x20
+    const/16 v20, 0x0
 
-    const/16 v21, 0x0
+    const/16 v21, 0x20
 
     const/16 v22, 0x0
 
-    invoke-static/range {v16 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
+    const/16 v23, 0x0
 
-    move-result-object v5
+    invoke-static/range {v17 .. v23}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
-    invoke-virtual {v10, v2, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    move-result-object v3
+
+    invoke-virtual {v9, v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 910
     new-instance v2, Landroid/widget/FrameLayout;
 
     invoke-direct {v2, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    const/16 v16, -0x1
+    const/16 v17, -0x1
 
-    const/16 v18, 0x33
+    const/16 v19, 0x33
 
-    const/16 v20, 0x24
+    const/16 v21, 0x24
 
-    const/16 v22, 0x16
+    const/16 v23, 0x16
 
     .line 911
-    invoke-static/range {v16 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static/range {v17 .. v23}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
+
+    move-result-object v3
+
+    invoke-virtual {v9, v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 913
+    iget-object v3, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText2:Landroid/widget/TextView;
+
+    const/16 v5, 0x31
+
+    invoke-static {v6, v6, v5}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v5
 
-    invoke-virtual {v10, v2, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 913
-    iget-object v5, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText2:Landroid/widget/TextView;
-
-    const/16 v7, 0x31
-
-    invoke-static {v6, v6, v7}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
-
-    move-result-object v6
-
-    invoke-virtual {v2, v5, v6}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v2, v3, v5}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 915
     iget v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->currentType:I
 
-    const/4 v5, 0x4
+    const/4 v3, 0x4
 
-    if-ne v2, v5, :cond_e
+    if-ne v2, v3, :cond_e
 
     .line 916
     new-instance v2, Landroid/widget/TextView;
@@ -8812,105 +8814,107 @@
 
     iput-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText3:Landroid/widget/TextView;
 
-    const-string v5, "windowBackgroundWhiteLinkText"
-
     .line 917
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteLinkText:I
 
-    move-result v5
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v2, v5}, Landroid/widget/TextView;->setTextColor(I)V
+    move-result v3
+
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 918
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText3:Landroid/widget/TextView;
 
-    const/4 v5, 0x1
+    const/4 v3, 0x1
 
-    invoke-virtual {v2, v5}, Landroid/widget/TextView;->setGravity(I)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setGravity(I)V
 
     .line 919
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText3:Landroid/widget/TextView;
 
-    const/high16 v6, 0x41600000    # 14.0f
+    const/high16 v5, 0x41600000    # 14.0f
 
-    invoke-virtual {v2, v5, v6}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-virtual {v2, v3, v5}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 920
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText3:Landroid/widget/TextView;
 
-    const/4 v5, 0x2
+    const/4 v3, 0x2
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v6
+    move-result v5
 
-    int-to-float v5, v6
+    int-to-float v3, v5
 
-    invoke-virtual {v2, v5, v14}, Landroid/widget/TextView;->setLineSpacing(FF)V
+    const/high16 v5, 0x3f800000    # 1.0f
+
+    invoke-virtual {v2, v3, v5}, Landroid/widget/TextView;->setLineSpacing(FF)V
 
     .line 921
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText3:Landroid/widget/TextView;
 
-    const/16 v5, 0x20
+    const/16 v3, 0x20
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v6
-
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
 
-    invoke-virtual {v2, v6, v4, v5, v4}, Landroid/widget/TextView;->setPadding(IIII)V
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v3
+
+    invoke-virtual {v2, v5, v4, v3, v4}, Landroid/widget/TextView;->setPadding(IIII)V
 
     .line 922
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText3:Landroid/widget/TextView;
 
-    sget v5, Lorg/telegram/messenger/R$string;->RestoreEmailTroubleNoEmail:I
+    sget v3, Lorg/telegram/messenger/R$string;->RestoreEmailTroubleNoEmail:I
 
-    const-string v6, "RestoreEmailTroubleNoEmail"
+    const-string v5, "RestoreEmailTroubleNoEmail"
 
-    invoke-static {v6, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v5, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v3
 
-    invoke-virtual {v2, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 923
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText3:Landroid/widget/TextView;
 
-    const/16 v16, -0x2
-
     const/16 v17, -0x2
 
-    const/16 v18, 0x31
+    const/16 v18, -0x2
 
-    const/16 v19, 0x0
+    const/16 v19, 0x31
 
     const/16 v20, 0x0
 
     const/16 v21, 0x0
 
-    const/16 v22, 0x19
+    const/16 v22, 0x0
 
-    invoke-static/range {v16 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
+    const/16 v23, 0x19
 
-    move-result-object v5
+    invoke-static/range {v17 .. v23}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
-    invoke-virtual {v10, v2, v5}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    move-result-object v3
+
+    invoke-virtual {v9, v2, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 924
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText3:Landroid/widget/TextView;
 
-    new-instance v5, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda12;
+    new-instance v3, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda12;
 
-    invoke-direct {v5, v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)V
+    invoke-direct {v3, v0}, Lorg/telegram/ui/TwoStepVerificationSetupActivity$$ExternalSyntheticLambda12;-><init>(Lorg/telegram/ui/TwoStepVerificationSetupActivity;)V
 
-    invoke-virtual {v2, v5}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 937
     :cond_e
-    iput-object v9, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
+    iput-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     .line 939
     new-instance v2, Lorg/telegram/ui/TwoStepVerificationSetupActivity$13;
@@ -8919,20 +8923,20 @@
 
     iput-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->actionBarBackground:Landroid/view/View;
 
-    const/4 v5, 0x0
+    const/4 v3, 0x0
 
     .line 951
-    invoke-virtual {v2, v5}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {v2, v3}, Landroid/view/View;->setAlpha(F)V
 
     .line 952
     iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->actionBarBackground:Landroid/view/View;
 
-    invoke-virtual {v9, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    invoke-virtual {v12, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     .line 953
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    invoke-virtual {v9, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    invoke-virtual {v12, v2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     .line 955
     new-instance v2, Lorg/telegram/ui/Components/RadialProgressView;
@@ -8972,9 +8976,9 @@
     .line 960
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->radialProgressView:Lorg/telegram/ui/Components/RadialProgressView;
 
-    const-string v2, "windowBackgroundWhiteInputFieldActivated"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputFieldActivated:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -8983,33 +8987,33 @@
     .line 961
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->radialProgressView:Lorg/telegram/ui/Components/RadialProgressView;
 
-    const/16 v5, 0x20
+    const/16 v8, 0x20
 
-    const/16 v6, 0x20
+    const/16 v9, 0x20
 
-    const/16 v7, 0x35
-
-    const/4 v8, 0x0
-
-    const/16 v9, 0x10
-
-    const/16 v10, 0x10
+    const/16 v10, 0x35
 
     const/4 v11, 0x0
 
-    invoke-static/range {v5 .. v11}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    const/16 v12, 0x10
+
+    const/16 v13, 0x10
+
+    const/4 v14, 0x0
+
+    invoke-static/range {v8 .. v14}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v2
 
-    invoke-virtual {v3, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v7, v1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 966
     :goto_9
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
-    const-string v2, "windowBackgroundWhite"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -9018,11 +9022,13 @@
     .line 968
     iget v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->currentType:I
 
-    const/16 v2, 0x8c
+    const-string v2, "YourEmailSkip"
 
-    const-string v3, ""
+    const/16 v3, 0x8c
 
-    const/16 v5, 0x78
+    const-string v5, ""
+
+    const/16 v6, 0x78
 
     packed-switch v1, :pswitch_data_1
 
@@ -9032,41 +9038,41 @@
     :pswitch_2
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->titleTextView:Landroid/widget/TextView;
 
-    sget v3, Lorg/telegram/messenger/R$string;->CheckPasswordPerfect:I
+    sget v2, Lorg/telegram/messenger/R$string;->CheckPasswordPerfect:I
 
     const-string v5, "CheckPasswordPerfect"
 
-    invoke-static {v5, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v5, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 997
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText:Landroid/widget/TextView;
 
-    sget v3, Lorg/telegram/messenger/R$string;->CheckPasswordPerfectInfo:I
+    sget v2, Lorg/telegram/messenger/R$string;->CheckPasswordPerfectInfo:I
 
     const-string v5, "CheckPasswordPerfectInfo"
 
-    invoke-static {v5, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v5, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 998
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->buttonTextView:Landroid/widget/TextView;
 
-    sget v3, Lorg/telegram/messenger/R$string;->CheckPasswordBackToSettings:I
+    sget v2, Lorg/telegram/messenger/R$string;->CheckPasswordBackToSettings:I
 
     const-string v5, "CheckPasswordBackToSettings"
 
-    invoke-static {v5, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v5, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 999
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText:Landroid/widget/TextView;
@@ -9076,9 +9082,9 @@
     .line 1001
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
-    sget v3, Lorg/telegram/messenger/R$raw;->wallet_perfect:I
+    sget v2, Lorg/telegram/messenger/R$raw;->wallet_perfect:I
 
-    invoke-virtual {v1, v3, v2, v2}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
+    invoke-virtual {v1, v2, v3, v3}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
     .line 1002
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
@@ -9157,9 +9163,9 @@
     .line 1013
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText2:Landroid/widget/TextView;
 
-    const-string v2, "windowBackgroundWhiteBlueText2"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText2:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -9220,7 +9226,7 @@
 
     sget v2, Lorg/telegram/messenger/R$raw;->wallet_science:I
 
-    invoke-virtual {v1, v2, v5, v5}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
+    invoke-virtual {v1, v2, v6, v6}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
     .line 1022
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
@@ -9337,41 +9343,41 @@
     :pswitch_5
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->titleTextView:Landroid/widget/TextView;
 
-    sget v3, Lorg/telegram/messenger/R$string;->TwoStepVerificationTitle:I
+    sget v2, Lorg/telegram/messenger/R$string;->TwoStepVerificationTitle:I
 
     const-string v5, "TwoStepVerificationTitle"
 
-    invoke-static {v5, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v5, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 971
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText:Landroid/widget/TextView;
 
-    sget v3, Lorg/telegram/messenger/R$string;->SetAdditionalPasswordInfo:I
+    sget v2, Lorg/telegram/messenger/R$string;->SetAdditionalPasswordInfo:I
 
     const-string v5, "SetAdditionalPasswordInfo"
 
-    invoke-static {v5, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v5, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 972
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->buttonTextView:Landroid/widget/TextView;
 
-    sget v3, Lorg/telegram/messenger/R$string;->TwoStepVerificationSetPassword:I
+    sget v2, Lorg/telegram/messenger/R$string;->TwoStepVerificationSetPassword:I
 
     const-string v5, "TwoStepVerificationSetPassword"
 
-    invoke-static {v5, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v5, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 973
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->descriptionText:Landroid/widget/TextView;
@@ -9381,9 +9387,9 @@
     .line 975
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
-    sget v3, Lorg/telegram/messenger/R$raw;->tsv_setup_intro:I
+    sget v2, Lorg/telegram/messenger/R$raw;->tsv_setup_intro:I
 
-    invoke-virtual {v1, v3, v2, v2}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
+    invoke-virtual {v1, v2, v3, v3}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
     .line 976
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
@@ -9398,13 +9404,13 @@
 
     sget v2, Lorg/telegram/messenger/R$string;->VerificationCode:I
 
-    const-string v6, "VerificationCode"
+    const-string v3, "VerificationCode"
 
-    invoke-static {v6, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v3
 
-    invoke-virtual {v1, v6}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
     .line 1103
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -9413,16 +9419,16 @@
 
     move-result-object v1
 
-    const/4 v6, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {v1, v6}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {v1, v3}, Landroid/view/View;->setAlpha(F)V
 
     .line 1104
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->titleTextView:Landroid/widget/TextView;
 
-    const-string v6, "VerificationCode"
+    const-string v3, "VerificationCode"
 
-    invoke-static {v6, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -9445,9 +9451,9 @@
 
     sget v2, Lorg/telegram/messenger/R$string;->EmailPasswordConfirmText2:I
 
-    const/4 v6, 0x1
+    const/4 v3, 0x1
 
-    new-array v6, v6, [Ljava/lang/Object;
+    new-array v3, v3, [Ljava/lang/Object;
 
     iget-object v7, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->currentPassword:Lorg/telegram/tgnet/TLRPC$account_Password;
 
@@ -9455,14 +9461,14 @@
 
     if-eqz v7, :cond_11
 
-    move-object v3, v7
+    move-object v5, v7
 
     :cond_11
-    aput-object v3, v6, v4
+    aput-object v5, v3, v4
 
-    const-string v3, "EmailPasswordConfirmText2"
+    const-string v5, "EmailPasswordConfirmText2"
 
-    invoke-static {v3, v2, v6}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v5, v2, v3}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -9533,7 +9539,7 @@
 
     sget v2, Lorg/telegram/messenger/R$raw;->tsv_setup_mail:I
 
-    invoke-virtual {v1, v2, v5, v5}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
+    invoke-virtual {v1, v2, v6, v6}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
     .line 1129
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
@@ -9548,13 +9554,13 @@
 
     sget v2, Lorg/telegram/messenger/R$string;->PasswordRecovery:I
 
-    const-string v6, "PasswordRecovery"
+    const-string v3, "PasswordRecovery"
 
-    invoke-static {v6, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v3
 
-    invoke-virtual {v1, v6}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
     .line 1134
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -9563,16 +9569,16 @@
 
     move-result-object v1
 
-    const/4 v6, 0x0
+    const/4 v3, 0x0
 
-    invoke-virtual {v1, v6}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {v1, v3}, Landroid/view/View;->setAlpha(F)V
 
     .line 1135
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->titleTextView:Landroid/widget/TextView;
 
-    const-string v6, "PasswordRecovery"
+    const-string v3, "PasswordRecovery"
 
-    invoke-static {v6, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -9597,24 +9603,24 @@
 
     if-eqz v1, :cond_12
 
-    move-object v3, v1
+    move-object v5, v1
 
     .line 1140
     :cond_12
-    invoke-static {v3}, Landroid/text/SpannableStringBuilder;->valueOf(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+    invoke-static {v5}, Landroid/text/SpannableStringBuilder;->valueOf(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object v1
 
     const/16 v2, 0x2a
 
     .line 1141
-    invoke-virtual {v3, v2}, Ljava/lang/String;->indexOf(I)I
+    invoke-virtual {v5, v2}, Ljava/lang/String;->indexOf(I)I
 
     move-result v2
 
-    const/16 v6, 0x2a
+    const/16 v3, 0x2a
 
-    invoke-virtual {v3, v6}, Ljava/lang/String;->lastIndexOf(I)I
+    invoke-virtual {v5, v3}, Ljava/lang/String;->lastIndexOf(I)I
 
     move-result v3
 
@@ -9625,31 +9631,31 @@
     if-eq v3, v15, :cond_13
 
     .line 1143
-    new-instance v6, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;
+    new-instance v5, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;
 
-    invoke-direct {v6}, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;-><init>()V
+    invoke-direct {v5}, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;-><init>()V
 
     .line 1144
-    iget v7, v6, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->flags:I
+    iget v7, v5, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->flags:I
 
     or-int/lit16 v7, v7, 0x100
 
-    iput v7, v6, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->flags:I
+    iput v7, v5, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->flags:I
 
     .line 1145
-    iput v2, v6, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->start:I
+    iput v2, v5, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->start:I
 
     const/4 v7, 0x1
 
     add-int/2addr v3, v7
 
     .line 1146
-    iput v3, v6, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->end:I
+    iput v3, v5, Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;->end:I
 
     .line 1147
     new-instance v7, Lorg/telegram/ui/Components/TextStyleSpan;
 
-    invoke-direct {v7, v6}, Lorg/telegram/ui/Components/TextStyleSpan;-><init>(Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;)V
+    invoke-direct {v7, v5}, Lorg/telegram/ui/Components/TextStyleSpan;-><init>(Lorg/telegram/ui/Components/TextStyleSpan$TextStyleRun;)V
 
     invoke-virtual {v1, v7, v2, v3, v4}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
@@ -9663,13 +9669,13 @@
 
     move-result-object v3
 
-    const/4 v6, 0x1
+    const/4 v5, 0x1
 
-    new-array v6, v6, [Ljava/lang/CharSequence;
+    new-array v5, v5, [Ljava/lang/CharSequence;
 
-    aput-object v1, v6, v4
+    aput-object v1, v5, v4
 
-    invoke-static {v3, v6}, Lorg/telegram/messenger/AndroidUtilities;->formatSpannable(Ljava/lang/CharSequence;[Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+    invoke-static {v3, v5}, Lorg/telegram/messenger/AndroidUtilities;->formatSpannable(Ljava/lang/CharSequence;[Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
     move-result-object v1
 
@@ -9697,7 +9703,7 @@
 
     sget v2, Lorg/telegram/messenger/R$raw;->tsv_setup_mail:I
 
-    invoke-virtual {v1, v2, v5, v5}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
+    invoke-virtual {v1, v2, v6, v6}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
     .line 1157
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
@@ -9710,15 +9716,15 @@
     :pswitch_8
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    sget v2, Lorg/telegram/messenger/R$string;->RecoveryEmailTitle:I
+    sget v3, Lorg/telegram/messenger/R$string;->RecoveryEmailTitle:I
 
-    const-string v3, "RecoveryEmailTitle"
+    const-string v5, "RecoveryEmailTitle"
 
-    invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v5, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v5
 
-    invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v5}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
     .line 1085
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -9727,9 +9733,9 @@
 
     move-result-object v1
 
-    const/4 v3, 0x0
+    const/4 v5, 0x0
 
-    invoke-virtual {v1, v3}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {v1, v5}, Landroid/view/View;->setAlpha(F)V
 
     .line 1086
     iget-boolean v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->emailOnly:Z
@@ -9744,23 +9750,21 @@
     .line 1088
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->bottomSkipButton:Landroid/widget/TextView;
 
-    sget v3, Lorg/telegram/messenger/R$string;->YourEmailSkip:I
+    sget v4, Lorg/telegram/messenger/R$string;->YourEmailSkip:I
 
-    const-string v4, "YourEmailSkip"
+    invoke-static {v2, v4}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1090
     :cond_14
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->titleTextView:Landroid/widget/TextView;
 
-    const-string v3, "RecoveryEmailTitle"
+    const-string v2, "RecoveryEmailTitle"
 
-    invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v2, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -9812,7 +9816,7 @@
 
     sget v2, Lorg/telegram/messenger/R$raw;->tsv_setup_email_sent:I
 
-    invoke-virtual {v1, v2, v5, v5}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
+    invoke-virtual {v1, v2, v6, v6}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
     .line 1098
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
@@ -9825,15 +9829,15 @@
     :pswitch_9
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    sget v2, Lorg/telegram/messenger/R$string;->PasswordHint:I
+    sget v3, Lorg/telegram/messenger/R$string;->PasswordHint:I
 
-    const-string v3, "PasswordHint"
+    const-string v5, "PasswordHint"
 
-    invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v5, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v5
 
-    invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v5}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
     .line 1067
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
@@ -9842,9 +9846,9 @@
 
     move-result-object v1
 
-    const/4 v3, 0x0
+    const/4 v5, 0x0
 
-    invoke-virtual {v1, v3}, Landroid/view/View;->setAlpha(F)V
+    invoke-virtual {v1, v5}, Landroid/view/View;->setAlpha(F)V
 
     .line 1068
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->bottomSkipButton:Landroid/widget/TextView;
@@ -9854,22 +9858,20 @@
     .line 1069
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->bottomSkipButton:Landroid/widget/TextView;
 
-    sget v3, Lorg/telegram/messenger/R$string;->YourEmailSkip:I
+    sget v5, Lorg/telegram/messenger/R$string;->YourEmailSkip:I
 
-    const-string v6, "YourEmailSkip"
+    invoke-static {v2, v5}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    invoke-static {v6, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    move-result-object v2
 
-    move-result-object v3
-
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1070
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->titleTextView:Landroid/widget/TextView;
 
-    const-string v3, "PasswordHint"
+    const-string v2, "PasswordHint"
 
-    invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v2, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -9930,7 +9932,7 @@
 
     sget v2, Lorg/telegram/messenger/R$raw;->tsv_setup_hint:I
 
-    invoke-virtual {v1, v2, v5, v5}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
+    invoke-virtual {v1, v2, v6, v6}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
     .line 1080
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
@@ -9941,35 +9943,35 @@
 
     .line 1027
     :pswitch_a
-    iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->currentPassword:Lorg/telegram/tgnet/TLRPC$account_Password;
+    iget-object v3, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->currentPassword:Lorg/telegram/tgnet/TLRPC$account_Password;
 
-    iget-boolean v2, v2, Lorg/telegram/tgnet/TLRPC$account_Password;->has_password:Z
+    iget-boolean v3, v3, Lorg/telegram/tgnet/TLRPC$account_Password;->has_password:Z
 
-    if-eqz v2, :cond_15
+    if-eqz v3, :cond_15
 
     .line 1028
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    sget v2, Lorg/telegram/messenger/R$string;->PleaseEnterNewFirstPassword:I
+    sget v3, Lorg/telegram/messenger/R$string;->PleaseEnterNewFirstPassword:I
 
-    const-string v6, "PleaseEnterNewFirstPassword"
+    const-string v7, "PleaseEnterNewFirstPassword"
 
-    invoke-static {v6, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v7, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v7
 
-    invoke-virtual {v1, v6}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v7}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
     .line 1029
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->titleTextView:Landroid/widget/TextView;
 
-    const-string v6, "PleaseEnterNewFirstPassword"
+    const-string v7, "PleaseEnterNewFirstPassword"
 
-    invoke-static {v6, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v7, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     goto :goto_c
 
@@ -9990,14 +9992,14 @@
     move-result-object v1
 
     .line 1032
-    iget-object v2, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    invoke-virtual {v2, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
+    invoke-virtual {v3, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
     .line 1033
-    iget-object v2, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->titleTextView:Landroid/widget/TextView;
+    iget-object v3, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->titleTextView:Landroid/widget/TextView;
 
-    invoke-virtual {v2, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v3, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 1035
     :goto_c
@@ -10017,11 +10019,9 @@
     .line 1037
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->bottomSkipButton:Landroid/widget/TextView;
 
-    sget v2, Lorg/telegram/messenger/R$string;->YourEmailSkip:I
+    sget v3, Lorg/telegram/messenger/R$string;->YourEmailSkip:I
 
-    const-string v6, "YourEmailSkip"
-
-    invoke-static {v6, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v2, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -10143,35 +10143,35 @@
     .line 1051
     new-instance v2, Lorg/telegram/ui/Components/RLottieDrawable;
 
-    sget v7, Lorg/telegram/messenger/R$raw;->tsv_setup_monkey_idle1:I
+    sget v8, Lorg/telegram/messenger/R$raw;->tsv_setup_monkey_idle1:I
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v9
-
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
 
-    const/4 v11, 0x1
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    const/4 v12, 0x0
+    move-result v11
 
-    move-object v6, v2
+    const/4 v12, 0x1
 
-    invoke-direct/range {v6 .. v12}, Lorg/telegram/ui/Components/RLottieDrawable;-><init>(ILjava/lang/String;IIZ[I)V
+    const/4 v13, 0x0
+
+    move-object v7, v2
+
+    invoke-direct/range {v7 .. v13}, Lorg/telegram/ui/Components/RLottieDrawable;-><init>(ILjava/lang/String;IIZ[I)V
 
     aput-object v2, v1, v4
 
@@ -10180,206 +10180,206 @@
 
     new-instance v2, Lorg/telegram/ui/Components/RLottieDrawable;
 
-    sget v7, Lorg/telegram/messenger/R$raw;->tsv_setup_monkey_idle2:I
+    sget v8, Lorg/telegram/messenger/R$raw;->tsv_setup_monkey_idle2:I
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v9
-
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
 
-    move-object v6, v2
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    invoke-direct/range {v6 .. v12}, Lorg/telegram/ui/Components/RLottieDrawable;-><init>(ILjava/lang/String;IIZ[I)V
+    move-result v11
 
-    const/4 v6, 0x1
+    move-object v7, v2
 
-    aput-object v2, v1, v6
+    invoke-direct/range {v7 .. v13}, Lorg/telegram/ui/Components/RLottieDrawable;-><init>(ILjava/lang/String;IIZ[I)V
+
+    const/4 v3, 0x1
+
+    aput-object v2, v1, v3
 
     .line 1053
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->animationDrawables:[Lorg/telegram/ui/Components/RLottieDrawable;
 
     new-instance v2, Lorg/telegram/ui/Components/RLottieDrawable;
 
-    sget v7, Lorg/telegram/messenger/R$raw;->tsv_monkey_close:I
+    sget v8, Lorg/telegram/messenger/R$raw;->tsv_monkey_close:I
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v9
-
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
 
-    move-object v6, v2
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    invoke-direct/range {v6 .. v12}, Lorg/telegram/ui/Components/RLottieDrawable;-><init>(ILjava/lang/String;IIZ[I)V
+    move-result v11
 
-    const/4 v6, 0x2
+    move-object v7, v2
 
-    aput-object v2, v1, v6
+    invoke-direct/range {v7 .. v13}, Lorg/telegram/ui/Components/RLottieDrawable;-><init>(ILjava/lang/String;IIZ[I)V
+
+    const/4 v3, 0x2
+
+    aput-object v2, v1, v3
 
     .line 1054
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->animationDrawables:[Lorg/telegram/ui/Components/RLottieDrawable;
 
     const/4 v2, 0x3
 
-    new-instance v13, Lorg/telegram/ui/Components/RLottieDrawable;
+    new-instance v3, Lorg/telegram/ui/Components/RLottieDrawable;
 
-    sget v7, Lorg/telegram/messenger/R$raw;->tsv_setup_monkey_peek:I
+    sget v8, Lorg/telegram/messenger/R$raw;->tsv_setup_monkey_peek:I
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v9
-
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
 
-    move-object v6, v13
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    invoke-direct/range {v6 .. v12}, Lorg/telegram/ui/Components/RLottieDrawable;-><init>(ILjava/lang/String;IIZ[I)V
+    move-result v11
 
-    aput-object v13, v1, v2
+    move-object v7, v3
+
+    invoke-direct/range {v7 .. v13}, Lorg/telegram/ui/Components/RLottieDrawable;-><init>(ILjava/lang/String;IIZ[I)V
+
+    aput-object v3, v1, v2
 
     .line 1055
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->animationDrawables:[Lorg/telegram/ui/Components/RLottieDrawable;
 
     new-instance v2, Lorg/telegram/ui/Components/RLottieDrawable;
 
-    sget v7, Lorg/telegram/messenger/R$raw;->tsv_setup_monkey_close_and_peek_to_idle:I
+    sget v8, Lorg/telegram/messenger/R$raw;->tsv_setup_monkey_close_and_peek_to_idle:I
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v9
-
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
 
-    move-object v6, v2
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    invoke-direct/range {v6 .. v12}, Lorg/telegram/ui/Components/RLottieDrawable;-><init>(ILjava/lang/String;IIZ[I)V
+    move-result v11
 
-    const/4 v6, 0x4
+    move-object v7, v2
 
-    aput-object v2, v1, v6
+    invoke-direct/range {v7 .. v13}, Lorg/telegram/ui/Components/RLottieDrawable;-><init>(ILjava/lang/String;IIZ[I)V
+
+    const/4 v3, 0x4
+
+    aput-object v2, v1, v3
 
     .line 1056
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->animationDrawables:[Lorg/telegram/ui/Components/RLottieDrawable;
 
     const/4 v2, 0x5
 
-    new-instance v13, Lorg/telegram/ui/Components/RLottieDrawable;
+    new-instance v3, Lorg/telegram/ui/Components/RLottieDrawable;
 
-    sget v7, Lorg/telegram/messenger/R$raw;->tsv_setup_monkey_close_and_peek:I
+    sget v8, Lorg/telegram/messenger/R$raw;->tsv_setup_monkey_close_and_peek:I
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v7, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v7, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v7}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v9
-
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
 
-    move-object v6, v13
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    invoke-direct/range {v6 .. v12}, Lorg/telegram/ui/Components/RLottieDrawable;-><init>(ILjava/lang/String;IIZ[I)V
+    move-result v11
 
-    aput-object v13, v1, v2
+    move-object v7, v3
+
+    invoke-direct/range {v7 .. v13}, Lorg/telegram/ui/Components/RLottieDrawable;-><init>(ILjava/lang/String;IIZ[I)V
+
+    aput-object v3, v1, v2
 
     .line 1057
     iget-object v1, v0, Lorg/telegram/ui/TwoStepVerificationSetupActivity;->animationDrawables:[Lorg/telegram/ui/Components/RLottieDrawable;
 
     new-instance v2, Lorg/telegram/ui/Components/RLottieDrawable;
 
-    sget v7, Lorg/telegram/messenger/R$raw;->tsv_setup_monkey_tracking:I
+    sget v8, Lorg/telegram/messenger/R$raw;->tsv_setup_monkey_tracking:I
 
-    new-instance v6, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v6}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-virtual {v6, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6, v7}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
+    invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v6}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v8
+    move-result-object v9
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v9
-
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
 
-    move-object v6, v2
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    invoke-direct/range {v6 .. v12}, Lorg/telegram/ui/Components/RLottieDrawable;-><init>(ILjava/lang/String;IIZ[I)V
+    move-result v11
+
+    move-object v7, v2
+
+    invoke-direct/range {v7 .. v13}, Lorg/telegram/ui/Components/RLottieDrawable;-><init>(ILjava/lang/String;IIZ[I)V
 
     const/4 v3, 0x6
 
@@ -10644,6 +10644,8 @@
 
     or-int/2addr v4, v2
 
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
     const/4 v5, 0x0
 
     const/4 v6, 0x0
@@ -10652,11 +10654,9 @@
 
     const/4 v8, 0x0
 
-    const-string v9, "windowBackgroundWhite"
-
     move-object v2, v10
 
-    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -10671,6 +10671,8 @@
 
     or-int v13, v3, v4
 
+    sget v18, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+
     const/4 v14, 0x0
 
     const/4 v15, 0x0
@@ -10679,11 +10681,9 @@
 
     const/16 v17, 0x0
 
-    const-string v18, "windowBackgroundGray"
-
     move-object v11, v2
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -10694,13 +10694,13 @@
 
     sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
-    const/4 v9, 0x0
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
 
-    const-string v10, "actionBarDefault"
+    const/4 v9, 0x0
 
     move-object v3, v2
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -10711,11 +10711,11 @@
 
     sget v13, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_ITEMSCOLOR:I
 
-    const-string v18, "actionBarDefaultIcon"
+    sget v18, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultIcon:I
 
     move-object v11, v2
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -10726,11 +10726,11 @@
 
     sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_TITLECOLOR:I
 
-    const-string v10, "actionBarDefaultTitle"
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultTitle:I
 
     move-object v3, v2
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -10741,11 +10741,11 @@
 
     sget v13, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_SELECTORCOLOR:I
 
-    const-string v18, "actionBarDefaultSelector"
+    sget v18, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSelector:I
 
     move-object v11, v2
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -10756,11 +10756,11 @@
 
     sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
 
-    const-string v10, "windowBackgroundWhiteGrayText6"
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText6:I
 
     move-object v3, v2
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -10771,11 +10771,11 @@
 
     sget v13, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_TEXTCOLOR:I
 
-    const-string v18, "windowBackgroundWhiteBlackText"
+    sget v18, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     move-object v11, v2
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -10786,11 +10786,11 @@
 
     sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_HINTTEXTCOLOR:I
 
-    const-string v10, "windowBackgroundWhiteHintText"
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
 
     move-object v3, v2
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -10801,11 +10801,11 @@
 
     sget v13, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUNDFILTER:I
 
-    const-string v18, "windowBackgroundWhiteInputField"
+    sget v18, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputField:I
 
     move-object v11, v2
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -10820,11 +10820,11 @@
 
     or-int/2addr v5, v3
 
-    const-string v10, "windowBackgroundWhiteInputFieldActivated"
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteInputFieldActivated:I
 
     move-object v3, v2
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -10871,14 +10871,14 @@
 .method public isLightStatusBar()Z
     .locals 5
 
-    const-string v0, "windowBackgroundWhite"
+    .line 2195
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     const/4 v1, 0x0
 
     const/4 v2, 0x1
 
-    .line 2195
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;[ZZ)I
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I[ZZ)I
 
     move-result v0
 

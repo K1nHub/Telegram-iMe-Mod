@@ -1361,20 +1361,20 @@
 
     return-void
 
-    .line 2343
+    .line 2350
     :cond_0
     invoke-virtual/range {p1 .. p1}, Ljava/util/ArrayList;->size()I
 
     move-result v3
 
-    .line 2344
+    .line 2351
     sget-object v4, Landroid/provider/ContactsContract$RawContacts;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {v4}, Landroid/content/ContentProviderOperation;->newInsert(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;
 
     move-result-object v4
 
-    .line 2345
+    .line 2352
     iget-object v5, v0, Lorg/telegram/messenger/ContactsController;->systemAccount:Landroid/accounts/Account;
 
     iget-object v5, v5, Landroid/accounts/Account;->name:Ljava/lang/String;
@@ -1383,7 +1383,7 @@
 
     invoke-virtual {v4, v6, v5}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
 
-    .line 2346
+    .line 2353
     iget-object v5, v0, Lorg/telegram/messenger/ContactsController;->systemAccount:Landroid/accounts/Account;
 
     iget-object v5, v5, Landroid/accounts/Account;->type:Ljava/lang/String;
@@ -1392,7 +1392,7 @@
 
     invoke-virtual {v4, v6, v5}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
 
-    .line 2347
+    .line 2354
     iget-object v5, v2, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
 
     invoke-static {v5}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -1409,60 +1409,20 @@
     iget-object v5, v2, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
 
     :goto_0
-    const-string v6, "sync1"
+    const-string/jumbo v6, "sync1"
 
     invoke-virtual {v4, v6, v5}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
 
-    .line 2348
+    .line 2355
     iget-wide v5, v2, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v5
 
-    const-string v6, "sync2"
+    const-string/jumbo v6, "sync2"
 
     invoke-virtual {v4, v6, v5}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
-
-    .line 2349
-    invoke-virtual {v4}, Landroid/content/ContentProviderOperation$Builder;->build()Landroid/content/ContentProviderOperation;
-
-    move-result-object v4
-
-    invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 2351
-    sget-object v4, Landroid/provider/ContactsContract$Data;->CONTENT_URI:Landroid/net/Uri;
-
-    invoke-static {v4}, Landroid/content/ContentProviderOperation;->newInsert(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;
-
-    move-result-object v4
-
-    const-string v5, "raw_contact_id"
-
-    .line 2352
-    invoke-virtual {v4, v5, v3}, Landroid/content/ContentProviderOperation$Builder;->withValueBackReference(Ljava/lang/String;I)Landroid/content/ContentProviderOperation$Builder;
-
-    const-string v6, "mimetype"
-
-    const-string/jumbo v7, "vnd.android.cursor.item/name"
-
-    .line 2353
-    invoke-virtual {v4, v6, v7}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
-
-    .line 2354
-    iget-object v7, v2, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
-
-    const-string v8, "data2"
-
-    invoke-virtual {v4, v8, v7}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
-
-    .line 2355
-    iget-object v7, v2, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
-
-    const-string v9, "data3"
-
-    invoke-virtual {v4, v9, v7}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
 
     .line 2356
     invoke-virtual {v4}, Landroid/content/ContentProviderOperation$Builder;->build()Landroid/content/ContentProviderOperation;
@@ -1472,6 +1432,46 @@
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 2358
+    sget-object v4, Landroid/provider/ContactsContract$Data;->CONTENT_URI:Landroid/net/Uri;
+
+    invoke-static {v4}, Landroid/content/ContentProviderOperation;->newInsert(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;
+
+    move-result-object v4
+
+    const-string v5, "raw_contact_id"
+
+    .line 2359
+    invoke-virtual {v4, v5, v3}, Landroid/content/ContentProviderOperation$Builder;->withValueBackReference(Ljava/lang/String;I)Landroid/content/ContentProviderOperation$Builder;
+
+    const-string v6, "mimetype"
+
+    const-string/jumbo v7, "vnd.android.cursor.item/name"
+
+    .line 2360
+    invoke-virtual {v4, v6, v7}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
+
+    .line 2361
+    iget-object v7, v2, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
+
+    const-string v8, "data2"
+
+    invoke-virtual {v4, v8, v7}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
+
+    .line 2362
+    iget-object v7, v2, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
+
+    const-string v9, "data3"
+
+    invoke-virtual {v4, v9, v7}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
+
+    .line 2363
+    invoke-virtual {v4}, Landroid/content/ContentProviderOperation$Builder;->build()Landroid/content/ContentProviderOperation;
+
+    move-result-object v4
+
+    invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 2365
     iget-object v4, v2, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
 
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -1507,7 +1507,7 @@
 
     move-result-object v4
 
-    .line 2360
+    .line 2367
     :goto_1
     sget-object v7, Landroid/provider/ContactsContract$Data;->CONTENT_URI:Landroid/net/Uri;
 
@@ -1515,10 +1515,10 @@
 
     move-result-object v7
 
-    .line 2361
+    .line 2368
     invoke-virtual {v7, v5, v3}, Landroid/content/ContentProviderOperation$Builder;->withValueBackReference(Ljava/lang/String;I)Landroid/content/ContentProviderOperation$Builder;
 
-    .line 2362
+    .line 2369
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getApplicationId()Ljava/lang/String;
 
     move-result-object v10
@@ -1533,7 +1533,7 @@
 
     invoke-virtual {v7, v6, v10}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
 
-    .line 2363
+    .line 2370
     iget-wide v10, v2, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     invoke-static {v10, v11}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1550,14 +1550,14 @@
 
     const-string v14, "iMe"
 
-    .line 2364
+    .line 2371
     invoke-virtual {v10, v13, v14}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v10
 
     invoke-virtual {v7, v8, v10}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
 
-    .line 2365
+    .line 2372
     sget v10, Lorg/telegram/messenger/R$string;->ContactShortcutMessage:I
 
     const/4 v15, 0x1
@@ -1578,7 +1578,7 @@
 
     move-object v0, v9
 
-    .line 2366
+    .line 2373
     iget-wide v9, v2, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1589,24 +1589,24 @@
 
     invoke-virtual {v7, v10, v9}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
 
-    .line 2367
+    .line 2374
     invoke-virtual {v7}, Landroid/content/ContentProviderOperation$Builder;->build()Landroid/content/ContentProviderOperation;
 
     move-result-object v7
 
     invoke-virtual {v1, v7}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2369
+    .line 2376
     sget-object v7, Landroid/provider/ContactsContract$Data;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {v7}, Landroid/content/ContentProviderOperation;->newInsert(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;
 
     move-result-object v7
 
-    .line 2370
+    .line 2377
     invoke-virtual {v7, v5, v3}, Landroid/content/ContentProviderOperation$Builder;->withValueBackReference(Ljava/lang/String;I)Landroid/content/ContentProviderOperation$Builder;
 
-    .line 2371
+    .line 2378
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getApplicationId()Ljava/lang/String;
 
     move-result-object v9
@@ -1623,7 +1623,7 @@
 
     move-object v15, v6
 
-    .line 2372
+    .line 2379
     iget-wide v5, v2, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1634,14 +1634,14 @@
 
     const-string v5, "Telegram Voice Call"
 
-    .line 2373
+    .line 2380
     invoke-virtual {v5, v13, v14}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v5
 
     invoke-virtual {v7, v8, v5}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
 
-    .line 2374
+    .line 2381
     sget v5, Lorg/telegram/messenger/R$string;->ContactShortcutVoiceCall:I
 
     move-object/from16 v17, v15
@@ -1660,7 +1660,7 @@
 
     invoke-virtual {v7, v0, v5}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
 
-    .line 2375
+    .line 2382
     iget-wide v5, v2, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     invoke-static {v5, v6}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1669,24 +1669,24 @@
 
     invoke-virtual {v7, v10, v5}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
 
-    .line 2376
+    .line 2383
     invoke-virtual {v7}, Landroid/content/ContentProviderOperation$Builder;->build()Landroid/content/ContentProviderOperation;
 
     move-result-object v5
 
     invoke-virtual {v1, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2378
+    .line 2385
     sget-object v5, Landroid/provider/ContactsContract$Data;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {v5}, Landroid/content/ContentProviderOperation;->newInsert(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;
 
     move-result-object v5
 
-    .line 2379
+    .line 2386
     invoke-virtual {v5, v9, v3}, Landroid/content/ContentProviderOperation$Builder;->withValueBackReference(Ljava/lang/String;I)Landroid/content/ContentProviderOperation$Builder;
 
-    .line 2380
+    .line 2387
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getApplicationId()Ljava/lang/String;
 
     move-result-object v3
@@ -1701,7 +1701,7 @@
 
     invoke-virtual {v5, v6, v3}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
 
-    .line 2381
+    .line 2388
     iget-wide v6, v2, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     invoke-static {v6, v7}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1712,14 +1712,14 @@
 
     const-string v3, "Telegram Video Call"
 
-    .line 2382
+    .line 2389
     invoke-virtual {v3, v13, v14}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object v3
 
     invoke-virtual {v5, v8, v3}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
 
-    .line 2383
+    .line 2390
     sget v3, Lorg/telegram/messenger/R$string;->ContactShortcutVideoCall:I
 
     const/4 v6, 0x1
@@ -1736,7 +1736,7 @@
 
     invoke-virtual {v5, v0, v3}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
 
-    .line 2384
+    .line 2391
     iget-wide v2, v2, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     invoke-static {v2, v3}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1745,7 +1745,7 @@
 
     invoke-virtual {v5, v10, v0}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
 
-    .line 2385
+    .line 2392
     invoke-virtual {v5}, Landroid/content/ContentProviderOperation$Builder;->build()Landroid/content/ContentProviderOperation;
 
     move-result-object v0
@@ -1782,20 +1782,20 @@
 
     if-nez p4, :cond_3
 
-    .line 2142
+    .line 2149
     :cond_0
     new-instance p3, Ljava/util/ArrayList;
 
     invoke-direct {p3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2143
+    .line 2150
     new-instance p4, Ljava/util/ArrayList;
 
     invoke-direct {p4}, Ljava/util/ArrayList;-><init>()V
 
     move v1, v0
 
-    .line 2144
+    .line 2151
     :goto_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -1803,14 +1803,14 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 2145
+    .line 2152
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Ljava/lang/Long;
 
-    .line 2146
+    .line 2153
     invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v3
@@ -1821,24 +1821,24 @@
 
     if-lez v3, :cond_1
 
-    .line 2147
+    .line 2154
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_contact;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_contact;-><init>()V
 
-    .line 2148
+    .line 2155
     invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v4
 
     iput-wide v4, v3, Lorg/telegram/tgnet/TLRPC$TL_contact;->user_id:J
 
-    .line 2149
+    .line 2156
     invoke-virtual {p3, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_1
 
-    .line 2150
+    .line 2157
     :cond_1
     invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
 
@@ -1848,7 +1848,7 @@
 
     if-gez v3, :cond_2
 
-    .line 2151
+    .line 2158
     invoke-virtual {v2}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v2
@@ -1867,13 +1867,13 @@
 
     goto :goto_0
 
-    .line 2155
+    .line 2162
     :cond_3
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p1, :cond_4
 
-    .line 2156
+    .line 2163
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1904,13 +1904,13 @@
 
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 2159
+    .line 2166
     :cond_4
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
 
-    .line 2160
+    .line 2167
     new-instance v1, Ljava/lang/StringBuilder;
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
@@ -1919,7 +1919,7 @@
 
     move v3, v2
 
-    .line 2163
+    .line 2170
     :goto_2
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
@@ -1935,7 +1935,7 @@
 
     if-ge v2, v4, :cond_b
 
-    .line 2164
+    .line 2171
     invoke-virtual {p3, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -1944,7 +1944,7 @@
 
     if-eqz p2, :cond_5
 
-    .line 2167
+    .line 2174
     iget-wide v9, v4, Lorg/telegram/tgnet/TLRPC$TL_contact;->user_id:J
 
     invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -1960,7 +1960,7 @@
     :cond_5
     if-nez v7, :cond_6
 
-    .line 2170
+    .line 2177
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v7
@@ -1977,7 +1977,7 @@
 
     goto :goto_3
 
-    .line 2172
+    .line 2179
     :cond_6
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
@@ -1988,7 +1988,7 @@
     :goto_3
     if-eqz v7, :cond_a
 
-    .line 2174
+    .line 2181
     iget-object v4, v7, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
 
     invoke-static {v4}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -1999,7 +1999,7 @@
 
     goto :goto_4
 
-    .line 2179
+    .line 2186
     :cond_7
     iget-object v4, p0, Lorg/telegram/messenger/ContactsController;->contactsBookSPhones:Ljava/util/HashMap;
 
@@ -2013,7 +2013,7 @@
 
     if-eqz v4, :cond_8
 
-    .line 2181
+    .line 2188
     iget-object v8, v4, Lorg/telegram/messenger/ContactsController$Contact;->shortPhones:Ljava/util/ArrayList;
 
     iget-object v9, v7, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
@@ -2024,7 +2024,7 @@
 
     if-eq v8, v6, :cond_8
 
-    .line 2183
+    .line 2190
     iget-object v4, v4, Lorg/telegram/messenger/ContactsController$Contact;->phoneDeleted:Ljava/util/ArrayList;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2033,7 +2033,7 @@
 
     invoke-virtual {v4, v8, v6}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 2186
+    .line 2193
     :cond_8
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->length()I
 
@@ -2041,10 +2041,10 @@
 
     if-eqz v4, :cond_9
 
-    .line 2187
+    .line 2194
     invoke-virtual {p1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2189
+    .line 2196
     :cond_9
     iget-object v4, v7, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
 
@@ -2061,7 +2061,7 @@
 
     goto :goto_2
 
-    .line 2192
+    .line 2199
     :cond_b
     :goto_6
     invoke-virtual {p4}, Ljava/util/ArrayList;->size()I
@@ -2070,14 +2070,14 @@
 
     if-ge v0, v2, :cond_12
 
-    .line 2193
+    .line 2200
     invoke-virtual {p4, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Ljava/lang/Long;
 
-    .line 2194
+    .line 2201
     sget-object v4, Lorg/telegram/messenger/Utilities;->phoneBookQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v9, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda17;
@@ -2088,7 +2088,7 @@
 
     if-eqz p2, :cond_c
 
-    .line 2198
+    .line 2205
     invoke-virtual {p2, v2}, Lj$/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v4
@@ -2103,7 +2103,7 @@
     :goto_7
     if-nez v4, :cond_d
 
-    .line 2201
+    .line 2208
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v4
@@ -2114,7 +2114,7 @@
 
     goto :goto_8
 
-    .line 2203
+    .line 2210
     :cond_d
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
@@ -2129,7 +2129,7 @@
 
     goto :goto_9
 
-    .line 2210
+    .line 2217
     :cond_e
     iget-object v2, v4, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
 
@@ -2139,7 +2139,7 @@
 
     if-nez v2, :cond_11
 
-    .line 2211
+    .line 2218
     iget-object v2, p0, Lorg/telegram/messenger/ContactsController;->contactsBookSPhones:Ljava/util/HashMap;
 
     iget-object v9, v4, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
@@ -2152,7 +2152,7 @@
 
     if-eqz v2, :cond_f
 
-    .line 2213
+    .line 2220
     iget-object v9, v2, Lorg/telegram/messenger/ContactsController$Contact;->shortPhones:Ljava/util/ArrayList;
 
     iget-object v10, v4, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
@@ -2163,7 +2163,7 @@
 
     if-eq v9, v6, :cond_f
 
-    .line 2215
+    .line 2222
     iget-object v2, v2, Lorg/telegram/messenger/ContactsController$Contact;->phoneDeleted:Ljava/util/ArrayList;
 
     invoke-static {v8}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -2172,7 +2172,7 @@
 
     invoke-virtual {v2, v9, v10}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 2218
+    .line 2225
     :cond_f
     invoke-virtual {v1}, Ljava/lang/StringBuilder;->length()I
 
@@ -2180,10 +2180,10 @@
 
     if-eqz v2, :cond_10
 
-    .line 2219
+    .line 2226
     invoke-virtual {v1, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 2221
+    .line 2228
     :cond_10
     iget-object v2, v4, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
 
@@ -2195,7 +2195,7 @@
 
     goto :goto_6
 
-    .line 2225
+    .line 2232
     :cond_12
     invoke-virtual {p1}, Ljava/lang/StringBuilder;->length()I
 
@@ -2209,7 +2209,7 @@
 
     if-eqz p2, :cond_14
 
-    .line 2226
+    .line 2233
     :cond_13
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
@@ -2228,7 +2228,7 @@
     :cond_14
     if-eqz v3, :cond_15
 
-    .line 2230
+    .line 2237
     sget-object p1, Lorg/telegram/messenger/Utilities;->stageQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance p2, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda3;
@@ -2239,7 +2239,7 @@
 
     goto :goto_a
 
-    .line 2234
+    .line 2241
     :cond_15
     new-instance p1, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda22;
 
@@ -2587,7 +2587,7 @@
 .method private deleteContactFromPhoneBook(J)V
     .locals 5
 
-    .line 2389
+    .line 2396
     invoke-direct {p0}, Lorg/telegram/messenger/ContactsController;->hasContactsPermission()Z
 
     move-result v0
@@ -2596,7 +2596,7 @@
 
     return-void
 
-    .line 2392
+    .line 2399
     :cond_0
     iget-object v0, p0, Lorg/telegram/messenger/ContactsController;->observerLock:Ljava/lang/Object;
 
@@ -2604,18 +2604,18 @@
 
     const/4 v1, 0x1
 
-    .line 2393
+    .line 2400
     :try_start_0
     iput-boolean v1, p0, Lorg/telegram/messenger/ContactsController;->ignoreChanges:Z
 
-    .line 2394
+    .line 2401
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
     const/4 v0, 0x0
 
-    .line 2396
+    .line 2403
     :try_start_1
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -2623,7 +2623,7 @@
 
     move-result-object v1
 
-    .line 2397
+    .line 2404
     sget-object v2, Landroid/provider/ContactsContract$RawContacts;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {v2}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -2662,12 +2662,12 @@
 
     move-result-object v2
 
-    .line 2398
+    .line 2405
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "sync2 = "
+    const-string/jumbo v4, "sync2 = "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2688,20 +2688,20 @@
     :catch_0
     move-exception p1
 
-    .line 2400
+    .line 2407
     invoke-static {p1, v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
-    .line 2402
+    .line 2409
     :goto_0
     iget-object p1, p0, Lorg/telegram/messenger/ContactsController;->observerLock:Ljava/lang/Object;
 
     monitor-enter p1
 
-    .line 2403
+    .line 2410
     :try_start_2
     iput-boolean v0, p0, Lorg/telegram/messenger/ContactsController;->ignoreChanges:Z
 
-    .line 2404
+    .line 2411
     monitor-exit p1
 
     return-void
@@ -2718,7 +2718,7 @@
     :catchall_1
     move-exception p1
 
-    .line 2394
+    .line 2401
     :try_start_3
     monitor-exit v0
     :try_end_3
@@ -2732,7 +2732,7 @@
 
     const/4 v0, 0x0
 
-    .line 2947
+    .line 2965
     invoke-static {p0, p1, v0}, Lorg/telegram/messenger/ContactsController;->formatName(Ljava/lang/String;Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p0
@@ -2745,7 +2745,7 @@
 
     if-eqz p0, :cond_0
 
-    .line 2955
+    .line 2973
     invoke-virtual {p0}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object p0
@@ -2753,12 +2753,12 @@
     :cond_0
     if-eqz p1, :cond_1
 
-    .line 2958
+    .line 2976
     invoke-virtual {p1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object p1
 
-    .line 2960
+    .line 2978
     :cond_1
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -2796,7 +2796,7 @@
 
     invoke-direct {v0, v2}, Ljava/lang/StringBuilder;-><init>(I)V
 
-    .line 2961
+    .line 2979
     sget v2, Lorg/telegram/messenger/LocaleController;->nameDisplayOrder:I
 
     const-string v4, " "
@@ -2805,7 +2805,7 @@
 
     if-eqz p0, :cond_6
 
-    .line 2962
+    .line 2980
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v2
@@ -2814,7 +2814,7 @@
 
     if-lez p2, :cond_4
 
-    .line 2963
+    .line 2981
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v2
@@ -2823,32 +2823,32 @@
 
     if-le v2, v3, :cond_4
 
-    .line 2964
+    .line 2982
     invoke-virtual {p0, v1, p2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
-    .line 2966
+    .line 2984
     :cond_4
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     if-eqz p1, :cond_d
 
-    .line 2967
+    .line 2985
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result p0
 
     if-lez p0, :cond_d
 
-    .line 2968
+    .line 2986
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     if-lez p2, :cond_5
 
-    .line 2969
+    .line 2987
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result p0
@@ -2861,7 +2861,7 @@
 
     if-le p0, p2, :cond_5
 
-    .line 2970
+    .line 2988
     invoke-virtual {p1, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result p0
@@ -2870,7 +2870,7 @@
 
     goto/16 :goto_2
 
-    .line 2972
+    .line 2990
     :cond_5
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2879,7 +2879,7 @@
     :cond_6
     if-eqz p1, :cond_d
 
-    .line 2975
+    .line 2993
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result p0
@@ -2888,7 +2888,7 @@
 
     if-lez p2, :cond_7
 
-    .line 2976
+    .line 2994
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result p0
@@ -2897,14 +2897,14 @@
 
     if-le p0, v2, :cond_7
 
-    .line 2977
+    .line 2995
     invoke-virtual {p1, v1, p2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
-    .line 2979
+    .line 2997
     :cond_7
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2913,7 +2913,7 @@
     :cond_8
     if-eqz p1, :cond_b
 
-    .line 2982
+    .line 3000
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v2
@@ -2922,7 +2922,7 @@
 
     if-lez p2, :cond_9
 
-    .line 2983
+    .line 3001
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v2
@@ -2931,32 +2931,32 @@
 
     if-le v2, v3, :cond_9
 
-    .line 2984
+    .line 3002
     invoke-virtual {p1, v1, p2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
-    .line 2986
+    .line 3004
     :cond_9
     invoke-virtual {v0, p1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     if-eqz p0, :cond_d
 
-    .line 2987
+    .line 3005
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result p1
 
     if-lez p1, :cond_d
 
-    .line 2988
+    .line 3006
     invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     if-lez p2, :cond_a
 
-    .line 2989
+    .line 3007
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->length()I
 
     move-result p1
@@ -2969,7 +2969,7 @@
 
     if-le p1, p2, :cond_a
 
-    .line 2990
+    .line 3008
     invoke-virtual {p0, v1}, Ljava/lang/String;->charAt(I)C
 
     move-result p0
@@ -2978,7 +2978,7 @@
 
     goto :goto_2
 
-    .line 2992
+    .line 3010
     :cond_a
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -2987,7 +2987,7 @@
     :cond_b
     if-eqz p0, :cond_d
 
-    .line 2995
+    .line 3013
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result p1
@@ -2996,7 +2996,7 @@
 
     if-lez p2, :cond_c
 
-    .line 2996
+    .line 3014
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result p1
@@ -3005,18 +3005,18 @@
 
     if-le p1, v2, :cond_c
 
-    .line 2997
+    .line 3015
     invoke-virtual {p0, v1, p2}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object p0
 
     return-object p0
 
-    .line 2999
+    .line 3017
     :cond_c
     invoke-virtual {v0, p0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    .line 3002
+    .line 3020
     :cond_d
     :goto_2
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
@@ -3026,10 +3026,47 @@
     return-object p0
 .end method
 
+.method public static formatName(Lorg/telegram/tgnet/TLObject;)Ljava/lang/String;
+    .locals 1
+
+    .line 2950
+    instance-of v0, p0, Lorg/telegram/tgnet/TLRPC$User;
+
+    if-eqz v0, :cond_0
+
+    .line 2951
+    check-cast p0, Lorg/telegram/tgnet/TLRPC$User;
+
+    invoke-static {p0}, Lorg/telegram/messenger/ContactsController;->formatName(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 2952
+    :cond_0
+    instance-of v0, p0, Lorg/telegram/tgnet/TLRPC$Chat;
+
+    if-eqz v0, :cond_1
+
+    .line 2953
+    check-cast p0, Lorg/telegram/tgnet/TLRPC$Chat;
+
+    .line 2954
+    iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
+
+    return-object p0
+
+    :cond_1
+    const-string p0, "DELETED"
+
+    return-object p0
+.end method
+
 .method public static formatName(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
     .locals 2
 
-    .line 2943
+    .line 2961
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
@@ -3424,6 +3461,39 @@
     throw v1
 .end method
 
+.method private hasContactsWritePermission()Z
+    .locals 3
+
+    .line 2080
+    sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
+
+    const/4 v1, 0x1
+
+    const/16 v2, 0x17
+
+    if-lt v0, v2, :cond_1
+
+    .line 2081
+    sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
+
+    const-string v2, "android.permission.WRITE_CONTACTS"
+
+    invoke-virtual {v0, v2}, Landroid/content/Context;->checkSelfPermission(Ljava/lang/String;)I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v1, 0x0
+
+    :cond_1
+    :goto_0
+    return v1
+.end method
+
 .method private isNotValidNameString(Ljava/lang/String;)Z
     .locals 7
 
@@ -3492,7 +3562,7 @@
 
     const/4 v0, 0x1
 
-    .line 2455
+    .line 2462
     invoke-virtual {p0, p1, v0}, Lorg/telegram/messenger/ContactsController;->addContactToPhoneBook(Lorg/telegram/tgnet/TLRPC$User;Z)J
 
     return-void
@@ -3505,7 +3575,7 @@
 
     move v1, v0
 
-    .line 2476
+    .line 2483
     :goto_0
     iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$Updates;->users:Ljava/util/ArrayList;
 
@@ -3515,7 +3585,7 @@
 
     if-ge v1, v2, :cond_2
 
-    .line 2477
+    .line 2484
     iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$Updates;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3524,7 +3594,7 @@
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 2478
+    .line 2485
     iget-boolean v3, v2, Lorg/telegram/tgnet/TLRPC$User;->contact:Z
 
     if-eqz v3, :cond_1
@@ -3545,23 +3615,23 @@
 
     goto :goto_1
 
-    .line 2481
+    .line 2488
     :cond_0
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_contact;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_contact;-><init>()V
 
-    .line 2482
+    .line 2489
     iget-wide v4, v2, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     iput-wide v4, v3, Lorg/telegram/tgnet/TLRPC$TL_contact;->user_id:J
 
-    .line 2483
+    .line 2490
     iget-object v2, p0, Lorg/telegram/messenger/ContactsController;->contacts:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2484
+    .line 2491
     iget-object v2, p0, Lorg/telegram/messenger/ContactsController;->contactsDict:Lj$/util/concurrent/ConcurrentHashMap;
 
     iget-wide v4, v3, Lorg/telegram/tgnet/TLRPC$TL_contact;->user_id:J
@@ -3581,10 +3651,10 @@
     :cond_2
     const/4 p1, 0x1
 
-    .line 2486
+    .line 2493
     invoke-direct {p0, p1}, Lorg/telegram/messenger/ContactsController;->buildContactsSectionsArrays(Z)V
 
-    .line 2487
+    .line 2494
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -3605,11 +3675,11 @@
 
     return-void
 
-    .line 2440
+    .line 2447
     :cond_0
     check-cast p2, Lorg/telegram/tgnet/TLRPC$Updates;
 
-    .line 2441
+    .line 2448
     iget-object p3, p1, Lorg/telegram/tgnet/TLRPC$User;->photo:Lorg/telegram/tgnet/TLRPC$UserProfilePhoto;
 
     const/4 v0, 0x0
@@ -3622,7 +3692,7 @@
 
     move p3, v0
 
-    .line 2442
+    .line 2449
     :goto_0
     iget-object v1, p2, Lorg/telegram/tgnet/TLRPC$Updates;->users:Ljava/util/ArrayList;
 
@@ -3632,7 +3702,7 @@
 
     if-ge p3, v1, :cond_2
 
-    .line 2443
+    .line 2450
     iget-object v1, p2, Lorg/telegram/tgnet/TLRPC$Updates;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3649,7 +3719,7 @@
 
     if-nez v1, :cond_1
 
-    .line 2444
+    .line 2451
     iget-object v1, p2, Lorg/telegram/tgnet/TLRPC$Updates;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3667,7 +3737,7 @@
 
     goto :goto_0
 
-    .line 2448
+    .line 2455
     :cond_2
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
@@ -3677,7 +3747,7 @@
 
     move p3, v0
 
-    .line 2450
+    .line 2457
     :goto_1
     iget-object v1, p2, Lorg/telegram/tgnet/TLRPC$Updates;->users:Ljava/util/ArrayList;
 
@@ -3687,7 +3757,7 @@
 
     if-ge p3, v1, :cond_5
 
-    .line 2451
+    .line 2458
     iget-object v1, p2, Lorg/telegram/tgnet/TLRPC$Updates;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v1, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -3696,7 +3766,7 @@
 
     check-cast v1, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 2452
+    .line 2459
     iget-wide v2, v1, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     iget-wide v4, p1, Lorg/telegram/tgnet/TLRPC$User;->id:J
@@ -3707,7 +3777,7 @@
 
     goto :goto_2
 
-    .line 2455
+    .line 2462
     :cond_3
     sget-object v2, Lorg/telegram/messenger/Utilities;->phoneBookQueue:Lorg/telegram/messenger/DispatchQueue;
 
@@ -3717,32 +3787,32 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    .line 2456
+    .line 2463
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_contact;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_contact;-><init>()V
 
-    .line 2457
+    .line 2464
     iget-wide v3, v1, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     iput-wide v3, v2, Lorg/telegram/tgnet/TLRPC$TL_contact;->user_id:J
 
-    .line 2458
+    .line 2465
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2459
+    .line 2466
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2460
+    .line 2467
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v2
 
     invoke-virtual {v2, v3, v0}, Lorg/telegram/messenger/MessagesStorage;->putContacts(Ljava/util/ArrayList;Z)V
 
-    .line 2462
+    .line 2469
     iget-object v2, v1, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
 
     invoke-static {v2}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -3751,14 +3821,14 @@
 
     if-nez v2, :cond_4
 
-    .line 2463
+    .line 2470
     iget-object v2, v1, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
     iget-object v3, v1, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
 
     invoke-static {v2, v3}, Lorg/telegram/messenger/ContactsController;->formatName(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
-    .line 2464
+    .line 2471
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v2
@@ -3769,7 +3839,7 @@
 
     invoke-virtual {v2, v3, v4}, Lorg/telegram/messenger/MessagesStorage;->applyPhoneBookUpdates(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2465
+    .line 2472
     iget-object v2, p0, Lorg/telegram/messenger/ContactsController;->contactsBookSPhones:Ljava/util/HashMap;
 
     iget-object v3, v1, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
@@ -3782,7 +3852,7 @@
 
     if-eqz v2, :cond_4
 
-    .line 2467
+    .line 2474
     iget-object v3, v2, Lorg/telegram/messenger/ContactsController$Contact;->shortPhones:Ljava/util/ArrayList;
 
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
@@ -3795,7 +3865,7 @@
 
     if-eq v1, v3, :cond_4
 
-    .line 2469
+    .line 2476
     iget-object v2, v2, Lorg/telegram/messenger/ContactsController$Contact;->phoneDeleted:Ljava/util/ArrayList;
 
     invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -3810,7 +3880,7 @@
 
     goto :goto_1
 
-    .line 2475
+    .line 2482
     :cond_5
     new-instance p1, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda43;
 
@@ -3824,7 +3894,7 @@
 .method private synthetic lambda$applyContactsUpdates$50(Ljava/lang/Long;)V
     .locals 2
 
-    .line 2194
+    .line 2201
     invoke-virtual {p1}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v0
@@ -3841,7 +3911,7 @@
 
     const-wide/16 v1, 0x0
 
-    .line 2230
+    .line 2237
     invoke-virtual {p0, v0, v1, v2}, Lorg/telegram/messenger/ContactsController;->loadContacts(ZJ)V
 
     return-void
@@ -3854,7 +3924,7 @@
 
     move v1, v0
 
-    .line 2235
+    .line 2242
     :goto_0
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -3862,14 +3932,14 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 2236
+    .line 2243
     invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$TL_contact;
 
-    .line 2237
+    .line 2244
     iget-object v3, p0, Lorg/telegram/messenger/ContactsController;->contactsDict:Lj$/util/concurrent/ConcurrentHashMap;
 
     iget-wide v4, v2, Lorg/telegram/tgnet/TLRPC$TL_contact;->user_id:J
@@ -3884,12 +3954,12 @@
 
     if-nez v3, :cond_0
 
-    .line 2238
+    .line 2245
     iget-object v3, p0, Lorg/telegram/messenger/ContactsController;->contacts:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2239
+    .line 2246
     iget-object v3, p0, Lorg/telegram/messenger/ContactsController;->contactsDict:Lj$/util/concurrent/ConcurrentHashMap;
 
     iget-wide v4, v2, Lorg/telegram/tgnet/TLRPC$TL_contact;->user_id:J
@@ -3908,7 +3978,7 @@
     :cond_1
     move v1, v0
 
-    .line 2242
+    .line 2249
     :goto_1
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
@@ -3916,14 +3986,14 @@
 
     if-ge v1, v2, :cond_3
 
-    .line 2243
+    .line 2250
     invoke-virtual {p2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v2
 
     check-cast v2, Ljava/lang/Long;
 
-    .line 2244
+    .line 2251
     iget-object v3, p0, Lorg/telegram/messenger/ContactsController;->contactsDict:Lj$/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v3, v2}, Lj$/util/concurrent/ConcurrentHashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3934,12 +4004,12 @@
 
     if-eqz v3, :cond_2
 
-    .line 2246
+    .line 2253
     iget-object v4, p0, Lorg/telegram/messenger/ContactsController;->contacts:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 2247
+    .line 2254
     iget-object v3, p0, Lorg/telegram/messenger/ContactsController;->contactsDict:Lj$/util/concurrent/ConcurrentHashMap;
 
     invoke-virtual {v3, v2}, Lj$/util/concurrent/ConcurrentHashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3949,7 +4019,7 @@
 
     goto :goto_1
 
-    .line 2250
+    .line 2257
     :cond_3
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -3957,13 +4027,13 @@
 
     if-nez p2, :cond_4
 
-    .line 2251
+    .line 2258
     invoke-direct {p0}, Lorg/telegram/messenger/ContactsController;->updateUnregisteredContacts()V
 
-    .line 2252
+    .line 2259
     invoke-direct {p0}, Lorg/telegram/messenger/ContactsController;->performWriteContactsToPhoneBook()V
 
-    .line 2254
+    .line 2261
     :cond_4
     iget-object p2, p0, Lorg/telegram/messenger/ContactsController;->contactsBook:Ljava/util/HashMap;
 
@@ -3987,7 +4057,7 @@
 
     invoke-virtual/range {v1 .. v8}, Lorg/telegram/messenger/ContactsController;->performSyncPhoneBook(Ljava/util/HashMap;ZZZZZZ)V
 
-    .line 2255
+    .line 2262
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result p1
@@ -3996,7 +4066,7 @@
 
     invoke-direct {p0, p1}, Lorg/telegram/messenger/ContactsController;->buildContactsSectionsArrays(Z)V
 
-    .line 2256
+    .line 2263
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -4555,7 +4625,7 @@
 .method private synthetic lambda$deleteContact$57(Ljava/util/ArrayList;)V
     .locals 2
 
-    .line 2526
+    .line 2533
     invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -4573,7 +4643,7 @@
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 2527
+    .line 2534
     iget-wide v0, v0, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     invoke-direct {p0, v0, v1}, Lorg/telegram/messenger/ContactsController;->deleteContactFromPhoneBook(J)V
@@ -4587,7 +4657,7 @@
 .method private synthetic lambda$deleteContact$58(Ljava/util/ArrayList;ZLjava/lang/String;Lcom/iMe/fork/utils/Callbacks$Callback1;)V
     .locals 7
 
-    .line 2548
+    .line 2555
     invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -4612,7 +4682,7 @@
 
     check-cast v2, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 2549
+    .line 2556
     iget-object v4, p0, Lorg/telegram/messenger/ContactsController;->contactsDict:Lj$/util/concurrent/ConcurrentHashMap;
 
     iget-wide v5, v2, Lorg/telegram/tgnet/TLRPC$User;->id:J
@@ -4629,12 +4699,12 @@
 
     if-eqz v4, :cond_0
 
-    .line 2552
+    .line 2559
     iget-object v1, p0, Lorg/telegram/messenger/ContactsController;->contacts:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 2553
+    .line 2560
     iget-object v1, p0, Lorg/telegram/messenger/ContactsController;->contactsDict:Lj$/util/concurrent/ConcurrentHashMap;
 
     iget-wide v4, v2, Lorg/telegram/tgnet/TLRPC$User;->id:J
@@ -4652,10 +4722,10 @@
     :cond_1
     if-eqz v1, :cond_2
 
-    .line 2557
+    .line 2564
     invoke-direct {p0, v0}, Lorg/telegram/messenger/ContactsController;->buildContactsSectionsArrays(Z)V
 
-    .line 2559
+    .line 2566
     :cond_2
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
@@ -4675,7 +4745,7 @@
 
     invoke-virtual {p1, v1, v2}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 2560
+    .line 2567
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -4688,7 +4758,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 2562
+    .line 2569
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object p1
@@ -4726,7 +4796,7 @@
 
     const/4 p1, 0x0
 
-    .line 2566
+    .line 2573
     invoke-interface {p4, p1}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
 
     :cond_4
@@ -4740,7 +4810,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 2518
+    .line 2525
     new-instance p2, Ljava/lang/Exception;
 
     iget-object p3, p7, Lorg/telegram/tgnet/TLRPC$TL_error;->text:Ljava/lang/String;
@@ -4752,7 +4822,7 @@
     :cond_0
     return-void
 
-    .line 2523
+    .line 2530
     :cond_1
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
@@ -4764,14 +4834,14 @@
 
     invoke-virtual {p7, p6, v0}, Lorg/telegram/messenger/MessagesController;->processUpdates(Lorg/telegram/tgnet/TLRPC$Updates;Z)V
 
-    .line 2524
+    .line 2531
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object p6
 
     invoke-virtual {p6, p2}, Lorg/telegram/messenger/MessagesStorage;->deleteContacts(Ljava/util/ArrayList;)V
 
-    .line 2525
+    .line 2532
     sget-object p2, Lorg/telegram/messenger/Utilities;->phoneBookQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance p6, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda19;
@@ -4780,7 +4850,7 @@
 
     invoke-virtual {p2, p6}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
 
-    .line 2531
+    .line 2538
     :goto_0
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
@@ -4788,14 +4858,14 @@
 
     if-ge v0, p2, :cond_4
 
-    .line 2532
+    .line 2539
     invoke-virtual {p3, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p2
 
     check-cast p2, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 2533
+    .line 2540
     iget-object p6, p2, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
 
     invoke-static {p6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -4806,7 +4876,7 @@
 
     goto :goto_1
 
-    .line 2536
+    .line 2543
     :cond_2
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
@@ -4818,7 +4888,7 @@
 
     invoke-virtual {p6, p7, v1}, Lorg/telegram/messenger/MessagesStorage;->applyPhoneBookUpdates(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2537
+    .line 2544
     iget-object p6, p0, Lorg/telegram/messenger/ContactsController;->contactsBookSPhones:Ljava/util/HashMap;
 
     iget-object p7, p2, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
@@ -4831,7 +4901,7 @@
 
     if-eqz p6, :cond_3
 
-    .line 2539
+    .line 2546
     iget-object p7, p6, Lorg/telegram/messenger/ContactsController$Contact;->shortPhones:Ljava/util/ArrayList;
 
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
@@ -4844,7 +4914,7 @@
 
     if-eq p2, p7, :cond_3
 
-    .line 2541
+    .line 2548
     iget-object p6, p6, Lorg/telegram/messenger/ContactsController$Contact;->phoneDeleted:Ljava/util/ArrayList;
 
     const/4 p7, 0x1
@@ -4861,7 +4931,7 @@
 
     goto :goto_0
 
-    .line 2546
+    .line 2553
     :cond_4
     new-instance p2, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda25;
 
@@ -5128,26 +5198,26 @@
 
     if-nez p1, :cond_0
 
-    .line 2623
+    .line 2630
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_accountDaysTTL;
 
-    .line 2624
+    .line 2631
     iget p1, p2, Lorg/telegram/tgnet/TLRPC$TL_accountDaysTTL;->days:I
 
     iput p1, p0, Lorg/telegram/messenger/ContactsController;->deleteAccountTTL:I
 
     const/4 p1, 0x2
 
-    .line 2625
+    .line 2632
     iput p1, p0, Lorg/telegram/messenger/ContactsController;->loadingDeleteInfo:I
 
     goto :goto_0
 
-    .line 2627
+    .line 2634
     :cond_0
     iput v0, p0, Lorg/telegram/messenger/ContactsController;->loadingDeleteInfo:I
 
-    .line 2629
+    .line 2636
     :goto_0
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
@@ -5165,7 +5235,7 @@
 .method private synthetic lambda$loadPrivacySettings$63(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 2621
+    .line 2628
     new-instance v0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda39;
 
     invoke-direct {v0, p0, p2, p1}, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda39;-><init>(Lorg/telegram/messenger/ContactsController;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
@@ -5182,23 +5252,23 @@
 
     if-nez p1, :cond_0
 
-    .line 2637
+    .line 2644
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;
 
     iput-object p2, p0, Lorg/telegram/messenger/ContactsController;->globalPrivacySettings:Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;
 
     const/4 p1, 0x2
 
-    .line 2638
+    .line 2645
     iput p1, p0, Lorg/telegram/messenger/ContactsController;->loadingGlobalSettings:I
 
     goto :goto_0
 
-    .line 2640
+    .line 2647
     :cond_0
     iput v0, p0, Lorg/telegram/messenger/ContactsController;->loadingGlobalSettings:I
 
-    .line 2642
+    .line 2649
     :goto_0
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
@@ -5216,7 +5286,7 @@
 .method private synthetic lambda$loadPrivacySettings$65(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 2635
+    .line 2642
     new-instance v0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda40;
 
     invoke-direct {v0, p0, p2, p1}, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda40;-><init>(Lorg/telegram/messenger/ContactsController;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
@@ -5233,10 +5303,10 @@
 
     if-nez p1, :cond_0
 
-    .line 2687
+    .line 2694
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_account_privacyRules;
 
-    .line 2688
+    .line 2695
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p1
@@ -5245,7 +5315,7 @@
 
     invoke-virtual {p1, v1, v0}, Lorg/telegram/messenger/MessagesController;->putUsers(Ljava/util/ArrayList;Z)V
 
-    .line 2689
+    .line 2696
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object p1
@@ -5256,7 +5326,7 @@
 
     packed-switch p3, :pswitch_data_0
 
-    .line 2718
+    .line 2725
     :pswitch_0
     iget-object p1, p2, Lorg/telegram/tgnet/TLRPC$TL_account_privacyRules;->rules:Ljava/util/ArrayList;
 
@@ -5264,7 +5334,7 @@
 
     goto :goto_0
 
-    .line 2714
+    .line 2721
     :pswitch_1
     iget-object p1, p2, Lorg/telegram/tgnet/TLRPC$TL_account_privacyRules;->rules:Ljava/util/ArrayList;
 
@@ -5272,7 +5342,7 @@
 
     goto :goto_0
 
-    .line 2711
+    .line 2718
     :pswitch_2
     iget-object p1, p2, Lorg/telegram/tgnet/TLRPC$TL_account_privacyRules;->rules:Ljava/util/ArrayList;
 
@@ -5280,7 +5350,7 @@
 
     goto :goto_0
 
-    .line 2708
+    .line 2715
     :pswitch_3
     iget-object p1, p2, Lorg/telegram/tgnet/TLRPC$TL_account_privacyRules;->rules:Ljava/util/ArrayList;
 
@@ -5288,7 +5358,7 @@
 
     goto :goto_0
 
-    .line 2705
+    .line 2712
     :pswitch_4
     iget-object p1, p2, Lorg/telegram/tgnet/TLRPC$TL_account_privacyRules;->rules:Ljava/util/ArrayList;
 
@@ -5296,7 +5366,7 @@
 
     goto :goto_0
 
-    .line 2702
+    .line 2709
     :pswitch_5
     iget-object p1, p2, Lorg/telegram/tgnet/TLRPC$TL_account_privacyRules;->rules:Ljava/util/ArrayList;
 
@@ -5304,7 +5374,7 @@
 
     goto :goto_0
 
-    .line 2699
+    .line 2706
     :pswitch_6
     iget-object p1, p2, Lorg/telegram/tgnet/TLRPC$TL_account_privacyRules;->rules:Ljava/util/ArrayList;
 
@@ -5312,7 +5382,7 @@
 
     goto :goto_0
 
-    .line 2696
+    .line 2703
     :pswitch_7
     iget-object p1, p2, Lorg/telegram/tgnet/TLRPC$TL_account_privacyRules;->rules:Ljava/util/ArrayList;
 
@@ -5320,13 +5390,13 @@
 
     goto :goto_0
 
-    .line 2693
+    .line 2700
     :pswitch_8
     iget-object p1, p2, Lorg/telegram/tgnet/TLRPC$TL_account_privacyRules;->rules:Ljava/util/ArrayList;
 
     iput-object p1, p0, Lorg/telegram/messenger/ContactsController;->lastseenPrivacyRules:Ljava/util/ArrayList;
 
-    .line 2721
+    .line 2728
     :goto_0
     iget-object p1, p0, Lorg/telegram/messenger/ContactsController;->loadingPrivacyInfo:[I
 
@@ -5336,13 +5406,13 @@
 
     goto :goto_1
 
-    .line 2723
+    .line 2730
     :cond_0
     iget-object p1, p0, Lorg/telegram/messenger/ContactsController;->loadingPrivacyInfo:[I
 
     aput v0, p1, p3
 
-    .line 2725
+    .line 2732
     :goto_1
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
@@ -5373,7 +5443,7 @@
 .method private synthetic lambda$loadPrivacySettings$67(ILorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 2685
+    .line 2692
     new-instance v0, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda41;
 
     invoke-direct {v0, p0, p3, p2, p1}, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda41;-><init>(Lorg/telegram/messenger/ContactsController;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;I)V
@@ -5386,17 +5456,17 @@
 .method private static synthetic lambda$markAsContacted$53(Ljava/lang/String;)V
     .locals 3
 
-    .line 2412
+    .line 2419
     invoke-static {p0}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
     move-result-object p0
 
-    .line 2413
+    .line 2420
     new-instance v0, Landroid/content/ContentValues;
 
     invoke-direct {v0}, Landroid/content/ContentValues;-><init>()V
 
-    .line 2414
+    .line 2421
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
@@ -5409,7 +5479,7 @@
 
     invoke-virtual {v0, v2, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Long;)V
 
-    .line 2415
+    .line 2422
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v1}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -5418,7 +5488,7 @@
 
     const/4 v2, 0x0
 
-    .line 2416
+    .line 2423
     invoke-virtual {v1, p0, v0, v2, v2}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
 
     return-void
@@ -7080,7 +7150,7 @@
 
     if-eqz v1, :cond_2
 
-    const-string v1, "start read contacts from phone"
+    const-string/jumbo v1, "start read contacts from phone"
 
     .line 1105
     invoke-static {v1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
@@ -8410,7 +8480,7 @@
 
     if-eqz v2, :cond_35
 
-    const-string v2, "start import contacts"
+    const-string/jumbo v2, "start import contacts"
 
     .line 1362
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
@@ -8833,7 +8903,7 @@
 .method private synthetic lambda$performWriteContactsToPhoneBook$49(Ljava/util/ArrayList;)V
     .locals 0
 
-    .line 2137
+    .line 2144
     invoke-direct {p0, p1}, Lorg/telegram/messenger/ContactsController;->performWriteContactsToPhoneBookInternal(Ljava/util/ArrayList;)V
 
     return-void
@@ -10036,17 +10106,17 @@
 
     const-string v0, "needGetStatuses"
 
-    .line 2583
+    .line 2590
     invoke-interface {p1, v0}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object p1
 
     invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 2584
+    .line 2591
     check-cast p2, Lorg/telegram/tgnet/TLRPC$Vector;
 
-    .line 2585
+    .line 2592
     iget-object p1, p2, Lorg/telegram/tgnet/TLRPC$Vector;->objects:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
@@ -10057,12 +10127,12 @@
 
     if-nez p1, :cond_6
 
-    .line 2586
+    .line 2593
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2587
+    .line 2594
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$Vector;->objects:Ljava/util/ArrayList;
 
     invoke-virtual {p2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -10080,19 +10150,19 @@
 
     move-result-object v1
 
-    .line 2588
+    .line 2595
     new-instance v2, Lorg/telegram/tgnet/TLRPC$TL_user;
 
     invoke-direct {v2}, Lorg/telegram/tgnet/TLRPC$TL_user;-><init>()V
 
-    .line 2589
+    .line 2596
     check-cast v1, Lorg/telegram/tgnet/TLRPC$TL_contactStatus;
 
     if-nez v1, :cond_0
 
     goto :goto_0
 
-    .line 2594
+    .line 2601
     :cond_0
     iget-object v3, v1, Lorg/telegram/tgnet/TLRPC$TL_contactStatus;->status:Lorg/telegram/tgnet/TLRPC$UserStatus;
 
@@ -10102,12 +10172,12 @@
 
     const/16 v4, -0x64
 
-    .line 2595
+    .line 2602
     iput v4, v3, Lorg/telegram/tgnet/TLRPC$UserStatus;->expires:I
 
     goto :goto_1
 
-    .line 2596
+    .line 2603
     :cond_1
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_userStatusLastWeek;
 
@@ -10115,12 +10185,12 @@
 
     const/16 v4, -0x65
 
-    .line 2597
+    .line 2604
     iput v4, v3, Lorg/telegram/tgnet/TLRPC$UserStatus;->expires:I
 
     goto :goto_1
 
-    .line 2598
+    .line 2605
     :cond_2
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$TL_userStatusLastMonth;
 
@@ -10128,10 +10198,10 @@
 
     const/16 v4, -0x66
 
-    .line 2599
+    .line 2606
     iput v4, v3, Lorg/telegram/tgnet/TLRPC$UserStatus;->expires:I
 
-    .line 2602
+    .line 2609
     :cond_3
     :goto_1
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -10150,23 +10220,23 @@
 
     if-eqz v3, :cond_4
 
-    .line 2604
+    .line 2611
     iget-object v4, v1, Lorg/telegram/tgnet/TLRPC$TL_contactStatus;->status:Lorg/telegram/tgnet/TLRPC$UserStatus;
 
     iput-object v4, v3, Lorg/telegram/tgnet/TLRPC$User;->status:Lorg/telegram/tgnet/TLRPC$UserStatus;
 
-    .line 2606
+    .line 2613
     :cond_4
     iget-object v1, v1, Lorg/telegram/tgnet/TLRPC$TL_contactStatus;->status:Lorg/telegram/tgnet/TLRPC$UserStatus;
 
     iput-object v1, v2, Lorg/telegram/tgnet/TLRPC$User;->status:Lorg/telegram/tgnet/TLRPC$UserStatus;
 
-    .line 2607
+    .line 2614
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 2609
+    .line 2616
     :cond_5
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
@@ -10174,7 +10244,7 @@
 
     invoke-virtual {p2, p1, v0, v0, v0}, Lorg/telegram/messenger/MessagesStorage;->updateUsers(Ljava/util/ArrayList;ZZZ)V
 
-    .line 2611
+    .line 2618
     :cond_6
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
@@ -10204,7 +10274,7 @@
 
     if-nez p3, :cond_0
 
-    .line 2582
+    .line 2589
     new-instance p3, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda15;
 
     invoke-direct {p3, p0, p1, p2}, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda15;-><init>(Lorg/telegram/messenger/ContactsController;Landroid/content/SharedPreferences$Editor;Lorg/telegram/tgnet/TLObject;)V
@@ -10386,7 +10456,7 @@
 
     if-eqz v0, :cond_0
 
-    const-string v0, "sync contacts by alert"
+    const-string/jumbo v0, "sync contacts by alert"
 
     .line 553
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
@@ -10505,14 +10575,14 @@
 .method private performWriteContactsToPhoneBook()V
     .locals 3
 
-    .line 2136
+    .line 2143
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/messenger/ContactsController;->contacts:Ljava/util/ArrayList;
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 2137
+    .line 2144
     sget-object v1, Lorg/telegram/messenger/Utilities;->phoneBookQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v2, Lorg/telegram/messenger/ContactsController$$ExternalSyntheticLambda20;
@@ -10537,29 +10607,35 @@
 
     const-string v0, "contacts_updated_v7"
 
-    .line 2081
+    .line 2088
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v1
 
     const/4 v3, 0x0
 
-    .line 2083
+    .line 2090
     :try_start_0
     iget-object v4, p0, Lorg/telegram/messenger/ContactsController;->systemAccount:Landroid/accounts/Account;
 
-    .line 2084
+    .line 2091
     invoke-direct {p0}, Lorg/telegram/messenger/ContactsController;->hasContactsPermission()Z
 
     move-result v5
 
     if-eqz v5, :cond_9
 
+    if-eqz v4, :cond_9
+
+    invoke-direct {p0}, Lorg/telegram/messenger/ContactsController;->hasContactsWritePermission()Z
+
+    move-result v4
+
     if-nez v4, :cond_0
 
     goto/16 :goto_3
 
-    .line 2087
+    .line 2094
     :cond_0
     iget v4, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
@@ -10569,7 +10645,7 @@
 
     const/4 v5, 0x0
 
-    .line 2088
+    .line 2095
     invoke-interface {v4, v0, v5}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
     move-result v6
@@ -10580,7 +10656,7 @@
 
     if-eqz v6, :cond_1
 
-    .line 2090
+    .line 2097
     invoke-interface {v4}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v4
@@ -10591,7 +10667,7 @@
 
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 2092
+    .line 2099
     :cond_1
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -10599,14 +10675,14 @@
 
     move-result-object v0
 
-    .line 2093
+    .line 2100
     sget-object v9, Landroid/provider/ContactsContract$RawContacts;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v4, "_id"
 
-    const-string v8, "sync2"
+    const-string/jumbo v8, "sync2"
 
-    .line 2094
+    .line 2101
     filled-new-array {v4, v8}, [Ljava/lang/String;
 
     move-result-object v10
@@ -10626,7 +10702,7 @@
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_1
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 2095
+    .line 2102
     :try_start_1
     new-instance v8, Landroidx/collection/LongSparseArray;
 
@@ -10634,7 +10710,7 @@
 
     if-eqz v4, :cond_7
 
-    .line 2097
+    .line 2104
     :goto_0
     invoke-interface {v4}, Landroid/database/Cursor;->moveToNext()Z
 
@@ -10642,7 +10718,7 @@
 
     if-eqz v9, :cond_2
 
-    .line 2098
+    .line 2105
     invoke-interface {v4, v7}, Landroid/database/Cursor;->getLong(I)J
 
     move-result-wide v9
@@ -10659,14 +10735,14 @@
 
     goto :goto_0
 
-    .line 2100
+    .line 2107
     :cond_2
     invoke-interface {v4}, Landroid/database/Cursor;->close()V
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 2103
+    .line 2110
     :try_start_2
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -10714,7 +10790,7 @@
 
     move-object v4, v3
 
-    .line 2105
+    .line 2112
     :goto_1
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
@@ -10727,7 +10803,7 @@
 
     if-ge v5, v7, :cond_6
 
-    .line 2106
+    .line 2113
     :try_start_3
     invoke-virtual {p1, v5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -10737,7 +10813,7 @@
 
     if-nez v6, :cond_3
 
-    .line 2107
+    .line 2114
     iget-wide v10, v7, Lorg/telegram/tgnet/TLRPC$TL_contact;->user_id:J
 
     invoke-virtual {v8, v10, v11}, Landroidx/collection/LongSparseArray;->indexOfKey(J)I
@@ -10749,12 +10825,12 @@
     :cond_3
     if-nez v4, :cond_4
 
-    .line 2109
+    .line 2116
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2111
+    .line 2118
     :cond_4
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
@@ -10772,7 +10848,7 @@
 
     invoke-direct {p0, v4, v7}, Lorg/telegram/messenger/ContactsController;->applyContactToPhoneBook(Ljava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 2112
+    .line 2119
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
     move-result v7
@@ -10781,10 +10857,10 @@
 
     if-le v7, v10, :cond_5
 
-    .line 2113
+    .line 2120
     invoke-virtual {v0, v9, v4}, Landroid/content/ContentResolver;->applyBatch(Ljava/lang/String;Ljava/util/ArrayList;)[Landroid/content/ContentProviderResult;
 
-    .line 2114
+    .line 2121
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
 
     :cond_5
@@ -10795,17 +10871,17 @@
     :cond_6
     if-eqz v4, :cond_8
 
-    .line 2118
+    .line 2125
     invoke-virtual {v4}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result p1
 
     if-nez p1, :cond_8
 
-    .line 2119
+    .line 2126
     invoke-virtual {v0, v9, v4}, Landroid/content/ContentResolver;->applyBatch(Ljava/lang/String;Ljava/util/ArrayList;)[Landroid/content/ContentProviderResult;
 
-    .line 2120
+    .line 2127
     invoke-virtual {v4}, Ljava/util/ArrayList;->clear()V
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
@@ -10848,7 +10924,7 @@
     :catch_1
     move-exception p1
 
-    .line 2125
+    .line 2132
     :goto_4
     :try_start_4
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
@@ -10857,11 +10933,11 @@
 
     if-eqz v3, :cond_a
 
-    .line 2128
+    .line 2135
     :goto_5
     invoke-interface {v3}, Landroid/database/Cursor;->close()V
 
-    .line 2132
+    .line 2139
     :cond_a
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -10890,10 +10966,10 @@
     :goto_6
     if-eqz v3, :cond_b
 
-    .line 2128
+    .line 2135
     invoke-interface {v3}, Landroid/database/Cursor;->close()V
 
-    .line 2130
+    .line 2137
     :cond_b
     throw p1
 .end method
@@ -10901,24 +10977,24 @@
 .method private reloadContactsStatuses()V
     .locals 4
 
-    .line 2574
+    .line 2581
     invoke-direct {p0}, Lorg/telegram/messenger/ContactsController;->saveContactsLoadTime()V
 
-    .line 2575
+    .line 2582
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lorg/telegram/messenger/MessagesController;->clearFullUsers()V
 
-    .line 2576
+    .line 2583
     iget v0, p0, Lorg/telegram/messenger/BaseController;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getMainSettings(I)Landroid/content/SharedPreferences;
 
     move-result-object v0
 
-    .line 2577
+    .line 2584
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
@@ -10927,19 +11003,19 @@
 
     const/4 v2, 0x1
 
-    .line 2578
+    .line 2585
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
     move-result-object v1
 
     invoke-interface {v1}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 2579
+    .line 2586
     new-instance v1, Lorg/telegram/tgnet/TLRPC$TL_contacts_getStatuses;
 
     invoke-direct {v1}, Lorg/telegram/tgnet/TLRPC$TL_contacts_getStatuses;-><init>()V
 
-    .line 2580
+    .line 2587
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v2
@@ -11197,13 +11273,13 @@
 
     return-void
 
-    .line 2425
+    .line 2432
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_addContact;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_contacts_addContact;-><init>()V
 
-    .line 2426
+    .line 2433
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v1
@@ -11214,34 +11290,34 @@
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_addContact;->id:Lorg/telegram/tgnet/TLRPC$InputUser;
 
-    .line 2427
+    .line 2434
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_addContact;->first_name:Ljava/lang/String;
 
-    .line 2428
+    .line 2435
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_addContact;->last_name:Ljava/lang/String;
 
-    .line 2429
+    .line 2436
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_addContact;->phone:Ljava/lang/String;
 
-    .line 2430
+    .line 2437
     iput-boolean p2, v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_addContact;->add_phone_privacy_exception:Z
 
     if-nez v1, :cond_1
 
     const-string p2, ""
 
-    .line 2432
+    .line 2439
     iput-object p2, v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_addContact;->phone:Ljava/lang/String;
 
     goto :goto_0
 
-    .line 2433
+    .line 2440
     :cond_1
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
@@ -11259,7 +11335,7 @@
 
     if-nez p2, :cond_2
 
-    .line 2434
+    .line 2441
     new-instance p2, Ljava/lang/StringBuilder;
 
     invoke-direct {p2}, Ljava/lang/StringBuilder;-><init>()V
@@ -11276,7 +11352,7 @@
 
     iput-object p2, v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_addContact;->phone:Ljava/lang/String;
 
-    .line 2436
+    .line 2443
     :cond_2
     :goto_0
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
@@ -11297,7 +11373,7 @@
 .method public addContactToPhoneBook(Lorg/telegram/tgnet/TLRPC$User;Z)J
     .locals 6
 
-    .line 2302
+    .line 2309
     iget-object v0, p0, Lorg/telegram/messenger/ContactsController;->systemAccount:Landroid/accounts/Account;
 
     const-wide/16 v1, -0x1
@@ -11308,7 +11384,7 @@
 
     goto/16 :goto_0
 
-    .line 2305
+    .line 2312
     :cond_0
     invoke-direct {p0}, Lorg/telegram/messenger/ContactsController;->hasContactsPermission()Z
 
@@ -11318,7 +11394,7 @@
 
     return-wide v1
 
-    .line 2309
+    .line 2316
     :cond_1
     iget-object v0, p0, Lorg/telegram/messenger/ContactsController;->observerLock:Ljava/lang/Object;
 
@@ -11326,16 +11402,16 @@
 
     const/4 v3, 0x1
 
-    .line 2310
+    .line 2317
     :try_start_0
     iput-boolean v3, p0, Lorg/telegram/messenger/ContactsController;->ignoreChanges:Z
 
-    .line 2311
+    .line 2318
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 2312
+    .line 2319
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     invoke-virtual {v0}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
@@ -11344,7 +11420,7 @@
 
     if-eqz p2, :cond_2
 
-    .line 2315
+    .line 2322
     :try_start_1
     sget-object p2, Landroid/provider/ContactsContract$RawContacts;->CONTENT_URI:Landroid/net/Uri;
 
@@ -11384,12 +11460,12 @@
 
     move-result-object p2
 
-    .line 2316
+    .line 2323
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "sync2 = "
+    const-string/jumbo v4, "sync2 = "
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -11407,14 +11483,14 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
 
-    .line 2322
+    .line 2329
     :catch_0
     :cond_2
     new-instance p2, Ljava/util/ArrayList;
 
     invoke-direct {p2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2323
+    .line 2330
     invoke-direct {p0, p2, p1}, Lorg/telegram/messenger/ContactsController;->applyContactToPhoneBook(Ljava/util/ArrayList;Lorg/telegram/tgnet/TLRPC$User;)V
 
     const/4 p1, 0x0
@@ -11422,14 +11498,14 @@
     :try_start_2
     const-string v3, "com.android.contacts"
 
-    .line 2326
+    .line 2333
     invoke-virtual {v0, v3, p2}, Landroid/content/ContentResolver;->applyBatch(Ljava/lang/String;Ljava/util/ArrayList;)[Landroid/content/ContentProviderResult;
 
     move-result-object p2
 
     if-eqz p2, :cond_3
 
-    .line 2327
+    .line 2334
     array-length v0, p2
 
     if-lez v0, :cond_3
@@ -11440,7 +11516,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 2328
+    .line 2335
     aget-object p2, p2, p1
 
     iget-object p2, p2, Landroid/content/ContentProviderResult;->uri:Landroid/net/Uri;
@@ -11457,18 +11533,18 @@
 
     move-wide v1, v0
 
-    .line 2333
+    .line 2340
     :catch_1
     :cond_3
     iget-object p2, p0, Lorg/telegram/messenger/ContactsController;->observerLock:Ljava/lang/Object;
 
     monitor-enter p2
 
-    .line 2334
+    .line 2341
     :try_start_3
     iput-boolean p1, p0, Lorg/telegram/messenger/ContactsController;->ignoreChanges:Z
 
-    .line 2335
+    .line 2342
     monitor-exit p2
 
     return-wide v1
@@ -11485,7 +11561,7 @@
     :catchall_1
     move-exception p1
 
-    .line 2311
+    .line 2318
     :try_start_4
     monitor-exit v0
     :try_end_4
@@ -11968,7 +12044,7 @@
 
     const-string v12, "raw_contact_id"
 
-    .line 2814
+    .line 2821
     invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/ContactsController;->hasContactsPermission()Z
 
     move-result v13
@@ -11977,7 +12053,7 @@
 
     return-void
 
-    .line 2818
+    .line 2825
     :cond_0
     :try_start_0
     sget-object v13, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -11986,12 +12062,12 @@
 
     move-result-object v13
 
-    .line 2819
+    .line 2826
     new-instance v15, Ljava/util/ArrayList;
 
     invoke-direct {v15}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2821
+    .line 2828
     sget-object v14, Landroid/provider/ContactsContract$Groups;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-virtual {v14}, Landroid/net/Uri;->buildUpon()Landroid/net/Uri$Builder;
@@ -12006,7 +12082,7 @@
 
     move-result-object v14
 
-    .line 2822
+    .line 2829
     sget-object v16, Landroid/provider/ContactsContract$RawContacts;->CONTENT_URI:Landroid/net/Uri;
 
     move-object/from16 v17, v14
@@ -12025,12 +12101,12 @@
 
     const-string v9, "_id"
 
-    .line 2825
+    .line 2832
     filled-new-array {v9}, [Ljava/lang/String;
 
     move-result-object v16
 
-    const-string v9, "title=? AND account_type=? AND account_name=?"
+    const-string/jumbo v9, "title=? AND account_type=? AND account_name=?"
 
     const/4 v14, 0x3
 
@@ -12084,7 +12160,7 @@
 
     if-eqz v9, :cond_1
 
-    .line 2829
+    .line 2836
     :try_start_1
     invoke-interface {v9}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -12094,7 +12170,7 @@
 
     const/4 v14, 0x0
 
-    .line 2830
+    .line 2837
     invoke-interface {v9, v14}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v4
@@ -12105,20 +12181,20 @@
 
     goto :goto_0
 
-    .line 2836
+    .line 2843
     :cond_1
     new-instance v14, Landroid/content/ContentValues;
 
     invoke-direct {v14}, Landroid/content/ContentValues;-><init>()V
 
-    .line 2837
+    .line 2844
     iget-object v0, v1, Lorg/telegram/messenger/ContactsController;->systemAccount:Landroid/accounts/Account;
 
     iget-object v0, v0, Landroid/accounts/Account;->type:Ljava/lang/String;
 
     invoke-virtual {v14, v15, v0}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2838
+    .line 2845
     iget-object v0, v1, Lorg/telegram/messenger/ContactsController;->systemAccount:Landroid/accounts/Account;
 
     iget-object v0, v0, Landroid/accounts/Account;->name:Ljava/lang/String;
@@ -12131,7 +12207,7 @@
 
     const/16 v16, 0x0
 
-    .line 2839
+    .line 2846
     invoke-static/range {v16 .. v16}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v15
@@ -12144,24 +12220,24 @@
 
     const/4 v15, 0x1
 
-    .line 2840
+    .line 2847
     invoke-static {v15}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v10
 
     invoke-virtual {v14, v0, v10}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/Integer;)V
 
-    const-string v0, "title"
+    const-string/jumbo v0, "title"
 
-    .line 2841
+    .line 2848
     invoke-virtual {v14, v0, v7}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 
-    .line 2842
+    .line 2849
     invoke-virtual {v13, v4, v14}, Landroid/content/ContentResolver;->insert(Landroid/net/Uri;Landroid/content/ContentValues;)Landroid/net/Uri;
 
     move-result-object v0
 
-    .line 2843
+    .line 2850
     invoke-virtual {v0}, Landroid/net/Uri;->getLastPathSegment()Ljava/lang/String;
 
     move-result-object v0
@@ -12173,10 +12249,10 @@
     :goto_0
     if-eqz v9, :cond_2
 
-    .line 2846
+    .line 2853
     invoke-interface {v9}, Landroid/database/Cursor;->close()V
 
-    .line 2849
+    .line 2856
     :cond_2
     sget-object v15, Landroid/provider/ContactsContract$Data;->CONTENT_URI:Landroid/net/Uri;
 
@@ -12224,7 +12300,7 @@
 
     move-result-object v0
 
-    .line 2852
+    .line 2859
     invoke-virtual/range {v22 .. v22}, Ljava/util/ArrayList;->size()I
 
     move-result v9
@@ -12251,7 +12327,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 2853
+    .line 2860
     :try_start_2
     invoke-interface {v0}, Landroid/database/Cursor;->moveToFirst()Z
 
@@ -12261,12 +12337,12 @@
 
     const/4 v9, 0x0
 
-    .line 2854
+    .line 2861
     invoke-interface {v0, v9}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v10
 
-    .line 2855
+    .line 2862
     invoke-static {v8}, Landroid/content/ContentProviderOperation;->newUpdate(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;
 
     move-result-object v8
@@ -12295,14 +12371,14 @@
 
     aput-object v12, v0, v17
 
-    .line 2856
+    .line 2863
     invoke-virtual {v8, v9, v0}, Landroid/content/ContentProviderOperation$Builder;->withSelection(Ljava/lang/String;[Ljava/lang/String;)Landroid/content/ContentProviderOperation$Builder;
 
     move-result-object v0
 
     const-string v8, "deleted"
 
-    .line 2857
+    .line 2864
     invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v9
@@ -12311,17 +12387,17 @@
 
     move-result-object v0
 
-    .line 2858
+    .line 2865
     invoke-virtual {v0}, Landroid/content/ContentProviderOperation$Builder;->build()Landroid/content/ContentProviderOperation;
 
     move-result-object v0
 
     move-object/from16 v9, v22
 
-    .line 2855
+    .line 2862
     invoke-virtual {v9, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2859
+    .line 2866
     sget-object v0, Landroid/provider/ContactsContract$Data;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {v0}, Landroid/content/ContentProviderOperation;->newUpdate(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;
@@ -12352,7 +12428,7 @@
 
     aput-object v15, v12, v8
 
-    .line 2860
+    .line 2867
     invoke-virtual {v0, v5, v12}, Landroid/content/ContentProviderOperation$Builder;->withSelection(Ljava/lang/String;[Ljava/lang/String;)Landroid/content/ContentProviderOperation$Builder;
 
     move-result-object v0
@@ -12369,20 +12445,20 @@
 
     move-result-object v2
 
-    .line 2862
+    .line 2869
     invoke-virtual {v0, v6, v2}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
 
     move-result-object v0
 
-    .line 2863
+    .line 2870
     invoke-virtual {v0}, Landroid/content/ContentProviderOperation$Builder;->build()Landroid/content/ContentProviderOperation;
 
     move-result-object v0
 
-    .line 2859
+    .line 2866
     invoke-virtual {v9, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2864
+    .line 2871
     sget-object v0, Landroid/provider/ContactsContract$Data;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {v0}, Landroid/content/ContentProviderOperation;->newUpdate(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;
@@ -12413,31 +12489,31 @@
 
     aput-object v4, v2, v3
 
-    .line 2865
+    .line 2872
     invoke-virtual {v0, v5, v2}, Landroid/content/ContentProviderOperation$Builder;->withSelection(Ljava/lang/String;[Ljava/lang/String;)Landroid/content/ContentProviderOperation$Builder;
 
     move-result-object v0
 
     move-object/from16 v5, p3
 
-    .line 2867
+    .line 2874
     invoke-virtual {v0, v13, v5}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
 
     move-result-object v0
 
     move-object/from16 v11, p4
 
-    .line 2868
+    .line 2875
     invoke-virtual {v0, v7, v11}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
 
     move-result-object v0
 
-    .line 2869
+    .line 2876
     invoke-virtual {v0}, Landroid/content/ContentProviderOperation$Builder;->build()Landroid/content/ContentProviderOperation;
 
     move-result-object v0
 
-    .line 2864
+    .line 2871
     invoke-virtual {v9, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto/16 :goto_1
@@ -12455,7 +12531,7 @@
 
     const/4 v0, 0x1
 
-    .line 2871
+    .line 2878
     invoke-static {v8}, Landroid/content/ContentProviderOperation;->newInsert(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;
 
     move-result-object v8
@@ -12464,7 +12540,7 @@
 
     iget-object v0, v0, Landroid/accounts/Account;->type:Ljava/lang/String;
 
-    .line 2872
+    .line 2879
     invoke-virtual {v8, v10, v0}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
 
     move-result-object v0
@@ -12475,7 +12551,7 @@
 
     move-object/from16 v10, v23
 
-    .line 2873
+    .line 2880
     invoke-virtual {v0, v10, v8}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
 
     move-result-object v0
@@ -12484,7 +12560,7 @@
 
     const/4 v10, 0x1
 
-    .line 2874
+    .line 2881
     invoke-static {v10}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v10
@@ -12495,7 +12571,7 @@
 
     const-string v8, "aggregation_mode"
 
-    .line 2875
+    .line 2882
     invoke-static/range {v21 .. v21}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v10
@@ -12504,51 +12580,12 @@
 
     move-result-object v0
 
-    .line 2876
+    .line 2883
     invoke-virtual {v0}, Landroid/content/ContentProviderOperation$Builder;->build()Landroid/content/ContentProviderOperation;
 
     move-result-object v0
-
-    .line 2871
-    invoke-virtual {v9, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 2877
-    sget-object v0, Landroid/provider/ContactsContract$Data;->CONTENT_URI:Landroid/net/Uri;
-
-    invoke-static {v0}, Landroid/content/ContentProviderOperation;->newInsert(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;
-
-    move-result-object v0
-
-    move/from16 v8, v19
 
     .line 2878
-    invoke-virtual {v0, v12, v8}, Landroid/content/ContentProviderOperation$Builder;->withValueBackReference(Ljava/lang/String;I)Landroid/content/ContentProviderOperation$Builder;
-
-    move-result-object v0
-
-    move-object/from16 v10, v20
-
-    .line 2879
-    invoke-virtual {v0, v10, v4}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
-
-    move-result-object v0
-
-    .line 2880
-    invoke-virtual {v0, v13, v5}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
-
-    move-result-object v0
-
-    .line 2881
-    invoke-virtual {v0, v7, v11}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
-
-    move-result-object v0
-
-    .line 2882
-    invoke-virtual {v0}, Landroid/content/ContentProviderOperation$Builder;->build()Landroid/content/ContentProviderOperation;
-
-    move-result-object v0
-
-    .line 2877
     invoke-virtual {v9, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 2884
@@ -12558,12 +12595,51 @@
 
     move-result-object v0
 
+    move/from16 v8, v19
+
     .line 2885
     invoke-virtual {v0, v12, v8}, Landroid/content/ContentProviderOperation$Builder;->withValueBackReference(Ljava/lang/String;I)Landroid/content/ContentProviderOperation$Builder;
 
     move-result-object v0
 
+    move-object/from16 v10, v20
+
     .line 2886
+    invoke-virtual {v0, v10, v4}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
+
+    move-result-object v0
+
+    .line 2887
+    invoke-virtual {v0, v13, v5}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
+
+    move-result-object v0
+
+    .line 2888
+    invoke-virtual {v0, v7, v11}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
+
+    move-result-object v0
+
+    .line 2889
+    invoke-virtual {v0}, Landroid/content/ContentProviderOperation$Builder;->build()Landroid/content/ContentProviderOperation;
+
+    move-result-object v0
+
+    .line 2884
+    invoke-virtual {v9, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 2891
+    sget-object v0, Landroid/provider/ContactsContract$Data;->CONTENT_URI:Landroid/net/Uri;
+
+    invoke-static {v0}, Landroid/content/ContentProviderOperation;->newInsert(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;
+
+    move-result-object v0
+
+    .line 2892
+    invoke-virtual {v0, v12, v8}, Landroid/content/ContentProviderOperation$Builder;->withValueBackReference(Ljava/lang/String;I)Landroid/content/ContentProviderOperation$Builder;
+
+    move-result-object v0
+
+    .line 2893
     invoke-virtual {v0, v10, v15}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
 
     move-result-object v0
@@ -12580,39 +12656,39 @@
 
     move-result-object v2
 
-    .line 2887
+    .line 2894
     invoke-virtual {v0, v6, v2}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
 
     move-result-object v0
 
-    .line 2888
+    .line 2895
     invoke-virtual {v0}, Landroid/content/ContentProviderOperation$Builder;->build()Landroid/content/ContentProviderOperation;
 
     move-result-object v0
 
-    .line 2884
+    .line 2891
     invoke-virtual {v9, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2889
+    .line 2896
     sget-object v0, Landroid/provider/ContactsContract$Data;->CONTENT_URI:Landroid/net/Uri;
 
     invoke-static {v0}, Landroid/content/ContentProviderOperation;->newInsert(Landroid/net/Uri;)Landroid/content/ContentProviderOperation$Builder;
 
     move-result-object v0
 
-    .line 2890
+    .line 2897
     invoke-virtual {v0, v12, v8}, Landroid/content/ContentProviderOperation$Builder;->withValueBackReference(Ljava/lang/String;I)Landroid/content/ContentProviderOperation$Builder;
 
     move-result-object v0
 
     move-object/from16 v2, v18
 
-    .line 2891
+    .line 2898
     invoke-virtual {v0, v10, v2}, Landroid/content/ContentProviderOperation$Builder;->withValue(Ljava/lang/String;Ljava/lang/Object;)Landroid/content/ContentProviderOperation$Builder;
 
     move-result-object v0
 
-    .line 2892
+    .line 2899
     invoke-static/range {v17 .. v17}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v2
@@ -12621,18 +12697,18 @@
 
     move-result-object v0
 
-    .line 2893
+    .line 2900
     invoke-virtual {v0}, Landroid/content/ContentProviderOperation$Builder;->build()Landroid/content/ContentProviderOperation;
 
     move-result-object v0
 
-    .line 2889
+    .line 2896
     invoke-virtual {v9, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :goto_1
     if-eqz v24, :cond_4
 
-    .line 2896
+    .line 2903
     invoke-interface/range {v24 .. v24}, Landroid/database/Cursor;->close()V
 
     :cond_4
@@ -12640,7 +12716,7 @@
 
     move-object/from16 v2, v16
 
-    .line 2898
+    .line 2905
     invoke-virtual {v2, v0, v9}, Landroid/content/ContentResolver;->applyBatch(Ljava/lang/String;Ljava/util/ArrayList;)[Landroid/content/ContentProviderResult;
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
@@ -12650,7 +12726,7 @@
     :catch_0
     move-exception v0
 
-    .line 2901
+    .line 2908
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_2
@@ -12728,7 +12804,7 @@
 
     const-string v0, ""
 
-    .line 2906
+    .line 2913
     invoke-direct {p0}, Lorg/telegram/messenger/ContactsController;->hasContactsPermission()Z
 
     move-result v1
@@ -12737,7 +12813,7 @@
 
     return-void
 
-    .line 2909
+    .line 2916
     :cond_0
     :try_start_0
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
@@ -12746,7 +12822,7 @@
 
     move-result-object v1
 
-    .line 2911
+    .line 2918
     sget-object v3, Landroid/provider/ContactsContract$Groups;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v2, "_id"
@@ -12755,7 +12831,7 @@
 
     move-result-object v4
 
-    const-string v5, "title=? AND account_type=? AND account_name=?"
+    const-string/jumbo v5, "title=? AND account_type=? AND account_name=?"
 
     const/4 v2, 0x3
 
@@ -12791,22 +12867,22 @@
 
     if-eqz v2, :cond_3
 
-    .line 2915
+    .line 2922
     invoke-interface {v2}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v3
 
     if-eqz v3, :cond_3
 
-    .line 2916
+    .line 2923
     invoke-interface {v2, v8}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v3
 
-    .line 2917
+    .line 2924
     invoke-interface {v2}, Landroid/database/Cursor;->close()V
 
-    .line 2923
+    .line 2930
     sget-object v4, Landroid/provider/ContactsContract$Data;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v2, "raw_contact_id"
@@ -12857,22 +12933,22 @@
 
     if-eqz v2, :cond_1
 
-    .line 2927
+    .line 2934
     invoke-interface {v2}, Landroid/database/Cursor;->moveToFirst()Z
 
     move-result v3
 
     if-eqz v3, :cond_1
 
-    .line 2928
+    .line 2935
     invoke-interface {v2, v8}, Landroid/database/Cursor;->getInt(I)I
 
     move-result v3
 
-    .line 2929
+    .line 2936
     invoke-interface {v2}, Landroid/database/Cursor;->close()V
 
-    .line 2935
+    .line 2942
     sget-object v2, Landroid/provider/ContactsContract$RawContacts;->CONTENT_URI:Landroid/net/Uri;
 
     const-string v4, "_id=?"
@@ -12900,7 +12976,7 @@
     :cond_1
     if-eqz v2, :cond_2
 
-    .line 2932
+    .line 2939
     invoke-interface {v2}, Landroid/database/Cursor;->close()V
 
     :cond_2
@@ -12909,7 +12985,7 @@
     :cond_3
     if-eqz v2, :cond_4
 
-    .line 2920
+    .line 2927
     invoke-interface {v2}, Landroid/database/Cursor;->close()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -12920,7 +12996,7 @@
     :catch_0
     move-exception v0
 
-    .line 2938
+    .line 2945
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -12962,7 +13038,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 2493
+    .line 2500
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v0
@@ -12971,18 +13047,18 @@
 
     goto :goto_2
 
-    .line 2501
+    .line 2508
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_deleteContacts;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_contacts_deleteContacts;-><init>()V
 
-    .line 2502
+    .line 2509
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2503
+    .line 2510
     invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -12994,14 +13070,14 @@
     :goto_0
     if-ge v3, v1, :cond_2
 
-    .line 2504
+    .line 2511
     invoke-virtual {p1, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
 
     check-cast v5, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 2505
+    .line 2512
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v6
@@ -13014,11 +13090,11 @@
 
     goto :goto_1
 
-    .line 2509
+    .line 2516
     :cond_1
     iput-boolean v2, v5, Lorg/telegram/tgnet/TLRPC$User;->contact:Z
 
-    .line 2510
+    .line 2517
     iget-wide v7, v5, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
     invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
@@ -13027,7 +13103,7 @@
 
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2511
+    .line 2518
     iget-object v5, v0, Lorg/telegram/tgnet/TLRPC$TL_contacts_deleteContacts;->id:Ljava/util/ArrayList;
 
     invoke-virtual {v5, v6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -13037,7 +13113,7 @@
 
     goto :goto_0
 
-    .line 2513
+    .line 2520
     :cond_2
     invoke-virtual {p1, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
@@ -13047,7 +13123,7 @@
 
     iget-object v7, v1, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
-    .line 2514
+    .line 2521
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v8
@@ -13074,7 +13150,7 @@
     :goto_2
     if-eqz p3, :cond_4
 
-    .line 2496
+    .line 2503
     new-instance p1, Ljava/lang/Exception;
 
     const-string/jumbo p2, "users is null or empty"
@@ -13345,7 +13421,7 @@
 .method public getDeleteAccountTTL()I
     .locals 1
 
-    .line 2736
+    .line 2743
     iget v0, p0, Lorg/telegram/messenger/ContactsController;->deleteAccountTTL:I
 
     return v0
@@ -13354,7 +13430,7 @@
 .method public getGlobalPrivacySettings()Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;
     .locals 1
 
-    .line 2752
+    .line 2759
     iget-object v0, p0, Lorg/telegram/messenger/ContactsController;->globalPrivacySettings:Lorg/telegram/tgnet/TLRPC$TL_globalPrivacySettings;
 
     return-object v0
@@ -13388,7 +13464,7 @@
 .method public getLoadingDeleteInfo()Z
     .locals 2
 
-    .line 2740
+    .line 2747
     iget v0, p0, Lorg/telegram/messenger/ContactsController;->loadingDeleteInfo:I
 
     const/4 v1, 0x2
@@ -13409,7 +13485,7 @@
 .method public getLoadingGlobalSettings()Z
     .locals 2
 
-    .line 2744
+    .line 2751
     iget v0, p0, Lorg/telegram/messenger/ContactsController;->loadingGlobalSettings:I
 
     const/4 v1, 0x2
@@ -13430,7 +13506,7 @@
 .method public getLoadingPrivacyInfo(I)Z
     .locals 1
 
-    .line 2748
+    .line 2755
     iget-object v0, p0, Lorg/telegram/messenger/ContactsController;->loadingPrivacyInfo:[I
 
     aget p1, v0, p1
@@ -13467,55 +13543,55 @@
 
     return-object p1
 
-    .line 2774
+    .line 2781
     :pswitch_0
     iget-object p1, p0, Lorg/telegram/messenger/ContactsController;->voiceMessagesRules:Ljava/util/ArrayList;
 
     return-object p1
 
-    .line 2772
+    .line 2779
     :pswitch_1
     iget-object p1, p0, Lorg/telegram/messenger/ContactsController;->addedByPhonePrivacyRules:Ljava/util/ArrayList;
 
     return-object p1
 
-    .line 2770
+    .line 2777
     :pswitch_2
     iget-object p1, p0, Lorg/telegram/messenger/ContactsController;->phonePrivacyRules:Ljava/util/ArrayList;
 
     return-object p1
 
-    .line 2768
+    .line 2775
     :pswitch_3
     iget-object p1, p0, Lorg/telegram/messenger/ContactsController;->forwardsPrivacyRules:Ljava/util/ArrayList;
 
     return-object p1
 
-    .line 2766
+    .line 2773
     :pswitch_4
     iget-object p1, p0, Lorg/telegram/messenger/ContactsController;->profilePhotoPrivacyRules:Ljava/util/ArrayList;
 
     return-object p1
 
-    .line 2764
+    .line 2771
     :pswitch_5
     iget-object p1, p0, Lorg/telegram/messenger/ContactsController;->p2pPrivacyRules:Ljava/util/ArrayList;
 
     return-object p1
 
-    .line 2762
+    .line 2769
     :pswitch_6
     iget-object p1, p0, Lorg/telegram/messenger/ContactsController;->callPrivacyRules:Ljava/util/ArrayList;
 
     return-object p1
 
-    .line 2760
+    .line 2767
     :pswitch_7
     iget-object p1, p0, Lorg/telegram/messenger/ContactsController;->groupPrivacyRules:Ljava/util/ArrayList;
 
     return-object p1
 
-    .line 2758
+    .line 2765
     :pswitch_8
     iget-object p1, p0, Lorg/telegram/messenger/ContactsController;->lastseenPrivacyRules:Ljava/util/ArrayList;
 
@@ -13679,22 +13755,22 @@
 .method public loadPrivacySettings()V
     .locals 6
 
-    .line 2618
+    .line 2625
     iget v0, p0, Lorg/telegram/messenger/ContactsController;->loadingDeleteInfo:I
 
     const/4 v1, 0x1
 
     if-nez v0, :cond_0
 
-    .line 2619
+    .line 2626
     iput v1, p0, Lorg/telegram/messenger/ContactsController;->loadingDeleteInfo:I
 
-    .line 2620
+    .line 2627
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_account_getAccountTTL;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_account_getAccountTTL;-><init>()V
 
-    .line 2621
+    .line 2628
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v2
@@ -13705,21 +13781,21 @@
 
     invoke-virtual {v2, v0, v3}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    .line 2632
+    .line 2639
     :cond_0
     iget v0, p0, Lorg/telegram/messenger/ContactsController;->loadingGlobalSettings:I
 
     if-nez v0, :cond_1
 
-    .line 2633
+    .line 2640
     iput v1, p0, Lorg/telegram/messenger/ContactsController;->loadingGlobalSettings:I
 
-    .line 2634
+    .line 2641
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_account_getGlobalPrivacySettings;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_account_getGlobalPrivacySettings;-><init>()V
 
-    .line 2635
+    .line 2642
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v2
@@ -13735,7 +13811,7 @@
 
     move v2, v0
 
-    .line 2645
+    .line 2652
     :goto_0
     iget-object v3, p0, Lorg/telegram/messenger/ContactsController;->loadingPrivacyInfo:[I
 
@@ -13743,25 +13819,25 @@
 
     if-ge v2, v4, :cond_3
 
-    .line 2646
+    .line 2653
     aget v4, v3, v2
 
     if-eqz v4, :cond_2
 
     goto :goto_2
 
-    .line 2649
+    .line 2656
     :cond_2
     aput v1, v3, v2
 
-    .line 2652
+    .line 2659
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_account_getPrivacy;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_account_getPrivacy;-><init>()V
 
     packed-switch v2, :pswitch_data_0
 
-    .line 2681
+    .line 2688
     :pswitch_0
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyKeyAddedByPhone;
 
@@ -13771,7 +13847,7 @@
 
     goto :goto_1
 
-    .line 2677
+    .line 2684
     :pswitch_1
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyKeyVoiceMessages;
 
@@ -13781,7 +13857,7 @@
 
     goto :goto_1
 
-    .line 2674
+    .line 2681
     :pswitch_2
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyKeyPhoneNumber;
 
@@ -13791,7 +13867,7 @@
 
     goto :goto_1
 
-    .line 2671
+    .line 2678
     :pswitch_3
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyKeyForwards;
 
@@ -13801,7 +13877,7 @@
 
     goto :goto_1
 
-    .line 2668
+    .line 2675
     :pswitch_4
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyKeyProfilePhoto;
 
@@ -13811,7 +13887,7 @@
 
     goto :goto_1
 
-    .line 2665
+    .line 2672
     :pswitch_5
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyKeyPhoneP2P;
 
@@ -13821,7 +13897,7 @@
 
     goto :goto_1
 
-    .line 2662
+    .line 2669
     :pswitch_6
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyKeyPhoneCall;
 
@@ -13831,7 +13907,7 @@
 
     goto :goto_1
 
-    .line 2659
+    .line 2666
     :pswitch_7
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyKeyChatInvite;
 
@@ -13841,7 +13917,7 @@
 
     goto :goto_1
 
-    .line 2656
+    .line 2663
     :pswitch_8
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_inputPrivacyKeyStatusTimestamp;
 
@@ -13849,7 +13925,7 @@
 
     iput-object v4, v3, Lorg/telegram/tgnet/TLRPC$TL_account_getPrivacy;->key:Lorg/telegram/tgnet/TLRPC$InputPrivacyKey;
 
-    .line 2685
+    .line 2692
     :goto_1
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getConnectionsManager()Lorg/telegram/tgnet/ConnectionsManager;
 
@@ -13866,7 +13942,7 @@
 
     goto :goto_0
 
-    .line 2728
+    .line 2735
     :cond_3
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
@@ -13903,7 +13979,7 @@
 
     return-void
 
-    .line 2411
+    .line 2418
     :cond_0
     sget-object v0, Lorg/telegram/messenger/Utilities;->phoneBookQueue:Lorg/telegram/messenger/DispatchQueue;
 
@@ -14008,17 +14084,17 @@
         }
     .end annotation
 
-    .line 2262
+    .line 2269
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2263
+    .line 2270
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 2264
+    .line 2271
     invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object v2
@@ -14037,7 +14113,7 @@
 
     check-cast v3, Ljava/lang/Long;
 
-    .line 2265
+    .line 2272
     invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v4
@@ -14050,22 +14126,22 @@
 
     if-lez v4, :cond_1
 
-    .line 2266
+    .line 2273
     new-instance v4, Lorg/telegram/tgnet/TLRPC$TL_contact;
 
     invoke-direct {v4}, Lorg/telegram/tgnet/TLRPC$TL_contact;-><init>()V
 
-    .line 2267
+    .line 2274
     invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v6
 
     iput-wide v6, v4, Lorg/telegram/tgnet/TLRPC$TL_contact;->user_id:J
 
-    .line 2268
+    .line 2275
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2269
+    .line 2276
     iget-object v4, p0, Lorg/telegram/messenger/ContactsController;->delayedContactsUpdate:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->isEmpty()Z
@@ -14074,7 +14150,7 @@
 
     if-nez v4, :cond_0
 
-    .line 2270
+    .line 2277
     iget-object v4, p0, Lorg/telegram/messenger/ContactsController;->delayedContactsUpdate:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
@@ -14093,14 +14169,14 @@
 
     if-eq v3, v5, :cond_0
 
-    .line 2272
+    .line 2279
     iget-object v4, p0, Lorg/telegram/messenger/ContactsController;->delayedContactsUpdate:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 2275
+    .line 2282
     :cond_1
     invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
 
@@ -14110,7 +14186,7 @@
 
     if-gez v4, :cond_0
 
-    .line 2276
+    .line 2283
     invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
 
     move-result-wide v6
@@ -14123,7 +14199,7 @@
 
     invoke-virtual {v1, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 2277
+    .line 2284
     iget-object v4, p0, Lorg/telegram/messenger/ContactsController;->delayedContactsUpdate:Ljava/util/ArrayList;
 
     invoke-virtual {v4}, Ljava/util/ArrayList;->isEmpty()Z
@@ -14132,7 +14208,7 @@
 
     if-nez v4, :cond_0
 
-    .line 2278
+    .line 2285
     iget-object v4, p0, Lorg/telegram/messenger/ContactsController;->delayedContactsUpdate:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/lang/Long;->longValue()J
@@ -14151,14 +14227,14 @@
 
     if-eq v3, v5, :cond_0
 
-    .line 2280
+    .line 2287
     iget-object v4, p0, Lorg/telegram/messenger/ContactsController;->delayedContactsUpdate:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v3}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
     goto :goto_0
 
-    .line 2285
+    .line 2292
     :cond_2
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -14166,14 +14242,14 @@
 
     if-nez v2, :cond_3
 
-    .line 2286
+    .line 2293
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v2
 
     invoke-virtual {v2, v1}, Lorg/telegram/messenger/MessagesStorage;->deleteContacts(Ljava/util/ArrayList;)V
 
-    .line 2288
+    .line 2295
     :cond_3
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
 
@@ -14181,7 +14257,7 @@
 
     if-nez v2, :cond_4
 
-    .line 2289
+    .line 2296
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v2
@@ -14190,7 +14266,7 @@
 
     invoke-virtual {v2, v0, v3}, Lorg/telegram/messenger/MessagesStorage;->putContacts(Ljava/util/ArrayList;Z)V
 
-    .line 2291
+    .line 2298
     :cond_4
     iget-boolean v2, p0, Lorg/telegram/messenger/ContactsController;->contactsLoaded:Z
 
@@ -14202,25 +14278,25 @@
 
     goto :goto_1
 
-    .line 2297
+    .line 2304
     :cond_5
     invoke-direct {p0, p1, p2, v0, v1}, Lorg/telegram/messenger/ContactsController;->applyContactsUpdates(Ljava/util/ArrayList;Lj$/util/concurrent/ConcurrentHashMap;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
     goto :goto_2
 
-    .line 2292
+    .line 2299
     :cond_6
     :goto_1
     iget-object p2, p0, Lorg/telegram/messenger/ContactsController;->delayedContactsUpdate:Ljava/util/ArrayList;
 
     invoke-virtual {p2, p1}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 2293
+    .line 2300
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p1, :cond_7
 
-    .line 2294
+    .line 2301
     new-instance p1, Ljava/lang/StringBuilder;
 
     invoke-direct {p1}, Ljava/lang/StringBuilder;-><init>()V
@@ -16514,7 +16590,7 @@
 .method public setDeleteAccountTTL(I)V
     .locals 0
 
-    .line 2732
+    .line 2739
     iput p1, p0, Lorg/telegram/messenger/ContactsController;->deleteAccountTTL:I
 
     return-void
@@ -16535,59 +16611,59 @@
 
     goto :goto_0
 
-    .line 2806
+    .line 2813
     :pswitch_0
     iput-object p1, p0, Lorg/telegram/messenger/ContactsController;->voiceMessagesRules:Ljava/util/ArrayList;
 
     goto :goto_0
 
-    .line 2803
+    .line 2810
     :pswitch_1
     iput-object p1, p0, Lorg/telegram/messenger/ContactsController;->addedByPhonePrivacyRules:Ljava/util/ArrayList;
 
     goto :goto_0
 
-    .line 2800
+    .line 2807
     :pswitch_2
     iput-object p1, p0, Lorg/telegram/messenger/ContactsController;->phonePrivacyRules:Ljava/util/ArrayList;
 
     goto :goto_0
 
-    .line 2797
+    .line 2804
     :pswitch_3
     iput-object p1, p0, Lorg/telegram/messenger/ContactsController;->forwardsPrivacyRules:Ljava/util/ArrayList;
 
     goto :goto_0
 
-    .line 2794
+    .line 2801
     :pswitch_4
     iput-object p1, p0, Lorg/telegram/messenger/ContactsController;->profilePhotoPrivacyRules:Ljava/util/ArrayList;
 
     goto :goto_0
 
-    .line 2791
+    .line 2798
     :pswitch_5
     iput-object p1, p0, Lorg/telegram/messenger/ContactsController;->p2pPrivacyRules:Ljava/util/ArrayList;
 
     goto :goto_0
 
-    .line 2788
+    .line 2795
     :pswitch_6
     iput-object p1, p0, Lorg/telegram/messenger/ContactsController;->callPrivacyRules:Ljava/util/ArrayList;
 
     goto :goto_0
 
-    .line 2785
+    .line 2792
     :pswitch_7
     iput-object p1, p0, Lorg/telegram/messenger/ContactsController;->groupPrivacyRules:Ljava/util/ArrayList;
 
     goto :goto_0
 
-    .line 2782
+    .line 2789
     :pswitch_8
     iput-object p1, p0, Lorg/telegram/messenger/ContactsController;->lastseenPrivacyRules:Ljava/util/ArrayList;
 
-    .line 2809
+    .line 2816
     :goto_0
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
@@ -16601,7 +16677,7 @@
 
     invoke-virtual {p1, p2, v0}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 2810
+    .line 2817
     invoke-direct {p0}, Lorg/telegram/messenger/ContactsController;->reloadContactsStatuses()V
 
     return-void

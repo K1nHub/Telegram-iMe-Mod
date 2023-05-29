@@ -33,13 +33,13 @@ public class InviteUserCell extends FrameLayout {
         this.avatarDrawable = new AvatarDrawable();
         BackupImageView backupImageView = new BackupImageView(context);
         this.avatarImageView = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m50dp(24));
+        backupImageView.setRoundRadius(AndroidUtilities.m54dp(24));
         BackupImageView backupImageView2 = this.avatarImageView;
         boolean z2 = LocaleController.isRTL;
         addView(backupImageView2, LayoutHelper.createFrame(50, 50, (z2 ? 5 : 3) | 48, z2 ? 0 : 11, 11, z2 ? 11 : 0, 0));
         SimpleTextView simpleTextView = new SimpleTextView(context);
         this.nameTextView = simpleTextView;
-        simpleTextView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        simpleTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         this.nameTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.nameTextView.setTextSize(17);
         this.nameTextView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
@@ -56,7 +56,7 @@ public class InviteUserCell extends FrameLayout {
         if (z) {
             CheckBox2 checkBox2 = new CheckBox2(context, 21);
             this.checkBox = checkBox2;
-            checkBox2.setColor(null, "windowBackgroundWhite", "checkboxCheck");
+            checkBox2.setColor(-1, Theme.key_windowBackgroundWhite, Theme.key_checkboxCheck);
             this.checkBox.setDrawUnchecked(false);
             this.checkBox.setDrawBackgroundAsArc(3);
             CheckBox2 checkBox22 = this.checkBox;
@@ -81,7 +81,7 @@ public class InviteUserCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(72), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(72), 1073741824));
     }
 
     public void recycle() {
@@ -102,12 +102,14 @@ public class InviteUserCell extends FrameLayout {
             ContactsController.Contact contact2 = this.currentContact;
             simpleTextView.setText(ContactsController.formatName(contact2.first_name, contact2.last_name));
         }
-        this.statusTextView.setTag("windowBackgroundWhiteGrayText");
-        this.statusTextView.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText"));
+        SimpleTextView simpleTextView2 = this.statusTextView;
+        int i2 = Theme.key_windowBackgroundWhiteGrayText;
+        simpleTextView2.setTag(Integer.valueOf(i2));
+        this.statusTextView.setTextColor(Theme.getColor(i2));
         ContactsController.Contact contact3 = this.currentContact;
-        int i2 = contact3.imported;
-        if (i2 > 0) {
-            this.statusTextView.setText(LocaleController.formatPluralString("TelegramContacts", i2, new Object[0]));
+        int i3 = contact3.imported;
+        if (i3 > 0) {
+            this.statusTextView.setText(LocaleController.formatPluralString("TelegramContacts", i3, new Object[0]));
         } else {
             this.statusTextView.setText(contact3.phones.get(0));
         }

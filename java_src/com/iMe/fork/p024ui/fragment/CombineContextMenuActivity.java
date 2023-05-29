@@ -27,10 +27,11 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.AndroidUtilities;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Cells.TextCheckBoxCell;
@@ -115,6 +116,9 @@ public final class CombineContextMenuActivity extends MvpFragment {
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        int i = ThemeDescription.FLAG_BACKGROUND;
+        int i2 = Theme.key_actionBarDefault;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.fork.ui.fragment.CombineContextMenuActivity$$ExternalSyntheticLambda0
             @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
@@ -125,7 +129,7 @@ public final class CombineContextMenuActivity extends MvpFragment {
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, "windowBackgroundGray"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, "actionBarDefault"), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, "listSelectorSDK21"), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, "divider"), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, "windowBackgroundChecked"), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, "windowBackgroundUnchecked"), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundCheckText"), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackBlue"), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackBlueChecked"), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackBlueThumb"), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackBlueThumbChecked"), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackBlueSelector"), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackBlueSelectorChecked"), new ThemeDescription(getListView(), 0, new Class[]{TextCheckBoxCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"));
+        }, Theme.key_windowBackgroundGray), new ThemeDescription(c3356ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundChecked), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundUnchecked), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundCheckText), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlue), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueChecked), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueThumb), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueThumbChecked), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueSelector), new ThemeDescription(getListView(), 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueSelectorChecked), new ThemeDescription(getListView(), 0, new Class[]{TextCheckBoxCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText));
         return arrayListOf;
     }
 
@@ -151,12 +155,12 @@ public final class CombineContextMenuActivity extends MvpFragment {
     }
 
     private final void setupActionBar() {
-        C3306ActionBar c3306ActionBar = this.actionBar;
-        c3306ActionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
-        c3306ActionBar.setAllowOverlayTitle(true);
-        c3306ActionBar.setTitle(LocaleController.getInternalString(C3242R.string.settings_interface_message_context_menu));
-        c3306ActionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.CombineContextMenuActivity$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        c3356ActionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        c3356ActionBar.setAllowOverlayTitle(true);
+        c3356ActionBar.setTitle(LocaleController.getInternalString(C3290R.string.settings_interface_message_context_menu));
+        c3356ActionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.fork.ui.fragment.CombineContextMenuActivity$setupActionBar$1$1
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     CombineContextMenuActivity.this.finishFragment();
@@ -168,7 +172,7 @@ public final class CombineContextMenuActivity extends MvpFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public final FrameLayout initRootView() {
         FrameLayout frameLayout = new FrameLayout(getParentActivity());
-        frameLayout.setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+        frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         return frameLayout;
     }
 
@@ -191,7 +195,7 @@ public final class CombineContextMenuActivity extends MvpFragment {
     public static final void initListView$lambda$7$lambda$6(CombineContextMenuActivity this$0, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         if (view instanceof TextCheckCell) {
-            ((TextCheckCell) view).toggleCheckbox();
+            ((TextCheckCell) view).toggleCheckBox();
             ToolsController toolsController = this$0.getToolsController();
             toolsController.setMessagePopupAggregatorEnabled(!toolsController.isMessagePopupAggregatorEnabled());
             toolsController.saveConfig();
@@ -221,7 +225,7 @@ public final class CombineContextMenuActivity extends MvpFragment {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final boolean isClickableViewType(int i) {
-        return i == IdFabric$ViewTypes.TEXT_CHECK || i == IdFabric$ViewTypes.SORTING_FILTER;
+        return i == IdFabric$ViewTypes.TEXT_CHECK_CELL || i == IdFabric$ViewTypes.SORTING_FILTER;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -265,7 +269,7 @@ public final class CombineContextMenuActivity extends MvpFragment {
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemViewType(int i) {
-            return i == this.this$0.mediaSwitchTopicsBarRow ? IdFabric$ViewTypes.TOPICS_BAR : i == this.this$0.enableRow ? IdFabric$ViewTypes.TEXT_CHECK : IdFabric$ViewTypes.TEXT_CHECK_BOX;
+            return i == this.this$0.mediaSwitchTopicsBarRow ? IdFabric$ViewTypes.TOPICS_BAR : i == this.this$0.enableRow ? IdFabric$ViewTypes.TEXT_CHECK_CELL : IdFabric$ViewTypes.TEXT_CHECK_BOX_CELL;
         }
 
         @Override // org.telegram.p044ui.Components.RecyclerListView.SelectionAdapter
@@ -277,25 +281,26 @@ public final class CombineContextMenuActivity extends MvpFragment {
         /* JADX WARN: Multi-variable type inference failed */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerListView.Holder onCreateViewHolder(ViewGroup parent, int i) {
-            TextCheckBoxCell textCheckBoxCell;
+            FrameLayout frameLayout;
             Intrinsics.checkNotNullParameter(parent, "parent");
-            if (i == IdFabric$ViewTypes.TOPICS_BAR) {
+            int i2 = IdFabric$ViewTypes.TOPICS_BAR;
+            if (i == i2) {
                 Activity parentActivity = this.this$0.getParentActivity();
                 Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
                 MediaSwitchTopicsBar mediaSwitchTopicsBar = new MediaSwitchTopicsBar(parentActivity, this.this$0.getCurrentMessagesContextMenu(), new CombineContextMenuActivity$ListAdapter$onCreateViewHolder$1(this.this$0));
                 this.this$0.topicsBar = mediaSwitchTopicsBar;
-                textCheckBoxCell = mediaSwitchTopicsBar;
-            } else if (i == IdFabric$ViewTypes.TEXT_CHECK) {
-                TextCheckCell textCheckCell = new TextCheckCell(this.mContext);
-                textCheckCell.setType(1);
-                textCheckBoxCell = textCheckCell;
+                frameLayout = mediaSwitchTopicsBar;
+            } else if (i == IdFabric$ViewTypes.TEXT_CHECK_CELL) {
+                FrameLayout textCheckCell = new TextCheckCell(this.mContext);
+                textCheckCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+                frameLayout = textCheckCell;
             } else {
-                TextCheckBoxCell textCheckBoxCell2 = new TextCheckBoxCell(this.this$0.getParentActivity(), true, false);
-                textCheckBoxCell2.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-                textCheckBoxCell = textCheckBoxCell2;
+                FrameLayout textCheckBoxCell = new TextCheckBoxCell(this.this$0.getParentActivity(), true, false);
+                textCheckBoxCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+                frameLayout = textCheckBoxCell;
             }
-            textCheckBoxCell.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
-            return new RecyclerListView.Holder(textCheckBoxCell);
+            frameLayout.setLayoutParams(new RecyclerView.LayoutParams(-1, i == i2 ? AndroidUtilities.m54dp(36) : -2));
+            return new RecyclerListView.Holder(frameLayout);
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -305,11 +310,9 @@ public final class CombineContextMenuActivity extends MvpFragment {
             int itemViewType = getItemViewType(i);
             View view = holder.itemView;
             Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
-            if ((view instanceof TextCheckCell) && itemViewType == IdFabric$ViewTypes.TEXT_CHECK) {
-                TextCheckCell textCheckCell = (TextCheckCell) view;
-                textCheckCell.setType(0);
-                textCheckCell.setTextAndCheck(LocaleController.getInternalString(C3242R.string.settings_interface_message_popup_aggregator), this.this$0.getToolsController().isMessagePopupAggregatorEnabled(), z);
-            } else if ((view instanceof TextCheckBoxCell) && itemViewType == IdFabric$ViewTypes.TEXT_CHECK_BOX) {
+            if ((view instanceof TextCheckCell) && itemViewType == IdFabric$ViewTypes.TEXT_CHECK_CELL) {
+                ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3290R.string.settings_interface_message_popup_aggregator), this.this$0.getToolsController().isMessagePopupAggregatorEnabled(), z);
+            } else if ((view instanceof TextCheckBoxCell) && itemViewType == IdFabric$ViewTypes.TEXT_CHECK_BOX_CELL) {
                 if (this.this$0.getCurrentMessagesContextMenu()) {
                     MessagePopupItem messagePopupItem = this.this$0.messagesPopupItems[i - this.this$0.tabsRowStart];
                     ((TextCheckBoxCell) view).setTextAndCheck(messagePopupItem.getTitle(), this.this$0.getToolsController().getSelectedMessagePopupItems().contains(messagePopupItem), z);

@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 38047
+    .line 38896
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$updates_ChannelDifference;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 2
 
-    .line 38052
+    .line 38901
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -46,25 +46,25 @@
     :cond_0
     const/4 v1, 0x0
 
-    .line 38053
+    .line 38902
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$updates_ChannelDifference;->isFinal:Z
 
-    .line 38054
+    .line 38903
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$updates_ChannelDifference;->pts:I
 
-    .line 38055
+    .line 38904
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$updates_ChannelDifference;->flags:I
 
     and-int/lit8 v0, v0, 0x2
 
     if-eqz v0, :cond_1
 
-    .line 38056
+    .line 38905
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -78,12 +78,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 38061
+    .line 38910
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_updates_channelDifferenceEmpty;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 38062
+    .line 38911
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$updates_ChannelDifference;->isFinal:Z
 
     if-eqz v0, :cond_0
@@ -102,22 +102,22 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$updates_ChannelDifference;->flags:I
 
-    .line 38063
+    .line 38912
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 38064
+    .line 38913
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$updates_ChannelDifference;->pts:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 38065
+    .line 38914
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$updates_ChannelDifference;->flags:I
 
     and-int/lit8 v0, v0, 0x2
 
     if-eqz v0, :cond_1
 
-    .line 38066
+    .line 38915
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$updates_ChannelDifference;->timeout:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

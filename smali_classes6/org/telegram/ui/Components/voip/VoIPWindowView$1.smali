@@ -17,17 +17,13 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
-.field final synthetic val$account:I
-
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/voip/VoIPWindowView;I)V
+.method constructor <init>(Lorg/telegram/ui/Components/voip/VoIPWindowView;)V
     .locals 0
 
-    .line 141
+    .line 142
     iput-object p1, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView$1;->this$0:Lorg/telegram/ui/Components/voip/VoIPWindowView;
-
-    iput p2, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView$1;->val$account:I
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
@@ -39,22 +35,16 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 144
-    iget p1, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView$1;->val$account:I
+    .line 145
+    iget-object p1, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView$1;->this$0:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
-    invoke-static {p1}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
+    invoke-static {p1}, Lorg/telegram/ui/Components/voip/VoIPWindowView;->access$000(Lorg/telegram/ui/Components/voip/VoIPWindowView;)Lorg/telegram/messenger/AnimationNotificationsLocker;
 
     move-result-object p1
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView$1;->this$0:Lorg/telegram/ui/Components/voip/VoIPWindowView;
+    invoke-virtual {p1}, Lorg/telegram/messenger/AnimationNotificationsLocker;->unlock()V
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/voip/VoIPWindowView;->access$000(Lorg/telegram/ui/Components/voip/VoIPWindowView;)I
-
-    move-result v0
-
-    invoke-virtual {p1, v0}, Lorg/telegram/messenger/NotificationCenter;->onAnimationFinish(I)V
-
-    .line 145
+    .line 146
     iget-object p1, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView$1;->this$0:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
@@ -63,7 +53,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 146
+    .line 147
     iget-object p1, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView$1;->this$0:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
     iget-object v0, p1, Lorg/telegram/ui/Components/voip/VoIPWindowView;->activity:Landroid/app/Activity;
@@ -74,7 +64,7 @@
 
     invoke-virtual {v0, p1}, Landroid/app/Activity;->setRequestedOrientation(I)V
 
-    .line 148
+    .line 149
     iget-object p1, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView$1;->this$0:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/voip/VoIPWindowView;->activity:Landroid/app/Activity;
@@ -87,14 +77,14 @@
 
     check-cast p1, Landroid/view/WindowManager;
 
-    .line 149
+    .line 150
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView$1;->this$0:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 
     const/16 v1, 0x8
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 151
+    .line 152
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/VoIPWindowView$1;->this$0:Lorg/telegram/ui/Components/voip/VoIPWindowView;
 

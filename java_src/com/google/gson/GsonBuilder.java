@@ -146,6 +146,12 @@ public final class GsonBuilder {
         return this;
     }
 
+    public GsonBuilder registerTypeAdapterFactory(TypeAdapterFactory typeAdapterFactory) {
+        Objects.requireNonNull(typeAdapterFactory);
+        this.factories.add(typeAdapterFactory);
+        return this;
+    }
+
     public Gson create() {
         List<TypeAdapterFactory> arrayList = new ArrayList<>(this.factories.size() + this.hierarchyFactories.size() + 3);
         arrayList.addAll(this.factories);

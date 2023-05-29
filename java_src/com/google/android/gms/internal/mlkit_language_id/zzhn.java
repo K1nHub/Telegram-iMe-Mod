@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 import sun.misc.Unsafe;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class zzhn {
     static final boolean zza;
     private static final Logger zzb = Logger.getLogger(zzhn.class.getName());
@@ -40,7 +40,7 @@ public final class zzhn {
     }
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     private static final class zza extends zzc {
         zza(Unsafe unsafe) {
             super(unsafe);
@@ -102,7 +102,7 @@ public final class zzhn {
     }
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     private static final class zzb extends zzc {
         zzb(Unsafe unsafe) {
             super(unsafe);
@@ -164,7 +164,7 @@ public final class zzhn {
     }
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     private static final class zzd extends zzc {
         zzd(Unsafe unsafe) {
             super(unsafe);
@@ -218,7 +218,7 @@ public final class zzhn {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static abstract class zzc {
         Unsafe zza;
 

@@ -27,10 +27,10 @@
 .method private constructor <init>(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
     .locals 0
 
-    .line 868
+    .line 882
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 869
+    .line 883
     iput-object p1, p0, Lorg/telegram/ui/Adapters/FiltersView$UpdateCallback;->adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     return-void
@@ -39,7 +39,7 @@
 .method synthetic constructor <init>(Landroidx/recyclerview/widget/RecyclerView$Adapter;Lorg/telegram/ui/Adapters/FiltersView$1;)V
     .locals 0
 
-    .line 863
+    .line 877
     invoke-direct {p0, p1}, Lorg/telegram/ui/Adapters/FiltersView$UpdateCallback;-><init>(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
     return-void
@@ -50,7 +50,7 @@
 .method public onChanged(IILjava/lang/Object;)V
     .locals 1
 
-    .line 892
+    .line 906
     iget-object v0, p0, Lorg/telegram/ui/Adapters/FiltersView$UpdateCallback;->adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     invoke-virtual {v0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeChanged(IILjava/lang/Object;)V
@@ -63,10 +63,10 @@
 
     const/4 v0, 0x1
 
-    .line 874
+    .line 888
     iput-boolean v0, p0, Lorg/telegram/ui/Adapters/FiltersView$UpdateCallback;->changed:Z
 
-    .line 875
+    .line 889
     iget-object v0, p0, Lorg/telegram/ui/Adapters/FiltersView$UpdateCallback;->adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     invoke-virtual {v0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeInserted(II)V
@@ -79,10 +79,10 @@
 
     const/4 v0, 0x1
 
-    .line 886
+    .line 900
     iput-boolean v0, p0, Lorg/telegram/ui/Adapters/FiltersView$UpdateCallback;->changed:Z
 
-    .line 887
+    .line 901
     iget-object v0, p0, Lorg/telegram/ui/Adapters/FiltersView$UpdateCallback;->adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     invoke-virtual {v0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemMoved(II)V
@@ -95,10 +95,10 @@
 
     const/4 v0, 0x1
 
-    .line 880
+    .line 894
     iput-boolean v0, p0, Lorg/telegram/ui/Adapters/FiltersView$UpdateCallback;->changed:Z
 
-    .line 881
+    .line 895
     iget-object v0, p0, Lorg/telegram/ui/Adapters/FiltersView$UpdateCallback;->adapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     invoke-virtual {v0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V

@@ -60,17 +60,17 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 788
+    .line 787
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 791
+    .line 790
     new-instance v0, Ljava/util/concurrent/atomic/AtomicReference;
 
     invoke-direct {v0}, Ljava/util/concurrent/atomic/AtomicReference;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->spoilersPatchedTextLayout:Ljava/util/concurrent/atomic/AtomicReference;
 
-    .line 799
+    .line 798
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -85,7 +85,7 @@
 .method public isRtl()Z
     .locals 2
 
-    .line 802
+    .line 801
     iget-byte v0, p0, Lorg/telegram/messenger/MessageObject$TextLayoutBlock;->directionFlags:B
 
     and-int/lit8 v1, v0, 0x1

@@ -5,14 +5,14 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAvatarDrawableCell.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AvatarDrawableCell.kt\ncom/iMe/fork/ui/view/AvatarDrawableCell\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,311:1\n304#2,2:312\n1#3:314\n*S KotlinDebug\n*F\n+ 1 AvatarDrawableCell.kt\ncom/iMe/fork/ui/view/AvatarDrawableCell\n*L\n100#1:312,2\n*E\n"
+    value = "SMAP\nAvatarDrawableCell.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AvatarDrawableCell.kt\ncom/iMe/fork/ui/view/AvatarDrawableCell\n+ 2 View.kt\nandroidx/core/view/ViewKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,312:1\n304#2,2:313\n1#3:315\n*S KotlinDebug\n*F\n+ 1 AvatarDrawableCell.kt\ncom/iMe/fork/ui/view/AvatarDrawableCell\n*L\n104#1:313,2\n*E\n"
 .end annotation
 
 
 # instance fields
 .field private final avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-.field private backgroundColorKey:Ljava/lang/String;
+.field private backgroundColorKey:I
 
 .field private final counterView$delegate:Lkotlin/Lazy;
 
@@ -53,13 +53,13 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 28
+    .line 29
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 27
+    .line 28
     iput p2, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentAccount:I
 
-    .line 31
+    .line 32
     new-instance p1, Lcom/iMe/fork/ui/view/AvatarDrawableCell$imageView$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell$imageView$2;-><init>(Lcom/iMe/fork/ui/view/AvatarDrawableCell;)V
@@ -70,7 +70,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->imageView$delegate:Lkotlin/Lazy;
 
-    .line 32
+    .line 33
     new-instance p1, Lcom/iMe/fork/ui/view/AvatarDrawableCell$pinnedImageView$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell$pinnedImageView$2;-><init>(Lcom/iMe/fork/ui/view/AvatarDrawableCell;)V
@@ -81,7 +81,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->pinnedImageView$delegate:Lkotlin/Lazy;
 
-    .line 33
+    .line 34
     new-instance p1, Lcom/iMe/fork/ui/view/AvatarDrawableCell$counterView$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell$counterView$2;-><init>(Lcom/iMe/fork/ui/view/AvatarDrawableCell;)V
@@ -92,24 +92,24 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->counterView$delegate:Lkotlin/Lazy;
 
-    .line 34
+    .line 35
     new-instance p1, Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-direct {p1}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>()V
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-    const-string p1, "windowBackgroundGray"
+    .line 40
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    .line 39
-    iput-object p1, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->backgroundColorKey:Ljava/lang/String;
+    iput p1, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->backgroundColorKey:I
 
     const/4 p1, 0x5
 
-    .line 44
+    .line 45
     iput p1, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->progressStage:I
 
-    .line 46
+    .line 47
     sget-object p1, Lcom/iMe/fork/controller/RecentChatsController;->Companion:Lcom/iMe/fork/controller/RecentChatsController$Companion;
 
     invoke-virtual {p1, p2}, Lcom/iMe/fork/controller/RecentChatsController$Companion;->getInstance(I)Lcom/iMe/fork/controller/RecentChatsController;
@@ -118,7 +118,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->recentChatsController:Lcom/iMe/fork/controller/RecentChatsController;
 
-    .line 49
+    .line 50
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->getImageView()Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object p1
@@ -133,7 +133,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 50
+    .line 51
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->getPinnedImageView()Landroid/widget/ImageView;
 
     move-result-object p1
@@ -158,7 +158,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 51
+    .line 52
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->getCounterView()Lorg/telegram/ui/Components/CounterView;
 
     move-result-object p1
@@ -173,7 +173,7 @@
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 52
+    .line 53
     invoke-virtual {p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->updateColors()V
 
     return-void
@@ -182,7 +182,7 @@
 .method public static final synthetic access$initBackupImageView(Lcom/iMe/fork/ui/view/AvatarDrawableCell;)Lorg/telegram/ui/Components/BackupImageView;
     .locals 0
 
-    .line 25
+    .line 26
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->initBackupImageView()Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object p0
@@ -193,7 +193,7 @@
 .method public static final synthetic access$initCounterView(Lcom/iMe/fork/ui/view/AvatarDrawableCell;)Lorg/telegram/ui/Components/CounterView;
     .locals 0
 
-    .line 25
+    .line 26
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->initCounterView()Lorg/telegram/ui/Components/CounterView;
 
     move-result-object p0
@@ -204,7 +204,7 @@
 .method public static final synthetic access$initPinnedImageView(Lcom/iMe/fork/ui/view/AvatarDrawableCell;)Landroid/widget/ImageView;
     .locals 0
 
-    .line 25
+    .line 26
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->initPinnedImageView()Landroid/widget/ImageView;
 
     move-result-object p0
@@ -215,7 +215,7 @@
 .method private final currentChatOrUser()V
     .locals 4
 
-    .line 144
+    .line 148
     iget-wide v0, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->dialogId:J
 
     invoke-static {v0, v1}, Lorg/telegram/messenger/DialogObject;->isUserDialog(J)Z
@@ -226,7 +226,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 145
+    .line 149
     iget v0, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -245,12 +245,12 @@
 
     iput-object v0, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 146
+    .line 150
     iput-object v1, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     goto :goto_0
 
-    .line 147
+    .line 151
     :cond_0
     iget-wide v2, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->dialogId:J
 
@@ -260,7 +260,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 148
+    .line 152
     iget v0, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -281,7 +281,7 @@
 
     iput-object v0, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 149
+    .line 153
     iput-object v1, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
 
     :cond_1
@@ -292,7 +292,7 @@
 .method private final drawCount(I)V
     .locals 9
 
-    .line 290
+    .line 294
     iget-object v0, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->recentChatsController:Lcom/iMe/fork/controller/RecentChatsController;
 
     sget-object v1, Lcom/iMe/fork/enums/DrawStatusType;->UNREAD_COUNT_CHATS:Lcom/iMe/fork/enums/DrawStatusType;
@@ -301,28 +301,25 @@
 
     move-result v0
 
-    if-nez v0, :cond_0
+    const/16 v1, 0x64
 
-    return-void
+    const/4 v2, 0x1
 
-    :cond_0
-    const/16 v0, 0x64
+    const/4 v3, 0x0
 
-    const/4 v1, 0x1
+    if-eqz v0, :cond_1
 
-    const/4 v2, 0x0
-
-    if-eqz p1, :cond_2
-
-    .line 294
-    iget v3, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->lastUnreadCount:I
-
-    if-eq v3, p1, :cond_3
+    if-eqz p1, :cond_1
 
     .line 295
-    iput p1, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->lastUnreadCount:I
+    iget v0, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->lastUnreadCount:I
+
+    if-eq v0, p1, :cond_2
 
     .line 296
+    iput p1, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->lastUnreadCount:I
+
+    .line 297
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->getImageView()Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object p1
@@ -331,22 +328,22 @@
 
     move-result p1
 
-    const/4 v3, 0x5
+    const/4 v0, 0x5
 
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v3
+    move-result v0
 
-    sub-int/2addr p1, v3
+    sub-int/2addr p1, v0
 
-    .line 297
+    .line 298
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->getImageView()Lorg/telegram/ui/Components/BackupImageView;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {v3}, Landroid/view/View;->getMeasuredWidth()I
+    invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
 
-    move-result v3
+    move-result v0
 
     const/16 v4, 0xa
 
@@ -354,9 +351,9 @@
 
     move-result v5
 
-    sub-int/2addr v3, v5
+    sub-int/2addr v0, v5
 
-    .line 298
+    .line 299
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->getCounterView()Lorg/telegram/ui/Components/CounterView;
 
     move-result-object v5
@@ -369,36 +366,36 @@
 
     iget-wide v7, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->dialogId:J
 
-    invoke-virtual {v6, v7, v8, v0}, Lorg/telegram/messenger/MessagesController;->isDialogMuted(JI)Z
+    invoke-virtual {v6, v7, v8, v1}, Lorg/telegram/messenger/MessagesController;->isDialogMuted(JI)Z
 
-    move-result v0
+    move-result v1
 
-    int-to-float v3, v3
+    int-to-float v0, v0
 
     int-to-float p1, p1
 
-    invoke-virtual {v5, v1, v0, v3, p1}, Lorg/telegram/ui/Components/CounterView;->setCountResentChats(ZZFF)V
+    invoke-virtual {v5, v2, v1, v0, p1}, Lorg/telegram/ui/Components/CounterView;->setCountResentChats(ZZFF)V
 
-    .line 299
+    .line 300
     iget p1, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->lastUnreadCount:I
 
     const/16 v0, 0x63
 
-    if-le p1, v0, :cond_1
+    if-le p1, v0, :cond_0
 
     iput v0, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->lastUnreadCount:I
 
-    .line 300
-    :cond_1
+    .line 301
+    :cond_0
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->getCounterView()Lorg/telegram/ui/Components/CounterView;
 
     move-result-object p1
 
     iget v0, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->lastUnreadCount:I
 
-    invoke-virtual {p1, v0, v2}, Lorg/telegram/ui/Components/CounterView;->setCount(IZ)V
+    invoke-virtual {p1, v0, v3}, Lorg/telegram/ui/Components/CounterView;->setCount(IZ)V
 
-    .line 301
+    .line 302
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->getCounterView()Lorg/telegram/ui/Components/CounterView;
 
     move-result-object p1
@@ -417,39 +414,39 @@
 
     goto :goto_0
 
-    .line 306
-    :cond_2
+    .line 307
+    :cond_1
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->getCounterView()Lorg/telegram/ui/Components/CounterView;
 
     move-result-object p1
 
-    iget v3, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentAccount:I
+    iget v0, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentAccount:I
 
-    invoke-static {v3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
-    move-result-object v3
+    move-result-object v0
 
     iget-wide v4, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->dialogId:J
 
-    invoke-virtual {v3, v4, v5, v0}, Lorg/telegram/messenger/MessagesController;->isDialogMuted(JI)Z
+    invoke-virtual {v0, v4, v5, v1}, Lorg/telegram/messenger/MessagesController;->isDialogMuted(JI)Z
 
     move-result v0
 
-    int-to-float v3, v2
+    int-to-float v1, v3
 
-    invoke-virtual {p1, v1, v0, v3, v3}, Lorg/telegram/ui/Components/CounterView;->setCountResentChats(ZZFF)V
-
-    .line 307
-    iput v2, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->lastUnreadCount:I
+    invoke-virtual {p1, v2, v0, v1, v1}, Lorg/telegram/ui/Components/CounterView;->setCountResentChats(ZZFF)V
 
     .line 308
+    iput v3, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->lastUnreadCount:I
+
+    .line 309
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->getCounterView()Lorg/telegram/ui/Components/CounterView;
 
     move-result-object p1
 
-    invoke-virtual {p1, v2, v2}, Lorg/telegram/ui/Components/CounterView;->setCount(IZ)V
+    invoke-virtual {p1, v3, v3}, Lorg/telegram/ui/Components/CounterView;->setCount(IZ)V
 
-    :cond_3
+    :cond_2
     :goto_0
     return-void
 .end method
@@ -457,7 +454,7 @@
 .method private final drawMention(Landroid/graphics/Canvas;Lorg/telegram/tgnet/TLRPC$Dialog;)V
     .locals 6
 
-    .line 269
+    .line 273
     iget-object v0, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->recentChatsController:Lcom/iMe/fork/controller/RecentChatsController;
 
     sget-object v1, Lcom/iMe/fork/enums/DrawStatusType;->MENTIONS:Lcom/iMe/fork/enums/DrawStatusType;
@@ -470,7 +467,7 @@
 
     return-void
 
-    .line 272
+    .line 276
     :cond_0
     iget p2, p2, Lorg/telegram/tgnet/TLRPC$Dialog;->unread_mentions_count:I
 
@@ -495,16 +492,16 @@
     :cond_2
     const/4 p2, 0x0
 
-    .line 273
+    .line 277
     :goto_1
     iput p2, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->showMentionProgress:F
 
-    .line 274
+    .line 278
     new-instance p2, Landroid/graphics/RectF;
 
     invoke-direct {p2}, Landroid/graphics/RectF;-><init>()V
 
-    .line 276
+    .line 280
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->getImageView()Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object v1
@@ -527,7 +524,7 @@
 
     const/16 v4, 0x14
 
-    .line 278
+    .line 282
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v5
@@ -546,13 +543,13 @@
 
     invoke-virtual {p2, v2, v3, v5, v4}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 279
+    .line 283
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_countPaint:Landroid/graphics/Paint;
 
-    .line 280
+    .line 284
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 282
+    .line 286
     iget v3, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->showMentionProgress:F
 
     invoke-virtual {p2}, Landroid/graphics/RectF;->centerX()F
@@ -565,7 +562,7 @@
 
     invoke-virtual {p1, v3, v3, v4, v5}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 283
+    .line 287
     sget v3, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
     const/high16 v4, 0x41380000    # 11.5f
@@ -576,7 +573,7 @@
 
     invoke-virtual {p1, p2, v5, v3, v2}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 284
+    .line 288
     sget-object p2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_mentionDrawable:Landroid/graphics/drawable/Drawable;
 
     const/4 v2, 0x4
@@ -605,12 +602,12 @@
 
     invoke-static {p2, v3, v1, v2, v0}, Lorg/telegram/ui/Cells/BaseCell;->setDrawableBounds(Landroid/graphics/drawable/Drawable;IIII)V
 
-    .line 285
+    .line 289
     sget-object p2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_mentionDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p2, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 286
+    .line 290
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -625,51 +622,55 @@
 
     const/16 v2, 0xf
 
-    .line 154
+    .line 158
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     const/16 v3, 0xa
 
-    .line 155
+    .line 159
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
 
-    .line 157
+    .line 161
     iget-object v5, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
 
-    const-string v6, "chats_onlineCircle"
+    const/high16 v6, 0x3f800000    # 1.0f
 
-    const/high16 v7, 0x3f800000    # 1.0f
+    const/4 v7, 0x0
 
-    const/4 v8, 0x0
+    const/4 v9, 0x5
 
-    const/4 v10, 0x5
-
-    const/4 v11, 0x1
+    const/4 v10, 0x1
 
     if-eqz v5, :cond_5
 
     iget-object v5, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->recentChatsController:Lcom/iMe/fork/controller/RecentChatsController;
 
-    sget-object v12, Lcom/iMe/fork/enums/DrawStatusType;->ONLINE_USER:Lcom/iMe/fork/enums/DrawStatusType;
+    sget-object v11, Lcom/iMe/fork/enums/DrawStatusType;->ONLINE_USER:Lcom/iMe/fork/enums/DrawStatusType;
 
-    invoke-virtual {v5, v12}, Lcom/iMe/fork/controller/RecentChatsController;->isDrawStatusType(Lcom/iMe/fork/enums/DrawStatusType;)Z
+    invoke-virtual {v5, v11}, Lcom/iMe/fork/controller/RecentChatsController;->isDrawStatusType(Lcom/iMe/fork/enums/DrawStatusType;)Z
 
     move-result v5
 
     if-eqz v5, :cond_5
 
-    .line 158
+    .line 162
     iget-object v3, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
 
     const-string v5, "null cannot be cast to non-null type org.telegram.tgnet.TLRPC.User"
 
     invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 159
+    .line 163
+    invoke-static {v3}, Lorg/telegram/messenger/UserObject;->isLive(Lorg/telegram/tgnet/TLRPC$User;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_2
+
     iget-boolean v5, v3, Lorg/telegram/tgnet/TLRPC$User;->self:Z
 
     if-nez v5, :cond_2
@@ -684,17 +685,17 @@
 
     iget v5, v5, Lorg/telegram/tgnet/TLRPC$UserStatus;->expires:I
 
-    iget v12, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentAccount:I
+    iget v11, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentAccount:I
 
-    invoke-static {v12}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
+    invoke-static {v11}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
-    move-result-object v12
+    move-result-object v11
 
-    invoke-virtual {v12}, Lorg/telegram/tgnet/ConnectionsManager;->getCurrentTime()I
+    invoke-virtual {v11}, Lorg/telegram/tgnet/ConnectionsManager;->getCurrentTime()I
 
-    move-result v12
+    move-result v11
 
-    if-gt v5, v12, :cond_1
+    if-gt v5, v11, :cond_1
 
     :cond_0
     iget v5, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentAccount:I
@@ -705,9 +706,9 @@
 
     iget-object v5, v5, Lorg/telegram/messenger/MessagesController;->onlinePrivacy:Lj$/util/concurrent/ConcurrentHashMap;
 
-    iget-wide v12, v3, Lorg/telegram/tgnet/TLRPC$User;->id:J
+    iget-wide v11, v3, Lorg/telegram/tgnet/TLRPC$User;->id:J
 
-    invoke-static {v12, v13}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    invoke-static {v11, v12}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v3
 
@@ -718,7 +719,7 @@
     if-eqz v3, :cond_2
 
     :cond_1
-    move v3, v11
+    move v3, v10
 
     goto :goto_0
 
@@ -731,47 +732,47 @@
     goto :goto_1
 
     :cond_3
-    move v7, v8
+    move v6, v7
 
-    .line 161
+    .line 165
     :goto_1
-    iput v7, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->showOnlineProgress:F
+    iput v6, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->showOnlineProgress:F
 
-    .line 162
+    .line 166
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     if-eqz v3, :cond_a
 
-    .line 163
+    .line 167
     iget v3, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->showOnlineProgress:F
 
-    cmpg-float v5, v3, v8
+    cmpg-float v5, v3, v7
 
     if-nez v5, :cond_4
 
-    move v9, v11
+    move v8, v10
 
     goto :goto_2
 
     :cond_4
-    const/4 v9, 0x0
+    const/4 v8, 0x0
 
     :goto_2
-    if-nez v9, :cond_a
+    if-nez v8, :cond_a
 
     int-to-float v4, v4
 
     int-to-float v2, v2
 
-    .line 164
+    .line 168
     invoke-virtual {v1, v3, v3, v4, v2}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 165
+    .line 169
     sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    iget-object v5, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->backgroundColorKey:Ljava/lang/String;
+    iget v5, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->backgroundColorKey:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -779,7 +780,7 @@
 
     const/4 v3, 0x7
 
-    .line 166
+    .line 170
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -790,17 +791,19 @@
 
     invoke-virtual {v1, v4, v2, v3, v5}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 167
+    .line 171
     sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chats_onlineCircle:I
+
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
     invoke-virtual {v3, v5}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 168
-    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 172
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
@@ -810,12 +813,12 @@
 
     invoke-virtual {v1, v4, v2, v3, v5}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 169
+    .line 173
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto/16 :goto_8
 
-    .line 171
+    .line 175
     :cond_5
     iget-object v5, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
 
@@ -823,126 +826,128 @@
 
     iget-object v5, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->recentChatsController:Lcom/iMe/fork/controller/RecentChatsController;
 
-    sget-object v12, Lcom/iMe/fork/enums/DrawStatusType;->LIVE_VIDEO:Lcom/iMe/fork/enums/DrawStatusType;
+    sget-object v11, Lcom/iMe/fork/enums/DrawStatusType;->LIVE_VIDEO:Lcom/iMe/fork/enums/DrawStatusType;
 
-    invoke-virtual {v5, v12}, Lcom/iMe/fork/controller/RecentChatsController;->isDrawStatusType(Lcom/iMe/fork/enums/DrawStatusType;)Z
+    invoke-virtual {v5, v11}, Lcom/iMe/fork/controller/RecentChatsController;->isDrawStatusType(Lcom/iMe/fork/enums/DrawStatusType;)Z
 
     move-result v5
 
     if-eqz v5, :cond_a
 
-    .line 172
+    .line 176
     new-instance v5, Landroid/graphics/RectF;
 
     invoke-direct {v5}, Landroid/graphics/RectF;-><init>()V
 
-    .line 173
-    iget-object v12, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
+    .line 177
+    iget-object v11, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    const-string v13, "null cannot be cast to non-null type org.telegram.tgnet.TLRPC.Chat"
+    const-string v12, "null cannot be cast to non-null type org.telegram.tgnet.TLRPC.Chat"
 
-    invoke-static {v12, v13}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v11, v12}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    iget-boolean v13, v12, Lorg/telegram/tgnet/TLRPC$Chat;->call_not_empty:Z
-
-    if-eqz v13, :cond_6
-
-    iget-boolean v12, v12, Lorg/telegram/tgnet/TLRPC$Chat;->call_active:Z
+    iget-boolean v12, v11, Lorg/telegram/tgnet/TLRPC$Chat;->call_not_empty:Z
 
     if-eqz v12, :cond_6
 
-    move v12, v11
+    iget-boolean v11, v11, Lorg/telegram/tgnet/TLRPC$Chat;->call_active:Z
+
+    if-eqz v11, :cond_6
+
+    move v11, v10
 
     goto :goto_3
 
     :cond_6
-    const/4 v12, 0x0
+    const/4 v11, 0x0
 
     :goto_3
-    if-eqz v12, :cond_7
+    if-eqz v11, :cond_7
 
-    move v13, v7
+    move v12, v6
 
     goto :goto_4
 
     :cond_7
-    move v13, v8
+    move v12, v7
 
-    .line 174
+    .line 178
     :goto_4
-    iput v13, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->showCallProgress:F
+    iput v12, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->showCallProgress:F
 
-    if-eqz v12, :cond_a
+    if-eqz v11, :cond_a
 
-    .line 176
-    sget-object v12, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
+    .line 180
+    sget-object v11, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    const-string v13, "windowBackgroundWhite"
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v14
+    move-result v13
 
-    invoke-virtual {v12, v14}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v11, v13}, Landroid/graphics/Paint;->setColor(I)V
 
-    int-to-float v12, v4
+    int-to-float v11, v4
 
     int-to-float v2, v2
 
-    .line 177
+    .line 181
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
     int-to-float v3, v3
 
-    iget v14, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->showCallProgress:F
+    iget v13, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->showCallProgress:F
 
-    mul-float/2addr v3, v14
+    mul-float/2addr v3, v13
 
-    sget-object v14, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
+    sget-object v13, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v1, v12, v2, v3, v14}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {v1, v11, v2, v3, v13}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 178
+    .line 182
     sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_chats_onlineCircle:I
 
-    move-result v6
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v3, v6}, Landroid/graphics/Paint;->setColor(I)V
+    move-result v13
+
+    invoke-virtual {v3, v13}, Landroid/graphics/Paint;->setColor(I)V
 
     const/16 v3, 0x8
 
-    .line 179
+    .line 183
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v6
+    move-result v13
 
-    int-to-float v6, v6
+    int-to-float v13, v13
 
     iget v14, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->showCallProgress:F
 
-    mul-float/2addr v6, v14
+    mul-float/2addr v13, v14
 
     sget-object v14, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v1, v12, v2, v6, v14}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
+    invoke-virtual {v1, v11, v2, v13, v14}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 180
-    sget-object v6, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
+    .line 184
+    sget-object v11, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v12
 
-    invoke-virtual {v6, v12}, Landroid/graphics/Paint;->setColor(I)V
+    invoke-virtual {v11, v12}, Landroid/graphics/Paint;->setColor(I)V
 
-    const/16 v6, 0x20
+    const/16 v11, 0x20
 
-    .line 183
-    invoke-static {v6}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
+    .line 187
+    invoke-static {v11}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
     move-result v12
 
@@ -950,10 +955,10 @@
 
     const v12, 0x3f266666    # 0.65f
 
-    .line 184
+    .line 188
     iput v12, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->innerProgress:F
 
-    .line 186
+    .line 190
     :cond_8
     iget v12, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->progressStage:I
 
@@ -965,12 +970,12 @@
 
     packed-switch v12, :pswitch_data_0
 
-    .line 216
-    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 220
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v9
+    move-result v8
 
-    int-to-float v9, v9
+    int-to-float v8, v8
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -982,14 +987,14 @@
 
     mul-float/2addr v12, v15
 
-    sub-float v12, v9, v12
+    sub-float v12, v8, v12
 
-    .line 217
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 221
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v9
+    move-result v8
 
-    int-to-float v9, v9
+    int-to-float v8, v8
 
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1001,9 +1006,9 @@
 
     goto/16 :goto_5
 
-    .line 212
+    .line 216
     :pswitch_0
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v12
 
@@ -1015,18 +1020,18 @@
 
     int-to-float v14, v14
 
-    iget v9, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->innerProgress:F
+    iget v8, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->innerProgress:F
 
-    mul-float/2addr v14, v9
+    mul-float/2addr v14, v8
 
     add-float/2addr v12, v14
 
-    .line 213
-    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 217
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v9
+    move-result v8
 
-    int-to-float v9, v9
+    int-to-float v8, v8
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1038,13 +1043,13 @@
 
     goto/16 :goto_6
 
-    .line 208
+    .line 212
     :pswitch_1
-    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v9
+    move-result v8
 
-    int-to-float v9, v9
+    int-to-float v8, v8
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1056,14 +1061,14 @@
 
     mul-float/2addr v12, v14
 
-    sub-float v12, v9, v12
+    sub-float v12, v8, v12
 
-    .line 209
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 213
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v9
+    move-result v8
 
-    int-to-float v9, v9
+    int-to-float v8, v8
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1075,13 +1080,13 @@
 
     goto :goto_5
 
-    .line 204
+    .line 208
     :pswitch_2
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v9
+    move-result v8
 
-    int-to-float v9, v9
+    int-to-float v8, v8
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1093,14 +1098,14 @@
 
     mul-float/2addr v12, v15
 
-    add-float/2addr v12, v9
+    add-float/2addr v12, v8
 
-    .line 205
+    .line 209
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v9
+    move-result v8
 
-    int-to-float v9, v9
+    int-to-float v8, v8
 
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1112,13 +1117,13 @@
 
     goto :goto_6
 
-    .line 200
+    .line 204
     :pswitch_3
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v9
+    move-result v8
 
-    int-to-float v9, v9
+    int-to-float v8, v8
 
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1130,14 +1135,14 @@
 
     mul-float/2addr v12, v15
 
-    sub-float v12, v9, v12
+    sub-float v12, v8, v12
 
-    .line 201
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 205
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v9
+    move-result v8
 
-    int-to-float v9, v9
+    int-to-float v8, v8
 
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1149,13 +1154,13 @@
 
     goto :goto_5
 
-    .line 196
+    .line 200
     :pswitch_4
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v9
+    move-result v8
 
-    int-to-float v9, v9
+    int-to-float v8, v8
 
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1167,51 +1172,51 @@
 
     mul-float/2addr v12, v14
 
-    add-float/2addr v12, v9
+    add-float/2addr v12, v8
+
+    .line 201
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v8
+
+    int-to-float v8, v8
+
+    invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v14
+
+    int-to-float v14, v14
+
+    iget v15, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->innerProgress:F
+
+    goto :goto_6
+
+    .line 196
+    :pswitch_5
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v8
+
+    int-to-float v8, v8
+
+    invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v12
+
+    int-to-float v12, v12
+
+    iget v14, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->innerProgress:F
+
+    mul-float/2addr v12, v14
+
+    sub-float v12, v8, v12
 
     .line 197
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v9
+    move-result v8
 
-    int-to-float v9, v9
-
-    invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v14
-
-    int-to-float v14, v14
-
-    iget v15, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->innerProgress:F
-
-    goto :goto_6
-
-    .line 192
-    :pswitch_5
-    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v9
-
-    int-to-float v9, v9
-
-    invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v12
-
-    int-to-float v12, v12
-
-    iget v14, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->innerProgress:F
-
-    mul-float/2addr v12, v14
-
-    sub-float v12, v9, v12
-
-    .line 193
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v9
-
-    int-to-float v9, v9
+    int-to-float v8, v8
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1224,17 +1229,17 @@
     :goto_5
     mul-float/2addr v14, v15
 
-    add-float/2addr v9, v14
+    add-float/2addr v8, v14
 
     goto :goto_7
 
-    .line 188
+    .line 192
     :pswitch_6
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v9
+    move-result v8
 
-    int-to-float v9, v9
+    int-to-float v8, v8
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1246,14 +1251,14 @@
 
     mul-float/2addr v12, v15
 
-    add-float/2addr v12, v9
+    add-float/2addr v12, v8
 
-    .line 189
+    .line 193
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v9
+    move-result v8
 
-    int-to-float v9, v9
+    int-to-float v8, v8
 
     invoke-static {v14}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1266,11 +1271,11 @@
     :goto_6
     mul-float/2addr v14, v15
 
-    sub-float/2addr v9, v14
+    sub-float/2addr v8, v14
 
-    .line 221
+    .line 225
     :goto_7
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v14
 
@@ -1280,7 +1285,7 @@
 
     sub-float v15, v2, v12
 
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v16
 
@@ -1292,14 +1297,14 @@
 
     invoke-virtual {v5, v14, v15, v3, v12}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 222
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 226
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
     int-to-float v3, v3
 
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v12
 
@@ -1309,8 +1314,8 @@
 
     invoke-virtual {v1, v5, v3, v12, v14}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 224
-    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 228
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
@@ -1318,7 +1323,7 @@
 
     int-to-float v3, v3
 
-    sub-float v12, v2, v9
+    sub-float v12, v2, v8
 
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1328,28 +1333,28 @@
 
     int-to-float v14, v14
 
-    add-float/2addr v2, v9
+    add-float/2addr v2, v8
 
     invoke-virtual {v5, v3, v12, v14, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 225
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 229
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
     int-to-float v3, v3
 
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v9
+    move-result v8
 
-    int-to-float v9, v9
+    int-to-float v8, v8
 
     sget-object v14, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v1, v5, v3, v9, v14}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
+    invoke-virtual {v1, v5, v3, v8, v14}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 227
+    .line 231
     invoke-static {v13}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -1358,24 +1363,24 @@
 
     int-to-float v3, v3
 
-    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v9
+    move-result v8
 
-    add-int/2addr v4, v9
+    add-int/2addr v4, v8
 
     int-to-float v4, v4
 
     invoke-virtual {v5, v3, v12, v4, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 228
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 232
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     int-to-float v2, v2
 
-    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
@@ -1385,14 +1390,14 @@
 
     invoke-virtual {v1, v5, v2, v3, v4}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 230
-    invoke-static {v6}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
+    .line 234
+    invoke-static {v11}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
     move-result v1
 
     if-nez v1, :cond_a
 
-    .line 231
+    .line 235
     iget v1, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->innerProgress:F
 
     const v2, 0x3d23d70a    # 0.04f
@@ -1401,17 +1406,17 @@
 
     iput v1, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->innerProgress:F
 
-    cmpl-float v1, v1, v7
+    cmpl-float v1, v1, v6
 
     if-ltz v1, :cond_9
 
-    .line 233
-    iput v8, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->innerProgress:F
+    .line 237
+    iput v7, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->innerProgress:F
 
-    .line 234
+    .line 238
     iget v1, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->progressStage:I
 
-    add-int/2addr v1, v11
+    add-int/2addr v1, v10
 
     iput v1, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->progressStage:I
 
@@ -1421,10 +1426,10 @@
 
     const/4 v1, 0x0
 
-    .line 236
+    .line 240
     iput v1, v0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->progressStage:I
 
-    .line 239
+    .line 243
     :cond_9
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->invalidate()V
 
@@ -1449,7 +1454,7 @@
 .method private final drawReaction(Landroid/graphics/Canvas;Lorg/telegram/tgnet/TLRPC$Dialog;)V
     .locals 7
 
-    .line 246
+    .line 250
     iget-object v0, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->recentChatsController:Lcom/iMe/fork/controller/RecentChatsController;
 
     sget-object v1, Lcom/iMe/fork/enums/DrawStatusType;->REACTION:Lcom/iMe/fork/enums/DrawStatusType;
@@ -1462,7 +1467,7 @@
 
     return-void
 
-    .line 249
+    .line 253
     :cond_0
     iget p2, p2, Lorg/telegram/tgnet/TLRPC$Dialog;->unread_reactions_count:I
 
@@ -1489,16 +1494,16 @@
     :cond_2
     const/4 p2, 0x0
 
-    .line 251
+    .line 255
     :goto_1
     iput p2, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->showReactionProgress:F
 
-    .line 252
+    .line 256
     new-instance p2, Landroid/graphics/RectF;
 
     invoke-direct {p2}, Landroid/graphics/RectF;-><init>()V
 
-    .line 254
+    .line 258
     iget v2, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->lastUnreadCount:I
 
     const/4 v3, 0x5
@@ -1517,7 +1522,7 @@
 
     sub-int/2addr v2, v3
 
-    .line 255
+    .line 259
     iget v3, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->lastUnreadCount:I
 
     if-nez v3, :cond_3
@@ -1545,7 +1550,7 @@
 
     const/16 v5, 0x14
 
-    .line 256
+    .line 260
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
@@ -1564,13 +1569,13 @@
 
     invoke-virtual {p2, v3, v4, v6, v5}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 257
+    .line 261
     sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->dialogs_reactionsCountPaint:Landroid/graphics/Paint;
 
-    .line 258
+    .line 262
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 260
+    .line 264
     iget v4, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->showReactionProgress:F
 
     invoke-virtual {p2}, Landroid/graphics/RectF;->centerX()F
@@ -1583,7 +1588,7 @@
 
     invoke-virtual {p1, v4, v4, v5, v6}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 261
+    .line 265
     sget v4, Lorg/telegram/messenger/AndroidUtilities;->density:F
 
     const/high16 v5, 0x41380000    # 11.5f
@@ -1594,7 +1599,7 @@
 
     invoke-virtual {p1, p2, v6, v4, v3}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 262
+    .line 266
     sget-object p2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_reactionsCountPaint:Landroid/graphics/Paint;
 
     iget v3, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->showReactionProgress:F
@@ -1611,7 +1616,7 @@
 
     invoke-virtual {p2, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 263
+    .line 267
     sget-object p2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_reactionsMentionDrawable:Landroid/graphics/drawable/Drawable;
 
     const/high16 v1, 0x40600000    # 3.5f
@@ -1642,12 +1647,12 @@
 
     invoke-static {p2, v0, v2, v3, v1}, Lorg/telegram/ui/Cells/BaseCell;->setDrawableBounds(Landroid/graphics/drawable/Drawable;IIII)V
 
-    .line 264
+    .line 268
     sget-object p2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_reactionsMentionDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p2, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 265
+    .line 269
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -1656,7 +1661,7 @@
 .method private final getCounterView()Lorg/telegram/ui/Components/CounterView;
     .locals 1
 
-    .line 33
+    .line 34
     iget-object v0, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->counterView$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -1671,7 +1676,7 @@
 .method private final getImageView()Lorg/telegram/ui/Components/BackupImageView;
     .locals 1
 
-    .line 31
+    .line 32
     iget-object v0, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->imageView$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -1686,7 +1691,7 @@
 .method private final getPinnedImageView()Landroid/widget/ImageView;
     .locals 1
 
-    .line 32
+    .line 33
     iget-object v0, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->pinnedImageView$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -1701,7 +1706,7 @@
 .method private final initBackupImageView()Lorg/telegram/ui/Components/BackupImageView;
     .locals 2
 
-    .line 135
+    .line 139
     new-instance v0, Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -1716,7 +1721,7 @@
 .method private final initCounterView()Lorg/telegram/ui/Components/CounterView;
     .locals 3
 
-    .line 141
+    .line 145
     new-instance v0, Lorg/telegram/ui/Components/CounterView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -1731,9 +1736,9 @@
 .end method
 
 .method private final initPinnedImageView()Landroid/widget/ImageView;
-    .locals 2
+    .locals 4
 
-    .line 137
+    .line 141
     new-instance v0, Landroid/widget/ImageView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -1742,8 +1747,14 @@
 
     invoke-direct {v0, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 138
-    invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    .line 142
+    invoke-static {v0, v1, v2, v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     return-object v0
 .end method
@@ -1757,12 +1768,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 107
+    .line 111
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
     move-result p2
 
-    .line 108
+    .line 112
     iget p3, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentAccount:I
 
     invoke-static {p3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1779,38 +1790,38 @@
 
     check-cast p3, Lorg/telegram/tgnet/TLRPC$Dialog;
 
-    .line 109
+    .line 113
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentChatOrUser()V
 
-    .line 110
+    .line 114
     invoke-direct {p0, p1}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->drawOnline(Landroid/graphics/Canvas;)V
 
     const/4 p4, 0x0
 
     if-eqz p3, :cond_2
 
-    .line 112
+    .line 116
     invoke-direct {p0, p1, p3}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->drawReaction(Landroid/graphics/Canvas;Lorg/telegram/tgnet/TLRPC$Dialog;)V
 
-    .line 113
+    .line 117
     invoke-direct {p0, p1, p3}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->drawMention(Landroid/graphics/Canvas;Lorg/telegram/tgnet/TLRPC$Dialog;)V
 
-    .line 114
+    .line 118
     iget-object p1, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz p1, :cond_1
 
     const-string v0, "null cannot be cast to non-null type org.telegram.tgnet.TLRPC.Chat"
 
-    .line 115
+    .line 119
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 116
+    .line 120
     iget-boolean v0, p1, Lorg/telegram/tgnet/TLRPC$Chat;->forum:Z
 
     if-eqz v0, :cond_0
 
-    .line 117
+    .line 121
     iget p3, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentAccount:I
 
     invoke-static {p3}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -1833,7 +1844,7 @@
 
     goto :goto_0
 
-    .line 119
+    .line 123
     :cond_0
     iget p1, p3, Lorg/telegram/tgnet/TLRPC$Dialog;->unread_count:I
 
@@ -1841,7 +1852,7 @@
 
     goto :goto_0
 
-    .line 123
+    .line 127
     :cond_1
     iget p1, p3, Lorg/telegram/tgnet/TLRPC$Dialog;->unread_count:I
 
@@ -1849,7 +1860,7 @@
 
     goto :goto_0
 
-    .line 126
+    .line 130
     :cond_2
     invoke-direct {p0, p4}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->drawCount(I)V
 
@@ -1860,7 +1871,7 @@
 .method public final getCurrentAccount()I
     .locals 1
 
-    .line 27
+    .line 28
     iget v0, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentAccount:I
 
     return v0
@@ -1869,28 +1880,28 @@
 .method public final setDialog(JZ)V
     .locals 5
 
-    .line 76
+    .line 80
     iget-wide v0, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->dialogId:J
 
     cmp-long v0, v0, p1
 
     if-eqz v0, :cond_0
 
-    .line 77
+    .line 81
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 79
+    .line 83
     :cond_0
     iput-wide p1, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->dialogId:J
 
-    .line 81
+    .line 85
     iget v0, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
 
-    .line 82
+    .line 86
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->getImageView()Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object v1
@@ -1915,7 +1926,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/BackupImageView;->setRoundRadius(I)V
 
-    .line 83
+    .line 87
     invoke-static {p1, p2}, Lorg/telegram/messenger/DialogObject;->isUserDialog(J)Z
 
     move-result v1
@@ -1928,7 +1939,7 @@
 
     if-eqz v1, :cond_3
 
-    .line 84
+    .line 88
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p1
@@ -1939,22 +1950,22 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 85
+    .line 89
     iput-object v4, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 86
+    .line 90
     invoke-static {p1}, Lorg/telegram/messenger/UserObject;->isUserSelf(Lorg/telegram/tgnet/TLRPC$User;)Z
 
     move-result p1
 
     if-eqz p1, :cond_2
 
-    .line 87
+    .line 91
     iget-object p1, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {p1, v2}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    .line 88
+    .line 92
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->getImageView()Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object p1
@@ -1965,20 +1976,20 @@
 
     goto :goto_1
 
-    .line 90
+    .line 94
     :cond_2
     iget-object p1, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {p1, v3}, Lorg/telegram/ui/Components/AvatarDrawable;->setAvatarType(I)V
 
-    .line 91
+    .line 95
     iget-object p1, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     iget-object p2, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$User;)V
 
-    .line 92
+    .line 96
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->getImageView()Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object p1
@@ -1991,13 +2002,13 @@
 
     goto :goto_1
 
-    .line 95
+    .line 99
     :cond_3
     iput-object v4, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentUser:Lorg/telegram/tgnet/TLRPC$User;
 
     neg-long p1, p1
 
-    .line 96
+    .line 100
     invoke-static {p1, p2}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object p1
@@ -2008,12 +2019,12 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->currentChat:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 97
+    .line 101
     iget-object p2, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->setInfo(Lorg/telegram/tgnet/TLRPC$Chat;)V
 
-    .line 98
+    .line 102
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->getImageView()Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object p1
@@ -2024,7 +2035,7 @@
 
     invoke-virtual {p1, p2, v0}, Lorg/telegram/ui/Components/BackupImageView;->setForUserOrChat(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/Components/AvatarDrawable;)V
 
-    .line 100
+    .line 104
     :goto_1
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->getPinnedImageView()Landroid/widget/ImageView;
 
@@ -2046,78 +2057,97 @@
 .method public final update()V
     .locals 1
 
-    .line 70
+    .line 74
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->getImageView()Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
-    .line 71
+    .line 75
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->getCounterView()Lorg/telegram/ui/Components/CounterView;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
-    .line 72
+    .line 76
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
 .end method
 
 .method public final updateColors()V
-    .locals 3
+    .locals 4
 
-    .line 58
+    .line 59
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->getPinnedImageView()Landroid/widget/ImageView;
 
     move-result-object v0
 
-    .line 59
-    iget-object v1, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->backgroundColorKey:Ljava/lang/String;
-
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v1
-
-    const/16 v2, 0x14
-
-    invoke-static {v2, v1}, Lorg/telegram/ui/ActionBar/Theme;->createCircleDrawable(II)Landroid/graphics/drawable/ShapeDrawable;
-
-    move-result-object v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
-
-    const-string v1, "chats_pinnedIcon"
-
     .line 60
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->dialogs_pinnedDrawable:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v1}, Landroid/graphics/drawable/Drawable;->getAlpha()I
 
     move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setColorFilter(I)V
 
     .line 61
-    sget v1, Lorg/telegram/messenger/R$drawable;->list_pin:I
+    sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_pinnedDrawable:Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
+    const/16 v3, 0xff
+
+    invoke-virtual {v2, v3}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
+
+    .line 62
+    iget v2, p0, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->backgroundColorKey:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v2
+
+    const/16 v3, 0x14
+
+    invoke-static {v3, v2}, Lorg/telegram/ui/ActionBar/Theme;->createCircleDrawable(II)Landroid/graphics/drawable/ShapeDrawable;
+
+    move-result-object v2
+
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     .line 63
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_pinnedIcon:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v2
+
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setColorFilter(I)V
+
+    .line 64
+    sget v2, Lorg/telegram/messenger/R$drawable;->list_pin:I
+
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    .line 65
+    sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_pinnedDrawable:Landroid/graphics/drawable/Drawable;
+
+    invoke-virtual {v0, v1}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
+
+    .line 67
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/AvatarDrawableCell;->getCounterView()Lorg/telegram/ui/Components/CounterView;
 
     move-result-object v0
 
-    const-string v1, "chats_unreadCounterText"
+    .line 68
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_unreadCounterText:I
 
-    const-string v2, "chats_unreadCounter"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_unreadCounter:I
 
-    .line 64
-    invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/CounterView;->setColors(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/CounterView;->setColors(II)V
 
     const/4 v1, 0x5
 
-    .line 65
+    .line 69
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/CounterView;->setGravity(I)V
 
     return-void

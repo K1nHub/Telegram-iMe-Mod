@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/QRCodeBottomSheet;Landroid/content/Context;)V
     .locals 0
 
-    .line 275
+    .line 150
     invoke-direct {p0, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,14 +29,14 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 278
+    .line 153
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
     const/high16 p2, 0x40000000    # 2.0f
 
-    .line 279
+    .line 154
     invoke-static {p1, p2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v0

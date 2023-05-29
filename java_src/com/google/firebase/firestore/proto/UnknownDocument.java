@@ -43,7 +43,7 @@ public final class UnknownDocument extends GeneratedMessageLite<UnknownDocument,
 
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<UnknownDocument, Builder> implements MessageLiteOrBuilder {
-        /* synthetic */ Builder(C10151 c10151) {
+        /* synthetic */ Builder(C10201 c10201) {
             this();
         }
 
@@ -66,40 +66,40 @@ public final class UnknownDocument extends GeneratedMessageLite<UnknownDocument,
 
     /* renamed from: com.google.firebase.firestore.proto.UnknownDocument$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C10151 {
+    static /* synthetic */ class C10201 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f181xa1df5c61;
+        static final /* synthetic */ int[] f184xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f181xa1df5c61 = iArr;
+            f184xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f181xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f184xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f181xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f184xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f181xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f184xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f181xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f184xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f181xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f184xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f181xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f184xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
@@ -107,7 +107,7 @@ public final class UnknownDocument extends GeneratedMessageLite<UnknownDocument,
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C10151.f181xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C10201.f184xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new UnknownDocument();
             case 2:

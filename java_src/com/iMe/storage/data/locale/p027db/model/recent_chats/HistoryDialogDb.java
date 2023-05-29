@@ -23,13 +23,13 @@ public final class HistoryDialogDb {
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m702m = ((((BotsDbModel$$ExternalSyntheticBackport0.m702m(this.userId) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.dialogId)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.creationDate)) * 31;
+        int m706m = ((((BotsDbModel$$ExternalSyntheticBackport0.m706m(this.userId) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.dialogId)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.creationDate)) * 31;
         boolean z = this.isPinned;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        return m702m + i;
+        return m706m + i;
     }
 
     public String toString() {

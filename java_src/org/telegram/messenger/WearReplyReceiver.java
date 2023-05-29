@@ -92,7 +92,7 @@ public class WearReplyReceiver extends BroadcastReceiver {
         if (i != 0) {
             TLRPC$TL_message tLRPC$TL_message = new TLRPC$TL_message();
             tLRPC$TL_message.message = "";
-            tLRPC$TL_message.f1451id = i;
+            tLRPC$TL_message.f1457id = i;
             tLRPC$TL_message.peer_id = accountInstance.getMessagesController().getPeer(j);
             TLRPC$TL_messageActionTopicCreate tLRPC$TL_messageActionTopicCreate = new TLRPC$TL_messageActionTopicCreate();
             tLRPC$TL_message.action = tLRPC$TL_messageActionTopicCreate;

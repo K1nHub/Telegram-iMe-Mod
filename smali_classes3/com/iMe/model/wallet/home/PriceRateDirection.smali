@@ -24,7 +24,7 @@
 
 
 # instance fields
-.field private final color:Ljava/lang/String;
+.field private final colorKey:I
 
 .field private final icon:I
 
@@ -66,13 +66,13 @@
 
     sget v1, Lorg/telegram/messenger/R$drawable;->chat_calls_outgoing:I
 
-    const-string v2, "UP"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inGreenCall:I
 
-    const/4 v3, 0x0
+    const-string v3, "UP"
 
-    const-string v4, "chat_inDownCall"
+    const/4 v4, 0x0
 
-    invoke-direct {v0, v2, v3, v1, v4}, Lcom/iMe/model/wallet/home/PriceRateDirection;-><init>(Ljava/lang/String;IILjava/lang/String;)V
+    invoke-direct {v0, v3, v4, v1, v2}, Lcom/iMe/model/wallet/home/PriceRateDirection;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Lcom/iMe/model/wallet/home/PriceRateDirection;->UP:Lcom/iMe/model/wallet/home/PriceRateDirection;
 
@@ -81,13 +81,13 @@
 
     sget v1, Lorg/telegram/messenger/R$drawable;->chat_calls_incoming:I
 
-    const-string v2, "DOWN"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_fill_RedNormal:I
 
-    const/4 v3, 0x1
+    const-string v3, "DOWN"
 
-    const-string v4, "chat_inUpCall"
+    const/4 v4, 0x1
 
-    invoke-direct {v0, v2, v3, v1, v4}, Lcom/iMe/model/wallet/home/PriceRateDirection;-><init>(Ljava/lang/String;IILjava/lang/String;)V
+    invoke-direct {v0, v3, v4, v1, v2}, Lcom/iMe/model/wallet/home/PriceRateDirection;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Lcom/iMe/model/wallet/home/PriceRateDirection;->DOWN:Lcom/iMe/model/wallet/home/PriceRateDirection;
 
@@ -96,13 +96,13 @@
 
     sget v1, Lorg/telegram/messenger/R$drawable;->fork_ic_rate_not_changed_14:I
 
-    const-string v2, "NOT_CHANGED"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText8:I
 
-    const/4 v3, 0x2
+    const-string v3, "NOT_CHANGED"
 
-    const-string v4, "windowBackgroundWhiteGrayText8"
+    const/4 v4, 0x2
 
-    invoke-direct {v0, v2, v3, v1, v4}, Lcom/iMe/model/wallet/home/PriceRateDirection;-><init>(Ljava/lang/String;IILjava/lang/String;)V
+    invoke-direct {v0, v3, v4, v1, v2}, Lcom/iMe/model/wallet/home/PriceRateDirection;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Lcom/iMe/model/wallet/home/PriceRateDirection;->NOT_CHANGED:Lcom/iMe/model/wallet/home/PriceRateDirection;
 
@@ -115,13 +115,11 @@
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;IILjava/lang/String;)V
+.method private constructor <init>(Ljava/lang/String;III)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(I",
-            "Ljava/lang/String;",
-            ")V"
+            "(II)V"
         }
     .end annotation
 
@@ -132,7 +130,7 @@
     iput p3, p0, Lcom/iMe/model/wallet/home/PriceRateDirection;->icon:I
 
     .line 9
-    iput-object p4, p0, Lcom/iMe/model/wallet/home/PriceRateDirection;->color:Ljava/lang/String;
+    iput p4, p0, Lcom/iMe/model/wallet/home/PriceRateDirection;->colorKey:I
 
     return-void
 .end method
@@ -167,13 +165,13 @@
 
 
 # virtual methods
-.method public final getColor()Ljava/lang/String;
+.method public final getColorKey()I
     .locals 1
 
     .line 9
-    iget-object v0, p0, Lcom/iMe/model/wallet/home/PriceRateDirection;->color:Ljava/lang/String;
+    iget v0, p0, Lcom/iMe/model/wallet/home/PriceRateDirection;->colorKey:I
 
-    return-object v0
+    return v0
 .end method
 
 .method public final getIcon()I

@@ -24,7 +24,7 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentWalletConnectSessionDetailsBinding;
 import org.telegram.p044ui.ActionBar.AlertDialog;
@@ -32,7 +32,7 @@ import org.telegram.p044ui.ActionBar.BaseFragment;
 import org.telegram.p044ui.ActionBar.Theme;
 /* compiled from: WalletConnectSessionDetailsBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.session_details.WalletConnectSessionDetailsBottomSheetDialog */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletConnectSessionDetailsBottomSheetDialog extends MvpBottomSheet implements WalletConnectSessionDetailsView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(WalletConnectSessionDetailsBottomSheetDialog.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/crypto/wallet_connect/session_details/WalletConnectSessionDetailsPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(WalletConnectSessionDetailsBottomSheetDialog.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkContentWalletConnectSessionDetailsBinding;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -134,11 +134,11 @@ public final class WalletConnectSessionDetailsBottomSheetDialog extends MvpBotto
         Intrinsics.checkNotNullParameter(network, "network");
         ForkContentWalletConnectSessionDetailsBinding binding = getBinding();
         binding.viewHeader.setupViewData(iconUrl, name, url);
-        binding.viewConnectedCell.setupViewData(getResourceManager().getString(C3242R.string.wallet_connect_session_details_connected), connectedDate, C3242R.C3244drawable.msg_calendar2, true);
-        binding.viewAddressCell.setupViewData(getResourceManager().getString(C3242R.string.wallet_connect_session_details_address), address, C3242R.C3244drawable.fork_ic_nav_wallet_24, true);
+        binding.viewConnectedCell.setupViewData(getResourceManager().getString(C3290R.string.wallet_connect_session_details_connected), connectedDate, C3290R.C3292drawable.msg_calendar2, true);
+        binding.viewAddressCell.setupViewData(getResourceManager().getString(C3290R.string.wallet_connect_session_details_address), address, C3290R.C3292drawable.fork_ic_nav_wallet_24, true);
         DetailsIconCellView viewNetworkCell = binding.viewNetworkCell;
         Intrinsics.checkNotNullExpressionValue(viewNetworkCell, "viewNetworkCell");
-        DetailsIconCellView.setupViewData$default(viewNetworkCell, getResourceManager().getString(C3242R.string.wallet_connect_session_details_network), network, C3242R.C3244drawable.msg_language, false, 8, null);
+        DetailsIconCellView.setupViewData$default(viewNetworkCell, getResourceManager().getString(C3290R.string.wallet_connect_session_details_network), network, C3290R.C3292drawable.msg_language, false, 8, null);
     }
 
     private final void setupColors() {
@@ -147,11 +147,11 @@ public final class WalletConnectSessionDetailsBottomSheetDialog extends MvpBotto
         binding.viewConnectedCell.setupColors();
         binding.viewAddressCell.setupColors();
         binding.viewNetworkCell.setupColors();
-        binding.buttonDisconnect.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m50dp(4), Theme.getColor("chat_attachAudioBackground"), ViewExtKt.withAlpha(Theme.getColor("windowBackgroundWhite"), 120)));
+        binding.buttonDisconnect.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(4), Theme.getColor(Theme.key_chat_attachAudioBackground), ViewExtKt.withAlpha(Theme.getColor(Theme.key_windowBackgroundWhite), 120)));
     }
 
     private final void setupTexts() {
-        getBinding().buttonDisconnect.setText(LocaleController.getString("Disconnect", C3242R.string.Disconnect));
+        getBinding().buttonDisconnect.setText(LocaleController.getString("Disconnect", C3290R.string.Disconnect));
     }
 
     private final void setupListeners() {
@@ -182,7 +182,7 @@ public final class WalletConnectSessionDetailsBottomSheetDialog extends MvpBotto
 
     /* compiled from: WalletConnectSessionDetailsBottomSheetDialog.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.session_details.WalletConnectSessionDetailsBottomSheetDialog$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

@@ -30,10 +30,10 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 1
 
-    .line 122
+    .line 124
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    .line 115
+    .line 117
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 v0, 0x1
@@ -52,7 +52,7 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    .line 161
+    .line 163
     iget v0, p0, Lorg/telegram/ui/Components/ColorPicker$RadioButton;->checkedState:F
 
     return v0
@@ -61,7 +61,7 @@
 .method public getColor()I
     .locals 1
 
-    .line 150
+    .line 152
     iget v0, p0, Lorg/telegram/ui/Components/ColorPicker$RadioButton;->currentColor:I
 
     return v0
@@ -70,12 +70,12 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 166
+    .line 168
     invoke-super {p0}, Landroid/view/View;->onAttachedToWindow()V
 
     const/4 v0, 0x0
 
-    .line 167
+    .line 169
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/ColorPicker$RadioButton;->updateCheckedState(Z)V
 
     return-void
@@ -86,14 +86,14 @@
 
     const/16 v0, 0xf
 
-    .line 177
+    .line 179
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     int-to-float v0, v0
 
-    .line 179
+    .line 181
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
@@ -104,7 +104,7 @@
 
     mul-float/2addr v1, v2
 
-    .line 180
+    .line 182
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v3
@@ -113,21 +113,21 @@
 
     mul-float/2addr v3, v2
 
-    .line 182
+    .line 184
     iget-object v4, p0, Lorg/telegram/ui/Components/ColorPicker$RadioButton;->paint:Landroid/graphics/Paint;
 
     iget v5, p0, Lorg/telegram/ui/Components/ColorPicker$RadioButton;->currentColor:I
 
     invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 183
+    .line 185
     iget-object v4, p0, Lorg/telegram/ui/Components/ColorPicker$RadioButton;->paint:Landroid/graphics/Paint;
 
     sget-object v5, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 184
+    .line 186
     iget-object v4, p0, Lorg/telegram/ui/Components/ColorPicker$RadioButton;->paint:Landroid/graphics/Paint;
 
     const/4 v5, 0x3
@@ -140,7 +140,7 @@
 
     invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 185
+    .line 187
     iget-object v4, p0, Lorg/telegram/ui/Components/ColorPicker$RadioButton;->paint:Landroid/graphics/Paint;
 
     iget v5, p0, Lorg/telegram/ui/Components/ColorPicker$RadioButton;->checkedState:F
@@ -155,7 +155,7 @@
 
     invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 186
+    .line 188
     iget-object v4, p0, Lorg/telegram/ui/Components/ColorPicker$RadioButton;->paint:Landroid/graphics/Paint;
 
     invoke-virtual {v4}, Landroid/graphics/Paint;->getStrokeWidth()F
@@ -170,14 +170,14 @@
 
     invoke-virtual {p1, v1, v3, v2, v4}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 188
+    .line 190
     iget-object v2, p0, Lorg/telegram/ui/Components/ColorPicker$RadioButton;->paint:Landroid/graphics/Paint;
 
     const/16 v4, 0xff
 
     invoke-virtual {v2, v4}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 189
+    .line 191
     iget-object v2, p0, Lorg/telegram/ui/Components/ColorPicker$RadioButton;->paint:Landroid/graphics/Paint;
 
     sget-object v4, Landroid/graphics/Paint$Style;->FILL:Landroid/graphics/Paint$Style;
@@ -186,7 +186,7 @@
 
     const/4 v2, 0x5
 
-    .line 190
+    .line 192
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -209,10 +209,10 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 2
 
-    .line 195
+    .line 197
     invoke-super {p0, p1}, Landroid/view/View;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 196
+    .line 198
     sget v0, Lorg/telegram/messenger/R$string;->ColorPickerMainColor:I
 
     const-string v1, "ColorPickerMainColor"
@@ -223,7 +223,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
 
-    .line 197
+    .line 199
     const-class v0, Landroid/widget/Button;
 
     invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
@@ -232,17 +232,17 @@
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
-    .line 198
+    .line 200
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ColorPicker$RadioButton;->checked:Z
 
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setChecked(Z)V
 
     const/4 v0, 0x1
 
-    .line 199
+    .line 201
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setCheckable(Z)V
 
-    .line 200
+    .line 202
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setEnabled(Z)V
 
     return-void
@@ -253,7 +253,7 @@
 
     const/16 p1, 0x1e
 
-    .line 172
+    .line 174
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -280,10 +280,10 @@
 .method public setChecked(ZZ)V
     .locals 0
 
-    .line 140
+    .line 142
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ColorPicker$RadioButton;->checked:Z
 
-    .line 141
+    .line 143
     invoke-virtual {p0, p2}, Lorg/telegram/ui/Components/ColorPicker$RadioButton;->updateCheckedState(Z)V
 
     return-void
@@ -294,10 +294,10 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    .line 155
+    .line 157
     iput p1, p0, Lorg/telegram/ui/Components/ColorPicker$RadioButton;->checkedState:F
 
-    .line 156
+    .line 158
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -306,10 +306,10 @@
 .method public setColor(I)V
     .locals 0
 
-    .line 145
+    .line 147
     iput p1, p0, Lorg/telegram/ui/Components/ColorPicker$RadioButton;->currentColor:I
 
-    .line 146
+    .line 148
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -318,12 +318,12 @@
 .method updateCheckedState(Z)V
     .locals 4
 
-    .line 126
+    .line 128
     iget-object v0, p0, Lorg/telegram/ui/Components/ColorPicker$RadioButton;->checkAnimator:Landroid/animation/ObjectAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 127
+    .line 129
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->cancel()V
 
     :cond_0
@@ -339,7 +339,7 @@
 
     const/4 v2, 0x0
 
-    .line 131
+    .line 133
     iget-boolean v3, p0, Lorg/telegram/ui/Components/ColorPicker$RadioButton;->checked:Z
 
     if-eqz v3, :cond_1
@@ -362,17 +362,17 @@
 
     const-wide/16 v0, 0xc8
 
-    .line 132
+    .line 134
     invoke-virtual {p1, v0, v1}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 133
+    .line 135
     iget-object p1, p0, Lorg/telegram/ui/Components/ColorPicker$RadioButton;->checkAnimator:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ObjectAnimator;->start()V
 
     goto :goto_2
 
-    .line 135
+    .line 137
     :cond_2
     iget-boolean p1, p0, Lorg/telegram/ui/Components/ColorPicker$RadioButton;->checked:Z
 

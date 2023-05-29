@@ -8,7 +8,6 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
-import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.p044ui.Components.LayoutHelper;
 /* compiled from: ArchiveSwitchTopicsBar.kt */
@@ -19,18 +18,6 @@ public final class ArchiveSwitchTopicsBar extends LinearLayout {
     private boolean currentArchive;
     private final Function1<Boolean, Unit> delegate;
     private final Lazy mainTopic$delegate;
-
-    static {
-        new Companion(null);
-    }
-
-    public final boolean getCurrentArchive() {
-        return this.currentArchive;
-    }
-
-    public final void setCurrentArchive(boolean z) {
-        this.currentArchive = z;
-    }
 
     public final Function1<Boolean, Unit> getDelegate() {
         return this.delegate;
@@ -51,8 +38,8 @@ public final class ArchiveSwitchTopicsBar extends LinearLayout {
         lazy2 = LazyKt__LazyJVMKt.lazy(new ArchiveSwitchTopicsBar$archiveTopic$2(this));
         this.archiveTopic$delegate = lazy2;
         setGravity(17);
-        addView(getMainTopic(), LayoutHelper.createLinear(-2, 24, 8, 6, 8, 6));
-        addView(getArchiveTopic(), LayoutHelper.createLinear(-2, 24, 8, 6, 8, 6));
+        addView(getMainTopic(), LayoutHelper.createLinear(-2, -1));
+        addView(getArchiveTopic(), LayoutHelper.createLinear(-2, -1));
         updateSelectedTopicAndColors();
     }
 
@@ -92,17 +79,5 @@ public final class ArchiveSwitchTopicsBar extends LinearLayout {
         this$0.currentArchive = z;
         this$0.delegate.invoke(Boolean.valueOf(z));
         this$0.updateSelectedTopicAndColors();
-    }
-
-    /* compiled from: ArchiveSwitchTopicsBar.kt */
-    /* renamed from: com.iMe.fork.ui.view.ArchiveSwitchTopicsBar$Companion */
-    /* loaded from: classes3.dex */
-    public static final class Companion {
-        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-            this();
-        }
-
-        private Companion() {
-        }
     }
 }

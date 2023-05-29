@@ -6,7 +6,7 @@ import kotlin.jvm.internal.Lambda;
 import org.telegram.messenger.databinding.ForkFragmentCatalogTabsBinding;
 /* compiled from: CatalogFragment.kt */
 /* renamed from: com.iMe.ui.catalog.tabs.CatalogFragment$binding$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class CatalogFragment$binding$2 extends Lambda implements Function0<ForkFragmentCatalogTabsBinding> {
     final /* synthetic */ CatalogFragment this$0;
 

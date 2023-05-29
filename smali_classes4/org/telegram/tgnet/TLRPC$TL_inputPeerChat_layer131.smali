@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 49519
+    .line 50520
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$TL_inputPeerChat;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 0
 
-    .line 49524
+    .line 50525
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -43,12 +43,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 49528
+    .line 50529
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_inputPeerChat_layer131;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 49529
+    .line 50530
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$InputPeer;->chat_id:J
 
     long-to-int v0, v0

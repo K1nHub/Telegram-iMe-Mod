@@ -199,11 +199,11 @@
     return-void
 .end method
 
-.method public static final synthetic access$getColorWithDefaultAlpha(Lcom/iMe/ui/custom/ChooseRecipientOptionsView;Ljava/lang/String;)I
+.method public static final synthetic access$getColorWithDefaultAlpha(Lcom/iMe/ui/custom/ChooseRecipientOptionsView;I)I
     .locals 0
 
     .line 22
-    invoke-direct {p0, p1}, Lcom/iMe/ui/custom/ChooseRecipientOptionsView;->getColorWithDefaultAlpha(Ljava/lang/String;)I
+    invoke-direct {p0, p1}, Lcom/iMe/ui/custom/ChooseRecipientOptionsView;->getColorWithDefaultAlpha(I)I
 
     move-result p0
 
@@ -248,11 +248,11 @@
     return v0
 .end method
 
-.method private final getColorWithDefaultAlpha(Ljava/lang/String;)I
+.method private final getColorWithDefaultAlpha(I)I
     .locals 1
 
     .line 112
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -502,124 +502,124 @@
 .end method
 
 .method public final setupColors()V
-    .locals 11
+    .locals 10
 
     .line 58
     iget-object v0, p0, Lcom/iMe/ui/custom/ChooseRecipientOptionsView;->binding:Lorg/telegram/messenger/databinding/ForkContentWalletChooseRecipientOptionsBinding;
 
-    const/4 v1, 0x3
-
-    new-array v2, v1, [Landroid/widget/TextView;
-
     .line 59
-    iget-object v3, v0, Lorg/telegram/messenger/databinding/ForkContentWalletChooseRecipientOptionsBinding;->textContacts:Landroid/widget/TextView;
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
 
-    const-string v4, "textContacts"
+    const/4 v2, 0x3
 
-    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    new-array v3, v2, [Landroid/widget/TextView;
 
-    const/4 v4, 0x0
+    iget-object v4, v0, Lorg/telegram/messenger/databinding/ForkContentWalletChooseRecipientOptionsBinding;->textContacts:Landroid/widget/TextView;
 
-    aput-object v3, v2, v4
+    const-string v5, "textContacts"
 
-    iget-object v3, v0, Lorg/telegram/messenger/databinding/ForkContentWalletChooseRecipientOptionsBinding;->textTwitter:Landroid/widget/TextView;
+    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v5, "textTwitter"
+    const/4 v5, 0x0
 
-    invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    aput-object v4, v3, v5
 
-    const/4 v5, 0x1
+    iget-object v4, v0, Lorg/telegram/messenger/databinding/ForkContentWalletChooseRecipientOptionsBinding;->textTwitter:Landroid/widget/TextView;
 
-    aput-object v3, v2, v5
+    const-string v6, "textTwitter"
 
-    iget-object v3, v0, Lorg/telegram/messenger/databinding/ForkContentWalletChooseRecipientOptionsBinding;->textQr:Landroid/widget/TextView;
+    invoke-static {v4, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v6, "textQr"
+    const/4 v6, 0x1
 
-    invoke-static {v3, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    aput-object v4, v3, v6
 
-    const/4 v6, 0x2
+    iget-object v4, v0, Lorg/telegram/messenger/databinding/ForkContentWalletChooseRecipientOptionsBinding;->textQr:Landroid/widget/TextView;
 
-    aput-object v3, v2, v6
+    const-string v7, "textQr"
 
-    const-string v3, "windowBackgroundWhiteBlueHeader"
+    invoke-static {v4, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v3, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setTextsColor(Ljava/lang/String;[Landroid/widget/TextView;)V
+    const/4 v7, 0x2
 
-    new-array v2, v1, [Landroid/widget/FrameLayout;
+    aput-object v4, v3, v7
+
+    invoke-static {v1, v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setTextsColor(I[Landroid/widget/TextView;)V
+
+    new-array v1, v2, [Landroid/widget/FrameLayout;
 
     .line 60
-    iget-object v7, v0, Lorg/telegram/messenger/databinding/ForkContentWalletChooseRecipientOptionsBinding;->frameContacts:Landroid/widget/FrameLayout;
+    iget-object v3, v0, Lorg/telegram/messenger/databinding/ForkContentWalletChooseRecipientOptionsBinding;->frameContacts:Landroid/widget/FrameLayout;
 
-    aput-object v7, v2, v4
+    aput-object v3, v1, v5
 
-    iget-object v7, v0, Lorg/telegram/messenger/databinding/ForkContentWalletChooseRecipientOptionsBinding;->frameTwitter:Landroid/widget/FrameLayout;
+    iget-object v3, v0, Lorg/telegram/messenger/databinding/ForkContentWalletChooseRecipientOptionsBinding;->frameTwitter:Landroid/widget/FrameLayout;
 
-    aput-object v7, v2, v5
+    aput-object v3, v1, v6
 
-    iget-object v7, v0, Lorg/telegram/messenger/databinding/ForkContentWalletChooseRecipientOptionsBinding;->frameQr:Landroid/widget/FrameLayout;
+    iget-object v3, v0, Lorg/telegram/messenger/databinding/ForkContentWalletChooseRecipientOptionsBinding;->frameQr:Landroid/widget/FrameLayout;
 
-    aput-object v7, v2, v6
+    aput-object v3, v1, v7
 
-    invoke-static {v2}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {v1}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
-    move-result-object v2
+    move-result-object v1
 
     .line 2634
-    invoke-interface {v2}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v1}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v2
+    move-result-object v1
 
     :goto_0
-    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v7
+    move-result v3
 
-    if-eqz v7, :cond_0
+    if-eqz v3, :cond_0
 
-    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+    invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v7
+    move-result-object v3
 
     .line 5
-    check-cast v7, Landroid/widget/FrameLayout;
+    check-cast v3, Landroid/widget/FrameLayout;
 
     .line 61
     invoke-direct {p0}, Lcom/iMe/ui/custom/ChooseRecipientOptionsView;->getCornerSize()I
 
-    move-result v8
+    move-result v4
 
     invoke-direct {p0}, Lcom/iMe/ui/custom/ChooseRecipientOptionsView;->getBackgroundColor()I
 
-    move-result v9
+    move-result v8
 
     invoke-direct {p0}, Lcom/iMe/ui/custom/ChooseRecipientOptionsView;->getBackgroundPressedColor()I
 
-    move-result v10
+    move-result v9
 
-    invoke-static {v8, v9, v10}, Lorg/telegram/ui/ActionBar/Theme;->createSimpleSelectorRoundRectDrawable(III)Landroid/graphics/drawable/Drawable;
+    invoke-static {v4, v8, v9}, Lorg/telegram/ui/ActionBar/Theme;->createSimpleSelectorRoundRectDrawable(III)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v8
+    move-result-object v4
 
-    invoke-virtual {v7, v8}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v3, v4}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_0
 
     :cond_0
-    new-array v1, v1, [Landroid/widget/TextView;
+    new-array v1, v2, [Landroid/widget/TextView;
 
     .line 63
     iget-object v2, v0, Lorg/telegram/messenger/databinding/ForkContentWalletChooseRecipientOptionsBinding;->textContacts:Landroid/widget/TextView;
 
-    aput-object v2, v1, v4
+    aput-object v2, v1, v5
 
     iget-object v2, v0, Lorg/telegram/messenger/databinding/ForkContentWalletChooseRecipientOptionsBinding;->textTwitter:Landroid/widget/TextView;
 
-    aput-object v2, v1, v5
+    aput-object v2, v1, v6
 
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentWalletChooseRecipientOptionsBinding;->textQr:Landroid/widget/TextView;
 
-    aput-object v0, v1, v6
+    aput-object v0, v1, v7
 
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
@@ -649,7 +649,9 @@
     .line 64
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 

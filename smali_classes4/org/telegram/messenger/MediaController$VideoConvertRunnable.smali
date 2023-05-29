@@ -33,10 +33,10 @@
 .method private constructor <init>(Lorg/telegram/messenger/MediaController$VideoConvertMessage;)V
     .locals 0
 
-    .line 5026
+    .line 5070
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 5027
+    .line 5071
     iput-object p1, p0, Lorg/telegram/messenger/MediaController$VideoConvertRunnable;->convertMessage:Lorg/telegram/messenger/MediaController$VideoConvertMessage;
 
     return-void
@@ -45,23 +45,23 @@
 .method private static synthetic lambda$runConversion$0(Lorg/telegram/messenger/MediaController$VideoConvertMessage;)V
     .locals 2
 
-    .line 5040
+    .line 5084
     :try_start_0
     new-instance v0, Lorg/telegram/messenger/MediaController$VideoConvertRunnable;
 
     invoke-direct {v0, p0}, Lorg/telegram/messenger/MediaController$VideoConvertRunnable;-><init>(Lorg/telegram/messenger/MediaController$VideoConvertMessage;)V
 
-    .line 5041
+    .line 5085
     new-instance p0, Ljava/lang/Thread;
 
     const-string v1, "VideoConvertRunnable"
 
     invoke-direct {p0, v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;Ljava/lang/String;)V
 
-    .line 5042
+    .line 5086
     invoke-virtual {p0}, Ljava/lang/Thread;->start()V
 
-    .line 5043
+    .line 5087
     invoke-virtual {p0}, Ljava/lang/Thread;->join()V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
@@ -71,7 +71,7 @@
     :catch_0
     move-exception p0
 
-    .line 5045
+    .line 5089
     invoke-static {p0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_0
@@ -81,7 +81,7 @@
 .method public static runConversion(Lorg/telegram/messenger/MediaController$VideoConvertMessage;)V
     .locals 2
 
-    .line 5038
+    .line 5082
     new-instance v0, Ljava/lang/Thread;
 
     new-instance v1, Lorg/telegram/messenger/MediaController$VideoConvertRunnable$$ExternalSyntheticLambda0;
@@ -90,7 +90,7 @@
 
     invoke-direct {v0, v1}, Ljava/lang/Thread;-><init>(Ljava/lang/Runnable;)V
 
-    .line 5047
+    .line 5091
     invoke-virtual {v0}, Ljava/lang/Thread;->start()V
 
     return-void
@@ -101,12 +101,12 @@
 .method public run()V
     .locals 2
 
-    .line 5033
+    .line 5077
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$VideoConvertRunnable;->convertMessage:Lorg/telegram/messenger/MediaController$VideoConvertMessage;
 
     if-eqz v0, :cond_0
 
-    .line 5034
+    .line 5078
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v0

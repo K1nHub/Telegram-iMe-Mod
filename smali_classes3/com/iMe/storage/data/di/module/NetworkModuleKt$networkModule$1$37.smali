@@ -22,9 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;",
+        "Lcom/iMe/storage/data/network/api/own/SocialApi;",
         ">;"
     }
+.end annotation
+
+.annotation system Ldalvik/annotation/SourceDebugExtension;
+    value = "SMAP\nNetworkModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$37\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,178:1\n129#2,5:179\n*S KotlinDebug\n*F\n+ 1 NetworkModule.kt\ncom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$37\n*L\n106#1:179,5\n*E\n"
 .end annotation
 
 
@@ -57,21 +61,49 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
-    .locals 1
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/network/api/own/SocialApi;
+    .locals 2
 
     const-string v0, "$this$single"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "it"
+    const-string v0, "it"
 
-    invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 110
-    new-instance p1, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
+    .line 106
+    invoke-static {}, Lcom/iMe/storage/data/di/module/NetworkModuleKt;->getSERVER_RETROFIT()Lorg/koin/core/qualifier/StringQualifier;
 
-    invoke-direct {p1}, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;-><init>()V
+    move-result-object p2
+
+    .line 133
+    const-class v0, Lretrofit2/Retrofit;
+
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    invoke-virtual {p1, v0, p2, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lretrofit2/Retrofit;
+
+    const-class p2, Lcom/iMe/storage/data/network/api/own/SocialApi;
+
+    .line 106
+    invoke-virtual {p1, p2}, Lretrofit2/Retrofit;->create(Ljava/lang/Class;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    const-string p2, "get<Retrofit>(SERVER_RET\u2026te(SocialApi::class.java)"
+
+    invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    check-cast p1, Lcom/iMe/storage/data/network/api/own/SocialApi;
 
     return-object p1
 .end method
@@ -79,12 +111,12 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 110
+    .line 106
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$37;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/data/di/module/NetworkModuleKt$networkModule$1$37;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/network/api/own/SocialApi;
 
     move-result-object p1
 

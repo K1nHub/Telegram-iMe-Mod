@@ -6,32 +6,42 @@
 # instance fields
 .field private leftImageView:Landroid/widget/ImageView;
 
+.field resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
 .field private rightImageView:Landroid/widget/ImageView;
 
-.field private seekBarView:Lorg/telegram/ui/Components/SeekBarView;
+.field public final seekBarView:Lorg/telegram/ui/Components/SeekBarView;
+
+.field private final size:I
 
 
 # direct methods
-.method public constructor <init>(Landroid/content/Context;)V
+.method public constructor <init>(Landroid/content/Context;I)V
+    .locals 1
+
+    const/4 v0, 0x0
+
+    .line 39
+    invoke-direct {p0, p1, p2, v0}, Lorg/telegram/ui/Cells/BrightnessControlCell;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 8
 
-    .line 34
+    .line 43
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 36
+    .line 45
+    iput-object p3, p0, Lorg/telegram/ui/Cells/BrightnessControlCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    .line 47
     new-instance v0, Landroid/widget/ImageView;
 
     invoke-direct {v0, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/BrightnessControlCell;->leftImageView:Landroid/widget/ImageView;
-
-    .line 37
-    sget v1, Lorg/telegram/messenger/R$drawable;->msg_brightness_low:I
-
-    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    .line 38
-    iget-object v0, p0, Lorg/telegram/ui/Cells/BrightnessControlCell;->leftImageView:Landroid/widget/ImageView;
 
     const/16 v1, 0x18
 
@@ -47,44 +57,36 @@
 
     const/4 v7, 0x0
 
+    .line 48
     invoke-static/range {v1 .. v7}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v1
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 40
+    .line 50
     new-instance v0, Lorg/telegram/ui/Cells/BrightnessControlCell$1;
 
     const/4 v1, 0x1
 
-    const/4 v2, 0x0
-
-    invoke-direct {v0, p0, p1, v1, v2}, Lorg/telegram/ui/Cells/BrightnessControlCell$1;-><init>(Lorg/telegram/ui/Cells/BrightnessControlCell;Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {v0, p0, p1, v1, p3}, Lorg/telegram/ui/Cells/BrightnessControlCell$1;-><init>(Lorg/telegram/ui/Cells/BrightnessControlCell;Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/BrightnessControlCell;->seekBarView:Lorg/telegram/ui/Components/SeekBarView;
 
-    .line 49
+    .line 59
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/SeekBarView;->setReportChanges(Z)V
 
-    .line 50
-    iget-object v0, p0, Lorg/telegram/ui/Cells/BrightnessControlCell;->seekBarView:Lorg/telegram/ui/Components/SeekBarView;
+    .line 60
+    new-instance p3, Lorg/telegram/ui/Cells/BrightnessControlCell$2;
 
-    new-instance v1, Lorg/telegram/ui/Cells/BrightnessControlCell$2;
+    invoke-direct {p3, p0}, Lorg/telegram/ui/Cells/BrightnessControlCell$2;-><init>(Lorg/telegram/ui/Cells/BrightnessControlCell;)V
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/Cells/BrightnessControlCell$2;-><init>(Lorg/telegram/ui/Cells/BrightnessControlCell;)V
+    invoke-virtual {v0, p3}, Lorg/telegram/ui/Components/SeekBarView;->setDelegate(Lorg/telegram/ui/Components/SeekBarView$SeekBarViewDelegate;)V
 
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/SeekBarView;->setDelegate(Lorg/telegram/ui/Components/SeekBarView$SeekBarViewDelegate;)V
+    const/4 p3, 0x2
 
-    .line 65
-    iget-object v0, p0, Lorg/telegram/ui/Cells/BrightnessControlCell;->seekBarView:Lorg/telegram/ui/Components/SeekBarView;
-
-    const/4 v1, 0x2
-
-    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setImportantForAccessibility(I)V
-
-    .line 66
-    iget-object v0, p0, Lorg/telegram/ui/Cells/BrightnessControlCell;->seekBarView:Lorg/telegram/ui/Components/SeekBarView;
+    .line 75
+    invoke-virtual {v0, p3}, Landroid/widget/FrameLayout;->setImportantForAccessibility(I)V
 
     const/4 v1, -0x1
 
@@ -96,26 +98,19 @@
 
     const/16 v6, 0x36
 
+    .line 76
     invoke-static/range {v1 .. v7}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v1
+    move-result-object p3
 
-    invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p0, v0, p3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 68
-    new-instance v0, Landroid/widget/ImageView;
+    .line 78
+    new-instance p3, Landroid/widget/ImageView;
 
-    invoke-direct {v0, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
+    invoke-direct {p3, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lorg/telegram/ui/Cells/BrightnessControlCell;->rightImageView:Landroid/widget/ImageView;
-
-    .line 69
-    sget p1, Lorg/telegram/messenger/R$drawable;->msg_brightness_high:I
-
-    invoke-virtual {v0, p1}, Landroid/widget/ImageView;->setImageResource(I)V
-
-    .line 70
-    iget-object p1, p0, Lorg/telegram/ui/Cells/BrightnessControlCell;->rightImageView:Landroid/widget/ImageView;
+    iput-object p3, p0, Lorg/telegram/ui/Cells/BrightnessControlCell;->rightImageView:Landroid/widget/ImageView;
 
     const/16 v0, 0x18
 
@@ -131,12 +126,57 @@
 
     const/4 v6, 0x0
 
+    .line 79
     invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v0
+    move-result-object p1
 
-    invoke-virtual {p0, p1, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p0, p3, p1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
+    if-nez p2, :cond_0
+
+    .line 81
+    iget-object p1, p0, Lorg/telegram/ui/Cells/BrightnessControlCell;->leftImageView:Landroid/widget/ImageView;
+
+    sget p2, Lorg/telegram/messenger/R$drawable;->msg_brightness_low:I
+
+    invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    .line 82
+    iget-object p1, p0, Lorg/telegram/ui/Cells/BrightnessControlCell;->rightImageView:Landroid/widget/ImageView;
+
+    sget p2, Lorg/telegram/messenger/R$drawable;->msg_brightness_high:I
+
+    invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    const/16 p1, 0x30
+
+    .line 83
+    iput p1, p0, Lorg/telegram/ui/Cells/BrightnessControlCell;->size:I
+
+    goto :goto_0
+
+    .line 85
+    :cond_0
+    iget-object p1, p0, Lorg/telegram/ui/Cells/BrightnessControlCell;->leftImageView:Landroid/widget/ImageView;
+
+    sget p2, Lorg/telegram/messenger/R$drawable;->msg_brightness_high:I
+
+    invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    .line 86
+    iget-object p1, p0, Lorg/telegram/ui/Cells/BrightnessControlCell;->rightImageView:Landroid/widget/ImageView;
+
+    sget p2, Lorg/telegram/messenger/R$drawable;->msg_brightness_low:I
+
+    invoke-virtual {p1, p2}, Landroid/widget/ImageView;->setImageResource(I)V
+
+    const/16 p1, 0x2b
+
+    .line 87
+    iput p1, p0, Lorg/telegram/ui/Cells/BrightnessControlCell;->size:I
+
+    :goto_0
     return-void
 .end method
 
@@ -151,17 +191,19 @@
 .method protected onAttachedToWindow()V
     .locals 5
 
-    .line 75
+    .line 93
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 76
+    .line 94
     iget-object v0, p0, Lorg/telegram/ui/Cells/BrightnessControlCell;->leftImageView:Landroid/widget/ImageView;
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "windowBackgroundWhiteGrayIcon"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    iget-object v3, p0, Lorg/telegram/ui/Cells/BrightnessControlCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v2, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v3
 
@@ -171,12 +213,14 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 77
+    .line 95
     iget-object v0, p0, Lorg/telegram/ui/Cells/BrightnessControlCell;->rightImageView:Landroid/widget/ImageView;
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    iget-object v3, p0, Lorg/telegram/ui/Cells/BrightnessControlCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v2, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v2
 
@@ -192,10 +236,10 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
 
-    .line 95
+    .line 113
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 96
+    .line 114
     iget-object v0, p0, Lorg/telegram/ui/Cells/BrightnessControlCell;->seekBarView:Lorg/telegram/ui/Components/SeekBarView;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/SeekBarView;->getSeekBarAccessibilityDelegate()Lorg/telegram/ui/Components/SeekBarAccessibilityDelegate;
@@ -210,7 +254,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 86
+    .line 104
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -221,7 +265,7 @@
 
     move-result p1
 
-    const/16 v0, 0x30
+    iget v0, p0, Lorg/telegram/ui/Cells/BrightnessControlCell;->size:I
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -239,7 +283,7 @@
 .method public performAccessibilityAction(ILandroid/os/Bundle;)Z
     .locals 1
 
-    .line 101
+    .line 119
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->performAccessibilityAction(ILandroid/os/Bundle;)Z
 
     move-result v0
@@ -276,7 +320,7 @@
 .method public setProgress(F)V
     .locals 1
 
-    .line 90
+    .line 108
     iget-object v0, p0, Lorg/telegram/ui/Cells/BrightnessControlCell;->seekBarView:Lorg/telegram/ui/Components/SeekBarView;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/SeekBarView;->setProgress(F)V

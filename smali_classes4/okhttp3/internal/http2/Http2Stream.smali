@@ -576,7 +576,7 @@
     :cond_2
     new-instance v0, Ljava/io/IOException;
 
-    const-string v1, "stream finished"
+    const-string/jumbo v1, "stream finished"
 
     invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
@@ -586,7 +586,7 @@
     :cond_3
     new-instance v0, Ljava/io/IOException;
 
-    const-string v1, "stream closed"
+    const-string/jumbo v1, "stream closed"
 
     invoke-direct {v0, v1}, Ljava/io/IOException;-><init>(Ljava/lang/String;)V
 
@@ -988,7 +988,7 @@
         }
     .end annotation
 
-    const-string v0, "source"
+    const-string/jumbo v0, "source"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

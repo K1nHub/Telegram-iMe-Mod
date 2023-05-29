@@ -29,7 +29,7 @@
     .line 501
     const-class p1, Lmoxy/viewstate/strategy/OneExecutionStateStrategy;
 
-    const-string v0, "showSuccessSwapAlert"
+    const-string/jumbo v0, "showSuccessSwapAlert"
 
     invoke-direct {p0, v0, p1}, Lmoxy/viewstate/ViewCommand;-><init>(Ljava/lang/String;Ljava/lang/Class;)V
 

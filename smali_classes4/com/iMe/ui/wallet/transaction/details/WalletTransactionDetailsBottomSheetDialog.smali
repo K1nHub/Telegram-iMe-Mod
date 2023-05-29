@@ -519,7 +519,7 @@
 .method private static final onSuccessBoostTransaction$lambda$10(Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -532,7 +532,7 @@
 .method private static final onSuccessCancelTransaction$lambda$9(Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -567,7 +567,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem;->setIcon(I)V
 
-    const-string v1, "setupActionItem$lambda$13"
+    const-string/jumbo v1, "setupActionItem$lambda$13"
 
     .line 204
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -635,7 +635,7 @@
 .method private static final setupActionItem$lambda$13$lambda$12(Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;I)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -646,7 +646,7 @@
 .end method
 
 .method private final setupColors()V
-    .locals 11
+    .locals 12
 
     .line 221
     invoke-direct {p0}, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsBottomSheetDialog;->getBinding()Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;
@@ -658,9 +658,9 @@
 
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v3, "actionBarDefault"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -673,9 +673,9 @@
     .line 223
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->constraintRoot:Landroid/widget/LinearLayout;
 
-    const-string/jumbo v2, "windowBackgroundGray"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -684,9 +684,9 @@
     .line 224
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->cardViewTransactionInfo:Landroidx/cardview/widget/CardView;
 
-    const-string/jumbo v2, "windowBackgroundWhite"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -695,7 +695,7 @@
     .line 225
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->linearActions:Landroid/widget/LinearLayout;
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -704,7 +704,7 @@
     .line 226
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->constraintBottomAction:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -713,7 +713,7 @@
     .line 227
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->constraintLayoutHeader:Landroidx/constraintlayout/widget/ConstraintLayout;
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -722,9 +722,9 @@
     .line 228
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textTransactionType:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v3, "actionBarDefaultTitle"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultTitle:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -738,7 +738,7 @@
     invoke-direct {v4}, Lcom/google/android/material/shape/MaterialShapeDrawable;-><init>()V
 
     .line 231
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -758,148 +758,150 @@
     .line 230
     invoke-virtual {v1, v4}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    const/4 v1, 0x6
+    .line 236
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    new-array v2, v1, [Landroid/widget/TextView;
+    const/4 v2, 0x6
+
+    new-array v4, v2, [Landroid/widget/TextView;
 
     .line 237
-    iget-object v4, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textFeeTitle:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v5, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textFeeTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v5, "textFeeTitle"
+    const-string/jumbo v6, "textFeeTitle"
+
+    invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v6, 0x0
+
+    aput-object v5, v4, v6
+
+    iget-object v5, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textProcessingTitle:Landroidx/appcompat/widget/AppCompatTextView;
+
+    const-string/jumbo v7, "textProcessingTitle"
+
+    invoke-static {v5, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v7, 0x1
+
+    aput-object v5, v4, v7
+
+    iget-object v5, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textDateTitle:Landroidx/appcompat/widget/AppCompatTextView;
+
+    const-string/jumbo v8, "textDateTitle"
+
+    invoke-static {v5, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v8, 0x2
+
+    aput-object v5, v4, v8
+
+    .line 238
+    iget-object v5, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textRecipientTitle:Landroidx/appcompat/widget/AppCompatTextView;
+
+    const-string/jumbo v9, "textRecipientTitle"
+
+    invoke-static {v5, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v9, 0x3
+
+    aput-object v5, v4, v9
+
+    iget-object v5, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textStatusTitle:Landroidx/appcompat/widget/AppCompatTextView;
+
+    const-string/jumbo v10, "textStatusTitle"
+
+    invoke-static {v5, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v10, 0x4
+
+    aput-object v5, v4, v10
+
+    iget-object v5, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textCommentTitle:Landroidx/appcompat/widget/AppCompatTextView;
+
+    const-string/jumbo v11, "textCommentTitle"
+
+    invoke-static {v5, v11}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v11, 0x5
+
+    aput-object v5, v4, v11
+
+    .line 235
+    invoke-static {v1, v4}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setTextsColor(I[Landroid/widget/TextView;)V
+
+    .line 241
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
+
+    new-array v2, v2, [Landroid/widget/TextView;
+
+    .line 242
+    iget-object v4, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textFeeValue:Landroidx/appcompat/widget/AppCompatTextView;
+
+    const-string/jumbo v5, "textFeeValue"
 
     invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v5, 0x0
-
-    aput-object v4, v2, v5
-
-    iget-object v4, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textProcessingTitle:Landroidx/appcompat/widget/AppCompatTextView;
-
-    const-string v6, "textProcessingTitle"
-
-    invoke-static {v4, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const/4 v6, 0x1
-
     aput-object v4, v2, v6
 
-    iget-object v4, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textDateTitle:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v4, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textProcessingValue:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v7, "textDateTitle"
+    const-string/jumbo v5, "textProcessingValue"
 
-    invoke-static {v4, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const/4 v7, 0x2
+    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     aput-object v4, v2, v7
 
-    .line 238
-    iget-object v4, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textRecipientTitle:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v4, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textDateValue:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v8, "textRecipientTitle"
+    const-string/jumbo v5, "textDateValue"
 
-    invoke-static {v4, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const/4 v8, 0x3
+    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     aput-object v4, v2, v8
 
-    iget-object v4, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textStatusTitle:Landroidx/appcompat/widget/AppCompatTextView;
+    .line 243
+    iget-object v4, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textRecipientValue:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v9, "textStatusTitle"
+    const-string/jumbo v5, "textRecipientValue"
 
-    invoke-static {v4, v9}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const/4 v9, 0x4
+    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     aput-object v4, v2, v9
 
-    iget-object v4, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textCommentTitle:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object v4, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textStatusValue:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v10, "textCommentTitle"
+    const-string/jumbo v5, "textStatusValue"
 
-    invoke-static {v4, v10}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const/4 v10, 0x5
+    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     aput-object v4, v2, v10
 
-    const-string/jumbo v4, "windowBackgroundWhiteBlackText"
+    iget-object v4, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textCommentValue:Landroidx/appcompat/widget/AppCompatTextView;
 
-    .line 235
-    invoke-static {v4, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setTextsColor(Ljava/lang/String;[Landroid/widget/TextView;)V
+    const-string/jumbo v5, "textCommentValue"
 
-    new-array v1, v1, [Landroid/widget/TextView;
+    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 242
-    iget-object v2, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textFeeValue:Landroidx/appcompat/widget/AppCompatTextView;
-
-    const-string v4, "textFeeValue"
-
-    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    aput-object v2, v1, v5
-
-    iget-object v2, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textProcessingValue:Landroidx/appcompat/widget/AppCompatTextView;
-
-    const-string v4, "textProcessingValue"
-
-    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    aput-object v2, v1, v6
-
-    iget-object v2, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textDateValue:Landroidx/appcompat/widget/AppCompatTextView;
-
-    const-string v4, "textDateValue"
-
-    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    aput-object v2, v1, v7
-
-    .line 243
-    iget-object v2, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textRecipientValue:Landroidx/appcompat/widget/AppCompatTextView;
-
-    const-string v4, "textRecipientValue"
-
-    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    aput-object v2, v1, v8
-
-    iget-object v2, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textStatusValue:Landroidx/appcompat/widget/AppCompatTextView;
-
-    const-string v4, "textStatusValue"
-
-    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    aput-object v2, v1, v9
-
-    iget-object v2, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textCommentValue:Landroidx/appcompat/widget/AppCompatTextView;
-
-    const-string v4, "textCommentValue"
-
-    invoke-static {v2, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    aput-object v2, v1, v10
-
-    const-string/jumbo v2, "windowBackgroundWhiteGrayText2"
+    aput-object v4, v2, v11
 
     .line 240
-    invoke-static {v2, v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setTextsColor(Ljava/lang/String;[Landroid/widget/TextView;)V
+    invoke-static {v1, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setTextsColor(I[Landroid/widget/TextView;)V
 
     .line 246
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textSectionName:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v2, "setupColors$lambda$19$lambda$15"
+    const-string/jumbo v2, "setupColors$lambda$19$lambda$15"
 
     .line 247
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
-    const-string/jumbo v2, "windowBackgroundWhiteBlueHeader"
-
     .line 248
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -908,7 +910,7 @@
     .line 251
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textSectionActions:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v4, "setupColors$lambda$19$lambda$16"
+    const-string/jumbo v4, "setupColors$lambda$19$lambda$16"
 
     .line 252
     invoke-static {v1, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -916,7 +918,7 @@
     invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
     .line 253
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -925,7 +927,7 @@
     .line 256
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textTransactionAmount:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v2, "setupColors$lambda$19$lambda$17"
+    const-string/jumbo v2, "setupColors$lambda$19$lambda$17"
 
     .line 257
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -933,7 +935,7 @@
     invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
     .line 258
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -942,20 +944,20 @@
     .line 261
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textActionCancel:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v1, "setupColors$lambda$19$lambda$18"
+    const-string/jumbo v1, "setupColors$lambda$19$lambda$18"
 
     .line 262
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v0, v6}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setRippleBackground(Landroid/view/View;Z)V
+    invoke-static {v0, v7}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setRippleBackground(Landroid/view/View;Z)V
 
     .line 263
     invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
-    const-string v1, "chats_actionBackground"
-
     .line 264
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -975,7 +977,7 @@
     .line 292
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textActionCancel:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v0, "textActionCancel"
+    const-string/jumbo v0, "textActionCancel"
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1180,7 +1182,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1251,7 +1253,7 @@
 .method public actionCopyToClipboard(Ljava/lang/String;)V
     .locals 2
 
-    const-string v0, "text"
+    const-string/jumbo v0, "text"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1573,7 +1575,7 @@
 
     invoke-static {p5, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "status"
+    const-string/jumbo v0, "status"
 
     invoke-static {p7, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -1639,95 +1641,99 @@
 
     invoke-virtual {p1, p10}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const/4 p1, 0x0
+    const/4 p1, 0x1
+
+    const/4 p2, 0x0
 
     if-eqz p6, :cond_1
 
     .line 98
     invoke-interface {p6}, Ljava/lang/CharSequence;->length()I
 
-    move-result p2
+    move-result p3
 
-    if-nez p2, :cond_0
+    if-nez p3, :cond_0
 
     goto :goto_0
 
     :cond_0
-    move p2, p1
+    move p3, p2
 
     goto :goto_1
 
     :cond_1
     :goto_0
-    const/4 p2, 0x1
+    move p3, p1
 
     :goto_1
-    if-nez p2, :cond_2
+    const/4 p4, 0x0
+
+    if-nez p3, :cond_2
 
     .line 99
-    iget-object p2, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textCommentTitle:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object p3, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textCommentTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string p3, "textCommentTitle"
+    const-string/jumbo p5, "textCommentTitle"
 
-    invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p3, p5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    invoke-static {p3, p2, p1, p4}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 100
-    iget-object p2, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->dividerComment:Lcom/iMe/ui/custom/DividerView;
+    iget-object p3, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->dividerComment:Lcom/iMe/ui/custom/DividerView;
 
-    const-string p3, "dividerComment"
+    const-string p5, "dividerComment"
 
-    invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p3, p5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    invoke-static {p3, p2, p1, p4}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 101
-    iget-object p2, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textCommentValue:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object p3, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textCommentValue:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string p3, "setupScreenWithData$lambda$2$lambda$0"
+    const-string/jumbo p5, "setupScreenWithData$lambda$2$lambda$0"
 
     .line 102
-    invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p3, p5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    invoke-static {p3, p2, p1, p4}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 103
-    invoke-virtual {p2, p6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {p3, p6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     :cond_2
     if-eqz p13, :cond_3
 
     .line 108
-    iget-object p2, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->imageStakingIcon:Landroidx/appcompat/widget/AppCompatImageView;
+    iget-object p3, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->imageStakingIcon:Landroidx/appcompat/widget/AppCompatImageView;
 
-    const-string p3, "setupScreenWithData$lambda$2$lambda$1"
+    const-string/jumbo p5, "setupScreenWithData$lambda$2$lambda$1"
 
     .line 109
-    invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p3, p5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    invoke-static {p3, p2, p1, p4}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 110
     invoke-virtual {p13}, Ljava/lang/Integer;->intValue()I
 
-    move-result p3
+    move-result p1
 
-    invoke-virtual {p2, p3}, Landroidx/appcompat/widget/AppCompatImageView;->setImageResource(I)V
+    invoke-virtual {p3, p1}, Landroidx/appcompat/widget/AppCompatImageView;->setImageResource(I)V
 
     .line 114
     :cond_3
-    iget-object p2, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textFeeTitle:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textFeeTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string p3, "textFeeTitle"
+    const-string/jumbo p3, "textFeeTitle"
 
-    invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, p3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/16 p3, 0x8
 
     if-eqz p11, :cond_4
 
-    move p4, p1
+    move p4, p2
 
     goto :goto_2
 
@@ -1736,18 +1742,18 @@
 
     .line 262
     :goto_2
-    invoke-virtual {p2, p4}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {p1, p4}, Landroid/view/View;->setVisibility(I)V
 
     .line 115
-    iget-object p2, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textFeeValue:Landroidx/appcompat/widget/AppCompatTextView;
+    iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->textFeeValue:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string p4, "textFeeValue"
+    const-string/jumbo p4, "textFeeValue"
 
-    invoke-static {p2, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     if-eqz p11, :cond_5
 
-    move p4, p1
+    move p4, p2
 
     goto :goto_3
 
@@ -1756,25 +1762,25 @@
 
     .line 262
     :goto_3
-    invoke-virtual {p2, p4}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {p1, p4}, Landroid/view/View;->setVisibility(I)V
 
     .line 116
-    iget-object p2, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->itemMoreOptions:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
+    iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletTransactionDetailsLayoutBinding;->itemMoreOptions:Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
 
     const-string p4, "itemMoreOptions"
 
-    invoke-static {p2, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, p4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     if-eqz p12, :cond_6
 
     goto :goto_4
 
     :cond_6
-    move p1, p3
+    move p2, p3
 
     .line 262
     :goto_4
-    invoke-virtual {p2, p1}, Landroid/view/View;->setVisibility(I)V
+    invoke-virtual {p1, p2}, Landroid/view/View;->setVisibility(I)V
 
     return-void
 .end method

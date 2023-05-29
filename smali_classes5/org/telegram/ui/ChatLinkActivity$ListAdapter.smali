@@ -224,8 +224,6 @@
 
     move-result p2
 
-    const-string v0, "windowBackgroundWhiteRedText5"
-
     if-eqz p2, :cond_2
 
     .line 988
@@ -242,7 +240,9 @@
     if-eqz p2, :cond_1
 
     .line 989
-    invoke-virtual {p1, v0, v0}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setColors(Ljava/lang/String;Ljava/lang/String;)V
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
+
+    invoke-virtual {p1, p2, p2}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setColors(II)V
 
     .line 990
     sget p2, Lorg/telegram/messenger/R$string;->DiscussionUnlinkGroup:I
@@ -259,13 +259,13 @@
 
     goto/16 :goto_1
 
-    :cond_1
-    const-string p2, "windowBackgroundWhiteBlueIcon"
-
-    const-string v0, "windowBackgroundWhiteBlueButton"
-
     .line 992
-    invoke-virtual {p1, p2, v0}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setColors(Ljava/lang/String;Ljava/lang/String;)V
+    :cond_1
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueIcon:I
+
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueButton:I
+
+    invoke-virtual {p1, p2, v0}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setColors(II)V
 
     .line 993
     sget p2, Lorg/telegram/messenger/R$string;->DiscussionCreateGroup:I
@@ -284,7 +284,9 @@
 
     .line 996
     :cond_2
-    invoke-virtual {p1, v0, v0}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setColors(Ljava/lang/String;Ljava/lang/String;)V
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
+
+    invoke-virtual {p1, p2, p2}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setColors(II)V
 
     .line 997
     sget p2, Lorg/telegram/messenger/R$string;->DiscussionUnlinkChannel:I
@@ -451,25 +453,23 @@
 .end method
 
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-    .locals 4
+    .locals 3
 
-    const-string p1, "windowBackgroundWhite"
+    const/4 p1, 0x0
 
-    const/4 v0, 0x0
-
-    const/4 v1, 0x2
+    const/4 v0, 0x2
 
     if-eqz p2, :cond_4
 
-    const/4 v2, 0x1
+    const/4 v1, 0x1
 
-    if-eq p2, v2, :cond_3
+    if-eq p2, v1, :cond_3
 
-    if-eq p2, v1, :cond_2
+    if-eq p2, v0, :cond_2
 
-    const/4 p1, 0x4
+    const/4 v0, 0x4
 
-    if-eq p2, p1, :cond_0
+    if-eq p2, v0, :cond_0
 
     .line 959
     new-instance p1, Lorg/telegram/ui/ChatLinkActivity$HintInnerCell;
@@ -480,25 +480,25 @@
 
     invoke-direct {p1, p2, v0}, Lorg/telegram/ui/ChatLinkActivity$HintInnerCell;-><init>(Lorg/telegram/ui/ChatLinkActivity;Landroid/content/Context;)V
 
-    goto :goto_2
+    goto :goto_1
 
     .line 881
     :cond_0
-    iget-object p1, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
+    iget-object p2, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatLinkActivity;->access$1000(Lorg/telegram/ui/ChatLinkActivity;)Z
+    invoke-static {p2}, Lorg/telegram/ui/ChatLinkActivity;->access$1000(Lorg/telegram/ui/ChatLinkActivity;)Z
 
-    move-result p1
+    move-result p2
 
-    if-eqz p1, :cond_1
+    if-eqz p2, :cond_1
 
-    iget-object p1, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
+    iget-object p2, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->this$0:Lorg/telegram/ui/ChatLinkActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatLinkActivity;->access$1200(Lorg/telegram/ui/ChatLinkActivity;)Ljava/util/ArrayList;
+    invoke-static {p2}, Lorg/telegram/ui/ChatLinkActivity;->access$1200(Lorg/telegram/ui/ChatLinkActivity;)Ljava/util/ArrayList;
 
-    move-result-object p1
+    move-result-object p2
 
-    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {p2, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object p1
 
@@ -527,22 +527,24 @@
 
     move-result-object p1
 
-    goto :goto_2
+    goto :goto_1
 
     .line 877
     :cond_2
-    new-instance p2, Lorg/telegram/ui/Cells/ManageChatTextCell;
+    new-instance p1, Lorg/telegram/ui/Cells/ManageChatTextCell;
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->mContext:Landroid/content/Context;
+    iget-object p2, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->mContext:Landroid/content/Context;
 
-    invoke-direct {p2, v0}, Lorg/telegram/ui/Cells/ManageChatTextCell;-><init>(Landroid/content/Context;)V
+    invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/ManageChatTextCell;-><init>(Landroid/content/Context;)V
 
     .line 878
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    move-result p1
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {p2, p1}, Landroid/view/View;->setBackgroundColor(I)V
+    move-result p2
+
+    invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundColor(I)V
 
     goto :goto_1
 
@@ -559,38 +561,39 @@
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    const-string v1, "windowBackgroundGrayShadow"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
-    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    goto :goto_2
+    goto :goto_1
 
     .line 869
     :cond_4
     new-instance p2, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
-    iget-object v2, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->mContext:Landroid/content/Context;
+    iget-object v1, p0, Lorg/telegram/ui/ChatLinkActivity$ListAdapter;->mContext:Landroid/content/Context;
 
-    const/4 v3, 0x6
+    const/4 v2, 0x6
 
-    invoke-direct {p2, v2, v3, v1, v0}, Lorg/telegram/ui/Cells/ManageChatUserCell;-><init>(Landroid/content/Context;IIZ)V
+    invoke-direct {p2, v1, v2, v0, p1}, Lorg/telegram/ui/Cells/ManageChatUserCell;-><init>(Landroid/content/Context;IIZ)V
 
     .line 870
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
     invoke-virtual {p2, p1}, Landroid/view/View;->setBackgroundColor(I)V
 
-    :goto_1
     move-object p1, p2
 
     .line 962
-    :goto_2
+    :goto_1
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V

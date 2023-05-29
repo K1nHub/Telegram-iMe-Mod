@@ -198,10 +198,10 @@
     .line 124
     invoke-virtual {v7, v3, v8}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v8, "dialogTextBlack"
-
     .line 125
-    invoke-static {v1, v8}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$400(Lorg/telegram/ui/Components/PhonebookShareAlert;Ljava/lang/String;)I
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+
+    invoke-static {v1, v8}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$400(Lorg/telegram/ui/Components/PhonebookShareAlert;I)I
 
     move-result v8
 
@@ -277,10 +277,10 @@
     .line 133
     invoke-virtual {v5, v3, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v2, "dialogTextGray3"
-
     .line 134
-    invoke-static {v1, v2}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$500(Lorg/telegram/ui/Components/PhonebookShareAlert;Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray3:I
+
+    invoke-static {v1, v2}, Lorg/telegram/ui/Components/PhonebookShareAlert;->access$500(Lorg/telegram/ui/Components/PhonebookShareAlert;I)I
 
     move-result v1
 

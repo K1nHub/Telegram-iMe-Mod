@@ -742,6 +742,41 @@
     return p0
 .end method
 
+.method public static intersect(Ljava/lang/Iterable;Ljava/lang/Iterable;)Ljava/util/Set;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/lang/Iterable<",
+            "+TT;>;",
+            "Ljava/lang/Iterable<",
+            "+TT;>;)",
+            "Ljava/util/Set<",
+            "TT;>;"
+        }
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "other"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 1673
+    invoke-static {p0}, Lkotlin/collections/CollectionsKt;->toMutableSet(Ljava/lang/Iterable;)Ljava/util/Set;
+
+    move-result-object p0
+
+    .line 1674
+    invoke-static {p0, p1}, Lkotlin/collections/CollectionsKt__MutableCollectionsKt;->retainAll(Ljava/util/Collection;Ljava/lang/Iterable;)Z
+
+    return-object p0
+.end method
+
 .method public static final joinTo(Ljava/lang/Iterable;Ljava/lang/Appendable;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ILjava/lang/CharSequence;Lkotlin/jvm/functions/Function1;)Ljava/lang/Appendable;
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
@@ -1268,6 +1303,77 @@
     return-object p0
 .end method
 
+.method public static maxOrNull(Ljava/lang/Iterable;)Ljava/lang/Comparable;
+    .locals 3
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T::",
+            "Ljava/lang/Comparable<",
+            "-TT;>;>(",
+            "Ljava/lang/Iterable<",
+            "+TT;>;)TT;"
+        }
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 2194
+    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    .line 2195
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 p0, 0x0
+
+    return-object p0
+
+    .line 2196
+    :cond_0
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v0
+
+    check-cast v0, Ljava/lang/Comparable;
+
+    .line 2197
+    :cond_1
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v1
+
+    if-eqz v1, :cond_2
+
+    .line 2198
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Ljava/lang/Comparable;
+
+    .line 2199
+    invoke-interface {v0, v1}, Ljava/lang/Comparable;->compareTo(Ljava/lang/Object;)I
+
+    move-result v2
+
+    if-gez v2, :cond_1
+
+    move-object v0, v1
+
+    goto :goto_0
+
+    :cond_2
+    return-object v0
+.end method
+
 .method public static minOrNull(Ljava/lang/Iterable;)Ljava/lang/Comparable;
     .locals 3
     .annotation system Ldalvik/annotation/Signature;
@@ -1332,6 +1438,83 @@
     if-lez v2, :cond_1
 
     move-object v0, v1
+
+    goto :goto_0
+
+    :cond_2
+    return-object v0
+.end method
+
+.method public static minus(Ljava/lang/Iterable;Ljava/lang/Object;)Ljava/util/List;
+    .locals 6
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/lang/Iterable<",
+            "+TT;>;TT;)",
+            "Ljava/util/List<",
+            "TT;>;"
+        }
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 3141
+    new-instance v0, Ljava/util/ArrayList;
+
+    const/16 v1, 0xa
+
+    invoke-static {p0, v1}, Lkotlin/collections/CollectionsKt;->collectionSizeOrDefault(Ljava/lang/Iterable;I)I
+
+    move-result v1
+
+    invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(I)V
+
+    .line 857
+    invoke-interface {p0}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object p0
+
+    const/4 v1, 0x0
+
+    move v2, v1
+
+    :cond_0
+    :goto_0
+    invoke-interface {p0}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    invoke-interface {p0}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v3
+
+    const/4 v4, 0x1
+
+    if-nez v2, :cond_1
+
+    .line 3143
+    invoke-static {v3, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1
+
+    move v2, v4
+
+    move v4, v1
+
+    :cond_1
+    if-eqz v4, :cond_0
+
+    .line 857
+    invoke-interface {v0, v3}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
@@ -1540,6 +1723,59 @@
     invoke-direct {p0, p1}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
 
     throw p0
+.end method
+
+.method public static reversed(Ljava/lang/Iterable;)Ljava/util/List;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/lang/Iterable<",
+            "+TT;>;)",
+            "Ljava/util/List<",
+            "TT;>;"
+        }
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 977
+    instance-of v0, p0, Ljava/util/Collection;
+
+    if-eqz v0, :cond_0
+
+    move-object v0, p0
+
+    check-cast v0, Ljava/util/Collection;
+
+    invoke-interface {v0}, Ljava/util/Collection;->size()I
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-gt v0, v1, :cond_0
+
+    invoke-static {p0}, Lkotlin/collections/CollectionsKt;->toList(Ljava/lang/Iterable;)Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 978
+    :cond_0
+    invoke-static {p0}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/lang/Iterable;)Ljava/util/List;
+
+    move-result-object p0
+
+    .line 979
+    invoke-static {p0}, Lkotlin/collections/CollectionsKt___CollectionsJvmKt;->reverse(Ljava/util/List;)V
+
+    return-object p0
 .end method
 
 .method public static single(Ljava/lang/Iterable;)Ljava/lang/Object;

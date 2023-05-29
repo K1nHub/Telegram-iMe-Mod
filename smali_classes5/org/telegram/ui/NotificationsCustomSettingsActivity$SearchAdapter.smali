@@ -88,29 +88,29 @@
 .method public constructor <init>(Lorg/telegram/ui/NotificationsCustomSettingsActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 973
+    .line 979
     iput-object p1, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->this$0:Lorg/telegram/ui/NotificationsCustomSettingsActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 968
+    .line 974
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchResult:Ljava/util/ArrayList;
 
-    .line 969
+    .line 975
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchResultNames:Ljava/util/ArrayList;
 
-    .line 974
+    .line 980
     iput-object p2, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->mContext:Landroid/content/Context;
 
-    .line 975
+    .line 981
     new-instance p1, Lorg/telegram/ui/Adapters/SearchAdapterHelper;
 
     const/4 p2, 0x1
@@ -119,7 +119,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchAdapterHelper:Lorg/telegram/ui/Adapters/SearchAdapterHelper;
 
-    .line 976
+    .line 982
     new-instance p2, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter$$ExternalSyntheticLambda4;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;)V
@@ -132,7 +132,7 @@
 .method static synthetic access$3100(Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 965
+    .line 971
     iget-object p0, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchResult:Ljava/util/ArrayList;
 
     return-object p0
@@ -141,7 +141,7 @@
 .method private synthetic lambda$new$0(I)V
     .locals 0
 
-    .line 977
+    .line 983
     iget-object p1, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchRunnable:Ljava/lang/Runnable;
 
     if-nez p1, :cond_0
@@ -154,7 +154,7 @@
 
     if-nez p1, :cond_0
 
-    .line 978
+    .line 984
     iget-object p1, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->this$0:Lorg/telegram/ui/NotificationsCustomSettingsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/NotificationsCustomSettingsActivity;->access$100(Lorg/telegram/ui/NotificationsCustomSettingsActivity;)Lorg/telegram/ui/Components/EmptyTextProgressView;
@@ -163,7 +163,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/EmptyTextProgressView;->showTextView()V
 
-    .line 980
+    .line 986
     :cond_0
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
@@ -175,7 +175,7 @@
 
     move-object/from16 v0, p0
 
-    .line 1005
+    .line 1011
     invoke-virtual/range {p1 .. p1}, Ljava/lang/String;->trim()Ljava/lang/String;
 
     move-result-object v1
@@ -184,14 +184,14 @@
 
     move-result-object v1
 
-    .line 1006
+    .line 1012
     invoke-virtual {v1}, Ljava/lang/String;->length()I
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 1007
+    .line 1013
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
@@ -208,7 +208,7 @@
 
     return-void
 
-    .line 1010
+    .line 1016
     :cond_0
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
@@ -218,7 +218,7 @@
 
     move-result-object v2
 
-    .line 1011
+    .line 1017
     invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
@@ -251,29 +251,29 @@
     :goto_0
     add-int/2addr v6, v3
 
-    .line 1014
+    .line 1020
     new-array v7, v6, [Ljava/lang/String;
 
-    .line 1015
+    .line 1021
     aput-object v1, v7, v5
 
     if-eqz v2, :cond_4
 
-    .line 1017
+    .line 1023
     aput-object v2, v7, v3
 
-    .line 1020
+    .line 1026
     :cond_4
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1021
+    .line 1027
     new-instance v2, Ljava/util/ArrayList;
 
     invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1022
+    .line 1028
     new-instance v8, Ljava/util/ArrayList;
 
     invoke-direct {v8}, Ljava/util/ArrayList;-><init>()V
@@ -284,7 +284,7 @@
 
     move v11, v5
 
-    .line 1025
+    .line 1031
     :goto_1
     invoke-virtual/range {p2 .. p2}, Ljava/util/ArrayList;->size()I
 
@@ -294,14 +294,14 @@
 
     move-object/from16 v12, p2
 
-    .line 1026
+    .line 1032
     invoke-virtual {v12, v11}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v13
 
     check-cast v13, Lorg/telegram/ui/NotificationsSettingsActivity$NotificationException;
 
-    .line 1030
+    .line 1036
     iget-wide v14, v13, Lorg/telegram/ui/NotificationsSettingsActivity$NotificationException;->did:J
 
     invoke-static {v14, v15}, Lorg/telegram/messenger/DialogObject;->isEncryptedDialog(J)Z
@@ -310,7 +310,7 @@
 
     if-eqz v14, :cond_6
 
-    .line 1031
+    .line 1037
     iget-object v14, v0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->this$0:Lorg/telegram/ui/NotificationsCustomSettingsActivity;
 
     invoke-virtual {v14}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -333,7 +333,7 @@
 
     if-eqz v3, :cond_5
 
-    .line 1033
+    .line 1039
     iget-object v4, v0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->this$0:Lorg/telegram/ui/NotificationsCustomSettingsActivity;
 
     invoke-virtual {v4}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -354,7 +354,7 @@
 
     if-eqz v3, :cond_b
 
-    .line 1035
+    .line 1041
     iget-object v4, v3, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
     iget-object v5, v3, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
@@ -367,7 +367,7 @@
 
     aput-object v4, v10, v5
 
-    .line 1036
+    .line 1042
     invoke-static {v3}, Lorg/telegram/messenger/UserObject;->getPublicUsername(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
     move-result-object v3
@@ -386,7 +386,7 @@
     :cond_6
     move/from16 v16, v6
 
-    .line 1039
+    .line 1045
     iget-wide v3, v13, Lorg/telegram/ui/NotificationsSettingsActivity$NotificationException;->did:J
 
     invoke-static {v3, v4}, Lorg/telegram/messenger/DialogObject;->isUserDialog(J)Z
@@ -395,7 +395,7 @@
 
     if-eqz v3, :cond_9
 
-    .line 1040
+    .line 1046
     iget-object v3, v0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->this$0:Lorg/telegram/ui/NotificationsCustomSettingsActivity;
 
     invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -414,14 +414,14 @@
 
     if-eqz v3, :cond_8
 
-    .line 1041
+    .line 1047
     iget-boolean v4, v3, Lorg/telegram/tgnet/TLRPC$User;->deleted:Z
 
     if-eqz v4, :cond_7
 
     goto :goto_2
 
-    .line 1044
+    .line 1050
     :cond_7
     iget-object v4, v3, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
@@ -435,7 +435,7 @@
 
     aput-object v4, v10, v5
 
-    .line 1045
+    .line 1051
     invoke-static {v3}, Lorg/telegram/messenger/UserObject;->getPublicUsername(Lorg/telegram/tgnet/TLRPC$User;)Ljava/lang/String;
 
     move-result-object v4
@@ -461,7 +461,7 @@
 
     goto/16 :goto_a
 
-    .line 1048
+    .line 1054
     :cond_9
     iget-object v3, v0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->this$0:Lorg/telegram/ui/NotificationsCustomSettingsActivity;
 
@@ -483,7 +483,7 @@
 
     if-eqz v3, :cond_b
 
-    .line 1050
+    .line 1056
     iget-boolean v4, v3, Lorg/telegram/tgnet/TLRPC$Chat;->left:Z
 
     if-nez v4, :cond_8
@@ -498,7 +498,7 @@
 
     goto :goto_2
 
-    .line 1053
+    .line 1059
     :cond_a
     iget-object v4, v3, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
 
@@ -506,7 +506,7 @@
 
     aput-object v4, v10, v5
 
-    .line 1054
+    .line 1060
     invoke-static {v3}, Lorg/telegram/messenger/ChatObject;->getPublicUsername(Lorg/telegram/tgnet/TLRPC$Chat;)Ljava/lang/String;
 
     move-result-object v4
@@ -523,11 +523,11 @@
 
     const/4 v3, 0x0
 
-    .line 1059
+    .line 1065
     :goto_5
     aget-object v4, v10, v5
 
-    .line 1060
+    .line 1066
     aget-object v6, v10, v5
 
     invoke-virtual {v6}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
@@ -536,7 +536,7 @@
 
     aput-object v6, v10, v5
 
-    .line 1061
+    .line 1067
     invoke-static {}, Lorg/telegram/messenger/LocaleController;->getInstance()Lorg/telegram/messenger/LocaleController;
 
     move-result-object v6
@@ -547,7 +547,7 @@
 
     move-result-object v6
 
-    .line 1062
+    .line 1068
     aget-object v14, v10, v5
 
     if-eqz v14, :cond_c
@@ -572,10 +572,10 @@
     :goto_6
     if-ge v14, v9, :cond_13
 
-    .line 1068
+    .line 1074
     aget-object v15, v7, v14
 
-    .line 1069
+    .line 1075
     aget-object v17, v10, v5
 
     move-object/from16 v18, v7
@@ -656,7 +656,7 @@
     :cond_f
     const/4 v5, 0x1
 
-    .line 1071
+    .line 1077
     aget-object v7, v10, v5
 
     if-eqz v7, :cond_10
@@ -683,7 +683,7 @@
 
     const/4 v6, 0x0
 
-    .line 1077
+    .line 1083
     invoke-static {v4, v6, v15}, Lorg/telegram/messenger/AndroidUtilities;->generateSearchName(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)Ljava/lang/CharSequence;
 
     move-result-object v4
@@ -694,7 +694,7 @@
 
     goto :goto_9
 
-    .line 1079
+    .line 1085
     :cond_11
     new-instance v4, Ljava/lang/StringBuilder;
 
@@ -732,13 +732,13 @@
 
     invoke-virtual {v8, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1081
+    .line 1087
     :goto_9
     invoke-virtual {v2, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     if-eqz v3, :cond_14
 
-    .line 1083
+    .line 1089
     invoke-virtual {v1, v3}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     goto :goto_a
@@ -781,7 +781,7 @@
 
     goto/16 :goto_1
 
-    .line 1089
+    .line 1095
     :cond_15
     invoke-direct {v0, v1, v2, v8}, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->updateSearchResults(Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
 
@@ -791,7 +791,7 @@
 .method private synthetic lambda$processSearch$3(Ljava/lang/String;)V
     .locals 12
 
-    .line 1002
+    .line 1008
     iget-object v0, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchAdapterHelper:Lorg/telegram/ui/Adapters/SearchAdapterHelper;
 
     iget-object v1, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->this$0:Lorg/telegram/ui/NotificationsCustomSettingsActivity;
@@ -834,7 +834,7 @@
 
     invoke-virtual/range {v0 .. v11}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->queryServerSearch(Ljava/lang/String;ZZZZZJZII)V
 
-    .line 1003
+    .line 1009
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->this$0:Lorg/telegram/ui/NotificationsCustomSettingsActivity;
@@ -845,7 +845,7 @@
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 1004
+    .line 1010
     sget-object v1, Lorg/telegram/messenger/Utilities;->searchQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v2, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter$$ExternalSyntheticLambda2;
@@ -860,7 +860,7 @@
 .method private synthetic lambda$searchDialogs$1(Ljava/lang/String;)V
     .locals 0
 
-    .line 996
+    .line 1002
     invoke-direct {p0, p1}, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->processSearch(Ljava/lang/String;)V
 
     return-void
@@ -869,7 +869,7 @@
 .method private synthetic lambda$updateSearchResults$4(Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
     .locals 1
 
-    .line 1096
+    .line 1102
     iget-object v0, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->this$0:Lorg/telegram/ui/NotificationsCustomSettingsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/NotificationsCustomSettingsActivity;->access$000(Lorg/telegram/ui/NotificationsCustomSettingsActivity;)Z
@@ -883,21 +883,21 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 1099
+    .line 1105
     iput-object v0, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchRunnable:Ljava/lang/Runnable;
 
-    .line 1100
+    .line 1106
     iput-object p1, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchResult:Ljava/util/ArrayList;
 
-    .line 1101
+    .line 1107
     iput-object p2, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchResultNames:Ljava/util/ArrayList;
 
-    .line 1102
+    .line 1108
     iget-object p1, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchAdapterHelper:Lorg/telegram/ui/Adapters/SearchAdapterHelper;
 
     invoke-virtual {p1, p3}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->mergeResults(Ljava/util/ArrayList;)V
 
-    .line 1103
+    .line 1109
     iget-object p1, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->this$0:Lorg/telegram/ui/NotificationsCustomSettingsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/NotificationsCustomSettingsActivity;->access$000(Lorg/telegram/ui/NotificationsCustomSettingsActivity;)Z
@@ -914,7 +914,7 @@
 
     if-nez p1, :cond_1
 
-    .line 1104
+    .line 1110
     iget-object p1, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->this$0:Lorg/telegram/ui/NotificationsCustomSettingsActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/NotificationsCustomSettingsActivity;->access$100(Lorg/telegram/ui/NotificationsCustomSettingsActivity;)Lorg/telegram/ui/Components/EmptyTextProgressView;
@@ -923,7 +923,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/EmptyTextProgressView;->showTextView()V
 
-    .line 1106
+    .line 1112
     :cond_1
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
@@ -933,7 +933,7 @@
 .method private processSearch(Ljava/lang/String;)V
     .locals 1
 
-    .line 1001
+    .line 1007
     new-instance v0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;Ljava/lang/String;)V
@@ -960,7 +960,7 @@
         }
     .end annotation
 
-    .line 1095
+    .line 1101
     new-instance v0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter$$ExternalSyntheticLambda3;
 
     invoke-direct {v0, p0, p2, p3, p1}, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;Ljava/util/ArrayList;Ljava/util/ArrayList;Ljava/util/ArrayList;)V
@@ -975,28 +975,28 @@
 .method public getItemCount()I
     .locals 3
 
-    .line 1130
+    .line 1136
     iget-object v0, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchResult:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 1131
+    .line 1137
     iget-object v1, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchAdapterHelper:Lorg/telegram/ui/Adapters/SearchAdapterHelper;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->getGlobalSearch()Ljava/util/ArrayList;
 
     move-result-object v1
 
-    .line 1132
+    .line 1138
     invoke-virtual {v1}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v2
 
     if-nez v2, :cond_0
 
-    .line 1133
+    .line 1139
     invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
 
     move-result v1
@@ -1012,7 +1012,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 1184
+    .line 1190
     iget-object v0, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchResult:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1036,7 +1036,7 @@
 
     if-ltz p1, :cond_0
 
-    .line 1111
+    .line 1117
     iget-object v0, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchResult:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1045,7 +1045,7 @@
 
     if-ge p1, v0, :cond_0
 
-    .line 1112
+    .line 1118
     iget-object v0, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchResult:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1054,7 +1054,7 @@
 
     return-object p1
 
-    .line 1114
+    .line 1120
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchResult:Ljava/util/ArrayList;
 
@@ -1066,7 +1066,7 @@
 
     sub-int/2addr p1, v0
 
-    .line 1115
+    .line 1121
     iget-object v0, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchAdapterHelper:Lorg/telegram/ui/Adapters/SearchAdapterHelper;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->getGlobalSearch()Ljava/util/ArrayList;
@@ -1075,14 +1075,14 @@
 
     if-ltz p1, :cond_1
 
-    .line 1116
+    .line 1122
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
     if-ge p1, v0, :cond_1
 
-    .line 1117
+    .line 1123
     iget-object v0, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchAdapterHelper:Lorg/telegram/ui/Adapters/SearchAdapterHelper;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->getGlobalSearch()Ljava/util/ArrayList;
@@ -1112,7 +1112,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 8
 
-    .line 1159
+    .line 1165
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -1125,13 +1125,13 @@
 
     goto/16 :goto_2
 
-    .line 1175
+    .line 1181
     :cond_0
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/GraySectionCell;
 
-    .line 1176
+    .line 1182
     sget p2, Lorg/telegram/messenger/R$string;->AddToExceptions:I
 
     const-string v0, "AddToExceptions"
@@ -1144,13 +1144,13 @@
 
     goto :goto_2
 
-    .line 1161
+    .line 1167
     :cond_1
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/UserCell;
 
-    .line 1162
+    .line 1168
     iget-object v0, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchResult:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -1161,7 +1161,7 @@
 
     if-ge p2, v0, :cond_3
 
-    .line 1163
+    .line 1169
     iget-object v0, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchResult:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1196,12 +1196,12 @@
     :goto_0
     invoke-virtual {p1, v0, v3, v1}, Lorg/telegram/ui/Cells/UserCell;->setException(Lorg/telegram/ui/NotificationsSettingsActivity$NotificationException;Ljava/lang/CharSequence;Z)V
 
-    .line 1164
+    .line 1170
     invoke-virtual {p1, v2}, Lorg/telegram/ui/Cells/UserCell;->setAddButtonVisible(Z)V
 
     goto :goto_2
 
-    .line 1166
+    .line 1172
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchResult:Ljava/util/ArrayList;
 
@@ -1213,14 +1213,14 @@
 
     sub-int/2addr p2, v0
 
-    .line 1167
+    .line 1173
     iget-object v0, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchAdapterHelper:Lorg/telegram/ui/Adapters/SearchAdapterHelper;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->getGlobalSearch()Ljava/util/ArrayList;
 
     move-result-object v0
 
-    .line 1168
+    .line 1174
     invoke-virtual {v0, p2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -1229,7 +1229,7 @@
 
     const/4 v4, 0x0
 
-    .line 1169
+    .line 1175
     sget v5, Lorg/telegram/messenger/R$string;->NotificationsOn:I
 
     const-string v6, "NotificationsOn"
@@ -1260,7 +1260,7 @@
 
     invoke-virtual/range {v2 .. v7}, Lorg/telegram/ui/Cells/UserCell;->setData(Ljava/lang/Object;Ljava/lang/CharSequence;Ljava/lang/CharSequence;IZ)V
 
-    .line 1170
+    .line 1176
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Cells/UserCell;->setAddButtonVisible(Z)V
 
     :goto_2
@@ -1272,7 +1272,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 1149
+    .line 1155
     new-instance p1, Lorg/telegram/ui/Cells/GraySectionCell;
 
     iget-object p2, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->mContext:Landroid/content/Context;
@@ -1281,7 +1281,7 @@
 
     goto :goto_0
 
-    .line 1143
+    .line 1149
     :cond_0
     new-instance p1, Lorg/telegram/ui/Cells/UserCell;
 
@@ -1299,16 +1299,16 @@
 
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Cells/UserCell;-><init>(Landroid/content/Context;IIZZ)V
 
-    const-string p2, "windowBackgroundWhite"
+    .line 1150
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    .line 1144
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 1154
+    .line 1160
     :goto_0
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
@@ -1320,42 +1320,42 @@
 .method public searchDialogs(Ljava/lang/String;)V
     .locals 14
 
-    .line 985
+    .line 991
     iget-object v0, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchRunnable:Ljava/lang/Runnable;
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 986
+    .line 992
     sget-object v0, Lorg/telegram/messenger/Utilities;->searchQueue:Lorg/telegram/messenger/DispatchQueue;
 
     iget-object v2, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v2}, Lorg/telegram/messenger/DispatchQueue;->cancelRunnable(Ljava/lang/Runnable;)V
 
-    .line 987
+    .line 993
     iput-object v1, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchRunnable:Ljava/lang/Runnable;
 
     :cond_0
     if-nez p1, :cond_2
 
-    .line 990
+    .line 996
     iget-object p1, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchResult:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
 
-    .line 991
+    .line 997
     iget-object p1, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchResultNames:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
 
-    .line 992
+    .line 998
     iget-object p1, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchAdapterHelper:Lorg/telegram/ui/Adapters/SearchAdapterHelper;
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->mergeResults(Ljava/util/ArrayList;)V
 
-    .line 993
+    .line 999
     iget-object v2, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$SearchAdapter;->searchAdapterHelper:Lorg/telegram/ui/Adapters/SearchAdapterHelper;
 
     const/4 v3, 0x0
@@ -1398,12 +1398,12 @@
 
     invoke-virtual/range {v2 .. v13}, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->queryServerSearch(Ljava/lang/String;ZZZZZJZII)V
 
-    .line 994
+    .line 1000
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     goto :goto_1
 
-    .line 996
+    .line 1002
     :cond_2
     sget-object v0, Lorg/telegram/messenger/Utilities;->searchQueue:Lorg/telegram/messenger/DispatchQueue;
 

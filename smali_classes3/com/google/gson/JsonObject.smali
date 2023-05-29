@@ -200,3 +200,18 @@
 
     return v0
 .end method
+
+.method public remove(Ljava/lang/String;)Lcom/google/gson/JsonElement;
+    .locals 1
+
+    .line 81
+    iget-object v0, p0, Lcom/google/gson/JsonObject;->members:Lcom/google/gson/internal/LinkedTreeMap;
+
+    invoke-virtual {v0, p1}, Lcom/google/gson/internal/LinkedTreeMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Lcom/google/gson/JsonElement;
+
+    return-object p1
+.end method

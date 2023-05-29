@@ -240,9 +240,9 @@
     .line 106
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v3, "actionBarDefaultSubmenuBackground"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuBackground:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -333,10 +333,10 @@
 
     iput-object v2, v6, Lorg/telegram/ui/Components/SenderSelectPopup;->headerText:Landroid/widget/TextView;
 
-    const-string v3, "dialogTextBlue"
-
     .line 131
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlue:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 

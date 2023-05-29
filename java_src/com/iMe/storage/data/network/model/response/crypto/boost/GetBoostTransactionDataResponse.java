@@ -199,7 +199,7 @@ public final class GetBoostTransactionDataResponse {
             private final String from;
 
             /* renamed from: to */
-            private final String f301to;
+            private final String f305to;
             private final String value;
 
             public static /* synthetic */ TransferMethodParamsResponse copy$default(TransferMethodParamsResponse transferMethodParamsResponse, String str, String str2, String str3, String str4, int i, Object obj) {
@@ -207,7 +207,7 @@ public final class GetBoostTransactionDataResponse {
                     str = transferMethodParamsResponse.from;
                 }
                 if ((i & 2) != 0) {
-                    str2 = transferMethodParamsResponse.f301to;
+                    str2 = transferMethodParamsResponse.f305to;
                 }
                 if ((i & 4) != 0) {
                     str3 = transferMethodParamsResponse.value;
@@ -223,7 +223,7 @@ public final class GetBoostTransactionDataResponse {
             }
 
             public final String component2() {
-                return this.f301to;
+                return this.f305to;
             }
 
             public final String component3() {
@@ -247,19 +247,19 @@ public final class GetBoostTransactionDataResponse {
                 }
                 if (obj instanceof TransferMethodParamsResponse) {
                     TransferMethodParamsResponse transferMethodParamsResponse = (TransferMethodParamsResponse) obj;
-                    return Intrinsics.areEqual(this.from, transferMethodParamsResponse.from) && Intrinsics.areEqual(this.f301to, transferMethodParamsResponse.f301to) && Intrinsics.areEqual(this.value, transferMethodParamsResponse.value) && Intrinsics.areEqual(this.contractAddress, transferMethodParamsResponse.contractAddress);
+                    return Intrinsics.areEqual(this.from, transferMethodParamsResponse.from) && Intrinsics.areEqual(this.f305to, transferMethodParamsResponse.f305to) && Intrinsics.areEqual(this.value, transferMethodParamsResponse.value) && Intrinsics.areEqual(this.contractAddress, transferMethodParamsResponse.contractAddress);
                 }
                 return false;
             }
 
             public int hashCode() {
-                int hashCode = ((((this.from.hashCode() * 31) + this.f301to.hashCode()) * 31) + this.value.hashCode()) * 31;
+                int hashCode = ((((this.from.hashCode() * 31) + this.f305to.hashCode()) * 31) + this.value.hashCode()) * 31;
                 String str = this.contractAddress;
                 return hashCode + (str == null ? 0 : str.hashCode());
             }
 
             public String toString() {
-                return "TransferMethodParamsResponse(from=" + this.from + ", to=" + this.f301to + ", value=" + this.value + ", contractAddress=" + this.contractAddress + ')';
+                return "TransferMethodParamsResponse(from=" + this.from + ", to=" + this.f305to + ", value=" + this.value + ", contractAddress=" + this.contractAddress + ')';
             }
 
             public TransferMethodParamsResponse(String from, String to, String value, String str) {
@@ -267,7 +267,7 @@ public final class GetBoostTransactionDataResponse {
                 Intrinsics.checkNotNullParameter(to, "to");
                 Intrinsics.checkNotNullParameter(value, "value");
                 this.from = from;
-                this.f301to = to;
+                this.f305to = to;
                 this.value = value;
                 this.contractAddress = str;
             }
@@ -277,7 +277,7 @@ public final class GetBoostTransactionDataResponse {
             }
 
             public final String getTo() {
-                return this.f301to;
+                return this.f305to;
             }
 
             public final String getValue() {

@@ -124,7 +124,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 78
+    .line 79
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     const-string v1, "PIN_CODE_MAX_ATTEMPTS"
@@ -135,7 +135,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->PIN_CODE_MAX_ATTEMPTS:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
-    .line 79
+    .line 80
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     const-string v1, "ETHER_BLOCK_CHAIN_ERROR"
@@ -146,7 +146,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->ETHER_BLOCK_CHAIN_ERROR:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
-    .line 80
+    .line 81
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     const-string v1, "SIMPLEX_QUOTE_ALREADY_USED"
@@ -157,7 +157,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->SIMPLEX_QUOTE_ALREADY_USED:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
-    .line 81
+    .line 82
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     const-string v1, "SWAP_APPROVED_AMOUNT_NOT_SUFFICIENT"
@@ -168,7 +168,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->SWAP_APPROVED_AMOUNT_NOT_SUFFICIENT:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
-    .line 82
+    .line 83
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     const-string v1, "SWAP_DIFF_BTW_TOKEN_EXCHANGE_RATES_IS_TOO_BIG"
@@ -179,7 +179,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->SWAP_DIFF_BTW_TOKEN_EXCHANGE_RATES_IS_TOO_BIG:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
-    .line 83
+    .line 84
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     const-string v1, "SWAP_QUOTE_NOT_FOUND"
@@ -190,7 +190,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->SWAP_QUOTE_NOT_FOUND:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
-    .line 84
+    .line 85
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     const-string v1, "SWAP_INSUFFICIENT_RESERVES_IN_LIQUIDITY_POOL_OF_TOKENS"
@@ -201,7 +201,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->SWAP_INSUFFICIENT_RESERVES_IN_LIQUIDITY_POOL_OF_TOKENS:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
-    .line 85
+    .line 86
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     const-string v1, "DONATIONS_NOT_CONFIGURED_YET"
@@ -212,7 +212,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->DONATIONS_NOT_CONFIGURED_YET:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
-    .line 86
+    .line 87
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     const-string v1, "DONATIONS_ADDRESS_ALREADY_LINKED"
@@ -223,7 +223,7 @@
 
     sput-object v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;->DONATIONS_ADDRESS_ALREADY_LINKED:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
-    .line 87
+    .line 88
     new-instance v0, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler$CryptoErrorStatus;
 
     const-string v1, "ETHER_WALLET_NOT_LINKED"
@@ -251,7 +251,7 @@
         }
     .end annotation
 
-    .line 77
+    .line 78
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
     return-void

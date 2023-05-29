@@ -18,7 +18,7 @@ import java.util.Iterator;
 public final class SQLiteTargetCache implements TargetCache {
 
     /* renamed from: db */
-    private final SQLitePersistence f177db;
+    private final SQLitePersistence f180db;
     private int highestTargetId;
     private long lastListenSequenceNumber;
     private SnapshotVersion lastRemoteSnapshotVersion = SnapshotVersion.NONE;
@@ -27,13 +27,13 @@ public final class SQLiteTargetCache implements TargetCache {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public SQLiteTargetCache(SQLitePersistence sQLitePersistence, LocalSerializer localSerializer) {
-        this.f177db = sQLitePersistence;
+        this.f180db = sQLitePersistence;
         this.localSerializer = localSerializer;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public void start() {
-        Assert.hardAssert(this.f177db.query("SELECT highest_target_id, highest_listen_sequence_number, last_remote_snapshot_version_seconds, last_remote_snapshot_version_nanos, target_count FROM target_globals LIMIT 1").first(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteTargetCache$$ExternalSyntheticLambda1
+        Assert.hardAssert(this.f180db.query("SELECT highest_target_id, highest_listen_sequence_number, last_remote_snapshot_version_seconds, last_remote_snapshot_version_nanos, target_count FROM target_globals LIMIT 1").first(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteTargetCache$$ExternalSyntheticLambda1
             @Override // com.google.firebase.firestore.util.Consumer
             public final void accept(Object obj) {
                 SQLiteTargetCache.this.lambda$start$0((Cursor) obj);
@@ -63,7 +63,7 @@ public final class SQLiteTargetCache implements TargetCache {
     }
 
     public void forEachTarget(final Consumer<TargetData> consumer) {
-        this.f177db.query("SELECT target_proto FROM targets").forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteTargetCache$$ExternalSyntheticLambda4
+        this.f180db.query("SELECT target_proto FROM targets").forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteTargetCache$$ExternalSyntheticLambda4
             @Override // com.google.firebase.firestore.util.Consumer
             public final void accept(Object obj) {
                 SQLiteTargetCache.this.lambda$forEachTarget$1(consumer, (Cursor) obj);
@@ -91,7 +91,7 @@ public final class SQLiteTargetCache implements TargetCache {
         int targetId = targetData.getTargetId();
         String canonicalId = targetData.getTarget().getCanonicalId();
         Timestamp timestamp = targetData.getSnapshotVersion().getTimestamp();
-        this.f177db.execute("INSERT OR REPLACE INTO targets (target_id, canonical_id, snapshot_version_seconds, snapshot_version_nanos, resume_token, last_listen_sequence_number, target_proto) VALUES (?, ?, ?, ?, ?, ?, ?)", Integer.valueOf(targetId), canonicalId, Long.valueOf(timestamp.getSeconds()), Integer.valueOf(timestamp.getNanoseconds()), targetData.getResumeToken().toByteArray(), Long.valueOf(targetData.getSequenceNumber()), this.localSerializer.encodeTargetData(targetData).toByteArray());
+        this.f180db.execute("INSERT OR REPLACE INTO targets (target_id, canonical_id, snapshot_version_seconds, snapshot_version_nanos, resume_token, last_listen_sequence_number, target_proto) VALUES (?, ?, ?, ?, ?, ?, ?)", Integer.valueOf(targetId), canonicalId, Long.valueOf(timestamp.getSeconds()), Integer.valueOf(timestamp.getNanoseconds()), targetData.getResumeToken().toByteArray(), Long.valueOf(targetData.getSequenceNumber()), this.localSerializer.encodeTargetData(targetData).toByteArray());
     }
 
     private boolean updateMetadata(TargetData targetData) {
@@ -126,19 +126,19 @@ public final class SQLiteTargetCache implements TargetCache {
     }
 
     private void writeMetadata() {
-        this.f177db.execute("UPDATE target_globals SET highest_target_id = ?, highest_listen_sequence_number = ?, last_remote_snapshot_version_seconds = ?, last_remote_snapshot_version_nanos = ?, target_count = ?", Integer.valueOf(this.highestTargetId), Long.valueOf(this.lastListenSequenceNumber), Long.valueOf(this.lastRemoteSnapshotVersion.getTimestamp().getSeconds()), Integer.valueOf(this.lastRemoteSnapshotVersion.getTimestamp().getNanoseconds()), Long.valueOf(this.targetCount));
+        this.f180db.execute("UPDATE target_globals SET highest_target_id = ?, highest_listen_sequence_number = ?, last_remote_snapshot_version_seconds = ?, last_remote_snapshot_version_nanos = ?, target_count = ?", Integer.valueOf(this.highestTargetId), Long.valueOf(this.lastListenSequenceNumber), Long.valueOf(this.lastRemoteSnapshotVersion.getTimestamp().getSeconds()), Integer.valueOf(this.lastRemoteSnapshotVersion.getTimestamp().getNanoseconds()), Long.valueOf(this.targetCount));
     }
 
     private void removeTarget(int i) {
         removeMatchingKeysForTargetId(i);
-        this.f177db.execute("DELETE FROM targets WHERE target_id = ?", Integer.valueOf(i));
+        this.f180db.execute("DELETE FROM targets WHERE target_id = ?", Integer.valueOf(i));
         this.targetCount--;
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public int removeQueries(long j, final SparseArray<?> sparseArray) {
         final int[] iArr = new int[1];
-        this.f177db.query("SELECT target_id FROM targets WHERE last_listen_sequence_number <= ?").binding(Long.valueOf(j)).forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteTargetCache$$ExternalSyntheticLambda2
+        this.f180db.query("SELECT target_id FROM targets WHERE last_listen_sequence_number <= ?").binding(Long.valueOf(j)).forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteTargetCache$$ExternalSyntheticLambda2
             @Override // com.google.firebase.firestore.util.Consumer
             public final void accept(Object obj) {
                 SQLiteTargetCache.this.lambda$removeQueries$2(sparseArray, iArr, (Cursor) obj);
@@ -161,7 +161,7 @@ public final class SQLiteTargetCache implements TargetCache {
     public TargetData getTargetData(final Target target) {
         String canonicalId = target.getCanonicalId();
         final TargetDataHolder targetDataHolder = new TargetDataHolder();
-        this.f177db.query("SELECT target_proto FROM targets WHERE canonical_id = ?").binding(canonicalId).forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteTargetCache$$ExternalSyntheticLambda3
+        this.f180db.query("SELECT target_proto FROM targets WHERE canonical_id = ?").binding(canonicalId).forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteTargetCache$$ExternalSyntheticLambda3
             @Override // com.google.firebase.firestore.util.Consumer
             public final void accept(Object obj) {
                 SQLiteTargetCache.this.lambda$getTargetData$3(target, targetDataHolder, (Cursor) obj);
@@ -197,36 +197,36 @@ public final class SQLiteTargetCache implements TargetCache {
 
     @Override // com.google.firebase.firestore.local.TargetCache
     public void addMatchingKeys(ImmutableSortedSet<DocumentKey> immutableSortedSet, int i) {
-        SQLiteStatement prepare = this.f177db.prepare("INSERT OR IGNORE INTO target_documents (target_id, path) VALUES (?, ?)");
-        SQLiteLruReferenceDelegate referenceDelegate = this.f177db.getReferenceDelegate();
+        SQLiteStatement prepare = this.f180db.prepare("INSERT OR IGNORE INTO target_documents (target_id, path) VALUES (?, ?)");
+        SQLiteLruReferenceDelegate referenceDelegate = this.f180db.getReferenceDelegate();
         Iterator<DocumentKey> it = immutableSortedSet.iterator();
         while (it.hasNext()) {
             DocumentKey next = it.next();
-            this.f177db.execute(prepare, Integer.valueOf(i), EncodedPath.encode(next.getPath()));
+            this.f180db.execute(prepare, Integer.valueOf(i), EncodedPath.encode(next.getPath()));
             referenceDelegate.addReference(next);
         }
     }
 
     @Override // com.google.firebase.firestore.local.TargetCache
     public void removeMatchingKeys(ImmutableSortedSet<DocumentKey> immutableSortedSet, int i) {
-        SQLiteStatement prepare = this.f177db.prepare("DELETE FROM target_documents WHERE target_id = ? AND path = ?");
-        SQLiteLruReferenceDelegate referenceDelegate = this.f177db.getReferenceDelegate();
+        SQLiteStatement prepare = this.f180db.prepare("DELETE FROM target_documents WHERE target_id = ? AND path = ?");
+        SQLiteLruReferenceDelegate referenceDelegate = this.f180db.getReferenceDelegate();
         Iterator<DocumentKey> it = immutableSortedSet.iterator();
         while (it.hasNext()) {
             DocumentKey next = it.next();
-            this.f177db.execute(prepare, Integer.valueOf(i), EncodedPath.encode(next.getPath()));
+            this.f180db.execute(prepare, Integer.valueOf(i), EncodedPath.encode(next.getPath()));
             referenceDelegate.removeReference(next);
         }
     }
 
     public void removeMatchingKeysForTargetId(int i) {
-        this.f177db.execute("DELETE FROM target_documents WHERE target_id = ?", Integer.valueOf(i));
+        this.f180db.execute("DELETE FROM target_documents WHERE target_id = ?", Integer.valueOf(i));
     }
 
     @Override // com.google.firebase.firestore.local.TargetCache
     public ImmutableSortedSet<DocumentKey> getMatchingKeysForTargetId(int i) {
         final DocumentKeysHolder documentKeysHolder = new DocumentKeysHolder();
-        this.f177db.query("SELECT path FROM target_documents WHERE target_id = ?").binding(Integer.valueOf(i)).forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteTargetCache$$ExternalSyntheticLambda0
+        this.f180db.query("SELECT path FROM target_documents WHERE target_id = ?").binding(Integer.valueOf(i)).forEach(new Consumer() { // from class: com.google.firebase.firestore.local.SQLiteTargetCache$$ExternalSyntheticLambda0
             @Override // com.google.firebase.firestore.util.Consumer
             public final void accept(Object obj) {
                 SQLiteTargetCache.lambda$getMatchingKeysForTargetId$4(SQLiteTargetCache.DocumentKeysHolder.this, (Cursor) obj);

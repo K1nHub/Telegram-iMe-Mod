@@ -36,6 +36,8 @@
     <color name="cardview_shadow_end_color">#03000000</color>
     <color name="cardview_shadow_start_color">#37000000</color>
     <color name="catalog_status_published">#ff55be61</color>
+    <color name="cell_button_blue">#ff50a7ea</color>
+    <color name="cell_button_white">#ffffffff</color>
     <color name="colorAnswerAds">#ffc2eefd</color>
     <color name="colorAnswerAdsText">#ff2678b6</color>
     <color name="colorBlack">#ff373737</color>
@@ -120,6 +122,9 @@
     <color name="foreground_material_light">@android:color/black</color>
     <color name="fork_color">#ff156ae9</color>
     <color name="gray_message">#ff9f9f9f</color>
+    <color name="grey_300">#fff4f4f4</color>
+    <color name="grey_500">#ffd3cfcf</color>
+    <color name="grey_700">#ff8e8e92</color>
     <color name="highlighted_text_material_dark">#6680cbc4</color>
     <color name="highlighted_text_material_light">#66009688</color>
     <color name="ic_launcher_black_background">#ff252729</color>
@@ -213,6 +218,7 @@
     <color name="wallet_network_type_polygon">#ff8247e5</color>
     <color name="wallet_network_type_ton">#ff0088cc</color>
     <color name="wallet_network_type_tron">#ffb73e31</color>
+    <color name="white">#ffffffff</color>
     <color name="widget_action_text">#ff8b8d8f</color>
     <color name="widget_badge">#ffffffff</color>
     <color name="widget_divider">#ffd9d9d9</color>

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)V
     .locals 0
 
-    .line 628
+    .line 644
     iput-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -142,7 +142,7 @@
 .method public onAnimatedEmojiUnlockClick()V
     .locals 4
 
-    .line 640
+    .line 656
     new-instance v0, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     new-instance v1, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3$1;
@@ -155,7 +155,7 @@
 
     invoke-direct {v0, v1, v2, v3}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;IZ)V
 
-    .line 683
+    .line 699
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->show()V
 
     return-void
@@ -164,7 +164,7 @@
 .method public onBackspace()Z
     .locals 4
 
-    .line 631
+    .line 647
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$300(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)Lorg/telegram/ui/Components/EditTextCaption;
@@ -181,7 +181,7 @@
 
     return v1
 
-    .line 634
+    .line 650
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
@@ -213,7 +213,7 @@
 .method public onCustomEmojiSelected(JLorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;Z)V
     .locals 4
 
-    .line 688
+    .line 704
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$300(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)Lorg/telegram/ui/Components/EditTextCaption;
@@ -230,7 +230,7 @@
 
     move v0, v1
 
-    .line 693
+    .line 709
     :cond_0
     :try_start_0
     iget-object v2, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
@@ -239,14 +239,14 @@
 
     invoke-static {v2, v3}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$502(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;Z)Z
 
-    .line 694
+    .line 710
     new-instance v2, Landroid/text/SpannableString;
 
     invoke-direct {v2, p4}, Landroid/text/SpannableString;-><init>(Ljava/lang/CharSequence;)V
 
     if-eqz p3, :cond_1
 
-    .line 697
+    .line 713
     new-instance p1, Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
@@ -267,7 +267,7 @@
 
     goto :goto_0
 
-    .line 699
+    .line 715
     :cond_1
     new-instance p3, Lorg/telegram/ui/Components/AnimatedEmojiSpan;
 
@@ -292,10 +292,10 @@
     :goto_0
     if-nez p5, :cond_2
 
-    .line 702
+    .line 718
     iput-boolean v3, p1, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->fromEmojiKeyboard:Z
 
-    .line 704
+    .line 720
     :cond_2
     invoke-virtual {v2}, Landroid/text/SpannableString;->length()I
 
@@ -305,7 +305,7 @@
 
     invoke-virtual {v2, p1, v1, p2, p3}, Landroid/text/SpannableString;->setSpan(Ljava/lang/Object;III)V
 
-    .line 705
+    .line 721
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$300(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)Lorg/telegram/ui/Components/EditTextCaption;
@@ -328,14 +328,14 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 706
+    .line 722
     invoke-virtual {v2}, Landroid/text/SpannableString;->length()I
 
     move-result p1
 
     add-int/2addr v0, p1
 
-    .line 707
+    .line 723
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$300(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)Lorg/telegram/ui/Components/EditTextCaption;
@@ -357,13 +357,13 @@
     :catch_0
     move-exception p1
 
-    .line 709
+    .line 725
     :try_start_1
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 711
+    .line 727
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
@@ -376,14 +376,14 @@
 
     invoke-static {p2, v1}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$502(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;Z)Z
 
-    .line 712
+    .line 728
     throw p1
 .end method
 
 .method public onEmojiSelected(Ljava/lang/String;)V
     .locals 4
 
-    .line 717
+    .line 733
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$300(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)Lorg/telegram/ui/Components/EditTextCaption;
@@ -400,7 +400,7 @@
 
     move v0, v1
 
-    .line 722
+    .line 738
     :cond_0
     :try_start_0
     iget-object v2, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
@@ -409,7 +409,7 @@
 
     invoke-static {v2, v3}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$502(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;Z)Z
 
-    .line 723
+    .line 739
     iget-object v2, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$300(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)Lorg/telegram/ui/Components/EditTextCaption;
@@ -434,7 +434,7 @@
 
     move-result-object p1
 
-    .line 724
+    .line 740
     iget-object v2, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$300(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)Lorg/telegram/ui/Components/EditTextCaption;
@@ -457,14 +457,14 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 725
+    .line 741
     invoke-interface {p1}, Ljava/lang/CharSequence;->length()I
 
     move-result p1
 
     add-int/2addr v0, p1
 
-    .line 726
+    .line 742
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$300(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)Lorg/telegram/ui/Components/EditTextCaption;
@@ -486,13 +486,13 @@
     :catch_0
     move-exception p1
 
-    .line 728
+    .line 744
     :try_start_1
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    .line 730
+    .line 746
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$3;->this$0:Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 
@@ -505,7 +505,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->access$502(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;Z)Z
 
-    .line 731
+    .line 747
     throw p1
 .end method
 

@@ -26,12 +26,11 @@
 
     const-string p1, "context"
 
-    .line 359
+    .line 375
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     const/16 p1, 0x30
 
-    .line 358
     invoke-direct {p0, p2, p1, p3}, Lcom/iMe/fork/ui/view/CircleCheckCell;-><init>(Landroid/content/Context;ILandroid/widget/ImageView$ScaleType;)V
 
     return-void
@@ -42,7 +41,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 365
+    .line 378
     iget-object p1, p0, Lcom/iMe/ui/topics/TopicsAlert$ListAdapter$onCreateViewHolder$1;->this$0:Lcom/iMe/ui/topics/TopicsAlert;
 
     invoke-static {p1}, Lcom/iMe/ui/topics/TopicsAlert;->access$getItemWidth$p(Lcom/iMe/ui/topics/TopicsAlert;)I
@@ -57,7 +56,7 @@
 
     const/16 v0, 0x64
 
-    .line 366
+    .line 379
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -66,7 +65,7 @@
 
     move-result p2
 
-    .line 364
+    .line 377
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void

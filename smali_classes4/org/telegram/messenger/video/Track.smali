@@ -949,7 +949,7 @@
 
     iput v5, v0, Lorg/telegram/messenger/video/Track;->timeScale:I
 
-    const-string v5, "soun"
+    const-string/jumbo v5, "soun"
 
     .line 210
     iput-object v5, v0, Lorg/telegram/messenger/video/Track;->handler:Ljava/lang/String;

@@ -19,6 +19,10 @@ public final class ThreadLocalEventLoop {
         return eventLoop;
     }
 
+    public final EventLoop currentOrNull$kotlinx_coroutines_core() {
+        return ref.get();
+    }
+
     public final void resetEventLoop$kotlinx_coroutines_core() {
         ref.set(null);
     }

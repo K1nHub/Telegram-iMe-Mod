@@ -91,16 +91,16 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Cells/AudioPlayerCell;->radialProgress:Lorg/telegram/ui/Components/RadialProgress2;
 
-    const-string p3, "chat_inLoader"
-
-    const-string v0, "chat_inLoaderSelected"
-
-    const-string v1, "chat_inMediaIcon"
-
-    const-string v2, "chat_inMediaIconSelected"
-
     .line 83
-    invoke-virtual {p1, p3, v0, v1, v2}, Lorg/telegram/ui/Components/RadialProgress2;->setColors(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inLoader:I
+
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inLoaderSelected:I
+
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inMediaIcon:I
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inMediaIconSelected:I
+
+    invoke-virtual {p1, p3, v0, v1, v2}, Lorg/telegram/ui/Components/RadialProgress2;->setColorKeys(IIII)V
 
     .line 84
     iget p1, p0, Lorg/telegram/ui/Cells/AudioPlayerCell;->currentAccount:I
@@ -491,39 +491,16 @@
     return v0
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
+.method private getThemedColor(I)I
     .locals 1
 
     .line 454
     iget-object v0, p0, Lorg/telegram/ui/Cells/AudioPlayerCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 455
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
@@ -915,9 +892,9 @@
     .line 288
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_contextResult_descriptionTextPaint:Landroid/text/TextPaint;
 
-    const-string v2, "windowBackgroundWhiteGrayText2"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Cells/AudioPlayerCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Cells/AudioPlayerCell;->getThemedColor(I)I
 
     move-result v2
 
@@ -986,15 +963,15 @@
 
     if-eqz v1, :cond_4
 
-    const-string v1, "chat_inAudioSelectedProgress"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inAudioSelectedProgress:I
 
     goto :goto_2
 
     :cond_4
-    const-string v1, "chat_inAudioProgress"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inAudioProgress:I
 
     :goto_2
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Cells/AudioPlayerCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Cells/AudioPlayerCell;->getThemedColor(I)I
 
     move-result v1
 
@@ -1819,15 +1796,15 @@
 
     if-eqz v2, :cond_7
 
-    const-string v2, "chat_outLoader"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outLoader:I
 
     goto :goto_3
 
     :cond_7
-    const-string v2, "chat_inLoader"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inLoader:I
 
     :goto_3
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Cells/AudioPlayerCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Cells/AudioPlayerCell;->getThemedColor(I)I
 
     move-result v2
 

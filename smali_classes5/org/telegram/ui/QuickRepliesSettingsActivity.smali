@@ -42,7 +42,7 @@
 
     new-array v0, v0, [Lorg/telegram/ui/Cells/EditTextSettingsCell;
 
-    .line 51
+    .line 50
     iput-object v0, p0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->textCells:[Lorg/telegram/ui/Cells/EditTextSettingsCell;
 
     return-void
@@ -116,14 +116,14 @@
 .method public createView(Landroid/content/Context;)Landroid/view/View;
     .locals 5
 
-    .line 69
+    .line 68
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v1, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
-    .line 70
+    .line 69
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v1, Lorg/telegram/messenger/R$string;->VoipQuickReplies:I
@@ -136,7 +136,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 71
+    .line 70
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v0
@@ -145,12 +145,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 72
+    .line 71
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setOccupyStatusBar(Z)V
 
-    .line 74
+    .line 73
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
@@ -158,7 +158,7 @@
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
 
-    .line 75
+    .line 74
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     new-instance v3, Lorg/telegram/ui/QuickRepliesSettingsActivity$1;
@@ -167,45 +167,45 @@
 
     invoke-virtual {v0, v3}, Lorg/telegram/ui/ActionBar/ActionBar;->setActionBarMenuOnItemClick(Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;)V
 
-    .line 84
+    .line 83
     new-instance v0, Lorg/telegram/ui/QuickRepliesSettingsActivity$ListAdapter;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/QuickRepliesSettingsActivity$ListAdapter;-><init>(Lorg/telegram/ui/QuickRepliesSettingsActivity;Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->listAdapter:Lorg/telegram/ui/QuickRepliesSettingsActivity$ListAdapter;
 
-    .line 86
+    .line 85
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-direct {v0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
-    const-string v3, "windowBackgroundGray"
+    .line 86
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    .line 87
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
     invoke-virtual {v0, v3}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 88
+    .line 87
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     check-cast v0, Landroid/widget/FrameLayout;
 
-    .line 90
+    .line 89
     new-instance v3, Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-direct {v3, p1}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
     iput-object v3, p0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 91
+    .line 90
     invoke-virtual {v3, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setVerticalScrollBarEnabled(Z)V
 
-    .line 92
+    .line 91
     iget-object v3, p0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v4, Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -214,7 +214,7 @@
 
     invoke-virtual {v3, v4}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 93
+    .line 92
     iget-object p1, p0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     const/16 v1, 0x33
@@ -227,21 +227,21 @@
 
     invoke-virtual {v0, p1, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 94
+    .line 93
     iget-object p1, p0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iget-object v0, p0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->listAdapter:Lorg/telegram/ui/QuickRepliesSettingsActivity$ListAdapter;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 96
+    .line 95
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     return-object p1
 .end method
 
 .method public getThemeDescriptions()Ljava/util/ArrayList;
-    .locals 31
+    .locals 36
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -253,12 +253,12 @@
 
     move-object/from16 v0, p0
 
-    .line 230
+    .line 229
     new-instance v1, Ljava/util/ArrayList;
 
     invoke-direct {v1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 232
+    .line 231
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -287,26 +287,28 @@
 
     aput-object v6, v5, v2
 
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
     const/4 v6, 0x0
 
     const/4 v7, 0x0
 
     const/4 v8, 0x0
 
-    const-string v9, "windowBackgroundWhite"
-
     move-object v2, v10
 
-    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v10}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 233
+    .line 232
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     sget v15, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
+
+    sget v20, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
     const/16 v16, 0x0
 
@@ -316,92 +318,90 @@
 
     const/16 v19, 0x0
 
-    const-string v20, "windowBackgroundGray"
-
     move-object v13, v2
 
-    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 235
+    .line 234
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
-    const/4 v9, 0x0
+    sget v20, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
 
-    const-string v10, "actionBarDefault"
+    const/4 v9, 0x0
 
     move-object v3, v2
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move/from16 v10, v20
+
+    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 236
+    .line 235
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     sget v15, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_LISTGLOWCOLOR:I
 
-    const-string v20, "actionBarDefault"
-
     move-object v13, v2
 
-    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 237
+    .line 236
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_ITEMSCOLOR:I
 
-    const-string v10, "actionBarDefaultIcon"
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultIcon:I
 
     move-object v3, v2
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 238
+    .line 237
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v15, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_TITLECOLOR:I
 
-    const-string v20, "actionBarDefaultTitle"
+    sget v20, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultTitle:I
 
     move-object v13, v2
 
-    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 239
+    .line 238
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_SELECTORCOLOR:I
 
-    const-string v10, "actionBarDefaultSelector"
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSelector:I
 
     move-object v3, v2
 
-    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v3 .. v10}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 241
+    .line 240
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -420,24 +420,26 @@
 
     move-result-object v17
 
-    const/16 v20, 0x0
+    sget v26, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    const-string v21, "windowBackgroundWhiteBlackText"
+    const/16 v20, 0x0
 
     move-object v13, v2
 
     move-object/from16 v16, v3
 
-    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move/from16 v21, v26
+
+    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 242
+    .line 241
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    sget v24, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_HINTTEXTCOLOR:I
+    sget v29, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_HINTTEXTCOLOR:I
 
     new-array v5, v12, [Ljava/lang/Class;
 
@@ -447,46 +449,46 @@
 
     filled-new-array {v4}, [Ljava/lang/String;
 
-    move-result-object v26
+    move-result-object v31
 
-    const/16 v27, 0x0
+    sget v35, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
 
-    const/16 v28, 0x0
+    const/16 v32, 0x0
 
-    const/16 v29, 0x0
+    const/16 v33, 0x0
 
-    const-string v30, "windowBackgroundWhiteHintText"
+    const/16 v34, 0x0
 
-    move-object/from16 v22, v2
+    move-object/from16 v27, v2
 
-    move-object/from16 v23, v3
+    move-object/from16 v28, v3
 
-    move-object/from16 v25, v5
+    move-object/from16 v30, v5
 
-    invoke-direct/range {v22 .. v30}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v27 .. v35}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 244
+    .line 243
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v14, v0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     sget v15, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_SELECTOR:I
 
+    sget v20, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
     const/16 v16, 0x0
 
     const/16 v17, 0x0
 
-    const-string v20, "listSelectorSDK21"
-
     move-object v13, v2
 
-    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 246
+    .line 245
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -497,54 +499,56 @@
 
     aput-object v6, v5, v11
 
-    sget-object v25, Lorg/telegram/ui/ActionBar/Theme;->dividerPaint:Landroid/graphics/Paint;
+    sget-object v31, Lorg/telegram/ui/ActionBar/Theme;->dividerPaint:Landroid/graphics/Paint;
+
+    sget v34, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
+
+    const/16 v29, 0x0
+
+    move-object/from16 v27, v2
+
+    move-object/from16 v28, v3
+
+    move-object/from16 v30, v5
+
+    invoke-direct/range {v27 .. v34}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
+
+    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+
+    .line 247
+    new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
+
+    iget-object v3, v0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
+
+    new-array v5, v12, [Ljava/lang/Class;
+
+    const-class v6, Lorg/telegram/ui/Cells/TextSettingsCell;
+
+    aput-object v6, v5, v11
+
+    filled-new-array {v4}, [Ljava/lang/String;
+
+    move-result-object v22
+
+    const/16 v20, 0x0
 
     const/16 v23, 0x0
 
-    const/16 v26, 0x0
+    const/16 v24, 0x0
 
-    const-string v28, "divider"
+    const/16 v25, 0x0
 
-    move-object/from16 v21, v2
+    move-object/from16 v18, v2
 
-    move-object/from16 v22, v3
+    move-object/from16 v19, v3
 
-    move-object/from16 v24, v5
+    move-object/from16 v21, v5
 
-    invoke-direct/range {v21 .. v28}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v18 .. v26}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     .line 248
-    new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
-
-    iget-object v14, v0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
-
-    new-array v3, v12, [Ljava/lang/Class;
-
-    const-class v5, Lorg/telegram/ui/Cells/TextSettingsCell;
-
-    aput-object v5, v3, v11
-
-    filled-new-array {v4}, [Ljava/lang/String;
-
-    move-result-object v17
-
-    const/4 v15, 0x0
-
-    const/16 v20, 0x0
-
-    const-string v21, "windowBackgroundWhiteBlackText"
-
-    move-object v13, v2
-
-    move-object/from16 v16, v3
-
-    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
-
-    invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
-
-    .line 249
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->listView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -559,21 +563,19 @@
 
     filled-new-array {v5}, [Ljava/lang/String;
 
-    move-result-object v26
+    move-result-object v31
 
-    const/16 v24, 0x0
+    sget v35, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteValueText:I
 
-    const/16 v28, 0x0
+    const/16 v34, 0x0
 
-    const-string v30, "windowBackgroundWhiteValueText"
+    move-object/from16 v27, v2
 
-    move-object/from16 v22, v2
+    move-object/from16 v28, v3
 
-    move-object/from16 v23, v3
+    move-object/from16 v30, v4
 
-    move-object/from16 v25, v4
-
-    invoke-direct/range {v22 .. v30}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v27 .. v35}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -583,12 +585,12 @@
 .method public onFragmentCreate()Z
     .locals 3
 
-    .line 55
+    .line 54
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onFragmentCreate()Z
 
     const/4 v0, 0x0
 
-    .line 57
+    .line 56
     iput v0, p0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->rowCount:I
 
     const/4 v1, 0x0
@@ -597,35 +599,35 @@
 
     add-int/2addr v1, v2
 
-    .line 58
+    .line 57
     iput v1, p0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->rowCount:I
 
     iput v0, p0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->reply1Row:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 59
+    .line 58
     iput v0, p0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->rowCount:I
 
     iput v1, p0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->reply2Row:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 60
+    .line 59
     iput v1, p0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->rowCount:I
 
     iput v0, p0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->reply3Row:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 61
+    .line 60
     iput v0, p0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->rowCount:I
 
     iput v1, p0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->reply4Row:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 62
+    .line 61
     iput v1, p0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->rowCount:I
 
     iput v0, p0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->explanationRow:I
@@ -636,10 +638,10 @@
 .method public onFragmentDestroy()V
     .locals 5
 
-    .line 101
+    .line 100
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onFragmentDestroy()V
 
-    .line 102
+    .line 101
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v0
@@ -652,12 +654,12 @@
 
     move-result-object v0
 
-    .line 103
+    .line 102
     invoke-interface {v0}, Landroid/content/SharedPreferences;->edit()Landroid/content/SharedPreferences$Editor;
 
     move-result-object v0
 
-    .line 104
+    .line 103
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->textCells:[Lorg/telegram/ui/Cells/EditTextSettingsCell;
 
@@ -665,12 +667,12 @@
 
     if-ge v2, v3, :cond_2
 
-    .line 105
+    .line 104
     aget-object v3, v1, v2
 
     if-eqz v3, :cond_1
 
-    .line 106
+    .line 105
     aget-object v1, v1, v2
 
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/EditTextSettingsCell;->getTextView()Lorg/telegram/ui/Components/EditTextBoldCursor;
@@ -685,7 +687,7 @@
 
     move-result-object v1
 
-    .line 107
+    .line 106
     invoke-static {v1}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
@@ -694,7 +696,7 @@
 
     if-nez v3, :cond_0
 
-    .line 108
+    .line 107
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
@@ -713,7 +715,7 @@
 
     goto :goto_1
 
-    .line 110
+    .line 109
     :cond_0
     new-instance v1, Ljava/lang/StringBuilder;
 
@@ -737,7 +739,7 @@
 
     goto :goto_0
 
-    .line 113
+    .line 112
     :cond_2
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
@@ -747,15 +749,15 @@
 .method public onResume()V
     .locals 1
 
-    .line 118
+    .line 117
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->onResume()V
 
-    .line 119
+    .line 118
     iget-object v0, p0, Lorg/telegram/ui/QuickRepliesSettingsActivity;->listAdapter:Lorg/telegram/ui/QuickRepliesSettingsActivity$ListAdapter;
 
     if-eqz v0, :cond_0
 
-    .line 120
+    .line 119
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     :cond_0

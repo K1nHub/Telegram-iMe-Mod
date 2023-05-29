@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 288
+    .line 287
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;
 
     invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/Components/SearchField;-><init>(Landroid/content/Context;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -35,7 +35,7 @@
 .method protected onFieldTouchUp(Lorg/telegram/ui/Components/EditTextBoldCursor;)V
     .locals 2
 
-    .line 328
+    .line 327
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -50,7 +50,7 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 3
 
-    .line 314
+    .line 313
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -63,7 +63,7 @@
 
     invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/ChatAttachAlert;->makeFocusable(Lorg/telegram/ui/Components/EditTextBoldCursor;Z)V
 
-    .line 315
+    .line 314
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
@@ -74,14 +74,14 @@
 .method public onTextChange(Ljava/lang/String;)V
     .locals 4
 
-    .line 291
+    .line 290
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 292
+    .line 291
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;->access$000(Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;)Lorg/telegram/ui/Components/EmptyTextProgressView;
@@ -90,7 +90,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 293
+    .line 292
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;->access$000(Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;)Lorg/telegram/ui/Components/EmptyTextProgressView;
@@ -109,7 +109,7 @@
 
     goto :goto_0
 
-    .line 296
+    .line 295
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;
 
@@ -129,14 +129,14 @@
 
     if-eq v0, v1, :cond_1
 
-    .line 297
+    .line 296
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;->access$300(Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;)I
 
     move-result v0
 
-    .line 298
+    .line 297
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;->access$000(Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;)Lorg/telegram/ui/Components/EmptyTextProgressView;
@@ -153,7 +153,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/EmptyTextProgressView;->setText(Ljava/lang/String;)V
 
-    .line 299
+    .line 298
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;->access$000(Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;)Lorg/telegram/ui/Components/EmptyTextProgressView;
@@ -162,7 +162,7 @@
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/EmptyTextProgressView;->showTextView()V
 
-    .line 300
+    .line 299
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;->access$100(Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -177,7 +177,7 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 301
+    .line 300
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;->access$200(Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;)Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$ShareAdapter;
@@ -188,7 +188,7 @@
 
     if-lez v0, :cond_1
 
-    .line 303
+    .line 302
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;->access$400(Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;)Lorg/telegram/ui/Components/FillLastLinearLayoutManager;
@@ -201,7 +201,7 @@
 
     invoke-virtual {v1, v2, v0}, Landroidx/recyclerview/widget/LinearLayoutManager;->scrollToPositionWithOffset(II)V
 
-    .line 307
+    .line 306
     :cond_1
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;
@@ -212,7 +212,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 308
+    .line 307
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;->access$500(Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;)Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$ShareSearchAdapter;
@@ -228,12 +228,12 @@
 .method public processTouchEvent(Landroid/view/MotionEvent;)V
     .locals 3
 
-    .line 320
+    .line 319
     invoke-static {p1}, Landroid/view/MotionEvent;->obtain(Landroid/view/MotionEvent;)Landroid/view/MotionEvent;
 
     move-result-object p1
 
-    .line 321
+    .line 320
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
 
     move-result v0
@@ -268,7 +268,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/view/MotionEvent;->setLocation(FF)V
 
-    .line 322
+    .line 321
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;->access$100(Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -277,7 +277,7 @@
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
-    .line 323
+    .line 322
     invoke-virtual {p1}, Landroid/view/MotionEvent;->recycle()V
 
     return-void

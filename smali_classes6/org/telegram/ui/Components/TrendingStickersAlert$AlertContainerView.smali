@@ -327,9 +327,9 @@
     .line 247
     iget-object v0, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->this$0:Lorg/telegram/ui/Components/TrendingStickersAlert;
 
-    const-string v1, "dialogBackground"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/TrendingStickersAlert;->access$1600(Lorg/telegram/ui/Components/TrendingStickersAlert;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/TrendingStickersAlert;->access$1600(Lorg/telegram/ui/Components/TrendingStickersAlert;I)I
 
     move-result v0
 
@@ -358,9 +358,9 @@
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->this$0:Lorg/telegram/ui/Components/TrendingStickersAlert;
 
-    const-string v5, "actionBarDefault"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
 
-    invoke-static {v4, v5}, Lorg/telegram/ui/Components/TrendingStickersAlert;->access$1700(Lorg/telegram/ui/Components/TrendingStickersAlert;Ljava/lang/String;)I
+    invoke-static {v4, v5}, Lorg/telegram/ui/Components/TrendingStickersAlert;->access$1700(Lorg/telegram/ui/Components/TrendingStickersAlert;I)I
 
     move-result v4
 
@@ -481,9 +481,9 @@
 
     iget-object v6, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->this$0:Lorg/telegram/ui/Components/TrendingStickersAlert;
 
-    const-string v7, "dialogBackground"
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    invoke-static {v6, v7}, Lorg/telegram/ui/Components/TrendingStickersAlert;->access$1800(Lorg/telegram/ui/Components/TrendingStickersAlert;Ljava/lang/String;)I
+    invoke-static {v6, v7}, Lorg/telegram/ui/Components/TrendingStickersAlert;->access$1800(Lorg/telegram/ui/Components/TrendingStickersAlert;I)I
 
     move-result v6
 
@@ -698,9 +698,9 @@
     .line 278
     iget-object v4, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->this$0:Lorg/telegram/ui/Components/TrendingStickersAlert;
 
-    const-string v6, "key_sheet_scrollUp"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_sheet_scrollUp:I
 
-    invoke-static {v4, v6}, Lorg/telegram/ui/Components/TrendingStickersAlert;->access$2100(Lorg/telegram/ui/Components/TrendingStickersAlert;Ljava/lang/String;)I
+    invoke-static {v4, v6}, Lorg/telegram/ui/Components/TrendingStickersAlert;->access$2100(Lorg/telegram/ui/Components/TrendingStickersAlert;I)I
 
     move-result v4
 
@@ -996,9 +996,9 @@
 
     iget-object v3, p0, Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;->this$0:Lorg/telegram/ui/Components/TrendingStickersAlert;
 
-    const-string v5, "dialogBackground"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    invoke-static {v3, v5}, Lorg/telegram/ui/Components/TrendingStickersAlert;->access$1200(Lorg/telegram/ui/Components/TrendingStickersAlert;Ljava/lang/String;)I
+    invoke-static {v3, v5}, Lorg/telegram/ui/Components/TrendingStickersAlert;->access$1200(Lorg/telegram/ui/Components/TrendingStickersAlert;I)I
 
     move-result v3
 

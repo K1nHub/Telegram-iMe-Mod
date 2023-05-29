@@ -7,12 +7,12 @@ public final class SmartTag {
     private final boolean hidden;
 
     /* renamed from: id */
-    private final String f249id;
+    private final String f252id;
     private final String title;
 
     public static /* synthetic */ SmartTag copy$default(SmartTag smartTag, String str, String str2, boolean z, int i, Object obj) {
         if ((i & 1) != 0) {
-            str = smartTag.f249id;
+            str = smartTag.f252id;
         }
         if ((i & 2) != 0) {
             str2 = smartTag.title;
@@ -24,7 +24,7 @@ public final class SmartTag {
     }
 
     public final String component1() {
-        return this.f249id;
+        return this.f252id;
     }
 
     public final String component2() {
@@ -47,14 +47,14 @@ public final class SmartTag {
         }
         if (obj instanceof SmartTag) {
             SmartTag smartTag = (SmartTag) obj;
-            return Intrinsics.areEqual(this.f249id, smartTag.f249id) && Intrinsics.areEqual(this.title, smartTag.title) && this.hidden == smartTag.hidden;
+            return Intrinsics.areEqual(this.f252id, smartTag.f252id) && Intrinsics.areEqual(this.title, smartTag.title) && this.hidden == smartTag.hidden;
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int hashCode = ((this.f249id.hashCode() * 31) + this.title.hashCode()) * 31;
+        int hashCode = ((this.f252id.hashCode() * 31) + this.title.hashCode()) * 31;
         boolean z = this.hidden;
         int i = z;
         if (z != 0) {
@@ -64,19 +64,19 @@ public final class SmartTag {
     }
 
     public String toString() {
-        return "SmartTag(id=" + this.f249id + ", title=" + this.title + ", hidden=" + this.hidden + ')';
+        return "SmartTag(id=" + this.f252id + ", title=" + this.title + ", hidden=" + this.hidden + ')';
     }
 
     public SmartTag(String id, String title, boolean z) {
         Intrinsics.checkNotNullParameter(id, "id");
         Intrinsics.checkNotNullParameter(title, "title");
-        this.f249id = id;
+        this.f252id = id;
         this.title = title;
         this.hidden = z;
     }
 
     public final String getId() {
-        return this.f249id;
+        return this.f252id;
     }
 
     public final String getTitle() {

@@ -611,7 +611,7 @@
 
     new-instance v1, Lio/grpc/okhttp/internal/framed/Header;
 
-    const-string v2, "strict-transport-security"
+    const-string/jumbo v2, "strict-transport-security"
 
     invoke-direct {v1, v2, v3}, Lio/grpc/okhttp/internal/framed/Header;-><init>(Ljava/lang/String;Ljava/lang/String;)V
 

@@ -8,7 +8,6 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
-import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.p044ui.Components.LayoutHelper;
 /* compiled from: MediaSwitchTopicsBar.kt */
@@ -19,18 +18,6 @@ public final class MediaSwitchTopicsBar extends LinearLayout {
     private final Function1<Boolean, Unit> delegate;
     private final Lazy mediaTopic$delegate;
     private final Lazy messagesTopic$delegate;
-
-    static {
-        new Companion(null);
-    }
-
-    public final boolean getCurrentMessagesContextMenu() {
-        return this.currentMessagesContextMenu;
-    }
-
-    public final void setCurrentMessagesContextMenu(boolean z) {
-        this.currentMessagesContextMenu = z;
-    }
 
     public final Function1<Boolean, Unit> getDelegate() {
         return this.delegate;
@@ -51,8 +38,8 @@ public final class MediaSwitchTopicsBar extends LinearLayout {
         lazy2 = LazyKt__LazyJVMKt.lazy(new MediaSwitchTopicsBar$messagesTopic$2(this));
         this.messagesTopic$delegate = lazy2;
         setGravity(17);
-        addView(getMessagesTopic(), LayoutHelper.createLinear(-2, 24, 8, 6, 8, 6));
-        addView(getMediaTopic(), LayoutHelper.createLinear(-2, 24, 8, 6, 8, 6));
+        addView(getMessagesTopic(), LayoutHelper.createLinear(-2, -1));
+        addView(getMediaTopic(), LayoutHelper.createLinear(-2, -1));
         updateSelectedTopicAndColors();
     }
 
@@ -92,17 +79,5 @@ public final class MediaSwitchTopicsBar extends LinearLayout {
         this$0.currentMessagesContextMenu = z;
         this$0.delegate.invoke(Boolean.valueOf(z));
         this$0.updateSelectedTopicAndColors();
-    }
-
-    /* compiled from: MediaSwitchTopicsBar.kt */
-    /* renamed from: com.iMe.fork.ui.view.MediaSwitchTopicsBar$Companion */
-    /* loaded from: classes3.dex */
-    public static final class Companion {
-        public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
-            this();
-        }
-
-        private Companion() {
-        }
     }
 }

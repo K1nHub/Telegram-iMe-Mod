@@ -104,18 +104,18 @@ public final class DefaultLivePlaybackSpeedControl implements LivePlaybackSpeedC
         this.maxLiveOffsetErrorUsForUnitSpeed = j2;
         this.targetLiveOffsetRebufferDeltaUs = j3;
         this.minPossibleLiveOffsetSmoothingFactor = f4;
-        this.mediaConfigurationTargetLiveOffsetUs = C0470C.TIME_UNSET;
-        this.targetLiveOffsetOverrideUs = C0470C.TIME_UNSET;
-        this.minTargetLiveOffsetUs = C0470C.TIME_UNSET;
-        this.maxTargetLiveOffsetUs = C0470C.TIME_UNSET;
+        this.mediaConfigurationTargetLiveOffsetUs = C0475C.TIME_UNSET;
+        this.targetLiveOffsetOverrideUs = C0475C.TIME_UNSET;
+        this.minTargetLiveOffsetUs = C0475C.TIME_UNSET;
+        this.maxTargetLiveOffsetUs = C0475C.TIME_UNSET;
         this.minPlaybackSpeed = f;
         this.maxPlaybackSpeed = f2;
         this.adjustedPlaybackSpeed = 1.0f;
-        this.lastPlaybackSpeedUpdateMs = C0470C.TIME_UNSET;
-        this.idealTargetLiveOffsetUs = C0470C.TIME_UNSET;
-        this.currentTargetLiveOffsetUs = C0470C.TIME_UNSET;
-        this.smoothedMinPossibleLiveOffsetUs = C0470C.TIME_UNSET;
-        this.smoothedMinPossibleLiveOffsetDeviationUs = C0470C.TIME_UNSET;
+        this.lastPlaybackSpeedUpdateMs = C0475C.TIME_UNSET;
+        this.idealTargetLiveOffsetUs = C0475C.TIME_UNSET;
+        this.currentTargetLiveOffsetUs = C0475C.TIME_UNSET;
+        this.smoothedMinPossibleLiveOffsetUs = C0475C.TIME_UNSET;
+        this.smoothedMinPossibleLiveOffsetDeviationUs = C0475C.TIME_UNSET;
     }
 
     @Override // com.google.android.exoplayer2.LivePlaybackSpeedControl
@@ -134,7 +134,7 @@ public final class DefaultLivePlaybackSpeedControl implements LivePlaybackSpeedC
         }
         this.maxPlaybackSpeed = f2;
         if (f == 1.0f && f2 == 1.0f) {
-            this.mediaConfigurationTargetLiveOffsetUs = C0470C.TIME_UNSET;
+            this.mediaConfigurationTargetLiveOffsetUs = C0475C.TIME_UNSET;
         }
         maybeResetTargetLiveOffsetUs();
     }
@@ -148,25 +148,25 @@ public final class DefaultLivePlaybackSpeedControl implements LivePlaybackSpeedC
     @Override // com.google.android.exoplayer2.LivePlaybackSpeedControl
     public void notifyRebuffer() {
         long j = this.currentTargetLiveOffsetUs;
-        if (j == C0470C.TIME_UNSET) {
+        if (j == C0475C.TIME_UNSET) {
             return;
         }
         long j2 = j + this.targetLiveOffsetRebufferDeltaUs;
         this.currentTargetLiveOffsetUs = j2;
         long j3 = this.maxTargetLiveOffsetUs;
-        if (j3 != C0470C.TIME_UNSET && j2 > j3) {
+        if (j3 != C0475C.TIME_UNSET && j2 > j3) {
             this.currentTargetLiveOffsetUs = j3;
         }
-        this.lastPlaybackSpeedUpdateMs = C0470C.TIME_UNSET;
+        this.lastPlaybackSpeedUpdateMs = C0475C.TIME_UNSET;
     }
 
     @Override // com.google.android.exoplayer2.LivePlaybackSpeedControl
     public float getAdjustedPlaybackSpeed(long j, long j2) {
-        if (this.mediaConfigurationTargetLiveOffsetUs == C0470C.TIME_UNSET) {
+        if (this.mediaConfigurationTargetLiveOffsetUs == C0475C.TIME_UNSET) {
             return 1.0f;
         }
         updateSmoothedMinPossibleLiveOffsetUs(j, j2);
-        if (this.lastPlaybackSpeedUpdateMs != C0470C.TIME_UNSET && SystemClock.elapsedRealtime() - this.lastPlaybackSpeedUpdateMs < this.minUpdateIntervalMs) {
+        if (this.lastPlaybackSpeedUpdateMs != C0475C.TIME_UNSET && SystemClock.elapsedRealtime() - this.lastPlaybackSpeedUpdateMs < this.minUpdateIntervalMs) {
             return this.adjustedPlaybackSpeed;
         }
         this.lastPlaybackSpeedUpdateMs = SystemClock.elapsedRealtime();
@@ -187,17 +187,17 @@ public final class DefaultLivePlaybackSpeedControl implements LivePlaybackSpeedC
 
     private void maybeResetTargetLiveOffsetUs() {
         long j = this.mediaConfigurationTargetLiveOffsetUs;
-        if (j != C0470C.TIME_UNSET) {
+        if (j != C0475C.TIME_UNSET) {
             long j2 = this.targetLiveOffsetOverrideUs;
-            if (j2 != C0470C.TIME_UNSET) {
+            if (j2 != C0475C.TIME_UNSET) {
                 j = j2;
             }
             long j3 = this.minTargetLiveOffsetUs;
-            if (j3 != C0470C.TIME_UNSET && j < j3) {
+            if (j3 != C0475C.TIME_UNSET && j < j3) {
                 j = j3;
             }
             long j4 = this.maxTargetLiveOffsetUs;
-            if (j4 != C0470C.TIME_UNSET && j > j4) {
+            if (j4 != C0475C.TIME_UNSET && j > j4) {
                 j = j4;
             }
         } else {
@@ -208,15 +208,15 @@ public final class DefaultLivePlaybackSpeedControl implements LivePlaybackSpeedC
         }
         this.idealTargetLiveOffsetUs = j;
         this.currentTargetLiveOffsetUs = j;
-        this.smoothedMinPossibleLiveOffsetUs = C0470C.TIME_UNSET;
-        this.smoothedMinPossibleLiveOffsetDeviationUs = C0470C.TIME_UNSET;
-        this.lastPlaybackSpeedUpdateMs = C0470C.TIME_UNSET;
+        this.smoothedMinPossibleLiveOffsetUs = C0475C.TIME_UNSET;
+        this.smoothedMinPossibleLiveOffsetDeviationUs = C0475C.TIME_UNSET;
+        this.lastPlaybackSpeedUpdateMs = C0475C.TIME_UNSET;
     }
 
     private void updateSmoothedMinPossibleLiveOffsetUs(long j, long j2) {
         long j3 = j - j2;
         long j4 = this.smoothedMinPossibleLiveOffsetUs;
-        if (j4 == C0470C.TIME_UNSET) {
+        if (j4 == C0475C.TIME_UNSET) {
             this.smoothedMinPossibleLiveOffsetUs = j3;
             this.smoothedMinPossibleLiveOffsetDeviationUs = 0L;
             return;
@@ -236,7 +236,7 @@ public final class DefaultLivePlaybackSpeedControl implements LivePlaybackSpeedC
         long constrainValue = Util.constrainValue(j - (Math.max((float) BitmapDescriptorFactory.HUE_RED, this.adjustedPlaybackSpeed - 1.0f) / this.proportionalControlFactor), this.currentTargetLiveOffsetUs, j2);
         this.currentTargetLiveOffsetUs = constrainValue;
         long j3 = this.maxTargetLiveOffsetUs;
-        if (j3 == C0470C.TIME_UNSET || constrainValue <= j3) {
+        if (j3 == C0475C.TIME_UNSET || constrainValue <= j3) {
             return;
         }
         this.currentTargetLiveOffsetUs = j3;

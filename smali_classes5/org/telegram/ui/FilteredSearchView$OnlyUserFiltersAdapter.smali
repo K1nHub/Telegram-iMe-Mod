@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilteredSearchView;)V
     .locals 0
 
-    .line 1534
+    .line 1552
     iput-object p1, p0, Lorg/telegram/ui/FilteredSearchView$OnlyUserFiltersAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public getItemCount()I
     .locals 2
 
-    .line 1606
+    .line 1624
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$OnlyUserFiltersAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView;->messages:Ljava/util/ArrayList;
@@ -50,7 +50,7 @@
 
     return v0
 
-    .line 1609
+    .line 1627
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$OnlyUserFiltersAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
@@ -76,7 +76,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 1598
+    .line 1616
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$OnlyUserFiltersAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView;->messages:Ljava/util/ArrayList;
@@ -108,19 +108,19 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 8
 
-    .line 1573
+    .line 1591
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
 
     if-nez v0, :cond_2
 
-    .line 1574
+    .line 1592
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/DialogCell;
 
-    .line 1575
+    .line 1593
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$OnlyUserFiltersAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     iget-object v0, v0, Lorg/telegram/ui/FilteredSearchView;->messages:Ljava/util/ArrayList;
@@ -133,7 +133,7 @@
 
     check-cast v7, Lorg/telegram/messenger/MessageObject;
 
-    .line 1576
+    .line 1594
     iget-object v0, p0, Lorg/telegram/ui/FilteredSearchView$OnlyUserFiltersAdapter;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     invoke-static {v0}, Lorg/telegram/ui/FilteredSearchView;->access$1300(Lorg/telegram/ui/FilteredSearchView;)Z
@@ -142,7 +142,7 @@
 
     iput-boolean v0, p1, Lorg/telegram/ui/Cells/DialogCell;->useFromUserAsAvatar:Z
 
-    .line 1577
+    .line 1595
     invoke-virtual {v7}, Lorg/telegram/messenger/MessageObject;->getDialogId()J
 
     move-result-wide v1
@@ -161,7 +161,7 @@
 
     invoke-virtual/range {v0 .. v6}, Lorg/telegram/ui/Cells/DialogCell;->setDialog(JLorg/telegram/messenger/MessageObject;IZZ)V
 
-    .line 1578
+    .line 1596
     invoke-virtual {p0}, Lorg/telegram/ui/FilteredSearchView$OnlyUserFiltersAdapter;->getItemCount()I
 
     move-result v0
@@ -184,7 +184,7 @@
     :goto_0
     iput-boolean p2, p1, Lorg/telegram/ui/Cells/DialogCell;->useSeparator:Z
 
-    .line 1579
+    .line 1597
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/DialogCell;->getMessage()Lorg/telegram/messenger/MessageObject;
 
     move-result-object p2
@@ -210,7 +210,7 @@
     :cond_1
     move v1, v2
 
-    .line 1580
+    .line 1598
     :goto_1
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
 
@@ -235,7 +235,7 @@
 
     if-eq p2, v0, :cond_0
 
-    .line 1562
+    .line 1580
     new-instance p2, Lorg/telegram/ui/Cells/GraySectionCell;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -244,7 +244,7 @@
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Cells/GraySectionCell;-><init>(Landroid/content/Context;)V
 
-    .line 1563
+    .line 1581
     sget p1, Lorg/telegram/messenger/R$string;->SearchMessages:I
 
     const-string v0, "SearchMessages"
@@ -257,7 +257,7 @@
 
     goto :goto_0
 
-    .line 1555
+    .line 1573
     :cond_0
     new-instance p2, Lorg/telegram/ui/Components/FlickerLoadingView;
 
@@ -269,15 +269,15 @@
 
     const/4 p1, 0x1
 
-    .line 1556
+    .line 1574
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/FlickerLoadingView;->setIsSingleCell(Z)V
 
-    .line 1557
+    .line 1575
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/FlickerLoadingView;->setViewType(I)V
 
     goto :goto_0
 
-    .line 1547
+    .line 1565
     :cond_1
     new-instance p2, Lorg/telegram/ui/FilteredSearchView$OnlyUserFiltersAdapter$1;
 
@@ -297,7 +297,7 @@
 
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/FilteredSearchView$OnlyUserFiltersAdapter$1;-><init>(Lorg/telegram/ui/FilteredSearchView$OnlyUserFiltersAdapter;Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;ZZ)V
 
-    .line 1567
+    .line 1585
     :goto_0
     new-instance p1, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
@@ -309,7 +309,7 @@
 
     invoke-virtual {p2, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 1568
+    .line 1586
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V

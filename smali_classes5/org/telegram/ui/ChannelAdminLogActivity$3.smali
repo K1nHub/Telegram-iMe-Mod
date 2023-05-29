@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChannelAdminLogActivity;)V
     .locals 0
 
-    .line 543
+    .line 551
     iput-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$3;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 547
+    .line 555
     iget-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$3;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V

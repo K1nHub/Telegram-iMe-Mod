@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlert$AttachButton;Landroid/content/Context;Lorg/telegram/ui/Components/ChatAttachAlert;)V
     .locals 0
 
-    .line 1007
+    .line 1036
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachButton$1;->this$1:Lorg/telegram/ui/Components/ChatAttachAlert$AttachButton;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method public setScaleX(F)V
     .locals 0
 
-    .line 1010
+    .line 1039
     invoke-super {p0, p1}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 1011
+    .line 1040
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlert$AttachButton$1;->this$1:Lorg/telegram/ui/Components/ChatAttachAlert$AttachButton;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V

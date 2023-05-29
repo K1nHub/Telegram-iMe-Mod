@@ -103,15 +103,15 @@
 
     if-eqz p1, :cond_0
 
-    const-string p1, "chat_emojiPanelIconSelected"
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelIconSelected:I
 
     goto :goto_0
 
     :cond_0
-    const-string p1, "chat_emojiBottomPanelIcon"
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiBottomPanelIcon:I
 
     :goto_0
-    invoke-static {v1, p1}, Lorg/telegram/ui/Components/PagerSlidingTabStrip;->access$400(Lorg/telegram/ui/Components/PagerSlidingTabStrip;Ljava/lang/String;)I
+    invoke-static {v1, p1}, Lorg/telegram/ui/Components/PagerSlidingTabStrip;->access$400(Lorg/telegram/ui/Components/PagerSlidingTabStrip;I)I
 
     move-result p1
 

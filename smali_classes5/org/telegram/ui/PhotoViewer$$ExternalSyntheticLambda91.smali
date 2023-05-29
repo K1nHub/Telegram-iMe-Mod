@@ -35,7 +35,7 @@
 .method public final format(I)Ljava/lang/String;
     .locals 0
 
-    invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$BtI2LrbN-8iVgW0IQZPHcUGwlE0(I)Ljava/lang/String;
+    invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$QM47VG8ibbRLTrJG2nK_NkRVbP4(I)Ljava/lang/String;
 
     move-result-object p1
 

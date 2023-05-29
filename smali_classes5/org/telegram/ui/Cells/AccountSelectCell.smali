@@ -161,9 +161,9 @@
     .line 79
     iget-object p2, p0, Lorg/telegram/ui/Cells/AccountSelectCell;->textView:Landroid/widget/TextView;
 
-    const-string v0, "voipgroup_nameText"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_nameText:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -189,10 +189,10 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Cells/AccountSelectCell;->infoTextView:Landroid/widget/TextView;
 
-    const-string p1, "voipgroup_lastSeenText"
-
     .line 83
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_lastSeenText:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -295,9 +295,9 @@
     .line 94
     iget-object p2, p0, Lorg/telegram/ui/Cells/AccountSelectCell;->textView:Landroid/widget/TextView;
 
-    const-string v0, "actionBarDefaultSubmenuItem"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -327,9 +327,9 @@
 
     new-instance p2, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v0, "chats_menuItemCheck"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuItemCheck:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -387,9 +387,9 @@
     .line 117
     iget-object v0, p0, Lorg/telegram/ui/Cells/AccountSelectCell;->textView:Landroid/widget/TextView;
 
-    const-string v1, "chats_menuItemText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuItemText:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

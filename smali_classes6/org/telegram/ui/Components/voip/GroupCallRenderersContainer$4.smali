@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;Landroid/content/Context;Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
-    .line 220
+    .line 221
     iput-object p1, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$4;->this$0:Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$4;->val$pinRippleDrawable:Landroid/graphics/drawable/Drawable;
@@ -39,7 +39,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 242
+    .line 243
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$4;->this$0:Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;->pinTextView:Landroid/widget/TextView;
@@ -86,10 +86,10 @@
 
     add-float/2addr v0, v1
 
-    .line 243
+    .line 244
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 244
+    .line 245
     iget-object v1, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$4;->val$pinRippleDrawable:Landroid/graphics/drawable/Drawable;
 
     const/16 v2, 0x32
@@ -110,12 +110,12 @@
 
     invoke-virtual {v1, v3, v3, v2, v0}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 245
+    .line 246
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$4;->val$pinRippleDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 246
+    .line 247
     invoke-super {p0, p1}, Landroid/view/View;->dispatchDraw(Landroid/graphics/Canvas;)V
 
     return-void
@@ -124,10 +124,10 @@
 .method protected drawableStateChanged()V
     .locals 2
 
-    .line 224
+    .line 225
     invoke-super {p0}, Landroid/view/View;->drawableStateChanged()V
 
-    .line 225
+    .line 226
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$4;->val$pinRippleDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0}, Landroid/view/View;->getDrawableState()[I
@@ -142,10 +142,10 @@
 .method public jumpDrawablesToCurrentState()V
     .locals 1
 
-    .line 235
+    .line 236
     invoke-super {p0}, Landroid/view/View;->jumpDrawablesToCurrentState()V
 
-    .line 236
+    .line 237
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$4;->val$pinRippleDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->jumpToCurrentState()V
@@ -156,7 +156,7 @@
 .method public verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
     .locals 1
 
-    .line 230
+    .line 231
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$4;->val$pinRippleDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eq v0, p1, :cond_1

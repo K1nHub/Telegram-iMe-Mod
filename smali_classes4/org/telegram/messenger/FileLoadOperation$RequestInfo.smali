@@ -34,7 +34,7 @@
 .method protected constructor <init>()V
     .locals 0
 
-    .line 57
+    .line 68
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -43,7 +43,7 @@
 .method static synthetic access$400(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)I
     .locals 0
 
-    .line 57
+    .line 68
     iget p0, p0, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->requestToken:I
 
     return p0
@@ -52,7 +52,7 @@
 .method static synthetic access$402(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;I)I
     .locals 0
 
-    .line 57
+    .line 68
     iput p1, p0, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->requestToken:I
 
     return p1
@@ -61,7 +61,7 @@
 .method static synthetic access$500(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_file;
     .locals 0
 
-    .line 57
+    .line 68
     iget-object p0, p0, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->response:Lorg/telegram/tgnet/TLRPC$TL_upload_file;
 
     return-object p0
@@ -70,7 +70,7 @@
 .method static synthetic access$502(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;Lorg/telegram/tgnet/TLRPC$TL_upload_file;)Lorg/telegram/tgnet/TLRPC$TL_upload_file;
     .locals 0
 
-    .line 57
+    .line 68
     iput-object p1, p0, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->response:Lorg/telegram/tgnet/TLRPC$TL_upload_file;
 
     return-object p1
@@ -79,7 +79,7 @@
 .method static synthetic access$600(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_webFile;
     .locals 0
 
-    .line 57
+    .line 68
     iget-object p0, p0, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->responseWeb:Lorg/telegram/tgnet/TLRPC$TL_upload_webFile;
 
     return-object p0
@@ -88,7 +88,7 @@
 .method static synthetic access$602(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;Lorg/telegram/tgnet/TLRPC$TL_upload_webFile;)Lorg/telegram/tgnet/TLRPC$TL_upload_webFile;
     .locals 0
 
-    .line 57
+    .line 68
     iput-object p1, p0, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->responseWeb:Lorg/telegram/tgnet/TLRPC$TL_upload_webFile;
 
     return-object p1
@@ -97,7 +97,7 @@
 .method static synthetic access$700(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Lorg/telegram/tgnet/TLRPC$TL_upload_cdnFile;
     .locals 0
 
-    .line 57
+    .line 68
     iget-object p0, p0, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->responseCdn:Lorg/telegram/tgnet/TLRPC$TL_upload_cdnFile;
 
     return-object p0
@@ -106,7 +106,7 @@
 .method static synthetic access$702(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;Lorg/telegram/tgnet/TLRPC$TL_upload_cdnFile;)Lorg/telegram/tgnet/TLRPC$TL_upload_cdnFile;
     .locals 0
 
-    .line 57
+    .line 68
     iput-object p1, p0, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->responseCdn:Lorg/telegram/tgnet/TLRPC$TL_upload_cdnFile;
 
     return-object p1
@@ -115,7 +115,7 @@
 .method static synthetic access$800(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)J
     .locals 2
 
-    .line 57
+    .line 68
     iget-wide v0, p0, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->offset:J
 
     return-wide v0
@@ -124,7 +124,7 @@
 .method static synthetic access$802(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;J)J
     .locals 0
 
-    .line 57
+    .line 68
     iput-wide p1, p0, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->offset:J
 
     return-wide p1
@@ -133,7 +133,7 @@
 .method static synthetic access$900(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;)Z
     .locals 0
 
-    .line 57
+    .line 68
     iget-boolean p0, p0, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->forceSmallChunk:Z
 
     return p0
@@ -142,7 +142,7 @@
 .method static synthetic access$902(Lorg/telegram/messenger/FileLoadOperation$RequestInfo;Z)Z
     .locals 0
 
-    .line 57
+    .line 68
     iput-boolean p1, p0, Lorg/telegram/messenger/FileLoadOperation$RequestInfo;->forceSmallChunk:Z
 
     return p1

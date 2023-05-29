@@ -11,6 +11,6 @@ public final /* synthetic */ class ApplicationLoader$$ExternalSyntheticLambda0 i
 
     @Override // io.reactivex.functions.Consumer
     public final void accept(Object obj) {
-        Timber.m4e((Throwable) obj);
+        Timber.m6e((Throwable) obj);
     }
 }

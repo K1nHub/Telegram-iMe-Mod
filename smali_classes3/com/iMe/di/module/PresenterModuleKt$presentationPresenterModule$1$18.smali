@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$18\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n44#2:434\n129#3,5:435\n129#3,5:440\n129#3,5:445\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$18\n*L\n189#1:434\n191#1:435,5\n192#1:440,5\n193#1:445,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$18\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,432:1\n44#2:433\n129#3,5:434\n129#3,5:439\n129#3,5:444\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$18\n*L\n190#1:433\n192#1:434,5\n193#1:439,5\n194#1:444,5\n*E\n"
 .end annotation
 
 
@@ -102,7 +102,7 @@
 
     move-result-object p2
 
-    .line 191
+    .line 192
     move-object v4, p2
 
     check-cast v4, Lcom/iMe/storage/domain/utils/system/ResourceManager;
@@ -118,7 +118,7 @@
 
     move-result-object p2
 
-    .line 191
+    .line 192
     move-object v3, p2
 
     check-cast v3, Lcom/iMe/storage/domain/interactor/crypto/boost/BoostInteractor;
@@ -134,7 +134,7 @@
 
     move-result-object p2
 
-    .line 192
+    .line 193
     move-object v7, p2
 
     check-cast v7, Lcom/iMe/storage/domain/gateway/TelegramGateway;
@@ -150,7 +150,7 @@
 
     move-result-object p2
 
-    .line 192
+    .line 193
     move-object v2, p2
 
     check-cast v2, Lcom/iMe/storage/domain/interactor/crypto/cancel/CancelInteractor;
@@ -166,7 +166,7 @@
 
     move-result-object p2
 
-    .line 192
+    .line 193
     move-object v6, p2
 
     check-cast v6, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
@@ -182,12 +182,12 @@
 
     move-result-object p1
 
-    .line 193
+    .line 194
     move-object v5, p1
 
     check-cast v5, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
-    .line 190
+    .line 191
     new-instance p1, Lcom/iMe/ui/wallet/transaction/details/WalletTransactionDetailsPresenter;
 
     move-object v0, p1
@@ -200,7 +200,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 189
+    .line 190
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

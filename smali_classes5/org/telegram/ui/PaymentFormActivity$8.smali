@@ -47,7 +47,7 @@
 
 # virtual methods
 .method public afterTextChanged(Landroid/text/Editable;)V
-    .locals 13
+    .locals 12
 
     .line 1502
     iget-object p1, p0, Lorg/telegram/ui/PaymentFormActivity$8;->this$0:Lorg/telegram/ui/PaymentFormActivity;
@@ -185,9 +185,9 @@
 
     iget-object v6, p0, Lorg/telegram/ui/PaymentFormActivity$8;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
-    const-string v7, "windowBackgroundWhiteBlackText"
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-virtual {v6, v7}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v6, v7}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v6
 
@@ -224,8 +224,6 @@
 
     const/16 v8, 0xc
 
-    const-string v9, "windowBackgroundWhiteRedText4"
-
     if-eqz v2, :cond_f
 
     .line 1530
@@ -243,36 +241,36 @@
     move v2, v0
 
     :goto_1
-    new-array v10, v2, [Ljava/lang/String;
+    new-array v9, v2, [Ljava/lang/String;
 
     .line 1531
     invoke-virtual {v3, v5, v7}, Ljava/lang/StringBuilder;->substring(II)Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v10
 
-    aput-object v11, v10, v5
+    aput-object v10, v9, v5
 
     if-ne v2, v7, :cond_7
 
     .line 1533
     invoke-virtual {v3, v7}, Ljava/lang/StringBuilder;->substring(I)Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v10
 
-    aput-object v11, v10, v0
+    aput-object v10, v9, v0
 
     .line 1535
     :cond_7
     invoke-virtual {v3}, Ljava/lang/StringBuilder;->length()I
 
-    move-result v11
+    move-result v10
 
-    if-ne v11, v6, :cond_d
+    if-ne v10, v6, :cond_d
 
     if-ne v2, v7, :cond_d
 
     .line 1536
-    aget-object v2, v10, v5
+    aget-object v2, v9, v5
 
     invoke-static {v2}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
 
@@ -283,7 +281,7 @@
     move-result v2
 
     .line 1537
-    aget-object v8, v10, v0
+    aget-object v8, v9, v0
 
     invoke-static {v8}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
 
@@ -298,98 +296,98 @@
     .line 1538
     invoke-static {}, Ljava/util/Calendar;->getInstance()Ljava/util/Calendar;
 
-    move-result-object v10
+    move-result-object v9
 
     .line 1540
-    iget-object v11, p0, Lorg/telegram/ui/PaymentFormActivity$8;->this$0:Lorg/telegram/ui/PaymentFormActivity;
+    iget-object v10, p0, Lorg/telegram/ui/PaymentFormActivity$8;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
-    invoke-static {v11}, Lorg/telegram/ui/PaymentFormActivity;->access$2800(Lorg/telegram/ui/PaymentFormActivity;)I
+    invoke-static {v10}, Lorg/telegram/ui/PaymentFormActivity;->access$2800(Lorg/telegram/ui/PaymentFormActivity;)I
 
-    move-result v11
+    move-result v10
 
-    invoke-static {v11}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
+    invoke-static {v10}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
 
-    move-result-object v11
+    move-result-object v10
 
-    invoke-virtual {v11}, Lorg/telegram/messenger/UserConfig;->getClientPhone()Ljava/lang/String;
+    invoke-virtual {v10}, Lorg/telegram/messenger/UserConfig;->getClientPhone()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v10
 
-    const-string v12, "7"
+    const-string v11, "7"
 
-    invoke-virtual {v11, v12}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    invoke-virtual {v10, v11}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v11
+    move-result v10
 
-    if-nez v11, :cond_9
+    if-nez v10, :cond_9
 
-    iget-object v11, p0, Lorg/telegram/ui/PaymentFormActivity$8;->this$0:Lorg/telegram/ui/PaymentFormActivity;
+    iget-object v10, p0, Lorg/telegram/ui/PaymentFormActivity$8;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
-    invoke-static {v11}, Lorg/telegram/ui/PaymentFormActivity;->access$2900(Lorg/telegram/ui/PaymentFormActivity;)Lorg/telegram/ui/CountrySelectActivity$Country;
+    invoke-static {v10}, Lorg/telegram/ui/PaymentFormActivity;->access$2900(Lorg/telegram/ui/PaymentFormActivity;)Lorg/telegram/ui/CountrySelectActivity$Country;
 
-    move-result-object v11
+    move-result-object v10
 
-    if-eqz v11, :cond_8
+    if-eqz v10, :cond_8
 
-    iget-object v11, p0, Lorg/telegram/ui/PaymentFormActivity$8;->this$0:Lorg/telegram/ui/PaymentFormActivity;
+    iget-object v10, p0, Lorg/telegram/ui/PaymentFormActivity$8;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
-    invoke-static {v11}, Lorg/telegram/ui/PaymentFormActivity;->access$2900(Lorg/telegram/ui/PaymentFormActivity;)Lorg/telegram/ui/CountrySelectActivity$Country;
+    invoke-static {v10}, Lorg/telegram/ui/PaymentFormActivity;->access$2900(Lorg/telegram/ui/PaymentFormActivity;)Lorg/telegram/ui/CountrySelectActivity$Country;
 
-    move-result-object v11
+    move-result-object v10
 
-    iget-object v11, v11, Lorg/telegram/ui/CountrySelectActivity$Country;->code:Ljava/lang/String;
+    iget-object v10, v10, Lorg/telegram/ui/CountrySelectActivity$Country;->code:Ljava/lang/String;
 
-    invoke-virtual {v11, v12}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v10, v11}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v11
+    move-result v10
 
-    if-eqz v11, :cond_8
+    if-eqz v10, :cond_8
 
     goto :goto_2
 
     :cond_8
-    move v11, v5
+    move v10, v5
 
     goto :goto_3
 
     :cond_9
     :goto_2
-    move v11, v0
+    move v10, v0
 
     :goto_3
-    if-eqz v11, :cond_a
+    if-eqz v10, :cond_a
 
-    const/16 v12, 0x7e6
+    const/16 v11, 0x7e6
 
     goto :goto_4
 
     .line 1541
     :cond_a
-    invoke-virtual {v10, v0}, Ljava/util/Calendar;->get(I)I
+    invoke-virtual {v9, v0}, Ljava/util/Calendar;->get(I)I
 
-    move-result v12
+    move-result v11
 
     :goto_4
-    if-eqz v11, :cond_b
+    if-eqz v10, :cond_b
 
-    move v10, v0
+    move v9, v0
 
     goto :goto_5
 
     .line 1542
     :cond_b
-    invoke-virtual {v10, v7}, Ljava/util/Calendar;->get(I)I
+    invoke-virtual {v9, v7}, Ljava/util/Calendar;->get(I)I
 
-    move-result v10
+    move-result v9
 
-    add-int/2addr v10, v0
+    add-int/2addr v9, v0
 
     :goto_5
-    if-lt v8, v12, :cond_c
+    if-lt v8, v11, :cond_c
 
-    if-ne v8, v12, :cond_13
+    if-ne v8, v11, :cond_13
 
-    if-ge v2, v10, :cond_13
+    if-ge v2, v9, :cond_13
 
     .line 1544
     :cond_c
@@ -403,7 +401,9 @@
 
     iget-object v8, p0, Lorg/telegram/ui/PaymentFormActivity$8;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
+
+    invoke-virtual {v8, v9}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v8
 
@@ -413,7 +413,7 @@
 
     .line 1548
     :cond_d
-    aget-object v2, v10, v5
+    aget-object v2, v9, v5
 
     invoke-static {v2}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
 
@@ -439,7 +439,9 @@
 
     iget-object v8, p0, Lorg/telegram/ui/PaymentFormActivity$8;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
+
+    invoke-virtual {v8, v9}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v8
 
@@ -526,7 +528,9 @@
 
     iget-object v8, p0, Lorg/telegram/ui/PaymentFormActivity$8;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
-    invoke-virtual {v8, v9}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
+
+    invoke-virtual {v8, v9}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v8
 

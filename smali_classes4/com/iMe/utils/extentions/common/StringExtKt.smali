@@ -42,7 +42,7 @@
 
     move-result-object p0
 
-    const-string v1, "this as java.lang.String).toLowerCase(Locale.ROOT)"
+    const-string/jumbo v1, "this as java.lang.String).toLowerCase(Locale.ROOT)"
 
     invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -86,7 +86,7 @@
 
     move-result-object v0
 
-    const-string v3, "this as java.lang.String).toUpperCase(Locale.ROOT)"
+    const-string/jumbo v3, "this as java.lang.String).toUpperCase(Locale.ROOT)"
 
     invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -96,7 +96,7 @@
 
     move-result-object p0
 
-    const-string v0, "this as java.lang.String).substring(startIndex)"
+    const-string/jumbo v0, "this as java.lang.String).substring(startIndex)"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -210,7 +210,7 @@
 
     move-result-object v1
 
-    const-string v2, "this as java.lang.String\u2026ing(startIndex, endIndex)"
+    const-string/jumbo v2, "this as java.lang.String\u2026ing(startIndex, endIndex)"
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

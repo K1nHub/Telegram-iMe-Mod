@@ -2016,70 +2016,70 @@
 .method protected updateColorKeys()V
     .locals 1
 
-    const-string v0, "voipgroup_scrollUp"
-
     .line 92
-    iput-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyScrollUp:Ljava/lang/String;
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_scrollUp:I
 
-    const-string v0, "voipgroup_listSelector"
+    iput v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyScrollUp:I
 
     .line 93
-    iput-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyListSelector:Ljava/lang/String;
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_listSelector:I
 
-    const-string v0, "voipgroup_searchBackground"
+    iput v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyListSelector:I
 
     .line 94
-    iput-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchBackground:Ljava/lang/String;
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_searchBackground:I
 
-    const-string v0, "voipgroup_inviteMembersBackground"
+    iput v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchBackground:I
 
     .line 95
-    iput-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyInviteMembersBackground:Ljava/lang/String;
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_inviteMembersBackground:I
 
-    const-string v0, "voipgroup_listViewBackground"
+    iput v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyInviteMembersBackground:I
 
     .line 96
-    iput-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyListViewBackground:Ljava/lang/String;
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_listViewBackground:I
 
-    const-string v0, "voipgroup_actionBarUnscrolled"
+    iput v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyListViewBackground:I
 
     .line 97
-    iput-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyActionBarUnscrolled:Ljava/lang/String;
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_actionBarUnscrolled:I
 
-    const-string v0, "voipgroup_nameText"
+    iput v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyActionBarUnscrolled:I
 
     .line 98
-    iput-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyNameText:Ljava/lang/String;
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_nameText:I
 
-    const-string v0, "voipgroup_lastSeenText"
+    iput v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyNameText:I
 
     .line 99
-    iput-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyLastSeenText:Ljava/lang/String;
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_lastSeenText:I
 
-    const-string v0, "voipgroup_lastSeenTextUnscrolled"
+    iput v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyLastSeenText:I
 
     .line 100
-    iput-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyLastSeenTextUnscrolled:Ljava/lang/String;
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_lastSeenTextUnscrolled:I
 
-    const-string v0, "voipgroup_searchPlaceholder"
+    iput v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keyLastSeenTextUnscrolled:I
 
     .line 101
-    iput-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchPlaceholder:Ljava/lang/String;
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_searchPlaceholder:I
 
-    const-string v0, "voipgroup_searchText"
+    iput v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchPlaceholder:I
 
     .line 102
-    iput-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchText:Ljava/lang/String;
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_searchText:I
 
-    const-string v0, "voipgroup_mutedIcon"
+    iput v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchText:I
 
     .line 103
-    iput-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchIcon:Ljava/lang/String;
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_mutedIcon:I
 
-    const-string v0, "voipgroup_mutedIconUnscrolled"
+    iput v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchIcon:I
 
     .line 104
-    iput-object v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchIconUnscrolled:Ljava/lang/String;
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_mutedIconUnscrolled:I
+
+    iput v0, p0, Lorg/telegram/ui/Components/UsersAlertBase;->keySearchIconUnscrolled:I
 
     return-void
 .end method

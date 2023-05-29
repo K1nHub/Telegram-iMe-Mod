@@ -9,7 +9,7 @@ final class MediaPeriodInfo {
     public final long endPositionUs;
 
     /* renamed from: id */
-    public final MediaSource.MediaPeriodId f101id;
+    public final MediaSource.MediaPeriodId f104id;
     public final boolean isFinal;
     public final boolean isFollowedByTransitionToSameStream;
     public final boolean isLastInTimelinePeriod;
@@ -26,7 +26,7 @@ final class MediaPeriodInfo {
             z5 = true;
         }
         Assertions.checkArgument(z5);
-        this.f101id = mediaPeriodId;
+        this.f104id = mediaPeriodId;
         this.startPositionUs = j;
         this.requestedContentPositionUs = j2;
         this.endPositionUs = j3;
@@ -38,11 +38,11 @@ final class MediaPeriodInfo {
     }
 
     public MediaPeriodInfo copyWithStartPositionUs(long j) {
-        return j == this.startPositionUs ? this : new MediaPeriodInfo(this.f101id, j, this.requestedContentPositionUs, this.endPositionUs, this.durationUs, this.isFollowedByTransitionToSameStream, this.isLastInTimelinePeriod, this.isLastInTimelineWindow, this.isFinal);
+        return j == this.startPositionUs ? this : new MediaPeriodInfo(this.f104id, j, this.requestedContentPositionUs, this.endPositionUs, this.durationUs, this.isFollowedByTransitionToSameStream, this.isLastInTimelinePeriod, this.isLastInTimelineWindow, this.isFinal);
     }
 
     public MediaPeriodInfo copyWithRequestedContentPositionUs(long j) {
-        return j == this.requestedContentPositionUs ? this : new MediaPeriodInfo(this.f101id, this.startPositionUs, j, this.endPositionUs, this.durationUs, this.isFollowedByTransitionToSameStream, this.isLastInTimelinePeriod, this.isLastInTimelineWindow, this.isFinal);
+        return j == this.requestedContentPositionUs ? this : new MediaPeriodInfo(this.f104id, this.startPositionUs, j, this.endPositionUs, this.durationUs, this.isFollowedByTransitionToSameStream, this.isLastInTimelinePeriod, this.isLastInTimelineWindow, this.isFinal);
     }
 
     public boolean equals(Object obj) {
@@ -53,10 +53,10 @@ final class MediaPeriodInfo {
             return false;
         }
         MediaPeriodInfo mediaPeriodInfo = (MediaPeriodInfo) obj;
-        return this.startPositionUs == mediaPeriodInfo.startPositionUs && this.requestedContentPositionUs == mediaPeriodInfo.requestedContentPositionUs && this.endPositionUs == mediaPeriodInfo.endPositionUs && this.durationUs == mediaPeriodInfo.durationUs && this.isFollowedByTransitionToSameStream == mediaPeriodInfo.isFollowedByTransitionToSameStream && this.isLastInTimelinePeriod == mediaPeriodInfo.isLastInTimelinePeriod && this.isLastInTimelineWindow == mediaPeriodInfo.isLastInTimelineWindow && this.isFinal == mediaPeriodInfo.isFinal && Util.areEqual(this.f101id, mediaPeriodInfo.f101id);
+        return this.startPositionUs == mediaPeriodInfo.startPositionUs && this.requestedContentPositionUs == mediaPeriodInfo.requestedContentPositionUs && this.endPositionUs == mediaPeriodInfo.endPositionUs && this.durationUs == mediaPeriodInfo.durationUs && this.isFollowedByTransitionToSameStream == mediaPeriodInfo.isFollowedByTransitionToSameStream && this.isLastInTimelinePeriod == mediaPeriodInfo.isLastInTimelinePeriod && this.isLastInTimelineWindow == mediaPeriodInfo.isLastInTimelineWindow && this.isFinal == mediaPeriodInfo.isFinal && Util.areEqual(this.f104id, mediaPeriodInfo.f104id);
     }
 
     public int hashCode() {
-        return ((((((((((((((((527 + this.f101id.hashCode()) * 31) + ((int) this.startPositionUs)) * 31) + ((int) this.requestedContentPositionUs)) * 31) + ((int) this.endPositionUs)) * 31) + ((int) this.durationUs)) * 31) + (this.isFollowedByTransitionToSameStream ? 1 : 0)) * 31) + (this.isLastInTimelinePeriod ? 1 : 0)) * 31) + (this.isLastInTimelineWindow ? 1 : 0)) * 31) + (this.isFinal ? 1 : 0);
+        return ((((((((((((((((527 + this.f104id.hashCode()) * 31) + ((int) this.startPositionUs)) * 31) + ((int) this.requestedContentPositionUs)) * 31) + ((int) this.endPositionUs)) * 31) + ((int) this.durationUs)) * 31) + (this.isFollowedByTransitionToSameStream ? 1 : 0)) * 31) + (this.isLastInTimelinePeriod ? 1 : 0)) * 31) + (this.isLastInTimelineWindow ? 1 : 0)) * 31) + (this.isFinal ? 1 : 0);
     }
 }

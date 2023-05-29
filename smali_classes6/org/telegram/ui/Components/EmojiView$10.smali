@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView;)V
     .locals 0
 
-    .line 2226
+    .line 1960
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$10;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$AnimationCallback;-><init>()V
@@ -35,12 +35,12 @@
 .method public ignoreView(Landroid/view/View;Z)V
     .locals 1
 
-    .line 2242
+    .line 1976
     instance-of v0, p1, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;
 
     if-eqz v0, :cond_0
 
-    .line 2243
+    .line 1977
     check-cast p1, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;
 
     iput-boolean p2, p1, Lorg/telegram/ui/Components/EmojiView$ImageViewEmoji;->ignoring:Z
@@ -52,14 +52,14 @@
 .method public onEndAnimation()V
     .locals 2
 
-    .line 2236
+    .line 1970
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$10;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->access$7402(Lorg/telegram/ui/Components/EmojiView;Z)Z
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->access$6802(Lorg/telegram/ui/Components/EmojiView;Z)Z
 
-    .line 2237
+    .line 1971
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$10;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$1100(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiGridView;
@@ -74,7 +74,7 @@
 .method public onPreAnimation()V
     .locals 2
 
-    .line 2230
+    .line 1964
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$10;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$1100(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$EmojiGridView;
@@ -83,12 +83,12 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/EmojiView$EmojiGridView;->updateEmojiDrawables()V
 
-    .line 2231
+    .line 1965
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$10;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->access$7402(Lorg/telegram/ui/Components/EmojiView;Z)Z
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->access$6802(Lorg/telegram/ui/Components/EmojiView;Z)Z
 
     return-void
 .end method

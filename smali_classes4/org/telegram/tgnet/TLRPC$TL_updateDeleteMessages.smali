@@ -33,10 +33,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 31713
+    .line 32559
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$Update;-><init>()V
 
-    .line 31716
+    .line 32562
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -51,7 +51,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 31721
+    .line 32567
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -66,7 +66,7 @@
 
     return-void
 
-    .line 31724
+    .line 32570
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -90,7 +90,7 @@
 
     throw p1
 
-    .line 31728
+    .line 32574
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -99,7 +99,7 @@
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 31730
+    .line 32576
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_updateDeleteMessages;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
@@ -116,7 +116,7 @@
 
     goto :goto_0
 
-    .line 31732
+    .line 32578
     :cond_2
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -124,7 +124,7 @@
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateDeleteMessages;->pts:I
 
-    .line 31733
+    .line 32579
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -137,24 +137,24 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 3
 
-    .line 31737
+    .line 32583
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_updateDeleteMessages;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const v0, 0x1cb5c415
 
-    .line 31738
+    .line 32584
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 31739
+    .line 32585
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateDeleteMessages;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 31740
+    .line 32586
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -162,7 +162,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 31742
+    .line 32588
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_updateDeleteMessages;->messages:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -181,13 +181,13 @@
 
     goto :goto_0
 
-    .line 31744
+    .line 32590
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateDeleteMessages;->pts:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 31745
+    .line 32591
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_updateDeleteMessages;->pts_count:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

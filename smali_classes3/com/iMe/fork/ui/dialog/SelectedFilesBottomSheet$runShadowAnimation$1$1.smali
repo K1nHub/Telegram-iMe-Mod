@@ -76,7 +76,7 @@
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
+    .locals 3
 
     const-string v0, "animation"
 
@@ -106,6 +106,8 @@
     .line 251
     iget-boolean p1, p0, Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet$runShadowAnimation$1$1;->$show:Z
 
+    const/4 v0, 0x0
+
     if-nez p1, :cond_0
 
     .line 252
@@ -115,13 +117,15 @@
 
     move-result-object p1
 
-    invoke-static {p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->invisible(Landroid/view/View;)V
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    invoke-static {p1, v1, v2, v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->invisible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 254
     :cond_0
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet$runShadowAnimation$1$1;->this$0:Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet;
-
-    const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet;->access$setShadowAnimation$p(Lcom/iMe/fork/ui/dialog/SelectedFilesBottomSheet;Landroid/animation/AnimatorSet;)V
 

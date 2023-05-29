@@ -417,7 +417,7 @@
 .method public final startSwapScreenFlow(Lcom/iMe/storage/domain/model/wallet/swap/SwapProtocolInfo;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;)V
     .locals 5
 
-    const-string v0, "swapProtocolInfo"
+    const-string/jumbo v0, "swapProtocolInfo"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

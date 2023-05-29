@@ -41,7 +41,7 @@ public class RtpReceiver {
     }
 
     /* renamed from: id */
-    public String m10id() {
+    public String m12id() {
         checkRtpReceiverExists();
         return nativeGetId(this.nativeRtpReceiver);
     }

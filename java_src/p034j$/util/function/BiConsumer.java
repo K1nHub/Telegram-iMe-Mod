@@ -5,5 +5,5 @@ public interface BiConsumer<T, U> {
     void accept(Object obj, Object obj2);
 
     /* renamed from: b */
-    BiConsumer mo101b(BiConsumer biConsumer);
+    BiConsumer mo106b(BiConsumer biConsumer);
 }

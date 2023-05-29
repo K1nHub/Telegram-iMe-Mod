@@ -1,6 +1,6 @@
 package com.google.android.exoplayer2.extractor.p015ts;
 
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.audio.MpegAudioUtil;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
@@ -42,7 +42,7 @@ public final class MpegAudioReader implements ElementaryStreamReader {
         this.headerScratch = parsableByteArray;
         parsableByteArray.getData()[0] = -1;
         this.header = new MpegAudioUtil.Header();
-        this.timeUs = C0470C.TIME_UNSET;
+        this.timeUs = C0475C.TIME_UNSET;
         this.language = str;
     }
 
@@ -51,7 +51,7 @@ public final class MpegAudioReader implements ElementaryStreamReader {
         this.state = 0;
         this.frameBytesRead = 0;
         this.lastByteWasFF = false;
-        this.timeUs = C0470C.TIME_UNSET;
+        this.timeUs = C0475C.TIME_UNSET;
     }
 
     @Override // com.google.android.exoplayer2.extractor.p015ts.ElementaryStreamReader
@@ -63,7 +63,7 @@ public final class MpegAudioReader implements ElementaryStreamReader {
 
     @Override // com.google.android.exoplayer2.extractor.p015ts.ElementaryStreamReader
     public void packetStarted(long j, int i) {
-        if (j != C0470C.TIME_UNSET) {
+        if (j != C0475C.TIME_UNSET) {
             this.timeUs = j;
         }
     }
@@ -140,7 +140,7 @@ public final class MpegAudioReader implements ElementaryStreamReader {
             return;
         }
         long j = this.timeUs;
-        if (j != C0470C.TIME_UNSET) {
+        if (j != C0475C.TIME_UNSET) {
             this.output.sampleMetadata(j, 1, i2, 0, null);
             this.timeUs += this.frameDurationUs;
         }

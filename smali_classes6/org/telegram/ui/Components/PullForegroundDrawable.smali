@@ -36,11 +36,11 @@
 
 .field private arrowRotateProgress:F
 
-.field private avatarBackgroundColorKey:Ljava/lang/String;
+.field private avatarBackgroundColorKey:I
 
-.field private backgroundActiveColorKey:Ljava/lang/String;
+.field private backgroundActiveColorKey:I
 
-.field private backgroundColorKey:Ljava/lang/String;
+.field private backgroundColorKey:I
 
 .field private final backgroundPaint:Landroid/graphics/Paint;
 
@@ -82,11 +82,15 @@
 
 .field private pullTooltipLayout:Landroid/text/StaticLayout;
 
+.field private pullTooltipLayoutLeft:F
+
 .field private pullTooltipLayoutWidth:F
 
 .field private final rectF:Landroid/graphics/RectF;
 
 .field private releaseTooltipLayout:Landroid/text/StaticLayout;
+
+.field private releaseTooltipLayoutLeft:F
 
 .field private releaseTooltipLayoutWidth:F
 
@@ -186,20 +190,20 @@
     .line 118
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "chats_archivePullDownBackground"
-
     .line 44
-    iput-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->backgroundColorKey:Ljava/lang/String;
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chats_archivePullDownBackground:I
 
-    const-string v0, "chats_archivePullDownBackgroundActive"
+    iput v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->backgroundColorKey:I
 
     .line 45
-    iput-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->backgroundActiveColorKey:Ljava/lang/String;
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chats_archivePullDownBackgroundActive:I
 
-    const-string v0, "avatar_backgroundArchivedHidden"
+    iput v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->backgroundActiveColorKey:I
 
     .line 46
-    iput-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->avatarBackgroundColorKey:Ljava/lang/String;
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundArchivedHidden:I
+
+    iput v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->avatarBackgroundColorKey:I
 
     const/4 v0, 0x1
 
@@ -290,7 +294,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textInUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
-    .line 479
+    .line 481
     new-instance v0, Lorg/telegram/ui/Components/PullForegroundDrawable$1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/PullForegroundDrawable$1;-><init>(Lorg/telegram/ui/Components/PullForegroundDrawable;)V
@@ -299,7 +303,7 @@
 
     const/4 v0, 0x0
 
-    .line 495
+    .line 497
     iput-boolean v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->wasSendCallback:Z
 
     const-string v2, "fonts/rmedium.ttf"
@@ -370,14 +374,55 @@
     iput-object v12, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->pullTooltipLayout:Landroid/text/StaticLayout;
 
     .line 127
-    invoke-virtual {v12, v0}, Landroid/text/StaticLayout;->getLineWidth(I)F
+    invoke-virtual {v12}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result p1
 
-    iput p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->pullTooltipLayoutWidth:F
+    const/4 v12, 0x0
+
+    if-lez p1, :cond_0
+
+    iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->pullTooltipLayout:Landroid/text/StaticLayout;
+
+    invoke-virtual {p1, v0}, Landroid/text/StaticLayout;->getLineLeft(I)F
+
+    move-result p1
+
+    goto :goto_0
+
+    :cond_0
+    move p1, v12
+
+    :goto_0
+    iput p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->pullTooltipLayoutLeft:F
 
     .line 128
+    iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->pullTooltipLayout:Landroid/text/StaticLayout;
+
+    invoke-virtual {p1}, Landroid/text/StaticLayout;->getLineCount()I
+
+    move-result p1
+
+    if-lez p1, :cond_1
+
+    iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->pullTooltipLayout:Landroid/text/StaticLayout;
+
+    invoke-virtual {p1, v0}, Landroid/text/StaticLayout;->getLineWidth(I)F
+
+    move-result p1
+
+    goto :goto_1
+
+    :cond_1
+    move p1, v12
+
+    :goto_1
+    iput p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->pullTooltipLayoutWidth:F
+
+    .line 129
     new-instance p1, Landroid/text/StaticLayout;
+
+    const/4 v4, 0x0
 
     invoke-interface {p2}, Ljava/lang/CharSequence;->length()I
 
@@ -389,22 +434,62 @@
 
     sget-object v8, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
 
+    const/high16 v9, 0x3f800000    # 1.0f
+
+    const/4 v10, 0x0
+
+    const/4 v11, 0x0
+
     move-object v2, p1
 
     move-object v3, p2
+
+    move-object v6, v1
 
     invoke-direct/range {v2 .. v11}, Landroid/text/StaticLayout;-><init>(Ljava/lang/CharSequence;IILandroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->releaseTooltipLayout:Landroid/text/StaticLayout;
 
-    .line 129
-    invoke-virtual {p1, v0}, Landroid/text/StaticLayout;->getLineWidth(I)F
+    .line 130
+    invoke-virtual {p1}, Landroid/text/StaticLayout;->getLineCount()I
 
     move-result p1
 
-    iput p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->releaseTooltipLayoutWidth:F
+    if-lez p1, :cond_2
 
-    .line 132
+    iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->releaseTooltipLayout:Landroid/text/StaticLayout;
+
+    invoke-virtual {p1, v0}, Landroid/text/StaticLayout;->getLineLeft(I)F
+
+    move-result p1
+
+    goto :goto_2
+
+    :cond_2
+    move p1, v12
+
+    :goto_2
+    iput p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->releaseTooltipLayoutLeft:F
+
+    .line 131
+    iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->releaseTooltipLayout:Landroid/text/StaticLayout;
+
+    invoke-virtual {p1}, Landroid/text/StaticLayout;->getLineCount()I
+
+    move-result p1
+
+    if-lez p1, :cond_3
+
+    iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->releaseTooltipLayout:Landroid/text/StaticLayout;
+
+    invoke-virtual {p1, v0}, Landroid/text/StaticLayout;->getLineWidth(I)F
+
+    move-result v12
+
+    :cond_3
+    iput v12, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->releaseTooltipLayoutWidth:F
+
+    .line 134
     :try_start_0
     sget-object p1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -480,7 +565,7 @@
 
     const/16 v0, 0x48
 
-    .line 137
+    .line 139
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -491,7 +576,7 @@
 .method private synthetic lambda$colorize$3(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 444
+    .line 446
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -504,21 +589,21 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalProgress:F
 
-    .line 445
+    .line 447
     iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->cell:Landroid/view/View;
 
     if-eqz p1, :cond_0
 
-    .line 446
+    .line 448
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    .line 448
+    .line 450
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     if-eqz p1, :cond_1
 
-    .line 449
+    .line 451
     invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
 
     :cond_1
@@ -528,7 +613,7 @@
 .method private synthetic lambda$colorize$4(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 464
+    .line 466
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -541,21 +626,21 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalProgressOut:F
 
-    .line 465
+    .line 467
     iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->cell:Landroid/view/View;
 
     if-eqz p1, :cond_0
 
-    .line 466
+    .line 468
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    .line 468
+    .line 470
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     if-eqz p1, :cond_1
 
-    .line 469
+    .line 471
     invoke-virtual {p1}, Landroid/view/ViewGroup;->invalidate()V
 
     :cond_1
@@ -621,7 +706,7 @@
 .method private synthetic lambda$startOutAnimation$5(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 526
+    .line 528
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -634,12 +719,12 @@
 
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/PullForegroundDrawable;->setOutProgress(F)V
 
-    .line 527
+    .line 529
     iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->cell:Landroid/view/View;
 
     if-eqz p1, :cond_0
 
-    .line 528
+    .line 530
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
     :cond_0
@@ -649,7 +734,7 @@
 .method private synthetic lambda$startOutAnimation$6(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 537
+    .line 539
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -664,15 +749,15 @@
 
     const/4 p1, 0x1
 
-    .line 538
+    .line 540
     iput-boolean p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->bounceIn:Z
 
-    .line 539
+    .line 541
     iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->cell:Landroid/view/View;
 
     if-eqz p1, :cond_0
 
-    .line 540
+    .line 542
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
     :cond_0
@@ -682,7 +767,7 @@
 .method private synthetic lambda$startOutAnimation$7(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 549
+    .line 551
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -697,15 +782,15 @@
 
     const/4 p1, 0x0
 
-    .line 550
+    .line 552
     iput-boolean p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->bounceIn:Z
 
-    .line 551
+    .line 553
     iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->cell:Landroid/view/View;
 
     if-eqz p1, :cond_0
 
-    .line 552
+    .line 554
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
     :cond_0
@@ -715,7 +800,7 @@
 .method private synthetic lambda$updateTextProgress$2(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 421
+    .line 423
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -728,12 +813,12 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->arrowRotateProgress:F
 
-    .line 422
+    .line 424
     iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->cell:Landroid/view/View;
 
     if-eqz p1, :cond_0
 
-    .line 423
+    .line 425
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
     :cond_0
@@ -743,19 +828,19 @@
 .method private setOutProgress(F)V
     .locals 3
 
-    .line 576
+    .line 578
     iput p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->outProgress:F
 
-    .line 577
-    iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->avatarBackgroundColorKey:Ljava/lang/String;
+    .line 579
+    iget p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->avatarBackgroundColorKey:I
 
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getNonAnimatedColor(Ljava/lang/String;)I
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getNonAnimatedColor(I)I
 
     move-result p1
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->backgroundActiveColorKey:Ljava/lang/String;
+    iget v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->backgroundActiveColorKey:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getNonAnimatedColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getNonAnimatedColor(I)I
 
     move-result v0
 
@@ -769,12 +854,12 @@
 
     move-result p1
 
-    .line 578
+    .line 580
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->paintBackgroundAccent:Landroid/graphics/Paint;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 579
+    .line 581
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->changeAvatarColor:Z
 
     if-eqz v0, :cond_0
@@ -785,33 +870,33 @@
 
     if-eqz v0, :cond_0
 
-    .line 580
+    .line 582
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieDrawable;->beginApplyLayerColors()V
 
-    .line 581
+    .line 583
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     const-string v1, "Arrow1.**"
 
     invoke-virtual {v0, v1, p1}, Lorg/telegram/ui/Components/RLottieDrawable;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 582
+    .line 584
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     const-string v1, "Arrow2.**"
 
     invoke-virtual {v0, v1, p1}, Lorg/telegram/ui/Components/RLottieDrawable;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 583
+    .line 585
     sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieDrawable;->commitApplyLayerColors()V
 
     const/4 p1, 0x1
 
-    .line 584
+    .line 586
     sput-boolean p1, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawableRecolored:Z
 
     :cond_0
@@ -821,12 +906,12 @@
 .method private textIn()V
     .locals 4
 
-    .line 498
+    .line 500
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->animateToTextIn:Z
 
     if-nez v0, :cond_1
 
-    .line 499
+    .line 501
     iget v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->scrollDy:I
 
     invoke-static {v0}, Ljava/lang/Math;->abs(I)I
@@ -847,33 +932,33 @@
 
     if-gez v0, :cond_0
 
-    .line 500
+    .line 502
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->wasSendCallback:Z
 
     if-nez v0, :cond_1
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 501
+    .line 503
     iput v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textInProgress:F
 
-    .line 502
+    .line 504
     iput-boolean v1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->animateToTextIn:Z
 
     goto :goto_0
 
-    .line 505
+    .line 507
     :cond_0
     iput-boolean v1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->wasSendCallback:Z
 
-    .line 506
+    .line 508
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->cell:Landroid/view/View;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textInRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 507
+    .line 509
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->cell:Landroid/view/View;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textInRunnable:Ljava/lang/Runnable;
@@ -907,7 +992,7 @@
     :cond_0
     move p1, v1
 
-    .line 395
+    .line 397
     :goto_0
     iget-boolean v2, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->animateToEndText:Z
 
@@ -919,22 +1004,22 @@
 
     if-eq v2, p1, :cond_6
 
-    .line 396
+    .line 398
     iput-boolean p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->animateToEndText:Z
 
-    .line 397
+    .line 399
     iget v2, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textInProgress:F
 
     cmpl-float v2, v2, v5
 
     if-nez v2, :cond_3
 
-    .line 398
+    .line 400
     iget-object v2, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textSwipingAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v2, :cond_1
 
-    .line 399
+    .line 401
     invoke-virtual {v2}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_1
@@ -947,25 +1032,25 @@
     :cond_2
     move v2, v4
 
-    .line 401
+    .line 403
     :goto_1
     iput v2, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textSwappingProgress:F
 
     goto :goto_3
 
-    .line 403
+    .line 405
     :cond_3
     iget-object v2, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textSwipingAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v2, :cond_4
 
-    .line 404
+    .line 406
     invoke-virtual {v2}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_4
     new-array v2, v3, [F
 
-    .line 406
+    .line 408
     iget v6, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textSwappingProgress:F
 
     aput v6, v2, v1
@@ -988,12 +1073,12 @@
 
     iput-object v2, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textSwipingAnimator:Landroid/animation/ValueAnimator;
 
-    .line 407
+    .line 409
     iget-object v6, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textSwappingUpdateListener:Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
     invoke-virtual {v2, v6}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 408
+    .line 410
     iget-object v2, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textSwipingAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v6, Landroid/view/animation/LinearInterpolator;
@@ -1002,40 +1087,40 @@
 
     invoke-virtual {v2, v6}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 409
+    .line 411
     iget-object v2, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textSwipingAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v6, 0xaa
 
     invoke-virtual {v2, v6, v7}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 410
+    .line 412
     iget-object v2, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textSwipingAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v2}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 414
+    .line 416
     :cond_6
     :goto_3
     iget-boolean v2, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->arrowAnimateTo:Z
 
     if-eq p1, v2, :cond_9
 
-    .line 415
+    .line 417
     iput-boolean p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->arrowAnimateTo:Z
 
-    .line 416
+    .line 418
     iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->arrowRotateAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz p1, :cond_7
 
-    .line 417
+    .line 419
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_7
     new-array p1, v3, [F
 
-    .line 419
+    .line 421
     iget v2, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->arrowRotateProgress:F
 
     aput v2, p1, v1
@@ -1055,28 +1140,28 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->arrowRotateAnimator:Landroid/animation/ValueAnimator;
 
-    .line 420
+    .line 422
     new-instance v0, Lorg/telegram/ui/Components/PullForegroundDrawable$$ExternalSyntheticLambda2;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/PullForegroundDrawable$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/PullForegroundDrawable;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 426
+    .line 428
     iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->arrowRotateAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_BOTH:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 427
+    .line 429
     iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->arrowRotateAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v0, 0xfa
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 428
+    .line 430
     iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->arrowRotateAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -1090,12 +1175,12 @@
 .method public colorize(Z)V
     .locals 8
 
-    .line 433
+    .line 435
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->animateToColorize:Z
 
     if-eq v0, p1, :cond_3
 
-    .line 434
+    .line 436
     iput-boolean p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->animateToColorize:Z
 
     const/4 v0, 0x0
@@ -1114,18 +1199,18 @@
 
     if-eqz p1, :cond_1
 
-    .line 436
+    .line 438
     iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalAnimatorIn:Landroid/animation/ValueAnimator;
 
     if-eqz p1, :cond_0
 
-    .line 437
+    .line 439
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 438
+    .line 440
     iput-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalAnimatorIn:Landroid/animation/ValueAnimator;
 
-    .line 441
+    .line 443
     :cond_0
     iput v7, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalProgress:F
 
@@ -1135,52 +1220,52 @@
 
     aput v3, p1, v4
 
-    .line 442
+    .line 444
     invoke-static {p1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalAnimatorIn:Landroid/animation/ValueAnimator;
 
-    .line 443
+    .line 445
     new-instance v0, Lorg/telegram/ui/Components/PullForegroundDrawable$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/PullForegroundDrawable$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/PullForegroundDrawable;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 452
+    .line 454
     iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalAnimatorIn:Landroid/animation/ValueAnimator;
 
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->accelerateInterpolator:Landroid/view/animation/AccelerateInterpolator;
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 453
+    .line 455
     iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalAnimatorIn:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 454
+    .line 456
     iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalAnimatorIn:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_0
 
-    .line 456
+    .line 458
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalAnimatorOut:Landroid/animation/ValueAnimator;
 
     if-eqz p1, :cond_2
 
-    .line 457
+    .line 459
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 458
+    .line 460
     iput-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalAnimatorOut:Landroid/animation/ValueAnimator;
 
-    .line 461
+    .line 463
     :cond_2
     iput v7, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalProgressOut:F
 
@@ -1190,33 +1275,33 @@
 
     aput v3, p1, v4
 
-    .line 462
+    .line 464
     invoke-static {p1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalAnimatorOut:Landroid/animation/ValueAnimator;
 
-    .line 463
+    .line 465
     new-instance v0, Lorg/telegram/ui/Components/PullForegroundDrawable$$ExternalSyntheticLambda3;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/PullForegroundDrawable$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/PullForegroundDrawable;)V
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 472
+    .line 474
     iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalAnimatorOut:Landroid/animation/ValueAnimator;
 
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->accelerateInterpolator:Landroid/view/animation/AccelerateInterpolator;
 
     invoke-virtual {p1, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 473
+    .line 475
     iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalAnimatorOut:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 474
+    .line 476
     iget-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalAnimatorOut:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
@@ -1229,83 +1314,83 @@
 .method public doNotShow()V
     .locals 4
 
-    .line 589
+    .line 591
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textSwipingAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 590
+    .line 592
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 592
+    .line 594
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textIntAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_1
 
-    .line 593
+    .line 595
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 595
+    .line 597
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->cell:Landroid/view/View;
 
     if-eqz v0, :cond_2
 
-    .line 596
+    .line 598
     iget-object v1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textInRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
 
-    .line 598
+    .line 600
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalAnimatorIn:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_3
 
-    .line 599
+    .line 601
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_3
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 601
+    .line 603
     iput v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textSwappingProgress:F
 
-    .line 602
+    .line 604
     iput v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->arrowRotateProgress:F
 
     const/4 v1, 0x0
 
-    .line 603
+    .line 605
     iput-boolean v1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->animateToEndText:Z
 
-    .line 604
+    .line 606
     iput-boolean v1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->arrowAnimateTo:Z
 
-    .line 605
+    .line 607
     iput-boolean v1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->animateToTextIn:Z
 
-    .line 606
+    .line 608
     iput-boolean v1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->wasSendCallback:Z
 
     const/4 v2, 0x0
 
-    .line 607
+    .line 609
     iput v2, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textInProgress:F
 
     const/4 v3, 0x1
 
-    .line 608
+    .line 610
     iput-boolean v3, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->isOut:Z
 
-    .line 609
+    .line 611
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/PullForegroundDrawable;->setOutProgress(F)V
 
-    .line 610
+    .line 612
     iput-boolean v1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->animateToColorize:Z
 
-    .line 611
+    .line 613
     iput v2, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalProgress:F
 
     return-void
@@ -1316,7 +1401,7 @@
 
     const/4 v0, 0x0
 
-    .line 173
+    .line 175
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/PullForegroundDrawable;->draw(Landroid/graphics/Canvas;Z)V
 
     return-void
@@ -1329,7 +1414,7 @@
 
     move-object/from16 v8, p1
 
-    .line 181
+    .line 183
     iget-boolean v1, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->willDraw:Z
 
     if-eqz v1, :cond_1f
@@ -1348,7 +1433,7 @@
 
     goto/16 :goto_c
 
-    .line 184
+    .line 186
     :cond_0
     instance-of v9, v1, Lorg/telegram/ui/TopicsFragment$TopicDialogCell;
 
@@ -1361,7 +1446,7 @@
     :cond_1
     const/16 v1, 0x1c
 
-    .line 185
+    .line 187
     :goto_0
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -1369,33 +1454,33 @@
 
     const/16 v10, 0x8
 
-    .line 186
+    .line 188
     invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v11
 
     const/16 v2, 0x9
 
-    .line 187
+    .line 189
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v12
 
     const/16 v2, 0x12
 
-    .line 188
+    .line 190
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
-    .line 190
+    .line 192
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/PullForegroundDrawable;->getViewOffset()F
 
     move-result v3
 
     float-to-int v3, v3
 
-    .line 191
+    .line 193
     iget-object v4, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->cell:Landroid/view/View;
 
     invoke-virtual {v4}, Landroid/view/View;->getHeight()I
@@ -1410,7 +1495,7 @@
 
     float-to-int v4, v4
 
-    .line 193
+    .line 195
     iget-boolean v6, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->bounceIn:Z
 
     if-eqz v6, :cond_2
@@ -1437,10 +1522,10 @@
     :goto_1
     move v13, v7
 
-    .line 195
+    .line 197
     invoke-direct {v0, v5}, Lorg/telegram/ui/Components/PullForegroundDrawable;->updateTextProgress(F)V
 
-    .line 197
+    .line 199
     iget v5, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->outProgress:F
 
     const/high16 v14, 0x40000000    # 2.0f
@@ -1455,11 +1540,11 @@
 
     move v5, v15
 
-    .line 202
+    .line 204
     :cond_3
     iget v7, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->outCx:F
 
-    .line 203
+    .line 205
     iget v6, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->outCy:F
 
     if-eqz p2, :cond_4
@@ -1473,7 +1558,7 @@
 
     add-int v6, v1, v12
 
-    .line 209
+    .line 211
     iget-object v14, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->cell:Landroid/view/View;
 
     invoke-virtual {v14}, Landroid/view/View;->getMeasuredHeight()I
@@ -1512,13 +1597,13 @@
 
     div-float/2addr v9, v12
 
-    .line 216
+    .line 218
     :goto_2
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     if-eqz p2, :cond_7
 
-    .line 219
+    .line 221
     iget-object v12, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v12}, Landroid/view/ViewGroup;->getMeasuredWidth()I
@@ -1542,7 +1627,7 @@
 
     move/from16 v20, v3
 
-    .line 221
+    .line 223
     :goto_3
     iget v2, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->outProgress:F
 
@@ -1552,7 +1637,7 @@
 
     if-nez v2, :cond_9
 
-    .line 222
+    .line 224
     iget v2, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalProgress:F
 
     const/high16 v3, 0x3f800000    # 1.0f
@@ -1567,7 +1652,7 @@
 
     if-eqz v2, :cond_8
 
-    .line 223
+    .line 225
     iget-object v2, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->backgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v8, v2}, Landroid/graphics/Canvas;->drawPaint(Landroid/graphics/Paint;)V
@@ -1579,7 +1664,7 @@
 
     goto :goto_4
 
-    .line 226
+    .line 228
     :cond_9
     iget v2, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->outRadius:F
 
@@ -1609,7 +1694,7 @@
 
     add-float/2addr v2, v3
 
-    .line 228
+    .line 230
     iget v3, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalProgress:F
 
     cmpl-float v3, v3, v17
@@ -1622,18 +1707,18 @@
 
     if-eqz v3, :cond_a
 
-    .line 229
+    .line 231
     iget-object v3, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->backgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v8, v7, v10, v2, v3}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 232
+    .line 234
     :cond_a
     iget-object v3, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->circleClipPath:Landroid/graphics/Path;
 
     invoke-virtual {v3}, Landroid/graphics/Path;->reset()V
 
-    .line 233
+    .line 235
     iget-object v3, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->rectF:Landroid/graphics/RectF;
 
     sub-float v12, v7, v2
@@ -1650,7 +1735,7 @@
 
     invoke-virtual {v3, v12, v13, v11, v2}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 234
+    .line 236
     iget-object v2, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->circleClipPath:Landroid/graphics/Path;
 
     iget-object v3, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->rectF:Landroid/graphics/RectF;
@@ -1659,18 +1744,18 @@
 
     invoke-virtual {v2, v3, v11}, Landroid/graphics/Path;->addOval(Landroid/graphics/RectF;Landroid/graphics/Path$Direction;)V
 
-    .line 235
+    .line 237
     iget-object v2, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->circleClipPath:Landroid/graphics/Path;
 
     invoke-virtual {v8, v2}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
-    .line 238
+    .line 240
     :goto_4
     iget-boolean v2, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->animateToColorize:Z
 
     if-eqz v2, :cond_c
 
-    .line 239
+    .line 241
     iget v2, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalProgressOut:F
 
     iget v3, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalProgress:F
@@ -1679,14 +1764,14 @@
 
     if-lez v2, :cond_b
 
-    .line 240
+    .line 242
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     int-to-float v2, v6
 
     sub-float v3, v7, v2
 
-    .line 241
+    .line 243
     iget v11, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->outProgress:F
 
     mul-float/2addr v3, v11
@@ -1699,7 +1784,7 @@
 
     invoke-virtual {v8, v3, v13}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 242
+    .line 244
     iget-object v3, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->cell:Landroid/view/View;
 
     invoke-virtual {v3}, Landroid/view/View;->getWidth()I
@@ -1716,10 +1801,10 @@
 
     invoke-virtual {v8, v2, v12, v3, v11}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 243
+    .line 245
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 245
+    .line 247
     :cond_b
     iget v2, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalProgress:F
 
@@ -1729,14 +1814,14 @@
 
     if-lez v2, :cond_e
 
-    .line 246
+    .line 248
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     int-to-float v2, v6
 
     sub-float v3, v7, v2
 
-    .line 247
+    .line 249
     iget v11, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->outProgress:F
 
     mul-float/2addr v3, v11
@@ -1749,7 +1834,7 @@
 
     invoke-virtual {v8, v3, v13}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 248
+    .line 250
     iget-object v3, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->cell:Landroid/view/View;
 
     invoke-virtual {v3}, Landroid/view/View;->getWidth()I
@@ -1766,12 +1851,12 @@
 
     invoke-virtual {v8, v2, v12, v3, v11}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 249
+    .line 251
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_5
 
-    .line 252
+    .line 254
     :cond_c
     iget v2, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalProgress:F
 
@@ -1781,14 +1866,14 @@
 
     if-lez v2, :cond_d
 
-    .line 253
+    .line 255
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     int-to-float v2, v6
 
     sub-float v3, v7, v2
 
-    .line 254
+    .line 256
     iget v11, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->outProgress:F
 
     mul-float/2addr v3, v11
@@ -1801,7 +1886,7 @@
 
     invoke-virtual {v8, v3, v13}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 255
+    .line 257
     iget-object v3, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->cell:Landroid/view/View;
 
     invoke-virtual {v3}, Landroid/view/View;->getWidth()I
@@ -1818,10 +1903,10 @@
 
     invoke-virtual {v8, v2, v12, v3, v11}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 256
+    .line 258
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 258
+    .line 260
     :cond_d
     iget v2, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->accentRevalProgressOut:F
 
@@ -1831,14 +1916,14 @@
 
     if-lez v2, :cond_e
 
-    .line 259
+    .line 261
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     int-to-float v2, v6
 
     sub-float v3, v7, v2
 
-    .line 260
+    .line 262
     iget v11, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->outProgress:F
 
     mul-float/2addr v3, v11
@@ -1851,7 +1936,7 @@
 
     invoke-virtual {v8, v3, v13}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 261
+    .line 263
     iget-object v3, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->cell:Landroid/view/View;
 
     invoke-virtual {v3}, Landroid/view/View;->getWidth()I
@@ -1868,7 +1953,7 @@
 
     invoke-virtual {v8, v2, v12, v3, v11}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 262
+    .line 264
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_e
@@ -1877,7 +1962,7 @@
 
     if-le v4, v15, :cond_10
 
-    .line 267
+    .line 269
     iget-object v2, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->paintSecondary:Landroid/graphics/Paint;
 
     const/high16 v3, 0x3f800000    # 1.0f
@@ -1898,7 +1983,7 @@
 
     if-eqz p2, :cond_f
 
-    .line 269
+    .line 271
     iget-object v2, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->rectF:Landroid/graphics/RectF;
 
     int-to-float v3, v1
@@ -1924,7 +2009,7 @@
     :cond_f
     move/from16 v12, v22
 
-    .line 271
+    .line 273
     iget-object v2, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->rectF:Landroid/graphics/RectF;
 
     int-to-float v3, v1
@@ -1959,7 +2044,7 @@
 
     invoke-virtual {v2, v3, v4, v1, v5}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 273
+    .line 275
     :goto_6
     iget-object v1, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->rectF:Landroid/graphics/RectF;
 
@@ -1981,7 +2066,7 @@
     :goto_7
     if-eqz p2, :cond_11
 
-    .line 277
+    .line 279
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
@@ -1991,7 +2076,7 @@
 
     int-to-float v1, v14
 
-    .line 282
+    .line 284
     iget-object v2, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->cell:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->getMeasuredHeight()I
@@ -2016,7 +2101,7 @@
 
     float-to-int v14, v1
 
-    .line 284
+    .line 286
     :cond_12
     iget v1, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->outProgress:F
 
@@ -2037,7 +2122,7 @@
 
     goto/16 :goto_a
 
-    .line 285
+    .line 287
     :cond_14
     :goto_8
     iget-object v2, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->paintWhite:Landroid/graphics/Paint;
@@ -2060,26 +2145,26 @@
 
     int-to-float v3, v13
 
-    .line 286
+    .line 288
     iget-object v4, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->paintWhite:Landroid/graphics/Paint;
 
     invoke-virtual {v8, v1, v2, v3, v4}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 288
+    .line 290
     iget-object v3, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->arrowDrawable:Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;->getIntrinsicHeight()I
 
     move-result v3
 
-    .line 289
+    .line 291
     iget-object v4, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->arrowDrawable:Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;
 
     invoke-virtual {v4}, Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;->getIntrinsicWidth()I
 
     move-result v4
 
-    .line 291
+    .line 293
     iget-object v5, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->arrowDrawable:Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;
 
     shr-int/lit8 v4, v4, 0x1
@@ -2098,7 +2183,7 @@
 
     invoke-virtual {v5, v11, v7, v4, v14}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 293
+    .line 295
     iget v3, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->arrowRotateProgress:F
 
     const/high16 v4, 0x3f800000    # 1.0f
@@ -2116,17 +2201,17 @@
     :cond_15
     sub-float v3, v4, v3
 
-    .line 298
+    .line 300
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     const/high16 v5, 0x43340000    # 180.0f
 
     mul-float/2addr v5, v3
 
-    .line 299
+    .line 301
     invoke-virtual {v8, v5, v1, v2}, Landroid/graphics/Canvas;->rotate(FFF)V
 
-    .line 300
+    .line 302
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dpf2(F)F
 
     move-result v1
@@ -2139,7 +2224,7 @@
 
     invoke-virtual {v8, v2, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 301
+    .line 303
     iget-object v1, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->arrowDrawable:Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;
 
     iget-boolean v2, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->animateToColorize:Z
@@ -2155,16 +2240,16 @@
     goto :goto_9
 
     :cond_16
-    iget-object v2, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->backgroundColorKey:Ljava/lang/String;
+    iget v2, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->backgroundColorKey:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
     :goto_9
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;->setColor(I)V
 
-    .line 302
+    .line 304
     iget-object v1, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->arrowDrawable:Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;
 
     iget v2, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->outProgress:F
@@ -2181,15 +2266,15 @@
 
     invoke-virtual {v1, v2}, Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;->setAlpha(I)V
 
-    .line 303
+    .line 305
     iget-object v1, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->arrowDrawable:Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;
 
     invoke-virtual {v1, v8}, Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 304
+    .line 306
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 307
+    .line 309
     :goto_a
     iget v1, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->pullProgress:F
 
@@ -2199,10 +2284,10 @@
 
     if-lez v1, :cond_17
 
-    .line 308
+    .line 310
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/PullForegroundDrawable;->textIn()V
 
-    .line 311
+    .line 313
     :cond_17
     iget-object v1, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->cell:Landroid/view/View;
 
@@ -2230,7 +2315,7 @@
 
     add-float v11, v1, v2
 
-    .line 312
+    .line 314
     iget-object v1, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->cell:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getWidth()I
@@ -2251,7 +2336,7 @@
 
     sub-float v14, v1, v2
 
-    .line 314
+    .line 316
     iget v1, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textSwappingProgress:F
 
     const/4 v2, 0x0
@@ -2268,12 +2353,12 @@
 
     if-gez v1, :cond_18
 
-    .line 315
+    .line 317
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     const v1, 0x3e4ccccd    # 0.2f
 
-    .line 316
+    .line 318
     iget v3, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textSwappingProgress:F
 
     mul-float/2addr v3, v1
@@ -2282,7 +2367,7 @@
 
     const/16 v1, 0x10
 
-    .line 317
+    .line 319
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -2304,7 +2389,7 @@
 
     const/4 v3, 0x0
 
-    .line 319
+    .line 321
     iget-object v1, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->cell:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getMeasuredWidth()I
@@ -2349,14 +2434,18 @@
 
     invoke-virtual/range {v1 .. v7}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
 
-    .line 320
-    iget v1, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->pullTooltipLayoutWidth:F
-
-    const/high16 v2, 0x40000000    # 2.0f
-
-    div-float/2addr v1, v2
+    .line 322
+    iget v1, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->pullTooltipLayoutLeft:F
 
     sub-float v1, v14, v1
+
+    iget v2, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->pullTooltipLayoutWidth:F
+
+    const/high16 v3, 0x40000000    # 2.0f
+
+    div-float/2addr v2, v3
+
+    sub-float/2addr v1, v2
 
     const/16 v2, 0x8
 
@@ -2386,15 +2475,15 @@
 
     invoke-virtual {v8, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 321
+    .line 323
     iget-object v1, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->pullTooltipLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v1, v8}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 322
+    .line 324
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 324
+    .line 326
     iget v1, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textSwappingProgress:F
 
     const/4 v2, 0x0
@@ -2409,7 +2498,7 @@
 
     if-gez v1, :cond_1a
 
-    .line 325
+    .line 327
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_b
@@ -2417,7 +2506,7 @@
     :cond_19
     const/high16 v3, 0x3f800000    # 1.0f
 
-    .line 328
+    .line 330
     :cond_1a
     :goto_b
     iget v1, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textSwappingProgress:F
@@ -2430,14 +2519,14 @@
 
     if-gez v1, :cond_1b
 
-    .line 329
+    .line 331
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     const v1, 0x3f666666    # 0.9f
 
     const v2, 0x3dcccccd    # 0.1f
 
-    .line 330
+    .line 332
     iget v4, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textSwappingProgress:F
 
     sub-float v4, v3, v4
@@ -2448,7 +2537,7 @@
 
     const/16 v1, 0x8
 
-    .line 331
+    .line 333
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -2468,7 +2557,7 @@
 
     const/4 v3, 0x0
 
-    .line 333
+    .line 335
     iget-object v1, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->cell:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getMeasuredWidth()I
@@ -2509,7 +2598,11 @@
 
     invoke-virtual/range {v1 .. v7}, Landroid/graphics/Canvas;->saveLayerAlpha(FFFFII)I
 
-    .line 334
+    .line 336
+    iget v1, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->releaseTooltipLayoutLeft:F
+
+    sub-float/2addr v14, v1
+
     iget v1, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->releaseTooltipLayoutWidth:F
 
     const/high16 v2, 0x40000000    # 2.0f
@@ -2542,15 +2635,15 @@
 
     invoke-virtual {v8, v14, v11}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 335
+    .line 337
     iget-object v1, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->releaseTooltipLayout:Landroid/text/StaticLayout;
 
     invoke-virtual {v1, v8}, Landroid/text/StaticLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 336
+    .line 338
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 338
+    .line 340
     iget v1, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textSwappingProgress:F
 
     const/4 v2, 0x0
@@ -2565,16 +2658,16 @@
 
     if-gez v1, :cond_1c
 
-    .line 339
+    .line 341
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 341
+    .line 343
     :cond_1c
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     if-nez v16, :cond_1f
 
-    .line 343
+    .line 345
     iget-boolean v1, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->changeAvatarColor:Z
 
     if-eqz v1, :cond_1f
@@ -2587,17 +2680,17 @@
 
     if-lez v1, :cond_1f
 
-    .line 344
+    .line 346
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 345
+    .line 347
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Components/RLottieDrawable;->getIntrinsicWidth()I
 
     move-result v1
 
-    .line 347
+    .line 349
     sget-boolean v2, Lorg/telegram/messenger/SharedConfig;->isDialogsCompactModeEnabled:Z
 
     if-eqz v2, :cond_1d
@@ -2608,7 +2701,7 @@
 
     float-to-int v1, v1
 
-    .line 353
+    .line 355
     :cond_1d
     iget-object v2, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->cell:Landroid/view/View;
 
@@ -2622,7 +2715,7 @@
 
     const/16 v3, 0x18
 
-    .line 355
+    .line 357
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -2637,7 +2730,7 @@
 
     sub-float v15, v4, v3
 
-    .line 356
+    .line 358
     iget v5, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->outProgress:F
 
     mul-float/2addr v15, v5
@@ -2666,35 +2759,35 @@
 
     mul-float/2addr v2, v15
 
-    .line 360
+    .line 362
     invoke-virtual {v8, v6, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 361
+    .line 363
     invoke-virtual {v8, v3, v3, v7, v10}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 363
+    .line 365
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     const/4 v3, 0x0
 
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Components/RLottieDrawable;->setProgress(F)V
 
-    .line 364
+    .line 366
     sget-boolean v2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawableRecolored:Z
 
     if-nez v2, :cond_1e
 
-    .line 365
+    .line 367
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/RLottieDrawable;->beginApplyLayerColors()V
 
-    .line 366
+    .line 368
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    iget-object v3, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->avatarBackgroundColorKey:Ljava/lang/String;
+    iget v3, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->avatarBackgroundColorKey:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getNonAnimatedColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getNonAnimatedColor(I)I
 
     move-result v3
 
@@ -2702,12 +2795,12 @@
 
     invoke-virtual {v2, v4, v3}, Lorg/telegram/ui/Components/RLottieDrawable;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 367
+    .line 369
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    iget-object v3, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->avatarBackgroundColorKey:Ljava/lang/String;
+    iget v3, v0, Lorg/telegram/ui/Components/PullForegroundDrawable;->avatarBackgroundColorKey:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getNonAnimatedColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getNonAnimatedColor(I)I
 
     move-result v3
 
@@ -2715,15 +2808,15 @@
 
     invoke-virtual {v2, v4, v3}, Lorg/telegram/ui/Components/RLottieDrawable;->setLayerColor(Ljava/lang/String;I)V
 
-    .line 368
+    .line 370
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v2}, Lorg/telegram/ui/Components/RLottieDrawable;->commitApplyLayerColors()V
 
-    .line 369
+    .line 371
     sput-boolean v18, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawableRecolored:Z
 
-    .line 372
+    .line 374
     :cond_1e
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
@@ -2749,12 +2842,12 @@
 
     invoke-virtual {v2, v3, v4, v5, v1}, Landroid/graphics/drawable/BitmapDrawable;->setBounds(IIII)V
 
-    .line 373
+    .line 375
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
     invoke-virtual {v1, v8}, Lorg/telegram/ui/Components/RLottieDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 375
+    .line 377
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     :cond_1f
@@ -2767,7 +2860,7 @@
 
     const/4 v0, 0x1
 
-    .line 169
+    .line 171
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Components/PullForegroundDrawable;->draw(Landroid/graphics/Canvas;Z)V
 
     return-void
@@ -2784,7 +2877,7 @@
 .method public isDraw()Z
     .locals 1
 
-    .line 636
+    .line 638
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->willDraw:Z
 
     if-eqz v0, :cond_0
@@ -2807,21 +2900,21 @@
 .method public resetText()V
     .locals 2
 
-    .line 645
+    .line 647
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textIntAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 646
+    .line 648
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 648
+    .line 650
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->cell:Landroid/view/View;
 
     if-eqz v0, :cond_1
 
-    .line 649
+    .line 651
     iget-object v1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textInRunnable:Ljava/lang/Runnable;
 
     invoke-virtual {v0, v1}, Landroid/view/View;->removeCallbacks(Ljava/lang/Runnable;)Z
@@ -2829,15 +2922,15 @@
     :cond_1
     const/4 v0, 0x0
 
-    .line 651
+    .line 653
     iput v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->textInProgress:F
 
     const/4 v0, 0x0
 
-    .line 652
+    .line 654
     iput-boolean v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->animateToTextIn:Z
 
-    .line 653
+    .line 655
     iput-boolean v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->wasSendCallback:Z
 
     return-void
@@ -2846,10 +2939,10 @@
 .method public setCell(Landroid/view/View;)V
     .locals 0
 
-    .line 148
+    .line 150
     iput-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->cell:Landroid/view/View;
 
-    .line 149
+    .line 151
     invoke-virtual {p0}, Lorg/telegram/ui/Components/PullForegroundDrawable;->updateColors()V
 
     return-void
@@ -2858,7 +2951,7 @@
 .method public setListView(Lorg/telegram/ui/Components/RecyclerListView;)V
     .locals 0
 
-    .line 165
+    .line 167
     iput-object p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     return-void
@@ -2867,7 +2960,7 @@
 .method public setWillDraw(Z)V
     .locals 0
 
-    .line 641
+    .line 643
     iput-boolean p1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->willDraw:Z
 
     return-void
@@ -2876,15 +2969,15 @@
 .method public showHidden()V
     .locals 1
 
-    .line 615
+    .line 617
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->outAnimator:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_0
 
-    .line 616
+    .line 618
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->removeAllListeners()V
 
-    .line 617
+    .line 619
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->outAnimator:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
@@ -2892,15 +2985,15 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 619
+    .line 621
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/PullForegroundDrawable;->setOutProgress(F)V
 
     const/4 v0, 0x0
 
-    .line 620
+    .line 622
     iput-boolean v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->isOut:Z
 
-    .line 621
+    .line 623
     iput-boolean v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->animateOut:Z
 
     return-void
@@ -2909,7 +3002,7 @@
 .method public startOutAnimation()V
     .locals 8
 
-    .line 513
+    .line 515
     iget-boolean v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->animateOut:Z
 
     if-nez v0, :cond_2
@@ -2920,16 +3013,16 @@
 
     goto/16 :goto_0
 
-    .line 516
+    .line 518
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->outAnimator:Landroid/animation/AnimatorSet;
 
     if-eqz v0, :cond_1
 
-    .line 517
+    .line 519
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->removeAllListeners()V
 
-    .line 518
+    .line 520
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->outAnimator:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->cancel()V
@@ -2937,18 +3030,18 @@
     :cond_1
     const/4 v0, 0x1
 
-    .line 520
+    .line 522
     iput-boolean v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->animateOut:Z
 
-    .line 521
+    .line 523
     iput-boolean v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->bounceIn:Z
 
     const/4 v1, 0x0
 
-    .line 522
+    .line 524
     iput v1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->bounceProgress:F
 
-    .line 523
+    .line 525
     iget-object v1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getTranslationY()F
@@ -2961,95 +3054,95 @@
 
     new-array v2, v1, [F
 
-    .line 524
+    .line 526
     fill-array-data v2, :array_0
 
     invoke-static {v2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v2
 
-    .line 525
+    .line 527
     new-instance v3, Lorg/telegram/ui/Components/PullForegroundDrawable$$ExternalSyntheticLambda6;
 
     invoke-direct {v3, p0}, Lorg/telegram/ui/Components/PullForegroundDrawable$$ExternalSyntheticLambda6;-><init>(Lorg/telegram/ui/Components/PullForegroundDrawable;)V
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 532
+    .line 534
     sget-object v3, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v2, v3}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
     const-wide/16 v3, 0xfa
 
-    .line 533
+    .line 535
     invoke-virtual {v2, v3, v4}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
     new-array v3, v1, [F
 
-    .line 535
+    .line 537
     fill-array-data v3, :array_1
 
     invoke-static {v3}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v3
 
-    .line 536
+    .line 538
     new-instance v4, Lorg/telegram/ui/Components/PullForegroundDrawable$$ExternalSyntheticLambda4;
 
     invoke-direct {v4, p0}, Lorg/telegram/ui/Components/PullForegroundDrawable$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Components/PullForegroundDrawable;)V
 
     invoke-virtual {v3, v4}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 544
+    .line 546
     sget-object v4, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_BOTH:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v3, v4}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
     const-wide/16 v5, 0x96
 
-    .line 545
+    .line 547
     invoke-virtual {v3, v5, v6}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
     new-array v5, v1, [F
 
-    .line 547
+    .line 549
     fill-array-data v5, :array_2
 
     invoke-static {v5}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v5
 
-    .line 548
+    .line 550
     new-instance v6, Lorg/telegram/ui/Components/PullForegroundDrawable$$ExternalSyntheticLambda7;
 
     invoke-direct {v6, p0}, Lorg/telegram/ui/Components/PullForegroundDrawable$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/Components/PullForegroundDrawable;)V
 
     invoke-virtual {v5, v6}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 556
+    .line 558
     invoke-virtual {v5, v4}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
     const-wide/16 v6, 0x87
 
-    .line 557
+    .line 559
     invoke-virtual {v5, v6, v7}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 559
+    .line 561
     new-instance v4, Landroid/animation/AnimatorSet;
 
     invoke-direct {v4}, Landroid/animation/AnimatorSet;-><init>()V
 
     iput-object v4, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->outAnimator:Landroid/animation/AnimatorSet;
 
-    .line 560
+    .line 562
     new-instance v6, Lorg/telegram/ui/Components/PullForegroundDrawable$2;
 
     invoke-direct {v6, p0}, Lorg/telegram/ui/Components/PullForegroundDrawable$2;-><init>(Lorg/telegram/ui/Components/PullForegroundDrawable;)V
 
     invoke-virtual {v4, v6}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 567
+    .line 569
     new-instance v4, Landroid/animation/AnimatorSet;
 
     invoke-direct {v4}, Landroid/animation/AnimatorSet;-><init>()V
@@ -3062,15 +3155,15 @@
 
     aput-object v5, v6, v0
 
-    .line 568
+    .line 570
     invoke-virtual {v4, v6}, Landroid/animation/AnimatorSet;->playSequentially([Landroid/animation/Animator;)V
 
     const-wide/16 v5, 0xb4
 
-    .line 569
+    .line 571
     invoke-virtual {v4, v5, v6}, Landroid/animation/AnimatorSet;->setStartDelay(J)V
 
-    .line 571
+    .line 573
     iget-object v3, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->outAnimator:Landroid/animation/AnimatorSet;
 
     new-array v1, v1, [Landroid/animation/Animator;
@@ -3081,7 +3174,7 @@
 
     invoke-virtual {v3, v1}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 572
+    .line 574
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->outAnimator:Landroid/animation/AnimatorSet;
 
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
@@ -3112,26 +3205,26 @@
 .method public updateColors()V
     .locals 4
 
-    .line 154
-    iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->backgroundColorKey:Ljava/lang/String;
+    .line 156
+    iget v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->backgroundColorKey:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
-    .line 156
+    .line 158
     iget-object v1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->tooltipTextPaint:Landroid/text/TextPaint;
 
     const/4 v2, -0x1
 
     invoke-virtual {v1, v2}, Landroid/text/TextPaint;->setColor(I)V
 
-    .line 157
+    .line 159
     iget-object v1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->paintWhite:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 158
+    .line 160
     iget-object v1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->paintSecondary:Landroid/graphics/Paint;
 
     const/16 v3, 0x64
@@ -3142,22 +3235,22 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 159
+    .line 161
     iget-object v1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->backgroundPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 160
+    .line 162
     iget-object v1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->arrowDrawable:Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/Components/PullForegroundDrawable$ArrowDrawable;->setColor(I)V
 
-    .line 161
+    .line 163
     iget-object v0, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->paintBackgroundAccent:Landroid/graphics/Paint;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->avatarBackgroundColorKey:Ljava/lang/String;
+    iget v1, p0, Lorg/telegram/ui/Components/PullForegroundDrawable;->avatarBackgroundColorKey:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

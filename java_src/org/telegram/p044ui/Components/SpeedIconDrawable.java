@@ -48,7 +48,7 @@ public class SpeedIconDrawable extends Drawable {
         animatedTextDrawable.setAnimationProperties(0.3f, 0L, 165L, CubicBezierInterpolator.EASE_OUT_QUINT);
         animatedTextDrawable.setGravity(1);
         animatedTextDrawable.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        animatedTextDrawable.setTextSize(AndroidUtilities.m50dp(10));
+        animatedTextDrawable.setTextSize(AndroidUtilities.m54dp(10));
         animatedTextDrawable.getPaint().setStyle(Paint.Style.FILL_AND_STROKE);
         animatedTextDrawable.getPaint().setStrokeWidth(AndroidUtilities.dpf2(0.6f));
         if (z) {
@@ -96,12 +96,12 @@ public class SpeedIconDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicWidth() {
-        return AndroidUtilities.m50dp(24);
+        return AndroidUtilities.m54dp(24);
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicHeight() {
-        return AndroidUtilities.m50dp(24);
+        return AndroidUtilities.m54dp(24);
     }
 
     @Override // android.graphics.drawable.Drawable

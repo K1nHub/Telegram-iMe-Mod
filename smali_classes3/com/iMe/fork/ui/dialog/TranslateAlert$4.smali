@@ -22,7 +22,7 @@
 .method constructor <init>(Lcom/iMe/fork/ui/dialog/TranslateAlert;Landroid/content/Context;)V
     .locals 0
 
-    .line 918
+    .line 874
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$4;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     invoke-direct {p0, p2}, Landroidx/core/widget/NestedScrollView;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 921
+    .line 877
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$4;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->access$1100(Lcom/iMe/fork/ui/dialog/TranslateAlert;)Z
@@ -84,7 +84,7 @@
 .method public onNestedScroll(Landroid/view/View;IIII)V
     .locals 0
 
-    .line 926
+    .line 882
     invoke-super/range {p0 .. p5}, Landroidx/core/widget/NestedScrollView;->onNestedScroll(Landroid/view/View;IIII)V
 
     return-void
@@ -93,10 +93,10 @@
 .method protected onScrollChanged(IIII)V
     .locals 0
 
-    .line 931
+    .line 887
     invoke-super {p0, p1, p2, p3, p4}, Landroidx/core/widget/NestedScrollView;->onScrollChanged(IIII)V
 
-    .line 932
+    .line 888
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$4;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/dialog/TranslateAlert;->access$1300(Lcom/iMe/fork/ui/dialog/TranslateAlert;)Z
@@ -105,7 +105,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 933
+    .line 889
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/TranslateAlert$4;->this$0:Lcom/iMe/fork/ui/dialog/TranslateAlert;
 
     const/high16 p2, 0x3f800000    # 1.0f

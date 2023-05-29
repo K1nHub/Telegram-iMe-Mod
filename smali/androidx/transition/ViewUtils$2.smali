@@ -1,4 +1,4 @@
-.class final Landroidx/transition/ViewUtils$2;
+.class Landroidx/transition/ViewUtils$2;
 .super Landroid/util/Property;
 .source "ViewUtils.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x0
     name = null
 .end annotation
 

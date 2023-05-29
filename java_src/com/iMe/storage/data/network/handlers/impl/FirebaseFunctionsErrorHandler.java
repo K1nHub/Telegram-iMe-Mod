@@ -203,7 +203,7 @@ public class FirebaseFunctionsErrorHandler implements ErrorHandler<ApiBaseRespon
     @Override // com.iMe.storage.data.network.handlers.ErrorHandler
     public ErrorModel handleError(ApiBaseResponse<?> apiBaseResponse) {
         IErrorStatus iErrorStatus;
-        Timber.tag("ErrorHandler").mo1e(String.valueOf(apiBaseResponse), new Object[0]);
+        Timber.tag("ErrorHandler").mo2e(String.valueOf(apiBaseResponse), new Object[0]);
         switch (WhenMappings.$EnumSwitchMapping$0[GlobalApiErrorCode.Companion.map(apiBaseResponse != null ? apiBaseResponse.getCode() : null).ordinal()]) {
             case 1:
                 iErrorStatus = ErrorStatus.USER_NOT_FOUND;

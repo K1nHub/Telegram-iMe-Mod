@@ -25,8 +25,8 @@ public final class TextCellWithRightImage extends TextCell {
         super(context, i, z);
         Lazy lazy;
         Intrinsics.checkNotNullParameter(context, "context");
-        this.rightImageOffset = AndroidUtilities.m51dp(16.0f);
-        this.rightImageHeight = AndroidUtilities.m51dp(48.0f);
+        this.rightImageOffset = AndroidUtilities.m55dp(16.0f);
+        this.rightImageHeight = AndroidUtilities.m55dp(48.0f);
         lazy = LazyKt__LazyJVMKt.lazy(new TextCellWithRightImage$rightImage$2(this));
         this.rightImage$delegate = lazy;
     }

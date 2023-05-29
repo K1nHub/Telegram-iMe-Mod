@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChannelAdminLogActivity;)V
     .locals 0
 
-    .line 870
+    .line 878
     iput-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$7;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -56,7 +56,7 @@
 .method public onItemClick(Landroid/view/View;IFF)V
     .locals 0
 
-    .line 873
+    .line 881
     iget-object p2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$7;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p2, p1, p3, p4}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$2800(Lorg/telegram/ui/ChannelAdminLogActivity;Landroid/view/View;FF)Z

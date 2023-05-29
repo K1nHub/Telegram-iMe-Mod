@@ -14,33 +14,41 @@ public final class Timber {
     private static final Tree TREE_OF_SOULS = new Tree() { // from class: timber.log.Timber.1
         @Override // timber.log.Timber.Tree
         /* renamed from: d */
-        public void mo3d(String str, Object... objArr) {
+        public void mo4d(String str, Object... objArr) {
             for (Tree tree : Timber.forestAsArray) {
-                tree.mo3d(str, objArr);
+                tree.mo4d(str, objArr);
             }
         }
 
         @Override // timber.log.Timber.Tree
         /* renamed from: d */
-        public void mo2d(Throwable th) {
+        public void mo3d(Throwable th) {
             for (Tree tree : Timber.forestAsArray) {
-                tree.mo2d(th);
+                tree.mo3d(th);
+            }
+        }
+
+        @Override // timber.log.Timber.Tree
+        /* renamed from: i */
+        public void mo0i(String str, Object... objArr) {
+            for (Tree tree : Timber.forestAsArray) {
+                tree.mo0i(str, objArr);
             }
         }
 
         @Override // timber.log.Timber.Tree
         /* renamed from: e */
-        public void mo1e(String str, Object... objArr) {
+        public void mo2e(String str, Object... objArr) {
             for (Tree tree : Timber.forestAsArray) {
-                tree.mo1e(str, objArr);
+                tree.mo2e(str, objArr);
             }
         }
 
         @Override // timber.log.Timber.Tree
         /* renamed from: e */
-        public void mo0e(Throwable th) {
+        public void mo1e(Throwable th) {
             for (Tree tree : Timber.forestAsArray) {
-                tree.mo0e(th);
+                tree.mo1e(th);
             }
         }
 
@@ -51,23 +59,28 @@ public final class Timber {
     };
 
     /* renamed from: d */
-    public static void m7d(String str, Object... objArr) {
-        TREE_OF_SOULS.mo3d(str, objArr);
+    public static void m9d(String str, Object... objArr) {
+        TREE_OF_SOULS.mo4d(str, objArr);
     }
 
     /* renamed from: d */
-    public static void m6d(Throwable th) {
-        TREE_OF_SOULS.mo2d(th);
+    public static void m8d(Throwable th) {
+        TREE_OF_SOULS.mo3d(th);
+    }
+
+    /* renamed from: i */
+    public static void m5i(String str, Object... objArr) {
+        TREE_OF_SOULS.mo0i(str, objArr);
     }
 
     /* renamed from: e */
-    public static void m5e(String str, Object... objArr) {
-        TREE_OF_SOULS.mo1e(str, objArr);
+    public static void m7e(String str, Object... objArr) {
+        TREE_OF_SOULS.mo2e(str, objArr);
     }
 
     /* renamed from: e */
-    public static void m4e(Throwable th) {
-        TREE_OF_SOULS.mo0e(th);
+    public static void m6e(Throwable th) {
+        TREE_OF_SOULS.mo1e(th);
     }
 
     public static Tree tag(String str) {
@@ -115,22 +128,27 @@ public final class Timber {
         }
 
         /* renamed from: d */
-        public void mo3d(String str, Object... objArr) {
+        public void mo4d(String str, Object... objArr) {
             prepareLog(3, null, str, objArr);
         }
 
         /* renamed from: d */
-        public void mo2d(Throwable th) {
+        public void mo3d(Throwable th) {
             prepareLog(3, th, null, new Object[0]);
         }
 
+        /* renamed from: i */
+        public void mo0i(String str, Object... objArr) {
+            prepareLog(4, null, str, objArr);
+        }
+
         /* renamed from: e */
-        public void mo1e(String str, Object... objArr) {
+        public void mo2e(String str, Object... objArr) {
             prepareLog(6, null, str, objArr);
         }
 
         /* renamed from: e */
-        public void mo0e(Throwable th) {
+        public void mo1e(Throwable th) {
             prepareLog(6, th, null, new Object[0]);
         }
 

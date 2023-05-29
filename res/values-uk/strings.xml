@@ -345,9 +345,6 @@
     <string name="collection_tab_all">Всі</string>
     <string name="collection_tab_categories">Категорії</string>
     <string name="collection_tab_my">Мої</string>
-    <string name="combine_messages_alert_message">"Ви надсилаєте повідомлення поспіль, і це може дратувати інших користувачів.
-
-Включити опцію, щоб ваші повідомлення, надіслані поспіль протягом 30 секунд, об'єднувалися в одне повідомлення?"</string>
     <string name="combine_messages_disable">"Не об'єднувати повідомлення"</string>
     <string name="combine_messages_enable">"Об'єднувати повідомлення"</string>
     <string name="combine_messages_send_without_combine">"Надіслати без об'єднання"</string>
@@ -442,15 +439,11 @@
     <string name="debug_option_choose_wallet_environment_dialog_title">Ви впевнені?</string>
     <string name="deleting_messages">Видалення повідомлень… Оброблено %1$d з %2$d</string>
     <string name="deleting_messages_success">Службові повідомлення видалено</string>
-    <string name="dialog_message_enable_archive_in_drawer">"При відключенні вкладки Усі чати ви не зможете увійти в Архів.
-
-Розмістити кнопку доступу до Архіву в боковому меню?"</string>
     <string name="dialog_promo_discussion_group_description">Світ</string>
     <string name="dialog_promo_en_news_channel_description">Англійський</string>
     <string name="dialog_promo_ru_news_channel_description">Російський</string>
     <string name="dialog_promo_subscribe_subtitle">Тоді приєднуйтесь до нашого каналу</string>
     <string name="dialog_promo_subscribe_title">Хочете стежити за новинами iMe?</string>
-    <string name="dialog_title_enable_archive_in_drawer">Доступ до Архіву</string>
     <string name="dialogs_activity_move_to_folder">Перемістити в папку</string>
     <string name="dialogs_albums_sort_alphabetically">Сортувати за алфавітом</string>
     <string name="dialogs_albums_sort_date">Сортувати за датою</string>
@@ -709,6 +702,8 @@
 Додайте музику в плейлист"</string>
     <string name="music_playlists_tab">Плейлисти</string>
     <string name="music_tab_playlist">Плейлист</string>
+    <string name="nav_app_bar_navigate_up_description">Перейти вгору</string>
+    <string name="nav_app_bar_open_drawer_description">Відкрити панель навігації</string>
     <string name="neurobots_enable_dialog_description">Щоб включити і налаштувати нейроботів, перейдіть в розділ налаштування</string>
     <string name="neurobots_enable_dialog_positive_btn_text">ПЕРЕЙТИ</string>
     <string name="neurobots_enable_dialog_title">Нейроботи відключені</string>
@@ -963,7 +958,6 @@
     <string name="settings_neurobots_item_title">Налаштування нейроботів</string>
     <string name="settings_proxy_button_in_toolbar">Кнопка проксі</string>
     <string name="settings_reactions_enable_hint">Увімкніть цей параметр, щоб відображати функції реакцій у чатах</string>
-    <string name="settings_revoke_by_default">Видалити у співрозмовника</string>
     <string name="settings_section_passcode_archive">Пароль Архіву</string>
     <string name="settings_section_passcode_cloud">Пароль Хмари</string>
     <string name="settings_speed_mega_fast">Мегашвидко</string>
@@ -985,8 +979,6 @@
     <string name="settings_tools_combine_messages_hint">"Якщо ви часто надсилаєте повідомлення поспіль, ви можете дратувати інших користувачів.
 
 Увімкніть цю опцію, щоб повідомлення, надіслані протягом 30 секунд, були об'єднані в одне повідомлення."</string>
-    <string name="settings_tools_custom_sharing">Мультишарінг</string>
-    <string name="settings_tools_custom_sharing_hint">Відображення вкладок сортування основного та архівної списку чатів при шарінгом ззовні. Наприклад, коли ви ділитеся фото з Галереї у iMe.</string>
     <string name="settings_tools_customization">Кастомізація</string>
     <string name="settings_tools_design_icon">Дизайн іконок</string>
     <string name="settings_tools_message_popup_reactions">У контекстному меню</string>

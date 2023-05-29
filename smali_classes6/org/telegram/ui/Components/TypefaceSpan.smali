@@ -6,7 +6,7 @@
 # instance fields
 .field private color:I
 
-.field private colorKey:Ljava/lang/String;
+.field private colorKey:I
 
 .field resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
@@ -17,10 +17,15 @@
 
 # direct methods
 .method public constructor <init>(Landroid/graphics/Typeface;)V
-    .locals 0
+    .locals 1
 
     .line 27
     invoke-direct {p0}, Landroid/text/style/MetricAffectingSpan;-><init>()V
+
+    const/4 v0, -0x1
+
+    .line 24
+    iput v0, p0, Lorg/telegram/ui/Components/TypefaceSpan;->colorKey:I
 
     .line 28
     iput-object p1, p0, Lorg/telegram/ui/Components/TypefaceSpan;->typeface:Landroid/graphics/Typeface;
@@ -29,10 +34,15 @@
 .end method
 
 .method public constructor <init>(Landroid/graphics/Typeface;II)V
-    .locals 0
+    .locals 1
 
     .line 36
     invoke-direct {p0}, Landroid/text/style/MetricAffectingSpan;-><init>()V
+
+    const/4 v0, -0x1
+
+    .line 24
+    iput v0, p0, Lorg/telegram/ui/Components/TypefaceSpan;->colorKey:I
 
     .line 37
     iput-object p1, p0, Lorg/telegram/ui/Components/TypefaceSpan;->typeface:Landroid/graphics/Typeface;
@@ -49,11 +59,16 @@
     return-void
 .end method
 
-.method public constructor <init>(Landroid/graphics/Typeface;ILjava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
-    .locals 0
+.method public constructor <init>(Landroid/graphics/Typeface;IILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    .locals 1
 
     .line 44
     invoke-direct {p0}, Landroid/text/style/MetricAffectingSpan;-><init>()V
+
+    const/4 v0, -0x1
+
+    .line 24
+    iput v0, p0, Lorg/telegram/ui/Components/TypefaceSpan;->colorKey:I
 
     .line 45
     iput-object p1, p0, Lorg/telegram/ui/Components/TypefaceSpan;->typeface:Landroid/graphics/Typeface;
@@ -68,10 +83,10 @@
     iput-object p4, p0, Lorg/telegram/ui/Components/TypefaceSpan;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     .line 50
-    iput-object p3, p0, Lorg/telegram/ui/Components/TypefaceSpan;->colorKey:Ljava/lang/String;
+    iput p3, p0, Lorg/telegram/ui/Components/TypefaceSpan;->colorKey:I
 
     .line 51
-    invoke-static {p3, p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {p3, p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
@@ -95,14 +110,14 @@
     .locals 2
 
     .line 87
-    iget-object v0, p0, Lorg/telegram/ui/Components/TypefaceSpan;->colorKey:Ljava/lang/String;
+    iget v0, p0, Lorg/telegram/ui/Components/TypefaceSpan;->colorKey:I
 
-    if-eqz v0, :cond_0
+    if-ltz v0, :cond_0
 
     .line 88
     iget-object v1, p0, Lorg/telegram/ui/Components/TypefaceSpan;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v0
 

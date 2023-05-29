@@ -219,7 +219,7 @@
     :cond_3
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "size of secretKeySeed needs to be equal size of digest"
+    const-string/jumbo v0, "size of secretKeySeed needs to be equal size of digest"
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -248,7 +248,7 @@
     :cond_5
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "size of secretKeyPRF needs to be equal size of digest"
+    const-string/jumbo v0, "size of secretKeyPRF needs to be equal size of digest"
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -277,7 +277,7 @@
     :cond_7
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "size of publicSeed needs to be equal size of digest"
+    const-string/jumbo v0, "size of publicSeed needs to be equal size of digest"
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
@@ -306,7 +306,7 @@
     :cond_9
     new-instance p1, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "size of root needs to be equal size of digest"
+    const-string/jumbo v0, "size of root needs to be equal size of digest"
 
     invoke-direct {p1, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

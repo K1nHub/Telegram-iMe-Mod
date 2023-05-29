@@ -50,7 +50,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 40
+    .line 47
     invoke-virtual {p0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$icons$2;->invoke()Ljava/util/List;
 
     move-result-object v0
@@ -69,7 +69,7 @@
         }
     .end annotation
 
-    .line 40
+    .line 47
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$icons$2;->this$0:Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->access$initIcons(Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;)Ljava/util/List;

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;Landroid/content/Context;)V
     .locals 0
 
-    .line 353
+    .line 354
     iput-object p1, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$6;->this$0:Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/UndoView;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method public invalidate()V
     .locals 1
 
-    .line 356
+    .line 357
     invoke-super {p0}, Lorg/telegram/ui/Components/UndoView;->invalidate()V
 
-    .line 357
+    .line 358
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$6;->this$0:Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V

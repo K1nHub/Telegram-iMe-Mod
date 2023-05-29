@@ -8,7 +8,7 @@ import androidx.core.graphics.ColorUtils;
 import androidx.core.widget.NestedScrollView;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -55,8 +55,8 @@ public class PermanentLinkBottomSheet extends BottomSheet {
         linkActionView.setPermanent(true);
         RLottieImageView rLottieImageView = new RLottieImageView(context);
         this.imageView = rLottieImageView;
-        int i2 = C3242R.raw.shared_link_enter;
-        RLottieDrawable rLottieDrawable = new RLottieDrawable(i2, "" + i2, AndroidUtilities.m50dp(90), AndroidUtilities.m50dp(90), false, null);
+        int i2 = C3290R.raw.shared_link_enter;
+        RLottieDrawable rLottieDrawable = new RLottieDrawable(i2, "" + i2, AndroidUtilities.m54dp(90), AndroidUtilities.m54dp(90), false, null);
         this.linkIcon = rLottieDrawable;
         rLottieDrawable.setCustomEndFrame(42);
         rLottieImageView.setAnimation(this.linkIcon);
@@ -85,30 +85,31 @@ public class PermanentLinkBottomSheet extends BottomSheet {
         });
         TextView textView = new TextView(context);
         this.titleView = textView;
-        textView.setText(LocaleController.getString("InviteLink", C3242R.string.InviteLink));
+        textView.setText(LocaleController.getString("InviteLink", C3290R.string.InviteLink));
         textView.setTextSize(24.0f);
         textView.setGravity(1);
-        textView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         TextView textView2 = new TextView(context);
         this.subtitle = textView2;
         if (z2) {
-            i = C3242R.string.LinkInfoChannel;
+            i = C3290R.string.LinkInfoChannel;
             str = "LinkInfoChannel";
         } else {
-            i = C3242R.string.LinkInfo;
+            i = C3290R.string.LinkInfo;
             str = "LinkInfo";
         }
         textView2.setText(LocaleController.getString(str, i));
         textView2.setTextSize(14.0f);
         textView2.setGravity(1);
-        textView2.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText"));
+        textView2.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText));
         TextView textView3 = new TextView(context);
         this.manage = textView3;
-        textView3.setText(LocaleController.getString("ManageInviteLinks", C3242R.string.ManageInviteLinks));
+        textView3.setText(LocaleController.getString("ManageInviteLinks", C3290R.string.ManageInviteLinks));
         textView3.setTextSize(14.0f);
-        textView3.setTextColor(Theme.getColor("windowBackgroundWhiteBlueText"));
-        textView3.setBackground(Theme.createRadSelectorDrawable(ColorUtils.setAlphaComponent(Theme.getColor("windowBackgroundWhiteBlueText"), 76), AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4)));
-        textView3.setPadding(AndroidUtilities.m50dp(12), AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(12), AndroidUtilities.m50dp(4));
+        int i3 = Theme.key_windowBackgroundWhiteBlueText;
+        textView3.setTextColor(Theme.getColor(i3));
+        textView3.setBackground(Theme.createRadSelectorDrawable(ColorUtils.setAlphaComponent(Theme.getColor(i3), 76), AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4)));
+        textView3.setPadding(AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(4));
         textView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PermanentLinkBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -145,7 +146,7 @@ public class PermanentLinkBottomSheet extends BottomSheet {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$1(TLRPC$ChatFull tLRPC$ChatFull, BaseFragment baseFragment, View view) {
-        ManageLinksActivity manageLinksActivity = new ManageLinksActivity(tLRPC$ChatFull.f1428id, 0L, 0);
+        ManageLinksActivity manageLinksActivity = new ManageLinksActivity(tLRPC$ChatFull.f1434id, 0L, 0);
         manageLinksActivity.setInfo(tLRPC$ChatFull, tLRPC$ChatFull.exported_invite);
         baseFragment.presentFragment(manageLinksActivity);
         dismiss();
@@ -188,9 +189,9 @@ public class PermanentLinkBottomSheet extends BottomSheet {
             this.linkActionView.setLink(this.invite.link);
             if (z && this.fragment != null) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-                builder.setMessage(LocaleController.getString("RevokeAlertNewLink", C3242R.string.RevokeAlertNewLink));
-                builder.setTitle(LocaleController.getString("RevokeLink", C3242R.string.RevokeLink));
-                builder.setNegativeButton(LocaleController.getString("OK", C3242R.string.OK), null);
+                builder.setMessage(LocaleController.getString("RevokeAlertNewLink", C3290R.string.RevokeAlertNewLink));
+                builder.setTitle(LocaleController.getString("RevokeLink", C3290R.string.RevokeLink));
+                builder.setNegativeButton(LocaleController.getString("OK", C3290R.string.OK), null);
                 this.fragment.showDialog(builder.create());
             }
         }
@@ -227,25 +228,28 @@ public class PermanentLinkBottomSheet extends BottomSheet {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
         };
-        arrayList.add(new ThemeDescription(this.titleView, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, "windowBackgroundWhiteBlackText"));
-        arrayList.add(new ThemeDescription(this.subtitle, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, "windowBackgroundWhiteGrayText"));
-        arrayList.add(new ThemeDescription(this.manage, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, "windowBackgroundWhiteBlueText"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "featuredStickers_addButton"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "featuredStickers_buttonText"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "windowBackgroundWhiteBlueText"));
+        arrayList.add(new ThemeDescription(this.titleView, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_windowBackgroundWhiteBlackText));
+        arrayList.add(new ThemeDescription(this.subtitle, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_windowBackgroundWhiteGrayText));
+        TextView textView = this.manage;
+        int i = ThemeDescription.FLAG_TEXTCOLOR;
+        int i2 = Theme.key_windowBackgroundWhiteBlueText;
+        arrayList.add(new ThemeDescription(textView, i, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_featuredStickers_addButton));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_featuredStickers_buttonText));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, i2));
         return arrayList;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void updateColors() {
-        this.imageView.setBackground(Theme.createCircleDrawable(AndroidUtilities.m50dp(90), Theme.getColor("featuredStickers_addButton")));
-        this.manage.setBackground(Theme.createRadSelectorDrawable(ColorUtils.setAlphaComponent(Theme.getColor("windowBackgroundWhiteBlueText"), 76), AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4)));
-        int color = Theme.getColor("featuredStickers_buttonText");
+        this.imageView.setBackground(Theme.createCircleDrawable(AndroidUtilities.m54dp(90), Theme.getColor(Theme.key_featuredStickers_addButton)));
+        this.manage.setBackground(Theme.createRadSelectorDrawable(ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_windowBackgroundWhiteBlueText), 76), AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4)));
+        int color = Theme.getColor(Theme.key_featuredStickers_buttonText);
         this.linkIcon.setLayerColor("Top.**", color);
         this.linkIcon.setLayerColor("Bottom.**", color);
         this.linkIcon.setLayerColor("Center.**", color);
         this.linkActionView.updateColors();
-        setBackgroundColor(Theme.getColor("dialogBackground"));
+        setBackgroundColor(Theme.getColor(Theme.key_dialogBackground));
     }
 
     @Override // org.telegram.p044ui.ActionBar.BottomSheet

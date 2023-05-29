@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/DialogsActivity$13;
-.super Landroid/widget/ScrollView;
+.super Lorg/telegram/ui/DialogsActivity$ViewPage;
 .source "DialogsActivity.java"
 
 
@@ -17,132 +17,124 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/DialogsActivity;
 
+.field final synthetic val$contentView:Lorg/telegram/ui/DialogsActivity$ContentView;
+
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;Lorg/telegram/ui/DialogsActivity$ContentView;)V
     .locals 0
 
-    .line 5212
+    .line 5113
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$13;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-direct {p0, p2}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
+    iput-object p3, p0, Lorg/telegram/ui/DialogsActivity$13;->val$contentView:Lorg/telegram/ui/DialogsActivity$ContentView;
+
+    invoke-direct {p0, p1, p2}, Lorg/telegram/ui/DialogsActivity$ViewPage;-><init>(Lorg/telegram/ui/DialogsActivity;Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 2
+.method public setTranslationX(F)V
+    .locals 3
 
-    .line 5216
-    invoke-virtual {p0}, Landroid/widget/ScrollView;->getParent()Landroid/view/ViewParent;
+    .line 5116
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getTranslationX()F
+
+    move-result v0
+
+    cmpl-float v0, v0, p1
+
+    if-eqz v0, :cond_1
+
+    .line 5117
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTranslationX(F)V
+
+    .line 5118
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$13;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$5900(Lorg/telegram/ui/DialogsActivity;)Z
+
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    .line 5119
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$13;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$1400(Lorg/telegram/ui/DialogsActivity;)[Lorg/telegram/ui/DialogsActivity$ViewPage;
+
+    move-result-object p1
+
+    const/4 v0, 0x0
+
+    aget-object p1, p1, v0
+
+    if-ne p1, p0, :cond_0
+
+    .line 5120
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$13;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$1400(Lorg/telegram/ui/DialogsActivity;)[Lorg/telegram/ui/DialogsActivity$ViewPage;
+
+    move-result-object p1
+
+    aget-object p1, p1, v0
+
+    invoke-virtual {p1}, Landroid/widget/FrameLayout;->getTranslationX()F
+
+    move-result p1
+
+    invoke-static {p1}, Ljava/lang/Math;->abs(F)F
+
+    move-result p1
+
+    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$13;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {v1}, Lorg/telegram/ui/DialogsActivity;->access$1400(Lorg/telegram/ui/DialogsActivity;)[Lorg/telegram/ui/DialogsActivity$ViewPage;
+
+    move-result-object v1
+
+    aget-object v0, v1, v0
+
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+
+    move-result v0
+
+    int-to-float v0, v0
+
+    div-float/2addr p1, v0
+
+    .line 5121
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$13;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$1200(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/FilterTabsView;
 
     move-result-object v0
 
-    const/4 v1, 0x1
+    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$13;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
+    invoke-static {v1}, Lorg/telegram/ui/DialogsActivity;->access$1400(Lorg/telegram/ui/DialogsActivity;)[Lorg/telegram/ui/DialogsActivity$ViewPage;
 
-    .line 5217
-    invoke-super {p0, p1}, Landroid/widget/ScrollView;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+    move-result-object v1
 
-    move-result p1
+    const/4 v2, 0x1
 
-    return p1
-.end method
+    aget-object v1, v1, v2
 
-.method public requestChildRectangleOnScreen(Landroid/view/View;Landroid/graphics/Rect;Z)Z
-    .locals 3
+    invoke-static {v1}, Lorg/telegram/ui/DialogsActivity$ViewPage;->access$000(Lorg/telegram/ui/DialogsActivity$ViewPage;)I
 
-    .line 5222
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$13;->this$0:Lorg/telegram/ui/DialogsActivity;
+    move-result v1
 
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->access$1700(Lorg/telegram/ui/DialogsActivity;)Z
+    invoke-virtual {v0, v1, p1}, Lorg/telegram/ui/Components/FilterTabsView;->selectTabWithId(IF)V
 
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 5223
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$13;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    const/4 p2, 0x0
-
-    invoke-static {p1, p2}, Lorg/telegram/ui/DialogsActivity;->access$1702(Lorg/telegram/ui/DialogsActivity;Z)Z
-
-    return p2
-
-    .line 5226
+    .line 5124
     :cond_0
-    invoke-virtual {p1}, Landroid/view/View;->getLeft()I
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$13;->val$contentView:Lorg/telegram/ui/DialogsActivity$ContentView;
 
-    move-result v0
+    invoke-virtual {p1}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->invalidateBlur()V
 
-    invoke-virtual {p1}, Landroid/view/View;->getScrollX()I
-
-    move-result v1
-
-    sub-int/2addr v0, v1
-
-    invoke-virtual {p1}, Landroid/view/View;->getTop()I
-
-    move-result v1
-
-    invoke-virtual {p1}, Landroid/view/View;->getScrollY()I
-
-    move-result v2
-
-    sub-int/2addr v1, v2
-
-    invoke-virtual {p2, v0, v1}, Landroid/graphics/Rect;->offset(II)V
-
-    .line 5227
-    iget v0, p2, Landroid/graphics/Rect;->top:I
-
-    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$13;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-static {v1}, Lorg/telegram/ui/DialogsActivity;->access$1900(Lorg/telegram/ui/DialogsActivity;)I
-
-    move-result v1
-
-    const/16 v2, 0x14
-
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v2
-
-    add-int/2addr v1, v2
-
-    add-int/2addr v0, v1
-
-    iput v0, p2, Landroid/graphics/Rect;->top:I
-
-    .line 5228
-    iget v0, p2, Landroid/graphics/Rect;->bottom:I
-
-    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$13;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-static {v1}, Lorg/telegram/ui/DialogsActivity;->access$1900(Lorg/telegram/ui/DialogsActivity;)I
-
-    move-result v1
-
-    const/16 v2, 0x32
-
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v2
-
-    add-int/2addr v1, v2
-
-    add-int/2addr v0, v1
-
-    iput v0, p2, Landroid/graphics/Rect;->bottom:I
-
-    .line 5229
-    invoke-super {p0, p1, p2, p3}, Landroid/widget/ScrollView;->requestChildRectangleOnScreen(Landroid/view/View;Landroid/graphics/Rect;Z)Z
-
-    move-result p1
-
-    return p1
+    :cond_1
+    return-void
 .end method

@@ -10,7 +10,7 @@ import kotlin.coroutines.jvm.internal.RestrictedSuspendLambda;
 import kotlin.jvm.functions.Function2;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: _Sequences.kt */
-@DebugMetadata(m79c = "kotlin.sequences.SequencesKt___SequencesKt$zipWithNext$2", m78f = "_Sequences.kt", m77l = {2855}, m76m = "invokeSuspend")
+@DebugMetadata(m84c = "kotlin.sequences.SequencesKt___SequencesKt$zipWithNext$2", m83f = "_Sequences.kt", m82l = {2855}, m81m = "invokeSuspend")
 /* loaded from: classes4.dex */
 public final class SequencesKt___SequencesKt$zipWithNext$2 extends RestrictedSuspendLambda implements Function2<SequenceScope<? super R>, Continuation<? super Unit>, Object> {
     final /* synthetic */ Sequence<T> $this_zipWithNext;

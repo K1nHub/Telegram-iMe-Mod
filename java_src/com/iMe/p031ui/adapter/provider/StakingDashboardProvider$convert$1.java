@@ -10,7 +10,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: StakingDashboardProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.StakingDashboardProvider$convert$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class StakingDashboardProvider$convert$1 extends Lambda implements Function1<StakingDashboardView, Unit> {
     final /* synthetic */ StakingDashboardItem $item;
     final /* synthetic */ StakingDashboardProvider this$0;

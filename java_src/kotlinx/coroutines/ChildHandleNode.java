@@ -16,6 +16,11 @@ public final class ChildHandleNode extends JobCancellingNode implements ChildHan
         this.childJob = childJob;
     }
 
+    @Override // kotlinx.coroutines.ChildHandle
+    public Job getParent() {
+        return getJob();
+    }
+
     @Override // kotlinx.coroutines.CompletionHandlerBase
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public void invoke2(Throwable th) {

@@ -147,10 +147,10 @@
 
     invoke-virtual {v7, v10}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    const-string v10, "windowBackgroundWhiteBlackText"
-
     .line 73
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v10
 
@@ -187,10 +187,10 @@
 
     invoke-direct {v11, v5}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    const-string v12, "windowBackgroundWhiteGrayText"
-
     .line 78
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
+
+    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v12
 
@@ -376,9 +376,9 @@
     .line 116
     new-instance v12, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v13, "windowBackgroundWhiteGrayIcon"
+    sget v13, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayIcon:I
 
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v14
 
@@ -416,8 +416,6 @@
 
     move-result v11
 
-    const-string v12, "listSelectorSDK21"
-
     if-eqz v11, :cond_5
 
     .line 124
@@ -426,78 +424,80 @@
     invoke-direct {v11, v5, v4}, Lorg/telegram/ui/SessionBottomSheet$ItemView;-><init>(Landroid/content/Context;Z)V
 
     .line 125
-    iget-object v14, v11, Lorg/telegram/ui/SessionBottomSheet$ItemView;->valueText:Landroid/widget/TextView;
+    iget-object v12, v11, Lorg/telegram/ui/SessionBottomSheet$ItemView;->valueText:Landroid/widget/TextView;
 
-    iget-object v15, v2, Lorg/telegram/tgnet/TLRPC$TL_authorization;->country:Ljava/lang/String;
+    iget-object v14, v2, Lorg/telegram/tgnet/TLRPC$TL_authorization;->country:Ljava/lang/String;
 
-    invoke-virtual {v14, v15}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v12, v14}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 126
-    sget v14, Lorg/telegram/messenger/R$drawable;->msg_location:I
+    sget v12, Lorg/telegram/messenger/R$drawable;->msg_location:I
 
-    invoke-static {v5, v14}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v5, v12}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v14
+    move-result-object v12
 
-    invoke-virtual {v14}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v12}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
 
-    move-result-object v14
+    move-result-object v12
 
     .line 127
-    new-instance v15, Landroid/graphics/PorterDuffColorFilter;
+    new-instance v14, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v10
+    move-result v15
 
-    sget-object v4, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
+    sget-object v10, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-direct {v15, v10, v4}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    invoke-direct {v14, v15, v10}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
-    invoke-virtual {v14, v15}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
+    invoke-virtual {v12, v14}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     .line 128
-    iget-object v4, v11, Lorg/telegram/ui/SessionBottomSheet$ItemView;->iconView:Landroid/widget/ImageView;
+    iget-object v10, v11, Lorg/telegram/ui/SessionBottomSheet$ItemView;->iconView:Landroid/widget/ImageView;
 
-    invoke-virtual {v4, v14}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v10, v12}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 129
-    iget-object v4, v11, Lorg/telegram/ui/SessionBottomSheet$ItemView;->descriptionText:Landroid/widget/TextView;
+    iget-object v10, v11, Lorg/telegram/ui/SessionBottomSheet$ItemView;->descriptionText:Landroid/widget/TextView;
 
-    sget v10, Lorg/telegram/messenger/R$string;->Location:I
+    sget v12, Lorg/telegram/messenger/R$string;->Location:I
 
     const-string v14, "Location"
 
-    invoke-static {v14, v10}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v14, v12}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-virtual {v10, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 131
+    new-instance v10, Lorg/telegram/ui/SessionBottomSheet$2;
+
+    invoke-direct {v10, v0, v2}, Lorg/telegram/ui/SessionBottomSheet$2;-><init>(Lorg/telegram/ui/SessionBottomSheet;Lorg/telegram/tgnet/TLRPC$TL_authorization;)V
+
+    invoke-virtual {v11, v10}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 137
+    new-instance v10, Lorg/telegram/ui/SessionBottomSheet$3;
+
+    invoke-direct {v10, v0, v2}, Lorg/telegram/ui/SessionBottomSheet$3;-><init>(Lorg/telegram/ui/SessionBottomSheet;Lorg/telegram/tgnet/TLRPC$TL_authorization;)V
+
+    invoke-virtual {v11, v10}, Landroid/widget/FrameLayout;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
+
+    .line 144
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v10
+
+    invoke-static {v10, v8}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v10
 
-    invoke-virtual {v4, v10}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 131
-    new-instance v4, Lorg/telegram/ui/SessionBottomSheet$2;
-
-    invoke-direct {v4, v0, v2}, Lorg/telegram/ui/SessionBottomSheet$2;-><init>(Lorg/telegram/ui/SessionBottomSheet;Lorg/telegram/tgnet/TLRPC$TL_authorization;)V
-
-    invoke-virtual {v11, v4}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 137
-    new-instance v4, Lorg/telegram/ui/SessionBottomSheet$3;
-
-    invoke-direct {v4, v0, v2}, Lorg/telegram/ui/SessionBottomSheet$3;-><init>(Lorg/telegram/ui/SessionBottomSheet;Lorg/telegram/tgnet/TLRPC$TL_authorization;)V
-
-    invoke-virtual {v11, v4}, Landroid/widget/FrameLayout;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
-
-    .line 144
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v4
-
-    invoke-static {v4, v8}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(II)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v4
-
-    invoke-virtual {v11, v4}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v11, v10}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     .line 146
     invoke-virtual {v6, v11}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
@@ -509,198 +509,296 @@
 
     .line 153
     :cond_5
-    iget-object v4, v2, Lorg/telegram/tgnet/TLRPC$TL_authorization;->ip:Ljava/lang/String;
+    iget-object v10, v2, Lorg/telegram/tgnet/TLRPC$TL_authorization;->ip:Ljava/lang/String;
 
-    invoke-virtual {v4}, Ljava/lang/String;->length()I
+    invoke-virtual {v10}, Ljava/lang/String;->length()I
 
-    move-result v4
+    move-result v10
 
-    if-eqz v4, :cond_6
+    if-eqz v10, :cond_6
 
     .line 154
-    new-instance v4, Lorg/telegram/ui/SessionBottomSheet$ItemView;
+    new-instance v10, Lorg/telegram/ui/SessionBottomSheet$ItemView;
 
-    const/4 v10, 0x0
-
-    invoke-direct {v4, v5, v10}, Lorg/telegram/ui/SessionBottomSheet$ItemView;-><init>(Landroid/content/Context;Z)V
+    invoke-direct {v10, v5, v4}, Lorg/telegram/ui/SessionBottomSheet$ItemView;-><init>(Landroid/content/Context;Z)V
 
     .line 155
-    iget-object v10, v4, Lorg/telegram/ui/SessionBottomSheet$ItemView;->valueText:Landroid/widget/TextView;
+    iget-object v11, v10, Lorg/telegram/ui/SessionBottomSheet$ItemView;->valueText:Landroid/widget/TextView;
 
-    iget-object v11, v2, Lorg/telegram/tgnet/TLRPC$TL_authorization;->ip:Ljava/lang/String;
+    iget-object v12, v2, Lorg/telegram/tgnet/TLRPC$TL_authorization;->ip:Ljava/lang/String;
 
-    invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v11, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 156
-    sget v10, Lorg/telegram/messenger/R$drawable;->msg_language:I
+    sget v11, Lorg/telegram/messenger/R$drawable;->msg_language:I
 
-    invoke-static {v5, v10}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+    invoke-static {v5, v11}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v10
+    move-result-object v11
 
-    invoke-virtual {v10}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v11}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
 
-    move-result-object v10
+    move-result-object v11
 
     .line 157
-    new-instance v11, Landroid/graphics/PorterDuffColorFilter;
+    new-instance v12, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v14
 
     sget-object v15, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-direct {v11, v14, v15}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    invoke-direct {v12, v14, v15}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
-    invoke-virtual {v10, v11}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
+    invoke-virtual {v11, v12}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     .line 158
-    iget-object v11, v4, Lorg/telegram/ui/SessionBottomSheet$ItemView;->iconView:Landroid/widget/ImageView;
+    iget-object v12, v10, Lorg/telegram/ui/SessionBottomSheet$ItemView;->iconView:Landroid/widget/ImageView;
 
-    invoke-virtual {v11, v10}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v12, v11}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 159
-    iget-object v10, v4, Lorg/telegram/ui/SessionBottomSheet$ItemView;->descriptionText:Landroid/widget/TextView;
+    iget-object v11, v10, Lorg/telegram/ui/SessionBottomSheet$ItemView;->descriptionText:Landroid/widget/TextView;
 
-    sget v11, Lorg/telegram/messenger/R$string;->IpAddress:I
+    sget v12, Lorg/telegram/messenger/R$string;->IpAddress:I
 
     const-string v14, "IpAddress"
 
-    invoke-static {v14, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v14, v12}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v12
 
-    invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v11, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 162
-    new-instance v10, Lorg/telegram/ui/SessionBottomSheet$4;
+    new-instance v11, Lorg/telegram/ui/SessionBottomSheet$4;
 
-    invoke-direct {v10, v0, v2}, Lorg/telegram/ui/SessionBottomSheet$4;-><init>(Lorg/telegram/ui/SessionBottomSheet;Lorg/telegram/tgnet/TLRPC$TL_authorization;)V
+    invoke-direct {v11, v0, v2}, Lorg/telegram/ui/SessionBottomSheet$4;-><init>(Lorg/telegram/ui/SessionBottomSheet;Lorg/telegram/tgnet/TLRPC$TL_authorization;)V
 
-    invoke-virtual {v4, v10}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v10, v11}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 168
-    new-instance v10, Lorg/telegram/ui/SessionBottomSheet$5;
+    new-instance v11, Lorg/telegram/ui/SessionBottomSheet$5;
 
-    invoke-direct {v10, v0, v2}, Lorg/telegram/ui/SessionBottomSheet$5;-><init>(Lorg/telegram/ui/SessionBottomSheet;Lorg/telegram/tgnet/TLRPC$TL_authorization;)V
+    invoke-direct {v11, v0, v2}, Lorg/telegram/ui/SessionBottomSheet$5;-><init>(Lorg/telegram/ui/SessionBottomSheet;Lorg/telegram/tgnet/TLRPC$TL_authorization;)V
 
-    invoke-virtual {v4, v10}, Landroid/widget/FrameLayout;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
+    invoke-virtual {v10, v11}, Landroid/widget/FrameLayout;->setOnLongClickListener(Landroid/view/View$OnLongClickListener;)V
 
     .line 176
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    move-result v10
+    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-static {v10, v8}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(II)Landroid/graphics/drawable/Drawable;
+    move-result v11
+
+    invoke-static {v11, v8}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v8
 
-    invoke-virtual {v4, v8}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v10, v8}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     .line 178
-    invoke-virtual {v6, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {v6, v10}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
     .line 181
     iput-boolean v3, v7, Lorg/telegram/ui/SessionBottomSheet$ItemView;->needDivider:Z
 
-    move-object v7, v4
+    move-object v7, v10
 
     .line 186
     :cond_6
     invoke-direct {v0, v2}, Lorg/telegram/ui/SessionBottomSheet;->secretChatsEnabled(Lorg/telegram/tgnet/TLRPC$TL_authorization;)Z
 
-    move-result v4
+    move-result v8
 
-    const/4 v8, 0x7
+    const/4 v10, 0x7
 
-    if-eqz v4, :cond_7
+    if-eqz v8, :cond_7
 
     .line 187
-    new-instance v4, Lorg/telegram/ui/SessionBottomSheet$ItemView;
+    new-instance v8, Lorg/telegram/ui/SessionBottomSheet$ItemView;
 
-    invoke-direct {v4, v5, v3}, Lorg/telegram/ui/SessionBottomSheet$ItemView;-><init>(Landroid/content/Context;Z)V
+    invoke-direct {v8, v5, v3}, Lorg/telegram/ui/SessionBottomSheet$ItemView;-><init>(Landroid/content/Context;Z)V
 
     .line 188
-    iget-object v10, v4, Lorg/telegram/ui/SessionBottomSheet$ItemView;->valueText:Landroid/widget/TextView;
+    iget-object v11, v8, Lorg/telegram/ui/SessionBottomSheet$ItemView;->valueText:Landroid/widget/TextView;
 
-    sget v11, Lorg/telegram/messenger/R$string;->AcceptSecretChats:I
+    sget v12, Lorg/telegram/messenger/R$string;->AcceptSecretChats:I
 
     const-string v14, "AcceptSecretChats"
 
-    invoke-static {v14, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v14, v12}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-virtual {v11, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 189
+    sget v11, Lorg/telegram/messenger/R$drawable;->msg_secret:I
+
+    invoke-static {v5, v11}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v11
 
-    invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v11}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
 
-    .line 189
-    sget v10, Lorg/telegram/messenger/R$drawable;->msg_secret:I
-
-    invoke-static {v5, v10}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v10
+    move-result-object v11
 
     .line 190
-    new-instance v11, Landroid/graphics/PorterDuffColorFilter;
+    new-instance v12, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v14
 
     sget-object v15, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-direct {v11, v14, v15}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    invoke-direct {v12, v14, v15}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
-    invoke-virtual {v10, v11}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
+    invoke-virtual {v11, v12}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     .line 191
-    iget-object v11, v4, Lorg/telegram/ui/SessionBottomSheet$ItemView;->iconView:Landroid/widget/ImageView;
+    iget-object v12, v8, Lorg/telegram/ui/SessionBottomSheet$ItemView;->iconView:Landroid/widget/ImageView;
 
-    invoke-virtual {v11, v10}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v12, v11}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 192
-    iget-object v10, v4, Lorg/telegram/ui/SessionBottomSheet$ItemView;->switchView:Lorg/telegram/ui/Components/Switch;
+    iget-object v11, v8, Lorg/telegram/ui/SessionBottomSheet$ItemView;->switchView:Lorg/telegram/ui/Components/Switch;
 
-    iget-boolean v11, v2, Lorg/telegram/tgnet/TLRPC$TL_authorization;->encrypted_requests_disabled:Z
+    iget-boolean v12, v2, Lorg/telegram/tgnet/TLRPC$TL_authorization;->encrypted_requests_disabled:Z
 
-    xor-int/2addr v11, v3
+    xor-int/2addr v12, v3
 
-    const/4 v14, 0x0
-
-    invoke-virtual {v10, v11, v14}, Lorg/telegram/ui/Components/Switch;->setChecked(ZZ)V
+    invoke-virtual {v11, v12, v4}, Lorg/telegram/ui/Components/Switch;->setChecked(ZZ)V
 
     .line 193
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    move-result v10
+    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-static {v10, v8}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(II)Landroid/graphics/drawable/Drawable;
+    move-result v11
 
-    move-result-object v10
+    invoke-static {v11, v10}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(II)Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v4, v10}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    move-result-object v11
+
+    invoke-virtual {v8, v11}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     .line 194
-    new-instance v10, Lorg/telegram/ui/SessionBottomSheet$6;
+    new-instance v11, Lorg/telegram/ui/SessionBottomSheet$6;
 
-    invoke-direct {v10, v0, v4, v2}, Lorg/telegram/ui/SessionBottomSheet$6;-><init>(Lorg/telegram/ui/SessionBottomSheet;Lorg/telegram/ui/SessionBottomSheet$ItemView;Lorg/telegram/tgnet/TLRPC$TL_authorization;)V
+    invoke-direct {v11, v0, v8, v2}, Lorg/telegram/ui/SessionBottomSheet$6;-><init>(Lorg/telegram/ui/SessionBottomSheet;Lorg/telegram/ui/SessionBottomSheet$ItemView;Lorg/telegram/tgnet/TLRPC$TL_authorization;)V
 
-    invoke-virtual {v4, v10}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v8, v11}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 204
     iput-boolean v3, v7, Lorg/telegram/ui/SessionBottomSheet$ItemView;->needDivider:Z
 
     .line 206
-    iget-object v7, v4, Lorg/telegram/ui/SessionBottomSheet$ItemView;->descriptionText:Landroid/widget/TextView;
+    iget-object v7, v8, Lorg/telegram/ui/SessionBottomSheet$ItemView;->descriptionText:Landroid/widget/TextView;
 
-    sget v10, Lorg/telegram/messenger/R$string;->AcceptSecretChatsDescription:I
+    sget v11, Lorg/telegram/messenger/R$string;->AcceptSecretChatsDescription:I
 
-    const-string v11, "AcceptSecretChatsDescription"
+    const-string v12, "AcceptSecretChatsDescription"
+
+    invoke-static {v12, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v11
+
+    invoke-virtual {v7, v11}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 207
+    invoke-virtual {v6, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+
+    move-object v7, v8
+
+    .line 211
+    :cond_7
+    new-instance v8, Lorg/telegram/ui/SessionBottomSheet$ItemView;
+
+    invoke-direct {v8, v5, v3}, Lorg/telegram/ui/SessionBottomSheet$ItemView;-><init>(Landroid/content/Context;Z)V
+
+    .line 212
+    iget-object v11, v8, Lorg/telegram/ui/SessionBottomSheet$ItemView;->valueText:Landroid/widget/TextView;
+
+    sget v12, Lorg/telegram/messenger/R$string;->AcceptCalls:I
+
+    const-string v14, "AcceptCalls"
+
+    invoke-static {v14, v12}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-virtual {v11, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    .line 213
+    sget v11, Lorg/telegram/messenger/R$drawable;->msg_calls:I
+
+    invoke-static {v5, v11}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v11
+
+    invoke-virtual {v11}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
+
+    move-result-object v11
+
+    .line 214
+    new-instance v12, Landroid/graphics/PorterDuffColorFilter;
+
+    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v13
+
+    sget-object v14, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
+
+    invoke-direct {v12, v13, v14}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+
+    invoke-virtual {v11, v12}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
+
+    .line 215
+    iget-object v12, v8, Lorg/telegram/ui/SessionBottomSheet$ItemView;->iconView:Landroid/widget/ImageView;
+
+    invoke-virtual {v12, v11}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 216
+    iget-object v11, v8, Lorg/telegram/ui/SessionBottomSheet$ItemView;->switchView:Lorg/telegram/ui/Components/Switch;
+
+    iget-boolean v12, v2, Lorg/telegram/tgnet/TLRPC$TL_authorization;->call_requests_disabled:Z
+
+    xor-int/2addr v12, v3
+
+    invoke-virtual {v11, v12, v4}, Lorg/telegram/ui/Components/Switch;->setChecked(ZZ)V
+
+    .line 217
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
+    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v11
+
+    invoke-static {v11, v10}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(II)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v10
+
+    invoke-virtual {v8, v10}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    .line 218
+    new-instance v10, Lorg/telegram/ui/SessionBottomSheet$7;
+
+    invoke-direct {v10, v0, v8, v2}, Lorg/telegram/ui/SessionBottomSheet$7;-><init>(Lorg/telegram/ui/SessionBottomSheet;Lorg/telegram/ui/SessionBottomSheet$ItemView;Lorg/telegram/tgnet/TLRPC$TL_authorization;)V
+
+    invoke-virtual {v8, v10}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+
+    .line 228
+    iput-boolean v3, v7, Lorg/telegram/ui/SessionBottomSheet$ItemView;->needDivider:Z
+
+    .line 230
+    iget-object v7, v8, Lorg/telegram/ui/SessionBottomSheet$ItemView;->descriptionText:Landroid/widget/TextView;
+
+    sget v10, Lorg/telegram/messenger/R$string;->AcceptCallsChatsDescription:I
+
+    const-string v11, "AcceptCallsChatsDescription"
 
     invoke-static {v11, v10}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
@@ -708,165 +806,65 @@
 
     invoke-virtual {v7, v10}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 207
-    invoke-virtual {v6, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
-
-    move-object v7, v4
-
-    .line 211
-    :cond_7
-    new-instance v4, Lorg/telegram/ui/SessionBottomSheet$ItemView;
-
-    invoke-direct {v4, v5, v3}, Lorg/telegram/ui/SessionBottomSheet$ItemView;-><init>(Landroid/content/Context;Z)V
-
-    .line 212
-    iget-object v10, v4, Lorg/telegram/ui/SessionBottomSheet$ItemView;->valueText:Landroid/widget/TextView;
-
-    sget v11, Lorg/telegram/messenger/R$string;->AcceptCalls:I
-
-    const-string v14, "AcceptCalls"
-
-    invoke-static {v14, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v11
-
-    invoke-virtual {v10, v11}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 213
-    sget v10, Lorg/telegram/messenger/R$drawable;->msg_calls:I
-
-    invoke-static {v5, v10}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v10
-
-    invoke-virtual {v10}, Landroid/graphics/drawable/Drawable;->mutate()Landroid/graphics/drawable/Drawable;
-
-    move-result-object v10
-
-    .line 214
-    new-instance v11, Landroid/graphics/PorterDuffColorFilter;
-
-    invoke-static {v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v13
-
-    sget-object v14, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
-
-    invoke-direct {v11, v13, v14}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
-
-    invoke-virtual {v10, v11}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
-
-    .line 215
-    iget-object v11, v4, Lorg/telegram/ui/SessionBottomSheet$ItemView;->iconView:Landroid/widget/ImageView;
-
-    invoke-virtual {v11, v10}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 216
-    iget-object v10, v4, Lorg/telegram/ui/SessionBottomSheet$ItemView;->switchView:Lorg/telegram/ui/Components/Switch;
-
-    iget-boolean v11, v2, Lorg/telegram/tgnet/TLRPC$TL_authorization;->call_requests_disabled:Z
-
-    xor-int/2addr v11, v3
-
-    const/4 v13, 0x0
-
-    invoke-virtual {v10, v11, v13}, Lorg/telegram/ui/Components/Switch;->setChecked(ZZ)V
-
-    .line 217
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v10
-
-    invoke-static {v10, v8}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(II)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v8
-
-    invoke-virtual {v4, v8}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
-
-    .line 218
-    new-instance v8, Lorg/telegram/ui/SessionBottomSheet$7;
-
-    invoke-direct {v8, v0, v4, v2}, Lorg/telegram/ui/SessionBottomSheet$7;-><init>(Lorg/telegram/ui/SessionBottomSheet;Lorg/telegram/ui/SessionBottomSheet$ItemView;Lorg/telegram/tgnet/TLRPC$TL_authorization;)V
-
-    invoke-virtual {v4, v8}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
-
-    .line 228
-    iput-boolean v3, v7, Lorg/telegram/ui/SessionBottomSheet$ItemView;->needDivider:Z
-
-    .line 230
-    iget-object v7, v4, Lorg/telegram/ui/SessionBottomSheet$ItemView;->descriptionText:Landroid/widget/TextView;
-
-    sget v8, Lorg/telegram/messenger/R$string;->AcceptCallsChatsDescription:I
-
-    const-string v10, "AcceptCallsChatsDescription"
-
-    invoke-static {v10, v8}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v7, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
     .line 231
-    invoke-virtual {v6, v4}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
+    invoke-virtual {v6, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;)V
 
     if-nez p3, :cond_8
 
     .line 234
-    new-instance v4, Landroid/widget/TextView;
+    new-instance v7, Landroid/widget/TextView;
 
-    invoke-direct {v4, v5}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v7, v5}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    const/16 v7, 0x22
+    const/16 v8, 0x22
 
     .line 235
-    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v10
+
+    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v8
 
-    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-virtual {v7, v10, v4, v8, v4}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    move-result v7
-
-    const/4 v10, 0x0
-
-    invoke-virtual {v4, v8, v10, v7, v10}, Landroid/widget/TextView;->setPadding(IIII)V
-
-    const/16 v7, 0x11
+    const/16 v4, 0x11
 
     .line 236
-    invoke-virtual {v4, v7}, Landroid/widget/TextView;->setGravity(I)V
+    invoke-virtual {v7, v4}, Landroid/widget/TextView;->setGravity(I)V
 
-    const/high16 v7, 0x41600000    # 14.0f
+    const/high16 v4, 0x41600000    # 14.0f
 
     .line 237
-    invoke-virtual {v4, v3, v7}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-virtual {v7, v3, v4}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 238
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v3
 
-    invoke-virtual {v4, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v7, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 239
     sget v3, Lorg/telegram/messenger/R$string;->TerminateSession:I
 
-    const-string v7, "TerminateSession"
+    const-string v4, "TerminateSession"
 
-    invoke-static {v7, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v4, v3}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v4, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    const-string v3, "featuredStickers_buttonText"
+    invoke-virtual {v7, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 241
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
-    invoke-virtual {v4, v3}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v7, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
     const/4 v3, 0x6
 
@@ -875,15 +873,15 @@
 
     move-result v3
 
-    const-string v7, "chat_attachAudioBackground"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_attachAudioBackground:I
 
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v7
+    move-result v4
 
-    const-string v8, "windowBackgroundWhite"
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 
@@ -893,41 +891,41 @@
 
     move-result v8
 
-    invoke-static {v3, v7, v8}, Lorg/telegram/ui/ActionBar/Theme;->createSimpleSelectorRoundRectDrawable(III)Landroid/graphics/drawable/Drawable;
+    invoke-static {v3, v4, v8}, Lorg/telegram/ui/ActionBar/Theme;->createSimpleSelectorRoundRectDrawable(III)Landroid/graphics/drawable/Drawable;
 
     move-result-object v3
 
-    invoke-virtual {v4, v3}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v7, v3}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    const/4 v7, -0x1
+    const/4 v8, -0x1
 
-    const/16 v8, 0x30
+    const/16 v9, 0x30
 
-    const/4 v9, 0x0
+    const/4 v10, 0x0
 
-    const/16 v10, 0x10
+    const/16 v11, 0x10
 
-    const/16 v11, 0xf
-
-    const/16 v12, 0x10
+    const/16 v12, 0xf
 
     const/16 v13, 0x10
 
+    const/16 v14, 0x10
+
     .line 244
-    invoke-static/range {v7 .. v13}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v8 .. v14}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v3
 
-    invoke-virtual {v6, v4, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v6, v7, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 246
     new-instance v3, Lorg/telegram/ui/SessionBottomSheet$8;
 
-    move-object/from16 v7, p4
+    move-object/from16 v4, p4
 
-    invoke-direct {v3, v0, v7, v2, v1}, Lorg/telegram/ui/SessionBottomSheet$8;-><init>(Lorg/telegram/ui/SessionBottomSheet;Lorg/telegram/ui/SessionBottomSheet$Callback;Lorg/telegram/tgnet/TLRPC$TL_authorization;Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-direct {v3, v0, v4, v2, v1}, Lorg/telegram/ui/SessionBottomSheet$8;-><init>(Lorg/telegram/ui/SessionBottomSheet;Lorg/telegram/ui/SessionBottomSheet$Callback;Lorg/telegram/tgnet/TLRPC$TL_authorization;Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
-    invoke-virtual {v4, v3}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v7, v3}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 271
     :cond_8
@@ -1090,7 +1088,7 @@
 .end method
 
 .method private setAnimation(Lorg/telegram/tgnet/TLRPC$TL_authorization;Lorg/telegram/ui/Components/RLottieImageView;)V
-    .locals 10
+    .locals 7
 
     .line 307
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$TL_authorization;->platform:Ljava/lang/String;
@@ -1128,28 +1126,25 @@
 
     move-result v2
 
-    const-string v3, "avatar_backgroundBlue"
+    const/4 v3, 0x1
 
-    const/4 v4, 0x1
-
-    const-string v5, "avatar_backgroundCyan"
-
-    const/4 v6, 0x0
-
-    const-string v7, "avatar_backgroundPink"
+    const/4 v4, 0x0
 
     if-eqz v2, :cond_1
 
     .line 318
     sget p1, Lorg/telegram/messenger/R$raw;->safari_30:I
 
+    .line 319
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundPink:I
+
+    .line 320
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_background2Pink:I
+
     :goto_0
-    move v0, v4
+    move v1, v3
 
-    :goto_1
-    move-object v3, v7
-
-    goto/16 :goto_6
+    goto/16 :goto_4
 
     :cond_1
     const-string v2, "edge"
@@ -1163,6 +1158,12 @@
 
     .line 322
     sget p1, Lorg/telegram/messenger/R$raw;->edge_30:I
+
+    .line 323
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundPink:I
+
+    .line 324
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_background2Pink:I
 
     goto :goto_0
 
@@ -1179,6 +1180,12 @@
     .line 326
     sget p1, Lorg/telegram/messenger/R$raw;->chrome_30:I
 
+    .line 327
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundPink:I
+
+    .line 328
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_background2Pink:I
+
     goto :goto_0
 
     :cond_3
@@ -1187,27 +1194,27 @@
     .line 329
     invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v8
+    move-result v5
 
-    const-string v9, "firefox"
+    const-string v6, "firefox"
 
-    if-nez v8, :cond_c
+    if-nez v5, :cond_c
 
-    invoke-virtual {v1, v9}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v1, v6}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v8
+    move-result v5
 
-    if-nez v8, :cond_c
+    if-nez v5, :cond_c
 
-    const-string v8, "vivaldi"
+    const-string v5, "vivaldi"
 
-    invoke-virtual {v1, v8}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v1, v5}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
-    move-result v8
+    move-result v5
 
-    if-eqz v8, :cond_4
+    if-eqz v5, :cond_4
 
-    goto :goto_4
+    goto/16 :goto_2
 
     :cond_4
     const-string v2, "ubuntu"
@@ -1222,10 +1229,13 @@
     .line 341
     sget p1, Lorg/telegram/messenger/R$raw;->ubuntu_30:I
 
-    :goto_2
-    move v0, v4
+    .line 342
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundBlue:I
 
-    goto/16 :goto_6
+    .line 343
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_background2Blue:I
+
+    goto :goto_0
 
     :cond_5
     const-string v2, "ios"
@@ -1248,12 +1258,19 @@
 
     sget p1, Lorg/telegram/messenger/R$raw;->ipad_30:I
 
-    goto :goto_2
+    goto :goto_1
 
     :cond_6
     sget p1, Lorg/telegram/messenger/R$raw;->iphone_30:I
 
-    goto :goto_2
+    .line 346
+    :goto_1
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundBlue:I
+
+    .line 347
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_background2Blue:I
+
+    goto :goto_0
 
     :cond_7
     const-string v1, "windows"
@@ -1268,12 +1285,13 @@
     .line 349
     sget p1, Lorg/telegram/messenger/R$raw;->windows_30:I
 
-    :goto_3
-    move v0, v4
+    .line 350
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundCyan:I
 
-    move-object v3, v5
+    .line 351
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_background2Cyan:I
 
-    goto :goto_6
+    goto :goto_0
 
     :cond_8
     const-string v1, "macos"
@@ -1288,7 +1306,13 @@
     .line 353
     sget p1, Lorg/telegram/messenger/R$raw;->mac_30:I
 
-    goto :goto_3
+    .line 354
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundCyan:I
+
+    .line 355
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_background2Cyan:I
+
+    goto/16 :goto_0
 
     :cond_9
     const-string v1, "android"
@@ -1303,9 +1327,13 @@
     .line 357
     sget p1, Lorg/telegram/messenger/R$raw;->android_30:I
 
-    const-string v3, "avatar_backgroundGreen"
+    .line 358
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundGreen:I
 
-    goto :goto_2
+    .line 359
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_background2Green:I
+
+    goto/16 :goto_0
 
     .line 361
     :cond_a
@@ -1326,17 +1354,29 @@
     .line 362
     sget p1, Lorg/telegram/messenger/R$raw;->windows_30:I
 
-    goto :goto_3
+    .line 363
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundCyan:I
+
+    .line 364
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_background2Cyan:I
+
+    goto/16 :goto_0
 
     .line 366
     :cond_b
     sget p1, Lorg/telegram/messenger/R$raw;->chrome_30:I
 
+    .line 367
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundPink:I
+
+    .line 368
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_background2Pink:I
+
     goto/16 :goto_0
 
     .line 331
     :cond_c
-    :goto_4
+    :goto_2
     invoke-virtual {v1, v2}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result p1
@@ -1346,11 +1386,11 @@
     .line 332
     sget p1, Lorg/telegram/messenger/R$drawable;->device_web_opera:I
 
-    goto :goto_5
+    goto :goto_3
 
     .line 333
     :cond_d
-    invoke-virtual {v1, v9}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
+    invoke-virtual {v1, v6}, Ljava/lang/String;->contains(Ljava/lang/CharSequence;)Z
 
     move-result p1
 
@@ -1359,56 +1399,60 @@
     .line 334
     sget p1, Lorg/telegram/messenger/R$drawable;->device_web_firefox:I
 
-    goto :goto_5
+    goto :goto_3
 
     .line 336
     :cond_e
     sget p1, Lorg/telegram/messenger/R$drawable;->device_web_other:I
 
-    :goto_5
-    move v0, v6
+    .line 338
+    :goto_3
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundPink:I
 
-    goto/16 :goto_1
+    .line 339
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_background2Pink:I
 
-    :goto_6
-    const/16 v1, 0x2a
+    move v1, v4
+
+    :goto_4
+    const/16 v2, 0x2a
 
     .line 372
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v1
-
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->createCircleDrawable(II)Landroid/graphics/drawable/ShapeDrawable;
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result-object v1
+    move-result v5
 
-    invoke-virtual {p2, v1}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-static {v2, v5}, Lorg/telegram/ui/ActionBar/Theme;->createCircleDrawable(II)Landroid/graphics/drawable/ShapeDrawable;
 
-    if-eqz v0, :cond_f
+    move-result-object v2
 
-    const/4 v0, 0x2
+    invoke-virtual {p2, v2}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    new-array v0, v0, [I
+    if-eqz v1, :cond_f
 
-    aput v6, v0, v6
+    const/4 v1, 0x2
+
+    new-array v1, v1, [I
+
+    aput v4, v1, v4
 
     .line 375
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v1
+    move-result v0
 
-    aput v1, v0, v4
+    aput v0, v1, v3
 
-    const/16 v1, 0x32
+    const/16 v0, 0x32
 
     .line 376
-    invoke-virtual {p2, p1, v1, v1, v0}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III[I)V
+    invoke-virtual {p2, p1, v0, v0, v1}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III[I)V
 
-    goto :goto_7
+    goto :goto_5
 
     .line 378
     :cond_f
@@ -1422,7 +1466,7 @@
 
     invoke-virtual {p2, p1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    :goto_7
+    :goto_5
     return-void
 .end method
 

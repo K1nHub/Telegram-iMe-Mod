@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroid/view/View$OnClickListener;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final run()V
+.method public final onClick(Landroid/view/View;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$$ExternalSyntheticLambda4;->f$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->$r8$lambda$r9tiE3wneuHhQA4AAoZUESH3rVI(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->$r8$lambda$cg_zgoYdKYcngah5pjR6TTCujo0(Lorg/telegram/ui/Components/ChatThemeBottomSheet;Landroid/view/View;)V
 
     return-void
 .end method

@@ -52,7 +52,7 @@ public final class WalletConnectManagerImpl$setupClientListeners$1$1 extends Lam
             walletConnectInteractor = this.this$0.walletConnectInteractor;
             Completable deleteWalletConnectSession = walletConnectInteractor.deleteWalletConnectSession(this.$sessionStoreItem.getSession().getKey());
             schedulersProvider = this.this$0.schedulersProvider;
-            Completable observeOn = deleteWalletConnectSession.observeOn(schedulersProvider.mo693ui());
+            Completable observeOn = deleteWalletConnectSession.observeOn(schedulersProvider.mo698ui());
             final WalletConnectManagerImpl walletConnectManagerImpl = this.this$0;
             final WCSessionStoreItem wCSessionStoreItem = this.$sessionStoreItem;
             Action action = new Action() { // from class: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$setupClientListeners$1$1$$ExternalSyntheticLambda0
@@ -61,7 +61,7 @@ public final class WalletConnectManagerImpl$setupClientListeners$1$1 extends Lam
                     WalletConnectManagerImpl$setupClientListeners$1$1.invoke$lambda$0(WalletConnectManagerImpl.this, wCSessionStoreItem);
                 }
             };
-            final C17492 c17492 = new C17492(this.this$0);
+            final C18262 c18262 = new C18262(this.this$0);
             Disposable subscribe = observeOn.subscribe(action, new Consumer() { // from class: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$setupClientListeners$1$1$$ExternalSyntheticLambda1
                 @Override // io.reactivex.functions.Consumer
                 public final void accept(Object obj) {
@@ -78,11 +78,11 @@ public final class WalletConnectManagerImpl$setupClientListeners$1$1 extends Lam
     /* compiled from: WalletConnectManagerImpl.kt */
     /* renamed from: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$setupClientListeners$1$1$2 */
     /* loaded from: classes3.dex */
-    public static final class C17492 extends Lambda implements Function1<Throwable, Unit> {
+    public static final class C18262 extends Lambda implements Function1<Throwable, Unit> {
         final /* synthetic */ WalletConnectManagerImpl this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C17492(WalletConnectManagerImpl walletConnectManagerImpl) {
+        C18262(WalletConnectManagerImpl walletConnectManagerImpl) {
             super(1);
             this.this$0 = walletConnectManagerImpl;
         }

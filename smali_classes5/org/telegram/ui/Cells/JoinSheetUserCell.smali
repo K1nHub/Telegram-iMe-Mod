@@ -80,10 +80,10 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Cells/JoinSheetUserCell;->nameTextView:Landroid/widget/TextView;
 
-    const-string p1, "dialogTextBlack"
-
     .line 43
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 

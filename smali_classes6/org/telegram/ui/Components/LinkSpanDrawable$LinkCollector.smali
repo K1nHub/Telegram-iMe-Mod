@@ -185,24 +185,19 @@
     check-cast p1, Lorg/telegram/ui/ArticleViewer$DrawingText;
 
     .line 483
-    iget-object p1, p1, Lorg/telegram/ui/ArticleViewer$DrawingText;->latestParentView:Landroid/view/View;
-
-    if-eqz p1, :cond_2
-
-    .line 484
-    invoke-virtual {p1}, Landroid/view/View;->invalidate()V
+    invoke-virtual {p1}, Lorg/telegram/ui/ArticleViewer$DrawingText;->invalidateParent()V
 
     goto :goto_0
 
     :cond_1
     if-eqz p2, :cond_2
 
-    .line 486
+    .line 484
     iget-object p1, p0, Lorg/telegram/ui/Components/LinkSpanDrawable$LinkCollector;->mParent:Landroid/view/View;
 
     if-eqz p1, :cond_2
 
-    .line 487
+    .line 485
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
     :cond_2

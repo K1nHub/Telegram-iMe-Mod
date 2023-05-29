@@ -30,19 +30,19 @@
 
     const/4 v0, 0x0
 
-    .line 948
+    .line 985
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;-><init>(IZ)V
 
-    .line 949
+    .line 986
     iput-object p2, p0, Lorg/telegram/ui/LiteModeSettingsActivity$Item;->text:Ljava/lang/CharSequence;
 
-    .line 950
+    .line 987
     iput p3, p0, Lorg/telegram/ui/LiteModeSettingsActivity$Item;->iconResId:I
 
-    .line 951
+    .line 988
     iput p4, p0, Lorg/telegram/ui/LiteModeSettingsActivity$Item;->flags:I
 
-    .line 952
+    .line 989
     iput p5, p0, Lorg/telegram/ui/LiteModeSettingsActivity$Item;->type:I
 
     return-void
@@ -51,7 +51,7 @@
 .method public static asCheckbox(Ljava/lang/CharSequence;I)Lorg/telegram/ui/LiteModeSettingsActivity$Item;
     .locals 7
 
-    .line 968
+    .line 1005
     new-instance v6, Lorg/telegram/ui/LiteModeSettingsActivity$Item;
 
     const/4 v1, 0x4
@@ -74,7 +74,7 @@
 .method public static asHeader(Ljava/lang/CharSequence;)Lorg/telegram/ui/LiteModeSettingsActivity$Item;
     .locals 7
 
-    .line 956
+    .line 993
     new-instance v6, Lorg/telegram/ui/LiteModeSettingsActivity$Item;
 
     const/4 v1, 0x0
@@ -97,7 +97,7 @@
 .method public static asInfo(Ljava/lang/CharSequence;)Lorg/telegram/ui/LiteModeSettingsActivity$Item;
     .locals 7
 
-    .line 962
+    .line 999
     new-instance v6, Lorg/telegram/ui/LiteModeSettingsActivity$Item;
 
     const/4 v1, 0x2
@@ -120,7 +120,7 @@
 .method public static asSlider()Lorg/telegram/ui/LiteModeSettingsActivity$Item;
     .locals 7
 
-    .line 959
+    .line 996
     new-instance v6, Lorg/telegram/ui/LiteModeSettingsActivity$Item;
 
     const/4 v1, 0x1
@@ -143,7 +143,7 @@
 .method public static asSwitch(ILjava/lang/CharSequence;I)Lorg/telegram/ui/LiteModeSettingsActivity$Item;
     .locals 7
 
-    .line 965
+    .line 1002
     new-instance v6, Lorg/telegram/ui/LiteModeSettingsActivity$Item;
 
     const/4 v1, 0x3
@@ -166,7 +166,7 @@
 .method public static asSwitch(Ljava/lang/CharSequence;I)Lorg/telegram/ui/LiteModeSettingsActivity$Item;
     .locals 7
 
-    .line 971
+    .line 1008
     new-instance v6, Lorg/telegram/ui/LiteModeSettingsActivity$Item;
 
     const/4 v1, 0x5
@@ -197,7 +197,7 @@
 
     return v0
 
-    .line 983
+    .line 1020
     :cond_0
     instance-of v1, p1, Lorg/telegram/ui/LiteModeSettingsActivity$Item;
 
@@ -207,11 +207,11 @@
 
     return v2
 
-    .line 986
+    .line 1023
     :cond_1
     check-cast p1, Lorg/telegram/ui/LiteModeSettingsActivity$Item;
 
-    .line 987
+    .line 1024
     iget v1, p1, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
 
     iget v3, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$Item;->viewType:I
@@ -225,7 +225,7 @@
 
     if-ne v3, v1, :cond_3
 
-    .line 991
+    .line 1028
     iget v4, p1, Lorg/telegram/ui/LiteModeSettingsActivity$Item;->iconResId:I
 
     iget v5, p0, Lorg/telegram/ui/LiteModeSettingsActivity$Item;->iconResId:I
@@ -239,7 +239,7 @@
 
     if-ne v3, v4, :cond_4
 
-    .line 996
+    .line 1033
     iget v5, p1, Lorg/telegram/ui/LiteModeSettingsActivity$Item;->type:I
 
     iget v6, p0, Lorg/telegram/ui/LiteModeSettingsActivity$Item;->type:I
@@ -255,7 +255,7 @@
 
     if-ne v3, v5, :cond_6
 
-    .line 1001
+    .line 1038
     :cond_5
     iget v6, p1, Lorg/telegram/ui/LiteModeSettingsActivity$Item;->flags:I
 
@@ -278,7 +278,7 @@
 
     if-ne v3, v4, :cond_8
 
-    .line 1006
+    .line 1043
     :cond_7
     iget-object p1, p1, Lorg/telegram/ui/LiteModeSettingsActivity$Item;->text:Ljava/lang/CharSequence;
 
@@ -299,7 +299,7 @@
 .method public getFlagsCount()I
     .locals 1
 
-    .line 975
+    .line 1012
     iget v0, p0, Lorg/telegram/ui/LiteModeSettingsActivity$Item;->flags:I
 
     invoke-static {v0}, Ljava/lang/Integer;->bitCount(I)I

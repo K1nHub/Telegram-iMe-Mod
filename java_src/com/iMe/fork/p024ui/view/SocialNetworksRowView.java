@@ -40,7 +40,7 @@ public final class SocialNetworksRowView extends LinearLayout {
         setWillNotDraw(false);
         for (final DrawerSocialNetwork drawerSocialNetwork : DrawerSocialNetwork.values()) {
             FrameLayout frameLayout = new FrameLayout(context);
-            frameLayout.setBackground(Theme.createSelectorDrawable(Theme.getColor("listSelectorSDK21")));
+            frameLayout.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector)));
             frameLayout.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.view.SocialNetworksRowView$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -57,7 +57,7 @@ public final class SocialNetworksRowView extends LinearLayout {
             });
             ImageView imageView = new ImageView(context);
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("chats_menuItemIcon"), PorterDuff.Mode.SRC_IN));
+            imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_menuItemIcon), PorterDuff.Mode.SRC_IN));
             imageView.setImageResource(drawerSocialNetwork.getIconResId());
             frameLayout.addView(imageView, LayoutHelper.createFrame(-2, -2, 17));
             addView(frameLayout, LayoutHelper.createLinear(0, -1, 1.0f));
@@ -97,7 +97,7 @@ public final class SocialNetworksRowView extends LinearLayout {
     protected void onDraw(Canvas canvas) {
         Intrinsics.checkNotNullParameter(canvas, "canvas");
         super.onDraw(canvas);
-        canvas.drawLine(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), AndroidUtilities.m50dp(AndroidUtilities.getShadowHeight()), Theme.dividerPaint);
+        canvas.drawLine(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), AndroidUtilities.m54dp(AndroidUtilities.getShadowHeight()), Theme.dividerPaint);
     }
 
     /* compiled from: SocialNetworksRowView.kt */

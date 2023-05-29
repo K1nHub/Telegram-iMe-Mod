@@ -130,16 +130,16 @@ public class BlurBehindDrawable {
                 if (this.blurredBitmapTmp[i] == null || this.parentView.getMeasuredWidth() != this.lastW || this.parentView.getMeasuredHeight() != this.lastH) {
                     int measuredHeight = this.parentView.getMeasuredHeight();
                     int measuredWidth = this.parentView.getMeasuredWidth();
-                    int m50dp = AndroidUtilities.statusBarHeight + AndroidUtilities.m50dp(200);
-                    this.toolbarH = m50dp;
+                    int m54dp = AndroidUtilities.statusBarHeight + AndroidUtilities.m54dp(200);
+                    this.toolbarH = m54dp;
                     if (i == 0) {
-                        measuredHeight = m50dp;
+                        measuredHeight = m54dp;
                     }
                     try {
                         this.blurredBitmapTmp[i] = Bitmap.createBitmap((int) (measuredWidth / 6.0f), (int) (measuredHeight / 6.0f), Bitmap.Config.ARGB_8888);
                         this.blurCanvas[i] = new Canvas(this.blurredBitmapTmp[i]);
                     } catch (Exception e) {
-                        FileLog.m45e(e);
+                        FileLog.m49e(e);
                         AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.BlurBehindDrawable$$ExternalSyntheticLambda0
                             @Override // java.lang.Runnable
                             public final void run() {
@@ -152,7 +152,7 @@ public class BlurBehindDrawable {
                     this.blurredBitmapTmp[i].eraseColor(0);
                 }
                 if (i == 1) {
-                    this.blurredBitmapTmp[i].eraseColor(getThemedColor("windowBackgroundWhite"));
+                    this.blurredBitmapTmp[i].eraseColor(getThemedColor(Theme.key_windowBackgroundWhite));
                 }
                 this.blurCanvas[i].save();
                 this.blurCanvas[i].scale(0.16666667f, 0.16666667f, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED);
@@ -302,20 +302,20 @@ public class BlurBehindDrawable {
             int measuredHeight = this.parentView.getMeasuredHeight();
             int measuredWidth = this.parentView.getMeasuredWidth();
             if (measuredHeight != 0 && measuredWidth != 0) {
-                int m50dp = AndroidUtilities.statusBarHeight + AndroidUtilities.m50dp(200);
-                this.toolbarH = m50dp;
+                int m54dp = AndroidUtilities.statusBarHeight + AndroidUtilities.m54dp(200);
+                this.toolbarH = m54dp;
                 if (i != 0) {
-                    m50dp = measuredHeight;
+                    m54dp = measuredHeight;
                 }
-                if (bitmapArr[i] == null || bitmapArr[i].getHeight() != m50dp || bitmapArr[i].getWidth() != this.parentView.getMeasuredWidth()) {
+                if (bitmapArr[i] == null || bitmapArr[i].getHeight() != m54dp || bitmapArr[i].getWidth() != this.parentView.getMeasuredWidth()) {
                     DispatchQueue dispatchQueue = this.queue;
                     if (dispatchQueue != null) {
                         dispatchQueue.cleanupQueue();
                     }
                     int i2 = (int) (measuredWidth / 6.0f);
-                    this.blurredBitmapTmp[i] = Bitmap.createBitmap(i2, (int) (m50dp / 6.0f), Bitmap.Config.ARGB_8888);
+                    this.blurredBitmapTmp[i] = Bitmap.createBitmap(i2, (int) (m54dp / 6.0f), Bitmap.Config.ARGB_8888);
                     if (i == 1) {
-                        this.blurredBitmapTmp[i].eraseColor(getThemedColor("windowBackgroundWhite"));
+                        this.blurredBitmapTmp[i].eraseColor(getThemedColor(Theme.key_windowBackgroundWhite));
                     }
                     this.blurCanvas[i] = new Canvas(this.blurredBitmapTmp[i]);
                     if (i == 0) {
@@ -347,7 +347,7 @@ public class BlurBehindDrawable {
                     Utilities.stackBlurBitmap(this.blurredBitmapTmp[i], getBlurRadius());
                     this.emptyPaint.setAlpha(255);
                     if (i == 1) {
-                        this.renderingBitmap[i].eraseColor(getThemedColor("windowBackgroundWhite"));
+                        this.renderingBitmap[i].eraseColor(getThemedColor(Theme.key_windowBackgroundWhite));
                     }
                     this.renderingBitmapCanvas[i].drawBitmap(this.blurredBitmapTmp[i], BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, this.emptyPaint);
                 }
@@ -399,11 +399,11 @@ public class BlurBehindDrawable {
                         BlurBehindDrawable.this.backgroundBitmapCanvas[i2] = new Canvas(BlurBehindDrawable.this.backgroundBitmap[i2]);
                         BlurBehindDrawable.this.backgroundBitmapCanvas[i2].scale(i / BlurBehindDrawable.this.blurredBitmapTmp[i2].getWidth(), i3 / BlurBehindDrawable.this.blurredBitmapTmp[i2].getHeight());
                     } catch (Throwable th) {
-                        FileLog.m45e(th);
+                        FileLog.m49e(th);
                     }
                 }
                 if (i2 == 1) {
-                    BlurBehindDrawable.this.backgroundBitmap[i2].eraseColor(BlurBehindDrawable.this.getThemedColor("windowBackgroundWhite"));
+                    BlurBehindDrawable.this.backgroundBitmap[i2].eraseColor(BlurBehindDrawable.this.getThemedColor(Theme.key_windowBackgroundWhite));
                 } else {
                     BlurBehindDrawable.this.backgroundBitmap[i2].eraseColor(0);
                 }
@@ -454,9 +454,7 @@ public class BlurBehindDrawable {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public int getThemedColor(String str) {
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-        return color != null ? color.intValue() : Theme.getColor(str);
+    public int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 }

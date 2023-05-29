@@ -71,7 +71,7 @@ public final class MapValue extends GeneratedMessageLite<MapValue, Builder> impl
     /* renamed from: com.google.firestore.v1.MapValue$Builder */
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<MapValue, Builder> implements MessageLiteOrBuilder {
-        /* synthetic */ Builder(C10581 c10581) {
+        /* synthetic */ Builder(C10631 c10631) {
             this();
         }
 
@@ -108,40 +108,40 @@ public final class MapValue extends GeneratedMessageLite<MapValue, Builder> impl
 
     /* renamed from: com.google.firestore.v1.MapValue$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C10581 {
+    static /* synthetic */ class C10631 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f209xa1df5c61;
+        static final /* synthetic */ int[] f212xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f209xa1df5c61 = iArr;
+            f212xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f209xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f212xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f209xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f212xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f209xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f212xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f209xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f212xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f209xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f212xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f209xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f212xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
@@ -149,7 +149,7 @@ public final class MapValue extends GeneratedMessageLite<MapValue, Builder> impl
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C10581.f209xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C10631.f212xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new MapValue();
             case 2:

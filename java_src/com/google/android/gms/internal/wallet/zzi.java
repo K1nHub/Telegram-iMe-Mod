@@ -13,7 +13,7 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class zzi extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzi> CREATOR = new zzj();
-    @SafeParcelable.Field(m775id = 2)
+    @SafeParcelable.Field(m779id = 2)
     final byte[] zza;
 
     @Override // android.os.Parcelable
@@ -28,7 +28,7 @@ public final class zzi extends AbstractSafeParcelable {
     }
 
     @SafeParcelable.Constructor
-    public zzi(@SafeParcelable.Param(m774id = 2) byte[] bArr) {
+    public zzi(@SafeParcelable.Param(m778id = 2) byte[] bArr) {
         this.zza = bArr;
     }
 }

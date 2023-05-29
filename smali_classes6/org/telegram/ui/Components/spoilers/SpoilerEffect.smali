@@ -121,14 +121,14 @@
 .method static constructor <clinit>()V
     .locals 1
 
-    .line 58
+    .line 56
     invoke-static {}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->measureMaxParticlesCount()I
 
     move-result v0
 
     sput v0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->MAX_PARTICLES_PER_ENTITY:I
 
-    .line 59
+    .line 57
     invoke-static {}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->measureParticlesPerCharacter()I
 
     move-result v0
@@ -139,12 +139,12 @@
 
     new-array v0, v0, [F
 
-    .line 64
+    .line 62
     fill-array-data v0, :array_0
 
     sput-object v0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->ALPHAS:[F
 
-    .line 75
+    .line 73
     new-instance v0, Landroid/graphics/Path;
 
     invoke-direct {v0}, Landroid/graphics/Path;-><init>()V
@@ -164,10 +164,10 @@
 .method public constructor <init>()V
     .locals 5
 
-    .line 128
+    .line 126
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 67
+    .line 65
     sget-object v0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->ALPHAS:[F
 
     array-length v1, v0
@@ -176,14 +176,14 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlePaints:[Landroid/graphics/Paint;
 
-    .line 69
+    .line 67
     new-instance v1, Ljava/util/Stack;
 
     invoke-direct {v1}, Ljava/util/Stack;-><init>()V
 
     iput-object v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlesPool:Ljava/util/Stack;
 
-    .line 71
+    .line 69
     array-length v1, v0
 
     sget v2, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->MAX_PARTICLES_PER_ENTITY:I
@@ -216,17 +216,17 @@
 
     new-array v1, v1, [F
 
-    .line 72
+    .line 70
     iput-object v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particleRands:[F
 
-    .line 73
+    .line 71
     array-length v0, v0
 
     new-array v0, v0, [I
 
     iput-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->renderCount:[I
 
-    .line 79
+    .line 77
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -235,10 +235,10 @@
 
     const/high16 v0, -0x40800000    # -1.0f
 
-    .line 86
+    .line 84
     iput v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->rippleProgress:F
 
-    .line 92
+    .line 90
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -247,17 +247,17 @@
 
     const/16 v0, 0xff
 
-    .line 93
+    .line 91
     iput v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->mAlpha:I
 
-    .line 95
+    .line 93
     sget-object v0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$$ExternalSyntheticLambda0;->INSTANCE:Lorg/telegram/ui/Components/spoilers/SpoilerEffect$$ExternalSyntheticLambda0;
 
     iput-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->rippleInterpolator:Landroid/animation/TimeInterpolator;
 
     move v0, v2
 
-    .line 129
+    .line 127
     :goto_0
     sget-object v1, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->ALPHAS:[F
 
@@ -265,7 +265,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 130
+    .line 128
     iget-object v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlePaints:[Landroid/graphics/Paint;
 
     new-instance v3, Landroid/graphics/Paint;
@@ -276,7 +276,7 @@
 
     if-nez v0, :cond_0
 
-    .line 132
+    .line 130
     iget-object v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlePaints:[Landroid/graphics/Paint;
 
     aget-object v1, v1, v0
@@ -291,7 +291,7 @@
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 133
+    .line 131
     iget-object v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlePaints:[Landroid/graphics/Paint;
 
     aget-object v1, v1, v0
@@ -300,7 +300,7 @@
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 134
+    .line 132
     iget-object v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlePaints:[Landroid/graphics/Paint;
 
     aget-object v1, v1, v0
@@ -311,7 +311,7 @@
 
     goto :goto_1
 
-    .line 136
+    .line 134
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlePaints:[Landroid/graphics/Paint;
 
@@ -327,7 +327,7 @@
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 137
+    .line 135
     iget-object v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlePaints:[Landroid/graphics/Paint;
 
     aget-object v1, v1, v0
@@ -336,7 +336,7 @@
 
     invoke-virtual {v1, v3}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 138
+    .line 136
     iget-object v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlePaints:[Landroid/graphics/Paint;
 
     aget-object v1, v1, v0
@@ -350,14 +350,14 @@
 
     goto :goto_0
 
-    .line 142
+    .line 140
     :cond_1
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getDevicePerformanceClass()I
 
-    .line 143
+    .line 141
     iput-boolean v4, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->enableAlpha:Z
 
-    .line 144
+    .line 142
     invoke-virtual {p0, v2}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setColor(I)V
 
     return-void
@@ -366,7 +366,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Components/spoilers/SpoilerEffect;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 57
+    .line 55
     iget-object p0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particles:Ljava/util/ArrayList;
 
     return-object p0
@@ -375,16 +375,25 @@
 .method static synthetic access$100(Lorg/telegram/ui/Components/spoilers/SpoilerEffect;)Ljava/util/Stack;
     .locals 0
 
-    .line 57
+    .line 55
     iget-object p0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlesPool:Ljava/util/Stack;
 
     return-object p0
 .end method
 
+.method static synthetic access$1400(Landroid/view/View;Landroid/text/Layout;FFFFLjava/util/Stack;Ljava/util/List;II)V
+    .locals 0
+
+    .line 55
+    invoke-static/range {p0 .. p9}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->addSpoilerRangeInternal(Landroid/view/View;Landroid/text/Layout;FFFFLjava/util/Stack;Ljava/util/List;II)V
+
+    return-void
+.end method
+
 .method static synthetic access$200(Lorg/telegram/ui/Components/spoilers/SpoilerEffect;)I
     .locals 0
 
-    .line 57
+    .line 55
     iget p0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->maxParticles:I
 
     return p0
@@ -393,7 +402,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Components/spoilers/SpoilerEffect;)Ljava/lang/Runnable;
     .locals 0
 
-    .line 57
+    .line 55
     iget-object p0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->onRippleEndCallback:Ljava/lang/Runnable;
 
     return-object p0
@@ -402,7 +411,7 @@
 .method static synthetic access$302(Lorg/telegram/ui/Components/spoilers/SpoilerEffect;Ljava/lang/Runnable;)Ljava/lang/Runnable;
     .locals 0
 
-    .line 57
+    .line 55
     iput-object p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->onRippleEndCallback:Ljava/lang/Runnable;
 
     return-object p1
@@ -411,14 +420,406 @@
 .method static synthetic access$402(Lorg/telegram/ui/Components/spoilers/SpoilerEffect;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
     .locals 0
 
-    .line 57
+    .line 55
     iput-object p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->rippleAnimator:Landroid/animation/ValueAnimator;
 
     return-object p1
 .end method
 
+.method private static addSpoilerRangeInternal(Landroid/view/View;Landroid/text/Layout;FFFFLjava/util/Stack;Ljava/util/List;II)V
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/view/View;",
+            "Landroid/text/Layout;",
+            "FFFF",
+            "Ljava/util/Stack<",
+            "Lorg/telegram/ui/Components/spoilers/SpoilerEffect;",
+            ">;",
+            "Ljava/util/List<",
+            "Lorg/telegram/ui/Components/spoilers/SpoilerEffect;",
+            ">;II)V"
+        }
+    .end annotation
+
+    if-eqz p6, :cond_1
+
+    .line 609
+    invoke-virtual {p6}, Ljava/util/Stack;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    invoke-virtual {p6, v0}, Ljava/util/Stack;->remove(I)Ljava/lang/Object;
+
+    move-result-object p6
+
+    check-cast p6, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
+
+    goto :goto_1
+
+    :cond_1
+    :goto_0
+    new-instance p6, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
+
+    invoke-direct {p6}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;-><init>()V
+
+    :goto_1
+    const/high16 v0, -0x40800000    # -1.0f
+
+    .line 610
+    invoke-virtual {p6, v0}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setRippleProgress(F)V
+
+    int-to-float p8, p8
+
+    .line 611
+    invoke-static {p2, p8}, Ljava/lang/Math;->max(FF)F
+
+    move-result p2
+
+    float-to-int p2, p2
+
+    float-to-int p3, p3
+
+    if-gtz p9, :cond_2
+
+    const/high16 p8, 0x4f000000
+
+    goto :goto_2
+
+    :cond_2
+    int-to-float p8, p9
+
+    :goto_2
+    invoke-static {p4, p8}, Ljava/lang/Math;->min(FF)F
+
+    move-result p4
+
+    float-to-int p4, p4
+
+    float-to-int p5, p5
+
+    invoke-virtual {p6, p2, p3, p4, p5}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setBounds(IIII)V
+
+    .line 612
+    invoke-virtual {p1}, Landroid/text/Layout;->getPaint()Landroid/text/TextPaint;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Landroid/text/TextPaint;->getColor()I
+
+    move-result p1
+
+    invoke-virtual {p6, p1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setColor(I)V
+
+    .line 613
+    sget-object p1, Lorg/telegram/ui/Components/Easings;->easeInQuad:Landroid/view/animation/Interpolator;
+
+    invoke-virtual {p6, p1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setRippleInterpolator(Landroid/animation/TimeInterpolator;)V
+
+    .line 614
+    invoke-virtual {p6}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->updateMaxParticles()V
+
+    if-eqz p0, :cond_3
+
+    .line 616
+    invoke-virtual {p6, p0}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setParentView(Landroid/view/View;)V
+
+    .line 618
+    :cond_3
+    invoke-interface {p7, p6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    return-void
+.end method
+
+.method private static addSpoilerRangesInternal(Landroid/view/View;Landroid/text/Layout;IIIILjava/util/Stack;Ljava/util/List;)V
+    .locals 8
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/view/View;",
+            "Landroid/text/Layout;",
+            "IIII",
+            "Ljava/util/Stack<",
+            "Lorg/telegram/ui/Components/spoilers/SpoilerEffect;",
+            ">;",
+            "Ljava/util/List<",
+            "Lorg/telegram/ui/Components/spoilers/SpoilerEffect;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 600
+    new-instance v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$2;
+
+    move-object v0, v7
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move-object v3, p6
+
+    move-object v4, p7
+
+    move v5, p2
+
+    move v6, p3
+
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$2;-><init>(Landroid/view/View;Landroid/text/Layout;Ljava/util/Stack;Ljava/util/List;II)V
+
+    invoke-virtual {p1, p4, p5, v7}, Landroid/text/Layout;->getSelectionPath(IILandroid/graphics/Path;)V
+
+    return-void
+.end method
+
+.method public static addSpoilers(Landroid/view/View;Landroid/text/Layout;IILandroid/text/Spanned;Ljava/util/Stack;Ljava/util/List;)V
+    .locals 14
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/view/View;",
+            "Landroid/text/Layout;",
+            "II",
+            "Landroid/text/Spanned;",
+            "Ljava/util/Stack<",
+            "Lorg/telegram/ui/Components/spoilers/SpoilerEffect;",
+            ">;",
+            "Ljava/util/List<",
+            "Lorg/telegram/ui/Components/spoilers/SpoilerEffect;",
+            ">;)V"
+        }
+    .end annotation
+
+    move-object v8, p1
+
+    move-object/from16 v9, p4
+
+    if-nez v8, :cond_0
+
+    return-void
+
+    .line 575
+    :cond_0
+    invoke-virtual {p1}, Landroid/text/Layout;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    invoke-interface {v0}, Ljava/lang/CharSequence;->length()I
+
+    move-result v0
+
+    const-class v1, Lorg/telegram/ui/Components/TextStyleSpan;
+
+    const/4 v2, 0x0
+
+    invoke-interface {v9, v2, v0, v1}, Landroid/text/Spanned;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
+
+    move-result-object v0
+
+    move-object v10, v0
+
+    check-cast v10, [Lorg/telegram/ui/Components/TextStyleSpan;
+
+    move v11, v2
+
+    .line 576
+    :goto_0
+    array-length v0, v10
+
+    if-ge v11, v0, :cond_4
+
+    .line 577
+    aget-object v0, v10, v11
+
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/TextStyleSpan;->isSpoiler()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_3
+
+    .line 578
+    aget-object v0, v10, v11
+
+    invoke-interface {v9, v0}, Landroid/text/Spanned;->getSpanStart(Ljava/lang/Object;)I
+
+    move-result v4
+
+    .line 579
+    aget-object v0, v10, v11
+
+    invoke-interface {v9, v0}, Landroid/text/Spanned;->getSpanEnd(Ljava/lang/Object;)I
+
+    move-result v5
+
+    const/4 v0, -0x1
+
+    move/from16 v12, p2
+
+    move/from16 v13, p3
+
+    if-ne v12, v0, :cond_2
+
+    if-ne v13, v0, :cond_2
+
+    const v0, 0x7fffffff
+
+    const/high16 v1, -0x80000000
+
+    .line 584
+    invoke-virtual {p1, v4}, Landroid/text/Layout;->getLineForOffset(I)I
+
+    move-result v2
+
+    .line 585
+    invoke-virtual {p1, v5}, Landroid/text/Layout;->getLineForOffset(I)I
+
+    move-result v3
+
+    :goto_1
+    if-gt v2, v3, :cond_1
+
+    .line 587
+    invoke-virtual {p1, v2}, Landroid/text/Layout;->getLineLeft(I)F
+
+    move-result v6
+
+    float-to-int v6, v6
+
+    invoke-static {v0, v6}, Ljava/lang/Math;->min(II)I
+
+    move-result v0
+
+    .line 588
+    invoke-virtual {p1, v2}, Landroid/text/Layout;->getLineRight(I)F
+
+    move-result v6
+
+    float-to-int v6, v6
+
+    invoke-static {v1, v6}, Ljava/lang/Math;->max(II)I
+
+    move-result v1
+
+    add-int/lit8 v2, v2, 0x1
+
+    goto :goto_1
+
+    :cond_1
+    move v2, v0
+
+    move v3, v1
+
+    goto :goto_2
+
+    :cond_2
+    move v2, v12
+
+    move v3, v13
+
+    :goto_2
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move-object/from16 v6, p5
+
+    move-object/from16 v7, p6
+
+    .line 591
+    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->addSpoilerRangesInternal(Landroid/view/View;Landroid/text/Layout;IIIILjava/util/Stack;Ljava/util/List;)V
+
+    goto :goto_3
+
+    :cond_3
+    move/from16 v12, p2
+
+    move/from16 v13, p3
+
+    :goto_3
+    add-int/lit8 v11, v11, 0x1
+
+    goto :goto_0
+
+    :cond_4
+    move-object v0, p0
+
+    .line 594
+    instance-of v0, v0, Landroid/widget/TextView;
+
+    if-eqz v0, :cond_5
+
+    if-eqz p5, :cond_5
+
+    .line 595
+    invoke-virtual/range {p5 .. p5}, Ljava/util/Stack;->clear()V
+
+    :cond_5
+    return-void
+.end method
+
+.method public static addSpoilers(Landroid/view/View;Landroid/text/Layout;IILjava/util/Stack;Ljava/util/List;)V
+    .locals 8
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Landroid/view/View;",
+            "Landroid/text/Layout;",
+            "II",
+            "Ljava/util/Stack<",
+            "Lorg/telegram/ui/Components/spoilers/SpoilerEffect;",
+            ">;",
+            "Ljava/util/List<",
+            "Lorg/telegram/ui/Components/spoilers/SpoilerEffect;",
+            ">;)V"
+        }
+    .end annotation
+
+    .line 546
+    invoke-virtual {p1}, Landroid/text/Layout;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    instance-of v0, v0, Landroid/text/Spanned;
+
+    if-eqz v0, :cond_0
+
+    .line 547
+    invoke-virtual {p1}, Landroid/text/Layout;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v0
+
+    move-object v5, v0
+
+    check-cast v5, Landroid/text/Spanned;
+
+    move-object v1, p0
+
+    move-object v2, p1
+
+    move v3, p2
+
+    move v4, p3
+
+    move-object v6, p4
+
+    move-object v7, p5
+
+    invoke-static/range {v1 .. v7}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->addSpoilers(Landroid/view/View;Landroid/text/Layout;IILandroid/text/Spanned;Ljava/util/Stack;Ljava/util/List;)V
+
+    :cond_0
+    return-void
+.end method
+
 .method public static addSpoilers(Landroid/view/View;Landroid/text/Layout;Landroid/text/Spanned;Ljava/util/Stack;Ljava/util/List;)V
-    .locals 26
+    .locals 7
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -434,209 +835,28 @@
         }
     .end annotation
 
-    move-object/from16 v13, p1
+    if-nez p1, :cond_0
 
-    move-object/from16 v14, p2
-
-    const/4 v15, 0x0
-
-    move v12, v15
-
-    .line 556
-    :goto_0
-    invoke-virtual/range {p1 .. p1}, Landroid/text/Layout;->getLineCount()I
-
-    move-result v0
-
-    if-ge v12, v0, :cond_3
-
-    .line 557
-    invoke-virtual {v13, v12}, Landroid/text/Layout;->getLineLeft(I)F
-
-    move-result v16
-
-    invoke-virtual {v13, v12}, Landroid/text/Layout;->getLineTop(I)I
-
-    move-result v0
-
-    int-to-float v11, v0
-
-    invoke-virtual {v13, v12}, Landroid/text/Layout;->getLineRight(I)F
-
-    move-result v17
-
-    invoke-virtual {v13, v12}, Landroid/text/Layout;->getLineBottom(I)I
-
-    move-result v0
-
-    int-to-float v10, v0
-
-    .line 558
-    invoke-virtual {v13, v12}, Landroid/text/Layout;->getLineStart(I)I
-
-    move-result v9
-
-    invoke-virtual {v13, v12}, Landroid/text/Layout;->getLineEnd(I)I
-
-    move-result v8
-
-    .line 560
-    const-class v0, Lorg/telegram/ui/Components/TextStyleSpan;
-
-    invoke-interface {v14, v9, v8, v0}, Landroid/text/Spanned;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
-
-    move-result-object v0
-
-    move-object v7, v0
-
-    check-cast v7, [Lorg/telegram/ui/Components/TextStyleSpan;
-
-    array-length v6, v7
-
-    move v5, v15
-
-    :goto_1
-    if-ge v5, v6, :cond_2
-
-    aget-object v0, v7, v5
-
-    .line 561
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/TextStyleSpan;->isSpoiler()Z
-
-    move-result v1
-
-    if-eqz v1, :cond_1
-
-    .line 562
-    invoke-interface {v14, v0}, Landroid/text/Spanned;->getSpanStart(Ljava/lang/Object;)I
-
-    move-result v1
-
-    invoke-interface {v14, v0}, Landroid/text/Spanned;->getSpanEnd(Ljava/lang/Object;)I
-
-    move-result v0
-
-    .line 563
-    invoke-static {v9, v1}, Ljava/lang/Math;->max(II)I
-
-    move-result v18
-
-    invoke-static {v8, v0}, Ljava/lang/Math;->min(II)I
-
-    move-result v19
-
-    sub-int v0, v19, v18
-
-    if-nez v0, :cond_0
-
-    goto :goto_2
+    return-void
 
     :cond_0
-    move-object/from16 v0, p0
+    const/4 v2, -0x1
 
-    move-object/from16 v1, p2
+    const/4 v3, -0x1
 
-    move-object/from16 v2, p1
+    move-object v0, p0
 
-    move v3, v9
+    move-object v1, p1
 
-    move v4, v8
+    move-object v4, p2
 
-    move/from16 v20, v5
+    move-object v5, p3
 
-    move/from16 v5, v16
+    move-object v6, p4
 
-    move/from16 v21, v6
+    .line 555
+    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->addSpoilers(Landroid/view/View;Landroid/text/Layout;IILandroid/text/Spanned;Ljava/util/Stack;Ljava/util/List;)V
 
-    move v6, v11
-
-    move-object/from16 v22, v7
-
-    move/from16 v7, v17
-
-    move/from16 v23, v8
-
-    move v8, v10
-
-    move/from16 v24, v9
-
-    move/from16 v9, v18
-
-    move/from16 v18, v10
-
-    move/from16 v10, v19
-
-    move/from16 v19, v11
-
-    move-object/from16 v11, p3
-
-    move/from16 v25, v12
-
-    move-object/from16 v12, p4
-
-    .line 567
-    invoke-static/range {v0 .. v12}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->addSpoilersInternal(Landroid/view/View;Landroid/text/Spanned;Landroid/text/Layout;IIFFFFIILjava/util/Stack;Ljava/util/List;)V
-
-    goto :goto_3
-
-    :cond_1
-    :goto_2
-    move/from16 v20, v5
-
-    move/from16 v21, v6
-
-    move-object/from16 v22, v7
-
-    move/from16 v23, v8
-
-    move/from16 v24, v9
-
-    move/from16 v18, v10
-
-    move/from16 v19, v11
-
-    move/from16 v25, v12
-
-    :goto_3
-    add-int/lit8 v5, v20, 0x1
-
-    move/from16 v10, v18
-
-    move/from16 v11, v19
-
-    move/from16 v6, v21
-
-    move-object/from16 v7, v22
-
-    move/from16 v8, v23
-
-    move/from16 v9, v24
-
-    move/from16 v12, v25
-
-    goto :goto_1
-
-    :cond_2
-    move/from16 v25, v12
-
-    add-int/lit8 v12, v25, 0x1
-
-    goto/16 :goto_0
-
-    :cond_3
-    move-object/from16 v0, p0
-
-    .line 571
-    instance-of v0, v0, Landroid/widget/TextView;
-
-    if-eqz v0, :cond_4
-
-    if-eqz p3, :cond_4
-
-    .line 572
-    invoke-virtual/range {p3 .. p3}, Ljava/util/Stack;->clear()V
-
-    :cond_4
     return-void
 .end method
 
@@ -656,7 +876,7 @@
         }
     .end annotation
 
-    .line 541
+    .line 540
     invoke-virtual {p1}, Landroid/text/Layout;->getText()Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -665,7 +885,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 542
+    .line 541
     invoke-virtual {p1}, Landroid/text/Layout;->getText()Ljava/lang/CharSequence;
 
     move-result-object v0
@@ -679,7 +899,7 @@
 .end method
 
 .method public static addSpoilers(Landroid/widget/TextView;Ljava/util/Stack;Ljava/util/List;)V
-    .locals 2
+    .locals 8
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -693,559 +913,43 @@
         }
     .end annotation
 
-    .line 529
+    .line 527
+    invoke-virtual {p0}, Landroid/widget/TextView;->getMeasuredWidth()I
+
+    move-result v0
+
+    .line 528
     invoke-virtual {p0}, Landroid/widget/TextView;->getLayout()Landroid/text/Layout;
 
-    move-result-object v0
+    move-result-object v2
 
-    invoke-virtual {p0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
-
-    move-result-object v1
-
-    check-cast v1, Landroid/text/Spanned;
-
-    invoke-static {p0, v0, v1, p1, p2}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->addSpoilers(Landroid/view/View;Landroid/text/Layout;Landroid/text/Spanned;Ljava/util/Stack;Ljava/util/List;)V
-
-    return-void
-.end method
-
-.method private static addSpoilersInternal(Landroid/view/View;Landroid/text/Spanned;Landroid/text/Layout;IIFFFFIILjava/util/Stack;Ljava/util/List;)V
-    .locals 19
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "(",
-            "Landroid/view/View;",
-            "Landroid/text/Spanned;",
-            "Landroid/text/Layout;",
-            "IIFFFFII",
-            "Ljava/util/Stack<",
-            "Lorg/telegram/ui/Components/spoilers/SpoilerEffect;",
-            ">;",
-            "Ljava/util/List<",
-            "Lorg/telegram/ui/Components/spoilers/SpoilerEffect;",
-            ">;)V"
-        }
-    .end annotation
-
-    move-object/from16 v0, p0
-
-    move-object/from16 v1, p1
-
-    move-object/from16 v2, p2
-
-    move/from16 v3, p4
-
-    move/from16 v4, p9
-
-    move/from16 v5, p10
-
-    move-object/from16 v6, p11
-
-    .line 581
-    new-instance v7, Landroid/text/SpannableStringBuilder;
-
-    invoke-direct {v7, v1, v4, v5}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;II)V
-
-    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->replaceNewLines(Ljava/lang/CharSequence;)Ljava/lang/CharSequence;
-
-    move-result-object v7
-
-    invoke-static {v7}, Landroid/text/SpannableStringBuilder;->valueOf(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
-
-    move-result-object v7
-
-    .line 582
-    invoke-virtual {v7}, Landroid/text/SpannableStringBuilder;->length()I
-
-    move-result v8
-
-    const-class v9, Lorg/telegram/ui/Components/TextStyleSpan;
-
-    const/4 v15, 0x0
-
-    invoke-virtual {v7, v15, v8, v9}, Landroid/text/SpannableStringBuilder;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
-
-    move-result-object v8
-
-    check-cast v8, [Lorg/telegram/ui/Components/TextStyleSpan;
-
-    array-length v9, v8
-
-    move v10, v15
-
-    :goto_0
-    if-ge v10, v9, :cond_0
-
-    aget-object v11, v8, v10
-
-    .line 583
-    invoke-virtual {v7, v11}, Landroid/text/SpannableStringBuilder;->removeSpan(Ljava/lang/Object;)V
-
-    add-int/lit8 v10, v10, 0x1
+    if-lez v0, :cond_0
 
     goto :goto_0
 
-    .line 584
     :cond_0
-    invoke-virtual {v7}, Landroid/text/SpannableStringBuilder;->length()I
+    const/4 v0, -0x2
 
-    move-result v8
+    :goto_0
+    move v4, v0
 
-    const-class v9, Landroid/text/style/URLSpan;
+    invoke-virtual {p0}, Landroid/widget/TextView;->getText()Ljava/lang/CharSequence;
 
-    invoke-virtual {v7, v15, v8, v9}, Landroid/text/SpannableStringBuilder;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
+    move-result-object v0
 
-    move-result-object v8
+    move-object v5, v0
 
-    check-cast v8, [Landroid/text/style/URLSpan;
+    check-cast v5, Landroid/text/Spanned;
 
-    array-length v9, v8
+    const/4 v3, 0x0
 
-    move v10, v15
+    move-object v1, p0
 
-    :goto_1
-    if-ge v10, v9, :cond_1
+    move-object v6, p1
 
-    aget-object v11, v8, v10
+    move-object v7, p2
 
-    .line 585
-    invoke-virtual {v7, v11}, Landroid/text/SpannableStringBuilder;->removeSpan(Ljava/lang/Object;)V
-
-    add-int/lit8 v10, v10, 0x1
-
-    goto :goto_1
-
-    .line 586
-    :cond_1
-    invoke-virtual {v7}, Landroid/text/SpannableStringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/String;->trim()Ljava/lang/String;
-
-    move-result-object v8
-
-    invoke-virtual {v8}, Ljava/lang/String;->length()I
-
-    move-result v8
-
-    if-nez v8, :cond_2
-
-    return-void
-
-    .line 588
-    :cond_2
-    invoke-virtual/range {p2 .. p2}, Landroid/text/Layout;->getEllipsizedWidth()I
-
-    move-result v8
-
-    if-lez v8, :cond_3
-
-    invoke-virtual/range {p2 .. p2}, Landroid/text/Layout;->getEllipsizedWidth()I
-
-    move-result v8
-
-    goto :goto_2
-
-    :cond_3
-    invoke-virtual/range {p2 .. p2}, Landroid/text/Layout;->getWidth()I
-
-    move-result v8
-
-    :goto_2
-    move v11, v8
-
-    .line 589
-    new-instance v10, Landroid/text/TextPaint;
-
-    invoke-virtual/range {p2 .. p2}, Landroid/text/Layout;->getPaint()Landroid/text/TextPaint;
-
-    move-result-object v8
-
-    invoke-direct {v10, v8}, Landroid/text/TextPaint;-><init>(Landroid/graphics/Paint;)V
-
-    const/high16 v8, -0x1000000
-
-    .line 590
-    invoke-virtual {v10, v8}, Landroid/text/TextPaint;->setColor(I)V
-
-    .line 592
-    sget v8, Landroid/os/Build$VERSION;->SDK_INT:I
-
-    const/16 v9, 0x18
-
-    const/4 v14, 0x1
-
-    if-lt v8, v9, :cond_4
-
-    .line 593
-    invoke-virtual {v7}, Landroid/text/SpannableStringBuilder;->length()I
-
-    move-result v8
-
-    invoke-static {v7, v15, v8, v10, v11}, Landroid/text/StaticLayout$Builder;->obtain(Ljava/lang/CharSequence;IILandroid/text/TextPaint;I)Landroid/text/StaticLayout$Builder;
-
-    move-result-object v8
-
-    .line 594
-    invoke-virtual {v8, v14}, Landroid/text/StaticLayout$Builder;->setBreakStrategy(I)Landroid/text/StaticLayout$Builder;
-
-    move-result-object v8
-
-    .line 595
-    invoke-virtual {v8, v15}, Landroid/text/StaticLayout$Builder;->setHyphenationFrequency(I)Landroid/text/StaticLayout$Builder;
-
-    move-result-object v8
-
-    sget-object v9, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
-
-    .line 596
-    invoke-virtual {v8, v9}, Landroid/text/StaticLayout$Builder;->setAlignment(Landroid/text/Layout$Alignment;)Landroid/text/StaticLayout$Builder;
-
-    move-result-object v8
-
-    .line 597
-    invoke-virtual/range {p2 .. p2}, Landroid/text/Layout;->getSpacingAdd()F
-
-    move-result v9
-
-    invoke-virtual/range {p2 .. p2}, Landroid/text/Layout;->getSpacingMultiplier()F
-
-    move-result v10
-
-    invoke-virtual {v8, v9, v10}, Landroid/text/StaticLayout$Builder;->setLineSpacing(FF)Landroid/text/StaticLayout$Builder;
-
-    move-result-object v8
-
-    .line 598
-    invoke-virtual {v8}, Landroid/text/StaticLayout$Builder;->build()Landroid/text/StaticLayout;
-
-    move/from16 v18, v14
-
-    move v0, v15
-
-    goto :goto_3
-
-    .line 600
-    :cond_4
-    new-instance v8, Landroid/text/StaticLayout;
-
-    sget-object v12, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
-
-    invoke-virtual/range {p2 .. p2}, Landroid/text/Layout;->getSpacingMultiplier()F
-
-    move-result v13
-
-    invoke-virtual/range {p2 .. p2}, Landroid/text/Layout;->getSpacingAdd()F
-
-    move-result v16
-
-    const/16 v17, 0x0
-
-    move-object v9, v7
-
-    move/from16 v18, v14
-
-    move/from16 v14, v16
-
-    move v0, v15
-
-    move/from16 v15, v17
-
-    invoke-direct/range {v8 .. v15}, Landroid/text/StaticLayout;-><init>(Ljava/lang/CharSequence;Landroid/text/TextPaint;ILandroid/text/Layout$Alignment;FFZ)V
-
-    .line 601
-    :goto_3
-    invoke-virtual {v7, v0}, Landroid/text/SpannableStringBuilder;->charAt(I)C
-
-    move-result v8
-
-    invoke-static {v8}, Lorg/telegram/messenger/LocaleController;->isRTLCharacter(C)Z
-
-    move-result v8
-
-    if-nez v8, :cond_5
-
-    invoke-virtual {v7}, Landroid/text/SpannableStringBuilder;->length()I
-
-    move-result v8
-
-    add-int/lit8 v8, v8, -0x1
-
-    invoke-virtual {v7, v8}, Landroid/text/SpannableStringBuilder;->charAt(I)C
-
-    move-result v8
-
-    invoke-static {v8}, Lorg/telegram/messenger/LocaleController;->isRTLCharacter(C)Z
-
-    move-result v8
-
-    if-eqz v8, :cond_6
-
-    :cond_5
-    sget-boolean v8, Lorg/telegram/messenger/LocaleController;->isRTL:Z
-
-    if-nez v8, :cond_6
-
-    move/from16 v15, v18
-
-    goto :goto_4
-
-    :cond_6
-    move v15, v0
-
-    :goto_4
-    if-eqz v6, :cond_8
-
-    .line 602
-    invoke-virtual/range {p11 .. p11}, Ljava/util/Stack;->isEmpty()Z
-
-    move-result v8
-
-    if-eqz v8, :cond_7
-
-    goto :goto_5
-
-    :cond_7
-    invoke-virtual {v6, v0}, Ljava/util/Stack;->remove(I)Ljava/lang/Object;
-
-    move-result-object v6
-
-    check-cast v6, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
-
-    goto :goto_6
-
-    :cond_8
-    :goto_5
-    new-instance v6, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
-
-    invoke-direct {v6}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;-><init>()V
-
-    :goto_6
-    const/high16 v8, -0x40800000    # -1.0f
-
-    .line 603
-    invoke-virtual {v6, v8}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setRippleProgress(F)V
-
-    move/from16 v8, p3
-
-    if-ne v4, v8, :cond_9
-
-    move/from16 v8, p5
-
-    goto :goto_7
-
-    .line 604
-    :cond_9
-    invoke-virtual {v2, v4}, Landroid/text/Layout;->getPrimaryHorizontal(I)F
-
-    move-result v8
-
-    :goto_7
-    if-eq v5, v3, :cond_b
-
-    if-eqz v15, :cond_a
-
-    add-int/lit8 v3, v3, -0x1
-
-    if-ne v5, v3, :cond_a
-
-    .line 605
-    invoke-interface {v1, v3}, Landroid/text/Spanned;->charAt(I)C
-
-    move-result v1
-
-    const/16 v3, 0x2026
-
-    if-ne v1, v3, :cond_a
-
-    goto :goto_8
-
-    :cond_a
-    invoke-virtual {v2, v5}, Landroid/text/Layout;->getPrimaryHorizontal(I)F
-
-    move-result v1
-
-    goto :goto_9
-
-    :cond_b
-    :goto_8
-    move/from16 v1, p7
-
-    .line 606
-    :goto_9
-    invoke-static {v8, v1}, Ljava/lang/Math;->min(FF)F
-
-    move-result v3
-
-    float-to-int v3, v3
-
-    move/from16 v5, p6
-
-    float-to-int v5, v5
-
-    invoke-static {v8, v1}, Ljava/lang/Math;->max(FF)F
-
-    move-result v1
-
-    float-to-int v1, v1
-
-    move/from16 v8, p8
-
-    float-to-int v8, v8
-
-    invoke-virtual {v6, v3, v5, v1, v8}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setBounds(IIII)V
-
-    .line 607
-    invoke-virtual/range {p2 .. p2}, Landroid/text/Layout;->getPaint()Landroid/text/TextPaint;
-
-    move-result-object v1
-
-    invoke-virtual {v1}, Landroid/text/TextPaint;->getColor()I
-
-    move-result v1
-
-    invoke-virtual {v6, v1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setColor(I)V
-
-    .line 608
-    sget-object v1, Lorg/telegram/ui/Components/Easings;->easeInQuad:Landroid/view/animation/Interpolator;
-
-    invoke-virtual {v6, v1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setRippleInterpolator(Landroid/animation/TimeInterpolator;)V
-
-    .line 609
-    invoke-virtual {v6}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->updateMaxParticles()V
-
-    move v1, v0
-
-    move-object/from16 v0, p0
-
-    if-eqz v0, :cond_c
-
-    .line 611
-    invoke-virtual {v6, v0}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setParentView(Landroid/view/View;)V
-
-    .line 613
-    :cond_c
-    iget-object v0, v6, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->spaces:Ljava/util/List;
-
-    invoke-interface {v0}, Ljava/util/List;->clear()V
-
-    move v15, v1
-
-    .line 614
-    :goto_a
-    invoke-virtual {v7}, Landroid/text/SpannableStringBuilder;->length()I
-
-    move-result v0
-
-    if-ge v15, v0, :cond_e
-
-    .line 615
-    invoke-virtual {v7, v15}, Landroid/text/SpannableStringBuilder;->charAt(I)C
-
-    move-result v0
-
-    const/16 v1, 0x20
-
-    if-ne v0, v1, :cond_d
-
-    .line 616
-    new-instance v0, Landroid/graphics/RectF;
-
-    invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
-
-    add-int v1, v4, v15
-
-    .line 618
-    invoke-virtual {v2, v1}, Landroid/text/Layout;->getLineForOffset(I)I
-
-    move-result v3
-
-    .line 619
-    invoke-virtual {v2, v3}, Landroid/text/Layout;->getLineTop(I)I
-
-    move-result v5
-
-    int-to-float v5, v5
-
-    iput v5, v0, Landroid/graphics/RectF;->top:F
-
-    .line 620
-    invoke-virtual {v2, v3}, Landroid/text/Layout;->getLineBottom(I)I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    iput v3, v0, Landroid/graphics/RectF;->bottom:F
-
-    .line 621
-    invoke-virtual {v2, v1}, Landroid/text/Layout;->getPrimaryHorizontal(I)F
-
-    move-result v3
-
-    add-int/lit8 v1, v1, 0x1
-
-    invoke-virtual {v2, v1}, Landroid/text/Layout;->getPrimaryHorizontal(I)F
-
-    move-result v1
-
-    .line 622
-    invoke-static {v3, v1}, Ljava/lang/Math;->min(FF)F
-
-    move-result v5
-
-    float-to-int v5, v5
-
-    int-to-float v5, v5
-
-    iput v5, v0, Landroid/graphics/RectF;->left:F
-
-    .line 623
-    invoke-static {v3, v1}, Ljava/lang/Math;->max(FF)F
-
-    move-result v5
-
-    float-to-int v5, v5
-
-    int-to-float v5, v5
-
-    iput v5, v0, Landroid/graphics/RectF;->right:F
-
-    sub-float/2addr v3, v1
-
-    .line 624
-    invoke-static {v3}, Ljava/lang/Math;->abs(F)F
-
-    move-result v1
-
-    const/16 v3, 0x14
-
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v3
-
-    int-to-float v3, v3
-
-    cmpg-float v1, v1, v3
-
-    if-gtz v1, :cond_d
-
-    .line 625
-    iget-object v1, v6, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->spaces:Ljava/util/List;
-
-    invoke-interface {v1, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    :cond_d
-    add-int/lit8 v15, v15, 0x1
-
-    goto :goto_a
-
-    :cond_e
-    move-object/from16 v0, p12
-
-    .line 629
-    invoke-interface {v0, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    invoke-static/range {v1 .. v7}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->addSpoilers(Landroid/view/View;Landroid/text/Layout;IILandroid/text/Spanned;Ljava/util/Stack;Ljava/util/List;)V
 
     return-void
 .end method
@@ -1262,12 +966,12 @@
         }
     .end annotation
 
-    .line 636
+    .line 625
     sget-object v0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->tempPath:Landroid/graphics/Path;
 
     invoke-virtual {v0}, Landroid/graphics/Path;->rewind()V
 
-    .line 637
+    .line 626
     invoke-interface {p1}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
@@ -1285,12 +989,12 @@
 
     check-cast v0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
-    .line 638
+    .line 627
     invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
 
-    .line 639
+    .line 628
     sget-object v1, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->tempPath:Landroid/graphics/Path;
 
     iget v2, v0, Landroid/graphics/Rect;->left:I
@@ -1315,7 +1019,7 @@
 
     goto :goto_0
 
-    .line 641
+    .line 630
     :cond_0
     sget-object p1, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->tempPath:Landroid/graphics/Path;
 
@@ -1329,7 +1033,7 @@
 .method private generateRandomLocation(Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;I)V
     .locals 2
 
-    .line 429
+    .line 427
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object p2
@@ -1360,7 +1064,7 @@
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;->access$502(Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;F)F
 
-    .line 430
+    .line 428
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object p2
@@ -1413,7 +1117,7 @@
 
     const/high16 p1, 0x40200000    # 2.5f
 
-    .line 416
+    .line 414
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result p3
@@ -1426,7 +1130,7 @@
 
     if-ltz p2, :cond_3
 
-    .line 417
+    .line 415
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result p1
@@ -1446,7 +1150,7 @@
 
     move p2, p1
 
-    .line 420
+    .line 418
     :goto_0
     iget-object p3, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->spaces:Ljava/util/List;
 
@@ -1456,7 +1160,7 @@
 
     if-ge p2, p3, :cond_2
 
-    .line 421
+    .line 419
     iget-object p3, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->spaces:Ljava/util/List;
 
     invoke-interface {p3, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1495,7 +1199,7 @@
 .method private synthetic lambda$startRipple$1(ILandroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 208
+    .line 206
     invoke-virtual {p2}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p2
@@ -1518,15 +1222,15 @@
 
     float-to-int p1, p1
 
-    .line 209
+    .line 207
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setAlpha(I)V
 
     const/4 p1, 0x1
 
-    .line 210
+    .line 208
     iput-boolean p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->shouldInvalidateColor:Z
 
-    .line 211
+    .line 209
     invoke-virtual {p0}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->invalidateSelf()V
 
     return-void
@@ -1535,7 +1239,7 @@
 .method private static measureMaxParticlesCount()I
     .locals 2
 
-    .line 118
+    .line 116
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getDevicePerformanceClass()I
 
     move-result v0
@@ -1557,7 +1261,7 @@
 .method private static measureParticlesPerCharacter()I
     .locals 2
 
-    .line 107
+    .line 105
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->getDevicePerformanceClass()I
 
     move-result v0
@@ -1605,19 +1309,19 @@
 
     move-object/from16 v11, p7
 
-    .line 659
+    .line 648
     invoke-interface/range {p6 .. p6}, Ljava/util/List;->isEmpty()Z
 
     move-result v4
 
     if-eqz v4, :cond_0
 
-    .line 660
+    .line 649
     invoke-virtual {v2, v11}, Landroid/text/Layout;->draw(Landroid/graphics/Canvas;)V
 
     return-void
 
-    .line 663
+    .line 652
     :cond_0
     invoke-virtual/range {p4 .. p4}, Ljava/util/concurrent/atomic/AtomicReference;->get()Ljava/lang/Object;
 
@@ -1629,7 +1333,7 @@
 
     if-eqz v4, :cond_1
 
-    .line 665
+    .line 654
     invoke-virtual/range {p5 .. p5}, Landroid/text/Layout;->getText()Ljava/lang/CharSequence;
 
     move-result-object v5
@@ -1672,7 +1376,7 @@
 
     if-eq v5, v6, :cond_6
 
-    .line 666
+    .line 655
     :cond_1
     new-instance v15, Landroid/text/SpannableStringBuilder;
 
@@ -1682,7 +1386,7 @@
 
     invoke-direct {v15, v4}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
 
-    .line 667
+    .line 656
     invoke-virtual/range {p5 .. p5}, Landroid/text/Layout;->getText()Ljava/lang/CharSequence;
 
     move-result-object v4
@@ -1691,14 +1395,14 @@
 
     if-eqz v4, :cond_4
 
-    .line 668
+    .line 657
     invoke-virtual/range {p5 .. p5}, Landroid/text/Layout;->getText()Ljava/lang/CharSequence;
 
     move-result-object v4
 
     check-cast v4, Landroid/text/Spannable;
 
-    .line 669
+    .line 658
     invoke-interface {v4}, Landroid/text/Spannable;->length()I
 
     move-result v5
@@ -1720,14 +1424,14 @@
 
     aget-object v8, v5, v7
 
-    .line 670
+    .line 659
     invoke-virtual {v8}, Lorg/telegram/ui/Components/TextStyleSpan;->isSpoiler()Z
 
     move-result v9
 
     if-eqz v9, :cond_3
 
-    .line 671
+    .line 660
     invoke-interface {v4, v8}, Landroid/text/Spannable;->getSpanStart(Ljava/lang/Object;)I
 
     move-result v9
@@ -1736,7 +1440,7 @@
 
     move-result v10
 
-    .line 672
+    .line 661
     const-class v14, Lorg/telegram/messenger/Emoji$EmojiSpan;
 
     invoke-interface {v4, v9, v10, v14}, Landroid/text/Spannable;->getSpans(IILjava/lang/Class;)[Ljava/lang/Object;
@@ -1754,14 +1458,14 @@
 
     aget-object v12, v9, v14
 
-    .line 673
-    new-instance v13, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$2;
+    .line 662
+    new-instance v13, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$3;
 
-    invoke-direct {v13, v12}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$2;-><init>(Lorg/telegram/messenger/Emoji$EmojiSpan;)V
+    invoke-direct {v13, v12}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$3;-><init>(Lorg/telegram/messenger/Emoji$EmojiSpan;)V
 
     move-object/from16 v16, v5
 
-    .line 682
+    .line 671
     invoke-interface {v4, v12}, Landroid/text/Spannable;->getSpanStart(Ljava/lang/Object;)I
 
     move-result v5
@@ -1778,10 +1482,10 @@
 
     move-result v9
 
-    .line 673
+    .line 662
     invoke-virtual {v15, v13, v5, v6, v9}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 683
+    .line 672
     invoke-virtual {v15, v12}, Landroid/text/SpannableStringBuilder;->removeSpan(Ljava/lang/Object;)V
 
     add-int/lit8 v14, v14, 0x1
@@ -1801,7 +1505,7 @@
 
     move/from16 v17, v6
 
-    .line 686
+    .line 675
     new-instance v5, Landroid/text/style/ForegroundColorSpan;
 
     const/4 v6, 0x0
@@ -1822,7 +1526,7 @@
 
     invoke-virtual {v15, v5, v6, v9, v10}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 687
+    .line 676
     invoke-virtual {v15, v8}, Landroid/text/SpannableStringBuilder;->removeSpan(Ljava/lang/Object;)V
 
     goto :goto_2
@@ -1843,7 +1547,7 @@
 
     goto :goto_0
 
-    .line 693
+    .line 682
     :cond_4
     sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -1851,7 +1555,7 @@
 
     if-lt v4, v5, :cond_5
 
-    .line 694
+    .line 683
     invoke-virtual {v15}, Landroid/text/SpannableStringBuilder;->length()I
 
     move-result v4
@@ -1872,24 +1576,24 @@
 
     const/4 v5, 0x1
 
-    .line 695
+    .line 684
     invoke-virtual {v4, v5}, Landroid/text/StaticLayout$Builder;->setBreakStrategy(I)Landroid/text/StaticLayout$Builder;
 
     move-result-object v4
 
-    .line 696
+    .line 685
     invoke-virtual {v4, v7}, Landroid/text/StaticLayout$Builder;->setHyphenationFrequency(I)Landroid/text/StaticLayout$Builder;
 
     move-result-object v4
 
     sget-object v5, Landroid/text/Layout$Alignment;->ALIGN_NORMAL:Landroid/text/Layout$Alignment;
 
-    .line 697
+    .line 686
     invoke-virtual {v4, v5}, Landroid/text/StaticLayout$Builder;->setAlignment(Landroid/text/Layout$Alignment;)Landroid/text/StaticLayout$Builder;
 
     move-result-object v4
 
-    .line 698
+    .line 687
     invoke-virtual/range {p5 .. p5}, Landroid/text/Layout;->getSpacingAdd()F
 
     move-result v5
@@ -1902,14 +1606,14 @@
 
     move-result-object v4
 
-    .line 699
+    .line 688
     invoke-virtual {v4}, Landroid/text/StaticLayout$Builder;->build()Landroid/text/StaticLayout;
 
     move-result-object v4
 
     goto :goto_3
 
-    .line 701
+    .line 690
     :cond_5
     new-instance v4, Landroid/text/StaticLayout;
 
@@ -1942,10 +1646,10 @@
     :goto_3
     move-object/from16 v5, p4
 
-    .line 703
+    .line 692
     invoke-virtual {v5, v4}, Ljava/util/concurrent/atomic/AtomicReference;->set(Ljava/lang/Object;)V
 
-    .line 706
+    .line 695
     :cond_6
     invoke-interface/range {p6 .. p6}, Ljava/util/List;->isEmpty()Z
 
@@ -1955,29 +1659,29 @@
 
     if-nez v5, :cond_7
 
-    .line 707
+    .line 696
     invoke-virtual/range {p7 .. p7}, Landroid/graphics/Canvas;->save()I
 
     move/from16 v5, p3
 
     int-to-float v5, v5
 
-    .line 708
+    .line 697
     invoke-virtual {v11, v12, v5}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 709
+    .line 698
     invoke-virtual {v4, v11}, Landroid/text/Layout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 710
+    .line 699
     invoke-virtual/range {p7 .. p7}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_4
 
-    .line 712
+    .line 701
     :cond_7
     invoke-virtual {v2, v11}, Landroid/text/Layout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 715
+    .line 704
     :goto_4
     invoke-interface/range {p6 .. p6}, Ljava/util/List;->isEmpty()Z
 
@@ -1985,12 +1689,12 @@
 
     if-nez v4, :cond_13
 
-    .line 716
+    .line 705
     sget-object v4, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->tempPath:Landroid/graphics/Path;
 
     invoke-virtual {v4}, Landroid/graphics/Path;->rewind()V
 
-    .line 717
+    .line 706
     invoke-interface/range {p6 .. p6}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
@@ -2008,12 +1712,12 @@
 
     check-cast v5, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;
 
-    .line 718
+    .line 707
     invoke-virtual {v5}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v5
 
-    .line 719
+    .line 708
     sget-object v13, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->tempPath:Landroid/graphics/Path;
 
     iget v6, v5, Landroid/graphics/Rect;->left:I
@@ -2042,7 +1746,7 @@
 
     goto :goto_5
 
-    .line 721
+    .line 710
     :cond_8
     invoke-interface/range {p6 .. p6}, Ljava/util/List;->isEmpty()Z
 
@@ -2066,20 +1770,20 @@
 
     if-eqz v4, :cond_a
 
-    .line 722
+    .line 711
     invoke-virtual/range {p7 .. p7}, Landroid/graphics/Canvas;->save()I
 
-    .line 723
+    .line 712
     sget-object v4, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->tempPath:Landroid/graphics/Path;
 
     invoke-virtual {v11, v4}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
-    .line 724
+    .line 713
     sget-object v4, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->tempPath:Landroid/graphics/Path;
 
     invoke-virtual {v4}, Landroid/graphics/Path;->rewind()V
 
-    .line 725
+    .line 714
     invoke-interface/range {p6 .. p6}, Ljava/util/List;->isEmpty()Z
 
     move-result v4
@@ -2088,7 +1792,7 @@
 
     const/4 v4, 0x0
 
-    .line 726
+    .line 715
     invoke-interface {v3, v4}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v6
@@ -2099,13 +1803,13 @@
 
     invoke-virtual {v6, v4}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->getRipplePath(Landroid/graphics/Path;)V
 
-    .line 728
+    .line 717
     :cond_9
     sget-object v4, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->tempPath:Landroid/graphics/Path;
 
     invoke-virtual {v11, v4}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
-    .line 729
+    .line 718
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingTop()I
 
     move-result v4
@@ -2116,16 +1820,16 @@
 
     invoke-virtual {v11, v12, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 730
+    .line 719
     invoke-virtual {v2, v11}, Landroid/text/Layout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 731
+    .line 720
     invoke-virtual/range {p7 .. p7}, Landroid/graphics/Canvas;->restore()V
 
     :cond_a
     const/4 v2, 0x0
 
-    .line 735
+    .line 724
     invoke-interface {v3, v2}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -2148,14 +1852,14 @@
     :goto_6
     if-eqz v2, :cond_d
 
-    .line 737
+    .line 726
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v4
 
     if-eqz p8, :cond_c
 
-    .line 738
+    .line 727
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v5
@@ -2164,7 +1868,7 @@
 
     if-eqz v5, :cond_c
 
-    .line 739
+    .line 728
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v4
@@ -2182,7 +1886,7 @@
 
     int-to-float v7, v4
 
-    .line 741
+    .line 730
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v4
@@ -2199,11 +1903,11 @@
 
     goto :goto_7
 
-    .line 743
+    .line 732
     :cond_d
     invoke-virtual/range {p7 .. p7}, Landroid/graphics/Canvas;->save()I
 
-    .line 745
+    .line 734
     :goto_7
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getPaddingTop()I
 
@@ -2215,7 +1919,7 @@
 
     invoke-virtual {v11, v12, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 746
+    .line 735
     invoke-interface/range {p6 .. p6}, Ljava/util/List;->iterator()Ljava/util/Iterator;
 
     move-result-object v4
@@ -2235,10 +1939,10 @@
 
     move/from16 v6, p1
 
-    .line 747
+    .line 736
     invoke-virtual {v5, v6}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setInvalidateParent(Z)V
 
-    .line 748
+    .line 737
     invoke-virtual {v5}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->getParentView()Landroid/view/View;
 
     move-result-object v7
@@ -2247,7 +1951,7 @@
 
     invoke-virtual {v5, v0}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setParentView(Landroid/view/View;)V
 
-    .line 749
+    .line 738
     :cond_e
     invoke-virtual {v5}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->shouldInvalidateColor()Z
 
@@ -2255,7 +1959,7 @@
 
     if-eqz v7, :cond_f
 
-    .line 750
+    .line 739
     sget-object v7, Lorg/telegram/ui/ActionBar/Theme;->chat_msgTextPaint:Landroid/text/TextPaint;
 
     invoke-virtual {v7}, Landroid/text/TextPaint;->getColor()I
@@ -2278,11 +1982,11 @@
 
     goto :goto_9
 
-    .line 752
+    .line 741
     :cond_f
     invoke-virtual {v5, v1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->setColor(I)V
 
-    .line 754
+    .line 743
     :goto_9
     invoke-virtual {v5, v11}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->draw(Landroid/graphics/Canvas;)V
 
@@ -2291,14 +1995,14 @@
     :cond_10
     if-eqz v2, :cond_12
 
-    .line 758
+    .line 747
     sget-object v0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->tempPath:Landroid/graphics/Path;
 
     invoke-virtual {v0}, Landroid/graphics/Path;->rewind()V
 
     const/4 v0, 0x0
 
-    .line 759
+    .line 748
     invoke-interface {v3, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v0
@@ -2309,12 +2013,12 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->getRipplePath(Landroid/graphics/Path;)V
 
-    .line 760
+    .line 749
     sget-object v0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->xRefPaint:Landroid/graphics/Paint;
 
     if-nez v0, :cond_11
 
-    .line 761
+    .line 750
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x1
@@ -2325,10 +2029,10 @@
 
     const/high16 v1, -0x1000000
 
-    .line 762
+    .line 751
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 763
+    .line 752
     sget-object v0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->xRefPaint:Landroid/graphics/Paint;
 
     new-instance v1, Landroid/graphics/PorterDuffXfermode;
@@ -2339,7 +2043,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 765
+    .line 754
     :cond_11
     sget-object v0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->tempPath:Landroid/graphics/Path;
 
@@ -2347,7 +2051,7 @@
 
     invoke-virtual {v11, v0, v1}, Landroid/graphics/Canvas;->drawPath(Landroid/graphics/Path;Landroid/graphics/Paint;)V
 
-    .line 767
+    .line 756
     :cond_12
     invoke-virtual/range {p7 .. p7}, Landroid/graphics/Canvas;->restore()V
 
@@ -2362,17 +2066,17 @@
 
     move-object/from16 v7, p0
 
-    .line 299
+    .line 297
     iget-boolean v0, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->drawPoints:Z
 
     if-eqz v0, :cond_f
 
-    .line 300
+    .line 298
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
 
-    .line 301
+    .line 299
     iget-wide v2, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->lastDrawTime:J
 
     sub-long v2, v0, v2
@@ -2385,10 +2089,10 @@
 
     long-to-int v8, v2
 
-    .line 305
+    .line 303
     iput-wide v0, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->lastDrawTime:J
 
-    .line 307
+    .line 305
     invoke-virtual/range {p0 .. p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
@@ -2417,7 +2121,7 @@
 
     move v0, v13
 
-    .line 308
+    .line 306
     :goto_0
     sget-object v1, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->ALPHAS:[F
 
@@ -2425,7 +2129,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 309
+    .line 307
     iget-object v1, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->renderCount:[I
 
     aput v13, v1, v0
@@ -2437,7 +2141,7 @@
     :cond_0
     move v14, v13
 
-    .line 311
+    .line 309
     :goto_1
     iget-object v0, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particles:Ljava/util/ArrayList;
 
@@ -2447,7 +2151,7 @@
 
     if-ge v14, v0, :cond_4
 
-    .line 312
+    .line 310
     iget-object v0, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particles:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v14}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2458,7 +2162,7 @@
 
     check-cast v15, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;
 
-    .line 314
+    .line 312
     invoke-static {v15}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;->access$700(Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;)F
 
     move-result v0
@@ -2477,7 +2181,7 @@
 
     invoke-static {v15, v0}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;->access$702(Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;F)F
 
-    .line 315
+    .line 313
     invoke-static {v15}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;->access$700(Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;)F
 
     move-result v0
@@ -2520,7 +2224,7 @@
 
     goto :goto_2
 
-    .line 324
+    .line 322
     :cond_1
     invoke-static {v15}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;->access$900(Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;)F
 
@@ -2532,7 +2236,7 @@
 
     div-float/2addr v0, v1
 
-    .line 325
+    .line 323
     invoke-static {v15}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;->access$1000(Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;)F
 
     move-result v1
@@ -2541,7 +2245,7 @@
 
     invoke-static {v15, v1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;->access$516(Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;F)F
 
-    .line 326
+    .line 324
     invoke-static {v15}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;->access$1100(Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;)F
 
     move-result v1
@@ -2550,12 +2254,12 @@
 
     invoke-static {v15, v1}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;->access$616(Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;F)F
 
-    .line 328
+    .line 326
     invoke-static {v15}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;->access$1200(Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;)I
 
     move-result v0
 
-    .line 329
+    .line 327
     iget-object v1, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlePoints:[[F
 
     aget-object v1, v1, v0
@@ -2572,7 +2276,7 @@
 
     aput v3, v1, v2
 
-    .line 330
+    .line 328
     iget-object v1, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlePoints:[[F
 
     aget-object v1, v1, v0
@@ -2591,7 +2295,7 @@
 
     aput v3, v1, v2
 
-    .line 331
+    .line 329
     iget-object v1, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->renderCount:[I
 
     aget v2, v1, v0
@@ -2602,7 +2306,7 @@
 
     goto :goto_3
 
-    .line 316
+    .line 314
     :cond_2
     :goto_2
     iget-object v0, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlesPool:Ljava/util/Stack;
@@ -2615,12 +2319,12 @@
 
     if-ge v0, v1, :cond_3
 
-    .line 317
+    .line 315
     iget-object v0, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlesPool:Ljava/util/Stack;
 
     invoke-virtual {v0, v15}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 319
+    .line 317
     :cond_3
     iget-object v0, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particles:Ljava/util/ArrayList;
 
@@ -2633,7 +2337,7 @@
 
     goto/16 :goto_1
 
-    .line 334
+    .line 332
     :cond_4
     iget-object v0, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particles:Ljava/util/ArrayList;
 
@@ -2645,7 +2349,7 @@
 
     if-ge v0, v1, :cond_9
 
-    .line 335
+    .line 333
     iget-object v0, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particles:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -2654,7 +2358,7 @@
 
     sub-int v8, v1, v0
 
-    .line 336
+    .line 334
     iget-object v0, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particleRands:[F
 
     const/high16 v14, -0x40800000    # -1.0f
@@ -2666,7 +2370,7 @@
     :goto_4
     if-ge v15, v8, :cond_9
 
-    .line 338
+    .line 336
     iget-object v0, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particleRands:[F
 
     rem-int/lit8 v1, v15, 0xe
@@ -2677,7 +2381,7 @@
 
     if-nez v3, :cond_5
 
-    .line 340
+    .line 338
     sget-object v2, Lorg/telegram/messenger/Utilities;->fastRandom:Ljava/util/Random;
 
     invoke-virtual {v2}, Ljava/util/Random;->nextFloat()F
@@ -2689,7 +2393,7 @@
     :cond_5
     move v6, v2
 
-    .line 343
+    .line 341
     iget-object v0, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlesPool:Ljava/util/Stack;
 
     invoke-virtual {v0}, Ljava/util/Stack;->isEmpty()Z
@@ -2720,13 +2424,13 @@
 
     move v0, v13
 
-    .line 346
+    .line 344
     :goto_6
     invoke-direct {v7, v5, v15}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->generateRandomLocation(Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;I)V
 
     add-int/lit8 v4, v0, 0x1
 
-    .line 348
+    .line 346
     invoke-static {v5}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;->access$500(Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;)F
 
     move-result v16
@@ -2798,32 +2502,32 @@
 
     sub-double/2addr v0, v2
 
-    .line 352
+    .line 350
     invoke-static {v0, v1}, Ljava/lang/Math;->cos(D)D
 
     move-result-wide v2
 
     double-to-float v2, v2
 
-    .line 353
+    .line 351
     invoke-static {v0, v1}, Ljava/lang/Math;->sin(D)D
 
     move-result-wide v0
 
     double-to-float v0, v0
 
-    .line 355
+    .line 353
     invoke-static {v13, v2}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;->access$1002(Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;F)F
 
-    .line 356
+    .line 354
     invoke-static {v13, v0}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;->access$1102(Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;F)F
 
     const/4 v0, 0x0
 
-    .line 358
+    .line 356
     invoke-static {v13, v0}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;->access$702(Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;F)F
 
-    .line 360
+    .line 358
     sget-object v0, Lorg/telegram/messenger/Utilities;->fastRandom:Ljava/util/Random;
 
     const/16 v1, 0x7d0
@@ -2850,10 +2554,10 @@
 
     add-float/2addr v6, v0
 
-    .line 361
+    .line 359
     invoke-static {v13, v6}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;->access$902(Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;F)F
 
-    .line 362
+    .line 360
     sget-object v0, Lorg/telegram/messenger/Utilities;->fastRandom:Ljava/util/Random;
 
     sget-object v1, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->ALPHAS:[F
@@ -2866,17 +2570,17 @@
 
     invoke-static {v13, v0}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;->access$1202(Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;I)I
 
-    .line 363
+    .line 361
     iget-object v0, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particles:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v13}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 365
+    .line 363
     invoke-static {v13}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;->access$1200(Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;)I
 
     move-result v0
 
-    .line 366
+    .line 364
     iget-object v1, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlePoints:[[F
 
     aget-object v1, v1, v0
@@ -2893,7 +2597,7 @@
 
     aput v3, v1, v2
 
-    .line 367
+    .line 365
     iget-object v1, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlePoints:[[F
 
     aget-object v1, v1, v0
@@ -2912,7 +2616,7 @@
 
     aput v3, v1, v2
 
-    .line 368
+    .line 366
     iget-object v1, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->renderCount:[I
 
     aget v2, v1, v0
@@ -2931,7 +2635,7 @@
 
     goto/16 :goto_4
 
-    .line 372
+    .line 370
     :cond_9
     iget-boolean v0, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->enableAlpha:Z
 
@@ -2961,7 +2665,7 @@
 
     const/4 v3, 0x0
 
-    .line 375
+    .line 373
     :goto_9
     iget-object v4, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particles:Ljava/util/ArrayList;
 
@@ -2971,7 +2675,7 @@
 
     if-ge v1, v4, :cond_e
 
-    .line 376
+    .line 374
     iget-object v4, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particles:Ljava/util/ArrayList;
 
     invoke-virtual {v4, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -2980,7 +2684,7 @@
 
     check-cast v4, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;
 
-    .line 378
+    .line 376
     iget-object v5, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->visibleRect:Landroid/graphics/RectF;
 
     if-eqz v5, :cond_b
@@ -3015,7 +2719,7 @@
 
     goto :goto_a
 
-    .line 383
+    .line 381
     :cond_d
     iget-object v5, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlePoints:[[F
 
@@ -3031,7 +2735,7 @@
 
     aput v8, v5, v6
 
-    .line 384
+    .line 382
     iget-object v5, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlePoints:[[F
 
     aget-object v5, v5, v0
@@ -3051,7 +2755,7 @@
 
     goto :goto_9
 
-    .line 387
+    .line 385
     :cond_e
     iget-object v1, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlePoints:[[F
 
@@ -3074,7 +2778,7 @@
     :cond_f
     move-object/from16 v4, p1
 
-    .line 390
+    .line 388
     invoke-static {}, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->getInstance()Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;
 
     move-result-object v0
@@ -3083,7 +2787,7 @@
 
     move-result-object v0
 
-    .line 391
+    .line 389
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
     iget v2, v7, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->lastColor:I
@@ -3094,7 +2798,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
 
-    .line 392
+    .line 390
     invoke-virtual/range {p0 .. p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0
@@ -3141,17 +2845,17 @@
 
     const/16 v0, 0x80
 
-    .line 393
+    .line 391
     invoke-static {v0}, Lorg/telegram/messenger/LiteMode;->isEnabled(I)Z
 
     move-result v0
 
     if-eqz v0, :cond_10
 
-    .line 394
+    .line 392
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->invalidateSelf()V
 
-    .line 395
+    .line 393
     invoke-static {}, Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;->getInstance()Lorg/telegram/ui/Components/spoilers/SpoilerEffectBitmapFactory;
 
     move-result-object v0
@@ -3173,7 +2877,7 @@
 .method public getParentView()Landroid/view/View;
     .locals 1
 
-    .line 460
+    .line 458
     iget-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->mParent:Landroid/view/View;
 
     return-object v0
@@ -3182,7 +2886,7 @@
 .method public getRipplePath(Landroid/graphics/Path;)V
     .locals 6
 
-    .line 252
+    .line 250
     iget v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->rippleX:F
 
     iget v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->rippleY:F
@@ -3211,7 +2915,7 @@
 .method public getRippleProgress()F
     .locals 1
 
-    .line 259
+    .line 257
     iget v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->rippleProgress:F
 
     return v0
@@ -3220,15 +2924,15 @@
 .method public invalidateSelf()V
     .locals 2
 
-    .line 435
+    .line 433
     invoke-super {p0}, Landroid/graphics/drawable/Drawable;->invalidateSelf()V
 
-    .line 437
+    .line 435
     iget-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->mParent:Landroid/view/View;
 
     if-eqz v0, :cond_1
 
-    .line 439
+    .line 437
     invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v1
@@ -3239,7 +2943,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 440
+    .line 438
     invoke-virtual {v0}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -3250,7 +2954,7 @@
 
     goto :goto_0
 
-    .line 442
+    .line 440
     :cond_0
     invoke-virtual {v0}, Landroid/view/View;->invalidate()V
 
@@ -3262,12 +2966,12 @@
 .method public setAlpha(I)V
     .locals 4
 
-    .line 465
+    .line 463
     iput p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->mAlpha:I
 
     const/4 v0, 0x0
 
-    .line 466
+    .line 464
     :goto_0
     sget-object v1, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->ALPHAS:[F
 
@@ -3275,7 +2979,7 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 467
+    .line 465
     iget-object v2, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlePaints:[Landroid/graphics/Paint;
 
     aget-object v2, v2, v0
@@ -3301,17 +3005,17 @@
 .method public setBounds(IIII)V
     .locals 1
 
-    .line 284
+    .line 282
     invoke-super {p0, p1, p2, p3, p4}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 285
+    .line 283
     iget-object p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particles:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
 
     move-result-object p1
 
-    .line 286
+    .line 284
     :cond_0
     :goto_0
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
@@ -3320,14 +3024,14 @@
 
     if-eqz p2, :cond_2
 
-    .line 287
+    .line 285
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object p2
 
     check-cast p2, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;
 
-    .line 288
+    .line 286
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object p3
@@ -3350,10 +3054,10 @@
 
     if-nez p3, :cond_1
 
-    .line 289
+    .line 287
     invoke-interface {p1}, Ljava/util/Iterator;->remove()V
 
-    .line 291
+    .line 289
     :cond_1
     iget-object p3, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlesPool:Ljava/util/Stack;
 
@@ -3365,7 +3069,7 @@
 
     if-ge p3, p4, :cond_0
 
-    .line 292
+    .line 290
     iget-object p3, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlesPool:Ljava/util/Stack;
 
     invoke-virtual {p3, p2}, Ljava/util/Stack;->push(Ljava/lang/Object;)Ljava/lang/Object;
@@ -3379,14 +3083,14 @@
 .method public setColor(I)V
     .locals 4
 
-    .line 484
+    .line 482
     iget v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->lastColor:I
 
     if-eq v0, p1, :cond_1
 
     const/4 v0, 0x0
 
-    .line 485
+    .line 483
     :goto_0
     sget-object v1, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->ALPHAS:[F
 
@@ -3394,7 +3098,7 @@
 
     if-ge v0, v2, :cond_0
 
-    .line 486
+    .line 484
     iget-object v2, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlePaints:[Landroid/graphics/Paint;
 
     aget-object v2, v2, v0
@@ -3419,7 +3123,7 @@
 
     goto :goto_0
 
-    .line 488
+    .line 486
     :cond_0
     iput p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->lastColor:I
 
@@ -3430,7 +3134,7 @@
 .method public setColorFilter(Landroid/graphics/ColorFilter;)V
     .locals 4
 
-    .line 473
+    .line 471
     iget-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlePaints:[Landroid/graphics/Paint;
 
     array-length v1, v0
@@ -3442,7 +3146,7 @@
 
     aget-object v3, v0, v2
 
-    .line 474
+    .line 472
     invoke-virtual {v3, p1}, Landroid/graphics/Paint;->setColorFilter(Landroid/graphics/ColorFilter;)Landroid/graphics/ColorFilter;
 
     add-int/lit8 v2, v2, 0x1
@@ -3456,7 +3160,7 @@
 .method public setInvalidateParent(Z)V
     .locals 0
 
-    .line 159
+    .line 157
     iput-boolean p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->invalidateParent:Z
 
     return-void
@@ -3465,10 +3169,10 @@
 .method public setMaxParticlesCount(I)V
     .locals 3
 
-    .line 515
+    .line 513
     iput p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->maxParticles:I
 
-    .line 516
+    .line 514
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlesPool:Ljava/util/Stack;
 
@@ -3486,7 +3190,7 @@
 
     if-ge v0, p1, :cond_0
 
-    .line 517
+    .line 515
     iget-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->particlesPool:Ljava/util/Stack;
 
     new-instance v1, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$Particle;
@@ -3506,7 +3210,7 @@
 .method public setOnRippleEndCallback(Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 173
+    .line 171
     iput-object p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->onRippleEndCallback:Ljava/lang/Runnable;
 
     return-void
@@ -3515,7 +3219,7 @@
 .method public setParentView(Landroid/view/View;)V
     .locals 0
 
-    .line 453
+    .line 451
     iput-object p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->mParent:Landroid/view/View;
 
     return-void
@@ -3524,7 +3228,7 @@
 .method public setRippleInterpolator(Landroid/animation/TimeInterpolator;)V
     .locals 0
 
-    .line 245
+    .line 243
     iput-object p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->rippleInterpolator:Landroid/animation/TimeInterpolator;
 
     return-void
@@ -3533,7 +3237,7 @@
 .method public setRippleProgress(F)V
     .locals 1
 
-    .line 275
+    .line 273
     iput p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->rippleProgress:F
 
     const/high16 v0, -0x40800000    # -1.0f
@@ -3542,18 +3246,18 @@
 
     if-nez p1, :cond_0
 
-    .line 276
+    .line 274
     iget-object p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->rippleAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz p1, :cond_0
 
-    .line 277
+    .line 275
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_0
     const/4 p1, 0x1
 
-    .line 279
+    .line 277
     iput-boolean p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->shouldInvalidateColor:Z
 
     return-void
@@ -3562,7 +3266,7 @@
 .method public setSuppressUpdates(Z)V
     .locals 0
 
-    .line 152
+    .line 150
     invoke-virtual {p0}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->invalidateSelf()V
 
     return-void
@@ -3571,19 +3275,19 @@
 .method public setVisibleBounds(FFFF)V
     .locals 2
 
-    .line 404
+    .line 402
     iget-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->visibleRect:Landroid/graphics/RectF;
 
     if-nez v0, :cond_0
 
-    .line 405
+    .line 403
     new-instance v0, Landroid/graphics/RectF;
 
     invoke-direct {v0}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->visibleRect:Landroid/graphics/RectF;
 
-    .line 406
+    .line 404
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->visibleRect:Landroid/graphics/RectF;
 
@@ -3611,20 +3315,20 @@
 
     if-eqz v1, :cond_2
 
-    .line 407
+    .line 405
     :cond_1
     iput p1, v0, Landroid/graphics/RectF;->left:F
 
-    .line 408
+    .line 406
     iput p2, v0, Landroid/graphics/RectF;->top:F
 
-    .line 409
+    .line 407
     iput p3, v0, Landroid/graphics/RectF;->right:F
 
-    .line 410
+    .line 408
     iput p4, v0, Landroid/graphics/RectF;->bottom:F
 
-    .line 411
+    .line 409
     invoke-virtual {p0}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->invalidateSelf()V
 
     :cond_2
@@ -3634,12 +3338,12 @@
 .method public shouldInvalidateColor()Z
     .locals 2
 
-    .line 266
+    .line 264
     iget-boolean v0, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->shouldInvalidateColor:Z
 
     const/4 v1, 0x0
 
-    .line 267
+    .line 265
     iput-boolean v1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->shouldInvalidateColor:Z
 
     return v0
@@ -3650,7 +3354,7 @@
 
     const/4 v0, 0x0
 
-    .line 184
+    .line 182
     invoke-virtual {p0, p1, p2, p3, v0}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->startRipple(FFFZ)V
 
     return-void
@@ -3659,13 +3363,13 @@
 .method public startRipple(FFFZ)V
     .locals 4
 
-    .line 196
+    .line 194
     iput p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->rippleX:F
 
-    .line 197
+    .line 195
     iput p2, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->rippleY:F
 
-    .line 198
+    .line 196
     iput p3, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->rippleMaxRadius:F
 
     const/high16 p1, 0x3f800000    # 1.0f
@@ -3681,22 +3385,22 @@
     :cond_0
     move p3, p2
 
-    .line 199
+    .line 197
     :goto_0
     iput p3, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->rippleProgress:F
 
-    .line 200
+    .line 198
     iput-boolean p4, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->reverseAnimator:Z
 
-    .line 202
+    .line 200
     iget-object p3, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->rippleAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz p3, :cond_1
 
-    .line 203
+    .line 201
     invoke-virtual {p3}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 204
+    .line 202
     :cond_1
     iget-boolean p3, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->reverseAnimator:Z
 
@@ -3730,7 +3434,7 @@
 
     const/4 v2, 0x0
 
-    .line 205
+    .line 203
     iget v3, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->rippleProgress:F
 
     aput v3, v1, v2
@@ -3768,12 +3472,12 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->rippleAnimator:Landroid/animation/ValueAnimator;
 
-    .line 206
+    .line 204
     iget-object p2, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->rippleInterpolator:Landroid/animation/TimeInterpolator;
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 207
+    .line 205
     iget-object p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->rippleAnimator:Landroid/animation/ValueAnimator;
 
     new-instance p2, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$$ExternalSyntheticLambda1;
@@ -3782,7 +3486,7 @@
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 213
+    .line 211
     iget-object p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->rippleAnimator:Landroid/animation/ValueAnimator;
 
     new-instance p2, Lorg/telegram/ui/Components/spoilers/SpoilerEffect$1;
@@ -3791,12 +3495,12 @@
 
     invoke-virtual {p1, p2}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 234
+    .line 232
     iget-object p1, p0, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->rippleAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
-    .line 236
+    .line 234
     invoke-virtual {p0}, Lorg/telegram/ui/Components/spoilers/SpoilerEffect;->invalidateSelf()V
 
     return-void
@@ -3805,7 +3509,7 @@
 .method public updateMaxParticles()V
     .locals 3
 
-    .line 166
+    .line 164
     invoke-virtual {p0}, Landroid/graphics/drawable/Drawable;->getBounds()Landroid/graphics/Rect;
 
     move-result-object v0

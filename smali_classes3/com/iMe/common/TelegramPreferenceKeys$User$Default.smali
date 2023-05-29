@@ -28,7 +28,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 691
+    .line 685
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -69,7 +69,7 @@
 .method public static final isArchiveSortingChatsEnabled()Z
     .locals 1
 
-    .line 733
+    .line 727
     sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->isChatSortingEnabledByDefault:Z
 
     return v0
@@ -107,18 +107,18 @@
     return v0
 .end method
 
-.method public static final isHiddenChatsHidden()Z
+.method public static final isFoldersHidden()Z
     .locals 1
 
-    const/4 v0, 0x1
+    const/4 v0, 0x0
 
     return v0
 .end method
 
-.method public static final isHideFoldersEnabled()Z
+.method public static final isHiddenChatsHidden()Z
     .locals 1
 
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     return v0
 .end method
@@ -302,7 +302,7 @@
 .method public static final isSortingChatsEnabled()Z
     .locals 1
 
-    .line 730
+    .line 724
     sget-boolean v0, Lorg/telegram/messenger/SharedConfig;->isChatSortingEnabledByDefault:Z
 
     return v0
@@ -435,7 +435,7 @@
 
     new-array v0, v0, [Ljava/lang/String;
 
-    .line 727
+    .line 721
     sget-object v1, Lcom/iMe/storage/domain/model/filters/FilterFab;->CREATE_CHAT:Lcom/iMe/storage/domain/model/filters/FilterFab;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
@@ -456,7 +456,7 @@
 .method public static final selectedAutoBackupInterval()Lcom/iMe/fork/enums/Interval;
     .locals 1
 
-    .line 705
+    .line 699
     sget-object v0, Lcom/iMe/fork/enums/Interval;->EVERY_WEEK:Lcom/iMe/fork/enums/Interval;
 
     return-object v0
@@ -465,7 +465,7 @@
 .method public static final selectedAutoUpdateTopicsCatalogInterval()Lcom/iMe/fork/enums/Interval;
     .locals 1
 
-    .line 903
+    .line 897
     sget-object v0, Lcom/iMe/fork/enums/Interval;->EVERY_WEEK:Lcom/iMe/fork/enums/Interval;
 
     return-object v0
@@ -474,7 +474,7 @@
 .method public static final selectedContactsFilter()Lcom/iMe/model/contacts/ContactsFilter;
     .locals 1
 
-    .line 770
+    .line 764
     sget-object v0, Lcom/iMe/model/contacts/ContactsFilter;->ALL:Lcom/iMe/model/contacts/ContactsFilter;
 
     return-object v0
@@ -491,7 +491,7 @@
         }
     .end annotation
 
-    .line 783
+    .line 777
     sget-object v0, Lcom/iMe/fork/enums/DialogType;->CHANNEL:Lcom/iMe/fork/enums/DialogType;
 
     invoke-virtual {v0}, Ljava/lang/Enum;->name()Ljava/lang/String;
@@ -520,7 +520,7 @@
 
     new-array v0, v0, [Ljava/lang/String;
 
-    .line 946
+    .line 940
     sget-object v1, Lcom/iMe/fork/enums/DrawStatusType;->UNREAD_COUNT_CHATS:Lcom/iMe/fork/enums/DrawStatusType;
 
     invoke-virtual {v1}, Ljava/lang/Enum;->name()Ljava/lang/String;
@@ -589,7 +589,7 @@
         }
     .end annotation
 
-    .line 789
+    .line 783
     sget-object v0, Lcom/iMe/fork/enums/MessagePopupItem;->Companion:Lcom/iMe/fork/enums/MessagePopupItem$Companion;
 
     invoke-virtual {v0}, Lcom/iMe/fork/enums/MessagePopupItem$Companion;->getDefaultEnumNames()Ljava/util/Set;
@@ -602,7 +602,7 @@
 .method public static final selectedMusicTab()Lcom/iMe/ui/music/MusicTab;
     .locals 1
 
-    .line 846
+    .line 840
     sget-object v0, Lcom/iMe/ui/music/MusicTab;->ALBUMS:Lcom/iMe/ui/music/MusicTab;
 
     return-object v0
@@ -629,7 +629,7 @@
 
     const-string v4, "FORUM"
 
-    .line 943
+    .line 937
     filled-new-array {v0, v1, v2, v3, v4}, [Ljava/lang/String;
 
     move-result-object v0
@@ -644,7 +644,7 @@
 .method public static final selectedSentMessageFont()Lcom/iMe/fork/enums/SentMessageFont;
     .locals 1
 
-    .line 879
+    .line 873
     sget-object v0, Lcom/iMe/fork/enums/SentMessageFont;->REGULAR:Lcom/iMe/fork/enums/SentMessageFont;
 
     return-object v0

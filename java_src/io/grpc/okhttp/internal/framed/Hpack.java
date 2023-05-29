@@ -251,7 +251,7 @@ public final class Hpack {
             boolean z = (readByte & 128) == 128;
             int readInt = readInt(readByte, 127);
             if (z) {
-                return ByteString.m70of(Huffman.get().decode(this.source.readByteArray(readInt)));
+                return ByteString.m74of(Huffman.get().decode(this.source.readByteArray(readInt)));
             }
             return this.source.readByteString(readInt);
         }

@@ -19,7 +19,7 @@ public class PaintCancelView extends View {
         paint.setColor(-1);
         this.paint.setStyle(Paint.Style.STROKE);
         this.paint.setStrokeCap(Paint.Cap.ROUND);
-        this.paint.setStrokeWidth(AndroidUtilities.m50dp(2));
+        this.paint.setStrokeWidth(AndroidUtilities.m54dp(2));
     }
 
     public void setProgress(float f) {
@@ -30,7 +30,7 @@ public class PaintCancelView extends View {
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        canvas.drawLine((getWidth() / 2.0f) + AndroidUtilities.m51dp(AndroidUtilities.lerp(-5.33f, -4.0f, this.progress)), (getHeight() / 2.0f) + AndroidUtilities.m51dp(AndroidUtilities.lerp(5.33f, (float) BitmapDescriptorFactory.HUE_RED, this.progress)), (getWidth() / 2.0f) + AndroidUtilities.m51dp(AndroidUtilities.lerp(5.33f, 3.0f, this.progress)), (getHeight() / 2.0f) + AndroidUtilities.m51dp(AndroidUtilities.lerp(-5.33f, -7.0f, this.progress)), this.paint);
-        canvas.drawLine((getWidth() / 2.0f) + AndroidUtilities.m51dp(AndroidUtilities.lerp(5.33f, 3.0f, this.progress)), (getHeight() / 2.0f) + AndroidUtilities.m51dp(AndroidUtilities.lerp(5.33f, 7.0f, this.progress)), (getWidth() / 2.0f) + AndroidUtilities.m51dp(AndroidUtilities.lerp(-5.33f, -4.0f, this.progress)), (getHeight() / 2.0f) + AndroidUtilities.m51dp(AndroidUtilities.lerp(-5.33f, (float) BitmapDescriptorFactory.HUE_RED, this.progress)), this.paint);
+        canvas.drawLine((getWidth() / 2.0f) + AndroidUtilities.m55dp(AndroidUtilities.lerp(-5.33f, -4.0f, this.progress)), (getHeight() / 2.0f) + AndroidUtilities.m55dp(AndroidUtilities.lerp(5.33f, (float) BitmapDescriptorFactory.HUE_RED, this.progress)), (getWidth() / 2.0f) + AndroidUtilities.m55dp(AndroidUtilities.lerp(5.33f, 3.0f, this.progress)), (getHeight() / 2.0f) + AndroidUtilities.m55dp(AndroidUtilities.lerp(-5.33f, -7.0f, this.progress)), this.paint);
+        canvas.drawLine((getWidth() / 2.0f) + AndroidUtilities.m55dp(AndroidUtilities.lerp(5.33f, 3.0f, this.progress)), (getHeight() / 2.0f) + AndroidUtilities.m55dp(AndroidUtilities.lerp(5.33f, 7.0f, this.progress)), (getWidth() / 2.0f) + AndroidUtilities.m55dp(AndroidUtilities.lerp(-5.33f, -4.0f, this.progress)), (getHeight() / 2.0f) + AndroidUtilities.m55dp(AndroidUtilities.lerp(-5.33f, (float) BitmapDescriptorFactory.HUE_RED, this.progress)), this.paint);
     }
 }

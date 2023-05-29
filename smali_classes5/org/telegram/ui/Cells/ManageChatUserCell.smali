@@ -28,7 +28,7 @@
 
 .field private delegate:Lorg/telegram/ui/Cells/ManageChatUserCell$ManageChatUserCellDelegate;
 
-.field private dividerColor:Ljava/lang/String;
+.field private dividerColor:I
 
 .field private isAdmin:Z
 
@@ -102,22 +102,27 @@
 
     iput v3, v0, Lorg/telegram/ui/Cells/ManageChatUserCell;->currentAccount:I
 
+    const/4 v3, -0x1
+
+    .line 64
+    iput v3, v0, Lorg/telegram/ui/Cells/ManageChatUserCell;->dividerColor:I
+
     .line 78
     iput-object v2, v0, Lorg/telegram/ui/Cells/ManageChatUserCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    const-string v3, "windowBackgroundWhiteGrayText"
-
     .line 80
-    invoke-static {v3, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
+
+    invoke-static {v3, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v3
 
     iput v3, v0, Lorg/telegram/ui/Cells/ManageChatUserCell;->statusColor:I
 
-    const-string v3, "windowBackgroundWhiteBlueText"
-
     .line 81
-    invoke-static {v3, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText:I
+
+    invoke-static {v3, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v3
 
@@ -219,10 +224,10 @@
 
     iput-object v3, v0, Lorg/telegram/ui/Cells/ManageChatUserCell;->nameTextView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const-string v4, "windowBackgroundWhiteBlackText"
-
     .line 92
-    invoke-static {v4, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v4, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v4
 
@@ -445,9 +450,9 @@
     .line 106
     iget-object v1, v0, Lorg/telegram/ui/Cells/ManageChatUserCell;->optionsButton:Landroid/widget/ImageView;
 
-    const-string v3, "stickers_menuSelector"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_stickers_menuSelector:I
 
-    invoke-static {v3, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v3, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v3
 
@@ -469,9 +474,9 @@
 
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v4, "stickers_menu"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_stickers_menu:I
 
-    invoke-static {v4, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v4, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v2
 
@@ -617,16 +622,16 @@
     if-eqz v0, :cond_4
 
     .line 355
-    iget-object v0, p0, Lorg/telegram/ui/Cells/ManageChatUserCell;->dividerColor:Ljava/lang/String;
+    iget v0, p0, Lorg/telegram/ui/Cells/ManageChatUserCell;->dividerColor:I
 
-    if-eqz v0, :cond_0
+    if-ltz v0, :cond_0
 
     .line 356
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->dividerExtraPaint:Landroid/graphics/Paint;
 
     iget-object v2, p0, Lorg/telegram/ui/Cells/ManageChatUserCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v0, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v0, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v0
 
@@ -692,9 +697,9 @@
 
     int-to-float v6, v0
 
-    iget-object v0, p0, Lorg/telegram/ui/Cells/ManageChatUserCell;->dividerColor:Ljava/lang/String;
+    iget v0, p0, Lorg/telegram/ui/Cells/ManageChatUserCell;->dividerColor:I
 
-    if-eqz v0, :cond_3
+    if-ltz v0, :cond_3
 
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dividerExtraPaint:Landroid/graphics/Paint;
 
@@ -818,11 +823,11 @@
 
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
-    iget-object v1, p0, Lorg/telegram/ui/Cells/ManageChatUserCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_mutedIconUnscrolled:I
 
-    const-string v2, "voipgroup_mutedIconUnscrolled"
+    iget-object v2, p0, Lorg/telegram/ui/Cells/ManageChatUserCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v2, v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v1
 
@@ -1358,11 +1363,11 @@
     return-void
 .end method
 
-.method public setDividerColor(Ljava/lang/String;)V
+.method public setDividerColor(I)V
     .locals 0
 
     .line 189
-    iput-object p1, p0, Lorg/telegram/ui/Cells/ManageChatUserCell;->dividerColor:Ljava/lang/String;
+    iput p1, p0, Lorg/telegram/ui/Cells/ManageChatUserCell;->dividerColor:I
 
     return-void
 .end method

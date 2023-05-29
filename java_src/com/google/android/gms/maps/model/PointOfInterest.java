@@ -11,15 +11,15 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes3.dex */
 public final class PointOfInterest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<PointOfInterest> CREATOR = new zzk();
-    @SafeParcelable.Field(m775id = 2)
+    @SafeParcelable.Field(m779id = 2)
     public final LatLng latLng;
-    @SafeParcelable.Field(m775id = 4)
+    @SafeParcelable.Field(m779id = 4)
     public final String name;
-    @SafeParcelable.Field(m775id = 3)
+    @SafeParcelable.Field(m779id = 3)
     public final String placeId;
 
     @SafeParcelable.Constructor
-    public PointOfInterest(@SafeParcelable.Param(m774id = 2) LatLng latLng, @SafeParcelable.Param(m774id = 3) String str, @SafeParcelable.Param(m774id = 4) String str2) {
+    public PointOfInterest(@SafeParcelable.Param(m778id = 2) LatLng latLng, @SafeParcelable.Param(m778id = 3) String str, @SafeParcelable.Param(m778id = 4) String str2) {
         this.latLng = latLng;
         this.placeId = str;
         this.name = str2;

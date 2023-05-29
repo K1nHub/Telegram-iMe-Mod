@@ -75,15 +75,15 @@ public final class DonationBalanceView extends FrameLayout implements KoinCompon
     public final void setupColors() {
         List<AppCompatTextView> listOf;
         ForkRecycleItemWalletTokenBalanceBinding forkRecycleItemWalletTokenBalanceBinding = this.binding;
-        forkRecycleItemWalletTokenBalanceBinding.getRoot().setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+        forkRecycleItemWalletTokenBalanceBinding.getRoot().setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
         listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new AppCompatTextView[]{forkRecycleItemWalletTokenBalanceBinding.textAccountBalance, forkRecycleItemWalletTokenBalanceBinding.textAccountBalanceInDollars});
         for (AppCompatTextView setupColors$lambda$2$lambda$1 : listOf) {
             Intrinsics.checkNotNullExpressionValue(setupColors$lambda$2$lambda$1, "setupColors$lambda$2$lambda$1");
             ViewExtKt.withMediumTypeface(setupColors$lambda$2$lambda$1);
         }
-        forkRecycleItemWalletTokenBalanceBinding.textAccountBalanceInDollars.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
-        forkRecycleItemWalletTokenBalanceBinding.textAccountTitle.setTextColor(Theme.getColor("chats_actionBackground"));
-        forkRecycleItemWalletTokenBalanceBinding.textAccountBalance.setTextColor(Theme.getColor("chat_messagePanelText"));
+        forkRecycleItemWalletTokenBalanceBinding.textAccountBalanceInDollars.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
+        forkRecycleItemWalletTokenBalanceBinding.textAccountTitle.setTextColor(Theme.getColor(Theme.key_chats_actionBackground));
+        forkRecycleItemWalletTokenBalanceBinding.textAccountBalance.setTextColor(Theme.getColor(Theme.key_chat_messagePanelText));
         forkRecycleItemWalletTokenBalanceBinding.textCoinTicker.setupColors();
     }
 
@@ -96,7 +96,7 @@ public final class DonationBalanceView extends FrameLayout implements KoinCompon
         setupColors();
         ConstraintLayout constraintLayout = this.binding.constraintTradeInfo;
         Intrinsics.checkNotNullExpressionValue(constraintLayout, "binding.constraintTradeInfo");
-        ViewExtKt.gone(constraintLayout);
+        ViewExtKt.gone$default(constraintLayout, false, 1, null);
         addView(this.binding.getRoot());
     }
 }

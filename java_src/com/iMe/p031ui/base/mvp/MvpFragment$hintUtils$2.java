@@ -6,7 +6,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MvpFragment.kt */
 /* renamed from: com.iMe.ui.base.mvp.MvpFragment$hintUtils$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class MvpFragment$hintUtils$2 extends Lambda implements Function0<HintUtils> {
     public static final MvpFragment$hintUtils$2 INSTANCE = new MvpFragment$hintUtils$2();
 

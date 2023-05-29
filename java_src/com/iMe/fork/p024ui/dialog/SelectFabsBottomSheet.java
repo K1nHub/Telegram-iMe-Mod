@@ -21,7 +21,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.BottomSheet;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -71,12 +71,12 @@ public final class SelectFabsBottomSheet extends BottomSheet {
         this.bottomShadow$delegate = lazy4;
         lazy5 = LazyKt__LazyJVMKt.lazy(new SelectFabsBottomSheet$saveButton$2(this));
         this.saveButton$delegate = lazy5;
-        setTitle(LocaleController.getInternalString(C3242R.string.create_folder_change_fab_title), true);
+        setTitle(LocaleController.getInternalString(C3290R.string.create_folder_change_fab_title), true);
         setApplyBottomPadding(false);
         FrameLayout frameLayout = new FrameLayout(context) { // from class: com.iMe.fork.ui.dialog.SelectFabsBottomSheet.1
             @Override // android.widget.FrameLayout, android.view.View
             protected void onMeasure(int i, int i2) {
-                this.itemWidth = (View.MeasureSpec.getSize(i) - AndroidUtilities.m50dp(28)) / 4;
+                this.itemWidth = (View.MeasureSpec.getSize(i) - AndroidUtilities.m54dp(28)) / 4;
                 super.onMeasure(i, i2);
             }
         };
@@ -129,7 +129,7 @@ public final class SelectFabsBottomSheet extends BottomSheet {
         recyclerListView.setClipToPadding(false);
         recyclerListView.setEnabled(true);
         recyclerListView.setOverScrollMode(2);
-        recyclerListView.setPadding(AndroidUtilities.m50dp(10), 0, AndroidUtilities.m50dp(10), 0);
+        recyclerListView.setPadding(AndroidUtilities.m54dp(10), 0, AndroidUtilities.m54dp(10), 0);
         recyclerListView.addItemDecoration(new RecyclerView.ItemDecoration() { // from class: com.iMe.fork.ui.dialog.SelectFabsBottomSheet$initListView$1$1
             @Override // androidx.recyclerview.widget.RecyclerView.ItemDecoration
             public void getItemOffsets(Rect outRect, View view, RecyclerView parent, RecyclerView.State state) {
@@ -140,8 +140,8 @@ public final class SelectFabsBottomSheet extends BottomSheet {
                 RecyclerView.ViewHolder childViewHolder = parent.getChildViewHolder(view);
                 Intrinsics.checkNotNull(childViewHolder, "null cannot be cast to non-null type org.telegram.ui.Components.RecyclerListView.Holder");
                 int adapterPosition = ((RecyclerListView.Holder) childViewHolder).getAdapterPosition() % 4;
-                outRect.left = adapterPosition == 0 ? 0 : AndroidUtilities.m50dp(4);
-                outRect.right = adapterPosition != 3 ? AndroidUtilities.m50dp(4) : 0;
+                outRect.left = adapterPosition == 0 ? 0 : AndroidUtilities.m54dp(4);
+                outRect.right = adapterPosition != 3 ? AndroidUtilities.m54dp(4) : 0;
             }
         });
         return recyclerListView;
@@ -150,7 +150,7 @@ public final class SelectFabsBottomSheet extends BottomSheet {
     /* JADX INFO: Access modifiers changed from: private */
     public final View initShadow() {
         View view = new View(getContext());
-        view.setBackgroundColor(Theme.getColor("dialogShadowLine"));
+        view.setBackgroundColor(Theme.getColor(Theme.key_dialogShadowLine));
         return view;
     }
 
@@ -161,10 +161,10 @@ public final class SelectFabsBottomSheet extends BottomSheet {
         textView.setAllCaps(true);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setGravity(17);
-        textView.setBackground(Theme.createSelectorWithBackgroundDrawable(Theme.getColor("dialogBackground"), Theme.getColor("listSelectorSDK21")));
-        textView.setText(LocaleController.getString("Save", C3242R.string.Save));
+        textView.setBackground(Theme.createSelectorWithBackgroundDrawable(Theme.getColor(Theme.key_dialogBackground), Theme.getColor(Theme.key_listSelector)));
+        textView.setText(LocaleController.getString("Save", C3290R.string.Save));
         textView.setTextSize(1, 14.0f);
-        textView.setTextColor(Theme.getColor("dialogTextBlue2"));
+        textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlue2));
         return textView;
     }
 
@@ -272,7 +272,7 @@ public final class SelectFabsBottomSheet extends BottomSheet {
                 protected void onMeasure(int i2, int i3) {
                     int i4;
                     i4 = SelectFabsBottomSheet.this.itemWidth;
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(i4, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(100), 1073741824));
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(i4, 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(100), 1073741824));
                 }
             });
         }
@@ -285,7 +285,7 @@ public final class SelectFabsBottomSheet extends BottomSheet {
             CircleCheckCell circleCheckCell = (CircleCheckCell) view;
             SelectFabsBottomSheet selectFabsBottomSheet = SelectFabsBottomSheet.this;
             FilterFab filterFab = (FilterFab) selectFabsBottomSheet.getFabs().get(i);
-            int color = Theme.getColor("chats_actionBackground");
+            int color = Theme.getColor(Theme.key_chats_actionBackground);
             int iconResId = FilterFabExtKt.iconResId(filterFab, true);
             String internalString = LocaleController.getInternalString(FilterFabExtKt.nameResId(filterFab));
             Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(fab.nameResId())");

@@ -18,7 +18,7 @@
 
 
 # static fields
-.field private static colors:[Ljava/lang/String;
+.field private static colors:[I
 
 .field private static particles:[I
 
@@ -41,71 +41,83 @@
 .method static constructor <clinit>()V
     .locals 10
 
-    const-string v0, "statisticChartLine_blue"
+    const/4 v0, 0x7
 
-    const-string v1, "statisticChartLine_green"
-
-    const-string v2, "statisticChartLine_lightblue"
-
-    const-string v3, "statisticChartLine_golden"
-
-    const-string v4, "statisticChartLine_red"
-
-    const-string v5, "statisticChartLine_purple"
-
-    const-string v6, "statisticChartLine_cyan"
+    new-array v1, v0, [I
 
     .line 159
-    filled-new-array/range {v0 .. v6}, [Ljava/lang/String;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_blue:I
 
-    move-result-object v0
+    const/4 v3, 0x0
 
-    sput-object v0, Lorg/telegram/ui/DataUsage2Activity;->colors:[Ljava/lang/String;
+    aput v2, v1, v3
 
-    const/4 v0, 0x7
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_green:I
+
+    const/4 v4, 0x1
+
+    aput v2, v1, v4
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_lightblue:I
+
+    const/4 v5, 0x2
+
+    aput v2, v1, v5
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_golden:I
+
+    const/4 v6, 0x3
+
+    aput v2, v1, v6
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_red:I
+
+    const/4 v7, 0x4
+
+    aput v2, v1, v7
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_purple:I
+
+    const/4 v8, 0x5
+
+    aput v2, v1, v8
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_cyan:I
+
+    const/4 v9, 0x6
+
+    aput v2, v1, v9
+
+    sput-object v1, Lorg/telegram/ui/DataUsage2Activity;->colors:[I
 
     new-array v1, v0, [I
 
     .line 169
     sget v2, Lorg/telegram/messenger/R$drawable;->msg_filled_data_videos:I
 
-    const/4 v3, 0x0
-
     aput v2, v1, v3
 
     sget v2, Lorg/telegram/messenger/R$drawable;->msg_filled_data_files:I
-
-    const/4 v4, 0x1
 
     aput v2, v1, v4
 
     sget v2, Lorg/telegram/messenger/R$drawable;->msg_filled_data_photos:I
 
-    const/4 v5, 0x2
-
     aput v2, v1, v5
 
     sget v2, Lorg/telegram/messenger/R$drawable;->msg_filled_data_messages:I
-
-    const/4 v6, 0x3
 
     aput v2, v1, v6
 
     sget v2, Lorg/telegram/messenger/R$drawable;->msg_filled_data_music:I
 
-    const/4 v7, 0x4
-
     aput v2, v1, v7
 
     sget v2, Lorg/telegram/messenger/R$drawable;->msg_filled_data_voice:I
 
-    const/4 v8, 0x5
-
     aput v2, v1, v8
 
     sget v2, Lorg/telegram/messenger/R$drawable;->msg_filled_data_calls:I
-
-    const/4 v9, 0x6
 
     aput v2, v1, v9
 
@@ -422,11 +434,11 @@
     return p0
 .end method
 
-.method static synthetic access$500()[Ljava/lang/String;
+.method static synthetic access$500()[I
     .locals 1
 
     .line 60
-    sget-object v0, Lorg/telegram/ui/DataUsage2Activity;->colors:[Ljava/lang/String;
+    sget-object v0, Lorg/telegram/ui/DataUsage2Activity;->colors:[I
 
     return-object v0
 .end method
@@ -468,9 +480,9 @@
     .line 81
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    const-string v1, "actionBarActionModeDefault"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarActionModeDefault:I
 
-    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v2
 
@@ -479,9 +491,9 @@
     .line 82
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    const-string v2, "windowBackgroundWhiteBlackText"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v3
 
@@ -490,7 +502,7 @@
     .line 83
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v2
 
@@ -501,9 +513,9 @@
     .line 84
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    const-string v2, "listSelectorSDK21"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v2
 
@@ -528,10 +540,10 @@
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/DataUsage2Activity$2;-><init>(Lorg/telegram/ui/DataUsage2Activity;Landroid/content/Context;)V
 
-    const-string v2, "windowBackgroundGray"
-
     .line 110
-    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+
+    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v2
 
@@ -567,7 +579,7 @@
     iput-object p1, p0, Lorg/telegram/ui/DataUsage2Activity;->tabsView:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
     .line 116
-    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v1
 
@@ -641,11 +653,11 @@
 
     return v0
 
-    :cond_0
-    const-string v0, "actionBarActionModeDefault"
-
     .line 1098
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    :cond_0
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarActionModeDefault:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

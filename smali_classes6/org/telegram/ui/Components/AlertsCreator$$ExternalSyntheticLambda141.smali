@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/NumberPicker$Formatter;
+.implements Lorg/telegram/tgnet/RequestDelegate;
 
 
 # static fields
@@ -32,12 +32,10 @@
 
 
 # virtual methods
-.method public final format(I)Ljava/lang/String;
+.method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$3efvyE0lKLwpl8C9sCxOBHIFaUQ(I)Ljava/lang/String;
+    invoke-static {p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$geAJrftHaOPxPntOYvLpa0rP8jE(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
-    move-result-object p1
-
-    return-object p1
+    return-void
 .end method

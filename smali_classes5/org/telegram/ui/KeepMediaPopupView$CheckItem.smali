@@ -24,13 +24,13 @@
 .method private constructor <init>(Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;I)V
     .locals 0
 
-    .line 259
+    .line 265
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 260
+    .line 266
     iput-object p1, p0, Lorg/telegram/ui/KeepMediaPopupView$CheckItem;->item:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    .line 261
+    .line 267
     iput p2, p0, Lorg/telegram/ui/KeepMediaPopupView$CheckItem;->type:I
 
     return-void
@@ -39,7 +39,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;ILorg/telegram/ui/KeepMediaPopupView$1;)V
     .locals 0
 
-    .line 255
+    .line 261
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/KeepMediaPopupView$CheckItem;-><init>(Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;I)V
 
     return-void

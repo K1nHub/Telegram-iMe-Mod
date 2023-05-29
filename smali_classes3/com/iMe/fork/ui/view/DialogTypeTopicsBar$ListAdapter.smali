@@ -27,7 +27,7 @@
         }
     .end annotation
 
-    .line 76
+    .line 73
     iput-object p1, p0, Lcom/iMe/fork/ui/view/DialogTypeTopicsBar$ListAdapter;->this$0:Lcom/iMe/fork/ui/view/DialogTypeTopicsBar;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
@@ -40,7 +40,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 80
+    .line 77
     iget-object v0, p0, Lcom/iMe/fork/ui/view/DialogTypeTopicsBar$ListAdapter;->this$0:Lcom/iMe/fork/ui/view/DialogTypeTopicsBar;
 
     invoke-virtual {v0}, Lcom/iMe/fork/ui/view/DialogTypeTopicsBar;->getData()Ljava/util/List;
@@ -73,7 +73,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 94
+    .line 90
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const-string v0, "null cannot be cast to non-null type com.iMe.ui.topics.TopicView"
@@ -84,7 +84,7 @@
 
     iget-object v0, p0, Lcom/iMe/fork/ui/view/DialogTypeTopicsBar$ListAdapter;->this$0:Lcom/iMe/fork/ui/view/DialogTypeTopicsBar;
 
-    .line 95
+    .line 91
     invoke-virtual {v0}, Lcom/iMe/fork/ui/view/DialogTypeTopicsBar;->getData()Ljava/util/List;
 
     move-result-object v1
@@ -125,7 +125,7 @@
 .method public bridge synthetic onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 0
 
-    .line 76
+    .line 73
     invoke-virtual {p0, p1, p2}, Lcom/iMe/fork/ui/view/DialogTypeTopicsBar$ListAdapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     move-result-object p1
@@ -134,16 +134,16 @@
 .end method
 
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Lorg/telegram/ui/Components/RecyclerListView$Holder;
-    .locals 13
+    .locals 7
 
     const-string p2, "parent"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 85
+    .line 82
     new-instance p1, Lcom/iMe/ui/topics/TopicView;
 
-    .line 86
+    .line 83
     iget-object p2, p0, Lcom/iMe/fork/ui/view/DialogTypeTopicsBar$ListAdapter;->this$0:Lcom/iMe/fork/ui/view/DialogTypeTopicsBar;
 
     invoke-virtual {p2}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -166,29 +166,21 @@
 
     move-object v0, p1
 
-    .line 85
+    .line 82
     invoke-direct/range {v0 .. v6}, Lcom/iMe/ui/topics/TopicView;-><init>(Landroid/content/Context;Landroid/util/AttributeSet;IIILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    const/4 v7, -0x2
+    const/4 p2, -0x2
 
-    const/16 v8, 0x18
+    const/4 v0, -0x1
 
-    const/16 v9, 0x8
-
-    const/4 v12, 0x6
-
-    const/16 v11, 0x8
-
-    move v10, v12
-
-    .line 90
-    invoke-static/range {v7 .. v12}, Lorg/telegram/ui/Components/LayoutHelper;->createRecycler(IIIIII)Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
+    .line 86
+    invoke-static {p2, v0}, Lorg/telegram/ui/Components/LayoutHelper;->createRecycler(II)Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     move-result-object p2
 
-    invoke-virtual {p1, p2}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p1, p2}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 84
+    .line 81
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V

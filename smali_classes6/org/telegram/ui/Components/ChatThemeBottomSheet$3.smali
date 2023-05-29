@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/ChatThemeBottomSheet;->lambda$new$1(Lorg/telegram/ui/ChatActivity$ThemeDelegate;Landroid/view/View;I)V
+    value = Lorg/telegram/ui/Components/ChatThemeBottomSheet;->lambda$new$2(Landroid/view/View;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -27,7 +27,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatThemeBottomSheet;I)V
     .locals 0
 
-    .line 187
+    .line 223
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$3;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     iput p2, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$3;->val$position:I
@@ -42,10 +42,10 @@
 .method public run()V
     .locals 3
 
-    .line 190
+    .line 226
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$3;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$1500(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$2700(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v0
 
@@ -55,25 +55,25 @@
 
     if-eqz v0, :cond_1
 
-    .line 192
+    .line 228
     iget v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$3;->val$position:I
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$3;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$1600(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)I
+    invoke-static {v2}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$2800(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)I
 
     move-result v2
 
     if-le v1, v2, :cond_0
 
-    .line 193
+    .line 229
     iget v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$3;->val$position:I
 
     add-int/lit8 v1, v1, 0x1
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$3;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$1700(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;
+    invoke-static {v2}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$2900(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;
 
     move-result-object v2
 
@@ -91,7 +91,7 @@
 
     goto :goto_0
 
-    .line 194
+    .line 230
     :cond_0
     iget v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$3;->val$position:I
 
@@ -103,32 +103,32 @@
 
     move-result v1
 
-    .line 195
+    .line 231
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$3;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$1800(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)Landroidx/recyclerview/widget/LinearSmoothScroller;
+    invoke-static {v2}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$3000(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)Landroidx/recyclerview/widget/LinearSmoothScroller;
 
     move-result-object v2
 
     invoke-virtual {v2, v1}, Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;->setTargetPosition(I)V
 
-    .line 196
+    .line 232
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$3;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$1800(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)Landroidx/recyclerview/widget/LinearSmoothScroller;
+    invoke-static {v1}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$3000(Lorg/telegram/ui/Components/ChatThemeBottomSheet;)Landroidx/recyclerview/widget/LinearSmoothScroller;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->startSmoothScroll(Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;)V
 
-    .line 198
+    .line 234
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$3;->this$0:Lorg/telegram/ui/Components/ChatThemeBottomSheet;
 
     iget v1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$3;->val$position:I
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$1602(Lorg/telegram/ui/Components/ChatThemeBottomSheet;I)I
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/ChatThemeBottomSheet;->access$2802(Lorg/telegram/ui/Components/ChatThemeBottomSheet;I)I
 
     return-void
 .end method

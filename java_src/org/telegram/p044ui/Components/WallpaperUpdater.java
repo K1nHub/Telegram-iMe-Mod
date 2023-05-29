@@ -13,7 +13,7 @@ import java.io.FileOutputStream;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLoader;
@@ -53,13 +53,13 @@ public class WallpaperUpdater {
         CharSequence[] charSequenceArr;
         int[] iArr;
         BottomSheet.Builder builder = new BottomSheet.Builder(this.parentActivity);
-        builder.setTitle(LocaleController.getString("ChoosePhoto", C3242R.string.ChoosePhoto), true);
+        builder.setTitle(LocaleController.getString("ChoosePhoto", C3290R.string.ChoosePhoto), true);
         if (z) {
-            charSequenceArr = new CharSequence[]{LocaleController.getString("ChooseTakePhoto", C3242R.string.ChooseTakePhoto), LocaleController.getString("SelectFromGallery", C3242R.string.SelectFromGallery), LocaleController.getString("SelectColor", C3242R.string.SelectColor), LocaleController.getString("Default", C3242R.string.Default)};
+            charSequenceArr = new CharSequence[]{LocaleController.getString("ChooseTakePhoto", C3290R.string.ChooseTakePhoto), LocaleController.getString("SelectFromGallery", C3290R.string.SelectFromGallery), LocaleController.getString("SelectColor", C3290R.string.SelectColor), LocaleController.getString("Default", C3290R.string.Default)};
             iArr = null;
         } else {
-            charSequenceArr = new CharSequence[]{LocaleController.getString("ChooseTakePhoto", C3242R.string.ChooseTakePhoto), LocaleController.getString("SelectFromGallery", C3242R.string.SelectFromGallery)};
-            iArr = new int[]{C3242R.C3244drawable.msg_camera, C3242R.C3244drawable.msg_photos};
+            charSequenceArr = new CharSequence[]{LocaleController.getString("ChooseTakePhoto", C3290R.string.ChooseTakePhoto), LocaleController.getString("SelectFromGallery", C3290R.string.SelectFromGallery)};
+            iArr = new int[]{C3290R.C3292drawable.msg_camera, C3290R.C3292drawable.msg_photos};
         }
         builder.setItems(charSequenceArr, iArr, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.WallpaperUpdater$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
@@ -107,10 +107,10 @@ public class WallpaperUpdater {
                 }
                 this.parentActivity.startActivityForResult(intent, 10);
             } catch (Exception e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
             }
         } catch (Exception e2) {
-            FileLog.m45e(e2);
+            FileLog.m49e(e2);
         }
     }
 
@@ -136,7 +136,7 @@ public class WallpaperUpdater {
                         intent.setType("image/*");
                         WallpaperUpdater.this.parentActivity.startActivityForResult(intent, 11);
                     } catch (Exception e) {
-                        FileLog.m45e(e);
+                        FileLog.m49e(e);
                     }
                 }
             });
@@ -164,7 +164,7 @@ public class WallpaperUpdater {
                 this.delegate.didSelectWallpaper(this.currentWallpaperPath, loadBitmap, true);
             }
         } catch (Throwable th) {
-            FileLog.m45e(th);
+            FileLog.m49e(th);
         }
     }
 
@@ -248,13 +248,13 @@ public class WallpaperUpdater {
             r8 = move-exception
             r9 = r5
         L61:
-            org.telegram.messenger.FileLog.m45e(r8)     // Catch: java.lang.Throwable -> L71
+            org.telegram.messenger.FileLog.m49e(r8)     // Catch: java.lang.Throwable -> L71
             if (r9 == 0) goto L6e
             r9.close()     // Catch: java.lang.Exception -> L6a
             goto L6e
         L6a:
             r8 = move-exception
-            org.telegram.messenger.FileLog.m45e(r8)
+            org.telegram.messenger.FileLog.m49e(r8)
         L6e:
             r7.currentPicturePath = r5
             goto Ld6
@@ -267,7 +267,7 @@ public class WallpaperUpdater {
             goto L7d
         L79:
             r9 = move-exception
-            org.telegram.messenger.FileLog.m45e(r9)
+            org.telegram.messenger.FileLog.m49e(r9)
         L7d:
             throw r8
         L7e:
@@ -307,7 +307,7 @@ public class WallpaperUpdater {
             goto Ld6
         Ld1:
             r8 = move-exception
-            org.telegram.messenger.FileLog.m45e(r8)
+            org.telegram.messenger.FileLog.m49e(r8)
         Ld6:
             return
         */

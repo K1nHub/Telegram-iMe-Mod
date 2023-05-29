@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$15\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n129#2,5:434\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$15\n*L\n174#1:434,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$15\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,432:1\n129#2,5:433\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$15\n*L\n175#1:433,5\n*E\n"
 .end annotation
 
 
@@ -85,7 +85,7 @@
 
     move-result-object p2
 
-    .line 174
+    .line 175
     check-cast p2, Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
     .line 133
@@ -99,7 +99,7 @@
 
     move-result-object v1
 
-    .line 174
+    .line 175
     check-cast v1, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
     .line 133
@@ -113,7 +113,7 @@
 
     move-result-object p1
 
-    .line 174
+    .line 175
     check-cast p1, Lcom/iMe/storage/domain/interactor/notification/PushNotificationInteractor;
 
     new-instance v0, Lcom/iMe/ui/wallet/notifications/WalletNotificationsPresenter;
@@ -126,7 +126,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 174
+    .line 175
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

@@ -98,7 +98,7 @@
     .line 107
     iput-boolean v0, p0, Lio/grpc/internal/MessageDeframer;->stopDelivery:Z
 
-    const-string v0, "sink"
+    const-string/jumbo v0, "sink"
 
     .line 123
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -123,7 +123,7 @@
     .line 125
     iput p3, p0, Lio/grpc/internal/MessageDeframer;->maxInboundMessageSize:I
 
-    const-string p1, "statsTraceCtx"
+    const-string/jumbo p1, "statsTraceCtx"
 
     .line 126
     invoke-static {p4, p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

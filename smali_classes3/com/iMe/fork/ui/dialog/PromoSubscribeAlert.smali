@@ -197,9 +197,9 @@
     .line 60
     sget p1, Lorg/telegram/messenger/R$drawable;->fork_promo_subscribe_dialog_icon:I
 
-    const-string p2, "windowBackgroundGray"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -530,14 +530,20 @@
 .end method
 
 .method private final endLoading()V
-    .locals 13
+    .locals 15
 
     .line 181
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/PromoSubscribeAlert;->getLoadingView()Landroid/widget/LinearLayout;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    invoke-static {v0, v1, v2, v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 182
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/PromoSubscribeAlert;->getChatsView()Landroid/widget/LinearLayout;
@@ -547,120 +553,118 @@
     .line 62
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getChildCount()I
 
-    move-result v1
+    move-result v4
 
-    const/4 v2, 0x0
-
-    move v3, v2
+    move v5, v1
 
     :goto_0
-    if-ge v3, v1, :cond_1
+    if-ge v5, v4, :cond_1
 
     .line 63
-    invoke-virtual {v0, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v4
-
-    const-string v5, "getChildAt(index)"
-
-    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v5, "null cannot be cast to non-null type org.telegram.ui.Cells.ProfileSearchCell"
-
-    .line 183
-    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    check-cast v4, Lorg/telegram/ui/Cells/ProfileSearchCell;
-
-    .line 184
-    invoke-virtual {v4}, Landroid/view/ViewGroup;->getTag()Ljava/lang/Object;
-
-    move-result-object v5
-
-    const-string v6, "null cannot be cast to non-null type com.iMe.fork.enums.PromoSubscribeChat"
-
-    invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
-    check-cast v5, Lcom/iMe/fork/enums/PromoSubscribeChat;
-
-    .line 185
-    iget v6, p0, Lcom/iMe/fork/ui/dialog/PromoSubscribeAlert;->accountNum:I
-
-    invoke-static {v6}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+    invoke-virtual {v0, v5}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v6
 
-    invoke-virtual {v5}, Lcom/iMe/fork/enums/PromoSubscribeChat;->getId()J
+    const-string v7, "getChildAt(index)"
 
-    move-result-wide v7
+    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    neg-long v7, v7
+    const-string v7, "null cannot be cast to non-null type org.telegram.ui.Cells.ProfileSearchCell"
 
-    invoke-static {v7, v8}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+    .line 183
+    invoke-static {v6, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+
+    check-cast v6, Lorg/telegram/ui/Cells/ProfileSearchCell;
+
+    .line 184
+    invoke-virtual {v6}, Landroid/view/ViewGroup;->getTag()Ljava/lang/Object;
 
     move-result-object v7
 
-    invoke-virtual {v6, v7}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
+    const-string v8, "null cannot be cast to non-null type com.iMe.fork.enums.PromoSubscribeChat"
 
-    move-result-object v7
+    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v8, 0x0
+    check-cast v7, Lcom/iMe/fork/enums/PromoSubscribeChat;
 
-    const/4 v9, 0x0
+    .line 185
+    iget v8, p0, Lcom/iMe/fork/ui/dialog/PromoSubscribeAlert;->accountNum:I
 
-    .line 186
-    invoke-virtual {v5}, Lcom/iMe/fork/enums/PromoSubscribeChat;->getDescriptionResId()I
+    invoke-static {v8}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
-    move-result v5
+    move-result-object v8
 
-    invoke-static {v5}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+    invoke-virtual {v7}, Lcom/iMe/fork/enums/PromoSubscribeChat;->getId()J
 
-    move-result-object v5
+    move-result-wide v9
 
-    const-string v6, "getInternalString(promo.descriptionResId)"
+    neg-long v9, v9
 
-    invoke-static {v5, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v9, v10}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    sget-object v6, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
+    move-result-object v9
 
-    invoke-virtual {v5, v6}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+    invoke-virtual {v8, v9}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
 
-    move-result-object v10
+    move-result-object v9
 
-    const-string v5, "this as java.lang.String).toLowerCase(Locale.ROOT)"
-
-    invoke-static {v10, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    const/4 v10, 0x0
 
     const/4 v11, 0x0
 
-    const/4 v12, 0x0
+    .line 186
+    invoke-virtual {v7}, Lcom/iMe/fork/enums/PromoSubscribeChat;->getDescriptionResId()I
 
-    move-object v6, v4
+    move-result v7
 
-    invoke-virtual/range {v6 .. v12}, Lorg/telegram/ui/Cells/ProfileSearchCell;->setData(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$EncryptedChat;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)V
+    invoke-static {v7}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+
+    move-result-object v7
+
+    const-string v8, "getInternalString(promo.descriptionResId)"
+
+    invoke-static {v7, v8}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    sget-object v8, Ljava/util/Locale;->ROOT:Ljava/util/Locale;
+
+    invoke-virtual {v7, v8}, Ljava/lang/String;->toLowerCase(Ljava/util/Locale;)Ljava/lang/String;
+
+    move-result-object v12
+
+    const-string v7, "this as java.lang.String).toLowerCase(Locale.ROOT)"
+
+    invoke-static {v12, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v13, 0x0
+
+    const/4 v14, 0x0
+
+    move-object v8, v6
+
+    invoke-virtual/range {v8 .. v14}, Lorg/telegram/ui/Cells/ProfileSearchCell;->setData(Ljava/lang/Object;Lorg/telegram/tgnet/TLRPC$EncryptedChat;Ljava/lang/CharSequence;Ljava/lang/CharSequence;ZZ)V
 
     .line 187
     invoke-static {}, Lcom/iMe/fork/enums/PromoSubscribeChat;->values()[Lcom/iMe/fork/enums/PromoSubscribeChat;
 
-    move-result-object v5
+    move-result-object v7
 
-    array-length v5, v5
+    array-length v7, v7
 
-    const/4 v6, 0x1
+    sub-int/2addr v7, v2
 
-    sub-int/2addr v5, v6
+    if-ge v5, v7, :cond_0
 
-    if-ge v3, v5, :cond_0
+    move v7, v2
 
     goto :goto_1
 
     :cond_0
-    move v6, v2
+    move v7, v1
 
     :goto_1
-    iput-boolean v6, v4, Lorg/telegram/ui/Cells/ProfileSearchCell;->useSeparator:Z
+    iput-boolean v7, v6, Lorg/telegram/ui/Cells/ProfileSearchCell;->useSeparator:Z
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v5, v5, 0x1
 
     goto :goto_0
 
@@ -670,7 +674,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    invoke-static {v0, v1, v2, v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     return-void
 .end method
@@ -1057,10 +1061,10 @@
     .line 126
     invoke-virtual {v1, v2}, Landroid/widget/TextView;->setGravity(I)V
 
-    const-string v2, "dialogTextBlack"
-
     .line 127
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -1192,15 +1196,15 @@
 
     move-result v1
 
-    const-string v2, "featuredStickers_addButton"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
-    const-string v3, "featuredStickers_addButtonPressed"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButtonPressed:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -1217,10 +1221,10 @@
     .line 142
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v1, "featuredStickers_buttonText"
-
     .line 143
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -1277,10 +1281,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const-string v1, "dialogTextGray3"
-
     .line 90
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray3:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -1331,10 +1335,10 @@
     .line 83
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    const-string v1, "dialogTextBlack"
-
     .line 84
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -1358,14 +1362,20 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    invoke-static {v0, v1, v2, v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 163
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/PromoSubscribeAlert;->getLoadingView()Landroid/widget/LinearLayout;
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    invoke-static {v0, v1, v2, v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 164
     new-instance v0, Lkotlin/jvm/internal/Ref$IntRef;
@@ -1374,26 +1384,24 @@
 
     invoke-static {}, Lcom/iMe/fork/enums/PromoSubscribeChat;->values()[Lcom/iMe/fork/enums/PromoSubscribeChat;
 
-    move-result-object v1
+    move-result-object v2
 
-    array-length v1, v1
+    array-length v2, v2
 
-    iput v1, v0, Lkotlin/jvm/internal/Ref$IntRef;->element:I
+    iput v2, v0, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 
     .line 165
     invoke-static {}, Lcom/iMe/fork/enums/PromoSubscribeChat;->values()[Lcom/iMe/fork/enums/PromoSubscribeChat;
 
-    move-result-object v1
+    move-result-object v2
 
     .line 13579
-    array-length v2, v1
-
-    const/4 v3, 0x0
+    array-length v3, v2
 
     :goto_0
-    if-ge v3, v2, :cond_0
+    if-ge v1, v3, :cond_0
 
-    aget-object v4, v1, v3
+    aget-object v4, v2, v1
 
     .line 166
     new-instance v5, Lorg/telegram/tgnet/TLRPC$TL_contacts_resolveUsername;
@@ -1420,7 +1428,7 @@
 
     invoke-virtual {v4, v5, v6}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    add-int/lit8 v3, v3, 0x1
+    add-int/lit8 v1, v1, 0x1
 
     goto :goto_0
 

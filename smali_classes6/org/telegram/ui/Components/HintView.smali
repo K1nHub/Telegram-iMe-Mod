@@ -74,7 +74,7 @@
 .end method
 
 .method public constructor <init>(Landroid/content/Context;IZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
-    .locals 19
+    .locals 18
 
     move-object/from16 v0, p0
 
@@ -110,10 +110,10 @@
 
     iput-object v4, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
-    const-string v5, "chat_gifSaveHintText"
-
     .line 91
-    invoke-direct {v0, v5}, Lorg/telegram/ui/Components/HintView;->getThemedColor(Ljava/lang/String;)I
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chat_gifSaveHintText:I
+
+    invoke-direct {v0, v5}, Lorg/telegram/ui/Components/HintView;->getThemedColor(I)I
 
     move-result v6
 
@@ -200,11 +200,9 @@
 
     const/4 v8, 0x3
 
-    const-string v9, "chat_gifSaveHintBackground"
+    const/4 v9, 0x6
 
-    const/4 v10, 0x6
-
-    const/4 v11, 0x0
+    const/4 v10, 0x0
 
     if-ne v7, v8, :cond_5
 
@@ -224,7 +222,9 @@
 
     move-result v6
 
-    invoke-direct {v0, v9}, Lorg/telegram/ui/Components/HintView;->getThemedColor(Ljava/lang/String;)I
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_chat_gifSaveHintBackground:I
+
+    invoke-direct {v0, v7}, Lorg/telegram/ui/Components/HintView;->getThemedColor(I)I
 
     move-result v7
 
@@ -247,42 +247,42 @@
 
     move-result v6
 
-    invoke-virtual {v4, v7, v11, v6, v11}, Landroid/widget/TextView;->setPadding(IIII)V
+    invoke-virtual {v4, v7, v10, v6, v10}, Landroid/widget/TextView;->setPadding(IIII)V
 
     .line 105
     iget-object v4, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
-    const/4 v12, -0x2
+    const/4 v11, -0x2
 
-    const/16 v13, 0x1e
+    const/16 v12, 0x1e
 
-    const/16 v14, 0x33
+    const/16 v13, 0x33
 
-    const/4 v15, 0x0
+    const/4 v14, 0x0
 
     if-eqz v3, :cond_3
 
-    move/from16 v16, v10
+    move v15, v9
 
     goto :goto_2
 
     :cond_3
-    move/from16 v16, v11
+    move v15, v10
 
     :goto_2
-    const/16 v17, 0x0
+    const/16 v16, 0x0
 
     if-eqz v3, :cond_4
 
-    move/from16 v18, v11
+    move/from16 v17, v10
 
     goto :goto_3
 
     :cond_4
-    move/from16 v18, v10
+    move/from16 v17, v9
 
     :goto_3
-    invoke-static/range {v12 .. v18}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v11 .. v17}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v6
 
@@ -294,45 +294,47 @@
     :cond_5
     iget-object v7, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
-    const/16 v12, 0x33
+    const/16 v11, 0x33
 
-    invoke-virtual {v7, v12}, Landroid/widget/TextView;->setGravity(I)V
+    invoke-virtual {v7, v11}, Landroid/widget/TextView;->setGravity(I)V
 
     .line 108
     iget-object v7, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
-    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v11
+
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_chat_gifSaveHintBackground:I
+
+    invoke-direct {v0, v12}, Lorg/telegram/ui/Components/HintView;->getThemedColor(I)I
 
     move-result v12
 
-    invoke-direct {v0, v9}, Lorg/telegram/ui/Components/HintView;->getThemedColor(Ljava/lang/String;)I
+    invoke-static {v11, v12}, Lorg/telegram/ui/ActionBar/Theme;->createRoundRectDrawable(II)Landroid/graphics/drawable/Drawable;
 
-    move-result v13
+    move-result-object v11
 
-    invoke-static {v12, v13}, Lorg/telegram/ui/ActionBar/Theme;->createRoundRectDrawable(II)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v12
-
-    invoke-virtual {v7, v12}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v7, v11}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     .line 109
     iget-object v7, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
-    iget v12, v0, Lorg/telegram/ui/Components/HintView;->currentType:I
+    iget v11, v0, Lorg/telegram/ui/Components/HintView;->currentType:I
 
-    if-nez v12, :cond_6
+    if-nez v11, :cond_6
 
-    const/16 v12, 0x36
+    const/16 v11, 0x36
 
     goto :goto_4
 
     :cond_6
-    move v12, v6
+    move v11, v6
 
     :goto_4
-    invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v11}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v12
+    move-result v11
 
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -340,48 +342,48 @@
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v13
+    move-result v12
 
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
 
-    invoke-virtual {v7, v12, v4, v13, v6}, Landroid/widget/TextView;->setPadding(IIII)V
+    invoke-virtual {v7, v11, v4, v12, v6}, Landroid/widget/TextView;->setPadding(IIII)V
 
     .line 110
     iget-object v4, v0, Lorg/telegram/ui/Components/HintView;->textView:Landroid/widget/TextView;
 
+    const/4 v11, -0x2
+
     const/4 v12, -0x2
 
-    const/4 v13, -0x2
+    const/16 v13, 0x33
 
-    const/16 v14, 0x33
-
-    const/4 v15, 0x0
+    const/4 v14, 0x0
 
     if-eqz v3, :cond_7
 
-    move/from16 v16, v10
+    move v15, v9
 
     goto :goto_5
 
     :cond_7
-    move/from16 v16, v11
+    move v15, v10
 
     :goto_5
-    const/16 v17, 0x0
+    const/16 v16, 0x0
 
     if-eqz v3, :cond_8
 
-    move/from16 v18, v11
+    move/from16 v17, v10
 
     goto :goto_6
 
     :cond_8
-    move/from16 v18, v10
+    move/from16 v17, v9
 
     :goto_6
-    invoke-static/range {v12 .. v18}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v11 .. v17}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v6
 
@@ -427,7 +429,7 @@
 
     new-instance v4, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-direct {v0, v5}, Lorg/telegram/ui/Components/HintView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v0, v5}, Lorg/telegram/ui/Components/HintView;->getThemedColor(I)I
 
     move-result v5
 
@@ -440,21 +442,21 @@
     .line 120
     iget-object v2, v0, Lorg/telegram/ui/Components/HintView;->imageView:Landroid/widget/ImageView;
 
-    const/16 v10, 0x26
+    const/16 v9, 0x26
 
-    const/16 v11, 0x22
+    const/16 v10, 0x22
 
-    const/16 v12, 0x33
+    const/16 v11, 0x33
+
+    const/4 v12, 0x7
 
     const/4 v13, 0x7
 
-    const/4 v14, 0x7
+    const/4 v14, 0x0
 
     const/4 v15, 0x0
 
-    const/16 v16, 0x0
-
-    invoke-static/range {v10 .. v16}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v9 .. v15}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v4
 
@@ -486,7 +488,9 @@
 
     new-instance v2, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-direct {v0, v9}, Lorg/telegram/ui/Components/HintView;->getThemedColor(Ljava/lang/String;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_gifSaveHintBackground:I
+
+    invoke-direct {v0, v4}, Lorg/telegram/ui/Components/HintView;->getThemedColor(I)I
 
     move-result v4
 
@@ -586,39 +590,16 @@
     return-object p1
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
+.method private getThemedColor(I)I
     .locals 1
 
     .line 508
     iget-object v0, p0, Lorg/telegram/ui/Components/HintView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 509
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
@@ -1102,6 +1083,8 @@
 
     sub-int v1, v11, v2
 
+    int-to-float v1, v1
+
     .line 426
     iget-object v2, p0, Lorg/telegram/ui/Components/HintView;->arrowImageView:Landroid/widget/ImageView;
 
@@ -1109,11 +1092,13 @@
 
     move-result v2
 
-    div-int/2addr v2, v0
+    int-to-float v2, v2
 
-    sub-int/2addr v1, v2
+    const/high16 v3, 0x40000000    # 2.0f
 
-    int-to-float v1, v1
+    div-float/2addr v2, v3
+
+    sub-float/2addr v1, v2
 
     .line 427
     iget v2, p0, Lorg/telegram/ui/Components/HintView;->currentType:I

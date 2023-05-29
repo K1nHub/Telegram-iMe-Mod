@@ -31,40 +31,40 @@ public final class Log {
         public static final Logger DEFAULT = new Logger() { // from class: com.google.android.exoplayer2.util.Log.Logger.1
             @Override // com.google.android.exoplayer2.util.Log.Logger
             /* renamed from: d */
-            public void mo790d(String str, String str2) {
+            public void mo794d(String str, String str2) {
                 android.util.Log.d(str, str2);
             }
 
             @Override // com.google.android.exoplayer2.util.Log.Logger
             /* renamed from: i */
-            public void mo788i(String str, String str2) {
+            public void mo792i(String str, String str2) {
                 android.util.Log.i(str, str2);
             }
 
             @Override // com.google.android.exoplayer2.util.Log.Logger
             /* renamed from: w */
-            public void mo787w(String str, String str2) {
+            public void mo791w(String str, String str2) {
                 android.util.Log.w(str, str2);
             }
 
             @Override // com.google.android.exoplayer2.util.Log.Logger
             /* renamed from: e */
-            public void mo789e(String str, String str2) {
+            public void mo793e(String str, String str2) {
                 android.util.Log.e(str, str2);
             }
         };
 
         /* renamed from: d */
-        void mo790d(String str, String str2);
+        void mo794d(String str, String str2);
 
         /* renamed from: e */
-        void mo789e(String str, String str2);
+        void mo793e(String str, String str2);
 
         /* renamed from: i */
-        void mo788i(String str, String str2);
+        void mo792i(String str, String str2);
 
         /* renamed from: w */
-        void mo787w(String str, String str2);
+        void mo791w(String str, String str2);
     }
 
     private Log() {
@@ -97,59 +97,59 @@ public final class Log {
     }
 
     /* renamed from: d */
-    public static void m798d(String str, String str2) {
+    public static void m802d(String str, String str2) {
         synchronized (lock) {
             if (logLevel == 0) {
-                logger.mo790d(str, str2);
+                logger.mo794d(str, str2);
             }
         }
     }
 
     /* renamed from: d */
-    public static void m797d(String str, String str2, Throwable th) {
-        m798d(str, appendThrowableString(str2, th));
+    public static void m801d(String str, String str2, Throwable th) {
+        m802d(str, appendThrowableString(str2, th));
     }
 
     /* renamed from: i */
-    public static void m794i(String str, String str2) {
+    public static void m798i(String str, String str2) {
         synchronized (lock) {
             if (logLevel <= 1) {
-                logger.mo788i(str, str2);
+                logger.mo792i(str, str2);
             }
         }
     }
 
     /* renamed from: i */
-    public static void m793i(String str, String str2, Throwable th) {
-        m794i(str, appendThrowableString(str2, th));
+    public static void m797i(String str, String str2, Throwable th) {
+        m798i(str, appendThrowableString(str2, th));
     }
 
     /* renamed from: w */
-    public static void m792w(String str, String str2) {
+    public static void m796w(String str, String str2) {
         synchronized (lock) {
             if (logLevel <= 2) {
-                logger.mo787w(str, str2);
+                logger.mo791w(str, str2);
             }
         }
     }
 
     /* renamed from: w */
-    public static void m791w(String str, String str2, Throwable th) {
-        m792w(str, appendThrowableString(str2, th));
+    public static void m795w(String str, String str2, Throwable th) {
+        m796w(str, appendThrowableString(str2, th));
     }
 
     /* renamed from: e */
-    public static void m796e(String str, String str2) {
+    public static void m800e(String str, String str2) {
         synchronized (lock) {
             if (logLevel <= 3) {
-                logger.mo789e(str, str2);
+                logger.mo793e(str, str2);
             }
         }
     }
 
     /* renamed from: e */
-    public static void m795e(String str, String str2, Throwable th) {
-        m796e(str, appendThrowableString(str2, th));
+    public static void m799e(String str, String str2, Throwable th) {
+        m800e(str, appendThrowableString(str2, th));
     }
 
     public static String getThrowableString(Throwable th) {

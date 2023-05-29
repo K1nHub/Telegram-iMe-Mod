@@ -726,62 +726,62 @@
 .end method
 
 .method public final setupColors()V
-    .locals 6
+    .locals 7
 
     .line 60
     iget-object v0, p0, Lcom/iMe/ui/custom/FeeView;->binding:Lorg/telegram/messenger/databinding/ForkContentFeeBinding;
 
-    const/4 v1, 0x2
-
-    new-array v2, v1, [Landroid/widget/TextView;
-
     .line 61
-    iget-object v3, v0, Lorg/telegram/messenger/databinding/ForkContentFeeBinding;->textFeeValue:Landroidx/appcompat/widget/AppCompatTextView;
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelText:I
 
-    const-string v4, "textFeeValue"
+    const/4 v2, 0x2
+
+    new-array v3, v2, [Landroid/widget/TextView;
+
+    iget-object v4, v0, Lorg/telegram/messenger/databinding/ForkContentFeeBinding;->textFeeValue:Landroidx/appcompat/widget/AppCompatTextView;
+
+    const-string v5, "textFeeValue"
+
+    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v5, 0x0
+
+    aput-object v4, v3, v5
+
+    iget-object v4, v0, Lorg/telegram/messenger/databinding/ForkContentFeeBinding;->textTimeValue:Landroidx/appcompat/widget/AppCompatTextView;
+
+    const-string v6, "textTimeValue"
+
+    invoke-static {v4, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v6, 0x1
+
+    aput-object v4, v3, v6
+
+    invoke-static {v1, v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setTextsColor(I[Landroid/widget/TextView;)V
+
+    .line 62
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText4:I
+
+    new-array v2, v2, [Landroid/widget/TextView;
+
+    iget-object v3, v0, Lorg/telegram/messenger/databinding/ForkContentFeeBinding;->textFeeTitle:Landroidx/appcompat/widget/AppCompatTextView;
+
+    const-string v4, "textFeeTitle"
 
     invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v4, 0x0
-
-    aput-object v3, v2, v4
-
-    iget-object v3, v0, Lorg/telegram/messenger/databinding/ForkContentFeeBinding;->textTimeValue:Landroidx/appcompat/widget/AppCompatTextView;
-
-    const-string v5, "textTimeValue"
-
-    invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const/4 v5, 0x1
-
     aput-object v3, v2, v5
-
-    const-string v3, "chat_messagePanelText"
-
-    invoke-static {v3, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setTextsColor(Ljava/lang/String;[Landroid/widget/TextView;)V
-
-    new-array v1, v1, [Landroid/widget/TextView;
-
-    .line 62
-    iget-object v2, v0, Lorg/telegram/messenger/databinding/ForkContentFeeBinding;->textFeeTitle:Landroidx/appcompat/widget/AppCompatTextView;
-
-    const-string v3, "textFeeTitle"
-
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
-
-    aput-object v2, v1, v4
 
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentFeeBinding;->textTimeTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v2, "textTimeTitle"
+    const-string v3, "textTimeTitle"
 
-    invoke-static {v0, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v0, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    aput-object v0, v1, v5
+    aput-object v0, v2, v6
 
-    const-string v0, "windowBackgroundWhiteGrayText4"
-
-    invoke-static {v0, v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setTextsColor(Ljava/lang/String;[Landroid/widget/TextView;)V
+    invoke-static {v1, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setTextsColor(I[Landroid/widget/TextView;)V
 
     return-void
 .end method

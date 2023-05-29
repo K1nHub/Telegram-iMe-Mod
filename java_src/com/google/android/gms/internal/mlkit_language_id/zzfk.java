@@ -1,6 +1,6 @@
 package com.google.android.gms.internal.mlkit_language_id;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class zzfk extends zzfj {
     private zzfk() {
         super();
@@ -9,7 +9,7 @@ final class zzfk extends zzfj {
     /* JADX INFO: Access modifiers changed from: package-private */
     @Override // com.google.android.gms.internal.mlkit_language_id.zzfj
     public final void zza(Object obj, long j) {
-        zzb(obj, j).mo758b_();
+        zzb(obj, j).mo762b_();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */

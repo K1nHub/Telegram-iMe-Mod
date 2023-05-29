@@ -85,7 +85,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 72
+    .line 67
     iget-object p1, p0, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor$login$1$3;->$result:Lcom/iMe/storage/domain/model/Result;
 
     return-object p1
@@ -94,7 +94,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 72
+    .line 67
     check-cast p1, Lcom/iMe/storage/domain/model/Result;
 
     invoke-virtual {p0, p1}, Lcom/iMe/storage/domain/interactor/wallet/WalletSessionInteractor$login$1$3;->invoke(Lcom/iMe/storage/domain/model/Result;)Lcom/iMe/storage/domain/model/Result;

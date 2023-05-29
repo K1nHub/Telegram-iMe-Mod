@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MvpAlertDialog.kt */
 /* renamed from: com.iMe.ui.base.mvp.MvpAlertDialog$mvpBaseDelegate$1$context$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class MvpAlertDialog$mvpBaseDelegate$1$context$2 extends Lambda implements Function0<Context> {
     final /* synthetic */ MvpAlertDialog this$0;
 

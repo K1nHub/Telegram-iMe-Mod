@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/FragmentContextView;)V
     .locals 0
 
-    .line 1596
+    .line 1602
     iput-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$10;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1599
+    .line 1605
     iget-object v0, p0, Lorg/telegram/ui/Components/FragmentContextView$10;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/FragmentContextView;->access$2300(Lorg/telegram/ui/Components/FragmentContextView;)Landroid/animation/AnimatorSet;
@@ -56,7 +56,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1600
+    .line 1606
     iget-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$10;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     const/4 v0, 0x0

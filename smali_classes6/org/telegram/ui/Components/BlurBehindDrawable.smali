@@ -201,11 +201,11 @@
     return-object p0
 .end method
 
-.method static synthetic access$400(Lorg/telegram/ui/Components/BlurBehindDrawable;Ljava/lang/String;)I
+.method static synthetic access$400(Lorg/telegram/ui/Components/BlurBehindDrawable;I)I
     .locals 0
 
     .line 20
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/BlurBehindDrawable;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/BlurBehindDrawable;->getThemedColor(I)I
 
     move-result p0
 
@@ -278,7 +278,7 @@
 .end method
 
 .method private generateBlurredBitmaps()V
-    .locals 12
+    .locals 11
 
     .line 264
     iget-object v0, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->renderingBitmap:[Landroid/graphics/Bitmap;
@@ -439,34 +439,34 @@
 
     aput-object v7, v8, v4
 
-    const-string v7, "windowBackgroundWhite"
-
     if-ne v4, v3, :cond_6
 
     .line 294
-    iget-object v8, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->blurredBitmapTmp:[Landroid/graphics/Bitmap;
+    iget-object v7, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->blurredBitmapTmp:[Landroid/graphics/Bitmap;
 
-    aget-object v8, v8, v4
+    aget-object v7, v7, v4
 
-    invoke-direct {p0, v7}, Lorg/telegram/ui/Components/BlurBehindDrawable;->getThemedColor(Ljava/lang/String;)I
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    move-result v10
+    invoke-direct {p0, v8}, Lorg/telegram/ui/Components/BlurBehindDrawable;->getThemedColor(I)I
 
-    invoke-virtual {v8, v10}, Landroid/graphics/Bitmap;->eraseColor(I)V
+    move-result v8
+
+    invoke-virtual {v7, v8}, Landroid/graphics/Bitmap;->eraseColor(I)V
 
     .line 296
     :cond_6
-    iget-object v8, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->blurCanvas:[Landroid/graphics/Canvas;
+    iget-object v7, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->blurCanvas:[Landroid/graphics/Canvas;
 
-    new-instance v10, Landroid/graphics/Canvas;
+    new-instance v8, Landroid/graphics/Canvas;
 
-    iget-object v11, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->blurredBitmapTmp:[Landroid/graphics/Bitmap;
+    iget-object v10, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->blurredBitmapTmp:[Landroid/graphics/Bitmap;
 
-    aget-object v11, v11, v4
+    aget-object v10, v10, v4
 
-    invoke-direct {v10, v11}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
+    invoke-direct {v8, v10}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
-    aput-object v10, v8, v4
+    aput-object v8, v7, v4
 
     if-nez v4, :cond_7
 
@@ -481,26 +481,26 @@
     float-to-int v5, v5
 
     .line 300
-    iget-object v8, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->renderingBitmap:[Landroid/graphics/Bitmap;
+    iget-object v7, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->renderingBitmap:[Landroid/graphics/Bitmap;
 
-    sget-object v9, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
+    sget-object v8, Landroid/graphics/Bitmap$Config;->ARGB_8888:Landroid/graphics/Bitmap$Config;
 
-    invoke-static {v6, v5, v9}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
+    invoke-static {v6, v5, v8}, Landroid/graphics/Bitmap;->createBitmap(IILandroid/graphics/Bitmap$Config;)Landroid/graphics/Bitmap;
 
     move-result-object v5
 
-    aput-object v5, v8, v4
+    aput-object v5, v7, v4
 
     .line 301
     iget-object v5, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->renderingBitmapCanvas:[Landroid/graphics/Canvas;
 
     new-instance v6, Landroid/graphics/Canvas;
 
-    iget-object v8, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->renderingBitmap:[Landroid/graphics/Bitmap;
+    iget-object v7, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->renderingBitmap:[Landroid/graphics/Bitmap;
 
-    aget-object v8, v8, v4
+    aget-object v7, v7, v4
 
-    invoke-direct {v6, v8}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
+    invoke-direct {v6, v7}, Landroid/graphics/Canvas;-><init>(Landroid/graphics/Bitmap;)V
 
     aput-object v6, v5, v4
 
@@ -519,19 +519,29 @@
 
     int-to-float v6, v6
 
+    iget-object v7, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->blurredBitmapTmp:[Landroid/graphics/Bitmap;
+
+    aget-object v7, v7, v4
+
+    invoke-virtual {v7}, Landroid/graphics/Bitmap;->getWidth()I
+
+    move-result v7
+
+    int-to-float v7, v7
+
+    div-float/2addr v6, v7
+
+    iget-object v7, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->renderingBitmap:[Landroid/graphics/Bitmap;
+
+    aget-object v7, v7, v4
+
+    invoke-virtual {v7}, Landroid/graphics/Bitmap;->getHeight()I
+
+    move-result v7
+
+    int-to-float v7, v7
+
     iget-object v8, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->blurredBitmapTmp:[Landroid/graphics/Bitmap;
-
-    aget-object v8, v8, v4
-
-    invoke-virtual {v8}, Landroid/graphics/Bitmap;->getWidth()I
-
-    move-result v8
-
-    int-to-float v8, v8
-
-    div-float/2addr v6, v8
-
-    iget-object v8, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->renderingBitmap:[Landroid/graphics/Bitmap;
 
     aget-object v8, v8, v4
 
@@ -541,19 +551,9 @@
 
     int-to-float v8, v8
 
-    iget-object v9, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->blurredBitmapTmp:[Landroid/graphics/Bitmap;
+    div-float/2addr v7, v8
 
-    aget-object v9, v9, v4
-
-    invoke-virtual {v9}, Landroid/graphics/Bitmap;->getHeight()I
-
-    move-result v9
-
-    int-to-float v9, v9
-
-    div-float/2addr v8, v9
-
-    invoke-virtual {v5, v6, v8}, Landroid/graphics/Canvas;->scale(FF)V
+    invoke-virtual {v5, v6, v7}, Landroid/graphics/Canvas;->scale(FF)V
 
     .line 304
     iget-object v5, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->blurCanvas:[Landroid/graphics/Canvas;
@@ -569,9 +569,9 @@
 
     const v6, 0x3e2aaaab
 
-    const/4 v8, 0x0
+    const/4 v7, 0x0
 
-    invoke-virtual {v5, v6, v6, v8, v8}, Landroid/graphics/Canvas;->scale(FFFF)V
+    invoke-virtual {v5, v6, v6, v7, v7}, Landroid/graphics/Canvas;->scale(FFFF)V
 
     .line 306
     iget-object v5, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->behindView:Landroid/view/View;
@@ -593,11 +593,11 @@
 
     invoke-static {v4}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    move-result-object v9
+    move-result-object v8
 
-    const v10, 0x4000003
+    const v9, 0x4000003
 
-    invoke-virtual {v6, v10, v9}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+    invoke-virtual {v6, v9, v8}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
     if-nez v4, :cond_9
 
@@ -606,20 +606,20 @@
 
     aget-object v6, v6, v4
 
-    iget v9, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->panTranslationY:F
+    iget v8, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->panTranslationY:F
 
-    neg-float v9, v9
+    neg-float v8, v8
 
-    invoke-virtual {v6, v8, v9}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {v6, v7, v8}, Landroid/graphics/Canvas;->translate(FF)V
 
     .line 313
     iget-object v6, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->behindView:Landroid/view/View;
 
-    iget-object v9, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->blurCanvas:[Landroid/graphics/Canvas;
+    iget-object v8, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->blurCanvas:[Landroid/graphics/Canvas;
 
-    aget-object v9, v9, v4
+    aget-object v8, v8, v4
 
-    invoke-virtual {v6, v9}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
+    invoke-virtual {v6, v8}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
     :cond_9
     if-ne v4, v3, :cond_a
@@ -630,26 +630,26 @@
     move-result-object v6
 
     .line 318
-    iget-object v9, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->behindView:Landroid/view/View;
+    iget-object v8, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->behindView:Landroid/view/View;
 
-    invoke-virtual {v9}, Landroid/view/View;->getMeasuredWidth()I
+    invoke-virtual {v8}, Landroid/view/View;->getMeasuredWidth()I
 
-    move-result v9
+    move-result v8
 
-    iget-object v11, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->behindView:Landroid/view/View;
+    iget-object v10, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->behindView:Landroid/view/View;
 
-    invoke-virtual {v11}, Landroid/view/View;->getMeasuredHeight()I
+    invoke-virtual {v10}, Landroid/view/View;->getMeasuredHeight()I
 
-    move-result v11
+    move-result v10
 
-    invoke-virtual {v5, v2, v2, v9, v11}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    invoke-virtual {v5, v2, v2, v8, v10}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 319
-    iget-object v9, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->blurCanvas:[Landroid/graphics/Canvas;
+    iget-object v8, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->blurCanvas:[Landroid/graphics/Canvas;
 
-    aget-object v9, v9, v4
+    aget-object v8, v8, v4
 
-    invoke-virtual {v5, v9}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+    invoke-virtual {v5, v8}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     .line 320
     invoke-virtual {v5, v6}, Landroid/graphics/drawable/Drawable;->setBounds(Landroid/graphics/Rect;)V
@@ -669,7 +669,7 @@
 
     const/4 v6, 0x0
 
-    invoke-virtual {v5, v10, v6}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
+    invoke-virtual {v5, v9, v6}, Landroid/view/View;->setTag(ILjava/lang/Object;)V
 
     .line 325
     iget-object v5, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->blurCanvas:[Landroid/graphics/Canvas;
@@ -703,7 +703,9 @@
 
     aget-object v5, v5, v4
 
-    invoke-direct {p0, v7}, Lorg/telegram/ui/Components/BlurBehindDrawable;->getThemedColor(Ljava/lang/String;)I
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-direct {p0, v6}, Lorg/telegram/ui/Components/BlurBehindDrawable;->getThemedColor(I)I
 
     move-result v6
 
@@ -719,9 +721,9 @@
 
     aget-object v6, v6, v4
 
-    iget-object v7, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->emptyPaint:Landroid/graphics/Paint;
+    iget-object v8, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->emptyPaint:Landroid/graphics/Paint;
 
-    invoke-virtual {v5, v6, v8, v8, v7}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
+    invoke-virtual {v5, v6, v7, v7, v8}, Landroid/graphics/Canvas;->drawBitmap(Landroid/graphics/Bitmap;FFLandroid/graphics/Paint;)V
 
     :cond_c
     :goto_2
@@ -785,39 +787,16 @@
     return v0
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
+.method private getThemedColor(I)I
     .locals 1
 
     .line 427
     iget-object v0, p0, Lorg/telegram/ui/Components/BlurBehindDrawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 428
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
@@ -1567,9 +1546,9 @@
 
     aget-object v3, v3, p1
 
-    const-string v5, "windowBackgroundWhite"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-direct {p0, v5}, Lorg/telegram/ui/Components/BlurBehindDrawable;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v5}, Lorg/telegram/ui/Components/BlurBehindDrawable;->getThemedColor(I)I
 
     move-result v5
 

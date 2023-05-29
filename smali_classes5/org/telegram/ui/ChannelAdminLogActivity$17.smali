@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChannelAdminLogActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 1529
+    .line 1537
     iput-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$17;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method public setTranslationY(F)V
     .locals 0
 
-    .line 1532
+    .line 1540
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTranslationY(F)V
 
-    .line 1533
+    .line 1541
     iget-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$17;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$3700(Lorg/telegram/ui/ChannelAdminLogActivity;)Lorg/telegram/ui/Components/SizeNotifierFrameLayout;

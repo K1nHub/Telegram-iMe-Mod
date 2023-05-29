@@ -9,15 +9,15 @@ import java.util.List;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 /* compiled from: GlobalStateProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.GlobalStateProvider */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class GlobalStateProvider extends BaseNodeProvider<GlobalStateItem> {
     private boolean isMatchParentHeight;
     private Function0<Unit> onRetryButtonClickAction = GlobalStateProvider$onRetryButtonClickAction$1.INSTANCE;
     private final int itemViewType = IdFabric$ViewTypes.GLOBAL_STATE;
-    private final int layoutId = C3242R.layout.fork_recycle_item_global_state;
+    private final int layoutId = C3290R.layout.fork_recycle_item_global_state;
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
     public /* bridge */ /* synthetic */ void convert(BaseViewHolder baseViewHolder, Object obj, List list) {
@@ -55,7 +55,7 @@ public final class GlobalStateProvider extends BaseNodeProvider<GlobalStateItem>
     public void convert(BaseViewHolder helper, GlobalStateItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        BaseQuickAdapterExtKt.applyForView(helper, C3242R.C3245id.global_state_layout, new GlobalStateProvider$convert$1(this, item));
+        BaseQuickAdapterExtKt.applyForView(helper, C3290R.C3293id.global_state_layout, new GlobalStateProvider$convert$1(this, item));
     }
 
     public void convert(BaseViewHolder helper, GlobalStateItem item, List<? extends Object> payloads) {

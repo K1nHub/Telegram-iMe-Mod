@@ -29,7 +29,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)V
     .locals 0
 
-    .line 2852
+    .line 2859
     iput-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$4;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
     iput-object p2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$4;->val$view:Landroid/view/View;
@@ -46,7 +46,7 @@
 .method public onPreDraw()Z
     .locals 12
 
-    .line 2855
+    .line 2862
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$4;->val$view:Landroid/view/View;
 
     invoke-virtual {v0}, Landroid/view/View;->getViewTreeObserver()Landroid/view/ViewTreeObserver;
@@ -55,7 +55,7 @@
 
     invoke-virtual {v0, p0}, Landroid/view/ViewTreeObserver;->removeOnPreDrawListener(Landroid/view/ViewTreeObserver$OnPreDrawListener;)V
 
-    .line 2857
+    .line 2864
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$4;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
@@ -68,14 +68,14 @@
 
     move-result v0
 
-    .line 2858
+    .line 2865
     iget-object v1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$4;->val$view:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getTop()I
 
     move-result v1
 
-    .line 2859
+    .line 2866
     iget-object v2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$4;->val$view:Landroid/view/View;
 
     invoke-virtual {v2}, Landroid/view/View;->getBottom()I
@@ -92,7 +92,7 @@
     :goto_0
     move v3, v1
 
-    .line 2861
+    .line 2868
     iget-object v1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$4;->val$view:Landroid/view/View;
 
     invoke-virtual {v1}, Landroid/view/View;->getMeasuredHeight()I
@@ -103,7 +103,7 @@
 
     add-int v1, v3, v0
 
-    .line 2866
+    .line 2873
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$4;->val$holder:Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
@@ -113,7 +113,7 @@
 
     if-eqz v2, :cond_2
 
-    .line 2867
+    .line 2874
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$4;->val$view:Landroid/view/View;
 
     move-object v2, v0
@@ -228,13 +228,13 @@
 
     goto :goto_1
 
-    .line 2868
+    .line 2875
     :cond_2
     instance-of v0, v0, Lorg/telegram/ui/Cells/ChatActionCell;
 
     if-eqz v0, :cond_3
 
-    .line 2869
+    .line 2876
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$4;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
@@ -255,7 +255,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 2870
+    .line 2877
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$4;->val$view:Landroid/view/View;
 
     move-object v1, v0

@@ -9,7 +9,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletHomeBinancePayFragment.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayFragment$binancePayApi$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletHomeBinancePayFragment$binancePayApi$2 extends Lambda implements Function0<BinancePay> {
     final /* synthetic */ WalletHomeBinancePayFragment this$0;
 

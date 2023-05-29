@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/TopicsFragment;)V
     .locals 0
 
-    .line 896
+    .line 898
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$9;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -35,10 +35,10 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 899
+    .line 901
     invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;->onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
 
-    .line 900
+    .line 902
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$9;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iget-object p1, p1, Lorg/telegram/ui/TopicsFragment;->contentView:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;

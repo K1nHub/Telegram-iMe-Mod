@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 339
+    .line 338
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$2;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -35,7 +35,7 @@
 .method protected allowSelectChildAtPosition(FF)Z
     .locals 3
 
-    .line 342
+    .line 341
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$2;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;

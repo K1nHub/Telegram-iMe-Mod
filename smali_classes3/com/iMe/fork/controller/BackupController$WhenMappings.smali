@@ -170,6 +170,34 @@
     .catch Ljava/lang/NoSuchFieldError; {:try_start_9 .. :try_end_9} :catch_9
 
     :catch_9
+    :try_start_a
+    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->HIDDEN_CHATS:Lcom/iMe/fork/enums/BackupComponent;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0xb
+
+    aput v2, v0, v1
+    :try_end_a
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_a .. :try_end_a} :catch_a
+
+    :catch_a
+    :try_start_b
+    sget-object v1, Lcom/iMe/fork/enums/BackupComponent;->RECENT_CHATS:Lcom/iMe/fork/enums/BackupComponent;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/16 v2, 0xc
+
+    aput v2, v0, v1
+    :try_end_b
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_b .. :try_end_b} :catch_b
+
+    :catch_b
     sput-object v0, Lcom/iMe/fork/controller/BackupController$WhenMappings;->$EnumSwitchMapping$0:[I
 
     return-void

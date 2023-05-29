@@ -81,6 +81,40 @@
     return-object p0
 .end method
 
+.method public addNextIntentWithParentStack(Landroid/content/Intent;)Landroidx/core/app/TaskStackBuilder;
+    .locals 1
+
+    .line 141
+    invoke-virtual {p1}, Landroid/content/Intent;->getComponent()Landroid/content/ComponentName;
+
+    move-result-object v0
+
+    if-nez v0, :cond_0
+
+    .line 143
+    iget-object v0, p0, Landroidx/core/app/TaskStackBuilder;->mSourceContext:Landroid/content/Context;
+
+    invoke-virtual {v0}, Landroid/content/Context;->getPackageManager()Landroid/content/pm/PackageManager;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/content/Intent;->resolveActivity(Landroid/content/pm/PackageManager;)Landroid/content/ComponentName;
+
+    move-result-object v0
+
+    :cond_0
+    if-eqz v0, :cond_1
+
+    .line 146
+    invoke-virtual {p0, v0}, Landroidx/core/app/TaskStackBuilder;->addParentStack(Landroid/content/ComponentName;)Landroidx/core/app/TaskStackBuilder;
+
+    .line 148
+    :cond_1
+    invoke-virtual {p0, p1}, Landroidx/core/app/TaskStackBuilder;->addNextIntent(Landroid/content/Intent;)Landroidx/core/app/TaskStackBuilder;
+
+    return-object p0
+.end method
+
 .method public addParentStack(Landroid/app/Activity;)Landroidx/core/app/TaskStackBuilder;
     .locals 1
 

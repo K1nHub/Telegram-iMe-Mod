@@ -50,7 +50,8 @@
 .method public getType()I
     .locals 1
 
-    const/4 v0, 0x2
+    .line 630
+    sget v0, Lcom/iMe/common/IdFabric$CustomType;->QR_BOTTOM_SHEET_WALLET_BACKUP:I
 
     return v0
 .end method

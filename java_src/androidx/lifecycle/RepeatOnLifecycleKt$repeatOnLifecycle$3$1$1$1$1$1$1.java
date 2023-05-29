@@ -9,7 +9,7 @@ import kotlin.coroutines.jvm.internal.SuspendLambda;
 import kotlin.jvm.functions.Function2;
 import kotlinx.coroutines.CoroutineScope;
 /* compiled from: RepeatOnLifecycle.kt */
-@DebugMetadata(m79c = "androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1$1$1$1", m78f = "RepeatOnLifecycle.kt", m77l = {111}, m76m = "invokeSuspend")
+@DebugMetadata(m84c = "androidx.lifecycle.RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1$1$1$1", m83f = "RepeatOnLifecycle.kt", m82l = {111}, m81m = "invokeSuspend")
 /* loaded from: classes.dex */
 final class RepeatOnLifecycleKt$repeatOnLifecycle$3$1$1$1$1$1$1 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
     final /* synthetic */ Function2<CoroutineScope, Continuation<? super Unit>, Object> $block;

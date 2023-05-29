@@ -42,7 +42,7 @@ import moxy.InjectViewState;
 /* compiled from: WalletAttachAlertPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.home.old.WalletAttachAlertPresenter */
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class WalletAttachAlertPresenter extends BasePresenter<WalletAttachAlertView> {
     private final HashMap<TokenCode, List<Transaction>> cachedTransactions;
     private final CryptoAccessManager cryptoAccessManager;
@@ -140,7 +140,7 @@ public final class WalletAttachAlertPresenter extends BasePresenter<WalletAttach
     }
 
     private final void getWalletBalance(boolean z) {
-        Observable observeOn = WalletInteractor.getWalletBalance$default(this.walletInteractor, z, null, 2, null).distinctUntilChanged().observeOn(this.schedulersProvider.mo693ui());
+        Observable observeOn = WalletInteractor.getWalletBalance$default(this.walletInteractor, z, null, 2, null).distinctUntilChanged().observeOn(this.schedulersProvider.mo698ui());
         final WalletAttachAlertPresenter$getWalletBalance$1 walletAttachAlertPresenter$getWalletBalance$1 = new WalletAttachAlertPresenter$getWalletBalance$1(this);
         Consumer consumer = new Consumer() { // from class: com.iMe.ui.wallet.home.old.WalletAttachAlertPresenter$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer
@@ -218,7 +218,7 @@ public final class WalletAttachAlertPresenter extends BasePresenter<WalletAttach
                 walletTransactions$lambda$6 = WalletAttachAlertPresenter.getWalletTransactions$lambda$6(Function1.this, obj);
                 return walletTransactions$lambda$6;
             }
-        }).distinctUntilChanged().observeOn(this.schedulersProvider.mo693ui());
+        }).distinctUntilChanged().observeOn(this.schedulersProvider.mo698ui());
         final WalletAttachAlertPresenter$getWalletTransactions$2 walletAttachAlertPresenter$getWalletTransactions$2 = new WalletAttachAlertPresenter$getWalletTransactions$2(this, tokenCode);
         Consumer consumer = new Consumer() { // from class: com.iMe.ui.wallet.home.old.WalletAttachAlertPresenter$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Consumer

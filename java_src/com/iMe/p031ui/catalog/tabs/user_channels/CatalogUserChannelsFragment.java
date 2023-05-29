@@ -35,15 +35,16 @@ import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.databinding.ForkFragmentCatalogUserChannelsBinding;
+import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.ActionIntroActivity;
 import org.telegram.p044ui.Components.RLottieImageView;
 /* compiled from: CatalogUserChannelsFragment.kt */
 /* renamed from: com.iMe.ui.catalog.tabs.user_channels.CatalogUserChannelsFragment */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class CatalogUserChannelsFragment extends CatalogTabFragment implements CatalogUserChannelsView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(CatalogUserChannelsFragment.class, "presenter", "getPresenter()Lcom/iMe/ui/catalog/tabs/user_channels/CatalogUserChannelsPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(CatalogUserChannelsFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentCatalogUserChannelsBinding;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -55,7 +56,7 @@ public final class CatalogUserChannelsFragment extends CatalogTabFragment implem
 
     /* compiled from: CatalogUserChannelsFragment.kt */
     /* renamed from: com.iMe.ui.catalog.tabs.user_channels.CatalogUserChannelsFragment$WhenMappings */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public /* synthetic */ class WhenMappings {
         public static final /* synthetic */ int[] $EnumSwitchMapping$0;
 
@@ -155,7 +156,7 @@ public final class CatalogUserChannelsFragment extends CatalogTabFragment implem
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.catalog.tabs.user_channels.CatalogUserChannelsFragment$$ExternalSyntheticLambda1
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.catalog.tabs.user_channels.CatalogUserChannelsFragment$$ExternalSyntheticLambda1
             @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 CatalogUserChannelsFragment.getThemeDescriptions$lambda$0(CatalogUserChannelsFragment.this);
@@ -165,7 +166,7 @@ public final class CatalogUserChannelsFragment extends CatalogTabFragment implem
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, "windowBackgroundGray"));
+        }, Theme.key_windowBackgroundGray));
         return arrayListOf;
     }
 
@@ -204,10 +205,10 @@ public final class CatalogUserChannelsFragment extends CatalogTabFragment implem
     private final void setupColors() {
         ForkFragmentCatalogUserChannelsBinding binding = getBinding();
         AppCompatTextView setupColors$lambda$4$lambda$3 = binding.textEmptyTitle;
-        setupColors$lambda$4$lambda$3.setTextColor(getThemedColor("windowBackgroundWhiteBlackText"));
+        setupColors$lambda$4$lambda$3.setTextColor(getThemedColor(Theme.key_windowBackgroundWhiteBlackText));
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$4$lambda$3, "setupColors$lambda$4$lambda$3");
         ViewExtKt.withMediumTypeface(setupColors$lambda$4$lambda$3);
-        binding.textEmptyDescription.setTextColor(getThemedColor("windowBackgroundWhiteGrayText"));
+        binding.textEmptyDescription.setTextColor(getThemedColor(Theme.key_windowBackgroundWhiteGrayText));
         binding.buttonAdd.applyColors();
     }
 
@@ -241,24 +242,24 @@ public final class CatalogUserChannelsFragment extends CatalogTabFragment implem
         ForkFragmentCatalogUserChannelsBinding binding = getBinding();
         RLottieImageView rLottieImageView = binding.imageEmpty;
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3242R.raw.fork_catalog_empty, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+        rLottieImageView.setAnimation(C3290R.raw.fork_catalog_empty, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
         rLottieImageView.playAnimation();
         int i = WhenMappings.$EnumSwitchMapping$0[this.chatType.ordinal()];
         if (i == 1) {
-            binding.textEmptyTitle.setText(getResourceManager().getString(C3242R.string.catalog_user_channels_empty_title));
-            binding.textEmptyDescription.setText(getResourceManager().getString(C3242R.string.catalog_user_channels_empty_description));
-            binding.buttonAdd.setText(getResourceManager().getString(C3242R.string.catalog_user_channels_empty_create));
+            binding.textEmptyTitle.setText(getResourceManager().getString(C3290R.string.catalog_user_channels_empty_title));
+            binding.textEmptyDescription.setText(getResourceManager().getString(C3290R.string.catalog_user_channels_empty_description));
+            binding.buttonAdd.setText(getResourceManager().getString(C3290R.string.catalog_user_channels_empty_create));
         } else if (i != 2) {
         } else {
-            binding.textEmptyTitle.setText(getResourceManager().getString(C3242R.string.catalog_user_groups_empty_title));
-            binding.textEmptyDescription.setText(getResourceManager().getString(C3242R.string.catalog_user_groups_empty_description));
-            binding.buttonAdd.setText(getResourceManager().getString(C3242R.string.catalog_user_groups_empty_create));
+            binding.textEmptyTitle.setText(getResourceManager().getString(C3290R.string.catalog_user_groups_empty_title));
+            binding.textEmptyDescription.setText(getResourceManager().getString(C3290R.string.catalog_user_groups_empty_description));
+            binding.buttonAdd.setText(getResourceManager().getString(C3290R.string.catalog_user_groups_empty_create));
         }
     }
 
     /* compiled from: CatalogUserChannelsFragment.kt */
     /* renamed from: com.iMe.ui.catalog.tabs.user_channels.CatalogUserChannelsFragment$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

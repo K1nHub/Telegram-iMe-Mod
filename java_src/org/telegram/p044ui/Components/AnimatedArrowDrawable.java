@@ -31,7 +31,7 @@ public class AnimatedArrowDrawable extends Drawable {
         Paint paint = new Paint(1);
         this.paint = paint;
         paint.setStyle(Paint.Style.STROKE);
-        this.paint.setStrokeWidth(AndroidUtilities.m50dp(2));
+        this.paint.setStrokeWidth(AndroidUtilities.m54dp(2));
         this.paint.setColor(i);
         this.paint.setStrokeCap(Paint.Cap.ROUND);
         this.paint.setStrokeJoin(Paint.Join.ROUND);
@@ -49,14 +49,14 @@ public class AnimatedArrowDrawable extends Drawable {
         this.path.reset();
         float f = (this.animProgress * 2.0f) - 1.0f;
         if (this.isSmall) {
-            this.path.moveTo(AndroidUtilities.m50dp(3), AndroidUtilities.m50dp(6) - (AndroidUtilities.m50dp(2) * f));
-            this.path.lineTo(AndroidUtilities.m50dp(8), AndroidUtilities.m50dp(6) + (AndroidUtilities.m50dp(2) * f));
-            this.path.lineTo(AndroidUtilities.m50dp(13), AndroidUtilities.m50dp(6) - (AndroidUtilities.m50dp(2) * f));
+            this.path.moveTo(AndroidUtilities.m54dp(3), AndroidUtilities.m54dp(6) - (AndroidUtilities.m54dp(2) * f));
+            this.path.lineTo(AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(6) + (AndroidUtilities.m54dp(2) * f));
+            this.path.lineTo(AndroidUtilities.m54dp(13), AndroidUtilities.m54dp(6) - (AndroidUtilities.m54dp(2) * f));
             return;
         }
-        this.path.moveTo(AndroidUtilities.m51dp(4.5f), AndroidUtilities.m50dp(12) - (AndroidUtilities.m50dp(4) * f));
-        this.path.lineTo(AndroidUtilities.m50dp(13), AndroidUtilities.m50dp(12) + (AndroidUtilities.m50dp(4) * f));
-        this.path.lineTo(AndroidUtilities.m51dp(21.5f), AndroidUtilities.m50dp(12) - (AndroidUtilities.m50dp(4) * f));
+        this.path.moveTo(AndroidUtilities.m55dp(4.5f), AndroidUtilities.m54dp(12) - (AndroidUtilities.m54dp(4) * f));
+        this.path.lineTo(AndroidUtilities.m54dp(13), AndroidUtilities.m54dp(12) + (AndroidUtilities.m54dp(4) * f));
+        this.path.lineTo(AndroidUtilities.m55dp(21.5f), AndroidUtilities.m54dp(12) - (AndroidUtilities.m54dp(4) * f));
     }
 
     @Keep
@@ -118,11 +118,11 @@ public class AnimatedArrowDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicWidth() {
-        return AndroidUtilities.m50dp(26);
+        return AndroidUtilities.m54dp(26);
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicHeight() {
-        return AndroidUtilities.m50dp(26);
+        return AndroidUtilities.m54dp(26);
     }
 }

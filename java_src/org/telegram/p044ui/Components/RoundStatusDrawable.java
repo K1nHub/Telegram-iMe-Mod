@@ -89,7 +89,7 @@ public class RoundStatusDrawable extends StatusDrawable {
             paint = Theme.chat_statusPaint;
         }
         paint.setAlpha(((int) (this.progress * 200.0f)) + 55);
-        canvas.drawCircle(AndroidUtilities.m50dp(6), AndroidUtilities.m50dp(SharedConfig.isDialogsCompactModeEnabled ? 5 : this.isChat ? 8 : 9), AndroidUtilities.m50dp(4), paint);
+        canvas.drawCircle(AndroidUtilities.m54dp(6), AndroidUtilities.m54dp(SharedConfig.isDialogsCompactModeEnabled ? 5 : this.isChat ? 8 : 9), AndroidUtilities.m54dp(4), paint);
         if (this.started) {
             update();
         }
@@ -97,11 +97,11 @@ public class RoundStatusDrawable extends StatusDrawable {
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicWidth() {
-        return AndroidUtilities.m50dp(12);
+        return AndroidUtilities.m54dp(12);
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicHeight() {
-        return AndroidUtilities.m50dp(10);
+        return AndroidUtilities.m54dp(10);
     }
 }

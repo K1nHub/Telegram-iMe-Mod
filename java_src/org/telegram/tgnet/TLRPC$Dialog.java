@@ -6,7 +6,7 @@ public abstract class TLRPC$Dialog extends TLObject {
     public int folder_id;
 
     /* renamed from: id */
-    public long f1433id;
+    public long f1439id;
     public boolean isFolder;
     public int last_message_date;
     public TLRPC$PeerNotifySettings notify_settings;

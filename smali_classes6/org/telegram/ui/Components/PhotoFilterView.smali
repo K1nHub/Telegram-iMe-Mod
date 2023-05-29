@@ -812,13 +812,13 @@
     .line 432
     iget-object v5, v0, Lorg/telegram/ui/Components/PhotoFilterView;->doneTextView:Landroid/widget/TextView;
 
-    const-string v11, "dialogFloatingButton"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_dialogFloatingButton:I
 
-    invoke-direct {v0, v11}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v0, v11}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(I)I
 
-    move-result v11
+    move-result v12
 
-    invoke-virtual {v5, v11}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v5, v12}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 433
     iget-object v5, v0, Lorg/telegram/ui/Components/PhotoFilterView;->doneTextView:Landroid/widget/TextView;
@@ -830,39 +830,39 @@
 
     invoke-static {v14, v6}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(II)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v11
+    move-result-object v12
 
-    invoke-virtual {v5, v11}, Landroid/widget/TextView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v5, v12}, Landroid/widget/TextView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 435
     iget-object v5, v0, Lorg/telegram/ui/Components/PhotoFilterView;->doneTextView:Landroid/widget/TextView;
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v11
+    move-result v12
 
     invoke-static {v15}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v12
+    move-result v13
 
-    invoke-virtual {v5, v11, v6, v12, v6}, Landroid/widget/TextView;->setPadding(IIII)V
+    invoke-virtual {v5, v12, v6, v13, v6}, Landroid/widget/TextView;->setPadding(IIII)V
 
     .line 436
     iget-object v5, v0, Lorg/telegram/ui/Components/PhotoFilterView;->doneTextView:Landroid/widget/TextView;
 
-    sget v11, Lorg/telegram/messenger/R$string;->Done:I
+    sget v12, Lorg/telegram/messenger/R$string;->Done:I
 
-    const-string v12, "Done"
+    const-string v13, "Done"
 
-    invoke-static {v12, v11}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v13, v12}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v12
 
-    invoke-virtual {v11}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
+    invoke-virtual {v12}, Ljava/lang/String;->toUpperCase()Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v12
 
-    invoke-virtual {v5, v11}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v5, v12}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 437
     iget-object v5, v0, Lorg/telegram/ui/Components/PhotoFilterView;->doneTextView:Landroid/widget/TextView;
@@ -920,9 +920,7 @@
 
     new-instance v9, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v11, "dialogFloatingButton"
-
-    invoke-direct {v0, v11}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v0, v11}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(I)I
 
     move-result v11
 
@@ -2670,39 +2668,16 @@
     return-void
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
+.method private getThemedColor(I)I
     .locals 1
 
     .line 1025
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 1026
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
@@ -2777,9 +2752,9 @@
 
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v1, "dialogFloatingButton"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogFloatingButton:I
 
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(I)I
 
     move-result v1
 
@@ -2827,9 +2802,9 @@
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "dialogFloatingButton"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogFloatingButton:I
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(I)I
 
     move-result v2
 
@@ -2875,9 +2850,9 @@
 
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v1, "dialogFloatingButton"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogFloatingButton:I
 
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(I)I
 
     move-result v1
 
@@ -3089,11 +3064,9 @@
 
     const/4 v1, -0x1
 
-    const-string v2, "dialogFloatingButton"
+    const/4 v2, 0x0
 
     const/4 v3, 0x0
-
-    const/4 v4, 0x0
 
     if-nez v0, :cond_0
 
@@ -3108,9 +3081,9 @@
 
     move-result-object v0
 
-    sget v5, Lorg/telegram/messenger/R$drawable;->msg_blur_off:I
+    sget v4, Lorg/telegram/messenger/R$drawable;->msg_blur_off:I
 
-    invoke-virtual {v0, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -3119,27 +3092,29 @@
     move-result-object v0
 
     .line 628
-    new-instance v5, Landroid/graphics/PorterDuffColorFilter;
+    new-instance v4, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(Ljava/lang/String;)I
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_dialogFloatingButton:I
+
+    invoke-direct {p0, v5}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(I)I
 
     move-result v6
 
     sget-object v7, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-direct {v5, v6, v7}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    invoke-direct {v4, v6, v7}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
-    invoke-virtual {v0, v5}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
+    invoke-virtual {v0, v4}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     .line 629
-    iget-object v5, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurOffButton:Landroid/widget/TextView;
+    iget-object v4, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurOffButton:Landroid/widget/TextView;
 
-    invoke-virtual {v5, v3, v0, v3, v3}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v4, v2, v0, v2, v2}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     .line 630
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurOffButton:Landroid/widget/TextView;
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v5}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(I)I
 
     move-result v2
 
@@ -3150,7 +3125,7 @@
 
     sget v2, Lorg/telegram/messenger/R$drawable;->msg_blur_radial:I
 
-    invoke-virtual {v0, v4, v2, v4, v4}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
+    invoke-virtual {v0, v3, v2, v3, v3}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
 
     .line 633
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurRadialButton:Landroid/widget/TextView;
@@ -3162,7 +3137,7 @@
 
     sget v2, Lorg/telegram/messenger/R$drawable;->msg_blur_linear:I
 
-    invoke-virtual {v0, v4, v2, v4, v4}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
+    invoke-virtual {v0, v3, v2, v3, v3}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
 
     .line 636
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurLinearButton:Landroid/widget/TextView;
@@ -3172,16 +3147,16 @@
     goto/16 :goto_0
 
     :cond_0
-    const/4 v5, 0x1
+    const/4 v4, 0x1
 
-    if-ne v0, v5, :cond_1
+    if-ne v0, v4, :cond_1
 
     .line 638
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurOffButton:Landroid/widget/TextView;
 
-    sget v5, Lorg/telegram/messenger/R$drawable;->msg_blur_off:I
+    sget v4, Lorg/telegram/messenger/R$drawable;->msg_blur_off:I
 
-    invoke-virtual {v0, v4, v5, v4, v4}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
+    invoke-virtual {v0, v3, v4, v3, v3}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
 
     .line 639
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurOffButton:Landroid/widget/TextView;
@@ -3199,9 +3174,9 @@
 
     move-result-object v0
 
-    sget v5, Lorg/telegram/messenger/R$drawable;->msg_blur_radial:I
+    sget v4, Lorg/telegram/messenger/R$drawable;->msg_blur_radial:I
 
-    invoke-virtual {v0, v5}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v0, v4}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -3210,27 +3185,29 @@
     move-result-object v0
 
     .line 642
-    new-instance v5, Landroid/graphics/PorterDuffColorFilter;
+    new-instance v4, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(Ljava/lang/String;)I
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_dialogFloatingButton:I
+
+    invoke-direct {p0, v5}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(I)I
 
     move-result v6
 
     sget-object v7, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-direct {v5, v6, v7}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    invoke-direct {v4, v6, v7}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
-    invoke-virtual {v0, v5}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
+    invoke-virtual {v0, v4}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     .line 643
-    iget-object v5, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurRadialButton:Landroid/widget/TextView;
+    iget-object v4, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurRadialButton:Landroid/widget/TextView;
 
-    invoke-virtual {v5, v3, v0, v3, v3}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v4, v2, v0, v2, v2}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     .line 644
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurRadialButton:Landroid/widget/TextView;
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v5}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(I)I
 
     move-result v2
 
@@ -3241,7 +3218,7 @@
 
     sget v2, Lorg/telegram/messenger/R$drawable;->msg_blur_linear:I
 
-    invoke-virtual {v0, v4, v2, v4, v4}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
+    invoke-virtual {v0, v3, v2, v3, v3}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
 
     .line 647
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurLinearButton:Landroid/widget/TextView;
@@ -3251,16 +3228,16 @@
     goto :goto_0
 
     :cond_1
-    const/4 v5, 0x2
+    const/4 v4, 0x2
 
-    if-ne v0, v5, :cond_2
+    if-ne v0, v4, :cond_2
 
     .line 649
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurOffButton:Landroid/widget/TextView;
 
-    sget v5, Lorg/telegram/messenger/R$drawable;->msg_blur_off:I
+    sget v4, Lorg/telegram/messenger/R$drawable;->msg_blur_off:I
 
-    invoke-virtual {v0, v4, v5, v4, v4}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
+    invoke-virtual {v0, v3, v4, v3, v3}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
 
     .line 650
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurOffButton:Landroid/widget/TextView;
@@ -3270,9 +3247,9 @@
     .line 652
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurRadialButton:Landroid/widget/TextView;
 
-    sget v5, Lorg/telegram/messenger/R$drawable;->msg_blur_radial:I
+    sget v4, Lorg/telegram/messenger/R$drawable;->msg_blur_radial:I
 
-    invoke-virtual {v0, v4, v5, v4, v4}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
+    invoke-virtual {v0, v3, v4, v3, v3}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(IIII)V
 
     .line 653
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurRadialButton:Landroid/widget/TextView;
@@ -3303,7 +3280,9 @@
     .line 656
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogFloatingButton:I
+
+    invoke-direct {p0, v3}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(I)I
 
     move-result v4
 
@@ -3316,12 +3295,12 @@
     .line 657
     iget-object v1, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurLinearButton:Landroid/widget/TextView;
 
-    invoke-virtual {v1, v3, v0, v3, v3}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v1, v2, v0, v2, v2}, Landroid/widget/TextView;->setCompoundDrawablesWithIntrinsicBounds(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
     .line 658
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurLinearButton:Landroid/widget/TextView;
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v3}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(I)I
 
     move-result v1
 
@@ -4583,21 +4562,21 @@
 .end method
 
 .method public updateColors()V
-    .locals 5
+    .locals 4
 
     .line 610
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->doneTextView:Landroid/widget/TextView;
 
-    const-string v1, "dialogFloatingButton"
-
     if-eqz v0, :cond_0
 
     .line 611
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogFloatingButton:I
 
-    move-result v2
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(I)I
 
-    invoke-virtual {v0, v2}, Landroid/widget/TextView;->setTextColor(I)V
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 613
     :cond_0
@@ -4614,17 +4593,19 @@
     .line 614
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->tuneItem:Landroid/widget/ImageView;
 
-    new-instance v2, Landroid/graphics/PorterDuffColorFilter;
+    new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogFloatingButton:I
 
-    move-result v3
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(I)I
 
-    sget-object v4, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
+    move-result v2
 
-    invoke-direct {v2, v3, v4}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    sget-object v3, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
+    invoke-direct {v1, v2, v3}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     .line 616
     :cond_1
@@ -4641,17 +4622,19 @@
     .line 617
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->blurItem:Landroid/widget/ImageView;
 
-    new-instance v2, Landroid/graphics/PorterDuffColorFilter;
+    new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogFloatingButton:I
 
-    move-result v3
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(I)I
 
-    sget-object v4, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
+    move-result v2
 
-    invoke-direct {v2, v3, v4}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    sget-object v3, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
+    invoke-direct {v1, v2, v3}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     .line 619
     :cond_2
@@ -4668,17 +4651,19 @@
     .line 620
     iget-object v0, p0, Lorg/telegram/ui/Components/PhotoFilterView;->curveItem:Landroid/widget/ImageView;
 
-    new-instance v2, Landroid/graphics/PorterDuffColorFilter;
+    new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogFloatingButton:I
 
-    move-result v1
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/PhotoFilterView;->getThemedColor(I)I
+
+    move-result v2
 
     sget-object v3, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-direct {v2, v1, v3}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    invoke-direct {v1, v2, v3}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
-    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     .line 622
     :cond_3

@@ -8,7 +8,7 @@ import org.koin.p043mp.KoinPlatformTools;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CatalogRootFragment.kt */
 /* renamed from: com.iMe.ui.catalog.CatalogRootFragment$presenter$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class CatalogRootFragment$presenter$2 extends Lambda implements Function0<CatalogRootPresenter> {
     final /* synthetic */ CatalogRootFragment this$0;
 

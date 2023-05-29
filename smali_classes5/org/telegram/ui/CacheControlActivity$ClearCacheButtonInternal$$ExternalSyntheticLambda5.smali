@@ -2,48 +2,50 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/Utilities$Callback2;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
-.field public final synthetic f$0:[F
+.field public final synthetic f$0:[Z
 
-.field public final synthetic f$1:[Z
+.field public final synthetic f$1:Lorg/telegram/ui/CacheControlActivity$ClearingCacheView;
 
-.field public final synthetic f$2:Ljava/lang/Runnable;
+.field public final synthetic f$2:[J
+
+.field public final synthetic f$3:Lorg/telegram/ui/ActionBar/BottomSheet;
 
 
 # direct methods
-.method public synthetic constructor <init>([F[ZLjava/lang/Runnable;)V
+.method public synthetic constructor <init>([ZLorg/telegram/ui/CacheControlActivity$ClearingCacheView;[JLorg/telegram/ui/ActionBar/BottomSheet;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal$$ExternalSyntheticLambda5;->f$0:[F
+    iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal$$ExternalSyntheticLambda5;->f$0:[Z
 
-    iput-object p2, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal$$ExternalSyntheticLambda5;->f$1:[Z
+    iput-object p2, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal$$ExternalSyntheticLambda5;->f$1:Lorg/telegram/ui/CacheControlActivity$ClearingCacheView;
 
-    iput-object p3, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal$$ExternalSyntheticLambda5;->f$2:Ljava/lang/Runnable;
+    iput-object p3, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal$$ExternalSyntheticLambda5;->f$2:[J
+
+    iput-object p4, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal$$ExternalSyntheticLambda5;->f$3:Lorg/telegram/ui/ActionBar/BottomSheet;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Ljava/lang/Object;Ljava/lang/Object;)V
-    .locals 3
+.method public final run()V
+    .locals 4
 
-    iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal$$ExternalSyntheticLambda5;->f$0:[F
+    iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal$$ExternalSyntheticLambda5;->f$0:[Z
 
-    iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal$$ExternalSyntheticLambda5;->f$1:[Z
+    iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal$$ExternalSyntheticLambda5;->f$1:Lorg/telegram/ui/CacheControlActivity$ClearingCacheView;
 
-    iget-object v2, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal$$ExternalSyntheticLambda5;->f$2:Ljava/lang/Runnable;
+    iget-object v2, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal$$ExternalSyntheticLambda5;->f$2:[J
 
-    check-cast p1, Ljava/lang/Float;
+    iget-object v3, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal$$ExternalSyntheticLambda5;->f$3:Lorg/telegram/ui/ActionBar/BottomSheet;
 
-    check-cast p2, Ljava/lang/Boolean;
-
-    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;->$r8$lambda$4pIYF-3H9PhBIDDxMkuFYx62tck([F[ZLjava/lang/Runnable;Ljava/lang/Float;Ljava/lang/Boolean;)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/CacheControlActivity$ClearCacheButtonInternal;->$r8$lambda$_v275GJaYb9BC0FNmj5-zNw47LE([ZLorg/telegram/ui/CacheControlActivity$ClearingCacheView;[JLorg/telegram/ui/ActionBar/BottomSheet;)V
 
     return-void
 .end method

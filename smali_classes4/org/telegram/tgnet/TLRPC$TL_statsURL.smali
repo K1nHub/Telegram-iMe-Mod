@@ -21,7 +21,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 2268
+    .line 2688
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -30,7 +30,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_statsURL;
     .locals 1
 
-    .line 2274
+    .line 2694
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_statsURL;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -41,7 +41,7 @@
 
     return-object p0
 
-    .line 2276
+    .line 2696
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -67,13 +67,13 @@
 
     throw p0
 
-    .line 2281
+    .line 2701
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_statsURL;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_statsURL;-><init>()V
 
-    .line 2282
+    .line 2702
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_statsURL;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -84,7 +84,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 0
 
-    .line 2287
+    .line 2707
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object p1
@@ -97,12 +97,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 2291
+    .line 2711
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_statsURL;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2292
+    .line 2712
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_statsURL;->url:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V

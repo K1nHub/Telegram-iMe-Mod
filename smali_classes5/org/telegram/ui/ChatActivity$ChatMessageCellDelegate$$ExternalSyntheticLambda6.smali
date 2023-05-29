@@ -2,34 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/Utilities$Callback;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;
 
+.field public final synthetic f$1:Lorg/telegram/messenger/MessageObject;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;Lorg/telegram/messenger/MessageObject;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda6;->f$0:Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;
 
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda6;->f$1:Lorg/telegram/messenger/MessageObject;
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Ljava/lang/Object;)V
-    .locals 1
+.method public final run()V
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda6;->f$0:Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$InputStickerSet;
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate$$ExternalSyntheticLambda6;->f$1:Lorg/telegram/messenger/MessageObject;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;->$r8$lambda$epdOR20q98RUZ8_nOfeLHuOIq6s(Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;Lorg/telegram/tgnet/TLRPC$InputStickerSet;)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;->$r8$lambda$mE8sRH4ja0xZQ12nxCjIC2slax4(Lorg/telegram/ui/ChatActivity$ChatMessageCellDelegate;Lorg/telegram/messenger/MessageObject;)V
 
     return-void
 .end method

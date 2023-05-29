@@ -26,17 +26,17 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 12
 
-    .line 469
+    .line 489
     invoke-direct {p0, p1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v0, 0x0
 
-    .line 470
+    .line 490
     invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/16 v1, 0x10
 
-    .line 471
+    .line 491
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -47,49 +47,58 @@
 
     invoke-virtual {p0, v2, v0, v3, v0}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 473
-    new-instance v0, Landroid/widget/TextView;
+    .line 493
+    new-instance v0, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandView$1;
 
-    invoke-direct {v0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandView$1;-><init>(Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandView;Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandView;->description:Landroid/widget/TextView;
+
+    .line 500
+    invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->listenEmojiLoading(Landroid/view/View;)V
+
+    .line 501
+    iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandView;->description:Landroid/widget/TextView;
 
     const/4 v2, 0x1
 
     const/high16 v3, 0x41800000    # 16.0f
 
-    .line 474
     invoke-virtual {v0, v2, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 475
+    .line 502
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandView;->description:Landroid/widget/TextView;
 
-    const-string v3, "windowBackgroundWhiteBlackText"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
     invoke-virtual {v0, v4}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 476
+    .line 503
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandView;->description:Landroid/widget/TextView;
+
+    invoke-static {v3}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 477
+    .line 504
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandView;->description:Landroid/widget/TextView;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 478
+    .line 505
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandView;->description:Landroid/widget/TextView;
 
     sget-object v3, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 479
+    .line 506
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandView;->description:Landroid/widget/TextView;
 
     const/16 v3, 0x8
@@ -118,7 +127,7 @@
 
     invoke-virtual {p0, v0, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 481
+    .line 508
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -127,26 +136,30 @@
 
     const/high16 p1, 0x41600000    # 14.0f
 
-    .line 482
+    .line 509
     invoke-virtual {v0, v2, p1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 483
+    .line 510
     iget-object p1, p0, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandView;->command:Landroid/widget/TextView;
 
-    const-string v0, "windowBackgroundWhiteGrayText"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
     invoke-virtual {p1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 484
+    .line 511
     iget-object p1, p0, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandView;->command:Landroid/widget/TextView;
+
+    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v0
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
-    .line 485
+    .line 512
     iget-object p1, p0, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandView;->command:Landroid/widget/TextView;
 
     const/4 v0, -0x2
@@ -167,7 +180,7 @@
 .method public getCommand()Ljava/lang/String;
     .locals 1
 
-    .line 494
+    .line 521
     iget-object v0, p0, Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandView;->commandStr:Ljava/lang/String;
 
     return-object v0
@@ -178,7 +191,7 @@
 
     const/16 p2, 0x24
 
-    .line 490
+    .line 517
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2

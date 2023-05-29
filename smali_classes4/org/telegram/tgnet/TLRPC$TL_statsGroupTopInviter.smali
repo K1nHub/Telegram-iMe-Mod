@@ -23,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 7233
+    .line 7656
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopInviter;
     .locals 1
 
-    .line 7240
+    .line 7663
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopInviter;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -43,7 +43,7 @@
 
     return-object p0
 
-    .line 7242
+    .line 7665
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -69,13 +69,13 @@
 
     throw p0
 
-    .line 7247
+    .line 7670
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopInviter;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopInviter;-><init>()V
 
-    .line 7248
+    .line 7671
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopInviter;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -86,14 +86,14 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 2
 
-    .line 7253
+    .line 7676
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopInviter;->user_id:J
 
-    .line 7254
+    .line 7677
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -106,17 +106,17 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 7258
+    .line 7681
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopInviter;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 7259
+    .line 7682
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopInviter;->user_id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 7260
+    .line 7683
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_statsGroupTopInviter;->invitations:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V

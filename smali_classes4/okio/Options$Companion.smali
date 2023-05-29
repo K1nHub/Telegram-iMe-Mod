@@ -1127,7 +1127,7 @@
     .line 48
     new-instance v0, Ljava/lang/IllegalArgumentException;
 
-    const-string v2, "the empty byte string is not a supported option"
+    const-string/jumbo v2, "the empty byte string is not a supported option"
 
     invoke-virtual {v2}, Ljava/lang/Object;->toString()Ljava/lang/String;
 
@@ -1136,6 +1136,8 @@
     invoke-direct {v0, v2}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 
     throw v0
+
+    nop
 
     :array_0
     .array-data 4

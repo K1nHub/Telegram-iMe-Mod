@@ -1,4 +1,4 @@
-.class final Landroidx/transition/Transition$1;
+.class Landroidx/transition/Transition$1;
 .super Landroidx/transition/PathMotion;
 .source "Transition.java"
 
@@ -9,7 +9,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
-    accessFlags = 0x8
+    accessFlags = 0x0
     name = null
 .end annotation
 

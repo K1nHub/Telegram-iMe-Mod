@@ -42,7 +42,7 @@
 
     move-result-object p0
 
-    const-string p1, "this as java.lang.String).substring(startIndex)"
+    const-string/jumbo p1, "this as java.lang.String).substring(startIndex)"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -272,7 +272,7 @@
 
     move-result-object p0
 
-    const-string p1, "this as java.lang.String\u2026ing(startIndex, endIndex)"
+    const-string/jumbo p1, "this as java.lang.String\u2026ing(startIndex, endIndex)"
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

@@ -2,40 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
+.implements Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/ThemePreviewActivity$$ExternalSyntheticLambda24;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/ThemePreviewActivity;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/ThemePreviewActivity$$ExternalSyntheticLambda24;
-
-    invoke-direct {v0}, Lorg/telegram/ui/ThemePreviewActivity$$ExternalSyntheticLambda24;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/ThemePreviewActivity$$ExternalSyntheticLambda24;->INSTANCE:Lorg/telegram/ui/ThemePreviewActivity$$ExternalSyntheticLambda24;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$$ExternalSyntheticLambda24;->f$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onItemClick(Landroid/view/View;I)V
+.method public final didSetColor()V
+    .locals 1
+
+    iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$$ExternalSyntheticLambda24;->f$0:Lorg/telegram/ui/ThemePreviewActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->$r8$lambda$vNhS5PtI-1W6jV7UpxHKjAahhEA(Lorg/telegram/ui/ThemePreviewActivity;)V
+
+    return-void
+.end method
+
+.method public synthetic onAnimationProgress(F)V
     .locals 0
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/ThemePreviewActivity;->$r8$lambda$NB93XeUo1-bjdI0j3PI-RhsfBuw(Landroid/view/View;I)V
+    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate$-CC;->$default$onAnimationProgress(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;F)V
 
     return-void
 .end method

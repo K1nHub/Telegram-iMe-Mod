@@ -70,16 +70,16 @@ public final class BotsPreviewAdapter extends RecyclerListView.ViewBindingSelect
             r4 = 0
             r5 = 12
             r6 = 0
-            com.iMe.p031ui.smartpanel.extension.ImageViewExtKt.loadFrom$default(r0, r1, r2, r3, r4, r5, r6)
+            com.iMe.utils.extentions.common.ImageViewExtKt.loadFrom$default(r0, r1, r2, r3, r4, r5, r6)
             android.widget.TextView r0 = r8.botName
             java.lang.String r1 = r9.getTitle()
             r0.setText(r1)
             android.widget.TextView r0 = r8.botName
-            java.lang.String r1 = "windowBackgroundWhiteBlackText"
+            int r1 = org.telegram.p044ui.ActionBar.Theme.key_windowBackgroundWhiteBlackText
             int r1 = org.telegram.p044ui.ActionBar.Theme.getColor(r1)
             r0.setTextColor(r1)
             android.widget.ImageView r0 = r8.botInstalledIcon
-            java.lang.String r1 = "chats_actionBackground"
+            int r1 = org.telegram.p044ui.ActionBar.Theme.key_chats_actionBackground
             int r1 = org.telegram.p044ui.ActionBar.Theme.getColor(r1)
             android.graphics.PorterDuff$Mode r2 = android.graphics.PorterDuff.Mode.SRC_IN
             r0.setColorFilter(r1, r2)

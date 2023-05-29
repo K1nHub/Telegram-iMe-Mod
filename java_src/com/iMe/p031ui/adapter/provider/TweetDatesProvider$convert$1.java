@@ -10,10 +10,11 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 import org.telegram.p044ui.ActionBar.Theme;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: TweetDatesProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.TweetDatesProvider$convert$1 */
-/* loaded from: classes3.dex */
-final class TweetDatesProvider$convert$1 extends Lambda implements Function1<TextView, Unit> {
+/* loaded from: classes.dex */
+public final class TweetDatesProvider$convert$1 extends Lambda implements Function1<TextView, Unit> {
     public static final TweetDatesProvider$convert$1 INSTANCE = new TweetDatesProvider$convert$1();
 
     TweetDatesProvider$convert$1() {
@@ -31,7 +32,7 @@ final class TweetDatesProvider$convert$1 extends Lambda implements Function1<Tex
         Intrinsics.checkNotNullParameter(applyForView, "$this$applyForView");
         if (ViewCompat.isLaidOut(applyForView) && !applyForView.isLayoutRequested()) {
             MaterialShapeDrawable materialShapeDrawable = new MaterialShapeDrawable();
-            materialShapeDrawable.setFillColor(ColorStateList.valueOf(Theme.getColor("chat_serviceBackground")));
+            materialShapeDrawable.setFillColor(ColorStateList.valueOf(Theme.getColor(Theme.key_chat_serviceBackground)));
             materialShapeDrawable.setCornerSize(applyForView.getHeight() / 2.0f);
             applyForView.setBackground(materialShapeDrawable);
             return;
@@ -43,7 +44,7 @@ final class TweetDatesProvider$convert$1 extends Lambda implements Function1<Tex
                 view.removeOnLayoutChangeListener(this);
                 TextView textView = applyForView;
                 MaterialShapeDrawable materialShapeDrawable2 = new MaterialShapeDrawable();
-                materialShapeDrawable2.setFillColor(ColorStateList.valueOf(Theme.getColor("chat_serviceBackground")));
+                materialShapeDrawable2.setFillColor(ColorStateList.valueOf(Theme.getColor(Theme.key_chat_serviceBackground)));
                 materialShapeDrawable2.setCornerSize(view.getHeight() / 2.0f);
                 textView.setBackground(materialShapeDrawable2);
             }

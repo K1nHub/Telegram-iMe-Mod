@@ -69,7 +69,7 @@ public final class GridBotsPageView extends FrameLayout {
         botsCategoriesAdapter.setHasStableIds(true);
         this.recyclerAdapter = botsCategoriesAdapter;
         this.recycler.setClipToPadding(false);
-        this.recycler.setPadding(0, AndroidUtilities.m51dp(14.0f), 0, 0);
+        this.recycler.setPadding(0, AndroidUtilities.m55dp(14.0f), 0, 0);
         this.recycler.setVerticalScrollBarEnabled(true);
         this.recycler.setItemAnimator(null);
         this.recycler.setInstantClick(true);
@@ -122,7 +122,7 @@ public final class GridBotsPageView extends FrameLayout {
                 subscribeToContent$lambda$1 = GridBotsPageView.subscribeToContent$lambda$1(GridBotsPageView.this, (List) obj, (List) obj2);
                 return subscribeToContent$lambda$1;
             }
-        }).subscribeOn(Schedulers.m674io()).observeOn(AndroidSchedulers.mainThread());
+        }).subscribeOn(Schedulers.m679io()).observeOn(AndroidSchedulers.mainThread());
         final GridBotsPageView$subscribeToContent$2 gridBotsPageView$subscribeToContent$2 = new GridBotsPageView$subscribeToContent$2(this);
         Observable doOnSubscribe = observeOn.doOnSubscribe(new Consumer() { // from class: com.iMe.ui.shop.view.GridBotsPageView$$ExternalSyntheticLambda3
             @Override // io.reactivex.functions.Consumer

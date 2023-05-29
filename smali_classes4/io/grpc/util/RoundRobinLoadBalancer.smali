@@ -54,7 +54,7 @@
 .method static constructor <clinit>()V
     .locals 2
 
-    const-string v0, "state-info"
+    const-string/jumbo v0, "state-info"
 
     .line 56
     invoke-static {v0}, Lio/grpc/Attributes$Key;->create(Ljava/lang/String;)Lio/grpc/Attributes$Key;
@@ -788,7 +788,7 @@
 
     move-result-object v1
 
-    const-string v3, "subchannel"
+    const-string/jumbo v3, "subchannel"
 
     .line 100
     invoke-static {v1, v3}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/PollEditTextCell;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 80
+    .line 72
     iput-object p1, p0, Lorg/telegram/ui/Cells/PollEditTextCell$1;->this$0:Lorg/telegram/ui/Cells/PollEditTextCell;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/EditTextCaption;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
@@ -35,12 +35,12 @@
 .method public onCreateInputConnection(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;
     .locals 3
 
-    .line 83
+    .line 75
     invoke-super {p0, p1}, Landroid/widget/EditText;->onCreateInputConnection(Landroid/view/inputmethod/EditorInfo;)Landroid/view/inputmethod/InputConnection;
 
     move-result-object v0
 
-    .line 84
+    .line 76
     iget-object v1, p0, Lorg/telegram/ui/Cells/PollEditTextCell$1;->this$0:Lorg/telegram/ui/Cells/PollEditTextCell;
 
     invoke-static {v1}, Lorg/telegram/ui/Cells/PollEditTextCell;->access$000(Lorg/telegram/ui/Cells/PollEditTextCell;)Z
@@ -49,7 +49,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 85
+    .line 77
     iget v1, p1, Landroid/view/inputmethod/EditorInfo;->imeOptions:I
 
     const v2, -0x40000001    # -1.9999999f
@@ -65,10 +65,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 1
 
-    .line 92
+    .line 84
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/EditTextCaption;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 93
+    .line 85
     iget-object v0, p0, Lorg/telegram/ui/Cells/PollEditTextCell$1;->this$0:Lorg/telegram/ui/Cells/PollEditTextCell;
 
     invoke-virtual {v0, p0, p1}, Lorg/telegram/ui/Cells/PollEditTextCell;->onEditTextDraw(Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/graphics/Canvas;)V
@@ -79,7 +79,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 98
+    .line 90
     invoke-virtual {p0}, Landroid/widget/EditText;->isEnabled()Z
 
     move-result v0
@@ -90,7 +90,7 @@
 
     return p1
 
-    .line 101
+    .line 93
     :cond_0
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -100,12 +100,12 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 102
+    .line 94
     iget-object v0, p0, Lorg/telegram/ui/Cells/PollEditTextCell$1;->this$0:Lorg/telegram/ui/Cells/PollEditTextCell;
 
     invoke-virtual {v0, p0}, Lorg/telegram/ui/Cells/PollEditTextCell;->onFieldTouchUp(Lorg/telegram/ui/Components/EditTextBoldCursor;)V
 
-    .line 104
+    .line 96
     :cond_1
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/EditTextBoldCursor;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -117,12 +117,12 @@
 .method public startActionMode(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;
     .locals 1
 
-    .line 116
+    .line 108
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/EditTextCaption;->startActionMode(Landroid/view/ActionMode$Callback;)Landroid/view/ActionMode;
 
     move-result-object p1
 
-    .line 117
+    .line 109
     iget-object v0, p0, Lorg/telegram/ui/Cells/PollEditTextCell$1;->this$0:Lorg/telegram/ui/Cells/PollEditTextCell;
 
     invoke-virtual {v0, p0, p1}, Lorg/telegram/ui/Cells/PollEditTextCell;->onActionModeStart(Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/view/ActionMode;)V
@@ -133,12 +133,12 @@
 .method public startActionMode(Landroid/view/ActionMode$Callback;I)Landroid/view/ActionMode;
     .locals 0
 
-    .line 109
+    .line 101
     invoke-super {p0, p1, p2}, Lorg/telegram/ui/Components/EditTextCaption;->startActionMode(Landroid/view/ActionMode$Callback;I)Landroid/view/ActionMode;
 
     move-result-object p1
 
-    .line 110
+    .line 102
     iget-object p2, p0, Lorg/telegram/ui/Cells/PollEditTextCell$1;->this$0:Lorg/telegram/ui/Cells/PollEditTextCell;
 
     invoke-virtual {p2, p0, p1}, Lorg/telegram/ui/Cells/PollEditTextCell;->onActionModeStart(Lorg/telegram/ui/Components/EditTextBoldCursor;Landroid/view/ActionMode;)V

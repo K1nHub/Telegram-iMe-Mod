@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: CryptoAccountProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.CryptoAccountProvider$convert$3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class CryptoAccountProvider$convert$3 extends Lambda implements Function1<HorizontalActionButtonsView, Unit> {
     final /* synthetic */ CryptoAccountItem $item;
 

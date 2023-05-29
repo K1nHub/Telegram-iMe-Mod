@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/DialogsActivity$44;
-.super Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+.super Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
 .source "DialogsActivity.java"
 
 
@@ -17,150 +17,33 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/DialogsActivity;
 
-.field final synthetic val$popup:[Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
-
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;[Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;)V
-    .locals 7
+.method constructor <init>(Lorg/telegram/ui/DialogsActivity;Landroid/view/View;II)V
+    .locals 0
 
-    .line 7634
+    .line 7402
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$44;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    iput-object p8, p0, Lorg/telegram/ui/DialogsActivity$44;->val$popup:[Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
-
-    move-object v0, p0
-
-    move-object v1, p2
-
-    move-object v2, p3
-
-    move v3, p4
-
-    move-object v4, p5
-
-    move v5, p6
-
-    move-object v6, p7
-
-    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ZLjava/lang/Integer;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {p0, p2, p3, p4}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;-><init>(Landroid/view/View;II)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected onEmojiSelected(Landroid/view/View;Ljava/lang/Long;Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/Integer;)V
+.method public dismiss()V
     .locals 2
 
-    if-nez p2, :cond_0
+    .line 7405
+    invoke-super {p0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;->dismiss()V
 
-    .line 7639
-    new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusEmpty;
+    .line 7406
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$44;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusEmpty;-><init>()V
+    const/4 v1, 0x0
 
-    goto :goto_0
+    invoke-static {v0, v1}, Lorg/telegram/ui/DialogsActivity;->access$13102(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
 
-    :cond_0
-    if-eqz p4, :cond_1
-
-    .line 7641
-    new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;
-
-    invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;-><init>()V
-
-    .line 7642
-    invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide v0
-
-    iput-wide v0, p1, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;->document_id:J
-
-    .line 7643
-    invoke-virtual {p4}, Ljava/lang/Integer;->intValue()I
-
-    move-result p3
-
-    iput p3, p1, Lorg/telegram/tgnet/TLRPC$TL_emojiStatusUntil;->until:I
-
-    goto :goto_0
-
-    .line 7645
-    :cond_1
-    new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;
-
-    invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;-><init>()V
-
-    .line 7646
-    invoke-virtual {p2}, Ljava/lang/Long;->longValue()J
-
-    move-result-wide p3
-
-    iput-wide p3, p1, Lorg/telegram/tgnet/TLRPC$TL_emojiStatus;->document_id:J
-
-    .line 7648
-    :goto_0
-    iget-object p3, p0, Lorg/telegram/ui/DialogsActivity$44;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-virtual {p3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
-
-    move-result-object p3
-
-    invoke-virtual {p3, p1}, Lorg/telegram/messenger/MessagesController;->updateEmojiStatus(Lorg/telegram/tgnet/TLRPC$EmojiStatus;)V
-
-    if-eqz p2, :cond_2
-
-    .line 7649
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$44;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getForkCommonController()Lcom/iMe/fork/controller/ForkCommonController;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lcom/iMe/fork/controller/ForkCommonController;->isShowPremiumStatusEnabled()Z
-
-    move-result p1
-
-    if-eqz p1, :cond_2
-
-    .line 7650
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$44;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$35500(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;
-
-    move-result-object p1
-
-    invoke-static {p2}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->fromCustomEmoji(Ljava/lang/Long;)Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/DrawerProfileCell$AnimatedStatusView;->animateChange(Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;)V
-
-    .line 7652
-    :cond_2
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$44;->val$popup:[Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
-
-    const/4 p2, 0x0
-
-    aget-object p1, p1, p2
-
-    if-eqz p1, :cond_3
-
-    .line 7653
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$44;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    const/4 p3, 0x0
-
-    invoke-static {p1, p3}, Lorg/telegram/ui/DialogsActivity;->access$12602(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;)Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
-
-    .line 7654
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$44;->val$popup:[Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;
-
-    aget-object p1, p1, p2
-
-    invoke-virtual {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$SelectAnimatedEmojiDialogWindow;->dismiss()V
-
-    :cond_3
     return-void
 .end method

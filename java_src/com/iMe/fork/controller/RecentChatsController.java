@@ -131,6 +131,11 @@ public final class RecentChatsController extends BaseController implements KoinC
     }
 
     public final void restoreBackup(Backup backup) {
+        int collectionSizeOrDefault;
+        int collectionSizeOrDefault2;
+        int mapCapacity;
+        int coerceAtLeast;
+        Map<Long, HistoryDialogModel> mutableMap;
         Intrinsics.checkNotNullParameter(backup, "backup");
         if (backup.isRecentChatsEnabled() != null) {
             this.isRecentChatsEnabled = backup.isRecentChatsEnabled().booleanValue();
@@ -144,17 +149,35 @@ public final class RecentChatsController extends BaseController implements KoinC
         if (backup.getSelectedDrawStatusTypes() != null) {
             this.selectedDrawStatusTypes = DrawStatusType.Companion.mapNamesToEnums(backup.getSelectedDrawStatusTypes());
         }
+        if (backup.getPinnedRecentChats() != null) {
+            HistoryDialogDao dao = getDao();
+            long j = getUserConfig().clientUserId;
+            List<HistoryDialogModel> pinnedRecentChats = backup.getPinnedRecentChats();
+            collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(pinnedRecentChats, 10);
+            ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
+            for (HistoryDialogModel historyDialogModel : pinnedRecentChats) {
+                arrayList.add(RecentChatsMappingKt.mapToDb(historyDialogModel, getUserConfig().clientUserId));
+            }
+            dao.restoreBackup(j, arrayList);
+            List<HistoryDialogModel> pinnedRecentChats2 = backup.getPinnedRecentChats();
+            collectionSizeOrDefault2 = CollectionsKt__IterablesKt.collectionSizeOrDefault(pinnedRecentChats2, 10);
+            mapCapacity = MapsKt__MapsJVMKt.mapCapacity(collectionSizeOrDefault2);
+            coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
+            LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
+            for (HistoryDialogModel historyDialogModel2 : pinnedRecentChats2) {
+                Pair m85to = TuplesKt.m85to(Long.valueOf(historyDialogModel2.getDialogId()), historyDialogModel2);
+                linkedHashMap.put(m85to.getFirst(), m85to.getSecond());
+            }
+            mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
+            this.historyDialogs = mutableMap;
+        }
         saveConfig();
     }
 
     public final void updateCreationDate(long j, boolean z) {
         if (!z) {
             HistoryDialogModel historyDialogModel = this.historyDialogs.get(Long.valueOf(j));
-            boolean z2 = true;
-            if (historyDialogModel == null || !historyDialogModel.isPinned()) {
-                z2 = false;
-            }
-            if (z2) {
+            if (historyDialogModel != null && historyDialogModel.isPinned()) {
                 return;
             }
         }
@@ -162,27 +185,31 @@ public final class RecentChatsController extends BaseController implements KoinC
         if (historyDialogModel2 == null) {
             historyDialogModel2 = new HistoryDialogModel(j, 0L, false);
         }
+        if (this.historyDialogs.size() >= 25) {
+            if (!this.historyDialogs.containsKey(Long.valueOf(j))) {
+                List<HistoryDialogModel> unPinnedRecentChats = getUnPinnedRecentChats();
+                if (unPinnedRecentChats.isEmpty()) {
+                    return;
+                }
+                removeRecentChat(unPinnedRecentChats.get(unPinnedRecentChats.size() - 1).getDialogId());
+            }
+        }
         historyDialogModel2.setCreationDate(System.currentTimeMillis());
         this.historyDialogs.put(Long.valueOf(j), historyDialogModel2);
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: com.iMe.fork.controller.RecentChatsController$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
             public final void run() {
-                RecentChatsController.updateCreationDate$lambda$2(RecentChatsController.this, historyDialogModel2);
+                RecentChatsController.updateCreationDate$lambda$4(RecentChatsController.this, historyDialogModel2);
             }
         });
         getNotificationCenter().postNotificationName(NotificationCenter.recentChatsDidLoad, new Object[0]);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void updateCreationDate$lambda$2(RecentChatsController this$0, HistoryDialogModel newModel) {
+    public static final void updateCreationDate$lambda$4(RecentChatsController this$0, HistoryDialogModel newModel) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(newModel, "$newModel");
         this$0.getDao().insert((HistoryDialogDao) RecentChatsMappingKt.mapToDb(newModel, this$0.getUserConfig().clientUserId));
-    }
-
-    public final void toggleEnabled() {
-        this.isRecentChatsEnabled = !this.isRecentChatsEnabled;
-        saveConfig();
     }
 
     public final void updatePin(final long j) {
@@ -198,14 +225,14 @@ public final class RecentChatsController extends BaseController implements KoinC
         Utilities.stageQueue.postRunnable(new Runnable() { // from class: com.iMe.fork.controller.RecentChatsController$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
-                RecentChatsController.updatePin$lambda$3(RecentChatsController.this, j, isPinned);
+                RecentChatsController.updatePin$lambda$5(RecentChatsController.this, j, isPinned);
             }
         });
         updateCreationDate(j, true);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void updatePin$lambda$3(RecentChatsController this$0, long j, boolean z) {
+    public static final void updatePin$lambda$5(RecentChatsController this$0, long j, boolean z) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getDao().updatePinned(this$0.getUserConfig().clientUserId, j, !z);
     }
@@ -213,7 +240,6 @@ public final class RecentChatsController extends BaseController implements KoinC
     public final List<HistoryDialogModel> getRecentChatsFilter() {
         List list;
         List sortedWith;
-        List sortedWith2;
         List<HistoryDialogModel> plus;
         list = CollectionsKt___CollectionsKt.toList(getRecentChatsList());
         ArrayList arrayList = new ArrayList();
@@ -230,21 +256,7 @@ public final class RecentChatsController extends BaseController implements KoinC
                 return compareValues;
             }
         });
-        ArrayList arrayList2 = new ArrayList();
-        for (Object obj2 : list) {
-            if (!((HistoryDialogModel) obj2).isPinned()) {
-                arrayList2.add(obj2);
-            }
-        }
-        sortedWith2 = CollectionsKt___CollectionsKt.sortedWith(arrayList2, new Comparator() { // from class: com.iMe.fork.controller.RecentChatsController$getRecentChatsFilter$$inlined$sortedByDescending$2
-            @Override // java.util.Comparator
-            public final int compare(T t, T t2) {
-                int compareValues;
-                compareValues = ComparisonsKt__ComparisonsKt.compareValues(Long.valueOf(((HistoryDialogModel) t2).getCreationDate()), Long.valueOf(((HistoryDialogModel) t).getCreationDate()));
-                return compareValues;
-            }
-        });
-        plus = CollectionsKt___CollectionsKt.plus((Collection) sortedWith, (Iterable) sortedWith2);
+        plus = CollectionsKt___CollectionsKt.plus((Collection) sortedWith, (Iterable) getUnPinnedRecentChats());
         return plus;
     }
 
@@ -264,8 +276,8 @@ public final class RecentChatsController extends BaseController implements KoinC
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
         LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
         for (HistoryDialogDb historyDialogDb : historyDialog) {
-            Pair m80to = TuplesKt.m80to(Long.valueOf(historyDialogDb.getDialogId()), RecentChatsMappingKt.mapToDomain(historyDialogDb));
-            linkedHashMap.put(m80to.getFirst(), m80to.getSecond());
+            Pair m85to = TuplesKt.m85to(Long.valueOf(historyDialogDb.getDialogId()), RecentChatsMappingKt.mapToDomain(historyDialogDb));
+            linkedHashMap.put(m85to.getFirst(), m85to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         this.historyDialogs = mutableMap;
@@ -316,7 +328,7 @@ public final class RecentChatsController extends BaseController implements KoinC
 
             @Override // p034j$.util.function.Predicate
             /* renamed from: or */
-            public /* synthetic */ Predicate mo21or(Predicate predicate) {
+            public /* synthetic */ Predicate mo23or(Predicate predicate) {
                 return Objects.requireNonNull(predicate);
             }
 
@@ -362,6 +374,27 @@ public final class RecentChatsController extends BaseController implements KoinC
             arrayList.add(recentChatsDialogType.getTitle());
         }
         return arrayList;
+    }
+
+    private final List<HistoryDialogModel> getUnPinnedRecentChats() {
+        List list;
+        List<HistoryDialogModel> sortedWith;
+        list = CollectionsKt___CollectionsKt.toList(getRecentChatsList());
+        ArrayList arrayList = new ArrayList();
+        for (Object obj : list) {
+            if (!((HistoryDialogModel) obj).isPinned()) {
+                arrayList.add(obj);
+            }
+        }
+        sortedWith = CollectionsKt___CollectionsKt.sortedWith(arrayList, new Comparator() { // from class: com.iMe.fork.controller.RecentChatsController$getUnPinnedRecentChats$$inlined$sortedByDescending$1
+            @Override // java.util.Comparator
+            public final int compare(T t, T t2) {
+                int compareValues;
+                compareValues = ComparisonsKt__ComparisonsKt.compareValues(Long.valueOf(((HistoryDialogModel) t2).getCreationDate()), Long.valueOf(((HistoryDialogModel) t).getCreationDate()));
+                return compareValues;
+            }
+        });
+        return sortedWith;
     }
 
     /* compiled from: RecentChatsController.kt */

@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/PinchToZoomHelper$ClipBoundsListener;
+.implements Lorg/telegram/ui/GroupCreateActivity$ContactsAddActivityDelegate;
 
 
 # instance fields
@@ -22,12 +22,20 @@
 
 
 # virtual methods
-.method public final getClipTopBottom([F)V
+.method public final didSelectUsers(Ljava/util/ArrayList;I)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda331;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$bNgD4gTIj-3ueZNXVUCCg0jGrzc(Lorg/telegram/ui/ChatActivity;[F)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$Blb7FVriq9_IbUDO6PoMYrV3F7E(Lorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;I)V
+
+    return-void
+.end method
+
+.method public synthetic needAddBot(Lorg/telegram/tgnet/TLRPC$User;)V
+    .locals 0
+
+    invoke-static {p0, p1}, Lorg/telegram/ui/GroupCreateActivity$ContactsAddActivityDelegate$-CC;->$default$needAddBot(Lorg/telegram/ui/GroupCreateActivity$ContactsAddActivityDelegate;Lorg/telegram/tgnet/TLRPC$User;)V
 
     return-void
 .end method

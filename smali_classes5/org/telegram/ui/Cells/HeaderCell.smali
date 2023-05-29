@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private expandImageView:Landroid/widget/ImageView;
+.field private final expandImageView:Landroid/widget/ImageView;
 
 .field private height:I
 
@@ -19,7 +19,8 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 7
 
-    const-string v2, "windowBackgroundWhiteBlueHeader"
+    .line 104
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
 
     const/16 v3, 0x15
 
@@ -33,8 +34,7 @@
 
     move-object v1, p1
 
-    .line 104
-    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;Ljava/lang/String;IIZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;IIIZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
 .end method
@@ -42,7 +42,8 @@
 .method public constructor <init>(Landroid/content/Context;I)V
     .locals 7
 
-    const-string v2, "windowBackgroundWhiteBlueHeader"
+    .line 112
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
 
     const/16 v4, 0xf
 
@@ -56,41 +57,17 @@
 
     move v3, p2
 
-    .line 112
-    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;Ljava/lang/String;IIZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;IIIZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
-    .locals 7
-
-    const-string v2, "windowBackgroundWhiteBlueHeader"
-
-    const/16 v4, 0xf
-
-    const/4 v5, 0x0
-
-    move-object v0, p0
-
-    move-object v1, p1
-
-    move v3, p2
-
-    move-object v6, p3
-
-    .line 116
-    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;Ljava/lang/String;IIZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
-
-    return-void
-.end method
-
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;IIIZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+.method public constructor <init>(Landroid/content/Context;IIIIZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 13
 
     move-object v0, p0
 
-    move-object v1, p2
+    move v1, p2
 
     .line 128
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -120,11 +97,9 @@
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setImageResource(I)V
 
     .line 134
-    iget-object v2, v0, Lorg/telegram/ui/Cells/HeaderCell;->expandImageView:Landroid/widget/ImageView;
-
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Cells/HeaderCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Cells/HeaderCell;->getThemedColor(I)I
 
     move-result v4
 
@@ -134,15 +109,10 @@
 
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 135
-    iget-object v2, v0, Lorg/telegram/ui/Cells/HeaderCell;->expandImageView:Landroid/widget/ImageView;
-
     const/16 v3, 0x8
 
+    .line 135
     invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 136
-    iget-object v2, v0, Lorg/telegram/ui/Cells/HeaderCell;->expandImageView:Landroid/widget/ImageView;
 
     add-int/lit8 v6, p3, -0x4
 
@@ -158,6 +128,7 @@
 
     move/from16 v7, p4
 
+    .line 136
     invoke-static/range {v3 .. v9}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v3
@@ -175,87 +146,91 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Cells/HeaderCell;->textView:Landroid/widget/TextView;
 
-    const/4 v10, 0x1
+    const/4 v3, 0x1
 
-    const/high16 v3, 0x41700000    # 15.0f
+    const/high16 v4, 0x41700000    # 15.0f
 
     .line 139
-    invoke-virtual {v2, v10, v3}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-virtual {v2, v3, v4}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 140
     iget-object v2, v0, Lorg/telegram/ui/Cells/HeaderCell;->textView:Landroid/widget/TextView;
 
-    const-string v3, "fonts/rmedium.ttf"
+    const-string v4, "fonts/rmedium.ttf"
 
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
-    move-result-object v3
+    move-result-object v4
 
-    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 141
     iget-object v2, v0, Lorg/telegram/ui/Cells/HeaderCell;->textView:Landroid/widget/TextView;
 
-    sget-object v3, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
+    sget-object v4, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
-    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
+    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
     .line 142
     iget-object v2, v0, Lorg/telegram/ui/Cells/HeaderCell;->textView:Landroid/widget/TextView;
 
-    sget-boolean v3, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+    sget-boolean v4, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/4 v11, 0x5
 
     const/4 v12, 0x3
 
-    if-eqz v3, :cond_0
+    if-eqz v4, :cond_0
 
-    move v3, v11
+    move v4, v11
 
     goto :goto_0
 
     :cond_0
-    move v3, v12
+    move v4, v12
 
     :goto_0
-    or-int/lit8 v3, v3, 0x10
+    or-int/lit8 v4, v4, 0x10
 
-    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setGravity(I)V
+    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setGravity(I)V
 
     .line 143
     iget-object v2, v0, Lorg/telegram/ui/Cells/HeaderCell;->textView:Landroid/widget/TextView;
 
-    iget v3, v0, Lorg/telegram/ui/Cells/HeaderCell;->height:I
+    iget v4, v0, Lorg/telegram/ui/Cells/HeaderCell;->height:I
 
-    sub-int v3, v3, p4
+    sub-int v4, v4, p4
 
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v3
+    move-result v4
 
-    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setMinHeight(I)V
+    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setMinHeight(I)V
 
     .line 144
     iget-object v2, v0, Lorg/telegram/ui/Cells/HeaderCell;->textView:Landroid/widget/TextView;
 
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Cells/HeaderCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Cells/HeaderCell;->getThemedColor(I)I
 
-    move-result v3
+    move-result v4
 
-    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v2, v4}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 145
     iget-object v2, v0, Lorg/telegram/ui/Cells/HeaderCell;->textView:Landroid/widget/TextView;
 
-    invoke-virtual {v2, p2}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
+    invoke-static {p2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v1
+
+    invoke-virtual {v2, v1}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
     .line 146
     iget-object v1, v0, Lorg/telegram/ui/Cells/HeaderCell;->textView:Landroid/widget/TextView;
 
-    const/4 v3, -0x1
-
     const/4 v4, -0x1
+
+    const/4 v5, -0x1
 
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
@@ -269,27 +244,27 @@
     move v2, v12
 
     :goto_1
-    or-int/lit8 v5, v2, 0x30
+    or-int/lit8 v6, v2, 0x30
 
     if-eqz p6, :cond_2
 
     const/4 v2, 0x0
 
-    move v9, v2
+    move v10, v2
 
     goto :goto_2
 
     :cond_2
-    move/from16 v9, p5
+    move/from16 v10, p5
 
     :goto_2
-    move/from16 v6, p3
+    move/from16 v7, p3
 
-    move/from16 v7, p4
+    move/from16 v8, p4
 
-    move/from16 v8, p3
+    move/from16 v9, p3
 
-    invoke-static/range {v3 .. v9}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v4 .. v10}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v2
 
@@ -335,9 +310,9 @@
     .line 152
     iget-object v1, v0, Lorg/telegram/ui/Cells/HeaderCell;->textView2:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const/4 v3, -0x1
-
     const/4 v4, -0x1
+
+    const/4 v5, -0x1
 
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
@@ -346,17 +321,17 @@
     move v11, v12
 
     :cond_4
-    or-int/lit8 v5, v11, 0x30
+    or-int/lit8 v6, v11, 0x30
 
-    const/16 v7, 0x15
+    const/16 v8, 0x15
 
-    move/from16 v6, p3
+    move/from16 v7, p3
 
-    move/from16 v8, p3
+    move/from16 v9, p3
 
-    move/from16 v9, p5
+    move/from16 v10, p5
 
-    invoke-static/range {v3 .. v9}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static/range {v4 .. v10}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v2
 
@@ -364,12 +339,12 @@
 
     .line 155
     :cond_5
-    invoke-static {p0, v10}, Landroidx/core/view/ViewCompat;->setAccessibilityHeading(Landroid/view/View;Z)V
+    invoke-static {p0, v3}, Landroidx/core/view/ViewCompat;->setAccessibilityHeading(Landroid/view/View;Z)V
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;IIZ)V
+.method public constructor <init>(Landroid/content/Context;IIIZ)V
     .locals 7
 
     const/4 v6, 0x0
@@ -378,7 +353,7 @@
 
     move-object v1, p1
 
-    move-object v2, p2
+    move v2, p2
 
     move v3, p3
 
@@ -387,12 +362,12 @@
     move v5, p5
 
     .line 120
-    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;Ljava/lang/String;IIZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;IIIZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
 .end method
 
-.method public constructor <init>(Landroid/content/Context;Ljava/lang/String;IIZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+.method public constructor <init>(Landroid/content/Context;IIIZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 8
 
     const/4 v5, 0x0
@@ -401,7 +376,7 @@
 
     move-object v1, p1
 
-    move-object v2, p2
+    move v2, p2
 
     move v3, p3
 
@@ -412,7 +387,30 @@
     move-object v7, p6
 
     .line 124
-    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;Ljava/lang/String;IIIZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;IIIIZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+
+    return-void
+.end method
+
+.method public constructor <init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    .locals 7
+
+    .line 116
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
+
+    const/16 v4, 0xf
+
+    const/4 v5, 0x0
+
+    move-object v0, p0
+
+    move-object v1, p1
+
+    move v3, p2
+
+    move-object v6, p3
+
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;IIIZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
 .end method
@@ -420,7 +418,8 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 7
 
-    const-string v2, "windowBackgroundWhiteBlueHeader"
+    .line 108
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
 
     const/16 v3, 0x15
 
@@ -434,45 +433,21 @@
 
     move-object v6, p2
 
-    .line 108
-    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;Ljava/lang/String;IIZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct/range {v0 .. v6}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;IIIZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
+.method private getThemedColor(I)I
     .locals 1
 
     .line 232
     iget-object v0, p0, Lorg/telegram/ui/Cells/HeaderCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 233
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
@@ -885,7 +860,7 @@
     return-void
 .end method
 
-.method public setText2Color(Ljava/lang/String;)V
+.method public setText2Color(I)V
     .locals 1
 
     .line 50
@@ -897,7 +872,7 @@
 
     .line 53
     :cond_0
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 

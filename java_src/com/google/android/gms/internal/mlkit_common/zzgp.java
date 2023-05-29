@@ -231,6 +231,6 @@ final class zzgp extends zzek<Long> implements zzfy<Long>, zzhk {
     static {
         zzgp zzgpVar = new zzgp(new long[0], 0);
         zza = zzgpVar;
-        zzgpVar.mo760b_();
+        zzgpVar.mo764b_();
     }
 }

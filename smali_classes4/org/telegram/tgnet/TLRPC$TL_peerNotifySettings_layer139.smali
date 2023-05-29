@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 9207
+    .line 9630
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$TL_peerNotifySettings;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 1
 
-    .line 9211
+    .line 9634
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -39,14 +39,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 9213
+    .line 9636
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readBool(Z)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->show_previews:Z
 
-    .line 9215
+    .line 9638
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->flags:I
 
@@ -54,14 +54,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 9216
+    .line 9639
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readBool(Z)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->silent:Z
 
-    .line 9218
+    .line 9641
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->flags:I
 
@@ -69,14 +69,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 9219
+    .line 9642
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->mute_until:I
 
-    .line 9221
+    .line 9644
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->flags:I
 
@@ -84,7 +84,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 9222
+    .line 9645
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object p1
@@ -98,29 +98,29 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 9227
+    .line 9650
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_peerNotifySettings_layer139;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 9228
+    .line 9651
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->flags:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 9229
+    .line 9652
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 9230
+    .line 9653
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->show_previews:Z
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeBool(Z)V
 
-    .line 9232
+    .line 9655
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->flags:I
 
@@ -128,12 +128,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 9233
+    .line 9656
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->silent:Z
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeBool(Z)V
 
-    .line 9235
+    .line 9658
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->flags:I
 
@@ -141,12 +141,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 9236
+    .line 9659
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->mute_until:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 9238
+    .line 9661
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->flags:I
 
@@ -154,7 +154,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 9239
+    .line 9662
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->sound:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V

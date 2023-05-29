@@ -4,10 +4,9 @@ import com.otaliastudios.opengl.draw.GlDrawable;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: GlProgram.kt */
 /* loaded from: classes4.dex */
-public final class GlProgram$draw$1 extends Lambda implements Function0<Unit> {
+final class GlProgram$draw$1 extends Lambda implements Function0<Unit> {
     final /* synthetic */ GlDrawable $drawable;
     final /* synthetic */ float[] $modelViewProjectionMatrix;
     final /* synthetic */ GlProgram this$0;

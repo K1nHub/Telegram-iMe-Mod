@@ -27,7 +27,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 17
+    .line 18
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -36,7 +36,7 @@
 .method private final getHttpError(Lretrofit2/HttpException;)Lcom/iMe/storage/data/network/model/error/ErrorModel;
     .locals 4
 
-    .line 60
+    .line 62
     :try_start_0
     new-instance v0, Lcom/iMe/storage/data/network/model/error/ErrorModel;
 
@@ -79,10 +79,10 @@
     :catchall_0
     move-exception v0
 
-    .line 62
+    .line 64
     invoke-virtual {v0}, Ljava/lang/Throwable;->printStackTrace()V
 
-    .line 63
+    .line 65
     new-instance v1, Lcom/iMe/storage/data/network/model/error/ErrorModel;
 
     invoke-virtual {v0}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
@@ -104,7 +104,7 @@
 .method public bridge synthetic handleError(Ljava/lang/Object;)Lcom/iMe/storage/data/network/model/error/ErrorModel;
     .locals 0
 
-    .line 17
+    .line 18
     check-cast p1, Ljava/lang/Throwable;
 
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;->handleError(Ljava/lang/Throwable;)Lcom/iMe/storage/data/network/model/error/ErrorModel;
@@ -119,19 +119,19 @@
 
     const-string v0, "ErrorHandler"
 
-    .line 20
+    .line 22
     invoke-static {v0}, Ltimber/log/Timber;->tag(Ljava/lang/String;)Ltimber/log/Timber$Tree;
 
     move-result-object v0
 
     invoke-virtual {v0, p1}, Ltimber/log/Timber$Tree;->e(Ljava/lang/Throwable;)V
 
-    .line 25
+    .line 27
     instance-of v0, p1, Lretrofit2/HttpException;
 
     if-eqz v0, :cond_1
 
-    .line 27
+    .line 29
     move-object v0, p1
 
     check-cast v0, Lretrofit2/HttpException;
@@ -144,7 +144,7 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 28
+    .line 30
     new-instance v1, Lcom/iMe/storage/data/network/model/error/ErrorModel;
 
     invoke-virtual {v0}, Lretrofit2/HttpException;->message()Ljava/lang/String;
@@ -165,7 +165,7 @@
 
     goto :goto_2
 
-    .line 30
+    .line 32
     :cond_0
     invoke-direct {p0, v0}, Lcom/iMe/storage/data/network/handlers/impl/ApiErrorHandler;->getHttpError(Lretrofit2/HttpException;)Lcom/iMe/storage/data/network/model/error/ErrorModel;
 
@@ -173,7 +173,7 @@
 
     goto :goto_2
 
-    .line 35
+    .line 37
     :cond_1
     instance-of v0, p1, Ljava/net/SocketTimeoutException;
 
@@ -191,7 +191,7 @@
     :goto_0
     if-eqz v0, :cond_3
 
-    .line 36
+    .line 38
     new-instance v1, Lcom/iMe/storage/data/network/model/error/ErrorModel;
 
     invoke-virtual {p1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
@@ -204,7 +204,7 @@
 
     goto :goto_2
 
-    .line 39
+    .line 41
     :cond_3
     instance-of v0, p1, Lcom/google/firebase/FirebaseException;
 
@@ -212,7 +212,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 40
+    .line 42
     move-object v0, p1
 
     check-cast v0, Lcom/google/firebase/FirebaseException;
@@ -221,7 +221,7 @@
 
     move-result-object v3
 
-    .line 41
+    .line 43
     instance-of v4, v3, Ljava/net/SocketTimeoutException;
 
     if-eqz v4, :cond_4
@@ -246,7 +246,7 @@
 
     goto :goto_2
 
-    .line 42
+    .line 44
     :cond_5
     new-instance v1, Lcom/iMe/storage/data/network/model/error/ErrorModel;
 
@@ -256,7 +256,7 @@
 
     goto :goto_2
 
-    .line 45
+    .line 47
     :cond_6
     new-instance v1, Lcom/iMe/storage/data/network/model/error/ErrorModel;
 
@@ -274,7 +274,7 @@
     :goto_2
     if-nez v1, :cond_8
 
-    .line 48
+    .line 50
     new-instance v1, Lcom/iMe/storage/data/network/model/error/ErrorModel;
 
     const/4 v0, 0x0

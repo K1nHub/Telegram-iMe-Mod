@@ -100,10 +100,10 @@
     :cond_0
     if-ne v0, v1, :cond_1
 
-    const-string v0, "chat_messageTextOut"
-
     .line 61
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messageTextOut:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -111,11 +111,11 @@
 
     goto :goto_0
 
-    :cond_1
-    const-string v0, "chat_messageTextIn"
-
     .line 63
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    :cond_1
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messageTextIn:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

@@ -22,7 +22,7 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/ui/twitter/search/adapter/TwitterUsersRecycleAdapter;",
+        "Lcom/iMe/feature/twitter/search/adapter/TwitterUsersRecycleAdapter;",
         ">;"
     }
 .end annotation
@@ -61,7 +61,7 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/twitter/search/adapter/TwitterUsersRecycleAdapter;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/feature/twitter/search/adapter/TwitterUsersRecycleAdapter;
     .locals 3
 
     const-string v0, "$this$factory"
@@ -116,9 +116,9 @@
     .line 89
     check-cast p1, Lcom/iMe/ui/adapter/provider/TwitterInviteProvider;
 
-    new-instance v0, Lcom/iMe/ui/twitter/search/adapter/TwitterUsersRecycleAdapter;
+    new-instance v0, Lcom/iMe/feature/twitter/search/adapter/TwitterUsersRecycleAdapter;
 
-    invoke-direct {v0, p2, p1, v1}, Lcom/iMe/ui/twitter/search/adapter/TwitterUsersRecycleAdapter;-><init>(Lcom/iMe/ui/adapter/provider/GlobalStateProvider;Lcom/iMe/ui/adapter/provider/TwitterInviteProvider;Lcom/iMe/ui/adapter/provider/TwitterUserProvider;)V
+    invoke-direct {v0, p2, p1, v1}, Lcom/iMe/feature/twitter/search/adapter/TwitterUsersRecycleAdapter;-><init>(Lcom/iMe/ui/adapter/provider/GlobalStateProvider;Lcom/iMe/ui/adapter/provider/TwitterInviteProvider;Lcom/iMe/ui/adapter/provider/TwitterUserProvider;)V
 
     return-object v0
 .end method
@@ -131,7 +131,7 @@
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$13;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/twitter/search/adapter/TwitterUsersRecycleAdapter;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$13;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/feature/twitter/search/adapter/TwitterUsersRecycleAdapter;
 
     move-result-object p1
 

@@ -31,7 +31,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject;Lcom/iMe/fork/utils/Callbacks$Callback2;Z)V
     .locals 0
 
-    .line 1466
+    .line 1438
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$7;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/ChatActivity$7;->val$message:Lorg/telegram/messenger/MessageObject;
@@ -50,7 +50,7 @@
 .method public onError(Ljava/lang/Throwable;)V
     .locals 0
 
-    .line 1485
+    .line 1457
     invoke-virtual {p1}, Ljava/lang/Throwable;->printStackTrace()V
 
     return-void
@@ -67,12 +67,12 @@
         }
     .end annotation
 
-    .line 1469
+    .line 1441
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$7;->val$message:Lorg/telegram/messenger/MessageObject;
 
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$7;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$500(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/messenger/MessageObject;
+    invoke-static {v1}, Lorg/telegram/ui/ChatActivity;->access$600(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/messenger/MessageObject;
 
     move-result-object v1
 
@@ -84,25 +84,25 @@
 
     if-lez v0, :cond_0
 
-    .line 1470
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$7;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$7;->val$message:Lorg/telegram/messenger/MessageObject;
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$502(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject;)Lorg/telegram/messenger/MessageObject;
-
-    .line 1471
+    .line 1442
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$7;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v1, p0, Lorg/telegram/ui/ChatActivity$7;->val$message:Lorg/telegram/messenger/MessageObject;
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$602(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject;)Lorg/telegram/messenger/MessageObject;
 
-    .line 1474
+    .line 1443
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$7;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$7;->val$message:Lorg/telegram/messenger/MessageObject;
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$702(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject;)Lorg/telegram/messenger/MessageObject;
+
+    .line 1446
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$7;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$700(Lorg/telegram/ui/ChatActivity;)Ljava/util/List;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$800(Lorg/telegram/ui/ChatActivity;)Ljava/util/List;
 
     move-result-object v0
 
@@ -110,15 +110,15 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$7;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->access$702(Lorg/telegram/ui/ChatActivity;Ljava/util/List;)Ljava/util/List;
+    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->access$802(Lorg/telegram/ui/ChatActivity;Ljava/util/List;)Ljava/util/List;
 
-    .line 1476
+    .line 1448
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$7;->val$callback:Lcom/iMe/fork/utils/Callbacks$Callback2;
 
     if-eqz v0, :cond_2
 
-    .line 1477
+    .line 1449
     iget-boolean v1, p0, Lorg/telegram/ui/ChatActivity$7;->val$forcedPopup:Z
 
     invoke-static {v1}, Ljava/lang/Boolean;->valueOf(Z)Ljava/lang/Boolean;
@@ -129,22 +129,22 @@
 
     goto :goto_0
 
-    .line 1478
+    .line 1450
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$7;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$800(Lorg/telegram/ui/ChatActivity;)Z
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$900(Lorg/telegram/ui/ChatActivity;)Z
 
     move-result p1
 
     if-eqz p1, :cond_3
 
-    .line 1479
+    .line 1451
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$7;->this$0:Lorg/telegram/ui/ChatActivity;
 
     iget-object v0, p1, Lorg/telegram/ui/ChatActivity;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$700(Lorg/telegram/ui/ChatActivity;)Ljava/util/List;
+    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$800(Lorg/telegram/ui/ChatActivity;)Ljava/util/List;
 
     move-result-object p1
 
@@ -152,7 +152,7 @@
 
     iget-boolean v2, p0, Lorg/telegram/ui/ChatActivity$7;->val$forcedPopup:Z
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/ChatActivity;->access$900(Lorg/telegram/ui/ChatActivity;Z)Z
+    invoke-static {v1, v2}, Lorg/telegram/ui/ChatActivity;->access$1000(Lorg/telegram/ui/ChatActivity;Z)Z
 
     move-result v1
 

@@ -48,7 +48,7 @@
 .method public final invoke()Landroid/widget/FrameLayout;
     .locals 1
 
-    .line 39
+    .line 41
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$rootView$2;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;->access$initRootView(Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;)Landroid/widget/FrameLayout;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 39
+    .line 41
     invoke-virtual {p0}, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$rootView$2;->invoke()Landroid/widget/FrameLayout;
 
     move-result-object v0

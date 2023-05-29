@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroidx/dynamicanimation/animation/DynamicAnimation$OnAnimationEndListener;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final onAnimationEnd(Landroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
+.method public final run()V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$36$$ExternalSyntheticLambda0;->f$0:Lorg/telegram/ui/PhotoViewer$36;
 
-    invoke-static {v0, p1, p2, p3, p4}, Lorg/telegram/ui/PhotoViewer$36;->$r8$lambda$YRMkestz4J1ftxTRSdcsQo7qhjU(Lorg/telegram/ui/PhotoViewer$36;Landroidx/dynamicanimation/animation/DynamicAnimation;ZFF)V
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer$36;->$r8$lambda$QxR3BFND8CEGqURanS-SRZ2TEg4(Lorg/telegram/ui/PhotoViewer$36;)V
 
     return-void
 .end method

@@ -6,20 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ActionIntroActivity;
-
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
+.field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ActionIntroActivity;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda37;->f$0:Lorg/telegram/ui/ActionIntroActivity;
-
-    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda37;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
+    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda37;->f$0:Lorg/telegram/ui/LaunchActivity;
 
     return-void
 .end method
@@ -27,13 +23,11 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda37;->f$0:Lorg/telegram/ui/ActionIntroActivity;
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda37;->f$0:Lorg/telegram/ui/LaunchActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda37;->f$1:Lorg/telegram/tgnet/TLRPC$TL_error;
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$mnc99B4CH6bhUGYJv1GayzPe2qI(Lorg/telegram/ui/ActionIntroActivity;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$OayCm1sT9fDlIwdI2hT__Z2nFDk(Lorg/telegram/ui/LaunchActivity;)V
 
     return-void
 .end method

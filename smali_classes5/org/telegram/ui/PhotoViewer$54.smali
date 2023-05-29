@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/PhotoViewer$54;
-.super Lorg/telegram/ui/Components/VideoPlayer;
+.super Landroid/animation/AnimatorListenerAdapter;
 .source "PhotoViewer.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/PhotoViewer;->preparePlayer(Landroid/net/Uri;ZZLorg/telegram/messenger/MediaController$SavedFilterState;)V
+    value = Lorg/telegram/ui/PhotoViewer;->setVideoPlayerControlVisible(ZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,82 +17,43 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/PhotoViewer;
 
+.field final synthetic val$visible:Z
+
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/PhotoViewer;)V
+.method constructor <init>(Lorg/telegram/ui/PhotoViewer;Z)V
     .locals 0
 
-    .line 8759
+    .line 9781
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$54;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-direct {p0}, Lorg/telegram/ui/Components/VideoPlayer;-><init>()V
+    iput-boolean p2, p0, Lorg/telegram/ui/PhotoViewer$54;->val$visible:Z
+
+    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public pause()V
-    .locals 2
-
-    .line 8768
-    invoke-super {p0}, Lorg/telegram/ui/Components/VideoPlayer;->pause()V
-
-    .line 8769
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$54;->this$0:Lorg/telegram/ui/PhotoViewer;
-
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$2400(Lorg/telegram/ui/PhotoViewer;)I
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 8770
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$54;->this$0:Lorg/telegram/ui/PhotoViewer;
-
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/PhotoViewer;->access$23700(Lorg/telegram/ui/PhotoViewer;Z)V
-
-    :cond_0
-    return-void
-.end method
-
-.method public play()V
-    .locals 2
-
-    .line 8762
-    invoke-super {p0}, Lorg/telegram/ui/Components/VideoPlayer;->play()V
-
-    .line 8763
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$54;->this$0:Lorg/telegram/ui/PhotoViewer;
-
-    const/4 v1, 0x1
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/PhotoViewer;->access$23700(Lorg/telegram/ui/PhotoViewer;Z)V
-
-    return-void
-.end method
-
-.method public seekTo(J)V
+.method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 8776
-    invoke-super {p0, p1, p2}, Lorg/telegram/ui/Components/VideoPlayer;->seekTo(J)V
+    .line 9784
+    iget-boolean p1, p0, Lorg/telegram/ui/PhotoViewer$54;->val$visible:Z
 
-    .line 8777
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$54;->this$0:Lorg/telegram/ui/PhotoViewer;
+    if-nez p1, :cond_0
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$1700(Lorg/telegram/ui/PhotoViewer;)Z
+    .line 9785
+    iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$54;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    move-result v0
+    invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$9800(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/PhotoViewer$VideoPlayerControlFrameLayout;
 
-    if-eqz v0, :cond_0
+    move-result-object p1
 
-    .line 8778
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$54;->this$0:Lorg/telegram/ui/PhotoViewer;
+    const/16 v0, 0x8
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/PhotoViewer;->access$23800(Lorg/telegram/ui/PhotoViewer;J)V
+    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     :cond_0
     return-void

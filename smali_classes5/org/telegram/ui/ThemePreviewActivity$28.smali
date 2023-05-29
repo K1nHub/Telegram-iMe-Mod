@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/ThemePreviewActivity$28;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Landroidx/viewpager/widget/PagerAdapter;
 .source "ThemePreviewActivity.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ThemePreviewActivity;->updateMotionButton()V
+    value = Lorg/telegram/ui/ThemePreviewActivity;->createView(Landroid/content/Context;)Landroid/view/View;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,42 +22,109 @@
 .method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;)V
     .locals 0
 
-    .line 3200
+    .line 2355
     iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$28;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Landroidx/viewpager/widget/PagerAdapter;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
+.method public destroyItem(Landroid/view/ViewGroup;ILjava/lang/Object;)V
+    .locals 0
+
+    .line 2381
+    check-cast p3, Landroid/view/View;
+
+    invoke-virtual {p1, p3}, Landroid/view/ViewGroup;->removeView(Landroid/view/View;)V
+
+    return-void
+.end method
+
+.method public getCount()I
     .locals 1
 
-    .line 3203
-    iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$28;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
+    .line 2359
+    iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$28;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$2400(Lorg/telegram/ui/ThemePreviewActivity;)Lorg/telegram/tgnet/TLRPC$TL_wallPaper;
+    invoke-static {v0}, Lorg/telegram/ui/ThemePreviewActivity;->access$6700(Lorg/telegram/ui/ThemePreviewActivity;)I
 
-    move-result-object p1
+    move-result v0
 
-    if-nez p1, :cond_0
+    if-eqz v0, :cond_0
 
-    .line 3204
-    iget-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$28;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
+    const/4 v0, 0x1
 
-    invoke-static {p1}, Lorg/telegram/ui/ThemePreviewActivity;->access$4600(Lorg/telegram/ui/ThemePreviewActivity;)[Lorg/telegram/ui/Components/WallpaperCheckBoxView;
+    goto :goto_0
 
-    move-result-object p1
+    :cond_0
+    const/4 v0, 0x2
 
-    const/4 v0, 0x0
+    :goto_0
+    return v0
+.end method
 
-    aget-object p1, p1, v0
+.method public getItemPosition(Ljava/lang/Object;)I
+    .locals 0
 
-    const/4 v0, 0x4
+    const/4 p1, -0x1
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+    return p1
+.end method
+
+.method public instantiateItem(Landroid/view/ViewGroup;I)Ljava/lang/Object;
+    .locals 0
+
+    if-nez p2, :cond_0
+
+    .line 2374
+    iget-object p2, p0, Lorg/telegram/ui/ThemePreviewActivity$28;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
+
+    invoke-static {p2}, Lorg/telegram/ui/ThemePreviewActivity;->access$7400(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/widget/FrameLayout;
+
+    move-result-object p2
+
+    goto :goto_0
+
+    :cond_0
+    iget-object p2, p0, Lorg/telegram/ui/ThemePreviewActivity$28;->this$0:Lorg/telegram/ui/ThemePreviewActivity;
+
+    invoke-static {p2}, Lorg/telegram/ui/ThemePreviewActivity;->access$7700(Lorg/telegram/ui/ThemePreviewActivity;)Landroid/widget/FrameLayout;
+
+    move-result-object p2
+
+    .line 2375
+    :goto_0
+    invoke-virtual {p1, p2}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+
+    return-object p2
+.end method
+
+.method public isViewFromObject(Landroid/view/View;Ljava/lang/Object;)Z
+    .locals 0
+
+    if-ne p2, p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
+.end method
+
+.method public unregisterDataSetObserver(Landroid/database/DataSetObserver;)V
+    .locals 0
+
+    if-eqz p1, :cond_0
+
+    .line 2387
+    invoke-super {p0, p1}, Landroidx/viewpager/widget/PagerAdapter;->unregisterDataSetObserver(Landroid/database/DataSetObserver;)V
 
     :cond_0
     return-void

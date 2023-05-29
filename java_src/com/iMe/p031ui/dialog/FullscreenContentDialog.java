@@ -54,8 +54,8 @@ public final class FullscreenContentDialog extends AlertDialog.Builder {
         appCompatTextView.setMovementMethod(LinkMovementMethod.getInstance());
         forkFullscreenContentAlertBinding.textAlertTitle.setText(title);
         forkFullscreenContentAlertBinding.buttonAction.setText(buttonText);
-        forkFullscreenContentAlertBinding.textAlertTitle.setTextColor(Theme.getColor("chat_messagePanelText"));
-        forkFullscreenContentAlertBinding.textAlertDescription.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
+        forkFullscreenContentAlertBinding.textAlertTitle.setTextColor(Theme.getColor(Theme.key_chat_messagePanelText));
+        forkFullscreenContentAlertBinding.textAlertDescription.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
         setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: com.iMe.ui.dialog.FullscreenContentDialog$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnDismissListener
             public final void onDismiss(DialogInterface dialogInterface) {

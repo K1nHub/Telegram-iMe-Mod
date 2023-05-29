@@ -12,11 +12,12 @@ import android.view.View;
 import androidx.core.content.ContextCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MediaDataController;
+import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.tgnet.TLRPC$TL_attachMenuBot;
 import org.telegram.tgnet.TLRPC$TL_attachMenuBotIcon;
 /* renamed from: org.telegram.ui.Components.AttachBotIntroTopView */
@@ -45,9 +46,9 @@ public class AttachBotIntroTopView extends View {
                 ImageReceiver.ImageReceiverDelegate.CC.$default$onAnimationReady(this, imageReceiver2);
             }
         });
-        this.attachDrawable = ContextCompat.getDrawable(context, C3242R.C3244drawable.input_attach).mutate().getConstantState().newDrawable();
+        this.attachDrawable = ContextCompat.getDrawable(context, C3290R.C3292drawable.input_attach).mutate().getConstantState().newDrawable();
         this.paint.setStyle(Paint.Style.STROKE);
-        this.paint.setStrokeWidth(AndroidUtilities.m50dp(3));
+        this.paint.setStrokeWidth(AndroidUtilities.m54dp(3));
         this.paint.setStrokeCap(Paint.Cap.ROUND);
     }
 
@@ -72,7 +73,7 @@ public class AttachBotIntroTopView extends View {
     public void setAttachBot(TLRPC$TL_attachMenuBot tLRPC$TL_attachMenuBot) {
         TLRPC$TL_attachMenuBotIcon staticAttachMenuBotIcon = MediaDataController.getStaticAttachMenuBotIcon(tLRPC$TL_attachMenuBot);
         if (staticAttachMenuBotIcon != null) {
-            this.imageReceiver.setImage(ImageLocation.getForDocument(staticAttachMenuBotIcon.icon), "42_42", DocumentObject.getSvgThumb(staticAttachMenuBotIcon.icon, "dialogTextGray2", 1.0f), "svg", tLRPC$TL_attachMenuBot, 0);
+            this.imageReceiver.setImage(ImageLocation.getForDocument(staticAttachMenuBotIcon.icon), "42_42", DocumentObject.getSvgThumb(staticAttachMenuBotIcon.icon, Theme.key_dialogTextGray2, 1.0f), "svg", tLRPC$TL_attachMenuBot, 0);
         }
     }
 
@@ -103,13 +104,13 @@ public class AttachBotIntroTopView extends View {
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
         RectF rectF = AndroidUtilities.rectTmp;
-        rectF.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getWidth(), getHeight() + AndroidUtilities.m50dp(10));
-        canvas.drawRoundRect(rectF, AndroidUtilities.m50dp(10), AndroidUtilities.m50dp(10), this.backgroundPaint);
-        this.imageReceiver.setImageCoords((getWidth() / 2.0f) - AndroidUtilities.m50dp(66), (getHeight() / 2.0f) - (AndroidUtilities.m50dp(42) / 2.0f), AndroidUtilities.m50dp(42), AndroidUtilities.m50dp(42));
+        rectF.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getWidth(), getHeight() + AndroidUtilities.m54dp(10));
+        canvas.drawRoundRect(rectF, AndroidUtilities.m54dp(10), AndroidUtilities.m54dp(10), this.backgroundPaint);
+        this.imageReceiver.setImageCoords((getWidth() / 2.0f) - AndroidUtilities.m54dp(66), (getHeight() / 2.0f) - (AndroidUtilities.m54dp(42) / 2.0f), AndroidUtilities.m54dp(42), AndroidUtilities.m54dp(42));
         this.imageReceiver.draw(canvas);
-        canvas.drawLine((getWidth() / 2.0f) - AndroidUtilities.m50dp(8), getHeight() / 2.0f, (getWidth() / 2.0f) + AndroidUtilities.m50dp(8), getHeight() / 2.0f, this.paint);
-        canvas.drawLine(getWidth() / 2.0f, (getHeight() / 2.0f) - AndroidUtilities.m50dp(8), getWidth() / 2.0f, (getHeight() / 2.0f) + AndroidUtilities.m50dp(8), this.paint);
-        this.attachDrawable.setBounds((getWidth() / 2) + AndroidUtilities.m50dp(24), (getHeight() / 2) - (AndroidUtilities.m50dp(42) / 2), (getWidth() / 2) + AndroidUtilities.m50dp(66), (getHeight() / 2) + (AndroidUtilities.m50dp(42) / 2));
+        canvas.drawLine((getWidth() / 2.0f) - AndroidUtilities.m54dp(8), getHeight() / 2.0f, (getWidth() / 2.0f) + AndroidUtilities.m54dp(8), getHeight() / 2.0f, this.paint);
+        canvas.drawLine(getWidth() / 2.0f, (getHeight() / 2.0f) - AndroidUtilities.m54dp(8), getWidth() / 2.0f, (getHeight() / 2.0f) + AndroidUtilities.m54dp(8), this.paint);
+        this.attachDrawable.setBounds((getWidth() / 2) + AndroidUtilities.m54dp(24), (getHeight() / 2) - (AndroidUtilities.m54dp(42) / 2), (getWidth() / 2) + AndroidUtilities.m54dp(66), (getHeight() / 2) + (AndroidUtilities.m54dp(42) / 2));
         this.attachDrawable.draw(canvas);
     }
 }

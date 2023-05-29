@@ -39,7 +39,7 @@
 .method public constructor <init>(Lcom/otaliastudios/opengl/internal/EglContext;I)V
     .locals 11
 
-    const-string v0, "sharedContext"
+    const-string/jumbo v0, "sharedContext"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -324,7 +324,7 @@
 .method public final createWindowSurface$library_release(Ljava/lang/Object;)Lcom/otaliastudios/opengl/internal/EglSurface;
     .locals 5
 
-    const-string v0, "surface"
+    const-string/jumbo v0, "surface"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -382,7 +382,7 @@
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
-    const-string v0, "surface was null"
+    const-string/jumbo v0, "surface was null"
 
     invoke-direct {p1, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/String;)V
 

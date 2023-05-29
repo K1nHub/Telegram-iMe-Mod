@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: WalletHomeBinancePayPresenter.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayPresenter$resolveActions$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class WalletHomeBinancePayPresenter$resolveActions$1 extends Lambda implements Function0<Unit> {
     final /* synthetic */ WalletHomeBinancePayPresenter this$0;
 

@@ -6,7 +6,7 @@ final /* synthetic */ class zzgd {
     static final /* synthetic */ int[] zzba;
 
     static {
-        int[] iArr = new int[zzcg.zzg.m763x126d66cb().length];
+        int[] iArr = new int[zzcg.zzg.m767x126d66cb().length];
         zzba = iArr;
         try {
             iArr[zzcg.zzg.zzkg - 1] = 1;

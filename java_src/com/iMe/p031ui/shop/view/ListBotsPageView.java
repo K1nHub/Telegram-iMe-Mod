@@ -95,7 +95,7 @@ public final class ListBotsPageView extends FrameLayout {
         BotLanguage botLanguage = this.botLanguage;
         String langCode = LocaleController.getInstance().getCurrentLocaleInfo().getLangCode();
         Intrinsics.checkNotNullExpressionValue(langCode, "getInstance().currentLocaleInfo.langCode");
-        Observable<List<ShopItem>> subscribeOn = aiBotsManager.getAllBotsObservable(botLanguage, langCode).subscribeOn(Schedulers.m674io());
+        Observable<List<ShopItem>> subscribeOn = aiBotsManager.getAllBotsObservable(botLanguage, langCode).subscribeOn(Schedulers.m679io());
         final ListBotsPageView$subscribeToContent$1 listBotsPageView$subscribeToContent$1 = new ListBotsPageView$subscribeToContent$1(this);
         Observable<R> map = subscribeOn.map(new Function() { // from class: com.iMe.ui.shop.view.ListBotsPageView$$ExternalSyntheticLambda2
             @Override // io.reactivex.functions.Function

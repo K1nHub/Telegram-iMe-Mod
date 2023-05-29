@@ -35,7 +35,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
@@ -45,7 +45,7 @@ import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p044ui.ActionBar.AlertDialog;
 import org.telegram.p044ui.ActionBar.BackDrawable;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.CallLogActivity;
@@ -158,7 +158,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             this.progressView = view;
             RLottieImageView rLottieImageView = new RLottieImageView(context);
             this.imageView = rLottieImageView;
-            rLottieImageView.setAnimation(C3242R.raw.utyan_call, 120, 120);
+            rLottieImageView.setAnimation(C3290R.raw.utyan_call, 120, 120);
             this.imageView.setAutoRepeat(false);
             addView(this.imageView, LayoutHelper.createFrame(140, 140, 17, 52, 4, 52, 60));
             this.imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$EmptyTextProgressView$$ExternalSyntheticLambda0
@@ -169,22 +169,22 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             });
             TextView textView = new TextView(context);
             this.emptyTextView1 = textView;
-            textView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
-            this.emptyTextView1.setText(LocaleController.getString("NoRecentCalls", C3242R.string.NoRecentCalls));
+            textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
+            this.emptyTextView1.setText(LocaleController.getString("NoRecentCalls", C3290R.string.NoRecentCalls));
             this.emptyTextView1.setTextSize(1, 20.0f);
             this.emptyTextView1.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             this.emptyTextView1.setGravity(17);
             addView(this.emptyTextView1, LayoutHelper.createFrame(-1, -2, 17, 17, 40, 17, 0));
             this.emptyTextView2 = new TextView(context);
-            String string = LocaleController.getString("NoRecentCallsInfo", C3242R.string.NoRecentCallsInfo);
+            String string = LocaleController.getString("NoRecentCallsInfo", C3290R.string.NoRecentCallsInfo);
             if (AndroidUtilities.isTablet() && !AndroidUtilities.isSmallTablet()) {
                 string = string.replace('\n', ' ');
             }
             this.emptyTextView2.setText(string);
-            this.emptyTextView2.setTextColor(Theme.getColor("emptyListPlaceholder"));
+            this.emptyTextView2.setTextColor(Theme.getColor(Theme.key_emptyListPlaceholder));
             this.emptyTextView2.setTextSize(1, 14.0f);
             this.emptyTextView2.setGravity(17);
-            this.emptyTextView2.setLineSpacing(AndroidUtilities.m50dp(2), 1.0f);
+            this.emptyTextView2.setLineSpacing(AndroidUtilities.m54dp(2), 1.0f);
             addView(this.emptyTextView2, LayoutHelper.createFrame(-1, -2, 17, 17, 80, 17, 0));
             view.setAlpha(BitmapDescriptorFactory.HUE_RED);
             this.imageView.setAlpha(BitmapDescriptorFactory.HUE_RED);
@@ -237,7 +237,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                         }
                         if (this.calls.size() > 0) {
                             CallLogRow callLogRow = this.calls.get(0);
-                            if (callLogRow.user.f1567id == j && callLogRow.type == i3) {
+                            if (callLogRow.user.f1574id == j && callLogRow.type == i3) {
                                 callLogRow.calls.add(0, messageObject.messageOwner);
                                 this.listViewAdapter.notifyItemChanged(0);
                             }
@@ -266,7 +266,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                     CallLogRow next = it2.next();
                     Iterator<TLRPC$Message> it3 = next.calls.iterator();
                     while (it3.hasNext()) {
-                        if (arrayList2.contains(Integer.valueOf(it3.next().f1451id))) {
+                        if (arrayList2.contains(Integer.valueOf(it3.next().f1457id))) {
                             it3.remove();
                             r3 = 1;
                         }
@@ -288,7 +288,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             }
         } else if (i == NotificationCenter.chatInfoDidLoad) {
             Long l2 = this.waitingForCallChatId;
-            if (l2 == null || ((TLRPC$ChatFull) objArr[0]).f1428id != l2.longValue() || getMessagesController().getGroupCall(this.waitingForCallChatId.longValue(), true) == null) {
+            if (l2 == null || ((TLRPC$ChatFull) objArr[0]).f1434id != l2.longValue() || getMessagesController().getGroupCall(this.waitingForCallChatId.longValue(), true) == null) {
                 return;
             }
             VoIPHelper.startCall(this.lastCallChat, (TLRPC$InputPeer) null, (String) null, false, getParentActivity(), (BaseFragment) this, getAccountInstance());
@@ -309,17 +309,18 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
 
         public CallCell(Context context) {
             super(context);
-            setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+            int i = Theme.key_windowBackgroundWhite;
+            setBackgroundColor(Theme.getColor(i));
             ProfileSearchCell profileSearchCell = new ProfileSearchCell(context);
             this.profileSearchCell = profileSearchCell;
-            profileSearchCell.setPadding(LocaleController.isRTL ? AndroidUtilities.m50dp(32) : 0, 0, LocaleController.isRTL ? 0 : AndroidUtilities.m50dp(32), 0);
-            this.profileSearchCell.setSublabelOffset(AndroidUtilities.m50dp(LocaleController.isRTL ? 2 : -2), -AndroidUtilities.m50dp(4));
+            profileSearchCell.setPadding(LocaleController.isRTL ? AndroidUtilities.m54dp(32) : 0, 0, LocaleController.isRTL ? 0 : AndroidUtilities.m54dp(32), 0);
+            this.profileSearchCell.setSublabelOffset(AndroidUtilities.m54dp(LocaleController.isRTL ? 2 : -2), -AndroidUtilities.m54dp(4));
             addView(this.profileSearchCell, LayoutHelper.createFrame(-1, -1));
             ImageView imageView = new ImageView(context);
             this.imageView = imageView;
             imageView.setAlpha(214);
-            this.imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("featuredStickers_addButton"), PorterDuff.Mode.MULTIPLY));
-            this.imageView.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor("listSelectorSDK21"), 1));
+            this.imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_featuredStickers_addButton), PorterDuff.Mode.MULTIPLY));
+            this.imageView.setBackgroundDrawable(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector), 1));
             this.imageView.setScaleType(ImageView.ScaleType.CENTER);
             this.imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$CallCell$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
@@ -327,11 +328,11 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                     CallLogActivity.CallCell.this.lambda$new$0(view);
                 }
             });
-            this.imageView.setContentDescription(LocaleController.getString("Call", C3242R.string.Call));
+            this.imageView.setContentDescription(LocaleController.getString("Call", C3290R.string.Call));
             addView(this.imageView, LayoutHelper.createFrame(48, 48, (LocaleController.isRTL ? 3 : 5) | 16, 8, 0, 8, 0));
             CheckBox2 checkBox2 = new CheckBox2(context, 21);
             this.checkBox = checkBox2;
-            checkBox2.setColor(null, "windowBackgroundWhite", "checkboxCheck");
+            checkBox2.setColor(-1, i, Theme.key_checkboxCheck);
             this.checkBox.setDrawUnchecked(false);
             this.checkBox.setDrawBackgroundAsArc(3);
             addView(this.checkBox, LayoutHelper.createFrame(24, 24, (LocaleController.isRTL ? 5 : 3) | 48, 42, 32, 42, 0));
@@ -340,7 +341,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$new$0(View view) {
             CallLogRow callLogRow = (CallLogRow) view.getTag();
-            TLRPC$UserFull userFull = CallLogActivity.this.getMessagesController().getUserFull(callLogRow.user.f1567id);
+            TLRPC$UserFull userFull = CallLogActivity.this.getMessagesController().getUserFull(callLogRow.user.f1574id);
             TLRPC$User tLRPC$User = CallLogActivity.this.lastCallUser = callLogRow.user;
             boolean z = callLogRow.video;
             VoIPHelper.startCall(tLRPC$User, z, z || (userFull != null && userFull.video_calls_available), CallLogActivity.this.getParentActivity(), null, CallLogActivity.this.getAccountInstance());
@@ -365,22 +366,22 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
 
         public GroupCallCell(Context context) {
             super(context);
-            setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-            String string = LocaleController.getString("VoipChatJoin", C3242R.string.VoipChatJoin);
+            setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+            String string = LocaleController.getString("VoipChatJoin", C3290R.string.VoipChatJoin);
             ProgressButton progressButton = new ProgressButton(context);
             this.button = progressButton;
             int ceil = (int) Math.ceil(progressButton.getPaint().measureText(string));
             ProfileSearchCell profileSearchCell = new ProfileSearchCell(context);
             this.profileSearchCell = profileSearchCell;
-            profileSearchCell.setPadding(LocaleController.isRTL ? AndroidUtilities.m50dp(44) + ceil : 0, 0, LocaleController.isRTL ? 0 : AndroidUtilities.m50dp(44) + ceil, 0);
-            this.profileSearchCell.setSublabelOffset(0, -AndroidUtilities.m50dp(1));
+            profileSearchCell.setPadding(LocaleController.isRTL ? AndroidUtilities.m54dp(44) + ceil : 0, 0, LocaleController.isRTL ? 0 : AndroidUtilities.m54dp(44) + ceil, 0);
+            this.profileSearchCell.setSublabelOffset(0, -AndroidUtilities.m54dp(1));
             addView(this.profileSearchCell, LayoutHelper.createFrame(-1, -1));
             this.button.setText(string);
             this.button.setTextSize(1, 14.0f);
-            this.button.setTextColor(Theme.getColor("featuredStickers_buttonText"));
-            this.button.setProgressColor(Theme.getColor("featuredStickers_buttonProgress"));
-            this.button.setBackgroundRoundRect(Theme.getColor("featuredStickers_addButton"), Theme.getColor("featuredStickers_addButtonPressed"), 16.0f);
-            this.button.setPadding(AndroidUtilities.m50dp(14), 0, AndroidUtilities.m50dp(14), 0);
+            this.button.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
+            this.button.setProgressColor(Theme.getColor(Theme.key_featuredStickers_buttonProgress));
+            this.button.setBackgroundRoundRect(Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed), 16.0f);
+            this.button.setPadding(AndroidUtilities.m54dp(14), 0, AndroidUtilities.m54dp(14), 0);
             addView(this.button, LayoutHelper.createFrameRelatively(-2.0f, 28.0f, 8388661, BitmapDescriptorFactory.HUE_RED, 16.0f, 14.0f, BitmapDescriptorFactory.HUE_RED));
             this.button.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$GroupCallCell$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
@@ -437,54 +438,56 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
 
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        Drawable mutate = getParentActivity().getResources().getDrawable(C3242R.C3244drawable.ic_call_made_green_18dp).mutate();
+        Drawable mutate = getParentActivity().getResources().getDrawable(C3290R.C3292drawable.ic_call_made_green_18dp).mutate();
         this.greenDrawable = mutate;
         mutate.setBounds(0, 0, mutate.getIntrinsicWidth(), this.greenDrawable.getIntrinsicHeight());
-        this.greenDrawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor("calls_callReceivedGreenIcon"), PorterDuff.Mode.MULTIPLY));
+        Drawable drawable = this.greenDrawable;
+        int i = Theme.key_calls_callReceivedGreenIcon;
+        drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.MULTIPLY));
         this.iconOut = new ImageSpan(this.greenDrawable, 0);
         Resources resources = getParentActivity().getResources();
-        int i = C3242R.C3244drawable.ic_call_received_green_18dp;
-        Drawable mutate2 = resources.getDrawable(i).mutate();
+        int i2 = C3290R.C3292drawable.ic_call_received_green_18dp;
+        Drawable mutate2 = resources.getDrawable(i2).mutate();
         this.greenDrawable2 = mutate2;
         mutate2.setBounds(0, 0, mutate2.getIntrinsicWidth(), this.greenDrawable2.getIntrinsicHeight());
-        this.greenDrawable2.setColorFilter(new PorterDuffColorFilter(Theme.getColor("calls_callReceivedGreenIcon"), PorterDuff.Mode.MULTIPLY));
+        this.greenDrawable2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.MULTIPLY));
         this.iconIn = new ImageSpan(this.greenDrawable2, 0);
-        Drawable mutate3 = getParentActivity().getResources().getDrawable(i).mutate();
+        Drawable mutate3 = getParentActivity().getResources().getDrawable(i2).mutate();
         this.redDrawable = mutate3;
         mutate3.setBounds(0, 0, mutate3.getIntrinsicWidth(), this.redDrawable.getIntrinsicHeight());
-        this.redDrawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor("calls_callReceivedRedIcon"), PorterDuff.Mode.MULTIPLY));
+        this.redDrawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_fill_RedNormal), PorterDuff.Mode.MULTIPLY));
         this.iconMissed = new ImageSpan(this.redDrawable, 0);
         this.actionBar.setBackButtonDrawable(new BackDrawable(false));
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setTitle(LocaleController.getString("Calls", C3242R.string.Calls));
-        this.actionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.CallLogActivity.1
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
-            public void onItemClick(int i2) {
-                if (i2 == -1) {
+        this.actionBar.setTitle(LocaleController.getString("Calls", C3290R.string.Calls));
+        this.actionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.CallLogActivity.1
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
+            public void onItemClick(int i3) {
+                if (i3 == -1) {
                     if (((BaseFragment) CallLogActivity.this).actionBar.isActionModeShowed()) {
                         CallLogActivity.this.hideActionMode(true);
                     } else {
                         CallLogActivity.this.finishFragment();
                     }
-                } else if (i2 == 1) {
+                } else if (i3 == 1) {
                     CallLogActivity.this.showDeleteAlert(true);
-                } else if (i2 == 2) {
+                } else if (i3 == 2) {
                     CallLogActivity.this.showDeleteAlert(false);
                 }
             }
         });
-        ActionBarMenuItem addItem = this.actionBar.createMenu().addItem(10, C3242R.C3244drawable.ic_ab_other);
+        ActionBarMenuItem addItem = this.actionBar.createMenu().addItem(10, C3290R.C3292drawable.ic_ab_other);
         this.otherItem = addItem;
-        addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3242R.string.AccDescrMoreOptions));
-        this.otherItem.addSubItem(1, C3242R.C3244drawable.msg_delete, LocaleController.getString("DeleteAllCalls", C3242R.string.DeleteAllCalls));
+        addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3290R.string.AccDescrMoreOptions));
+        this.otherItem.addSubItem(1, C3290R.C3292drawable.msg_delete, LocaleController.getString("DeleteAllCalls", C3290R.string.DeleteAllCalls));
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        frameLayout.setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+        frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         FrameLayout frameLayout2 = (FrameLayout) this.fragmentView;
         FlickerLoadingView flickerLoadingView = new FlickerLoadingView(context);
         this.flickerLoadingView = flickerLoadingView;
         flickerLoadingView.setViewType(8);
-        this.flickerLoadingView.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+        this.flickerLoadingView.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
         this.flickerLoadingView.showDate(false);
         EmptyTextProgressView emptyTextProgressView = new EmptyTextProgressView(context, this.flickerLoadingView);
         this.emptyView = emptyTextProgressView;
@@ -504,19 +507,19 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         frameLayout2.addView(this.listView, LayoutHelper.createFrame(-1, -1));
         this.listView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda8
             @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemClickListener
-            public final void onItemClick(View view, int i2) {
-                CallLogActivity.this.lambda$createView$0(view, i2);
+            public final void onItemClick(View view, int i3) {
+                CallLogActivity.this.lambda$createView$0(view, i3);
             }
         });
         this.listView.setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda9
             @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemLongClickListener
-            public final boolean onItemClick(View view, int i2) {
+            public final boolean onItemClick(View view, int i3) {
                 boolean lambda$createView$1;
-                lambda$createView$1 = CallLogActivity.this.lambda$createView$1(view, i2);
+                lambda$createView$1 = CallLogActivity.this.lambda$createView$1(view, i3);
                 return lambda$createView$1;
             }
         });
-        this.listView.setOnScrollListener(new C35442());
+        this.listView.setOnScrollListener(new C35952());
         if (this.loading) {
             this.emptyView.showProgress();
         } else {
@@ -526,36 +529,36 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         this.floatingButton = imageView;
         imageView.setVisibility(0);
         this.floatingButton.setScaleType(ImageView.ScaleType.CENTER);
-        Drawable createSimpleSelectorCircleDrawable = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.m50dp(56), Theme.getColor("chats_actionBackground"), Theme.getColor("chats_actionPressedBackground"));
-        int i2 = Build.VERSION.SDK_INT;
-        if (i2 < 21) {
-            Drawable mutate4 = context.getResources().getDrawable(C3242R.C3244drawable.floating_shadow).mutate();
+        Drawable createSimpleSelectorCircleDrawable = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.m54dp(56), Theme.getColor(Theme.key_chats_actionBackground), Theme.getColor(Theme.key_chats_actionPressedBackground));
+        int i3 = Build.VERSION.SDK_INT;
+        if (i3 < 21) {
+            Drawable mutate4 = context.getResources().getDrawable(C3290R.C3292drawable.floating_shadow).mutate();
             mutate4.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
             CombinedDrawable combinedDrawable = new CombinedDrawable(mutate4, createSimpleSelectorCircleDrawable, 0, 0);
-            combinedDrawable.setIconSize(AndroidUtilities.m50dp(56), AndroidUtilities.m50dp(56));
+            combinedDrawable.setIconSize(AndroidUtilities.m54dp(56), AndroidUtilities.m54dp(56));
             createSimpleSelectorCircleDrawable = combinedDrawable;
         }
         this.floatingButton.setBackgroundDrawable(createSimpleSelectorCircleDrawable);
-        this.floatingButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor("chats_actionIcon"), PorterDuff.Mode.MULTIPLY));
-        this.floatingButton.setImageResource(C3242R.C3244drawable.ic_call);
-        this.floatingButton.setContentDescription(LocaleController.getString("Call", C3242R.string.Call));
-        if (i2 >= 21) {
+        this.floatingButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_actionIcon), PorterDuff.Mode.MULTIPLY));
+        this.floatingButton.setImageResource(C3290R.C3292drawable.ic_call);
+        this.floatingButton.setContentDescription(LocaleController.getString("Call", C3290R.string.Call));
+        if (i3 >= 21) {
             StateListAnimator stateListAnimator = new StateListAnimator();
-            stateListAnimator.addState(new int[]{16842919}, ObjectAnimator.ofFloat(this.floatingButton, "translationZ", AndroidUtilities.m50dp(2), AndroidUtilities.m50dp(4)).setDuration(200L));
-            stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(this.floatingButton, "translationZ", AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(2)).setDuration(200L));
+            stateListAnimator.addState(new int[]{16842919}, ObjectAnimator.ofFloat(this.floatingButton, "translationZ", AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(4)).setDuration(200L));
+            stateListAnimator.addState(new int[0], ObjectAnimator.ofFloat(this.floatingButton, "translationZ", AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(2)).setDuration(200L));
             this.floatingButton.setStateListAnimator(stateListAnimator);
             this.floatingButton.setOutlineProvider(new ViewOutlineProvider(this) { // from class: org.telegram.ui.CallLogActivity.3
                 @Override // android.view.ViewOutlineProvider
                 public void getOutline(View view, Outline outline) {
-                    outline.setOval(0, 0, AndroidUtilities.m50dp(56), AndroidUtilities.m50dp(56));
+                    outline.setOval(0, 0, AndroidUtilities.m54dp(56), AndroidUtilities.m54dp(56));
                 }
             });
         }
         ImageView imageView2 = this.floatingButton;
-        int i3 = i2 >= 21 ? 56 : 60;
-        int i4 = i2 >= 21 ? 56 : 60;
+        int i4 = i3 >= 21 ? 56 : 60;
+        int i5 = i3 >= 21 ? 56 : 60;
         boolean z = LocaleController.isRTL;
-        frameLayout2.addView(imageView2, LayoutHelper.createFrame(i3, i4, (z ? 3 : 5) | 80, z ? 14 : 0, 0, z ? 0 : 14, 14));
+        frameLayout2.addView(imageView2, LayoutHelper.createFrame(i4, i5, (z ? 3 : 5) | 80, z ? 14 : 0, 0, z ? 0 : 14, 14));
         this.floatingButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -570,7 +573,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         if (!(view instanceof CallCell)) {
             if (view instanceof GroupCallCell) {
                 Bundle bundle = new Bundle();
-                bundle.putLong("chat_id", ((GroupCallCell) view).currentChat.f1427id);
+                bundle.putLong("chat_id", ((GroupCallCell) view).currentChat.f1433id);
                 getNotificationCenter().postNotificationName(NotificationCenter.closeChats, new Object[0]);
                 presentFragment(new ChatActivity(bundle), true);
                 return;
@@ -583,8 +586,8 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             return;
         }
         Bundle bundle2 = new Bundle();
-        bundle2.putLong("user_id", callLogRow.user.f1567id);
-        bundle2.putInt("message_id", callLogRow.calls.get(0).f1451id);
+        bundle2.putLong("user_id", callLogRow.user.f1574id);
+        bundle2.putInt("message_id", callLogRow.calls.get(0).f1457id);
         getNotificationCenter().postNotificationName(NotificationCenter.closeChats, new Object[0]);
         presentFragment(new ChatActivity(bundle2), true);
     }
@@ -601,8 +604,8 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.CallLogActivity$2 */
     /* loaded from: classes5.dex */
-    public class C35442 extends RecyclerView.OnScrollListener {
-        C35442() {
+    public class C35952 extends RecyclerView.OnScrollListener {
+        C35952() {
         }
 
         /* JADX WARN: Code restructure failed: missing block: B:29:0x00a5, code lost:
@@ -717,14 +720,14 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             Ld1:
                 return
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.CallLogActivity.C35442.onScrolled(androidx.recyclerview.widget.RecyclerView, int, int):void");
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.CallLogActivity.C35952.onScrolled(androidx.recyclerview.widget.RecyclerView, int, int):void");
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onScrolled$0(CallLogRow callLogRow) {
             CallLogActivity callLogActivity = CallLogActivity.this;
             ArrayList<TLRPC$Message> arrayList = callLogRow.calls;
-            callLogActivity.getCalls(arrayList.get(arrayList.size() - 1).f1451id, 100);
+            callLogActivity.getCalls(arrayList.get(arrayList.size() - 1).f1457id, 100);
         }
     }
 
@@ -747,7 +750,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createView$2(TLRPC$User tLRPC$User, String str, ContactsActivity contactsActivity) {
-        TLRPC$UserFull userFull = getMessagesController().getUserFull(tLRPC$User.f1567id);
+        TLRPC$UserFull userFull = getMessagesController().getUserFull(tLRPC$User.f1574id);
         this.lastCallUser = tLRPC$User;
         VoIPHelper.startCall(tLRPC$User, false, userFull != null && userFull.video_calls_available, getParentActivity(), null, getAccountInstance());
     }
@@ -756,18 +759,18 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
     public void showDeleteAlert(final boolean z) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
         if (z) {
-            builder.setTitle(LocaleController.getString("DeleteAllCalls", C3242R.string.DeleteAllCalls));
-            builder.setMessage(LocaleController.getString("DeleteAllCallsText", C3242R.string.DeleteAllCallsText));
+            builder.setTitle(LocaleController.getString("DeleteAllCalls", C3290R.string.DeleteAllCalls));
+            builder.setMessage(LocaleController.getString("DeleteAllCallsText", C3290R.string.DeleteAllCallsText));
         } else {
-            builder.setTitle(LocaleController.getString("DeleteCalls", C3242R.string.DeleteCalls));
-            builder.setMessage(LocaleController.getString("DeleteSelectedCallsText", C3242R.string.DeleteSelectedCallsText));
+            builder.setTitle(LocaleController.getString("DeleteCalls", C3290R.string.DeleteCalls));
+            builder.setMessage(LocaleController.getString("DeleteSelectedCallsText", C3290R.string.DeleteSelectedCallsText));
         }
         final boolean[] zArr = {false};
         FrameLayout frameLayout = new FrameLayout(getParentActivity());
         CheckBoxCell checkBoxCell = new CheckBoxCell(getParentActivity(), 1);
         checkBoxCell.setBackgroundDrawable(Theme.getSelectorDrawable(false));
-        checkBoxCell.setText(LocaleController.getString("DeleteCallsForEveryone", C3242R.string.DeleteCallsForEveryone), "", false, false);
-        checkBoxCell.setPadding(LocaleController.isRTL ? AndroidUtilities.m50dp(8) : 0, 0, LocaleController.isRTL ? 0 : AndroidUtilities.m50dp(8), 0);
+        checkBoxCell.setText(LocaleController.getString("DeleteCallsForEveryone", C3290R.string.DeleteCallsForEveryone), "", false, false);
+        checkBoxCell.setPadding(LocaleController.isRTL ? AndroidUtilities.m54dp(8) : 0, 0, LocaleController.isRTL ? 0 : AndroidUtilities.m54dp(8), 0);
         frameLayout.addView(checkBoxCell, LayoutHelper.createFrame(-1, 48, 51, 8, 0, 8, 0));
         checkBoxCell.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
@@ -776,18 +779,18 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             }
         });
         builder.setView(frameLayout);
-        builder.setPositiveButton(LocaleController.getString("Delete", C3242R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda0
+        builder.setPositiveButton(LocaleController.getString("Delete", C3290R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 CallLogActivity.this.lambda$showDeleteAlert$5(z, zArr, dialogInterface, i);
             }
         });
-        builder.setNegativeButton(LocaleController.getString("Cancel", C3242R.string.Cancel), null);
+        builder.setNegativeButton(LocaleController.getString("Cancel", C3290R.string.Cancel), null);
         AlertDialog create = builder.create();
         showDialog(create);
         TextView textView = (TextView) create.getButton(-1);
         if (textView != null) {
-            textView.setTextColor(Theme.getColor("dialogTextRed"));
+            textView.setTextColor(Theme.getColor(Theme.key_text_RedBold));
         }
     }
 
@@ -857,7 +860,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
     public boolean isSelected(ArrayList<TLRPC$Message> arrayList) {
         int size = arrayList.size();
         for (int i = 0; i < size; i++) {
-            if (this.selectedIds.contains(Integer.valueOf(arrayList.get(i).f1451id))) {
+            if (this.selectedIds.contains(Integer.valueOf(arrayList.get(i).f1457id))) {
                 return true;
             }
         }
@@ -873,10 +876,10 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         this.selectedDialogsCountTextView = numberTextView;
         numberTextView.setTextSize(18);
         this.selectedDialogsCountTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        this.selectedDialogsCountTextView.setTextColor(Theme.getColor("actionBarActionModeDefaultIcon"));
+        this.selectedDialogsCountTextView.setTextColor(Theme.getColor(Theme.key_actionBarActionModeDefaultIcon));
         createActionMode.addView(this.selectedDialogsCountTextView, LayoutHelper.createLinear(0, -1, 1.0f, 72, 0, 0, 0));
         this.selectedDialogsCountTextView.setOnTouchListener(CallLogActivity$$ExternalSyntheticLambda3.INSTANCE);
-        this.actionModeViews.add(createActionMode.addItemWithWidth(2, C3242R.C3244drawable.msg_delete, AndroidUtilities.m50dp(54), LocaleController.getString("Delete", C3242R.string.Delete)));
+        this.actionModeViews.add(createActionMode.addItemWithWidth(2, C3290R.C3292drawable.msg_delete, AndroidUtilities.m54dp(54), LocaleController.getString("Delete", C3290R.string.Delete)));
     }
 
     private boolean addOrRemoveSelectedDialog(ArrayList<TLRPC$Message> arrayList, CallCell callCell) {
@@ -886,7 +889,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         if (isSelected(arrayList)) {
             int size = arrayList.size();
             for (int i = 0; i < size; i++) {
-                this.selectedIds.remove(Integer.valueOf(arrayList.get(i).f1451id));
+                this.selectedIds.remove(Integer.valueOf(arrayList.get(i).f1457id));
             }
             callCell.setChecked(false, true);
             showOrUpdateActionMode();
@@ -894,7 +897,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         }
         int size2 = arrayList.size();
         for (int i2 = 0; i2 < size2; i2++) {
-            Integer valueOf = Integer.valueOf(arrayList.get(i2).f1451id);
+            Integer valueOf = Integer.valueOf(arrayList.get(i2).f1457id);
             if (!this.selectedIds.contains(valueOf)) {
                 this.selectedIds.add(valueOf);
             }
@@ -919,7 +922,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             ArrayList arrayList = new ArrayList();
             for (int i = 0; i < this.actionModeViews.size(); i++) {
                 View view = this.actionModeViews.get(i);
-                view.setPivotY(C3306ActionBar.getCurrentActionBarHeight() / 2);
+                view.setPivotY(C3356ActionBar.getCurrentActionBarHeight() / 2);
                 AndroidUtilities.clearDrawableAnimation(view);
                 arrayList.add(ObjectAnimator.ofFloat(view, View.SCALE_Y, 0.1f, 1.0f));
             }
@@ -938,7 +941,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         this.floatingHidden = z;
         ImageView imageView = this.floatingButton;
         float[] fArr = new float[1];
-        fArr[0] = z ? AndroidUtilities.m50dp(100) : BitmapDescriptorFactory.HUE_RED;
+        fArr[0] = z ? AndroidUtilities.m54dp(100) : BitmapDescriptorFactory.HUE_RED;
         ObjectAnimator duration = ObjectAnimator.ofFloat(imageView, "translationY", fArr).setDuration(300L);
         duration.setInterpolator(this.floatingInterpolator);
         this.floatingButton.setClickable(!z);
@@ -963,7 +966,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         tLRPC$TL_messages_search.limit = i2;
         tLRPC$TL_messages_search.peer = new TLRPC$TL_inputPeerEmpty();
         tLRPC$TL_messages_search.filter = new TLRPC$TL_inputMessagesFilterPhoneCalls();
-        tLRPC$TL_messages_search.f1532q = "";
+        tLRPC$TL_messages_search.f1538q = "";
         tLRPC$TL_messages_search.offset_id = i;
         getConnectionsManager().bindRequestToGuid(getConnectionsManager().sendRequest(tLRPC$TL_messages_search, new RequestDelegate() { // from class: org.telegram.ui.CallLogActivity$$ExternalSyntheticLambda5
             @Override // org.telegram.tgnet.RequestDelegate
@@ -993,7 +996,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             this.endReached = tLRPC$messages_Messages.messages.isEmpty();
             for (int i = 0; i < tLRPC$messages_Messages.users.size(); i++) {
                 TLRPC$User tLRPC$User = tLRPC$messages_Messages.users.get(i);
-                longSparseArray.put(tLRPC$User.f1567id, tLRPC$User);
+                longSparseArray.put(tLRPC$User.f1574id, tLRPC$User);
             }
             if (this.calls.size() > 0) {
                 ArrayList<CallLogRow> arrayList = this.calls;
@@ -1014,7 +1017,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                     if (fromChatId == getUserConfig().getClientUserId()) {
                         fromChatId = tLRPC$Message.peer_id.user_id;
                     }
-                    if (callLogRow == null || callLogRow.user.f1567id != fromChatId || callLogRow.type != i3) {
+                    if (callLogRow == null || callLogRow.user.f1574id != fromChatId || callLogRow.type != i3) {
                         if (callLogRow != null && !this.calls.contains(callLogRow)) {
                             this.calls.add(callLogRow);
                         }
@@ -1081,7 +1084,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             } else if (i == 103) {
                 VoIPHelper.startCall(this.lastCallChat, (TLRPC$InputPeer) null, (String) null, false, getParentActivity(), (BaseFragment) this, getAccountInstance());
             } else {
-                TLRPC$UserFull userFull = this.lastCallUser != null ? getMessagesController().getUserFull(this.lastCallUser.f1567id) : null;
+                TLRPC$UserFull userFull = this.lastCallUser != null ? getMessagesController().getUserFull(this.lastCallUser.f1574id) : null;
                 VoIPHelper.startCall(this.lastCallUser, i == 102, i == 102 || (userFull != null && userFull.video_calls_available), getParentActivity(), null, getAccountInstance());
             }
         }
@@ -1218,30 +1221,25 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
             View callCell;
-            HeaderCell headerCell;
-            if (i != 0) {
-                if (i == 1) {
-                    FlickerLoadingView flickerLoadingView = new FlickerLoadingView(this.mContext);
-                    flickerLoadingView.setIsSingleCell(true);
-                    flickerLoadingView.setViewType(8);
-                    flickerLoadingView.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-                    flickerLoadingView.showDate(false);
-                    headerCell = flickerLoadingView;
-                } else if (i == 2) {
-                    callCell = new TextInfoPrivacyCell(this.mContext);
-                    callCell.setBackgroundDrawable(Theme.getThemedDrawable(this.mContext, C3242R.C3244drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
-                } else if (i == 3) {
-                    HeaderCell headerCell2 = new HeaderCell(this.mContext, "windowBackgroundWhiteBlueHeader", 21, 15, 2, false, CallLogActivity.this.getResourceProvider());
-                    headerCell2.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-                    headerCell = headerCell2;
-                } else if (i == 4) {
-                    callCell = new GroupCallCell(this.mContext);
-                } else {
-                    callCell = new ShadowSectionCell(this.mContext);
-                }
-                callCell = headerCell;
-            } else {
+            if (i == 0) {
                 callCell = new CallCell(this.mContext);
+            } else if (i == 1) {
+                FlickerLoadingView flickerLoadingView = new FlickerLoadingView(this.mContext);
+                flickerLoadingView.setIsSingleCell(true);
+                flickerLoadingView.setViewType(8);
+                flickerLoadingView.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+                flickerLoadingView.showDate(false);
+                callCell = flickerLoadingView;
+            } else if (i == 2) {
+                callCell = new TextInfoPrivacyCell(this.mContext);
+                callCell.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3290R.C3292drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
+            } else if (i == 3) {
+                callCell = new HeaderCell(this.mContext, Theme.key_windowBackgroundWhiteBlueHeader, 21, 15, 2, false, CallLogActivity.this.getResourceProvider());
+                callCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+            } else if (i == 4) {
+                callCell = new GroupCallCell(this.mContext);
+            } else {
+                callCell = new ShadowSectionCell(this.mContext);
             }
             return new RecyclerListView.Holder(callCell);
         }
@@ -1263,7 +1261,7 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                 int i2 = i - this.callsStartRow;
                 CallLogRow callLogRow = (CallLogRow) CallLogActivity.this.calls.get(i2);
                 CallCell callCell = (CallCell) viewHolder.itemView;
-                callCell.imageView.setImageResource(callLogRow.video ? C3242R.C3244drawable.profile_video : C3242R.C3244drawable.profile_phone);
+                callCell.imageView.setImageResource(callLogRow.video ? C3290R.C3292drawable.profile_video : C3290R.C3292drawable.profile_phone);
                 TLRPC$Message tLRPC$Message = callLogRow.calls.get(0);
                 String str = LocaleController.isRTL ? "\u202b" : "";
                 if (callLogRow.calls.size() == 1) {
@@ -1290,9 +1288,9 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
             } else if (itemViewType == 3) {
                 HeaderCell headerCell = (HeaderCell) viewHolder.itemView;
                 if (i == this.activeHeaderRow) {
-                    headerCell.setText(LocaleController.getString("VoipChatActiveChats", C3242R.string.VoipChatActiveChats));
+                    headerCell.setText(LocaleController.getString("VoipChatActiveChats", C3290R.string.VoipChatActiveChats));
                 } else if (i == this.callsHeaderRow) {
-                    headerCell.setText(LocaleController.getString("VoipChatRecentCalls", C3242R.string.VoipChatRecentCalls));
+                    headerCell.setText(LocaleController.getString("VoipChatRecentCalls", C3290R.string.VoipChatRecentCalls));
                 }
             } else if (itemViewType != 4) {
             } else {
@@ -1300,19 +1298,19 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                 TLRPC$Chat chat = CallLogActivity.this.getMessagesController().getChat((Long) CallLogActivity.this.activeGroupCalls.get(i4));
                 GroupCallCell groupCallCell = (GroupCallCell) viewHolder.itemView;
                 groupCallCell.setChat(chat);
-                groupCallCell.button.setTag(Long.valueOf(chat.f1427id));
+                groupCallCell.button.setTag(Long.valueOf(chat.f1433id));
                 if (ChatObject.isChannel(chat) && !chat.megagroup) {
                     if (!ChatObject.isPublic(chat)) {
-                        lowerCase = LocaleController.getString("ChannelPrivate", C3242R.string.ChannelPrivate).toLowerCase();
+                        lowerCase = LocaleController.getString("ChannelPrivate", C3290R.string.ChannelPrivate).toLowerCase();
                     } else {
-                        lowerCase = LocaleController.getString("ChannelPublic", C3242R.string.ChannelPublic).toLowerCase();
+                        lowerCase = LocaleController.getString("ChannelPublic", C3290R.string.ChannelPublic).toLowerCase();
                     }
                 } else if (chat.has_geo) {
-                    lowerCase = LocaleController.getString("MegaLocation", C3242R.string.MegaLocation);
+                    lowerCase = LocaleController.getString("MegaLocation", C3290R.string.MegaLocation);
                 } else if (!ChatObject.isPublic(chat)) {
-                    lowerCase = LocaleController.getString("MegaPrivate", C3242R.string.MegaPrivate).toLowerCase();
+                    lowerCase = LocaleController.getString("MegaPrivate", C3290R.string.MegaPrivate).toLowerCase();
                 } else {
-                    lowerCase = LocaleController.getString("MegaPublic", C3242R.string.MegaPublic).toLowerCase();
+                    lowerCase = LocaleController.getString("MegaPublic", C3290R.string.MegaPublic).toLowerCase();
                 }
                 String str2 = lowerCase;
                 ProfileSearchCell profileSearchCell2 = groupCallCell.profileSearchCell;
@@ -1433,45 +1431,50 @@ public class CallLogActivity extends BaseFragment implements NotificationCenter.
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
         };
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{LocationCell.class, CallCell.class, HeaderCell.class, GroupCallCell.class}, null, null, null, "windowBackgroundWhite"));
-        arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "windowBackgroundGray"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, "actionBarDefault"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_SELECTOR, null, null, null, null, "listSelectorSDK21"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, Theme.dividerPaint, null, null, "divider"));
-        arrayList.add(new ThemeDescription(this.emptyView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{EmptyTextProgressView.class}, new String[]{"emptyTextView1"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"));
-        arrayList.add(new ThemeDescription(this.emptyView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{EmptyTextProgressView.class}, new String[]{"emptyTextView2"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "emptyListPlaceholder"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{LoadingCell.class}, new String[]{"progressBar"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "progressCircle"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, "windowBackgroundGrayShadow"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayText4"));
-        arrayList.add(new ThemeDescription(this.floatingButton, ThemeDescription.FLAG_IMAGECOLOR, null, null, null, null, "chats_actionIcon"));
-        arrayList.add(new ThemeDescription(this.floatingButton, ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, "chats_actionBackground"));
-        arrayList.add(new ThemeDescription(this.floatingButton, ThemeDescription.FLAG_BACKGROUNDFILTER | ThemeDescription.FLAG_DRAWABLESELECTEDSTATE, null, null, null, null, "chats_actionPressedBackground"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, new String[]{"imageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "featuredStickers_addButton"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, null, new Drawable[]{Theme.dialogs_verifiedCheckDrawable}, null, "chats_verifiedCheck"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, null, new Drawable[]{Theme.dialogs_verifiedDrawable}, null, "chats_verifiedBackground"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, Theme.dialogs_offlinePaint, null, null, "windowBackgroundWhiteGrayText3"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, Theme.dialogs_onlinePaint, null, null, "windowBackgroundWhiteBlueText3"));
+        int i = Theme.key_windowBackgroundWhite;
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{LocationCell.class, CallCell.class, HeaderCell.class, GroupCallCell.class}, null, null, null, i));
+        arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray));
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        int i2 = ThemeDescription.FLAG_BACKGROUND;
+        int i3 = Theme.key_actionBarDefault;
+        arrayList.add(new ThemeDescription(c3356ActionBar, i2, null, null, null, null, i3));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i3));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider));
+        arrayList.add(new ThemeDescription(this.emptyView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{EmptyTextProgressView.class}, new String[]{"emptyTextView1"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText));
+        arrayList.add(new ThemeDescription(this.emptyView, ThemeDescription.FLAG_TEXTCOLOR, new Class[]{EmptyTextProgressView.class}, new String[]{"emptyTextView2"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_emptyListPlaceholder));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{LoadingCell.class}, new String[]{"progressBar"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_progressCircle));
+        int i4 = Theme.key_windowBackgroundGrayShadow;
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, i4));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4));
+        arrayList.add(new ThemeDescription(this.floatingButton, ThemeDescription.FLAG_IMAGECOLOR, null, null, null, null, Theme.key_chats_actionIcon));
+        arrayList.add(new ThemeDescription(this.floatingButton, ThemeDescription.FLAG_BACKGROUNDFILTER, null, null, null, null, Theme.key_chats_actionBackground));
+        arrayList.add(new ThemeDescription(this.floatingButton, ThemeDescription.FLAG_BACKGROUNDFILTER | ThemeDescription.FLAG_DRAWABLESELECTEDSTATE, null, null, null, null, Theme.key_chats_actionPressedBackground));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, new String[]{"imageView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_featuredStickers_addButton));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, null, new Drawable[]{Theme.dialogs_verifiedCheckDrawable}, null, Theme.key_chats_verifiedCheck));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, null, new Drawable[]{Theme.dialogs_verifiedDrawable}, null, Theme.key_chats_verifiedBackground));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, Theme.dialogs_offlinePaint, null, null, Theme.key_windowBackgroundWhiteGrayText3));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, Theme.dialogs_onlinePaint, null, null, Theme.key_windowBackgroundWhiteBlueText3));
         TextPaint[] textPaintArr = Theme.dialogs_namePaint;
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, (String[]) null, new Paint[]{textPaintArr[0], textPaintArr[1], Theme.dialogs_searchNamePaint}, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "chats_name"));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, (String[]) null, new Paint[]{textPaintArr[0], textPaintArr[1], Theme.dialogs_searchNamePaint}, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_chats_name));
         TextPaint[] textPaintArr2 = Theme.dialogs_nameEncryptedPaint;
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, (String[]) null, new Paint[]{textPaintArr2[0], textPaintArr2[1], Theme.dialogs_searchNameEncryptedPaint}, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "chats_secretName"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, null, Theme.avatarDrawables, null, "avatar_text"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundRed"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundOrange"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundViolet"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundGreen"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundCyan"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundBlue"));
-        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, "avatar_backgroundPink"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, null, new Drawable[]{this.greenDrawable, this.greenDrawable2, Theme.calllog_msgCallUpRedDrawable, Theme.calllog_msgCallDownRedDrawable}, null, "calls_callReceivedGreenIcon"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, null, new Drawable[]{this.redDrawable, Theme.calllog_msgCallUpGreenDrawable, Theme.calllog_msgCallDownGreenDrawable}, null, "calls_callReceivedRedIcon"));
-        arrayList.add(new ThemeDescription(this.flickerLoadingView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "windowBackgroundWhite"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{ShadowSectionCell.class}, null, null, null, "windowBackgroundGrayShadow"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlueHeader"));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, (String[]) null, new Paint[]{textPaintArr2[0], textPaintArr2[1], Theme.dialogs_searchNameEncryptedPaint}, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_chats_secretName));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{CallCell.class}, null, Theme.avatarDrawables, null, Theme.key_avatar_text));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundRed));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundOrange));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundViolet));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundGreen));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundCyan));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundBlue));
+        arrayList.add(new ThemeDescription(null, 0, null, null, null, themeDescriptionDelegate, Theme.key_avatar_backgroundPink));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, null, new Drawable[]{this.greenDrawable, this.greenDrawable2, Theme.calllog_msgCallUpRedDrawable, Theme.calllog_msgCallDownRedDrawable}, null, Theme.key_calls_callReceivedGreenIcon));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, null, new Drawable[]{this.redDrawable, Theme.calllog_msgCallUpGreenDrawable, Theme.calllog_msgCallDownGreenDrawable}, null, Theme.key_fill_RedNormal));
+        arrayList.add(new ThemeDescription(this.flickerLoadingView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, i));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{ShadowSectionCell.class}, null, null, null, i4));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader));
         return arrayList;
     }
 

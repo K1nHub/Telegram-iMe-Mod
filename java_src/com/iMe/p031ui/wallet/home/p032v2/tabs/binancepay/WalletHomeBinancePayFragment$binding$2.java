@@ -7,7 +7,7 @@ import org.telegram.messenger.databinding.ForkFragmentWalletHomeBinancePayBindin
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletHomeBinancePayFragment.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayFragment$binding$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletHomeBinancePayFragment$binding$2 extends Lambda implements Function0<ForkFragmentWalletHomeBinancePayBinding> {
     final /* synthetic */ WalletHomeBinancePayFragment this$0;
 

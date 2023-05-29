@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda20;->f$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->$r8$lambda$kSsudwZ9sAsKHs_59DfkhGZTnfw(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/view/View;Landroid/view/MotionEvent;)Z
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->$r8$lambda$GG1jm3vM_wfzqK-OIbZWuxFMJ1Y(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/view/View;Landroid/view/MotionEvent;)Z
 
     move-result p1
 

@@ -3,6 +3,7 @@ package com.iMe.utils.extentions.model.wallet;
 import com.iMe.storage.domain.model.staking.StakingOperationStatus;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
+import org.telegram.p044ui.ActionBar.Theme;
 /* compiled from: StakingOperationStatusExt.kt */
 /* loaded from: classes4.dex */
 public final class StakingOperationStatusExtKt {
@@ -30,18 +31,18 @@ public final class StakingOperationStatusExtKt {
         }
     }
 
-    public static final String color(StakingOperationStatus stakingOperationStatus) {
+    public static final int colorKey(StakingOperationStatus stakingOperationStatus) {
         Intrinsics.checkNotNullParameter(stakingOperationStatus, "<this>");
         int i = WhenMappings.$EnumSwitchMapping$0[stakingOperationStatus.ordinal()];
         if (i != 1) {
             if (i != 2) {
                 if (i == 3) {
-                    return "windowBackgroundWhiteGrayText2";
+                    return Theme.key_windowBackgroundWhiteGrayText2;
                 }
                 throw new NoWhenBranchMatchedException();
             }
-            return "statisticChartLine_red";
+            return Theme.key_statisticChartLine_red;
         }
-        return "statisticChartLine_green";
+        return Theme.key_statisticChartLine_green;
     }
 }

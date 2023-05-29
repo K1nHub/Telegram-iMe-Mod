@@ -10,7 +10,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import android.widget.FrameLayout;
 import android.widget.ImageView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.LayoutHelper;
 import org.telegram.p044ui.Components.SeekBarView;
@@ -18,19 +18,25 @@ import org.telegram.p044ui.Components.SeekBarView;
 /* loaded from: classes5.dex */
 public class BrightnessControlCell extends FrameLayout {
     private ImageView leftImageView;
+    Theme.ResourcesProvider resourcesProvider;
     private ImageView rightImageView;
-    private SeekBarView seekBarView;
+    public final SeekBarView seekBarView;
+    private final int size;
 
     protected void didChangedValue(float f) {
     }
 
-    public BrightnessControlCell(Context context) {
+    public BrightnessControlCell(Context context, int i) {
+        this(context, i, null);
+    }
+
+    public BrightnessControlCell(Context context, int i, Theme.ResourcesProvider resourcesProvider) {
         super(context);
+        this.resourcesProvider = resourcesProvider;
         ImageView imageView = new ImageView(context);
         this.leftImageView = imageView;
-        imageView.setImageResource(C3242R.C3244drawable.msg_brightness_low);
-        addView(this.leftImageView, LayoutHelper.createFrame(24, 24, 51, 17, 12, 0, 0));
-        SeekBarView seekBarView = new SeekBarView(this, context, true, null) { // from class: org.telegram.ui.Cells.BrightnessControlCell.1
+        addView(imageView, LayoutHelper.createFrame(24, 24, 51, 17, 12, 0, 0));
+        SeekBarView seekBarView = new SeekBarView(this, context, true, resourcesProvider) { // from class: org.telegram.ui.Cells.BrightnessControlCell.1
             @Override // org.telegram.p044ui.Components.SeekBarView, android.view.View
             public boolean onTouchEvent(MotionEvent motionEvent) {
                 if (motionEvent.getAction() == 0) {
@@ -41,7 +47,7 @@ public class BrightnessControlCell extends FrameLayout {
         };
         this.seekBarView = seekBarView;
         seekBarView.setReportChanges(true);
-        this.seekBarView.setDelegate(new SeekBarView.SeekBarViewDelegate() { // from class: org.telegram.ui.Cells.BrightnessControlCell.2
+        seekBarView.setDelegate(new SeekBarView.SeekBarViewDelegate() { // from class: org.telegram.ui.Cells.BrightnessControlCell.2
             @Override // org.telegram.p044ui.Components.SeekBarView.SeekBarViewDelegate
             public CharSequence getContentDescription() {
                 return " ";
@@ -61,24 +67,34 @@ public class BrightnessControlCell extends FrameLayout {
                 BrightnessControlCell.this.didChangedValue(f);
             }
         });
-        this.seekBarView.setImportantForAccessibility(2);
-        addView(this.seekBarView, LayoutHelper.createFrame(-1, 38, 51, 54, 5, 54, 0));
+        seekBarView.setImportantForAccessibility(2);
+        addView(seekBarView, LayoutHelper.createFrame(-1, 38, 51, 54, 5, 54, 0));
         ImageView imageView2 = new ImageView(context);
         this.rightImageView = imageView2;
-        imageView2.setImageResource(C3242R.C3244drawable.msg_brightness_high);
-        addView(this.rightImageView, LayoutHelper.createFrame(24, 24, 53, 0, 12, 17, 0));
+        addView(imageView2, LayoutHelper.createFrame(24, 24, 53, 0, 12, 17, 0));
+        if (i == 0) {
+            this.leftImageView.setImageResource(C3290R.C3292drawable.msg_brightness_low);
+            this.rightImageView.setImageResource(C3290R.C3292drawable.msg_brightness_high);
+            this.size = 48;
+            return;
+        }
+        this.leftImageView.setImageResource(C3290R.C3292drawable.msg_brightness_high);
+        this.rightImageView.setImageResource(C3290R.C3292drawable.msg_brightness_low);
+        this.size = 43;
     }
 
     @Override // android.view.ViewGroup, android.view.View
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        this.leftImageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("windowBackgroundWhiteGrayIcon"), PorterDuff.Mode.MULTIPLY));
-        this.rightImageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("windowBackgroundWhiteGrayIcon"), PorterDuff.Mode.MULTIPLY));
+        ImageView imageView = this.leftImageView;
+        int i = Theme.key_windowBackgroundWhiteGrayIcon;
+        imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i, this.resourcesProvider), PorterDuff.Mode.MULTIPLY));
+        this.rightImageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i, this.resourcesProvider), PorterDuff.Mode.MULTIPLY));
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(48), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(this.size), 1073741824));
     }
 
     public void setProgress(float f) {

@@ -12,9 +12,9 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public final class zzbw extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzbw> CREATOR = new zzbx();
-    @SafeParcelable.VersionField(m772id = 1)
+    @SafeParcelable.VersionField(m776id = 1)
     final int zza;
-    @SafeParcelable.Field(m775id = 2)
+    @SafeParcelable.Field(m779id = 2)
     String zzb;
 
     public zzbw() {
@@ -36,7 +36,7 @@ public final class zzbw extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzbw(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) String str) {
+    public zzbw(@SafeParcelable.Param(m778id = 1) int i, @SafeParcelable.Param(m778id = 2) String str) {
         this.zza = i;
         this.zzb = str;
     }

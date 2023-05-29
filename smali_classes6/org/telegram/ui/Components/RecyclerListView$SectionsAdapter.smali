@@ -40,17 +40,17 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 355
+    .line 357
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$FastScrollAdapter;-><init>()V
 
-    .line 334
+    .line 336
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->hashes:Ljava/util/ArrayList;
 
-    .line 356
+    .line 358
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->cleanupCache()V
 
     return-void
@@ -59,7 +59,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 326
+    .line 328
     iget-object p0, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->hashes:Ljava/util/ArrayList;
 
     return-object p0
@@ -68,26 +68,26 @@
 .method private cleanupCache()V
     .locals 1
 
-    .line 337
+    .line 339
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->sectionCache:Landroid/util/SparseIntArray;
 
     if-nez v0, :cond_0
 
-    .line 338
+    .line 340
     new-instance v0, Landroid/util/SparseIntArray;
 
     invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->sectionCache:Landroid/util/SparseIntArray;
 
-    .line 339
+    .line 341
     new-instance v0, Landroid/util/SparseIntArray;
 
     invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->sectionPositionCache:Landroid/util/SparseIntArray;
 
-    .line 340
+    .line 342
     new-instance v0, Landroid/util/SparseIntArray;
 
     invoke-direct {v0}, Landroid/util/SparseIntArray;-><init>()V
@@ -96,16 +96,16 @@
 
     goto :goto_0
 
-    .line 342
+    .line 344
     :cond_0
     invoke-virtual {v0}, Landroid/util/SparseIntArray;->clear()V
 
-    .line 343
+    .line 345
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->sectionPositionCache:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0}, Landroid/util/SparseIntArray;->clear()V
 
-    .line 344
+    .line 346
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->sectionCountCache:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0}, Landroid/util/SparseIntArray;->clear()V
@@ -113,10 +113,10 @@
     :goto_0
     const/4 v0, -0x1
 
-    .line 346
+    .line 348
     iput v0, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->count:I
 
-    .line 347
+    .line 349
     iput v0, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->sectionCount:I
 
     return-void
@@ -125,7 +125,7 @@
 .method private internalGetCountForSection(I)I
     .locals 2
 
-    .line 396
+    .line 398
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->sectionCountCache:Landroid/util/SparseIntArray;
 
     const v1, 0x7fffffff
@@ -138,13 +138,13 @@
 
     return v0
 
-    .line 400
+    .line 402
     :cond_0
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->getCountForSection(I)I
 
     move-result v0
 
-    .line 401
+    .line 403
     iget-object v1, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->sectionCountCache:Landroid/util/SparseIntArray;
 
     invoke-virtual {v1, p1, v0}, Landroid/util/SparseIntArray;->put(II)V
@@ -155,14 +155,14 @@
 .method private internalGetSectionCount()I
     .locals 1
 
-    .line 406
+    .line 408
     iget v0, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->sectionCount:I
 
     if-ltz v0, :cond_0
 
     return v0
 
-    .line 409
+    .line 411
     :cond_0
     invoke-virtual {p0}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->getSectionCount()I
 
@@ -181,7 +181,7 @@
 .method public final getItem(I)Ljava/lang/Object;
     .locals 1
 
-    .line 383
+    .line 385
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->getSectionForPosition(I)I
 
     move-result v0
@@ -203,7 +203,7 @@
 .method public getItemCount()I
     .locals 4
 
-    .line 372
+    .line 374
     iget v0, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->count:I
 
     if-ltz v0, :cond_0
@@ -213,10 +213,10 @@
     :cond_0
     const/4 v0, 0x0
 
-    .line 375
+    .line 377
     iput v0, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->count:I
 
-    .line 376
+    .line 378
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->internalGetSectionCount()I
 
     move-result v1
@@ -224,7 +224,7 @@
     :goto_0
     if-ge v0, v1, :cond_1
 
-    .line 377
+    .line 379
     iget v2, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->count:I
 
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->internalGetCountForSection(I)I
@@ -239,7 +239,7 @@
 
     goto :goto_0
 
-    .line 379
+    .line 381
     :cond_1
     iget v0, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->count:I
 
@@ -249,7 +249,7 @@
 .method public final getItemViewType(I)I
     .locals 1
 
-    .line 387
+    .line 389
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->getSectionForPosition(I)I
 
     move-result v0
@@ -271,7 +271,7 @@
 .method public getPositionInSectionForPosition(I)I
     .locals 4
 
-    .line 432
+    .line 434
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->sectionPositionCache:Landroid/util/SparseIntArray;
 
     const v1, 0x7fffffff
@@ -284,7 +284,7 @@
 
     return v0
 
-    .line 437
+    .line 439
     :cond_0
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->internalGetSectionCount()I
 
@@ -297,7 +297,7 @@
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 438
+    .line 440
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->internalGetCountForSection(I)I
 
     move-result v3
@@ -310,7 +310,7 @@
 
     sub-int v0, p1, v2
 
-    .line 442
+    .line 444
     iget-object v1, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->sectionPositionCache:Landroid/util/SparseIntArray;
 
     invoke-virtual {v1, p1, v0}, Landroid/util/SparseIntArray;->put(II)V
@@ -336,7 +336,7 @@
 .method public final getSectionForPosition(I)I
     .locals 4
 
-    .line 414
+    .line 416
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->sectionCache:Landroid/util/SparseIntArray;
 
     const v1, 0x7fffffff
@@ -349,7 +349,7 @@
 
     return v0
 
-    .line 419
+    .line 421
     :cond_0
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->internalGetSectionCount()I
 
@@ -362,7 +362,7 @@
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 420
+    .line 422
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->internalGetCountForSection(I)I
 
     move-result v3
@@ -373,7 +373,7 @@
 
     if-ge p1, v3, :cond_1
 
-    .line 423
+    .line 425
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->sectionCache:Landroid/util/SparseIntArray;
 
     invoke-virtual {v0, p1, v1}, Landroid/util/SparseIntArray;->put(II)V
@@ -399,12 +399,12 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 2
 
-    .line 366
+    .line 368
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result v0
 
-    .line 367
+    .line 369
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->getSectionForPosition(I)I
 
     move-result v1
@@ -428,7 +428,7 @@
 
     const/4 v0, 0x0
 
-    .line 361
+    .line 363
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->update(Z)V
 
     return-void
@@ -437,7 +437,7 @@
 .method public notifySectionsChanged()V
     .locals 0
 
-    .line 351
+    .line 353
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->cleanupCache()V
 
     return-void
@@ -449,7 +449,7 @@
 .method public final onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 1
 
-    .line 392
+    .line 394
     invoke-virtual {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->getSectionForPosition(I)I
 
     move-result v0
@@ -466,22 +466,22 @@
 .method public update(Z)V
     .locals 10
 
-    .line 451
+    .line 453
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->cleanupCache()V
 
-    .line 453
+    .line 455
     new-instance v0, Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->hashes:Ljava/util/ArrayList;
 
     invoke-direct {v0, v1}, Ljava/util/ArrayList;-><init>(Ljava/util/Collection;)V
 
-    .line 454
+    .line 456
     iget-object v1, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->hashes:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 456
+    .line 458
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->internalGetSectionCount()I
 
     move-result v1
@@ -495,7 +495,7 @@
 
     if-ge v3, v1, :cond_1
 
-    .line 457
+    .line 459
     invoke-direct {p0, v3}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->internalGetCountForSection(I)I
 
     move-result v5
@@ -505,7 +505,7 @@
     :goto_1
     if-ge v6, v5, :cond_0
 
-    .line 459
+    .line 461
     iget-object v7, p0, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;->hashes:Ljava/util/ArrayList;
 
     const/4 v8, 0x2
@@ -550,7 +550,7 @@
     :cond_1
     if-eqz p1, :cond_2
 
-    .line 464
+    .line 466
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter$1;
 
     invoke-direct {p1, p0, v0}, Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter$1;-><init>(Lorg/telegram/ui/Components/RecyclerListView$SectionsAdapter;Ljava/util/ArrayList;)V
@@ -559,12 +559,12 @@
 
     move-result-object p1
 
-    .line 484
+    .line 486
     invoke-virtual {p1, p0}, Landroidx/recyclerview/widget/DiffUtil$DiffResult;->dispatchUpdatesTo(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
     goto :goto_2
 
-    .line 486
+    .line 488
     :cond_2
     invoke-super {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 

@@ -31,7 +31,7 @@ public final class SwapInteractor {
     public final Observable<Result<List<TokenInfo>>> getAvailableTokensToSwap(NetworkType networkType, SwapProtocol protocol) {
         Intrinsics.checkNotNullParameter(networkType, "networkType");
         Intrinsics.checkNotNullParameter(protocol, "protocol");
-        Observable<Result<List<TokenInfo>>> subscribeOn = this.swapRepository.getAvailableTokensToSwap(networkType, protocol).subscribeOn(this.schedulersProvider.mo694io());
+        Observable<Result<List<TokenInfo>>> subscribeOn = this.swapRepository.getAvailableTokensToSwap(networkType, protocol).subscribeOn(this.schedulersProvider.mo699io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "swapRepository\n         …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -39,21 +39,21 @@ public final class SwapInteractor {
     public final Observable<Result<List<CryptoTokenApproveMetadata>>> getApproveTokensInfo(NetworkType networkType, SwapProtocol protocol) {
         Intrinsics.checkNotNullParameter(networkType, "networkType");
         Intrinsics.checkNotNullParameter(protocol, "protocol");
-        Observable<Result<List<CryptoTokenApproveMetadata>>> startWith = this.swapRepository.getApproveTokensInfo(networkType, protocol).subscribeOn(this.schedulersProvider.mo694io()).startWith((Observable<Result<List<CryptoTokenApproveMetadata>>>) Result.Companion.loading$default(Result.Companion, null, 1, null));
+        Observable<Result<List<CryptoTokenApproveMetadata>>> startWith = this.swapRepository.getApproveTokensInfo(networkType, protocol).subscribeOn(this.schedulersProvider.mo699io()).startWith((Observable<Result<List<CryptoTokenApproveMetadata>>>) Result.Companion.loading$default(Result.Companion, null, 1, null));
         Intrinsics.checkNotNullExpressionValue(startWith, "swapRepository\n         …artWith(Result.loading())");
         return startWith;
     }
 
     public final Observable<Result<String>> approveToken(ApproveArgs args) {
         Intrinsics.checkNotNullParameter(args, "args");
-        Observable<Result<String>> subscribeOn = this.swapRepository.approveToken(args).subscribeOn(this.schedulersProvider.mo694io());
+        Observable<Result<String>> subscribeOn = this.swapRepository.approveToken(args).subscribeOn(this.schedulersProvider.mo699io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "swapRepository\n         …(schedulersProvider.io())");
         return subscribeOn;
     }
 
     public final Observable<Result<String>> swap(SwapArgs args) {
         Intrinsics.checkNotNullParameter(args, "args");
-        Observable<Result<String>> subscribeOn = this.swapRepository.swap(args).subscribeOn(this.schedulersProvider.mo694io());
+        Observable<Result<String>> subscribeOn = this.swapRepository.swap(args).subscribeOn(this.schedulersProvider.mo699io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "swapRepository\n         …(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -65,7 +65,7 @@ public final class SwapInteractor {
         Intrinsics.checkNotNullParameter(tradeType, "tradeType");
         Intrinsics.checkNotNullParameter(inputNetworkType, "inputNetworkType");
         Intrinsics.checkNotNullParameter(protocol, "protocol");
-        Observable<Result<CryptoSwapMetadata>> startWith = this.swapRepository.getQuoteToSwap(inputToken, outputToken, amount, tradeType, f, inputNetworkType, networkType, protocol).subscribeOn(this.schedulersProvider.mo694io()).startWith((Observable<Result<CryptoSwapMetadata>>) Result.Companion.loading$default(Result.Companion, null, 1, null));
+        Observable<Result<CryptoSwapMetadata>> startWith = this.swapRepository.getQuoteToSwap(inputToken, outputToken, amount, tradeType, f, inputNetworkType, networkType, protocol).subscribeOn(this.schedulersProvider.mo699io()).startWith((Observable<Result<CryptoSwapMetadata>>) Result.Companion.loading$default(Result.Companion, null, 1, null));
         Intrinsics.checkNotNullExpressionValue(startWith, "swapRepository\n         …artWith(Result.loading())");
         return startWith;
     }

@@ -34,7 +34,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
@@ -232,13 +232,13 @@ public final class AuthHelper implements KoinComponent, NotificationCenter.Notif
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void didReceivedNotification$lambda$2(String str, TLRPC$TL_messages_requestUrlAuth tLRPC$TL_messages_requestUrlAuth) {
-        authSubject.onNext(Result.Companion.success(TuplesKt.m80to(str, tLRPC$TL_messages_requestUrlAuth)));
+        authSubject.onNext(Result.Companion.success(TuplesKt.m85to(str, tLRPC$TL_messages_requestUrlAuth)));
     }
 
     private final void runHiddenAuthWithRemoteConfigCheck() {
-        Single<Result<Boolean>> observeOn = getRemoteConfigInteractor().getBoolean("auto_auth_enabled").observeOn(getSchedulersProvider().mo693ui());
+        Single<Result<Boolean>> observeOn = getRemoteConfigInteractor().getBoolean("auto_auth_enabled").observeOn(getSchedulersProvider().mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "remoteConfigInteractor\n …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2388x3a0d1b4e()), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2389x3a0d1b4f(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2427x3a0d1b4e()), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2428x3a0d1b4f(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         RxExtKt.autoDispose(subscribe, subscriptions);
     }
@@ -257,7 +257,7 @@ public final class AuthHelper implements KoinComponent, NotificationCenter.Notif
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void prepareAndStartAuthFlow() {
-        Observable<TLRPC$User> observeOn = getTelegramApi().getUserInfoByUsername(AppConfiguration$Wallet.getWalletBotUsernameLowerCase()).observeOn(getSchedulersProvider().mo693ui());
+        Observable<TLRPC$User> observeOn = getTelegramApi().getUserInfoByUsername(AppConfiguration$Wallet.getWalletBotUsernameLowerCase()).observeOn(getSchedulersProvider().mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "telegramApi\n            …(schedulersProvider.ui())");
         RxExtKt.autoDispose(subscribeWithCommonErrorHandling(observeOn, AuthHelper$$ExternalSyntheticLambda1.INSTANCE), subscriptions);
     }
@@ -318,7 +318,7 @@ public final class AuthHelper implements KoinComponent, NotificationCenter.Notif
             }
         });
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable observeOn = flatMap.observeOn(getSchedulersProvider().mo693ui());
+        Observable observeOn = flatMap.observeOn(getSchedulersProvider().mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "authSubject\n            …(schedulersProvider.ui())");
         RxExtKt.autoDispose(subscribeWithCommonErrorHandling(withLoadingDialog(observeOn), AuthHelper$$ExternalSyntheticLambda0.INSTANCE), compositeDisposable);
     }
@@ -340,7 +340,7 @@ public final class AuthHelper implements KoinComponent, NotificationCenter.Notif
     /* JADX INFO: Access modifiers changed from: package-private */
     public static /* synthetic */ void onError$default(AuthHelper authHelper, String str, int i, Object obj) {
         if ((i & 1) != 0) {
-            str = authHelper.getResourceManager().getString(C3242R.string.common_error_unexpected);
+            str = authHelper.getResourceManager().getString(C3290R.string.common_error_unexpected);
         }
         authHelper.onError(str);
     }

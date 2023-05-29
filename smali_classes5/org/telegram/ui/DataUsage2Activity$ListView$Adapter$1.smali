@@ -29,7 +29,7 @@
     return p0
 .end method
 
-.method constructor <init>(Lorg/telegram/ui/DataUsage2Activity$ListView$Adapter;Landroid/content/Context;I[Ljava/lang/String;I[I)V
+.method constructor <init>(Lorg/telegram/ui/DataUsage2Activity$ListView$Adapter;Landroid/content/Context;I[II[I)V
     .locals 6
 
     .line 527
@@ -47,7 +47,7 @@
 
     move-object v5, p6
 
-    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/CacheChart;-><init>(Landroid/content/Context;I[Ljava/lang/String;I[I)V
+    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/CacheChart;-><init>(Landroid/content/Context;I[II[I)V
 
     return-void
 .end method

@@ -3,12 +3,12 @@
 .source "DialogsActivity.java"
 
 # interfaces
-.implements Landroid/view/View$OnKeyListener;
+.implements Lorg/telegram/ui/GroupCreateFinalActivity$GroupCreateFinalActivityDelegate;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/DialogsActivity;->createView(Landroid/content/Context;)Landroid/view/View;
+    value = Lorg/telegram/ui/DialogsActivity;->lambda$createView$40(Lorg/telegram/ui/DialogsActivity$ViewPage;Landroid/view/View;I)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -20,14 +20,12 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/DialogsActivity;
 
-.field private wasEmpty:Z
-
 
 # direct methods
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
-    .line 5293
+    .line 5369
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$16;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -37,124 +35,71 @@
 
 
 # virtual methods
-.method public onKey(Landroid/view/View;ILandroid/view/KeyEvent;)Z
-    .locals 4
+.method public didFailChatCreation()V
+    .locals 0
 
-    const/4 p1, 0x0
+    return-void
+.end method
 
-    const/16 v0, 0x43
+.method public didFinishChatCreation(Lorg/telegram/ui/GroupCreateFinalActivity;J)V
+    .locals 7
 
-    if-ne p2, v0, :cond_2
+    .line 5377
+    new-instance v2, Ljava/util/ArrayList;
 
-    .line 5300
-    invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    move-result p2
+    neg-long p1, p2
 
-    const/4 v0, 0x1
+    const/4 p3, 0x0
 
-    if-nez p2, :cond_1
+    .line 5378
+    invoke-static {p1, p2, p3}, Lorg/telegram/messenger/MessagesStorage$TopicKey;->of(JI)Lorg/telegram/messenger/MessagesStorage$TopicKey;
 
-    .line 5301
-    iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$16;->this$0:Lorg/telegram/ui/DialogsActivity;
+    move-result-object p1
 
-    invoke-static {p2}, Lorg/telegram/ui/DialogsActivity;->access$1300(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/Components/EditTextBoldCursor;
+    invoke-virtual {v2, p1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    move-result-object p2
+    .line 5379
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$16;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-virtual {p2}, Landroid/widget/EditText;->length()I
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$31000(Lorg/telegram/ui/DialogsActivity;)Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;
 
-    move-result p2
+    move-result-object v0
 
-    if-nez p2, :cond_0
+    .line 5380
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$16;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    goto :goto_0
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$39800(Lorg/telegram/ui/DialogsActivity;)Z
 
+    move-result p1
+
+    if-eqz p1, :cond_0
+
+    .line 5381
+    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$16;->this$0:Lorg/telegram/ui/DialogsActivity;
+
+    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->removeSelfFromStack()V
+
+    .line 5383
     :cond_0
-    move v0, p1
-
-    :goto_0
-    iput-boolean v0, p0, Lorg/telegram/ui/DialogsActivity$16;->wasEmpty:Z
-
-    goto :goto_1
-
-    .line 5302
-    :cond_1
-    invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
-
-    move-result p2
-
-    if-ne p2, v0, :cond_2
-
-    iget-boolean p2, p0, Lorg/telegram/ui/DialogsActivity$16;->wasEmpty:Z
-
-    if-eqz p2, :cond_2
-
-    iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$16;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-static {p2}, Lorg/telegram/ui/DialogsActivity;->access$1100(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
-
-    move-result-object p2
-
-    invoke-virtual {p2}, Ljava/util/ArrayList;->isEmpty()Z
-
-    move-result p2
-
-    if-nez p2, :cond_2
-
-    .line 5303
-    iget-object p2, p0, Lorg/telegram/ui/DialogsActivity$16;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-static {p2}, Lorg/telegram/ui/DialogsActivity;->access$1100(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
-
-    move-result-object p2
-
-    iget-object p3, p0, Lorg/telegram/ui/DialogsActivity$16;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-static {p3}, Lorg/telegram/ui/DialogsActivity;->access$1100(Lorg/telegram/ui/DialogsActivity;)Ljava/util/ArrayList;
-
-    move-result-object p3
-
-    invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
-
-    move-result p3
-
-    sub-int/2addr p3, v0
-
-    invoke-virtual {p2, p3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object p2
-
-    check-cast p2, Lorg/telegram/ui/Components/GroupCreateSpan;
-
-    .line 5304
-    iget-object p3, p0, Lorg/telegram/ui/DialogsActivity$16;->this$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-virtual {p2}, Lorg/telegram/ui/Components/GroupCreateSpan;->getDialogId()J
-
-    move-result-wide v1
+    iget-object v1, p0, Lorg/telegram/ui/DialogsActivity$16;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     const/4 v3, 0x0
 
-    invoke-virtual {p3, v1, v2, v3}, Lorg/telegram/ui/DialogsActivity;->addOrRemoveSelectedDialog(JLandroid/view/View;)Z
+    const/4 v4, 0x1
 
-    .line 5305
-    iget-object p3, p0, Lorg/telegram/ui/DialogsActivity$16;->this$0:Lorg/telegram/ui/DialogsActivity;
+    const/4 v5, 0x0
 
-    invoke-virtual {p2}, Lorg/telegram/ui/Components/GroupCreateSpan;->getDialogId()J
+    const/4 v6, 0x0
 
-    move-result-wide v1
+    invoke-interface/range {v0 .. v6}, Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;->didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
 
-    invoke-static {p3, v1, v2, p1}, Lorg/telegram/ui/DialogsActivity;->access$28000(Lorg/telegram/ui/DialogsActivity;JZ)V
+    return-void
+.end method
 
-    .line 5306
-    iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$16;->this$0:Lorg/telegram/ui/DialogsActivity;
+.method public didStartChatCreation()V
+    .locals 0
 
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$28100(Lorg/telegram/ui/DialogsActivity;)V
-
-    return v0
-
-    :cond_2
-    :goto_1
-    return p1
+    return-void
 .end method

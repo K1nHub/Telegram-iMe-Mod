@@ -18,7 +18,7 @@ class LowLatencyAudioBufferManager {
                 if (this.bufferIncreaseCounter < 5) {
                     int bufferSizeInFrames = audioTrack.getBufferSizeInFrames();
                     int playbackRate = (audioTrack.getPlaybackRate() / 100) + bufferSizeInFrames;
-                    Logging.m18d(TAG, "Underrun detected! Increasing AudioTrack buffer size from " + bufferSizeInFrames + " to " + playbackRate);
+                    Logging.m20d(TAG, "Underrun detected! Increasing AudioTrack buffer size from " + bufferSizeInFrames + " to " + playbackRate);
                     audioTrack.setBufferSizeInFrames(playbackRate);
                     this.bufferIncreaseCounter = this.bufferIncreaseCounter + 1;
                 }
@@ -33,7 +33,7 @@ class LowLatencyAudioBufferManager {
                     int bufferSizeInFrames2 = audioTrack.getBufferSizeInFrames();
                     int max = Math.max(playbackRate2, bufferSizeInFrames2 - playbackRate2);
                     if (max != bufferSizeInFrames2) {
-                        Logging.m18d(TAG, "Lowering AudioTrack buffer size from " + bufferSizeInFrames2 + " to " + max);
+                        Logging.m20d(TAG, "Lowering AudioTrack buffer size from " + bufferSizeInFrames2 + " to " + max);
                         audioTrack.setBufferSizeInFrames(max);
                     }
                     this.ticksUntilNextDecrease = 10;

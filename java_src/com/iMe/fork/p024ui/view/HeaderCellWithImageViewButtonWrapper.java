@@ -30,7 +30,7 @@ public final class HeaderCellWithImageViewButtonWrapper extends FrameLayout {
         Lazy lazy;
         int i;
         ViewGroup.MarginLayoutParams marginLayoutParams;
-        int m49px;
+        int m53px;
         ViewGroup.MarginLayoutParams marginLayoutParams2;
         Intrinsics.checkNotNullParameter(headerCell, "headerCell");
         this.headerCell = headerCell;
@@ -44,19 +44,19 @@ public final class HeaderCellWithImageViewButtonWrapper extends FrameLayout {
             TextView textView = headerCell.getTextView();
             Intrinsics.checkNotNullExpressionValue(textView, "headerCell.textView");
             ViewGroup.LayoutParams layoutParams = textView.getLayoutParams();
-            i = AndroidUtilities.m49px((layoutParams instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams : null) != null ? marginLayoutParams2.rightMargin : 0);
+            i = AndroidUtilities.m53px((layoutParams instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams : null) != null ? marginLayoutParams2.rightMargin : 0);
         } else {
             i = 0;
         }
         if (LocaleController.isRTL) {
-            m49px = 0;
+            m53px = 0;
         } else {
             TextView textView2 = headerCell.getTextView();
             Intrinsics.checkNotNullExpressionValue(textView2, "headerCell.textView");
             ViewGroup.LayoutParams layoutParams2 = textView2.getLayoutParams();
-            m49px = AndroidUtilities.m49px((layoutParams2 instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams2 : null) != null ? marginLayoutParams.rightMargin : 0);
+            m53px = AndroidUtilities.m53px((layoutParams2 instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams2 : null) != null ? marginLayoutParams.rightMargin : 0);
         }
-        addView(imageView, LayoutHelper.createFrame(24, 24, i2, i, 0, m49px, 0));
+        addView(imageView, LayoutHelper.createFrame(24, 24, i2, i, 0, m53px, 0));
         setupColors();
     }
 
@@ -66,19 +66,19 @@ public final class HeaderCellWithImageViewButtonWrapper extends FrameLayout {
 
     public final void setupColors() {
         HeaderCell headerCell = this.headerCell;
-        headerCell.getTextView().setTextColor(Theme.getColor("windowBackgroundWhiteBlueHeader"));
-        headerCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+        headerCell.getTextView().setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueHeader));
+        headerCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
         AppCompatImageView imageView = getImageView();
-        ViewExtKt.setImageColor(imageView, Theme.getColor("windowBackgroundWhiteGrayIcon"));
+        ViewExtKt.setImageColor(imageView, Theme.getColor(Theme.key_windowBackgroundWhiteGrayIcon));
         ViewExtKt.setBoundedCircleRippleBackground(imageView);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final AppCompatImageView initImageView() {
         AppCompatImageView appCompatImageView = new AppCompatImageView(getContext());
-        int m50dp = AndroidUtilities.m50dp(2);
-        appCompatImageView.setPadding(m50dp, m50dp, m50dp, m50dp);
-        ViewExtKt.gone(appCompatImageView);
+        int m54dp = AndroidUtilities.m54dp(2);
+        appCompatImageView.setPadding(m54dp, m54dp, m54dp, m54dp);
+        ViewExtKt.gone$default(appCompatImageView, false, 1, null);
         return appCompatImageView;
     }
 }

@@ -15,13 +15,13 @@ import com.iMe.common.IdFabric$ViewTypes;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Cells.AvailableReactionCell;
@@ -60,12 +60,12 @@ public class ReactionsDoubleTapManageActivity extends BaseFragment implements No
 
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public View createView(final Context context) {
-        this.actionBar.setTitle(LocaleController.getString("Reactions", C3242R.string.Reactions));
-        this.actionBar.setTitle(LocaleController.getString("DoubleTapSetting", C3242R.string.DoubleTapSetting));
-        this.actionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
+        this.actionBar.setTitle(LocaleController.getString("Reactions", C3290R.string.Reactions));
+        this.actionBar.setTitle(LocaleController.getString("DoubleTapSetting", C3290R.string.DoubleTapSetting));
+        this.actionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ReactionsDoubleTapManageActivity.1
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ReactionsDoubleTapManageActivity.1
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     ReactionsDoubleTapManageActivity.this.finishFragment();
@@ -88,7 +88,7 @@ public class ReactionsDoubleTapManageActivity extends BaseFragment implements No
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter
             public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
                 SetDefaultReactionCell setDefaultReactionCell;
-                if (i == IdFabric$ViewTypes.TEXT_CHECK) {
+                if (i == IdFabric$ViewTypes.TEXT_CHECK_CELL) {
                     setDefaultReactionCell = new TextCheckCell(context);
                 } else if (i == 0) {
                     ThemePreviewMessagesCell themePreviewMessagesCell = new ThemePreviewMessagesCell(context, ((BaseFragment) ReactionsDoubleTapManageActivity.this).parentLayout, 2);
@@ -99,8 +99,8 @@ public class ReactionsDoubleTapManageActivity extends BaseFragment implements No
                     setDefaultReactionCell = themePreviewMessagesCell;
                 } else if (i == 2) {
                     TextInfoPrivacyCell textInfoPrivacyCell = new TextInfoPrivacyCell(context);
-                    textInfoPrivacyCell.setText(ReactionsDoubleTapManageActivity.this.initInfoText = LocaleController.getString("DoubleTapPreviewRational", C3242R.string.DoubleTapPreviewRational));
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(context, C3242R.C3244drawable.greydivider, "windowBackgroundGrayShadow"));
+                    textInfoPrivacyCell.setText(ReactionsDoubleTapManageActivity.this.initInfoText = LocaleController.getString("DoubleTapPreviewRational", C3290R.string.DoubleTapPreviewRational));
+                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(context, C3290R.C3292drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                     setDefaultReactionCell = textInfoPrivacyCell;
                 } else if (i == 3) {
                     SetDefaultReactionCell setDefaultReactionCell2 = new SetDefaultReactionCell(context);
@@ -110,10 +110,10 @@ public class ReactionsDoubleTapManageActivity extends BaseFragment implements No
                     View view = new View(this, context) { // from class: org.telegram.ui.ReactionsDoubleTapManageActivity.2.1
                         @Override // android.view.View
                         protected void onMeasure(int i2, int i3) {
-                            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(16), 1073741824));
+                            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(16), 1073741824));
                         }
                     };
-                    view.setBackground(Theme.getThemedDrawable(context, C3242R.C3244drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                    view.setBackground(Theme.getThemedDrawableByKey(context, C3290R.C3292drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
                     setDefaultReactionCell = view;
                 } else {
                     setDefaultReactionCell = new AvailableReactionCell(context, true, true);
@@ -124,24 +124,24 @@ public class ReactionsDoubleTapManageActivity extends BaseFragment implements No
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter
             public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
                 int itemViewType = getItemViewType(i);
-                if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK) {
+                if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK_CELL) {
                     TextCheckCell textCheckCell = (TextCheckCell) viewHolder.itemView;
                     textCheckCell.setType(1);
-                    textCheckCell.setTextAndCheck(LocaleController.getString("Enable", C3242R.string.Enable), ReactionsDoubleTapManageActivity.this.getForkCommonController().isQuickReactionEnabled(), false);
+                    textCheckCell.setTextAndCheck(LocaleController.getString("Enable", C3290R.string.Enable), ReactionsDoubleTapManageActivity.this.getForkCommonController().isQuickReactionEnabled(), false);
                 } else if (itemViewType == 2) {
                     TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) viewHolder.itemView;
                     if (i == ReactionsDoubleTapManageActivity.this.enableSectionRow && ReactionsDoubleTapManageActivity.this.getForkCommonController().isQuickReactionEnabled()) {
-                        textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(ReactionsDoubleTapManageActivity.this.getParentActivity(), C3242R.C3244drawable.greydivider, "windowBackgroundGrayShadow"));
+                        textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(ReactionsDoubleTapManageActivity.this.getParentActivity(), C3290R.C3292drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                         textInfoPrivacyCell.setFixedSize(1);
                         textInfoPrivacyCell.setText(null);
                         return;
                     }
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(ReactionsDoubleTapManageActivity.this.getParentActivity(), C3242R.C3244drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawable(ReactionsDoubleTapManageActivity.this.getParentActivity(), C3290R.C3292drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
                     textInfoPrivacyCell.setFixedSize(0);
                     if (i != ReactionsDoubleTapManageActivity.this.enableSectionRow) {
                         textInfoPrivacyCell.setText(ReactionsDoubleTapManageActivity.this.initInfoText);
                     } else {
-                        textInfoPrivacyCell.setText(LocaleController.getInternalString(C3242R.string.quick_reaction_settings_enable_item_hint));
+                        textInfoPrivacyCell.setText(LocaleController.getInternalString(C3290R.string.quick_reaction_settings_enable_item_hint));
                     }
                 } else if (getItemViewType(i) != 1) {
                 } else {
@@ -162,7 +162,7 @@ public class ReactionsDoubleTapManageActivity extends BaseFragment implements No
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter
             public int getItemViewType(int i) {
                 if (i == ReactionsDoubleTapManageActivity.this.enableRow) {
-                    return IdFabric$ViewTypes.TEXT_CHECK;
+                    return IdFabric$ViewTypes.TEXT_CHECK_CELL;
                 }
                 ReactionsDoubleTapManageActivity reactionsDoubleTapManageActivity = ReactionsDoubleTapManageActivity.this;
                 if (i == reactionsDoubleTapManageActivity.previewRow) {
@@ -197,7 +197,7 @@ public class ReactionsDoubleTapManageActivity extends BaseFragment implements No
     public /* synthetic */ void lambda$createView$0(View view, int i) {
         if (view instanceof TextCheckCell) {
             TextCheckCell textCheckCell = (TextCheckCell) view;
-            textCheckCell.toggleCheckbox();
+            textCheckCell.toggleCheckBox();
             int itemCount = this.listAdapter.getItemCount();
             getForkCommonController().setQuickReactionEnabled(!getForkCommonController().isQuickReactionEnabled());
             getForkCommonController().saveConfig();
@@ -231,14 +231,14 @@ public class ReactionsDoubleTapManageActivity extends BaseFragment implements No
 
         public SetDefaultReactionCell(Context context) {
             super(context);
-            setBackgroundColor(ReactionsDoubleTapManageActivity.this.getThemedColor("windowBackgroundWhite"));
+            setBackgroundColor(ReactionsDoubleTapManageActivity.this.getThemedColor(Theme.key_windowBackgroundWhite));
             TextView textView = new TextView(context);
             this.textView = textView;
             textView.setTextSize(1, 16.0f);
-            this.textView.setTextColor(ReactionsDoubleTapManageActivity.this.getThemedColor("windowBackgroundWhiteBlackText"));
-            this.textView.setText(LocaleController.getString("DoubleTapSetting", C3242R.string.DoubleTapSetting));
+            this.textView.setTextColor(ReactionsDoubleTapManageActivity.this.getThemedColor(Theme.key_windowBackgroundWhiteBlackText));
+            this.textView.setText(LocaleController.getString("DoubleTapSetting", C3290R.string.DoubleTapSetting));
             addView(this.textView, LayoutHelper.createFrame(-1, -2, 23, 20, 0, 48, 0));
-            this.imageDrawable = new AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable(this, AndroidUtilities.m50dp(24));
+            this.imageDrawable = new AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable(this, AndroidUtilities.m54dp(24));
         }
 
         public void update(boolean z) {
@@ -257,7 +257,7 @@ public class ReactionsDoubleTapManageActivity extends BaseFragment implements No
         }
 
         public void updateImageBounds() {
-            this.imageDrawable.setBounds((getWidth() - this.imageDrawable.getIntrinsicWidth()) - AndroidUtilities.m50dp(21), (getHeight() - this.imageDrawable.getIntrinsicHeight()) / 2, getWidth() - AndroidUtilities.m50dp(21), (getHeight() + this.imageDrawable.getIntrinsicHeight()) / 2);
+            this.imageDrawable.setBounds((getWidth() - this.imageDrawable.getIntrinsicWidth()) - AndroidUtilities.m54dp(21), (getHeight() - this.imageDrawable.getIntrinsicHeight()) / 2, getWidth() - AndroidUtilities.m54dp(21), (getHeight() + this.imageDrawable.getIntrinsicHeight()) / 2);
         }
 
         @Override // android.view.ViewGroup, android.view.View
@@ -269,7 +269,7 @@ public class ReactionsDoubleTapManageActivity extends BaseFragment implements No
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(50), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(50), 1073741824));
         }
 
         @Override // android.view.ViewGroup, android.view.View
@@ -353,12 +353,12 @@ public class ReactionsDoubleTapManageActivity extends BaseFragment implements No
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, "windowBackgroundWhite", "windowBackgroundWhiteBlackText", "windowBackgroundWhiteGrayText2", "listSelectorSDK21", "windowBackgroundGray", "windowBackgroundWhiteGrayText4", "windowBackgroundWhiteRedText4", "windowBackgroundChecked", "windowBackgroundCheckText", "switchTrackBlue", "switchTrackBlueChecked", "switchTrackBlueThumb", "switchTrackBlueThumbChecked");
+        }, Theme.key_windowBackgroundWhite, Theme.key_windowBackgroundWhiteBlackText, Theme.key_windowBackgroundWhiteGrayText2, Theme.key_listSelector, Theme.key_windowBackgroundGray, Theme.key_windowBackgroundWhiteGrayText4, Theme.key_text_RedRegular, Theme.key_windowBackgroundChecked, Theme.key_windowBackgroundCheckText, Theme.key_switchTrackBlue, Theme.key_switchTrackBlueChecked, Theme.key_switchTrackBlueThumb, Theme.key_switchTrackBlueThumbChecked);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public void updateColors() {
-        this.contentView.setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+        this.contentView.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         this.listAdapter.notifyDataSetChanged();
     }
 

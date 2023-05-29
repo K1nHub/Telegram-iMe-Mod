@@ -38,7 +38,7 @@ public final class AutoBatchedLogRequestEncoder implements Configurator {
     /* loaded from: classes.dex */
     private static final class BatchedLogRequestEncoder implements ObjectEncoder<BatchedLogRequest> {
         static final BatchedLogRequestEncoder INSTANCE = new BatchedLogRequestEncoder();
-        private static final FieldDescriptor LOGREQUEST_DESCRIPTOR = FieldDescriptor.m714of("logRequest");
+        private static final FieldDescriptor LOGREQUEST_DESCRIPTOR = FieldDescriptor.m718of("logRequest");
 
         private BatchedLogRequestEncoder() {
         }
@@ -52,13 +52,13 @@ public final class AutoBatchedLogRequestEncoder implements Configurator {
     /* loaded from: classes.dex */
     private static final class LogRequestEncoder implements ObjectEncoder<LogRequest> {
         static final LogRequestEncoder INSTANCE = new LogRequestEncoder();
-        private static final FieldDescriptor REQUESTTIMEMS_DESCRIPTOR = FieldDescriptor.m714of("requestTimeMs");
-        private static final FieldDescriptor REQUESTUPTIMEMS_DESCRIPTOR = FieldDescriptor.m714of("requestUptimeMs");
-        private static final FieldDescriptor CLIENTINFO_DESCRIPTOR = FieldDescriptor.m714of("clientInfo");
-        private static final FieldDescriptor LOGSOURCE_DESCRIPTOR = FieldDescriptor.m714of("logSource");
-        private static final FieldDescriptor LOGSOURCENAME_DESCRIPTOR = FieldDescriptor.m714of("logSourceName");
-        private static final FieldDescriptor LOGEVENT_DESCRIPTOR = FieldDescriptor.m714of("logEvent");
-        private static final FieldDescriptor QOSTIER_DESCRIPTOR = FieldDescriptor.m714of("qosTier");
+        private static final FieldDescriptor REQUESTTIMEMS_DESCRIPTOR = FieldDescriptor.m718of("requestTimeMs");
+        private static final FieldDescriptor REQUESTUPTIMEMS_DESCRIPTOR = FieldDescriptor.m718of("requestUptimeMs");
+        private static final FieldDescriptor CLIENTINFO_DESCRIPTOR = FieldDescriptor.m718of("clientInfo");
+        private static final FieldDescriptor LOGSOURCE_DESCRIPTOR = FieldDescriptor.m718of("logSource");
+        private static final FieldDescriptor LOGSOURCENAME_DESCRIPTOR = FieldDescriptor.m718of("logSourceName");
+        private static final FieldDescriptor LOGEVENT_DESCRIPTOR = FieldDescriptor.m718of("logEvent");
+        private static final FieldDescriptor QOSTIER_DESCRIPTOR = FieldDescriptor.m718of("qosTier");
 
         private LogRequestEncoder() {
         }
@@ -78,8 +78,8 @@ public final class AutoBatchedLogRequestEncoder implements Configurator {
     /* loaded from: classes.dex */
     private static final class ClientInfoEncoder implements ObjectEncoder<ClientInfo> {
         static final ClientInfoEncoder INSTANCE = new ClientInfoEncoder();
-        private static final FieldDescriptor CLIENTTYPE_DESCRIPTOR = FieldDescriptor.m714of("clientType");
-        private static final FieldDescriptor ANDROIDCLIENTINFO_DESCRIPTOR = FieldDescriptor.m714of("androidClientInfo");
+        private static final FieldDescriptor CLIENTTYPE_DESCRIPTOR = FieldDescriptor.m718of("clientType");
+        private static final FieldDescriptor ANDROIDCLIENTINFO_DESCRIPTOR = FieldDescriptor.m718of("androidClientInfo");
 
         private ClientInfoEncoder() {
         }
@@ -94,18 +94,18 @@ public final class AutoBatchedLogRequestEncoder implements Configurator {
     /* loaded from: classes.dex */
     private static final class AndroidClientInfoEncoder implements ObjectEncoder<AndroidClientInfo> {
         static final AndroidClientInfoEncoder INSTANCE = new AndroidClientInfoEncoder();
-        private static final FieldDescriptor SDKVERSION_DESCRIPTOR = FieldDescriptor.m714of("sdkVersion");
-        private static final FieldDescriptor MODEL_DESCRIPTOR = FieldDescriptor.m714of("model");
-        private static final FieldDescriptor HARDWARE_DESCRIPTOR = FieldDescriptor.m714of("hardware");
-        private static final FieldDescriptor DEVICE_DESCRIPTOR = FieldDescriptor.m714of("device");
-        private static final FieldDescriptor PRODUCT_DESCRIPTOR = FieldDescriptor.m714of("product");
-        private static final FieldDescriptor OSBUILD_DESCRIPTOR = FieldDescriptor.m714of("osBuild");
-        private static final FieldDescriptor MANUFACTURER_DESCRIPTOR = FieldDescriptor.m714of("manufacturer");
-        private static final FieldDescriptor FINGERPRINT_DESCRIPTOR = FieldDescriptor.m714of("fingerprint");
-        private static final FieldDescriptor LOCALE_DESCRIPTOR = FieldDescriptor.m714of("locale");
-        private static final FieldDescriptor COUNTRY_DESCRIPTOR = FieldDescriptor.m714of("country");
-        private static final FieldDescriptor MCCMNC_DESCRIPTOR = FieldDescriptor.m714of("mccMnc");
-        private static final FieldDescriptor APPLICATIONBUILD_DESCRIPTOR = FieldDescriptor.m714of("applicationBuild");
+        private static final FieldDescriptor SDKVERSION_DESCRIPTOR = FieldDescriptor.m718of("sdkVersion");
+        private static final FieldDescriptor MODEL_DESCRIPTOR = FieldDescriptor.m718of("model");
+        private static final FieldDescriptor HARDWARE_DESCRIPTOR = FieldDescriptor.m718of("hardware");
+        private static final FieldDescriptor DEVICE_DESCRIPTOR = FieldDescriptor.m718of("device");
+        private static final FieldDescriptor PRODUCT_DESCRIPTOR = FieldDescriptor.m718of("product");
+        private static final FieldDescriptor OSBUILD_DESCRIPTOR = FieldDescriptor.m718of("osBuild");
+        private static final FieldDescriptor MANUFACTURER_DESCRIPTOR = FieldDescriptor.m718of("manufacturer");
+        private static final FieldDescriptor FINGERPRINT_DESCRIPTOR = FieldDescriptor.m718of("fingerprint");
+        private static final FieldDescriptor LOCALE_DESCRIPTOR = FieldDescriptor.m718of("locale");
+        private static final FieldDescriptor COUNTRY_DESCRIPTOR = FieldDescriptor.m718of("country");
+        private static final FieldDescriptor MCCMNC_DESCRIPTOR = FieldDescriptor.m718of("mccMnc");
+        private static final FieldDescriptor APPLICATIONBUILD_DESCRIPTOR = FieldDescriptor.m718of("applicationBuild");
 
         private AndroidClientInfoEncoder() {
         }
@@ -130,13 +130,13 @@ public final class AutoBatchedLogRequestEncoder implements Configurator {
     /* loaded from: classes.dex */
     private static final class LogEventEncoder implements ObjectEncoder<LogEvent> {
         static final LogEventEncoder INSTANCE = new LogEventEncoder();
-        private static final FieldDescriptor EVENTTIMEMS_DESCRIPTOR = FieldDescriptor.m714of("eventTimeMs");
-        private static final FieldDescriptor EVENTCODE_DESCRIPTOR = FieldDescriptor.m714of("eventCode");
-        private static final FieldDescriptor EVENTUPTIMEMS_DESCRIPTOR = FieldDescriptor.m714of("eventUptimeMs");
-        private static final FieldDescriptor SOURCEEXTENSION_DESCRIPTOR = FieldDescriptor.m714of("sourceExtension");
-        private static final FieldDescriptor SOURCEEXTENSIONJSONPROTO3_DESCRIPTOR = FieldDescriptor.m714of("sourceExtensionJsonProto3");
-        private static final FieldDescriptor TIMEZONEOFFSETSECONDS_DESCRIPTOR = FieldDescriptor.m714of("timezoneOffsetSeconds");
-        private static final FieldDescriptor NETWORKCONNECTIONINFO_DESCRIPTOR = FieldDescriptor.m714of("networkConnectionInfo");
+        private static final FieldDescriptor EVENTTIMEMS_DESCRIPTOR = FieldDescriptor.m718of("eventTimeMs");
+        private static final FieldDescriptor EVENTCODE_DESCRIPTOR = FieldDescriptor.m718of("eventCode");
+        private static final FieldDescriptor EVENTUPTIMEMS_DESCRIPTOR = FieldDescriptor.m718of("eventUptimeMs");
+        private static final FieldDescriptor SOURCEEXTENSION_DESCRIPTOR = FieldDescriptor.m718of("sourceExtension");
+        private static final FieldDescriptor SOURCEEXTENSIONJSONPROTO3_DESCRIPTOR = FieldDescriptor.m718of("sourceExtensionJsonProto3");
+        private static final FieldDescriptor TIMEZONEOFFSETSECONDS_DESCRIPTOR = FieldDescriptor.m718of("timezoneOffsetSeconds");
+        private static final FieldDescriptor NETWORKCONNECTIONINFO_DESCRIPTOR = FieldDescriptor.m718of("networkConnectionInfo");
 
         private LogEventEncoder() {
         }
@@ -156,8 +156,8 @@ public final class AutoBatchedLogRequestEncoder implements Configurator {
     /* loaded from: classes.dex */
     private static final class NetworkConnectionInfoEncoder implements ObjectEncoder<NetworkConnectionInfo> {
         static final NetworkConnectionInfoEncoder INSTANCE = new NetworkConnectionInfoEncoder();
-        private static final FieldDescriptor NETWORKTYPE_DESCRIPTOR = FieldDescriptor.m714of("networkType");
-        private static final FieldDescriptor MOBILESUBTYPE_DESCRIPTOR = FieldDescriptor.m714of("mobileSubtype");
+        private static final FieldDescriptor NETWORKTYPE_DESCRIPTOR = FieldDescriptor.m718of("networkType");
+        private static final FieldDescriptor MOBILESUBTYPE_DESCRIPTOR = FieldDescriptor.m718of("mobileSubtype");
 
         private NetworkConnectionInfoEncoder() {
         }

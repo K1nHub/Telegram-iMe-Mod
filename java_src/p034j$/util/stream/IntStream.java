@@ -1,92 +1,92 @@
 package p034j$.util.stream;
 
-import p034j$.util.C2675g;
-import p034j$.util.C2677i;
-import p034j$.util.C2678j;
-import p034j$.util.InterfaceC2683o;
-import p034j$.util.InterfaceC2688s;
+import p034j$.util.C2714g;
+import p034j$.util.C2716i;
+import p034j$.util.C2717j;
+import p034j$.util.InterfaceC2722o;
+import p034j$.util.InterfaceC2727s;
 import p034j$.util.function.BiConsumer;
-import p034j$.util.function.InterfaceC2659j;
-import p034j$.util.function.InterfaceC2661l;
-import p034j$.util.function.InterfaceC2662m;
-import p034j$.util.function.InterfaceC2663n;
-import p034j$.util.function.InterfaceC2671v;
-import p034j$.util.function.InterfaceC2674y;
-import p034j$.wrappers.C3036U;
-import p034j$.wrappers.C3038W;
-import p034j$.wrappers.C3043a0;
+import p034j$.util.function.InterfaceC2698j;
+import p034j$.util.function.InterfaceC2700l;
+import p034j$.util.function.InterfaceC2701m;
+import p034j$.util.function.InterfaceC2702n;
+import p034j$.util.function.InterfaceC2710v;
+import p034j$.util.function.InterfaceC2713y;
+import p034j$.wrappers.C3075U;
+import p034j$.wrappers.C3077W;
+import p034j$.wrappers.C3082a0;
 /* renamed from: j$.util.stream.IntStream */
 /* loaded from: classes2.dex */
-public interface IntStream extends InterfaceC2875g {
+public interface IntStream extends InterfaceC2914g {
     /* renamed from: A */
-    InterfaceC2808U mo262A(C3038W c3038w);
+    InterfaceC2847U mo267A(C3077W c3077w);
 
     /* renamed from: C */
-    boolean mo261C(C3036U c3036u);
+    boolean mo266C(C3075U c3075u);
 
     /* renamed from: F */
-    boolean mo260F(C3036U c3036u);
+    boolean mo265F(C3075U c3075u);
 
     /* renamed from: I */
-    void mo259I(InterfaceC2661l interfaceC2661l);
+    void mo264I(InterfaceC2700l interfaceC2700l);
 
     /* renamed from: J */
-    Stream mo258J(InterfaceC2662m interfaceC2662m);
+    Stream mo263J(InterfaceC2701m interfaceC2701m);
 
     /* renamed from: N */
-    int mo257N(int i, InterfaceC2659j interfaceC2659j);
+    int mo262N(int i, InterfaceC2698j interfaceC2698j);
 
     /* renamed from: P */
-    IntStream mo256P(InterfaceC2662m interfaceC2662m);
+    IntStream mo261P(InterfaceC2701m interfaceC2701m);
 
     /* renamed from: U */
-    void mo255U(InterfaceC2661l interfaceC2661l);
+    void mo260U(InterfaceC2700l interfaceC2700l);
 
     /* renamed from: a0 */
-    C2678j mo254a0(InterfaceC2659j interfaceC2659j);
+    C2717j mo259a0(InterfaceC2698j interfaceC2698j);
 
-    InterfaceC2808U asDoubleStream();
+    InterfaceC2847U asDoubleStream();
 
-    InterfaceC2865e1 asLongStream();
+    InterfaceC2904e1 asLongStream();
 
-    C2677i average();
+    C2716i average();
 
     Stream boxed();
 
     /* renamed from: c0 */
-    IntStream mo253c0(InterfaceC2661l interfaceC2661l);
+    IntStream mo258c0(InterfaceC2700l interfaceC2700l);
 
     long count();
 
     IntStream distinct();
 
     /* renamed from: f */
-    InterfaceC2865e1 mo252f(InterfaceC2663n interfaceC2663n);
+    InterfaceC2904e1 mo257f(InterfaceC2702n interfaceC2702n);
 
-    C2678j findAny();
+    C2717j findAny();
 
-    C2678j findFirst();
+    C2717j findFirst();
 
     /* renamed from: h */
-    IntStream mo251h(C3036U c3036u);
+    IntStream mo256h(C3075U c3075u);
 
-    @Override // p034j$.util.stream.InterfaceC2875g
-    InterfaceC2683o.InterfaceC2684a iterator();
+    @Override // p034j$.util.stream.InterfaceC2914g
+    InterfaceC2722o.InterfaceC2723a iterator();
 
     /* renamed from: k0 */
-    Object mo250k0(InterfaceC2674y interfaceC2674y, InterfaceC2671v interfaceC2671v, BiConsumer biConsumer);
+    Object mo255k0(InterfaceC2713y interfaceC2713y, InterfaceC2710v interfaceC2710v, BiConsumer biConsumer);
 
     IntStream limit(long j);
 
-    C2678j max();
+    C2717j max();
 
-    C2678j min();
+    C2717j min();
 
     @Override // 
     IntStream parallel();
 
     /* renamed from: q */
-    IntStream mo249q(C3043a0 c3043a0);
+    IntStream mo254q(C3082a0 c3082a0);
 
     @Override // 
     IntStream sequential();
@@ -95,15 +95,15 @@ public interface IntStream extends InterfaceC2875g {
 
     IntStream sorted();
 
-    @Override // p034j$.util.stream.InterfaceC2875g
-    InterfaceC2688s.InterfaceC2690b spliterator();
+    @Override // p034j$.util.stream.InterfaceC2914g
+    InterfaceC2727s.InterfaceC2729b spliterator();
 
     int sum();
 
-    C2675g summaryStatistics();
+    C2714g summaryStatistics();
 
     int[] toArray();
 
     /* renamed from: v */
-    boolean mo248v(C3036U c3036u);
+    boolean mo253v(C3075U c3075u);
 }

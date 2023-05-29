@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/StickerMasksAlert$ImageViewEmoji;)V
     .locals 0
 
-    .line 1639
+    .line 1643
     iput-object p1, p0, Lorg/telegram/ui/Components/StickerMasksAlert$ImageViewEmoji$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$ImageViewEmoji;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +35,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1642
+    .line 1646
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 1643
+    .line 1647
     iget-object p1, p0, Lorg/telegram/ui/Components/StickerMasksAlert$ImageViewEmoji$1;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$ImageViewEmoji;
 
     const/4 v0, 0x0

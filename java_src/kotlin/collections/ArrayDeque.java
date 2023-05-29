@@ -11,13 +11,29 @@ import kotlin.ranges.RangesKt___RangesKt;
 public final class ArrayDeque<E> extends AbstractMutableList<E> {
     public static final Companion Companion = new Companion(null);
     private static final Object[] emptyElementData = new Object[0];
-    private Object[] elementData = emptyElementData;
+    private Object[] elementData;
     private int head;
     private int size;
 
     @Override // kotlin.collections.AbstractMutableList
     public int getSize() {
         return this.size;
+    }
+
+    public ArrayDeque(int i) {
+        Object[] objArr;
+        if (i == 0) {
+            objArr = emptyElementData;
+        } else if (i > 0) {
+            objArr = new Object[i];
+        } else {
+            throw new IllegalArgumentException("Illegal Capacity: " + i);
+        }
+        this.elementData = objArr;
+    }
+
+    public ArrayDeque() {
+        this.elementData = emptyElementData;
     }
 
     private final void ensureCapacity(int i) {
@@ -81,11 +97,40 @@ public final class ArrayDeque<E> extends AbstractMutableList<E> {
         return size() == 0;
     }
 
+    public final E first() {
+        if (isEmpty()) {
+            throw new NoSuchElementException("ArrayDeque is empty.");
+        }
+        return (E) this.elementData[this.head];
+    }
+
     public final E firstOrNull() {
         if (isEmpty()) {
             return null;
         }
         return (E) this.elementData[this.head];
+    }
+
+    public final E last() {
+        int lastIndex;
+        if (isEmpty()) {
+            throw new NoSuchElementException("ArrayDeque is empty.");
+        }
+        Object[] objArr = this.elementData;
+        int i = this.head;
+        lastIndex = CollectionsKt__CollectionsKt.getLastIndex(this);
+        return (E) objArr[positiveMod(i + lastIndex)];
+    }
+
+    public final E lastOrNull() {
+        int lastIndex;
+        if (isEmpty()) {
+            return null;
+        }
+        Object[] objArr = this.elementData;
+        int i = this.head;
+        lastIndex = CollectionsKt__CollectionsKt.getLastIndex(this);
+        return (E) objArr[positiveMod(i + lastIndex)];
     }
 
     public final void addFirst(E e) {

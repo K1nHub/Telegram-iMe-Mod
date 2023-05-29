@@ -35,14 +35,14 @@ final class WalletConnectMessageSignBottomSheetDialog$presenter$2 extends Lambda
     /* compiled from: WalletConnectMessageSignBottomSheetDialog.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.message_sign.WalletConnectMessageSignBottomSheetDialog$presenter$2$1 */
     /* loaded from: classes3.dex */
-    public static final class C21691 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C22081 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ WCEthereumSignMessage $message;
         final /* synthetic */ long $requestId;
         final /* synthetic */ WalletConnectSessionItem $sessionItem;
         final /* synthetic */ WalletConnectManager $walletConnectManager;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C21691(long j, WalletConnectSessionItem walletConnectSessionItem, WCEthereumSignMessage wCEthereumSignMessage, WalletConnectManager walletConnectManager) {
+        C22081(long j, WalletConnectSessionItem walletConnectSessionItem, WCEthereumSignMessage wCEthereumSignMessage, WalletConnectManager walletConnectManager) {
             super(0);
             this.$requestId = j;
             this.$sessionItem = walletConnectSessionItem;
@@ -60,7 +60,7 @@ final class WalletConnectMessageSignBottomSheetDialog$presenter$2 extends Lambda
     @Override // kotlin.jvm.functions.Function0
     public final WalletConnectMessageSignPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2166xe2ff69b5(this.this$0, null, new C21691(this.$requestId, this.$sessionItem, this.$message, this.$walletConnectManager)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2205xe2ff69b5(this.this$0, null, new C22081(this.$requestId, this.$sessionItem, this.$message, this.$walletConnectManager)));
         return (WalletConnectMessageSignPresenter) lazy.getValue();
     }
 }

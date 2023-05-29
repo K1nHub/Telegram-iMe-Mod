@@ -5,27 +5,17 @@
 .implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda238;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/tgnet/TLObject;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda238;
-
-    invoke-direct {v0}, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda238;-><init>()V
-
-    sput-object v0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda238;->INSTANCE:Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda238;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/tgnet/TLObject;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda238;->f$0:Lorg/telegram/tgnet/TLObject;
 
     return-void
 .end method
@@ -33,9 +23,11 @@
 
 # virtual methods
 .method public final run()V
-    .locals 0
+    .locals 1
 
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->checkAutoNightThemeConditions()V
+    iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda238;->f$0:Lorg/telegram/tgnet/TLObject;
+
+    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$5ETQP9Ye5lpT2IIAaUZSbzXkqv0(Lorg/telegram/tgnet/TLObject;)V
 
     return-void
 .end method

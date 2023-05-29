@@ -10,7 +10,7 @@ public final class zzre implements Closeable {
     private static final char[] zzbeb = ")]}'\n".toCharArray();
 
     /* renamed from: in */
-    private final Reader f150in;
+    private final Reader f153in;
     private long zzbeh;
     private int zzbei;
     private String zzbej;
@@ -35,7 +35,7 @@ public final class zzre implements Closeable {
         this.zzbem = new String[32];
         this.zzben = new int[32];
         Objects.requireNonNull(reader, "in == null");
-        this.f150in = reader;
+        this.f153in = reader;
     }
 
     public final void setLenient(boolean z) {
@@ -520,7 +520,7 @@ public final class zzre implements Closeable {
         this.zzbeg = 0;
         this.zzbek[0] = 8;
         this.zzbel = 1;
-        this.f150in.close();
+        this.f153in.close();
     }
 
     public final void skipValue() throws IOException {
@@ -634,7 +634,7 @@ public final class zzre implements Closeable {
         }
         this.pos = 0;
         do {
-            Reader reader = this.f150in;
+            Reader reader = this.f153in;
             int i8 = this.limit;
             int read = reader.read(cArr, i8, cArr.length - i8);
             if (read == -1) {

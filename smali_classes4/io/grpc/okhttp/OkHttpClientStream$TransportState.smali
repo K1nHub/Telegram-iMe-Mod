@@ -375,7 +375,7 @@
     const/4 v0, 0x0
 
     :goto_0
-    const-string v1, "streamId should be set"
+    const-string/jumbo v1, "streamId should be set"
 
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V
 
@@ -612,7 +612,7 @@
     move v0, v1
 
     :goto_0
-    const-string v2, "the stream has been started with id %s"
+    const-string/jumbo v2, "the stream has been started with id %s"
 
     invoke-static {v0, v2, p1}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/String;I)V
 

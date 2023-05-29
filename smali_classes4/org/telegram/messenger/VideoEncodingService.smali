@@ -365,7 +365,7 @@
 
     if-eqz p2, :cond_3
 
-    const-string p2, "start video service"
+    const-string/jumbo p2, "start video service"
 
     .line 92
     invoke-static {p2}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V

@@ -28,7 +28,7 @@
 
     iput-object p2, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$setupListView$1$3;->$this_with:Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListView$1;
 
-    .line 287
+    .line 288
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
 
     return-void
@@ -47,12 +47,12 @@
 
     const/16 p1, 0xd
 
-    .line 295
+    .line 296
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
-    .line 296
+    .line 297
     iget-object p2, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$setupListView$1$3;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;
 
     invoke-static {p2}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->access$getParentAlert$p$s-1709477308(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -63,7 +63,7 @@
 
     move-result p2
 
-    .line 297
+    .line 298
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$setupListView$1$3;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->access$getParentAlert$p$s-1709477308(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -82,14 +82,14 @@
 
     add-int/2addr v0, p2
 
-    .line 298
+    .line 299
     invoke-static {}, Lorg/telegram/ui/ActionBar/ActionBar;->getCurrentActionBarHeight()I
 
     move-result p1
 
     if-ge v0, p1, :cond_0
 
-    .line 299
+    .line 300
     iget-object p1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$setupListView$1$3;->$this_with:Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListView$1;
 
     const/4 p2, 0x1
@@ -102,7 +102,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 300
+    .line 301
     iget-object p2, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     invoke-virtual {p2}, Landroid/view/View;->getTop()I
@@ -117,7 +117,7 @@
 
     if-le p2, v2, :cond_0
 
-    .line 301
+    .line 302
     iget-object p2, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$setupListView$1$3;->$this_with:Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$initListView$1;
 
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
@@ -145,7 +145,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 289
+    .line 290
     iget-object p1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$setupListView$1$3;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->access$getParentAlert$p$s-1709477308(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -158,7 +158,7 @@
 
     invoke-virtual {p1, p2, v0, p3}, Lorg/telegram/ui/Components/ChatAttachAlert;->updateLayout(Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;ZI)V
 
-    .line 290
+    .line 291
     iget-object p1, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout$setupListView$1$3;->this$0:Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;->access$updateEmptyViewPosition(Lcom/iMe/fork/ui/view/ChatAttachAlertTemplatesLayout;)V

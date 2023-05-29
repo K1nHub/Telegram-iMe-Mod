@@ -773,11 +773,11 @@
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoPickerActivity$ListAdapter;->this$0:Lorg/telegram/ui/PhotoPickerActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoPickerActivity;->access$4700(Lorg/telegram/ui/PhotoPickerActivity;)Ljava/lang/String;
+    invoke-static {v0}, Lorg/telegram/ui/PhotoPickerActivity;->access$4700(Lorg/telegram/ui/PhotoPickerActivity;)I
 
-    move-result-object v0
+    move-result v0
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -788,9 +788,9 @@
 
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v1, "voipgroup_mutedIcon"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_mutedIcon:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

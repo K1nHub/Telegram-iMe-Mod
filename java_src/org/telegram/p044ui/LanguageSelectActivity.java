@@ -21,7 +21,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -29,7 +29,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p044ui.ActionBar.AlertDialog;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Cells.HeaderCell;
@@ -106,22 +106,22 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
 
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         if (isCatalogType()) {
-            this.actionBar.setTitle(LocaleController.getInternalString(C3242R.string.language_select_startup));
+            this.actionBar.setTitle(LocaleController.getInternalString(C3290R.string.language_select_startup));
         } else {
-            this.actionBar.setTitle(LocaleController.getString("Language", C3242R.string.Language));
+            this.actionBar.setTitle(LocaleController.getString("Language", C3290R.string.Language));
         }
-        this.actionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.LanguageSelectActivity.1
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.LanguageSelectActivity.1
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     LanguageSelectActivity.this.finishFragment();
                 }
             }
         });
-        ActionBarMenuItem actionBarMenuItemSearchListener = this.actionBar.createMenu().addItem(0, C3242R.C3244drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.LanguageSelectActivity.2
+        ActionBarMenuItem actionBarMenuItemSearchListener = this.actionBar.createMenu().addItem(0, C3290R.C3292drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.LanguageSelectActivity.2
             @Override // org.telegram.p044ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
             public void onSearchExpand() {
                 LanguageSelectActivity.this.searching = true;
@@ -159,16 +159,16 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
             }
         });
         this.searchItem = actionBarMenuItemSearchListener;
-        actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString("Search", C3242R.string.Search));
+        actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString("Search", C3290R.string.Search));
         this.listAdapter = new ListAdapter(context, false);
         this.searchListViewAdapter = new ListAdapter(context, true);
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        frameLayout.setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+        frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         FrameLayout frameLayout2 = (FrameLayout) this.fragmentView;
         EmptyTextProgressView emptyTextProgressView = new EmptyTextProgressView(context);
         this.emptyView = emptyTextProgressView;
-        emptyTextProgressView.setText(LocaleController.getString("NoResult", C3242R.string.NoResult));
+        emptyTextProgressView.setText(LocaleController.getString("NoResult", C3290R.string.NoResult));
         this.emptyView.showTextView();
         this.emptyView.setShowAtCenter(true);
         frameLayout2.addView(this.emptyView, LayoutHelper.createFrame(-1, -1));
@@ -177,7 +177,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
             @Override // org.telegram.p044ui.Components.RecyclerListView, android.view.ViewGroup, android.view.View
             public void dispatchDraw(Canvas canvas) {
                 if (getAdapter() == LanguageSelectActivity.this.listAdapter && getItemAnimator() != null && getItemAnimator().isRunning()) {
-                    int color = Theme.getColor("windowBackgroundWhite", this.resourcesProvider);
+                    int color = Theme.getColor(Theme.key_windowBackgroundWhite, this.resourcesProvider);
                     drawItemBackground(canvas, 0, LanguageSelectActivity.this.translateSettingsBackgroundHeight, color);
                     drawSectionBackground(canvas, 1, 2, color);
                 }
@@ -229,16 +229,16 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
 
     /* JADX INFO: Access modifiers changed from: private */
     /* JADX WARN: Removed duplicated region for block: B:125:? A[RETURN, SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:13:0x001a A[Catch: Exception -> 0x0224, TryCatch #0 {Exception -> 0x0224, blocks: (B:2:0x0000, B:4:0x0007, B:6:0x000d, B:11:0x0017, B:13:0x001a, B:17:0x0023, B:26:0x0084, B:28:0x008a, B:34:0x0096, B:38:0x00a1, B:39:0x00a4, B:41:0x00ac, B:43:0x00ba, B:45:0x00be, B:46:0x00c1, B:48:0x00c6, B:50:0x00cb, B:51:0x00d2, B:19:0x0043, B:21:0x004a, B:23:0x0054, B:25:0x005f, B:53:0x00d9, B:55:0x00dd, B:57:0x00e6, B:59:0x00ec, B:61:0x00f0, B:64:0x00f6, B:68:0x0103, B:70:0x0109, B:73:0x0113, B:75:0x0119, B:79:0x0122, B:81:0x012f, B:92:0x016b, B:94:0x0171, B:96:0x018c, B:99:0x0197, B:101:0x01a3, B:102:0x01a8, B:104:0x01be, B:105:0x01c6, B:107:0x01dd, B:109:0x01e3, B:111:0x01ed, B:113:0x01f5, B:114:0x01f8, B:82:0x0138, B:85:0x0142, B:87:0x014a, B:88:0x0153, B:90:0x015b, B:91:0x0163), top: B:120:0x0000 }] */
+    /* JADX WARN: Removed duplicated region for block: B:13:0x001a A[Catch: Exception -> 0x0210, TryCatch #0 {Exception -> 0x0210, blocks: (B:2:0x0000, B:4:0x0007, B:6:0x000d, B:11:0x0017, B:13:0x001a, B:17:0x0023, B:26:0x007c, B:28:0x0082, B:34:0x008e, B:38:0x0099, B:39:0x009c, B:41:0x00a4, B:43:0x00b2, B:45:0x00b6, B:46:0x00b9, B:48:0x00be, B:50:0x00c3, B:51:0x00ca, B:19:0x0043, B:21:0x004a, B:23:0x0054, B:25:0x005f, B:53:0x00d1, B:55:0x00d5, B:57:0x00de, B:59:0x00e4, B:61:0x00e8, B:64:0x00ee, B:68:0x00fb, B:70:0x0101, B:73:0x010b, B:75:0x0111, B:79:0x011a, B:81:0x0127, B:92:0x0163, B:94:0x0169, B:96:0x0184, B:99:0x018f, B:101:0x019b, B:102:0x01a0, B:104:0x01b6, B:105:0x01be, B:107:0x01d1, B:109:0x01d7, B:111:0x01e1, B:113:0x01e9, B:114:0x01ec, B:82:0x0130, B:85:0x013a, B:87:0x0142, B:88:0x014b, B:90:0x0153, B:91:0x015b), top: B:120:0x0000 }] */
     /* JADX WARN: Removed duplicated region for block: B:18:0x0041  */
-    /* JADX WARN: Removed duplicated region for block: B:34:0x0096 A[Catch: Exception -> 0x0224, TryCatch #0 {Exception -> 0x0224, blocks: (B:2:0x0000, B:4:0x0007, B:6:0x000d, B:11:0x0017, B:13:0x001a, B:17:0x0023, B:26:0x0084, B:28:0x008a, B:34:0x0096, B:38:0x00a1, B:39:0x00a4, B:41:0x00ac, B:43:0x00ba, B:45:0x00be, B:46:0x00c1, B:48:0x00c6, B:50:0x00cb, B:51:0x00d2, B:19:0x0043, B:21:0x004a, B:23:0x0054, B:25:0x005f, B:53:0x00d9, B:55:0x00dd, B:57:0x00e6, B:59:0x00ec, B:61:0x00f0, B:64:0x00f6, B:68:0x0103, B:70:0x0109, B:73:0x0113, B:75:0x0119, B:79:0x0122, B:81:0x012f, B:92:0x016b, B:94:0x0171, B:96:0x018c, B:99:0x0197, B:101:0x01a3, B:102:0x01a8, B:104:0x01be, B:105:0x01c6, B:107:0x01dd, B:109:0x01e3, B:111:0x01ed, B:113:0x01f5, B:114:0x01f8, B:82:0x0138, B:85:0x0142, B:87:0x014a, B:88:0x0153, B:90:0x015b, B:91:0x0163), top: B:120:0x0000 }] */
+    /* JADX WARN: Removed duplicated region for block: B:34:0x008e A[Catch: Exception -> 0x0210, TryCatch #0 {Exception -> 0x0210, blocks: (B:2:0x0000, B:4:0x0007, B:6:0x000d, B:11:0x0017, B:13:0x001a, B:17:0x0023, B:26:0x007c, B:28:0x0082, B:34:0x008e, B:38:0x0099, B:39:0x009c, B:41:0x00a4, B:43:0x00b2, B:45:0x00b6, B:46:0x00b9, B:48:0x00be, B:50:0x00c3, B:51:0x00ca, B:19:0x0043, B:21:0x004a, B:23:0x0054, B:25:0x005f, B:53:0x00d1, B:55:0x00d5, B:57:0x00de, B:59:0x00e4, B:61:0x00e8, B:64:0x00ee, B:68:0x00fb, B:70:0x0101, B:73:0x010b, B:75:0x0111, B:79:0x011a, B:81:0x0127, B:92:0x0163, B:94:0x0169, B:96:0x0184, B:99:0x018f, B:101:0x019b, B:102:0x01a0, B:104:0x01b6, B:105:0x01be, B:107:0x01d1, B:109:0x01d7, B:111:0x01e1, B:113:0x01e9, B:114:0x01ec, B:82:0x0130, B:85:0x013a, B:87:0x0142, B:88:0x014b, B:90:0x0153, B:91:0x015b), top: B:120:0x0000 }] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public /* synthetic */ void lambda$createView$4(android.view.View r13, int r14) {
         /*
-            Method dump skipped, instructions count: 553
+            Method dump skipped, instructions count: 533
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.LanguageSelectActivity.lambda$createView$4(android.view.View, int):void");
@@ -296,26 +296,26 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
                     }
                     if (localeInfo != null && localeInfo.pathToFile != null && (!localeInfo.isRemote() || localeInfo.serverIndex == Integer.MAX_VALUE)) {
                         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-                        builder.setTitle(LocaleController.getString("DeleteLocalizationTitle", C3242R.string.DeleteLocalizationTitle));
-                        builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("DeleteLocalizationText", C3242R.string.DeleteLocalizationText, localeInfo.name)));
-                        builder.setPositiveButton(LocaleController.getString("Delete", C3242R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda1
+                        builder.setTitle(LocaleController.getString("DeleteLocalizationTitle", C3290R.string.DeleteLocalizationTitle));
+                        builder.setMessage(AndroidUtilities.replaceTags(LocaleController.formatString("DeleteLocalizationText", C3290R.string.DeleteLocalizationText, localeInfo.name)));
+                        builder.setPositiveButton(LocaleController.getString("Delete", C3290R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.LanguageSelectActivity$$ExternalSyntheticLambda1
                             @Override // android.content.DialogInterface.OnClickListener
                             public final void onClick(DialogInterface dialogInterface, int i2) {
                                 LanguageSelectActivity.this.lambda$createView$5(localeInfo, dialogInterface, i2);
                             }
                         });
-                        builder.setNegativeButton(LocaleController.getString("Cancel", C3242R.string.Cancel), null);
+                        builder.setNegativeButton(LocaleController.getString("Cancel", C3290R.string.Cancel), null);
                         AlertDialog create = builder.create();
                         showDialog(create);
                         TextView textView = (TextView) create.getButton(-1);
                         if (textView != null) {
-                            textView.setTextColor(Theme.getColor("dialogTextRed"));
+                            textView.setTextColor(Theme.getColor(Theme.key_text_RedBold));
                         }
                     }
                 }
                 return false;
             } catch (Exception e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
             }
         }
         return true;
@@ -452,7 +452,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
 
     private void updateLanguage() {
         if (this.actionBar != null) {
-            String string = LocaleController.getString("Language", C3242R.string.Language);
+            String string = LocaleController.getString("Language", C3290R.string.Language);
             if (!TextUtils.equals(this.actionBar.getTitle(), string)) {
                 this.actionBar.setTitleAnimated(string, true, 350L, CubicBezierInterpolator.EASE_OUT_QUINT);
             }
@@ -568,29 +568,28 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
-            FrameLayout textRadioCell;
             View view;
             if (i == 0) {
-                textRadioCell = new TextRadioCell(this.mContext);
-                textRadioCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                View textRadioCell = new TextRadioCell(this.mContext);
+                textRadioCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+                view = textRadioCell;
             } else if (i == 2) {
-                textRadioCell = new TextCheckCell(this.mContext);
-                textRadioCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                View textCheckCell = new TextCheckCell(this.mContext);
+                textCheckCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+                view = textCheckCell;
             } else if (i == 3) {
-                textRadioCell = new HeaderCell(this.mContext);
-                textRadioCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                FrameLayout headerCell = new HeaderCell(this.mContext);
+                headerCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+                view = headerCell;
             } else if (i == 4) {
-                textRadioCell = new TextSettingsCell(this.mContext);
-                textRadioCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                FrameLayout textSettingsCell = new TextSettingsCell(this.mContext);
+                textSettingsCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+                view = textSettingsCell;
+            } else if (i == 5) {
+                view = new TextInfoPrivacyCell(this.mContext);
             } else {
-                if (i == 5) {
-                    view = new TextInfoPrivacyCell(this.mContext);
-                } else {
-                    view = new ShadowSectionCell(this.mContext);
-                }
-                return new RecyclerListView.Holder(view);
+                view = new ShadowSectionCell(this.mContext);
             }
-            view = textRadioCell;
             return new RecyclerListView.Holder(view);
         }
 
@@ -602,25 +601,25 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
             }
         }
 
-        /* JADX WARN: Code restructure failed: missing block: B:100:0x025e, code lost:
-            r13 = false;
+        /* JADX WARN: Code restructure failed: missing block: B:106:0x029c, code lost:
+            if (r13 == (r11.this$0.unofficialLanguages.size() - 1)) goto L115;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:107:0x0293, code lost:
-            if (r13 == (r11.this$0.unofficialLanguages.size() - 1)) goto L116;
+        /* JADX WARN: Code restructure failed: missing block: B:116:0x02dd, code lost:
+            if (r13 == (r11.this$0.sortedLanguages.size() - 1)) goto L115;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:117:0x02d4, code lost:
-            if (r13 == (r11.this$0.sortedLanguages.size() - 1)) goto L116;
+        /* JADX WARN: Code restructure failed: missing block: B:43:0x0126, code lost:
+            if (r12.getValueTextView().getPaint().measureText(r2) > java.lang.Math.min((org.telegram.messenger.AndroidUtilities.displaySize.x - org.telegram.messenger.AndroidUtilities.m54dp(34)) / 2.0f, (org.telegram.messenger.AndroidUtilities.displaySize.x - org.telegram.messenger.AndroidUtilities.m54dp(84)) - r12.getTextView().getPaint().measureText(r0))) goto L31;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:44:0x0124, code lost:
-            if (r12.getValueTextView().getPaint().measureText(r2) > java.lang.Math.min((org.telegram.messenger.AndroidUtilities.displaySize.x - org.telegram.messenger.AndroidUtilities.m50dp(34)) / 2.0f, (org.telegram.messenger.AndroidUtilities.displaySize.x - org.telegram.messenger.AndroidUtilities.m50dp(84)) - r12.getTextView().getPaint().measureText(r0))) goto L32;
+        /* JADX WARN: Code restructure failed: missing block: B:97:0x0262, code lost:
+            if (r13 == (r11.this$0.searchResult.size() - 1)) goto L115;
          */
-        /* JADX WARN: Code restructure failed: missing block: B:98:0x0259, code lost:
-            if (r13 == (r11.this$0.searchResult.size() - 1)) goto L116;
-         */
-        /* JADX WARN: Code restructure failed: missing block: B:99:0x025b, code lost:
+        /* JADX WARN: Code restructure failed: missing block: B:98:0x0264, code lost:
             r13 = true;
          */
-        /* JADX WARN: Removed duplicated region for block: B:48:0x012a  */
+        /* JADX WARN: Code restructure failed: missing block: B:99:0x0267, code lost:
+            r13 = false;
+         */
+        /* JADX WARN: Removed duplicated region for block: B:47:0x012c  */
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         /*
             Code decompiled incorrectly, please refer to instructions dump.
@@ -628,7 +627,7 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
         */
         public void onBindViewHolder(androidx.recyclerview.widget.RecyclerView.ViewHolder r12, int r13) {
             /*
-                Method dump skipped, instructions count: 820
+                Method dump skipped, instructions count: 829
                 To view this dump add '--comments-level debug' option
             */
             throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.LanguageSelectActivity.ListAdapter.onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder, int):void");
@@ -681,22 +680,25 @@ public class LanguageSelectActivity extends BaseFragment implements Notification
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayList = new ArrayList<>();
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{LanguageCell.class}, null, null, null, "windowBackgroundWhite"));
-        arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "windowBackgroundGray"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, "actionBarDefault"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SEARCH, null, null, null, null, "actionBarDefaultSearch"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SEARCHPLACEHOLDER, null, null, null, null, "actionBarDefaultSearchPlaceholder"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_SELECTOR, null, null, null, null, "listSelectorSDK21"));
-        arrayList.add(new ThemeDescription(this.emptyView, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, "emptyListPlaceholder"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, Theme.dividerPaint, null, null, "divider"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{ShadowSectionCell.class}, null, null, null, "windowBackgroundGrayShadow"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{LanguageCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{LanguageCell.class}, new String[]{"textView2"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayText3"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{LanguageCell.class}, new String[]{"checkImage"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "featuredStickers_addedIcon"));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{LanguageCell.class}, null, null, null, Theme.key_windowBackgroundWhite));
+        arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray));
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        int i = ThemeDescription.FLAG_BACKGROUND;
+        int i2 = Theme.key_actionBarDefault;
+        arrayList.add(new ThemeDescription(c3356ActionBar, i, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SEARCH, null, null, null, null, Theme.key_actionBarDefaultSearch));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SEARCHPLACEHOLDER, null, null, null, null, Theme.key_actionBarDefaultSearchPlaceholder));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector));
+        arrayList.add(new ThemeDescription(this.emptyView, ThemeDescription.FLAG_TEXTCOLOR, null, null, null, null, Theme.key_emptyListPlaceholder));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{ShadowSectionCell.class}, null, null, null, Theme.key_windowBackgroundGrayShadow));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{LanguageCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{LanguageCell.class}, new String[]{"textView2"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText3));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{LanguageCell.class}, new String[]{"checkImage"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_featuredStickers_addedIcon));
         return arrayList;
     }
 }

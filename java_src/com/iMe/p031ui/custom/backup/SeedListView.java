@@ -56,9 +56,9 @@ public final class SeedListView extends FrameLayout {
     public final void applyColors() {
         LinearLayout linearLayout = this.binding.linearRoot;
         GradientDrawable gradientDrawable = new GradientDrawable();
-        gradientDrawable.setCornerRadius(AndroidUtilities.m51dp(9.0f));
-        gradientDrawable.setColor(Theme.getColor("windowBackgroundWhite"));
-        gradientDrawable.setStroke(AndroidUtilities.m51dp(1.0f), Theme.getColor("chats_actionBackground"));
+        gradientDrawable.setCornerRadius(AndroidUtilities.m55dp(9.0f));
+        gradientDrawable.setColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+        gradientDrawable.setStroke(AndroidUtilities.m55dp(1.0f), Theme.getColor(Theme.key_chats_actionBackground));
         linearLayout.setBackground(gradientDrawable);
         LinearLayout linearLayout2 = this.binding.linearSeedFirstPart;
         Intrinsics.checkNotNullExpressionValue(linearLayout2, "binding.linearSeedFirstPart");

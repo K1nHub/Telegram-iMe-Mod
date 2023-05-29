@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/ChatActivity$42;
-.super Landroid/widget/FrameLayout;
+.super Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;
 .source "ChatActivity.java"
 
 
@@ -17,75 +17,133 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/ChatActivity;
 
+.field final synthetic val$firstButton:Z
+
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;Z)V
     .locals 0
 
-    .line 8898
+    .line 8789
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$42;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+    iput-boolean p3, p0, Lorg/telegram/ui/ChatActivity$42;->val$firstButton:Z
+
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onDraw(Landroid/graphics/Canvas;)V
-    .locals 8
+.method public setEditButton(Z)V
+    .locals 1
 
-    .line 8901
-    sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_composeShadowDrawable:Landroid/graphics/drawable/Drawable;
+    .line 8792
+    invoke-super {p0, p1}, Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;->setEditButton(Z)V
 
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
+    .line 8793
+    iget-boolean v0, p0, Lorg/telegram/ui/ChatActivity$42;->val$firstButton:Z
+
+    if-eqz v0, :cond_1
+
+    .line 8794
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;->getTextView()Landroid/widget/TextView;
+
+    move-result-object v0
+
+    if-eqz p1, :cond_0
+
+    const/16 p1, 0x74
+
+    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result p1
+
+    goto :goto_0
+
+    :cond_0
+    const p1, 0x7fffffff
+
+    :goto_0
+    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setMaxWidth(I)V
+
+    :cond_1
+    return-void
+.end method
+
+.method public updateColors()V
+    .locals 5
+
+    .line 8800
+    iget-boolean v0, p0, Lorg/telegram/ui/ChatActivity$42;->val$firstButton:Z
+
+    const/4 v1, 0x0
+
+    if-eqz v0, :cond_0
+
+    const/16 v0, 0xe
+
+    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    .line 8902
-    sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->chat_composeShadowDrawable:Landroid/graphics/drawable/Drawable;
+    goto :goto_0
 
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+    :cond_0
+    move v0, v1
+
+    .line 8801
+    :goto_0
+    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$42;->this$0:Lorg/telegram/ui/ChatActivity;
+
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_replyPanelName:I
+
+    invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v2
 
-    const/4 v3, 0x0
+    const v4, 0x19ffffff
 
-    invoke-virtual {v1, v3, v3, v2, v0}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    and-int/2addr v2, v4
 
-    .line 8903
-    sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->chat_composeShadowDrawable:Landroid/graphics/drawable/Drawable;
+    invoke-static {v2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->createCircleSelectorDrawable(III)Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
+    move-result-object v0
 
-    int-to-float v4, v0
+    invoke-virtual {p0, v0}, Landroid/widget/LinearLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 8904
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
+    .line 8802
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;->getImageView()Landroid/widget/ImageView;
 
-    move-result v0
+    move-result-object v0
 
-    int-to-float v5, v0
+    new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$42;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    move-result v0
+    invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
-    int-to-float v6, v0
+    move-result v2
 
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$42;->this$0:Lorg/telegram/ui/ChatActivity;
+    sget-object v4, Landroid/graphics/PorterDuff$Mode;->MULTIPLY:Landroid/graphics/PorterDuff$Mode;
 
-    const-string v1, "paintChatComposeBackground"
+    invoke-direct {v1, v2, v4}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$26400(Lorg/telegram/ui/ChatActivity;Ljava/lang/String;)Landroid/graphics/Paint;
+    invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    move-result-object v7
+    .line 8803
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatActivityEnterTopView$EditViewButton;->getTextView()Landroid/widget/TextView;
 
-    const/4 v3, 0x0
+    move-result-object v0
 
-    move-object v2, p1
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$42;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
+    invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
     return-void
 .end method

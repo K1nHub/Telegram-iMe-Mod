@@ -11,7 +11,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageReceiver;
@@ -44,12 +44,13 @@ public class DownloadProgressIcon extends View implements NotificationCenter.Not
         this.downloadImageReceiver = new ImageReceiver(this);
         this.downloadCompleteImageReceiver = new ImageReceiver(this);
         this.currentAccount = i;
-        RLottieDrawable rLottieDrawable = new RLottieDrawable(C3242R.raw.download_progress, "download_progress", AndroidUtilities.m50dp(28), AndroidUtilities.m50dp(28), true, null);
+        RLottieDrawable rLottieDrawable = new RLottieDrawable(C3290R.raw.download_progress, "download_progress", AndroidUtilities.m54dp(28), AndroidUtilities.m54dp(28), true, null);
         this.downloadDrawable = rLottieDrawable;
-        rLottieDrawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor("actionBarDefaultIcon"), PorterDuff.Mode.MULTIPLY));
-        RLottieDrawable rLottieDrawable2 = new RLottieDrawable(C3242R.raw.download_finish, "download_finish", AndroidUtilities.m50dp(28), AndroidUtilities.m50dp(28), true, null);
+        int i2 = Theme.key_actionBarDefaultIcon;
+        rLottieDrawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i2), PorterDuff.Mode.MULTIPLY));
+        RLottieDrawable rLottieDrawable2 = new RLottieDrawable(C3290R.raw.download_finish, "download_finish", AndroidUtilities.m54dp(28), AndroidUtilities.m54dp(28), true, null);
         this.downloadCompleteDrawable = rLottieDrawable2;
-        rLottieDrawable2.setColorFilter(new PorterDuffColorFilter(Theme.getColor("actionBarDefaultIcon"), PorterDuff.Mode.MULTIPLY));
+        rLottieDrawable2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i2), PorterDuff.Mode.MULTIPLY));
         this.downloadImageReceiver.setImageBitmap(this.downloadDrawable);
         this.downloadCompleteImageReceiver.setImageBitmap(this.downloadCompleteDrawable);
         this.downloadImageReceiver.setAutoRepeat(1);
@@ -60,9 +61,9 @@ public class DownloadProgressIcon extends View implements NotificationCenter.Not
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
         super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), 1073741824));
-        int m50dp = AndroidUtilities.m50dp(15);
-        float f = m50dp;
-        int i3 = m50dp * 2;
+        int m54dp = AndroidUtilities.m54dp(15);
+        float f = m54dp;
+        int i3 = m54dp * 2;
         this.downloadImageReceiver.setImageCoords(f, f, getMeasuredWidth() - i3, getMeasuredHeight() - i3);
         this.downloadCompleteImageReceiver.setImageCoords(f, f, getMeasuredWidth() - i3, getMeasuredHeight() - i3);
     }
@@ -73,12 +74,14 @@ public class DownloadProgressIcon extends View implements NotificationCenter.Not
         if (getAlpha() == BitmapDescriptorFactory.HUE_RED) {
             return;
         }
-        if (this.currentColor != Theme.getColor("actionBarDefaultIcon")) {
-            this.currentColor = Theme.getColor("actionBarDefaultIcon");
-            this.paint.setColor(Theme.getColor("actionBarDefaultIcon"));
-            this.paint2.setColor(Theme.getColor("actionBarDefaultIcon"));
-            this.downloadImageReceiver.setColorFilter(new PorterDuffColorFilter(Theme.getColor("actionBarDefaultIcon"), PorterDuff.Mode.MULTIPLY));
-            this.downloadCompleteImageReceiver.setColorFilter(new PorterDuffColorFilter(Theme.getColor("actionBarDefaultIcon"), PorterDuff.Mode.MULTIPLY));
+        int i = this.currentColor;
+        int i2 = Theme.key_actionBarDefaultIcon;
+        if (i != Theme.getColor(i2)) {
+            this.currentColor = Theme.getColor(i2);
+            this.paint.setColor(Theme.getColor(i2));
+            this.paint2.setColor(Theme.getColor(i2));
+            this.downloadImageReceiver.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i2), PorterDuff.Mode.MULTIPLY));
+            this.downloadCompleteImageReceiver.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i2), PorterDuff.Mode.MULTIPLY));
             this.paint2.setAlpha(100);
         }
         float f = this.currentProgress;
@@ -95,16 +98,16 @@ public class DownloadProgressIcon extends View implements NotificationCenter.Not
                 invalidate();
             }
         }
-        float m51dp = AndroidUtilities.m51dp(1.0f);
-        float m50dp = AndroidUtilities.m50dp(16);
+        float m55dp = AndroidUtilities.m55dp(1.0f);
+        float m54dp = AndroidUtilities.m54dp(16);
         RectF rectF = AndroidUtilities.rectTmp;
-        float measuredHeight = (getMeasuredHeight() / 2) + AndroidUtilities.m50dp(8);
-        float f5 = measuredHeight - m51dp;
-        float f6 = measuredHeight + m51dp;
-        rectF.set(m50dp, f5, getMeasuredWidth() - m50dp, f6);
-        canvas.drawRoundRect(rectF, m51dp, m51dp, this.paint2);
-        rectF.set(m50dp, f5, ((getMeasuredWidth() - (2.0f * m50dp)) * this.currentProgress) + m50dp, f6);
-        canvas.drawRoundRect(rectF, m51dp, m51dp, this.paint);
+        float measuredHeight = (getMeasuredHeight() / 2) + AndroidUtilities.m54dp(8);
+        float f5 = measuredHeight - m55dp;
+        float f6 = measuredHeight + m55dp;
+        rectF.set(m54dp, f5, getMeasuredWidth() - m54dp, f6);
+        canvas.drawRoundRect(rectF, m55dp, m55dp, this.paint2);
+        rectF.set(m54dp, f5, ((getMeasuredWidth() - (2.0f * m54dp)) * this.currentProgress) + m54dp, f6);
+        canvas.drawRoundRect(rectF, m55dp, m55dp, this.paint);
         canvas.save();
         canvas.clipRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), f5);
         if (this.progress != 1.0f) {

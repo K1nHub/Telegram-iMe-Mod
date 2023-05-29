@@ -137,7 +137,7 @@
     .line 62
     iput-boolean v7, v10, Lio/grpc/okhttp/OkHttpClientStream;->useGet:Z
 
-    const-string v0, "statsTraceCtx"
+    const-string/jumbo v0, "statsTraceCtx"
 
     move-object/from16 v3, p11
 

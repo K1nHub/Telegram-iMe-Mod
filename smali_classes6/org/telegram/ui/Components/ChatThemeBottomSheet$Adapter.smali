@@ -1,5 +1,5 @@
 .class public Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;
-.super Landroidx/recyclerview/widget/RecyclerView$Adapter;
+.super Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;
 .source "ChatThemeBottomSheet.java"
 
 
@@ -11,14 +11,6 @@
 .annotation system Ldalvik/annotation/InnerClass;
     accessFlags = 0x9
     name = "Adapter"
-.end annotation
-
-.annotation system Ldalvik/annotation/Signature;
-    value = {
-        "Landroidx/recyclerview/widget/RecyclerView$Adapter<",
-        "Landroidx/recyclerview/widget/RecyclerView$ViewHolder;",
-        ">;"
-    }
 .end annotation
 
 
@@ -94,35 +86,35 @@
 .method public constructor <init>(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)V
     .locals 1
 
-    .line 683
-    invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;-><init>()V
+    .line 910
+    invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
     const/4 v0, -0x1
 
-    .line 676
+    .line 903
     iput v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->selectedItemPosition:I
 
-    .line 680
+    .line 907
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->loadingThemes:Ljava/util/HashMap;
 
-    .line 681
+    .line 908
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->loadingWallpapers:Ljava/util/HashMap;
 
-    .line 684
+    .line 911
     iput p3, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->currentViewType:I
 
-    .line 685
+    .line 912
     iput-object p2, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 686
+    .line 913
     iput p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->currentAccount:I
 
     return-void
@@ -131,24 +123,24 @@
 .method private synthetic lambda$parseTheme$0(Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)V
     .locals 3
 
-    .line 861
+    .line 1081
     instance-of v0, p1, Lorg/telegram/tgnet/TLRPC$TL_wallPaper;
 
     const/4 v1, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 862
+    .line 1082
     check-cast p1, Lorg/telegram/tgnet/TLRPC$WallPaper;
 
-    .line 863
+    .line 1083
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$WallPaper;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLoader;->getAttachFileName(Lorg/telegram/tgnet/TLObject;)Ljava/lang/String;
 
     move-result-object v0
 
-    .line 864
+    .line 1084
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->loadingThemes:Ljava/util/HashMap;
 
     invoke-virtual {v2, v0}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
@@ -157,12 +149,12 @@
 
     if-nez v2, :cond_1
 
-    .line 865
+    .line 1085
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->loadingThemes:Ljava/util/HashMap;
 
     invoke-virtual {v2, v0, p2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 866
+    .line 1086
     iget p2, p2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->account:I
 
     invoke-static {p2}, Lorg/telegram/messenger/FileLoader;->getInstance(I)Lorg/telegram/messenger/FileLoader;
@@ -175,7 +167,7 @@
 
     goto :goto_0
 
-    .line 869
+    .line 1089
     :cond_0
     iput-boolean v1, p2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->badWallpaper:Z
 
@@ -187,7 +179,7 @@
 .method private synthetic lambda$parseTheme$1(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 860
+    .line 1080
     new-instance p3, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter$$ExternalSyntheticLambda0;
 
     invoke-direct {p3, p0, p2, p1}, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)V
@@ -198,150 +190,145 @@
 .end method
 
 .method private parseTheme(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)Z
-    .locals 20
+    .locals 17
 
     move-object/from16 v1, p0
 
     move-object/from16 v2, p1
 
-    const-string v0, "chat_inBubble"
+    if-eqz v2, :cond_19
 
-    if-eqz v2, :cond_1c
+    .line 951
+    iget-object v0, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->pathToFile:Ljava/lang/String;
 
-    .line 724
+    if-nez v0, :cond_0
+
+    goto/16 :goto_b
+
+    .line 955
+    :cond_0
+    new-instance v0, Ljava/io/File;
+
     iget-object v4, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->pathToFile:Ljava/lang/String;
 
-    if-nez v4, :cond_0
+    invoke-direct {v0, v4}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    goto/16 :goto_10
+    const/4 v4, 0x1
 
-    .line 728
-    :cond_0
-    new-instance v4, Ljava/io/File;
-
-    iget-object v5, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->pathToFile:Ljava/lang/String;
-
-    invoke-direct {v4, v5}, Ljava/io/File;-><init>(Ljava/lang/String;)V
-
-    const/4 v5, 0x1
-
-    .line 729
+    .line 956
     :try_start_0
-    new-instance v6, Ljava/io/FileInputStream;
+    new-instance v5, Ljava/io/FileInputStream;
 
-    invoke-direct {v6, v4}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
+    invoke-direct {v5, v0}, Ljava/io/FileInputStream;-><init>(Ljava/io/File;)V
     :try_end_0
-    .catchall {:try_start_0 .. :try_end_0} :catchall_4
+    .catchall {:try_start_0 .. :try_end_0} :catchall_2
 
-    const/4 v4, 0x0
+    const/4 v0, 0x0
 
-    const/4 v7, 0x0
+    const/4 v6, 0x0
 
-    .line 734
+    .line 961
     :goto_0
     :try_start_1
-    sget-object v8, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->bytes:[B
+    sget-object v7, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->bytes:[B
 
-    invoke-virtual {v6, v8}, Ljava/io/FileInputStream;->read([B)I
+    invoke-virtual {v5, v7}, Ljava/io/FileInputStream;->read([B)I
 
-    move-result v8
+    move-result v7
 
-    const/4 v9, -0x1
+    const/4 v8, -0x1
 
-    if-eq v8, v9, :cond_18
+    if-eq v7, v8, :cond_16
 
-    move v12, v4
+    move v11, v0
+
+    const/4 v9, 0x0
 
     const/4 v10, 0x0
 
-    const/4 v11, 0x0
-
     :goto_1
-    if-ge v10, v8, :cond_16
+    if-ge v9, v7, :cond_14
 
-    .line 738
-    sget-object v13, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->bytes:[B
+    .line 965
+    sget-object v12, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->bytes:[B
 
-    aget-byte v14, v13, v10
+    aget-byte v13, v12, v9
 
-    const/16 v15, 0xa
+    const/16 v14, 0xa
 
-    if-ne v14, v15, :cond_15
+    if-ne v13, v14, :cond_13
 
-    sub-int v14, v10, v11
+    sub-int v13, v9, v10
 
-    add-int/2addr v14, v5
+    add-int/2addr v13, v4
 
-    .line 741
-    new-instance v15, Ljava/lang/String;
+    .line 968
+    new-instance v14, Ljava/lang/String;
 
-    add-int/lit8 v9, v14, -0x1
+    add-int/lit8 v15, v13, -0x1
 
-    const-string v3, "UTF-8"
+    const-string v8, "UTF-8"
 
-    invoke-direct {v15, v13, v11, v9, v3}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
+    invoke-direct {v14, v12, v10, v15, v8}, Ljava/lang/String;-><init>([BIILjava/lang/String;)V
 
-    const-string v3, "WLS="
+    const-string v8, "WLS="
 
-    .line 742
-    invoke-virtual {v15, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+    .line 969
+    invoke-virtual {v14, v8}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
 
-    move-result v3
-    :try_end_1
-    .catchall {:try_start_1 .. :try_end_1} :catchall_2
+    move-result v8
 
-    const/4 v9, 0x4
+    if-eqz v8, :cond_9
 
-    if-eqz v3, :cond_8
+    const/4 v8, 0x4
 
-    .line 743
-    :try_start_2
-    invoke-virtual {v15, v9}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    .line 970
+    invoke-virtual {v14, v8}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v8
 
-    .line 744
-    invoke-static {v3}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
+    .line 971
+    invoke-static {v8}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
 
-    move-result-object v9
+    move-result-object v12
 
-    const-string v13, "slug"
+    const-string v14, "slug"
 
-    .line 745
-    invoke-virtual {v9, v13}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
+    .line 972
+    invoke-virtual {v12, v14}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v14
 
-    iput-object v13, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->slug:Ljava/lang/String;
+    iput-object v14, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->slug:Ljava/lang/String;
 
-    .line 746
-    new-instance v13, Ljava/io/File;
+    .line 973
+    new-instance v14, Ljava/io/File;
 
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->getFilesDirFixed()Ljava/io/File;
 
     move-result-object v15
 
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v3, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    invoke-static {v3}, Lorg/telegram/messenger/Utilities;->MD5(Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v8}, Lorg/telegram/messenger/Utilities;->MD5(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v8
+
+    invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    const-string v8, ".wp"
+
+    invoke-virtual {v3, v8}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v3
 
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-direct {v14, v15, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
-    const-string v3, ".wp"
-
-    invoke-virtual {v5, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
-
-    invoke-direct {v13, v15, v3}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    invoke-virtual {v13}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
+    invoke-virtual {v14}, Ljava/io/File;->getAbsolutePath()Ljava/lang/String;
 
     move-result-object v3
 
@@ -349,60 +336,58 @@
 
     const-string v3, "mode"
 
-    .line 748
-    invoke-virtual {v9, v3}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
+    .line 975
+    invoke-virtual {v12, v3}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
     if-eqz v3, :cond_2
 
-    .line 750
+    .line 977
     invoke-virtual {v3}, Ljava/lang/String;->toLowerCase()Ljava/lang/String;
 
     move-result-object v3
 
-    const-string v5, " "
+    const-string v8, " "
 
-    .line 751
-    invoke-virtual {v3, v5}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
+    .line 978
+    invoke-virtual {v3, v8}, Ljava/lang/String;->split(Ljava/lang/String;)[Ljava/lang/String;
 
     move-result-object v3
 
     if-eqz v3, :cond_2
 
-    .line 752
-    array-length v5, v3
+    .line 979
+    array-length v8, v3
 
-    if-lez v5, :cond_2
+    if-lez v8, :cond_2
 
-    const/4 v5, 0x0
+    const/4 v8, 0x0
 
-    .line 753
+    .line 980
     :goto_2
-    array-length v13, v3
+    array-length v14, v3
 
-    if-ge v5, v13, :cond_2
+    if-ge v8, v14, :cond_2
 
-    const-string v13, "blur"
+    const-string v14, "blur"
 
-    .line 754
-    aget-object v15, v3, v5
+    .line 981
+    aget-object v15, v3, v8
 
-    invoke-virtual {v13, v15}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v14, v15}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v13
+    move-result v14
 
-    if-eqz v13, :cond_1
+    if-eqz v14, :cond_1
 
-    const/4 v13, 0x1
-
-    .line 755
-    iput-boolean v13, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->isBlured:Z
+    .line 982
+    iput-boolean v4, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->isBlured:Z
 
     goto :goto_3
 
     :cond_1
-    add-int/lit8 v5, v5, 0x1
+    add-int/lit8 v8, v8, 0x1
 
     goto :goto_2
 
@@ -410,47 +395,47 @@
     :goto_3
     const-string v3, "pattern"
 
-    .line 761
-    invoke-virtual {v9, v3}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
+    .line 988
+    invoke-virtual {v12, v3}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 762
+    .line 989
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
     move-result v3
-    :try_end_2
-    .catchall {:try_start_2 .. :try_end_2} :catchall_0
+    :try_end_1
+    .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
-    if-nez v3, :cond_13
+    if-nez v3, :cond_8
 
-    :try_start_3
+    :try_start_2
     const-string v3, "bg_color"
 
-    .line 764
-    invoke-virtual {v9, v3}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
+    .line 991
+    invoke-virtual {v12, v3}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 765
+    .line 992
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v5
+    move-result v8
 
-    if-nez v5, :cond_5
+    if-nez v8, :cond_5
 
-    const/4 v5, 0x6
+    const/4 v8, 0x6
 
-    const/4 v13, 0x0
+    const/4 v14, 0x0
 
-    .line 766
-    invoke-virtual {v3, v13, v5}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    .line 993
+    invoke-virtual {v3, v14, v8}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
     move-result-object v15
 
-    const/16 v13, 0x10
+    const/16 v14, 0x10
 
-    invoke-static {v15, v13}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
+    invoke-static {v15, v14}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
 
     move-result v15
 
@@ -460,137 +445,131 @@
 
     iput v15, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->patternBgColor:I
 
-    .line 767
+    .line 994
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
     move-result v15
 
-    const/16 v13, 0xd
+    const/16 v4, 0xd
 
-    if-lt v15, v13, :cond_3
+    if-lt v15, v4, :cond_3
 
-    invoke-virtual {v3, v5}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v3, v8}, Ljava/lang/String;->charAt(I)C
 
-    move-result v5
+    move-result v8
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->isValidWallChar(C)Z
+    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->isValidWallChar(C)Z
 
-    move-result v5
+    move-result v8
 
-    if-eqz v5, :cond_3
+    if-eqz v8, :cond_3
 
-    const/4 v5, 0x7
+    const/4 v8, 0x7
 
-    .line 768
-    invoke-virtual {v3, v5, v13}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    .line 995
+    invoke-virtual {v3, v8, v4}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v8
 
-    const/16 v15, 0x10
+    invoke-static {v8, v14}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
 
-    invoke-static {v5, v15}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
+    move-result v8
 
-    move-result v5
+    or-int v8, v8, v16
 
-    or-int v5, v5, v16
+    iput v8, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->patternBgGradientColor1:I
 
-    iput v5, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->patternBgGradientColor1:I
-
-    .line 770
+    .line 997
     :cond_3
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    move-result v5
+    move-result v8
 
     const/16 v15, 0x14
 
-    if-lt v5, v15, :cond_4
+    if-lt v8, v15, :cond_4
 
-    invoke-virtual {v3, v13}, Ljava/lang/String;->charAt(I)C
+    invoke-virtual {v3, v4}, Ljava/lang/String;->charAt(I)C
 
-    move-result v5
+    move-result v4
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->isValidWallChar(C)Z
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->isValidWallChar(C)Z
 
-    move-result v5
+    move-result v4
 
-    if-eqz v5, :cond_4
+    if-eqz v4, :cond_4
 
-    const/16 v5, 0xe
+    const/16 v4, 0xe
 
-    .line 771
-    invoke-virtual {v3, v5, v15}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+    .line 998
+    invoke-virtual {v3, v4, v15}, Ljava/lang/String;->substring(II)Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
-    const/16 v13, 0x10
+    invoke-static {v4, v14}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
 
-    invoke-static {v5, v13}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
+    move-result v4
 
-    move-result v5
+    or-int v4, v4, v16
 
-    or-int v5, v5, v16
+    iput v4, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->patternBgGradientColor2:I
 
-    iput v5, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->patternBgGradientColor2:I
-
-    .line 773
+    .line 1000
     :cond_4
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
-    move-result v5
+    move-result v4
 
-    const/16 v13, 0x1b
+    const/16 v8, 0x1b
 
-    if-ne v5, v13, :cond_5
+    if-ne v4, v8, :cond_5
 
     invoke-virtual {v3, v15}, Ljava/lang/String;->charAt(I)C
 
-    move-result v5
+    move-result v4
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->isValidWallChar(C)Z
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->isValidWallChar(C)Z
 
-    move-result v5
+    move-result v4
 
-    if-eqz v5, :cond_5
+    if-eqz v4, :cond_5
 
-    const/16 v5, 0x15
+    const/16 v4, 0x15
 
-    .line 774
-    invoke-virtual {v3, v5}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+    .line 1001
+    invoke-virtual {v3, v4}, Ljava/lang/String;->substring(I)Ljava/lang/String;
 
     move-result-object v3
 
-    const/16 v5, 0x10
-
-    invoke-static {v3, v5}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
+    invoke-static {v3, v14}, Ljava/lang/Integer;->parseInt(Ljava/lang/String;I)I
 
     move-result v3
 
     or-int v3, v3, v16
 
     iput v3, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->patternBgGradientColor3:I
-    :try_end_3
-    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_0
-    .catchall {:try_start_3 .. :try_end_3} :catchall_0
+    :try_end_2
+    .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_0
+    .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
     :catch_0
     :cond_5
-    :try_start_4
+    :try_start_3
     const-string v3, "rotation"
 
-    .line 781
-    invoke-virtual {v9, v3}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
+    .line 1008
+    invoke-virtual {v12, v3}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 782
+    .line 1009
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v5
+    move-result v4
 
-    if-nez v5, :cond_6
+    if-nez v4, :cond_6
 
-    .line 783
+    .line 1010
     invoke-static {v3}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
 
     move-result-object v3
@@ -600,28 +579,28 @@
     move-result v3
 
     iput v3, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->patternBgGradientRotation:I
-    :try_end_4
-    .catch Ljava/lang/Exception; {:try_start_4 .. :try_end_4} :catch_1
-    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+    :try_end_3
+    .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_1
+    .catchall {:try_start_3 .. :try_end_3} :catchall_0
 
     :catch_1
     :cond_6
-    :try_start_5
+    :try_start_4
     const-string v3, "intensity"
 
-    .line 788
-    invoke-virtual {v9, v3}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
+    .line 1015
+    invoke-virtual {v12, v3}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 789
+    .line 1016
     invoke-static {v3}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
 
-    move-result v5
+    move-result v4
 
-    if-nez v5, :cond_7
+    if-nez v4, :cond_7
 
-    .line 790
+    .line 1017
     invoke-static {v3}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
 
     move-result-object v3
@@ -632,524 +611,361 @@
 
     iput v3, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->patternIntensity:I
 
-    .line 792
+    .line 1019
     :cond_7
     iget v3, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->patternIntensity:I
 
-    if-nez v3, :cond_13
+    if-nez v3, :cond_8
 
     const/16 v3, 0x32
 
-    .line 793
+    .line 1020
     iput v3, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->patternIntensity:I
-    :try_end_5
-    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+
+    :cond_8
+    const/4 v4, -0x1
+
+    goto/16 :goto_5
+
+    :cond_9
+    const-string v3, "WPS"
+
+    .line 1023
+    invoke-virtual {v14, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
+
+    move-result v3
+
+    if-eqz v3, :cond_a
+
+    add-int/2addr v13, v11
+
+    .line 1024
+    iput v13, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->previewWallpaperOffset:I
+
+    const/4 v6, 0x1
 
     goto/16 :goto_7
+
+    :cond_a
+    const/16 v3, 0x3d
+
+    .line 1028
+    invoke-virtual {v14, v3}, Ljava/lang/String;->indexOf(I)I
+
+    move-result v3
+
+    const/4 v4, -0x1
+
+    if-eq v3, v4, :cond_12
+
+    const/4 v8, 0x0
+
+    .line 1029
+    invoke-virtual {v14, v8, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
+
+    move-result-object v12
+
+    invoke-static {v12}, Lorg/telegram/ui/ActionBar/ThemeColors;->stringKeyToInt(Ljava/lang/String;)I
+
+    move-result v8
+
+    .line 1030
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inBubble:I
+
+    if-eq v8, v12, :cond_b
+
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubble:I
+
+    if-eq v8, v12, :cond_b
+
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper:I
+
+    if-eq v8, v12, :cond_b
+
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to1:I
+
+    if-eq v8, v12, :cond_b
+
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to2:I
+
+    if-eq v8, v12, :cond_b
+
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to3:I
+
+    if-ne v8, v12, :cond_12
+
+    :cond_b
+    add-int/lit8 v3, v3, 0x1
+
+    .line 1031
+    invoke-virtual {v14, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
+
+    move-result-object v3
+
+    .line 1033
+    invoke-virtual {v3}, Ljava/lang/String;->length()I
+
+    move-result v12
+
+    if-lez v12, :cond_c
+
+    const/4 v12, 0x0
+
+    invoke-virtual {v3, v12}, Ljava/lang/String;->charAt(I)C
+
+    move-result v14
+    :try_end_4
+    .catchall {:try_start_4 .. :try_end_4} :catchall_0
+
+    const/16 v12, 0x23
+
+    if-ne v14, v12, :cond_c
+
+    .line 1035
+    :try_start_5
+    invoke-static {v3}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
+
+    move-result v3
+    :try_end_5
+    .catch Ljava/lang/Exception; {:try_start_5 .. :try_end_5} :catch_2
+    .catchall {:try_start_5 .. :try_end_5} :catchall_0
+
+    goto :goto_4
+
+    .line 1037
+    :catch_2
+    :try_start_6
+    invoke-static {v3}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    goto :goto_4
+
+    .line 1040
+    :cond_c
+    invoke-static {v3}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
+
+    move-result v3
+
+    .line 1042
+    :goto_4
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inBubble:I
+
+    if-ne v8, v12, :cond_d
+
+    .line 1043
+    invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->setPreviewInColor(I)V
+
+    goto :goto_5
+
+    .line 1044
+    :cond_d
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubble:I
+
+    if-ne v8, v12, :cond_e
+
+    .line 1045
+    invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->setPreviewOutColor(I)V
+
+    goto :goto_5
+
+    .line 1046
+    :cond_e
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper:I
+
+    if-ne v8, v12, :cond_f
+
+    .line 1047
+    invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->setPreviewBackgroundColor(I)V
+
+    goto :goto_5
+
+    .line 1048
+    :cond_f
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to1:I
+
+    if-ne v8, v12, :cond_10
+
+    .line 1049
+    iput v3, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->previewBackgroundGradientColor1:I
+
+    goto :goto_5
+
+    .line 1050
+    :cond_10
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to2:I
+
+    if-ne v8, v12, :cond_11
+
+    .line 1051
+    iput v3, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->previewBackgroundGradientColor2:I
+
+    goto :goto_5
+
+    .line 1052
+    :cond_11
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper_gradient_to3:I
+
+    if-ne v8, v12, :cond_12
+
+    .line 1053
+    iput v3, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->previewBackgroundGradientColor3:I
+
+    :cond_12
+    :goto_5
+    add-int/2addr v10, v13
+
+    add-int/2addr v11, v13
+
+    goto :goto_6
+
+    :cond_13
+    move v4, v8
+
+    :goto_6
+    add-int/lit8 v9, v9, 0x1
+
+    move v8, v4
+
+    const/4 v4, 0x1
+
+    goto/16 :goto_1
+
+    :cond_14
+    :goto_7
+    if-nez v6, :cond_16
+
+    if-ne v0, v11, :cond_15
+
+    goto :goto_8
+
+    .line 1065
+    :cond_15
+    invoke-virtual {v5}, Ljava/io/FileInputStream;->getChannel()Ljava/nio/channels/FileChannel;
+
+    move-result-object v0
+
+    int-to-long v3, v11
+
+    invoke-virtual {v0, v3, v4}, Ljava/nio/channels/FileChannel;->position(J)Ljava/nio/channels/FileChannel;
+    :try_end_6
+    .catchall {:try_start_6 .. :try_end_6} :catchall_0
+
+    move v0, v11
+
+    const/4 v4, 0x1
+
+    goto/16 :goto_0
+
+    .line 1067
+    :cond_16
+    :goto_8
+    :try_start_7
+    invoke-virtual {v5}, Ljava/io/FileInputStream;->close()V
+    :try_end_7
+    .catchall {:try_start_7 .. :try_end_7} :catchall_2
+
+    goto :goto_a
 
     :catchall_0
     move-exception v0
 
-    move-object v1, v0
+    move-object v3, v0
 
-    move-object/from16 v19, v6
-
-    goto/16 :goto_d
-
-    :cond_8
-    :try_start_6
-    const-string v3, "WPS"
-
-    .line 796
-    invoke-virtual {v15, v3}, Ljava/lang/String;->startsWith(Ljava/lang/String;)Z
-
-    move-result v3
-    :try_end_6
-    .catchall {:try_start_6 .. :try_end_6} :catchall_2
-
-    if-eqz v3, :cond_9
-
-    add-int/2addr v14, v12
-
-    .line 797
-    :try_start_7
-    iput v14, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->previewWallpaperOffset:I
-    :try_end_7
-    .catchall {:try_start_7 .. :try_end_7} :catchall_0
-
-    move-object/from16 v19, v6
-
-    const/4 v7, 0x1
-
-    goto/16 :goto_a
-
-    :cond_9
-    const/16 v3, 0x3d
-
-    .line 801
+    .line 956
     :try_start_8
-    invoke-virtual {v15, v3}, Ljava/lang/String;->indexOf(I)I
-
-    move-result v3
-
-    const/4 v13, -0x1
-
-    if-eq v3, v13, :cond_13
-
-    const/4 v5, 0x0
-
-    .line 802
-    invoke-virtual {v15, v5, v3}, Ljava/lang/String;->substring(II)Ljava/lang/String;
-
-    move-result-object v13
-
-    .line 803
-    invoke-virtual {v13, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
+    invoke-virtual {v5}, Ljava/io/FileInputStream;->close()V
     :try_end_8
-    .catchall {:try_start_8 .. :try_end_8} :catchall_2
-
-    const-string v9, "key_chat_wallpaper_gradient_to3"
-
-    move/from16 v17, v7
-
-    const-string v7, "key_chat_wallpaper_gradient_to2"
-
-    move/from16 v18, v8
-
-    const-string v8, "chat_wallpaper_gradient_to"
-
-    const-string v1, "chat_wallpaper"
-
-    move-object/from16 v19, v6
-
-    const-string v6, "chat_outBubble"
-
-    if-nez v5, :cond_a
-
-    :try_start_9
-    invoke-virtual {v13, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_a
-
-    invoke-virtual {v13, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_a
-
-    invoke-virtual {v13, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_a
-
-    invoke-virtual {v13, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-nez v5, :cond_a
-
-    invoke-virtual {v13, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v5
-
-    if-eqz v5, :cond_14
-
-    :cond_a
-    add-int/lit8 v3, v3, 0x1
-
-    .line 804
-    invoke-virtual {v15, v3}, Ljava/lang/String;->substring(I)Ljava/lang/String;
-
-    move-result-object v3
-
-    .line 806
-    invoke-virtual {v3}, Ljava/lang/String;->length()I
-
-    move-result v5
-
-    if-lez v5, :cond_b
-
-    const/4 v5, 0x0
-
-    invoke-virtual {v3, v5}, Ljava/lang/String;->charAt(I)C
-
-    move-result v15
-    :try_end_9
-    .catchall {:try_start_9 .. :try_end_9} :catchall_1
-
-    const/16 v5, 0x23
-
-    if-ne v15, v5, :cond_b
-
-    .line 808
-    :try_start_a
-    invoke-static {v3}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
-
-    move-result v3
-    :try_end_a
-    .catch Ljava/lang/Exception; {:try_start_a .. :try_end_a} :catch_2
-    .catchall {:try_start_a .. :try_end_a} :catchall_1
-
-    goto :goto_4
-
-    .line 810
-    :catch_2
-    :try_start_b
-    invoke-static {v3}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
-
-    move-result v3
-
-    goto :goto_4
-
-    .line 813
-    :cond_b
-    invoke-static {v3}, Lorg/telegram/messenger/Utilities;->parseInt(Ljava/lang/CharSequence;)Ljava/lang/Integer;
-
-    move-result-object v3
-
-    invoke-virtual {v3}, Ljava/lang/Integer;->intValue()I
-
-    move-result v3
-
-    .line 815
-    :goto_4
-    invoke-virtual {v13}, Ljava/lang/String;->hashCode()I
-
-    move-result v5
-
-    const/4 v15, 0x2
-
-    sparse-switch v5, :sswitch_data_0
-
-    goto :goto_5
-
-    :sswitch_0
-    invoke-virtual {v13, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_c
-
-    const/4 v13, 0x1
-
-    goto :goto_6
-
-    :sswitch_1
-    invoke-virtual {v13, v9}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_c
-
-    const/4 v13, 0x5
-
-    goto :goto_6
-
-    :sswitch_2
-    invoke-virtual {v13, v7}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_c
-
-    const/4 v13, 0x4
-
-    goto :goto_6
-
-    :sswitch_3
-    invoke-virtual {v13, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_c
-
-    const/4 v13, 0x0
-
-    goto :goto_6
-
-    :sswitch_4
-    invoke-virtual {v13, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_c
-
-    const/4 v13, 0x3
-
-    goto :goto_6
-
-    :sswitch_5
-    invoke-virtual {v13, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v1
-
-    if-eqz v1, :cond_c
-
-    move v13, v15
-
-    goto :goto_6
-
-    :cond_c
-    :goto_5
-    const/4 v13, -0x1
-
-    :goto_6
-    if-eqz v13, :cond_12
-
-    const/4 v1, 0x1
-
-    if-eq v13, v1, :cond_11
-
-    if-eq v13, v15, :cond_10
-
-    const/4 v1, 0x3
-
-    if-eq v13, v1, :cond_f
-
-    const/4 v1, 0x4
-
-    if-eq v13, v1, :cond_e
-
-    const/4 v1, 0x5
-
-    if-eq v13, v1, :cond_d
-
-    goto :goto_8
-
-    .line 832
-    :cond_d
-    iput v3, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->previewBackgroundGradientColor3:I
-
-    goto :goto_8
-
-    .line 829
-    :cond_e
-    iput v3, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->previewBackgroundGradientColor2:I
-
-    goto :goto_8
-
-    .line 826
-    :cond_f
-    iput v3, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->previewBackgroundGradientColor1:I
-
-    goto :goto_8
-
-    .line 823
-    :cond_10
-    invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->setPreviewBackgroundColor(I)V
-
-    goto :goto_8
-
-    .line 820
-    :cond_11
-    invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->setPreviewOutColor(I)V
-
-    goto :goto_8
-
-    .line 817
-    :cond_12
-    invoke-virtual {v2, v3}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->setPreviewInColor(I)V
-
-    goto :goto_8
-
-    :cond_13
-    :goto_7
-    move-object/from16 v19, v6
-
-    move/from16 v17, v7
-
-    move/from16 v18, v8
-
-    :cond_14
-    :goto_8
-    add-int/2addr v11, v14
-
-    add-int/2addr v12, v14
+    .catchall {:try_start_8 .. :try_end_8} :catchall_1
 
     goto :goto_9
-
-    :cond_15
-    move-object/from16 v19, v6
-
-    move/from16 v17, v7
-
-    move/from16 v18, v8
-
-    :goto_9
-    add-int/lit8 v10, v10, 0x1
-
-    move-object/from16 v1, p0
-
-    move/from16 v7, v17
-
-    move/from16 v8, v18
-
-    move-object/from16 v6, v19
-
-    const/4 v5, 0x1
-
-    const/4 v9, -0x1
-
-    goto/16 :goto_1
-
-    :cond_16
-    move-object/from16 v19, v6
-
-    move/from16 v17, v7
-
-    :goto_a
-    if-nez v7, :cond_19
-
-    if-ne v4, v12, :cond_17
-
-    goto :goto_b
-
-    .line 845
-    :cond_17
-    invoke-virtual/range {v19 .. v19}, Ljava/io/FileInputStream;->getChannel()Ljava/nio/channels/FileChannel;
-
-    move-result-object v1
-
-    int-to-long v3, v12
-
-    invoke-virtual {v1, v3, v4}, Ljava/nio/channels/FileChannel;->position(J)Ljava/nio/channels/FileChannel;
-    :try_end_b
-    .catchall {:try_start_b .. :try_end_b} :catchall_1
-
-    move-object/from16 v1, p0
-
-    move v4, v12
-
-    move-object/from16 v6, v19
-
-    const/4 v5, 0x1
-
-    goto/16 :goto_0
 
     :catchall_1
     move-exception v0
 
-    goto :goto_c
+    move-object v4, v0
 
-    :cond_18
-    move-object/from16 v19, v6
+    :try_start_9
+    invoke-virtual {v3, v4}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
 
-    .line 847
-    :cond_19
-    :goto_b
-    :try_start_c
-    invoke-virtual/range {v19 .. v19}, Ljava/io/FileInputStream;->close()V
-    :try_end_c
-    .catchall {:try_start_c .. :try_end_c} :catchall_4
-
-    goto :goto_f
+    :goto_9
+    throw v3
+    :try_end_9
+    .catchall {:try_start_9 .. :try_end_9} :catchall_2
 
     :catchall_2
     move-exception v0
 
-    move-object/from16 v19, v6
-
-    :goto_c
-    move-object v1, v0
-
-    .line 729
-    :goto_d
-    :try_start_d
-    invoke-virtual/range {v19 .. v19}, Ljava/io/FileInputStream;->close()V
-    :try_end_d
-    .catchall {:try_start_d .. :try_end_d} :catchall_3
-
-    goto :goto_e
-
-    :catchall_3
-    move-exception v0
-
-    move-object v3, v0
-
-    :try_start_e
-    invoke-virtual {v1, v3}, Ljava/lang/Throwable;->addSuppressed(Ljava/lang/Throwable;)V
-
-    :goto_e
-    throw v1
-    :try_end_e
-    .catchall {:try_start_e .. :try_end_e} :catchall_4
-
-    :catchall_4
-    move-exception v0
-
-    .line 848
+    .line 1068
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 851
-    :goto_f
+    .line 1071
+    :goto_a
     iget-object v0, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->pathToWallpaper:Ljava/lang/String;
 
-    if-eqz v0, :cond_1b
+    if-eqz v0, :cond_18
 
     iget-boolean v0, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->badWallpaper:Z
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_18
 
-    .line 852
+    .line 1072
     new-instance v0, Ljava/io/File;
 
-    iget-object v1, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->pathToWallpaper:Ljava/lang/String;
+    iget-object v3, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->pathToWallpaper:Ljava/lang/String;
 
-    invoke-direct {v0, v1}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 853
+    .line 1073
     invoke-virtual {v0}, Ljava/io/File;->exists()Z
 
     move-result v0
 
-    if-nez v0, :cond_1b
+    if-nez v0, :cond_18
 
-    move-object/from16 v1, p0
-
-    .line 854
+    .line 1074
     iget-object v0, v1, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->loadingWallpapers:Ljava/util/HashMap;
 
     invoke-virtual {v0, v2}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
     move-result v0
 
-    if-nez v0, :cond_1a
+    if-nez v0, :cond_17
 
-    .line 855
+    .line 1075
     iget-object v0, v1, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->loadingWallpapers:Ljava/util/HashMap;
 
     iget-object v3, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->slug:Ljava/lang/String;
 
     invoke-virtual {v0, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 856
+    .line 1076
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_account_getWallPaper;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_account_getWallPaper;-><init>()V
 
-    .line 857
+    .line 1077
     new-instance v3, Lorg/telegram/tgnet/TLRPC$TL_inputWallPaperSlug;
 
     invoke-direct {v3}, Lorg/telegram/tgnet/TLRPC$TL_inputWallPaperSlug;-><init>()V
 
-    .line 858
+    .line 1078
     iget-object v4, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->slug:Ljava/lang/String;
 
     iput-object v4, v3, Lorg/telegram/tgnet/TLRPC$TL_inputWallPaperSlug;->slug:Ljava/lang/String;
 
-    .line 859
+    .line 1079
     iput-object v3, v0, Lorg/telegram/tgnet/TLRPC$TL_account_getWallPaper;->wallpaper:Lorg/telegram/tgnet/TLRPC$InputWallPaper;
 
-    .line 860
+    .line 1080
     iget v3, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->account:I
 
     invoke-static {v3}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
@@ -1162,36 +978,24 @@
 
     invoke-virtual {v3, v0, v4}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    :cond_1a
+    :cond_17
     const/4 v2, 0x0
 
     return v2
 
-    :cond_1b
-    move-object/from16 v1, p0
-
+    :cond_18
     const/4 v3, 0x1
 
-    .line 876
+    .line 1096
     iput-boolean v3, v2, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->previewParsed:Z
 
     return v3
 
-    :cond_1c
-    :goto_10
+    :cond_19
+    :goto_b
     const/4 v2, 0x0
 
     return v2
-
-    :sswitch_data_0
-    .sparse-switch
-        -0x60e8b225 -> :sswitch_5
-        -0x25c9567a -> :sswitch_4
-        0x4bb25f18 -> :sswitch_3
-        0x525ead8c -> :sswitch_2
-        0x525ead8d -> :sswitch_1
-        0x7a585d53 -> :sswitch_0
-    .end sparse-switch
 .end method
 
 
@@ -1199,7 +1003,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 882
+    .line 1102
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->items:Ljava/util/List;
 
     if-nez v0, :cond_0
@@ -1217,15 +1021,23 @@
     return v0
 .end method
 
+.method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
+    .locals 0
+
+    const/4 p1, 0x0
+
+    return p1
+.end method
+
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 5
 
-    .line 697
+    .line 924
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/ThemeSmallPreviewView;
 
-    .line 698
+    .line 925
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->items:Ljava/util/List;
 
     invoke-interface {v0, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -1252,7 +1064,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 699
+    .line 926
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->pathToFile:Ljava/lang/String;
 
     if-eqz v1, :cond_0
@@ -1261,24 +1073,24 @@
 
     if-nez v1, :cond_0
 
-    .line 700
+    .line 927
     new-instance v1, Ljava/io/File;
 
     iget-object v2, v0, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->pathToFile:Ljava/lang/String;
 
     invoke-direct {v1, v2}, Ljava/io/File;-><init>(Ljava/lang/String;)V
 
-    .line 701
+    .line 928
     invoke-virtual {v1}, Ljava/io/File;->exists()Z
 
     move-result v1
 
     if-eqz v1, :cond_0
 
-    .line 703
+    .line 930
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->parseTheme(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)Z
 
-    .line 707
+    .line 934
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->items:Ljava/util/List;
 
@@ -1288,7 +1100,7 @@
 
     check-cast v0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;
 
-    .line 708
+    .line 935
     iget-object v1, p1, Lorg/telegram/ui/Components/ThemeSmallPreviewView;->chatThemeItem:Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;
 
     const/4 v2, 0x0
@@ -1336,26 +1148,26 @@
     :goto_0
     move v1, v2
 
-    .line 712
+    .line 939
     :goto_1
     invoke-virtual {p1, v3}, Landroid/widget/FrameLayout;->setFocusable(Z)V
 
-    .line 713
+    .line 940
     invoke-virtual {p1, v3}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    const-string v4, "dialogBackgroundGray"
+    .line 942
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackgroundGray:I
 
-    .line 715
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
     invoke-virtual {p1, v4}, Lorg/telegram/ui/Components/ThemeSmallPreviewView;->setBackgroundColor(I)V
 
-    .line 716
+    .line 943
     invoke-virtual {p1, v0, v1}, Lorg/telegram/ui/Components/ThemeSmallPreviewView;->setItem(Lorg/telegram/ui/Components/ChatThemeBottomSheet$ChatThemeItem;Z)V
 
-    .line 717
+    .line 944
     iget v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->selectedItemPosition:I
 
     if-ne p2, v0, :cond_3
@@ -1365,12 +1177,12 @@
     :cond_3
     invoke-virtual {p1, v2, v1}, Lorg/telegram/ui/Components/ThemeSmallPreviewView;->setSelected(ZZ)V
 
-    .line 718
+    .line 945
     iget v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->selectedItemPosition:I
 
     if-ne p2, v0, :cond_4
 
-    .line 719
+    .line 946
     new-instance p2, Ljava/lang/ref/WeakReference;
 
     invoke-direct {p2, p1}, Ljava/lang/ref/WeakReference;-><init>(Ljava/lang/Object;)V
@@ -1384,7 +1196,7 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 4
 
-    .line 692
+    .line 919
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     new-instance v0, Lorg/telegram/ui/Components/ThemeSmallPreviewView;
@@ -1417,10 +1229,10 @@
         }
     .end annotation
 
-    .line 886
+    .line 1106
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->items:Ljava/util/List;
 
-    .line 887
+    .line 1107
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     return-void
@@ -1429,7 +1241,7 @@
 .method public setSelectedItem(I)V
     .locals 2
 
-    .line 891
+    .line 1111
     iget v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->selectedItemPosition:I
 
     if-ne v0, p1, :cond_0
@@ -1439,10 +1251,10 @@
     :cond_0
     if-ltz v0, :cond_2
 
-    .line 895
+    .line 1115
     invoke-virtual {p0, v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
 
-    .line 896
+    .line 1116
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->selectedViewRef:Ljava/lang/ref/WeakReference;
 
     if-nez v0, :cond_1
@@ -1463,14 +1275,14 @@
 
     const/4 v1, 0x0
 
-    .line 898
+    .line 1118
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setSelected(Z)V
 
-    .line 901
+    .line 1121
     :cond_2
     iput p1, p0, Lorg/telegram/ui/Components/ChatThemeBottomSheet$Adapter;->selectedItemPosition:I
 
-    .line 902
+    .line 1122
     invoke-virtual {p0, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
 
     return-void

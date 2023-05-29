@@ -114,8 +114,8 @@ public class PaintingOverlay extends FrameLayout {
                         i5 = ((int) (measuredWidth * mediaEntity.textViewX)) - (childAt.getMeasuredWidth() / 2);
                         i6 = ((int) (measuredHeight * mediaEntity.textViewY)) - (childAt.getMeasuredHeight() / 2);
                     } else {
-                        i5 = (int) (measuredWidth * mediaEntity.f1404x);
-                        i6 = (int) (measuredHeight * mediaEntity.f1405y);
+                        i5 = (int) (measuredWidth * mediaEntity.f1410x);
+                        i6 = (int) (measuredHeight * mediaEntity.f1411y);
                     }
                     childAt.layout(i5, i6, childAt.getMeasuredWidth() + i5, childAt.getMeasuredHeight() + i6);
                 }
@@ -168,6 +168,7 @@ public class PaintingOverlay extends FrameLayout {
             int i2 = 2;
             if (b == 0) {
                 BackupImageView backupImageView2 = new BackupImageView(getContext());
+                backupImageView2.setLayerNum(8);
                 backupImageView2.setAspectFit(true);
                 ImageReceiver imageReceiver = backupImageView2.getImageReceiver();
                 if (z) {
@@ -196,11 +197,11 @@ public class PaintingOverlay extends FrameLayout {
                     }
 
                     {
-                        this.animatedEmojiOffsetX = AndroidUtilities.m50dp(8);
+                        this.animatedEmojiOffsetX = AndroidUtilities.m54dp(8);
                     }
                 };
                 editTextOutline.setBackgroundColor(0);
-                editTextOutline.setPadding(AndroidUtilities.m50dp(7), AndroidUtilities.m50dp(7), AndroidUtilities.m50dp(7), AndroidUtilities.m50dp(7));
+                editTextOutline.setPadding(AndroidUtilities.m54dp(7), AndroidUtilities.m54dp(7), AndroidUtilities.m54dp(7), AndroidUtilities.m54dp(7));
                 editTextOutline.setTextSize(0, mediaEntity.fontSize);
                 editTextOutline.setTypeface(mediaEntity.textTypeface.getTypeface());
                 SpannableString spannableString = new SpannableString(Emoji.replaceEmoji(mediaEntity.text, editTextOutline.getPaint().getFontMetricsInt(), (int) (editTextOutline.getTextSize() * 0.8f), false));
@@ -300,7 +301,7 @@ public class PaintingOverlay extends FrameLayout {
     public Bitmap getThumb() {
         float measuredWidth = getMeasuredWidth();
         float measuredHeight = getMeasuredHeight();
-        float max = Math.max(measuredWidth / AndroidUtilities.m50dp(120), measuredHeight / AndroidUtilities.m50dp(120));
+        float max = Math.max(measuredWidth / AndroidUtilities.m54dp(120), measuredHeight / AndroidUtilities.m54dp(120));
         Bitmap createBitmap = Bitmap.createBitmap((int) (measuredWidth / max), (int) (measuredHeight / max), Bitmap.Config.ARGB_8888);
         Canvas canvas = new Canvas(createBitmap);
         float f = 1.0f / max;

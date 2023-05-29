@@ -300,7 +300,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/iMe/utils/extentions/model/wallet/BinancePayExtKt;->icon(Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionDirection;)I
+    invoke-static {v0}, Lcom/iMe/utils/extentions/model/pay/BinancePayExtKt;->icon(Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionDirection;)I
 
     move-result v0
 
@@ -350,7 +350,7 @@
     return-object p1
 .end method
 
-.method public final getTransactionStatusColor()Ljava/lang/String;
+.method public final getTransactionStatusColor()I
     .locals 1
 
     .line 37
@@ -360,11 +360,11 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lcom/iMe/utils/extentions/model/wallet/BinancePayExtKt;->color(Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionStatus;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/iMe/utils/extentions/model/pay/BinancePayExtKt;->colorKey(Lcom/iMe/storage/domain/model/binancepay/BinanceTransactionStatus;)I
 
-    move-result-object v0
+    move-result v0
 
-    return-object v0
+    return v0
 .end method
 
 .method public final getTransactionTime()Ljava/lang/String;

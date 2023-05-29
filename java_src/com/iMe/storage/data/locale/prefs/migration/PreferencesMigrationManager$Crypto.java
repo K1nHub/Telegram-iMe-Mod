@@ -40,7 +40,7 @@ public final class PreferencesMigrationManager$Crypto implements KoinComponent {
         try {
             INSTANCE.migrateToCurrentVersion(j);
         } catch (Exception e) {
-            Timber.m4e(e);
+            Timber.m6e(e);
         }
     }
 
@@ -54,6 +54,7 @@ public final class PreferencesMigrationManager$Crypto implements KoinComponent {
         List<? extends TokenCode> listOf6;
         List<? extends TokenCode> listOf7;
         List<? extends TokenCode> listOf8;
+        List<? extends TokenCode> listOf9;
         if (this instanceof KoinScopeComponent) {
             rootScope = ((KoinScopeComponent) this).getScope();
         } else {
@@ -61,7 +62,7 @@ public final class PreferencesMigrationManager$Crypto implements KoinComponent {
         }
         CryptoPreferenceHelper cryptoPreferenceHelper = (CryptoPreferenceHelper) rootScope.get(Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, null);
         cryptoPreferenceHelper.setTempOneActionUserId(String.valueOf(j));
-        for (int prefsVersion = cryptoPreferenceHelper.getPrefsVersion() + 1; prefsVersion < 10; prefsVersion++) {
+        for (int prefsVersion = cryptoPreferenceHelper.getPrefsVersion() + 1; prefsVersion < 11; prefsVersion++) {
             switch (prefsVersion) {
                 case 1:
                     PreferencesMigrationManager$Crypto preferencesMigrationManager$Crypto = INSTANCE;
@@ -113,6 +114,11 @@ public final class PreferencesMigrationManager$Crypto implements KoinComponent {
                     PreferencesMigrationManager$Crypto preferencesMigrationManager$Crypto8 = INSTANCE;
                     listOf8 = CollectionsKt__CollectionsJVMKt.listOf(TokenCode.HT);
                     preferencesMigrationManager$Crypto8.addSupportForNewTokens(cryptoPreferenceHelper, cryptoPreferenceHelper, listOf8);
+                    break;
+                case 10:
+                    PreferencesMigrationManager$Crypto preferencesMigrationManager$Crypto9 = INSTANCE;
+                    listOf9 = CollectionsKt__CollectionsJVMKt.listOf(TokenCode.BTCMT);
+                    preferencesMigrationManager$Crypto9.addSupportForNewTokens(cryptoPreferenceHelper, cryptoPreferenceHelper, listOf9);
                     break;
             }
             cryptoPreferenceHelper.setPrefsVersion(prefsVersion);

@@ -26,7 +26,7 @@ public final class WalletTokenBalanceDb {
     }
 
     public int hashCode() {
-        return (((((((((((BotsDbModel$$ExternalSyntheticBackport0.m702m(this.tgUserId) * 31) + this.coinCode.hashCode()) * 31) + Double.doubleToLongBits(this.total)) * 31) + Float.floatToIntBits(this.totalInDollars)) * 31) + Double.doubleToLongBits(this.rateToDollars)) * 31) + Float.floatToIntBits(this.ratePercentageChange24h)) * 31) + this.networkType.hashCode();
+        return (((((((((((BotsDbModel$$ExternalSyntheticBackport0.m706m(this.tgUserId) * 31) + this.coinCode.hashCode()) * 31) + Double.doubleToLongBits(this.total)) * 31) + Float.floatToIntBits(this.totalInDollars)) * 31) + Double.doubleToLongBits(this.rateToDollars)) * 31) + Float.floatToIntBits(this.ratePercentageChange24h)) * 31) + this.networkType.hashCode();
     }
 
     public String toString() {

@@ -92,7 +92,7 @@ public final class ObservableDistinct<T, K> extends AbstractObservableWithUpstre
         public T poll() throws Exception {
             T poll;
             do {
-                poll = this.f444qd.poll();
+                poll = this.f447qd.poll();
                 if (poll == null) {
                     break;
                 }

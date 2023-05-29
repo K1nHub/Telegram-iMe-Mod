@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/CacheControlActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 1413
+    .line 1412
     iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$4;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected allowSelectChildAtPosition(Landroid/view/View;)Z
     .locals 1
 
-    .line 1424
+    .line 1423
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$4;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->access$1100(Lorg/telegram/ui/CacheControlActivity;)Lorg/telegram/ui/Components/CacheChart;
@@ -58,7 +58,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 3
 
-    .line 1416
+    .line 1415
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$4;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->access$900(Lorg/telegram/ui/CacheControlActivity;)I
@@ -75,7 +75,7 @@
 
     if-ltz v0, :cond_0
 
-    .line 1417
+    .line 1416
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$4;->this$0:Lorg/telegram/ui/CacheControlActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/CacheControlActivity;->access$900(Lorg/telegram/ui/CacheControlActivity;)I
@@ -90,15 +90,15 @@
 
     move-result v1
 
-    const-string v2, "windowBackgroundWhite"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
     invoke-virtual {p0, p1, v0, v1, v2}, Lorg/telegram/ui/Components/RecyclerListView;->drawSectionBackgroundExclusive(Landroid/graphics/Canvas;III)V
 
-    .line 1419
+    .line 1418
     :cond_0
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->dispatchDraw(Landroid/graphics/Canvas;)V
 

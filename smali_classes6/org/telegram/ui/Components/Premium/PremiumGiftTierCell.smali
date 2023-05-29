@@ -10,9 +10,9 @@
 
 .field private color1:I
 
-.field private colorKey1:Ljava/lang/String;
+.field private colorKey1:I
 
-.field private colorKey2:Ljava/lang/String;
+.field private colorKey2:I
 
 .field protected discountView:Landroid/widget/TextView;
 
@@ -63,15 +63,15 @@
     .line 38
     iput v2, v0, Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;->leftPaddingToTextDp:I
 
-    const-string v3, "windowBackgroundWhite"
-
     .line 43
-    iput-object v3, v0, Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;->colorKey1:Ljava/lang/String;
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    const-string v3, "windowBackgroundGray"
+    iput v3, v0, Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;->colorKey1:I
 
     .line 44
-    iput-object v3, v0, Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;->colorKey2:Ljava/lang/String;
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+
+    iput v3, v0, Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;->colorKey2:I
 
     .line 47
     new-instance v3, Landroid/graphics/Paint;
@@ -102,11 +102,11 @@
     .line 64
     iget-object v3, v0, Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
-    const-string v4, "radioBackground"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_radioBackground:I
 
-    const-string v5, "checkboxCheck"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxCheck:I
 
-    invoke-virtual {v3, v4, v4, v5}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v3, v4, v4, v5}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
     .line 65
     iget-object v3, v0, Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
@@ -130,9 +130,9 @@
     .line 69
     iget-object v3, v0, Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;->titleView:Landroid/widget/TextView;
 
-    const-string v6, "windowBackgroundWhiteBlackText"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
@@ -270,9 +270,9 @@
     .line 81
     iget-object v3, v0, Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;->pricePerMonthView:Landroid/widget/TextView;
 
-    const-string v6, "windowBackgroundWhiteGrayText"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 
@@ -324,7 +324,7 @@
     .line 86
     iget-object v1, v0, Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;->priceTotalView:Landroid/widget/TextView;
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -1404,16 +1404,16 @@
 
     .line 257
     :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;->colorKey1:Ljava/lang/String;
+    iget v0, p0, Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;->colorKey1:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
     .line 258
-    iget-object v1, p0, Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;->colorKey2:Ljava/lang/String;
+    iget v1, p0, Lorg/telegram/ui/Components/Premium/PremiumGiftTierCell;->colorKey2:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

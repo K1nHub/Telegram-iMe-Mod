@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/WallpapersListActivity;)V
     .locals 0
 
-    .line 1349
+    .line 1396
     iput-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$7;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,24 +38,24 @@
 .method public onPreDraw()Z
     .locals 1
 
-    .line 1352
+    .line 1399
     iget-object v0, p0, Lorg/telegram/ui/WallpapersListActivity$7;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/WallpapersListActivity;->access$2800(Lorg/telegram/ui/WallpapersListActivity;)V
+    invoke-static {v0}, Lorg/telegram/ui/WallpapersListActivity;->access$2900(Lorg/telegram/ui/WallpapersListActivity;)V
 
-    .line 1353
+    .line 1400
     iget-object v0, p0, Lorg/telegram/ui/WallpapersListActivity$7;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/WallpapersListActivity;->access$2100(Lorg/telegram/ui/WallpapersListActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {v0}, Lorg/telegram/ui/WallpapersListActivity;->access$2200(Lorg/telegram/ui/WallpapersListActivity;)Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 1354
+    .line 1401
     iget-object v0, p0, Lorg/telegram/ui/WallpapersListActivity$7;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/WallpapersListActivity;->access$2100(Lorg/telegram/ui/WallpapersListActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {v0}, Lorg/telegram/ui/WallpapersListActivity;->access$2200(Lorg/telegram/ui/WallpapersListActivity;)Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v0
 

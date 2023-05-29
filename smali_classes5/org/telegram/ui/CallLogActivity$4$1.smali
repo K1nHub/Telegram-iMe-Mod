@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/CallLogActivity$4;Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
     .locals 0
 
-    .line 1173
+    .line 1172
     iput-object p1, p0, Lorg/telegram/ui/CallLogActivity$4$1;->this$1:Lorg/telegram/ui/CallLogActivity$4;
 
     iput-object p2, p0, Lorg/telegram/ui/CallLogActivity$4$1;->val$layoutManager:Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1176
+    .line 1175
     iget-object p1, p0, Lorg/telegram/ui/CallLogActivity$4$1;->this$1:Lorg/telegram/ui/CallLogActivity$4;
 
     iget-object p1, p1, Lorg/telegram/ui/CallLogActivity$4;->val$finalProgressView:Landroid/view/View;
@@ -48,7 +48,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1177
+    .line 1176
     iget-object p1, p0, Lorg/telegram/ui/CallLogActivity$4$1;->val$layoutManager:Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
 
     iget-object v0, p0, Lorg/telegram/ui/CallLogActivity$4$1;->this$1:Lorg/telegram/ui/CallLogActivity$4;
@@ -57,7 +57,7 @@
 
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->stopIgnoringView(Landroid/view/View;)V
 
-    .line 1178
+    .line 1177
     iget-object p1, p0, Lorg/telegram/ui/CallLogActivity$4$1;->this$1:Lorg/telegram/ui/CallLogActivity$4;
 
     iget-object p1, p1, Lorg/telegram/ui/CallLogActivity$4;->this$0:Lorg/telegram/ui/CallLogActivity;

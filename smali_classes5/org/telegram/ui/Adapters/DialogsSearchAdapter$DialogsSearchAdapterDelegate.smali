@@ -15,9 +15,6 @@
 
 
 # virtual methods
-.method public abstract checkDialogIsSelected(J)Z
-.end method
-
 .method public abstract clearTopPeers()V
 .end method
 
@@ -25,9 +22,6 @@
 .end method
 
 .method public abstract getSearchForumDialogId()J
-.end method
-
-.method public abstract isCustomForward()Z
 .end method
 
 .method public abstract isSelected(J)Z

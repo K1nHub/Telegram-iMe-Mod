@@ -4865,9 +4865,6 @@ Configurações > Ferramentas > Bate-papos > Modelos"</string>
     <string name="collection_tab_all">Tudo</string>
     <string name="collection_tab_categories">Categorias</string>
     <string name="collection_tab_my">Minha coleção</string>
-    <string name="combine_messages_alert_message">"Você envia mensagens consecutivas, e isso pode irritar outros usuários.
-
-Quer ativar a opção para que suas mensagens enviadas de forma consecutiva em até 30 segundos sejam combinadas em uma única mensagem?"</string>
     <string name="combine_messages_disable">Não combinar mensagens</string>
     <string name="combine_messages_enable">Combinar mensagens</string>
     <string name="combine_messages_send_without_combine">Enviar sem combinar</string>
@@ -4956,15 +4953,11 @@ Quer ativar a opção para que suas mensagens enviadas de forma consecutiva em a
     <string name="debug_option_choose_wallet_environment_dialog_title">Tem certeza?</string>
     <string name="deleting_messages">Excluindo mensagens... Processadas: %1$d de %2$d</string>
     <string name="deleting_messages_success">Mensagens de serviço excluídas</string>
-    <string name="dialog_message_enable_archive_in_drawer">"Caso desabilite a aba Todos os chats, você não poderá entrar no arquivo.
-
-Quer colocar o botão de acesso ao arquivo no menu lateral?"</string>
     <string name="dialog_promo_discussion_group_description">Grupo</string>
     <string name="dialog_promo_en_news_channel_description">Inglês</string>
     <string name="dialog_promo_ru_news_channel_description">Russo</string>
     <string name="dialog_promo_subscribe_subtitle">Então junte-se ao nosso canal</string>
     <string name="dialog_promo_subscribe_title">Quer acompanhar as notícias do iMe?</string>
-    <string name="dialog_title_enable_archive_in_drawer">Acesso ao arquivo</string>
     <string name="dialogs_activity_move_to_folder">Mover para a pasta</string>
     <string name="dialogs_albums_sort_alphabetically">Classificar alfabeticamente</string>
     <string name="dialogs_albums_sort_date">Classificar por data</string>
@@ -5234,6 +5227,8 @@ Mude para o acesso ao dispositivo para ativar este recurso."</string>
 Adicione música à playlist"</string>
     <string name="music_playlists_tab">Playlists</string>
     <string name="music_tab_playlist">Playlist</string>
+    <string name="nav_app_bar_navigate_up_description">Navegar para cima</string>
+    <string name="nav_app_bar_open_drawer_description">Abrir gaveta de navegação</string>
     <string name="neurobots_enable_dialog_description">Para ativar e configurar neurobots, vá até as configurações</string>
     <string name="neurobots_enable_dialog_positive_btn_text">IR PARA</string>
     <string name="neurobots_enable_dialog_title">Neurobots desativados</string>
@@ -5451,7 +5446,6 @@ Você precisa estar nos contatos deles no Telegram para adicioná-los novamente,
     <string name="settings_neurobots_item_title">Configurações de neurobots</string>
     <string name="settings_proxy_button_in_toolbar">Botão proxy</string>
     <string name="settings_reactions_enable_hint">Ative esta opção para exibir a funcionalidade de reações nos chats</string>
-    <string name="settings_revoke_by_default">Excluir de outro lado</string>
     <string name="settings_tools">Ferramentas</string>
     <string name="settings_tools_base_toolbar">Barra de Ferramentas Básica</string>
     <string name="settings_tools_bot_help_translate">Tradução de saudação em bots</string>
@@ -5469,8 +5463,6 @@ Se você selecionar a opção API do Bot, um \"-\" será adicionado ao início d
     <string name="settings_tools_combine_messages_hint">"Você pode irritar outros usuários caso costume enviar mensagens consecutivas.
 
 Ative esta opção para que suas mensagens enviadas de forma consecutiva em até 30 segundos sejam combinadas em uma única mensagem."</string>
-    <string name="settings_tools_custom_sharing">Multicompartilhamento</string>
-    <string name="settings_tools_custom_sharing_hint">Exibindo as abas de classificação da lista de chat principal e de arquivo ao compartilhar de fora. Por exemplo, quando você compartilha uma foto da galeria do dispositivo no iMe.</string>
     <string name="settings_tools_customization">Personalização</string>
     <string name="settings_tools_design_icon">Design de ícones</string>
     <string name="settings_tools_message_popup_reactions">No menu de contexto</string>

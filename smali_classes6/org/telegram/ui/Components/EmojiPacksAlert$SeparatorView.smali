@@ -21,10 +21,10 @@
     .line 1190
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    const-string p2, "chat_emojiPanelShadowLine"
-
     .line 1191
-    invoke-static {p1, p2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$3900(Lorg/telegram/ui/Components/EmojiPacksAlert;Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelShadowLine:I
+
+    invoke-static {p1, p2}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$3900(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
 
     move-result p1
 

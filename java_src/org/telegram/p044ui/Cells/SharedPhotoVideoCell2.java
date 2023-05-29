@@ -17,7 +17,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.math.MathUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.MessageObject;
@@ -115,10 +115,10 @@ public class SharedPhotoVideoCell2 extends View {
         if (i == 1) {
             CheckBoxBase checkBoxBase = new CheckBoxBase(this, 21, null);
             this.checkBoxBase = checkBoxBase;
-            checkBoxBase.setColor(null, "sharedMedia_photoPlaceholder", "checkboxCheck");
+            checkBoxBase.setColor(-1, Theme.key_sharedMedia_photoPlaceholder, Theme.key_checkboxCheck);
             this.checkBoxBase.setDrawUnchecked(true);
             this.checkBoxBase.setBackgroundType(0);
-            this.checkBoxBase.setBounds(0, 0, AndroidUtilities.m50dp(24), AndroidUtilities.m50dp(24));
+            this.checkBoxBase.setBounds(0, 0, AndroidUtilities.m54dp(24), AndroidUtilities.m54dp(24));
             if (this.attached) {
                 this.checkBoxBase.onAttachedToWindow();
             }
@@ -167,24 +167,24 @@ public class SharedPhotoVideoCell2 extends View {
         this.drawVideoIcon = z;
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:120:0x0336  */
-    /* JADX WARN: Removed duplicated region for block: B:126:0x034c  */
-    /* JADX WARN: Removed duplicated region for block: B:127:0x0365  */
-    /* JADX WARN: Removed duplicated region for block: B:130:0x037e  */
-    /* JADX WARN: Removed duplicated region for block: B:51:0x0101  */
-    /* JADX WARN: Removed duplicated region for block: B:52:0x0112  */
-    /* JADX WARN: Removed duplicated region for block: B:62:0x013e  */
-    /* JADX WARN: Removed duplicated region for block: B:63:0x0158  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x0181  */
-    /* JADX WARN: Removed duplicated region for block: B:89:0x0231  */
+    /* JADX WARN: Removed duplicated region for block: B:122:0x0340  */
+    /* JADX WARN: Removed duplicated region for block: B:128:0x0358  */
+    /* JADX WARN: Removed duplicated region for block: B:129:0x0371  */
+    /* JADX WARN: Removed duplicated region for block: B:132:0x038a  */
+    /* JADX WARN: Removed duplicated region for block: B:53:0x010c  */
+    /* JADX WARN: Removed duplicated region for block: B:54:0x011d  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x0149  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x0163  */
+    /* JADX WARN: Removed duplicated region for block: B:76:0x018c  */
+    /* JADX WARN: Removed duplicated region for block: B:91:0x023b  */
     @Override // android.view.View
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    protected void onDraw(android.graphics.Canvas r27) {
+    protected void onDraw(android.graphics.Canvas r28) {
         /*
-            Method dump skipped, instructions count: 931
+            Method dump skipped, instructions count: 943
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Cells.SharedPhotoVideoCell2.onDraw(android.graphics.Canvas):void");
@@ -301,7 +301,7 @@ public class SharedPhotoVideoCell2 extends View {
         if (this.crossfadeView != null) {
             canvas.save();
             canvas.translate(getX(), getY());
-            this.crossfadeView.setImageScale(((getMeasuredWidth() - AndroidUtilities.m50dp(2)) * this.imageScale) / (this.crossfadeView.getMeasuredWidth() - AndroidUtilities.m50dp(2)), false);
+            this.crossfadeView.setImageScale(((getMeasuredWidth() - AndroidUtilities.m54dp(2)) * this.imageScale) / (this.crossfadeView.getMeasuredWidth() - AndroidUtilities.m54dp(2)), false);
             this.crossfadeView.draw(canvas);
             canvas.restore();
         }
@@ -319,10 +319,10 @@ public class SharedPhotoVideoCell2 extends View {
         if (this.checkBoxBase == null) {
             CheckBoxBase checkBoxBase2 = new CheckBoxBase(this, 21, null);
             this.checkBoxBase = checkBoxBase2;
-            checkBoxBase2.setColor(null, "sharedMedia_photoPlaceholder", "checkboxCheck");
+            checkBoxBase2.setColor(-1, Theme.key_sharedMedia_photoPlaceholder, Theme.key_checkboxCheck);
             this.checkBoxBase.setDrawUnchecked(false);
             this.checkBoxBase.setBackgroundType(1);
-            this.checkBoxBase.setBounds(0, 0, AndroidUtilities.m50dp(24), AndroidUtilities.m50dp(24));
+            this.checkBoxBase.setBounds(0, 0, AndroidUtilities.m54dp(24), AndroidUtilities.m54dp(24));
             if (this.attached) {
                 this.checkBoxBase.onAttachedToWindow();
             }
@@ -383,13 +383,13 @@ public class SharedPhotoVideoCell2 extends View {
         SparseArray<String> imageFilters = new SparseArray<>();
 
         public SharedResources(Context context, Theme.ResourcesProvider resourcesProvider) {
-            this.textPaint.setTextSize(AndroidUtilities.m50dp(12));
+            this.textPaint.setTextSize(AndroidUtilities.m54dp(12));
             this.textPaint.setColor(-1);
             this.textPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-            Drawable drawable = ContextCompat.getDrawable(context, C3242R.C3244drawable.play_mini_video);
+            Drawable drawable = ContextCompat.getDrawable(context, C3290R.C3292drawable.play_mini_video);
             this.playDrawable = drawable;
             drawable.setBounds(0, 0, drawable.getIntrinsicWidth(), this.playDrawable.getIntrinsicHeight());
-            this.backgroundPaint.setColor(Theme.getColor("sharedMedia_photoPlaceholder", resourcesProvider));
+            this.backgroundPaint.setColor(Theme.getColor(Theme.key_sharedMedia_photoPlaceholder, resourcesProvider));
         }
 
         public String getFilterString(int i) {

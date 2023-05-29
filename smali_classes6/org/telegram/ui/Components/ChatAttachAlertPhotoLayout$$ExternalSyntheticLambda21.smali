@@ -8,18 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
-.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+.field public final synthetic f$1:Z
+
+.field public final synthetic f$2:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda21;->f$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
-    iput-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda21;->f$1:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    iput-boolean p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda21;->f$1:Z
+
+    iput-object p3, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda21;->f$2:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     return-void
 .end method
@@ -45,21 +49,23 @@
 .end method
 
 .method public final onItemClick(Landroid/view/View;IFF)V
-    .locals 6
+    .locals 7
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda21;->f$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda21;->f$1:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    iget-boolean v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda21;->f$1:Z
 
-    move-object v2, p1
+    iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$$ExternalSyntheticLambda21;->f$2:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    move v3, p2
+    move-object v3, p1
 
-    move v4, p3
+    move v4, p2
 
-    move v5, p4
+    move v5, p3
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->$r8$lambda$e7agy51n-rYdVpTqJmFyWacud5M(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Landroid/view/View;IFF)V
+    move v6, p4
+
+    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->$r8$lambda$RG3zAWWLloSQ99Pd005Wj6rzIuE(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;ZLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Landroid/view/View;IFF)V
 
     return-void
 .end method

@@ -16,29 +16,29 @@ import java.util.List;
 /* loaded from: classes3.dex */
 public final class PolylineOptions extends AbstractSafeParcelable {
     public static final Parcelable.Creator<PolylineOptions> CREATOR = new zzm();
-    @SafeParcelable.Field(getter = "getPoints", m775id = 2)
+    @SafeParcelable.Field(getter = "getPoints", m779id = 2)
     private final List zza;
-    @SafeParcelable.Field(getter = "getWidth", m775id = 3)
+    @SafeParcelable.Field(getter = "getWidth", m779id = 3)
     private float zzb;
-    @SafeParcelable.Field(getter = "getColor", m775id = 4)
+    @SafeParcelable.Field(getter = "getColor", m779id = 4)
     private int zzc;
-    @SafeParcelable.Field(getter = "getZIndex", m775id = 5)
+    @SafeParcelable.Field(getter = "getZIndex", m779id = 5)
     private float zzd;
-    @SafeParcelable.Field(getter = "isVisible", m775id = 6)
+    @SafeParcelable.Field(getter = "isVisible", m779id = 6)
     private boolean zze;
-    @SafeParcelable.Field(getter = "isGeodesic", m775id = 7)
+    @SafeParcelable.Field(getter = "isGeodesic", m779id = 7)
     private boolean zzf;
-    @SafeParcelable.Field(getter = "isClickable", m775id = 8)
+    @SafeParcelable.Field(getter = "isClickable", m779id = 8)
     private boolean zzg;
-    @SafeParcelable.Field(getter = "getStartCap", m775id = 9)
+    @SafeParcelable.Field(getter = "getStartCap", m779id = 9)
     private Cap zzh;
-    @SafeParcelable.Field(getter = "getEndCap", m775id = 10)
+    @SafeParcelable.Field(getter = "getEndCap", m779id = 10)
     private Cap zzi;
-    @SafeParcelable.Field(getter = "getJointType", m775id = 11)
+    @SafeParcelable.Field(getter = "getJointType", m779id = 11)
     private int zzj;
-    @SafeParcelable.Field(getter = "getPattern", m775id = 12)
+    @SafeParcelable.Field(getter = "getPattern", m779id = 12)
     private List zzk;
-    @SafeParcelable.Field(getter = "getSpans", m775id = 13)
+    @SafeParcelable.Field(getter = "getSpans", m779id = 13)
     private List zzl;
 
     public PolylineOptions() {
@@ -216,7 +216,7 @@ public final class PolylineOptions extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public PolylineOptions(@SafeParcelable.Param(m774id = 2) List list, @SafeParcelable.Param(m774id = 3) float f, @SafeParcelable.Param(m774id = 4) int i, @SafeParcelable.Param(m774id = 5) float f2, @SafeParcelable.Param(m774id = 6) boolean z, @SafeParcelable.Param(m774id = 7) boolean z2, @SafeParcelable.Param(m774id = 8) boolean z3, @SafeParcelable.Param(m774id = 9) Cap cap, @SafeParcelable.Param(m774id = 10) Cap cap2, @SafeParcelable.Param(m774id = 11) int i2, @SafeParcelable.Param(m774id = 12) List list2, @SafeParcelable.Param(m774id = 13) List list3) {
+    public PolylineOptions(@SafeParcelable.Param(m778id = 2) List list, @SafeParcelable.Param(m778id = 3) float f, @SafeParcelable.Param(m778id = 4) int i, @SafeParcelable.Param(m778id = 5) float f2, @SafeParcelable.Param(m778id = 6) boolean z, @SafeParcelable.Param(m778id = 7) boolean z2, @SafeParcelable.Param(m778id = 8) boolean z3, @SafeParcelable.Param(m778id = 9) Cap cap, @SafeParcelable.Param(m778id = 10) Cap cap2, @SafeParcelable.Param(m778id = 11) int i2, @SafeParcelable.Param(m778id = 12) List list2, @SafeParcelable.Param(m778id = 13) List list3) {
         this.zzb = 10.0f;
         this.zzc = -16777216;
         this.zzd = BitmapDescriptorFactory.HUE_RED;

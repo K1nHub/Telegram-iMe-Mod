@@ -26,14 +26,14 @@
 .method private fetchSetFrame()V
     .locals 6
 
-    .line 176
+    .line 179
     sget-boolean v0, Landroidx/transition/ViewUtilsBase;->sSetFrameFetched:Z
 
     if-nez v0, :cond_0
 
     const/4 v0, 0x1
 
-    .line 178
+    .line 181
     :try_start_0
     const-class v1, Landroid/view/View;
 
@@ -65,7 +65,7 @@
 
     sput-object v1, Landroidx/transition/ViewUtilsBase;->sSetFrameMethod:Ljava/lang/reflect/Method;
 
-    .line 180
+    .line 183
     invoke-virtual {v1, v0}, Ljava/lang/reflect/Method;->setAccessible(Z)V
     :try_end_0
     .catch Ljava/lang/NoSuchMethodException; {:try_start_0 .. :try_end_0} :catch_0
@@ -79,10 +79,10 @@
 
     const-string v3, "Failed to retrieve setFrame method"
 
-    .line 182
+    .line 185
     invoke-static {v2, v3, v1}, Landroid/util/Log;->i(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
-    .line 184
+    .line 187
     :goto_0
     sput-boolean v0, Landroidx/transition/ViewUtilsBase;->sSetFrameFetched:Z
 

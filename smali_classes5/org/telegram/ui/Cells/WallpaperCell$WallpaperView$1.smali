@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/WallpaperCell$WallpaperView;Landroid/content/Context;Lorg/telegram/ui/Cells/WallpaperCell;)V
     .locals 0
 
-    .line 64
+    .line 67
     iput-object p1, p0, Lorg/telegram/ui/Cells/WallpaperCell$WallpaperView$1;->this$1:Lorg/telegram/ui/Cells/WallpaperCell$WallpaperView;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/BackupImageView;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 13
 
-    .line 67
+    .line 70
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/BackupImageView;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 68
+    .line 71
     iget-object v0, p0, Lorg/telegram/ui/Cells/WallpaperCell$WallpaperView$1;->this$1:Lorg/telegram/ui/Cells/WallpaperCell$WallpaperView;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/WallpaperCell$WallpaperView;->access$000(Lorg/telegram/ui/Cells/WallpaperCell$WallpaperView;)Ljava/lang/Object;
@@ -64,7 +64,7 @@
 
     const/4 v3, 0x0
 
-    .line 69
+    .line 72
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
@@ -93,7 +93,7 @@
 
     const/4 v10, 0x0
 
-    .line 70
+    .line 73
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
@@ -112,7 +112,7 @@
 
     invoke-virtual/range {v7 .. v12}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 71
+    .line 74
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
@@ -147,7 +147,7 @@
 
     const/high16 v8, 0x3f800000    # 1.0f
 
-    .line 72
+    .line 75
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v0
@@ -182,7 +182,7 @@
 
     invoke-virtual/range {v7 .. v12}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
-    .line 74
+    .line 77
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Cells/WallpaperCell$WallpaperView$1;->this$1:Lorg/telegram/ui/Cells/WallpaperCell$WallpaperView;
 
@@ -192,7 +192,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 75
+    .line 78
     iget-object v0, p0, Lorg/telegram/ui/Cells/WallpaperCell$WallpaperView$1;->this$1:Lorg/telegram/ui/Cells/WallpaperCell$WallpaperView;
 
     iget-object v0, v0, Lorg/telegram/ui/Cells/WallpaperCell$WallpaperView;->this$0:Lorg/telegram/ui/Cells/WallpaperCell;
@@ -205,14 +205,14 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 76
+    .line 79
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
 
     div-int/lit8 v0, v0, 0x2
 
-    .line 77
+    .line 80
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v1
@@ -225,7 +225,7 @@
 
     const/16 v4, 0x14
 
-    .line 78
+    .line 81
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -242,7 +242,7 @@
 
     invoke-virtual {p1, v2, v3, v4, v5}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 79
+    .line 82
     iget-object v2, p0, Lorg/telegram/ui/Cells/WallpaperCell$WallpaperView$1;->this$1:Lorg/telegram/ui/Cells/WallpaperCell$WallpaperView;
 
     iget-object v2, v2, Lorg/telegram/ui/Cells/WallpaperCell$WallpaperView;->this$0:Lorg/telegram/ui/Cells/WallpaperCell;
@@ -317,7 +317,7 @@
 
     invoke-virtual {v2, v3, v4, v0, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 80
+    .line 83
     iget-object v0, p0, Lorg/telegram/ui/Cells/WallpaperCell$WallpaperView$1;->this$1:Lorg/telegram/ui/Cells/WallpaperCell$WallpaperView;
 
     iget-object v0, v0, Lorg/telegram/ui/Cells/WallpaperCell$WallpaperView;->this$0:Lorg/telegram/ui/Cells/WallpaperCell;

@@ -63,7 +63,7 @@ public final class WalletInteractor$getWalletBalance$$inlined$flatMapError$1 ext
                     }
                 });
                 schedulersProvider = this.this$0.schedulersProvider;
-                Observable subscribeOn = flatMap.subscribeOn(schedulersProvider.mo694io());
+                Observable subscribeOn = flatMap.subscribeOn(schedulersProvider.mo699io());
                 Intrinsics.checkNotNullExpressionValue(subscribeOn, "fun getWalletBalance(for…(schedulersProvider.io())");
                 return subscribeOn;
             }

@@ -22,7 +22,7 @@
 .method private constructor <init>(Lorg/telegram/ui/CacheChatsExceptionsFragment;)V
     .locals 0
 
-    .line 235
+    .line 241
     iput-object p1, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment$Adapter;->this$0:Lorg/telegram/ui/CacheChatsExceptionsFragment;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils;-><init>()V
@@ -33,7 +33,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/CacheChatsExceptionsFragment;Lorg/telegram/ui/CacheChatsExceptionsFragment$1;)V
     .locals 0
 
-    .line 235
+    .line 241
     invoke-direct {p0, p1}, Lorg/telegram/ui/CacheChatsExceptionsFragment$Adapter;-><init>(Lorg/telegram/ui/CacheChatsExceptionsFragment;)V
 
     return-void
@@ -44,7 +44,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 292
+    .line 298
     iget-object v0, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment$Adapter;->this$0:Lorg/telegram/ui/CacheChatsExceptionsFragment;
 
     iget-object v0, v0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->items:Ljava/util/ArrayList;
@@ -59,7 +59,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 297
+    .line 303
     iget-object v0, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment$Adapter;->this$0:Lorg/telegram/ui/CacheChatsExceptionsFragment;
 
     iget-object v0, v0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->items:Ljava/util/ArrayList;
@@ -78,7 +78,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 3
 
-    .line 302
+    .line 308
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -116,7 +116,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 8
 
-    .line 269
+    .line 275
     iget-object v0, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment$Adapter;->this$0:Lorg/telegram/ui/CacheChatsExceptionsFragment;
 
     iget-object v0, v0, Lorg/telegram/ui/CacheChatsExceptionsFragment;->items:Ljava/util/ArrayList;
@@ -133,14 +133,14 @@
 
     if-ne v0, v1, :cond_5
 
-    .line 270
+    .line 276
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     move-object v2, p1
 
     check-cast v2, Lorg/telegram/ui/Cells/UserCell;
 
-    .line 271
+    .line 277
     iget-object p1, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment$Adapter;->this$0:Lorg/telegram/ui/CacheChatsExceptionsFragment;
 
     iget-object p1, p1, Lorg/telegram/ui/CacheChatsExceptionsFragment;->items:Ljava/util/ArrayList;
@@ -153,7 +153,7 @@
 
     iget-object p1, p1, Lorg/telegram/ui/CacheChatsExceptionsFragment$Item;->exception:Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;
 
-    .line 272
+    .line 278
     iget-object v0, p0, Lorg/telegram/ui/CacheChatsExceptionsFragment$Adapter;->this$0:Lorg/telegram/ui/CacheChatsExceptionsFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -168,22 +168,22 @@
 
     const/4 v0, 0x0
 
-    .line 274
+    .line 280
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$User;
 
     if-eqz v4, :cond_1
 
-    .line 275
+    .line 281
     move-object v0, v3
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 276
+    .line 282
     iget-boolean v4, v0, Lorg/telegram/tgnet/TLRPC$User;->self:Z
 
     if-eqz v4, :cond_0
 
-    .line 277
+    .line 283
     sget v0, Lorg/telegram/messenger/R$string;->SavedMessages:I
 
     const-string v4, "SavedMessages"
@@ -194,7 +194,7 @@
 
     goto :goto_0
 
-    .line 279
+    .line 285
     :cond_0
     iget-object v4, v0, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
@@ -206,18 +206,18 @@
 
     goto :goto_0
 
-    .line 281
+    .line 287
     :cond_1
     instance-of v4, v3, Lorg/telegram/tgnet/TLRPC$Chat;
 
     if-eqz v4, :cond_2
 
-    .line 282
+    .line 288
     move-object v0, v3
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 283
+    .line 289
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
 
     :cond_2
@@ -226,10 +226,10 @@
 
     const/4 v0, 0x1
 
-    .line 285
+    .line 291
     invoke-virtual {v2, v0}, Lorg/telegram/ui/Cells/UserCell;->setSelfAsSavedMessages(Z)V
 
-    .line 286
+    .line 292
     iget p1, p1, Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;->keepMedia:I
 
     invoke-static {p1}, Lorg/telegram/messenger/CacheByChatsController;->getKeepMediaString(I)Ljava/lang/String;
@@ -287,31 +287,31 @@
 .end method
 
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-    .locals 9
+    .locals 7
 
-    const/4 v0, 0x1
+    const/4 v0, -0x1
 
-    const/4 v1, 0x0
+    const/4 v1, 0x1
 
-    const-string v2, "windowBackgroundWhite"
+    if-eq p2, v1, :cond_3
 
-    if-eq p2, v0, :cond_3
+    const/4 v1, 0x2
 
-    const/4 v0, 0x2
+    if-eq p2, v1, :cond_2
 
-    if-eq p2, v0, :cond_2
+    const/4 v1, 0x3
 
-    const/4 v0, 0x3
+    if-eq p2, v1, :cond_1
 
-    if-eq p2, v0, :cond_1
+    const/4 v1, 0x4
 
-    const/4 v0, 0x4
+    if-eq p2, v1, :cond_0
 
-    if-eq p2, v0, :cond_0
+    const/4 p1, 0x0
 
-    goto :goto_0
+    goto :goto_1
 
-    .line 256
+    .line 262
     :cond_0
     new-instance p2, Lorg/telegram/ui/Cells/TextCell;
 
@@ -321,129 +321,134 @@
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Cells/TextCell;-><init>(Landroid/content/Context;)V
 
-    .line 257
+    .line 263
     sget p1, Lorg/telegram/messenger/R$string;->NotificationsDeleteAllException:I
 
-    const-string v0, "NotificationsDeleteAllException"
+    const-string v1, "NotificationsDeleteAllException"
 
-    invoke-static {v0, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v1, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    invoke-virtual {p2, p1, v0}, Lorg/telegram/ui/Cells/TextCell;->setText(Ljava/lang/String;Z)V
+    invoke-virtual {p2, p1, v1}, Lorg/telegram/ui/Cells/TextCell;->setText(Ljava/lang/String;Z)V
 
-    const-string p1, "windowBackgroundWhiteRedText5"
+    .line 264
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
-    .line 258
-    invoke-virtual {p2, v1, p1}, Lorg/telegram/ui/Cells/TextCell;->setColors(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p2, v0, p1}, Lorg/telegram/ui/Cells/TextCell;->setColors(II)V
 
-    .line 260
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    .line 266
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
     invoke-virtual {p2, p1}, Landroid/view/View;->setBackgroundColor(I)V
 
-    move-object v1, p2
-
     goto :goto_0
 
-    .line 253
+    .line 259
     :cond_1
-    new-instance v1, Lorg/telegram/ui/Cells/ShadowSectionCell;
+    new-instance p2, Lorg/telegram/ui/Cells/ShadowSectionCell;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object p1
 
-    invoke-direct {v1, p1}, Lorg/telegram/ui/Cells/ShadowSectionCell;-><init>(Landroid/content/Context;)V
+    invoke-direct {p2, p1}, Lorg/telegram/ui/Cells/ShadowSectionCell;-><init>(Landroid/content/Context;)V
 
     goto :goto_0
 
-    .line 242
+    .line 248
     :cond_2
-    new-instance v1, Lorg/telegram/ui/Cells/UserCell;
+    new-instance p2, Lorg/telegram/ui/Cells/UserCell;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
-    move-result-object v4
+    move-result-object v2
 
-    const/4 v5, 0x4
+    const/4 v3, 0x4
+
+    const/4 v4, 0x0
+
+    const/4 v5, 0x0
 
     const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    move-object v1, p2
 
-    const/4 v8, 0x0
+    invoke-direct/range {v1 .. v6}, Lorg/telegram/ui/Cells/UserCell;-><init>(Landroid/content/Context;IIZZ)V
 
-    move-object v3, v1
+    .line 249
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-direct/range {v3 .. v8}, Lorg/telegram/ui/Cells/UserCell;-><init>(Landroid/content/Context;IIZZ)V
-
-    .line 243
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
-    invoke-virtual {v1, p1}, Landroid/view/View;->setBackgroundColor(I)V
+    invoke-virtual {p2, p1}, Landroid/view/View;->setBackgroundColor(I)V
 
     goto :goto_0
 
-    .line 246
+    .line 252
     :cond_3
-    new-instance v1, Lorg/telegram/ui/Cells/TextCell;
+    new-instance p2, Lorg/telegram/ui/Cells/TextCell;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object p1
 
-    invoke-direct {v1, p1}, Lorg/telegram/ui/Cells/TextCell;-><init>(Landroid/content/Context;)V
+    invoke-direct {p2, p1}, Lorg/telegram/ui/Cells/TextCell;-><init>(Landroid/content/Context;)V
 
-    .line 247
+    .line 253
     sget p1, Lorg/telegram/messenger/R$string;->NotificationsAddAnException:I
 
-    const-string p2, "NotificationsAddAnException"
+    const-string v2, "NotificationsAddAnException"
 
-    invoke-static {p2, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {v2, p1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object p1
 
-    sget p2, Lorg/telegram/messenger/R$drawable;->msg_contact_add:I
+    sget v2, Lorg/telegram/messenger/R$drawable;->msg_contact_add:I
 
-    invoke-virtual {v1, p1, p2, v0}, Lorg/telegram/ui/Cells/TextCell;->setTextAndIcon(Ljava/lang/String;IZ)V
+    invoke-virtual {p2, p1, v2, v1}, Lorg/telegram/ui/Cells/TextCell;->setTextAndIcon(Ljava/lang/String;IZ)V
 
-    const-string p1, "windowBackgroundWhiteBlueIcon"
+    .line 254
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueIcon:I
 
-    const-string p2, "windowBackgroundWhiteBlueButton"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueButton:I
 
-    .line 248
-    invoke-virtual {v1, p1, p2}, Lorg/telegram/ui/Cells/TextCell;->setColors(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p2, p1, v1}, Lorg/telegram/ui/Cells/TextCell;->setColors(II)V
 
-    .line 250
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    .line 256
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
-    invoke-virtual {v1, p1}, Landroid/view/View;->setBackgroundColor(I)V
+    invoke-virtual {p2, p1}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 263
     :goto_0
-    new-instance p1, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
+    move-object p1, p2
 
-    const/4 p2, -0x1
+    .line 269
+    :goto_1
+    new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
-    const/4 v0, -0x2
+    const/4 v1, -0x2
 
-    invoke-direct {p1, p2, v0}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(II)V
+    invoke-direct {p2, v0, v1}, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;-><init>(II)V
 
-    invoke-virtual {v1, p1}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p1, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 264
-    new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
+    .line 270
+    new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
-    invoke-direct {p1, v1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
+    invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
 
-    return-object p1
+    return-object p2
 .end method

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilteredSearchView;)V
     .locals 0
 
-    .line 1719
+    .line 1737
     iput-object p1, p0, Lorg/telegram/ui/FilteredSearchView$9;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1722
+    .line 1740
     iget-object p1, p0, Lorg/telegram/ui/FilteredSearchView$9;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     const/4 v0, 0x0

@@ -231,6 +231,23 @@
     return-object v2
 .end method
 
+.method public final getValues()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Ljava/lang/Object;",
+            ">;"
+        }
+    .end annotation
+
+    .line 38
+    iget-object v0, p0, Lorg/koin/core/parameter/ParametersHolder;->_values:Ljava/util/List;
+
+    return-object v0
+.end method
+
 .method public toString()Ljava/lang/String;
     .locals 2
 

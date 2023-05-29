@@ -44,7 +44,7 @@ public final class ReactionPresenter$prepareTextMessage$$inlined$flatMapSuccess$
         Intrinsics.checkNotNull(data2);
         String id = data2.getId();
         j = this.this$0.dialogId;
-        Observable onErrorReturn = telegramApi.getInlineBot(id, j, AppConfiguration$Reaction.getBotId()).map(new C1997x5210a4c3(C1995x3fabecbe.INSTANCE)).onErrorReturn(new C1997x5210a4c3(C1996x3fabecbf.INSTANCE));
+        Observable onErrorReturn = telegramApi.getInlineBot(id, j, AppConfiguration$Reaction.getBotId()).map(new C2055x5210a4c3(C2053x3fabecbe.INSTANCE)).onErrorReturn(new C2055x5210a4c3(C2054x3fabecbf.INSTANCE));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "map { it.toSuccess() }\n …RESPONSE, it).toError() }");
         return onErrorReturn;
     }

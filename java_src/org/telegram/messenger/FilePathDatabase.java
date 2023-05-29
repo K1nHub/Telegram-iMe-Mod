@@ -62,7 +62,7 @@ public class FilePathDatabase {
             } else {
                 int intValue = this.database.executeInt("PRAGMA user_version", new Object[0]).intValue();
                 if (BuildVars.LOGS_ENABLED) {
-                    FileLog.m48d("current files db version = " + intValue);
+                    FileLog.m52d("current files db version = " + intValue);
                 }
                 if (intValue == 0) {
                     throw new Exception("malformed");
@@ -72,7 +72,7 @@ public class FilePathDatabase {
             if (!z) {
                 createBackup();
             }
-            FileLog.m48d("files db created from_backup= " + z);
+            FileLog.m52d("files db created from_backup= " + z);
         } catch (Exception e) {
             if (i < 4) {
                 if (!z && restoreBackup()) {
@@ -84,7 +84,7 @@ public class FilePathDatabase {
                 createDatabase(i + 1, false);
             }
             if (BuildVars.DEBUG_VERSION) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
             }
         }
     }
@@ -117,7 +117,7 @@ public class FilePathDatabase {
         File file2 = new File(filesDirFixed, "file_to_path_backup.db");
         try {
             AndroidUtilities.copyFile(this.cacheFile, file2);
-            FileLog.m48d("file db backup created " + file2.getAbsolutePath());
+            FileLog.m52d("file db backup created " + file2.getAbsolutePath());
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -135,7 +135,7 @@ public class FilePathDatabase {
             try {
                 return AndroidUtilities.copyFile(file2, this.cacheFile);
             } catch (IOException e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
                 return false;
             }
         }
@@ -187,7 +187,7 @@ public class FilePathDatabase {
             if (queryFinalized.next()) {
                 str2 = queryFinalized.stringValue(0);
                 if (BuildVars.DEBUG_VERSION) {
-                    FileLog.m48d("get file path id=" + j + " dc=" + i + " type=" + i2 + " path=" + str2);
+                    FileLog.m52d("get file path id=" + j + " dc=" + i + " type=" + i2 + " path=" + str2);
                 }
             }
             queryFinalized.dispose();
@@ -196,7 +196,7 @@ public class FilePathDatabase {
             sQLiteException = e2;
             str = str2;
             sQLiteCursor = queryFinalized;
-            FileLog.m45e(sQLiteException);
+            FileLog.m49e(sQLiteException);
             if (sQLiteCursor != null) {
                 sQLiteCursor.dispose();
             }
@@ -222,12 +222,12 @@ public class FilePathDatabase {
                 if (sQLiteCursor.next()) {
                     strArr[0] = sQLiteCursor.stringValue(0);
                     if (BuildVars.DEBUG_VERSION) {
-                        FileLog.m48d("get file path id=" + j + " dc=" + i + " type=" + i2 + " path=" + strArr[0]);
+                        FileLog.m52d("get file path id=" + j + " dc=" + i + " type=" + i2 + " path=" + strArr[0]);
                     }
                 }
             } catch (Throwable th) {
                 try {
-                    FileLog.m45e(th);
+                    FileLog.m49e(th);
                 } finally {
                     if (sQLiteCursor != null) {
                         sQLiteCursor.dispose();
@@ -296,7 +296,7 @@ public class FilePathDatabase {
             r0.append(r1)
             r0.append(r10)
             java.lang.String r0 = r0.toString()
-            org.telegram.messenger.FileLog.m48d(r0)
+            org.telegram.messenger.FileLog.m52d(r0)
         L30:
             r5.ensureDatabaseCreated()
             org.telegram.SQLite.SQLiteDatabase r0 = r5.database
@@ -368,7 +368,7 @@ public class FilePathDatabase {
             r6 = move-exception
             r7 = r1
         Lb0:
-            org.telegram.messenger.FileLog.m45e(r6)     // Catch: java.lang.Throwable -> Lbe
+            org.telegram.messenger.FileLog.m49e(r6)     // Catch: java.lang.Throwable -> Lbe
             if (r1 == 0) goto Lb8
             r1.dispose()
         Lb8:
@@ -406,11 +406,11 @@ public class FilePathDatabase {
         try {
             countDownLatch.await();
         } catch (InterruptedException e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
-        FileLog.m48d("checkMediaExistance size=" + arrayList.size() + " time=" + (System.currentTimeMillis() - currentTimeMillis));
+        FileLog.m52d("checkMediaExistance size=" + arrayList.size() + " time=" + (System.currentTimeMillis() - currentTimeMillis));
         if (BuildVars.DEBUG_VERSION && Thread.currentThread() == Looper.getMainLooper().getThread()) {
-            FileLog.m45e(new Exception("warning, not allowed in main thread"));
+            FileLog.m49e(new Exception("warning, not allowed in main thread"));
         }
     }
 
@@ -444,7 +444,7 @@ public class FilePathDatabase {
             this.database.executeFast("DELETE FROM paths WHERE 1").stepThis().dispose();
             this.database.executeFast("DELETE FROM paths_by_dialog_id WHERE 1").stepThis().dispose();
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
     }
 
@@ -460,7 +460,7 @@ public class FilePathDatabase {
         try {
             countDownLatch.await();
         } catch (InterruptedException e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
         return zArr[0];
     }
@@ -475,7 +475,7 @@ public class FilePathDatabase {
                     zArr[0] = true;
                 }
             } catch (Exception e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
             }
         } finally {
             countDownLatch.countDown();
@@ -508,7 +508,7 @@ public class FilePathDatabase {
                 sQLitePreparedStatement.bindInteger(4, fileMeta.messageType);
                 sQLitePreparedStatement.step();
             } catch (Exception e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
                 if (sQLitePreparedStatement == null) {
                     return;
                 }
@@ -545,7 +545,7 @@ public class FilePathDatabase {
                         i2 = sQLiteCursor.intValue(2);
                     } catch (Exception e) {
                         e = e;
-                        FileLog.m45e(e);
+                        FileLog.m49e(e);
                         i3 = i;
                         i2 = 0;
                         fileMeta.dialogId = j;
@@ -618,7 +618,7 @@ public class FilePathDatabase {
         try {
             countDownLatch.await();
         } catch (InterruptedException e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
         return longSparseArray;
     }
@@ -668,15 +668,15 @@ public class FilePathDatabase {
     public static class PathData {
 
         /* renamed from: dc */
-        public final int f1356dc;
+        public final int f1362dc;
 
         /* renamed from: id */
-        public final long f1357id;
+        public final long f1363id;
         public final int type;
 
         public PathData(long j, int i, int i2) {
-            this.f1357id = j;
-            this.f1356dc = i;
+            this.f1363id = j;
+            this.f1362dc = i;
             this.type = i2;
         }
     }

@@ -4,11 +4,11 @@ import android.content.Context;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.FrameLayout;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.Delegates.MemberRequestsDelegate;
 /* renamed from: org.telegram.ui.MemberRequestsActivity */
 /* loaded from: classes5.dex */
@@ -33,25 +33,25 @@ public class MemberRequestsActivity extends BaseFragment {
         int i;
         String str;
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.MemberRequestsActivity.2
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.MemberRequestsActivity.2
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
                     MemberRequestsActivity.this.finishFragment();
                 }
             }
         });
-        this.actionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
-        C3306ActionBar c3306ActionBar = this.actionBar;
+        this.actionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        C3356ActionBar c3356ActionBar = this.actionBar;
         if (this.delegate.isChannel) {
-            i = C3242R.string.SubscribeRequests;
+            i = C3290R.string.SubscribeRequests;
             str = "SubscribeRequests";
         } else {
-            i = C3242R.string.MemberRequests;
+            i = C3290R.string.MemberRequests;
             str = "MemberRequests";
         }
-        c3306ActionBar.setTitle(LocaleController.getString(str, i));
-        ActionBarMenuItem actionBarMenuItemSearchListener = this.actionBar.createMenu().addItem(0, C3242R.C3244drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.MemberRequestsActivity.3
+        c3356ActionBar.setTitle(LocaleController.getString(str, i));
+        ActionBarMenuItem actionBarMenuItemSearchListener = this.actionBar.createMenu().addItem(0, C3290R.C3292drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.MemberRequestsActivity.3
             @Override // org.telegram.p044ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
             public void onSearchExpand() {
                 super.onSearchExpand();
@@ -71,7 +71,7 @@ public class MemberRequestsActivity extends BaseFragment {
                 MemberRequestsActivity.this.delegate.setQuery(editText.getText().toString());
             }
         });
-        actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString("Search", C3242R.string.Search));
+        actionBarMenuItemSearchListener.setSearchFieldHint(LocaleController.getString("Search", C3290R.string.Search));
         actionBarMenuItemSearchListener.setVisibility(8);
         FrameLayout rootLayout = this.delegate.getRootLayout();
         this.delegate.loadMembers();

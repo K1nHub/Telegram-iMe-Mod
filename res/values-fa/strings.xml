@@ -331,9 +331,6 @@
     <string name="collection_tab_all">همه</string>
     <string name="collection_tab_categories">دسته‌بندی‌ها</string>
     <string name="collection_tab_my">متعلق به من</string>
-    <string name="combine_messages_alert_message">"پیاپی پیام ارسال می‌کنید و ممکن است باعث آزار سایر کاربران شود.
-
-مایلید با فعال‌سازی این گزینه، پیام‌های پیاپی که ظرف 30 ثانیه ارسال می‌شود، در یک پیام ترکیب شود؟"</string>
     <string name="combine_messages_disable">پیام‌ها ترکیب نشود</string>
     <string name="combine_messages_enable">ترکیب پیام‌ها</string>
     <string name="combine_messages_send_without_combine">ارسال بدون ترکیب</string>
@@ -422,15 +419,11 @@
     <string name="debug_option_choose_wallet_environment_dialog_title">مطمئن هستید؟</string>
     <string name="deleting_messages">‏در حال حذف پیام‌ها… پردازش‌شده: ‎%1$d of %2$d‎</string>
     <string name="deleting_messages_success">پیام‌های سرویس حذف شده است</string>
-    <string name="dialog_message_enable_archive_in_drawer">"در صورت غیرفعال‌سازی زبانه «همه چت‌ها»، نمی‌توانید وارد بایگانی شوید.
-
-دکمه دسترسی به بایگانی در منوی جانبی قرار داده شود؟"</string>
     <string name="dialog_promo_discussion_group_description">گروه</string>
     <string name="dialog_promo_en_news_channel_description">انگلیسی</string>
     <string name="dialog_promo_ru_news_channel_description">روسی</string>
     <string name="dialog_promo_subscribe_subtitle">سپس به کانال ما بپیوندید</string>
     <string name="dialog_promo_subscribe_title">تمایل به دنبال کردن اخبار iMe دارید؟</string>
-    <string name="dialog_title_enable_archive_in_drawer">دسترسی به بایگانی</string>
     <string name="dialogs_activity_move_to_folder">انتقال به پوشه</string>
     <string name="dialogs_albums_sort_alphabetically">مرتب‌سازی بر اساس حروف الفبا</string>
     <string name="dialogs_albums_sort_date">مرتب‌سازی بر اساس تاریخ</string>
@@ -667,6 +660,8 @@
 موسیقی به لیست پخش اضافه کنید"</string>
     <string name="music_playlists_tab">لیست‌های پخش</string>
     <string name="music_tab_playlist">لیست پخش</string>
+    <string name="nav_app_bar_navigate_up_description">پیمایش به بالا</string>
+    <string name="nav_app_bar_open_drawer_description">باز کردن کشوی پیمایش</string>
     <string name="neurobots_enable_dialog_description">برای فعال‌سازی و پیکربندی نوروبات‌ها، به تنظیمات بروید</string>
     <string name="neurobots_enable_dialog_positive_btn_text">رفتن به</string>
     <string name="neurobots_enable_dialog_title">نوروبات‌ها غیرفعال هستند</string>
@@ -899,8 +894,6 @@
     <string name="settings_tools_combine_messages_hint">"اگر پیاپی پیام ارسال می‌کنید، ممکن است باعث آزار سایر کاربران شوید.
 
 مایلید با فعال‌سازی این گزینه، پیام‌های پیاپی که ظرف 30 ثانیه ارسال می‌شود، در یک پیام ترکیب شود؟"</string>
-    <string name="settings_tools_custom_sharing">اشتراک‌گذاری چندگانه</string>
-    <string name="settings_tools_custom_sharing_hint">زبانه‌های مرتب‌سازی لیست چت اصلی و بایگانی هنگام اشتراک‌گذاری از خارج از برنامه نمایش داده می‌شود. برای نمونه، هنگام اشتراک‌گذاری عکسی از گالری دستگاه در iMe.</string>
     <string name="settings_tools_customization">سفارشی‌سازی</string>
     <string name="settings_tools_design_icon">طراحی آیکون ها</string>
     <string name="settings_tools_message_popup_reactions">در منوی بافت</string>

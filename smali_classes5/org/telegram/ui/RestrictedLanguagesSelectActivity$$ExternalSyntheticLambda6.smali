@@ -2,42 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/Utilities$Callback;
+.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/RestrictedLanguagesSelectActivity$$ExternalSyntheticLambda6;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/RestrictedLanguagesSelectActivity;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$$ExternalSyntheticLambda6;
-
-    invoke-direct {v0}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$$ExternalSyntheticLambda6;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$$ExternalSyntheticLambda6;->INSTANCE:Lorg/telegram/ui/RestrictedLanguagesSelectActivity$$ExternalSyntheticLambda6;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$$ExternalSyntheticLambda6;->f$0:Lorg/telegram/ui/RestrictedLanguagesSelectActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Ljava/lang/Object;)V
-    .locals 0
+.method public final onItemClick(Landroid/view/View;I)V
+    .locals 1
 
-    check-cast p1, Ljava/util/HashSet;
+    iget-object v0, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$$ExternalSyntheticLambda6;->f$0:Lorg/telegram/ui/RestrictedLanguagesSelectActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->$r8$lambda$psspHfadqfwLznkZAjXzt-lcjMc(Ljava/util/HashSet;)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->$r8$lambda$6TdFbJTq3R5lpXPajfXndM4Fw0Y(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;Landroid/view/View;I)V
 
     return-void
 .end method

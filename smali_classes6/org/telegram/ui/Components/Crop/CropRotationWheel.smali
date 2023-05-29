@@ -1282,9 +1282,9 @@
 
     new-instance p1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v1, "dialogFloatingButton"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogFloatingButton:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -1313,9 +1313,9 @@
 
     new-instance p1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v1, "dialogFloatingButton"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogFloatingButton:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

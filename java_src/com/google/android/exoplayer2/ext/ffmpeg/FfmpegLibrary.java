@@ -57,7 +57,7 @@ public final class FfmpegLibrary {
             if (ffmpegHasDecoder(codecName)) {
                 return true;
             }
-            Log.m792w(TAG, "No " + codecName + " decoder available. Check the FFmpeg build configuration.");
+            Log.m796w(TAG, "No " + codecName + " decoder available. Check the FFmpeg build configuration.");
             return false;
         }
         return false;

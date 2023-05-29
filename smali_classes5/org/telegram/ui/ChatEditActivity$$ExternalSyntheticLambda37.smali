@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/LocationActivity$LocationActivityDelegate;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
@@ -22,22 +22,12 @@
 
 
 # virtual methods
-.method public final didSelectLocation(Lorg/telegram/tgnet/TLRPC$MessageMedia;IZILjava/lang/String;)V
-    .locals 6
+.method public final run()V
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda37;->f$0:Lorg/telegram/ui/ChatEditActivity;
 
-    move-object v1, p1
-
-    move v2, p2
-
-    move v3, p3
-
-    move v4, p4
-
-    move-object v5, p5
-
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/ChatEditActivity;->$r8$lambda$HpEEGJaga51w6UWg6-GK3lCWvck(Lorg/telegram/ui/ChatEditActivity;Lorg/telegram/tgnet/TLRPC$MessageMedia;IZILjava/lang/String;)V
+    invoke-static {v0}, Lorg/telegram/ui/ChatEditActivity;->$r8$lambda$GJ0es-hCUEuYA-LAHByw_hlGPAo(Lorg/telegram/ui/ChatEditActivity;)V
 
     return-void
 .end method

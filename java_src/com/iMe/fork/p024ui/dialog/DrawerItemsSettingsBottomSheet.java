@@ -17,7 +17,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
@@ -56,7 +56,7 @@ public final class DrawerItemsSettingsBottomSheet extends BottomSheet {
     public final FrameLayout initRootView() {
         int collectionSizeOrDefault;
         FrameLayout frameLayout = new FrameLayout(getContext());
-        setTitle(LocaleController.getInternalString(C3242R.string.settings_interface_drawer_items), true);
+        setTitle(LocaleController.getInternalString(C3290R.string.settings_interface_drawer_items), true);
         ScrollView scrollView = new ScrollView(frameLayout.getContext());
         LinearLayout linearLayout = new LinearLayout(frameLayout.getContext());
         linearLayout.setOrientation(1);
@@ -80,20 +80,21 @@ public final class DrawerItemsSettingsBottomSheet extends BottomSheet {
         scrollView.addView(linearLayout);
         frameLayout.addView(scrollView, LayoutHelper.createFrame(-1, -2, 48, 0, 0, 0, 53));
         View view = new View(frameLayout.getContext());
-        view.setBackgroundColor(Theme.getColor("divider"));
+        view.setBackgroundColor(Theme.getColor(Theme.key_divider));
         frameLayout.addView(view, LayoutHelper.createFrame(-1, 1, 80, 0, 0, 0, 52));
         TextView textView = new TextView(frameLayout.getContext());
         textView.setGravity(17);
-        String string = LocaleController.getString("Cancel", C3242R.string.Cancel);
+        String string = LocaleController.getString("Cancel", C3290R.string.Cancel);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Cancel\", R.string.Cancel)");
         Locale locale = Locale.ROOT;
         String upperCase = string.toUpperCase(locale);
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
         textView.setText(upperCase);
         textView.setTextSize(1, 14.0f);
-        textView.setTextColor(Theme.getColor("dialogTextBlue2"));
+        int i = Theme.key_dialogTextBlue2;
+        textView.setTextColor(Theme.getColor(i));
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView.setPadding(AndroidUtilities.m50dp(10), 0, AndroidUtilities.m50dp(10), 0);
+        textView.setPadding(AndroidUtilities.m54dp(10), 0, AndroidUtilities.m54dp(10), 0);
         textView.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.dialog.DrawerItemsSettingsBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
@@ -102,15 +103,15 @@ public final class DrawerItemsSettingsBottomSheet extends BottomSheet {
         });
         TextView textView2 = new TextView(frameLayout.getContext());
         textView2.setGravity(17);
-        String string2 = LocaleController.getString("Save", C3242R.string.Save);
+        String string2 = LocaleController.getString("Save", C3290R.string.Save);
         Intrinsics.checkNotNullExpressionValue(string2, "getString(\"Save\", R.string.Save)");
         String upperCase2 = string2.toUpperCase(locale);
         Intrinsics.checkNotNullExpressionValue(upperCase2, "this as java.lang.String).toUpperCase(Locale.ROOT)");
         textView2.setText(upperCase2);
         textView2.setTextSize(1, 14.0f);
-        textView2.setTextColor(Theme.getColor("dialogTextBlue2"));
+        textView2.setTextColor(Theme.getColor(i));
         textView2.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView2.setPadding(AndroidUtilities.m50dp(10), 0, AndroidUtilities.m50dp(10), 0);
+        textView2.setPadding(AndroidUtilities.m54dp(10), 0, AndroidUtilities.m54dp(10), 0);
         textView2.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.dialog.DrawerItemsSettingsBottomSheet$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
@@ -118,8 +119,8 @@ public final class DrawerItemsSettingsBottomSheet extends BottomSheet {
             }
         });
         FrameLayout frameLayout2 = new FrameLayout(frameLayout.getContext());
-        int m50dp = AndroidUtilities.m50dp(8);
-        frameLayout2.setPadding(m50dp, m50dp, m50dp, m50dp);
+        int m54dp = AndroidUtilities.m54dp(8);
+        frameLayout2.setPadding(m54dp, m54dp, m54dp, m54dp);
         frameLayout2.addView(textView, LayoutHelper.createFrame(-2, 36, 8388659));
         frameLayout2.addView(textView2, LayoutHelper.createFrame(-2, 36, 8388661));
         frameLayout.addView(frameLayout2, LayoutHelper.createFrame(-1, 52, 80));

@@ -45,7 +45,7 @@ public final class ScopedInstanceFactory<T> extends InstanceFactory<T> {
         if (!Intrinsics.areEqual(context.getScope().getScopeQualifier(), getBeanDefinition().getScopeQualifier())) {
             throw new IllegalStateException(("Wrong Scope: trying to open instance for " + context.getScope().getId() + " in " + getBeanDefinition()).toString());
         }
-        KoinPlatformTools.INSTANCE.m1573synchronized(this, new ScopedInstanceFactory$get$1(this, context));
+        KoinPlatformTools.INSTANCE.m1612synchronized(this, new ScopedInstanceFactory$get$1(this, context));
         T t = this.values.get(context.getScope().getId());
         if (t != null) {
             return t;

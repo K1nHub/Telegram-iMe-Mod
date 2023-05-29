@@ -19,7 +19,7 @@ import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 import org.koin.p043mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.AlertDialog;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -62,14 +62,14 @@ public final class AccountLevelAlert extends AlertDialog.Builder implements Koin
         this.visibilityChangedListener = visibilityChangedListener;
         lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new AccountLevelAlert$special$$inlined$inject$default$1(this, null, null));
         this.resourceManager$delegate = lazy;
-        setTitle(LocaleController.formatStringInternal(C3242R.string.wallet_account_level_alert_title, accountLevelInformation.getLevel().name()));
+        setTitle(LocaleController.formatStringInternal(C3290R.string.wallet_account_level_alert_title, accountLevelInformation.getLevel().name()));
         LinearLayout linearLayout = new LinearLayout(getContext());
         linearLayout.setOrientation(1);
         for (AccountLevel accountLevel : AccountLevel.values()) {
             TextView textView = new TextView(linearLayout.getContext());
-            textView.setText(LocaleController.formatStringInternal(C3242R.string.wallet_account_level_description, accountLevel.name(), accountLevel.getFullDescription(getResourceManager())));
-            textView.setTextColor(Theme.getColor("dialogTextBlack"));
-            Drawable drawable2 = ContextCompat.getDrawable(mContext, C3242R.C3244drawable.fork_account_level_badge_20);
+            textView.setText(LocaleController.formatStringInternal(C3290R.string.wallet_account_level_description, accountLevel.name(), accountLevel.getFullDescription(getResourceManager())));
+            textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
+            Drawable drawable2 = ContextCompat.getDrawable(mContext, C3290R.C3292drawable.fork_account_level_badge_20);
             if (drawable2 == null || (drawable = drawable2.mutate()) == null) {
                 drawable = null;
             } else {
@@ -77,14 +77,14 @@ public final class AccountLevelAlert extends AlertDialog.Builder implements Koin
             }
             textView.setCompoundDrawablesWithIntrinsicBounds(drawable, (Drawable) null, (Drawable) null, (Drawable) null);
             textView.setTextSize(1, 16.0f);
-            textView.setCompoundDrawablePadding(AndroidUtilities.m51dp(10.0f));
+            textView.setCompoundDrawablePadding(AndroidUtilities.m55dp(10.0f));
             linearLayout.addView(textView, LayoutHelper.createLinear(-2, -2, 48, 23, 6, 0, 12));
         }
         final CheckBoxCell checkBoxCell = new CheckBoxCell(linearLayout.getContext(), 2);
         checkBoxCell.setMultiline(true);
-        checkBoxCell.setText(LocaleController.getInternalString(C3242R.string.wallet_account_level_alert_public), null, this.accountLevelInformation.isPublic(), false);
-        checkBoxCell.setTextColor(Theme.getColor("dialogTextBlack"));
-        checkBoxCell.setPadding(AndroidUtilities.m51dp(24.0f), AndroidUtilities.m51dp(12.0f), AndroidUtilities.m51dp(24.0f), 0);
+        checkBoxCell.setText(LocaleController.getInternalString(C3290R.string.wallet_account_level_alert_public), null, this.accountLevelInformation.isPublic(), false);
+        checkBoxCell.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
+        checkBoxCell.setPadding(AndroidUtilities.m55dp(24.0f), AndroidUtilities.m55dp(12.0f), AndroidUtilities.m55dp(24.0f), 0);
         checkBoxCell.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.dialog.AccountLevelAlert$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -93,7 +93,7 @@ public final class AccountLevelAlert extends AlertDialog.Builder implements Koin
         });
         linearLayout.addView(checkBoxCell);
         setView(linearLayout);
-        setPositiveButton(LocaleController.getString("OK", C3242R.string.OK), null);
+        setPositiveButton(LocaleController.getString("OK", C3290R.string.OK), null);
     }
 
     private final ResourceManager getResourceManager() {

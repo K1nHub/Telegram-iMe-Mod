@@ -199,7 +199,7 @@ public class ViewOverlayApi14 implements ViewOverlayImpl {
         public ViewParent invalidateChildInParent(int[] iArr, Rect rect) {
             if (this.mHostView != null) {
                 rect.offset(iArr[0], iArr[1]);
-                if (this.mHostView instanceof ViewGroup) {
+                if (this.mHostView != null) {
                     iArr[0] = 0;
                     iArr[1] = 0;
                     int[] iArr2 = new int[2];

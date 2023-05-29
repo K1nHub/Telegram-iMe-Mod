@@ -21,20 +21,20 @@
     return-void
 .end method
 
-.method public static getCircleThumb(FLjava/lang/String;F)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+.method public static getCircleThumb(FIF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
     .locals 1
 
     const/4 v0, 0x0
 
     .line 72
-    invoke-static {p0, p1, v0, p2}, Lorg/telegram/messenger/DocumentObject;->getCircleThumb(FLjava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;F)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+    invoke-static {p0, p1, v0, p2}, Lorg/telegram/messenger/DocumentObject;->getCircleThumb(FILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;F)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static getCircleThumb(FLjava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;F)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+.method public static getCircleThumb(FILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;F)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
     .locals 3
 
     .line 77
@@ -81,7 +81,7 @@
     const/4 p0, 0x0
 
     .line 83
-    invoke-virtual {p2, p1, p3, p0}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->setupGradient(Ljava/lang/String;FZ)V
+    invoke-virtual {p2, p1, p3, p0}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->setupGradient(IFZ)V
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
@@ -98,7 +98,7 @@
     return-object p0
 .end method
 
-.method public static getSvgRectThumb(Ljava/lang/String;F)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+.method public static getSvgRectThumb(IF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
     .locals 7
 
     .line 96
@@ -156,12 +156,12 @@
     const/4 v1, 0x0
 
     .line 104
-    invoke-virtual {v0, p0, p1, v1}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->setupGradient(Ljava/lang/String;FZ)V
+    invoke-virtual {v0, p0, p1, v1}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->setupGradient(IFZ)V
 
     return-object v0
 .end method
 
-.method public static getSvgThumb(ILjava/lang/String;F)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+.method public static getSvgThumb(IIF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
     .locals 1
 
     const/high16 v0, -0x10000
@@ -180,22 +180,20 @@
     const/4 v0, 0x0
 
     .line 143
-    invoke-virtual {p0, p1, p2, v0}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->setupGradient(Ljava/lang/String;FZ)V
+    invoke-virtual {p0, p1, p2, v0}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->setupGradient(IFZ)V
 
     :cond_0
     return-object p0
 .end method
 
-.method public static getSvgThumb(Ljava/util/ArrayList;Ljava/lang/String;F)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+.method public static getSvgThumb(Ljava/util/ArrayList;IF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
     .locals 9
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
             "Ljava/util/ArrayList<",
             "Lorg/telegram/tgnet/TLRPC$PhotoSize;",
-            ">;",
-            "Ljava/lang/String;",
-            "F)",
+            ">;IF)",
             "Lorg/telegram/messenger/SvgHelper$SvgDrawable;"
         }
     .end annotation
@@ -263,7 +261,7 @@
     if-eqz p0, :cond_1
 
     .line 63
-    invoke-virtual {p0, p1, p2, v2}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->setupGradient(Ljava/lang/String;FZ)V
+    invoke-virtual {p0, p1, p2, v2}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->setupGradient(IFZ)V
 
     :cond_1
     return-object p0
@@ -277,20 +275,20 @@
     return-object v1
 .end method
 
-.method public static getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;F)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+.method public static getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;IF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
     .locals 1
 
     const/high16 v0, 0x3f800000    # 1.0f
 
     .line 92
-    invoke-static {p0, p1, p2, v0}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;FF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+    invoke-static {p0, p1, p2, v0}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;IFF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     move-result-object p0
 
     return-object p0
 .end method
 
-.method public static getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;FF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+.method public static getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;IFF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
     .locals 8
 
     const/4 v0, 0x0
@@ -415,7 +413,7 @@
     if-eqz v0, :cond_5
 
     .line 131
-    invoke-virtual {v0, p1, p2, v2}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->setupGradient(Ljava/lang/String;FZ)V
+    invoke-virtual {v0, p1, p2, v2}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->setupGradient(IFZ)V
 
     goto :goto_4
 

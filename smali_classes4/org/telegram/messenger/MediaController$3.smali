@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/messenger/MediaController;)V
     .locals 0
 
-    .line 767
+    .line 780
     iput-object p1, p0, Lorg/telegram/messenger/MediaController$3;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 770
+    .line 783
     iget-object v0, p0, Lorg/telegram/messenger/MediaController$3;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -53,7 +53,7 @@
 
     invoke-static {v0, p1}, Lorg/telegram/messenger/MediaController;->access$1902(Lorg/telegram/messenger/MediaController;F)F
 
-    .line 771
+    .line 784
     iget-object p1, p0, Lorg/telegram/messenger/MediaController$3;->this$0:Lorg/telegram/messenger/MediaController;
 
     invoke-static {p1}, Lorg/telegram/messenger/MediaController;->access$2000(Lorg/telegram/messenger/MediaController;)V

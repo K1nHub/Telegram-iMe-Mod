@@ -103,10 +103,10 @@
 
     invoke-direct {p2, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    const-string p1, "divider"
-
     .line 30
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 

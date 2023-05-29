@@ -22,7 +22,7 @@ public final class KiklikoInteractor {
     }
 
     public final Observable<Result<List<TagResponse>>> getTags() {
-        Observable<Result<List<TagResponse>>> subscribeOn = this.kiklikoRepository.getTags().subscribeOn(this.schedulersProvider.mo694io());
+        Observable<Result<List<TagResponse>>> subscribeOn = this.kiklikoRepository.getTags().subscribeOn(this.schedulersProvider.mo699io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "kiklikoRepository.getTag…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -30,7 +30,7 @@ public final class KiklikoInteractor {
     public final Observable<Result<SearchResponse>> searchByKeyword(String keyword, String offset) {
         Intrinsics.checkNotNullParameter(keyword, "keyword");
         Intrinsics.checkNotNullParameter(offset, "offset");
-        Observable<Result<SearchResponse>> subscribeOn = this.kiklikoRepository.searchByKeyword(keyword, offset.length() == 0 ? 0 : Integer.parseInt(offset)).subscribeOn(this.schedulersProvider.mo694io());
+        Observable<Result<SearchResponse>> subscribeOn = this.kiklikoRepository.searchByKeyword(keyword, offset.length() == 0 ? 0 : Integer.parseInt(offset)).subscribeOn(this.schedulersProvider.mo699io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "kiklikoRepository.search…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -38,28 +38,28 @@ public final class KiklikoInteractor {
     public final Observable<Result<SearchResponse>> searchByTag(String tag, String offset) {
         Intrinsics.checkNotNullParameter(tag, "tag");
         Intrinsics.checkNotNullParameter(offset, "offset");
-        Observable<Result<SearchResponse>> subscribeOn = this.kiklikoRepository.searchByTag(tag, offset.length() == 0 ? 0 : Integer.parseInt(offset)).subscribeOn(this.schedulersProvider.mo694io());
+        Observable<Result<SearchResponse>> subscribeOn = this.kiklikoRepository.searchByTag(tag, offset.length() == 0 ? 0 : Integer.parseInt(offset)).subscribeOn(this.schedulersProvider.mo699io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "kiklikoRepository.search…(schedulersProvider.io())");
         return subscribeOn;
     }
 
     public final Observable<Result<SearchResponse>> getTrending(String offset) {
         Intrinsics.checkNotNullParameter(offset, "offset");
-        Observable<Result<SearchResponse>> subscribeOn = this.kiklikoRepository.getTrending(offset.length() == 0 ? 0 : Integer.parseInt(offset)).subscribeOn(this.schedulersProvider.mo694io());
+        Observable<Result<SearchResponse>> subscribeOn = this.kiklikoRepository.getTrending(offset.length() == 0 ? 0 : Integer.parseInt(offset)).subscribeOn(this.schedulersProvider.mo699io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "kiklikoRepository.getTre…(schedulersProvider.io())");
         return subscribeOn;
     }
 
     public final Observable<Result<Boolean>> share(String slug) {
         Intrinsics.checkNotNullParameter(slug, "slug");
-        Observable<Result<Boolean>> subscribeOn = this.kiklikoRepository.share(slug).subscribeOn(this.schedulersProvider.mo694io());
+        Observable<Result<Boolean>> subscribeOn = this.kiklikoRepository.share(slug).subscribeOn(this.schedulersProvider.mo699io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "kiklikoRepository.share(…(schedulersProvider.io())");
         return subscribeOn;
     }
 
     public final Observable<Result<Boolean>> view(String slug) {
         Intrinsics.checkNotNullParameter(slug, "slug");
-        Observable<Result<Boolean>> subscribeOn = this.kiklikoRepository.view(slug).subscribeOn(this.schedulersProvider.mo694io());
+        Observable<Result<Boolean>> subscribeOn = this.kiklikoRepository.view(slug).subscribeOn(this.schedulersProvider.mo699io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "kiklikoRepository.view(s…(schedulersProvider.io())");
         return subscribeOn;
     }
@@ -67,7 +67,7 @@ public final class KiklikoInteractor {
     public final Observable<Result<Boolean>> report(String slug, String reason) {
         Intrinsics.checkNotNullParameter(slug, "slug");
         Intrinsics.checkNotNullParameter(reason, "reason");
-        Observable<Result<Boolean>> subscribeOn = this.kiklikoRepository.report(slug, reason).subscribeOn(this.schedulersProvider.mo694io());
+        Observable<Result<Boolean>> subscribeOn = this.kiklikoRepository.report(slug, reason).subscribeOn(this.schedulersProvider.mo699io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "kiklikoRepository.report…(schedulersProvider.io())");
         return subscribeOn;
     }

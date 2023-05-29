@@ -41,7 +41,7 @@ public final class HintFactory {
     private final HintView createHintView(Context context, int i, boolean z) {
         HintView hintView = new HintView(context, i, z);
         hintView.setAlpha(BitmapDescriptorFactory.HUE_RED);
-        ViewExtKt.invisible(hintView);
+        ViewExtKt.invisible$default(hintView, false, 1, null);
         hintView.setHideRunnable(new Runnable() { // from class: com.iMe.utils.hints.HintFactory$$ExternalSyntheticLambda0
             @Override // java.lang.Runnable
             public final void run() {

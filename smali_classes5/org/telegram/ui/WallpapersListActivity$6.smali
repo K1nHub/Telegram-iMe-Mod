@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/WallpapersListActivity;)V
     .locals 0
 
-    .line 773
+    .line 794
     iput-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$6;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p2, p1, :cond_0
 
-    .line 777
+    .line 798
     iget-object v0, p0, Lorg/telegram/ui/WallpapersListActivity$6;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -52,7 +52,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V
 
-    .line 779
+    .line 800
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/WallpapersListActivity$6;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
@@ -64,7 +64,7 @@
     const/4 p1, 0x0
 
     :goto_0
-    invoke-static {v0, p1}, Lorg/telegram/ui/WallpapersListActivity;->access$2602(Lorg/telegram/ui/WallpapersListActivity;Z)Z
+    invoke-static {v0, p1}, Lorg/telegram/ui/WallpapersListActivity;->access$2702(Lorg/telegram/ui/WallpapersListActivity;Z)Z
 
     return-void
 .end method
@@ -72,10 +72,10 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 784
+    .line 805
     iget-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$6;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/WallpapersListActivity;->access$2100(Lorg/telegram/ui/WallpapersListActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {p1}, Lorg/telegram/ui/WallpapersListActivity;->access$2200(Lorg/telegram/ui/WallpapersListActivity;)Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object p1
 
@@ -85,16 +85,16 @@
 
     iget-object p2, p0, Lorg/telegram/ui/WallpapersListActivity$6;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/WallpapersListActivity;->access$2000(Lorg/telegram/ui/WallpapersListActivity;)Lorg/telegram/ui/WallpapersListActivity$SearchAdapter;
+    invoke-static {p2}, Lorg/telegram/ui/WallpapersListActivity;->access$2100(Lorg/telegram/ui/WallpapersListActivity;)Lorg/telegram/ui/WallpapersListActivity$SearchAdapter;
 
     move-result-object p2
 
     if-ne p1, p2, :cond_1
 
-    .line 785
+    .line 806
     iget-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$6;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/WallpapersListActivity;->access$2700(Lorg/telegram/ui/WallpapersListActivity;)Landroidx/recyclerview/widget/LinearLayoutManager;
+    invoke-static {p1}, Lorg/telegram/ui/WallpapersListActivity;->access$2800(Lorg/telegram/ui/WallpapersListActivity;)Landroidx/recyclerview/widget/LinearLayoutManager;
 
     move-result-object p1
 
@@ -110,11 +110,11 @@
 
     goto :goto_0
 
-    .line 786
+    .line 807
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/WallpapersListActivity$6;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {p2}, Lorg/telegram/ui/WallpapersListActivity;->access$2700(Lorg/telegram/ui/WallpapersListActivity;)Landroidx/recyclerview/widget/LinearLayoutManager;
+    invoke-static {p2}, Lorg/telegram/ui/WallpapersListActivity;->access$2800(Lorg/telegram/ui/WallpapersListActivity;)Landroidx/recyclerview/widget/LinearLayoutManager;
 
     move-result-object p2
 
@@ -133,10 +133,10 @@
     :goto_0
     if-lez p2, :cond_1
 
-    .line 788
+    .line 809
     iget-object p3, p0, Lorg/telegram/ui/WallpapersListActivity$6;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {p3}, Lorg/telegram/ui/WallpapersListActivity;->access$2700(Lorg/telegram/ui/WallpapersListActivity;)Landroidx/recyclerview/widget/LinearLayoutManager;
+    invoke-static {p3}, Lorg/telegram/ui/WallpapersListActivity;->access$2800(Lorg/telegram/ui/WallpapersListActivity;)Landroidx/recyclerview/widget/LinearLayoutManager;
 
     move-result-object p3
 
@@ -152,10 +152,10 @@
 
     if-le p1, p3, :cond_1
 
-    .line 790
+    .line 811
     iget-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$6;->this$0:Lorg/telegram/ui/WallpapersListActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/WallpapersListActivity;->access$2000(Lorg/telegram/ui/WallpapersListActivity;)Lorg/telegram/ui/WallpapersListActivity$SearchAdapter;
+    invoke-static {p1}, Lorg/telegram/ui/WallpapersListActivity;->access$2100(Lorg/telegram/ui/WallpapersListActivity;)Lorg/telegram/ui/WallpapersListActivity$SearchAdapter;
 
     move-result-object p1
 

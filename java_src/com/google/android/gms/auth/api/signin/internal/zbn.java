@@ -9,17 +9,17 @@ import com.google.android.gms.common.util.VisibleForTesting;
 public final class zbn {
     private static zbn zbd;
     @VisibleForTesting
-    final C0688Storage zba;
+    final C0693Storage zba;
     @VisibleForTesting
     GoogleSignInAccount zbb;
     @VisibleForTesting
     GoogleSignInOptions zbc;
 
     private zbn(Context context) {
-        C0688Storage c0688Storage = C0688Storage.getInstance(context);
-        this.zba = c0688Storage;
-        this.zbb = c0688Storage.getSavedDefaultGoogleSignInAccount();
-        this.zbc = c0688Storage.getSavedDefaultGoogleSignInOptions();
+        C0693Storage c0693Storage = C0693Storage.getInstance(context);
+        this.zba = c0693Storage;
+        this.zbb = c0693Storage.getSavedDefaultGoogleSignInAccount();
+        this.zbc = c0693Storage.getSavedDefaultGoogleSignInOptions();
     }
 
     public static synchronized zbn zbc(Context context) {

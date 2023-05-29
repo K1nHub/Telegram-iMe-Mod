@@ -34,7 +34,7 @@
 
     const/4 v0, 0x0
 
-    .line 845
+    .line 866
     invoke-direct {p0, p1, p2, v0}, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;-><init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
@@ -43,47 +43,47 @@
 .method public constructor <init>(Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 7
 
-    .line 849
+    .line 870
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v0, 0x0
 
-    .line 950
+    .line 970
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->isSelected:Z
 
-    .line 850
+    .line 871
     iput-object p3, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 852
+    .line 873
     iput p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->currentType:I
 
-    .line 853
+    .line 874
     invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getSelectorDrawable(Z)Landroid/graphics/drawable/Drawable;
 
     move-result-object p3
 
     invoke-virtual {p0, p3}, Landroid/widget/FrameLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 856
+    .line 877
     new-instance p3, Landroid/widget/ImageView;
 
     invoke-direct {p3, p1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object p3, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->imageView:Landroid/widget/ImageView;
 
-    .line 857
+    .line 878
     sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 858
+    .line 879
     iget-object p3, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->imageView:Landroid/widget/ImageView;
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "dialogIcon"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogIcon:I
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->getThemedColor(I)I
 
     move-result v2
 
@@ -93,7 +93,7 @@
 
     invoke-virtual {p3, v1}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 859
+    .line 880
     iget-object p3, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->imageView:Landroid/widget/ImageView;
 
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -124,7 +124,7 @@
 
     invoke-virtual {p0, p3, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 861
+    .line 882
     new-instance p3, Landroid/widget/TextView;
 
     invoke-direct {p3, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
@@ -133,47 +133,47 @@
 
     const/4 p1, 0x1
 
-    .line 862
+    .line 883
     invoke-virtual {p3, p1}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 863
+    .line 884
     iget-object p3, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p3, p1}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 864
+    .line 885
     iget-object p3, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p3, p1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 865
+    .line 886
     iget-object p3, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->textView:Landroid/widget/TextView;
 
     sget-object v1, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {p3, v1}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    const-string p3, "dialogTextBlack"
-
     if-nez p2, :cond_2
 
-    .line 867
+    .line 888
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->textView:Landroid/widget/TextView;
 
-    invoke-direct {p0, p3}, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->getThemedColor(Ljava/lang/String;)I
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+
+    invoke-virtual {p0, p3}, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->getThemedColor(I)I
 
     move-result p3
 
     invoke-virtual {p2, p3}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 868
+    .line 889
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->textView:Landroid/widget/TextView;
 
     const/high16 p3, 0x41800000    # 16.0f
 
     invoke-virtual {p2, p1, p3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 869
+    .line 890
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->textView:Landroid/widget/TextView;
 
     sget-boolean p2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -199,43 +199,45 @@
     goto/16 :goto_2
 
     :cond_2
-    const-string v1, "fonts/rmedium.ttf"
+    const-string p3, "fonts/rmedium.ttf"
 
-    const/high16 v2, 0x41600000    # 14.0f
+    const/high16 v1, 0x41600000    # 14.0f
 
-    const/16 v3, 0x11
+    const/16 v2, 0x11
 
     if-ne p2, p1, :cond_3
 
-    .line 871
+    .line 892
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->textView:Landroid/widget/TextView;
 
-    invoke-virtual {p2, v3}, Landroid/widget/TextView;->setGravity(I)V
+    invoke-virtual {p2, v2}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 872
+    .line 893
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->textView:Landroid/widget/TextView;
 
-    invoke-direct {p0, p3}, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->getThemedColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
-    move-result p3
+    invoke-virtual {p0, v0}, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->getThemedColor(I)I
 
-    invoke-virtual {p2, p3}, Landroid/widget/TextView;->setTextColor(I)V
+    move-result v0
 
-    .line 873
+    invoke-virtual {p2, v0}, Landroid/widget/TextView;->setTextColor(I)V
+
+    .line 894
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->textView:Landroid/widget/TextView;
 
-    invoke-virtual {p2, p1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-virtual {p2, p1, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 874
+    .line 895
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->textView:Landroid/widget/TextView;
 
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
+    invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object p2
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 875
+    .line 896
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->textView:Landroid/widget/TextView;
 
     const/4 p2, -0x1
@@ -249,46 +251,46 @@
     goto :goto_2
 
     :cond_3
-    const/4 p3, 0x2
+    const/4 v3, 0x2
 
-    if-ne p2, p3, :cond_4
+    if-ne p2, v3, :cond_4
 
-    .line 877
+    .line 898
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->textView:Landroid/widget/TextView;
 
-    invoke-virtual {p2, v3}, Landroid/widget/TextView;->setGravity(I)V
+    invoke-virtual {p2, v2}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 878
+    .line 899
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->textView:Landroid/widget/TextView;
 
-    const-string p3, "featuredStickers_buttonText"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
 
-    invoke-direct {p0, p3}, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v2}, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->getThemedColor(I)I
 
-    move-result p3
+    move-result v2
 
-    invoke-virtual {p2, p3}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {p2, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 879
+    .line 900
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->textView:Landroid/widget/TextView;
 
-    invoke-virtual {p2, p1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-virtual {p2, p1, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 880
+    .line 901
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->textView:Landroid/widget/TextView;
 
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
+    invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object p3
 
     invoke-virtual {p2, p3}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 881
+    .line 902
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->textView:Landroid/widget/TextView;
 
-    const-string p3, "featuredStickers_addButton"
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
 
-    invoke-direct {p0, p3}, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p3}, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->getThemedColor(I)I
 
     move-result p3
 
@@ -304,7 +306,7 @@
 
     invoke-virtual {p2, p1}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 882
+    .line 903
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->textView:Landroid/widget/TextView;
 
     const/4 v0, -0x1
@@ -332,58 +334,22 @@
     return-void
 .end method
 
-.method static synthetic access$2100(Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;)Landroid/widget/TextView;
+.method static synthetic access$2300(Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;)Landroid/widget/TextView;
     .locals 0
 
-    .line 810
+    .line 831
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->textView:Landroid/widget/TextView;
 
     return-object p0
 .end method
 
-.method static synthetic access$2200(Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;)Landroid/widget/ImageView;
+.method static synthetic access$2400(Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;)Landroid/widget/ImageView;
     .locals 0
 
-    .line 810
+    .line 831
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->imageView:Landroid/widget/ImageView;
 
     return-object p0
-.end method
-
-.method private getThemedColor(Ljava/lang/String;)I
-    .locals 1
-
-    .line 946
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
-
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 947
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
-
-    move-result p1
-
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
-    return p1
 .end method
 
 
@@ -391,7 +357,7 @@
 .method public getImageView()Landroid/widget/ImageView;
     .locals 1
 
-    .line 942
+    .line 963
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->imageView:Landroid/widget/ImageView;
 
     return-object v0
@@ -400,23 +366,36 @@
 .method public getTextView()Landroid/widget/TextView;
     .locals 1
 
-    .line 938
+    .line 959
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->textView:Landroid/widget/TextView;
 
     return-object v0
 .end method
 
+.method protected getThemedColor(I)I
+    .locals 1
+
+    .line 967
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+
+    move-result p1
+
+    return p1
+.end method
+
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 830
+    .line 851
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->needDivider:Z
 
     if-eqz v0, :cond_0
 
     const/4 v2, 0x0
 
-    .line 831
+    .line 852
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
@@ -452,17 +431,17 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
 
-    .line 954
+    .line 974
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 955
+    .line 975
     iget-boolean v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->isSelected:Z
 
     if-eqz v0, :cond_0
 
     const/4 v0, 0x1
 
-    .line 956
+    .line 976
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setSelected(Z)V
 
     :cond_0
@@ -472,7 +451,7 @@
 .method protected onMeasure(II)V
     .locals 2
 
-    .line 888
+    .line 909
     iget p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->currentType:I
 
     const/4 v0, 0x2
@@ -491,7 +470,7 @@
 
     if-nez p2, :cond_1
 
-    .line 890
+    .line 911
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -500,7 +479,7 @@
 
     move-result p1
 
-    .line 892
+    .line 913
     :cond_1
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -518,7 +497,7 @@
 .method public setGravity(I)V
     .locals 1
 
-    .line 904
+    .line 925
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setGravity(I)V
@@ -529,7 +508,7 @@
 .method public setIconColor(I)V
     .locals 3
 
-    .line 900
+    .line 921
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->imageView:Landroid/widget/ImageView;
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
@@ -546,12 +525,12 @@
 .method public setNeedDivider(Z)V
     .locals 0
 
-    .line 820
+    .line 841
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->needDivider:Z
 
     xor-int/lit8 p1, p1, 0x1
 
-    .line 821
+    .line 842
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
     return-void
@@ -564,7 +543,7 @@
 
     const/4 v1, 0x0
 
-    .line 908
+    .line 929
     invoke-virtual {p0, p1, p2, v0, v1}, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->setTextAndIcon(Ljava/lang/CharSequence;ILandroid/graphics/drawable/Drawable;Z)V
 
     return-void
@@ -573,7 +552,7 @@
 .method public setTextAndIcon(Ljava/lang/CharSequence;ILandroid/graphics/drawable/Drawable;Z)V
     .locals 2
 
-    .line 916
+    .line 937
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
@@ -590,7 +569,7 @@
 
     goto :goto_2
 
-    .line 932
+    .line 953
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->imageView:Landroid/widget/ImageView;
 
@@ -598,7 +577,7 @@
 
     invoke-virtual {p2, p3}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 933
+    .line 954
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->textView:Landroid/widget/TextView;
 
     if-eqz p4, :cond_1
@@ -635,20 +614,20 @@
     :goto_2
     if-eqz p3, :cond_4
 
-    .line 919
+    .line 940
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->imageView:Landroid/widget/ImageView;
 
     invoke-virtual {p2, p3}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
     goto :goto_3
 
-    .line 921
+    .line 942
     :cond_4
     iget-object p3, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->imageView:Landroid/widget/ImageView;
 
     invoke-virtual {p3, p2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 923
+    .line 944
     :goto_3
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->imageView:Landroid/widget/ImageView;
 
@@ -658,7 +637,7 @@
 
     if-eqz p4, :cond_9
 
-    .line 925
+    .line 946
     iget-object p3, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->textView:Landroid/widget/TextView;
 
     sget-boolean p4, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -690,7 +669,7 @@
 
     invoke-virtual {p3, p4, v1, p1, v1}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 926
+    .line 947
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->imageView:Landroid/widget/ImageView;
 
     sget-boolean p2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -722,7 +701,7 @@
 
     goto :goto_7
 
-    .line 928
+    .line 949
     :cond_9
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->textView:Landroid/widget/TextView;
 
@@ -755,7 +734,7 @@
 
     invoke-virtual {p1, p3, v1, p2, v1}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 929
+    .line 950
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->imageView:Landroid/widget/ImageView;
 
     invoke-virtual {p1, v1, v1, v1, v1}, Landroid/widget/ImageView;->setPadding(IIII)V
@@ -769,7 +748,7 @@
 
     const/4 v0, 0x0
 
-    .line 912
+    .line 933
     invoke-virtual {p0, p1, v0, p2, v0}, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->setTextAndIcon(Ljava/lang/CharSequence;ILandroid/graphics/drawable/Drawable;Z)V
 
     return-void
@@ -778,7 +757,7 @@
 .method public setTextColor(I)V
     .locals 1
 
-    .line 896
+    .line 917
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(I)V

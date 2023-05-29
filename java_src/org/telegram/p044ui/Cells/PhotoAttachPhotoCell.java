@@ -29,7 +29,7 @@ import android.widget.TextView;
 import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
@@ -168,15 +168,15 @@ public class PhotoAttachPhotoCell extends FrameLayout {
             @Override // android.view.View
             protected void onDraw(Canvas canvas) {
                 this.rect.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), getMeasuredHeight());
-                canvas.drawRoundRect(this.rect, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), Theme.chat_timeBackgroundPaint);
+                canvas.drawRoundRect(this.rect, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), Theme.chat_timeBackgroundPaint);
             }
         };
         this.videoInfoContainer = frameLayout2;
         frameLayout2.setWillNotDraw(false);
-        this.videoInfoContainer.setPadding(AndroidUtilities.m50dp(5), 0, AndroidUtilities.m50dp(5), 0);
+        this.videoInfoContainer.setPadding(AndroidUtilities.m54dp(5), 0, AndroidUtilities.m54dp(5), 0);
         this.container.addView(this.videoInfoContainer, LayoutHelper.createFrame(-2, 17, 83, 4, 0, 0, 4));
         ImageView imageView = new ImageView(context);
-        imageView.setImageResource(C3242R.C3244drawable.play_mini_video);
+        imageView.setImageResource(C3290R.C3292drawable.play_mini_video);
         this.videoInfoContainer.addView(imageView, LayoutHelper.createFrame(-2, -2, 19));
         TextView textView = new TextView(context);
         this.videoTextView = textView;
@@ -188,14 +188,14 @@ public class PhotoAttachPhotoCell extends FrameLayout {
         CheckBox2 checkBox2 = new CheckBox2(context, 24, resourcesProvider);
         this.checkBox = checkBox2;
         checkBox2.setDrawBackgroundAsArc(7);
-        this.checkBox.setColor("chat_attachCheckBoxBackground", "chat_attachPhotoBackground", "chat_attachCheckBoxCheck");
+        this.checkBox.setColor(Theme.key_chat_attachCheckBoxBackground, Theme.key_chat_attachPhotoBackground, Theme.key_chat_attachCheckBoxCheck);
         addView(this.checkBox, LayoutHelper.createFrame(26, 26, 51, 52, 4, 0, 0));
         this.checkBox.setVisibility(0);
         setFocusable(true);
         FrameLayout frameLayout3 = new FrameLayout(context);
         this.checkFrame = frameLayout3;
         addView(frameLayout3, LayoutHelper.createFrame(42, 42, 51, 38, 0, 0, 0));
-        this.itemSize = AndroidUtilities.m50dp(80);
+        this.itemSize = AndroidUtilities.m54dp(80);
     }
 
     public void setHasSpoiler(boolean z) {
@@ -243,9 +243,9 @@ public class PhotoAttachPhotoCell extends FrameLayout {
         FrameLayout.LayoutParams layoutParams3 = (FrameLayout.LayoutParams) this.checkBox.getLayoutParams();
         layoutParams3.gravity = 53;
         layoutParams3.leftMargin = 0;
-        int m50dp = AndroidUtilities.m50dp(5);
-        layoutParams3.topMargin = m50dp;
-        layoutParams3.rightMargin = m50dp;
+        int m54dp = AndroidUtilities.m54dp(5);
+        layoutParams3.topMargin = m54dp;
+        layoutParams3.rightMargin = m54dp;
         this.checkBox.setDrawBackgroundAsArc(6);
         this.itemSizeChanged = true;
     }
@@ -253,13 +253,13 @@ public class PhotoAttachPhotoCell extends FrameLayout {
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
         if (this.itemSizeChanged) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.itemSize, 1073741824), View.MeasureSpec.makeMeasureSpec(this.itemSize + AndroidUtilities.m50dp(5), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(this.itemSize, 1073741824), View.MeasureSpec.makeMeasureSpec(this.itemSize + AndroidUtilities.m54dp(5), 1073741824));
             return;
         }
         if (this.isVertical) {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(80), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp((this.isLast ? 0 : 6) + 80), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(80), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp((this.isLast ? 0 : 6) + 80), 1073741824));
         } else {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp((this.isLast ? 0 : 6) + 80), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(80), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp((this.isLast ? 0 : 6) + 80), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(80), 1073741824));
         }
     }
 
@@ -307,7 +307,7 @@ public class PhotoAttachPhotoCell extends FrameLayout {
             if (photoEntry2.isVideo) {
                 this.imageView.setImage("vthumb://" + this.photoEntry.imageId + ":" + this.photoEntry.path, null, Theme.chat_attachEmptyDrawable);
             } else {
-                this.imageView.setOrientation(photoEntry2.orientation, true);
+                this.imageView.setOrientation(photoEntry2.orientation, photoEntry2.invert, true);
                 this.imageView.setImage("thumb://" + this.photoEntry.imageId + ":" + this.photoEntry.path, null, Theme.chat_attachEmptyDrawable);
             }
         } else {
@@ -333,7 +333,7 @@ public class PhotoAttachPhotoCell extends FrameLayout {
         this.pressed = false;
         this.searchEntry = searchImage;
         this.isLast = z2;
-        Drawable drawable = this.zoomOnSelect ? Theme.chat_attachEmptyDrawable : getResources().getDrawable(C3242R.C3244drawable.nophotos);
+        Drawable drawable = this.zoomOnSelect ? Theme.chat_attachEmptyDrawable : getResources().getDrawable(C3290R.C3292drawable.nophotos);
         TLRPC$PhotoSize tLRPC$PhotoSize = searchImage.thumbPhotoSize;
         if (tLRPC$PhotoSize != null) {
             this.imageView.setImage(ImageLocation.getForPhoto(tLRPC$PhotoSize, searchImage.photo), (String) null, drawable, searchImage);
@@ -588,7 +588,7 @@ public class PhotoAttachPhotoCell extends FrameLayout {
         if (!this.checkBox.isChecked() && this.container.getScaleX() == 1.0f && this.imageView.getImageReceiver().hasNotThumb() && this.imageView.getImageReceiver().getCurrentAlpha() == 1.0f && (((photoEntry = this.photoEntry) == null || !PhotoViewer.isShowingImage(photoEntry.path)) && ((searchImage = this.searchEntry) == null || !PhotoViewer.isShowingImage(searchImage.getPathToAttach())))) {
             return;
         }
-        this.backgroundPaint.setColor(getThemedColor("chat_attachPhotoBackground"));
+        this.backgroundPaint.setColor(getThemedColor(Theme.key_chat_attachPhotoBackground));
         canvas.drawRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, this.imageView.getMeasuredWidth(), this.imageView.getMeasuredHeight(), this.backgroundPaint);
     }
 
@@ -599,9 +599,9 @@ public class PhotoAttachPhotoCell extends FrameLayout {
         StringBuilder sb = new StringBuilder();
         MediaController.PhotoEntry photoEntry = this.photoEntry;
         if (photoEntry != null && photoEntry.isVideo) {
-            sb.append(LocaleController.getString("AttachVideo", C3242R.string.AttachVideo) + ", " + LocaleController.formatDuration(this.photoEntry.duration));
+            sb.append(LocaleController.getString("AttachVideo", C3290R.string.AttachVideo) + ", " + LocaleController.formatDuration(this.photoEntry.duration));
         } else {
-            sb.append(LocaleController.getString("AttachPhoto", C3242R.string.AttachPhoto));
+            sb.append(LocaleController.getString("AttachPhoto", C3290R.string.AttachPhoto));
         }
         if (this.photoEntry != null) {
             sb.append(". ");
@@ -612,13 +612,13 @@ public class PhotoAttachPhotoCell extends FrameLayout {
             accessibilityNodeInfo.setSelected(true);
         }
         if (Build.VERSION.SDK_INT >= 21) {
-            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(C3242R.C3245id.acc_action_open_photo, LocaleController.getString("Open", C3242R.string.Open)));
+            accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(C3290R.C3293id.acc_action_open_photo, LocaleController.getString("Open", C3290R.string.Open)));
         }
     }
 
     @Override // android.view.View
     public boolean performAccessibilityAction(int i, Bundle bundle) {
-        if (i == C3242R.C3245id.acc_action_open_photo) {
+        if (i == C3290R.C3293id.acc_action_open_photo) {
             View view = (View) getParent();
             view.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(), SystemClock.uptimeMillis(), 0, getLeft(), (getTop() + getHeight()) - 1, 0));
             view.dispatchTouchEvent(MotionEvent.obtain(SystemClock.uptimeMillis(), SystemClock.uptimeMillis(), 1, getLeft(), (getTop() + getHeight()) - 1, 0));
@@ -626,9 +626,7 @@ public class PhotoAttachPhotoCell extends FrameLayout {
         return super.performAccessibilityAction(i, bundle);
     }
 
-    protected int getThemedColor(String str) {
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-        return color != null ? color.intValue() : Theme.getColor(str);
+    protected int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 }

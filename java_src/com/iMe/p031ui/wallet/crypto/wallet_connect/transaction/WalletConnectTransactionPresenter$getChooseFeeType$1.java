@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletConnectTransactionPresenter.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionPresenter$getChooseFeeType$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public /* synthetic */ class WalletConnectTransactionPresenter$getChooseFeeType$1 extends FunctionReferenceImpl implements Function1<GasPriceItem, Unit> {
     /* JADX INFO: Access modifiers changed from: package-private */
     public WalletConnectTransactionPresenter$getChooseFeeType$1(Object obj) {

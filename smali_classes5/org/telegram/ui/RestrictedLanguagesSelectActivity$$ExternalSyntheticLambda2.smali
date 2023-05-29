@@ -29,7 +29,7 @@
 
     check-cast p1, Ljava/lang/Runnable;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->$r8$lambda$fSyrPYuAGlnW1wi8WsrBVe5QJTg(Ljava/util/HashSet;Ljava/lang/Runnable;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->$r8$lambda$lNkZcvg4nkGfBZtDPbvfJPWbyoI(Ljava/util/HashSet;Ljava/lang/Runnable;)V
 
     return-void
 .end method

@@ -27,7 +27,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentStakingCompoundBinding;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -89,9 +89,9 @@ public final class StakingPercentageView extends FrameLayout implements KoinComp
             return;
         }
         AppCompatTextView appCompatTextView = forkContentStakingCompoundBinding.textApr;
-        appCompatTextView.setText(LocaleController.getInternalString(C3242R.string.staking_programme_apr) + getAnnualPercentageText(stakingAnnualPercentageData.getApr()));
+        appCompatTextView.setText(LocaleController.getInternalString(C3290R.string.staking_programme_apr) + getAnnualPercentageText(stakingAnnualPercentageData.getApr()));
         AppCompatTextView appCompatTextView2 = forkContentStakingCompoundBinding.textApy;
-        appCompatTextView2.setText(LocaleController.getInternalString(C3242R.string.staking_programme_apy) + getAnnualPercentageText(stakingAnnualPercentageData.getApy()));
+        appCompatTextView2.setText(LocaleController.getInternalString(C3290R.string.staking_programme_apy) + getAnnualPercentageText(stakingAnnualPercentageData.getApy()));
         AppCompatTextView appCompatTextView3 = forkContentStakingCompoundBinding.textThresholdValue;
         appCompatTextView3.setText(stakingAnnualPercentageData.getCompoundThreshold() + '+');
     }
@@ -103,23 +103,24 @@ public final class StakingPercentageView extends FrameLayout implements KoinComp
     public final void setupColors() {
         ForkContentStakingCompoundBinding forkContentStakingCompoundBinding = this.binding;
         AppCompatTextView setupColors$lambda$4$lambda$1 = forkContentStakingCompoundBinding.textApr;
-        setupColors$lambda$4$lambda$1.setTextColor(Theme.getColor(this.isThresholdReached ? "windowBackgroundWhiteGrayText" : "windowBackgroundWhiteBlueText"));
+        setupColors$lambda$4$lambda$1.setTextColor(Theme.getColor(this.isThresholdReached ? Theme.key_windowBackgroundWhiteGrayText : Theme.key_windowBackgroundWhiteBlueText));
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$4$lambda$1, "setupColors$lambda$4$lambda$1");
         ViewExtKt.withMediumTypeface(setupColors$lambda$4$lambda$1);
         AppCompatTextView setupColors$lambda$4$lambda$2 = forkContentStakingCompoundBinding.textApy;
-        setupColors$lambda$4$lambda$2.setTextColor(Theme.getColor(this.isThresholdReached ? "windowBackgroundWhiteBlueText" : "windowBackgroundWhiteGrayText"));
+        setupColors$lambda$4$lambda$2.setTextColor(Theme.getColor(this.isThresholdReached ? Theme.key_windowBackgroundWhiteBlueText : Theme.key_windowBackgroundWhiteGrayText));
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$4$lambda$2, "setupColors$lambda$4$lambda$2");
         ViewExtKt.withMediumTypeface(setupColors$lambda$4$lambda$2);
         AppCompatImageView setupColors$lambda$4$lambda$3 = forkContentStakingCompoundBinding.imageInfo;
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$4$lambda$3, "setupColors$lambda$4$lambda$3");
-        ViewExtKt.setImageColor(setupColors$lambda$4$lambda$3, Theme.getColor("windowBackgroundWhiteGrayIcon"));
+        ViewExtKt.setImageColor(setupColors$lambda$4$lambda$3, Theme.getColor(Theme.key_windowBackgroundWhiteGrayIcon));
         ViewExtKt.setBoundedCircleRippleBackground(setupColors$lambda$4$lambda$3);
         forkContentStakingCompoundBinding.viewProgress.setupColors();
+        int i = Theme.key_windowBackgroundWhiteGrayText;
         AppCompatTextView textStartValue = forkContentStakingCompoundBinding.textStartValue;
         Intrinsics.checkNotNullExpressionValue(textStartValue, "textStartValue");
         AppCompatTextView textThresholdValue = forkContentStakingCompoundBinding.textThresholdValue;
         Intrinsics.checkNotNullExpressionValue(textThresholdValue, "textThresholdValue");
-        ViewExtKt.setTextsColor("windowBackgroundWhiteGrayText", textStartValue, textThresholdValue);
+        ViewExtKt.setTextsColor(i, textStartValue, textThresholdValue);
     }
 
     @Override // android.view.ViewGroup, android.view.View
@@ -148,7 +149,7 @@ public final class StakingPercentageView extends FrameLayout implements KoinComp
     }
 
     private final void setupProgressListener() {
-        Observable<Float> observeOn = this.progressSubject.debounce(200L, TimeUnit.MILLISECONDS).subscribeOn(getSchedulersProvider().mo694io()).observeOn(getSchedulersProvider().mo693ui());
+        Observable<Float> observeOn = this.progressSubject.debounce(200L, TimeUnit.MILLISECONDS).subscribeOn(getSchedulersProvider().mo699io()).observeOn(getSchedulersProvider().mo698ui());
         final StakingPercentageView$setupProgressListener$1 stakingPercentageView$setupProgressListener$1 = new StakingPercentageView$setupProgressListener$1(this);
         Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.iMe.ui.custom.StakingPercentageView$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer

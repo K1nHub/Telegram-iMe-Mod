@@ -199,11 +199,11 @@
     .line 63
     iget-object v0, p0, Lorg/telegram/ui/Charts/view_data/LineViewData;->line:Lorg/telegram/ui/Charts/data/ChartData$Line;
 
-    iget-object v0, v0, Lorg/telegram/ui/Charts/data/ChartData$Line;->colorKey:Ljava/lang/String;
+    iget v0, v0, Lorg/telegram/ui/Charts/data/ChartData$Line;->colorKey:I
 
-    if-eqz v0, :cond_0
+    if-ltz v0, :cond_0
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->hasThemeKey(Ljava/lang/String;)Z
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->hasThemeKey(I)Z
 
     move-result v0
 
@@ -212,9 +212,9 @@
     .line 64
     iget-object v0, p0, Lorg/telegram/ui/Charts/view_data/LineViewData;->line:Lorg/telegram/ui/Charts/data/ChartData$Line;
 
-    iget-object v0, v0, Lorg/telegram/ui/Charts/data/ChartData$Line;->colorKey:Ljava/lang/String;
+    iget v0, v0, Lorg/telegram/ui/Charts/data/ChartData$Line;->colorKey:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -222,11 +222,11 @@
 
     goto :goto_2
 
-    :cond_0
-    const-string v0, "windowBackgroundWhite"
-
     .line 66
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    :cond_0
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

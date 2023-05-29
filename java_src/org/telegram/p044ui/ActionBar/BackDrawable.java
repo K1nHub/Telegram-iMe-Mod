@@ -33,9 +33,9 @@ public class BackDrawable extends Drawable {
     }
 
     public BackDrawable(boolean z) {
-        this.paint.setStrokeWidth(AndroidUtilities.m50dp(2));
+        this.paint.setStrokeWidth(AndroidUtilities.m54dp(2));
         this.paint.setStrokeCap(Paint.Cap.ROUND);
-        this.prevPaint.setStrokeWidth(AndroidUtilities.m50dp(2));
+        this.prevPaint.setStrokeWidth(AndroidUtilities.m54dp(2));
         this.prevPaint.setColor(-65536);
         this.alwaysClose = z;
     }
@@ -116,12 +116,12 @@ public class BackDrawable extends Drawable {
             canvas.rotate((this.reverseAngle ? -225 : TsExtractor.TS_STREAM_TYPE_E_AC3) * f2);
         }
         float f3 = 1.0f - f2;
-        canvas.drawLine(AndroidUtilities.m51dp(AndroidUtilities.lerp(-6.75f, -8.0f, f2)), BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m50dp(8) - ((this.paint.getStrokeWidth() / 2.0f) * f3), BitmapDescriptorFactory.HUE_RED, this.paint);
-        float m51dp = AndroidUtilities.m51dp(-0.25f);
-        float m51dp2 = AndroidUtilities.m51dp(AndroidUtilities.lerp(7.0f, 8.0f, f2)) - ((this.paint.getStrokeWidth() / 4.0f) * f3);
-        float m51dp3 = AndroidUtilities.m51dp(AndroidUtilities.lerp(-7.25f, (float) BitmapDescriptorFactory.HUE_RED, f2));
-        canvas.drawLine(m51dp3, -m51dp, BitmapDescriptorFactory.HUE_RED, -m51dp2, this.paint);
-        canvas.drawLine(m51dp3, m51dp, BitmapDescriptorFactory.HUE_RED, m51dp2, this.paint);
+        canvas.drawLine(AndroidUtilities.m55dp(AndroidUtilities.lerp(-6.75f, -8.0f, f2)), BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(8) - ((this.paint.getStrokeWidth() / 2.0f) * f3), BitmapDescriptorFactory.HUE_RED, this.paint);
+        float m55dp = AndroidUtilities.m55dp(-0.25f);
+        float m55dp2 = AndroidUtilities.m55dp(AndroidUtilities.lerp(7.0f, 8.0f, f2)) - ((this.paint.getStrokeWidth() / 4.0f) * f3);
+        float m55dp3 = AndroidUtilities.m55dp(AndroidUtilities.lerp(-7.25f, (float) BitmapDescriptorFactory.HUE_RED, f2));
+        canvas.drawLine(m55dp3, -m55dp, BitmapDescriptorFactory.HUE_RED, -m55dp2, this.paint);
+        canvas.drawLine(m55dp3, m55dp, BitmapDescriptorFactory.HUE_RED, m55dp2, this.paint);
         canvas.restore();
     }
 
@@ -137,11 +137,11 @@ public class BackDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicWidth() {
-        return AndroidUtilities.m50dp(24);
+        return AndroidUtilities.m54dp(24);
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicHeight() {
-        return AndroidUtilities.m50dp(24);
+        return AndroidUtilities.m54dp(24);
     }
 }

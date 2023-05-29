@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.AnimatedTextView;
@@ -40,14 +40,16 @@ public class TextCheckCell2 extends FrameLayout {
             linearLayout.setOrientation(0);
             AnimatedTextView animatedTextView = new AnimatedTextView(getContext(), false, true, true);
             this.animatedTextView = animatedTextView;
-            animatedTextView.setTextSize(AndroidUtilities.m50dp(14));
+            animatedTextView.setTextSize(AndroidUtilities.m54dp(14));
             this.animatedTextView.getDrawable().setAllowCancel(true);
-            this.animatedTextView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+            AnimatedTextView animatedTextView2 = this.animatedTextView;
+            int i = Theme.key_windowBackgroundWhiteBlackText;
+            animatedTextView2.setTextColor(Theme.getColor(i));
             this.animatedTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             this.collapseViewContainer.addView(this.animatedTextView, LayoutHelper.createFrame(-2, 20));
             this.collapsedArrow = new View(getContext());
-            Drawable mutate = getContext().getResources().getDrawable(C3242R.C3244drawable.arrow_more).mutate();
-            mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor("windowBackgroundWhiteBlackText"), PorterDuff.Mode.MULTIPLY));
+            Drawable mutate = getContext().getResources().getDrawable(C3290R.C3292drawable.arrow_more).mutate();
+            mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.MULTIPLY));
             this.collapsedArrow.setBackground(mutate);
             this.collapseViewContainer.addView(this.collapsedArrow, LayoutHelper.createLinear(16, 16, 16));
             this.collapseViewContainer.setClipChildren(false);
@@ -57,11 +59,11 @@ public class TextCheckCell2 extends FrameLayout {
                 @Override // android.view.View
                 protected void onDraw(Canvas canvas) {
                     super.onDraw(canvas);
-                    canvas.drawLine(BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m50dp(14), 2.0f, getMeasuredHeight() - AndroidUtilities.m50dp(14), Theme.dividerPaint);
+                    canvas.drawLine(BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m54dp(14), 2.0f, getMeasuredHeight() - AndroidUtilities.m54dp(14), Theme.dividerPaint);
                 }
             };
             this.checkBoxClickArea = view;
-            view.setBackground(Theme.createSelectorDrawable(Theme.getColor("listSelectorSDK21"), 2));
+            view.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_listSelector), 2));
             addView(this.checkBoxClickArea, LayoutHelper.createFrame(76, -1, LocaleController.isRTL ? 3 : 5));
         }
         this.animatedTextView.setText(str);
@@ -83,7 +85,7 @@ public class TextCheckCell2 extends FrameLayout {
         super(context);
         TextView textView = new TextView(context);
         this.textView = textView;
-        textView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText", resourcesProvider));
+        textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, resourcesProvider));
         this.textView.setTextSize(1, 16.0f);
         this.textView.setLines(1);
         this.textView.setMaxLines(1);
@@ -95,7 +97,7 @@ public class TextCheckCell2 extends FrameLayout {
         addView(textView2, LayoutHelper.createFrame(-2, -1, (z ? 5 : 3) | 48, z ? 64 : 21, 0, z ? 21 : 64, 0));
         TextView textView3 = new TextView(context);
         this.valueTextView = textView3;
-        textView3.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2", resourcesProvider));
+        textView3.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2, resourcesProvider));
         this.valueTextView.setTextSize(1, 13.0f);
         this.valueTextView.setGravity(LocaleController.isRTL ? 5 : 3);
         this.valueTextView.setLines(1);
@@ -117,7 +119,7 @@ public class TextCheckCell2 extends FrameLayout {
         if (this.isMultiline) {
             super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(0, 0));
         } else {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(this.valueTextView.getVisibility() == 0 ? 64 : 50) + (this.needDivider ? 1 : 0), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(this.valueTextView.getVisibility() == 0 ? 64 : 50) + (this.needDivider ? 1 : 0), 1073741824));
         }
     }
 
@@ -127,9 +129,9 @@ public class TextCheckCell2 extends FrameLayout {
         LinearLayout linearLayout = this.collapseViewContainer;
         if (linearLayout != null) {
             if (LocaleController.isRTL) {
-                linearLayout.setTranslationX((this.textView.getLeft() - this.collapseViewContainer.getMeasuredWidth()) - AndroidUtilities.m50dp(4));
+                linearLayout.setTranslationX((this.textView.getLeft() - this.collapseViewContainer.getMeasuredWidth()) - AndroidUtilities.m54dp(4));
             } else {
-                linearLayout.setTranslationX(this.textView.getRight() + AndroidUtilities.m50dp(4));
+                linearLayout.setTranslationX(this.textView.getRight() + AndroidUtilities.m54dp(4));
             }
         }
     }
@@ -211,7 +213,7 @@ public class TextCheckCell2 extends FrameLayout {
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         if (this.needDivider) {
-            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m50dp(20), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m50dp(20) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m54dp(20), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m54dp(20) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
         }
     }
 

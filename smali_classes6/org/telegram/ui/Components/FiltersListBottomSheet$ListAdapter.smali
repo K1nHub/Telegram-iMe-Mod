@@ -169,9 +169,9 @@
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "dialogIcon"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogIcon:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -194,10 +194,10 @@
 
     check-cast p2, Lorg/telegram/messenger/MessagesController$DialogFilter;
 
-    const-string v0, "dialogTextBlack"
-
     .line 434
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -353,9 +353,9 @@
     .line 456
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "switchTrackChecked"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackChecked:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -368,9 +368,9 @@
     .line 457
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "checkboxCheck"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxCheck:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -385,10 +385,10 @@
 
     invoke-direct {v1, p2, v0}, Lorg/telegram/ui/Components/CombinedDrawable;-><init>(Landroid/graphics/drawable/Drawable;Landroid/graphics/drawable/Drawable;)V
 
-    const-string p2, "windowBackgroundWhiteBlueText4"
-
     .line 459
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText4:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 

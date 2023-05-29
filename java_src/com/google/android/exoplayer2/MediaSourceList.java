@@ -171,7 +171,7 @@ public final class MediaSourceList {
     public void releasePeriod(MediaPeriod mediaPeriod) {
         MediaSourceHolder mediaSourceHolder = (MediaSourceHolder) Assertions.checkNotNull(this.mediaSourceByMediaPeriod.remove(mediaPeriod));
         mediaSourceHolder.mediaSource.releasePeriod(mediaPeriod);
-        mediaSourceHolder.activeMediaPeriodIds.remove(((MaskingMediaPeriod) mediaPeriod).f121id);
+        mediaSourceHolder.activeMediaPeriodIds.remove(((MaskingMediaPeriod) mediaPeriod).f124id);
         if (!this.mediaSourceByMediaPeriod.isEmpty()) {
             disableUnusedMediaSources();
         }
@@ -183,7 +183,7 @@ public final class MediaSourceList {
             try {
                 mediaSourceAndListener.mediaSource.releaseSource(mediaSourceAndListener.caller);
             } catch (RuntimeException e) {
-                Log.m795e(TAG, "Failed to release child source.", e);
+                Log.m799e(TAG, "Failed to release child source.", e);
             }
             mediaSourceAndListener.mediaSource.removeEventListener(mediaSourceAndListener.eventListener);
             mediaSourceAndListener.mediaSource.removeDrmEventListener(mediaSourceAndListener.eventListener);
@@ -357,7 +357,7 @@ public final class MediaSourceList {
     public final class ForwardingEventListener implements MediaSourceEventListener, DrmSessionEventListener {
 
         /* renamed from: id */
-        private final MediaSourceHolder f102id;
+        private final MediaSourceHolder f105id;
 
         @Override // com.google.android.exoplayer2.drm.DrmSessionEventListener
         public /* synthetic */ void onDrmSessionAcquired(int i, MediaSource.MediaPeriodId mediaPeriodId) {
@@ -365,7 +365,7 @@ public final class MediaSourceList {
         }
 
         public ForwardingEventListener(MediaSourceHolder mediaSourceHolder) {
-            this.f102id = mediaSourceHolder;
+            this.f105id = mediaSourceHolder;
         }
 
         @Override // com.google.android.exoplayer2.source.MediaSourceEventListener
@@ -587,13 +587,13 @@ public final class MediaSourceList {
         private Pair<Integer, MediaSource.MediaPeriodId> getEventParameters(int i, MediaSource.MediaPeriodId mediaPeriodId) {
             MediaSource.MediaPeriodId mediaPeriodId2 = null;
             if (mediaPeriodId != null) {
-                MediaSource.MediaPeriodId mediaPeriodIdForChildMediaPeriodId = MediaSourceList.getMediaPeriodIdForChildMediaPeriodId(this.f102id, mediaPeriodId);
+                MediaSource.MediaPeriodId mediaPeriodIdForChildMediaPeriodId = MediaSourceList.getMediaPeriodIdForChildMediaPeriodId(this.f105id, mediaPeriodId);
                 if (mediaPeriodIdForChildMediaPeriodId == null) {
                     return null;
                 }
                 mediaPeriodId2 = mediaPeriodIdForChildMediaPeriodId;
             }
-            return Pair.create(Integer.valueOf(MediaSourceList.getWindowIndexForChildWindowIndex(this.f102id, i)), mediaPeriodId2);
+            return Pair.create(Integer.valueOf(MediaSourceList.getWindowIndexForChildWindowIndex(this.f105id, i)), mediaPeriodId2);
         }
     }
 }

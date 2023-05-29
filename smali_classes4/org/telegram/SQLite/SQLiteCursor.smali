@@ -381,7 +381,7 @@
 
     if-eqz v2, :cond_0
 
-    const-string v2, "sqlite busy, waiting..."
+    const-string/jumbo v2, "sqlite busy, waiting..."
 
     .line 85
     invoke-static {v2}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
@@ -426,7 +426,7 @@
     :cond_3
     new-instance v0, Lorg/telegram/SQLite/SQLiteException;
 
-    const-string v1, "sqlite busy"
+    const-string/jumbo v1, "sqlite busy"
 
     invoke-direct {v0, v1}, Lorg/telegram/SQLite/SQLiteException;-><init>(Ljava/lang/String;)V
 

@@ -8,18 +8,18 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ChatUsersActivity;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$Updates;
+.field public final synthetic f$1:J
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatUsersActivity;Lorg/telegram/tgnet/TLRPC$Updates;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatUsersActivity;J)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$$ExternalSyntheticLambda9;->f$0:Lorg/telegram/ui/ChatUsersActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/ChatUsersActivity$$ExternalSyntheticLambda9;->f$1:Lorg/telegram/tgnet/TLRPC$Updates;
+    iput-wide p2, p0, Lorg/telegram/ui/ChatUsersActivity$$ExternalSyntheticLambda9;->f$1:J
 
     return-void
 .end method
@@ -27,13 +27,13 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/ui/ChatUsersActivity$$ExternalSyntheticLambda9;->f$0:Lorg/telegram/ui/ChatUsersActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/ChatUsersActivity$$ExternalSyntheticLambda9;->f$1:Lorg/telegram/tgnet/TLRPC$Updates;
+    iget-wide v1, p0, Lorg/telegram/ui/ChatUsersActivity$$ExternalSyntheticLambda9;->f$1:J
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/ChatUsersActivity;->$r8$lambda$nfIUM_FgHqiVun-wI_rLBNgN9LI(Lorg/telegram/ui/ChatUsersActivity;Lorg/telegram/tgnet/TLRPC$Updates;)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ChatUsersActivity;->$r8$lambda$nDiTymfqsB5WUk9oUVMKFvIRwWM(Lorg/telegram/ui/ChatUsersActivity;J)V
 
     return-void
 .end method

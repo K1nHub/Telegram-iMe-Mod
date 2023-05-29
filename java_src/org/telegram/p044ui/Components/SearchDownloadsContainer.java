@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
@@ -308,7 +308,7 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
             updateListInternal(z, this.currentLoadingFilesTmp, this.recentLoadingFilesTmp);
             if (this.rowCount == 0) {
                 this.emptyView.showProgress(false, false);
-                this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewDownloads", C3242R.string.SearchEmptyViewDownloads));
+                this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewDownloads", C3290R.string.SearchEmptyViewDownloads));
                 this.emptyView.subtitle.setVisibility(8);
             }
             this.emptyView.setStickerType(9);
@@ -379,9 +379,9 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
             updateListInternal(true, arrayList, arrayList2);
             if (this.rowCount == 0) {
                 this.emptyView.showProgress(false, true);
-                this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewTitle2", C3242R.string.SearchEmptyViewTitle2));
+                this.emptyView.title.setText(LocaleController.getString("SearchEmptyViewTitle2", C3290R.string.SearchEmptyViewTitle2));
                 this.emptyView.subtitle.setVisibility(0);
-                this.emptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3242R.string.SearchEmptyViewFilteredSubtitle2));
+                this.emptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3290R.string.SearchEmptyViewFilteredSubtitle2));
             }
         }
     }
@@ -443,7 +443,7 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
                             messageObject2 = searchDownloadsContainer.recentLoadingFiles.get(i9 - i13);
                         }
                     }
-                    return (messageObject2 == null || messageObject == null || messageObject2.getDocument() == null || messageObject.getDocument() == null || messageObject2.getDocument().f1435id != messageObject.getDocument().f1435id) ? false : true;
+                    return (messageObject2 == null || messageObject == null || messageObject2.getDocument() == null || messageObject.getDocument() == null || messageObject2.getDocument().f1441id != messageObject.getDocument().f1441id) ? false : true;
                 }
 
                 @Override // androidx.recyclerview.widget.DiffUtil.Callback
@@ -626,33 +626,35 @@ public class SearchDownloadsContainer extends FrameLayout implements Notificatio
         linearLayout.addView(stickerImageView, LayoutHelper.createLinear(144, 144, 1, 0, 16, 0, 0));
         TextView textView = new TextView(parentActivity);
         textView.setGravity(1);
-        textView.setTextColor(Theme.getColor("dialogTextBlack"));
+        textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
         textView.setTextSize(1, 24.0f);
-        textView.setText(LocaleController.getString("DownloadedFiles", C3242R.string.DownloadedFiles));
+        textView.setText(LocaleController.getString("DownloadedFiles", C3290R.string.DownloadedFiles));
         linearLayout.addView(textView, LayoutHelper.createFrame(-1, -2, 0, 21, 30, 21, 0));
         TextView textView2 = new TextView(parentActivity);
         textView2.setGravity(1);
         textView2.setTextSize(1, 15.0f);
-        textView2.setTextColor(Theme.getColor("dialogTextHint"));
-        textView2.setText(LocaleController.formatString("DownloadedFilesMessage", C3242R.string.DownloadedFilesMessage, new Object[0]));
+        textView2.setTextColor(Theme.getColor(Theme.key_dialogTextHint));
+        textView2.setText(LocaleController.formatString("DownloadedFilesMessage", C3290R.string.DownloadedFilesMessage, new Object[0]));
         linearLayout.addView(textView2, LayoutHelper.createFrame(-1, -2, 0, 21, 15, 21, 16));
         TextView textView3 = new TextView(parentActivity);
-        textView3.setPadding(AndroidUtilities.m50dp(34), 0, AndroidUtilities.m50dp(34), 0);
+        textView3.setPadding(AndroidUtilities.m54dp(34), 0, AndroidUtilities.m54dp(34), 0);
         textView3.setGravity(17);
         textView3.setTextSize(1, 14.0f);
         textView3.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView3.setText(LocaleController.getString("ManageDeviceStorage", C3242R.string.ManageDeviceStorage));
-        textView3.setTextColor(Theme.getColor("featuredStickers_buttonText"));
-        textView3.setBackgroundDrawable(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m50dp(6), Theme.getColor("featuredStickers_addButton"), ColorUtils.setAlphaComponent(Theme.getColor("windowBackgroundWhite"), 120)));
+        textView3.setText(LocaleController.getString("ManageDeviceStorage", C3290R.string.ManageDeviceStorage));
+        textView3.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
+        int m54dp = AndroidUtilities.m54dp(6);
+        int i = Theme.key_featuredStickers_addButton;
+        textView3.setBackgroundDrawable(Theme.createSimpleSelectorRoundRectDrawable(m54dp, Theme.getColor(i), ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_windowBackgroundWhite), 120)));
         linearLayout.addView(textView3, LayoutHelper.createFrame(-1, 48, 0, 16, 15, 16, 16));
         TextView textView4 = new TextView(parentActivity);
-        textView4.setPadding(AndroidUtilities.m50dp(34), 0, AndroidUtilities.m50dp(34), 0);
+        textView4.setPadding(AndroidUtilities.m54dp(34), 0, AndroidUtilities.m54dp(34), 0);
         textView4.setGravity(17);
         textView4.setTextSize(1, 14.0f);
         textView4.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView4.setText(LocaleController.getString("ClearDownloadsList", C3242R.string.ClearDownloadsList));
-        textView4.setTextColor(Theme.getColor("featuredStickers_addButton"));
-        textView4.setBackgroundDrawable(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m50dp(6), 0, ColorUtils.setAlphaComponent(Theme.getColor("featuredStickers_addButton"), 120)));
+        textView4.setText(LocaleController.getString("ClearDownloadsList", C3290R.string.ClearDownloadsList));
+        textView4.setTextColor(Theme.getColor(i));
+        textView4.setBackgroundDrawable(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(6), 0, ColorUtils.setAlphaComponent(Theme.getColor(i), 120)));
         linearLayout.addView(textView4, LayoutHelper.createFrame(-1, 48, 0, 16, 0, 16, 16));
         NestedScrollView nestedScrollView = new NestedScrollView(parentActivity);
         nestedScrollView.addView(linearLayout);

@@ -83,7 +83,7 @@
 
 .field private isFoldersFirstEnabled:Z
 
-.field private isHideFoldersEnabled:Z
+.field private isFoldersHidden:Z
 
 .field private isIconInsteadAllChatsTabTitleEnabled:Z
 
@@ -170,11 +170,11 @@
     iput-object p1, p0, Lcom/iMe/fork/controller/FiltersController;->filtersDao$delegate:Lkotlin/Lazy;
 
     .line 30
-    invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User$Default;->isHideFoldersEnabled()Z
+    invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User$Default;->isFoldersHidden()Z
 
     move-result p1
 
-    iput-boolean p1, p0, Lcom/iMe/fork/controller/FiltersController;->isHideFoldersEnabled:Z
+    iput-boolean p1, p0, Lcom/iMe/fork/controller/FiltersController;->isFoldersHidden:Z
 
     .line 31
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User$Default;->isFoldersFirstEnabled()Z
@@ -1273,11 +1273,11 @@
     return v0
 .end method
 
-.method public final isHideFoldersEnabled()Z
+.method public final isFoldersHidden()Z
     .locals 1
 
     .line 30
-    iget-boolean v0, p0, Lcom/iMe/fork/controller/FiltersController;->isHideFoldersEnabled:Z
+    iget-boolean v0, p0, Lcom/iMe/fork/controller/FiltersController;->isFoldersHidden:Z
 
     return v0
 .end method
@@ -1316,11 +1316,11 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 49
-    invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isHideFoldersEnabled()Ljava/lang/String;
+    invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isFoldersHidden()Ljava/lang/String;
 
     move-result-object v0
 
-    invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User$Default;->isHideFoldersEnabled()Z
+    invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User$Default;->isFoldersHidden()Z
 
     move-result v1
 
@@ -1328,7 +1328,7 @@
 
     move-result v0
 
-    iput-boolean v0, p0, Lcom/iMe/fork/controller/FiltersController;->isHideFoldersEnabled:Z
+    iput-boolean v0, p0, Lcom/iMe/fork/controller/FiltersController;->isFoldersHidden:Z
 
     .line 50
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isFoldersFirstEnabled()Ljava/lang/String;
@@ -1677,7 +1677,7 @@
 
     move-result v0
 
-    iput-boolean v0, p0, Lcom/iMe/fork/controller/FiltersController;->isHideFoldersEnabled:Z
+    iput-boolean v0, p0, Lcom/iMe/fork/controller/FiltersController;->isFoldersHidden:Z
 
     .line 88
     :cond_0
@@ -2150,11 +2150,11 @@
     move-result-object v0
 
     .line 70
-    invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isHideFoldersEnabled()Ljava/lang/String;
+    invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isFoldersHidden()Ljava/lang/String;
 
     move-result-object v1
 
-    iget-boolean v2, p0, Lcom/iMe/fork/controller/FiltersController;->isHideFoldersEnabled:Z
+    iget-boolean v2, p0, Lcom/iMe/fork/controller/FiltersController;->isFoldersHidden:Z
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
@@ -2277,11 +2277,11 @@
     return-void
 .end method
 
-.method public final setHideFoldersEnabled(Z)V
+.method public final setFoldersHidden(Z)V
     .locals 0
 
     .line 30
-    iput-boolean p1, p0, Lcom/iMe/fork/controller/FiltersController;->isHideFoldersEnabled:Z
+    iput-boolean p1, p0, Lcom/iMe/fork/controller/FiltersController;->isFoldersHidden:Z
 
     return-void
 .end method

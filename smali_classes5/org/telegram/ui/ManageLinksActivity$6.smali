@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ManageLinksActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 1580
+    .line 1571
     iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$6;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method protected onAttachedToWindow()V
     .locals 3
 
-    .line 1583
+    .line 1574
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 1584
+    .line 1575
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$6;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/ManageLinksActivity;->updateTimerRunnable:Ljava/lang/Runnable;
@@ -53,10 +53,10 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 1589
+    .line 1580
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 1590
+    .line 1581
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$6;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/ManageLinksActivity;->updateTimerRunnable:Ljava/lang/Runnable;

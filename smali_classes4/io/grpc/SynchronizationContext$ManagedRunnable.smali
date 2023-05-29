@@ -32,7 +32,7 @@
     .line 171
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "task"
+    const-string/jumbo v0, "task"
 
     .line 172
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

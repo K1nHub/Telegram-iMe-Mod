@@ -3,6 +3,6 @@
 
 
 # static fields
-.field public static final staking_all:I = 0x7f090329
+.field public static final staking_all:I = 0x7f090341
 
-.field public static final staking_participated:I = 0x7f090330
+.field public static final staking_participated:I = 0x7f090348

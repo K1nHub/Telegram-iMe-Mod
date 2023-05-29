@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;Landroid/content/Context;Landroid/view/View$OnClickListener;)V
     .locals 0
 
-    .line 917
+    .line 920
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter$1;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Cells/PollEditTextCell;-><init>(Landroid/content/Context;Landroid/view/View$OnClickListener;)V
@@ -35,7 +35,7 @@
 .method protected onFieldTouchUp(Lorg/telegram/ui/Components/EditTextBoldCursor;)V
     .locals 2
 
-    .line 920
+    .line 923
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter$1;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatAttachAlertPollLayout$ListAdapter;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPollLayout;

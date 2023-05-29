@@ -63,16 +63,16 @@ public class LetterDrawable extends Drawable {
             if (namePaint == null) {
                 namePaint = new TextPaint(1);
             }
-            namePaint.setTextSize(AndroidUtilities.m50dp(28));
-            paint.setColor(Theme.getColor("sharedMedia_linkPlaceholder", resourcesProvider));
-            namePaint.setColor(Theme.getColor("sharedMedia_linkPlaceholderText", resourcesProvider));
+            namePaint.setTextSize(AndroidUtilities.m54dp(28));
+            paint.setColor(Theme.getColor(Theme.key_sharedMedia_linkPlaceholder, resourcesProvider));
+            namePaint.setColor(Theme.getColor(Theme.key_sharedMedia_linkPlaceholderText, resourcesProvider));
             this.textPaint = namePaint;
         } else if (i == 1) {
             if (namePaintTopic == null) {
                 namePaintTopic = new TextPaint(1);
             }
             namePaintTopic.setColor(-1);
-            namePaintTopic.setTextSize(AndroidUtilities.m50dp(13));
+            namePaintTopic.setTextSize(AndroidUtilities.m54dp(13));
             namePaintTopic.setTypeface(Typeface.create(Typeface.DEFAULT, 1));
             this.textPaint = namePaintTopic;
         } else {
@@ -101,7 +101,7 @@ public class LetterDrawable extends Drawable {
         }
         if (this.stringBuilder.length() > 0) {
             try {
-                StaticLayout staticLayout = new StaticLayout(this.stringBuilder.toString().toUpperCase(), this.textPaint, AndroidUtilities.m50dp(100), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
+                StaticLayout staticLayout = new StaticLayout(this.stringBuilder.toString().toUpperCase(), this.textPaint, AndroidUtilities.m54dp(100), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
                 this.textLayout = staticLayout;
                 if (staticLayout.getLineCount() > 0) {
                     this.textLeft = this.textLayout.getLineLeft(0);
@@ -111,7 +111,7 @@ public class LetterDrawable extends Drawable {
                 }
                 return;
             } catch (Exception e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
                 return;
             }
         }
@@ -126,7 +126,7 @@ public class LetterDrawable extends Drawable {
         }
         if (this.style == 0) {
             this.rect.set(bounds.left, bounds.top, bounds.right, bounds.bottom);
-            canvas.drawRoundRect(this.rect, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), paint);
+            canvas.drawRoundRect(this.rect, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), paint);
         }
         canvas.save();
         float f = this.scale;

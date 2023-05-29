@@ -6,7 +6,7 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.parameter.ParametersHolderKt;
 /* compiled from: WalletTokenDetailsFragment.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsFragment$navigationRouter$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class WalletTokenDetailsFragment$navigationRouter$2 extends Lambda implements Function0<ParametersHolder> {
     public static final WalletTokenDetailsFragment$navigationRouter$2 INSTANCE = new WalletTokenDetailsFragment$navigationRouter$2();
 

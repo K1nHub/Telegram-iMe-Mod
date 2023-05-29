@@ -9,7 +9,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.p044ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.BetterRatingView */
 /* loaded from: classes6.dex */
@@ -32,21 +32,21 @@ public class BetterRatingView extends View {
         this.paint = new Paint();
         this.numStars = 5;
         this.selectedRating = 0;
-        this.filledStar = BitmapFactory.decodeResource(getResources(), C3242R.C3244drawable.ic_rating_star_filled).extractAlpha();
-        this.hollowStar = BitmapFactory.decodeResource(getResources(), C3242R.C3244drawable.ic_rating_star).extractAlpha();
+        this.filledStar = BitmapFactory.decodeResource(getResources(), C3290R.C3292drawable.ic_rating_star_filled).extractAlpha();
+        this.hollowStar = BitmapFactory.decodeResource(getResources(), C3290R.C3292drawable.ic_rating_star).extractAlpha();
     }
 
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
-        setMeasuredDimension((this.numStars * AndroidUtilities.m50dp(32)) + ((this.numStars - 1) * AndroidUtilities.m50dp(16)), AndroidUtilities.m50dp(32));
+        setMeasuredDimension((this.numStars * AndroidUtilities.m54dp(32)) + ((this.numStars - 1) * AndroidUtilities.m54dp(16)), AndroidUtilities.m54dp(32));
     }
 
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         int i = 0;
         while (i < this.numStars) {
-            this.paint.setColor(Theme.getColor(i < this.selectedRating ? "dialogTextBlue" : "dialogTextHint"));
-            canvas.drawBitmap(i < this.selectedRating ? this.filledStar : this.hollowStar, AndroidUtilities.m50dp(48) * i, BitmapDescriptorFactory.HUE_RED, this.paint);
+            this.paint.setColor(Theme.getColor(i < this.selectedRating ? Theme.key_dialogTextBlue : Theme.key_dialogTextHint));
+            canvas.drawBitmap(i < this.selectedRating ? this.filledStar : this.hollowStar, AndroidUtilities.m54dp(48) * i, BitmapDescriptorFactory.HUE_RED, this.paint);
             i++;
         }
     }
@@ -54,9 +54,9 @@ public class BetterRatingView extends View {
     @Override // android.view.View
     public boolean onTouchEvent(MotionEvent motionEvent) {
         int i;
-        float m50dp = AndroidUtilities.m50dp(-8);
+        float m54dp = AndroidUtilities.m54dp(-8);
         for (int i2 = 0; i2 < this.numStars; i2++) {
-            if (motionEvent.getX() > m50dp && motionEvent.getX() < AndroidUtilities.m50dp(48) + m50dp && this.selectedRating != (i = i2 + 1)) {
+            if (motionEvent.getX() > m54dp && motionEvent.getX() < AndroidUtilities.m54dp(48) + m54dp && this.selectedRating != (i = i2 + 1)) {
                 this.selectedRating = i;
                 OnRatingChangeListener onRatingChangeListener = this.listener;
                 if (onRatingChangeListener != null) {
@@ -65,7 +65,7 @@ public class BetterRatingView extends View {
                 invalidate();
                 return true;
             }
-            m50dp += AndroidUtilities.m50dp(48);
+            m54dp += AndroidUtilities.m54dp(48);
         }
         return true;
     }

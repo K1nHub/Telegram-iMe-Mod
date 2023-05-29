@@ -20,7 +20,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTokenCode.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TokenCode.kt\ncom/iMe/storage/domain/model/wallet/token/TokenCode$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,144:1\n1#2:145\n*E\n"
+    value = "SMAP\nTokenCode.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TokenCode.kt\ncom/iMe/storage/domain/model/wallet/token/TokenCode$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,145:1\n1#2:146\n*E\n"
 .end annotation
 
 
@@ -28,7 +28,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 102
+    .line 103
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -55,11 +55,11 @@
         }
     .end annotation
 
-    const/16 v0, 0x1d
+    const/16 v0, 0x1e
 
     new-array v0, v0, [Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    .line 115
+    .line 116
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->ETHER:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     const/4 v2, 0x0
@@ -120,7 +120,7 @@
 
     aput-object v1, v0, v2
 
-    .line 116
+    .line 117
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->DEGO:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     const/16 v2, 0xa
@@ -181,7 +181,7 @@
 
     aput-object v1, v0, v2
 
-    .line 117
+    .line 118
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->SKILL:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     const/16 v2, 0x14
@@ -236,7 +236,13 @@
 
     aput-object v1, v0, v2
 
-    .line 114
+    sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->BTCMT:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+
+    const/16 v2, 0x1d
+
+    aput-object v1, v0, v2
+
+    .line 115
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
@@ -255,7 +261,7 @@
         }
     .end annotation
 
-    .line 142
+    .line 143
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;->getEthereumCodes()Ljava/util/List;
 
     move-result-object v0
@@ -314,7 +320,7 @@
 
     new-array v0, v0, [Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    .line 107
+    .line 108
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->ETHER:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     const/4 v2, 0x0
@@ -375,7 +381,7 @@
 
     aput-object v1, v0, v2
 
-    .line 108
+    .line 109
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->GT:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     const/16 v2, 0xa
@@ -454,7 +460,7 @@
 
     aput-object v1, v0, v2
 
-    .line 109
+    .line 110
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->DEGO:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     const/16 v2, 0x17
@@ -521,7 +527,7 @@
 
     aput-object v1, v0, v2
 
-    .line 110
+    .line 111
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->GFX:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     const/16 v2, 0x22
@@ -594,7 +600,7 @@
 
     aput-object v1, v0, v2
 
-    .line 111
+    .line 112
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->KFT:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     const/16 v2, 0x2e
@@ -643,7 +649,7 @@
 
     aput-object v1, v0, v2
 
-    .line 106
+    .line 107
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
@@ -662,7 +668,7 @@
         }
     .end annotation
 
-    .line 125
+    .line 126
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->FTM:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf(Ljava/lang/Object;)Ljava/util/List;
@@ -687,7 +693,7 @@
 
     new-array v0, v0, [Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    .line 121
+    .line 122
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->MATIC:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     const/4 v2, 0x0
@@ -748,7 +754,7 @@
 
     aput-object v1, v0, v2
 
-    .line 122
+    .line 123
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->LINK:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     const/16 v2, 0xa
@@ -785,7 +791,7 @@
 
     aput-object v1, v0, v2
 
-    .line 120
+    .line 121
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
@@ -810,7 +816,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 132
+    .line 133
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
@@ -821,7 +827,7 @@
 
     packed-switch p1, :pswitch_data_0
 
-    .line 138
+    .line 139
     new-instance p1, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {p1}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
@@ -835,7 +841,7 @@
 
     goto :goto_0
 
-    .line 137
+    .line 138
     :pswitch_1
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;->getTronCodes()Ljava/util/List;
 
@@ -843,7 +849,7 @@
 
     goto :goto_0
 
-    .line 136
+    .line 137
     :pswitch_2
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;->getFantomCodes()Ljava/util/List;
 
@@ -851,7 +857,7 @@
 
     goto :goto_0
 
-    .line 135
+    .line 136
     :pswitch_3
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;->getPolygonCodes()Ljava/util/List;
 
@@ -859,7 +865,7 @@
 
     goto :goto_0
 
-    .line 134
+    .line 135
     :pswitch_4
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;->getBSCCodes()Ljava/util/List;
 
@@ -867,7 +873,7 @@
 
     goto :goto_0
 
-    .line 133
+    .line 134
     :pswitch_5
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;->getEthereumCodes()Ljava/util/List;
 
@@ -898,7 +904,7 @@
         }
     .end annotation
 
-    .line 129
+    .line 130
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->TON:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOf(Ljava/lang/Object;)Ljava/util/List;
@@ -923,7 +929,7 @@
 
     new-array v0, v0, [Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    .line 127
+    .line 128
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->TRX:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     const/4 v2, 0x0
@@ -974,7 +980,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 104
+    .line 105
     invoke-static {}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->values()[Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     move-result-object v0

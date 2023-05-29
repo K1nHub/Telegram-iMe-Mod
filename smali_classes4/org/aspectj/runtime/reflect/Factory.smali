@@ -71,7 +71,7 @@
 
     sget-object v1, Ljava/lang/Short;->TYPE:Ljava/lang/Class;
 
-    const-string v2, "short"
+    const-string/jumbo v2, "short"
 
     invoke-virtual {v0, v2, v1}, Ljava/util/Hashtable;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

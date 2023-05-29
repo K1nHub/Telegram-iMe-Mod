@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
-    .line 12530
+    .line 12370
     iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$63;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,29 +35,29 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 12533
+    .line 12373
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$63;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$32300(Lorg/telegram/ui/DialogsActivity;)Z
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$31100(Lorg/telegram/ui/DialogsActivity;)Z
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 12534
+    .line 12374
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$63;->this$0:Lorg/telegram/ui/DialogsActivity;
 
     const/4 v0, 0x1
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/DialogsActivity;->access$41500(Lorg/telegram/ui/DialogsActivity;Z)V
+    invoke-static {p1, v0}, Lorg/telegram/ui/DialogsActivity;->access$39400(Lorg/telegram/ui/DialogsActivity;Z)V
 
     goto :goto_0
 
-    .line 12536
+    .line 12376
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/DialogsActivity$63;->this$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$32400(Lorg/telegram/ui/DialogsActivity;)Landroid/widget/ImageView;
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->access$31200(Lorg/telegram/ui/DialogsActivity;)Landroid/widget/ImageView;
 
     move-result-object p1
 

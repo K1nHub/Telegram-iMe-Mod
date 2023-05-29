@@ -57,7 +57,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;)V
     .locals 0
 
-    .line 560
+    .line 558
     iput-object p1, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1;->this$1:Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -70,7 +70,7 @@
 
     if-nez p1, :cond_0
 
-    .line 643
+    .line 641
     iget-object p1, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1;->this$1:Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;->this$0:Lorg/telegram/ui/Components/InviteLinkBottomSheet;
@@ -79,7 +79,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 644
+    .line 642
     iget-object p1, p1, Lorg/telegram/ui/Components/InviteLinkBottomSheet;->invite:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
     invoke-interface {v0, p1}, Lorg/telegram/ui/Components/InviteLinkBottomSheet$InviteDelegate;->onLinkDeleted(Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;)V
@@ -91,7 +91,7 @@
 .method private synthetic lambda$removeLink$3(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 0
 
-    .line 641
+    .line 639
     new-instance p1, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1$$ExternalSyntheticLambda0;
 
     invoke-direct {p1, p0, p2}, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1;Lorg/telegram/tgnet/TLRPC$TL_error;)V
@@ -106,15 +106,15 @@
 
     if-nez p1, :cond_4
 
-    .line 572
+    .line 570
     instance-of p1, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_exportedChatInviteReplaced;
 
     if-eqz p1, :cond_1
 
-    .line 573
+    .line 571
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_messages_exportedChatInviteReplaced;
 
-    .line 574
+    .line 572
     iget-object p1, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1;->this$1:Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;->this$0:Lorg/telegram/ui/Components/InviteLinkBottomSheet;
@@ -123,20 +123,20 @@
 
     if-eqz v0, :cond_0
 
-    .line 575
+    .line 573
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$TL_messages_exportedChatInviteReplaced;->new_invite:Lorg/telegram/tgnet/TLRPC$ExportedChatInvite;
 
     check-cast p2, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
     iput-object p2, v0, Lorg/telegram/tgnet/TLRPC$ChatFull;->exported_invite:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
-    .line 577
+    .line 575
     :cond_0
     iget-object p2, p1, Lorg/telegram/ui/Components/InviteLinkBottomSheet;->inviteDelegate:Lorg/telegram/ui/Components/InviteLinkBottomSheet$InviteDelegate;
 
     if-eqz p2, :cond_4
 
-    .line 578
+    .line 576
     iget-object p1, p1, Lorg/telegram/ui/Components/InviteLinkBottomSheet;->invite:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$ChatFull;->exported_invite:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
@@ -145,7 +145,7 @@
 
     goto :goto_0
 
-    .line 581
+    .line 579
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1;->this$1:Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;
 
@@ -155,7 +155,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 582
+    .line 580
     iget v0, p2, Lorg/telegram/tgnet/TLRPC$ChatFull;->invitesCount:I
 
     add-int/lit8 v0, v0, -0x1
@@ -166,10 +166,10 @@
 
     const/4 v0, 0x0
 
-    .line 584
+    .line 582
     iput v0, p2, Lorg/telegram/tgnet/TLRPC$ChatFull;->invitesCount:I
 
-    .line 586
+    .line 584
     :cond_2
     invoke-static {p1}, Lorg/telegram/ui/Components/InviteLinkBottomSheet;->access$2900(Lorg/telegram/ui/Components/InviteLinkBottomSheet;)I
 
@@ -197,7 +197,7 @@
 
     invoke-virtual {p1, v0, v1, p2}, Lorg/telegram/messenger/MessagesStorage;->saveChatLinksCount(JI)V
 
-    .line 588
+    .line 586
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1;->this$1:Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;
 
@@ -207,7 +207,7 @@
 
     if-eqz p2, :cond_4
 
-    .line 589
+    .line 587
     iget-object p1, p1, Lorg/telegram/ui/Components/InviteLinkBottomSheet;->invite:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
 
     invoke-interface {p2, p1}, Lorg/telegram/ui/Components/InviteLinkBottomSheet$InviteDelegate;->linkRevoked(Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;)V
@@ -220,7 +220,7 @@
 .method private synthetic lambda$revokeLink$1(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
     .locals 1
 
-    .line 570
+    .line 568
     new-instance v0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, p0, p2, p1}, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1;Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;)V
@@ -235,7 +235,7 @@
 .method public editLink()V
     .locals 5
 
-    .line 600
+    .line 598
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1;->this$1:Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;->this$0:Lorg/telegram/ui/Components/InviteLinkBottomSheet;
@@ -246,7 +246,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 601
+    .line 599
     check-cast v1, Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/InviteLinkBottomSheet;->invite:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
@@ -255,7 +255,7 @@
 
     goto :goto_0
 
-    .line 603
+    .line 601
     :cond_0
     new-instance v1, Lorg/telegram/ui/LinkEditActivity;
 
@@ -267,7 +267,7 @@
 
     invoke-direct {v1, v2, v3, v4}, Lorg/telegram/ui/LinkEditActivity;-><init>(IJ)V
 
-    .line 604
+    .line 602
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1;->this$1:Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;->this$0:Lorg/telegram/ui/Components/InviteLinkBottomSheet;
@@ -276,14 +276,14 @@
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/LinkEditActivity;->setInviteToEdit(Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;)V
 
-    .line 605
+    .line 603
     new-instance v0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1$1;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1$1;-><init>(Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1;)V
 
     invoke-virtual {v1, v0}, Lorg/telegram/ui/LinkEditActivity;->setCallback(Lorg/telegram/ui/LinkEditActivity$Callback;)V
 
-    .line 628
+    .line 626
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1;->this$1:Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;->this$0:Lorg/telegram/ui/Components/InviteLinkBottomSheet;
@@ -292,7 +292,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
-    .line 630
+    .line 628
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1;->this$1:Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;
 
@@ -306,7 +306,7 @@
 .method public removeLink()V
     .locals 4
 
-    .line 635
+    .line 633
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1;->this$1:Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;->this$0:Lorg/telegram/ui/Components/InviteLinkBottomSheet;
@@ -317,7 +317,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 636
+    .line 634
     check-cast v1, Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/InviteLinkBottomSheet;->invite:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
@@ -326,13 +326,13 @@
 
     goto :goto_0
 
-    .line 638
+    .line 636
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_deleteExportedChatInvite;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messages_deleteExportedChatInvite;-><init>()V
 
-    .line 639
+    .line 637
     iget-object v1, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1;->this$1:Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;->this$0:Lorg/telegram/ui/Components/InviteLinkBottomSheet;
@@ -343,7 +343,7 @@
 
     iput-object v2, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_deleteExportedChatInvite;->link:Ljava/lang/String;
 
-    .line 640
+    .line 638
     invoke-static {v1}, Lorg/telegram/ui/Components/InviteLinkBottomSheet;->access$2700(Lorg/telegram/ui/Components/InviteLinkBottomSheet;)I
 
     move-result v1
@@ -368,7 +368,7 @@
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_deleteExportedChatInvite;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 641
+    .line 639
     iget-object v1, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1;->this$1:Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;->this$0:Lorg/telegram/ui/Components/InviteLinkBottomSheet;
@@ -387,7 +387,7 @@
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    .line 649
+    .line 647
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1;->this$1:Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;
 
@@ -401,7 +401,7 @@
 .method public revokeLink()V
     .locals 4
 
-    .line 563
+    .line 561
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1;->this$1:Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;->this$0:Lorg/telegram/ui/Components/InviteLinkBottomSheet;
@@ -412,7 +412,7 @@
 
     if-eqz v2, :cond_0
 
-    .line 564
+    .line 562
     check-cast v1, Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/InviteLinkBottomSheet;->invite:Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;
@@ -421,13 +421,13 @@
 
     goto :goto_0
 
-    .line 566
+    .line 564
     :cond_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_editExportedChatInvite;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messages_editExportedChatInvite;-><init>()V
 
-    .line 567
+    .line 565
     iget-object v1, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1;->this$1:Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;->this$0:Lorg/telegram/ui/Components/InviteLinkBottomSheet;
@@ -440,10 +440,10 @@
 
     const/4 v2, 0x1
 
-    .line 568
+    .line 566
     iput-boolean v2, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_editExportedChatInvite;->revoked:Z
 
-    .line 569
+    .line 567
     invoke-static {v1}, Lorg/telegram/ui/Components/InviteLinkBottomSheet;->access$2500(Lorg/telegram/ui/Components/InviteLinkBottomSheet;)I
 
     move-result v1
@@ -468,7 +468,7 @@
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_editExportedChatInvite;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 570
+    .line 568
     iget-object v1, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1;->this$1:Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;->this$0:Lorg/telegram/ui/Components/InviteLinkBottomSheet;
@@ -487,7 +487,7 @@
 
     invoke-virtual {v1, v0, v2}, Lorg/telegram/tgnet/ConnectionsManager;->sendRequest(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/RequestDelegate;)I
 
-    .line 595
+    .line 593
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter$1;->this$1:Lorg/telegram/ui/Components/InviteLinkBottomSheet$Adapter;
 

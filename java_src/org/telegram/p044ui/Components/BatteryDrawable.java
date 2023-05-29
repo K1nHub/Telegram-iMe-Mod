@@ -160,11 +160,11 @@ public class BatteryDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicWidth() {
-        return AndroidUtilities.m51dp(this.scale * 24.0f);
+        return AndroidUtilities.m55dp(this.scale * 24.0f);
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicHeight() {
-        return AndroidUtilities.m51dp(this.scale * 24.0f);
+        return AndroidUtilities.m55dp(this.scale * 24.0f);
     }
 }

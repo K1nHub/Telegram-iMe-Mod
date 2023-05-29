@@ -12,7 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.MediaController;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.BackupImageView;
@@ -47,7 +47,7 @@ public class PhotoPickerAlbumsCell extends FrameLayout {
             addView(backupImageView, LayoutHelper.createFrame(-1, -1));
             LinearLayout linearLayout = new LinearLayout(context);
             linearLayout.setOrientation(0);
-            linearLayout.setBackgroundResource(C3242R.C3244drawable.album_shadow);
+            linearLayout.setBackgroundResource(C3290R.C3292drawable.album_shadow);
             addView(linearLayout, LayoutHelper.createFrame(-1, 60, 83));
             TextView textView = new TextView(context);
             this.nameTextView = textView;
@@ -86,7 +86,7 @@ public class PhotoPickerAlbumsCell extends FrameLayout {
             if (this.imageView.getImageReceiver().hasNotThumb() && this.imageView.getImageReceiver().getCurrentAlpha() == 1.0f) {
                 return;
             }
-            PhotoPickerAlbumsCell.this.backgroundPaint.setColor(Theme.getColor("chat_attachPhotoBackground"));
+            PhotoPickerAlbumsCell.this.backgroundPaint.setColor(Theme.getColor(Theme.key_chat_attachPhotoBackground));
             canvas.drawRect(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, this.imageView.getMeasuredWidth(), this.imageView.getMeasuredHeight(), PhotoPickerAlbumsCell.this.backgroundPaint);
         }
     }
@@ -145,13 +145,15 @@ public class PhotoPickerAlbumsCell extends FrameLayout {
             if (photoEntry == null || photoEntry.path == null) {
                 albumView.imageView.setImageDrawable(Theme.chat_attachEmptyDrawable);
             } else {
-                albumView.imageView.setOrientation(albumEntry.coverPhoto.orientation, true);
+                BackupImageView backupImageView = albumView.imageView;
+                MediaController.PhotoEntry photoEntry2 = albumEntry.coverPhoto;
+                backupImageView.setOrientation(photoEntry2.orientation, photoEntry2.invert, true);
                 if (albumEntry.coverPhoto.isVideo) {
-                    BackupImageView backupImageView = albumView.imageView;
-                    backupImageView.setImage("vthumb://" + albumEntry.coverPhoto.imageId + ":" + albumEntry.coverPhoto.path, null, Theme.chat_attachEmptyDrawable);
-                } else {
                     BackupImageView backupImageView2 = albumView.imageView;
-                    backupImageView2.setImage("thumb://" + albumEntry.coverPhoto.imageId + ":" + albumEntry.coverPhoto.path, null, Theme.chat_attachEmptyDrawable);
+                    backupImageView2.setImage("vthumb://" + albumEntry.coverPhoto.imageId + ":" + albumEntry.coverPhoto.path, null, Theme.chat_attachEmptyDrawable);
+                } else {
+                    BackupImageView backupImageView3 = albumView.imageView;
+                    backupImageView3.setImage("thumb://" + albumEntry.coverPhoto.imageId + ":" + albumEntry.coverPhoto.path, null, Theme.chat_attachEmptyDrawable);
                 }
             }
             albumView.nameTextView.setText(albumEntry.bucketName);
@@ -163,21 +165,21 @@ public class PhotoPickerAlbumsCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        int m50dp;
+        int m54dp;
         if (AndroidUtilities.isTablet()) {
-            m50dp = ((AndroidUtilities.m50dp(490) - AndroidUtilities.m50dp(12)) - ((this.albumsCount - 1) * AndroidUtilities.m50dp(4))) / this.albumsCount;
+            m54dp = ((AndroidUtilities.m54dp(490) - AndroidUtilities.m54dp(12)) - ((this.albumsCount - 1) * AndroidUtilities.m54dp(4))) / this.albumsCount;
         } else {
-            m50dp = ((AndroidUtilities.displaySize.x - AndroidUtilities.m50dp(12)) - ((this.albumsCount - 1) * AndroidUtilities.m50dp(4))) / this.albumsCount;
+            m54dp = ((AndroidUtilities.displaySize.x - AndroidUtilities.m54dp(12)) - ((this.albumsCount - 1) * AndroidUtilities.m54dp(4))) / this.albumsCount;
         }
         for (int i3 = 0; i3 < this.albumsCount; i3++) {
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.albumViews[i3].getLayoutParams();
-            layoutParams.topMargin = AndroidUtilities.m50dp(4);
-            layoutParams.leftMargin = (AndroidUtilities.m50dp(4) + m50dp) * i3;
-            layoutParams.width = m50dp;
-            layoutParams.height = m50dp;
+            layoutParams.topMargin = AndroidUtilities.m54dp(4);
+            layoutParams.leftMargin = (AndroidUtilities.m54dp(4) + m54dp) * i3;
+            layoutParams.width = m54dp;
+            layoutParams.height = m54dp;
             layoutParams.gravity = 51;
             this.albumViews[i3].setLayoutParams(layoutParams);
         }
-        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(4) + m50dp, 1073741824));
+        super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(4) + m54dp, 1073741824));
     }
 }

@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Components/AlertsCreator$4;
-.super Landroid/widget/TextView;
+.super Lorg/telegram/ui/Components/URLSpanNoUnderline;
 .source "AlertsCreator.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/AlertsCreator;->createClearOrDeleteDialogAlert(Lorg/telegram/ui/ActionBar/BaseFragment;ZZZLorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$User;ZZZLorg/telegram/messenger/MessagesStorage$BooleanCallback;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    value = Lorg/telegram/ui/Components/AlertsCreator;->createSupportAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/AlertDialog;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,38 +14,34 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic val$fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
+
+
 # direct methods
-.method constructor <init>(Landroid/content/Context;)V
+.method constructor <init>(Ljava/lang/String;Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
-    .line 1836
-    invoke-direct {p0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    .line 1619
+    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$4;->val$fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/URLSpanNoUnderline;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
-    .locals 2
+.method public onClick(Landroid/view/View;)V
+    .locals 1
 
-    .line 1839
-    invoke-virtual {p0}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
+    .line 1622
+    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$4;->val$fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    move-result-object v0
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->dismissCurrentDialog()V
 
-    invoke-virtual {v0}, Landroid/text/TextPaint;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
-
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    invoke-static {p1, v0, v1}, Lorg/telegram/messenger/Emoji;->replaceEmoji(Ljava/lang/CharSequence;Landroid/graphics/Paint$FontMetricsInt;Z)Ljava/lang/CharSequence;
-
-    move-result-object p1
-
-    .line 1840
-    invoke-super {p0, p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
+    .line 1623
+    invoke-super {p0, p1}, Lorg/telegram/ui/Components/URLSpanNoUnderline;->onClick(Landroid/view/View;)V
 
     return-void
 .end method

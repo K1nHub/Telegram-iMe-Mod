@@ -206,7 +206,7 @@
 .end method
 
 .method private final displayBotItem(Lcom/iMe/bots/domain/model/ShopItem;)V
-    .locals 11
+    .locals 10
 
     const/4 v0, 0x0
 
@@ -219,43 +219,43 @@
     .line 163
     iget-object v1, p0, Lcom/iMe/ui/shop/BotInfoActivity;->button:Landroid/widget/TextView;
 
-    const-string v2, "chats_actionBackground"
-
     if-eqz v1, :cond_0
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
-    move-result v3
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setBackgroundColor(I)V
+    move-result v2
+
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setBackgroundColor(I)V
 
     .line 164
     :cond_0
-    iget-object v4, p0, Lcom/iMe/ui/shop/BotInfoActivity;->avatar:Landroid/widget/ImageView;
+    iget-object v3, p0, Lcom/iMe/ui/shop/BotInfoActivity;->avatar:Landroid/widget/ImageView;
 
-    if-eqz v4, :cond_1
+    if-eqz v3, :cond_1
 
     invoke-virtual {p1}, Lcom/iMe/bots/domain/model/ShopItem;->getAvatar()Ljava/lang/String;
 
-    move-result-object v5
+    move-result-object v4
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
-    move-result-object v6
+    move-result-object v5
 
     const-string v1, "parentActivity"
 
-    invoke-static {v6, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v5, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v6, 0x0
 
     const/4 v7, 0x0
 
-    const/4 v8, 0x0
+    const/16 v8, 0xc
 
-    const/16 v9, 0xc
+    const/4 v9, 0x0
 
-    const/4 v10, 0x0
-
-    invoke-static/range {v4 .. v10}, Lcom/iMe/ui/smartpanel/extension/ImageViewExtKt;->loadFrom$default(Landroid/widget/ImageView;Ljava/lang/String;Landroid/content/Context;Landroid/graphics/drawable/Drawable;ZILjava/lang/Object;)V
+    invoke-static/range {v3 .. v9}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->loadFrom$default(Landroid/widget/ImageView;Ljava/lang/String;Landroid/content/Context;Landroid/graphics/drawable/Drawable;ZILjava/lang/Object;)V
 
     .line 165
     :cond_1
@@ -268,9 +268,9 @@
     :cond_2
     invoke-virtual {p1}, Lcom/iMe/bots/domain/model/ShopItem;->getTitle()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 166
     :goto_0
@@ -278,13 +278,13 @@
 
     if-eqz v1, :cond_3
 
-    const-string v3, "windowBackgroundWhiteBlackText"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v3
+    move-result v2
 
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 167
     :cond_3
@@ -297,48 +297,48 @@
     :cond_4
     invoke-virtual {p1}, Lcom/iMe/bots/domain/model/ShopItem;->getDescription()Ljava/lang/String;
 
-    move-result-object v3
+    move-result-object v2
 
-    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 168
     :goto_1
     iget-object v1, p0, Lcom/iMe/ui/shop/BotInfoActivity;->ratingValue:Landroid/widget/TextView;
 
-    const/4 v3, 0x1
+    const/4 v2, 0x1
 
     if-nez v1, :cond_5
 
     goto :goto_2
 
     :cond_5
-    new-array v4, v3, [Ljava/lang/Object;
+    new-array v3, v2, [Ljava/lang/Object;
 
     invoke-virtual {p1}, Lcom/iMe/bots/domain/model/ShopItem;->getRating()F
 
-    move-result v5
+    move-result v4
 
-    invoke-static {v5}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
-
-    move-result-object v5
-
-    aput-object v5, v4, v0
-
-    invoke-static {v4, v3}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
+    invoke-static {v4}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
 
     move-result-object v4
 
-    const-string v5, "%.1f"
+    aput-object v4, v3, v0
 
-    invoke-static {v5, v4}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v3, v2}, Ljava/util/Arrays;->copyOf([Ljava/lang/Object;I)[Ljava/lang/Object;
 
-    move-result-object v4
+    move-result-object v3
 
-    const-string v5, "format(this, *args)"
+    const-string v4, "%.1f"
 
-    invoke-static {v4, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v4, v3}, Ljava/lang/String;->format(Ljava/lang/String;[Ljava/lang/Object;)Ljava/lang/String;
 
-    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    move-result-object v3
+
+    const-string v4, "format(this, *args)"
+
+    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 169
     :goto_2
@@ -349,19 +349,19 @@
     goto :goto_3
 
     :cond_6
-    sget v4, Lorg/telegram/messenger/R$string;->plural_info_votes:I
+    sget v3, Lorg/telegram/messenger/R$string;->plural_info_votes:I
 
     invoke-virtual {p1}, Lcom/iMe/bots/domain/model/ShopItem;->getReviews()J
 
-    move-result-wide v5
+    move-result-wide v4
 
-    long-to-int v5, v5
+    long-to-int v4, v4
 
-    invoke-static {v4, v5}, Lorg/telegram/messenger/LocaleController;->formatPluralStringInternal(II)Ljava/lang/String;
+    invoke-static {v3, v4}, Lorg/telegram/messenger/LocaleController;->formatPluralStringInternal(II)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 170
     :goto_3
@@ -372,13 +372,13 @@
     goto :goto_4
 
     :cond_7
-    sget v4, Lorg/telegram/messenger/R$string;->neurobots_store_bot_info_themes:I
+    sget v3, Lorg/telegram/messenger/R$string;->neurobots_store_bot_info_themes:I
 
-    invoke-static {v4}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+    invoke-static {v3}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 171
     :goto_4
@@ -389,13 +389,13 @@
     goto :goto_5
 
     :cond_8
-    sget v4, Lorg/telegram/messenger/R$string;->neurobots_store_bot_info_phrases:I
+    sget v3, Lorg/telegram/messenger/R$string;->neurobots_store_bot_info_phrases:I
 
-    invoke-static {v4}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+    invoke-static {v3}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 172
     :goto_5
@@ -406,13 +406,13 @@
     goto :goto_6
 
     :cond_9
-    sget v4, Lorg/telegram/messenger/R$string;->neurobots_store_bot_info_developer:I
+    sget v3, Lorg/telegram/messenger/R$string;->neurobots_store_bot_info_developer:I
 
-    invoke-static {v4}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+    invoke-static {v3}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 173
     :goto_6
@@ -423,13 +423,13 @@
     goto :goto_7
 
     :cond_a
-    sget v4, Lorg/telegram/messenger/R$string;->neurobots_store_bot_info_installs:I
+    sget v3, Lorg/telegram/messenger/R$string;->neurobots_store_bot_info_installs:I
 
-    invoke-static {v4}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+    invoke-static {v3}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 174
     :goto_7
@@ -442,13 +442,13 @@
     :cond_b
     invoke-virtual {p1}, Lcom/iMe/bots/domain/model/ShopItem;->getThemes()J
 
-    move-result-wide v4
+    move-result-wide v3
 
-    invoke-static {v4, v5}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+    invoke-static {v3, v4}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 175
     :goto_8
@@ -461,13 +461,13 @@
     :cond_c
     invoke-virtual {p1}, Lcom/iMe/bots/domain/model/ShopItem;->getPhrases()J
 
-    move-result-wide v4
+    move-result-wide v3
 
-    invoke-static {v4, v5}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+    invoke-static {v3, v4}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 176
     :goto_9
@@ -480,13 +480,13 @@
     :cond_d
     invoke-virtual {p1}, Lcom/iMe/bots/domain/model/ShopItem;->getInstalls()J
 
-    move-result-wide v4
+    move-result-wide v3
 
-    invoke-static {v4, v5}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
+    invoke-static {v3, v4}, Ljava/lang/String;->valueOf(J)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 177
     :goto_a
@@ -497,13 +497,13 @@
     goto :goto_b
 
     :cond_e
-    sget v4, Lorg/telegram/messenger/R$string;->neurobots_store_bot_info_rate:I
+    sget v3, Lorg/telegram/messenger/R$string;->neurobots_store_bot_info_rate:I
 
-    invoke-static {v4}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+    invoke-static {v3}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 178
     :goto_b
@@ -511,19 +511,19 @@
 
     move-result-object v1
 
-    sget-object v4, Lcom/iMe/ui/shop/BotInfoActivity$WhenMappings;->$EnumSwitchMapping$0:[I
+    sget-object v3, Lcom/iMe/ui/shop/BotInfoActivity$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v1
 
-    aget v1, v4, v1
+    aget v1, v3, v1
 
-    if-eq v1, v3, :cond_10
+    if-eq v1, v2, :cond_10
 
-    const/4 v4, 0x2
+    const/4 v3, 0x2
 
-    if-ne v1, v4, :cond_f
+    if-ne v1, v3, :cond_f
 
     .line 180
     sget v1, Lorg/telegram/messenger/R$string;->neurobots_store_bot_info_supported_language_en:I
@@ -551,36 +551,36 @@
 
     .line 182
     :goto_c
-    iget-object v4, p0, Lcom/iMe/ui/shop/BotInfoActivity;->botCurrentLanguage:Landroid/widget/TextView;
+    iget-object v3, p0, Lcom/iMe/ui/shop/BotInfoActivity;->botCurrentLanguage:Landroid/widget/TextView;
 
-    if-nez v4, :cond_11
+    if-nez v3, :cond_11
 
     goto :goto_d
 
     :cond_11
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget v6, Lorg/telegram/messenger/R$string;->neurobots_store_bot_info_supported_languages:I
+    sget v5, Lorg/telegram/messenger/R$string;->neurobots_store_bot_info_supported_languages:I
 
-    invoke-static {v6}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+    invoke-static {v5}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    const-string v6, ": \n"
+    const-string v5, ": \n"
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
     move-result-object v1
 
-    invoke-virtual {v4, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v3, v1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 183
     :goto_d
@@ -588,11 +588,13 @@
 
     if-eqz v1, :cond_12
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
-    move-result v4
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setTextColor(I)V
+    move-result v3
+
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 184
     :cond_12
@@ -600,11 +602,11 @@
 
     if-eqz v1, :cond_13
 
-    new-instance v4, Lcom/iMe/ui/shop/BotInfoActivity$$ExternalSyntheticLambda0;
+    new-instance v3, Lcom/iMe/ui/shop/BotInfoActivity$$ExternalSyntheticLambda0;
 
-    invoke-direct {v4, p0}, Lcom/iMe/ui/shop/BotInfoActivity$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/ui/shop/BotInfoActivity;)V
+    invoke-direct {v3, p0}, Lcom/iMe/ui/shop/BotInfoActivity$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/ui/shop/BotInfoActivity;)V
 
-    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 193
     :cond_13
@@ -654,7 +656,7 @@
 
     if-eqz v0, :cond_17
 
-    invoke-virtual {v0, v3}, Landroid/widget/RatingBar;->setIsIndicator(Z)V
+    invoke-virtual {v0, v2}, Landroid/widget/RatingBar;->setIsIndicator(Z)V
 
     .line 203
     :cond_17
@@ -693,38 +695,38 @@
     .line 210
     iget-object v1, p0, Lcom/iMe/ui/shop/BotInfoActivity;->dateAdded:Landroid/widget/TextView;
 
-    const/16 v4, 0x20
+    const/16 v3, 0x20
 
     if-nez v1, :cond_1b
 
     goto :goto_10
 
     :cond_1b
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget v6, Lorg/telegram/messenger/R$string;->neurobots_store_bot_added:I
+    sget v5, Lorg/telegram/messenger/R$string;->neurobots_store_bot_added:I
 
-    invoke-static {v6}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
-
-    invoke-virtual {p1}, Lcom/iMe/bots/domain/model/ShopItem;->getCreated()Ljava/lang/String;
-
-    move-result-object v6
-
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-static {v5}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
     move-result-object v5
 
-    invoke-virtual {v1, v5}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+
+    invoke-virtual {p1}, Lcom/iMe/bots/domain/model/ShopItem;->getCreated()Ljava/lang/String;
+
+    move-result-object v5
+
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v4
+
+    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 211
     :goto_10
@@ -735,31 +737,31 @@
     goto :goto_11
 
     :cond_1c
-    new-instance v5, Ljava/lang/StringBuilder;
+    new-instance v4, Ljava/lang/StringBuilder;
 
-    invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
+    invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget v6, Lorg/telegram/messenger/R$string;->neurobots_store_bot_updated:I
+    sget v5, Lorg/telegram/messenger/R$string;->neurobots_store_bot_updated:I
 
-    invoke-static {v6}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+    invoke-static {v5}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
-    move-result-object v6
+    move-result-object v5
 
-    invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v5}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     invoke-virtual {p1}, Lcom/iMe/bots/domain/model/ShopItem;->getUpdated()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v5, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v4, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v5}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+    invoke-virtual {v4}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     :goto_11
     const/16 v1, 0x10
@@ -772,157 +774,159 @@
     .line 215
     invoke-virtual {p1}, Lcom/iMe/bots/domain/model/ShopItem;->getTags()Ljava/util/List;
 
-    move-result-object v4
+    move-result-object v3
 
     .line 766
-    new-instance v5, Ljava/util/ArrayList;
+    new-instance v4, Ljava/util/ArrayList;
 
-    invoke-direct {v5}, Ljava/util/ArrayList;-><init>()V
+    invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
 
     .line 857
-    invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v3}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
 
-    move-result-object v4
+    move-result-object v3
 
     :cond_1d
     :goto_12
-    invoke-interface {v4}, Ljava/util/Iterator;->hasNext()Z
+    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v5
+
+    if-eqz v5, :cond_1e
+
+    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
+
+    move-result-object v5
+
+    move-object v6, v5
+
+    check-cast v6, Lcom/iMe/bots/domain/model/SmartTag;
+
+    .line 216
+    invoke-virtual {v6}, Lcom/iMe/bots/domain/model/SmartTag;->getHidden()Z
 
     move-result v6
 
-    if-eqz v6, :cond_1e
+    xor-int/2addr v6, v2
 
-    invoke-interface {v4}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v6
-
-    move-object v7, v6
-
-    check-cast v7, Lcom/iMe/bots/domain/model/SmartTag;
-
-    .line 216
-    invoke-virtual {v7}, Lcom/iMe/bots/domain/model/SmartTag;->getHidden()Z
-
-    move-result v7
-
-    xor-int/2addr v7, v3
-
-    if-eqz v7, :cond_1d
+    if-eqz v6, :cond_1d
 
     .line 857
-    invoke-interface {v5, v6}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
+    invoke-interface {v4, v5}, Ljava/util/Collection;->add(Ljava/lang/Object;)Z
 
     goto :goto_12
 
     .line 1855
     :cond_1e
-    invoke-interface {v5}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+    invoke-interface {v4}, Ljava/lang/Iterable;->iterator()Ljava/util/Iterator;
+
+    move-result-object v2
+
+    :goto_13
+    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_20
+
+    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
     move-result-object v3
 
-    :goto_13
-    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
-
-    move-result v4
-
-    if-eqz v4, :cond_20
-
-    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
-
-    move-result-object v4
-
-    check-cast v4, Lcom/iMe/bots/domain/model/SmartTag;
+    check-cast v3, Lcom/iMe/bots/domain/model/SmartTag;
 
     .line 218
-    new-instance v5, Landroid/widget/TextView;
+    new-instance v4, Landroid/widget/TextView;
 
-    invoke-direct {v5, v0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v4, v0}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     .line 219
-    invoke-virtual {v4}, Lcom/iMe/bots/domain/model/SmartTag;->getTitle()Ljava/lang/String;
+    invoke-virtual {v3}, Lcom/iMe/bots/domain/model/SmartTag;->getTitle()Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v3
 
-    invoke-virtual {v5, v4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v4, v3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const/4 v4, -0x1
+    const/4 v3, -0x1
 
     .line 220
-    invoke-virtual {v5, v4}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v4, v3}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 221
-    new-instance v4, Landroid/graphics/drawable/GradientDrawable;
+    new-instance v3, Landroid/graphics/drawable/GradientDrawable;
 
-    invoke-direct {v4}, Landroid/graphics/drawable/GradientDrawable;-><init>()V
+    invoke-direct {v3}, Landroid/graphics/drawable/GradientDrawable;-><init>()V
 
     .line 222
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
-    move-result v6
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v4, v6}, Landroid/graphics/drawable/GradientDrawable;->setColor(I)V
+    move-result v5
 
-    const/high16 v6, 0x42480000    # 50.0f
+    invoke-virtual {v3, v5}, Landroid/graphics/drawable/GradientDrawable;->setColor(I)V
+
+    const/high16 v5, 0x42480000    # 50.0f
 
     .line 223
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
-    move-result v6
+    move-result v5
 
-    int-to-float v6, v6
+    int-to-float v5, v5
 
-    invoke-virtual {v4, v6}, Landroid/graphics/drawable/GradientDrawable;->setCornerRadius(F)V
+    invoke-virtual {v3, v5}, Landroid/graphics/drawable/GradientDrawable;->setCornerRadius(F)V
 
-    const/high16 v6, 0x41000000    # 8.0f
+    const/high16 v5, 0x41000000    # 8.0f
 
     .line 224
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
-
-    move-result v7
-
-    const/high16 v8, 0x40800000    # 4.0f
-
-    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
-
-    move-result v9
-
-    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v6
 
-    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+    const/high16 v7, 0x40800000    # 4.0f
+
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v8
 
-    invoke-virtual {v5, v7, v9, v6, v8}, Landroid/widget/TextView;->setPadding(IIII)V
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+
+    move-result v5
+
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
+
+    move-result v7
+
+    invoke-virtual {v4, v6, v8, v5, v7}, Landroid/widget/TextView;->setPadding(IIII)V
 
     .line 225
-    invoke-virtual {v5, v4}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v4, v3}, Landroid/widget/TextView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     .line 226
-    iget-object v4, p0, Lcom/iMe/ui/shop/BotInfoActivity;->tagsContainer:Lcom/google/android/flexbox/FlexboxLayout;
+    iget-object v3, p0, Lcom/iMe/ui/shop/BotInfoActivity;->tagsContainer:Lcom/google/android/flexbox/FlexboxLayout;
 
-    if-eqz v4, :cond_1f
+    if-eqz v3, :cond_1f
 
-    invoke-virtual {v4, v5}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
+    invoke-virtual {v3, v4}, Landroid/view/ViewGroup;->addView(Landroid/view/View;)V
 
     .line 227
     :cond_1f
-    invoke-virtual {v5}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+    invoke-virtual {v4}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    move-result-object v4
+    move-result-object v3
 
-    const-string v6, "null cannot be cast to non-null type com.google.android.flexbox.FlexboxLayout.LayoutParams"
+    const-string v5, "null cannot be cast to non-null type com.google.android.flexbox.FlexboxLayout.LayoutParams"
 
-    invoke-static {v4, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
-    check-cast v4, Lcom/google/android/flexbox/FlexboxLayout$LayoutParams;
+    check-cast v3, Lcom/google/android/flexbox/FlexboxLayout$LayoutParams;
 
     .line 228
-    invoke-virtual {v4, v1, v1, v1, v1}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
+    invoke-virtual {v3, v1, v1, v1, v1}, Landroid/view/ViewGroup$MarginLayoutParams;->setMargins(IIII)V
 
     .line 229
-    invoke-virtual {v5, v4}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v4, v3}, Landroid/widget/TextView;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     goto :goto_13
 
@@ -1940,9 +1944,9 @@
 
     if-eqz p1, :cond_1
 
-    const-string v0, "windowBackgroundGray"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

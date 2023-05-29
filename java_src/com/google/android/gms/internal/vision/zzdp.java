@@ -35,7 +35,7 @@ public final class zzdp<K, V> extends AbstractMap<K, V> implements Serializable 
     /* JADX INFO: Access modifiers changed from: package-private */
     public zzdp() {
         zzde.zza(true, (Object) "Expected size must be >= 0");
-        this.zzf = zzfc.zza(3, 1, IdFabric$RequestCode.file_saving_directory);
+        this.zzf = zzfc.zza(3, 1, IdFabric$RequestCode.FILE_SAVING_DIRECTORY);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
@@ -146,7 +146,7 @@ public final class zzdp<K, V> extends AbstractMap<K, V> implements Serializable 
             zzea.zza(this.zze, i4, i3);
         }
         int length = this.zza.length;
-        if (i3 > length && (min = Math.min((int) IdFabric$RequestCode.file_saving_directory, 1 | (Math.max(1, length >>> 1) + length))) != length) {
+        if (i3 > length && (min = Math.min((int) IdFabric$RequestCode.FILE_SAVING_DIRECTORY, 1 | (Math.max(1, length >>> 1) + length))) != length) {
             this.zza = Arrays.copyOf(this.zza, min);
             this.zzb = Arrays.copyOf(this.zzb, min);
             this.zzc = Arrays.copyOf(this.zzc, min);
@@ -409,7 +409,7 @@ public final class zzdp<K, V> extends AbstractMap<K, V> implements Serializable 
         zzc();
         Map<K, V> zzb = zzb();
         if (zzb != null) {
-            this.zzf = zzfc.zza(size(), 3, IdFabric$RequestCode.file_saving_directory);
+            this.zzf = zzfc.zza(size(), 3, IdFabric$RequestCode.FILE_SAVING_DIRECTORY);
             zzb.clear();
             this.zze = null;
             this.zzg = 0;

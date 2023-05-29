@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
+.method public abstract didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -26,7 +26,10 @@
             "Ljava/lang/CharSequence;",
             "Z",
             "Lorg/telegram/ui/TopicsFragment;",
-            ")Z"
+            "Lcom/iMe/fork/utils/Callbacks$Callback1<",
+            "Ljava/util/ArrayList<",
+            "Lorg/telegram/messenger/MessageObject;",
+            ">;>;)Z"
         }
     .end annotation
 .end method

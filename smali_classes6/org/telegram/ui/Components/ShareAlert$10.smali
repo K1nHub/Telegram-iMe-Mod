@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/Components/ShareAlert$10;
-.super Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;
+.super Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;
 .source "ShareAlert.java"
 
 
@@ -14,88 +14,44 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic this$0:Lorg/telegram/ui/Components/ShareAlert;
+
+
 # direct methods
 .method constructor <init>(Lorg/telegram/ui/Components/ShareAlert;)V
     .locals 0
 
-    .line 1097
-    invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;-><init>()V
+    .line 1248
+    iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$10;->this$0:Lorg/telegram/ui/Components/ShareAlert;
+
+    invoke-direct {p0}, Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getItemOffsets(Landroid/graphics/Rect;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;)V
-    .locals 1
+.method public getSpanSize(I)I
+    .locals 0
 
-    .line 1100
-    invoke-virtual {p3, p2}, Landroidx/recyclerview/widget/RecyclerView;->getChildViewHolder(Landroid/view/View;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
+    if-nez p1, :cond_0
 
-    move-result-object p2
+    .line 1252
+    iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$10;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
-    check-cast p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert;->access$2400(Lorg/telegram/ui/Components/ShareAlert;)Landroidx/recyclerview/widget/GridLayoutManager;
 
-    const/4 p3, 0x4
+    move-result-object p1
 
-    if-eqz p2, :cond_2
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/GridLayoutManager;->getSpanCount()I
 
-    .line 1102
-    invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
+    move-result p1
 
-    move-result p2
-
-    .line 1103
-    rem-int/2addr p2, p3
-
-    const/4 p4, 0x0
-
-    if-nez p2, :cond_0
-
-    move v0, p4
-
-    goto :goto_0
+    return p1
 
     :cond_0
-    invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    const/4 p1, 0x1
 
-    move-result v0
-
-    :goto_0
-    iput v0, p1, Landroid/graphics/Rect;->left:I
-
-    const/4 v0, 0x3
-
-    if-ne p2, v0, :cond_1
-
-    goto :goto_1
-
-    .line 1104
-    :cond_1
-    invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result p4
-
-    :goto_1
-    iput p4, p1, Landroid/graphics/Rect;->right:I
-
-    goto :goto_2
-
-    .line 1106
-    :cond_2
-    invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result p2
-
-    iput p2, p1, Landroid/graphics/Rect;->left:I
-
-    .line 1107
-    invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result p2
-
-    iput p2, p1, Landroid/graphics/Rect;->right:I
-
-    :goto_2
-    return-void
+    return p1
 .end method

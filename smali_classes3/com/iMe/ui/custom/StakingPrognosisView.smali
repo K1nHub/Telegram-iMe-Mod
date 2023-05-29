@@ -327,10 +327,10 @@
     .line 5
     check-cast v3, Landroid/view/ViewGroup;
 
-    const-string v7, "windowBackgroundWhite"
-
     .line 60
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -383,10 +383,10 @@
     .line 5
     check-cast v3, Landroid/widget/TextView;
 
-    const-string v7, "windowBackgroundWhiteBlackText"
-
     .line 63
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -436,10 +436,10 @@
     .line 5
     check-cast v3, Landroid/widget/TextView;
 
-    const-string v7, "windowBackgroundWhiteGreenText2"
-
     .line 67
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGreenText2:I
+
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -454,45 +454,45 @@
 
     goto :goto_2
 
+    .line 70
     :cond_2
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
+
     new-array v1, v1, [Landroid/widget/TextView;
 
-    .line 70
-    iget-object v2, v0, Lorg/telegram/messenger/databinding/ForkContentStakingPrognosisBinding;->textModeTitle:Landroid/widget/TextView;
+    iget-object v3, v0, Lorg/telegram/messenger/databinding/ForkContentStakingPrognosisBinding;->textModeTitle:Landroid/widget/TextView;
 
-    const-string v3, "textModeTitle"
+    const-string v7, "textModeTitle"
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v3, v7}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    aput-object v2, v1, v4
+    aput-object v3, v1, v4
 
-    iget-object v2, v0, Lorg/telegram/messenger/databinding/ForkContentStakingPrognosisBinding;->textProfitTitle:Landroid/widget/TextView;
+    iget-object v3, v0, Lorg/telegram/messenger/databinding/ForkContentStakingPrognosisBinding;->textProfitTitle:Landroid/widget/TextView;
 
-    const-string v3, "textProfitTitle"
+    const-string v4, "textProfitTitle"
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    aput-object v2, v1, v5
+    aput-object v3, v1, v5
 
-    iget-object v2, v0, Lorg/telegram/messenger/databinding/ForkContentStakingPrognosisBinding;->textDepositDescription:Landroid/widget/TextView;
+    iget-object v3, v0, Lorg/telegram/messenger/databinding/ForkContentStakingPrognosisBinding;->textDepositDescription:Landroid/widget/TextView;
 
-    const-string v3, "textDepositDescription"
+    const-string v4, "textDepositDescription"
 
-    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    aput-object v2, v1, v6
+    aput-object v3, v1, v6
 
-    const-string v2, "windowBackgroundWhiteGrayText"
-
-    invoke-static {v2, v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setTextsColor(Ljava/lang/String;[Landroid/widget/TextView;)V
+    invoke-static {v2, v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setTextsColor(I[Landroid/widget/TextView;)V
 
     .line 71
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingPrognosisBinding;->textDepositTitle:Landroid/widget/TextView;
 
-    const-string v2, "windowBackgroundWhiteBlueText"
-
     .line 72
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 

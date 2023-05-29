@@ -9,7 +9,7 @@ import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.p044ui.Cells.TextCell;
 import org.telegram.p044ui.Components.RLottieImageView;
 /* loaded from: classes4.dex */
@@ -44,7 +44,7 @@ public final class ForkFragmentBlockchainsManagementBinding implements ViewBindi
     }
 
     public static ForkFragmentBlockchainsManagementBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3242R.layout.fork_fragment_blockchains_management, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3290R.layout.fork_fragment_blockchains_management, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -52,28 +52,28 @@ public final class ForkFragmentBlockchainsManagementBinding implements ViewBindi
     }
 
     public static ForkFragmentBlockchainsManagementBinding bind(View view) {
-        int i = C3242R.C3245id.button_reset_all;
+        int i = C3290R.C3293id.button_reset_all;
         TextCell textCell = (TextCell) ViewBindings.findChildViewById(view, i);
         if (textCell != null) {
-            i = C3242R.C3245id.image_header;
+            i = C3290R.C3293id.image_header;
             RLottieImageView rLottieImageView = (RLottieImageView) ViewBindings.findChildViewById(view, i);
             if (rLottieImageView != null) {
-                i = C3242R.C3245id.linear_add_session;
+                i = C3290R.C3293id.linear_add_session;
                 LinearLayout linearLayout = (LinearLayout) ViewBindings.findChildViewById(view, i);
                 if (linearLayout != null) {
-                    i = C3242R.C3245id.linear_root;
+                    i = C3290R.C3293id.linear_root;
                     LinearLayout linearLayout2 = (LinearLayout) ViewBindings.findChildViewById(view, i);
                     if (linearLayout2 != null) {
-                        i = C3242R.C3245id.linear_wallets;
+                        i = C3290R.C3293id.linear_wallets;
                         LinearLayout linearLayout3 = (LinearLayout) ViewBindings.findChildViewById(view, i);
                         if (linearLayout3 != null) {
-                            i = C3242R.C3245id.recycle_wallets;
+                            i = C3290R.C3293id.recycle_wallets;
                             RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
                             if (recyclerView != null) {
-                                i = C3242R.C3245id.text_description;
+                                i = C3290R.C3293id.text_description;
                                 AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                 if (appCompatTextView != null) {
-                                    i = C3242R.C3245id.text_wallets_title;
+                                    i = C3290R.C3293id.text_wallets_title;
                                     AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                                     if (appCompatTextView2 != null) {
                                         return new ForkFragmentBlockchainsManagementBinding((NestedScrollView) view, textCell, rLottieImageView, linearLayout, linearLayout2, linearLayout3, recyclerView, appCompatTextView, appCompatTextView2);

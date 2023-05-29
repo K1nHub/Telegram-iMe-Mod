@@ -80,7 +80,7 @@
     .line 43
     new-instance v0, Lio/grpc/okhttp/internal/framed/Header;
 
-    const-string v1, "te"
+    const-string/jumbo v1, "te"
 
     const-string/jumbo v2, "trailers"
 

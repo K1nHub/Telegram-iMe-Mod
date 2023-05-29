@@ -2,34 +2,50 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/Utilities$Callback;
+.implements Lj$/util/function/Consumer;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/MessagesController;
 
+.field public final synthetic f$1:J
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;J)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda252;->f$0:Lorg/telegram/messenger/MessagesController;
 
+    iput-wide p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda252;->f$1:J
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final run(Ljava/lang/Object;)V
-    .locals 1
+.method public final accept(Ljava/lang/Object;)V
+    .locals 3
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda252;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_help_appConfig;
+    iget-wide v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda252;->f$1:J
 
-    invoke-static {v0, p1}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$AhakC0b_6zdCTpmMhbvoioLpyrY(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLRPC$TL_help_appConfig;)V
+    check-cast p1, Ljava/util/ArrayList;
+
+    invoke-static {v0, v1, v2, p1}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$qBIq_WfMRMfuROIDlEWpPDdofXQ(Lorg/telegram/messenger/MessagesController;JLjava/util/ArrayList;)V
 
     return-void
+.end method
+
+.method public synthetic andThen(Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
+
+    move-result-object p1
+
+    return-object p1
 .end method

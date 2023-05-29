@@ -28,7 +28,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: WalletConnectPresenter.kt */
 @InjectViewState
@@ -79,7 +79,7 @@ public final class WalletConnectPresenter extends BasePresenter<WalletConnectVie
     }
 
     public final DialogModel getDisconnectAllConfirmationDialogModel() {
-        return new DialogModel(LocaleController.getString("AreYouSureSessionsTitle", C3242R.string.AreYouSureSessionsTitle), this.resourceManager.getString(C3242R.string.wallet_connect_terminate_all_description), LocaleController.getString("Cancel", C3242R.string.Cancel), LocaleController.getString("Terminate", C3242R.string.Terminate));
+        return new DialogModel(LocaleController.getString("AreYouSureSessionsTitle", C3290R.string.AreYouSureSessionsTitle), this.resourceManager.getString(C3290R.string.wallet_connect_terminate_all_description), LocaleController.getString("Cancel", C3290R.string.Cancel), LocaleController.getString("Terminate", C3290R.string.Terminate));
     }
 
     public final void showChangeNetworkHintIfNeeded() {
@@ -101,17 +101,17 @@ public final class WalletConnectPresenter extends BasePresenter<WalletConnectVie
 
     private final void subscribeToEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
-        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.NetworkUpdated.class).observeOn(rxEventBus.getSchedulersProvider().mo693ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.NetworkUpdated.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2160x796451d4(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2161x796451d5(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2199x796451d4(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2200x796451d5(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     private final void subscribeToSessionList() {
-        Flowable<Result<List<WCSessionStoreItem>>> observeOn = this.walletConnectInteractor.getWalletConnectSavedSessions().distinctUntilChanged().observeOn(this.schedulersProvider.mo693ui());
+        Flowable<Result<List<WCSessionStoreItem>>> observeOn = this.walletConnectInteractor.getWalletConnectSavedSessions().distinctUntilChanged().observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletConnectInteractor\n…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2162xd4a7409f(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2163xd4a740a0((BaseView) getViewState())));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2201xd4a7409f(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2202xd4a740a0((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

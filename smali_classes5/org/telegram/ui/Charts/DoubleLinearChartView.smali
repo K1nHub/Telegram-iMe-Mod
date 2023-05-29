@@ -1460,9 +1460,9 @@
     :goto_4
     iget-object v10, v0, Lorg/telegram/ui/Charts/BaseChartView;->signaturePaint:Landroid/graphics/Paint;
 
-    const-string v14, "statisticChartSignature"
+    sget v14, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartSignature:I
 
-    invoke-static {v14}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v14}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v14
 

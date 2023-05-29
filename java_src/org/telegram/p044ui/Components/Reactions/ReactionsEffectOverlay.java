@@ -90,7 +90,7 @@ public class ReactionsEffectOverlay {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Reactions.ReactionsEffectOverlay$1 */
     /* loaded from: classes6.dex */
-    public class C49421 extends FrameLayout {
+    public class C50151 extends FrameLayout {
         final /* synthetic */ int val$animationType;
         final /* synthetic */ ChatMessageCell val$cell;
         final /* synthetic */ ChatActivity val$chatActivity;
@@ -103,7 +103,7 @@ public class ReactionsEffectOverlay {
         final /* synthetic */ ReactionsLayoutInBubble.VisibleReaction val$visibleReaction;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C49421(Context context, BaseFragment baseFragment, ChatMessageCell chatMessageCell, ChatActivity chatActivity, int i, int i2, boolean z, float f, float f2, float f3, ReactionsLayoutInBubble.VisibleReaction visibleReaction) {
+        C50151(Context context, BaseFragment baseFragment, ChatMessageCell chatMessageCell, ChatActivity chatActivity, int i, int i2, boolean z, float f, float f2, float f3, ReactionsLayoutInBubble.VisibleReaction visibleReaction) {
             super(context);
             this.val$fragment = baseFragment;
             this.val$cell = chatMessageCell;
@@ -135,7 +135,7 @@ public class ReactionsEffectOverlay {
                 Method dump skipped, instructions count: 1456
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Components.Reactions.ReactionsEffectOverlay.C49421.dispatchDraw(android.graphics.Canvas):void");
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Components.Reactions.ReactionsEffectOverlay.C50151.dispatchDraw(android.graphics.Canvas):void");
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -466,13 +466,13 @@ public class ReactionsEffectOverlay {
     }
 
     public static int sizeForBigReaction() {
-        int m50dp = AndroidUtilities.m50dp(350);
+        int m54dp = AndroidUtilities.m54dp(350);
         Point point = AndroidUtilities.displaySize;
-        return (int) (Math.round(Math.min(m50dp, Math.min(point.x, point.y)) * 0.7f) / AndroidUtilities.density);
+        return (int) (Math.round(Math.min(m54dp, Math.min(point.x, point.y)) * 0.7f) / AndroidUtilities.density);
     }
 
     public static int sizeForAroundReaction() {
-        return (int) ((AndroidUtilities.m50dp(40) * 2.0f) / AndroidUtilities.density);
+        return (int) ((AndroidUtilities.m54dp(40) * 2.0f) / AndroidUtilities.density);
     }
 
     public static void dismissAll() {
@@ -507,7 +507,7 @@ public class ReactionsEffectOverlay {
         private AvatarParticle(ReactionsEffectOverlay reactionsEffectOverlay) {
         }
 
-        /* synthetic */ AvatarParticle(ReactionsEffectOverlay reactionsEffectOverlay, C49421 c49421) {
+        /* synthetic */ AvatarParticle(ReactionsEffectOverlay reactionsEffectOverlay, C50151 c50151) {
             this(reactionsEffectOverlay);
         }
     }

@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nAllChatsTabSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AllChatsTabSettingsActivity.kt\ncom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity\n+ 2 ViewGroup.kt\nandroidx/core/view/ViewGroupKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,267:1\n55#2,4:268\n1#3:272\n*S KotlinDebug\n*F\n+ 1 AllChatsTabSettingsActivity.kt\ncom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity\n*L\n64#1:268,4\n*E\n"
+    value = "SMAP\nAllChatsTabSettingsActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 AllChatsTabSettingsActivity.kt\ncom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity\n+ 2 ViewGroup.kt\nandroidx/core/view/ViewGroupKt\n+ 3 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,268:1\n55#2,4:269\n1#3:273\n*S KotlinDebug\n*F\n+ 1 AllChatsTabSettingsActivity.kt\ncom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity\n*L\n64#1:269,4\n*E\n"
 .end annotation
 
 
@@ -397,11 +397,11 @@
     invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 64
-    instance-of v3, v2, Lcom/iMe/fork/ui/view/FabsCell;
+    instance-of v3, v2, Lcom/iMe/fork/ui/view/FloatingActionButtonsCell;
 
     if-eqz v3, :cond_0
 
-    check-cast v2, Lcom/iMe/fork/ui/view/FabsCell;
+    check-cast v2, Lcom/iMe/fork/ui/view/FloatingActionButtonsCell;
 
     goto :goto_1
 
@@ -411,7 +411,7 @@
     :goto_1
     if-eqz v2, :cond_1
 
-    invoke-virtual {v2}, Lcom/iMe/fork/ui/view/FabsCell;->updateColors()V
+    invoke-virtual {v2}, Lcom/iMe/fork/ui/view/FloatingActionButtonsCell;->updateColors()V
 
     :cond_1
     add-int/lit8 v1, v1, 0x1
@@ -470,7 +470,7 @@
 .end method
 
 .method private static final initListView$lambda$9$lambda$8(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;Landroid/view/View;I)V
-    .locals 2
+    .locals 3
 
     const-string v0, "this$0"
 
@@ -484,10 +484,12 @@
     .line 120
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextCheckCell;->toggleCheckbox()V
+    invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextCheckCell;->toggleCheckBox()V
 
     .line 121
     iget v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->enableRow:I
+
+    const/4 v1, 0x1
 
     if-ne p2, v0, :cond_1
 
@@ -500,7 +502,7 @@
 
     move-result v0
 
-    xor-int/lit8 v0, v0, 0x1
+    xor-int/2addr v0, v1
 
     invoke-virtual {p2, v0}, Lcom/iMe/fork/controller/FiltersController;->setAllChatsTabEnabled(Z)V
 
@@ -516,9 +518,9 @@
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->updateRows()V
 
     .line 126
-    iget v1, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->rowCount:I
+    iget v2, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->rowCount:I
 
-    sub-int/2addr v0, v1
+    sub-int/2addr v0, v2
 
     invoke-static {v0}, Ljava/lang/Math;->abs(I)I
 
@@ -534,7 +536,7 @@
     .line 128
     iget p1, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->enableSectionRow:I
 
-    add-int/lit8 p1, p1, 0x1
+    add-int/2addr p1, v1
 
     invoke-virtual {p2, p1, v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeInserted(II)V
 
@@ -544,7 +546,7 @@
     :cond_0
     iget p1, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->enableSectionRow:I
 
-    add-int/lit8 p1, p1, 0x1
+    add-int/2addr p1, v1
 
     invoke-virtual {p2, p1, v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemRangeRemoved(II)V
 
@@ -555,20 +557,33 @@
     invoke-virtual {p2, p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
 
     .line 134
-    invoke-static {p0}, Lorg/telegram/ui/Components/AlertsCreator;->showArchiveAccessAlert(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-static {v1}, Lorg/telegram/messenger/SharedConfig;->setShowDrawerHeaderArchiveEnabled(Z)V
 
     .line 135
+    invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
+
+    move-result-object p1
+
+    sget p2, Lorg/telegram/messenger/NotificationCenter;->mainUserInfoChanged:I
+
+    const/4 v0, 0x0
+
+    new-array v0, v0, [Ljava/lang/Object;
+
+    invoke-virtual {p1, p2, v0}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
+
+    .line 136
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->notifySettingsChanged()V
 
     goto :goto_1
 
-    .line 136
+    .line 137
     :cond_1
     iget p1, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->iconInsteadTitleRow:I
 
     if-ne p2, p1, :cond_3
 
-    .line 137
+    .line 138
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object p1
@@ -581,22 +596,22 @@
 
     move-result p2
 
-    xor-int/lit8 p2, p2, 0x1
+    xor-int/2addr p2, v1
 
     invoke-virtual {p1, p2}, Lcom/iMe/fork/controller/FiltersController;->setIconInsteadAllChatsTabTitleEnabled(Z)V
 
-    .line 138
+    .line 139
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->notifySettingsChanged()V
 
     goto :goto_1
 
-    .line 141
+    .line 142
     :cond_2
-    instance-of p1, p1, Lcom/iMe/fork/ui/view/FabsCell;
+    instance-of p1, p1, Lcom/iMe/fork/ui/view/FloatingActionButtonsCell;
 
     if-eqz p1, :cond_3
 
-    .line 142
+    .line 143
     new-instance p1, Lcom/iMe/fork/ui/dialog/SelectFabsBottomSheet;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -635,7 +650,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 143
+    .line 144
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object v0
@@ -646,7 +661,7 @@
 
     invoke-virtual {v0, p1}, Lcom/iMe/fork/controller/FiltersController;->setSelectedAllChatsTabFabs(Ljava/util/Set;)V
 
-    .line 144
+    .line 145
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListAdapter()Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity$ListAdapter;
 
     move-result-object p1
@@ -655,7 +670,7 @@
 
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemChanged(I)V
 
-    .line 145
+    .line 146
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->notifySettingsChanged()V
 
     return-void
@@ -673,10 +688,10 @@
 
     invoke-direct {v0, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    const-string v1, "windowBackgroundGray"
-
     .line 110
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -688,12 +703,12 @@
 .method private final isClickableViewType(I)Z
     .locals 1
 
-    .line 175
-    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    .line 176
+    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
     if-eq p1, v0, :cond_1
 
-    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->FABS:I
+    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->FLOATING_ACTION_BUTTON:I
 
     if-ne p1, v0, :cond_0
 
@@ -715,8 +730,8 @@
 .method private final needDivider(I)Z
     .locals 1
 
-    .line 177
-    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY:I
+    .line 178
+    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_INFO_PRIVACY_CELL:I
 
     if-eq p1, v0, :cond_0
 
@@ -738,7 +753,7 @@
 .method private final notifySettingsChanged()V
     .locals 3
 
-    .line 172
+    .line 173
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getNotificationCenter()Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v0
@@ -794,26 +809,26 @@
 
     const/4 v0, 0x0
 
-    .line 153
+    .line 154
     iput v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->rowCount:I
 
     const/4 v1, 0x0
 
     add-int/lit8 v1, v1, 0x1
 
-    .line 154
+    .line 155
     iput v1, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->rowCount:I
 
     iput v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->enableRow:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 155
+    .line 156
     iput v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->rowCount:I
 
     iput v1, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->enableSectionRow:I
 
-    .line 156
+    .line 157
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getFiltersController()Lcom/iMe/fork/controller/FiltersController;
 
     move-result-object v0
@@ -824,7 +839,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 157
+    .line 158
     iget v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->rowCount:I
 
     add-int/lit8 v1, v0, 0x1
@@ -835,26 +850,26 @@
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 158
+    .line 159
     iput v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->rowCount:I
 
     iput v1, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->iconInsteadTitleRow:I
 
     add-int/lit8 v0, v0, 0x1
 
-    .line 159
+    .line 160
     iput v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->rowCount:I
 
     add-int/lit8 v1, v0, 0x1
 
-    .line 160
+    .line 161
     iput v1, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->rowCount:I
 
     iput v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->fabsRow:I
 
     add-int/lit8 v0, v1, 0x1
 
-    .line 161
+    .line 162
     iput v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->rowCount:I
 
     iput v1, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->fabsSectionRow:I
@@ -864,16 +879,16 @@
     :cond_0
     const/4 v0, -0x1
 
-    .line 163
+    .line 164
     iput v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->iconInsteadTitleHeaderRow:I
 
-    .line 164
+    .line 165
     iput v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->iconInsteadTitleRow:I
 
-    .line 166
+    .line 167
     iput v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->fabsRow:I
 
-    .line 167
+    .line 168
     iput v0, p0, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->fabsSectionRow:I
 
     :goto_0
@@ -883,7 +898,7 @@
 
 # virtual methods
 .method public getThemeDescriptions()Ljava/util/ArrayList;
-    .locals 19
+    .locals 28
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -911,18 +926,19 @@
 
     invoke-direct {v8, v0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;)V
 
+    .line 65
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+
     const/4 v5, 0x0
 
     const/4 v6, 0x0
 
     const/4 v7, 0x0
 
-    const-string v9, "windowBackgroundGray"
-
     move-object v2, v10
 
     .line 63
-    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v2, 0x0
 
@@ -935,6 +951,8 @@
 
     sget v13, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
+    sget v19, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
+
     const/4 v14, 0x0
 
     const/4 v15, 0x0
@@ -943,22 +961,24 @@
 
     const/16 v17, 0x0
 
-    const-string v18, "actionBarDefault"
-
     move-object v11, v3
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move/from16 v18, v19
 
-    const/4 v4, 0x1
+    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    aput-object v3, v1, v4
+    const/4 v12, 0x1
+
+    aput-object v3, v1, v12
 
     .line 67
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    iget-object v6, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    iget-object v5, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    sget v7, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_ITEMSCOLOR:I
+    sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_ITEMSCOLOR:I
+
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultIcon:I
 
     const/4 v8, 0x0
 
@@ -966,563 +986,591 @@
 
     const/4 v10, 0x0
 
-    const/4 v11, 0x0
+    move-object v4, v3
 
-    const-string v12, "actionBarDefaultIcon"
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    move-object v5, v3
+    const/4 v13, 0x2
 
-    invoke-direct/range {v5 .. v12}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
-
-    const/4 v5, 0x2
-
-    aput-object v3, v1, v5
+    aput-object v3, v1, v13
 
     .line 68
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    iget-object v7, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    iget-object v5, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    sget v8, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_TITLECOLOR:I
+    sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_TITLECOLOR:I
 
-    const/4 v12, 0x0
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultTitle:I
 
-    const-string v13, "actionBarDefaultTitle"
+    move-object v4, v3
 
-    move-object v6, v3
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    invoke-direct/range {v6 .. v13}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    const/4 v14, 0x3
 
-    const/4 v6, 0x3
-
-    aput-object v3, v1, v6
+    aput-object v3, v1, v14
 
     .line 69
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    iget-object v8, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    iget-object v5, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    sget v9, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_SELECTORCOLOR:I
+    sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_SELECTORCOLOR:I
 
-    const/4 v13, 0x0
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSelector:I
 
-    const-string v14, "actionBarDefaultSelector"
+    move-object v4, v3
 
-    move-object v7, v3
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    invoke-direct/range {v7 .. v14}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    const/4 v4, 0x4
 
-    const/4 v7, 0x4
-
-    aput-object v3, v1, v7
+    aput-object v3, v1, v4
 
     .line 70
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v9
+    move-result-object v21
 
-    sget v10, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_SELECTOR:I
+    sget v22, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_SELECTOR:I
 
-    const/4 v14, 0x0
+    sget v27, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    const-string v15, "listSelectorSDK21"
+    const/16 v23, 0x0
 
-    move-object v8, v3
+    const/16 v24, 0x0
 
-    invoke-direct/range {v8 .. v15}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    const/16 v25, 0x0
 
-    const/4 v7, 0x5
+    const/16 v26, 0x0
 
-    aput-object v3, v1, v7
+    move-object/from16 v20, v3
+
+    invoke-direct/range {v20 .. v27}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
+
+    const/4 v4, 0x5
+
+    aput-object v3, v1, v4
 
     .line 71
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v9
+    move-result-object v5
 
-    sget v10, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_LISTGLOWCOLOR:I
+    sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_LISTGLOWCOLOR:I
 
-    const-string v15, "actionBarDefault"
+    move-object v4, v3
 
-    move-object v8, v3
+    move/from16 v11, v19
 
-    invoke-direct/range {v8 .. v15}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    const/4 v7, 0x6
+    const/4 v4, 0x6
 
-    aput-object v3, v1, v7
+    aput-object v3, v1, v4
 
     .line 72
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v9
+    move-result-object v16
 
-    sget v10, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CELLBACKGROUNDCOLOR:I
+    sget v17, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CELLBACKGROUNDCOLOR:I
 
-    new-array v11, v6, [Ljava/lang/Class;
+    new-array v4, v14, [Ljava/lang/Class;
 
-    const-class v6, Lorg/telegram/ui/Cells/TextCheckCell;
+    const-class v5, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    aput-object v6, v11, v2
+    aput-object v5, v4, v2
 
-    const-class v6, Lorg/telegram/ui/Cells/HeaderCell;
+    const-class v5, Lorg/telegram/ui/Cells/HeaderCell;
 
-    aput-object v6, v11, v4
+    aput-object v5, v4, v12
 
-    const-class v6, Lcom/iMe/fork/ui/view/FabsCell;
+    const-class v5, Lcom/iMe/fork/ui/view/FloatingActionButtonsCell;
 
-    aput-object v6, v11, v5
+    aput-object v5, v4, v13
 
-    const-string v15, "windowBackgroundWhite"
+    sget v22, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    move-object v8, v3
+    const/16 v19, 0x0
 
-    invoke-direct/range {v8 .. v15}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    const/16 v20, 0x0
 
-    const/4 v5, 0x7
+    const/16 v21, 0x0
 
-    aput-object v3, v1, v5
+    move-object v15, v3
+
+    move-object/from16 v18, v4
+
+    invoke-direct/range {v15 .. v22}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
+
+    const/4 v4, 0x7
+
+    aput-object v3, v1, v4
 
     .line 73
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v7
+    move-result-object v14
 
-    new-array v9, v4, [Ljava/lang/Class;
+    new-array v4, v12, [Ljava/lang/Class;
 
     const-class v5, Landroid/view/View;
 
-    aput-object v5, v9, v2
+    aput-object v5, v4, v2
 
-    sget-object v10, Lorg/telegram/ui/ActionBar/Theme;->dividerPaint:Landroid/graphics/Paint;
+    sget-object v17, Lorg/telegram/ui/ActionBar/Theme;->dividerPaint:Landroid/graphics/Paint;
 
-    const/4 v8, 0x0
+    sget v20, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
 
-    const/4 v11, 0x0
+    const/4 v15, 0x0
 
-    const-string v13, "divider"
+    const/16 v18, 0x0
 
-    move-object v6, v3
+    move-object v13, v3
 
-    invoke-direct/range {v6 .. v13}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move-object/from16 v16, v4
 
-    const/16 v5, 0x8
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    aput-object v3, v1, v5
+    const/16 v4, 0x8
+
+    aput-object v3, v1, v4
 
     .line 74
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v7
+    move-result-object v14
 
-    sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CELLBACKGROUNDCOLOR:I
+    sget v4, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CELLBACKGROUNDCOLOR:I
 
-    sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CHECKTAG:I
+    sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CHECKTAG:I
 
-    or-int v8, v5, v6
+    or-int v15, v4, v5
 
-    new-array v9, v4, [Ljava/lang/Class;
+    new-array v4, v12, [Ljava/lang/Class;
 
     const-class v5, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    aput-object v5, v9, v2
+    aput-object v5, v4, v2
 
-    const/4 v10, 0x0
+    sget v20, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundChecked:I
 
-    const-string v13, "windowBackgroundChecked"
+    const/16 v17, 0x0
 
-    move-object v6, v3
+    move-object v13, v3
 
-    invoke-direct/range {v6 .. v13}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move-object/from16 v16, v4
 
-    const/16 v5, 0x9
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    aput-object v3, v1, v5
+    const/16 v4, 0x9
+
+    aput-object v3, v1, v4
 
     .line 75
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v7
+    move-result-object v14
 
-    sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CELLBACKGROUNDCOLOR:I
+    sget v4, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CELLBACKGROUNDCOLOR:I
 
-    sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CHECKTAG:I
+    sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CHECKTAG:I
 
-    or-int v8, v5, v6
+    or-int v15, v4, v5
 
-    new-array v9, v4, [Ljava/lang/Class;
+    new-array v4, v12, [Ljava/lang/Class;
 
     const-class v5, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    aput-object v5, v9, v2
+    aput-object v5, v4, v2
 
-    const-string v13, "windowBackgroundUnchecked"
+    sget v20, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundUnchecked:I
 
-    move-object v6, v3
+    move-object v13, v3
 
-    invoke-direct/range {v6 .. v13}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move-object/from16 v16, v4
 
-    const/16 v5, 0xa
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    aput-object v3, v1, v5
+    const/16 v4, 0xa
+
+    aput-object v3, v1, v4
 
     .line 76
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v7
+    move-result-object v14
 
-    sget v8, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CHECKTAG:I
+    sget v15, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CHECKTAG:I
 
-    new-array v9, v4, [Ljava/lang/Class;
+    new-array v4, v12, [Ljava/lang/Class;
 
     const-class v5, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    aput-object v5, v9, v2
+    aput-object v5, v4, v2
 
     const-string v5, "textView"
 
     filled-new-array {v5}, [Ljava/lang/String;
 
-    move-result-object v10
+    move-result-object v17
 
-    const/4 v13, 0x0
+    sget v21, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundCheckText:I
 
-    const-string v14, "windowBackgroundCheckText"
+    const/16 v20, 0x0
 
-    move-object v6, v3
+    move-object v13, v3
 
-    invoke-direct/range {v6 .. v14}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move-object/from16 v16, v4
 
-    const/16 v6, 0xb
+    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    aput-object v3, v1, v6
+    const/16 v4, 0xb
+
+    aput-object v3, v1, v4
 
     .line 77
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v8
+    move-result-object v14
 
-    sget v9, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CHECKTAG:I
+    sget v15, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CHECKTAG:I
 
-    new-array v10, v4, [Ljava/lang/Class;
+    new-array v4, v12, [Ljava/lang/Class;
 
     const-class v6, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    aput-object v6, v10, v2
+    aput-object v6, v4, v2
 
     filled-new-array {v5}, [Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v17
 
-    const/4 v14, 0x0
+    sget v21, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    const-string v15, "windowBackgroundWhiteBlackText"
+    move-object v13, v3
 
-    move-object v7, v3
+    move-object/from16 v16, v4
 
-    invoke-direct/range {v7 .. v15}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    const/16 v6, 0xc
+    const/16 v4, 0xc
 
-    aput-object v3, v1, v6
+    aput-object v3, v1, v4
 
     .line 78
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v8
+    move-result-object v14
 
-    new-array v10, v4, [Ljava/lang/Class;
+    new-array v4, v12, [Ljava/lang/Class;
 
     const-class v6, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    aput-object v6, v10, v2
+    aput-object v6, v4, v2
 
     const-string v6, "checkBox"
 
     filled-new-array {v6}, [Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v17
 
-    const/4 v9, 0x0
+    sget v21, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackBlue:I
 
-    const-string v15, "switchTrackBlue"
+    const/4 v15, 0x0
 
-    move-object v7, v3
+    move-object v13, v3
 
-    invoke-direct/range {v7 .. v15}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move-object/from16 v16, v4
 
-    const/16 v7, 0xd
+    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    aput-object v3, v1, v7
+    const/16 v4, 0xd
+
+    aput-object v3, v1, v4
 
     .line 79
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v9
+    move-result-object v14
 
-    new-array v11, v4, [Ljava/lang/Class;
+    new-array v4, v12, [Ljava/lang/Class;
 
     const-class v7, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    aput-object v7, v11, v2
+    aput-object v7, v4, v2
 
     filled-new-array {v6}, [Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v17
 
-    const/4 v10, 0x0
+    sget v21, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackBlueChecked:I
 
-    const/4 v15, 0x0
+    move-object v13, v3
 
-    const-string v16, "switchTrackBlueChecked"
+    move-object/from16 v16, v4
 
-    move-object v8, v3
+    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    invoke-direct/range {v8 .. v16}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    const/16 v4, 0xe
 
-    const/16 v7, 0xe
-
-    aput-object v3, v1, v7
+    aput-object v3, v1, v4
 
     .line 80
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v9
+    move-result-object v14
 
-    new-array v11, v4, [Ljava/lang/Class;
+    new-array v4, v12, [Ljava/lang/Class;
 
     const-class v7, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    aput-object v7, v11, v2
+    aput-object v7, v4, v2
 
     filled-new-array {v6}, [Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v17
 
-    const-string v16, "switchTrackBlueThumb"
+    sget v21, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackBlueThumb:I
 
-    move-object v8, v3
+    move-object v13, v3
 
-    invoke-direct/range {v8 .. v16}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move-object/from16 v16, v4
 
-    const/16 v7, 0xf
+    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    aput-object v3, v1, v7
+    const/16 v4, 0xf
+
+    aput-object v3, v1, v4
 
     .line 81
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v9
+    move-result-object v14
 
-    new-array v11, v4, [Ljava/lang/Class;
+    new-array v4, v12, [Ljava/lang/Class;
 
     const-class v7, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    aput-object v7, v11, v2
+    aput-object v7, v4, v2
 
     filled-new-array {v6}, [Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v17
 
-    const-string v16, "switchTrackBlueThumbChecked"
+    sget v21, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackBlueThumbChecked:I
 
-    move-object v8, v3
+    move-object v13, v3
 
-    invoke-direct/range {v8 .. v16}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move-object/from16 v16, v4
 
-    const/16 v7, 0x10
+    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    aput-object v3, v1, v7
+    const/16 v4, 0x10
+
+    aput-object v3, v1, v4
 
     .line 82
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v9
+    move-result-object v14
 
-    new-array v11, v4, [Ljava/lang/Class;
+    new-array v4, v12, [Ljava/lang/Class;
 
     const-class v7, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    aput-object v7, v11, v2
+    aput-object v7, v4, v2
 
     filled-new-array {v6}, [Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v17
 
-    const-string v16, "switchTrackBlueSelector"
+    sget v21, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackBlueSelector:I
 
-    move-object v8, v3
+    move-object v13, v3
 
-    invoke-direct/range {v8 .. v16}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move-object/from16 v16, v4
 
-    const/16 v7, 0x11
+    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    aput-object v3, v1, v7
+    const/16 v4, 0x11
+
+    aput-object v3, v1, v4
 
     .line 83
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v9
+    move-result-object v14
 
-    new-array v11, v4, [Ljava/lang/Class;
+    new-array v4, v12, [Ljava/lang/Class;
 
     const-class v7, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    aput-object v7, v11, v2
+    aput-object v7, v4, v2
 
     filled-new-array {v6}, [Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v17
 
-    const-string v16, "switchTrackBlueSelectorChecked"
+    sget v21, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackBlueSelectorChecked:I
 
-    move-object v8, v3
+    move-object v13, v3
 
-    invoke-direct/range {v8 .. v16}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move-object/from16 v16, v4
 
-    const/16 v6, 0x12
+    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    aput-object v3, v1, v6
+    const/16 v4, 0x12
+
+    aput-object v3, v1, v4
 
     .line 84
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v8
+    move-result-object v14
 
-    sget v9, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUNDFILTER:I
+    sget v15, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUNDFILTER:I
 
-    new-array v10, v4, [Ljava/lang/Class;
+    new-array v4, v12, [Ljava/lang/Class;
 
     const-class v6, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    aput-object v6, v10, v2
+    aput-object v6, v4, v2
 
-    const/4 v11, 0x0
+    sget v23, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
-    const/4 v12, 0x0
+    const/16 v17, 0x0
 
-    const-string v14, "windowBackgroundGrayShadow"
+    move-object v13, v3
 
-    move-object v7, v3
+    move-object/from16 v16, v4
 
-    invoke-direct/range {v7 .. v14}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move/from16 v20, v23
 
-    const/16 v6, 0x13
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    aput-object v3, v1, v6
+    const/16 v4, 0x13
+
+    aput-object v3, v1, v4
 
     .line 85
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v8
+    move-result-object v14
 
-    new-array v10, v4, [Ljava/lang/Class;
+    new-array v4, v12, [Ljava/lang/Class;
 
     const-class v6, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    aput-object v6, v10, v2
+    aput-object v6, v4, v2
 
     filled-new-array {v5}, [Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v17
 
-    const/4 v9, 0x0
+    sget v21, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText4:I
 
-    const/4 v14, 0x0
+    const/4 v15, 0x0
 
-    const-string v15, "windowBackgroundWhiteGrayText4"
+    const/16 v20, 0x0
 
-    move-object v7, v3
+    move-object v13, v3
 
-    invoke-direct/range {v7 .. v15}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move-object/from16 v16, v4
 
-    const/16 v6, 0x14
+    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    aput-object v3, v1, v6
+    const/16 v4, 0x14
+
+    aput-object v3, v1, v4
 
     .line 86
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v8
+    move-result-object v14
 
-    new-array v10, v4, [Ljava/lang/Class;
+    new-array v4, v12, [Ljava/lang/Class;
 
     const-class v6, Lorg/telegram/ui/Cells/HeaderCell;
 
-    aput-object v6, v10, v2
+    aput-object v6, v4, v2
 
     filled-new-array {v5}, [Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v17
 
-    const-string v15, "windowBackgroundWhiteBlueHeader"
+    sget v21, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
 
-    move-object v7, v3
+    move-object v13, v3
 
-    invoke-direct/range {v7 .. v15}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move-object/from16 v16, v4
 
-    const/16 v5, 0x15
+    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    aput-object v3, v1, v5
+    const/16 v4, 0x15
+
+    aput-object v3, v1, v4
 
     .line 87
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/AllChatsTabSettingsActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v7
+    move-result-object v17
 
-    sget v8, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUNDFILTER:I
+    sget v18, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUNDFILTER:I
 
-    new-array v9, v4, [Ljava/lang/Class;
+    new-array v4, v12, [Ljava/lang/Class;
 
-    const-class v4, Lorg/telegram/ui/Cells/ShadowSectionCell;
+    const-class v5, Lorg/telegram/ui/Cells/ShadowSectionCell;
 
-    aput-object v4, v9, v2
+    aput-object v5, v4, v2
 
-    const/4 v10, 0x0
+    const/16 v21, 0x0
 
-    const/4 v11, 0x0
+    const/16 v22, 0x0
 
-    const-string v13, "windowBackgroundGrayShadow"
+    move-object/from16 v16, v3
 
-    move-object v6, v3
+    move-object/from16 v19, v4
 
-    invoke-direct/range {v6 .. v13}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v16 .. v23}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/16 v2, 0x16
 

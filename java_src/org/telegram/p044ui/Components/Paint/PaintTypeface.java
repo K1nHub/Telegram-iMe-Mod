@@ -5,7 +5,7 @@ import android.graphics.fonts.Font;
 import android.graphics.fonts.SystemFonts;
 import android.os.Build;
 import android.text.TextUtils;
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.exoplayer2.text.ttml.TtmlNode;
 import java.io.IOException;
 import java.io.RandomAccessFile;
@@ -21,7 +21,7 @@ import org.telegram.messenger.Utilities;
 /* renamed from: org.telegram.ui.Components.Paint.PaintTypeface */
 /* loaded from: classes6.dex */
 public class PaintTypeface {
-    private static final List<PaintTypeface> BUILT_IN_FONTS;
+    public static final List<PaintTypeface> BUILT_IN_FONTS;
     public static final PaintTypeface COURIER_NEW_BOLD;
     public static final PaintTypeface MW_BOLD;
     public static final PaintTypeface ROBOTO_ITALIC;
@@ -40,7 +40,7 @@ public class PaintTypeface {
         ROBOTO_MEDIUM = paintTypeface;
         PaintTypeface paintTypeface2 = new PaintTypeface(TtmlNode.ITALIC, "PhotoEditorTypefaceItalic", AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM_ITALIC));
         ROBOTO_ITALIC = paintTypeface2;
-        PaintTypeface paintTypeface3 = new PaintTypeface(C0470C.SERIF_NAME, "PhotoEditorTypefaceSerif", Typeface.create(C0470C.SERIF_NAME, 1));
+        PaintTypeface paintTypeface3 = new PaintTypeface(C0475C.SERIF_NAME, "PhotoEditorTypefaceSerif", Typeface.create(C0475C.SERIF_NAME, 1));
         ROBOTO_SERIF = paintTypeface3;
         PaintTypeface paintTypeface4 = new PaintTypeface("mono", "PhotoEditorTypefaceMono", AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MONO));
         ROBOTO_MONO = paintTypeface4;
@@ -325,7 +325,7 @@ public class PaintTypeface {
             r9 = move-exception
             r2 = r0
         La4:
-            org.telegram.messenger.FileLog.m45e(r9)     // Catch: java.lang.Throwable -> Lab
+            org.telegram.messenger.FileLog.m49e(r9)     // Catch: java.lang.Throwable -> Lab
             if (r2 == 0) goto Laa
             goto L9a
         Laa:

@@ -14,21 +14,21 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public final class HintRequest extends AbstractSafeParcelable implements ReflectedParcelable {
     public static final Parcelable.Creator<HintRequest> CREATOR = new zbe();
-    @SafeParcelable.Field(m775id = 1000)
+    @SafeParcelable.Field(m779id = 1000)
     final int zba;
-    @SafeParcelable.Field(getter = "getHintPickerConfig", m775id = 1)
+    @SafeParcelable.Field(getter = "getHintPickerConfig", m779id = 1)
     private final CredentialPickerConfig zbb;
-    @SafeParcelable.Field(getter = "isEmailAddressIdentifierSupported", m775id = 2)
+    @SafeParcelable.Field(getter = "isEmailAddressIdentifierSupported", m779id = 2)
     private final boolean zbc;
-    @SafeParcelable.Field(getter = "isPhoneNumberIdentifierSupported", m775id = 3)
+    @SafeParcelable.Field(getter = "isPhoneNumberIdentifierSupported", m779id = 3)
     private final boolean zbd;
-    @SafeParcelable.Field(getter = "getAccountTypes", m775id = 4)
+    @SafeParcelable.Field(getter = "getAccountTypes", m779id = 4)
     private final String[] zbe;
-    @SafeParcelable.Field(getter = "isIdTokenRequested", m775id = 5)
+    @SafeParcelable.Field(getter = "isIdTokenRequested", m779id = 5)
     private final boolean zbf;
-    @SafeParcelable.Field(getter = "getServerClientId", m775id = 6)
+    @SafeParcelable.Field(getter = "getServerClientId", m779id = 6)
     private final String zbg;
-    @SafeParcelable.Field(getter = "getIdTokenNonce", m775id = 7)
+    @SafeParcelable.Field(getter = "getIdTokenNonce", m779id = 7)
     private final String zbh;
 
     /* compiled from: com.google.android.gms:play-services-auth@@20.4.0 */
@@ -93,7 +93,7 @@ public final class HintRequest extends AbstractSafeParcelable implements Reflect
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public HintRequest(@SafeParcelable.Param(m774id = 1000) int i, @SafeParcelable.Param(m774id = 1) CredentialPickerConfig credentialPickerConfig, @SafeParcelable.Param(m774id = 2) boolean z, @SafeParcelable.Param(m774id = 3) boolean z2, @SafeParcelable.Param(m774id = 4) String[] strArr, @SafeParcelable.Param(m774id = 5) boolean z3, @SafeParcelable.Param(m774id = 6) String str, @SafeParcelable.Param(m774id = 7) String str2) {
+    public HintRequest(@SafeParcelable.Param(m778id = 1000) int i, @SafeParcelable.Param(m778id = 1) CredentialPickerConfig credentialPickerConfig, @SafeParcelable.Param(m778id = 2) boolean z, @SafeParcelable.Param(m778id = 3) boolean z2, @SafeParcelable.Param(m778id = 4) String[] strArr, @SafeParcelable.Param(m778id = 5) boolean z3, @SafeParcelable.Param(m778id = 6) String str, @SafeParcelable.Param(m778id = 7) String str2) {
         this.zba = i;
         this.zbb = (CredentialPickerConfig) Preconditions.checkNotNull(credentialPickerConfig);
         this.zbc = z;

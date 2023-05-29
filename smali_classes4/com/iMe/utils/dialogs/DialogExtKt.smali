@@ -134,26 +134,22 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const/4 v0, -0x1
-
-    const-string v1, "dialogTextRed"
-
     .line 19
-    invoke-static {p0, v0, v1}, Lcom/iMe/utils/dialogs/DialogExtKt;->setButtonColor(Lorg/telegram/ui/ActionBar/AlertDialog;ILjava/lang/String;)V
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
+
+    const/4 v1, -0x1
+
+    invoke-static {p0, v1, v0}, Lcom/iMe/utils/dialogs/DialogExtKt;->setButtonColor(Lorg/telegram/ui/ActionBar/AlertDialog;II)V
 
     return-void
 .end method
 
-.method public static final setButtonColor(Lorg/telegram/ui/ActionBar/AlertDialog;ILjava/lang/String;)V
+.method public static final setButtonColor(Lorg/telegram/ui/ActionBar/AlertDialog;II)V
     .locals 1
 
     const-string v0, "<this>"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
-
-    const-string v0, "colorKey"
-
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 23
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/AlertDialog;->getButton(I)Landroid/view/View;
@@ -174,7 +170,7 @@
     :goto_0
     if-eqz p0, :cond_1
 
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 

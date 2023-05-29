@@ -1,7 +1,7 @@
 package com.google.android.gms.internal.mlkit_language_id;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class zzfm implements zzgo {
     private static final zzfw zzb = new zzfp();
     private final zzfw zza;

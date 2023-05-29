@@ -14,7 +14,7 @@ import android.widget.TextView;
 import com.google.android.exoplayer2.ExoPlayer;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
@@ -70,40 +70,41 @@ public class HintView extends FrameLayout {
         this.isTopArrow = z;
         CorrectlyMeasuringTextView correctlyMeasuringTextView = new CorrectlyMeasuringTextView(context);
         this.textView = correctlyMeasuringTextView;
-        correctlyMeasuringTextView.setTextColor(getThemedColor("chat_gifSaveHintText"));
+        int i2 = Theme.key_chat_gifSaveHintText;
+        correctlyMeasuringTextView.setTextColor(getThemedColor(i2));
         this.textView.setTextSize(1, 14.0f);
         this.textView.setMaxLines(2);
         if (i == 7 || i == 8 || i == 9) {
-            this.textView.setMaxWidth(AndroidUtilities.m50dp(310));
+            this.textView.setMaxWidth(AndroidUtilities.m54dp(310));
         } else if (i == 4) {
-            this.textView.setMaxWidth(AndroidUtilities.m50dp(280));
+            this.textView.setMaxWidth(AndroidUtilities.m54dp(280));
         } else {
-            this.textView.setMaxWidth(AndroidUtilities.m50dp(250));
+            this.textView.setMaxWidth(AndroidUtilities.m54dp(250));
         }
         if (this.currentType == 3) {
             this.textView.setGravity(19);
-            this.textView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m50dp(5), getThemedColor("chat_gifSaveHintBackground")));
-            this.textView.setPadding(AndroidUtilities.m50dp(10), 0, AndroidUtilities.m50dp(10), 0);
+            this.textView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m54dp(5), getThemedColor(Theme.key_chat_gifSaveHintBackground)));
+            this.textView.setPadding(AndroidUtilities.m54dp(10), 0, AndroidUtilities.m54dp(10), 0);
             addView(this.textView, LayoutHelper.createFrame(-2, 30, 51, 0, z ? 6 : 0, 0, z ? 0 : 6));
         } else {
             this.textView.setGravity(51);
-            this.textView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m50dp(6), getThemedColor("chat_gifSaveHintBackground")));
-            this.textView.setPadding(AndroidUtilities.m50dp(this.currentType == 0 ? 54 : 8), AndroidUtilities.m50dp(7), AndroidUtilities.m50dp(8), AndroidUtilities.m50dp(8));
+            this.textView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m54dp(6), getThemedColor(Theme.key_chat_gifSaveHintBackground)));
+            this.textView.setPadding(AndroidUtilities.m54dp(this.currentType == 0 ? 54 : 8), AndroidUtilities.m54dp(7), AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(8));
             addView(this.textView, LayoutHelper.createFrame(-2, -2, 51, 0, z ? 6 : 0, 0, z ? 0 : 6));
         }
         if (i == 0) {
-            this.textView.setText(LocaleController.getString("AutoplayVideoInfo", C3242R.string.AutoplayVideoInfo));
+            this.textView.setText(LocaleController.getString("AutoplayVideoInfo", C3290R.string.AutoplayVideoInfo));
             ImageView imageView = new ImageView(context);
             this.imageView = imageView;
-            imageView.setImageResource(C3242R.C3244drawable.tooltip_sound);
+            imageView.setImageResource(C3290R.C3292drawable.tooltip_sound);
             this.imageView.setScaleType(ImageView.ScaleType.CENTER);
-            this.imageView.setColorFilter(new PorterDuffColorFilter(getThemedColor("chat_gifSaveHintText"), PorterDuff.Mode.MULTIPLY));
+            this.imageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(i2), PorterDuff.Mode.MULTIPLY));
             addView(this.imageView, LayoutHelper.createFrame(38, 34, 51, 7, 7, 0, 0));
         }
         ImageView imageView2 = new ImageView(context);
         this.arrowImageView = imageView2;
-        imageView2.setImageResource(z ? C3242R.C3244drawable.tooltip_arrow_up : C3242R.C3244drawable.tooltip_arrow);
-        this.arrowImageView.setColorFilter(new PorterDuffColorFilter(getThemedColor("chat_gifSaveHintBackground"), PorterDuff.Mode.MULTIPLY));
+        imageView2.setImageResource(z ? C3290R.C3292drawable.tooltip_arrow_up : C3290R.C3292drawable.tooltip_arrow);
+        this.arrowImageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_chat_gifSaveHintBackground), PorterDuff.Mode.MULTIPLY));
         addView(this.arrowImageView, LayoutHelper.createFrame(14, 6, (z ? 48 : 80) | 3, 0, 0, 0, 0));
     }
 
@@ -112,7 +113,7 @@ public class HintView extends FrameLayout {
         this.arrowImageView.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.MULTIPLY));
         TextView textView = this.textView;
         int i3 = this.currentType;
-        textView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m50dp((i3 == 7 || i3 == 8) ? 6 : 3), i));
+        textView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m54dp((i3 == 7 || i3 == 8) ? 6 : 3), i));
     }
 
     public void setOverrideText(String str) {
@@ -139,7 +140,7 @@ public class HintView extends FrameLayout {
     }
 
     public boolean showForMessageCell(ChatMessageCell chatMessageCell, Object obj, int i, int i2, boolean z) {
-        int m50dp;
+        int m54dp;
         int forwardNameCenterX;
         int i3 = this.currentType;
         if (!(i3 == 5 && i2 == this.shownY && this.messageCell == chatMessageCell) && (i3 == 5 || ((i3 != 0 || getTag() == null) && this.messageCell != chatMessageCell))) {
@@ -157,28 +158,28 @@ public class HintView extends FrameLayout {
             int i6 = this.currentType;
             if (i6 == 0) {
                 ImageReceiver photoImage = chatMessageCell.getPhotoImage();
-                m50dp = (int) (i5 + photoImage.getImageY());
+                m54dp = (int) (i5 + photoImage.getImageY());
                 int imageHeight = (int) photoImage.getImageHeight();
-                int i7 = m50dp + imageHeight;
+                int i7 = m54dp + imageHeight;
                 int measuredHeight = view.getMeasuredHeight();
-                if (m50dp <= getMeasuredHeight() + AndroidUtilities.m50dp(10) || i7 > measuredHeight + (imageHeight / 4)) {
+                if (m54dp <= getMeasuredHeight() + AndroidUtilities.m54dp(10) || i7 > measuredHeight + (imageHeight / 4)) {
                     return false;
                 }
                 forwardNameCenterX = chatMessageCell.getNoSoundIconCenterX();
             } else if (i6 == 5) {
                 Integer num = (Integer) obj;
-                m50dp = i5 + i2;
+                m54dp = i5 + i2;
                 this.shownY = i2;
                 if (num.intValue() == -1) {
-                    this.textView.setText(LocaleController.getString("PollSelectOption", C3242R.string.PollSelectOption));
+                    this.textView.setText(LocaleController.getString("PollSelectOption", C3290R.string.PollSelectOption));
                 } else if (chatMessageCell.getMessageObject().isQuiz()) {
                     if (num.intValue() == 0) {
-                        this.textView.setText(LocaleController.getString("NoVotesQuiz", C3242R.string.NoVotesQuiz));
+                        this.textView.setText(LocaleController.getString("NoVotesQuiz", C3290R.string.NoVotesQuiz));
                     } else {
                         this.textView.setText(LocaleController.formatPluralString("Answer", num.intValue(), new Object[0]));
                     }
                 } else if (num.intValue() == 0) {
-                    this.textView.setText(LocaleController.getString("NoVotes", C3242R.string.NoVotes));
+                    this.textView.setText(LocaleController.getString("NoVotes", C3290R.string.NoVotes));
                 } else {
                     this.textView.setText(LocaleController.formatPluralString("Vote", num.intValue(), new Object[0]));
                 }
@@ -188,24 +189,24 @@ public class HintView extends FrameLayout {
                 MessageObject messageObject = chatMessageCell.getMessageObject();
                 String str = this.overrideText;
                 if (str == null) {
-                    this.textView.setText(LocaleController.getString("HidAccount", C3242R.string.HidAccount));
+                    this.textView.setText(LocaleController.getString("HidAccount", C3290R.string.HidAccount));
                 } else {
                     this.textView.setText(str);
                 }
                 measure(View.MeasureSpec.makeMeasureSpec(1000, Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(1000, Integer.MIN_VALUE));
                 TLRPC$User currentUser = chatMessageCell.getCurrentUser();
-                if (currentUser != null && currentUser.f1567id == 0) {
-                    m50dp = i5 + ((chatMessageCell.getMeasuredHeight() - Math.max(0, chatMessageCell.getBottom() - view.getMeasuredHeight())) - AndroidUtilities.m50dp(50));
+                if (currentUser != null && currentUser.f1574id == 0) {
+                    m54dp = i5 + ((chatMessageCell.getMeasuredHeight() - Math.max(0, chatMessageCell.getBottom() - view.getMeasuredHeight())) - AndroidUtilities.m54dp(50));
                 } else {
-                    m50dp = i5 + AndroidUtilities.m50dp(22);
+                    m54dp = i5 + AndroidUtilities.m54dp(22);
                     if (!messageObject.isOutOwner() && chatMessageCell.isDrawNameLayout()) {
-                        m50dp += AndroidUtilities.m50dp(20);
+                        m54dp += AndroidUtilities.m54dp(20);
                     }
                     if (!messageObject.shouldDrawWithoutBackground() && chatMessageCell.isDrawTopic()) {
-                        m50dp = (int) (m50dp + AndroidUtilities.m50dp(5) + chatMessageCell.getDrawTopicHeight());
+                        m54dp = (int) (m54dp + AndroidUtilities.m54dp(5) + chatMessageCell.getDrawTopicHeight());
                     }
                 }
-                if (!this.isTopArrow && m50dp <= getMeasuredHeight() + AndroidUtilities.m50dp(10)) {
+                if (!this.isTopArrow && m54dp <= getMeasuredHeight() + AndroidUtilities.m54dp(10)) {
                     return false;
                 }
                 forwardNameCenterX = chatMessageCell.getForwardNameCenterX();
@@ -213,44 +214,44 @@ public class HintView extends FrameLayout {
             int measuredWidth = view.getMeasuredWidth();
             if (this.isTopArrow) {
                 float f = this.extraTranslationY;
-                float m50dp2 = AndroidUtilities.m50dp(44);
-                this.translationY = m50dp2;
-                setTranslationY(f + m50dp2);
+                float m54dp2 = AndroidUtilities.m54dp(44);
+                this.translationY = m54dp2;
+                setTranslationY(f + m54dp2);
             } else {
                 float f2 = this.extraTranslationY;
-                float measuredHeight2 = m50dp - getMeasuredHeight();
+                float measuredHeight2 = m54dp - getMeasuredHeight();
                 this.translationY = measuredHeight2;
                 setTranslationY(f2 + measuredHeight2);
             }
             int left = chatMessageCell.getLeft() + forwardNameCenterX;
-            int m50dp3 = AndroidUtilities.m50dp(19);
+            int m54dp3 = AndroidUtilities.m54dp(19);
             if (this.currentType == 5) {
-                int max = Math.max(0, (forwardNameCenterX - (getMeasuredWidth() / 2)) - AndroidUtilities.m51dp(19.1f));
+                int max = Math.max(0, (forwardNameCenterX - (getMeasuredWidth() / 2)) - AndroidUtilities.m55dp(19.1f));
                 setTranslationX(max);
-                m50dp3 += max;
+                m54dp3 += max;
             } else if (left > view.getMeasuredWidth() / 2) {
-                int measuredWidth2 = (measuredWidth - getMeasuredWidth()) - AndroidUtilities.m50dp(38);
+                int measuredWidth2 = (measuredWidth - getMeasuredWidth()) - AndroidUtilities.m54dp(38);
                 setTranslationX(measuredWidth2);
-                m50dp3 += measuredWidth2;
+                m54dp3 += measuredWidth2;
             } else {
                 setTranslationX(BitmapDescriptorFactory.HUE_RED);
             }
-            float left2 = ((chatMessageCell.getLeft() + forwardNameCenterX) - m50dp3) - (this.arrowImageView.getMeasuredWidth() / 2);
+            float left2 = ((chatMessageCell.getLeft() + forwardNameCenterX) - m54dp3) - (this.arrowImageView.getMeasuredWidth() / 2);
             this.arrowImageView.setTranslationX(left2);
             if (left > view.getMeasuredWidth() / 2) {
-                if (left2 < AndroidUtilities.m50dp(10)) {
-                    float m50dp4 = left2 - AndroidUtilities.m50dp(10);
-                    setTranslationX(getTranslationX() + m50dp4);
-                    this.arrowImageView.setTranslationX(left2 - m50dp4);
+                if (left2 < AndroidUtilities.m54dp(10)) {
+                    float m54dp4 = left2 - AndroidUtilities.m54dp(10);
+                    setTranslationX(getTranslationX() + m54dp4);
+                    this.arrowImageView.setTranslationX(left2 - m54dp4);
                 }
-            } else if (left2 > getMeasuredWidth() - AndroidUtilities.m50dp(24)) {
-                float measuredWidth3 = (left2 - getMeasuredWidth()) + AndroidUtilities.m50dp(24);
+            } else if (left2 > getMeasuredWidth() - AndroidUtilities.m54dp(24)) {
+                float measuredWidth3 = (left2 - getMeasuredWidth()) + AndroidUtilities.m54dp(24);
                 setTranslationX(measuredWidth3);
                 this.arrowImageView.setTranslationX(left2 - measuredWidth3);
-            } else if (left2 < AndroidUtilities.m50dp(10)) {
-                float m50dp5 = left2 - AndroidUtilities.m50dp(10);
-                setTranslationX(getTranslationX() + m50dp5);
-                this.arrowImageView.setTranslationX(left2 - m50dp5);
+            } else if (left2 < AndroidUtilities.m54dp(10)) {
+                float m54dp5 = left2 - AndroidUtilities.m54dp(10);
+                setTranslationX(getTranslationX() + m54dp5);
+                this.arrowImageView.setTranslationX(left2 - m54dp5);
             }
             this.messageCell = chatMessageCell;
             AnimatorSet animatorSet = this.animatorSet;
@@ -264,7 +265,7 @@ public class HintView extends FrameLayout {
                 AnimatorSet animatorSet2 = new AnimatorSet();
                 this.animatorSet = animatorSet2;
                 animatorSet2.playTogether(ObjectAnimator.ofFloat(this, View.ALPHA, BitmapDescriptorFactory.HUE_RED, 1.0f));
-                this.animatorSet.addListener(new C46191());
+                this.animatorSet.addListener(new C46881());
                 this.animatorSet.setDuration(300L);
                 this.animatorSet.start();
             } else {
@@ -278,8 +279,8 @@ public class HintView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.HintView$1 */
     /* loaded from: classes6.dex */
-    public class C46191 extends AnimatorListenerAdapter {
-        C46191() {
+    public class C46881 extends AnimatorListenerAdapter {
+        C46881() {
         }
 
         @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -288,7 +289,7 @@ public class HintView extends FrameLayout {
             AndroidUtilities.runOnUIThread(HintView.this.hideRunnable = new Runnable() { // from class: org.telegram.ui.Components.HintView$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    HintView.C46191.this.lambda$onAnimationEnd$0();
+                    HintView.C46881.this.lambda$onAnimationEnd$0();
                 }
             }, HintView.this.currentType == 0 ? 10000L : ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS);
         }
@@ -324,7 +325,7 @@ public class HintView extends FrameLayout {
             AnimatorSet animatorSet2 = new AnimatorSet();
             this.animatorSet = animatorSet2;
             animatorSet2.playTogether(ObjectAnimator.ofFloat(this, View.ALPHA, BitmapDescriptorFactory.HUE_RED, 1.0f));
-            this.animatorSet.addListener(new C46202(z2));
+            this.animatorSet.addListener(new C46892(z2));
             this.animatorSet.setDuration(300L);
             this.animatorSet.start();
         } else {
@@ -336,10 +337,10 @@ public class HintView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.HintView$2 */
     /* loaded from: classes6.dex */
-    public class C46202 extends AnimatorListenerAdapter {
+    public class C46892 extends AnimatorListenerAdapter {
         final /* synthetic */ boolean val$autoHide;
 
-        C46202(boolean z) {
+        C46892(boolean z) {
             this.val$autoHide = z;
         }
 
@@ -350,7 +351,7 @@ public class HintView extends FrameLayout {
                 AndroidUtilities.runOnUIThread(HintView.this.hideRunnable = new Runnable() { // from class: org.telegram.ui.Components.HintView$2$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        HintView.C46202.this.lambda$onAnimationEnd$0();
+                        HintView.C46892.this.lambda$onAnimationEnd$0();
                     }
                 }, HintView.this.showingDuration);
             }
@@ -377,16 +378,16 @@ public class HintView extends FrameLayout {
     /* JADX WARN: Removed duplicated region for block: B:46:0x0111  */
     /* JADX WARN: Removed duplicated region for block: B:54:0x012c  */
     /* JADX WARN: Removed duplicated region for block: B:60:0x0147  */
-    /* JADX WARN: Removed duplicated region for block: B:68:0x0171  */
-    /* JADX WARN: Removed duplicated region for block: B:71:0x0183  */
-    /* JADX WARN: Removed duplicated region for block: B:74:0x01a2  */
+    /* JADX WARN: Removed duplicated region for block: B:68:0x0174  */
+    /* JADX WARN: Removed duplicated region for block: B:71:0x0186  */
+    /* JADX WARN: Removed duplicated region for block: B:74:0x01a5  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     private void updatePosition(android.view.View r13) {
         /*
-            Method dump skipped, instructions count: 488
+            Method dump skipped, instructions count: 491
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Components.HintView.updatePosition(android.view.View):void");
@@ -450,9 +451,7 @@ public class HintView extends FrameLayout {
         this.bottomOffset = i;
     }
 
-    private int getThemedColor(String str) {
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-        return color != null ? color.intValue() : Theme.getColor(str);
+    private int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 }

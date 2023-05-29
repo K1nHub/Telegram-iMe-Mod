@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 19107
+    .line 19672
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$KeyboardButton;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 1
 
-    .line 19112
+    .line 19677
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -39,14 +39,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 19114
+    .line 19679
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readBool(Z)Z
 
     move-result v0
 
     iput-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$KeyboardButton;->quiz:Z
 
-    .line 19116
+    .line 19681
     :cond_0
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
@@ -60,29 +60,29 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 19120
+    .line 19685
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_keyboardButtonRequestPoll;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 19121
+    .line 19686
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$KeyboardButton;->flags:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 19122
+    .line 19687
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$KeyboardButton;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 19123
+    .line 19688
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$KeyboardButton;->quiz:Z
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeBool(Z)V
 
-    .line 19125
+    .line 19690
     :cond_0
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$KeyboardButton;->text:Ljava/lang/String;
 

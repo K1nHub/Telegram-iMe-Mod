@@ -36,7 +36,7 @@
         }
     .end annotation
 
-    .line 75
+    .line 77
     invoke-direct {p0, p2}, Landroidx/room/EntityDeletionOrUpdateAdapter;-><init>(Landroidx/room/RoomDatabase;)V
 
     return-void
@@ -57,7 +57,7 @@
         }
     .end annotation
 
-    .line 83
+    .line 85
     invoke-virtual {p2}, Lcom/iMe/storage/data/locale/db/model/recent_chats/HistoryDialogDb;->getUserId()J
 
     move-result-wide v0
@@ -66,7 +66,7 @@
 
     invoke-interface {p1, v2, v0, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
-    .line 84
+    .line 86
     invoke-virtual {p2}, Lcom/iMe/storage/data/locale/db/model/recent_chats/HistoryDialogDb;->getDialogId()J
 
     move-result-wide v0
@@ -75,7 +75,7 @@
 
     invoke-interface {p1, v2, v0, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
-    .line 85
+    .line 87
     invoke-virtual {p2}, Lcom/iMe/storage/data/locale/db/model/recent_chats/HistoryDialogDb;->getCreationDate()J
 
     move-result-wide v0
@@ -84,7 +84,7 @@
 
     invoke-interface {p1, v2, v0, v1}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
-    .line 86
+    .line 88
     invoke-virtual {p2}, Lcom/iMe/storage/data/locale/db/model/recent_chats/HistoryDialogDb;->isPinned()Z
 
     move-result v0
@@ -93,12 +93,12 @@
 
     int-to-long v2, v0
 
-    .line 87
+    .line 89
     invoke-interface {p1, v1, v2, v3}, Landroidx/sqlite/db/SupportSQLiteProgram;->bindLong(IJ)V
 
     const/4 v0, 0x5
 
-    .line 88
+    .line 90
     invoke-virtual {p2}, Lcom/iMe/storage/data/locale/db/model/recent_chats/HistoryDialogDb;->getUserId()J
 
     move-result-wide v1
@@ -107,7 +107,7 @@
 
     const/4 v0, 0x6
 
-    .line 89
+    .line 91
     invoke-virtual {p2}, Lcom/iMe/storage/data/locale/db/model/recent_chats/HistoryDialogDb;->getDialogId()J
 
     move-result-wide v1
@@ -130,7 +130,7 @@
         }
     .end annotation
 
-    .line 75
+    .line 77
     check-cast p2, Lcom/iMe/storage/data/locale/db/model/recent_chats/HistoryDialogDb;
 
     invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/data/locale/db/dao/main/HistoryDialogDao_Impl$3;->bind(Landroidx/sqlite/db/SupportSQLiteStatement;Lcom/iMe/storage/data/locale/db/model/recent_chats/HistoryDialogDb;)V

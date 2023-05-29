@@ -6,38 +6,38 @@ import com.google.zxing.common.detector.MathUtils;
 public class ResultPoint {
 
     /* renamed from: x */
-    private final float f227x;
+    private final float f230x;
 
     /* renamed from: y */
-    private final float f228y;
+    private final float f231y;
 
     public ResultPoint(float f, float f2) {
-        this.f227x = f;
-        this.f228y = f2;
+        this.f230x = f;
+        this.f231y = f2;
     }
 
     public final float getX() {
-        return this.f227x;
+        return this.f230x;
     }
 
     public final float getY() {
-        return this.f228y;
+        return this.f231y;
     }
 
     public final boolean equals(Object obj) {
         if (obj instanceof ResultPoint) {
             ResultPoint resultPoint = (ResultPoint) obj;
-            return this.f227x == resultPoint.f227x && this.f228y == resultPoint.f228y;
+            return this.f230x == resultPoint.f230x && this.f231y == resultPoint.f231y;
         }
         return false;
     }
 
     public final int hashCode() {
-        return (Float.floatToIntBits(this.f227x) * 31) + Float.floatToIntBits(this.f228y);
+        return (Float.floatToIntBits(this.f230x) * 31) + Float.floatToIntBits(this.f231y);
     }
 
     public final String toString() {
-        return "(" + this.f227x + ',' + this.f228y + ')';
+        return "(" + this.f230x + ',' + this.f231y + ')';
     }
 
     public static void orderBestPatterns(ResultPoint[] resultPointArr) {
@@ -71,12 +71,12 @@ public class ResultPoint {
     }
 
     public static float distance(ResultPoint resultPoint, ResultPoint resultPoint2) {
-        return MathUtils.distance(resultPoint.f227x, resultPoint.f228y, resultPoint2.f227x, resultPoint2.f228y);
+        return MathUtils.distance(resultPoint.f230x, resultPoint.f231y, resultPoint2.f230x, resultPoint2.f231y);
     }
 
     private static float crossProductZ(ResultPoint resultPoint, ResultPoint resultPoint2, ResultPoint resultPoint3) {
-        float f = resultPoint2.f227x;
-        float f2 = resultPoint2.f228y;
-        return ((resultPoint3.f227x - f) * (resultPoint.f228y - f2)) - ((resultPoint3.f228y - f2) * (resultPoint.f227x - f));
+        float f = resultPoint2.f230x;
+        float f2 = resultPoint2.f231y;
+        return ((resultPoint3.f230x - f) * (resultPoint.f231y - f2)) - ((resultPoint3.f231y - f2) * (resultPoint.f230x - f));
     }
 }

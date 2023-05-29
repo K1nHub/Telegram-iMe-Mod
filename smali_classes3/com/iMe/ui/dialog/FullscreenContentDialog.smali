@@ -162,9 +162,9 @@
     .line 57
     iget-object p2, p1, Lorg/telegram/messenger/databinding/ForkFullscreenContentAlertBinding;->textAlertTitle:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string p3, "chat_messagePanelText"
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelText:I
 
-    invoke-static {p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p3
 
@@ -173,9 +173,9 @@
     .line 58
     iget-object p1, p1, Lorg/telegram/messenger/databinding/ForkFullscreenContentAlertBinding;->textAlertDescription:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string p2, "windowBackgroundWhiteGrayText2"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 

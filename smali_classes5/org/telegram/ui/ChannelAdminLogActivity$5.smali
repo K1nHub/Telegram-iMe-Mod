@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChannelAdminLogActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 596
+    .line 604
     iput-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$5;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;-><init>(Landroid/content/Context;)V
@@ -35,14 +35,14 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 727
+    .line 735
     invoke-static {}, Lorg/telegram/ui/AvatarPreviewer;->hasVisibleInstance()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 728
+    .line 736
     invoke-static {}, Lorg/telegram/ui/AvatarPreviewer;->getInstance()Lorg/telegram/ui/AvatarPreviewer;
 
     move-result-object v0
@@ -53,7 +53,7 @@
 
     return p1
 
-    .line 731
+    .line 739
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -65,12 +65,12 @@
 .method protected drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 0
 
-    .line 609
+    .line 617
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
     move-result p3
 
-    .line 610
+    .line 618
     iget-object p4, p0, Lorg/telegram/ui/ChannelAdminLogActivity$5;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p4}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$900(Lorg/telegram/ui/ChannelAdminLogActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -87,7 +87,7 @@
 
     if-eqz p2, :cond_1
 
-    .line 611
+    .line 619
     iget-object p2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$5;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$1300(Lorg/telegram/ui/ChannelAdminLogActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
@@ -131,7 +131,7 @@
 .method protected isActionBarVisible()Z
     .locals 1
 
-    .line 618
+    .line 626
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$5;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$1400(Lorg/telegram/ui/ChannelAdminLogActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -158,10 +158,10 @@
 .method protected onAttachedToWindow()V
     .locals 5
 
-    .line 600
+    .line 608
     invoke-super {p0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->onAttachedToWindow()V
 
-    .line 601
+    .line 609
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v0
@@ -172,7 +172,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 602
+    .line 610
     invoke-virtual {v0}, Lorg/telegram/messenger/MessageObject;->isRoundVideo()Z
 
     move-result v1
@@ -203,7 +203,7 @@
 
     if-nez v0, :cond_0
 
-    .line 603
+    .line 611
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v0
@@ -239,7 +239,7 @@
 .method protected onLayout(ZIIII)V
     .locals 9
 
-    .line 659
+    .line 667
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getChildCount()I
 
     move-result p1
@@ -251,12 +251,12 @@
     :goto_0
     if-ge v1, p1, :cond_c
 
-    .line 662
+    .line 670
     invoke-virtual {p0, v1}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 663
+    .line 671
     invoke-virtual {v2}, Landroid/view/View;->getVisibility()I
 
     move-result v3
@@ -267,7 +267,7 @@
 
     goto/16 :goto_8
 
-    .line 666
+    .line 674
     :cond_0
     invoke-virtual {v2}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
@@ -275,17 +275,17 @@
 
     check-cast v3, Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 668
+    .line 676
     invoke-virtual {v2}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v4
 
-    .line 669
+    .line 677
     invoke-virtual {v2}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v5
 
-    .line 674
+    .line 682
     iget v6, v3, Landroid/widget/FrameLayout$LayoutParams;->gravity:I
 
     const/4 v7, -0x1
@@ -309,7 +309,7 @@
 
     if-eq v7, v8, :cond_2
 
-    .line 691
+    .line 699
     iget v7, v3, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
     goto :goto_2
@@ -317,7 +317,7 @@
     :cond_2
     sub-int v7, p4, v4
 
-    .line 687
+    .line 695
     iget v8, v3, Landroid/widget/FrameLayout$LayoutParams;->rightMargin:I
 
     goto :goto_1
@@ -327,7 +327,7 @@
 
     sub-int/2addr v7, v4
 
-    .line 684
+    .line 692
     div-int/lit8 v7, v7, 0x2
 
     iget v8, v3, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
@@ -352,7 +352,7 @@
 
     if-eq v6, v8, :cond_4
 
-    .line 708
+    .line 716
     iget v3, v3, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
     goto :goto_4
@@ -362,12 +362,12 @@
 
     sub-int/2addr v6, v5
 
-    .line 705
+    .line 713
     iget v3, v3, Landroid/widget/FrameLayout$LayoutParams;->bottomMargin:I
 
     goto :goto_3
 
-    .line 696
+    .line 704
     :cond_5
     iget v3, v3, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
@@ -377,7 +377,7 @@
 
     add-int/2addr v3, v6
 
-    .line 697
+    .line 705
     iget-object v6, p0, Lorg/telegram/ui/ChannelAdminLogActivity$5;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$2100(Lorg/telegram/ui/ChannelAdminLogActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -398,7 +398,7 @@
 
     if-nez v6, :cond_7
 
-    .line 698
+    .line 706
     iget-object v6, p0, Lorg/telegram/ui/ChannelAdminLogActivity$5;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$2300(Lorg/telegram/ui/ChannelAdminLogActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -418,7 +418,7 @@
 
     sub-int/2addr v6, v5
 
-    .line 702
+    .line 710
     div-int/lit8 v6, v6, 0x2
 
     iget v8, v3, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
@@ -430,7 +430,7 @@
     :goto_3
     sub-int v3, v6, v3
 
-    .line 711
+    .line 719
     :cond_7
     :goto_4
     iget-object v6, p0, Lorg/telegram/ui/ChannelAdminLogActivity$5;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
@@ -443,7 +443,7 @@
 
     const/16 v6, 0x18
 
-    .line 712
+    .line 720
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
@@ -482,7 +482,7 @@
 
     goto :goto_6
 
-    .line 713
+    .line 721
     :cond_9
     iget-object v6, p0, Lorg/telegram/ui/ChannelAdminLogActivity$5;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
@@ -492,7 +492,7 @@
 
     if-ne v2, v6, :cond_a
 
-    .line 714
+    .line 722
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingTop()I
 
     move-result v6
@@ -502,7 +502,7 @@
 
     goto :goto_7
 
-    .line 715
+    .line 723
     :cond_a
     iget-object v6, p0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->backgroundView:Landroid/view/View;
 
@@ -516,7 +516,7 @@
 
     add-int/2addr v5, v3
 
-    .line 718
+    .line 726
     invoke-virtual {v2, v7, v3, v4, v5}, Landroid/view/View;->layout(IIII)V
 
     :goto_8
@@ -524,13 +524,13 @@
 
     goto/16 :goto_0
 
-    .line 721
+    .line 729
     :cond_c
     iget-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$5;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$2700(Lorg/telegram/ui/ChannelAdminLogActivity;)V
 
-    .line 722
+    .line 730
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->notifyHeightChanged()V
 
     return-void
@@ -539,27 +539,27 @@
 .method protected onMeasure(II)V
     .locals 10
 
-    .line 624
+    .line 632
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 625
+    .line 633
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v1
 
-    .line 627
+    .line 635
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->setMeasuredDimension(II)V
 
-    .line 628
+    .line 636
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingTop()I
 
     move-result v2
 
     sub-int/2addr v1, v2
 
-    .line 630
+    .line 638
     iget-object v2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$5;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$1500(Lorg/telegram/ui/ChannelAdminLogActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -578,7 +578,7 @@
 
     invoke-virtual/range {v3 .. v8}, Landroid/widget/FrameLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
 
-    .line 631
+    .line 639
     iget-object v2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$5;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$1600(Lorg/telegram/ui/ChannelAdminLogActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -589,7 +589,7 @@
 
     move-result v2
 
-    .line 632
+    .line 640
     iget-object v3, p0, Lorg/telegram/ui/ChannelAdminLogActivity$5;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$1700(Lorg/telegram/ui/ChannelAdminLogActivity;)Lorg/telegram/ui/ActionBar/ActionBar;
@@ -604,7 +604,7 @@
 
     sub-int/2addr v1, v2
 
-    .line 636
+    .line 644
     :cond_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getChildCount()I
 
@@ -615,14 +615,14 @@
     :goto_0
     if-ge v3, v2, :cond_6
 
-    .line 639
+    .line 647
     invoke-virtual {p0, v3}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
 
     move-result-object v5
 
     if-eqz v5, :cond_5
 
-    .line 640
+    .line 648
     invoke-virtual {v5}, Landroid/view/View;->getVisibility()I
 
     move-result v4
@@ -641,7 +641,7 @@
 
     goto :goto_2
 
-    .line 643
+    .line 651
     :cond_1
     iget-object v4, p0, Lorg/telegram/ui/ChannelAdminLogActivity$5;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
@@ -663,7 +663,7 @@
 
     goto :goto_1
 
-    .line 647
+    .line 655
     :cond_2
     iget-object v4, p0, Lorg/telegram/ui/ChannelAdminLogActivity$5;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
@@ -673,17 +673,17 @@
 
     if-ne v5, v4, :cond_3
 
-    .line 648
+    .line 656
     invoke-static {v0, v6}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v4
 
-    .line 649
+    .line 657
     invoke-static {v1, v6}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v6
 
-    .line 650
+    .line 658
     invoke-virtual {v5, v4, v6}, Landroid/view/View;->measure(II)V
 
     goto :goto_2
@@ -699,12 +699,12 @@
 
     move v8, p2
 
-    .line 652
+    .line 660
     invoke-virtual/range {v4 .. v9}, Landroid/widget/FrameLayout;->measureChildWithMargins(Landroid/view/View;IIII)V
 
     goto :goto_2
 
-    .line 644
+    .line 652
     :cond_4
     :goto_1
     invoke-static {v0, v6}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
@@ -713,7 +713,7 @@
 
     const/16 v7, 0xa
 
-    .line 645
+    .line 653
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -734,7 +734,7 @@
 
     move-result v6
 
-    .line 646
+    .line 654
     invoke-virtual {v5, v4, v6}, Landroid/view/View;->measure(II)V
 
     :cond_5

@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/Premium/LimitPreviewView;-><init>(Landroid/content/Context;III)V
+    value = Lorg/telegram/ui/Components/Premium/LimitPreviewView;-><init>(Landroid/content/Context;IIIF)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,17 +19,21 @@
 
 .field final synthetic this$0:Lorg/telegram/ui/Components/Premium/LimitPreviewView;
 
+.field final synthetic val$percent:F
+
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/Premium/LimitPreviewView;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/Components/Premium/LimitPreviewView;Landroid/content/Context;F)V
     .locals 0
 
-    .line 80
+    .line 86
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$1;->this$0:Lorg/telegram/ui/Components/Premium/LimitPreviewView;
+
+    iput p3, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$1;->val$percent:F
 
     invoke-direct {p0, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 82
+    .line 88
     new-instance p1, Landroid/graphics/Paint;
 
     invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
@@ -44,18 +48,18 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 12
 
-    .line 86
+    .line 92
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$1;->grayPaint:Landroid/graphics/Paint;
 
-    const-string v1, "windowBackgroundGray"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 87
+    .line 93
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getMeasuredWidth()I
@@ -76,7 +80,7 @@
 
     const/4 v1, 0x6
 
-    .line 88
+    .line 94
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -93,19 +97,19 @@
 
     invoke-virtual {p1, v0, v2, v4, v5}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 90
+    .line 96
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 91
+    .line 97
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getMeasuredWidth()I
 
     move-result v0
 
     int-to-float v0, v0
 
-    const/high16 v2, 0x40000000    # 2.0f
+    iget v2, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$1;->val$percent:F
 
-    div-float/2addr v0, v2
+    mul-float/2addr v0, v2
 
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getMeasuredWidth()I
 
@@ -121,7 +125,7 @@
 
     invoke-virtual {p1, v0, v3, v2, v4}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
-    .line 92
+    .line 98
     invoke-static {}, Lorg/telegram/ui/Components/Premium/PremiumGradient;->getInstance()Lorg/telegram/ui/Components/Premium/PremiumGradient;
 
     move-result-object v0
@@ -130,7 +134,7 @@
 
     move-result-object v0
 
-    .line 93
+    .line 99
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$1;->this$0:Lorg/telegram/ui/Components/Premium/LimitPreviewView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->access$000(Lorg/telegram/ui/Components/Premium/LimitPreviewView;)Landroid/view/View;
@@ -139,24 +143,24 @@
 
     if-eqz v2, :cond_2
 
-    .line 94
+    .line 100
     iget-object v2, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$1;->this$0:Lorg/telegram/ui/Components/Premium/LimitPreviewView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->access$000(Lorg/telegram/ui/Components/Premium/LimitPreviewView;)Landroid/view/View;
 
     move-result-object v2
 
-    .line 95
+    .line 101
     iget-object v4, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$1;->this$0:Lorg/telegram/ui/Components/Premium/LimitPreviewView;
 
     iget-object v5, v4, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->staticGradient:Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
 
     if-eqz v5, :cond_0
 
-    .line 96
+    .line 102
     iget-object v0, v5, Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;->paint:Landroid/graphics/Paint;
 
-    .line 97
+    .line 103
     iget v2, v4, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->gradientTotalHeight:I
 
     int-to-float v2, v2
@@ -177,14 +181,14 @@
     :goto_0
     if-eq v4, v2, :cond_1
 
-    .line 102
+    .line 108
     invoke-virtual {v4}, Landroid/view/View;->getY()F
 
     move-result v5
 
     add-float/2addr v3, v5
 
-    .line 103
+    .line 109
     invoke-virtual {v4}, Landroid/view/View;->getParent()Landroid/view/ViewParent;
 
     move-result-object v4
@@ -193,7 +197,7 @@
 
     goto :goto_0
 
-    .line 105
+    .line 111
     :cond_1
     invoke-static {}, Lorg/telegram/ui/Components/Premium/PremiumGradient;->getInstance()Lorg/telegram/ui/Components/Premium/PremiumGradient;
 
@@ -231,7 +235,7 @@
 
     goto :goto_1
 
-    .line 109
+    .line 115
     :cond_2
     invoke-static {}, Lorg/telegram/ui/Components/Premium/PremiumGradient;->getInstance()Lorg/telegram/ui/Components/Premium/PremiumGradient;
 
@@ -277,7 +281,7 @@
 
     invoke-virtual/range {v2 .. v8}, Lorg/telegram/ui/Components/Premium/PremiumGradient;->updateMainGradientMatrix(IIIIFF)V
 
-    .line 111
+    .line 117
     :goto_1
     sget-object v2, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
 
@@ -295,20 +299,20 @@
 
     invoke-virtual {p1, v2, v3, v1, v0}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 112
+    .line 118
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 113
+    .line 119
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/LimitPreviewView$1;->this$0:Lorg/telegram/ui/Components/Premium/LimitPreviewView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/Premium/LimitPreviewView;->staticGradient:Lorg/telegram/ui/Components/Premium/PremiumGradient$PremiumGradientTools;
 
     if-nez v0, :cond_3
 
-    .line 114
+    .line 120
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->invalidate()V
 
-    .line 116
+    .line 122
     :cond_3
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 

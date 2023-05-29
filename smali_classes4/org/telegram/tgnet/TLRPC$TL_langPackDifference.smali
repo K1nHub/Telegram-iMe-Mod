@@ -35,10 +35,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 4236
+    .line 4656
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 4242
+    .line 4662
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -51,7 +51,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_langPackDifference;
     .locals 1
 
-    .line 4245
+    .line 4665
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_langPackDifference;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -62,7 +62,7 @@
 
     return-object p0
 
-    .line 4247
+    .line 4667
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -88,13 +88,13 @@
 
     throw p0
 
-    .line 4252
+    .line 4672
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_langPackDifference;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_langPackDifference;-><init>()V
 
-    .line 4253
+    .line 4673
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_langPackDifference;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -105,28 +105,28 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 4258
+    .line 4678
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_langPackDifference;->lang_code:Ljava/lang/String;
 
-    .line 4259
+    .line 4679
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_langPackDifference;->from_version:I
 
-    .line 4260
+    .line 4680
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_langPackDifference;->version:I
 
-    .line 4261
+    .line 4681
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -141,7 +141,7 @@
 
     return-void
 
-    .line 4264
+    .line 4684
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -165,7 +165,7 @@
 
     throw p1
 
-    .line 4268
+    .line 4688
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -174,7 +174,7 @@
     :goto_0
     if-ge v1, v0, :cond_3
 
-    .line 4270
+    .line 4690
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v2
@@ -187,7 +187,7 @@
 
     return-void
 
-    .line 4274
+    .line 4694
     :cond_2
     iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$TL_langPackDifference;->strings:Ljava/util/ArrayList;
 
@@ -204,39 +204,39 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 3
 
-    .line 4279
+    .line 4699
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_langPackDifference;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 4280
+    .line 4700
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_langPackDifference;->lang_code:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 4281
+    .line 4701
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_langPackDifference;->from_version:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 4282
+    .line 4702
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_langPackDifference;->version:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const v0, 0x1cb5c415
 
-    .line 4283
+    .line 4703
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 4284
+    .line 4704
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_langPackDifference;->strings:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 4285
+    .line 4705
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -244,7 +244,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 4287
+    .line 4707
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_langPackDifference;->strings:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

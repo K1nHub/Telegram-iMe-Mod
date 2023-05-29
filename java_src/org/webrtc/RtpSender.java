@@ -73,7 +73,7 @@ public class RtpSender {
     }
 
     /* renamed from: id */
-    public String m9id() {
+    public String m11id() {
         checkRtpSenderExists();
         return nativeGetId(this.nativeRtpSender);
     }

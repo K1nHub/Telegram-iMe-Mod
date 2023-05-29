@@ -6,16 +6,24 @@
 
 
 # instance fields
-.field public final synthetic f$0:[Z
+.field public final synthetic f$0:[Lorg/telegram/ui/ActionBar/AlertDialog;
+
+.field public final synthetic f$1:Ljava/lang/Runnable;
+
+.field public final synthetic f$2:Lorg/telegram/ui/Components/AlertsCreator$AccountSelectDelegate;
 
 
 # direct methods
-.method public synthetic constructor <init>([Z)V
+.method public synthetic constructor <init>([Lorg/telegram/ui/ActionBar/AlertDialog;Ljava/lang/Runnable;Lorg/telegram/ui/Components/AlertsCreator$AccountSelectDelegate;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda91;->f$0:[Z
+    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda91;->f$0:[Lorg/telegram/ui/ActionBar/AlertDialog;
+
+    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda91;->f$1:Ljava/lang/Runnable;
+
+    iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda91;->f$2:Lorg/telegram/ui/Components/AlertsCreator$AccountSelectDelegate;
 
     return-void
 .end method
@@ -23,11 +31,15 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .locals 1
+    .locals 3
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda91;->f$0:[Z
+    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda91;->f$0:[Lorg/telegram/ui/ActionBar/AlertDialog;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$9bKo-Hm_mnMXXGAFMmy9YM2gkM0([ZLandroid/view/View;)V
+    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda91;->f$1:Ljava/lang/Runnable;
+
+    iget-object v2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda91;->f$2:Lorg/telegram/ui/Components/AlertsCreator$AccountSelectDelegate;
+
+    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$G8uux0Qqbgqm3Qt6UIX6_DLmRI8([Lorg/telegram/ui/ActionBar/AlertDialog;Ljava/lang/Runnable;Lorg/telegram/ui/Components/AlertsCreator$AccountSelectDelegate;Landroid/view/View;)V
 
     return-void
 .end method

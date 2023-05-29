@@ -21,7 +21,7 @@
 
     const-string v0, "inapp"
 
-    const-string v1, "subs"
+    const-string/jumbo v1, "subs"
 
     .line 47
     filled-new-array {v0, v1}, [Ljava/lang/String;

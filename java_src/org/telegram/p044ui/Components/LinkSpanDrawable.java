@@ -68,7 +68,7 @@ public class LinkSpanDrawable<S extends CharacterStyle> {
         this.isLite = !LiteMode.isEnabled(LiteMode.FLAGS_CHAT);
         this.mSpan = s;
         this.mResourcesProvider = resourcesProvider;
-        setColor(Theme.getColor("chat_linkSelectBackground", resourcesProvider));
+        setColor(Theme.getColor(Theme.key_chat_linkSelectBackground, resourcesProvider));
         this.mTouchX = f;
         this.mTouchY = f2;
         this.mLongPressDuration = ViewConfiguration.getLongPressTimeout();
@@ -123,8 +123,8 @@ public class LinkSpanDrawable<S extends CharacterStyle> {
 
     public boolean draw(Canvas canvas) {
         float f;
-        int m50dp = this.isLite ? 0 : AndroidUtilities.m50dp(4);
-        boolean z = this.cornerRadius != m50dp;
+        int m54dp = this.isLite ? 0 : AndroidUtilities.m54dp(4);
+        boolean z = this.cornerRadius != m54dp;
         if (this.mSelectionPaint == null) {
             Paint paint = new Paint(1);
             this.mSelectionPaint = paint;
@@ -140,8 +140,8 @@ public class LinkSpanDrawable<S extends CharacterStyle> {
             this.mRippleAlpha = Color.alpha(this.color);
         }
         if (z) {
-            this.cornerRadius = m50dp;
-            if (m50dp <= 0) {
+            this.cornerRadius = m54dp;
+            if (m54dp <= 0) {
                 this.mSelectionPaint.setPathEffect(null);
                 this.mRipplePaint.setPathEffect(null);
             } else {
@@ -190,12 +190,12 @@ public class LinkSpanDrawable<S extends CharacterStyle> {
         float f2 = 1.0f - min;
         this.mSelectionPaint.setAlpha((int) (this.mSelectionAlpha * 0.2f * Math.min(1.0f, 5.0f * interpolation) * f2));
         float f3 = 1.0f - f;
-        this.mSelectionPaint.setStrokeWidth(Math.min(1.0f, f3) * AndroidUtilities.m50dp(5));
+        this.mSelectionPaint.setStrokeWidth(Math.min(1.0f, f3) * AndroidUtilities.m54dp(5));
         for (int i3 = 0; i3 < this.mPathesCount; i3++) {
             canvas.drawPath(this.mPathes.get(i3), this.mSelectionPaint);
         }
         this.mRipplePaint.setAlpha((int) (this.mRippleAlpha * 0.8f * f2));
-        this.mRipplePaint.setStrokeWidth(Math.min(1.0f, f3) * AndroidUtilities.m50dp(5));
+        this.mRipplePaint.setStrokeWidth(Math.min(1.0f, f3) * AndroidUtilities.m54dp(5));
         int i4 = (interpolation > 1.0f ? 1 : (interpolation == 1.0f ? 0 : -1));
         if (i4 < 0) {
             float f4 = interpolation * this.mMaxRadius;
@@ -474,10 +474,7 @@ public class LinkSpanDrawable<S extends CharacterStyle> {
             if (obj instanceof View) {
                 ((View) obj).invalidate();
             } else if (obj instanceof ArticleViewer.DrawingText) {
-                View view2 = ((ArticleViewer.DrawingText) obj).latestParentView;
-                if (view2 != null) {
-                    view2.invalidate();
-                }
+                ((ArticleViewer.DrawingText) obj).invalidateParent();
             } else if (!z || (view = this.mParent) == null) {
             } else {
                 view.invalidate();
@@ -672,7 +669,7 @@ public class LinkSpanDrawable<S extends CharacterStyle> {
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getPaddingLeft() + getTextWidth() + getPaddingRight(), getHeight());
                 this.linkBackgroundPaint.setColor(getLinkColor());
-                canvas.drawRoundRect(rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), this.linkBackgroundPaint);
+                canvas.drawRoundRect(rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), this.linkBackgroundPaint);
             }
             super.onDraw(canvas);
             if (isClickable() && this.links.draw(canvas)) {

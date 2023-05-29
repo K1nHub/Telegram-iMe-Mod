@@ -16,6 +16,6 @@ final class ChooseRecipientOptionsView$iconSize$2 extends Lambda implements Func
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // kotlin.jvm.functions.Function0
     public final Integer invoke() {
-        return Integer.valueOf(AndroidUtilities.m50dp(16));
+        return Integer.valueOf(AndroidUtilities.m54dp(16));
     }
 }

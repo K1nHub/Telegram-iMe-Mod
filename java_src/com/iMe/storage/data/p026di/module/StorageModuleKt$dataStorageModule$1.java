@@ -42,10 +42,10 @@ final class StorageModuleKt$dataStorageModule$1 extends Lambda implements Functi
     /* compiled from: StorageModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.StorageModuleKt$dataStorageModule$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C16601 extends Lambda implements Function2<Scope, ParametersHolder, PreferenceHelper> {
-        public static final C16601 INSTANCE = new C16601();
+    public static final class C17311 extends Lambda implements Function2<Scope, ParametersHolder, PreferenceHelper> {
+        public static final C17311 INSTANCE = new C17311();
 
-        C16601() {
+        C17311() {
             super(2);
         }
 
@@ -70,39 +70,39 @@ final class StorageModuleKt$dataStorageModule$1 extends Lambda implements Functi
         List emptyList3;
         List emptyList4;
         Intrinsics.checkNotNullParameter(module, "$this$module");
-        C16601 c16601 = C16601.INSTANCE;
+        C17311 c17311 = C17311.INSTANCE;
         ScopeRegistry.Companion companion = ScopeRegistry.Companion;
         StringQualifier rootScopeQualifier = companion.getRootScopeQualifier();
         Kind kind = Kind.Singleton;
         emptyList = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(PreferenceHelper.class), null, c16601, kind, emptyList));
+        SingleInstanceFactory<?> singleInstanceFactory = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier, Reflection.getOrCreateKotlinClass(PreferenceHelper.class), null, c17311, kind, emptyList));
         module.indexPrimaryType(singleInstanceFactory);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory);
         }
         new KoinDefinition(module, singleInstanceFactory);
-        C16612 c16612 = C16612.INSTANCE;
+        C17322 c17322 = C17322.INSTANCE;
         StringQualifier rootScopeQualifier2 = companion.getRootScopeQualifier();
         emptyList2 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, c16612, kind, emptyList2));
+        SingleInstanceFactory<?> singleInstanceFactory2 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier2, Reflection.getOrCreateKotlinClass(CryptoPreferenceHelper.class), null, c17322, kind, emptyList2));
         module.indexPrimaryType(singleInstanceFactory2);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory2);
         }
         new KoinDefinition(module, singleInstanceFactory2);
-        C16623 c16623 = C16623.INSTANCE;
+        C17333 c17333 = C17333.INSTANCE;
         StringQualifier rootScopeQualifier3 = companion.getRootScopeQualifier();
         emptyList3 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(HintsPreferenceHelper.class), null, c16623, kind, emptyList3));
+        SingleInstanceFactory<?> singleInstanceFactory3 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier3, Reflection.getOrCreateKotlinClass(HintsPreferenceHelper.class), null, c17333, kind, emptyList3));
         module.indexPrimaryType(singleInstanceFactory3);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory3);
         }
         new KoinDefinition(module, singleInstanceFactory3);
-        C16634 c16634 = C16634.INSTANCE;
+        C17344 c17344 = C17344.INSTANCE;
         StringQualifier rootScopeQualifier4 = companion.getRootScopeQualifier();
         emptyList4 = CollectionsKt__CollectionsKt.emptyList();
-        SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(TwitterPreferenceHelper.class), null, c16634, kind, emptyList4));
+        SingleInstanceFactory<?> singleInstanceFactory4 = new SingleInstanceFactory<>(new BeanDefinition(rootScopeQualifier4, Reflection.getOrCreateKotlinClass(TwitterPreferenceHelper.class), null, c17344, kind, emptyList4));
         module.indexPrimaryType(singleInstanceFactory4);
         if (module.get_createdAtStart()) {
             module.prepareForCreationAtStart(singleInstanceFactory4);
@@ -114,10 +114,10 @@ final class StorageModuleKt$dataStorageModule$1 extends Lambda implements Functi
     /* compiled from: StorageModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.StorageModuleKt$dataStorageModule$1$2 */
     /* loaded from: classes3.dex */
-    public static final class C16612 extends Lambda implements Function2<Scope, ParametersHolder, CryptoPreferenceHelper> {
-        public static final C16612 INSTANCE = new C16612();
+    public static final class C17322 extends Lambda implements Function2<Scope, ParametersHolder, CryptoPreferenceHelper> {
+        public static final C17322 INSTANCE = new C17322();
 
-        C16612() {
+        C17322() {
             super(2);
         }
 
@@ -133,10 +133,10 @@ final class StorageModuleKt$dataStorageModule$1 extends Lambda implements Functi
     /* compiled from: StorageModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.StorageModuleKt$dataStorageModule$1$3 */
     /* loaded from: classes3.dex */
-    public static final class C16623 extends Lambda implements Function2<Scope, ParametersHolder, HintsPreferenceHelper> {
-        public static final C16623 INSTANCE = new C16623();
+    public static final class C17333 extends Lambda implements Function2<Scope, ParametersHolder, HintsPreferenceHelper> {
+        public static final C17333 INSTANCE = new C17333();
 
-        C16623() {
+        C17333() {
             super(2);
         }
 
@@ -152,10 +152,10 @@ final class StorageModuleKt$dataStorageModule$1 extends Lambda implements Functi
     /* compiled from: StorageModule.kt */
     /* renamed from: com.iMe.storage.data.di.module.StorageModuleKt$dataStorageModule$1$4 */
     /* loaded from: classes3.dex */
-    public static final class C16634 extends Lambda implements Function2<Scope, ParametersHolder, TwitterPreferenceHelper> {
-        public static final C16634 INSTANCE = new C16634();
+    public static final class C17344 extends Lambda implements Function2<Scope, ParametersHolder, TwitterPreferenceHelper> {
+        public static final C17344 INSTANCE = new C17344();
 
-        C16634() {
+        C17344() {
             super(2);
         }
 

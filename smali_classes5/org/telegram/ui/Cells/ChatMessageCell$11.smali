@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/ChatMessageCell;Z)V
     .locals 0
 
-    .line 16515
+    .line 16537
     iput-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$11;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$11;->val$fromParent:Z
@@ -39,10 +39,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
 
-    .line 16518
+    .line 16540
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$11;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$7900(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;
+    invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$8000(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;
 
     move-result-object p1
 
@@ -50,46 +50,46 @@
 
     move-result p1
 
-    .line 16519
+    .line 16541
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$11;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$8000(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$8100(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v0
 
     if-eq v0, p1, :cond_0
 
-    .line 16520
+    .line 16542
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$11;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$8000(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$8100(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v1
 
     iget-boolean v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$11;->val$fromParent:Z
 
-    invoke-static {v0, v1, p1, v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$8100(Lorg/telegram/ui/Cells/ChatMessageCell;IIZ)V
+    invoke-static {v0, v1, p1, v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$8200(Lorg/telegram/ui/Cells/ChatMessageCell;IIZ)V
 
     goto :goto_0
 
-    .line 16522
+    .line 16544
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$11;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$8202(Lorg/telegram/ui/Cells/ChatMessageCell;Z)Z
+    invoke-static {p1, v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$8302(Lorg/telegram/ui/Cells/ChatMessageCell;Z)Z
 
-    .line 16523
+    .line 16545
     iget-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$11;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$7900(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;
+    invoke-static {p1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$8000(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;
 
     move-result-object p1
 
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$11;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$8000(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$8100(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v0
 

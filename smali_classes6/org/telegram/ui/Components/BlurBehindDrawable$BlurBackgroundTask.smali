@@ -398,9 +398,9 @@
 
     iget-object v6, p0, Lorg/telegram/ui/Components/BlurBehindDrawable$BlurBackgroundTask;->this$0:Lorg/telegram/ui/Components/BlurBehindDrawable;
 
-    const-string v7, "windowBackgroundWhite"
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v6, v7}, Lorg/telegram/ui/Components/BlurBehindDrawable;->access$400(Lorg/telegram/ui/Components/BlurBehindDrawable;Ljava/lang/String;)I
+    invoke-static {v6, v7}, Lorg/telegram/ui/Components/BlurBehindDrawable;->access$400(Lorg/telegram/ui/Components/BlurBehindDrawable;I)I
 
     move-result v6
 

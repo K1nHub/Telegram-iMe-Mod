@@ -7,7 +7,7 @@ import org.telegram.messenger.LocaleController;
 /* loaded from: classes6.dex */
 public final class ViewHelper {
     public static void setPadding(View view, float f, float f2, float f3, float f4) {
-        view.setPadding(AndroidUtilities.m51dp(f), AndroidUtilities.m51dp(f2), AndroidUtilities.m51dp(f3), AndroidUtilities.m51dp(f4));
+        view.setPadding(AndroidUtilities.m55dp(f), AndroidUtilities.m55dp(f2), AndroidUtilities.m55dp(f3), AndroidUtilities.m55dp(f4));
     }
 
     public static void setPaddingRelative(View view, float f, float f2, float f3, float f4) {

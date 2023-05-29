@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;Landroid/content/Context;)V
     .locals 0
 
-    .line 2152
+    .line 2172
     iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton$1;->this$0:Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -37,12 +37,12 @@
 
     const/16 v0, 0x8
 
-    .line 2155
+    .line 2175
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
-    .line 2156
+    .line 2176
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v2
@@ -75,17 +75,17 @@
 
     div-int/lit8 v2, v2, 0x2
 
-    .line 2158
+    .line 2178
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v1, :cond_0
 
-    .line 2159
+    .line 2179
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
     goto :goto_0
 
-    .line 2161
+    .line 2181
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton$1;->this$0:Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;
 
@@ -99,14 +99,14 @@
 
     invoke-virtual {v1, v4, v4, v2, v3}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(IIII)V
 
-    .line 2162
+    .line 2182
     iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton$1;->this$0:Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;
 
     iget-object v1, v1, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->textView:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
 
     invoke-virtual {v1, p1}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 2164
+    .line 2184
     iget-object v1, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton$1;->this$0:Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;
 
     iget-object v1, v1, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->valueTextView:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
@@ -127,7 +127,7 @@
 
     invoke-virtual {v1, v2, v4, v0, v3}, Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;->setBounds(IIII)V
 
-    .line 2165
+    .line 2185
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton$1;->this$0:Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;
 
     iget-object v0, v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->valueTextView:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;
@@ -141,12 +141,12 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
 
-    .line 2176
+    .line 2196
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     const-string v0, "android.widget.Button"
 
-    .line 2177
+    .line 2197
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
     return-void
@@ -155,7 +155,7 @@
 .method protected verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
     .locals 2
 
-    .line 2171
+    .line 2191
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton$1;->this$0:Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;
 
     iget-object v1, v0, Lorg/telegram/ui/CacheControlActivity$ClearCacheButton;->valueTextView:Lorg/telegram/ui/Components/AnimatedTextView$AnimatedTextDrawable;

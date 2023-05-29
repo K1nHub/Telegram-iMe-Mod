@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout;)V
     .locals 0
 
-    .line 1454
+    .line 1455
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$3;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onLayoutChange(Landroid/view/View;IIIIIIII)V
     .locals 0
 
-    .line 1457
+    .line 1458
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$3;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$1200(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;
@@ -49,7 +49,7 @@
 
     return-void
 
-    .line 1460
+    .line 1461
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$3;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -63,7 +63,7 @@
 
     check-cast p1, Landroid/view/View;
 
-    .line 1461
+    .line 1462
     iget-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$3;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {p2}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$1200(Lorg/telegram/ui/Components/SharedMediaLayout;)Lorg/telegram/ui/ActionBar/ActionBarMenuItem;

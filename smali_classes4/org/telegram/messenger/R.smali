@@ -18,6 +18,7 @@
         Lorg/telegram/messenger/R$interpolator;,
         Lorg/telegram/messenger/R$layout;,
         Lorg/telegram/messenger/R$mipmap;,
+        Lorg/telegram/messenger/R$navigation;,
         Lorg/telegram/messenger/R$plurals;,
         Lorg/telegram/messenger/R$raw;,
         Lorg/telegram/messenger/R$string;,

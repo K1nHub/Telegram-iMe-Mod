@@ -10,24 +10,6 @@
 
 
 # direct methods
-.method public constructor <init>()V
-    .locals 7
-
-    const-wide/16 v1, 0x0
-
-    const-wide/16 v3, 0x0
-
-    const/4 v5, 0x3
-
-    const/4 v6, 0x0
-
-    move-object v0, p0
-
-    invoke-direct/range {v0 .. v6}, Lcom/iMe/storage/data/locale/db/model/cloud/CloudAlbumDb;-><init>(JJILkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    return-void
-.end method
-
 .method public constructor <init>(JJ)V
     .locals 0
 
@@ -39,31 +21,6 @@
 
     .line 8
     iput-wide p3, p0, Lcom/iMe/storage/data/locale/db/model/cloud/CloudAlbumDb;->albumId:J
-
-    return-void
-.end method
-
-.method public synthetic constructor <init>(JJILkotlin/jvm/internal/DefaultConstructorMarker;)V
-    .locals 2
-
-    and-int/lit8 p6, p5, 0x1
-
-    const-wide/16 v0, 0x0
-
-    if-eqz p6, :cond_0
-
-    move-wide p1, v0
-
-    :cond_0
-    and-int/lit8 p5, p5, 0x2
-
-    if-eqz p5, :cond_1
-
-    move-wide p3, v0
-
-    .line 6
-    :cond_1
-    invoke-direct {p0, p1, p2, p3, p4}, Lcom/iMe/storage/data/locale/db/model/cloud/CloudAlbumDb;-><init>(JJ)V
 
     return-void
 .end method

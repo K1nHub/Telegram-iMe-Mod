@@ -17,7 +17,7 @@ import android.widget.FrameLayout;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLoader;
@@ -122,8 +122,8 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
     public ContextLinkCell(Context context, boolean z, Theme.ResourcesProvider resourcesProvider) {
         super(context);
         this.currentAccount = UserConfig.selectedAccount;
-        this.titleY = AndroidUtilities.m50dp(7);
-        this.descriptionY = AndroidUtilities.m50dp(27);
+        this.titleY = AndroidUtilities.m54dp(7);
+        this.descriptionY = AndroidUtilities.m54dp(27);
         this.imageScale = 1.0f;
         this.IMAGE_SCALE = new AnimationProperties.FloatProperty<ContextLinkCell>("animationValue") { // from class: org.telegram.ui.Cells.ContextLinkCell.2
             @Override // org.telegram.p044ui.Components.AnimationProperties.FloatProperty
@@ -140,7 +140,8 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
         this.resourcesProvider = resourcesProvider;
         ImageReceiver imageReceiver = new ImageReceiver(this);
         this.linkImageView = imageReceiver;
-        imageReceiver.setLayerNum(1);
+        imageReceiver.setAllowLoadingOnAttachedOnly(true);
+        this.linkImageView.setLayerNum(1);
         this.linkImageView.setUseSharedAnimationQueue(true);
         this.letterDrawable = new LetterDrawable(resourcesProvider, 0);
         this.radialProgress = new RadialProgress2(this);
@@ -149,11 +150,12 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
         if (z) {
             Paint paint = new Paint();
             this.backgroundPaint = paint;
-            paint.setColor(Theme.getColor("sharedMedia_photoPlaceholder", resourcesProvider));
+            int i = Theme.key_sharedMedia_photoPlaceholder;
+            paint.setColor(Theme.getColor(i, resourcesProvider));
             CheckBox2 checkBox2 = new CheckBox2(context, 21, resourcesProvider);
             this.checkBox = checkBox2;
             checkBox2.setVisibility(4);
-            this.checkBox.setColor(null, "sharedMedia_photoPlaceholder", "checkboxCheck");
+            this.checkBox.setColor(-1, i, Theme.key_checkboxCheck);
             this.checkBox.setDrawUnchecked(false);
             this.checkBox.setDrawBackgroundAsArc(1);
             addView(this.checkBox, LayoutHelper.createFrame(24, 24, 53, 0, 1, 1, 0));
@@ -240,7 +242,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
         if (i == 3 || i == 5) {
             TLRPC$TL_message tLRPC$TL_message = new TLRPC$TL_message();
             tLRPC$TL_message.out = true;
-            tLRPC$TL_message.f1451id = -Utilities.random.nextInt();
+            tLRPC$TL_message.f1457id = -Utilities.random.nextInt();
             tLRPC$TL_message.peer_id = new TLRPC$TL_peerUser();
             TLRPC$TL_peerUser tLRPC$TL_peerUser = new TLRPC$TL_peerUser();
             tLRPC$TL_message.from_id = tLRPC$TL_peerUser;
@@ -264,7 +266,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
             } else {
                 String httpUrlExtension = ImageLoader.getHttpUrlExtension(this.inlineResult.content.url, this.documentAttachType == 5 ? "mp3" : "ogg");
                 TLRPC$Document tLRPC$Document3 = tLRPC$TL_message.media.document;
-                tLRPC$Document3.f1435id = 0L;
+                tLRPC$Document3.f1441id = 0L;
                 tLRPC$Document3.access_hash = 0L;
                 tLRPC$Document3.date = tLRPC$TL_message.date;
                 tLRPC$Document3.mime_type = "audio/" + httpUrlExtension;
@@ -436,7 +438,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
         }
         int x = (int) motionEvent.getX();
         int y = (int) motionEvent.getY();
-        AndroidUtilities.m50dp(48);
+        AndroidUtilities.m54dp(48);
         int i = this.documentAttachType;
         boolean z = true;
         if (i == 3 || i == 5) {
@@ -535,21 +537,21 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
         }
         if (this.titleLayout != null) {
             canvas.save();
-            canvas.translate(AndroidUtilities.m50dp(LocaleController.isRTL ? 8 : AndroidUtilities.leftBaseline), this.titleY);
+            canvas.translate(AndroidUtilities.m54dp(LocaleController.isRTL ? 8 : AndroidUtilities.leftBaseline), this.titleY);
             this.titleLayout.draw(canvas);
             canvas.restore();
         }
         if (this.descriptionLayout != null) {
-            Theme.chat_contextResult_descriptionTextPaint.setColor(Theme.getColor("windowBackgroundWhiteGrayText2", this.resourcesProvider));
+            Theme.chat_contextResult_descriptionTextPaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2, this.resourcesProvider));
             canvas.save();
-            canvas.translate(AndroidUtilities.m50dp(LocaleController.isRTL ? 8 : AndroidUtilities.leftBaseline), this.descriptionY);
+            canvas.translate(AndroidUtilities.m54dp(LocaleController.isRTL ? 8 : AndroidUtilities.leftBaseline), this.descriptionY);
             this.descriptionLayout.draw(canvas);
             canvas.restore();
         }
         if (this.linkLayout != null) {
-            Theme.chat_contextResult_descriptionTextPaint.setColor(Theme.getColor("windowBackgroundWhiteLinkText", this.resourcesProvider));
+            Theme.chat_contextResult_descriptionTextPaint.setColor(Theme.getColor(Theme.key_windowBackgroundWhiteLinkText, this.resourcesProvider));
             canvas.save();
-            canvas.translate(AndroidUtilities.m50dp(LocaleController.isRTL ? 8 : AndroidUtilities.leftBaseline), this.linkY);
+            canvas.translate(AndroidUtilities.m54dp(LocaleController.isRTL ? 8 : AndroidUtilities.leftBaseline), this.linkY);
             this.linkLayout.draw(canvas);
             canvas.restore();
         }
@@ -561,16 +563,16 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
             }
             int i2 = this.documentAttachType;
             if (i2 == 3 || i2 == 5) {
-                this.radialProgress.setProgressColor(Theme.getColor(this.buttonPressed ? "chat_inAudioSelectedProgress" : "chat_inAudioProgress", this.resourcesProvider));
+                this.radialProgress.setProgressColor(Theme.getColor(this.buttonPressed ? Theme.key_chat_inAudioSelectedProgress : Theme.key_chat_inAudioProgress, this.resourcesProvider));
                 this.radialProgress.draw(canvas);
             } else {
                 TLRPC$BotInlineResult tLRPC$BotInlineResult = this.inlineResult;
                 if (tLRPC$BotInlineResult != null && tLRPC$BotInlineResult.type.equals("file")) {
                     int intrinsicWidth = Theme.chat_inlineResultFile.getIntrinsicWidth();
                     int intrinsicHeight = Theme.chat_inlineResultFile.getIntrinsicHeight();
-                    int imageX = (int) (this.linkImageView.getImageX() + ((AndroidUtilities.m50dp(52) - intrinsicWidth) / 2));
-                    int imageY = (int) (this.linkImageView.getImageY() + ((AndroidUtilities.m50dp(52) - intrinsicHeight) / 2));
-                    canvas.drawRect(this.linkImageView.getImageX(), this.linkImageView.getImageY(), AndroidUtilities.m50dp(52) + this.linkImageView.getImageX(), this.linkImageView.getImageY() + AndroidUtilities.m50dp(52), LetterDrawable.paint);
+                    int imageX = (int) (this.linkImageView.getImageX() + ((AndroidUtilities.m54dp(52) - intrinsicWidth) / 2));
+                    int imageY = (int) (this.linkImageView.getImageY() + ((AndroidUtilities.m54dp(52) - intrinsicHeight) / 2));
+                    canvas.drawRect(this.linkImageView.getImageX(), this.linkImageView.getImageY(), AndroidUtilities.m54dp(52) + this.linkImageView.getImageX(), this.linkImageView.getImageY() + AndroidUtilities.m54dp(52), LetterDrawable.paint);
                     Theme.chat_inlineResultFile.setBounds(imageX, imageY, intrinsicWidth + imageX, intrinsicHeight + imageY);
                     Theme.chat_inlineResultFile.draw(canvas);
                 } else {
@@ -578,9 +580,9 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
                     if (tLRPC$BotInlineResult2 != null && (tLRPC$BotInlineResult2.type.equals("audio") || this.inlineResult.type.equals("voice"))) {
                         int intrinsicWidth2 = Theme.chat_inlineResultAudio.getIntrinsicWidth();
                         int intrinsicHeight2 = Theme.chat_inlineResultAudio.getIntrinsicHeight();
-                        int imageX2 = (int) (this.linkImageView.getImageX() + ((AndroidUtilities.m50dp(52) - intrinsicWidth2) / 2));
-                        int imageY2 = (int) (this.linkImageView.getImageY() + ((AndroidUtilities.m50dp(52) - intrinsicHeight2) / 2));
-                        canvas.drawRect(this.linkImageView.getImageX(), this.linkImageView.getImageY(), AndroidUtilities.m50dp(52) + this.linkImageView.getImageX(), this.linkImageView.getImageY() + AndroidUtilities.m50dp(52), LetterDrawable.paint);
+                        int imageX2 = (int) (this.linkImageView.getImageX() + ((AndroidUtilities.m54dp(52) - intrinsicWidth2) / 2));
+                        int imageY2 = (int) (this.linkImageView.getImageY() + ((AndroidUtilities.m54dp(52) - intrinsicHeight2) / 2));
+                        canvas.drawRect(this.linkImageView.getImageX(), this.linkImageView.getImageY(), AndroidUtilities.m54dp(52) + this.linkImageView.getImageX(), this.linkImageView.getImageY() + AndroidUtilities.m54dp(52), LetterDrawable.paint);
                         Theme.chat_inlineResultAudio.setBounds(imageX2, imageY2, intrinsicWidth2 + imageX2, intrinsicHeight2 + imageY2);
                         Theme.chat_inlineResultAudio.draw(canvas);
                     } else {
@@ -588,9 +590,9 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
                         if (tLRPC$BotInlineResult3 != null && (tLRPC$BotInlineResult3.type.equals("venue") || this.inlineResult.type.equals("geo"))) {
                             int intrinsicWidth3 = Theme.chat_inlineResultLocation.getIntrinsicWidth();
                             int intrinsicHeight3 = Theme.chat_inlineResultLocation.getIntrinsicHeight();
-                            int imageX3 = (int) (this.linkImageView.getImageX() + ((AndroidUtilities.m50dp(52) - intrinsicWidth3) / 2));
-                            int imageY3 = (int) (this.linkImageView.getImageY() + ((AndroidUtilities.m50dp(52) - intrinsicHeight3) / 2));
-                            canvas.drawRect(this.linkImageView.getImageX(), this.linkImageView.getImageY(), AndroidUtilities.m50dp(52) + this.linkImageView.getImageX(), this.linkImageView.getImageY() + AndroidUtilities.m50dp(52), LetterDrawable.paint);
+                            int imageX3 = (int) (this.linkImageView.getImageX() + ((AndroidUtilities.m54dp(52) - intrinsicWidth3) / 2));
+                            int imageY3 = (int) (this.linkImageView.getImageY() + ((AndroidUtilities.m54dp(52) - intrinsicHeight3) / 2));
+                            canvas.drawRect(this.linkImageView.getImageX(), this.linkImageView.getImageY(), AndroidUtilities.m54dp(52) + this.linkImageView.getImageX(), this.linkImageView.getImageY() + AndroidUtilities.m54dp(52), LetterDrawable.paint);
                             Theme.chat_inlineResultLocation.setBounds(imageX3, imageY3, intrinsicWidth3 + imageX3, intrinsicHeight3 + imageY3);
                             Theme.chat_inlineResultLocation.draw(canvas);
                         } else {
@@ -654,13 +656,13 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
         }
         if (this.needDivider && !this.mediaWebpage) {
             if (LocaleController.isRTL) {
-                canvas.drawLine(BitmapDescriptorFactory.HUE_RED, getMeasuredHeight() - 1, getMeasuredWidth() - AndroidUtilities.m50dp(AndroidUtilities.leftBaseline), getMeasuredHeight() - 1, Theme.dividerPaint);
+                canvas.drawLine(BitmapDescriptorFactory.HUE_RED, getMeasuredHeight() - 1, getMeasuredWidth() - AndroidUtilities.m54dp(AndroidUtilities.leftBaseline), getMeasuredHeight() - 1, Theme.dividerPaint);
             } else {
-                canvas.drawLine(AndroidUtilities.m50dp(AndroidUtilities.leftBaseline), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, Theme.dividerPaint);
+                canvas.drawLine(AndroidUtilities.m54dp(AndroidUtilities.leftBaseline), getMeasuredHeight() - 1, getMeasuredWidth(), getMeasuredHeight() - 1, Theme.dividerPaint);
             }
         }
         if (this.needShadow) {
-            Theme.chat_contextResult_shadowUnderSwitchDrawable.setBounds(0, 0, getMeasuredWidth(), AndroidUtilities.m50dp(3));
+            Theme.chat_contextResult_shadowUnderSwitchDrawable.setBounds(0, 0, getMeasuredWidth(), AndroidUtilities.m54dp(3));
             Theme.chat_contextResult_shadowUnderSwitchDrawable.draw(canvas);
         }
     }
@@ -668,7 +670,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
     private int getIconForCurrentState() {
         int i = this.documentAttachType;
         if (i == 3 || i == 5) {
-            this.radialProgress.setColors("chat_inLoader", "chat_inLoaderSelected", "chat_inMediaIcon", "chat_inMediaIconSelected");
+            this.radialProgress.setColorKeys(Theme.key_chat_inLoader, Theme.key_chat_inLoaderSelected, Theme.key_chat_inMediaIcon, Theme.key_chat_inMediaIconSelected);
             int i2 = this.buttonState;
             if (i2 == 1) {
                 return 1;
@@ -678,7 +680,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
             }
             return i2 == 4 ? 3 : 0;
         }
-        this.radialProgress.setColors("chat_mediaLoaderPhoto", "chat_mediaLoaderPhotoSelected", "chat_mediaLoaderPhotoIcon", "chat_mediaLoaderPhotoIconSelected");
+        this.radialProgress.setColorKeys(Theme.key_chat_mediaLoaderPhoto, Theme.key_chat_mediaLoaderPhotoSelected, Theme.key_chat_mediaLoaderPhotoIcon, Theme.key_chat_mediaLoaderPhotoIconSelected);
         return this.buttonState == 1 ? 10 : 4;
     }
 
@@ -690,7 +692,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
             int i = this.resolveFileNameId;
             this.resolveFileNameId = i + 1;
             this.resolveFileNameId = i;
-            Utilities.searchQueue.postRunnable(new RunnableC35881(i, z));
+            Utilities.searchQueue.postRunnable(new RunnableC36391(i, z));
             this.radialProgress.setIcon(4, z, false);
         } else if (TextUtils.isEmpty(str)) {
             this.buttonState = -1;
@@ -746,11 +748,11 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Cells.ContextLinkCell$1 */
     /* loaded from: classes5.dex */
-    public class RunnableC35881 implements Runnable {
+    public class RunnableC36391 implements Runnable {
         final /* synthetic */ boolean val$ifSame;
         final /* synthetic */ int val$localId;
 
-        RunnableC35881(int i, boolean z) {
+        RunnableC36391(int i, boolean z) {
             this.val$localId = i;
             this.val$ifSame = z;
         }
@@ -766,7 +768,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
                 Method dump skipped, instructions count: 592
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Cells.ContextLinkCell.RunnableC35881.run():void");
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Cells.ContextLinkCell.RunnableC36391.run():void");
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -829,28 +831,28 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
         StringBuilder sb = new StringBuilder();
         switch (this.documentAttachType) {
             case 1:
-                sb.append(LocaleController.getString("AttachDocument", C3242R.string.AttachDocument));
+                sb.append(LocaleController.getString("AttachDocument", C3290R.string.AttachDocument));
                 break;
             case 2:
-                sb.append(LocaleController.getString("AttachGif", C3242R.string.AttachGif));
+                sb.append(LocaleController.getString("AttachGif", C3290R.string.AttachGif));
                 break;
             case 3:
-                sb.append(LocaleController.getString("AttachAudio", C3242R.string.AttachAudio));
+                sb.append(LocaleController.getString("AttachAudio", C3290R.string.AttachAudio));
                 break;
             case 4:
-                sb.append(LocaleController.getString("AttachVideo", C3242R.string.AttachVideo));
+                sb.append(LocaleController.getString("AttachVideo", C3290R.string.AttachVideo));
                 break;
             case 5:
-                sb.append(LocaleController.getString("AttachMusic", C3242R.string.AttachMusic));
+                sb.append(LocaleController.getString("AttachMusic", C3290R.string.AttachMusic));
                 break;
             case 6:
-                sb.append(LocaleController.getString("AttachSticker", C3242R.string.AttachSticker));
+                sb.append(LocaleController.getString("AttachSticker", C3290R.string.AttachSticker));
                 break;
             case 7:
-                sb.append(LocaleController.getString("AttachPhoto", C3242R.string.AttachPhoto));
+                sb.append(LocaleController.getString("AttachPhoto", C3290R.string.AttachPhoto));
                 break;
             case 8:
-                sb.append(LocaleController.getString("AttachLocation", C3242R.string.AttachLocation));
+                sb.append(LocaleController.getString("AttachLocation", C3290R.string.AttachLocation));
                 break;
         }
         StaticLayout staticLayout = this.titleLayout;
@@ -859,7 +861,7 @@ public class ContextLinkCell extends FrameLayout implements DownloadController.F
         boolean z2 = (staticLayout2 == null || TextUtils.isEmpty(staticLayout2.getText())) ? false : true;
         if (this.documentAttachType == 5 && z && z2) {
             sb.append(", ");
-            sb.append(LocaleController.formatString("AccDescrMusicInfo", C3242R.string.AccDescrMusicInfo, this.descriptionLayout.getText(), this.titleLayout.getText()));
+            sb.append(LocaleController.formatString("AccDescrMusicInfo", C3290R.string.AccDescrMusicInfo, this.descriptionLayout.getText(), this.titleLayout.getText()));
         } else {
             if (z) {
                 if (sb.length() > 0) {

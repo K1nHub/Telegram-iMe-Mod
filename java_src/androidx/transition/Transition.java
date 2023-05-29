@@ -651,21 +651,15 @@ public abstract class Transition implements Cloneable {
         if (this.mEnded) {
             return;
         }
-        ArrayMap<Animator, AnimationInfo> runningAnimators = getRunningAnimators();
-        int size = runningAnimators.size();
-        WindowIdImpl windowId = ViewUtils.getWindowId(view);
-        for (int i = size - 1; i >= 0; i--) {
-            AnimationInfo valueAt = runningAnimators.valueAt(i);
-            if (valueAt.mView != null && windowId.equals(valueAt.mWindowId)) {
-                AnimatorUtils.pause(runningAnimators.keyAt(i));
-            }
+        for (int size = this.mCurrentAnimators.size() - 1; size >= 0; size--) {
+            AnimatorUtils.pause(this.mCurrentAnimators.get(size));
         }
         ArrayList<TransitionListener> arrayList = this.mListeners;
         if (arrayList != null && arrayList.size() > 0) {
             ArrayList arrayList2 = (ArrayList) this.mListeners.clone();
             int size2 = arrayList2.size();
-            for (int i2 = 0; i2 < size2; i2++) {
-                ((TransitionListener) arrayList2.get(i2)).onTransitionPause(this);
+            for (int i = 0; i < size2; i++) {
+                ((TransitionListener) arrayList2.get(i)).onTransitionPause(this);
             }
         }
         this.mPaused = true;
@@ -674,21 +668,15 @@ public abstract class Transition implements Cloneable {
     public void resume(View view) {
         if (this.mPaused) {
             if (!this.mEnded) {
-                ArrayMap<Animator, AnimationInfo> runningAnimators = getRunningAnimators();
-                int size = runningAnimators.size();
-                WindowIdImpl windowId = ViewUtils.getWindowId(view);
-                for (int i = size - 1; i >= 0; i--) {
-                    AnimationInfo valueAt = runningAnimators.valueAt(i);
-                    if (valueAt.mView != null && windowId.equals(valueAt.mWindowId)) {
-                        AnimatorUtils.resume(runningAnimators.keyAt(i));
-                    }
+                for (int size = this.mCurrentAnimators.size() - 1; size >= 0; size--) {
+                    AnimatorUtils.resume(this.mCurrentAnimators.get(size));
                 }
                 ArrayList<TransitionListener> arrayList = this.mListeners;
                 if (arrayList != null && arrayList.size() > 0) {
                     ArrayList arrayList2 = (ArrayList) this.mListeners.clone();
                     int size2 = arrayList2.size();
-                    for (int i2 = 0; i2 < size2; i2++) {
-                        ((TransitionListener) arrayList2.get(i2)).onTransitionResume(this);
+                    for (int i = 0; i < size2; i++) {
+                        ((TransitionListener) arrayList2.get(i)).onTransitionResume(this);
                     }
                 }
             }
@@ -895,7 +883,7 @@ public abstract class Transition implements Cloneable {
 
     @Override // 
     /* renamed from: clone */
-    public Transition mo876clone() {
+    public Transition mo884clone() {
         try {
             Transition transition = (Transition) super.clone();
             transition.mAnimators = new ArrayList<>();

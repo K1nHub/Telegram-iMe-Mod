@@ -18,7 +18,7 @@ import com.iMe.storage.domain.model.crypto.NetworkType;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BalanceDiffCallback.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.adapter.diff.BalanceDiffCallback */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BalanceDiffCallback extends DiffUtil.ItemCallback<BaseNode> {
     @Override // androidx.recyclerview.widget.DiffUtil.ItemCallback
     public boolean areItemsTheSame(BaseNode oldItem, BaseNode newItem) {
@@ -48,7 +48,7 @@ public final class BalanceDiffCallback extends DiffUtil.ItemCallback<BaseNode> {
                     return false;
                 }
             } else if ((oldItem instanceof CryptoAccountItem) && (newItem instanceof CryptoAccountItem)) {
-                if (((CryptoAccountItem) oldItem).getUser().f1567id != ((CryptoAccountItem) newItem).getUser().f1567id) {
+                if (((CryptoAccountItem) oldItem).getUser().f1574id != ((CryptoAccountItem) newItem).getUser().f1574id) {
                     return false;
                 }
             } else if ((!(oldItem instanceof CryptoSelectTokensItem) || !(newItem instanceof CryptoSelectTokensItem)) && ((!(oldItem instanceof BannerItem) || !(newItem instanceof BannerItem)) && (!((z = oldItem instanceof GlobalStateItem)) || !(newItem instanceof GlobalStateItem)))) {

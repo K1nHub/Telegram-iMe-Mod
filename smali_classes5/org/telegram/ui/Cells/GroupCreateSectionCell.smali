@@ -16,10 +16,10 @@
     .line 33
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    const-string p1, "graySection"
-
     .line 34
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_graySection:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -41,9 +41,9 @@
     .line 37
     new-instance v0, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v1, "groupcreate_sectionShadow"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_groupcreate_sectionShadow:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -85,9 +85,9 @@
     .line 42
     iget-object p1, p0, Lorg/telegram/ui/Cells/GroupCreateSectionCell;->textView:Landroid/widget/TextView;
 
-    const-string v0, "groupcreate_sectionText"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_groupcreate_sectionText:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

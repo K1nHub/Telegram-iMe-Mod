@@ -1,7 +1,6 @@
 package okhttp3;
 
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
-import com.iMe.model.twitter.TweetItem$$ExternalSyntheticBackport0;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Date;
@@ -73,7 +72,7 @@ public final class Cookie {
     }
 
     public int hashCode() {
-        return ((((((((((((((((527 + this.name.hashCode()) * 31) + this.value.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.expiresAt)) * 31) + this.domain.hashCode()) * 31) + this.path.hashCode()) * 31) + TweetItem$$ExternalSyntheticBackport0.m695m(this.secure)) * 31) + TweetItem$$ExternalSyntheticBackport0.m695m(this.httpOnly)) * 31) + TweetItem$$ExternalSyntheticBackport0.m695m(this.persistent)) * 31) + TweetItem$$ExternalSyntheticBackport0.m695m(this.hostOnly);
+        return ((((((((((((((((527 + this.name.hashCode()) * 31) + this.value.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.expiresAt)) * 31) + this.domain.hashCode()) * 31) + this.path.hashCode()) * 31) + Cookie$$ExternalSyntheticBackport0.m77m(this.secure)) * 31) + Cookie$$ExternalSyntheticBackport0.m77m(this.httpOnly)) * 31) + Cookie$$ExternalSyntheticBackport0.m77m(this.persistent)) * 31) + Cookie$$ExternalSyntheticBackport0.m77m(this.hostOnly);
     }
 
     public String toString() {

@@ -25,7 +25,7 @@ import java.util.HashMap;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.MessageObject;
@@ -52,10 +52,10 @@ public class TranscribeButton {
     private static ArrayList<Integer> videoTranscriptionsOpen;
 
     /* renamed from: a */
-    private float f1749a;
+    private float f1756a;
 
     /* renamed from: b */
-    private float f1750b;
+    private float f1757b;
     private float backgroundBack;
     private int backgroundColor;
     private Paint backgroundPaint;
@@ -86,7 +86,7 @@ public class TranscribeButton {
     private boolean pressed = false;
     private final FastOutSlowInInterpolator interpolator = new FastOutSlowInInterpolator();
     private long start = SystemClock.elapsedRealtime();
-    private Rect bounds = new Rect(0, 0, AndroidUtilities.m50dp(30), AndroidUtilities.m50dp(30));
+    private Rect bounds = new Rect(0, 0, AndroidUtilities.m54dp(30), AndroidUtilities.m54dp(30));
 
     public void drawGradientBackground(Canvas canvas, Rect rect, float f) {
         throw null;
@@ -110,8 +110,8 @@ public class TranscribeButton {
         this.seekBar = seekBarWaveform;
         Rect rect = new Rect(this.bounds);
         this.pressBounds = rect;
-        rect.inset(AndroidUtilities.m50dp(8), AndroidUtilities.m50dp(8));
-        RLottieDrawable rLottieDrawable = new RLottieDrawable(C3242R.raw.transcribe_out, "transcribe_out", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
+        rect.inset(AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(8));
+        RLottieDrawable rLottieDrawable = new RLottieDrawable(C3290R.raw.transcribe_out, "transcribe_out", AndroidUtilities.m54dp(26), AndroidUtilities.m54dp(26));
         this.outIconDrawable = rLottieDrawable;
         rLottieDrawable.setCurrentFrame(0);
         this.outIconDrawable.setCallback(chatMessageCell);
@@ -122,7 +122,7 @@ public class TranscribeButton {
             }
         }, 19);
         this.outIconDrawable.setAllowDecodeSingleFrame(true);
-        RLottieDrawable rLottieDrawable2 = new RLottieDrawable(C3242R.raw.transcribe_in, "transcribe_in", AndroidUtilities.m50dp(26), AndroidUtilities.m50dp(26));
+        RLottieDrawable rLottieDrawable2 = new RLottieDrawable(C3290R.raw.transcribe_in, "transcribe_in", AndroidUtilities.m54dp(26), AndroidUtilities.m54dp(26));
         this.inIconDrawable = rLottieDrawable2;
         rLottieDrawable2.setCurrentFrame(0);
         this.inIconDrawable.setCallback(chatMessageCell);
@@ -313,7 +313,7 @@ public class TranscribeButton {
         Paint paint = this.backgroundPaint;
         paint.setAlpha((int) (paint.getAlpha() * (1.0f - f)));
         if (z2 || this.selectorDrawable == null) {
-            Drawable createSimpleSelectorRoundRectDrawable = Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m50dp(8), 0, this.rippleColor);
+            Drawable createSimpleSelectorRoundRectDrawable = Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(8), 0, this.rippleColor);
             this.selectorDrawable = createSimpleSelectorRoundRectDrawable;
             createSimpleSelectorRoundRectDrawable.setCallback(this.parent);
         }
@@ -351,8 +351,8 @@ public class TranscribeButton {
             float f = i3 / 2.0f;
             float f2 = i5;
             float f3 = i4 / 2.0f;
-            this.f1749a = (float) ((Math.atan((f - f2) / f3) * 180.0d) / 3.141592653589793d);
-            this.f1750b = (float) ((Math.atan(f / (f3 - f2)) * 180.0d) / 3.141592653589793d);
+            this.f1756a = (float) ((Math.atan((f - f2) / f3) * 180.0d) / 3.141592653589793d);
+            this.f1757b = (float) ((Math.atan(f / (f3 - f2)) * 180.0d) / 3.141592653589793d);
         }
         this.bounds.set(i, i2, i + i3, i2 + i4);
         int min = Math.min(Math.min(i3, i4) / 2, i5);
@@ -369,7 +369,7 @@ public class TranscribeButton {
     }
 
     public void draw(Canvas canvas, float f) {
-        this.pressBounds.set(this.bounds.left - AndroidUtilities.m50dp(8), this.bounds.top - AndroidUtilities.m50dp(8), this.bounds.right + AndroidUtilities.m50dp(8), this.bounds.bottom + AndroidUtilities.m50dp(8));
+        this.pressBounds.set(this.bounds.left - AndroidUtilities.m54dp(8), this.bounds.top - AndroidUtilities.m54dp(8), this.bounds.right + AndroidUtilities.m54dp(8), this.bounds.bottom + AndroidUtilities.m54dp(8));
         Path path = this.boundsPath;
         if (path == null) {
             this.boundsPath = new Path();
@@ -426,46 +426,46 @@ public class TranscribeButton {
             int centerX = this.bounds.centerX();
             Rect rect = this.bounds;
             int i2 = rect.top;
-            addLine(path4, centerX, i2, rect.right - this.radius, i2, f8, f9, BitmapDescriptorFactory.HUE_RED, this.f1749a);
+            addLine(path4, centerX, i2, rect.right - this.radius, i2, f8, f9, BitmapDescriptorFactory.HUE_RED, this.f1756a);
             Path path5 = this.progressClipPath;
             Rect rect2 = this.bounds;
-            addCorner(path5, rect2.right, rect2.top, this.diameter, 1, f8, f9, this.f1749a, this.f1750b);
+            addCorner(path5, rect2.right, rect2.top, this.diameter, 1, f8, f9, this.f1756a, this.f1757b);
             Path path6 = this.progressClipPath;
             Rect rect3 = this.bounds;
             int i3 = rect3.right;
             int i4 = rect3.top;
             int i5 = this.radius;
-            float f10 = this.f1750b;
+            float f10 = this.f1757b;
             addLine(path6, i3, i4 + i5, i3, rect3.bottom - i5, f8, f9, f10, 180.0f - f10);
             Path path7 = this.progressClipPath;
             Rect rect4 = this.bounds;
-            addCorner(path7, rect4.right, rect4.bottom, this.diameter, 2, f8, f9, 180.0f - this.f1750b, 180.0f - this.f1749a);
+            addCorner(path7, rect4.right, rect4.bottom, this.diameter, 2, f8, f9, 180.0f - this.f1757b, 180.0f - this.f1756a);
             Path path8 = this.progressClipPath;
             Rect rect5 = this.bounds;
             int i6 = rect5.right;
             int i7 = this.radius;
             int i8 = rect5.bottom;
             int i9 = rect5.left + i7;
-            float f11 = this.f1749a;
+            float f11 = this.f1756a;
             addLine(path8, i6 - i7, i8, i9, i8, f8, f9, 180.0f - f11, f11 + 180.0f);
             Path path9 = this.progressClipPath;
             Rect rect6 = this.bounds;
-            addCorner(path9, rect6.left, rect6.bottom, this.diameter, 3, f8, f9, this.f1749a + 180.0f, this.f1750b + 180.0f);
+            addCorner(path9, rect6.left, rect6.bottom, this.diameter, 3, f8, f9, this.f1756a + 180.0f, this.f1757b + 180.0f);
             Path path10 = this.progressClipPath;
             Rect rect7 = this.bounds;
             int i10 = rect7.left;
             int i11 = rect7.bottom;
             int i12 = this.radius;
             int i13 = rect7.top + i12;
-            float f12 = this.f1750b;
+            float f12 = this.f1757b;
             addLine(path10, i10, i11 - i12, i10, i13, f8, f9, f12 + 180.0f, 360.0f - f12);
             Path path11 = this.progressClipPath;
             Rect rect8 = this.bounds;
-            addCorner(path11, rect8.left, rect8.top, this.diameter, 4, f8, f9, 360.0f - this.f1750b, 360.0f - this.f1749a);
+            addCorner(path11, rect8.left, rect8.top, this.diameter, 4, f8, f9, 360.0f - this.f1757b, 360.0f - this.f1756a);
             Path path12 = this.progressClipPath;
             Rect rect9 = this.bounds;
-            addLine(path12, rect9.left + this.radius, rect9.top, rect9.centerX(), this.bounds.top, f8, f9, 360.0f - this.f1749a, 360.0f);
-            this.strokePaint.setStrokeWidth(AndroidUtilities.m51dp(1.5f));
+            addLine(path12, rect9.left + this.radius, rect9.top, rect9.centerX(), this.bounds.top, f8, f9, 360.0f - this.f1756a, 360.0f);
+            this.strokePaint.setStrokeWidth(AndroidUtilities.m55dp(1.5f));
             int alpha2 = this.strokePaint.getAlpha();
             this.strokePaint.setAlpha((int) (alpha2 * f));
             canvas.drawPath(this.progressClipPath, this.strokePaint);
@@ -473,7 +473,7 @@ public class TranscribeButton {
             this.parent.invalidate();
         }
         canvas.save();
-        canvas.translate(this.bounds.centerX() + AndroidUtilities.m50dp(-13), this.bounds.centerY() + AndroidUtilities.m50dp(-13));
+        canvas.translate(this.bounds.centerX() + AndroidUtilities.m54dp(-13), this.bounds.centerY() + AndroidUtilities.m54dp(-13));
         if (this.isOpen) {
             this.inIconDrawable.setAlpha((int) (this.inIconDrawableAlpha * f));
             this.inIconDrawable.draw(canvas);
@@ -632,7 +632,7 @@ public class TranscribeButton {
         public LoadingPointsDrawable(TextPaint textPaint) {
             this.paint = textPaint;
             float textSize = textPaint.getTextSize() * 0.89f;
-            RLottieDrawable rLottieDrawable = new RLottieDrawable(this, C3242R.raw.dots_loading, "dots_loading", (int) textSize, (int) (textSize * 1.25f)) { // from class: org.telegram.ui.Components.TranscribeButton.LoadingPointsDrawable.1
+            RLottieDrawable rLottieDrawable = new RLottieDrawable(this, C3290R.raw.dots_loading, "dots_loading", (int) textSize, (int) (textSize * 1.25f)) { // from class: org.telegram.ui.Components.TranscribeButton.LoadingPointsDrawable.1
                 /* JADX INFO: Access modifiers changed from: protected */
                 @Override // org.telegram.p044ui.Components.RLottieDrawable
                 public boolean hasParentView() {
@@ -709,7 +709,7 @@ public class TranscribeButton {
         TLRPC$InputPeer inputPeer = MessagesController.getInstance(i).getInputPeer(messageObject.messageOwner.peer_id);
         final long peerDialogId = DialogObject.getPeerDialogId(inputPeer);
         TLRPC$Message tLRPC$Message = messageObject.messageOwner;
-        final int i2 = tLRPC$Message.f1451id;
+        final int i2 = tLRPC$Message.f1457id;
         if (z) {
             if (tLRPC$Message.voiceTranscription != null && tLRPC$Message.voiceTranscriptionFinal) {
                 openVideoTranscription(messageObject);
@@ -724,7 +724,7 @@ public class TranscribeButton {
                 return;
             }
             if (BuildVars.LOGS_ENABLED) {
-                FileLog.m48d("sending Transcription request, msg_id=" + i2 + " dialog_id=" + peerDialogId);
+                FileLog.m52d("sending Transcription request, msg_id=" + i2 + " dialog_id=" + peerDialogId);
             }
             TLRPC$TL_messages_transcribeAudio tLRPC$TL_messages_transcribeAudio = new TLRPC$TL_messages_transcribeAudio();
             tLRPC$TL_messages_transcribeAudio.peer = inputPeer;
@@ -799,7 +799,7 @@ public class TranscribeButton {
         tLRPC$Message.voiceTranscriptionOpen = true;
         tLRPC$Message.voiceTranscriptionFinal = z;
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m48d("Transcription request sent, received final=" + z + " id=" + j3 + " text=" + str);
+            FileLog.m52d("Transcription request sent, received final=" + z + " id=" + j3 + " text=" + str);
         }
         MessagesStorage.getInstance(i).updateMessageVoiceTranscription(j2, i2, str, messageObject.messageOwner);
         if (z) {

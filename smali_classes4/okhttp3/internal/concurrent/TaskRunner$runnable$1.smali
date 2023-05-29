@@ -106,7 +106,7 @@
 
     move-result-wide v2
 
-    const-string v5, "starting"
+    const-string/jumbo v5, "starting"
 
     .line 39
     invoke-static {v1, v0, v5}, Lokhttp3/internal/concurrent/TaskLoggerKt;->access$log(Lokhttp3/internal/concurrent/Task;Lokhttp3/internal/concurrent/TaskQueue;Ljava/lang/String;)V

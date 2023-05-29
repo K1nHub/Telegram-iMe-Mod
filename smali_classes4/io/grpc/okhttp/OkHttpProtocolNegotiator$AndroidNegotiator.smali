@@ -97,7 +97,7 @@
 
     const/4 v4, 0x0
 
-    const-string v6, "setUseSessionTickets"
+    const-string/jumbo v6, "setUseSessionTickets"
 
     invoke-direct {v1, v4, v6, v3}, Lio/grpc/okhttp/internal/OptionalMethod;-><init>(Ljava/lang/Class;Ljava/lang/String;[Ljava/lang/Class;)V
 

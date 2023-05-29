@@ -64,7 +64,7 @@
     .line 112
     invoke-static {v0}, Lorg/solovyev/android/checkout/Sku$Price;->access$000(Lorg/json/JSONObject;)Lorg/solovyev/android/checkout/Sku$Price;
 
-    const-string p1, "title"
+    const-string/jumbo p1, "title"
 
     .line 113
     invoke-virtual {v0, p1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
@@ -78,7 +78,7 @@
     .line 114
     invoke-virtual {v0, p1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;
 
-    const-string p1, "subscriptionPeriod"
+    const-string/jumbo p1, "subscriptionPeriod"
 
     .line 115
     invoke-virtual {v0, p1}, Lorg/json/JSONObject;->optString(Ljava/lang/String;)Ljava/lang/String;

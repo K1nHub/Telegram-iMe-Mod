@@ -18,7 +18,7 @@
 .method constructor <init>(Landroid/content/Context;)V
     .locals 0
 
-    .line 231
+    .line 232
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -37,7 +37,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 233
+    .line 234
     iget v0, p2, Landroid/graphics/Rect;->bottom:I
 
     const/16 v1, 0x3c
@@ -50,7 +50,7 @@
 
     iput v0, p2, Landroid/graphics/Rect;->bottom:I
 
-    .line 234
+    .line 235
     invoke-super {p0, p1, p2, p3}, Landroidx/recyclerview/widget/RecyclerView;->requestChildRectangleOnScreen(Landroid/view/View;Landroid/graphics/Rect;Z)Z
 
     move-result p1

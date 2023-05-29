@@ -169,9 +169,9 @@
     .line 136
     iget-object p2, p0, Lorg/telegram/ui/Cells/DrawerUserCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const-string v0, "chats_menuItemText"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuItemText:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -302,13 +302,13 @@
     .line 151
     iget-object p1, p0, Lorg/telegram/ui/Cells/DrawerUserCell;->checkBox:Lorg/telegram/ui/Components/GroupCreateCheckBox;
 
-    const-string p2, "chats_unreadCounterText"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_unreadCounterText:I
 
-    const-string v0, "chats_unreadCounter"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chats_unreadCounter:I
 
-    const-string v2, "chats_menuBackground"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuBackground:I
 
-    invoke-virtual {p1, p2, v0, v2}, Lorg/telegram/ui/Components/GroupCreateCheckBox;->setColorKeysOverrides(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p1, p2, v0, v2}, Lorg/telegram/ui/Components/GroupCreateCheckBox;->setColorKeysOverrides(III)V
 
     .line 152
     iget-object p1, p0, Lorg/telegram/ui/Cells/DrawerUserCell;->checkBox:Lorg/telegram/ui/Components/GroupCreateCheckBox;
@@ -370,9 +370,9 @@
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "chats_menuItemIcon"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuItemIcon:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -657,9 +657,9 @@
     .line 165
     iget-object v0, p0, Lorg/telegram/ui/Cells/DrawerUserCell;->textView:Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    const-string v1, "chats_menuItemText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_menuItemText:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -670,10 +670,10 @@
 
     if-eqz v0, :cond_0
 
-    const-string v1, "listSelectorSDK21"
-
     .line 168
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -1299,9 +1299,9 @@
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Cells/DrawerUserCell;->status:Lorg/telegram/ui/Components/AnimatedEmojiDrawable$SwapAnimatedEmojiDrawable;
 
-    const-string v3, "chats_verifiedBackground"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chats_verifiedBackground:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 

@@ -29,35 +29,35 @@ public final class LocationRequest extends AbstractSafeParcelable implements Ref
     public static final int PRIORITY_LOW_POWER = 104;
     @Deprecated
     public static final int PRIORITY_NO_POWER = 105;
-    @SafeParcelable.Field(defaultValueUnchecked = "Priority.PRIORITY_BALANCED_POWER_ACCURACY", getter = "getPriority", m775id = 1)
+    @SafeParcelable.Field(defaultValueUnchecked = "Priority.PRIORITY_BALANCED_POWER_ACCURACY", getter = "getPriority", m779id = 1)
     private int zza;
-    @SafeParcelable.Field(defaultValue = "3600000", getter = "getIntervalMillis", m775id = 2)
+    @SafeParcelable.Field(defaultValue = "3600000", getter = "getIntervalMillis", m779id = 2)
     private long zzb;
-    @SafeParcelable.Field(defaultValue = "600000", getter = "getMinUpdateIntervalMillis", m775id = 3)
+    @SafeParcelable.Field(defaultValue = "600000", getter = "getMinUpdateIntervalMillis", m779id = 3)
     private long zzc;
-    @SafeParcelable.Field(defaultValue = SessionDescription.SUPPORTED_SDP_VERSION, getter = "getMaxUpdateDelayMillis", m775id = 8)
+    @SafeParcelable.Field(defaultValue = SessionDescription.SUPPORTED_SDP_VERSION, getter = "getMaxUpdateDelayMillis", m779id = 8)
     private long zzd;
-    @SafeParcelable.Field(defaultValueUnchecked = "Long.MAX_VALUE", getter = "getDurationMillis", m775id = 10)
+    @SafeParcelable.Field(defaultValueUnchecked = "Long.MAX_VALUE", getter = "getDurationMillis", m779id = 10)
     private long zze;
-    @SafeParcelable.Field(defaultValueUnchecked = "Integer.MAX_VALUE", getter = "getMaxUpdates", m775id = 6)
+    @SafeParcelable.Field(defaultValueUnchecked = "Integer.MAX_VALUE", getter = "getMaxUpdates", m779id = 6)
     private int zzf;
-    @SafeParcelable.Field(defaultValue = SessionDescription.SUPPORTED_SDP_VERSION, getter = "getMinUpdateDistanceMeters", m775id = 7)
+    @SafeParcelable.Field(defaultValue = SessionDescription.SUPPORTED_SDP_VERSION, getter = "getMinUpdateDistanceMeters", m779id = 7)
     private float zzg;
-    @SafeParcelable.Field(defaultValue = "false", getter = "isWaitForAccurateLocation", m775id = 9)
+    @SafeParcelable.Field(defaultValue = "false", getter = "isWaitForAccurateLocation", m779id = 9)
     private boolean zzh;
-    @SafeParcelable.Field(defaultValueUnchecked = "-1", getter = "getMaxUpdateAgeMillis", m775id = 11)
+    @SafeParcelable.Field(defaultValueUnchecked = "-1", getter = "getMaxUpdateAgeMillis", m779id = 11)
     private long zzi;
-    @SafeParcelable.Field(defaultValueUnchecked = "Granularity.GRANULARITY_PERMISSION_LEVEL", getter = "getGranularity", m775id = 12)
+    @SafeParcelable.Field(defaultValueUnchecked = "Granularity.GRANULARITY_PERMISSION_LEVEL", getter = "getGranularity", m779id = 12)
     private final int zzj;
-    @SafeParcelable.Field(defaultValueUnchecked = "ThrottleBehavior.THROTTLE_BACKGROUND", getter = "getThrottleBehavior", m775id = 13)
+    @SafeParcelable.Field(defaultValueUnchecked = "ThrottleBehavior.THROTTLE_BACKGROUND", getter = "getThrottleBehavior", m779id = 13)
     private final int zzk;
-    @SafeParcelable.Field(getter = "getModuleId", m775id = 14)
+    @SafeParcelable.Field(getter = "getModuleId", m779id = 14)
     private final String zzl;
-    @SafeParcelable.Field(defaultValue = "false", getter = "isBypass", m775id = 15)
+    @SafeParcelable.Field(defaultValue = "false", getter = "isBypass", m779id = 15)
     private final boolean zzm;
-    @SafeParcelable.Field(defaultValueUnchecked = "new android.os.WorkSource()", getter = "getWorkSource", m775id = 16)
+    @SafeParcelable.Field(defaultValueUnchecked = "new android.os.WorkSource()", getter = "getWorkSource", m779id = 16)
     private final WorkSource zzn;
-    @SafeParcelable.Field(getter = "getImpersonation", m775id = 17)
+    @SafeParcelable.Field(getter = "getImpersonation", m779id = 17)
     private final com.google.android.gms.internal.location.zzd zzo;
 
     @Deprecated
@@ -564,7 +564,7 @@ public final class LocationRequest extends AbstractSafeParcelable implements Ref
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public LocationRequest(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) long j, @SafeParcelable.Param(m774id = 3) long j2, @SafeParcelable.Param(m774id = 8) long j3, @SafeParcelable.RemovedParam(defaultValueUnchecked = "Long.MAX_VALUE", m773id = 5) long j4, @SafeParcelable.Param(m774id = 10) long j5, @SafeParcelable.Param(m774id = 6) int i2, @SafeParcelable.Param(m774id = 7) float f, @SafeParcelable.Param(m774id = 9) boolean z, @SafeParcelable.Param(m774id = 11) long j6, @SafeParcelable.Param(m774id = 12) int i3, @SafeParcelable.Param(m774id = 13) int i4, @SafeParcelable.Param(m774id = 14) String str, @SafeParcelable.Param(m774id = 15) boolean z2, @SafeParcelable.Param(m774id = 16) WorkSource workSource, @SafeParcelable.Param(m774id = 17) com.google.android.gms.internal.location.zzd zzdVar) {
+    public LocationRequest(@SafeParcelable.Param(m778id = 1) int i, @SafeParcelable.Param(m778id = 2) long j, @SafeParcelable.Param(m778id = 3) long j2, @SafeParcelable.Param(m778id = 8) long j3, @SafeParcelable.RemovedParam(defaultValueUnchecked = "Long.MAX_VALUE", m777id = 5) long j4, @SafeParcelable.Param(m778id = 10) long j5, @SafeParcelable.Param(m778id = 6) int i2, @SafeParcelable.Param(m778id = 7) float f, @SafeParcelable.Param(m778id = 9) boolean z, @SafeParcelable.Param(m778id = 11) long j6, @SafeParcelable.Param(m778id = 12) int i3, @SafeParcelable.Param(m778id = 13) int i4, @SafeParcelable.Param(m778id = 14) String str, @SafeParcelable.Param(m778id = 15) boolean z2, @SafeParcelable.Param(m778id = 16) WorkSource workSource, @SafeParcelable.Param(m778id = 17) com.google.android.gms.internal.location.zzd zzdVar) {
         this.zza = i;
         long j7 = j;
         this.zzb = j7;

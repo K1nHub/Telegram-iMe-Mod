@@ -64,20 +64,20 @@
 .method public constructor <init>(Lorg/telegram/messenger/ImageLoader;Lorg/telegram/messenger/ImageLoader$CacheImage;)V
     .locals 1
 
-    .line 367
+    .line 374
     iput-object p1, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->this$0:Lorg/telegram/messenger/ImageLoader;
 
     invoke-direct {p0}, Landroid/os/AsyncTask;-><init>()V
 
     const/4 p1, 0x1
 
-    .line 362
+    .line 369
     iput-boolean p1, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->canRetry:Z
 
-    .line 368
+    .line 375
     iput-object p2, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->cacheImage:Lorg/telegram/messenger/ImageLoader$CacheImage;
 
-    .line 369
+    .line 376
     iget-object p2, p2, Lorg/telegram/messenger/ImageLoader$CacheImage;->imageLocation:Lorg/telegram/messenger/ImageLocation;
 
     iget-object p2, p2, Lorg/telegram/messenger/ImageLocation;->path:Ljava/lang/String;
@@ -88,7 +88,7 @@
 
     const-string v0, "s"
 
-    .line 370
+    .line 377
     invoke-virtual {p2, v0}, Landroid/net/Uri;->getQueryParameter(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p2
@@ -109,7 +109,7 @@
 .method static synthetic access$4500(Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;)Lorg/telegram/messenger/ImageLoader$CacheImage;
     .locals 0
 
-    .line 359
+    .line 366
     iget-object p0, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->cacheImage:Lorg/telegram/messenger/ImageLoader$CacheImage;
 
     return-object p0
@@ -118,7 +118,7 @@
 .method private synthetic lambda$onCancelled$2()V
     .locals 2
 
-    .line 481
+    .line 488
     iget-object v0, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->this$0:Lorg/telegram/messenger/ImageLoader;
 
     const/4 v1, 0x1
@@ -131,7 +131,7 @@
 .method private synthetic lambda$onPostExecute$0(Ljava/lang/String;)V
     .locals 4
 
-    .line 469
+    .line 476
     iget-object v0, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->cacheImage:Lorg/telegram/messenger/ImageLoader$CacheImage;
 
     new-instance v1, Lorg/telegram/messenger/ImageLoader$HttpImageTask;
@@ -144,7 +144,7 @@
 
     iput-object v1, v0, Lorg/telegram/messenger/ImageLoader$CacheImage;->httpTask:Lorg/telegram/messenger/ImageLoader$HttpImageTask;
 
-    .line 470
+    .line 477
     iget-object p1, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->this$0:Lorg/telegram/messenger/ImageLoader;
 
     invoke-static {p1}, Lorg/telegram/messenger/ImageLoader;->access$500(Lorg/telegram/messenger/ImageLoader;)Ljava/util/LinkedList;
@@ -157,7 +157,7 @@
 
     invoke-virtual {p1, v0}, Ljava/util/LinkedList;->add(Ljava/lang/Object;)Z
 
-    .line 471
+    .line 478
     iget-object p1, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->this$0:Lorg/telegram/messenger/ImageLoader;
 
     invoke-static {p1, v3}, Lorg/telegram/messenger/ImageLoader;->access$600(Lorg/telegram/messenger/ImageLoader;Z)V
@@ -168,7 +168,7 @@
 .method private synthetic lambda$onPostExecute$1()V
     .locals 2
 
-    .line 476
+    .line 483
     iget-object v0, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->this$0:Lorg/telegram/messenger/ImageLoader;
 
     const/4 v1, 0x1
@@ -183,7 +183,7 @@
 .method protected bridge synthetic doInBackground([Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 359
+    .line 366
     check-cast p1, [Ljava/lang/Void;
 
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->doInBackground([Ljava/lang/Void;)Ljava/lang/String;
@@ -200,7 +200,7 @@
 
     const/4 v0, 0x0
 
-    .line 377
+    .line 384
     :try_start_0
     iget-object v1, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->cacheImage:Lorg/telegram/messenger/ImageLoader$CacheImage;
 
@@ -208,7 +208,7 @@
 
     iget-object v1, v1, Lorg/telegram/messenger/ImageLocation;->path:Ljava/lang/String;
 
-    .line 378
+    .line 385
     new-instance v2, Ljava/net/URL;
 
     const-string v3, "athumb://"
@@ -221,7 +221,7 @@
 
     invoke-direct {v2, v1}, Ljava/net/URL;-><init>(Ljava/lang/String;)V
 
-    .line 379
+    .line 386
     invoke-virtual {v2}, Ljava/net/URL;->openConnection()Ljava/net/URLConnection;
 
     move-result-object v1
@@ -232,28 +232,28 @@
 
     const/16 v2, 0x1388
 
-    .line 381
+    .line 388
     invoke-virtual {v1, v2}, Ljava/net/HttpURLConnection;->setConnectTimeout(I)V
 
-    .line 382
+    .line 389
     iget-object v1, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->httpConnection:Ljava/net/HttpURLConnection;
 
     invoke-virtual {v1, v2}, Ljava/net/HttpURLConnection;->setReadTimeout(I)V
 
-    .line 383
+    .line 390
     iget-object v1, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->httpConnection:Ljava/net/HttpURLConnection;
 
     invoke-virtual {v1}, Ljava/net/HttpURLConnection;->connect()V
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_8
 
-    .line 385
+    .line 392
     :try_start_1
     iget-object v1, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->httpConnection:Ljava/net/HttpURLConnection;
 
     if-eqz v1, :cond_0
 
-    .line 386
+    .line 393
     invoke-virtual {v1}, Ljava/net/HttpURLConnection;->getResponseCode()I
 
     move-result v1
@@ -270,7 +270,7 @@
 
     if-eq v1, v2, :cond_0
 
-    .line 388
+    .line 395
     iput-boolean v0, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->canRetry:Z
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_0
@@ -281,11 +281,11 @@
     :catch_0
     move-exception v1
 
-    .line 392
+    .line 399
     :try_start_2
     invoke-static {v1, v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
 
-    .line 394
+    .line 401
     :cond_0
     :goto_0
     iget-object v1, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->httpConnection:Ljava/net/HttpURLConnection;
@@ -296,7 +296,7 @@
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_8
 
-    .line 396
+    .line 403
     :try_start_3
     new-instance v2, Ljava/io/ByteArrayOutputStream;
 
@@ -309,7 +309,7 @@
     :try_start_4
     new-array v3, v3, [B
 
-    .line 400
+    .line 407
     :goto_1
     invoke-virtual {p0}, Landroid/os/AsyncTask;->isCancelled()Z
 
@@ -319,7 +319,7 @@
 
     goto :goto_2
 
-    .line 403
+    .line 410
     :cond_1
     invoke-virtual {v1, v3}, Ljava/io/InputStream;->read([B)I
 
@@ -327,17 +327,17 @@
 
     if-lez v4, :cond_2
 
-    .line 405
+    .line 412
     invoke-virtual {v2, v3, v0, v4}, Ljava/io/ByteArrayOutputStream;->write([BII)V
 
     goto :goto_1
 
-    .line 412
+    .line 419
     :cond_2
     :goto_2
     iput-boolean v0, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->canRetry:Z
 
-    .line 413
+    .line 420
     new-instance v3, Lorg/json/JSONObject;
 
     new-instance v4, Ljava/lang/String;
@@ -352,44 +352,44 @@
 
     const-string v4, "results"
 
-    .line 414
+    .line 421
     invoke-virtual {v3, v4}, Lorg/json/JSONObject;->getJSONArray(Ljava/lang/String;)Lorg/json/JSONArray;
 
     move-result-object v3
 
-    .line 415
+    .line 422
     invoke-virtual {v3}, Lorg/json/JSONArray;->length()I
 
     move-result v4
 
     if-lez v4, :cond_8
 
-    .line 416
+    .line 423
     invoke-virtual {v3, v0}, Lorg/json/JSONArray;->getJSONObject(I)Lorg/json/JSONObject;
 
     move-result-object v3
 
     const-string v4, "artworkUrl100"
 
-    .line 417
+    .line 424
     invoke-virtual {v3, v4}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v3
 
-    .line 418
+    .line 425
     iget-boolean v4, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->small:Z
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_6
 
     if-eqz v4, :cond_5
 
-    .line 441
+    .line 448
     :try_start_5
     iget-object p1, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->httpConnection:Ljava/net/HttpURLConnection;
 
     if-eqz p1, :cond_3
 
-    .line 442
+    .line 449
     invoke-virtual {p1}, Ljava/net/HttpURLConnection;->disconnect()V
     :try_end_5
     .catchall {:try_start_5 .. :try_end_5} :catchall_0
@@ -398,7 +398,7 @@
     :cond_3
     if-eqz v1, :cond_4
 
-    .line 449
+    .line 456
     :try_start_6
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_6
@@ -409,10 +409,10 @@
     :catchall_1
     move-exception p1
 
-    .line 452
+    .line 459
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 456
+    .line 463
     :cond_4
     :goto_3
     :try_start_7
@@ -429,20 +429,20 @@
 
     const-string v5, "600x600"
 
-    .line 421
+    .line 428
     invoke-virtual {v3, v4, v5}, Ljava/lang/String;->replace(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Ljava/lang/String;
 
     move-result-object p1
     :try_end_8
     .catchall {:try_start_8 .. :try_end_8} :catchall_6
 
-    .line 441
+    .line 448
     :try_start_9
     iget-object v0, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->httpConnection:Ljava/net/HttpURLConnection;
 
     if-eqz v0, :cond_6
 
-    .line 442
+    .line 449
     invoke-virtual {v0}, Ljava/net/HttpURLConnection;->disconnect()V
     :try_end_9
     .catchall {:try_start_9 .. :try_end_9} :catchall_2
@@ -451,7 +451,7 @@
     :cond_6
     if-eqz v1, :cond_7
 
-    .line 449
+    .line 456
     :try_start_a
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_a
@@ -462,10 +462,10 @@
     :catchall_3
     move-exception v0
 
-    .line 452
+    .line 459
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 456
+    .line 463
     :cond_7
     :goto_4
     :try_start_b
@@ -476,14 +476,14 @@
     :catch_2
     return-object p1
 
-    .line 441
+    .line 448
     :cond_8
     :try_start_c
     iget-object v0, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->httpConnection:Ljava/net/HttpURLConnection;
 
     if-eqz v0, :cond_9
 
-    .line 442
+    .line 449
     invoke-virtual {v0}, Ljava/net/HttpURLConnection;->disconnect()V
     :try_end_c
     .catchall {:try_start_c .. :try_end_c} :catchall_4
@@ -492,7 +492,7 @@
     :cond_9
     if-eqz v1, :cond_a
 
-    .line 449
+    .line 456
     :try_start_d
     invoke-virtual {v1}, Ljava/io/InputStream;->close()V
     :try_end_d
@@ -503,10 +503,10 @@
     :catchall_5
     move-exception v0
 
-    .line 452
+    .line 459
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 456
+    .line 463
     :cond_a
     :goto_5
     :try_start_e
@@ -549,43 +549,43 @@
 
     move-object v3, v2
 
-    .line 425
+    .line 432
     :goto_6
     :try_start_f
     instance-of v4, v1, Ljava/net/SocketTimeoutException;
 
     if-eqz v4, :cond_b
 
-    .line 426
+    .line 433
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->isNetworkOnline()Z
 
     move-result v4
 
     if-eqz v4, :cond_e
 
-    .line 427
+    .line 434
     iput-boolean v0, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->canRetry:Z
 
     goto :goto_7
 
-    .line 429
+    .line 436
     :cond_b
     instance-of v4, v1, Ljava/net/UnknownHostException;
 
     if-eqz v4, :cond_c
 
-    .line 430
+    .line 437
     iput-boolean v0, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->canRetry:Z
 
     goto :goto_7
 
-    .line 431
+    .line 438
     :cond_c
     instance-of v4, v1, Ljava/net/SocketException;
 
     if-eqz v4, :cond_d
 
-    .line 432
+    .line 439
     invoke-virtual {v1}, Ljava/lang/Throwable;->getMessage()Ljava/lang/String;
 
     move-result-object v4
@@ -604,34 +604,34 @@
 
     if-eqz v4, :cond_e
 
-    .line 433
+    .line 440
     iput-boolean v0, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->canRetry:Z
 
     goto :goto_7
 
-    .line 435
+    .line 442
     :cond_d
     instance-of v4, v1, Ljava/io/FileNotFoundException;
 
     if-eqz v4, :cond_e
 
-    .line 436
+    .line 443
     iput-boolean v0, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->canRetry:Z
 
-    .line 438
+    .line 445
     :cond_e
     :goto_7
     invoke-static {v1, v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;Z)V
     :try_end_f
     .catchall {:try_start_f .. :try_end_f} :catchall_b
 
-    .line 441
+    .line 448
     :try_start_10
     iget-object v0, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->httpConnection:Ljava/net/HttpURLConnection;
 
     if-eqz v0, :cond_f
 
-    .line 442
+    .line 449
     invoke-virtual {v0}, Ljava/net/HttpURLConnection;->disconnect()V
     :try_end_10
     .catchall {:try_start_10 .. :try_end_10} :catchall_9
@@ -640,7 +640,7 @@
     :cond_f
     if-eqz v2, :cond_10
 
-    .line 449
+    .line 456
     :try_start_11
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
     :try_end_11
@@ -651,14 +651,14 @@
     :catchall_a
     move-exception v0
 
-    .line 452
+    .line 459
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_10
     :goto_8
     if-eqz v3, :cond_11
 
-    .line 456
+    .line 463
     :try_start_12
     invoke-virtual {v3}, Ljava/io/ByteArrayOutputStream;->close()V
     :try_end_12
@@ -672,13 +672,13 @@
     :catchall_b
     move-exception p1
 
-    .line 441
+    .line 448
     :try_start_13
     iget-object v0, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->httpConnection:Ljava/net/HttpURLConnection;
 
     if-eqz v0, :cond_12
 
-    .line 442
+    .line 449
     invoke-virtual {v0}, Ljava/net/HttpURLConnection;->disconnect()V
     :try_end_13
     .catchall {:try_start_13 .. :try_end_13} :catchall_c
@@ -687,7 +687,7 @@
     :cond_12
     if-eqz v2, :cond_13
 
-    .line 449
+    .line 456
     :try_start_14
     invoke-virtual {v2}, Ljava/io/InputStream;->close()V
     :try_end_14
@@ -698,20 +698,20 @@
     :catchall_d
     move-exception v0
 
-    .line 452
+    .line 459
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_13
     :goto_a
     if-eqz v3, :cond_14
 
-    .line 456
+    .line 463
     :try_start_15
     invoke-virtual {v3}, Ljava/io/ByteArrayOutputStream;->close()V
     :try_end_15
     .catch Ljava/lang/Exception; {:try_start_15 .. :try_end_15} :catch_4
 
-    .line 461
+    .line 468
     :catch_4
     :cond_14
     throw p1
@@ -720,7 +720,7 @@
 .method protected onCancelled()V
     .locals 2
 
-    .line 481
+    .line 488
     iget-object v0, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->this$0:Lorg/telegram/messenger/ImageLoader;
 
     invoke-static {v0}, Lorg/telegram/messenger/ImageLoader;->access$200(Lorg/telegram/messenger/ImageLoader;)Lorg/telegram/messenger/DispatchQueue;
@@ -739,7 +739,7 @@
 .method protected bridge synthetic onPostExecute(Ljava/lang/Object;)V
     .locals 0
 
-    .line 359
+    .line 366
     check-cast p1, Ljava/lang/String;
 
     invoke-virtual {p0, p1}, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->onPostExecute(Ljava/lang/String;)V
@@ -752,7 +752,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 468
+    .line 475
     iget-object v0, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->this$0:Lorg/telegram/messenger/ImageLoader;
 
     invoke-static {v0}, Lorg/telegram/messenger/ImageLoader;->access$200(Lorg/telegram/messenger/ImageLoader;)Lorg/telegram/messenger/DispatchQueue;
@@ -767,13 +767,13 @@
 
     goto :goto_0
 
-    .line 473
+    .line 480
     :cond_0
     iget-boolean p1, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->canRetry:Z
 
     if-eqz p1, :cond_1
 
-    .line 474
+    .line 481
     iget-object p1, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->this$0:Lorg/telegram/messenger/ImageLoader;
 
     iget-object v0, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->cacheImage:Lorg/telegram/messenger/ImageLoader$CacheImage;
@@ -782,7 +782,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/messenger/ImageLoader;->access$300(Lorg/telegram/messenger/ImageLoader;Ljava/lang/String;)V
 
-    .line 476
+    .line 483
     :cond_1
     :goto_0
     iget-object p1, p0, Lorg/telegram/messenger/ImageLoader$ArtworkLoadTask;->this$0:Lorg/telegram/messenger/ImageLoader;

@@ -27,7 +27,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 11409
+    .line 11927
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -36,7 +36,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_messageViews;
     .locals 1
 
-    .line 11418
+    .line 11936
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -47,7 +47,7 @@
 
     return-object p0
 
-    .line 11420
+    .line 11938
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -73,13 +73,13 @@
 
     throw p0
 
-    .line 11425
+    .line 11943
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_messageViews;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_messageViews;-><init>()V
 
-    .line 11426
+    .line 11944
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -90,7 +90,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 1
 
-    .line 11431
+    .line 11949
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -101,14 +101,14 @@
 
     if-eqz v0, :cond_0
 
-    .line 11433
+    .line 11951
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->views:I
 
-    .line 11435
+    .line 11953
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->flags:I
 
@@ -116,14 +116,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 11436
+    .line 11954
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->forwards:I
 
-    .line 11438
+    .line 11956
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->flags:I
 
@@ -131,7 +131,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 11439
+    .line 11957
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -149,29 +149,29 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 11444
+    .line 11962
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 11445
+    .line 11963
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->flags:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 11446
+    .line 11964
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 11447
+    .line 11965
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->views:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 11449
+    .line 11967
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->flags:I
 
@@ -179,12 +179,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 11450
+    .line 11968
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->forwards:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 11452
+    .line 11970
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->flags:I
 
@@ -192,7 +192,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 11453
+    .line 11971
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messageViews;->replies:Lorg/telegram/tgnet/TLRPC$MessageReplies;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V

@@ -89,7 +89,7 @@
     goto/16 :goto_0
 
     :sswitch_0
-    const-string v2, "short"
+    const-string/jumbo v2, "short"
 
     invoke-virtual {v0, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -234,6 +234,8 @@
     invoke-static {p0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p0
+
+    nop
 
     :sswitch_data_0
     .sparse-switch

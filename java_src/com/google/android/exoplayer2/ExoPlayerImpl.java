@@ -169,7 +169,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         ConditionVariable conditionVariable = new ConditionVariable();
         this.constructorFinished = conditionVariable;
         try {
-            Log.m794i(TAG, "Init " + Integer.toHexString(System.identityHashCode(this)) + " [" + ExoPlayerLibraryInfo.VERSION_SLASHY + "] [" + Util.DEVICE_DEBUG_INFO + "]");
+            Log.m798i(TAG, "Init " + Integer.toHexString(System.identityHashCode(this)) + " [" + ExoPlayerLibraryInfo.VERSION_SLASHY + "] [" + Util.DEVICE_DEBUG_INFO + "]");
             Context applicationContext = builder.context.getApplicationContext();
             this.applicationContext = applicationContext;
             AnalyticsCollector apply = builder.analyticsCollectorFunction.apply(builder.clock);
@@ -422,7 +422,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         PlaybackInfo copyWithPlaybackState = copyWithPlaybackError.copyWithPlaybackState(copyWithPlaybackError.timeline.isEmpty() ? 4 : 2);
         this.pendingOperationAcks++;
         this.internalPlayer.prepare();
-        updatePlaybackInfo(copyWithPlaybackState, 1, 1, false, false, 5, C0470C.TIME_UNSET, -1, false);
+        updatePlaybackInfo(copyWithPlaybackState, 1, 1, false, false, 5, C0475C.TIME_UNSET, -1, false);
     }
 
     @Override // com.google.android.exoplayer2.ExoPlayer
@@ -480,7 +480,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
     @Override // com.google.android.exoplayer2.ExoPlayer
     public void setMediaSources(List<MediaSource> list, boolean z) {
         verifyApplicationThread();
-        setMediaSourcesInternal(list, -1, C0470C.TIME_UNSET, z);
+        setMediaSourcesInternal(list, -1, C0475C.TIME_UNSET, z);
     }
 
     @Override // com.google.android.exoplayer2.ExoPlayer
@@ -524,7 +524,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         Timeline createMaskingTimeline = createMaskingTimeline();
         PlaybackInfo maskTimelineAndPosition = maskTimelineAndPosition(this.playbackInfo, createMaskingTimeline, getPeriodPositionUsAfterTimelineChanged(currentTimeline, createMaskingTimeline));
         this.internalPlayer.addMediaSources(min, addMediaSourceHolders, this.shuffleOrder);
-        updatePlaybackInfo(maskTimelineAndPosition, 0, 1, false, false, 5, C0470C.TIME_UNSET, -1, false);
+        updatePlaybackInfo(maskTimelineAndPosition, 0, 1, false, false, 5, C0475C.TIME_UNSET, -1, false);
     }
 
     @Override // com.google.android.exoplayer2.Player
@@ -556,7 +556,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         Timeline createMaskingTimeline = createMaskingTimeline();
         PlaybackInfo maskTimelineAndPosition = maskTimelineAndPosition(this.playbackInfo, createMaskingTimeline, getPeriodPositionUsAfterTimelineChanged(currentTimeline, createMaskingTimeline));
         this.internalPlayer.moveMediaSources(i, min, min2, this.shuffleOrder);
-        updatePlaybackInfo(maskTimelineAndPosition, 0, 1, false, false, 5, C0470C.TIME_UNSET, -1, false);
+        updatePlaybackInfo(maskTimelineAndPosition, 0, 1, false, false, 5, C0475C.TIME_UNSET, -1, false);
     }
 
     @Override // com.google.android.exoplayer2.ExoPlayer
@@ -567,7 +567,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         PlaybackInfo maskTimelineAndPosition = maskTimelineAndPosition(this.playbackInfo, createMaskingTimeline, maskWindowPositionMsOrGetPeriodPositionUs(createMaskingTimeline, getCurrentMediaItemIndex(), getCurrentPosition()));
         this.pendingOperationAcks++;
         this.internalPlayer.setShuffleOrder(shuffleOrder);
-        updatePlaybackInfo(maskTimelineAndPosition, 0, 1, false, false, 5, C0470C.TIME_UNSET, -1, false);
+        updatePlaybackInfo(maskTimelineAndPosition, 0, 1, false, false, 5, C0475C.TIME_UNSET, -1, false);
     }
 
     @Override // com.google.android.exoplayer2.ExoPlayer
@@ -660,7 +660,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         if (timeline.isEmpty() || i < timeline.getWindowCount()) {
             this.pendingOperationAcks++;
             if (isPlayingAd()) {
-                Log.m792w(TAG, "seekTo ignored because an ad is playing");
+                Log.m796w(TAG, "seekTo ignored because an ad is playing");
                 ExoPlayerImplInternal.PlaybackInfoUpdate playbackInfoUpdate = new ExoPlayerImplInternal.PlaybackInfoUpdate(this.playbackInfo);
                 playbackInfoUpdate.incrementPendingOperationAcks(1);
                 this.playbackInfoUpdateListener.onPlaybackInfoUpdate(playbackInfoUpdate);
@@ -689,7 +689,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
     @Override // com.google.android.exoplayer2.Player
     public long getMaxSeekToPreviousPosition() {
         verifyApplicationThread();
-        return C0470C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS;
+        return C0475C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS;
     }
 
     @Override // com.google.android.exoplayer2.Player
@@ -704,7 +704,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         PlaybackInfo copyWithPlaybackParameters = this.playbackInfo.copyWithPlaybackParameters(playbackParameters);
         this.pendingOperationAcks++;
         this.internalPlayer.setPlaybackParameters(playbackParameters);
-        updatePlaybackInfo(copyWithPlaybackParameters, 0, 1, false, false, 5, C0470C.TIME_UNSET, -1, false);
+        updatePlaybackInfo(copyWithPlaybackParameters, 0, 1, false, false, 5, C0475C.TIME_UNSET, -1, false);
     }
 
     @Override // com.google.android.exoplayer2.Player
@@ -755,13 +755,13 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         verifyApplicationThread();
         this.audioFocusManager.updateAudioFocus(getPlayWhenReady(), 1);
         stopInternal(z, null);
-        this.currentCueGroup = new CueGroup(ImmutableList.m740of(), this.playbackInfo.positionUs);
+        this.currentCueGroup = new CueGroup(ImmutableList.m744of(), this.playbackInfo.positionUs);
     }
 
     @Override // com.google.android.exoplayer2.Player
     public void release() {
         AudioTrack audioTrack;
-        Log.m794i(TAG, "Release " + Integer.toHexString(System.identityHashCode(this)) + " [" + ExoPlayerLibraryInfo.VERSION_SLASHY + "] [" + Util.DEVICE_DEBUG_INFO + "] [" + ExoPlayerLibraryInfo.registeredModules() + "]");
+        Log.m798i(TAG, "Release " + Integer.toHexString(System.identityHashCode(this)) + " [" + ExoPlayerLibraryInfo.VERSION_SLASHY + "] [" + Util.DEVICE_DEBUG_INFO + "] [" + ExoPlayerLibraryInfo.registeredModules() + "]");
         verifyApplicationThread();
         if (Util.SDK_INT < 21 && (audioTrack = this.keepSessionIdAudioTrack) != null) {
             audioTrack.release();
@@ -899,7 +899,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
             PlaybackInfo playbackInfo = this.playbackInfo;
             playbackInfo.timeline.getPeriodByUid(playbackInfo.periodId.periodUid, this.period);
             PlaybackInfo playbackInfo2 = this.playbackInfo;
-            if (playbackInfo2.requestedContentPositionUs == C0470C.TIME_UNSET) {
+            if (playbackInfo2.requestedContentPositionUs == C0475C.TIME_UNSET) {
                 return playbackInfo2.timeline.getWindow(getCurrentMediaItemIndex(), this.window).getDefaultPositionMs();
             }
             return this.period.getPositionInWindowMs() + Util.usToMs(this.playbackInfo.requestedContentPositionUs);
@@ -1163,7 +1163,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         removeSurfaceCallbacks();
         this.textureView = textureView;
         if (textureView.getSurfaceTextureListener() != null) {
-            Log.m792w(TAG, "Replacing existing SurfaceTextureListener.");
+            Log.m796w(TAG, "Replacing existing SurfaceTextureListener.");
         }
         textureView.setSurfaceTextureListener(this.componentListener);
         SurfaceTexture surfaceTexture = textureView.isAvailable() ? textureView.getSurfaceTexture() : null;
@@ -1916,7 +1916,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         Timeline.Window window = new Timeline.Window();
         Timeline.Period period = new Timeline.Period();
         playbackInfo.timeline.getPeriodByUid(playbackInfo.periodId.periodUid, period);
-        if (playbackInfo.requestedContentPositionUs == C0470C.TIME_UNSET) {
+        if (playbackInfo.requestedContentPositionUs == C0475C.TIME_UNSET) {
             return playbackInfo.timeline.getWindow(period.windowIndex, window).getDefaultPositionUs();
         }
         return period.getPositionInWindowUs() + playbackInfo.requestedContentPositionUs;
@@ -1988,7 +1988,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         }
         if (z) {
             int firstWindowIndex = createMaskingTimeline.getFirstWindowIndex(this.shuffleModeEnabled);
-            j2 = C0470C.TIME_UNSET;
+            j2 = C0475C.TIME_UNSET;
             i2 = firstWindowIndex;
         } else if (i == -1) {
             i2 = currentWindowIndexInternal;
@@ -2058,7 +2058,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         if (timeline.isEmpty()) {
             MediaSource.MediaPeriodId dummyPeriodForEmptyTimeline = PlaybackInfo.getDummyPeriodForEmptyTimeline();
             long msToUs = Util.msToUs(this.maskingWindowPositionMs);
-            PlaybackInfo copyWithLoadingMediaPeriodId = copyWithTimeline.copyWithNewPosition(dummyPeriodForEmptyTimeline, msToUs, msToUs, msToUs, 0L, TrackGroupArray.EMPTY, this.emptyTrackSelectorResult, ImmutableList.m740of()).copyWithLoadingMediaPeriodId(dummyPeriodForEmptyTimeline);
+            PlaybackInfo copyWithLoadingMediaPeriodId = copyWithTimeline.copyWithNewPosition(dummyPeriodForEmptyTimeline, msToUs, msToUs, msToUs, 0L, TrackGroupArray.EMPTY, this.emptyTrackSelectorResult, ImmutableList.m744of()).copyWithLoadingMediaPeriodId(dummyPeriodForEmptyTimeline);
             copyWithLoadingMediaPeriodId.bufferedPositionUs = copyWithLoadingMediaPeriodId.positionUs;
             return copyWithLoadingMediaPeriodId;
         }
@@ -2072,7 +2072,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         }
         if (z || longValue < msToUs2) {
             Assertions.checkState(!mediaPeriodId.isAd());
-            PlaybackInfo copyWithLoadingMediaPeriodId2 = copyWithTimeline.copyWithNewPosition(mediaPeriodId, longValue, longValue, longValue, 0L, z ? TrackGroupArray.EMPTY : copyWithTimeline.trackGroups, z ? this.emptyTrackSelectorResult : copyWithTimeline.trackSelectorResult, z ? ImmutableList.m740of() : copyWithTimeline.staticMetadata).copyWithLoadingMediaPeriodId(mediaPeriodId);
+            PlaybackInfo copyWithLoadingMediaPeriodId2 = copyWithTimeline.copyWithNewPosition(mediaPeriodId, longValue, longValue, longValue, 0L, z ? TrackGroupArray.EMPTY : copyWithTimeline.trackGroups, z ? this.emptyTrackSelectorResult : copyWithTimeline.trackSelectorResult, z ? ImmutableList.m744of() : copyWithTimeline.staticMetadata).copyWithLoadingMediaPeriodId(mediaPeriodId);
             copyWithLoadingMediaPeriodId2.bufferedPositionUs = longValue;
             return copyWithLoadingMediaPeriodId2;
         }
@@ -2122,13 +2122,13 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
             int i = this.period.windowIndex;
             return maskWindowPositionMsOrGetPeriodPositionUs(timeline2, i, timeline2.getWindow(i, this.window).getDefaultPositionMs());
         }
-        return maskWindowPositionMsOrGetPeriodPositionUs(timeline2, -1, C0470C.TIME_UNSET);
+        return maskWindowPositionMsOrGetPeriodPositionUs(timeline2, -1, C0475C.TIME_UNSET);
     }
 
     private Pair<Object, Long> maskWindowPositionMsOrGetPeriodPositionUs(Timeline timeline, int i, long j) {
         if (timeline.isEmpty()) {
             this.maskingWindowIndex = i;
-            if (j == C0470C.TIME_UNSET) {
+            if (j == C0475C.TIME_UNSET) {
                 j = 0;
             }
             this.maskingWindowPositionMs = j;
@@ -2175,7 +2175,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         TextureView textureView = this.textureView;
         if (textureView != null) {
             if (textureView.getSurfaceTextureListener() != this.componentListener) {
-                Log.m792w(TAG, "SurfaceTextureListener already unset or replaced.");
+                Log.m796w(TAG, "SurfaceTextureListener already unset or replaced.");
             } else {
                 this.textureView.setSurfaceTextureListener(null);
             }
@@ -2285,7 +2285,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         this.pendingOperationAcks++;
         PlaybackInfo copyWithPlayWhenReady = playbackInfo.copyWithPlayWhenReady(z2, i3);
         this.internalPlayer.setPlayWhenReady(z2, i3);
-        updatePlaybackInfo(copyWithPlayWhenReady, 0, i2, false, false, 5, C0470C.TIME_UNSET, -1, false);
+        updatePlaybackInfo(copyWithPlayWhenReady, 0, i2, false, false, 5, C0475C.TIME_UNSET, -1, false);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -2317,7 +2317,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
             if (this.throwsWhenUsingWrongThread) {
                 throw new IllegalStateException(formatInvariant);
             }
-            Log.m791w(TAG, formatInvariant, this.hasNotifiedFullWrongThreadWarning ? null : new IllegalStateException());
+            Log.m795w(TAG, formatInvariant, this.hasNotifiedFullWrongThreadWarning ? null : new IllegalStateException());
             this.hasNotifiedFullWrongThreadWarning = true;
         }
     }
@@ -2776,7 +2776,7 @@ public final class ExoPlayerImpl extends BasePlayer implements ExoPlayer, ExoPla
         public static PlayerId registerMediaMetricsListener(Context context, ExoPlayerImpl exoPlayerImpl, boolean z) {
             MediaMetricsListener create = MediaMetricsListener.create(context);
             if (create == null) {
-                Log.m792w(ExoPlayerImpl.TAG, "MediaMetricsService unavailable.");
+                Log.m796w(ExoPlayerImpl.TAG, "MediaMetricsService unavailable.");
                 return new PlayerId(LogSessionId.LOG_SESSION_ID_NONE);
             }
             if (z) {

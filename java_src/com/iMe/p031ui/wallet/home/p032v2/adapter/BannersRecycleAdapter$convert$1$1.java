@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Lambda;
 import org.telegram.p044ui.Components.RLottieImageView;
 /* compiled from: BannersRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.adapter.BannersRecycleAdapter$convert$1$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class BannersRecycleAdapter$convert$1$1 extends Lambda implements Function1<RLottieImageView, Unit> {
     final /* synthetic */ Object $isPlaying;
 

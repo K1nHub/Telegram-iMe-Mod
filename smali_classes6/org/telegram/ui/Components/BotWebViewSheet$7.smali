@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BotWebViewSheet;)V
     .locals 0
 
-    .line 544
+    .line 550
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$7;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
@@ -39,7 +39,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 548
+    .line 554
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$7;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/BotWebViewSheet;->onCheckDismissByUser()Z

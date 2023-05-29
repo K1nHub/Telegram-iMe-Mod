@@ -1235,7 +1235,7 @@
     invoke-direct {v2}, Lorg/telegram/ui/Components/AvatarDrawable;-><init>()V
 
     .line 284
-    sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[Ljava/lang/String;
+    sget-object v3, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[I
 
     .line 285
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->getChat()Lorg/telegram/tgnet/TLRPC$Chat;
@@ -1248,13 +1248,13 @@
 
     move-result v4
 
-    aget-object v3, v3, v4
+    aget v3, v3, v4
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
-    sget-object v4, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[Ljava/lang/String;
+    sget-object v4, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[I
 
     .line 286
     invoke-virtual {v0}, Lorg/telegram/messenger/voip/VoIPService;->getChat()Lorg/telegram/tgnet/TLRPC$Chat;
@@ -1267,9 +1267,9 @@
 
     move-result v5
 
-    aget-object v4, v4, v5
+    aget v4, v4, v5
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -1707,16 +1707,16 @@
 
     if-eqz v2, :cond_d
 
-    const-string v2, "voipgroup_overlayAlertGradientMuted"
-
     .line 209
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_overlayAlertGradientMuted:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
-    const-string v8, "voipgroup_overlayAlertGradientUnmuted"
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_overlayAlertGradientUnmuted:I
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 
@@ -1728,16 +1728,16 @@
 
     move-result v2
 
-    const-string v8, "voipgroup_overlayAlertGradientMuted2"
-
     .line 210
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_overlayAlertGradientMuted2:I
+
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 
-    const-string v9, "voipgroup_overlayAlertGradientUnmuted2"
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_overlayAlertGradientUnmuted2:I
 
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 
@@ -1749,10 +1749,10 @@
 
     move-result v6
 
-    const-string v8, "voipgroup_overlayAlertMutedByAdmin"
-
     .line 212
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_overlayAlertMutedByAdmin:I
+
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 
@@ -1762,10 +1762,10 @@
 
     move-result v2
 
-    const-string v8, "kvoipgroup_overlayAlertMutedByAdmin2"
-
     .line 213
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_overlayAlertMutedByAdmin2:I
+
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 

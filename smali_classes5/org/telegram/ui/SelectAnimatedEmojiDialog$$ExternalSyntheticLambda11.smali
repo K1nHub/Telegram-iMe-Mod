@@ -2,32 +2,42 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Lcom/google/android/exoplayer2/util/Consumer;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda11;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda11;
+
+    invoke-direct {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda11;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda11;->INSTANCE:Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda11;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda11;->f$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
-    .locals 1
+.method public final accept(Ljava/lang/Object;)V
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda11;->f$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
+    check-cast p1, Landroid/view/View;
 
-    invoke-static {v0}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->$r8$lambda$60C6p3Nu8_PiYOVo5DKptD8KNgE(Lorg/telegram/ui/SelectAnimatedEmojiDialog;)V
+    invoke-static {p1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->$r8$lambda$lL2GYorfrt17aKTLrXJDYxSE34k(Landroid/view/View;)V
 
     return-void
 .end method

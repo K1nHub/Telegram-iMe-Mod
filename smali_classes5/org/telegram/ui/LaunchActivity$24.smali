@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/LaunchActivity$24;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Landroid/text/style/ClickableSpan;
 .source "LaunchActivity.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/LaunchActivity;->updateAppUpdateViews(Z)V
+    value = Lorg/telegram/ui/LaunchActivity;->didReceivedNotification(II[Ljava/lang/Object;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,43 +22,47 @@
 .method constructor <init>(Lorg/telegram/ui/LaunchActivity;)V
     .locals 0
 
-    .line 5507
+    .line 6534
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$24;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
+.method public onClick(Landroid/view/View;)V
+    .locals 2
+
+    .line 6537
+    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$24;->this$0:Lorg/telegram/ui/LaunchActivity;
+
+    invoke-virtual {p1}, Lorg/telegram/ui/LaunchActivity;->getActionBarLayout()Lorg/telegram/ui/ActionBar/INavigationLayout;
+
+    move-result-object p1
+
+    new-instance v0, Lorg/telegram/ui/PremiumPreviewFragment;
+
+    const-string v1, "gift"
+
+    invoke-direct {v0, v1}, Lorg/telegram/ui/PremiumPreviewFragment;-><init>(Ljava/lang/String;)V
+
+    invoke-interface {p1, v0}, Lorg/telegram/ui/ActionBar/INavigationLayout;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
+    return-void
+.end method
+
+.method public updateDrawState(Landroid/text/TextPaint;)V
     .locals 1
 
-    .line 5510
-    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$24;->this$0:Lorg/telegram/ui/LaunchActivity;
+    .line 6542
+    invoke-super {p0, p1}, Landroid/text/style/ClickableSpan;->updateDrawState(Landroid/text/TextPaint;)V
 
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2500(Lorg/telegram/ui/LaunchActivity;)Landroid/widget/FrameLayout;
+    const/4 v0, 0x0
 
-    move-result-object p1
+    .line 6543
+    invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setUnderlineText(Z)V
 
-    invoke-virtual {p1}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
-
-    move-result-object p1
-
-    if-nez p1, :cond_0
-
-    .line 5511
-    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$24;->this$0:Lorg/telegram/ui/LaunchActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2500(Lorg/telegram/ui/LaunchActivity;)Landroid/widget/FrameLayout;
-
-    move-result-object p1
-
-    const/4 v0, 0x4
-
-    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
-
-    :cond_0
     return-void
 .end method

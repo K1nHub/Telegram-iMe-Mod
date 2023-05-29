@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/StickerSetCell;Landroid/content/Context;)V
     .locals 0
 
-    .line 201
+    .line 202
     invoke-direct {p0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -29,7 +29,7 @@
 .method public setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
     .locals 3
 
-    .line 204
+    .line 205
     invoke-virtual {p0}, Landroid/widget/TextView;->getPaint()Landroid/text/TextPaint;
 
     move-result-object v0
@@ -50,7 +50,7 @@
 
     move-result-object p1
 
-    .line 205
+    .line 206
     invoke-super {p0, p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;Landroid/widget/TextView$BufferType;)V
 
     return-void

@@ -16,6 +16,6 @@ final class TimeWithClockView$clockPadding$2 extends Lambda implements Function0
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // kotlin.jvm.functions.Function0
     public final Integer invoke() {
-        return Integer.valueOf(AndroidUtilities.m51dp(6.0f));
+        return Integer.valueOf(AndroidUtilities.m55dp(6.0f));
     }
 }

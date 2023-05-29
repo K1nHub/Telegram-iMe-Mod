@@ -259,7 +259,7 @@
 
     move-result-object v1
 
-    const-string v2, "this as java.lang.String\u2026ing(startIndex, endIndex)"
+    const-string/jumbo v2, "this as java.lang.String\u2026ing(startIndex, endIndex)"
 
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

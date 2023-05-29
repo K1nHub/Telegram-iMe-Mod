@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletTokenDetailsPresenter.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsPresenter$tokenCode$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletTokenDetailsPresenter$tokenCode$2 extends Lambda implements Function0<TokenCode> {
     final /* synthetic */ WalletTokenDetailsPresenter this$0;
 

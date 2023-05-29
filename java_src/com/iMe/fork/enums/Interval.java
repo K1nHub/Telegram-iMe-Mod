@@ -2,13 +2,13 @@ package com.iMe.fork.enums;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 /* compiled from: Interval.kt */
 /* loaded from: classes3.dex */
 public enum Interval {
-    EVERY_DAY(C3242R.string.backup_settings_interval_every_day, 1),
-    EVERY_WEEK(C3242R.string.backup_settings_interval_every_week, 7),
-    EVERY_MONTH(C3242R.string.backup_settings_interval_every_month, 30);
+    EVERY_DAY(C3290R.string.backup_settings_interval_every_day, 1),
+    EVERY_WEEK(C3290R.string.backup_settings_interval_every_week, 7),
+    EVERY_MONTH(C3290R.string.backup_settings_interval_every_month, 30);
     
     public static final Companion Companion = new Companion(null);
     private final int days;

@@ -91,7 +91,7 @@ public class NetworkMonitor {
 
     @CalledByNative
     private void startMonitoring(Context context, long j) {
-        Logging.m18d(TAG, "Start monitoring with native observer " + j);
+        Logging.m20d(TAG, "Start monitoring with native observer " + j);
         if (context == null) {
             context = ContextUtils.getApplicationContext();
         }
@@ -116,7 +116,7 @@ public class NetworkMonitor {
 
     @CalledByNative
     private void stopMonitoring(long j) {
-        Logging.m18d(TAG, "Stop monitoring with native observer " + j);
+        Logging.m20d(TAG, "Stop monitoring with native observer " + j);
         stopMonitoring();
         synchronized (this.nativeNetworkObservers) {
             this.nativeNetworkObservers.remove(Long.valueOf(j));

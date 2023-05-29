@@ -2,7 +2,7 @@ package com.iMe.p031ui.custom;
 
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 /* compiled from: ChooseRecipientOptionsView.kt */
 /* renamed from: com.iMe.ui.custom.ChooseRecipientOptionsView$cornerSize$2 */
 /* loaded from: classes3.dex */
@@ -19,6 +19,6 @@ final class ChooseRecipientOptionsView$cornerSize$2 extends Lambda implements Fu
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // kotlin.jvm.functions.Function0
     public final Integer invoke() {
-        return Integer.valueOf(this.this$0.getResources().getDimensionPixelOffset(C3242R.dimen.new_label_corner_radius));
+        return Integer.valueOf(this.this$0.getResources().getDimensionPixelOffset(C3290R.dimen.new_label_corner_radius));
     }
 }

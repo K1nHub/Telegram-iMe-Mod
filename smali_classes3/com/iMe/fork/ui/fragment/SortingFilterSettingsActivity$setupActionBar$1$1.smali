@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$setupActionBar$1$1;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
-    .line 101
+    .line 103
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
 
     return-void
@@ -39,7 +39,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 104
+    .line 106
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity$setupActionBar$1$1;->this$0:Lcom/iMe/fork/ui/fragment/SortingFilterSettingsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V

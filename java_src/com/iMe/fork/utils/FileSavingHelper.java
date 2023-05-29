@@ -14,7 +14,7 @@ import kotlin.p035io.ByteStreamsKt;
 import kotlin.p035io.CloseableKt;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.Utilities;
 import org.telegram.tgnet.TLRPC$Document;
@@ -49,7 +49,7 @@ public final class FileSavingHelper {
     /* JADX INFO: Access modifiers changed from: private */
     public static final void saveDocumentFileToCustomDirectory$lambda$6(Uri directoryUri, TLRPC$Document document, String fileName, File originalFile, boolean z) {
         DocumentFile createFile;
-        Object m1555constructorimpl;
+        Object m1574constructorimpl;
         Long l;
         Intrinsics.checkNotNullParameter(directoryUri, "$directoryUri");
         Intrinsics.checkNotNullParameter(document, "$document");
@@ -71,23 +71,23 @@ public final class FileSavingHelper {
                 l = null;
             }
             CloseableKt.closeFinally(fileInputStream, null);
-            m1555constructorimpl = Result.m1555constructorimpl(l);
+            m1574constructorimpl = Result.m1574constructorimpl(l);
         } catch (Throwable th) {
             Result.Companion companion2 = Result.Companion;
-            m1555constructorimpl = Result.m1555constructorimpl(ResultKt.createFailure(th));
+            m1574constructorimpl = Result.m1574constructorimpl(ResultKt.createFailure(th));
         }
-        final Throwable m1556exceptionOrNullimpl = Result.m1556exceptionOrNullimpl(m1555constructorimpl);
-        if (m1556exceptionOrNullimpl != null) {
+        final Throwable m1575exceptionOrNullimpl = Result.m1575exceptionOrNullimpl(m1574constructorimpl);
+        if (m1575exceptionOrNullimpl != null) {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: com.iMe.fork.utils.FileSavingHelper$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ThrowableExtKt.showToast(m1556exceptionOrNullimpl);
+                    ThrowableExtKt.showToast(m1575exceptionOrNullimpl);
                 }
             });
-            Timber.m4e(m1556exceptionOrNullimpl);
+            Timber.m6e(m1575exceptionOrNullimpl);
         }
-        if (Result.m1558isSuccessimpl(m1555constructorimpl)) {
-            Long l2 = (Long) m1555constructorimpl;
+        if (Result.m1577isSuccessimpl(m1574constructorimpl)) {
+            Long l2 = (Long) m1574constructorimpl;
             if (z) {
                 originalFile.delete();
             }
@@ -97,7 +97,7 @@ public final class FileSavingHelper {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void saveDocumentFileToCustomDirectory$lambda$6$lambda$5$lambda$4() {
-        String internalString = LocaleController.getInternalString(C3242R.string.message_document_file_save_as_success);
+        String internalString = LocaleController.getInternalString(C3290R.string.message_document_file_save_as_success);
         Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…ent_file_save_as_success)");
         ContextExtKt.toast(internalString);
     }

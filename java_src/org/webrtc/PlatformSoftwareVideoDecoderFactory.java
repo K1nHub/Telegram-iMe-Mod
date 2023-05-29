@@ -18,7 +18,7 @@ public class PlatformSoftwareVideoDecoderFactory extends MediaCodecVideoDecoderF
 
         @Override // org.webrtc.Predicate
         /* renamed from: or */
-        public /* synthetic */ Predicate<MediaCodecInfo> mo11or(Predicate<? super MediaCodecInfo> predicate) {
+        public /* synthetic */ Predicate<MediaCodecInfo> mo13or(Predicate<? super MediaCodecInfo> predicate) {
             return Predicate.CC.$default$or(this, predicate);
         }
 

@@ -40,13 +40,13 @@
         }
     .end annotation
 
-    .line 979
+    .line 984
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 980
+    .line 985
     iput-object p1, p0, Lorg/telegram/messenger/SvgHelper$NumberParse;->numbers:Ljava/util/ArrayList;
 
-    .line 981
+    .line 986
     iput p2, p0, Lorg/telegram/messenger/SvgHelper$NumberParse;->nextCmd:I
 
     return-void
@@ -55,7 +55,7 @@
 .method static synthetic access$100(Lorg/telegram/messenger/SvgHelper$NumberParse;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 975
+    .line 980
     iget-object p0, p0, Lorg/telegram/messenger/SvgHelper$NumberParse;->numbers:Ljava/util/ArrayList;
 
     return-object p0
@@ -66,7 +66,7 @@
 .method public getNextCmd()I
     .locals 1
 
-    .line 985
+    .line 990
     iget v0, p0, Lorg/telegram/messenger/SvgHelper$NumberParse;->nextCmd:I
 
     return v0
@@ -75,7 +75,7 @@
 .method public getNumber(I)F
     .locals 1
 
-    .line 989
+    .line 994
     iget-object v0, p0, Lorg/telegram/messenger/SvgHelper$NumberParse;->numbers:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

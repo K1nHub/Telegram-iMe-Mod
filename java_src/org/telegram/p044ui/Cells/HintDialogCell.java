@@ -28,7 +28,7 @@ import org.telegram.tgnet.TLRPC$User;
 /* loaded from: classes5.dex */
 public class HintDialogCell extends FrameLayout {
     private AvatarDrawable avatarDrawable;
-    private String backgroundColorKey;
+    private int backgroundColorKey;
     CheckBox2 checkBox;
     CounterView counterView;
     private int currentAccount;
@@ -46,21 +46,21 @@ public class HintDialogCell extends FrameLayout {
         this.avatarDrawable = new AvatarDrawable();
         new RectF();
         this.currentAccount = UserConfig.selectedAccount;
-        this.backgroundColorKey = "windowBackgroundWhite";
+        this.backgroundColorKey = Theme.key_windowBackgroundWhite;
         this.drawCheckbox = z;
         BackupImageView backupImageView = new BackupImageView(context);
         this.imageView = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m50dp(27));
+        backupImageView.setRoundRadius(AndroidUtilities.m54dp(27));
         addView(this.imageView, LayoutHelper.createFrame(54, 54, 49, 0, 7, 0, 0));
         TextView textView = new TextView(this, context) { // from class: org.telegram.ui.Cells.HintDialogCell.1
             @Override // android.widget.TextView
             public void setText(CharSequence charSequence, TextView.BufferType bufferType) {
-                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), AndroidUtilities.m50dp(10), false), bufferType);
+                super.setText(Emoji.replaceEmoji(charSequence, getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(10), false), bufferType);
             }
         };
         this.nameTextView = textView;
         NotificationCenter.listenEmojiLoading(textView);
-        this.nameTextView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        this.nameTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         this.nameTextView.setTextSize(1, 12.0f);
         this.nameTextView.setMaxLines(1);
         this.nameTextView.setGravity(49);
@@ -70,12 +70,12 @@ public class HintDialogCell extends FrameLayout {
         CounterView counterView = new CounterView(context, null);
         this.counterView = counterView;
         addView(counterView, LayoutHelper.createFrame(-1, 28, 48, 0, 4, 0, 0));
-        this.counterView.setColors("chats_unreadCounterText", "chats_unreadCounter");
+        this.counterView.setColors(Theme.key_chats_unreadCounterText, Theme.key_chats_unreadCounter);
         this.counterView.setGravity(5);
         if (z) {
             CheckBox2 checkBox2 = new CheckBox2(context, 21);
             this.checkBox = checkBox2;
-            checkBox2.setColor("dialogRoundCheckBox", "dialogBackground", "dialogRoundCheckBoxCheck");
+            checkBox2.setColor(Theme.key_dialogRoundCheckBox, Theme.key_dialogBackground, Theme.key_dialogRoundCheckBoxCheck);
             this.checkBox.setDrawUnchecked(false);
             this.checkBox.setDrawBackgroundAsArc(4);
             this.checkBox.setProgressDelegate(new CheckBoxBase.ProgressDelegate() { // from class: org.telegram.ui.Cells.HintDialogCell$$ExternalSyntheticLambda0
@@ -100,14 +100,14 @@ public class HintDialogCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(86), 1073741824));
-        this.counterView.counterDrawable.horizontalPadding = AndroidUtilities.m50dp(13);
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(86), 1073741824));
+        this.counterView.counterDrawable.horizontalPadding = AndroidUtilities.m54dp(13);
     }
 
     public void update(int i) {
         int i2;
         if ((MessagesController.UPDATE_MASK_STATUS & i) != 0 && this.currentUser != null) {
-            this.currentUser = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.currentUser.f1567id));
+            this.currentUser = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.currentUser.f1574id));
             this.imageView.invalidate();
             invalidate();
         }
@@ -138,10 +138,10 @@ public class HintDialogCell extends FrameLayout {
         this.currentUser = null;
     }
 
-    public void setColors(String str, String str2) {
-        this.nameTextView.setTextColor(Theme.getColor(str));
-        this.backgroundColorKey = str2;
-        this.checkBox.setColor("dialogRoundCheckBox", str2, "dialogRoundCheckBoxCheck");
+    public void setColors(int i, int i2) {
+        this.nameTextView.setTextColor(Theme.getColor(i));
+        this.backgroundColorKey = i2;
+        this.checkBox.setColor(Theme.key_dialogRoundCheckBox, i2, Theme.key_dialogRoundCheckBoxCheck);
     }
 
     public void setDialog(long j, boolean z, CharSequence charSequence) {
@@ -209,7 +209,7 @@ public class HintDialogCell extends FrameLayout {
             org.telegram.messenger.MessagesController r7 = org.telegram.messenger.MessagesController.getInstance(r7)
             j$.util.concurrent.ConcurrentHashMap<java.lang.Long, java.lang.Integer> r7 = r7.onlinePrivacy
             org.telegram.tgnet.TLRPC$User r0 = r5.currentUser
-            long r0 = r0.f1567id
+            long r0 = r0.f1574id
             java.lang.Long r0 = java.lang.Long.valueOf(r0)
             boolean r7 = r7.containsKey(r0)
             if (r7 == 0) goto L3b
@@ -261,29 +261,29 @@ public class HintDialogCell extends FrameLayout {
             int r7 = (r7 > r2 ? 1 : (r7 == r2 ? 0 : -1))
             if (r7 == 0) goto Lc1
             r7 = 53
-            int r7 = org.telegram.messenger.AndroidUtilities.m50dp(r7)
+            int r7 = org.telegram.messenger.AndroidUtilities.m54dp(r7)
             r0 = 59
-            int r0 = org.telegram.messenger.AndroidUtilities.m50dp(r0)
+            int r0 = org.telegram.messenger.AndroidUtilities.m54dp(r0)
             r6.save()
             float r1 = r5.showOnlineProgress
             float r0 = (float) r0
             float r7 = (float) r7
             r6.scale(r1, r1, r0, r7)
             android.graphics.Paint r1 = org.telegram.p044ui.ActionBar.Theme.dialogs_onlineCirclePaint
-            java.lang.String r2 = r5.backgroundColorKey
+            int r2 = r5.backgroundColorKey
             int r2 = org.telegram.p044ui.ActionBar.Theme.getColor(r2)
             r1.setColor(r2)
             r1 = 7
-            int r1 = org.telegram.messenger.AndroidUtilities.m50dp(r1)
+            int r1 = org.telegram.messenger.AndroidUtilities.m54dp(r1)
             float r1 = (float) r1
             android.graphics.Paint r2 = org.telegram.p044ui.ActionBar.Theme.dialogs_onlineCirclePaint
             r6.drawCircle(r0, r7, r1, r2)
             android.graphics.Paint r1 = org.telegram.p044ui.ActionBar.Theme.dialogs_onlineCirclePaint
-            java.lang.String r2 = "chats_onlineCircle"
+            int r2 = org.telegram.p044ui.ActionBar.Theme.key_chats_onlineCircle
             int r2 = org.telegram.p044ui.ActionBar.Theme.getColor(r2)
             r1.setColor(r2)
             r1 = 5
-            int r1 = org.telegram.messenger.AndroidUtilities.m50dp(r1)
+            int r1 = org.telegram.messenger.AndroidUtilities.m54dp(r1)
             float r1 = (float) r1
             android.graphics.Paint r2 = org.telegram.p044ui.ActionBar.Theme.dialogs_onlineCirclePaint
             r6.drawCircle(r0, r7, r1, r2)
@@ -301,9 +301,9 @@ public class HintDialogCell extends FrameLayout {
         if (this.drawCheckbox) {
             int left = this.imageView.getLeft() + (this.imageView.getMeasuredWidth() / 2);
             int top = this.imageView.getTop() + (this.imageView.getMeasuredHeight() / 2);
-            Theme.checkboxSquare_checkPaint.setColor(Theme.getColor("dialogRoundCheckBox"));
+            Theme.checkboxSquare_checkPaint.setColor(Theme.getColor(Theme.key_dialogRoundCheckBox));
             Theme.checkboxSquare_checkPaint.setAlpha((int) (this.checkBox.getProgress() * 255.0f));
-            canvas.drawCircle(left, top, AndroidUtilities.m50dp(28), Theme.checkboxSquare_checkPaint);
+            canvas.drawCircle(left, top, AndroidUtilities.m54dp(28), Theme.checkboxSquare_checkPaint);
         }
     }
 

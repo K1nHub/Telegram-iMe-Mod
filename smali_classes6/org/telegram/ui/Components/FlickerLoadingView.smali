@@ -10,11 +10,11 @@
 
 .field private color1:I
 
-.field private colorKey1:Ljava/lang/String;
+.field private colorKey1:I
 
-.field private colorKey2:Ljava/lang/String;
+.field private colorKey2:I
 
-.field private colorKey3:Ljava/lang/String;
+.field private colorKey3:I
 
 .field globalGradientView:Lorg/telegram/ui/Components/FlickerLoadingView;
 
@@ -107,15 +107,15 @@
     .line 67
     iput-boolean p1, p0, Lorg/telegram/ui/Components/FlickerLoadingView;->showDate:Z
 
-    const-string v0, "actionBarDefaultSubmenuBackground"
-
     .line 75
-    iput-object v0, p0, Lorg/telegram/ui/Components/FlickerLoadingView;->colorKey1:Ljava/lang/String;
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuBackground:I
 
-    const-string v0, "listSelectorSDK21"
+    iput v0, p0, Lorg/telegram/ui/Components/FlickerLoadingView;->colorKey1:I
 
     .line 76
-    iput-object v0, p0, Lorg/telegram/ui/Components/FlickerLoadingView;->colorKey2:Ljava/lang/String;
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
+    iput v0, p0, Lorg/telegram/ui/Components/FlickerLoadingView;->colorKey2:I
 
     .line 78
     iput p1, p0, Lorg/telegram/ui/Components/FlickerLoadingView;->itemsCount:I
@@ -504,39 +504,16 @@
     .end packed-switch
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
+.method private getThemedColor(I)I
     .locals 1
 
     .line 914
     iget-object v0, p0, Lorg/telegram/ui/Components/FlickerLoadingView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 915
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
@@ -561,7 +538,7 @@
 .method public getPaint()Landroid/graphics/Paint;
     .locals 1
 
-    .line 929
+    .line 928
     iget-object v0, p0, Lorg/telegram/ui/Components/FlickerLoadingView;->paint:Landroid/graphics/Paint;
 
     return-object v0
@@ -657,14 +634,14 @@
     add-int v10, v1, v2
 
     .line 167
-    iget-object v1, v0, Lorg/telegram/ui/Components/FlickerLoadingView;->colorKey3:Ljava/lang/String;
+    iget v1, v0, Lorg/telegram/ui/Components/FlickerLoadingView;->colorKey3:I
 
-    if-eqz v1, :cond_2
+    if-ltz v1, :cond_2
 
     .line 168
     iget-object v2, v0, Lorg/telegram/ui/Components/FlickerLoadingView;->headerPaint:Landroid/graphics/Paint;
 
-    invoke-direct {v0, v1}, Lorg/telegram/ui/Components/FlickerLoadingView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v0, v1}, Lorg/telegram/ui/Components/FlickerLoadingView;->getThemedColor(I)I
 
     move-result v1
 
@@ -688,9 +665,9 @@
 
     int-to-float v5, v1
 
-    iget-object v1, v0, Lorg/telegram/ui/Components/FlickerLoadingView;->colorKey3:Ljava/lang/String;
+    iget v1, v0, Lorg/telegram/ui/Components/FlickerLoadingView;->colorKey3:I
 
-    if-eqz v1, :cond_3
+    if-ltz v1, :cond_3
 
     iget-object v1, v0, Lorg/telegram/ui/Components/FlickerLoadingView;->headerPaint:Landroid/graphics/Paint;
 
@@ -4586,10 +4563,10 @@
 
     iput-object v2, v0, Lorg/telegram/ui/Components/FlickerLoadingView;->backgroundPaint:Landroid/graphics/Paint;
 
-    const-string v3, "actionBarDefaultSubmenuBackground"
-
     .line 585
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuBackground:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -6044,11 +6021,11 @@
     :cond_44
     iget-object v11, v0, Lorg/telegram/ui/Components/FlickerLoadingView;->backgroundPaint:Landroid/graphics/Paint;
 
-    iget-object v14, v0, Lorg/telegram/ui/Components/FlickerLoadingView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    sget v14, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    const-string v15, "dialogBackground"
+    iget-object v15, v0, Lorg/telegram/ui/Components/FlickerLoadingView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v15, v14}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v14, v15}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v14
 
@@ -6771,17 +6748,17 @@
     return-void
 .end method
 
-.method public setColors(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public setColors(III)V
     .locals 0
 
     .line 115
-    iput-object p1, p0, Lorg/telegram/ui/Components/FlickerLoadingView;->colorKey1:Ljava/lang/String;
+    iput p1, p0, Lorg/telegram/ui/Components/FlickerLoadingView;->colorKey1:I
 
     .line 116
-    iput-object p2, p0, Lorg/telegram/ui/Components/FlickerLoadingView;->colorKey2:Ljava/lang/String;
+    iput p2, p0, Lorg/telegram/ui/Components/FlickerLoadingView;->colorKey2:I
 
     .line 117
-    iput-object p3, p0, Lorg/telegram/ui/Components/FlickerLoadingView;->colorKey3:Ljava/lang/String;
+    iput p3, p0, Lorg/telegram/ui/Components/FlickerLoadingView;->colorKey3:I
 
     .line 118
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
@@ -6792,7 +6769,7 @@
 .method public setGlobalGradientView(Lorg/telegram/ui/Components/FlickerLoadingView;)V
     .locals 0
 
-    .line 919
+    .line 918
     iput-object p1, p0, Lorg/telegram/ui/Components/FlickerLoadingView;->globalGradientView:Lorg/telegram/ui/Components/FlickerLoadingView;
 
     return-void
@@ -6801,7 +6778,7 @@
 .method public setIgnoreHeightCheck(Z)V
     .locals 0
 
-    .line 933
+    .line 932
     iput-boolean p1, p0, Lorg/telegram/ui/Components/FlickerLoadingView;->ignoreHeightCheck:Z
 
     return-void
@@ -6852,13 +6829,13 @@
 .method public setParentSize(IIF)V
     .locals 0
 
-    .line 923
+    .line 922
     iput p1, p0, Lorg/telegram/ui/Components/FlickerLoadingView;->parentWidth:I
 
-    .line 924
+    .line 923
     iput p2, p0, Lorg/telegram/ui/Components/FlickerLoadingView;->parentHeight:I
 
-    .line 925
+    .line 924
     iput p3, p0, Lorg/telegram/ui/Components/FlickerLoadingView;->parentXOffset:F
 
     return-void
@@ -6967,16 +6944,16 @@
 
     .line 806
     :cond_0
-    iget-object v1, v0, Lorg/telegram/ui/Components/FlickerLoadingView;->colorKey1:Ljava/lang/String;
+    iget v1, v0, Lorg/telegram/ui/Components/FlickerLoadingView;->colorKey1:I
 
-    invoke-direct {v0, v1}, Lorg/telegram/ui/Components/FlickerLoadingView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v0, v1}, Lorg/telegram/ui/Components/FlickerLoadingView;->getThemedColor(I)I
 
     move-result v1
 
     .line 807
-    iget-object v2, v0, Lorg/telegram/ui/Components/FlickerLoadingView;->colorKey2:Ljava/lang/String;
+    iget v2, v0, Lorg/telegram/ui/Components/FlickerLoadingView;->colorKey2:I
 
-    invoke-direct {v0, v2}, Lorg/telegram/ui/Components/FlickerLoadingView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v0, v2}, Lorg/telegram/ui/Components/FlickerLoadingView;->getThemedColor(I)I
 
     move-result v2
 

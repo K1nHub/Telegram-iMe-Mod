@@ -40,14 +40,14 @@ import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.databinding.ForkFragmentWalletBinancePayHistoryBinding;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 /* compiled from: WalletBinancePayHistoryFragment.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryFragment */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletBinancePayHistoryFragment extends WalletAuthFragment implements WalletBinancePayHistoryView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(WalletBinancePayHistoryFragment.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/home/v2/tabs/binancepay/history/WalletBinancePayHistoryPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(WalletBinancePayHistoryFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletBinancePayHistoryBinding;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -67,7 +67,7 @@ public final class WalletBinancePayHistoryFragment extends WalletAuthFragment im
         MvpDelegate mvpDelegate = getMvpDelegate();
         Intrinsics.checkExpressionValueIsNotNull(mvpDelegate, "mvpDelegate");
         this.presenter$delegate = new MoxyKtxDelegate(mvpDelegate, WalletBinancePayHistoryPresenter.class.getName() + ".presenter", walletBinancePayHistoryFragment$presenter$2);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2231xc9259482(this, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2270xc9259482(this, null, null));
         this.binancePayHistoryAdapter$delegate = lazy;
         this.binding$delegate = ResettableLazyDelegateKt.resettableLazy$default(this, (ResettableLazyManager) null, new WalletBinancePayHistoryFragment$binding$2(this), 1, (Object) null);
     }
@@ -176,7 +176,7 @@ public final class WalletBinancePayHistoryFragment extends WalletAuthFragment im
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryFragment$$ExternalSyntheticLambda3
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryFragment$$ExternalSyntheticLambda3
             @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 WalletBinancePayHistoryFragment.getThemeDescriptions$lambda$0(WalletBinancePayHistoryFragment.this);
@@ -186,7 +186,7 @@ public final class WalletBinancePayHistoryFragment extends WalletAuthFragment im
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, "windowBackgroundWhite"));
+        }, Theme.key_windowBackgroundWhite));
         return arrayListOf;
     }
 
@@ -197,12 +197,12 @@ public final class WalletBinancePayHistoryFragment extends WalletAuthFragment im
     }
 
     private final void setupActionBar() {
-        C3306ActionBar c3306ActionBar = this.actionBar;
-        c3306ActionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
-        c3306ActionBar.setTitle(getResourceManager().getString(C3242R.string.wallet_binance_pay_action_history));
-        c3306ActionBar.setAllowOverlayTitle(true);
-        c3306ActionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryFragment$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        c3356ActionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        c3356ActionBar.setTitle(getResourceManager().getString(C3290R.string.wallet_binance_pay_action_history));
+        c3356ActionBar.setAllowOverlayTitle(true);
+        c3356ActionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryFragment$setupActionBar$1$1
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletBinancePayHistoryFragment.this.finishFragment();
@@ -242,8 +242,8 @@ public final class WalletBinancePayHistoryFragment extends WalletAuthFragment im
 
     private final void setupColors() {
         ForkFragmentWalletBinancePayHistoryBinding binding = getBinding();
-        binding.getRoot().setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-        binding.getRoot().setColorSchemeColors(Theme.getColor("chats_actionBackground"));
+        binding.getRoot().setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+        binding.getRoot().setColorSchemeColors(Theme.getColor(Theme.key_chats_actionBackground));
     }
 
     private final void setupListeners() {
@@ -286,7 +286,7 @@ public final class WalletBinancePayHistoryFragment extends WalletAuthFragment im
 
     /* compiled from: WalletBinancePayHistoryFragment.kt */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryFragment$ScreenType */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static abstract class ScreenType {
         public /* synthetic */ ScreenType(DefaultConstructorMarker defaultConstructorMarker) {
             this();
@@ -297,7 +297,7 @@ public final class WalletBinancePayHistoryFragment extends WalletAuthFragment im
 
         /* compiled from: WalletBinancePayHistoryFragment.kt */
         /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryFragment$ScreenType$Fullscreen */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class Fullscreen extends ScreenType {
             public static final Fullscreen INSTANCE = new Fullscreen();
 
@@ -308,7 +308,7 @@ public final class WalletBinancePayHistoryFragment extends WalletAuthFragment im
 
         /* compiled from: WalletBinancePayHistoryFragment.kt */
         /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryFragment$ScreenType$TokenDetailsTab */
-        /* loaded from: classes3.dex */
+        /* loaded from: classes4.dex */
         public static final class TokenDetailsTab extends ScreenType {
             private final BinanceTransactionsGroup transactionsGroup;
 
@@ -327,7 +327,7 @@ public final class WalletBinancePayHistoryFragment extends WalletAuthFragment im
 
     /* compiled from: WalletBinancePayHistoryFragment.kt */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryFragment$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

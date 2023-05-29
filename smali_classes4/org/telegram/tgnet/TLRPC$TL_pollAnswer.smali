@@ -23,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 2895
+    .line 3315
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -32,7 +32,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_pollAnswer;
     .locals 1
 
-    .line 2902
+    .line 3322
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_pollAnswer;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -43,7 +43,7 @@
 
     return-object p0
 
-    .line 2904
+    .line 3324
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -69,13 +69,13 @@
 
     throw p0
 
-    .line 2909
+    .line 3329
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_pollAnswer;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_pollAnswer;-><init>()V
 
-    .line 2910
+    .line 3330
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_pollAnswer;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -86,14 +86,14 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 1
 
-    .line 2915
+    .line 3335
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_pollAnswer;->text:Ljava/lang/String;
 
-    .line 2916
+    .line 3336
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readByteArray(Z)[B
 
     move-result-object p1
@@ -106,17 +106,17 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 2920
+    .line 3340
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_pollAnswer;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2921
+    .line 3341
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_pollAnswer;->text:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 2922
+    .line 3342
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_pollAnswer;->option:[B
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeByteArray([B)V

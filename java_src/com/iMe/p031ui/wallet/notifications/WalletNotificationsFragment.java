@@ -33,11 +33,11 @@ import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkFragmentWalletNotificationsBinding;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 /* compiled from: WalletNotificationsFragment.kt */
@@ -101,7 +101,7 @@ public final class WalletNotificationsFragment extends WalletAuthFragment implem
         }
         ActionBarMenuItem actionBarMenuItem = this.optionsMenuItem;
         if (actionBarMenuItem != null) {
-            ViewExtKt.visible(actionBarMenuItem);
+            ViewExtKt.visible$default(actionBarMenuItem, false, 1, null);
         }
         getNotificationAdapter().setNewInstance(notifications);
     }
@@ -126,7 +126,7 @@ public final class WalletNotificationsFragment extends WalletAuthFragment implem
     public void onEmptyState() {
         ActionBarMenuItem actionBarMenuItem = this.optionsMenuItem;
         if (actionBarMenuItem != null) {
-            ViewExtKt.gone(actionBarMenuItem);
+            ViewExtKt.gone$default(actionBarMenuItem, false, 1, null);
         }
         GlobalStateLayout globalStateLayout = getBinding().globalStateLayout;
         Intrinsics.checkNotNullExpressionValue(globalStateLayout, "binding.globalStateLayout");
@@ -168,7 +168,10 @@ public final class WalletNotificationsFragment extends WalletAuthFragment implem
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SUBMENUBACKGROUND, null, null, null, null, "actionBarDefaultSubmenuBackground"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SUBMENUITEM, null, null, null, null, "actionBarDefaultSubmenuItem"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SUBMENUITEM | ThemeDescription.FLAG_IMAGECOLOR, null, null, null, null, "actionBarDefaultSubmenuItemIcon"), new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "windowBackgroundWhite"), new ThemeDescription(getBinding().globalStateLayout, ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.notifications.WalletNotificationsFragment$$ExternalSyntheticLambda3
+        SwipeRefreshLayout root = getBinding().getRoot();
+        int i = ThemeDescription.FLAG_BACKGROUND;
+        int i2 = Theme.key_windowBackgroundWhite;
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SUBMENUBACKGROUND, null, null, null, null, Theme.key_actionBarDefaultSubmenuBackground), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SUBMENUITEM, null, null, null, null, Theme.key_actionBarDefaultSubmenuItem), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SUBMENUITEM | ThemeDescription.FLAG_IMAGECOLOR, null, null, null, null, Theme.key_actionBarDefaultSubmenuItemIcon), new ThemeDescription(root, i, null, null, null, null, i2), new ThemeDescription(getBinding().globalStateLayout, ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.notifications.WalletNotificationsFragment$$ExternalSyntheticLambda3
             @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 WalletNotificationsFragment.getThemeDescriptions$lambda$0(WalletNotificationsFragment.this);
@@ -178,7 +181,7 @@ public final class WalletNotificationsFragment extends WalletAuthFragment implem
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, "windowBackgroundWhite"));
+        }, i2));
         return arrayListOf;
     }
 
@@ -189,18 +192,18 @@ public final class WalletNotificationsFragment extends WalletAuthFragment implem
     }
 
     private final void setupActionBar() {
-        C3306ActionBar c3306ActionBar = this.actionBar;
-        c3306ActionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
-        c3306ActionBar.setTitle(getResourceManager().getString(C3242R.string.wallet_notifications_toolbar_title));
-        c3306ActionBar.setAllowOverlayTitle(true);
-        ActionBarMenuItem setupActionBar$lambda$3$lambda$2$lambda$1 = c3306ActionBar.createMenu().addItem(0, C3242R.C3244drawable.ic_ab_other);
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        c3356ActionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        c3356ActionBar.setTitle(getResourceManager().getString(C3290R.string.wallet_notifications_toolbar_title));
+        c3356ActionBar.setAllowOverlayTitle(true);
+        ActionBarMenuItem setupActionBar$lambda$3$lambda$2$lambda$1 = c3356ActionBar.createMenu().addItem(0, C3290R.C3292drawable.ic_ab_other);
         Intrinsics.checkNotNullExpressionValue(setupActionBar$lambda$3$lambda$2$lambda$1, "setupActionBar$lambda$3$lambda$2$lambda$1");
-        ViewExtKt.gone(setupActionBar$lambda$3$lambda$2$lambda$1);
-        setupActionBar$lambda$3$lambda$2$lambda$1.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3242R.string.AccDescrMoreOptions));
-        setupActionBar$lambda$3$lambda$2$lambda$1.addSubItem(1, C3242R.C3244drawable.fork_ic_folder_tab_read_all_24, getResourceManager().getString(C3242R.string.dialogs_tab_popup_read_all));
+        ViewExtKt.gone$default(setupActionBar$lambda$3$lambda$2$lambda$1, false, 1, null);
+        setupActionBar$lambda$3$lambda$2$lambda$1.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3290R.string.AccDescrMoreOptions));
+        setupActionBar$lambda$3$lambda$2$lambda$1.addSubItem(1, C3290R.C3292drawable.fork_ic_folder_tab_read_all_24, getResourceManager().getString(C3290R.string.dialogs_tab_popup_read_all));
         this.optionsMenuItem = setupActionBar$lambda$3$lambda$2$lambda$1;
-        c3306ActionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.notifications.WalletNotificationsFragment$setupActionBar$1$2
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        c3356ActionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.notifications.WalletNotificationsFragment$setupActionBar$1$2
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 WalletNotificationsPresenter presenter;
                 WalletNotificationsRecycleAdapter notificationAdapter;
@@ -261,9 +264,11 @@ public final class WalletNotificationsFragment extends WalletAuthFragment implem
 
     private final void setupColors() {
         ForkFragmentWalletNotificationsBinding binding = getBinding();
-        binding.getRoot().setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-        binding.getRoot().setColorSchemeColors(Theme.getColor("chats_actionBackground"));
-        binding.globalStateLayout.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+        SwipeRefreshLayout root = binding.getRoot();
+        int i = Theme.key_windowBackgroundWhite;
+        root.setBackgroundColor(Theme.getColor(i));
+        binding.getRoot().setColorSchemeColors(Theme.getColor(Theme.key_chats_actionBackground));
+        binding.globalStateLayout.setBackgroundColor(Theme.getColor(i));
     }
 
     private final void setupListeners() {

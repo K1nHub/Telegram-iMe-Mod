@@ -3,7 +3,6 @@ package com.iMe.mapper.twitter;
 import com.chad.library.adapter.base.entity.node.BaseNode;
 import com.iMe.model.twitter.TweetItem;
 import com.iMe.storage.domain.model.twitter.TweetInfo;
-import com.iMe.utils.extentions.common.StringExtKt;
 import com.iMe.utils.formatter.DateFormatter;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -24,6 +23,6 @@ public final class TweetInfoUiMappingKt {
         Intrinsics.checkNotNullExpressionValue(formatWholeNumber2, "formatWholeNumber(quotesCount)");
         String formatWholeNumber3 = AndroidUtilities.formatWholeNumber(tweetInfo.getRetweetsCount());
         Intrinsics.checkNotNullExpressionValue(formatWholeNumber3, "formatWholeNumber(retweetsCount)");
-        return new TweetItem(id, authorName, str, avatarUrl, formatWholeNumber, formatWholeNumber2, formatWholeNumber3, StringExtKt.addTwitterLinks(tweetInfo.getText()), DateFormatter.format$default(DateFormatter.DateType.ONLY_TIME, new Date(TimeUnit.SECONDS.toMillis(tweetInfo.getCreatedAt())), null, 4, null), tweetInfo.isLiked());
+        return new TweetItem(id, authorName, str, avatarUrl, formatWholeNumber, formatWholeNumber2, formatWholeNumber3, tweetInfo.getText(), DateFormatter.format$default(DateFormatter.DateType.ONLY_TIME, new Date(TimeUnit.SECONDS.toMillis(tweetInfo.getCreatedAt())), null, 4, null), tweetInfo.isLiked(), tweetInfo.getMediaInfo());
     }
 }

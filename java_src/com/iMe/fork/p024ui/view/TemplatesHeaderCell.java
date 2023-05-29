@@ -12,7 +12,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
@@ -44,8 +44,8 @@ public final class TemplatesHeaderCell extends LinearLayout {
         this.sortButton$delegate = lazy2;
         lazy3 = LazyKt__LazyJVMKt.lazy(new TemplatesHeaderCell$createButton$2(this));
         this.createButton$delegate = lazy3;
-        int m50dp = AndroidUtilities.m50dp(8);
-        setPadding(m50dp, m50dp, m50dp, m50dp);
+        int m54dp = AndroidUtilities.m54dp(8);
+        setPadding(m54dp, m54dp, m54dp, m54dp);
         setGravity(16);
         addView(getHeaderTextView(), LayoutHelper.createLinear(0, -2, 1.0f, 16, 8, 0, 0, 0));
         addView(getSortButton(), LayoutHelper.createLinear(36, 36, 16, 8, 0, 8, 0));
@@ -68,12 +68,13 @@ public final class TemplatesHeaderCell extends LinearLayout {
     public final void bind(int i, final BotCommandsMenuView.BotCommandsAdapter.TemplatesDelegate templatesDelegate) {
         Intrinsics.checkNotNullParameter(templatesDelegate, "templatesDelegate");
         TextView headerTextView = getHeaderTextView();
-        headerTextView.setText(LocaleController.getInternalString(i > 0 ? C3242R.string.chat_templates : C3242R.string.chat_templates_list_header));
-        headerTextView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        headerTextView.setText(LocaleController.getInternalString(i > 0 ? C3290R.string.chat_templates : C3290R.string.chat_templates_list_header));
+        int i2 = Theme.key_windowBackgroundWhiteBlackText;
+        headerTextView.setTextColor(Theme.getColor(i2));
         ActionBarMenuItem sortButton = getSortButton();
         sortButton.setVisibility(i > 1 ? 0 : 8);
-        sortButton.setBackground(Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.m50dp(48), 0, Theme.getColor("listSelectorSDK21")));
-        sortButton.setIconColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        sortButton.setBackground(Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.m54dp(48), 0, Theme.getColor(Theme.key_listSelector)));
+        sortButton.setIconColor(Theme.getColor(i2));
         TextView createButton = getCreateButton();
         ViewExtKt.setRippleBackground(createButton, true);
         createButton.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.fork.ui.view.TemplatesHeaderCell$$ExternalSyntheticLambda1
@@ -82,7 +83,7 @@ public final class TemplatesHeaderCell extends LinearLayout {
                 TemplatesHeaderCell.bind$lambda$3$lambda$2(BotCommandsMenuView.BotCommandsAdapter.TemplatesDelegate.this, view);
             }
         });
-        createButton.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        createButton.setTextColor(Theme.getColor(i2));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -101,9 +102,9 @@ public final class TemplatesHeaderCell extends LinearLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final ActionBarMenuItem initSortButton() {
-        final ActionBarMenuItem actionBarMenuItem = new ActionBarMenuItem(getContext(), null, 0, Theme.getColor("windowBackgroundWhiteBlackText"));
-        actionBarMenuItem.setAdditionalYOffset(-AndroidUtilities.m50dp(10));
-        actionBarMenuItem.setAdditionalXOffset(AndroidUtilities.m50dp(10));
+        final ActionBarMenuItem actionBarMenuItem = new ActionBarMenuItem(getContext(), null, 0, Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
+        actionBarMenuItem.setAdditionalYOffset(-AndroidUtilities.m54dp(10));
+        actionBarMenuItem.setAdditionalXOffset(AndroidUtilities.m54dp(10));
         actionBarMenuItem.setLongClickEnabled(false);
         actionBarMenuItem.setShowSubmenuByMove(false);
         actionBarMenuItem.setShowedFromBottom(true);
@@ -145,7 +146,7 @@ public final class TemplatesHeaderCell extends LinearLayout {
         TextView textView = new TextView(getContext());
         ViewExtKt.withMediumTypeface(textView);
         ViewExtKt.setHorizontalPadding(textView, 16);
-        String string = LocaleController.getString("Create", C3242R.string.Create);
+        String string = LocaleController.getString("Create", C3290R.string.Create);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Create\", R.string.Create)");
         String upperCase = string.toUpperCase(Locale.ROOT);
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");

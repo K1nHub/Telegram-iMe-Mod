@@ -423,9 +423,9 @@
 
     check-cast v4, Lorg/telegram/ui/Charts/data/ChartData$Line;
 
-    iget-object v4, v4, Lorg/telegram/ui/Charts/data/ChartData$Line;->colorKey:Ljava/lang/String;
+    iget v4, v4, Lorg/telegram/ui/Charts/data/ChartData$Line;->colorKey:I
 
-    iput-object v4, v3, Lorg/telegram/ui/Charts/data/ChartData$Line;->colorKey:Ljava/lang/String;
+    iput v4, v3, Lorg/telegram/ui/Charts/data/ChartData$Line;->colorKey:I
 
     .line 92
     iget-object v4, p1, Lorg/telegram/ui/Charts/data/ChartData;->lines:Ljava/util/ArrayList;

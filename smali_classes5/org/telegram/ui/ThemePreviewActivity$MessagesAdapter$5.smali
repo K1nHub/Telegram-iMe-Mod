@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter$5;
-.super Landroid/widget/FrameLayout;
+.super Landroid/view/View;
 .source "ThemePreviewActivity.java"
 
 
@@ -18,8 +18,8 @@
 .method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;Landroid/content/Context;)V
     .locals 0
 
-    .line 4442
-    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+    .line 4935
+    invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
@@ -29,28 +29,20 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 4445
-    invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
+    const/4 p2, 0x4
 
-    move-result p1
-
-    const/high16 p2, 0x40000000    # 2.0f
-
-    invoke-static {p1, p2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
-
-    move-result p1
-
-    const/16 v0, 0x3c
-
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v0
-
-    invoke-static {v0, p2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+    .line 4938
+    invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
 
-    invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
+    const/high16 v0, 0x40000000    # 2.0f
+
+    invoke-static {p2, v0}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
+
+    move-result p2
+
+    invoke-super {p0, p1, p2}, Landroid/view/View;->onMeasure(II)V
 
     return-void
 .end method

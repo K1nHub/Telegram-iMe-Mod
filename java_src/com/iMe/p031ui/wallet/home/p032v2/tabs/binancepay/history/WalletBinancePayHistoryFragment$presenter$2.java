@@ -11,7 +11,7 @@ import org.koin.p043mp.KoinPlatformTools;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletBinancePayHistoryFragment.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryFragment$presenter$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletBinancePayHistoryFragment$presenter$2 extends Lambda implements Function0<WalletBinancePayHistoryPresenter> {
     final /* synthetic */ WalletBinancePayHistoryFragment this$0;
 
@@ -25,12 +25,12 @@ public final class WalletBinancePayHistoryFragment$presenter$2 extends Lambda im
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: WalletBinancePayHistoryFragment.kt */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.WalletBinancePayHistoryFragment$presenter$2$1 */
-    /* loaded from: classes3.dex */
-    public static final class C22321 extends Lambda implements Function0<ParametersHolder> {
+    /* loaded from: classes4.dex */
+    public static final class C22711 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ WalletBinancePayHistoryFragment this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C22321(WalletBinancePayHistoryFragment walletBinancePayHistoryFragment) {
+        C22711(WalletBinancePayHistoryFragment walletBinancePayHistoryFragment) {
             super(0);
             this.this$0 = walletBinancePayHistoryFragment;
         }
@@ -50,7 +50,7 @@ public final class WalletBinancePayHistoryFragment$presenter$2 extends Lambda im
     public final WalletBinancePayHistoryPresenter invoke() {
         Lazy lazy;
         WalletBinancePayHistoryFragment walletBinancePayHistoryFragment = this.this$0;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2230xbbe1c0a5(walletBinancePayHistoryFragment, null, new C22321(walletBinancePayHistoryFragment)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2269xbbe1c0a5(walletBinancePayHistoryFragment, null, new C22711(walletBinancePayHistoryFragment)));
         return (WalletBinancePayHistoryPresenter) lazy.getValue();
     }
 }

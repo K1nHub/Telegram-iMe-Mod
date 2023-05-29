@@ -2,40 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/iMe/fork/utils/Callbacks$Callback;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda37;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/ProfileActivity;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda37;
-
-    invoke-direct {v0}, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda37;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda37;->INSTANCE:Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda37;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda37;->f$0:Lorg/telegram/ui/ProfileActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke()V
-    .locals 0
+.method public final run()V
+    .locals 1
 
-    invoke-static {}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$6MA4dsRufXx2KPKPTCJIb2n5uuI()V
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda37;->f$0:Lorg/telegram/ui/ProfileActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$oTwCK7upLpy3C5VUSTQt9ejyCk0(Lorg/telegram/ui/ProfileActivity;)V
 
     return-void
 .end method

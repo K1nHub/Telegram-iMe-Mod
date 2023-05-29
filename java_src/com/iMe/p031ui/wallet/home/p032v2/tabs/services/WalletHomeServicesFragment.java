@@ -136,7 +136,7 @@ public final class WalletHomeServicesFragment extends WalletHomeTabFragment impl
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, "windowBackgroundGray"));
+        }, Theme.key_windowBackgroundGray));
         return arrayListOf;
     }
 
@@ -180,7 +180,7 @@ public final class WalletHomeServicesFragment extends WalletHomeTabFragment impl
     }
 
     private final void setupColors() {
-        getBinding().getRoot().setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+        getBinding().getRoot().setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
     }
 
     private final void setupListeners() {

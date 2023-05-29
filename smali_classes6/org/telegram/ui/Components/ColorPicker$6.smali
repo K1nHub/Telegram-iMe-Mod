@@ -41,7 +41,7 @@
     .line 486
     iget-object p1, p0, Lorg/telegram/ui/Components/ColorPicker$6;->this$0:Lorg/telegram/ui/Components/ColorPicker;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ColorPicker;->access$700(Lorg/telegram/ui/Components/ColorPicker;)Landroid/widget/LinearLayout;
+    invoke-static {p1}, Lorg/telegram/ui/Components/ColorPicker;->access$800(Lorg/telegram/ui/Components/ColorPicker;)Landroid/widget/LinearLayout;
 
     move-result-object p1
 

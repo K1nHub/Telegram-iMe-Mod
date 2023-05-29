@@ -21,7 +21,7 @@
 .method constructor <init>(Lorg/telegram/ui/PrivacyControlActivity$MessageCell;Lorg/telegram/ui/PrivacyControlActivity;)V
     .locals 0
 
-    .line 358
+    .line 359
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

@@ -24,12 +24,12 @@
 .method public constructor <init>(Lorg/telegram/ui/ChangeUsernameActivity;Ljava/lang/String;)V
     .locals 0
 
-    .line 120
+    .line 125
     iput-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$LinkSpan;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
     invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
 
-    .line 121
+    .line 126
     iput-object p2, p0, Lorg/telegram/ui/ChangeUsernameActivity$LinkSpan;->url:Ljava/lang/String;
 
     return-void
@@ -40,7 +40,7 @@
 .method public onClick(Landroid/view/View;)V
     .locals 2
 
-    .line 133
+    .line 138
     :try_start_0
     sget-object p1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -54,17 +54,17 @@
 
     const-string v0, "label"
 
-    .line 134
+    .line 139
     iget-object v1, p0, Lorg/telegram/ui/ChangeUsernameActivity$LinkSpan;->url:Ljava/lang/String;
 
     invoke-static {v0, v1}, Landroid/content/ClipData;->newPlainText(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Landroid/content/ClipData;
 
     move-result-object v0
 
-    .line 135
+    .line 140
     invoke-virtual {p1, v0}, Landroid/content/ClipboardManager;->setPrimaryClip(Landroid/content/ClipData;)V
 
-    .line 136
+    .line 141
     iget-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$LinkSpan;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BulletinFactory;->canShowBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
@@ -73,7 +73,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 137
+    .line 142
     iget-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$LinkSpan;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/BulletinFactory;->createCopyLinkBulletin(Lorg/telegram/ui/ActionBar/BaseFragment;)Lorg/telegram/ui/Components/Bulletin;
@@ -89,7 +89,7 @@
     :catch_0
     move-exception p1
 
-    .line 140
+    .line 145
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :cond_0
@@ -100,12 +100,12 @@
 .method public updateDrawState(Landroid/text/TextPaint;)V
     .locals 1
 
-    .line 126
+    .line 131
     invoke-super {p0, p1}, Landroid/text/style/ClickableSpan;->updateDrawState(Landroid/text/TextPaint;)V
 
     const/4 v0, 0x0
 
-    .line 127
+    .line 132
     invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setUnderlineText(Z)V
 
     return-void

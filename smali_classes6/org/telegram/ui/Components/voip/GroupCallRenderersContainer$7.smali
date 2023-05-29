@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;)V
     .locals 0
 
-    .line 702
+    .line 703
     iput-object p1, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$7;->this$0:Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$7;->val$removingMiniView:Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 705
+    .line 706
     iget-object p1, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$7;->val$removingMiniView:Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getParent()Landroid/view/ViewParent;
@@ -48,14 +48,14 @@
 
     if-eqz p1, :cond_0
 
-    .line 706
+    .line 707
     iget-object p1, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$7;->this$0:Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$7;->val$removingMiniView:Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->removeView(Landroid/view/View;)V
 
-    .line 707
+    .line 708
     iget-object p1, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$7;->val$removingMiniView:Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/voip/GroupCallMiniTextureView;->release()V

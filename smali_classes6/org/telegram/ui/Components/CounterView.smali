@@ -52,7 +52,7 @@
 .method public getEnterProgress()F
     .locals 5
 
-    .line 515
+    .line 513
     iget-object v0, p0, Lorg/telegram/ui/Components/CounterView;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
     iget v1, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->countChangeProgress:F
@@ -81,7 +81,7 @@
 
     return v2
 
-    .line 522
+    .line 520
     :cond_2
     iget v0, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->currentCount:I
 
@@ -96,7 +96,7 @@
 .method public isInOutAnimation()Z
     .locals 2
 
-    .line 527
+    .line 525
     iget-object v0, p0, Lorg/telegram/ui/Components/CounterView;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
     iget v0, v0, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->animationType:I
@@ -150,18 +150,18 @@
     return-void
 .end method
 
-.method public setColors(Ljava/lang/String;Ljava/lang/String;)V
+.method public setColors(II)V
     .locals 1
 
     .line 59
     iget-object v0, p0, Lorg/telegram/ui/Components/CounterView;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->access$002(Lorg/telegram/ui/Components/CounterView$CounterDrawable;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->access$002(Lorg/telegram/ui/Components/CounterView$CounterDrawable;I)I
 
     .line 60
     iget-object p1, p0, Lorg/telegram/ui/Components/CounterView;->counterDrawable:Lorg/telegram/ui/Components/CounterView$CounterDrawable;
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->access$102(Lorg/telegram/ui/Components/CounterView$CounterDrawable;Ljava/lang/String;)Ljava/lang/String;
+    invoke-static {p1, p2}, Lorg/telegram/ui/Components/CounterView$CounterDrawable;->access$102(Lorg/telegram/ui/Components/CounterView$CounterDrawable;I)I
 
     return-void
 .end method

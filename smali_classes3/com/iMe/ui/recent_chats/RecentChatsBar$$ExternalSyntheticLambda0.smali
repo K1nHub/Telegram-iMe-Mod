@@ -2,64 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lj$/util/function/Predicate;
+.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
 
 
 # instance fields
-.field public final synthetic f$0:Lkotlin/jvm/functions/Function1;
+.field public final synthetic f$0:Lcom/iMe/ui/recent_chats/RecentChatsBar;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lkotlin/jvm/functions/Function1;)V
+.method public synthetic constructor <init>(Lcom/iMe/ui/recent_chats/RecentChatsBar;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar$$ExternalSyntheticLambda0;->f$0:Lkotlin/jvm/functions/Function1;
+    iput-object p1, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar$$ExternalSyntheticLambda0;->f$0:Lcom/iMe/ui/recent_chats/RecentChatsBar;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public synthetic and(Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/function/Predicate$-CC;->$default$and(Lj$/util/function/Predicate;Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public synthetic negate()Lj$/util/function/Predicate;
+.method public final onItemClick(Landroid/view/View;I)V
     .locals 1
 
-    invoke-static {p0}, Lj$/util/function/Predicate$-CC;->$default$negate(Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
+    iget-object v0, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar$$ExternalSyntheticLambda0;->f$0:Lcom/iMe/ui/recent_chats/RecentChatsBar;
 
-    move-result-object v0
+    invoke-static {v0, p1, p2}, Lcom/iMe/ui/recent_chats/RecentChatsBar;->$r8$lambda$Ft_nBrncze_X3nR1B0ZsL1Jashg(Lcom/iMe/ui/recent_chats/RecentChatsBar;Landroid/view/View;I)V
 
-    return-object v0
-.end method
-
-.method public synthetic or(Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
-    .locals 0
-
-    invoke-static {p0, p1}, Lj$/util/function/Predicate$-CC;->$default$or(Lj$/util/function/Predicate;Lj$/util/function/Predicate;)Lj$/util/function/Predicate;
-
-    move-result-object p1
-
-    return-object p1
-.end method
-
-.method public final test(Ljava/lang/Object;)Z
-    .locals 1
-
-    iget-object v0, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar$$ExternalSyntheticLambda0;->f$0:Lkotlin/jvm/functions/Function1;
-
-    invoke-static {v0, p1}, Lcom/iMe/ui/recent_chats/RecentChatsBar;->$r8$lambda$lWS4HIyBki_GMkZN9V9dL4g2XjA(Lkotlin/jvm/functions/Function1;Ljava/lang/Object;)Z
-
-    move-result p1
-
-    return p1
+    return-void
 .end method

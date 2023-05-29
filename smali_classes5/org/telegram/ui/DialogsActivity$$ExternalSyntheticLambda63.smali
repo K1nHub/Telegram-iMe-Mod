@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/iMe/fork/utils/Callbacks$Callback1;
+.implements Lcom/iMe/bots/usecase/AiBotsManager$BotsListChangedCallback;
 
 
 # instance fields
@@ -22,14 +22,12 @@
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
+.method public final onSuccess()V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda63;->f$0:Lorg/telegram/ui/DialogsActivity;
 
-    check-cast p1, Ljava/lang/Long;
-
-    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$jnHBL0BFjj3D33_zYXsW7rzm6QE(Lorg/telegram/ui/DialogsActivity;Ljava/lang/Long;)V
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$9DGCK1bWYB5ka8g_Xz_LFBQDAPs(Lorg/telegram/ui/DialogsActivity;)V
 
     return-void
 .end method

@@ -78,15 +78,15 @@
 
     if-eqz v0, :cond_1
 
-    const-string v0, "chat_messageLinkOut"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messageLinkOut:I
 
     goto :goto_0
 
     :cond_1
-    const-string v0, "chat_messageTextOut"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messageTextOut:I
 
     :goto_0
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -100,15 +100,15 @@
 
     if-eqz v0, :cond_3
 
-    const-string v0, "chat_messageLinkIn"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messageLinkIn:I
 
     goto :goto_1
 
     :cond_3
-    const-string v0, "chat_messageTextIn"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messageTextIn:I
 
     :goto_1
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

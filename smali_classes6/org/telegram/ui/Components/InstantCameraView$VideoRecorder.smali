@@ -211,32 +211,32 @@
 .method private constructor <init>(Lorg/telegram/ui/Components/InstantCameraView;)V
     .locals 4
 
-    .line 1727
+    .line 1737
     iput-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 p1, 0x1
 
-    .line 1738
+    .line 1748
     iput-boolean p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoConvertFirstWrite:Z
 
-    .line 1742
+    .line 1752
     sget-object p1, Landroid/opengl/EGL14;->EGL_NO_DISPLAY:Landroid/opengl/EGLDisplay;
 
     iput-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglDisplay:Landroid/opengl/EGLDisplay;
 
-    .line 1743
+    .line 1753
     sget-object p1, Landroid/opengl/EGL14;->EGL_NO_CONTEXT:Landroid/opengl/EGLContext;
 
     iput-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglContext:Landroid/opengl/EGLContext;
 
-    .line 1746
+    .line 1756
     sget-object p1, Landroid/opengl/EGL14;->EGL_NO_SURFACE:Landroid/opengl/EGLSurface;
 
     iput-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglSurface:Landroid/opengl/EGLSurface;
 
-    .line 1757
+    .line 1767
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -245,48 +245,48 @@
 
     const/4 p1, -0x5
 
-    .line 1758
+    .line 1768
     iput p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoTrackIndex:I
 
-    .line 1759
+    .line 1769
     iput p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioTrackIndex:I
 
     const-wide/16 v0, -0x1
 
-    .line 1762
+    .line 1772
     iput-wide v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioStartTime:J
 
     const-wide/16 v2, 0x0
 
-    .line 1764
+    .line 1774
     iput-wide v2, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->currentTimestamp:J
 
-    .line 1765
+    .line 1775
     iput-wide v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->lastTimestamp:J
 
-    .line 1769
+    .line 1779
     new-instance p1, Ljava/lang/Object;
 
     invoke-direct {p1}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->sync:Ljava/lang/Object;
 
-    .line 1777
+    .line 1787
     iput-wide v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoFirst:J
 
-    .line 1779
+    .line 1789
     iput-wide v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioFirst:J
 
     const/4 p1, 0x0
 
-    .line 1791
+    .line 1801
     invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object p1
 
     iput-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->lastCameraId:Ljava/lang/Integer;
 
-    .line 1795
+    .line 1805
     new-instance p1, Ljava/util/concurrent/ArrayBlockingQueue;
 
     const/16 v0, 0xa
@@ -295,14 +295,14 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->buffers:Ljava/util/concurrent/ArrayBlockingQueue;
 
-    .line 1796
+    .line 1806
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->keyframeThumbs:Ljava/util/ArrayList;
 
-    .line 1800
+    .line 1810
     new-instance p1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder$1;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder$1;-><init>(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;)V
@@ -315,7 +315,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/InstantCameraView;Lorg/telegram/ui/Components/InstantCameraView$1;)V
     .locals 0
 
-    .line 1727
+    .line 1737
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;-><init>(Lorg/telegram/ui/Components/InstantCameraView;)V
 
     return-void
@@ -324,7 +324,7 @@
 .method static synthetic access$2900(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;)V
     .locals 0
 
-    .line 1727
+    .line 1737
     invoke-direct {p0}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->prepareEncoder()V
 
     return-void
@@ -333,7 +333,7 @@
 .method static synthetic access$3000(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;I)V
     .locals 0
 
-    .line 1727
+    .line 1737
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->handleStopRecording(I)V
 
     return-void
@@ -342,7 +342,7 @@
 .method static synthetic access$3100(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;JLjava/lang/Integer;)V
     .locals 0
 
-    .line 1727
+    .line 1737
     invoke-direct {p0, p1, p2, p3}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->handleVideoFrameAvailable(JLjava/lang/Integer;)V
 
     return-void
@@ -351,7 +351,7 @@
 .method static synthetic access$3200(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;)V
     .locals 0
 
-    .line 1727
+    .line 1737
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->handleAudioFrameAvailable(Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;)V
 
     return-void
@@ -360,7 +360,7 @@
 .method static synthetic access$3300(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;)Z
     .locals 0
 
-    .line 1727
+    .line 1737
     iget-boolean p0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->running:Z
 
     return p0
@@ -369,7 +369,7 @@
 .method static synthetic access$3400(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;)Landroid/media/AudioRecord;
     .locals 0
 
-    .line 1727
+    .line 1737
     iget-object p0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioRecorder:Landroid/media/AudioRecord;
 
     return-object p0
@@ -378,7 +378,7 @@
 .method static synthetic access$3500(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;)I
     .locals 0
 
-    .line 1727
+    .line 1737
     iget p0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->sendWhenDone:I
 
     return p0
@@ -387,7 +387,7 @@
 .method static synthetic access$3600(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;)Ljava/util/concurrent/ArrayBlockingQueue;
     .locals 0
 
-    .line 1727
+    .line 1737
     iget-object p0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->buffers:Ljava/util/concurrent/ArrayBlockingQueue;
 
     return-object p0
@@ -396,7 +396,7 @@
 .method static synthetic access$3700(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;)Lorg/telegram/ui/Components/InstantCameraView$EncoderHandler;
     .locals 0
 
-    .line 1727
+    .line 1737
     iget-object p0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->handler:Lorg/telegram/ui/Components/InstantCameraView$EncoderHandler;
 
     return-object p0
@@ -405,7 +405,7 @@
 .method static synthetic access$4200(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 1727
+    .line 1737
     iget-object p0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->keyframeThumbs:Ljava/util/ArrayList;
 
     return-object p0
@@ -414,7 +414,7 @@
 .method private createKeyframeThumb()V
     .locals 2
 
-    .line 2208
+    .line 2238
     sget v0, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v1, 0x15
@@ -435,14 +435,14 @@
 
     if-nez v0, :cond_0
 
-    .line 2209
+    .line 2239
     new-instance v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder$GenerateKeyframeThumbTask;
 
     const/4 v1, 0x0
 
     invoke-direct {v0, p0, v1}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder$GenerateKeyframeThumbTask;-><init>(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;Lorg/telegram/ui/Components/InstantCameraView$1;)V
 
-    .line 2210
+    .line 2240
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->generateKeyframeThumbsQueue:Lorg/telegram/messenger/DispatchQueue;
 
     invoke-virtual {v1, v0}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
@@ -454,14 +454,14 @@
 .method private didWriteData(Ljava/io/File;JZ)V
     .locals 11
 
-    .line 2579
+    .line 2609
     iget-boolean v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoConvertFirstWrite:Z
 
     const-wide/16 v1, 0x0
 
     if-eqz v0, :cond_1
 
-    .line 2580
+    .line 2610
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InstantCameraView;->access$3900(Lorg/telegram/ui/Components/InstantCameraView;)I
@@ -494,12 +494,12 @@
 
     const/4 v0, 0x0
 
-    .line 2581
+    .line 2611
     iput-boolean v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoConvertFirstWrite:Z
 
     if-eqz p4, :cond_3
 
-    .line 2583
+    .line 2613
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InstantCameraView;->access$3900(Lorg/telegram/ui/Components/InstantCameraView;)I
@@ -535,7 +535,7 @@
 
     goto :goto_0
 
-    .line 2586
+    .line 2616
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
@@ -576,18 +576,18 @@
 .end method
 
 .method private handleAudioFrameAvailable(Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;)V
-    .locals 16
+    .locals 18
 
     move-object/from16 v1, p0
 
-    .line 1975
+    .line 1986
     iget-boolean v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioStopedByTime:Z
 
     if-eqz v0, :cond_0
 
     return-void
 
-    .line 1978
+    .line 1989
     :cond_0
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->buffersToWrite:Ljava/util/ArrayList;
 
@@ -595,7 +595,7 @@
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 1979
+    .line 1990
     iget-wide v3, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioFirst:J
 
     const-wide/16 v5, -0x1
@@ -608,21 +608,21 @@
 
     if-nez v0, :cond_a
 
-    .line 1980
+    .line 1991
     iget-wide v7, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoFirst:J
 
     cmp-long v0, v7, v5
 
     if-nez v0, :cond_2
 
-    .line 1981
+    .line 1992
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_1
 
     const-string v0, "video record not yet started"
 
-    .line 1982
+    .line 1993
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     :cond_1
@@ -632,7 +632,7 @@
     :goto_0
     move v0, v3
 
-    .line 1988
+    .line 1999
     :goto_1
     iget v7, v2, Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;->results:I
 
@@ -640,7 +640,7 @@
 
     if-nez v0, :cond_3
 
-    .line 1989
+    .line 2000
     iget-wide v7, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoFirst:J
 
     iget-object v9, v2, Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;->offset:[J
@@ -659,7 +659,7 @@
 
     if-lez v7, :cond_3
 
-    .line 1990
+    .line 2001
     iget-wide v7, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoFirst:J
 
     iget-object v9, v2, Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;->offset:[J
@@ -670,17 +670,17 @@
 
     iput-wide v7, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->desyncTime:J
 
-    .line 1991
+    .line 2002
     aget-wide v7, v9, v0
 
     iput-wide v7, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioFirst:J
 
-    .line 1993
+    .line 2004
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_4
 
-    .line 1994
+    .line 2005
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -701,7 +701,7 @@
 
     goto :goto_2
 
-    .line 1998
+    .line 2009
     :cond_3
     iget-object v7, v2, Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;->offset:[J
 
@@ -715,20 +715,20 @@
 
     if-ltz v8, :cond_5
 
-    .line 1999
+    .line 2010
     iput v0, v2, Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;->lastWroteBuffer:I
 
-    .line 2000
+    .line 2011
     aget-wide v10, v7, v0
 
     iput-wide v10, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioFirst:J
 
-    .line 2002
+    .line 2013
     sget-boolean v7, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v7, :cond_4
 
-    .line 2003
+    .line 2014
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -759,13 +759,13 @@
 
     goto :goto_3
 
-    .line 2007
+    .line 2018
     :cond_5
     sget-boolean v7, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v7, :cond_6
 
-    .line 2008
+    .line 2019
     new-instance v7, Ljava/lang/StringBuilder;
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
@@ -801,12 +801,12 @@
     :goto_3
     if-nez v0, :cond_a
 
-    .line 2013
+    .line 2024
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_8
 
-    .line 2014
+    .line 2025
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -825,13 +825,13 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 2016
+    .line 2027
     :cond_8
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->buffersToWrite:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 2020
+    .line 2031
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->buffersToWrite:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->isEmpty()Z
@@ -840,7 +840,7 @@
 
     if-nez v0, :cond_9
 
-    .line 2021
+    .line 2032
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->buffersToWrite:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -856,7 +856,7 @@
     :cond_9
     return-void
 
-    .line 2028
+    .line 2039
     :cond_a
     iget-wide v7, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioStartTime:J
 
@@ -864,7 +864,7 @@
 
     if-nez v0, :cond_b
 
-    .line 2029
+    .line 2040
     iget-object v0, v2, Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;->offset:[J
 
     iget v5, v2, Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;->lastWroteBuffer:I
@@ -873,7 +873,7 @@
 
     iput-wide v5, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioStartTime:J
 
-    .line 2031
+    .line 2042
     :cond_b
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->buffersToWrite:Ljava/util/ArrayList;
 
@@ -883,7 +883,7 @@
 
     if-le v0, v4, :cond_c
 
-    .line 2032
+    .line 2043
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->buffersToWrite:Ljava/util/ArrayList;
 
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -894,7 +894,7 @@
 
     check-cast v2, Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;
 
-    .line 2035
+    .line 2046
     :cond_c
     :try_start_0
     invoke-virtual {v1, v3}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->drainEncoder(Z)V
@@ -908,7 +908,7 @@
 
     move-object v5, v0
 
-    .line 2037
+    .line 2048
     invoke-static {v5}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
     :goto_4
@@ -916,9 +916,9 @@
 
     :cond_d
     :goto_5
-    if-eqz v2, :cond_19
+    if-eqz v2, :cond_1b
 
-    .line 2042
+    .line 2053
     :try_start_1
     iget-object v5, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioEncoder:Landroid/media/MediaCodec;
 
@@ -930,14 +930,14 @@
 
     if-ltz v9, :cond_d
 
-    .line 2045
+    .line 2056
     sget v5, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v8, 0x15
 
     if-lt v5, v8, :cond_e
 
-    .line 2046
+    .line 2057
     iget-object v5, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioEncoder:Landroid/media/MediaCodec;
 
     invoke-virtual {v5, v9}, Landroid/media/MediaCodec;->getInputBuffer(I)Ljava/nio/ByteBuffer;
@@ -946,7 +946,7 @@
 
     goto :goto_6
 
-    .line 2048
+    .line 2059
     :cond_e
     iget-object v5, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioEncoder:Landroid/media/MediaCodec;
 
@@ -954,13 +954,13 @@
 
     move-result-object v5
 
-    .line 2049
+    .line 2060
     aget-object v5, v5, v9
 
-    .line 2050
+    .line 2061
     invoke-virtual {v5}, Ljava/nio/ByteBuffer;->clear()Ljava/nio/Buffer;
 
-    .line 2052
+    .line 2063
     :goto_6
     iget-object v8, v2, Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;->offset:[J
 
@@ -968,41 +968,69 @@
 
     aget-wide v11, v8, v10
 
-    .line 2053
+    .line 2064
     :goto_7
     iget v8, v2, Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;->results:I
 
-    const/4 v13, 0x0
+    if-gt v10, v8, :cond_18
 
-    if-gt v10, v8, :cond_16
+    if-ge v10, v8, :cond_14
 
-    if-ge v10, v8, :cond_12
-
-    .line 2055
-    iget-boolean v8, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->running:Z
-
-    if-nez v8, :cond_10
-
+    .line 2066
     iget-object v8, v2, Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;->offset:[J
 
     aget-wide v14, v8, v10
 
-    iget-wide v6, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoLast:J
+    iget-wide v6, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioStartTime:J
 
-    iget-wide v3, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->desyncTime:J
+    sub-long/2addr v14, v6
 
-    sub-long/2addr v6, v3
+    .line 2067
+    iget-boolean v6, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->running:Z
 
-    cmp-long v3, v14, v6
+    if-nez v6, :cond_12
 
-    if-ltz v3, :cond_10
+    iget-object v6, v2, Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;->offset:[J
 
-    .line 2056
+    aget-wide v7, v6, v10
+
+    iget-wide v3, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoLast:J
+
+    move-wide/from16 v16, v14
+
+    iget-wide v13, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->desyncTime:J
+
+    sub-long/2addr v3, v13
+
+    cmp-long v3, v7, v3
+
+    const-wide/32 v7, 0x3938700
+
+    if-gez v3, :cond_f
+
+    cmp-long v3, v16, v7
+
+    if-ltz v3, :cond_12
+
+    .line 2068
+    :cond_f
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
-    if-eqz v0, :cond_f
+    if-eqz v0, :cond_11
 
-    .line 2057
+    cmp-long v0, v16, v7
+
+    if-ltz v0, :cond_10
+
+    const-string v0, "stop audio encoding because recorded time more than 60s"
+
+    .line 2070
+    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
+
+    goto :goto_8
+
+    .line 2072
+    :cond_10
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1031,25 +1059,24 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    :cond_f
+    :cond_11
+    :goto_8
     const/4 v2, 0x1
 
-    .line 2059
+    .line 2076
     iput-boolean v2, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioStopedByTime:Z
 
-    .line 2062
+    .line 2079
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->buffersToWrite:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    move-object v2, v13
-
     const/4 v0, 0x1
 
-    goto :goto_8
+    goto :goto_9
 
-    .line 2065
-    :cond_10
+    .line 2082
+    :cond_12
     invoke-virtual {v5}, Ljava/nio/ByteBuffer;->remaining()I
 
     move-result v3
@@ -1058,64 +1085,64 @@
 
     aget v4, v4, v10
 
-    if-ge v3, v4, :cond_11
+    if-ge v3, v4, :cond_13
 
-    .line 2066
+    .line 2083
     iput v10, v2, Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;->lastWroteBuffer:I
 
-    move-object v2, v13
+    :goto_9
+    const/4 v2, 0x0
 
-    :goto_8
     const/4 v3, 0x0
 
     const/4 v4, 0x1
 
-    goto :goto_a
+    goto :goto_b
 
-    .line 2070
-    :cond_11
+    .line 2087
+    :cond_13
     iget-object v3, v2, Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;->buffer:[Ljava/nio/ByteBuffer;
 
     aget-object v3, v3, v10
 
     invoke-virtual {v5, v3}, Ljava/nio/ByteBuffer;->put(Ljava/nio/ByteBuffer;)Ljava/nio/ByteBuffer;
 
-    .line 2072
-    :cond_12
+    .line 2089
+    :cond_14
     iget v3, v2, Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;->results:I
 
     const/4 v4, 0x1
 
     sub-int/2addr v3, v4
 
-    if-lt v10, v3, :cond_15
+    if-lt v10, v3, :cond_17
 
-    .line 2073
+    .line 2090
     iget-object v3, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->buffersToWrite:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v2}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
 
-    .line 2074
+    .line 2091
     iget-boolean v3, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->running:Z
 
-    if-eqz v3, :cond_13
+    if-eqz v3, :cond_15
 
-    .line 2075
+    .line 2092
     iget-object v3, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->buffers:Ljava/util/concurrent/ArrayBlockingQueue;
 
     invoke-virtual {v3, v2}, Ljava/util/concurrent/ArrayBlockingQueue;->put(Ljava/lang/Object;)V
 
-    .line 2077
-    :cond_13
+    .line 2094
+    :cond_15
     iget-object v3, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->buffersToWrite:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v3
 
-    if-nez v3, :cond_14
+    if-nez v3, :cond_16
 
-    .line 2078
+    .line 2095
     iget-object v2, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->buffersToWrite:Ljava/util/ArrayList;
 
     const/4 v3, 0x0
@@ -1126,31 +1153,31 @@
 
     check-cast v2, Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;
 
-    goto :goto_9
-
-    :cond_14
-    const/4 v3, 0x0
-
-    .line 2080
-    iget-boolean v0, v2, Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;->last:Z
-
-    move-object v2, v13
-
     goto :goto_a
 
-    :cond_15
+    :cond_16
     const/4 v3, 0x0
 
-    :goto_9
+    .line 2097
+    iget-boolean v0, v2, Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;->last:Z
+
+    const/4 v2, 0x0
+
+    goto :goto_b
+
+    :cond_17
+    const/4 v3, 0x0
+
+    :goto_a
     add-int/lit8 v10, v10, 0x1
 
     const-wide/16 v6, 0x0
 
     goto/16 :goto_7
 
-    .line 2086
-    :cond_16
-    :goto_a
+    .line 2103
+    :cond_18
+    :goto_b
     iget-object v8, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioEncoder:Landroid/media/MediaCodec;
 
     const/4 v10, 0x0
@@ -1163,33 +1190,33 @@
 
     cmp-long v13, v11, v6
 
-    if-nez v13, :cond_17
+    if-nez v13, :cond_19
 
-    :goto_b
+    :goto_c
     move-wide v12, v6
 
-    goto :goto_c
+    goto :goto_d
 
-    :cond_17
+    :cond_19
     iget-wide v6, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioStartTime:J
 
     sub-long v6, v11, v6
 
-    goto :goto_b
+    goto :goto_c
 
-    :goto_c
-    if-eqz v0, :cond_18
+    :goto_d
+    if-eqz v0, :cond_1a
 
     const/4 v6, 0x4
 
     move v14, v6
 
-    goto :goto_d
+    goto :goto_e
 
-    :cond_18
+    :cond_1a
     move v14, v3
 
-    :goto_d
+    :goto_e
     move v11, v5
 
     invoke-virtual/range {v8 .. v14}, Landroid/media/MediaCodec;->queueInputBuffer(IIIJI)V
@@ -1201,27 +1228,27 @@
     :catchall_0
     move-exception v0
 
-    .line 2090
+    .line 2107
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    :cond_19
+    :cond_1b
     return-void
 .end method
 
 .method private handleStopRecording(I)V
     .locals 3
 
-    .line 2237
+    .line 2267
     iget-boolean v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->running:Z
 
     const/4 v1, 0x0
 
     if-eqz v0, :cond_0
 
-    .line 2238
+    .line 2268
     iput p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->sendWhenDone:I
 
-    .line 2239
+    .line 2269
     iput-boolean v1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->running:Z
 
     return-void
@@ -1229,7 +1256,7 @@
     :cond_0
     const/4 v0, 0x1
 
-    .line 2243
+    .line 2273
     :try_start_0
     invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->drainEncoder(Z)V
     :try_end_0
@@ -1240,10 +1267,10 @@
     :catch_0
     move-exception v0
 
-    .line 2245
+    .line 2275
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2247
+    .line 2277
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoEncoder:Landroid/media/MediaCodec;
 
@@ -1251,16 +1278,16 @@
 
     if-eqz v0, :cond_1
 
-    .line 2249
+    .line 2279
     :try_start_1
     invoke-virtual {v0}, Landroid/media/MediaCodec;->stop()V
 
-    .line 2250
+    .line 2280
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoEncoder:Landroid/media/MediaCodec;
 
     invoke-virtual {v0}, Landroid/media/MediaCodec;->release()V
 
-    .line 2251
+    .line 2281
     iput-object v2, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoEncoder:Landroid/media/MediaCodec;
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
@@ -1270,29 +1297,29 @@
     :catch_1
     move-exception v0
 
-    .line 2253
+    .line 2283
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2256
+    .line 2286
     :cond_1
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioEncoder:Landroid/media/MediaCodec;
 
     if-eqz v0, :cond_2
 
-    .line 2258
+    .line 2288
     :try_start_2
     invoke-virtual {v0}, Landroid/media/MediaCodec;->stop()V
 
-    .line 2259
+    .line 2289
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioEncoder:Landroid/media/MediaCodec;
 
     invoke-virtual {v0}, Landroid/media/MediaCodec;->release()V
 
-    .line 2260
+    .line 2290
     iput-object v2, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioEncoder:Landroid/media/MediaCodec;
 
-    .line 2262
+    .line 2292
     invoke-direct {p0, v1}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->setBluetoothScoOn(Z)V
     :try_end_2
     .catch Ljava/lang/Exception; {:try_start_2 .. :try_end_2} :catch_2
@@ -1302,17 +1329,17 @@
     :catch_2
     move-exception v0
 
-    .line 2264
+    .line 2294
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2267
+    .line 2297
     :cond_2
     :goto_2
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
 
     if-eqz v0, :cond_3
 
-    .line 2269
+    .line 2299
     :try_start_3
     invoke-virtual {v0}, Lorg/telegram/messenger/video/MP4Builder;->finishMovie()V
     :try_end_3
@@ -1323,31 +1350,31 @@
     :catch_3
     move-exception v0
 
-    .line 2271
+    .line 2301
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2274
+    .line 2304
     :cond_3
     :goto_3
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->generateKeyframeThumbsQueue:Lorg/telegram/messenger/DispatchQueue;
 
     if-eqz v0, :cond_4
 
-    .line 2275
+    .line 2305
     invoke-virtual {v0}, Lorg/telegram/messenger/DispatchQueue;->cleanupQueue()V
 
-    .line 2276
+    .line 2306
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->generateKeyframeThumbsQueue:Lorg/telegram/messenger/DispatchQueue;
 
     invoke-virtual {v0}, Lorg/telegram/messenger/DispatchQueue;->recycle()V
 
-    .line 2277
+    .line 2307
     iput-object v2, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->generateKeyframeThumbsQueue:Lorg/telegram/messenger/DispatchQueue;
 
     :cond_4
     if-eqz p1, :cond_5
 
-    .line 2280
+    .line 2310
     new-instance v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder$$ExternalSyntheticLambda4;
 
     invoke-direct {v0, p0, p1}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;I)V
@@ -1356,7 +1383,7 @@
 
     goto :goto_4
 
-    .line 2364
+    .line 2394
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
@@ -1376,12 +1403,12 @@
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/messenger/FileLoader;->cancelFileUpload(Ljava/lang/String;Z)V
 
-    .line 2365
+    .line 2395
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoFile:Ljava/io/File;
 
     invoke-virtual {p1}, Ljava/io/File;->delete()Z
 
-    .line 2367
+    .line 2397
     :goto_4
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglDisplay:Landroid/opengl/EGLDisplay;
 
@@ -1389,23 +1416,23 @@
 
     invoke-static {p1, v0}, Landroid/opengl/EGL14;->eglDestroySurface(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;)Z
 
-    .line 2368
+    .line 2398
     sget-object p1, Landroid/opengl/EGL14;->EGL_NO_SURFACE:Landroid/opengl/EGLSurface;
 
     iput-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglSurface:Landroid/opengl/EGLSurface;
 
-    .line 2369
+    .line 2399
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->surface:Landroid/view/Surface;
 
     if-eqz p1, :cond_6
 
-    .line 2370
+    .line 2400
     invoke-virtual {p1}, Landroid/view/Surface;->release()V
 
-    .line 2371
+    .line 2401
     iput-object v2, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->surface:Landroid/view/Surface;
 
-    .line 2373
+    .line 2403
     :cond_6
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglDisplay:Landroid/opengl/EGLDisplay;
 
@@ -1413,43 +1440,43 @@
 
     if-eq p1, v0, :cond_7
 
-    .line 2374
+    .line 2404
     sget-object v0, Landroid/opengl/EGL14;->EGL_NO_SURFACE:Landroid/opengl/EGLSurface;
 
     sget-object v1, Landroid/opengl/EGL14;->EGL_NO_CONTEXT:Landroid/opengl/EGLContext;
 
     invoke-static {p1, v0, v0, v1}, Landroid/opengl/EGL14;->eglMakeCurrent(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;Landroid/opengl/EGLSurface;Landroid/opengl/EGLContext;)Z
 
-    .line 2375
+    .line 2405
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglDisplay:Landroid/opengl/EGLDisplay;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglContext:Landroid/opengl/EGLContext;
 
     invoke-static {p1, v0}, Landroid/opengl/EGL14;->eglDestroyContext(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLContext;)Z
 
-    .line 2376
+    .line 2406
     invoke-static {}, Landroid/opengl/EGL14;->eglReleaseThread()Z
 
-    .line 2377
+    .line 2407
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglDisplay:Landroid/opengl/EGLDisplay;
 
     invoke-static {p1}, Landroid/opengl/EGL14;->eglTerminate(Landroid/opengl/EGLDisplay;)Z
 
-    .line 2379
+    .line 2409
     :cond_7
     sget-object p1, Landroid/opengl/EGL14;->EGL_NO_DISPLAY:Landroid/opengl/EGLDisplay;
 
     iput-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglDisplay:Landroid/opengl/EGLDisplay;
 
-    .line 2380
+    .line 2410
     sget-object p1, Landroid/opengl/EGL14;->EGL_NO_CONTEXT:Landroid/opengl/EGLContext;
 
     iput-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglContext:Landroid/opengl/EGLContext;
 
-    .line 2381
+    .line 2411
     iput-object v2, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglConfig:Landroid/opengl/EGLConfig;
 
-    .line 2382
+    .line 2412
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->handler:Lorg/telegram/ui/Components/InstantCameraView$EncoderHandler;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/InstantCameraView$EncoderHandler;->exit()V
@@ -1458,7 +1485,7 @@
 .end method
 
 .method private handleVideoFrameAvailable(JLjava/lang/Integer;)V
-    .locals 24
+    .locals 21
 
     move-object/from16 v1, p0
 
@@ -1468,7 +1495,7 @@
 
     const/4 v5, 0x0
 
-    .line 2096
+    .line 2113
     :try_start_0
     invoke-virtual {v1, v5}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->drainEncoder(Z)V
     :try_end_0
@@ -1481,10 +1508,10 @@
 
     move-object v6, v0
 
-    .line 2098
+    .line 2115
     invoke-static {v6}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 2101
+    .line 2119
     :goto_0
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->lastCameraId:Ljava/lang/Integer;
 
@@ -1492,139 +1519,182 @@
 
     move-result v0
 
-    const-wide/16 v6, -0x1
+    const/4 v6, 0x1
 
     if-nez v0, :cond_0
 
-    .line 2102
-    iput-wide v6, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->lastTimestamp:J
-
-    .line 2103
+    .line 2121
     iput-object v4, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->lastCameraId:Ljava/lang/Integer;
 
-    .line 2105
-    :cond_0
-    iget-wide v8, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->lastTimestamp:J
-
-    cmp-long v0, v8, v6
-
-    const-wide/16 v10, 0x0
-
-    if-nez v0, :cond_1
-
-    .line 2106
-    iput-wide v2, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->lastTimestamp:J
-
-    .line 2107
-    iget-wide v8, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->currentTimestamp:J
-
-    cmp-long v0, v8, v10
-
-    if-eqz v0, :cond_2
-
-    .line 2108
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
-
-    move-result-wide v8
-
-    iget-wide v12, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->lastCommitedFrameTime:J
-
-    sub-long/2addr v8, v12
-
-    const-wide/32 v12, 0xf4240
-
-    mul-long/2addr v8, v12
-
-    move-wide/from16 v22, v8
-
-    move-wide v8, v10
-
-    move-wide/from16 v10, v22
+    move v0, v6
 
     goto :goto_1
 
-    :cond_1
-    sub-long v10, v2, v8
+    :cond_0
+    move v0, v5
 
-    .line 2115
-    iput-wide v2, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->lastTimestamp:J
-
-    :cond_2
-    move-wide v8, v10
-
-    .line 2117
     :goto_1
-    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+    const-wide/16 v7, -0x1
 
-    move-result-wide v12
+    const-wide/16 v9, 0x0
 
-    iput-wide v12, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->lastCommitedFrameTime:J
-
-    .line 2118
-    iget-boolean v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->skippedFirst:Z
-
-    const/4 v4, 0x1
-
-    if-nez v0, :cond_4
-
-    .line 2119
-    iget-wide v12, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->skippedTime:J
-
-    add-long/2addr v12, v10
-
-    iput-wide v12, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->skippedTime:J
-
-    const-wide/32 v14, 0xbebc200
-
-    cmp-long v0, v12, v14
-
-    if-gez v0, :cond_3
-
-    return-void
+    if-nez v0, :cond_2
 
     .line 2123
-    :cond_3
-    iput-boolean v4, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->skippedFirst:Z
+    iget-wide v11, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->lastTimestamp:J
 
-    .line 2125
-    :cond_4
-    iget-wide v12, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->currentTimestamp:J
+    cmp-long v0, v11, v7
 
-    add-long/2addr v12, v10
+    if-nez v0, :cond_1
 
-    iput-wide v12, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->currentTimestamp:J
+    goto :goto_2
 
-    .line 2126
-    iget-wide v10, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoFirst:J
+    :cond_1
+    sub-long v9, v2, v11
 
-    cmp-long v0, v10, v6
+    .line 2145
+    iput-wide v2, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->lastTimestamp:J
 
-    if-nez v0, :cond_5
+    move-wide v7, v9
 
-    const-wide/16 v6, 0x3e8
+    goto :goto_3
 
-    .line 2127
-    div-long v6, v2, v6
+    .line 2124
+    :cond_2
+    :goto_2
+    iget-wide v11, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->currentTimestamp:J
 
-    iput-wide v6, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoFirst:J
-
-    .line 2128
-    sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+    cmp-long v0, v11, v9
 
     if-eqz v0, :cond_5
 
+    .line 2128
+    iget-wide v11, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->lastTimestamp:J
+
+    sub-long v11, v2, v11
+
     .line 2129
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v13
+
+    iget-wide v7, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->lastCommitedFrameTime:J
+
+    sub-long/2addr v13, v7
+
+    const-wide/32 v7, 0xf4240
+
+    mul-long/2addr v13, v7
+
+    cmp-long v0, v11, v9
+
+    if-ltz v0, :cond_3
+
+    sub-long v7, v13, v11
+
+    .line 2130
+    invoke-static {v7, v8}, Ljava/lang/Math;->abs(J)J
+
+    move-result-wide v7
+
+    const-wide/32 v17, 0x5f5e100
+
+    cmp-long v0, v7, v17
+
+    if-lez v0, :cond_4
+
+    :cond_3
+    move-wide v11, v13
+
+    :cond_4
+    cmp-long v0, v11, v9
+
+    if-gez v0, :cond_6
+
+    :cond_5
+    move-wide v11, v9
+
+    .line 2142
+    :cond_6
+    iput-wide v2, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->lastTimestamp:J
+
+    move-wide v7, v9
+
+    move-wide v9, v11
+
+    .line 2147
+    :goto_3
+    invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
+
+    move-result-wide v11
+
+    iput-wide v11, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->lastCommitedFrameTime:J
+
+    .line 2148
+    iget-boolean v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->skippedFirst:Z
+
+    if-nez v0, :cond_8
+
+    .line 2149
+    iget-wide v11, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->skippedTime:J
+
+    add-long/2addr v11, v9
+
+    iput-wide v11, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->skippedTime:J
+
+    const-wide/32 v13, 0xbebc200
+
+    cmp-long v0, v11, v13
+
+    if-gez v0, :cond_7
+
+    return-void
+
+    .line 2153
+    :cond_7
+    iput-boolean v6, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->skippedFirst:Z
+
+    .line 2155
+    :cond_8
+    iget-wide v11, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->currentTimestamp:J
+
+    add-long/2addr v11, v9
+
+    iput-wide v11, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->currentTimestamp:J
+
+    .line 2156
+    iget-wide v9, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoFirst:J
+
+    const-wide/16 v11, -0x1
+
+    cmp-long v0, v9, v11
+
+    if-nez v0, :cond_9
+
+    const-wide/16 v9, 0x3e8
+
+    .line 2157
+    div-long v9, v2, v9
+
+    iput-wide v9, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoFirst:J
+
+    .line 2158
+    sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
+
+    if-eqz v0, :cond_9
+
+    .line 2159
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v6, "first video frame was at "
+    const-string v4, "first video frame was at "
 
-    invoke-virtual {v0, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-wide v6, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoFirst:J
+    iget-wide v9, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoFirst:J
 
-    invoke-virtual {v0, v6, v7}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v9, v10}, Ljava/lang/StringBuilder;->append(J)Ljava/lang/StringBuilder;
 
     invoke-virtual {v0}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
 
@@ -1632,89 +1702,87 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 2132
-    :cond_5
+    .line 2162
+    :cond_9
     iput-wide v2, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoLast:J
 
-    .line 2134
+    .line 2164
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InstantCameraView;->access$1600(Lorg/telegram/ui/Components/InstantCameraView;)Ljava/nio/FloatBuffer;
 
-    move-result-object v15
+    move-result-object v14
 
-    .line 2135
+    .line 2165
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InstantCameraView;->access$1500(Lorg/telegram/ui/Components/InstantCameraView;)Ljava/nio/FloatBuffer;
 
     move-result-object v0
 
-    .line 2136
+    .line 2166
     iget-object v2, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/InstantCameraView;->access$2600(Lorg/telegram/ui/Components/InstantCameraView;)Ljava/nio/FloatBuffer;
 
     move-result-object v2
 
-    if-eqz v15, :cond_d
+    if-eqz v14, :cond_11
 
-    if-nez v0, :cond_6
+    if-nez v0, :cond_a
 
-    goto/16 :goto_3
+    goto/16 :goto_5
 
-    .line 2142
-    :cond_6
+    .line 2172
+    :cond_a
     iget v3, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->drawProgram:I
 
     invoke-static {v3}, Landroid/opengl/GLES20;->glUseProgram(I)V
 
     const v3, 0x84c0
 
-    .line 2143
+    .line 2173
     invoke-static {v3}, Landroid/opengl/GLES20;->glActiveTexture(I)V
 
-    .line 2144
-    iget v3, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->positionHandle:I
+    .line 2174
+    iget v15, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->positionHandle:I
 
-    const/16 v17, 0x3
+    const/16 v16, 0x3
 
-    const/16 v18, 0x1406
+    const/16 v17, 0x1406
 
-    const/16 v19, 0x0
+    const/16 v18, 0x0
 
-    const/16 v20, 0xc
+    const/16 v19, 0xc
 
-    move/from16 v16, v3
+    move-object/from16 v20, v0
 
-    move-object/from16 v21, v0
+    invoke-static/range {v15 .. v20}, Landroid/opengl/GLES20;->glVertexAttribPointer(IIIZILjava/nio/Buffer;)V
 
-    invoke-static/range {v16 .. v21}, Landroid/opengl/GLES20;->glVertexAttribPointer(IIIZILjava/nio/Buffer;)V
-
-    .line 2145
+    .line 2175
     iget v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->positionHandle:I
 
     invoke-static {v0}, Landroid/opengl/GLES20;->glEnableVertexAttribArray(I)V
 
-    .line 2146
-    iget v10, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->textureHandle:I
+    .line 2176
+    iget v9, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->textureHandle:I
 
-    const/4 v11, 0x2
+    const/4 v10, 0x2
 
-    const/16 v12, 0x1406
+    const/16 v11, 0x1406
 
-    const/4 v13, 0x0
+    const/4 v12, 0x0
 
-    const/16 v14, 0x8
+    const/16 v13, 0x8
 
-    invoke-static/range {v10 .. v15}, Landroid/opengl/GLES20;->glVertexAttribPointer(IIIZILjava/nio/Buffer;)V
+    invoke-static/range {v9 .. v14}, Landroid/opengl/GLES20;->glVertexAttribPointer(IIIZILjava/nio/Buffer;)V
 
-    .line 2147
+    .line 2177
     iget v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->textureHandle:I
 
     invoke-static {v0}, Landroid/opengl/GLES20;->glEnableVertexAttribArray(I)V
 
-    .line 2148
+    .line 2178
     iget v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->vertexMatrixHandle:I
 
     iget-object v3, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
@@ -1723,22 +1791,22 @@
 
     move-result-object v3
 
-    invoke-static {v0, v4, v5, v3, v5}, Landroid/opengl/GLES20;->glUniformMatrix4fv(IIZ[FI)V
+    invoke-static {v0, v6, v5, v3, v5}, Landroid/opengl/GLES20;->glUniformMatrix4fv(IIZ[FI)V
 
-    .line 2150
+    .line 2180
     iget v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->resolutionHandle:I
 
     iget v3, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoWidth:I
 
     int-to-float v3, v3
 
-    iget v6, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoHeight:I
+    iget v4, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoHeight:I
 
-    int-to-float v6, v6
+    int-to-float v4, v4
 
-    invoke-static {v0, v3, v6}, Landroid/opengl/GLES20;->glUniform2f(IFF)V
+    invoke-static {v0, v3, v4}, Landroid/opengl/GLES20;->glUniform2f(IFF)V
 
-    .line 2152
+    .line 2182
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InstantCameraView;->access$2400(Lorg/telegram/ui/Components/InstantCameraView;)[I
@@ -1749,40 +1817,40 @@
 
     const/16 v3, 0xbe2
 
-    const/4 v6, 0x4
+    const/4 v4, 0x4
 
-    const/4 v7, 0x5
+    const/4 v9, 0x5
 
     const v10, 0x8d65
 
     const/high16 v11, 0x3f800000    # 1.0f
 
-    if-eqz v0, :cond_9
+    if-eqz v0, :cond_d
 
-    if-eqz v2, :cond_9
+    if-eqz v2, :cond_d
 
-    .line 2153
+    .line 2183
     iget-boolean v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->blendEnabled:Z
 
-    if-nez v0, :cond_7
+    if-nez v0, :cond_b
 
-    .line 2154
+    .line 2184
     invoke-static {v3}, Landroid/opengl/GLES20;->glEnable(I)V
 
-    .line 2155
-    iput-boolean v4, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->blendEnabled:Z
+    .line 2185
+    iput-boolean v6, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->blendEnabled:Z
 
-    .line 2157
-    :cond_7
+    .line 2187
+    :cond_b
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InstantCameraView;->access$2700(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/messenger/camera/Size;
 
     move-result-object v0
 
-    if-eqz v0, :cond_8
+    if-eqz v0, :cond_c
 
-    .line 2158
+    .line 2188
     iget v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->previewSizeHandle:I
 
     iget-object v12, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
@@ -1811,25 +1879,23 @@
 
     invoke-static {v0, v12, v13}, Landroid/opengl/GLES20;->glUniform2f(IFF)V
 
-    .line 2160
-    :cond_8
-    iget v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->textureHandle:I
+    .line 2190
+    :cond_c
+    iget v15, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->textureHandle:I
 
-    const/16 v17, 0x2
+    const/16 v16, 0x2
 
-    const/16 v18, 0x1406
+    const/16 v17, 0x1406
 
-    const/16 v19, 0x0
+    const/16 v18, 0x0
 
-    const/16 v20, 0x8
+    const/16 v19, 0x8
 
-    move/from16 v16, v0
+    move-object/from16 v20, v2
 
-    move-object/from16 v21, v2
+    invoke-static/range {v15 .. v20}, Landroid/opengl/GLES20;->glVertexAttribPointer(IIIZILjava/nio/Buffer;)V
 
-    invoke-static/range {v16 .. v21}, Landroid/opengl/GLES20;->glVertexAttribPointer(IIIZILjava/nio/Buffer;)V
-
-    .line 2162
+    .line 2192
     iget v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->textureMatrixHandle:I
 
     iget-object v2, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
@@ -1838,14 +1904,14 @@
 
     move-result-object v2
 
-    invoke-static {v0, v4, v5, v2, v5}, Landroid/opengl/GLES20;->glUniformMatrix4fv(IIZ[FI)V
+    invoke-static {v0, v6, v5, v2, v5}, Landroid/opengl/GLES20;->glUniformMatrix4fv(IIZ[FI)V
 
-    .line 2163
+    .line 2193
     iget v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->alphaHandle:I
 
     invoke-static {v0, v11}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 2164
+    .line 2194
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InstantCameraView;->access$2400(Lorg/telegram/ui/Components/InstantCameraView;)[I
@@ -1856,20 +1922,20 @@
 
     invoke-static {v10, v0}, Landroid/opengl/GLES20;->glBindTexture(II)V
 
-    .line 2165
-    invoke-static {v7, v5, v6}, Landroid/opengl/GLES20;->glDrawArrays(III)V
+    .line 2195
+    invoke-static {v9, v5, v4}, Landroid/opengl/GLES20;->glDrawArrays(III)V
 
-    .line 2168
-    :cond_9
+    .line 2198
+    :cond_d
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InstantCameraView;->access$1100(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/messenger/camera/Size;
 
     move-result-object v0
 
-    if-eqz v0, :cond_a
+    if-eqz v0, :cond_e
 
-    .line 2169
+    .line 2199
     iget v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->previewSizeHandle:I
 
     iget-object v2, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
@@ -1898,8 +1964,8 @@
 
     invoke-static {v0, v2, v12}, Landroid/opengl/GLES20;->glUniform2f(IFF)V
 
-    .line 2172
-    :cond_a
+    .line 2202
+    :cond_e
     iget v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->textureMatrixHandle:I
 
     iget-object v2, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
@@ -1908,9 +1974,9 @@
 
     move-result-object v2
 
-    invoke-static {v0, v4, v5, v2, v5}, Landroid/opengl/GLES20;->glUniformMatrix4fv(IIZ[FI)V
+    invoke-static {v0, v6, v5, v2, v5}, Landroid/opengl/GLES20;->glUniformMatrix4fv(IIZ[FI)V
 
-    .line 2173
+    .line 2203
     iget v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->alphaHandle:I
 
     iget-object v2, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
@@ -1921,7 +1987,7 @@
 
     invoke-static {v0, v2}, Landroid/opengl/GLES20;->glUniform1f(IF)V
 
-    .line 2174
+    .line 2204
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InstantCameraView;->access$1900(Lorg/telegram/ui/Components/InstantCameraView;)[I
@@ -1932,52 +1998,52 @@
 
     invoke-static {v10, v0}, Landroid/opengl/GLES20;->glBindTexture(II)V
 
-    .line 2175
-    invoke-static {v7, v5, v6}, Landroid/opengl/GLES20;->glDrawArrays(III)V
+    .line 2205
+    invoke-static {v9, v5, v4}, Landroid/opengl/GLES20;->glDrawArrays(III)V
 
-    .line 2177
+    .line 2207
     iget v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->positionHandle:I
 
     invoke-static {v0}, Landroid/opengl/GLES20;->glDisableVertexAttribArray(I)V
 
-    .line 2178
+    .line 2208
     iget v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->textureHandle:I
 
     invoke-static {v0}, Landroid/opengl/GLES20;->glDisableVertexAttribArray(I)V
 
-    .line 2179
+    .line 2209
     invoke-static {v10, v5}, Landroid/opengl/GLES20;->glBindTexture(II)V
 
-    .line 2180
+    .line 2210
     invoke-static {v5}, Landroid/opengl/GLES20;->glUseProgram(I)V
 
-    .line 2182
+    .line 2212
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglDisplay:Landroid/opengl/EGLDisplay;
 
     iget-object v2, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglSurface:Landroid/opengl/EGLSurface;
 
-    iget-wide v6, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->currentTimestamp:J
+    iget-wide v9, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->currentTimestamp:J
 
-    invoke-static {v0, v2, v6, v7}, Landroid/opengl/EGLExt;->eglPresentationTimeANDROID(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;J)Z
+    invoke-static {v0, v2, v9, v10}, Landroid/opengl/EGLExt;->eglPresentationTimeANDROID(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;J)Z
 
-    .line 2183
+    .line 2213
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglDisplay:Landroid/opengl/EGLDisplay;
 
     iget-object v2, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglSurface:Landroid/opengl/EGLSurface;
 
     invoke-static {v0, v2}, Landroid/opengl/EGL14;->eglSwapBuffers(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;)Z
 
-    .line 2185
+    .line 2215
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->createKeyframeThumb()V
 
-    .line 2186
+    .line 2216
     iget v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->frameCount:I
 
-    add-int/2addr v0, v4
+    add-int/2addr v0, v6
 
     iput v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->frameCount:I
 
-    .line 2188
+    .line 2218
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InstantCameraView;->access$2400(Lorg/telegram/ui/Components/InstantCameraView;)[I
@@ -1986,7 +2052,7 @@
 
     aget v0, v0, v5
 
-    if-eqz v0, :cond_b
+    if-eqz v0, :cond_f
 
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
@@ -1996,20 +2062,20 @@
 
     cmpg-float v0, v0, v11
 
-    if-gez v0, :cond_b
+    if-gez v0, :cond_f
 
-    .line 2189
+    .line 2219
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
-    long-to-float v2, v8
+    long-to-float v2, v7
 
-    const v6, 0x4d3ebc20    # 2.0E8f
+    const v4, 0x4d3ebc20    # 2.0E8f
 
-    div-float/2addr v2, v6
+    div-float/2addr v2, v4
 
     invoke-static {v0, v2}, Lorg/telegram/ui/Components/InstantCameraView;->access$2516(Lorg/telegram/ui/Components/InstantCameraView;F)F
 
-    .line 2190
+    .line 2220
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InstantCameraView;->access$2500(Lorg/telegram/ui/Components/InstantCameraView;)F
@@ -2018,29 +2084,29 @@
 
     cmpl-float v0, v0, v11
 
-    if-lez v0, :cond_c
+    if-lez v0, :cond_10
 
-    .line 2191
+    .line 2221
     invoke-static {v3}, Landroid/opengl/GLES20;->glDisable(I)V
 
-    .line 2192
+    .line 2222
     iput-boolean v5, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->blendEnabled:Z
 
-    .line 2193
+    .line 2223
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v0, v11}, Lorg/telegram/ui/Components/InstantCameraView;->access$2502(Lorg/telegram/ui/Components/InstantCameraView;F)F
 
-    .line 2194
+    .line 2224
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InstantCameraView;->access$2400(Lorg/telegram/ui/Components/InstantCameraView;)[I
 
     move-result-object v0
 
-    invoke-static {v4, v0, v5}, Landroid/opengl/GLES20;->glDeleteTextures(I[II)V
+    invoke-static {v6, v0, v5}, Landroid/opengl/GLES20;->glDeleteTextures(I[II)V
 
-    .line 2195
+    .line 2225
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InstantCameraView;->access$2400(Lorg/telegram/ui/Components/InstantCameraView;)[I
@@ -2049,58 +2115,58 @@
 
     aput v5, v0, v5
 
-    .line 2196
+    .line 2226
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InstantCameraView;->access$2800(Lorg/telegram/ui/Components/InstantCameraView;)Z
 
     move-result v0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_10
 
-    .line 2197
+    .line 2227
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
-    invoke-static {v0, v4}, Lorg/telegram/ui/Components/InstantCameraView;->access$2802(Lorg/telegram/ui/Components/InstantCameraView;Z)Z
+    invoke-static {v0, v6}, Lorg/telegram/ui/Components/InstantCameraView;->access$2802(Lorg/telegram/ui/Components/InstantCameraView;Z)Z
 
-    .line 2198
+    .line 2228
     new-instance v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder$$ExternalSyntheticLambda3;
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;)V
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    goto :goto_2
+    goto :goto_4
 
-    .line 2201
-    :cond_b
+    .line 2231
+    :cond_f
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InstantCameraView;->access$2800(Lorg/telegram/ui/Components/InstantCameraView;)Z
 
     move-result v0
 
-    if-nez v0, :cond_c
+    if-nez v0, :cond_10
 
-    .line 2202
+    .line 2232
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
-    invoke-static {v0, v4}, Lorg/telegram/ui/Components/InstantCameraView;->access$2802(Lorg/telegram/ui/Components/InstantCameraView;Z)Z
+    invoke-static {v0, v6}, Lorg/telegram/ui/Components/InstantCameraView;->access$2802(Lorg/telegram/ui/Components/InstantCameraView;Z)Z
 
-    .line 2203
+    .line 2233
     new-instance v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder$$ExternalSyntheticLambda1;
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;)V
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;)V
 
-    :cond_c
-    :goto_2
+    :cond_10
+    :goto_4
     return-void
 
-    .line 2138
-    :cond_d
-    :goto_3
+    .line 2168
+    :cond_11
+    :goto_5
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -2109,7 +2175,7 @@
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {v2, v15}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v2, v14}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const-string v3, " "
 
@@ -2131,7 +2197,7 @@
 
     move-object v0, p0
 
-    .line 2297
+    .line 2327
     iget-object v1, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/InstantCameraView;->access$4500(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/ui/ChatActivity;
@@ -2184,7 +2250,7 @@
 
     invoke-virtual/range {v2 .. v8}, Lorg/telegram/ui/ChatActivity;->sendMedia(Lorg/telegram/messenger/MediaController$PhotoEntry;Lorg/telegram/messenger/VideoEditedInfo;ZIZLjava/lang/String;)V
 
-    .line 2298
+    .line 2328
     iget-object v1, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     const/4 v2, 0x0
@@ -2197,7 +2263,7 @@
 .method private synthetic lambda$handleStopRecording$3()V
     .locals 2
 
-    .line 2300
+    .line 2330
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     const/4 v1, 0x0
@@ -2212,7 +2278,7 @@
 
     move-object/from16 v0, p0
 
-    .line 2281
+    .line 2311
     iget-object v1, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     new-instance v2, Lorg/telegram/messenger/VideoEditedInfo;
@@ -2221,7 +2287,7 @@
 
     invoke-static {v1, v2}, Lorg/telegram/ui/Components/InstantCameraView;->access$1002(Lorg/telegram/ui/Components/InstantCameraView;Lorg/telegram/messenger/VideoEditedInfo;)Lorg/telegram/messenger/VideoEditedInfo;
 
-    .line 2282
+    .line 2312
     iget-object v1, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/InstantCameraView;->access$1000(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/messenger/VideoEditedInfo;
@@ -2232,7 +2298,7 @@
 
     iput-boolean v2, v1, Lorg/telegram/messenger/VideoEditedInfo;->roundVideo:Z
 
-    .line 2283
+    .line 2313
     iget-object v1, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/InstantCameraView;->access$1000(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/messenger/VideoEditedInfo;
@@ -2243,7 +2309,7 @@
 
     iput-wide v3, v1, Lorg/telegram/messenger/VideoEditedInfo;->startTime:J
 
-    .line 2284
+    .line 2314
     iget-object v1, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/InstantCameraView;->access$1000(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/messenger/VideoEditedInfo;
@@ -2252,7 +2318,7 @@
 
     iput-wide v3, v1, Lorg/telegram/messenger/VideoEditedInfo;->endTime:J
 
-    .line 2285
+    .line 2315
     iget-object v1, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/InstantCameraView;->access$1000(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/messenger/VideoEditedInfo;
@@ -2267,7 +2333,7 @@
 
     iput-object v3, v1, Lorg/telegram/messenger/VideoEditedInfo;->file:Lorg/telegram/tgnet/TLRPC$InputFile;
 
-    .line 2286
+    .line 2316
     iget-object v1, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/InstantCameraView;->access$1000(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/messenger/VideoEditedInfo;
@@ -2282,7 +2348,7 @@
 
     iput-object v3, v1, Lorg/telegram/messenger/VideoEditedInfo;->encryptedFile:Lorg/telegram/tgnet/TLRPC$InputEncryptedFile;
 
-    .line 2287
+    .line 2317
     iget-object v1, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/InstantCameraView;->access$1000(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/messenger/VideoEditedInfo;
@@ -2297,7 +2363,7 @@
 
     iput-object v3, v1, Lorg/telegram/messenger/VideoEditedInfo;->key:[B
 
-    .line 2288
+    .line 2318
     iget-object v1, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/InstantCameraView;->access$1000(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/messenger/VideoEditedInfo;
@@ -2312,7 +2378,7 @@
 
     iput-object v3, v1, Lorg/telegram/messenger/VideoEditedInfo;->iv:[B
 
-    .line 2289
+    .line 2319
     iget-object v1, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/InstantCameraView;->access$1000(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/messenger/VideoEditedInfo;
@@ -2333,7 +2399,7 @@
 
     iput-wide v3, v1, Lorg/telegram/messenger/VideoEditedInfo;->estimatedSize:J
 
-    .line 2290
+    .line 2320
     iget-object v1, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/InstantCameraView;->access$1000(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/messenger/VideoEditedInfo;
@@ -2344,7 +2410,7 @@
 
     iput v3, v1, Lorg/telegram/messenger/VideoEditedInfo;->framerate:I
 
-    .line 2291
+    .line 2321
     iget-object v1, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/InstantCameraView;->access$1000(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/messenger/VideoEditedInfo;
@@ -2363,7 +2429,7 @@
 
     iput v4, v1, Lorg/telegram/messenger/VideoEditedInfo;->resultWidth:I
 
-    .line 2292
+    .line 2322
     iget-object v1, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/InstantCameraView;->access$1000(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/messenger/VideoEditedInfo;
@@ -2380,7 +2446,7 @@
 
     iput v4, v1, Lorg/telegram/messenger/VideoEditedInfo;->resultHeight:I
 
-    .line 2293
+    .line 2323
     iget-object v1, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/InstantCameraView;->access$1000(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/messenger/VideoEditedInfo;
@@ -2401,7 +2467,7 @@
 
     if-ne v3, v2, :cond_2
 
-    .line 2295
+    .line 2325
     iget-object v3, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/InstantCameraView;->access$4500(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/ui/ChatActivity;
@@ -2428,7 +2494,7 @@
 
     goto :goto_0
 
-    .line 2303
+    .line 2333
     :cond_0
     iget-object v3, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
@@ -2484,7 +2550,7 @@
 
     goto/16 :goto_1
 
-    .line 2296
+    .line 2326
     :cond_1
     :goto_0
     iget-object v3, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
@@ -2517,7 +2583,7 @@
 
     iget-object v3, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
-    .line 2301
+    .line 2331
     invoke-static {v3}, Lorg/telegram/ui/Components/InstantCameraView;->access$5300(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object v9
@@ -2528,12 +2594,12 @@
 
     move-result-object v10
 
-    .line 2296
+    .line 2326
     invoke-static/range {v4 .. v10}, Lorg/telegram/ui/Components/AlertsCreator;->createScheduleDatePickerDialog(Landroid/content/Context;JLorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     goto/16 :goto_1
 
-    .line 2306
+    .line 2336
     :cond_2
     iget-object v3, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
@@ -2543,7 +2609,7 @@
 
     invoke-static {v3, v4}, Lorg/telegram/ui/Components/InstantCameraView;->access$902(Lorg/telegram/ui/Components/InstantCameraView;Lorg/telegram/ui/Components/VideoPlayer;)Lorg/telegram/ui/Components/VideoPlayer;
 
-    .line 2307
+    .line 2337
     iget-object v3, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/InstantCameraView;->access$900(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/ui/Components/VideoPlayer;
@@ -2556,7 +2622,7 @@
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Components/VideoPlayer;->setDelegate(Lorg/telegram/ui/Components/VideoPlayer$VideoPlayerDelegate;)V
 
-    .line 2343
+    .line 2373
     iget-object v3, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/InstantCameraView;->access$900(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/ui/Components/VideoPlayer;
@@ -2571,7 +2637,7 @@
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/Components/VideoPlayer;->setTextureView(Landroid/view/TextureView;)V
 
-    .line 2344
+    .line 2374
     iget-object v3, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/InstantCameraView;->access$900(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/ui/Components/VideoPlayer;
@@ -2588,7 +2654,7 @@
 
     invoke-virtual {v3, v4, v5}, Lorg/telegram/ui/Components/VideoPlayer;->preparePlayer(Landroid/net/Uri;Ljava/lang/String;)V
 
-    .line 2345
+    .line 2375
     iget-object v3, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/InstantCameraView;->access$900(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/ui/Components/VideoPlayer;
@@ -2597,7 +2663,7 @@
 
     invoke-virtual {v3}, Lorg/telegram/ui/Components/VideoPlayer;->play()V
 
-    .line 2346
+    .line 2376
     iget-object v3, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/InstantCameraView;->access$900(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/ui/Components/VideoPlayer;
@@ -2606,12 +2672,12 @@
 
     invoke-virtual {v3, v2}, Lorg/telegram/ui/Components/VideoPlayer;->setMute(Z)V
 
-    .line 2347
+    .line 2377
     iget-object v3, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/InstantCameraView;->access$5400(Lorg/telegram/ui/Components/InstantCameraView;)V
 
-    .line 2349
+    .line 2379
     new-instance v3, Landroid/animation/AnimatorSet;
 
     invoke-direct {v3}, Landroid/animation/AnimatorSet;-><init>()V
@@ -2620,10 +2686,10 @@
 
     new-array v5, v4, [Landroid/animation/Animator;
 
-    .line 2350
+    .line 2380
     iget-object v6, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
-    .line 2351
+    .line 2381
     invoke-static {v6}, Lorg/telegram/ui/Components/InstantCameraView;->access$5500(Lorg/telegram/ui/Components/InstantCameraView;)Landroid/widget/ImageView;
 
     move-result-object v6
@@ -2644,7 +2710,7 @@
 
     iget-object v6, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
-    .line 2352
+    .line 2382
     invoke-static {v6}, Lorg/telegram/ui/Components/InstantCameraView;->access$5600(Lorg/telegram/ui/Components/InstantCameraView;)Landroid/graphics/Paint;
 
     move-result-object v6
@@ -2663,7 +2729,7 @@
 
     iget-object v6, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
-    .line 2353
+    .line 2383
     invoke-static {v6}, Lorg/telegram/ui/Components/InstantCameraView;->access$5700(Lorg/telegram/ui/Components/InstantCameraView;)Landroid/widget/ImageView;
 
     move-result-object v6
@@ -2684,25 +2750,25 @@
 
     aput-object v6, v5, v7
 
-    .line 2350
+    .line 2380
     invoke-virtual {v3, v5}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
     const-wide/16 v5, 0xb4
 
-    .line 2354
+    .line 2384
     invoke-virtual {v3, v5, v6}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 2355
+    .line 2385
     new-instance v5, Landroid/view/animation/DecelerateInterpolator;
 
     invoke-direct {v5}, Landroid/view/animation/DecelerateInterpolator;-><init>()V
 
     invoke-virtual {v3, v5}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 2356
+    .line 2386
     invoke-virtual {v3}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 2357
+    .line 2387
     iget-object v3, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/InstantCameraView;->access$1000(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/messenger/VideoEditedInfo;
@@ -2717,7 +2783,7 @@
 
     iput-wide v5, v3, Lorg/telegram/messenger/VideoEditedInfo;->estimatedDuration:J
 
-    .line 2358
+    .line 2388
     iget-object v3, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/InstantCameraView;->access$3900(Lorg/telegram/ui/Components/InstantCameraView;)I
@@ -2768,7 +2834,7 @@
 
     invoke-virtual {v3, v5, v6}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 2360
+    .line 2390
     :goto_1
     iget-object v3, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoFile:Ljava/io/File;
 
@@ -2776,7 +2842,7 @@
 
     invoke-direct {v0, v3, v4, v5, v2}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->didWriteData(Ljava/io/File;JZ)V
 
-    .line 2361
+    .line 2391
     invoke-static {}, Lorg/telegram/messenger/MediaController;->getInstance()Lorg/telegram/messenger/MediaController;
 
     move-result-object v2
@@ -2789,7 +2855,7 @@
 .method private synthetic lambda$handleVideoFrameAvailable$0()V
     .locals 3
 
-    .line 2198
+    .line 2228
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InstantCameraView;->access$5900(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/ui/Components/BackupImageView;
@@ -2828,7 +2894,7 @@
 .method private synthetic lambda$handleVideoFrameAvailable$1()V
     .locals 3
 
-    .line 2203
+    .line 2233
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InstantCameraView;->access$5900(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/ui/Components/BackupImageView;
@@ -2867,7 +2933,7 @@
 .method private synthetic lambda$prepareEncoder$5()V
     .locals 6
 
-    .line 2469
+    .line 2499
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InstantCameraView;->access$300(Lorg/telegram/ui/Components/InstantCameraView;)Z
@@ -2881,7 +2947,7 @@
     :cond_0
     const/4 v0, 0x2
 
-    .line 2473
+    .line 2503
     :try_start_0
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
@@ -2891,7 +2957,7 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2477
+    .line 2507
     :catch_0
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
@@ -2905,14 +2971,14 @@
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->lockOrientation(Landroid/app/Activity;)V
 
-    .line 2478
+    .line 2508
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     const/4 v2, 0x1
 
     invoke-static {v1, v2}, Lorg/telegram/ui/Components/InstantCameraView;->access$4602(Lorg/telegram/ui/Components/InstantCameraView;Z)Z
 
-    .line 2479
+    .line 2509
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
@@ -2921,12 +2987,12 @@
 
     invoke-static {v1, v3, v4}, Lorg/telegram/ui/Components/InstantCameraView;->access$4702(Lorg/telegram/ui/Components/InstantCameraView;J)J
 
-    .line 2480
+    .line 2510
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 2481
+    .line 2511
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/InstantCameraView;->access$3900(Lorg/telegram/ui/Components/InstantCameraView;)I
@@ -2977,7 +3043,7 @@
 
     const/4 v4, 0x1
 
-    .line 2405
+    .line 2435
     invoke-direct {v1, v4}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->setBluetoothScoOn(Z)V
 
     const/16 v5, 0x10
@@ -2986,7 +3052,7 @@
 
     const/4 v7, 0x2
 
-    .line 2408
+    .line 2438
     :try_start_0
     invoke-static {v6, v5, v7}, Landroid/media/AudioRecord;->getMinBufferSize(III)I
 
@@ -3001,7 +3067,7 @@
 
     if-ge v8, v5, :cond_1
 
-    .line 2414
+    .line 2444
     div-int/lit16 v5, v5, 0x800
 
     add-int/2addr v5, v4
@@ -3020,7 +3086,7 @@
 
     if-ge v9, v15, :cond_2
 
-    .line 2417
+    .line 2447
     iget-object v10, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->buffers:Ljava/util/concurrent/ArrayBlockingQueue;
 
     new-instance v11, Lorg/telegram/ui/Components/InstantCameraView$AudioBufferInfo;
@@ -3033,7 +3099,7 @@
 
     goto :goto_0
 
-    .line 2419
+    .line 2449
     :cond_2
     new-instance v14, Landroid/media/AudioRecord;
 
@@ -3055,15 +3121,15 @@
 
     iput-object v15, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioRecorder:Landroid/media/AudioRecord;
 
-    .line 2420
+    .line 2450
     invoke-virtual {v15}, Landroid/media/AudioRecord;->startRecording()V
 
-    .line 2421
+    .line 2451
     sget-boolean v9, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v9, :cond_3
 
-    .line 2422
+    .line 2452
     new-instance v9, Ljava/lang/StringBuilder;
 
     invoke-direct {v9}, Ljava/lang/StringBuilder;-><init>()V
@@ -3104,7 +3170,7 @@
 
     invoke-static {v8}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 2424
+    .line 2454
     :cond_3
     new-instance v8, Ljava/lang/Thread;
 
@@ -3114,47 +3180,47 @@
 
     const/16 v9, 0xa
 
-    .line 2425
+    .line 2455
     invoke-virtual {v8, v9}, Ljava/lang/Thread;->setPriority(I)V
 
-    .line 2426
+    .line 2456
     invoke-virtual {v8}, Ljava/lang/Thread;->start()V
 
-    .line 2428
+    .line 2458
     new-instance v8, Landroid/media/MediaCodec$BufferInfo;
 
     invoke-direct {v8}, Landroid/media/MediaCodec$BufferInfo;-><init>()V
 
     iput-object v8, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioBufferInfo:Landroid/media/MediaCodec$BufferInfo;
 
-    .line 2429
+    .line 2459
     new-instance v8, Landroid/media/MediaCodec$BufferInfo;
 
     invoke-direct {v8}, Landroid/media/MediaCodec$BufferInfo;-><init>()V
 
     iput-object v8, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoBufferInfo:Landroid/media/MediaCodec$BufferInfo;
 
-    .line 2431
+    .line 2461
     new-instance v8, Landroid/media/MediaFormat;
 
     invoke-direct {v8}, Landroid/media/MediaFormat;-><init>()V
 
     const-string v9, "mime"
 
-    .line 2432
+    .line 2462
     invoke-virtual {v8, v9, v3}, Landroid/media/MediaFormat;->setString(Ljava/lang/String;Ljava/lang/String;)V
 
     const-string v9, "sample-rate"
 
-    .line 2433
+    .line 2463
     invoke-virtual {v8, v9, v6}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
     const-string v6, "channel-count"
 
-    .line 2434
+    .line 2464
     invoke-virtual {v8, v6, v4}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    .line 2435
+    .line 2465
     iget-object v6, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v6}, Lorg/telegram/ui/Components/InstantCameraView;->access$3900(Lorg/telegram/ui/Components/InstantCameraView;)I
@@ -3175,10 +3241,10 @@
 
     const/16 v9, 0x5000
 
-    .line 2436
+    .line 2466
     invoke-virtual {v8, v6, v9}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    .line 2438
+    .line 2468
     invoke-static {v3}, Landroid/media/MediaCodec;->createEncoderByType(Ljava/lang/String;)Landroid/media/MediaCodec;
 
     move-result-object v3
@@ -3187,25 +3253,25 @@
 
     const/4 v6, 0x0
 
-    .line 2439
+    .line 2469
     invoke-virtual {v3, v8, v6, v6, v4}, Landroid/media/MediaCodec;->configure(Landroid/media/MediaFormat;Landroid/view/Surface;Landroid/media/MediaCrypto;I)V
 
-    .line 2440
+    .line 2470
     iget-object v3, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioEncoder:Landroid/media/MediaCodec;
 
     invoke-virtual {v3}, Landroid/media/MediaCodec;->start()V
 
-    .line 2442
+    .line 2472
     invoke-static {v0}, Landroid/media/MediaCodec;->createEncoderByType(Ljava/lang/String;)Landroid/media/MediaCodec;
 
     move-result-object v3
 
     iput-object v3, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoEncoder:Landroid/media/MediaCodec;
 
-    .line 2443
+    .line 2473
     iput-boolean v4, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->firstEncode:Z
 
-    .line 2445
+    .line 2475
     iget v3, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoWidth:I
 
     iget v8, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoHeight:I
@@ -3218,10 +3284,10 @@
 
     const v8, 0x7f000789
 
-    .line 2447
+    .line 2477
     invoke-virtual {v0, v3, v8}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    .line 2448
+    .line 2478
     iget v3, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoBitrate:I
 
     invoke-virtual {v0, v2, v3}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
@@ -3230,20 +3296,20 @@
 
     const/16 v3, 0x1e
 
-    .line 2449
+    .line 2479
     invoke-virtual {v0, v2, v3}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
     const-string v2, "i-frame-interval"
 
-    .line 2450
+    .line 2480
     invoke-virtual {v0, v2, v4}, Landroid/media/MediaFormat;->setInteger(Ljava/lang/String;I)V
 
-    .line 2458
+    .line 2488
     iget-object v2, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoEncoder:Landroid/media/MediaCodec;
 
     invoke-virtual {v2, v0, v6, v6, v4}, Landroid/media/MediaCodec;->configure(Landroid/media/MediaFormat;Landroid/view/Surface;Landroid/media/MediaCrypto;I)V
 
-    .line 2459
+    .line 2489
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoEncoder:Landroid/media/MediaCodec;
 
     invoke-virtual {v0}, Landroid/media/MediaCodec;->createInputSurface()Landroid/view/Surface;
@@ -3252,32 +3318,32 @@
 
     iput-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->surface:Landroid/view/Surface;
 
-    .line 2460
+    .line 2490
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoEncoder:Landroid/media/MediaCodec;
 
     invoke-virtual {v0}, Landroid/media/MediaCodec;->start()V
 
-    .line 2462
+    .line 2492
     new-instance v0, Lorg/telegram/messenger/video/Mp4Movie;
 
     invoke-direct {v0}, Lorg/telegram/messenger/video/Mp4Movie;-><init>()V
 
-    .line 2463
+    .line 2493
     iget-object v2, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoFile:Ljava/io/File;
 
     invoke-virtual {v0, v2}, Lorg/telegram/messenger/video/Mp4Movie;->setCacheFile(Ljava/io/File;)V
 
-    .line 2464
+    .line 2494
     invoke-virtual {v0, v5}, Lorg/telegram/messenger/video/Mp4Movie;->setRotation(I)V
 
-    .line 2465
+    .line 2495
     iget v2, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoWidth:I
 
     iget v3, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoHeight:I
 
     invoke-virtual {v0, v2, v3}, Lorg/telegram/messenger/video/Mp4Movie;->setSize(II)V
 
-    .line 2466
+    .line 2496
     new-instance v2, Lorg/telegram/messenger/video/MP4Builder;
 
     invoke-direct {v2}, Lorg/telegram/messenger/video/MP4Builder;-><init>()V
@@ -3294,7 +3360,7 @@
 
     iput-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
 
-    .line 2468
+    .line 2498
     new-instance v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, v1}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;)V
@@ -3303,35 +3369,35 @@
     :try_end_0
     .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
-    .line 2487
+    .line 2517
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglDisplay:Landroid/opengl/EGLDisplay;
 
     sget-object v2, Landroid/opengl/EGL14;->EGL_NO_DISPLAY:Landroid/opengl/EGLDisplay;
 
     if-ne v0, v2, :cond_e
 
-    .line 2491
+    .line 2521
     invoke-static {v5}, Landroid/opengl/EGL14;->eglGetDisplay(I)Landroid/opengl/EGLDisplay;
 
     move-result-object v0
 
     iput-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglDisplay:Landroid/opengl/EGLDisplay;
 
-    .line 2492
+    .line 2522
     sget-object v2, Landroid/opengl/EGL14;->EGL_NO_DISPLAY:Landroid/opengl/EGLDisplay;
 
     if-eq v0, v2, :cond_d
 
     new-array v2, v7, [I
 
-    .line 2496
+    .line 2526
     invoke-static {v0, v2, v5, v2, v4}, Landroid/opengl/EGL14;->eglInitialize(Landroid/opengl/EGLDisplay;[II[II)Z
 
     move-result v0
 
     if-eqz v0, :cond_c
 
-    .line 2501
+    .line 2531
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglContext:Landroid/opengl/EGLContext;
 
     sget-object v2, Landroid/opengl/EGL14;->EGL_NO_CONTEXT:Landroid/opengl/EGLContext;
@@ -3342,14 +3408,14 @@
 
     new-array v7, v0, [I
 
-    .line 2504
+    .line 2534
     fill-array-data v7, :array_0
 
     new-array v0, v4, [Landroid/opengl/EGLConfig;
 
     new-array v12, v4, [I
 
-    .line 2515
+    .line 2545
     iget-object v6, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglDisplay:Landroid/opengl/EGLDisplay;
 
     const/4 v8, 0x0
@@ -3372,10 +3438,10 @@
 
     new-array v2, v2, [I
 
-    .line 2519
+    .line 2549
     fill-array-data v2, :array_1
 
-    .line 2523
+    .line 2553
     iget-object v3, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglDisplay:Landroid/opengl/EGLDisplay;
 
     aget-object v6, v0, v5
@@ -3388,14 +3454,14 @@
 
     iput-object v2, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglContext:Landroid/opengl/EGLContext;
 
-    .line 2524
+    .line 2554
     aget-object v0, v0, v5
 
     iput-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglConfig:Landroid/opengl/EGLConfig;
 
     goto :goto_1
 
-    .line 2516
+    .line 2546
     :cond_4
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -3409,7 +3475,7 @@
     :goto_1
     new-array v0, v4, [I
 
-    .line 2528
+    .line 2558
     iget-object v2, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglDisplay:Landroid/opengl/EGLDisplay;
 
     iget-object v3, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglContext:Landroid/opengl/EGLContext;
@@ -3418,7 +3484,7 @@
 
     invoke-static {v2, v3, v6, v0, v5}, Landroid/opengl/EGL14;->eglQueryContext(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLContext;I[II)Z
 
-    .line 2530
+    .line 2560
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglSurface:Landroid/opengl/EGLSurface;
 
     sget-object v2, Landroid/opengl/EGL14;->EGL_NO_SURFACE:Landroid/opengl/EGLSurface;
@@ -3431,7 +3497,7 @@
 
     aput v2, v0, v5
 
-    .line 2537
+    .line 2567
     iget-object v2, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglDisplay:Landroid/opengl/EGLDisplay;
 
     iget-object v3, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglConfig:Landroid/opengl/EGLConfig;
@@ -3446,7 +3512,7 @@
 
     if-eqz v0, :cond_a
 
-    .line 2542
+    .line 2572
     iget-object v2, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglDisplay:Landroid/opengl/EGLDisplay;
 
     iget-object v3, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglContext:Landroid/opengl/EGLContext;
@@ -3457,12 +3523,12 @@
 
     if-nez v0, :cond_7
 
-    .line 2543
+    .line 2573
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_6
 
-    .line 2544
+    .line 2574
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -3487,7 +3553,7 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
 
-    .line 2546
+    .line 2576
     :cond_6
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -3502,10 +3568,10 @@
 
     const/16 v2, 0x303
 
-    .line 2548
+    .line 2578
     invoke-static {v0, v2}, Landroid/opengl/GLES20;->glBlendFunc(II)V
 
-    .line 2550
+    .line 2580
     iget-object v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     const v2, 0x8b31
@@ -3516,7 +3582,7 @@
 
     move-result v0
 
-    .line 2551
+    .line 2581
     iget-object v2, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     const v3, 0x8b30
@@ -3537,51 +3603,51 @@
 
     if-eqz v2, :cond_9
 
-    .line 2553
+    .line 2583
     invoke-static {}, Landroid/opengl/GLES20;->glCreateProgram()I
 
     move-result v3
 
     iput v3, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->drawProgram:I
 
-    .line 2554
+    .line 2584
     invoke-static {v3, v0}, Landroid/opengl/GLES20;->glAttachShader(II)V
 
-    .line 2555
+    .line 2585
     iget v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->drawProgram:I
 
     invoke-static {v0, v2}, Landroid/opengl/GLES20;->glAttachShader(II)V
 
-    .line 2556
+    .line 2586
     iget v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->drawProgram:I
 
     invoke-static {v0}, Landroid/opengl/GLES20;->glLinkProgram(I)V
 
     new-array v0, v4, [I
 
-    .line 2558
+    .line 2588
     iget v2, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->drawProgram:I
 
     const v3, 0x8b82
 
     invoke-static {v2, v3, v0, v5}, Landroid/opengl/GLES20;->glGetProgramiv(II[II)V
 
-    .line 2559
+    .line 2589
     aget v0, v0, v5
 
     if-nez v0, :cond_8
 
-    .line 2560
+    .line 2590
     iget v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->drawProgram:I
 
     invoke-static {v0}, Landroid/opengl/GLES20;->glDeleteProgram(I)V
 
-    .line 2561
+    .line 2591
     iput v5, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->drawProgram:I
 
     goto :goto_2
 
-    .line 2563
+    .line 2593
     :cond_8
     iget v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->drawProgram:I
 
@@ -3593,7 +3659,7 @@
 
     iput v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->positionHandle:I
 
-    .line 2564
+    .line 2594
     iget v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->drawProgram:I
 
     const-string v2, "aTextureCoord"
@@ -3604,7 +3670,7 @@
 
     iput v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->textureHandle:I
 
-    .line 2565
+    .line 2595
     iget v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->drawProgram:I
 
     const-string v2, "preview"
@@ -3615,7 +3681,7 @@
 
     iput v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->previewSizeHandle:I
 
-    .line 2566
+    .line 2596
     iget v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->drawProgram:I
 
     const-string v2, "resolution"
@@ -3626,7 +3692,7 @@
 
     iput v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->resolutionHandle:I
 
-    .line 2567
+    .line 2597
     iget v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->drawProgram:I
 
     const-string v2, "alpha"
@@ -3637,7 +3703,7 @@
 
     iput v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->alphaHandle:I
 
-    .line 2568
+    .line 2598
     iget v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->drawProgram:I
 
     const-string v2, "uMVPMatrix"
@@ -3648,7 +3714,7 @@
 
     iput v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->vertexMatrixHandle:I
 
-    .line 2569
+    .line 2599
     iget v0, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->drawProgram:I
 
     const-string v2, "uSTMatrix"
@@ -3663,7 +3729,7 @@
     :goto_2
     return-void
 
-    .line 2539
+    .line 2569
     :cond_a
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -3673,7 +3739,7 @@
 
     throw v0
 
-    .line 2531
+    .line 2561
     :cond_b
     new-instance v0, Ljava/lang/IllegalStateException;
 
@@ -3683,11 +3749,11 @@
 
     throw v0
 
-    .line 2497
+    .line 2527
     :cond_c
     iput-object v6, v1, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglDisplay:Landroid/opengl/EGLDisplay;
 
-    .line 2498
+    .line 2528
     new-instance v0, Ljava/lang/RuntimeException;
 
     const-string v2, "unable to initialize EGL14"
@@ -3696,7 +3762,7 @@
 
     throw v0
 
-    .line 2493
+    .line 2523
     :cond_d
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -3706,7 +3772,7 @@
 
     throw v0
 
-    .line 2488
+    .line 2518
     :cond_e
     new-instance v0, Ljava/lang/RuntimeException;
 
@@ -3719,7 +3785,7 @@
     :catch_0
     move-exception v0
 
-    .line 2484
+    .line 2514
     new-instance v2, Ljava/lang/RuntimeException;
 
     invoke-direct {v2, v0}, Ljava/lang/RuntimeException;-><init>(Ljava/lang/Throwable;)V
@@ -3754,7 +3820,7 @@
 .method private setBluetoothScoOn(Z)V
     .locals 3
 
-    .line 2386
+    .line 2416
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
     const-string v1, "audio"
@@ -3765,7 +3831,7 @@
 
     check-cast v0, Landroid/media/AudioManager;
 
-    .line 2387
+    .line 2417
     invoke-virtual {v0}, Landroid/media/AudioManager;->isBluetoothScoAvailableOffCall()Z
 
     move-result v1
@@ -3779,7 +3845,7 @@
     :cond_0
     if-nez p1, :cond_5
 
-    .line 2388
+    .line 2418
     :cond_1
     invoke-static {}, Landroid/bluetooth/BluetoothAdapter;->getDefaultAdapter()Landroid/bluetooth/BluetoothAdapter;
 
@@ -3789,7 +3855,7 @@
 
     const/4 v2, 0x1
 
-    .line 2390
+    .line 2420
     :try_start_0
     invoke-virtual {v1, v2}, Landroid/bluetooth/BluetoothAdapter;->getProfileConnectionState(I)I
 
@@ -3813,14 +3879,14 @@
     :cond_3
     if-eqz p1, :cond_4
 
-    .line 2391
+    .line 2421
     invoke-virtual {v0}, Landroid/media/AudioManager;->isBluetoothScoOn()Z
 
     move-result v1
 
     if-nez v1, :cond_4
 
-    .line 2392
+    .line 2422
     invoke-virtual {v0}, Landroid/media/AudioManager;->startBluetoothSco()V
 
     goto :goto_2
@@ -3828,14 +3894,14 @@
     :cond_4
     if-nez p1, :cond_5
 
-    .line 2393
+    .line 2423
     invoke-virtual {v0}, Landroid/media/AudioManager;->isBluetoothScoOn()Z
 
     move-result p1
 
     if-eqz p1, :cond_5
 
-    .line 2394
+    .line 2424
     invoke-virtual {v0}, Landroid/media/AudioManager;->stopBluetoothSco()V
     :try_end_0
     .catch Ljava/lang/SecurityException; {:try_start_0 .. :try_end_0} :catch_0
@@ -3843,7 +3909,7 @@
 
     goto :goto_2
 
-    .line 2399
+    .line 2429
     :goto_1
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
@@ -3867,12 +3933,12 @@
 
     if-eqz p1, :cond_0
 
-    .line 2592
+    .line 2622
     iget-object v1, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoEncoder:Landroid/media/MediaCodec;
 
     invoke-virtual {v1}, Landroid/media/MediaCodec;->signalEndOfInputStream()V
 
-    .line 2596
+    .line 2626
     :cond_0
     sget v1, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -3880,7 +3946,7 @@
 
     if-ge v1, v3, :cond_1
 
-    .line 2597
+    .line 2627
     iget-object v1, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoEncoder:Landroid/media/MediaCodec;
 
     invoke-virtual {v1}, Landroid/media/MediaCodec;->getOutputBuffers()[Ljava/nio/ByteBuffer;
@@ -3892,7 +3958,7 @@
     :cond_1
     const/4 v1, 0x0
 
-    .line 2600
+    .line 2630
     :goto_0
     iget-object v4, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoEncoder:Landroid/media/MediaCodec;
 
@@ -3931,12 +3997,12 @@
     :cond_2
     if-ne v4, v8, :cond_4
 
-    .line 2606
+    .line 2636
     sget v4, Landroid/os/Build$VERSION;->SDK_INT:I
 
     if-ge v4, v3, :cond_3
 
-    .line 2607
+    .line 2637
     iget-object v1, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoEncoder:Landroid/media/MediaCodec;
 
     invoke-virtual {v1}, Landroid/media/MediaCodec;->getOutputBuffers()[Ljava/nio/ByteBuffer;
@@ -3956,19 +4022,19 @@
 
     if-ne v4, v7, :cond_5
 
-    .line 2610
+    .line 2640
     iget-object v4, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoEncoder:Landroid/media/MediaCodec;
 
     invoke-virtual {v4}, Landroid/media/MediaCodec;->getOutputFormat()Landroid/media/MediaFormat;
 
     move-result-object v4
 
-    .line 2611
+    .line 2641
     iget v5, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoTrackIndex:I
 
     if-ne v5, v11, :cond_3
 
-    .line 2612
+    .line 2642
     iget-object v5, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
 
     invoke-virtual {v5, v4, v14}, Lorg/telegram/messenger/video/MP4Builder;->addTrack(Landroid/media/MediaFormat;Z)I
@@ -3979,7 +4045,7 @@
 
     const-string v5, "prepend-sps-pps-to-idr-frames"
 
-    .line 2613
+    .line 2643
     invoke-virtual {v4, v5}, Landroid/media/MediaFormat;->containsKey(Ljava/lang/String;)Z
 
     move-result v6
@@ -3992,17 +4058,17 @@
 
     if-ne v5, v13, :cond_3
 
-    .line 2614
+    .line 2644
     invoke-virtual {v4, v2}, Landroid/media/MediaFormat;->getByteBuffer(Ljava/lang/String;)Ljava/nio/ByteBuffer;
 
     move-result-object v2
 
-    .line 2615
+    .line 2645
     invoke-virtual {v4, v15}, Landroid/media/MediaFormat;->getByteBuffer(Ljava/lang/String;)Ljava/nio/ByteBuffer;
 
     move-result-object v4
 
-    .line 2616
+    .line 2646
     invoke-virtual {v2}, Ljava/nio/ByteBuffer;->limit()I
 
     move-result v2
@@ -4020,17 +4086,17 @@
     :cond_5
     if-ltz v4, :cond_3
 
-    .line 2621
+    .line 2651
     sget v7, Landroid/os/Build$VERSION;->SDK_INT:I
 
     if-ge v7, v3, :cond_6
 
-    .line 2622
+    .line 2652
     aget-object v7, v1, v4
 
     goto :goto_2
 
-    .line 2624
+    .line 2654
     :cond_6
     iget-object v7, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoEncoder:Landroid/media/MediaCodec;
 
@@ -4041,21 +4107,21 @@
     :goto_2
     if-eqz v7, :cond_1e
 
-    .line 2629
+    .line 2659
     iget-object v8, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoBufferInfo:Landroid/media/MediaCodec$BufferInfo;
 
     iget v12, v8, Landroid/media/MediaCodec$BufferInfo;->size:I
 
     if-le v12, v13, :cond_f
 
-    .line 2630
+    .line 2660
     iget v3, v8, Landroid/media/MediaCodec$BufferInfo;->flags:I
 
     and-int/lit8 v16, v3, 0x2
 
     if-nez v16, :cond_b
 
-    .line 2631
+    .line 2661
     iget v2, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->prependHeaderSize:I
 
     if-eqz v2, :cond_7
@@ -4064,7 +4130,7 @@
 
     if-eqz v15, :cond_7
 
-    .line 2632
+    .line 2662
     iget v15, v8, Landroid/media/MediaCodec$BufferInfo;->offset:I
 
     add-int/2addr v15, v2
@@ -4073,10 +4139,10 @@
 
     sub-int/2addr v12, v2
 
-    .line 2633
+    .line 2663
     iput v12, v8, Landroid/media/MediaCodec$BufferInfo;->size:I
 
-    .line 2635
+    .line 2665
     :cond_7
     iget-boolean v2, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->firstEncode:Z
 
@@ -4086,21 +4152,21 @@
 
     if-eqz v2, :cond_a
 
-    .line 2636
+    .line 2666
     iget v2, v8, Landroid/media/MediaCodec$BufferInfo;->size:I
 
     const/16 v3, 0x64
 
     if-le v2, v3, :cond_9
 
-    .line 2637
+    .line 2667
     iget v2, v8, Landroid/media/MediaCodec$BufferInfo;->offset:I
 
     invoke-virtual {v7, v2}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
     new-array v2, v3, [B
 
-    .line 2639
+    .line 2669
     invoke-virtual {v7, v2}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
 
     move v3, v14
@@ -4112,7 +4178,7 @@
 
     if-ge v3, v12, :cond_9
 
-    .line 2642
+    .line 2672
     aget-byte v12, v2, v3
 
     if-nez v12, :cond_8
@@ -4139,7 +4205,7 @@
 
     if-le v8, v13, :cond_8
 
-    .line 2645
+    .line 2675
     iget-object v2, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoBufferInfo:Landroid/media/MediaCodec$BufferInfo;
 
     iget v8, v2, Landroid/media/MediaCodec$BufferInfo;->offset:I
@@ -4148,7 +4214,7 @@
 
     iput v8, v2, Landroid/media/MediaCodec$BufferInfo;->offset:I
 
-    .line 2646
+    .line 2676
     iget v8, v2, Landroid/media/MediaCodec$BufferInfo;->size:I
 
     sub-int/2addr v8, v3
@@ -4162,12 +4228,12 @@
 
     goto :goto_3
 
-    .line 2652
+    .line 2682
     :cond_9
     :goto_4
     iput-boolean v14, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->firstEncode:Z
 
-    .line 2654
+    .line 2684
     :cond_a
     iget-object v2, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
 
@@ -4183,40 +4249,40 @@
 
     if-eqz v7, :cond_f
 
-    .line 2656
+    .line 2686
     iget-object v7, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoFile:Ljava/io/File;
 
     invoke-direct {v0, v7, v2, v3, v14}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->didWriteData(Ljava/io/File;JZ)V
 
     goto/16 :goto_7
 
-    .line 2658
+    .line 2688
     :cond_b
     iget v3, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoTrackIndex:I
 
     if-ne v3, v11, :cond_f
 
-    .line 2659
+    .line 2689
     new-array v3, v12, [B
 
-    .line 2660
+    .line 2690
     iget v8, v8, Landroid/media/MediaCodec$BufferInfo;->offset:I
 
     add-int/2addr v8, v12
 
     invoke-virtual {v7, v8}, Ljava/nio/ByteBuffer;->limit(I)Ljava/nio/Buffer;
 
-    .line 2661
+    .line 2691
     iget-object v8, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoBufferInfo:Landroid/media/MediaCodec$BufferInfo;
 
     iget v8, v8, Landroid/media/MediaCodec$BufferInfo;->offset:I
 
     invoke-virtual {v7, v8}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 2662
+    .line 2692
     invoke-virtual {v7, v3}, Ljava/nio/ByteBuffer;->get([B)Ljava/nio/ByteBuffer;
 
-    .line 2665
+    .line 2695
     iget-object v7, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoBufferInfo:Landroid/media/MediaCodec$BufferInfo;
 
     iget v7, v7, Landroid/media/MediaCodec$BufferInfo;->size:I
@@ -4230,7 +4296,7 @@
 
     if-le v7, v8, :cond_d
 
-    .line 2667
+    .line 2697
     aget-byte v8, v3, v7
 
     if-ne v8, v13, :cond_c
@@ -4253,12 +4319,12 @@
 
     if-nez v12, :cond_c
 
-    .line 2668
+    .line 2698
     invoke-static {v8}, Ljava/nio/ByteBuffer;->allocate(I)Ljava/nio/ByteBuffer;
 
     move-result-object v7
 
-    .line 2669
+    .line 2699
     iget-object v12, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoBufferInfo:Landroid/media/MediaCodec$BufferInfo;
 
     iget v12, v12, Landroid/media/MediaCodec$BufferInfo;->size:I
@@ -4269,14 +4335,14 @@
 
     move-result-object v12
 
-    .line 2670
+    .line 2700
     invoke-virtual {v7, v3, v14, v8}, Ljava/nio/ByteBuffer;->put([BII)Ljava/nio/ByteBuffer;
 
     move-result-object v13
 
     invoke-virtual {v13, v14}, Ljava/nio/ByteBuffer;->position(I)Ljava/nio/Buffer;
 
-    .line 2671
+    .line 2701
     iget-object v13, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoBufferInfo:Landroid/media/MediaCodec$BufferInfo;
 
     iget v13, v13, Landroid/media/MediaCodec$BufferInfo;->size:I
@@ -4303,7 +4369,7 @@
 
     const/4 v12, 0x0
 
-    .line 2679
+    .line 2709
     :goto_6
     iget v3, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoWidth:I
 
@@ -4319,13 +4385,13 @@
 
     if-eqz v12, :cond_e
 
-    .line 2681
+    .line 2711
     invoke-virtual {v3, v2, v7}, Landroid/media/MediaFormat;->setByteBuffer(Ljava/lang/String;Ljava/nio/ByteBuffer;)V
 
-    .line 2682
+    .line 2712
     invoke-virtual {v3, v15, v12}, Landroid/media/MediaFormat;->setByteBuffer(Ljava/lang/String;Ljava/nio/ByteBuffer;)V
 
-    .line 2684
+    .line 2714
     :cond_e
     iget-object v2, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
 
@@ -4335,14 +4401,14 @@
 
     iput v2, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoTrackIndex:I
 
-    .line 2687
+    .line 2717
     :cond_f
     :goto_7
     iget-object v2, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoEncoder:Landroid/media/MediaCodec;
 
     invoke-virtual {v2, v4, v14}, Landroid/media/MediaCodec;->releaseOutputBuffer(IZ)V
 
-    .line 2688
+    .line 2718
     iget-object v2, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoBufferInfo:Landroid/media/MediaCodec$BufferInfo;
 
     iget v2, v2, Landroid/media/MediaCodec$BufferInfo;->flags:I
@@ -4351,7 +4417,7 @@
 
     if-eqz v2, :cond_1d
 
-    .line 2694
+    .line 2724
     :goto_8
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
@@ -4359,14 +4425,14 @@
 
     if-ge v2, v3, :cond_10
 
-    .line 2695
+    .line 2725
     iget-object v1, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioEncoder:Landroid/media/MediaCodec;
 
     invoke-virtual {v1}, Landroid/media/MediaCodec;->getOutputBuffers()[Ljava/nio/ByteBuffer;
 
     move-result-object v1
 
-    .line 2699
+    .line 2729
     :cond_10
     :goto_9
     iget-object v2, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioEncoder:Landroid/media/MediaCodec;
@@ -4383,7 +4449,7 @@
 
     if-eqz p1, :cond_1b
 
-    .line 2701
+    .line 2731
     iget-boolean v2, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->running:Z
 
     if-nez v2, :cond_11
@@ -4412,14 +4478,14 @@
 
     if-ne v2, v4, :cond_16
 
-    .line 2705
+    .line 2735
     sget v2, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v7, 0x15
 
     if-ge v2, v7, :cond_15
 
-    .line 2706
+    .line 2736
     iget-object v1, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioEncoder:Landroid/media/MediaCodec;
 
     invoke-virtual {v1}, Landroid/media/MediaCodec;->getOutputBuffers()[Ljava/nio/ByteBuffer;
@@ -4442,19 +4508,19 @@
 
     if-ne v2, v7, :cond_17
 
-    .line 2709
+    .line 2739
     iget-object v2, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioEncoder:Landroid/media/MediaCodec;
 
     invoke-virtual {v2}, Landroid/media/MediaCodec;->getOutputFormat()Landroid/media/MediaFormat;
 
     move-result-object v2
 
-    .line 2710
+    .line 2740
     iget v8, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioTrackIndex:I
 
     if-ne v8, v11, :cond_12
 
-    .line 2711
+    .line 2741
     iget-object v8, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
 
     const/4 v12, 0x1
@@ -4472,19 +4538,19 @@
 
     if-ltz v2, :cond_13
 
-    .line 2715
+    .line 2745
     sget v8, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 v13, 0x15
 
     if-ge v8, v13, :cond_18
 
-    .line 2716
+    .line 2746
     aget-object v8, v1, v2
 
     goto :goto_c
 
-    .line 2718
+    .line 2748
     :cond_18
     iget-object v8, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioEncoder:Landroid/media/MediaCodec;
 
@@ -4495,7 +4561,7 @@
     :goto_c
     if-eqz v8, :cond_1c
 
-    .line 2723
+    .line 2753
     iget-object v15, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioBufferInfo:Landroid/media/MediaCodec$BufferInfo;
 
     iget v3, v15, Landroid/media/MediaCodec$BufferInfo;->flags:I
@@ -4504,16 +4570,16 @@
 
     if-eqz v3, :cond_19
 
-    .line 2724
+    .line 2754
     iput v14, v15, Landroid/media/MediaCodec$BufferInfo;->size:I
 
-    .line 2726
+    .line 2756
     :cond_19
     iget v3, v15, Landroid/media/MediaCodec$BufferInfo;->size:I
 
     if-eqz v3, :cond_1a
 
-    .line 2727
+    .line 2757
     iget-object v3, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->mediaMuxer:Lorg/telegram/messenger/video/MP4Builder;
 
     iget v4, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioTrackIndex:I
@@ -4526,18 +4592,18 @@
 
     if-eqz v8, :cond_1a
 
-    .line 2729
+    .line 2759
     iget-object v8, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoFile:Ljava/io/File;
 
     invoke-direct {v0, v8, v3, v4, v14}, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->didWriteData(Ljava/io/File;JZ)V
 
-    .line 2732
+    .line 2762
     :cond_1a
     iget-object v3, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioEncoder:Landroid/media/MediaCodec;
 
     invoke-virtual {v3, v2, v14}, Landroid/media/MediaCodec;->releaseOutputBuffer(IZ)V
 
-    .line 2733
+    .line 2763
     iget-object v2, v0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->audioBufferInfo:Landroid/media/MediaCodec$BufferInfo;
 
     iget v2, v2, Landroid/media/MediaCodec$BufferInfo;->flags:I
@@ -4550,7 +4616,7 @@
     :goto_d
     return-void
 
-    .line 2721
+    .line 2751
     :cond_1c
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -4577,7 +4643,7 @@
 
     goto :goto_e
 
-    .line 2627
+    .line 2657
     :cond_1e
     new-instance v1, Ljava/lang/RuntimeException;
 
@@ -4613,7 +4679,7 @@
         }
     .end annotation
 
-    .line 2743
+    .line 2773
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglDisplay:Landroid/opengl/EGLDisplay;
 
@@ -4621,46 +4687,46 @@
 
     if-eq v0, v1, :cond_0
 
-    .line 2744
+    .line 2774
     sget-object v1, Landroid/opengl/EGL14;->EGL_NO_SURFACE:Landroid/opengl/EGLSurface;
 
     sget-object v2, Landroid/opengl/EGL14;->EGL_NO_CONTEXT:Landroid/opengl/EGLContext;
 
     invoke-static {v0, v1, v1, v2}, Landroid/opengl/EGL14;->eglMakeCurrent(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLSurface;Landroid/opengl/EGLSurface;Landroid/opengl/EGLContext;)Z
 
-    .line 2745
+    .line 2775
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglDisplay:Landroid/opengl/EGLDisplay;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglContext:Landroid/opengl/EGLContext;
 
     invoke-static {v0, v1}, Landroid/opengl/EGL14;->eglDestroyContext(Landroid/opengl/EGLDisplay;Landroid/opengl/EGLContext;)Z
 
-    .line 2746
+    .line 2776
     invoke-static {}, Landroid/opengl/EGL14;->eglReleaseThread()Z
 
-    .line 2747
+    .line 2777
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglDisplay:Landroid/opengl/EGLDisplay;
 
     invoke-static {v0}, Landroid/opengl/EGL14;->eglTerminate(Landroid/opengl/EGLDisplay;)Z
 
-    .line 2748
+    .line 2778
     sget-object v0, Landroid/opengl/EGL14;->EGL_NO_DISPLAY:Landroid/opengl/EGLDisplay;
 
     iput-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglDisplay:Landroid/opengl/EGLDisplay;
 
-    .line 2749
+    .line 2779
     sget-object v0, Landroid/opengl/EGL14;->EGL_NO_CONTEXT:Landroid/opengl/EGLContext;
 
     iput-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglContext:Landroid/opengl/EGLContext;
 
     const/4 v0, 0x0
 
-    .line 2750
+    .line 2780
     iput-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->eglConfig:Landroid/opengl/EGLConfig;
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 2753
+    .line 2783
     :cond_0
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
@@ -4671,36 +4737,36 @@
 
     invoke-super {p0}, Ljava/lang/Object;->finalize()V
 
-    .line 2754
+    .line 2784
     throw v0
 .end method
 
 .method public frameAvailable(Landroid/graphics/SurfaceTexture;Ljava/lang/Integer;J)V
     .locals 4
 
-    .line 1935
+    .line 1946
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->sync:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1936
+    .line 1947
     :try_start_0
     iget-boolean v1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->ready:Z
 
     if-nez v1, :cond_0
 
-    .line 1937
+    .line 1948
     monitor-exit v0
 
     return-void
 
-    .line 1939
+    .line 1950
     :cond_0
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
-    .line 1941
+    .line 1952
     invoke-virtual {p1}, Landroid/graphics/SurfaceTexture;->getTimestamp()J
 
     move-result-wide v0
@@ -4711,7 +4777,7 @@
 
     if-nez p1, :cond_2
 
-    .line 1943
+    .line 1954
     iget p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->zeroTimeStamps:I
 
     const/4 v0, 0x1
@@ -4722,14 +4788,14 @@
 
     if-le p1, v0, :cond_1
 
-    .line 1945
+    .line 1956
     sget-boolean p1, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz p1, :cond_3
 
     const-string p1, "fix timestamp enabled"
 
-    .line 1946
+    .line 1957
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
     goto :goto_0
@@ -4740,12 +4806,12 @@
     :cond_2
     const/4 p1, 0x0
 
-    .line 1953
+    .line 1964
     iput p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->zeroTimeStamps:I
 
     move-wide p3, v0
 
-    .line 1956
+    .line 1967
     :cond_3
     :goto_0
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->handler:Lorg/telegram/ui/Components/InstantCameraView$EncoderHandler;
@@ -4773,7 +4839,7 @@
     :catchall_0
     move-exception p1
 
-    .line 1939
+    .line 1950
     :try_start_1
     monitor-exit v0
     :try_end_1
@@ -4785,15 +4851,15 @@
 .method public run()V
     .locals 2
 
-    .line 1961
+    .line 1972
     invoke-static {}, Landroid/os/Looper;->prepare()V
 
-    .line 1962
+    .line 1973
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->sync:Ljava/lang/Object;
 
     monitor-enter v0
 
-    .line 1963
+    .line 1974
     :try_start_0
     new-instance v1, Lorg/telegram/ui/Components/InstantCameraView$EncoderHandler;
 
@@ -4803,34 +4869,34 @@
 
     const/4 v1, 0x1
 
-    .line 1964
+    .line 1975
     iput-boolean v1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->ready:Z
 
-    .line 1965
+    .line 1976
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->sync:Ljava/lang/Object;
 
     invoke-virtual {v1}, Ljava/lang/Object;->notify()V
 
-    .line 1966
+    .line 1977
     monitor-exit v0
     :try_end_0
     .catchall {:try_start_0 .. :try_end_0} :catchall_1
 
-    .line 1967
+    .line 1978
     invoke-static {}, Landroid/os/Looper;->loop()V
 
-    .line 1969
+    .line 1980
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->sync:Ljava/lang/Object;
 
     monitor-enter v1
 
     const/4 v0, 0x0
 
-    .line 1970
+    .line 1981
     :try_start_1
     iput-boolean v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->ready:Z
 
-    .line 1971
+    .line 1982
     monitor-exit v1
 
     return-void
@@ -4847,7 +4913,7 @@
     :catchall_1
     move-exception v1
 
-    .line 1966
+    .line 1977
     :try_start_2
     monitor-exit v0
     :try_end_2
@@ -4859,7 +4925,7 @@
 .method public startRecording(Ljava/io/File;Landroid/opengl/EGLContext;)V
     .locals 2
 
-    .line 1895
+    .line 1905
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InstantCameraView;->access$3900(Lorg/telegram/ui/Components/InstantCameraView;)I
@@ -4872,7 +4938,7 @@
 
     iget v0, v0, Lorg/telegram/messenger/MessagesController;->roundVideoSize:I
 
-    .line 1896
+    .line 1906
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/InstantCameraView;->access$3900(Lorg/telegram/ui/Components/InstantCameraView;)I
@@ -4887,33 +4953,33 @@
 
     mul-int/lit16 v1, v1, 0x400
 
-    .line 1898
+    .line 1908
     iput-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoFile:Ljava/io/File;
 
-    .line 1899
+    .line 1909
     iput v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoWidth:I
 
-    .line 1900
+    .line 1910
     iput v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoHeight:I
 
-    .line 1901
+    .line 1911
     iput v1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->videoBitrate:I
 
-    .line 1902
+    .line 1912
     iput-object p2, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->sharedEglContext:Landroid/opengl/EGLContext;
 
-    .line 1904
+    .line 1914
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->sync:Ljava/lang/Object;
 
     monitor-enter p1
 
-    .line 1905
+    .line 1915
     :try_start_0
     iget-boolean p2, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->running:Z
 
     if-eqz p2, :cond_0
 
-    .line 1906
+    .line 1916
     monitor-exit p1
 
     return-void
@@ -4921,10 +4987,10 @@
     :cond_0
     const/4 p2, 0x1
 
-    .line 1908
+    .line 1918
     iput-boolean p2, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->running:Z
 
-    .line 1909
+    .line 1919
     new-instance p2, Ljava/lang/Thread;
 
     const-string v0, "TextureMovieEncoder"
@@ -4933,13 +4999,13 @@
 
     const/16 v0, 0xa
 
-    .line 1910
+    .line 1920
     invoke-virtual {p2, v0}, Ljava/lang/Thread;->setPriority(I)V
 
-    .line 1911
+    .line 1921
     invoke-virtual {p2}, Ljava/lang/Thread;->start()V
 
-    .line 1912
+    .line 1922
     :catch_0
     :goto_0
     iget-boolean p2, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->ready:Z
@@ -4948,7 +5014,7 @@
 
     if-nez p2, :cond_1
 
-    .line 1914
+    .line 1924
     :try_start_1
     iget-object p2, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->sync:Ljava/lang/Object;
 
@@ -4959,37 +5025,37 @@
 
     goto :goto_0
 
-    .line 1919
+    .line 1929
     :cond_1
     :try_start_2
     monitor-exit p1
     :try_end_2
     .catchall {:try_start_2 .. :try_end_2} :catchall_0
 
-    .line 1920
+    .line 1930
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->keyframeThumbs:Ljava/util/ArrayList;
 
     invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
 
     const/4 p1, 0x0
 
-    .line 1921
+    .line 1931
     iput p1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->frameCount:I
 
-    .line 1922
+    .line 1932
     iget-object p2, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->generateKeyframeThumbsQueue:Lorg/telegram/messenger/DispatchQueue;
 
     if-eqz p2, :cond_2
 
-    .line 1923
+    .line 1933
     invoke-virtual {p2}, Lorg/telegram/messenger/DispatchQueue;->cleanupQueue()V
 
-    .line 1924
+    .line 1934
     iget-object p2, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->generateKeyframeThumbsQueue:Lorg/telegram/messenger/DispatchQueue;
 
     invoke-virtual {p2}, Lorg/telegram/messenger/DispatchQueue;->recycle()V
 
-    .line 1926
+    .line 1936
     :cond_2
     new-instance p2, Lorg/telegram/messenger/DispatchQueue;
 
@@ -4999,7 +5065,7 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->generateKeyframeThumbsQueue:Lorg/telegram/messenger/DispatchQueue;
 
-    .line 1927
+    .line 1937
     iget-object p2, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->handler:Lorg/telegram/ui/Components/InstantCameraView$EncoderHandler;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->handler:Lorg/telegram/ui/Components/InstantCameraView$EncoderHandler;
@@ -5015,7 +5081,7 @@
     :catchall_0
     move-exception p2
 
-    .line 1919
+    .line 1929
     :try_start_3
     monitor-exit p1
     :try_end_3
@@ -5027,7 +5093,7 @@
 .method public stopRecording(I)V
     .locals 4
 
-    .line 1931
+    .line 1941
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->handler:Lorg/telegram/ui/Components/InstantCameraView$EncoderHandler;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/InstantCameraView$VideoRecorder;->handler:Lorg/telegram/ui/Components/InstantCameraView$EncoderHandler;

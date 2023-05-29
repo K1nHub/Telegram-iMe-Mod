@@ -38,7 +38,7 @@ public final class DialogTranslationSettingsDb {
         String str = this.inTextTranslateTargetLangCode;
         int hashCode = (i + (str == null ? 0 : str.hashCode())) * 31;
         boolean z2 = this.isOutTextTranslateEnabled;
-        return ((((((hashCode + (z2 ? 1 : z2 ? 1 : 0)) * 31) + this.outTextTranslateTargetLangCode.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.dialogId)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.userId);
+        return ((((((hashCode + (z2 ? 1 : z2 ? 1 : 0)) * 31) + this.outTextTranslateTargetLangCode.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.dialogId)) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.userId);
     }
 
     public String toString() {

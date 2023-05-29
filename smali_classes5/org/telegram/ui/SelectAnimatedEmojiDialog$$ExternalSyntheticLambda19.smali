@@ -8,26 +8,18 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
-.field public final synthetic f$1:Landroid/view/View;
-
-.field public final synthetic f$2:Lorg/telegram/ui/Components/AnimatedEmojiSpan;
-
-.field public final synthetic f$3:Lorg/telegram/tgnet/TLRPC$Document;
+.field public final synthetic f$1:Lorg/telegram/ui/ActionBar/BaseFragment;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Landroid/view/View;Lorg/telegram/ui/Components/AnimatedEmojiSpan;Lorg/telegram/tgnet/TLRPC$Document;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda19;->f$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
-    iput-object p2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda19;->f$1:Landroid/view/View;
-
-    iput-object p3, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda19;->f$2:Lorg/telegram/ui/Components/AnimatedEmojiSpan;
-
-    iput-object p4, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda19;->f$3:Lorg/telegram/tgnet/TLRPC$Document;
+    iput-object p2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda19;->f$1:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     return-void
 .end method
@@ -35,17 +27,13 @@
 
 # virtual methods
 .method public final run()V
-    .locals 4
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda19;->f$0:Lorg/telegram/ui/SelectAnimatedEmojiDialog;
 
-    iget-object v1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda19;->f$1:Landroid/view/View;
+    iget-object v1, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda19;->f$1:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    iget-object v2, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda19;->f$2:Lorg/telegram/ui/Components/AnimatedEmojiSpan;
-
-    iget-object v3, p0, Lorg/telegram/ui/SelectAnimatedEmojiDialog$$ExternalSyntheticLambda19;->f$3:Lorg/telegram/tgnet/TLRPC$Document;
-
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->$r8$lambda$FMtW1cM1l2qFFLLOvPOR0L4Ay64(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Landroid/view/View;Lorg/telegram/ui/Components/AnimatedEmojiSpan;Lorg/telegram/tgnet/TLRPC$Document;)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/SelectAnimatedEmojiDialog;->$r8$lambda$b0U6dJeL4FKdbVwz_kuF1Ojjr0w(Lorg/telegram/ui/SelectAnimatedEmojiDialog;Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
     return-void
 .end method

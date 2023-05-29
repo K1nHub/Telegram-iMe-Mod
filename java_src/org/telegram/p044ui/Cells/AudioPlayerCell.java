@@ -12,7 +12,7 @@ import android.view.accessibility.AccessibilityNodeInfo;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.io.File;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
@@ -61,14 +61,14 @@ public class AudioPlayerCell extends View implements DownloadController.FileDown
 
     public AudioPlayerCell(Context context, int i, Theme.ResourcesProvider resourcesProvider) {
         super(context);
-        this.titleY = AndroidUtilities.m50dp(9);
-        this.descriptionY = AndroidUtilities.m50dp(29);
+        this.titleY = AndroidUtilities.m54dp(9);
+        this.descriptionY = AndroidUtilities.m54dp(29);
         this.currentAccount = UserConfig.selectedAccount;
         this.resourcesProvider = resourcesProvider;
         this.viewType = i;
         RadialProgress2 radialProgress2 = new RadialProgress2(this, resourcesProvider);
         this.radialProgress = radialProgress2;
-        radialProgress2.setColors("chat_inLoader", "chat_inLoaderSelected", "chat_inMediaIcon", "chat_inMediaIconSelected");
+        radialProgress2.setColorKeys(Theme.key_chat_inLoader, Theme.key_chat_inLoaderSelected, Theme.key_chat_inMediaIcon, Theme.key_chat_inMediaIconSelected);
         this.TAG = DownloadController.getInstance(this.currentAccount).generateObserverTag();
         setFocusable(true);
         if (i == 1) {
@@ -82,34 +82,34 @@ public class AudioPlayerCell extends View implements DownloadController.FileDown
     protected void onMeasure(int i, int i2) {
         this.descriptionLayout = null;
         this.titleLayout = null;
-        int size = (View.MeasureSpec.getSize(i) - AndroidUtilities.m50dp(AndroidUtilities.leftBaseline)) - AndroidUtilities.m50dp(28);
+        int size = (View.MeasureSpec.getSize(i) - AndroidUtilities.m54dp(AndroidUtilities.leftBaseline)) - AndroidUtilities.m54dp(28);
         try {
             String musicTitle = this.currentMessageObject.getMusicTitle();
-            StaticLayout staticLayout = new StaticLayout(TextUtils.ellipsize(musicTitle.replace('\n', ' '), Theme.chat_contextResult_titleTextPaint, Math.min((int) Math.ceil(Theme.chat_contextResult_titleTextPaint.measureText(musicTitle)), size), TextUtils.TruncateAt.END), Theme.chat_contextResult_titleTextPaint, size + AndroidUtilities.m50dp(4), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
+            StaticLayout staticLayout = new StaticLayout(TextUtils.ellipsize(musicTitle.replace('\n', ' '), Theme.chat_contextResult_titleTextPaint, Math.min((int) Math.ceil(Theme.chat_contextResult_titleTextPaint.measureText(musicTitle)), size), TextUtils.TruncateAt.END), Theme.chat_contextResult_titleTextPaint, size + AndroidUtilities.m54dp(4), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
             this.titleLayout = staticLayout;
             this.titleLayoutEmojis = AnimatedEmojiSpan.update(0, this, this.titleLayoutEmojis, staticLayout);
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
         try {
             CharSequence replace = this.currentMessageObject.getMusicAuthor().replace('\n', ' ');
             if (this.viewType == 1) {
                 replace = new SpannableStringBuilder(replace).append(' ').append((CharSequence) this.dotSpan).append(' ').append(FilteredSearchView.createFromInfoString(this.currentMessageObject));
             }
-            StaticLayout staticLayout2 = new StaticLayout(TextUtils.ellipsize(replace, Theme.chat_contextResult_descriptionTextPaint, size, TextUtils.TruncateAt.END), Theme.chat_contextResult_descriptionTextPaint, size + AndroidUtilities.m50dp(4), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
+            StaticLayout staticLayout2 = new StaticLayout(TextUtils.ellipsize(replace, Theme.chat_contextResult_descriptionTextPaint, size, TextUtils.TruncateAt.END), Theme.chat_contextResult_descriptionTextPaint, size + AndroidUtilities.m54dp(4), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
             this.descriptionLayout = staticLayout2;
             this.descriptionLayoutEmojis = AnimatedEmojiSpan.update(0, this, this.descriptionLayoutEmojis, staticLayout2);
         } catch (Exception e2) {
-            FileLog.m45e(e2);
+            FileLog.m49e(e2);
         }
-        setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m50dp(56));
-        int size2 = LocaleController.isRTL ? (View.MeasureSpec.getSize(i) - AndroidUtilities.m50dp(8)) - AndroidUtilities.m50dp(52) : AndroidUtilities.m50dp(8);
+        setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m54dp(56));
+        int size2 = LocaleController.isRTL ? (View.MeasureSpec.getSize(i) - AndroidUtilities.m54dp(8)) - AndroidUtilities.m54dp(52) : AndroidUtilities.m54dp(8);
         RadialProgress2 radialProgress2 = this.radialProgress;
-        int m50dp = AndroidUtilities.m50dp(4) + size2;
-        this.buttonX = m50dp;
-        int m50dp2 = AndroidUtilities.m50dp(6);
-        this.buttonY = m50dp2;
-        radialProgress2.setProgressRect(m50dp, m50dp2, size2 + AndroidUtilities.m50dp(48), AndroidUtilities.m50dp(50));
+        int m54dp = AndroidUtilities.m54dp(4) + size2;
+        this.buttonX = m54dp;
+        int m54dp2 = AndroidUtilities.m54dp(6);
+        this.buttonY = m54dp2;
+        radialProgress2.setProgressRect(m54dp, m54dp2, size2 + AndroidUtilities.m54dp(48), AndroidUtilities.m54dp(50));
     }
 
     public void setMessageObject(MessageObject messageObject) {
@@ -165,13 +165,13 @@ public class AudioPlayerCell extends View implements DownloadController.FileDown
             float r1 = r9.getY()
             int r1 = (int) r1
             r2 = 36
-            int r2 = org.telegram.messenger.AndroidUtilities.m50dp(r2)
+            int r2 = org.telegram.messenger.AndroidUtilities.m54dp(r2)
             int r3 = r8.miniButtonState
             r4 = 1
             r5 = 0
             if (r3 < 0) goto L32
             r3 = 27
-            int r3 = org.telegram.messenger.AndroidUtilities.m50dp(r3)
+            int r3 = org.telegram.messenger.AndroidUtilities.m54dp(r3)
             int r6 = r8.buttonX
             int r7 = r6 + r3
             if (r0 < r7) goto L32
@@ -306,20 +306,20 @@ public class AudioPlayerCell extends View implements DownloadController.FileDown
     protected void onDraw(Canvas canvas) {
         if (this.titleLayout != null) {
             canvas.save();
-            canvas.translate(AndroidUtilities.m50dp(LocaleController.isRTL ? 8 : AndroidUtilities.leftBaseline), this.titleY);
+            canvas.translate(AndroidUtilities.m54dp(LocaleController.isRTL ? 8 : AndroidUtilities.leftBaseline), this.titleY);
             this.titleLayout.draw(canvas);
             AnimatedEmojiSpan.drawAnimatedEmojis(canvas, this.titleLayout, this.titleLayoutEmojis, BitmapDescriptorFactory.HUE_RED, null, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, 1.0f);
             canvas.restore();
         }
         if (this.descriptionLayout != null) {
-            Theme.chat_contextResult_descriptionTextPaint.setColor(getThemedColor("windowBackgroundWhiteGrayText2"));
+            Theme.chat_contextResult_descriptionTextPaint.setColor(getThemedColor(Theme.key_windowBackgroundWhiteGrayText2));
             canvas.save();
-            canvas.translate(AndroidUtilities.m50dp(LocaleController.isRTL ? 8 : AndroidUtilities.leftBaseline), this.descriptionY);
+            canvas.translate(AndroidUtilities.m54dp(LocaleController.isRTL ? 8 : AndroidUtilities.leftBaseline), this.descriptionY);
             this.descriptionLayout.draw(canvas);
             AnimatedEmojiSpan.drawAnimatedEmojis(canvas, this.descriptionLayout, this.descriptionLayoutEmojis, BitmapDescriptorFactory.HUE_RED, null, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, 1.0f);
             canvas.restore();
         }
-        this.radialProgress.setProgressColor(getThemedColor(this.buttonPressed ? "chat_inAudioSelectedProgress" : "chat_inAudioProgress"));
+        this.radialProgress.setProgressColor(getThemedColor(this.buttonPressed ? Theme.key_chat_inAudioSelectedProgress : Theme.key_chat_inAudioProgress));
         this.radialProgress.draw(canvas);
     }
 
@@ -398,7 +398,7 @@ public class AudioPlayerCell extends View implements DownloadController.FileDown
             invalidate();
             return;
         }
-        this.radialProgress.setMiniProgressBackgroundColor(getThemedColor(this.currentMessageObject.isOutOwner() ? "chat_outLoader" : "chat_inLoader"));
+        this.radialProgress.setMiniProgressBackgroundColor(getThemedColor(this.currentMessageObject.isOutOwner() ? Theme.key_chat_outLoader : Theme.key_chat_inLoader));
         boolean isPlayingMessage2 = MediaController.getInstance().isPlayingMessage(this.currentMessageObject);
         if (!isPlayingMessage2 || (isPlayingMessage2 && MediaController.getInstance().isMessagePaused())) {
             this.buttonState = 0;
@@ -460,15 +460,13 @@ public class AudioPlayerCell extends View implements DownloadController.FileDown
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
         if (this.currentMessageObject.isMusic()) {
-            accessibilityNodeInfo.setText(LocaleController.formatString("AccDescrMusicInfo", C3242R.string.AccDescrMusicInfo, this.currentMessageObject.getMusicAuthor(), this.currentMessageObject.getMusicTitle()));
+            accessibilityNodeInfo.setText(LocaleController.formatString("AccDescrMusicInfo", C3290R.string.AccDescrMusicInfo, this.currentMessageObject.getMusicAuthor(), this.currentMessageObject.getMusicTitle()));
             return;
         }
         accessibilityNodeInfo.setText(((Object) this.titleLayout.getText()) + ", " + ((Object) this.descriptionLayout.getText()));
     }
 
-    private int getThemedColor(String str) {
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-        return color != null ? color.intValue() : Theme.getColor(str);
+    private int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 }

@@ -32,7 +32,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -140,24 +140,24 @@ public final class ForwardCloudBottomSheet extends BottomSheet {
         TextView textView = new TextView(getContext());
         ViewExtKt.withMediumTypeface(textView);
         ViewExtKt.singleLine(textView);
-        textView.setHighlightColor(Theme.getColor("dialogLinkSelection"));
+        textView.setHighlightColor(Theme.getColor(Theme.key_dialogLinkSelection));
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity(16);
-        textView.setText(LocaleController.getInternalString(C3242R.string.cloud_albums_bottom_sheet_title));
-        textView.setTextColor(Theme.getColor("dialogTextBlack"));
+        textView.setText(LocaleController.getInternalString(C3290R.string.cloud_albums_bottom_sheet_title));
+        textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
         textView.setTextSize(1, 20.0f);
-        textView.setLinkTextColor(Theme.getColor("dialogTextLink"));
-        textView.setPadding(AndroidUtilities.m50dp(18), 0, AndroidUtilities.m50dp(18), 0);
+        textView.setLinkTextColor(Theme.getColor(Theme.key_dialogTextLink));
+        textView.setPadding(AndroidUtilities.m54dp(18), 0, AndroidUtilities.m54dp(18), 0);
         return textView;
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     public final View initShadow() {
         View view = new View(getContext());
-        ViewExtKt.visible(view);
+        ViewExtKt.visible$default(view, false, 1, null);
         view.setAlpha(BitmapDescriptorFactory.HUE_RED);
         view.setTag(1);
-        view.setBackgroundColor(Theme.getColor("dialogShadowLine"));
+        view.setBackgroundColor(Theme.getColor(Theme.key_dialogShadowLine));
         return view;
     }
 
@@ -179,8 +179,8 @@ public final class ForwardCloudBottomSheet extends BottomSheet {
         r1.setAdapter(getListAdapter());
         r1.setVerticalScrollBarEnabled(false);
         r1.setClipToPadding(false);
-        r1.setPadding(AndroidUtilities.m50dp(10), 0, AndroidUtilities.m50dp(10), 0);
-        r1.setGlowColor(Theme.getColor("dialogScrollGlow"));
+        r1.setPadding(AndroidUtilities.m54dp(10), 0, AndroidUtilities.m54dp(10), 0);
+        r1.setGlowColor(Theme.getColor(Theme.key_dialogScrollGlow));
         r1.addOnScrollListener(new RecyclerView.OnScrollListener() { // from class: com.iMe.fork.ui.dialog.ForwardCloudBottomSheet$initListView$2$1
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView, int i, int i2) {
@@ -257,7 +257,7 @@ public final class ForwardCloudBottomSheet extends BottomSheet {
         }
         getShadow().setTag(z ? null : 1);
         if (z) {
-            ViewExtKt.visible(getShadow());
+            ViewExtKt.visible$default(getShadow(), false, 1, null);
         }
         AnimatorSet animatorSet = this.shadowAnimation;
         if (animatorSet != null) {
@@ -285,7 +285,7 @@ public final class ForwardCloudBottomSheet extends BottomSheet {
                     if (Intrinsics.areEqual(animatorSet4, animation)) {
                         if (!z) {
                             shadow2 = ForwardCloudBottomSheet.this.getShadow();
-                            ViewExtKt.invisible(shadow2);
+                            ViewExtKt.invisible$default(shadow2, false, 1, null);
                         }
                         ForwardCloudBottomSheet.this.shadowAnimation = null;
                     }
@@ -343,7 +343,7 @@ public final class ForwardCloudBottomSheet extends BottomSheet {
             if (i == this.cloudRow) {
                 return UserConfig.getInstance(((BottomSheet) this.this$0).currentAccount).getClientUserId();
             }
-            return this.cloudAlbums.get(i - this.albumsStartRow).f1433id;
+            return this.cloudAlbums.get(i - this.albumsStartRow).f1439id;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -353,14 +353,14 @@ public final class ForwardCloudBottomSheet extends BottomSheet {
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemViewType(int i) {
-            return i == this.newAlbumRow ? IdFabric$ViewTypes.CREATE_ALBUM : IdFabric$ViewTypes.ALBUM;
+            return i == this.newAlbumRow ? IdFabric$ViewTypes.BOTTOM_SHEET_CELL : IdFabric$ViewTypes.PROFILE_SEARCH_CELL;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int i) {
             View profileSearchCell;
             Intrinsics.checkNotNullParameter(parent, "parent");
-            if (i == IdFabric$ViewTypes.CREATE_ALBUM) {
+            if (i == IdFabric$ViewTypes.BOTTOM_SHEET_CELL) {
                 profileSearchCell = new BottomSheet.BottomSheetCell(this.context, 0);
                 profileSearchCell.setBackground(null);
                 profileSearchCell.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
@@ -378,16 +378,16 @@ public final class ForwardCloudBottomSheet extends BottomSheet {
                 Intrinsics.checkNotNull(view, "null cannot be cast to non-null type org.telegram.ui.ActionBar.BottomSheet.BottomSheetCell");
                 BottomSheet.BottomSheetCell bottomSheetCell = (BottomSheet.BottomSheetCell) view;
                 bottomSheetCell.getImageView().setColorFilter((ColorFilter) null);
-                Drawable drawable = AppCompatResources.getDrawable(this.context, C3242R.C3244drawable.poll_add_circle);
-                Drawable drawable2 = AppCompatResources.getDrawable(this.context, C3242R.C3244drawable.poll_add_plus);
+                Drawable drawable = AppCompatResources.getDrawable(this.context, C3290R.C3292drawable.poll_add_circle);
+                Drawable drawable2 = AppCompatResources.getDrawable(this.context, C3290R.C3292drawable.poll_add_plus);
                 if (drawable != null && drawable2 != null) {
-                    drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor("switchTrackChecked"), PorterDuff.Mode.MULTIPLY));
-                    drawable2.setColorFilter(new PorterDuffColorFilter(Theme.getColor("checkboxCheck"), PorterDuff.Mode.MULTIPLY));
+                    drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_switchTrackChecked), PorterDuff.Mode.MULTIPLY));
+                    drawable2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_checkboxCheck), PorterDuff.Mode.MULTIPLY));
                 }
                 CombinedDrawable combinedDrawable = new CombinedDrawable(drawable, drawable2);
-                bottomSheetCell.setTextColor(Theme.getColor("windowBackgroundWhiteBlueText4"));
-                bottomSheetCell.setTextAndIcon(LocaleController.getInternalString(C3242R.string.cloud_albums_bottom_sheet_create_new_album), combinedDrawable);
-                bottomSheetCell.getImageView().setPadding(AndroidUtilities.m50dp(11), 0, 0, 0);
+                bottomSheetCell.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueText4));
+                bottomSheetCell.setTextAndIcon(LocaleController.getInternalString(C3290R.string.cloud_albums_bottom_sheet_create_new_album), combinedDrawable);
+                bottomSheetCell.getImageView().setPadding(AndroidUtilities.m54dp(11), 0, 0, 0);
                 return;
             }
             View view2 = holder.itemView;
@@ -452,21 +452,21 @@ public final class ForwardCloudBottomSheet extends BottomSheet {
             this.this$0.ignoreLayout = true;
             setPadding(((BottomSheet) this.this$0).backgroundPaddingLeft, AndroidUtilities.statusBarHeight, ((BottomSheet) this.this$0).backgroundPaddingLeft, 0);
             this.this$0.ignoreLayout = false;
-            int m50dp = AndroidUtilities.m50dp(48) + ((BottomSheet) this.this$0).backgroundPaddingTop + AndroidUtilities.statusBarHeight + (AndroidUtilities.m50dp(61) * (this.this$0.getListAdapter().getItemCount() - 1)) + AndroidUtilities.m50dp(48);
-            int i3 = ((double) m50dp) < ((double) (((float) size) / 5.0f)) * 3.2d ? 0 : (size / 5) * 2;
-            if (i3 != 0 && m50dp < size) {
-                i3 -= size - m50dp;
+            int m54dp = AndroidUtilities.m54dp(48) + ((BottomSheet) this.this$0).backgroundPaddingTop + AndroidUtilities.statusBarHeight + (AndroidUtilities.m54dp(61) * (this.this$0.getListAdapter().getItemCount() - 1)) + AndroidUtilities.m54dp(48);
+            int i3 = ((double) m54dp) < ((double) (((float) size) / 5.0f)) * 3.2d ? 0 : (size / 5) * 2;
+            if (i3 != 0 && m54dp < size) {
+                i3 -= size - m54dp;
             }
             if (i3 == 0) {
                 i3 = ((BottomSheet) this.this$0).backgroundPaddingTop;
             }
             if (this.this$0.getListView().getPaddingTop() != i3) {
                 this.this$0.ignoreLayout = true;
-                this.this$0.getListView().setPadding(AndroidUtilities.m50dp(10), i3, AndroidUtilities.m50dp(10), 0);
+                this.this$0.getListView().setPadding(AndroidUtilities.m54dp(10), i3, AndroidUtilities.m54dp(10), 0);
                 this.this$0.ignoreLayout = false;
             }
-            this.fullHeight = m50dp >= size;
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(m50dp, size), 1073741824));
+            this.fullHeight = m54dp >= size;
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(Math.min(m54dp, size), 1073741824));
         }
 
         @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
@@ -488,12 +488,12 @@ public final class ForwardCloudBottomSheet extends BottomSheet {
             int i;
             float f;
             Intrinsics.checkNotNullParameter(canvas, "canvas");
-            int m50dp = (this.this$0.scrollOffsetY - ((BottomSheet) this.this$0).backgroundPaddingTop) + AndroidUtilities.m50dp(6);
-            int m50dp2 = (this.this$0.scrollOffsetY - ((BottomSheet) this.this$0).backgroundPaddingTop) - AndroidUtilities.m50dp(13);
-            int measuredHeight = getMeasuredHeight() + AndroidUtilities.m50dp(36) + ((BottomSheet) this.this$0).backgroundPaddingTop;
+            int m54dp = (this.this$0.scrollOffsetY - ((BottomSheet) this.this$0).backgroundPaddingTop) + AndroidUtilities.m54dp(6);
+            int m54dp2 = (this.this$0.scrollOffsetY - ((BottomSheet) this.this$0).backgroundPaddingTop) - AndroidUtilities.m54dp(13);
+            int measuredHeight = getMeasuredHeight() + AndroidUtilities.m54dp(36) + ((BottomSheet) this.this$0).backgroundPaddingTop;
             int i2 = AndroidUtilities.statusBarHeight;
-            int i3 = m50dp2 + i2;
-            int i4 = m50dp + i2;
+            int i3 = m54dp2 + i2;
+            int i4 = m54dp + i2;
             if (this.fullHeight) {
                 int i5 = ((BottomSheet) this.this$0).backgroundPaddingTop + i3;
                 int i6 = AndroidUtilities.statusBarHeight;
@@ -515,16 +515,16 @@ public final class ForwardCloudBottomSheet extends BottomSheet {
             ((BottomSheet) this.this$0).shadowDrawable.setBounds(0, i3, getMeasuredWidth(), measuredHeight);
             ((BottomSheet) this.this$0).shadowDrawable.draw(canvas);
             if (!(f == 1.0f)) {
-                Theme.dialogs_onlineCirclePaint.setColor(Theme.getColor("dialogBackground"));
-                this.rect.set(((BottomSheet) this.this$0).backgroundPaddingLeft, ((BottomSheet) this.this$0).backgroundPaddingTop + i3, getMeasuredWidth() - ((BottomSheet) this.this$0).backgroundPaddingLeft, ((BottomSheet) this.this$0).backgroundPaddingTop + i3 + AndroidUtilities.m50dp(24));
-                canvas.drawRoundRect(this.rect, AndroidUtilities.m50dp(12) * f, AndroidUtilities.m50dp(12) * f, Theme.dialogs_onlineCirclePaint);
+                Theme.dialogs_onlineCirclePaint.setColor(Theme.getColor(Theme.key_dialogBackground));
+                this.rect.set(((BottomSheet) this.this$0).backgroundPaddingLeft, ((BottomSheet) this.this$0).backgroundPaddingTop + i3, getMeasuredWidth() - ((BottomSheet) this.this$0).backgroundPaddingLeft, ((BottomSheet) this.this$0).backgroundPaddingTop + i3 + AndroidUtilities.m54dp(24));
+                canvas.drawRoundRect(this.rect, AndroidUtilities.m54dp(12) * f, AndroidUtilities.m54dp(12) * f, Theme.dialogs_onlineCirclePaint);
             }
-            int m50dp3 = AndroidUtilities.m50dp(36);
-            this.rect.set((getMeasuredWidth() - m50dp3) / 2.0f, i4, (getMeasuredWidth() + m50dp3) / 2.0f, i4 + AndroidUtilities.m50dp(4));
-            Theme.dialogs_onlineCirclePaint.setColor(Theme.getColor("key_sheet_scrollUp"));
-            canvas.drawRoundRect(this.rect, AndroidUtilities.m50dp(2), AndroidUtilities.m50dp(2), Theme.dialogs_onlineCirclePaint);
+            int m54dp3 = AndroidUtilities.m54dp(36);
+            this.rect.set((getMeasuredWidth() - m54dp3) / 2.0f, i4, (getMeasuredWidth() + m54dp3) / 2.0f, i4 + AndroidUtilities.m54dp(4));
+            Theme.dialogs_onlineCirclePaint.setColor(Theme.getColor(Theme.key_sheet_scrollUp));
+            canvas.drawRoundRect(this.rect, AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2), Theme.dialogs_onlineCirclePaint);
             if (i > 0) {
-                int color = Theme.getColor("dialogBackground");
+                int color = Theme.getColor(Theme.key_dialogBackground);
                 Theme.dialogs_onlineCirclePaint.setColor(Color.argb(255, (int) (Color.red(color) * 0.8f), (int) (Color.green(color) * 0.8f), (int) (Color.blue(color) * 0.8f)));
                 canvas.drawRect(((BottomSheet) this.this$0).backgroundPaddingLeft, AndroidUtilities.statusBarHeight - i, getMeasuredWidth() - ((BottomSheet) this.this$0).backgroundPaddingLeft, AndroidUtilities.statusBarHeight, Theme.dialogs_onlineCirclePaint);
             }

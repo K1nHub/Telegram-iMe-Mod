@@ -18,7 +18,7 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 2
 
-    .line 27
+    .line 24
     new-instance v0, Lorg/telegram/ui/ActionBar/DarkAlertDialog;
 
     const/4 v1, 0x0

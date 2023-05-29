@@ -49,9 +49,9 @@
     .line 204
     iget-object v1, p0, Lcom/iMe/fork/ui/view/PinnedPlayerView$2;->this$0:Lcom/iMe/fork/ui/view/PinnedPlayerView;
 
-    const-string v2, "player_actionBarTitle"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_player_actionBarTitle:I
 
-    invoke-static {v1, v2}, Lcom/iMe/fork/ui/view/PinnedPlayerView;->access$700(Lcom/iMe/fork/ui/view/PinnedPlayerView;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lcom/iMe/fork/ui/view/PinnedPlayerView;->access$700(Lcom/iMe/fork/ui/view/PinnedPlayerView;I)I
 
     move-result v1
 

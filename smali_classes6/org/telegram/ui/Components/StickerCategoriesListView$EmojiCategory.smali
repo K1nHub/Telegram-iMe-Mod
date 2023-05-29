@@ -30,7 +30,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 815
+    .line 819
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -39,22 +39,22 @@
 .method public static remote(Lorg/telegram/tgnet/TLRPC$TL_emojiGroup;)Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;
     .locals 3
 
-    .line 843
+    .line 847
     new-instance v0, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;
 
     invoke-direct {v0}, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;-><init>()V
 
     const/4 v1, 0x1
 
-    .line 844
+    .line 848
     iput-boolean v1, v0, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;->remote:Z
 
-    .line 845
+    .line 849
     iget-wide v1, p0, Lorg/telegram/tgnet/TLRPC$TL_emojiGroup;->icon_emoji_id:J
 
     iput-wide v1, v0, Lorg/telegram/ui/Components/StickerCategoriesListView$EmojiCategory;->documentId:J
 
-    .line 846
+    .line 850
     iget-object p0, p0, Lorg/telegram/tgnet/TLRPC$TL_emojiGroup;->emoticons:Ljava/util/ArrayList;
 
     const/4 v1, 0x0

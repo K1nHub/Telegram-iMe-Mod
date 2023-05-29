@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 19785
+    .line 20350
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$TL_botInlineMessageMediaGeo;-><init>()V
 
     return-void
@@ -28,14 +28,14 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 1
 
-    .line 19790
+    .line 20355
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineMessage;->flags:I
 
-    .line 19791
+    .line 20356
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -46,21 +46,21 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineMessage;->geo:Lorg/telegram/tgnet/TLRPC$GeoPoint;
 
-    .line 19792
+    .line 20357
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineMessage;->period:I
 
-    .line 19793
+    .line 20358
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineMessage;->flags:I
 
     and-int/lit8 v0, v0, 0x4
 
     if-eqz v0, :cond_0
 
-    .line 19794
+    .line 20359
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -78,34 +78,34 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 1
 
-    .line 19799
+    .line 20364
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_botInlineMessageMediaGeo_layer119;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 19800
+    .line 20365
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineMessage;->flags:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 19801
+    .line 20366
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineMessage;->geo:Lorg/telegram/tgnet/TLRPC$GeoPoint;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 19802
+    .line 20367
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineMessage;->period:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 19803
+    .line 20368
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineMessage;->flags:I
 
     and-int/lit8 v0, v0, 0x4
 
     if-eqz v0, :cond_0
 
-    .line 19804
+    .line 20369
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$BotInlineMessage;->reply_markup:Lorg/telegram/tgnet/TLRPC$ReplyMarkup;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V

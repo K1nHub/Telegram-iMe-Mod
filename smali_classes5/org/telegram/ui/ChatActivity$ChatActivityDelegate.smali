@@ -15,7 +15,7 @@
 
 
 # virtual methods
-.method public abstract onCompleteForwardingEditing(Ljava/util/ArrayList;)V
+.method public abstract onForwardingMessagesChanged(Ljava/util/ArrayList;)V
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -49,4 +49,7 @@
 .end method
 
 .method public abstract openSearch(Ljava/lang/String;)V
+.end method
+
+.method public abstract setFieldText(Ljava/lang/CharSequence;)V
 .end method

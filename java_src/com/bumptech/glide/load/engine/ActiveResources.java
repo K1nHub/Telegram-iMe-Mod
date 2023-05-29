@@ -16,7 +16,7 @@ final class ActiveResources {
     final Map<Key, ResourceWeakReference> activeEngineResources;
 
     /* renamed from: cb */
-    private volatile DequeuedResourceCallback f80cb;
+    private volatile DequeuedResourceCallback f83cb;
     private final boolean isActiveResourceRetentionAllowed;
     private volatile boolean isShutdown;
     private EngineResource.ResourceListener listener;
@@ -108,7 +108,7 @@ final class ActiveResources {
         while (!this.isShutdown) {
             try {
                 cleanupActiveReference((ResourceWeakReference) this.resourceReferenceQueue.remove());
-                DequeuedResourceCallback dequeuedResourceCallback = this.f80cb;
+                DequeuedResourceCallback dequeuedResourceCallback = this.f83cb;
                 if (dequeuedResourceCallback != null) {
                     dequeuedResourceCallback.onResourceDequeued();
                 }

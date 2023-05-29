@@ -48,7 +48,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 141
+    .line 148
     invoke-virtual {p0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$IconView$checkBox$2;->invoke()Lorg/telegram/ui/Components/CheckBox2;
 
     move-result-object v0
@@ -59,7 +59,7 @@
 .method public final invoke()Lorg/telegram/ui/Components/CheckBox2;
     .locals 1
 
-    .line 141
+    .line 148
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$IconView$checkBox$2;->this$0:Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$IconView;
 
     invoke-static {v0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$IconView;->access$initCheckBox(Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$IconView;)Lorg/telegram/ui/Components/CheckBox2;

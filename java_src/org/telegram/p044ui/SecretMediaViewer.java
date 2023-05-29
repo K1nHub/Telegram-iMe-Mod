@@ -31,14 +31,14 @@ import android.view.WindowManager;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.FrameLayout;
 import androidx.annotation.Keep;
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.exoplayer2.analytics.AnalyticsListener;
 import com.google.android.exoplayer2.p016ui.AspectRatioFrameLayout;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLocation;
@@ -47,7 +47,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.Components.AnimationProperties;
 import org.telegram.p044ui.Components.LayoutHelper;
 import org.telegram.p044ui.Components.Scroller;
@@ -62,7 +62,7 @@ import org.telegram.tgnet.TLRPC$Message;
 /* loaded from: classes5.dex */
 public class SecretMediaViewer implements NotificationCenter.NotificationCenterDelegate, GestureDetector.OnGestureListener, GestureDetector.OnDoubleTapListener {
     private static volatile SecretMediaViewer Instance;
-    private C3306ActionBar actionBar;
+    private C3356ActionBar actionBar;
     private int[] animateFromRadius;
     private float animateToClipBottom;
     private float animateToClipBottomOrigin;
@@ -245,7 +245,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
             setWillNotDraw(false);
             Paint paint = new Paint(1);
             this.particlePaint = paint;
-            paint.setStrokeWidth(AndroidUtilities.m51dp(1.5f));
+            paint.setStrokeWidth(AndroidUtilities.m55dp(1.5f));
             this.particlePaint.setColor(-1644826);
             this.particlePaint.setStrokeCap(Paint.Cap.ROUND);
             this.particlePaint.setStyle(Paint.Style.STROKE);
@@ -254,11 +254,11 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
             paint2.setStyle(Paint.Style.STROKE);
             this.afterDeleteProgressPaint.setStrokeCap(Paint.Cap.ROUND);
             this.afterDeleteProgressPaint.setColor(-1644826);
-            this.afterDeleteProgressPaint.setStrokeWidth(AndroidUtilities.m50dp(2));
+            this.afterDeleteProgressPaint.setStrokeWidth(AndroidUtilities.m54dp(2));
             Paint paint3 = new Paint(1);
             this.circlePaint = paint3;
             paint3.setColor(2130706432);
-            this.drawable = context.getResources().getDrawable(C3242R.C3244drawable.flame_small);
+            this.drawable = context.getResources().getDrawable(C3290R.C3292drawable.flame_small);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -272,8 +272,8 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
             super.onMeasure(i, i2);
-            int measuredHeight = (getMeasuredHeight() / 2) - (AndroidUtilities.m50dp(28) / 2);
-            this.deleteProgressRect.set(getMeasuredWidth() - AndroidUtilities.m50dp(49), measuredHeight, getMeasuredWidth() - AndroidUtilities.m50dp(21), measuredHeight + AndroidUtilities.m50dp(28));
+            int measuredHeight = (getMeasuredHeight() / 2) - (AndroidUtilities.m54dp(28) / 2);
+            this.deleteProgressRect.set(getMeasuredWidth() - AndroidUtilities.m54dp(49), measuredHeight, getMeasuredWidth() - AndroidUtilities.m54dp(21), measuredHeight + AndroidUtilities.m54dp(28));
         }
 
         @Override // android.view.View
@@ -281,22 +281,22 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
             if (SecretMediaViewer.this.currentMessageObject == null || SecretMediaViewer.this.currentMessageObject.messageOwner.destroyTime == 0) {
                 return;
             }
-            canvas.drawCircle(getMeasuredWidth() - AndroidUtilities.m50dp(35), getMeasuredHeight() / 2, AndroidUtilities.m50dp(16), this.circlePaint);
+            canvas.drawCircle(getMeasuredWidth() - AndroidUtilities.m54dp(35), getMeasuredHeight() / 2, AndroidUtilities.m54dp(16), this.circlePaint);
             float f = 1.0f;
             if (this.useVideoProgress) {
                 if (SecretMediaViewer.this.videoPlayer != null) {
                     long duration = SecretMediaViewer.this.videoPlayer.getDuration();
                     long currentPosition = SecretMediaViewer.this.videoPlayer.getCurrentPosition();
-                    if (duration != C0470C.TIME_UNSET && currentPosition != C0470C.TIME_UNSET) {
+                    if (duration != C0475C.TIME_UNSET && currentPosition != C0475C.TIME_UNSET) {
                         f = 1.0f - (((float) currentPosition) / ((float) duration));
                     }
                 }
             } else {
                 f = ((float) Math.max(0L, this.destroyTime - (System.currentTimeMillis() + (ConnectionsManager.getInstance(SecretMediaViewer.this.currentAccount).getTimeDifference() * 1000)))) / (((float) this.destroyTtl) * 1000.0f);
             }
-            int measuredWidth = getMeasuredWidth() - AndroidUtilities.m50dp(40);
-            int measuredHeight = ((getMeasuredHeight() - AndroidUtilities.m50dp(14)) / 2) - AndroidUtilities.m51dp(0.5f);
-            this.drawable.setBounds(measuredWidth, measuredHeight, AndroidUtilities.m50dp(10) + measuredWidth, AndroidUtilities.m50dp(14) + measuredHeight);
+            int measuredWidth = getMeasuredWidth() - AndroidUtilities.m54dp(40);
+            int measuredHeight = ((getMeasuredHeight() - AndroidUtilities.m54dp(14)) / 2) - AndroidUtilities.m55dp(0.5f);
+            this.drawable.setBounds(measuredWidth, measuredHeight, AndroidUtilities.m54dp(10) + measuredWidth, AndroidUtilities.m54dp(14) + measuredHeight);
             this.drawable.draw(canvas);
             float f2 = (-360.0f) * f;
             canvas.drawArc(this.deleteProgressRect, -90.0f, f2, false, this.afterDeleteProgressPaint);
@@ -385,7 +385,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
                     }
                 }
             }
-        } else if (i == NotificationCenter.updateMessageMedia && this.currentMessageObject.getId() == ((TLRPC$Message) objArr[0]).f1451id) {
+        } else if (i == NotificationCenter.updateMessageMedia && this.currentMessageObject.getId() == ((TLRPC$Message) objArr[0]).f1457id) {
             if (this.isVideo && !this.videoWatchedOneTime) {
                 this.closeVideoAfterWatch = true;
             } else if (!closePhoto(true, true)) {
@@ -419,7 +419,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
             VideoPlayer videoPlayer = new VideoPlayer();
             this.videoPlayer = videoPlayer;
             videoPlayer.setTextureView(this.videoTextureView);
-            this.videoPlayer.setDelegate(new C63291(file));
+            this.videoPlayer.setDelegate(new C64241(file));
         }
         this.videoPlayer.preparePlayer(Uri.fromFile(file), "other");
         this.videoPlayer.setPlayWhenReady(true);
@@ -428,7 +428,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.SecretMediaViewer$1 */
     /* loaded from: classes5.dex */
-    public class C63291 implements VideoPlayer.VideoPlayerDelegate {
+    public class C64241 implements VideoPlayer.VideoPlayerDelegate {
         final /* synthetic */ File val$file;
 
         @Override // org.telegram.p044ui.Components.VideoPlayer.VideoPlayerDelegate
@@ -455,7 +455,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
         public void onSurfaceTextureUpdated(SurfaceTexture surfaceTexture) {
         }
 
-        C63291(File file) {
+        C64241(File file) {
             this.val$file = file;
         }
 
@@ -468,13 +468,13 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
                 try {
                     SecretMediaViewer.this.parentActivity.getWindow().clearFlags(128);
                 } catch (Exception e) {
-                    FileLog.m45e(e);
+                    FileLog.m49e(e);
                 }
             } else {
                 try {
                     SecretMediaViewer.this.parentActivity.getWindow().addFlags(128);
                 } catch (Exception e2) {
-                    FileLog.m45e(e2);
+                    FileLog.m49e(e2);
                 }
             }
             if (i == 3 && SecretMediaViewer.this.aspectRatioFrameLayout.getVisibility() != 0) {
@@ -507,12 +507,12 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SecretMediaViewer$1$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        SecretMediaViewer.C63291.this.lambda$onError$0(file);
+                        SecretMediaViewer.C64241.this.lambda$onError$0(file);
                     }
                 }, 100L);
                 return;
             }
-            FileLog.m45e(exc);
+            FileLog.m49e(exc);
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -554,7 +554,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
                 activity.getWindow().clearFlags(128);
             }
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
         AspectRatioFrameLayout aspectRatioFrameLayout = this.aspectRatioFrameLayout;
         if (aspectRatioFrameLayout != null) {
@@ -644,7 +644,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
             protected void onLayout(boolean z, int i2, int i3, int i4, int i5) {
                 super.onLayout(z, i2, i3, i4, i5);
                 if (SecretMediaViewer.this.secretDeleteTimer != null) {
-                    int currentActionBarHeight = ((C3306ActionBar.getCurrentActionBarHeight() - SecretMediaViewer.this.secretDeleteTimer.getMeasuredHeight()) / 2) + (Build.VERSION.SDK_INT >= 21 ? AndroidUtilities.statusBarHeight : 0);
+                    int currentActionBarHeight = ((C3356ActionBar.getCurrentActionBarHeight() - SecretMediaViewer.this.secretDeleteTimer.getMeasuredHeight()) / 2) + (Build.VERSION.SDK_INT >= 21 ? AndroidUtilities.statusBarHeight : 0);
                     SecretMediaViewer.this.secretDeleteTimer.layout(SecretMediaViewer.this.secretDeleteTimer.getLeft(), currentActionBarHeight, SecretMediaViewer.this.secretDeleteTimer.getRight(), SecretMediaViewer.this.secretDeleteTimer.getMeasuredHeight() + currentActionBarHeight);
                 }
             }
@@ -673,18 +673,18 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
         GestureDetector gestureDetector = new GestureDetector(this.containerView.getContext(), this);
         this.gestureDetector = gestureDetector;
         gestureDetector.setOnDoubleTapListener(this);
-        C3306ActionBar c3306ActionBar = new C3306ActionBar(activity);
-        this.actionBar = c3306ActionBar;
-        c3306ActionBar.setTitleColor(-1);
+        C3356ActionBar c3356ActionBar = new C3356ActionBar(activity);
+        this.actionBar = c3356ActionBar;
+        c3356ActionBar.setTitleColor(-1);
         this.actionBar.setSubtitleColor(-1);
         this.actionBar.setBackgroundColor(2130706432);
         this.actionBar.setOccupyStatusBar(i2 >= 21);
         this.actionBar.setItemsBackgroundColor(1090519039, false);
-        this.actionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
-        this.actionBar.setTitleRightMargin(AndroidUtilities.m50dp(70));
+        this.actionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        this.actionBar.setTitleRightMargin(AndroidUtilities.m54dp(70));
         this.containerView.addView(this.actionBar, LayoutHelper.createFrame(-1, -2));
-        this.actionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.SecretMediaViewer.4
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.SecretMediaViewer.4
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i3) {
                 if (i3 == -1) {
                     SecretMediaViewer.this.closePhoto(true, false);
@@ -834,7 +834,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
         this.currentThumb = placeForPhoto.imageReceiver.getThumbBitmapSafe();
         if (document != null) {
             if (MessageObject.isGifDocument(document)) {
-                this.actionBar.setTitle(LocaleController.getString("DisappearingGif", C3242R.string.DisappearingGif));
+                this.actionBar.setTitle(LocaleController.getString("DisappearingGif", C3290R.string.DisappearingGif));
                 String str = messageObject.messageOwner.attachPath;
                 if (str != null && messageObject.attachPathExists) {
                     forDocument = ImageLocation.getForPath(str);
@@ -851,7 +851,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
                 i2 = 21;
                 c = 4;
                 this.playerRetryPlayCount = 1;
-                this.actionBar.setTitle(LocaleController.getString("DisappearingVideo", C3242R.string.DisappearingVideo));
+                this.actionBar.setTitle(LocaleController.getString("DisappearingVideo", C3290R.string.DisappearingVideo));
                 File file = new File(messageObject.messageOwner.attachPath);
                 if (file.exists()) {
                     preparePlayer(file);
@@ -876,7 +876,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
         } else {
             i2 = 21;
             c = 4;
-            this.actionBar.setTitle(LocaleController.getString("DisappearingPhoto", C3242R.string.DisappearingPhoto));
+            this.actionBar.setTitle(LocaleController.getString("DisappearingPhoto", C3290R.string.DisappearingPhoto));
             this.centerImage.setImage(ImageLocation.getForObject(FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, AndroidUtilities.getPhotoSize()), messageObject.photoThumbsObject), (String) null, this.currentThumb != null ? new BitmapDrawable(this.currentThumb.bitmap) : null, -1L, (String) null, messageObject, 2);
             SecretDeleteTimer secretDeleteTimer3 = this.secretDeleteTimer;
             TLRPC$Message tLRPC$Message3 = messageObject.messageOwner;
@@ -887,7 +887,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
                 ((WindowManager) this.parentActivity.getSystemService("window")).removeView(this.windowView);
             }
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
         ((WindowManager) this.parentActivity.getSystemService("window")).addView(this.windowView, this.windowLayoutParams);
         this.secretDeleteTimer.invalidate();
@@ -980,11 +980,11 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
         this.isActionBarVisible = z;
         if (z2) {
             ArrayList arrayList = new ArrayList();
-            C3306ActionBar c3306ActionBar = this.actionBar;
+            C3356ActionBar c3356ActionBar = this.actionBar;
             Property property = View.ALPHA;
             float[] fArr = new float[1];
             fArr[0] = z ? 1.0f : 0.0f;
-            arrayList.add(ObjectAnimator.ofFloat(c3306ActionBar, property, fArr));
+            arrayList.add(ObjectAnimator.ofFloat(c3356ActionBar, property, fArr));
             AnimatorSet animatorSet = new AnimatorSet();
             this.currentActionBarAnimation = animatorSet;
             animatorSet.playTogether(arrayList);
@@ -1035,7 +1035,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
                 }
                 this.windowView = null;
             } catch (Exception e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
             }
         }
         Instance = null;
@@ -1120,10 +1120,10 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.SecretMediaViewer$7 */
     /* loaded from: classes5.dex */
-    public class C63357 extends AnimatorListenerAdapter {
+    public class C64307 extends AnimatorListenerAdapter {
         final /* synthetic */ PhotoViewer.PlaceProviderObject val$object;
 
-        C63357(PhotoViewer.PlaceProviderObject placeProviderObject) {
+        C64307(PhotoViewer.PlaceProviderObject placeProviderObject) {
             this.val$object = placeProviderObject;
         }
 
@@ -1137,7 +1137,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.SecretMediaViewer$7$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SecretMediaViewer.C63357.this.lambda$onAnimationEnd$0();
+                    SecretMediaViewer.C64307.this.lambda$onAnimationEnd$0();
                 }
             });
         }
@@ -1194,7 +1194,7 @@ public class SecretMediaViewer implements NotificationCenter.NotificationCenterD
                 ((WindowManager) this.parentActivity.getSystemService("window")).removeView(this.windowView);
             }
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
         this.isPhotoVisible = false;
     }

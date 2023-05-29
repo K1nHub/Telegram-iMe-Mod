@@ -22,7 +22,7 @@ public class DividerCell extends View {
         super(context);
         this.paint = new Paint();
         this.resourcesProvider = resourcesProvider;
-        setPadding(0, AndroidUtilities.m50dp(8), 0, AndroidUtilities.m50dp(8));
+        setPadding(0, AndroidUtilities.m54dp(8), 0, AndroidUtilities.m54dp(8));
     }
 
     @Override // android.view.View
@@ -33,9 +33,9 @@ public class DividerCell extends View {
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         if (this.forceDarkTheme) {
-            this.paint.setColor(ColorUtils.blendARGB(-16777216, Theme.getColor("voipgroup_dialogBackground", this.resourcesProvider), 0.2f));
+            this.paint.setColor(ColorUtils.blendARGB(-16777216, Theme.getColor(Theme.key_voipgroup_dialogBackground, this.resourcesProvider), 0.2f));
         } else {
-            this.paint.setColor(Theme.getColor("divider", this.resourcesProvider));
+            this.paint.setColor(Theme.getColor(Theme.key_divider, this.resourcesProvider));
         }
         canvas.drawLine(getPaddingLeft(), getPaddingTop(), getWidth() - getPaddingRight(), getPaddingTop(), this.paint);
     }

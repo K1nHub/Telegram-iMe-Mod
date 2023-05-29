@@ -3,7 +3,6 @@ package com.iMe.utils.extentions.common;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.PaintDrawable;
-import android.os.Build;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -13,7 +12,6 @@ import com.chad.library.adapter.base.entity.node.BaseNode;
 import com.chad.library.adapter.base.provider.BaseItemProvider;
 import com.chad.library.adapter.base.provider.BaseNodeProvider;
 import com.chad.library.adapter.base.viewholder.BaseViewHolder;
-import com.iMe.p031ui.smartpanel.extension.ImageViewExtKt;
 import java.util.Map;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
@@ -29,10 +27,9 @@ public final class BaseQuickAdapterExtKt {
         return baseItemProvider;
     }
 
-    public static final BaseViewHolder setThemedTextColor(BaseViewHolder baseViewHolder, int i, String color) {
+    public static final BaseViewHolder setThemedTextColor(BaseViewHolder baseViewHolder, int i, int i2) {
         Intrinsics.checkNotNullParameter(baseViewHolder, "<this>");
-        Intrinsics.checkNotNullParameter(color, "color");
-        ((TextView) baseViewHolder.getView(i)).setTextColor(Theme.getColor(color));
+        ((TextView) baseViewHolder.getView(i)).setTextColor(Theme.getColor(i2));
         return baseViewHolder;
     }
 
@@ -43,10 +40,9 @@ public final class BaseQuickAdapterExtKt {
         return baseViewHolder;
     }
 
-    public static final BaseViewHolder setThemedBackgroundColor(BaseViewHolder baseViewHolder, int i, String color) {
+    public static final BaseViewHolder setThemedBackgroundColor(BaseViewHolder baseViewHolder, int i, int i2) {
         Intrinsics.checkNotNullParameter(baseViewHolder, "<this>");
-        Intrinsics.checkNotNullParameter(color, "color");
-        baseViewHolder.getView(i).setBackgroundColor(Theme.getColor(color));
+        baseViewHolder.getView(i).setBackgroundColor(Theme.getColor(i2));
         return baseViewHolder;
     }
 
@@ -76,35 +72,30 @@ public final class BaseQuickAdapterExtKt {
 
     public static final BaseViewHolder setForeground(BaseViewHolder baseViewHolder, int i, Drawable drawable) {
         Intrinsics.checkNotNullParameter(baseViewHolder, "<this>");
-        if (Build.VERSION.SDK_INT >= 23) {
-            baseViewHolder.getView(i).setForeground(drawable);
-        }
+        baseViewHolder.getView(i).setForeground(drawable);
         return baseViewHolder;
     }
 
-    public static final BaseViewHolder setThemedRoundedBackground(BaseViewHolder baseViewHolder, int i, String color, float f) {
+    public static final BaseViewHolder setThemedRoundedBackground(BaseViewHolder baseViewHolder, int i, int i2, float f) {
         Intrinsics.checkNotNullParameter(baseViewHolder, "<this>");
-        Intrinsics.checkNotNullParameter(color, "color");
         View view = baseViewHolder.getView(i);
-        PaintDrawable paintDrawable = new PaintDrawable(Theme.getColor(color));
-        paintDrawable.setCornerRadius(AndroidUtilities.m51dp(f));
+        PaintDrawable paintDrawable = new PaintDrawable(Theme.getColor(i2));
+        paintDrawable.setCornerRadius(AndroidUtilities.m55dp(f));
         view.setBackground(paintDrawable);
         return baseViewHolder;
     }
 
-    public static final BaseViewHolder setThemedCompoundDrawablesColor(BaseViewHolder baseViewHolder, int i, String color) {
+    public static final BaseViewHolder setThemedCompoundDrawablesColor(BaseViewHolder baseViewHolder, int i, int i2) {
         Intrinsics.checkNotNullParameter(baseViewHolder, "<this>");
-        Intrinsics.checkNotNullParameter(color, "color");
-        ViewExtKt.setCompoundDrawablesColor((TextView) baseViewHolder.getView(i), Theme.getColor(color));
+        ViewExtKt.setCompoundDrawablesColor((TextView) baseViewHolder.getView(i), Theme.getColor(i2));
         return baseViewHolder;
     }
 
-    public static final BaseViewHolder setThemedImageColor(BaseViewHolder baseViewHolder, int i, String color) {
+    public static final BaseViewHolder setThemedImageColor(BaseViewHolder baseViewHolder, int i, int i2) {
         Intrinsics.checkNotNullParameter(baseViewHolder, "<this>");
-        Intrinsics.checkNotNullParameter(color, "color");
         View view = baseViewHolder.getView(i);
         if (view instanceof ImageView) {
-            ViewExtKt.setImageColor((ImageView) view, Theme.getColor(color));
+            ViewExtKt.setImageColor((ImageView) view, Theme.getColor(i2));
         }
         return baseViewHolder;
     }
@@ -117,7 +108,7 @@ public final class BaseQuickAdapterExtKt {
 
     public static final BaseViewHolder setPadding(BaseViewHolder baseViewHolder, int i, float f, float f2, float f3, float f4) {
         Intrinsics.checkNotNullParameter(baseViewHolder, "<this>");
-        baseViewHolder.getView(i).setPadding(AndroidUtilities.m51dp(f), AndroidUtilities.m51dp(f2), AndroidUtilities.m51dp(f3), AndroidUtilities.m51dp(f4));
+        baseViewHolder.getView(i).setPadding(AndroidUtilities.m55dp(f), AndroidUtilities.m55dp(f2), AndroidUtilities.m55dp(f3), AndroidUtilities.m55dp(f4));
         return baseViewHolder;
     }
 
@@ -133,12 +124,11 @@ public final class BaseQuickAdapterExtKt {
         return baseViewHolder;
     }
 
-    public static final BaseViewHolder setThemedCardBackground(BaseViewHolder baseViewHolder, int i, String color) {
+    public static final BaseViewHolder setThemedCardBackground(BaseViewHolder baseViewHolder, int i, int i2) {
         Intrinsics.checkNotNullParameter(baseViewHolder, "<this>");
-        Intrinsics.checkNotNullParameter(color, "color");
         View view = baseViewHolder.getView(i);
         if (view instanceof CardView) {
-            ((CardView) view).setCardBackgroundColor(Theme.getColor(color));
+            ((CardView) view).setCardBackgroundColor(Theme.getColor(i2));
         }
         return baseViewHolder;
     }
@@ -185,26 +175,6 @@ public final class BaseQuickAdapterExtKt {
         Intrinsics.checkNotNullParameter(viewIds, "viewIds");
         for (int i : viewIds) {
             ViewExtKt.withMediumTypeface((TextView) baseViewHolder.getView(i));
-        }
-        return baseViewHolder;
-    }
-
-    public static final BaseViewHolder setThemedImageColor(BaseViewHolder baseViewHolder, String color, int... viewIds) {
-        Intrinsics.checkNotNullParameter(baseViewHolder, "<this>");
-        Intrinsics.checkNotNullParameter(color, "color");
-        Intrinsics.checkNotNullParameter(viewIds, "viewIds");
-        for (int i : viewIds) {
-            ViewExtKt.setImageColor((ImageView) baseViewHolder.getView(i), Theme.getColor(color));
-        }
-        return baseViewHolder;
-    }
-
-    public static final BaseViewHolder setThemedTextColor(BaseViewHolder baseViewHolder, String color, int... viewIds) {
-        Intrinsics.checkNotNullParameter(baseViewHolder, "<this>");
-        Intrinsics.checkNotNullParameter(color, "color");
-        Intrinsics.checkNotNullParameter(viewIds, "viewIds");
-        for (int i : viewIds) {
-            ((TextView) baseViewHolder.getView(i)).setTextColor(Theme.getColor(color));
         }
         return baseViewHolder;
     }

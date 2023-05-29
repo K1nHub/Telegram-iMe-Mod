@@ -257,19 +257,19 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->flickerDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
-    const-string v0, "featuredStickers_addButton"
-
     .line 109
-    invoke-direct {p0, v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
+
+    invoke-direct {p0, v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(I)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->lastButtonColor:I
 
-    const-string v0, "featuredStickers_buttonText"
-
     .line 110
-    invoke-direct {p0, v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
+
+    invoke-direct {p0, v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(I)I
 
     move-result v0
 
@@ -320,9 +320,9 @@
     .line 181
     new-instance p3, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v1, "dialogSearchHint"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogSearchHint:I
 
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(Ljava/lang/String;)I
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(I)I
 
     move-result v1
 
@@ -377,9 +377,9 @@
     .line 187
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webViewNotAvailableText:Landroid/widget/TextView;
 
-    const-string p2, "windowBackgroundWhiteGrayText"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(Ljava/lang/String;)I
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(I)I
 
     move-result p2
 
@@ -642,10 +642,10 @@
 
     const-string v1, "bg_color"
 
-    const-string v2, "windowBackgroundWhite"
-
     .line 1415
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->formatColor(Ljava/lang/String;)Ljava/lang/String;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->formatColor(I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -653,10 +653,10 @@
 
     const-string v1, "secondary_bg_color"
 
-    const-string v2, "windowBackgroundGray"
-
     .line 1416
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->formatColor(Ljava/lang/String;)Ljava/lang/String;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->formatColor(I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -664,10 +664,10 @@
 
     const-string v1, "text_color"
 
-    const-string v2, "windowBackgroundWhiteBlackText"
-
     .line 1417
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->formatColor(Ljava/lang/String;)Ljava/lang/String;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->formatColor(I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -675,10 +675,10 @@
 
     const-string v1, "hint_color"
 
-    const-string v2, "windowBackgroundWhiteHintText"
-
     .line 1418
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->formatColor(Ljava/lang/String;)Ljava/lang/String;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
+
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->formatColor(I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -686,10 +686,10 @@
 
     const-string v1, "link_color"
 
-    const-string v2, "windowBackgroundWhiteLinkText"
-
     .line 1419
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->formatColor(Ljava/lang/String;)Ljava/lang/String;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteLinkText:I
+
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->formatColor(I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -697,10 +697,10 @@
 
     const-string v1, "button_color"
 
-    const-string v2, "featuredStickers_addButton"
-
     .line 1420
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->formatColor(Ljava/lang/String;)Ljava/lang/String;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
+
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->formatColor(I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -708,10 +708,10 @@
 
     const-string v1, "button_text_color"
 
-    const-string v2, "featuredStickers_buttonText"
-
     .line 1421
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->formatColor(Ljava/lang/String;)Ljava/lang/String;
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
+
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/BotWebViewContainer;->formatColor(I)Ljava/lang/String;
 
     move-result-object v2
 
@@ -845,15 +845,15 @@
     return p1
 .end method
 
-.method private formatColor(Ljava/lang/String;)Ljava/lang/String;
+.method private formatColor(I)Ljava/lang/String;
     .locals 2
 
-    .line 1438
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(Ljava/lang/String;)I
+    .line 1437
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(I)I
 
     move-result p1
 
-    .line 1439
+    .line 1438
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -899,7 +899,7 @@
     return-object p1
 .end method
 
-.method private getColor(Ljava/lang/String;)I
+.method private getColor(I)I
     .locals 1
 
     .line 1430
@@ -907,40 +907,24 @@
 
     if-eqz v0, :cond_0
 
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->contains(I)Z
 
     move-result v0
 
-    goto :goto_0
+    if-eqz v0, :cond_0
 
-    :cond_0
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    .line 1431
+    iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    move-result v0
-
-    :goto_0
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    if-nez v0, :cond_1
-
-    .line 1432
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(I)I
 
     move-result p1
 
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    return p1
 
-    move-result-object v0
-
-    .line 1434
-    :cond_1
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    .line 1433
+    :cond_0
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -990,12 +974,12 @@
 .method private hexFixed(I)Ljava/lang/String;
     .locals 2
 
-    .line 1443
+    .line 1442
     invoke-static {p1}, Ljava/lang/Integer;->toHexString(I)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 1444
+    .line 1443
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result v0
@@ -1004,7 +988,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 1445
+    .line 1444
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -1478,7 +1462,7 @@
 
     const/4 v7, 0x4
 
-    const/4 v9, 0x3
+    const/4 v8, 0x3
 
     const/4 v10, 0x2
 
@@ -1777,7 +1761,7 @@
     goto/16 :goto_0
 
     :cond_12
-    move v0, v9
+    move v0, v8
 
     goto :goto_1
 
@@ -1836,7 +1820,7 @@
 
     const-string v15, "color"
 
-    const/4 v8, 0x0
+    const/4 v9, 0x0
 
     packed-switch v0, :pswitch_data_0
 
@@ -1957,23 +1941,27 @@
 
     if-eq v11, v12, :cond_19
 
+    const/4 v9, -0x1
+
     goto :goto_5
 
+    .line 1192
     :cond_19
-    const-string v8, "windowBackgroundGray"
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
     goto :goto_5
 
+    .line 1188
     :cond_1a
-    const-string v8, "windowBackgroundWhite"
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     :goto_5
-    if-eqz v8, :cond_46
+    if-ltz v9, :cond_46
 
     .line 1197
     iget-object v0, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->delegate:Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;
 
-    invoke-interface {v0, v8}, Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;->onWebAppSetActionBarColor(Ljava/lang/String;)V
+    invoke-interface {v0, v9}, Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;->onWebAppSetActionBarColor(I)V
     :try_end_1
     .catch Lorg/json/JSONException; {:try_start_1 .. :try_end_1} :catch_2
 
@@ -2225,7 +2213,7 @@
 
     .line 1263
     :cond_23
-    sget-object v8, Lorg/telegram/messenger/BotWebViewVibrationEffect;->SELECTION_CHANGE:Lorg/telegram/messenger/BotWebViewVibrationEffect;
+    sget-object v9, Lorg/telegram/messenger/BotWebViewVibrationEffect;->SELECTION_CHANGE:Lorg/telegram/messenger/BotWebViewVibrationEffect;
 
     goto/16 :goto_12
 
@@ -2322,7 +2310,7 @@
     sget-object v0, Lorg/telegram/messenger/BotWebViewVibrationEffect;->NOTIFICATION_ERROR:Lorg/telegram/messenger/BotWebViewVibrationEffect;
 
     :goto_f
-    move-object v8, v0
+    move-object v9, v0
 
     goto/16 :goto_12
 
@@ -2351,7 +2339,7 @@
 
     if-eqz v0, :cond_2d
 
-    move v11, v9
+    move v11, v8
 
     goto :goto_11
 
@@ -2416,7 +2404,7 @@
 
     if-eq v11, v10, :cond_30
 
-    if-eq v11, v9, :cond_2f
+    if-eq v11, v8, :cond_2f
 
     if-eq v11, v7, :cond_2e
 
@@ -2453,10 +2441,10 @@
     goto :goto_f
 
     :goto_12
-    if-eqz v8, :cond_46
+    if-eqz v9, :cond_46
 
     .line 1268
-    invoke-virtual {v8}, Lorg/telegram/messenger/BotWebViewVibrationEffect;->vibrate()V
+    invoke-virtual {v9}, Lorg/telegram/messenger/BotWebViewVibrationEffect;->vibrate()V
     :try_end_3
     .catch Ljava/lang/Exception; {:try_start_3 .. :try_end_3} :catch_5
 
@@ -2731,7 +2719,7 @@
     :pswitch_a
     iget-object v0, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->delegate:Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;
 
-    invoke-interface {v0, v8}, Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;->onCloseRequested(Ljava/lang/Runnable;)V
+    invoke-interface {v0, v9}, Lorg/telegram/ui/Components/BotWebViewContainer$Delegate;->onCloseRequested(Ljava/lang/Runnable;)V
 
     goto/16 :goto_17
 
@@ -3054,7 +3042,7 @@
 
     iput v0, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->dialogSequentialOpenTimes:I
 
-    if-lt v0, v9, :cond_3d
+    if-lt v0, v8, :cond_3d
 
     .line 1062
     iput v11, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->dialogSequentialOpenTimes:I
@@ -3095,7 +3083,7 @@
     const-string v2, "title"
 
     .line 1073
-    invoke-virtual {v0, v2, v8}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v0, v2, v9}, Lorg/json/JSONObject;->optString(Ljava/lang/String;Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -3168,7 +3156,7 @@
 
     move-result v0
 
-    if-le v0, v9, :cond_40
+    if-le v0, v8, :cond_40
 
     goto/16 :goto_17
 
@@ -3231,7 +3219,7 @@
 
     move-result v4
 
-    if-ne v4, v9, :cond_43
+    if-ne v4, v8, :cond_43
 
     .line 1117
     invoke-interface {v3, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -3279,9 +3267,9 @@
     check-cast v0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;
 
     .line 1139
-    iget-object v2, v0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->textColorKey:Ljava/lang/String;
+    iget v2, v0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->textColorKey:I
 
-    if-eqz v2, :cond_44
+    if-ltz v2, :cond_44
 
     .line 1140
     iget-object v2, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->currentDialog:Lorg/telegram/ui/ActionBar/AlertDialog;
@@ -3295,9 +3283,9 @@
     check-cast v2, Landroid/widget/TextView;
 
     .line 1141
-    iget-object v0, v0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->textColorKey:Ljava/lang/String;
+    iget v0, v0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->textColorKey:I
 
-    invoke-direct {v1, v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(Ljava/lang/String;)I
+    invoke-direct {v1, v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(I)I
 
     move-result v0
 
@@ -3319,9 +3307,9 @@
     check-cast v0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;
 
     .line 1146
-    iget-object v2, v0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->textColorKey:Ljava/lang/String;
+    iget v2, v0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->textColorKey:I
 
-    if-eqz v2, :cond_45
+    if-ltz v2, :cond_45
 
     .line 1147
     iget-object v2, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->currentDialog:Lorg/telegram/ui/ActionBar/AlertDialog;
@@ -3335,9 +3323,9 @@
     check-cast v2, Landroid/widget/TextView;
 
     .line 1148
-    iget-object v0, v0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->textColorKey:Ljava/lang/String;
+    iget v0, v0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->textColorKey:I
 
-    invoke-direct {v1, v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(Ljava/lang/String;)I
+    invoke-direct {v1, v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(I)I
 
     move-result v0
 
@@ -3349,7 +3337,7 @@
 
     move-result v0
 
-    if-ne v0, v9, :cond_46
+    if-ne v0, v8, :cond_46
 
     .line 1152
     invoke-interface {v3, v10}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -3359,9 +3347,9 @@
     check-cast v0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;
 
     .line 1153
-    iget-object v2, v0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->textColorKey:Ljava/lang/String;
+    iget v2, v0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->textColorKey:I
 
-    if-eqz v2, :cond_46
+    if-ltz v2, :cond_46
 
     .line 1154
     iget-object v2, v1, Lorg/telegram/ui/Components/BotWebViewContainer;->currentDialog:Lorg/telegram/ui/ActionBar/AlertDialog;
@@ -3375,9 +3363,9 @@
     check-cast v2, Landroid/widget/TextView;
 
     .line 1155
-    iget-object v0, v0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->textColorKey:Ljava/lang/String;
+    iget v0, v0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->textColorKey:I
 
-    invoke-direct {v1, v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(Ljava/lang/String;)I
+    invoke-direct {v1, v0}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(I)I
 
     move-result v0
 
@@ -3462,8 +3450,6 @@
     :goto_17
     :pswitch_14
     return-void
-
-    nop
 
     :sswitch_data_0
     .sparse-switch
@@ -4034,10 +4020,10 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer;->webView:Landroid/webkit/WebView;
 
-    const-string v1, "windowBackgroundWhite"
-
     .line 271
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(I)I
 
     move-result v1
 
@@ -4227,10 +4213,10 @@
 
     if-eqz p1, :cond_0
 
-    const-string p2, "windowBackgroundWhite"
-
     .line 906
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(I)I
 
     move-result p2
 
@@ -4242,9 +4228,9 @@
 
     new-instance p2, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string p3, "dialogSearchHint"
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogSearchHint:I
 
-    invoke-direct {p0, p3}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(Ljava/lang/String;)I
+    invoke-direct {p0, p3}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(I)I
 
     move-result p3
 
@@ -4803,9 +4789,9 @@
 
     sget p2, Lorg/telegram/messenger/R$raw;->durgerking_placeholder:I
 
-    const-string p3, "windowBackgroundGray"
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    invoke-direct {p0, p3}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(Ljava/lang/String;)I
+    invoke-direct {p0, p3}, Lorg/telegram/ui/Components/BotWebViewContainer;->getColor(I)I
 
     move-result p3
 

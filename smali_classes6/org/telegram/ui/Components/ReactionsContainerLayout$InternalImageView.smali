@@ -32,10 +32,10 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;Landroid/content/Context;)V
     .locals 0
 
-    .line 1636
+    .line 1647
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
-    .line 1637
+    .line 1648
     invoke-direct {p0, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -44,7 +44,7 @@
 .method private synthetic lambda$play$0(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 1652
+    .line 1663
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p1
@@ -55,13 +55,13 @@
 
     move-result p1
 
-    .line 1653
+    .line 1664
     invoke-virtual {p0, p1}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 1654
+    .line 1665
     invoke-virtual {p0, p1}, Landroid/widget/ImageView;->setScaleY(F)V
 
-    .line 1655
+    .line 1666
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/ReactionsContainerLayout;->customReactionsContainer:Landroid/widget/FrameLayout;
@@ -76,18 +76,18 @@
 .method public play(IZ)V
     .locals 3
 
-    .line 1642
+    .line 1653
     invoke-virtual {p0}, Landroid/widget/ImageView;->invalidate()V
 
-    .line 1643
+    .line 1654
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;->valueAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 1644
+    .line 1655
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->removeAllListeners()V
 
-    .line 1645
+    .line 1656
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;->valueAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
@@ -103,7 +103,7 @@
 
     const/4 v1, 0x0
 
-    .line 1649
+    .line 1660
     invoke-virtual {p0}, Landroid/widget/ImageView;->getScaleX()F
 
     move-result v2
@@ -120,12 +120,12 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;->valueAnimator:Landroid/animation/ValueAnimator;
 
-    .line 1650
+    .line 1661
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->overshootInterpolator:Landroid/view/animation/OvershootInterpolator;
 
     invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1651
+    .line 1662
     iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;->valueAnimator:Landroid/animation/ValueAnimator;
 
     new-instance v0, Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView$$ExternalSyntheticLambda0;
@@ -134,7 +134,7 @@
 
     invoke-virtual {p2, v0}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1657
+    .line 1668
     iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;->valueAnimator:Landroid/animation/ValueAnimator;
 
     int-to-float p1, p1
@@ -149,25 +149,25 @@
 
     invoke-virtual {p2, v0, v1}, Landroid/animation/ValueAnimator;->setStartDelay(J)V
 
-    .line 1658
+    .line 1669
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;->valueAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v0, 0x12c
 
     invoke-virtual {p1, v0, v1}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1659
+    .line 1670
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;->valueAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->start()V
 
     goto :goto_0
 
-    .line 1661
+    .line 1672
     :cond_1
     invoke-virtual {p0, v0}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 1662
+    .line 1673
     invoke-virtual {p0, v0}, Landroid/widget/ImageView;->setScaleY(F)V
 
     :goto_0
@@ -179,25 +179,25 @@
 
     const/4 v0, 0x0
 
-    .line 1668
+    .line 1679
     invoke-virtual {p0, v0}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 1669
+    .line 1680
     invoke-virtual {p0, v0}, Landroid/widget/ImageView;->setScaleY(F)V
 
-    .line 1670
+    .line 1681
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->customReactionsContainer:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 1671
+    .line 1682
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;->valueAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 1672
+    .line 1683
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
     :cond_0

@@ -2315,7 +2315,7 @@
     .line 106
     new-instance v1, Landroid/media/session/MediaSession;
 
-    const-string v2, "telegramAudioPlayer"
+    const-string/jumbo v2, "telegramAudioPlayer"
 
     invoke-direct {v1, p0, v2}, Landroid/media/session/MediaSession;-><init>(Landroid/content/Context;Ljava/lang/String;)V
 

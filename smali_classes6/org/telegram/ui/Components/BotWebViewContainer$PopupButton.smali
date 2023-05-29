@@ -19,145 +19,145 @@
 
 .field public text:Ljava/lang/String;
 
-.field public textColorKey:Ljava/lang/String;
+.field public textColorKey:I
 
 
 # direct methods
 .method public constructor <init>(Lorg/json/JSONObject;)V
-    .locals 7
+    .locals 8
     .annotation system Ldalvik/annotation/Throws;
         value = {
             Lorg/json/JSONException;
         }
     .end annotation
 
-    .line 1553
+    .line 1551
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    const-string v0, "id"
+    const/4 v0, -0x1
 
-    .line 1554
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    .line 1549
+    iput v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->textColorKey:I
 
-    move-result-object v0
+    const-string v1, "id"
 
-    iput-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->id:Ljava/lang/String;
+    .line 1552
+    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
-    const-string v0, "type"
+    move-result-object v1
+
+    iput-object v1, p0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->id:Ljava/lang/String;
+
+    const-string v1, "type"
+
+    .line 1553
+    invoke-virtual {p1, v1}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v1
 
     .line 1555
-    invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
+    invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
-    move-result-object v0
+    move-result v2
 
-    .line 1557
-    invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
+    const/4 v3, 0x5
 
-    move-result v1
+    const/4 v4, 0x4
 
-    const/4 v2, 0x5
+    const/4 v5, 0x3
 
-    const/4 v3, 0x4
+    const/4 v6, 0x2
 
-    const/4 v4, 0x3
+    const/4 v7, 0x1
 
-    const/4 v5, 0x2
-
-    const/4 v6, 0x1
-
-    sparse-switch v1, :sswitch_data_0
+    sparse-switch v2, :sswitch_data_0
 
     goto :goto_0
 
     :sswitch_0
-    const-string v1, "default"
+    const-string v2, "default"
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
-    move v0, v6
+    move v0, v7
 
-    goto :goto_1
+    goto :goto_0
 
     :sswitch_1
-    const-string v1, "close"
+    const-string v2, "close"
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_0
-
-    move v0, v4
-
-    goto :goto_1
-
-    :sswitch_2
-    const-string v1, "ok"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
 
     move v0, v5
 
-    goto :goto_1
+    goto :goto_0
+
+    :sswitch_2
+    const-string v2, "ok"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
+
+    move v0, v6
+
+    goto :goto_0
 
     :sswitch_3
-    const-string v1, "cancel"
+    const-string v2, "cancel"
 
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
-    move-result v0
+    move-result v1
 
-    if-eqz v0, :cond_0
+    if-eqz v1, :cond_0
+
+    move v0, v4
+
+    goto :goto_0
+
+    :sswitch_4
+    const-string v2, "destructive"
+
+    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v1
+
+    if-eqz v1, :cond_0
 
     move v0, v3
 
-    goto :goto_1
-
-    :sswitch_4
-    const-string v1, "destructive"
-
-    invoke-virtual {v0, v1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    move v0, v2
-
-    goto :goto_1
-
     :cond_0
     :goto_0
-    const/4 v0, -0x1
+    if-eq v0, v6, :cond_4
 
-    :goto_1
-    if-eq v0, v5, :cond_4
+    if-eq v0, v5, :cond_3
 
-    if-eq v0, v4, :cond_3
+    if-eq v0, v4, :cond_2
 
-    if-eq v0, v3, :cond_2
+    if-eq v0, v3, :cond_1
 
-    if-eq v0, v2, :cond_1
+    goto :goto_2
 
-    goto :goto_3
-
+    .line 1575
     :cond_1
-    const-string v0, "dialogTextRed"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
-    .line 1577
-    iput-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->textColorKey:Ljava/lang/String;
+    iput v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->textColorKey:I
 
-    goto :goto_3
+    goto :goto_2
 
-    .line 1572
+    .line 1570
     :cond_2
     sget v0, Lorg/telegram/messenger/R$string;->Cancel:I
 
@@ -167,9 +167,9 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->text:Ljava/lang/String;
 
-    goto :goto_2
+    goto :goto_1
 
-    .line 1568
+    .line 1566
     :cond_3
     sget v0, Lorg/telegram/messenger/R$string;->Close:I
 
@@ -179,9 +179,9 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->text:Ljava/lang/String;
 
-    goto :goto_2
+    goto :goto_1
 
-    .line 1564
+    .line 1562
     :cond_4
     sget v0, Lorg/telegram/messenger/R$string;->OK:I
 
@@ -191,15 +191,15 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/BotWebViewContainer$PopupButton;->text:Ljava/lang/String;
 
-    :goto_2
-    const/4 v6, 0x0
+    :goto_1
+    const/4 v7, 0x0
 
-    :goto_3
-    if-eqz v6, :cond_5
+    :goto_2
+    if-eqz v7, :cond_5
 
     const-string v0, "text"
 
-    .line 1583
+    .line 1581
     invoke-virtual {p1, v0}, Lorg/json/JSONObject;->getString(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object p1
@@ -208,8 +208,6 @@
 
     :cond_5
     return-void
-
-    nop
 
     :sswitch_data_0
     .sparse-switch

@@ -18,7 +18,7 @@
 .method constructor <init>(Lorg/telegram/ui/VoIPFragment;)V
     .locals 0
 
-    .line 1986
+    .line 1987
     invoke-direct {p0}, Landroid/transition/Visibility;-><init>()V
 
     return-void
@@ -29,7 +29,7 @@
 .method public onAppear(Landroid/view/ViewGroup;Landroid/view/View;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
     .locals 2
 
-    .line 1989
+    .line 1990
     sget-object p1, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
 
     const/4 p3, 0x2
@@ -58,12 +58,12 @@
 
     move-result-object p1
 
-    .line 1990
+    .line 1991
     instance-of p3, p2, Lorg/telegram/ui/Components/voip/VoIPToggleButton;
 
     if-eqz p3, :cond_0
 
-    .line 1991
+    .line 1992
     invoke-static {p4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p3
@@ -72,7 +72,7 @@
 
     invoke-virtual {p2, p3}, Landroid/view/View;->setTranslationY(F)V
 
-    .line 1992
+    .line 1993
     check-cast p2, Lorg/telegram/ui/Components/voip/VoIPToggleButton;
 
     iget p2, p2, Lorg/telegram/ui/Components/voip/VoIPToggleButton;->animationDelay:I
@@ -88,7 +88,7 @@
 .method public onDisappear(Landroid/view/ViewGroup;Landroid/view/View;Landroid/transition/TransitionValues;Landroid/transition/TransitionValues;)Landroid/animation/Animator;
     .locals 1
 
-    .line 1999
+    .line 2000
     sget-object p1, Landroid/view/View;->TRANSLATION_Y:Landroid/util/Property;
 
     const/4 p3, 0x2

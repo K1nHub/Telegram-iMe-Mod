@@ -22,14 +22,14 @@
 .method constructor <init>(Lorg/telegram/ui/ChannelAdminLogActivity;)V
     .locals 0
 
-    .line 935
+    .line 943
     iput-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$10;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
 
     const/16 p1, 0x64
 
-    .line 938
+    .line 946
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     return-void
@@ -44,12 +44,12 @@
 
     if-ne p2, p1, :cond_0
 
-    .line 943
+    .line 951
     iget-object p2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$10;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p2, p1}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$2902(Lorg/telegram/ui/ChannelAdminLogActivity;Z)Z
 
-    .line 944
+    .line 952
     iget-object p2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$10;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p2, p1}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$3002(Lorg/telegram/ui/ChannelAdminLogActivity;Z)Z
@@ -59,19 +59,19 @@
     :cond_0
     if-nez p2, :cond_1
 
-    .line 946
+    .line 954
     iget-object p2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$10;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     const/4 v0, 0x0
 
     invoke-static {p2, v0}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$2902(Lorg/telegram/ui/ChannelAdminLogActivity;Z)Z
 
-    .line 947
+    .line 955
     iget-object p2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$10;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p2, v0}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$3002(Lorg/telegram/ui/ChannelAdminLogActivity;Z)Z
 
-    .line 948
+    .line 956
     iget-object p2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$10;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p2, p1}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$3100(Lorg/telegram/ui/ChannelAdminLogActivity;Z)V
@@ -84,7 +84,7 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 4
 
-    .line 954
+    .line 962
     iget-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$10;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$000(Lorg/telegram/ui/ChannelAdminLogActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -97,7 +97,7 @@
 
     if-eqz p3, :cond_1
 
-    .line 955
+    .line 963
     iget-object p2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$10;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$2900(Lorg/telegram/ui/ChannelAdminLogActivity;)Z
@@ -114,7 +114,7 @@
 
     if-nez p2, :cond_1
 
-    .line 956
+    .line 964
     iget-object p2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$10;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$3300(Lorg/telegram/ui/ChannelAdminLogActivity;)Lorg/telegram/ui/Cells/ChatActionCell;
@@ -127,7 +127,7 @@
 
     if-nez p2, :cond_1
 
-    .line 957
+    .line 965
     iget-object p2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$10;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$3400(Lorg/telegram/ui/ChannelAdminLogActivity;)Landroid/animation/AnimatorSet;
@@ -136,7 +136,7 @@
 
     if-eqz p2, :cond_0
 
-    .line 958
+    .line 966
     iget-object p2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$10;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$3400(Lorg/telegram/ui/ChannelAdminLogActivity;)Landroid/animation/AnimatorSet;
@@ -145,7 +145,7 @@
 
     invoke-virtual {p2}, Landroid/animation/AnimatorSet;->cancel()V
 
-    .line 960
+    .line 968
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$10;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
@@ -159,7 +159,7 @@
 
     invoke-virtual {p2, p3}, Landroid/view/ViewGroup;->setTag(Ljava/lang/Object;)V
 
-    .line 961
+    .line 969
     iget-object p2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$10;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     new-instance p3, Landroid/animation/AnimatorSet;
@@ -168,7 +168,7 @@
 
     invoke-static {p2, p3}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$3402(Lorg/telegram/ui/ChannelAdminLogActivity;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 962
+    .line 970
     iget-object p2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$10;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$3400(Lorg/telegram/ui/ChannelAdminLogActivity;)Landroid/animation/AnimatorSet;
@@ -179,7 +179,7 @@
 
     invoke-virtual {p2, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 963
+    .line 971
     iget-object p2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$10;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$3400(Lorg/telegram/ui/ChannelAdminLogActivity;)Landroid/animation/AnimatorSet;
@@ -212,7 +212,7 @@
 
     invoke-virtual {p2, p3}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 964
+    .line 972
     iget-object p2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$10;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$3400(Lorg/telegram/ui/ChannelAdminLogActivity;)Landroid/animation/AnimatorSet;
@@ -225,7 +225,7 @@
 
     invoke-virtual {p2, p3}, Landroid/animation/AnimatorSet;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 972
+    .line 980
     iget-object p2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$10;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$3400(Lorg/telegram/ui/ChannelAdminLogActivity;)Landroid/animation/AnimatorSet;
@@ -234,13 +234,13 @@
 
     invoke-virtual {p2}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 975
+    .line 983
     :cond_1
     iget-object p2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$10;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p2, p1}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$3500(Lorg/telegram/ui/ChannelAdminLogActivity;Z)V
 
-    .line 976
+    .line 984
     iget-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$10;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$2700(Lorg/telegram/ui/ChannelAdminLogActivity;)V

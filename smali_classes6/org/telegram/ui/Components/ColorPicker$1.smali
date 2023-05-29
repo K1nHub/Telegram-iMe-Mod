@@ -26,19 +26,19 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ColorPicker;Landroid/content/Context;)V
     .locals 0
 
-    .line 222
+    .line 224
     iput-object p1, p0, Lorg/telegram/ui/Components/ColorPicker$1;->this$0:Lorg/telegram/ui/Components/ColorPicker;
 
     invoke-direct {p0, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 224
+    .line 226
     new-instance p1, Landroid/graphics/RectF;
 
     invoke-direct {p1}, Landroid/graphics/RectF;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ColorPicker$1;->rect:Landroid/graphics/RectF;
 
-    .line 225
+    .line 227
     new-instance p1, Landroid/graphics/Paint;
 
     const/4 p2, 0x1
@@ -46,15 +46,6 @@
     invoke-direct {p1, p2}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ColorPicker$1;->paint:Landroid/graphics/Paint;
-
-    const-string p2, "dialogBackgroundGray"
-
-    .line 227
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p2
-
-    invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setColor(I)V
 
     return-void
 .end method
@@ -64,10 +55,23 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 5
 
+    .line 231
+    iget-object v0, p0, Lorg/telegram/ui/Components/ColorPicker$1;->paint:Landroid/graphics/Paint;
+
+    iget-object v1, p0, Lorg/telegram/ui/Components/ColorPicker$1;->this$0:Lorg/telegram/ui/Components/ColorPicker;
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackgroundGray:I
+
+    invoke-static {v1, v2}, Lorg/telegram/ui/Components/ColorPicker;->access$000(Lorg/telegram/ui/Components/ColorPicker;I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+
     .line 232
     iget-object v0, p0, Lorg/telegram/ui/Components/ColorPicker$1;->this$0:Lorg/telegram/ui/Components/ColorPicker;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ColorPicker;->access$000(Lorg/telegram/ui/Components/ColorPicker;)[Lorg/telegram/ui/Components/EditTextBoldCursor;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ColorPicker;->access$100(Lorg/telegram/ui/Components/ColorPicker;)[Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     move-result-object v0
 
@@ -98,7 +102,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/Components/ColorPicker$1;->this$0:Lorg/telegram/ui/Components/ColorPicker;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/ColorPicker;->access$100(Lorg/telegram/ui/Components/ColorPicker;)Landroid/widget/ImageView;
+    invoke-static {v2}, Lorg/telegram/ui/Components/ColorPicker;->access$200(Lorg/telegram/ui/Components/ColorPicker;)Landroid/widget/ImageView;
 
     move-result-object v2
 
@@ -118,7 +122,7 @@
 
     iget-object v3, p0, Lorg/telegram/ui/Components/ColorPicker$1;->this$0:Lorg/telegram/ui/Components/ColorPicker;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/ColorPicker;->access$100(Lorg/telegram/ui/Components/ColorPicker;)Landroid/widget/ImageView;
+    invoke-static {v3}, Lorg/telegram/ui/Components/ColorPicker;->access$200(Lorg/telegram/ui/Components/ColorPicker;)Landroid/widget/ImageView;
 
     move-result-object v3
 

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView;)V
     .locals 0
 
-    .line 2380
+    .line 2114
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$13;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -40,16 +40,16 @@
 
     if-eqz p2, :cond_0
 
-    .line 2384
+    .line 2118
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$13;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->getCurrentKeyboardLanguage()[Ljava/lang/String;
 
     move-result-object p2
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/Components/EmojiView;->access$9602(Lorg/telegram/ui/Components/EmojiView;[Ljava/lang/String;)[Ljava/lang/String;
+    invoke-static {p1, p2}, Lorg/telegram/ui/Components/EmojiView;->access$9002(Lorg/telegram/ui/Components/EmojiView;[Ljava/lang/String;)[Ljava/lang/String;
 
-    .line 2385
+    .line 2119
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$13;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     iget p1, p1, Lorg/telegram/ui/Components/EmojiView;->currentAccount:I
@@ -60,7 +60,7 @@
 
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiView$13;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {p2}, Lorg/telegram/ui/Components/EmojiView;->access$9600(Lorg/telegram/ui/Components/EmojiView;)[Ljava/lang/String;
+    invoke-static {p2}, Lorg/telegram/ui/Components/EmojiView;->access$9000(Lorg/telegram/ui/Components/EmojiView;)[Ljava/lang/String;
 
     move-result-object p2
 

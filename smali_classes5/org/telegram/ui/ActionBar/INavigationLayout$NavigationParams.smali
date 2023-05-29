@@ -32,15 +32,15 @@
 .method public constructor <init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
     .locals 1
 
-    .line 315
+    .line 343
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, 0x1
 
-    .line 307
+    .line 335
     iput-boolean v0, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$NavigationParams;->checkPresentFromDelegate:Z
 
-    .line 316
+    .line 344
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$NavigationParams;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     return-void
@@ -51,7 +51,7 @@
 .method public setCheckPresentFromDelegate(Z)Lorg/telegram/ui/ActionBar/INavigationLayout$NavigationParams;
     .locals 0
 
-    .line 330
+    .line 358
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$NavigationParams;->checkPresentFromDelegate:Z
 
     return-object p0
@@ -60,7 +60,7 @@
 .method public setMenuView(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;)Lorg/telegram/ui/ActionBar/INavigationLayout$NavigationParams;
     .locals 0
 
-    .line 340
+    .line 368
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$NavigationParams;->menuView:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     return-object p0
@@ -69,7 +69,7 @@
 .method public setNoAnimation(Z)Lorg/telegram/ui/ActionBar/INavigationLayout$NavigationParams;
     .locals 0
 
-    .line 325
+    .line 353
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$NavigationParams;->noAnimation:Z
 
     return-object p0
@@ -78,7 +78,7 @@
 .method public setPreview(Z)Lorg/telegram/ui/ActionBar/INavigationLayout$NavigationParams;
     .locals 0
 
-    .line 335
+    .line 363
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$NavigationParams;->preview:Z
 
     return-object p0
@@ -87,7 +87,7 @@
 .method public setRemoveLast(Z)Lorg/telegram/ui/ActionBar/INavigationLayout$NavigationParams;
     .locals 0
 
-    .line 320
+    .line 348
     iput-boolean p1, p0, Lorg/telegram/ui/ActionBar/INavigationLayout$NavigationParams;->removeLast:Z
 
     return-object p0

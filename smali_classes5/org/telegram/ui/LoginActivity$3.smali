@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/LoginActivity$3;
-.super Landroid/widget/ScrollView;
+.super Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 .source "LoginActivity.java"
 
 
@@ -22,69 +22,355 @@
 .method constructor <init>(Lorg/telegram/ui/LoginActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 633
+    .line 654
     iput-object p1, p0, Lorg/telegram/ui/LoginActivity$3;->this$0:Lorg/telegram/ui/LoginActivity;
 
-    invoke-direct {p0, p2}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public requestChildRectangleOnScreen(Landroid/view/View;Landroid/graphics/Rect;Z)Z
-    .locals 2
+.method protected onMeasure(II)V
+    .locals 7
 
-    .line 636
+    .line 657
     iget-object v0, p0, Lorg/telegram/ui/LoginActivity$3;->this$0:Lorg/telegram/ui/LoginActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$1100(Lorg/telegram/ui/LoginActivity;)I
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$500(Lorg/telegram/ui/LoginActivity;)Landroid/widget/FrameLayout;
 
-    move-result v0
+    move-result-object v0
 
-    const/4 v1, 0x1
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    if-eq v0, v1, :cond_0
+    move-result-object v0
 
-    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$3;->this$0:Lorg/telegram/ui/LoginActivity;
+    check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
 
-    invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$1100(Lorg/telegram/ui/LoginActivity;)I
+    .line 658
+    iget-object v1, p0, Lorg/telegram/ui/LoginActivity$3;->this$0:Lorg/telegram/ui/LoginActivity;
 
-    move-result v0
+    invoke-static {v1}, Lorg/telegram/ui/LoginActivity;->access$600(Lorg/telegram/ui/LoginActivity;)Z
 
-    const/4 v1, 0x2
+    move-result v1
 
-    if-eq v0, v1, :cond_0
+    const/4 v2, 0x0
 
-    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$3;->this$0:Lorg/telegram/ui/LoginActivity;
+    if-eqz v1, :cond_0
 
-    invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$1100(Lorg/telegram/ui/LoginActivity;)I
-
-    move-result v0
-
-    const/4 v1, 0x4
-
-    if-ne v0, v1, :cond_1
-
-    .line 637
-    :cond_0
-    iget v0, p2, Landroid/graphics/Rect;->bottom:I
-
-    const/16 v1, 0x28
+    const/16 v1, 0xe6
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
-    add-int/2addr v0, v1
+    goto :goto_0
 
-    iput v0, p2, Landroid/graphics/Rect;->bottom:I
+    :cond_0
+    move v1, v2
 
-    .line 639
+    .line 659
+    :goto_0
+    iget-object v3, p0, Lorg/telegram/ui/LoginActivity$3;->this$0:Lorg/telegram/ui/LoginActivity;
+
+    invoke-static {v3}, Lorg/telegram/ui/LoginActivity;->access$600(Lorg/telegram/ui/LoginActivity;)Z
+
+    move-result v3
+
+    const/16 v4, 0x14
+
+    if-eqz v3, :cond_1
+
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->measureKeyboardHeight()I
+
+    move-result v3
+
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v5
+
+    if-le v3, v5, :cond_1
+
+    .line 660
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->measureKeyboardHeight()I
+
+    move-result v3
+
+    sub-int/2addr v1, v3
+
+    .line 662
     :cond_1
-    invoke-super {p0, p1, p2, p3}, Landroid/widget/ScrollView;->requestChildRectangleOnScreen(Landroid/view/View;Landroid/graphics/Rect;Z)Z
+    invoke-static {}, Lorg/telegram/ui/Components/Bulletin;->getVisibleBulletin()Lorg/telegram/ui/Components/Bulletin;
 
-    move-result p1
+    move-result-object v3
 
-    return p1
+    const/16 v5, 0x10
+
+    if-eqz v3, :cond_2
+
+    invoke-static {}, Lorg/telegram/ui/Components/Bulletin;->getVisibleBulletin()Lorg/telegram/ui/Components/Bulletin;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Lorg/telegram/ui/Components/Bulletin;->isShowing()Z
+
+    move-result v3
+
+    if-eqz v3, :cond_2
+
+    .line 663
+    invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
+
+    .line 664
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v3
+
+    invoke-static {}, Lorg/telegram/ui/Components/Bulletin;->getVisibleBulletin()Lorg/telegram/ui/Components/Bulletin;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Lorg/telegram/ui/Components/Bulletin;->getLayout()Lorg/telegram/ui/Components/Bulletin$Layout;
+
+    move-result-object v6
+
+    invoke-virtual {v6}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+
+    move-result v6
+
+    add-int/2addr v3, v6
+
+    const/16 v6, 0xa
+
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v6
+
+    sub-int/2addr v3, v6
+
+    add-int/2addr v3, v1
+
+    iput v3, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+
+    goto :goto_1
+
+    .line 666
+    :cond_2
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v3
+
+    add-int/2addr v3, v1
+
+    iput v3, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+
+    .line 669
+    :goto_1
+    iget-object v1, p0, Lorg/telegram/ui/LoginActivity$3;->this$0:Lorg/telegram/ui/LoginActivity;
+
+    invoke-static {v1}, Lorg/telegram/ui/LoginActivity;->access$700(Lorg/telegram/ui/LoginActivity;)Landroid/widget/TextView;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_3
+
+    .line 670
+    iget-object v1, p0, Lorg/telegram/ui/LoginActivity$3;->this$0:Lorg/telegram/ui/LoginActivity;
+
+    invoke-static {v1}, Lorg/telegram/ui/LoginActivity;->access$700(Lorg/telegram/ui/LoginActivity;)Landroid/widget/TextView;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/widget/TextView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/view/ViewGroup$MarginLayoutParams;
+
+    iget v3, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+
+    iput v3, v1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+
+    .line 672
+    :cond_3
+    iget-object v1, p0, Lorg/telegram/ui/LoginActivity$3;->this$0:Lorg/telegram/ui/LoginActivity;
+
+    invoke-static {v1}, Lorg/telegram/ui/LoginActivity;->access$800(Lorg/telegram/ui/LoginActivity;)Landroid/widget/FrameLayout;
+
+    move-result-object v1
+
+    if-eqz v1, :cond_4
+
+    .line 673
+    iget-object v1, p0, Lorg/telegram/ui/LoginActivity$3;->this$0:Lorg/telegram/ui/LoginActivity;
+
+    invoke-static {v1}, Lorg/telegram/ui/LoginActivity;->access$800(Lorg/telegram/ui/LoginActivity;)Landroid/widget/FrameLayout;
+
+    move-result-object v1
+
+    invoke-virtual {v1}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v1
+
+    check-cast v1, Landroid/view/ViewGroup$MarginLayoutParams;
+
+    iget v0, v0, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+
+    iput v0, v1, Landroid/view/ViewGroup$MarginLayoutParams;->bottomMargin:I
+
+    .line 677
+    :cond_4
+    invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_5
+
+    goto :goto_2
+
+    :cond_5
+    sget v2, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
+
+    .line 678
+    :goto_2
+    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$3;->this$0:Lorg/telegram/ui/LoginActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$900(Lorg/telegram/ui/LoginActivity;)Landroid/widget/ImageView;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
+
+    .line 679
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v1
+
+    add-int/2addr v1, v2
+
+    iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+
+    .line 681
+    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$3;->this$0:Lorg/telegram/ui/LoginActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$1000(Lorg/telegram/ui/LoginActivity;)Landroid/widget/ImageView;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/widget/ImageView;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
+
+    .line 682
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v1
+
+    add-int/2addr v1, v2
+
+    iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+
+    .line 684
+    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$3;->this$0:Lorg/telegram/ui/LoginActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$1100(Lorg/telegram/ui/LoginActivity;)Lorg/telegram/ui/Components/RadialProgressView;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
+
+    move-result-object v0
+
+    check-cast v0, Landroid/view/ViewGroup$MarginLayoutParams;
+
+    .line 685
+    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v1
+
+    add-int/2addr v1, v2
+
+    iput v1, v0, Landroid/view/ViewGroup$MarginLayoutParams;->topMargin:I
+
+    .line 687
+    invoke-virtual {p0}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->measureKeyboardHeight()I
+
+    move-result v0
+
+    invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v1
+
+    if-le v0, v1, :cond_7
+
+    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$3;->this$0:Lorg/telegram/ui/LoginActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$1200(Lorg/telegram/ui/LoginActivity;)Lorg/telegram/ui/Components/CustomPhoneKeyboardView;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/view/ViewGroup;->getVisibility()I
+
+    move-result v0
+
+    const/16 v1, 0x8
+
+    if-eq v0, v1, :cond_7
+
+    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$3;->this$0:Lorg/telegram/ui/LoginActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$1300(Lorg/telegram/ui/LoginActivity;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_7
+
+    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$3;->this$0:Lorg/telegram/ui/LoginActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$1400(Lorg/telegram/ui/LoginActivity;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_7
+
+    .line 688
+    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$3;->this$0:Lorg/telegram/ui/LoginActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$1500(Lorg/telegram/ui/LoginActivity;)Landroid/animation/ValueAnimator;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_6
+
+    .line 689
+    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$3;->this$0:Lorg/telegram/ui/LoginActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$1500(Lorg/telegram/ui/LoginActivity;)Landroid/animation/ValueAnimator;
+
+    move-result-object v0
+
+    invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
+
+    .line 691
+    :cond_6
+    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$3;->this$0:Lorg/telegram/ui/LoginActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$1200(Lorg/telegram/ui/LoginActivity;)Lorg/telegram/ui/Components/CustomPhoneKeyboardView;
+
+    move-result-object v0
+
+    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
+
+    .line 694
+    :cond_7
+    invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
+
+    return-void
 .end method

@@ -44,10 +44,10 @@
     .line 31
     invoke-virtual {p0, p1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    const-string p1, "windowBackgroundGray"
-
     .line 32
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -944,7 +944,7 @@
 
 # virtual methods
 .method public set(Lorg/telegram/tgnet/TLRPC$RequestPeerType;)V
-    .locals 6
+    .locals 5
 
     .line 39
     iget-object v0, p0, Lorg/telegram/ui/Cells/RequestPeerRequirementsCell;->requestPeerType:Lorg/telegram/tgnet/TLRPC$RequestPeerType;
@@ -1195,10 +1195,10 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/HeaderCell;->setText(Ljava/lang/CharSequence;)V
 
-    const-string v0, "windowBackgroundWhite"
-
     .line 83
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -1218,19 +1218,19 @@
     const/16 p1, 0x9
 
     .line 86
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v3
+    move-result v0
 
-    invoke-direct {p0, p1, v3}, Lorg/telegram/ui/Cells/RequestPeerRequirementsCell;->emptyView(II)Landroid/view/View;
+    invoke-direct {p0, p1, v0}, Lorg/telegram/ui/Cells/RequestPeerRequirementsCell;->emptyView(II)Landroid/view/View;
 
     move-result-object p1
 
     invoke-static {v1, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {p0, p1, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p0, p1, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 87
     iget-object p1, p0, Lorg/telegram/ui/Cells/RequestPeerRequirementsCell;->requirements:Ljava/util/ArrayList;
@@ -1242,36 +1242,38 @@
     :goto_2
     invoke-interface {p1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v0
 
-    if-eqz v3, :cond_7
+    if-eqz v0, :cond_7
 
     invoke-interface {p1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v0
 
-    check-cast v3, Lorg/telegram/ui/Cells/Requirement;
+    check-cast v0, Lorg/telegram/ui/Cells/Requirement;
 
     .line 88
-    new-instance v4, Lorg/telegram/ui/Cells/RequestPeerRequirementsCell$RequirementCell;
+    new-instance v3, Lorg/telegram/ui/Cells/RequestPeerRequirementsCell$RequirementCell;
 
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getContext()Landroid/content/Context;
 
-    move-result-object v5
+    move-result-object v4
 
-    invoke-direct {v4, p0, v5, v3}, Lorg/telegram/ui/Cells/RequestPeerRequirementsCell$RequirementCell;-><init>(Lorg/telegram/ui/Cells/RequestPeerRequirementsCell;Landroid/content/Context;Lorg/telegram/ui/Cells/Requirement;)V
+    invoke-direct {v3, p0, v4, v0}, Lorg/telegram/ui/Cells/RequestPeerRequirementsCell$RequirementCell;-><init>(Lorg/telegram/ui/Cells/RequestPeerRequirementsCell;Landroid/content/Context;Lorg/telegram/ui/Cells/Requirement;)V
 
     invoke-static {v1, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v3
+    move-result-object v0
 
-    invoke-virtual {p0, v4, v3}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p0, v3, v0}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     goto :goto_2
 
     .line 90
     :cond_7
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -1294,9 +1296,9 @@
 
     sget v3, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    const-string v4, "windowBackgroundGrayShadow"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
-    invoke-static {p1, v3, v4}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {p1, v3, v4}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object p1
 

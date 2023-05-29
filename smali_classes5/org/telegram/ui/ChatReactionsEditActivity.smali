@@ -487,16 +487,16 @@
 
     if-eqz v3, :cond_2
 
-    const-string v0, "windowBackgroundChecked"
+    .line 278
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundChecked:I
 
     goto :goto_1
 
     :cond_2
-    const-string v0, "windowBackgroundUnchecked"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundUnchecked:I
 
-    .line 278
     :goto_1
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -774,9 +774,9 @@
     .line 380
     iget-object v0, p0, Lorg/telegram/ui/ChatReactionsEditActivity;->contentView:Landroid/widget/LinearLayout;
 
-    const-string v1, "windowBackgroundGray"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -787,18 +787,18 @@
 
     if-eqz v2, :cond_0
 
-    const-string v3, "windowBackgroundCheckText"
-
-    const-string v4, "switchTrackBlue"
-
-    const-string v5, "switchTrackBlueChecked"
-
-    const-string v6, "switchTrackBlueThumb"
-
-    const-string v7, "switchTrackBlueThumbChecked"
-
     .line 382
-    invoke-virtual/range {v2 .. v7}, Lorg/telegram/ui/Cells/TextCheckCell;->setColors(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundCheckText:I
+
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackBlue:I
+
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackBlueChecked:I
+
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackBlueThumb:I
+
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackBlueThumbChecked:I
+
+    invoke-virtual/range {v2 .. v7}, Lorg/telegram/ui/Cells/TextCheckCell;->setColors(IIIII)V
 
     .line 384
     :cond_0
@@ -935,15 +935,15 @@
 
     if-eqz v6, :cond_0
 
-    const-string v6, "windowBackgroundChecked"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundChecked:I
 
     goto :goto_0
 
     :cond_0
-    const-string v6, "windowBackgroundUnchecked"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundUnchecked:I
 
     :goto_0
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
@@ -1154,10 +1154,10 @@
 
     invoke-virtual {v1, v3}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    const-string v1, "windowBackgroundWhite"
-
     .line 153
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -1166,13 +1166,13 @@
     .line 154
     iget-object v2, p0, Lorg/telegram/ui/ChatReactionsEditActivity;->allReactions:Lorg/telegram/ui/Cells/RadioCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
-    const-string v6, "listSelectorSDK21"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -1185,11 +1185,11 @@
     .line 155
     iget-object v2, p0, Lorg/telegram/ui/ChatReactionsEditActivity;->someReactions:Lorg/telegram/ui/Cells/RadioCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -1202,11 +1202,11 @@
     .line 156
     iget-object v2, p0, Lorg/telegram/ui/ChatReactionsEditActivity;->disableReactions:Lorg/telegram/ui/Cells/RadioCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -1324,7 +1324,7 @@
 .end method
 
 .method public getThemeDescriptions()Ljava/util/ArrayList;
-    .locals 14
+    .locals 4
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -1339,37 +1339,89 @@
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/ChatReactionsEditActivity$$ExternalSyntheticLambda7;-><init>(Lorg/telegram/ui/ChatReactionsEditActivity;)V
 
-    const-string v1, "windowBackgroundWhite"
+    const/16 v1, 0xd
 
-    const-string v2, "windowBackgroundWhiteBlackText"
+    new-array v1, v1, [I
 
-    const-string v3, "windowBackgroundWhiteGrayText2"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    const-string v4, "listSelectorSDK21"
+    const/4 v3, 0x0
 
-    const-string v5, "windowBackgroundGray"
+    aput v2, v1, v3
 
-    const-string v6, "windowBackgroundWhiteGrayText4"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    const-string v7, "windowBackgroundWhiteRedText4"
+    const/4 v3, 0x1
 
-    const-string v8, "windowBackgroundChecked"
+    aput v2, v1, v3
 
-    const-string v9, "windowBackgroundCheckText"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
-    const-string v10, "switchTrackBlue"
+    const/4 v3, 0x2
 
-    const-string v11, "switchTrackBlueChecked"
+    aput v2, v1, v3
 
-    const-string v12, "switchTrackBlueThumb"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    const-string v13, "switchTrackBlueThumbChecked"
+    const/4 v3, 0x3
 
-    filled-new-array/range {v1 .. v13}, [Ljava/lang/String;
+    aput v2, v1, v3
 
-    move-result-object v1
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/SimpleThemeDescription;->createThemeDescriptions(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;[Ljava/lang/String;)Ljava/util/ArrayList;
+    const/4 v3, 0x4
+
+    aput v2, v1, v3
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText4:I
+
+    const/4 v3, 0x5
+
+    aput v2, v1, v3
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
+
+    const/4 v3, 0x6
+
+    aput v2, v1, v3
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundChecked:I
+
+    const/4 v3, 0x7
+
+    aput v2, v1, v3
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundCheckText:I
+
+    const/16 v3, 0x8
+
+    aput v2, v1, v3
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackBlue:I
+
+    const/16 v3, 0x9
+
+    aput v2, v1, v3
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackBlueChecked:I
+
+    const/16 v3, 0xa
+
+    aput v2, v1, v3
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackBlueThumb:I
+
+    const/16 v3, 0xb
+
+    aput v2, v1, v3
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackBlueThumbChecked:I
+
+    const/16 v3, 0xc
+
+    aput v2, v1, v3
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/SimpleThemeDescription;->createThemeDescriptions(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;[I)Ljava/util/ArrayList;
 
     move-result-object v0
 

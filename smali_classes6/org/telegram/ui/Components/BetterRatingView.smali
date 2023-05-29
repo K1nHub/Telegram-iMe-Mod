@@ -115,15 +115,15 @@
 
     if-ge v0, v2, :cond_0
 
-    const-string v2, "dialogTextBlue"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlue:I
 
     goto :goto_1
 
     :cond_0
-    const-string v2, "dialogTextHint"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextHint:I
 
     :goto_1
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 

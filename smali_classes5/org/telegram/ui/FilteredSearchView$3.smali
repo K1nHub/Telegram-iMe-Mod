@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/FilteredSearchView;Landroid/content/Context;)V
     .locals 0
 
-    .line 285
+    .line 287
     iput-object p1, p0, Lorg/telegram/ui/FilteredSearchView$3;->this$0:Lorg/telegram/ui/FilteredSearchView;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/BlurredRecyclerView;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 4
 
-    .line 289
+    .line 291
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v0
@@ -50,7 +50,7 @@
 
     const/4 v0, 0x0
 
-    .line 290
+    .line 292
     :goto_0
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -58,7 +58,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 291
+    .line 293
     invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
@@ -75,10 +75,10 @@
 
     if-ne v1, v2, :cond_0
 
-    .line 292
+    .line 294
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 293
+    .line 295
     invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
@@ -119,17 +119,17 @@
 
     invoke-virtual {p1, v1, v2}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 294
+    .line 296
     invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
     invoke-virtual {v1, p1}, Landroid/view/View;->draw(Landroid/graphics/Canvas;)V
 
-    .line 295
+    .line 297
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 296
+    .line 298
     invoke-virtual {p0}, Landroid/view/ViewGroup;->invalidate()V
 
     :cond_0
@@ -137,7 +137,7 @@
 
     goto :goto_0
 
-    .line 300
+    .line 302
     :cond_1
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/BlurredRecyclerView;->dispatchDraw(Landroid/graphics/Canvas;)V
 
@@ -147,7 +147,7 @@
 .method public drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 2
 
-    .line 305
+    .line 307
     invoke-virtual {p0}, Landroidx/recyclerview/widget/RecyclerView;->getAdapter()Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     move-result-object v0
@@ -160,7 +160,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 306
+    .line 308
     invoke-virtual {p0, p2}, Landroidx/recyclerview/widget/RecyclerView;->getChildViewHolder(Landroid/view/View;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
     move-result-object v0
@@ -175,7 +175,7 @@
 
     return v1
 
-    .line 310
+    .line 312
     :cond_0
     invoke-super {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/BlurredRecyclerView;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 

@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.source.rtsp;
 
 import android.os.Handler;
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.exoplayer2.extractor.DefaultExtractorInput;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
 import com.google.android.exoplayer2.extractor.PositionHolder;
@@ -24,7 +24,7 @@ public final class RtpDataLoadable implements Loader.Loadable {
     public final RtspMediaTrack rtspMediaTrack;
     public final int trackId;
     private final Handler playbackThreadHandler = Util.createHandlerForCurrentLooper();
-    private volatile long pendingSeekPositionUs = C0470C.TIME_UNSET;
+    private volatile long pendingSeekPositionUs = C0475C.TIME_UNSET;
 
     /* loaded from: classes.dex */
     public interface EventListener {
@@ -40,7 +40,7 @@ public final class RtpDataLoadable implements Loader.Loadable {
     }
 
     public void setTimestamp(long j) {
-        if (j == C0470C.TIME_UNSET || ((RtpExtractor) Assertions.checkNotNull(this.extractor)).hasReadFirstRtpPacket()) {
+        if (j == C0475C.TIME_UNSET || ((RtpExtractor) Assertions.checkNotNull(this.extractor)).hasReadFirstRtpPacket()) {
             return;
         }
         this.extractor.setFirstTimestamp(j);
@@ -75,9 +75,9 @@ public final class RtpDataLoadable implements Loader.Loadable {
             this.extractor = rtpExtractor;
             rtpExtractor.init(this.output);
             while (!this.loadCancelled) {
-                if (this.pendingSeekPositionUs != C0470C.TIME_UNSET) {
+                if (this.pendingSeekPositionUs != C0475C.TIME_UNSET) {
                     this.extractor.seek(this.nextRtpTimestamp, this.pendingSeekPositionUs);
-                    this.pendingSeekPositionUs = C0470C.TIME_UNSET;
+                    this.pendingSeekPositionUs = C0475C.TIME_UNSET;
                 }
                 if (this.extractor.read(defaultExtractorInput, new PositionHolder()) == -1) {
                     break;

@@ -2,7 +2,7 @@ package com.google.android.gms.internal.mlkit_language_id;
 
 import java.util.Comparator;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 final class zzdp implements Comparator<zzdn> {
     @Override // java.util.Comparator
     public final /* synthetic */ int compare(zzdn zzdnVar, zzdn zzdnVar2) {

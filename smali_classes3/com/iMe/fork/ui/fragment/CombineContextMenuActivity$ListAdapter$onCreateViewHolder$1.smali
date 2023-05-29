@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 191
+    .line 193
     check-cast p1, Ljava/lang/Boolean;
 
     invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
@@ -66,22 +66,22 @@
 .method public final invoke(Z)V
     .locals 1
 
-    .line 186
+    .line 188
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity$ListAdapter$onCreateViewHolder$1;->this$0:Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;
 
     invoke-virtual {v0, p1}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->setCurrentMessagesContextMenu(Z)V
 
-    .line 187
+    .line 189
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity$ListAdapter$onCreateViewHolder$1;->this$0:Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->access$getListAdapter(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;)Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity$ListAdapter;
 
     move-result-object p1
 
-    .line 188
+    .line 190
     invoke-virtual {p1}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity$ListAdapter;->updateRows()V
 
-    .line 189
+    .line 191
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
     return-void

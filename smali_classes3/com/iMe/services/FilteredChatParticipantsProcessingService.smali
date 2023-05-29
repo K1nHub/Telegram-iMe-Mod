@@ -123,7 +123,7 @@
     iput-object v0, p0, Lcom/iMe/services/FilteredChatParticipantsProcessingService;->participants:Ljava/util/List;
 
     .line 31
-    sget v0, Lcom/iMe/common/IdFabric$ServiceNotifications;->chat_participants_processing:I
+    sget v0, Lcom/iMe/common/IdFabric$ServiceNotifications;->CHAT_PARTICIPANTS_PROCESSING:I
 
     iput v0, p0, Lcom/iMe/services/FilteredChatParticipantsProcessingService;->notificationChannelId:I
 

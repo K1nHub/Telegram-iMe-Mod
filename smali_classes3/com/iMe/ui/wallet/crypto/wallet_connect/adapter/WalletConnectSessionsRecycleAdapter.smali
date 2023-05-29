@@ -33,7 +33,7 @@
 
 # virtual methods
 .method protected convert(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Lcom/iMe/model/wallet/crypto/wallet_connect/WalletConnectSessionItem;)V
-    .locals 6
+    .locals 5
 
     const-string v0, "holder"
 
@@ -52,46 +52,43 @@
 
     move-result-object p1
 
-    const/4 v0, 0x2
-
-    new-array v0, v0, [I
-
     .line 20
-    sget v2, Lorg/telegram/messenger/R$id;->text_peer_name:I
+    sget v0, Lorg/telegram/messenger/R$id;->text_peer_name:I
 
-    aput v2, v0, v1
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    sget v3, Lorg/telegram/messenger/R$id;->text_peer_url:I
-
-    const/4 v4, 0x1
-
-    aput v3, v0, v4
-
-    const-string v5, "windowBackgroundWhiteBlackText"
-
-    invoke-static {p1, v5, v0}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;Ljava/lang/String;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {p1, v0, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
-
-    new-array v0, v4, [I
-
-    aput v2, v0, v1
 
     .line 21
-    invoke-static {p1, v0}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setMediumTypeface(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    sget v3, Lorg/telegram/messenger/R$id;->text_peer_url:I
+
+    invoke-static {p1, v3, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setThemedTextColor(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;II)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
+    const/4 v2, 0x1
+
+    new-array v4, v2, [I
+
+    aput v0, v4, v1
+
     .line 22
-    invoke-virtual {p2}, Lcom/iMe/model/wallet/crypto/wallet_connect/WalletConnectSessionItem;->getPeerName()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-virtual {p1, v2, v0}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {p1, v4}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->setMediumTypeface(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;[I)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     move-result-object p1
 
     .line 23
+    invoke-virtual {p2}, Lcom/iMe/model/wallet/crypto/wallet_connect/WalletConnectSessionItem;->getPeerName()Ljava/lang/String;
+
+    move-result-object v1
+
+    invoke-virtual {p1, v0, v1}, Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;->setText(ILjava/lang/CharSequence;)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+
+    move-result-object p1
+
+    .line 24
     invoke-virtual {p2}, Lcom/iMe/model/wallet/crypto/wallet_connect/WalletConnectSessionItem;->getPeerUrl()Ljava/lang/String;
 
     move-result-object v0
@@ -100,7 +97,7 @@
 
     move-result-object p1
 
-    .line 24
+    .line 25
     sget v0, Lorg/telegram/messenger/R$id;->image_peer_icon:I
 
     invoke-virtual {p2}, Lcom/iMe/model/wallet/crypto/wallet_connect/WalletConnectSessionItem;->getPeerIconUrl()Ljava/lang/String;
@@ -113,7 +110,7 @@
 
     move-result-object v1
 
-    invoke-static {p1, v0, p2, v1, v4}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->loadImage(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;Ljava/lang/Integer;Z)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
+    invoke-static {p1, v0, p2, v1, v2}, Lcom/iMe/utils/extentions/common/BaseQuickAdapterExtKt;->loadImage(Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;ILjava/lang/String;Ljava/lang/Integer;Z)Lcom/chad/library/adapter/base/viewholder/BaseViewHolder;
 
     return-void
 .end method

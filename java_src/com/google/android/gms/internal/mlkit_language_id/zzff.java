@@ -6,7 +6,7 @@ import p034j$.util.Iterator;
 import p034j$.util.function.Consumer;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class zzff<K> implements Iterator<Map.Entry<K, Object>>, p034j$.util.Iterator {
     private Iterator<Map.Entry<K, Object>> zza;
 

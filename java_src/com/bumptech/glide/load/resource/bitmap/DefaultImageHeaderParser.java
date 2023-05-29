@@ -379,15 +379,15 @@ public final class DefaultImageHeaderParser implements ImageHeaderParser {
     private static final class StreamReader implements Reader {
 
         /* renamed from: is */
-        private final InputStream f88is;
+        private final InputStream f91is;
 
         StreamReader(InputStream inputStream) {
-            this.f88is = inputStream;
+            this.f91is = inputStream;
         }
 
         @Override // com.bumptech.glide.load.resource.bitmap.DefaultImageHeaderParser.Reader
         public short getUInt8() throws IOException {
-            int read = this.f88is.read();
+            int read = this.f91is.read();
             if (read != -1) {
                 return (short) read;
             }
@@ -403,7 +403,7 @@ public final class DefaultImageHeaderParser implements ImageHeaderParser {
         public int read(byte[] bArr, int i) throws IOException {
             int i2 = 0;
             int i3 = 0;
-            while (i2 < i && (i3 = this.f88is.read(bArr, i2, i - i2)) != -1) {
+            while (i2 < i && (i3 = this.f91is.read(bArr, i2, i - i2)) != -1) {
                 i2 += i3;
             }
             if (i2 == 0 && i3 == -1) {
@@ -419,9 +419,9 @@ public final class DefaultImageHeaderParser implements ImageHeaderParser {
             }
             long j2 = j;
             while (j2 > 0) {
-                long skip = this.f88is.skip(j2);
+                long skip = this.f91is.skip(j2);
                 if (skip <= 0) {
-                    if (this.f88is.read() == -1) {
+                    if (this.f91is.read() == -1) {
                         break;
                     }
                     skip = 1;

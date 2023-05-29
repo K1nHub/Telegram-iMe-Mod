@@ -40,7 +40,7 @@
 .method public static constructor-impl([I)[I
     .locals 1
 
-    const-string v0, "storage"
+    const-string/jumbo v0, "storage"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

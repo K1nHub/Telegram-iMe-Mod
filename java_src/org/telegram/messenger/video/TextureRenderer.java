@@ -81,9 +81,9 @@ public class TextureRenderer {
         this.isPhoto = z;
         float[] fArr = {BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, 1.0f, BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, 1.0f, 1.0f, 1.0f};
         if (BuildVars.LOGS_ENABLED) {
-            FileLog.m48d("start textureRenderer w = " + i7 + " h = " + i8 + " r = " + i5 + " fps = " + f3);
+            FileLog.m52d("start textureRenderer w = " + i7 + " h = " + i8 + " r = " + i5 + " fps = " + f3);
             if (cropState != null) {
-                FileLog.m48d("cropState px = " + cropState.cropPx + " py = " + cropState.cropPy + " cScale = " + cropState.cropScale + " cropRotate = " + cropState.cropRotate + " pw = " + cropState.cropPw + " ph = " + cropState.cropPh + " tw = " + cropState.transformWidth + " th = " + cropState.transformHeight + " tr = " + cropState.transformRotation + " mirror = " + cropState.mirrored);
+                FileLog.m52d("cropState px = " + cropState.cropPx + " py = " + cropState.cropPy + " cScale = " + cropState.cropScale + " cropRotate = " + cropState.cropRotate + " pw = " + cropState.cropPw + " ph = " + cropState.cropPh + " tw = " + cropState.transformWidth + " th = " + cropState.transformHeight + " tr = " + cropState.transformRotation + " mirror = " + cropState.mirrored);
             }
         }
         FloatBuffer asFloatBuffer = ByteBuffer.allocateDirect(32).order(ByteOrder.nativeOrder()).asFloatBuffer();
@@ -204,7 +204,7 @@ public class TextureRenderer {
                     sb.append(", ");
                     i3++;
                 }
-                FileLog.m48d("stMatrix = " + ((Object) sb));
+                FileLog.m52d("stMatrix = " + ((Object) sb));
                 this.firstFrame = false;
             }
             if (this.blendEnabled) {
@@ -281,7 +281,7 @@ public class TextureRenderer {
                     if (f >= mediaEntity.metadata[0]) {
                         mediaEntity.currentFrame = BitmapDescriptorFactory.HUE_RED;
                     }
-                    drawTexture(false, this.stickerTexture[0], mediaEntity.f1404x, mediaEntity.f1405y, mediaEntity.width, mediaEntity.height, mediaEntity.rotation, (mediaEntity.subType & 2) != 0);
+                    drawTexture(false, this.stickerTexture[0], mediaEntity.f1410x, mediaEntity.f1411y, mediaEntity.width, mediaEntity.height, mediaEntity.rotation, (mediaEntity.subType & 2) != 0);
                 } else if (mediaEntity.animatedFileDrawable != null) {
                     float f2 = mediaEntity.currentFrame;
                     int i7 = (int) f2;
@@ -305,7 +305,7 @@ public class TextureRenderer {
                             applyRoundRadius(mediaEntity, this.stickerBitmap);
                             GLES20.glBindTexture(3553, this.stickerTexture[0]);
                             GLUtils.texImage2D(3553, 0, this.stickerBitmap, 0);
-                            drawTexture(false, this.stickerTexture[0], mediaEntity.f1404x, mediaEntity.f1405y, mediaEntity.width, mediaEntity.height, mediaEntity.rotation, (mediaEntity.subType & 2) != 0);
+                            drawTexture(false, this.stickerTexture[0], mediaEntity.f1410x, mediaEntity.f1411y, mediaEntity.width, mediaEntity.height, mediaEntity.rotation, (mediaEntity.subType & 2) != 0);
                         }
                     }
                 } else if (mediaEntity.view != null && mediaEntity.canvas != null && (bitmap = mediaEntity.bitmap) != null) {
@@ -319,11 +319,11 @@ public class TextureRenderer {
                     applyRoundRadius(mediaEntity, mediaEntity.bitmap);
                     GLES20.glBindTexture(3553, this.stickerTexture[0]);
                     GLUtils.texImage2D(3553, 0, mediaEntity.bitmap, 0);
-                    drawTexture(false, this.stickerTexture[0], mediaEntity.f1404x, mediaEntity.f1405y, mediaEntity.width, mediaEntity.height, mediaEntity.rotation, (mediaEntity.subType & 2) != 0);
+                    drawTexture(false, this.stickerTexture[0], mediaEntity.f1410x, mediaEntity.f1411y, mediaEntity.width, mediaEntity.height, mediaEntity.rotation, (mediaEntity.subType & 2) != 0);
                 } else if (mediaEntity.bitmap != null) {
                     GLES20.glBindTexture(3553, this.stickerTexture[0]);
                     GLUtils.texImage2D(3553, 0, mediaEntity.bitmap, 0);
-                    drawTexture(false, this.stickerTexture[0], mediaEntity.f1404x, mediaEntity.f1405y, mediaEntity.width, mediaEntity.height, mediaEntity.rotation, (mediaEntity.subType & 2) != 0);
+                    drawTexture(false, this.stickerTexture[0], mediaEntity.f1410x, mediaEntity.f1411y, mediaEntity.width, mediaEntity.height, mediaEntity.rotation, (mediaEntity.subType & 2) != 0);
                 }
             }
         }
@@ -426,18 +426,22 @@ public class TextureRenderer {
         editTextOutline.setBreakStrategy(0);
     }
 
-    /* JADX WARN: Code restructure failed: missing block: B:125:0x0425, code lost:
-        if (org.telegram.messenger.LocaleController.isRTL != false) goto L84;
+    /* JADX WARN: Code restructure failed: missing block: B:121:0x042d, code lost:
+        if (org.telegram.messenger.LocaleController.isRTL != false) goto L82;
      */
-    /* JADX WARN: Removed duplicated region for block: B:172:0x0206 A[SYNTHETIC] */
-    /* JADX WARN: Removed duplicated region for block: B:59:0x0167  */
+    /* JADX WARN: Removed duplicated region for block: B:142:0x04d3 A[Catch: all -> 0x04ea, TRY_LEAVE, TryCatch #0 {all -> 0x04ea, blocks: (B:73:0x0226, B:75:0x025d, B:77:0x026f, B:79:0x0275, B:80:0x029f, B:82:0x02a3, B:83:0x02d6, B:85:0x02da, B:87:0x0327, B:89:0x032b, B:91:0x033e, B:94:0x0355, B:86:0x02e3, B:96:0x0367, B:98:0x038a, B:100:0x0390, B:101:0x0393, B:102:0x03a8, B:104:0x03ae, B:106:0x03b8, B:108:0x03d7, B:107:0x03c8, B:109:0x03f0, B:115:0x041c, B:117:0x0425, B:120:0x042b, B:128:0x0439, B:124:0x0433, B:129:0x043c, B:131:0x0455, B:132:0x0458, B:134:0x045e, B:140:0x04a0, B:142:0x04d3, B:136:0x0473, B:138:0x0477, B:139:0x0489), top: B:149:0x0226 }] */
+    /* JADX WARN: Removed duplicated region for block: B:158:0x04e6 A[SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:60:0x01c1  */
+    /* JADX WARN: Removed duplicated region for block: B:61:0x01c4  */
+    /* JADX WARN: Removed duplicated region for block: B:64:0x01c9  */
+    /* JADX WARN: Removed duplicated region for block: B:65:0x01cc  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public void surfaceCreated() {
         /*
-            Method dump skipped, instructions count: 1251
+            Method dump skipped, instructions count: 1263
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.messenger.video.TextureRenderer.surfaceCreated():void");

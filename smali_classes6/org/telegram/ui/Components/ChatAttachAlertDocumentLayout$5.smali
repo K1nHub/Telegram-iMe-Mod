@@ -24,12 +24,12 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 332
+    .line 333
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$5;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 334
+    .line 335
     new-instance p1, Landroid/graphics/Paint;
 
     invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
@@ -44,7 +44,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 3
 
-    .line 337
+    .line 338
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$5;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;->access$1200(Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;)I
@@ -65,7 +65,7 @@
 
     const/4 v1, 0x0
 
-    .line 339
+    .line 340
     :goto_0
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -73,7 +73,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 340
+    .line 341
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -86,7 +86,7 @@
 
     if-gez v2, :cond_0
 
-    .line 341
+    .line 342
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
@@ -100,19 +100,19 @@
 
     goto :goto_0
 
-    .line 344
+    .line 345
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$5;->paint:Landroid/graphics/Paint;
 
-    const-string v1, "dialogBackground"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 347
+    .line 348
     :cond_2
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->dispatchDraw(Landroid/graphics/Canvas;)V
 

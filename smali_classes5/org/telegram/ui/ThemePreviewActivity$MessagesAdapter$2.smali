@@ -21,7 +21,7 @@
 .method constructor <init>(Lorg/telegram/ui/ThemePreviewActivity$MessagesAdapter;)V
     .locals 0
 
-    .line 4418
+    .line 4914
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void

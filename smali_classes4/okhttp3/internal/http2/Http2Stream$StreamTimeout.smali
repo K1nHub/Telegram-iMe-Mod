@@ -70,7 +70,7 @@
     .line 675
     new-instance v0, Ljava/net/SocketTimeoutException;
 
-    const-string v1, "timeout"
+    const-string/jumbo v1, "timeout"
 
     invoke-direct {v0, v1}, Ljava/net/SocketTimeoutException;-><init>(Ljava/lang/String;)V
 

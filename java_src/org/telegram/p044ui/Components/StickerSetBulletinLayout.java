@@ -21,8 +21,8 @@ public class StickerSetBulletinLayout extends Bulletin.TwoLineLayout {
         this(context, tLObject, 1, i, tLRPC$Document, resourcesProvider);
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:104:0x034f  */
-    /* JADX WARN: Removed duplicated region for block: B:135:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:107:0x0375  */
+    /* JADX WARN: Removed duplicated region for block: B:139:? A[RETURN, SYNTHETIC] */
     /* JADX WARN: Removed duplicated region for block: B:29:0x0075 A[ADDED_TO_REGION] */
     /* JADX WARN: Removed duplicated region for block: B:35:0x008c  */
     /* JADX WARN: Removed duplicated region for block: B:66:0x0114  */
@@ -40,7 +40,7 @@ public class StickerSetBulletinLayout extends Bulletin.TwoLineLayout {
     */
     public StickerSetBulletinLayout(final android.content.Context r16, org.telegram.tgnet.TLObject r17, int r18, int r19, org.telegram.tgnet.TLRPC$Document r20, org.telegram.p044ui.ActionBar.Theme.ResourcesProvider r21) {
         /*
-            Method dump skipped, instructions count: 992
+            Method dump skipped, instructions count: 1030
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Components.StickerSetBulletinLayout.<init>(android.content.Context, org.telegram.tgnet.TLObject, int, int, org.telegram.tgnet.TLRPC$Document, org.telegram.ui.ActionBar.Theme$ResourcesProvider):void");
@@ -50,7 +50,7 @@ public class StickerSetBulletinLayout extends Bulletin.TwoLineLayout {
     public static /* synthetic */ void lambda$new$0(Context context) {
         Activity findActivity = AndroidUtilities.findActivity(context);
         if (findActivity instanceof LaunchActivity) {
-            ((LaunchActivity) findActivity).lambda$runLinkRequest$83(new PremiumPreviewFragment(LimitReachedBottomSheet.limitTypeToServerString(10)));
+            ((LaunchActivity) findActivity).lambda$runLinkRequest$82(new PremiumPreviewFragment(LimitReachedBottomSheet.limitTypeToServerString(10)));
         }
     }
 
@@ -58,7 +58,7 @@ public class StickerSetBulletinLayout extends Bulletin.TwoLineLayout {
     public static /* synthetic */ void lambda$new$1(Context context) {
         Activity findActivity = AndroidUtilities.findActivity(context);
         if (findActivity instanceof LaunchActivity) {
-            ((LaunchActivity) findActivity).lambda$runLinkRequest$83(new PremiumPreviewFragment(LimitReachedBottomSheet.limitTypeToServerString(9)));
+            ((LaunchActivity) findActivity).lambda$runLinkRequest$82(new PremiumPreviewFragment(LimitReachedBottomSheet.limitTypeToServerString(9)));
         }
     }
 }

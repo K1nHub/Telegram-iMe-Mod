@@ -40,6 +40,6 @@ public final class CircleTokenView extends AppCompatImageView {
         gradientDrawable.setShape(1);
         gradientDrawable.setColor(i);
         setBackground(gradientDrawable);
-        ViewCompat.setElevation(this, AndroidUtilities.m51dp(2.0f));
+        ViewCompat.setElevation(this, AndroidUtilities.m55dp(2.0f));
     }
 }

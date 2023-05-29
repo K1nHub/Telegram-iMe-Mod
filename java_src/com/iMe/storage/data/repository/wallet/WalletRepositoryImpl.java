@@ -85,7 +85,7 @@ public final class WalletRepositoryImpl implements WalletRepository {
     public Observable<Result<CryptoTransferMetadata>> getCryptoTransferMetadata(TokenCode tokenCode, String str, String str2, NetworkType networkType) {
         Intrinsics.checkNotNullParameter(tokenCode, "tokenCode");
         Intrinsics.checkNotNullParameter(networkType, "networkType");
-        Observable<Result<CryptoTransferMetadata>> onErrorReturn = this.dataSourceFactory.getDataSource(TuplesKt.m80to(tokenCode, networkType.getBlockchainType())).getTransferMetadata(tokenCode, str, str2, networkType).onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1854x8820c924(this.errorHandler)));
+        Observable<Result<CryptoTransferMetadata>> onErrorReturn = this.dataSourceFactory.getDataSource(TuplesKt.m85to(tokenCode, networkType.getBlockchainType())).getTransferMetadata(tokenCode, str, str2, networkType).onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1925x8820c924(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -190,9 +190,9 @@ public final class WalletRepositoryImpl implements WalletRepository {
     @Override // com.iMe.storage.domain.repository.wallet.WalletRepository
     public Observable<Result<List<Transaction>>> getWalletTransactionHistory(boolean z, String str, TokenCode tokenCode, int i, NetworkType networkType) {
         Intrinsics.checkNotNullParameter(networkType, "networkType");
-        Observable<R> map = this.walletApi.getWalletTransactions(new GetWalletTransactionsRequest(str, i, networkType.name(), tokenCode != null ? tokenCode.getName() : null)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1862x5cdbb371(this.firebaseErrorHandler)));
+        Observable<R> map = this.walletApi.getWalletTransactions(new GetWalletTransactionsRequest(str, i, networkType.name(), tokenCode != null ? tokenCode.getName() : null)).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1933x5cdbb371(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<List<Transaction>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1861x21a27350(this.errorHandler)));
+        Observable<Result<List<Transaction>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1932x21a27350(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -202,7 +202,7 @@ public final class WalletRepositoryImpl implements WalletRepository {
         Intrinsics.checkNotNullParameter(code, "code");
         Intrinsics.checkNotNullParameter(args, "args");
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
-        Observable<Result<Boolean>> onErrorReturn = this.dataSourceFactory.getDataSource(TuplesKt.m80to(code, blockchainType)).transfer(args).onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new WalletRepositoryImpl$sendTokens$$inlined$handleError$1(this.errorHandler)));
+        Observable<Result<Boolean>> onErrorReturn = this.dataSourceFactory.getDataSource(TuplesKt.m85to(code, blockchainType)).transfer(args).onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new WalletRepositoryImpl$sendTokens$$inlined$handleError$1(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }

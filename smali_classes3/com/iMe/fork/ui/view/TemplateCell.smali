@@ -472,10 +472,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    const-string v1, "listSelectorSDK21"
-
     .line 105
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -488,9 +488,9 @@
     .line 106
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "chat_messagePanelIcons"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelIcons:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -525,10 +525,10 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    const-string v1, "listSelectorSDK21"
-
     .line 112
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -541,9 +541,9 @@
     .line 113
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "chat_messagePanelSend"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelSend:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -592,10 +592,10 @@
     .line 99
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setIncludeFontPadding(Z)V
 
-    const-string v1, "windowBackgroundWhiteGrayText"
-
     .line 100
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -686,10 +686,10 @@
     .line 92
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setIncludeFontPadding(Z)V
 
-    const-string v1, "windowBackgroundWhiteBlackText"
-
     .line 93
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -701,7 +701,7 @@
 
 # virtual methods
 .method public final bind(Lcom/iMe/storage/domain/model/templates/TemplateModel;Lorg/telegram/ui/Components/BotCommandsMenuView$BotCommandsAdapter$TemplatesDelegate;)V
-    .locals 6
+    .locals 7
 
     const-string v0, "template"
 
@@ -765,6 +765,10 @@
 
     const/16 v3, 0x20
 
+    const/4 v4, 0x1
+
+    const/4 v6, 0x0
+
     if-ne v1, v2, :cond_2
 
     .line 63
@@ -772,21 +776,17 @@
 
     move-result v1
 
-    const/4 v2, 0x0
-
     if-eqz v1, :cond_0
-
-    const/4 v1, 0x1
 
     goto :goto_0
 
     :cond_0
-    move v1, v2
+    move v4, v6
 
     :goto_0
-    if-eqz v1, :cond_1
+    if-eqz v4, :cond_1
 
-    move v1, v2
+    move v1, v6
 
     goto :goto_1
 
@@ -802,25 +802,25 @@
 
     invoke-direct {v1}, Ljava/lang/StringBuilder;-><init>()V
 
-    sget v4, Lorg/telegram/messenger/R$string;->chat_template_subtitle_sent:I
+    sget v2, Lorg/telegram/messenger/R$string;->chat_template_subtitle_sent:I
 
-    invoke-static {v4}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+    invoke-static {v2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
-    move-result-object v4
+    move-result-object v2
 
-    invoke-virtual {v1, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+    invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     invoke-virtual {v1, v3}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
 
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/templates/TemplateModel;->getUsageRating()I
 
-    move-result v3
+    move-result v2
 
-    new-array v2, v2, [Ljava/lang/Object;
+    new-array v3, v6, [Ljava/lang/Object;
 
     const-string v4, "Times"
 
-    invoke-static {v4, v3, v2}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+    invoke-static {v4, v2, v3}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v2
 
@@ -836,7 +836,7 @@
 
     .line 66
     :cond_2
-    invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    invoke-static {v0, v6, v4, v5}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 67
     new-instance v1, Ljava/lang/StringBuilder;

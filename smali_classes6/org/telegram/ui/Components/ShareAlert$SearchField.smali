@@ -50,13 +50,13 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/ShareAlert;Landroid/content/Context;)V
     .locals 8
 
-    .line 332
+    .line 479
     iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
-    .line 333
+    .line 480
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 335
+    .line 482
     new-instance v0, Landroid/view/View;
 
     invoke-direct {v0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
@@ -65,26 +65,26 @@
 
     const/16 v1, 0x12
 
-    .line 336
+    .line 483
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert;->access$000(Lorg/telegram/ui/Components/ShareAlert;)Z
+    invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert;->access$200(Lorg/telegram/ui/Components/ShareAlert;)Z
 
     move-result v2
 
     if-eqz v2, :cond_0
 
-    const-string v2, "voipgroup_searchBackground"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_searchBackground:I
 
     goto :goto_0
 
     :cond_0
-    const-string v2, "dialogSearchBackground"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogSearchBackground:I
 
     :goto_0
-    invoke-static {p1, v2}, Lorg/telegram/ui/Components/ShareAlert;->access$900(Lorg/telegram/ui/Components/ShareAlert;Ljava/lang/String;)I
+    invoke-static {p1, v2}, Lorg/telegram/ui/Components/ShareAlert;->access$1100(Lorg/telegram/ui/Components/ShareAlert;I)I
 
     move-result v2
 
@@ -94,7 +94,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 337
+    .line 484
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->searchBackground:Landroid/view/View;
 
     const/4 v1, -0x1
@@ -117,45 +117,45 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 339
+    .line 486
     new-instance v0, Landroid/widget/ImageView;
 
     invoke-direct {v0, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->searchIconImageView:Landroid/widget/ImageView;
 
-    .line 340
+    .line 487
     sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 341
+    .line 488
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->searchIconImageView:Landroid/widget/ImageView;
 
     sget v1, Lorg/telegram/messenger/R$drawable;->smiles_inputsearch:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 342
+    .line 489
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->searchIconImageView:Landroid/widget/ImageView;
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert;->access$000(Lorg/telegram/ui/Components/ShareAlert;)Z
+    invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert;->access$200(Lorg/telegram/ui/Components/ShareAlert;)Z
 
     move-result v2
 
     if-eqz v2, :cond_1
 
-    const-string v2, "voipgroup_mutedIcon"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_mutedIcon:I
 
     goto :goto_1
 
     :cond_1
-    const-string v2, "dialogSearchIcon"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogSearchIcon:I
 
     :goto_1
-    invoke-static {p1, v2}, Lorg/telegram/ui/Components/ShareAlert;->access$1000(Lorg/telegram/ui/Components/ShareAlert;Ljava/lang/String;)I
+    invoke-static {p1, v2}, Lorg/telegram/ui/Components/ShareAlert;->access$1200(Lorg/telegram/ui/Components/ShareAlert;I)I
 
     move-result v2
 
@@ -165,7 +165,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 343
+    .line 490
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->searchIconImageView:Landroid/widget/ImageView;
 
     const/16 v1, 0x24
@@ -188,19 +188,19 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 345
+    .line 492
     new-instance v0, Landroid/widget/ImageView;
 
     invoke-direct {v0, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->clearSearchImageView:Landroid/widget/ImageView;
 
-    .line 346
+    .line 493
     sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 347
+    .line 494
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->clearSearchImageView:Landroid/widget/ImageView;
 
     new-instance v1, Lorg/telegram/ui/Components/ShareAlert$SearchField$1;
@@ -211,7 +211,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 353
+    .line 500
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->progressDrawable:Lorg/telegram/ui/Components/CloseProgressDrawable2;
 
     const/4 v1, 0x7
@@ -222,26 +222,26 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/CloseProgressDrawable2;->setSide(I)V
 
-    .line 354
+    .line 501
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->clearSearchImageView:Landroid/widget/ImageView;
 
     const v1, 0x3dcccccd    # 0.1f
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 355
+    .line 502
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->clearSearchImageView:Landroid/widget/ImageView;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleY(F)V
 
-    .line 356
+    .line 503
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->clearSearchImageView:Landroid/widget/ImageView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 357
+    .line 504
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->clearSearchImageView:Landroid/widget/ImageView;
 
     const/16 v1, 0x24
@@ -258,7 +258,7 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 358
+    .line 505
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->clearSearchImageView:Landroid/widget/ImageView;
 
     new-instance v1, Lorg/telegram/ui/Components/ShareAlert$SearchField$$ExternalSyntheticLambda0;
@@ -267,7 +267,7 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 364
+    .line 511
     new-instance v0, Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-direct {v0, p2}, Lorg/telegram/ui/Components/EditTextBoldCursor;-><init>(Landroid/content/Context;)V
@@ -278,94 +278,92 @@
 
     const/4 v1, 0x1
 
-    .line 365
+    .line 512
     invoke-virtual {v0, v1, p2}, Landroid/widget/EditText;->setTextSize(IF)V
 
-    .line 366
+    .line 513
     iget-object p2, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert;->access$000(Lorg/telegram/ui/Components/ShareAlert;)Z
+    invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert;->access$200(Lorg/telegram/ui/Components/ShareAlert;)Z
 
     move-result v0
 
     if-eqz v0, :cond_2
 
-    const-string v0, "voipgroup_searchPlaceholder"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_searchPlaceholder:I
 
     goto :goto_2
 
     :cond_2
-    const-string v0, "dialogSearchHint"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogSearchHint:I
 
     :goto_2
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/ShareAlert;->access$1200(Lorg/telegram/ui/Components/ShareAlert;Ljava/lang/String;)I
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/ShareAlert;->access$1400(Lorg/telegram/ui/Components/ShareAlert;I)I
 
     move-result v0
 
     invoke-virtual {p2, v0}, Landroid/widget/EditText;->setHintTextColor(I)V
 
-    .line 367
+    .line 514
     iget-object p2, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert;->access$000(Lorg/telegram/ui/Components/ShareAlert;)Z
+    invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert;->access$200(Lorg/telegram/ui/Components/ShareAlert;)Z
 
     move-result v0
 
-    const-string v2, "voipgroup_searchText"
-
     if-eqz v0, :cond_3
 
-    move-object v0, v2
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_searchText:I
 
     goto :goto_3
 
     :cond_3
-    const-string v0, "dialogSearchText"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogSearchText:I
 
     :goto_3
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/ShareAlert;->access$1300(Lorg/telegram/ui/Components/ShareAlert;Ljava/lang/String;)I
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/ShareAlert;->access$1500(Lorg/telegram/ui/Components/ShareAlert;I)I
 
     move-result v0
 
     invoke-virtual {p2, v0}, Landroid/widget/EditText;->setTextColor(I)V
 
-    .line 368
+    .line 515
     iget-object p2, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v0, 0x0
 
     invoke-virtual {p2, v0}, Landroid/widget/EditText;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
-    .line 369
+    .line 516
     iget-object p2, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v0, 0x0
 
     invoke-virtual {p2, v0, v0, v0, v0}, Landroid/widget/EditText;->setPadding(IIII)V
 
-    .line 370
+    .line 517
     iget-object p2, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {p2, v1}, Landroid/widget/EditText;->setMaxLines(I)V
 
-    .line 371
+    .line 518
     iget-object p2, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {p2, v1}, Landroid/widget/EditText;->setLines(I)V
 
-    .line 372
+    .line 519
     iget-object p2, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-virtual {p2, v1}, Landroid/widget/EditText;->setSingleLine(Z)V
 
-    .line 373
+    .line 520
     iget-object p2, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const v0, 0x10000003
 
     invoke-virtual {p2, v0}, Landroid/widget/EditText;->setImeOptions(I)V
 
-    .line 374
+    .line 521
     iget-object p2, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     sget v0, Lorg/telegram/messenger/R$string;->ShareSendTo:I
@@ -378,28 +376,30 @@
 
     invoke-virtual {p2, v0}, Landroid/widget/EditText;->setHint(Ljava/lang/CharSequence;)V
 
-    .line 375
+    .line 522
     iget-object p2, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert;->access$000(Lorg/telegram/ui/Components/ShareAlert;)Z
+    invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert;->access$200(Lorg/telegram/ui/Components/ShareAlert;)Z
 
     move-result v0
 
     if-eqz v0, :cond_4
 
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_searchText:I
+
     goto :goto_4
 
     :cond_4
-    const-string v2, "featuredStickers_addedIcon"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addedIcon:I
 
     :goto_4
-    invoke-static {p1, v2}, Lorg/telegram/ui/Components/ShareAlert;->access$1400(Lorg/telegram/ui/Components/ShareAlert;Ljava/lang/String;)I
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/ShareAlert;->access$1600(Lorg/telegram/ui/Components/ShareAlert;I)I
 
     move-result v0
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorColor(I)V
 
-    .line 376
+    .line 523
     iget-object p2, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/16 v0, 0x14
@@ -410,14 +410,14 @@
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorSize(I)V
 
-    .line 377
+    .line 524
     iget-object p2, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/high16 v0, 0x3fc00000    # 1.5f
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->setCursorWidth(F)V
 
-    .line 378
+    .line 525
     iget-object p2, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const/4 v0, -0x1
@@ -440,7 +440,7 @@
 
     invoke-virtual {p0, p2, v0}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 379
+    .line 526
     iget-object p2, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     new-instance v0, Lorg/telegram/ui/Components/ShareAlert$SearchField$2;
@@ -449,7 +449,7 @@
 
     invoke-virtual {p2, v0}, Lorg/telegram/ui/Components/EditTextBoldCursor;->addTextChangedListener(Landroid/text/TextWatcher;)V
 
-    .line 431
+    .line 578
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     new-instance p2, Lorg/telegram/ui/Components/ShareAlert$SearchField$$ExternalSyntheticLambda1;
@@ -461,19 +461,19 @@
     return-void
 .end method
 
-.method static synthetic access$1500(Lorg/telegram/ui/Components/ShareAlert$SearchField;)Lorg/telegram/ui/Components/EditTextBoldCursor;
+.method static synthetic access$000(Lorg/telegram/ui/Components/ShareAlert$SearchField;)Lorg/telegram/ui/Components/EditTextBoldCursor;
     .locals 0
 
-    .line 323
+    .line 470
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     return-object p0
 .end method
 
-.method static synthetic access$1600(Lorg/telegram/ui/Components/ShareAlert$SearchField;)Landroid/widget/ImageView;
+.method static synthetic access$1700(Lorg/telegram/ui/Components/ShareAlert$SearchField;)Landroid/widget/ImageView;
     .locals 0
 
-    .line 323
+    .line 470
     iget-object p0, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->clearSearchImageView:Landroid/widget/ImageView;
 
     return-object p0
@@ -482,21 +482,21 @@
 .method private synthetic lambda$new$0(Landroid/view/View;)V
     .locals 1
 
-    .line 359
+    .line 506
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
     const/4 v0, 0x1
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/ShareAlert;->access$1802(Lorg/telegram/ui/Components/ShareAlert;Z)Z
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/ShareAlert;->access$1902(Lorg/telegram/ui/Components/ShareAlert;Z)Z
 
-    .line 360
+    .line 507
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     const-string v0, ""
 
     invoke-virtual {p1, v0}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
-    .line 361
+    .line 508
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->showKeyboard(Landroid/view/View;)Z
@@ -509,7 +509,7 @@
 
     if-eqz p3, :cond_2
 
-    .line 432
+    .line 579
     invoke-virtual {p3}, Landroid/view/KeyEvent;->getAction()I
 
     move-result p1
@@ -541,7 +541,7 @@
 
     if-ne p1, p2, :cond_2
 
-    .line 433
+    .line 580
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
@@ -558,7 +558,7 @@
 .method public hideKeyboard()V
     .locals 1
 
-    .line 440
+    .line 587
     iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$SearchField;->searchEditText:Lorg/telegram/ui/Components/EditTextBoldCursor;
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->hideKeyboard(Landroid/view/View;)V

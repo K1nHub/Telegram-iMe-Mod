@@ -39,10 +39,10 @@
 .method public constructor <init>(I)V
     .locals 0
 
-    .line 20
+    .line 21
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 21
+    .line 22
     iput p1, p0, Lorg/telegram/messenger/NotificationsSettingsFacade;->currentAccount:I
 
     return-void
@@ -51,7 +51,7 @@
 .method private getPreferences()Landroid/content/SharedPreferences;
     .locals 1
 
-    .line 86
+    .line 87
     iget v0, p0, Lorg/telegram/messenger/NotificationsSettingsFacade;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getNotificationsSettings(I)Landroid/content/SharedPreferences;
@@ -64,7 +64,7 @@
 .method private synthetic lambda$applyDialogNotificationsSettings$0()V
     .locals 3
 
-    .line 172
+    .line 173
     iget v0, p0, Lorg/telegram/messenger/NotificationsSettingsFacade;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -91,40 +91,40 @@
 
     move-object/from16 v0, p4
 
-    .line 94
+    .line 95
     invoke-static/range {p1 .. p3}, Lorg/telegram/messenger/NotificationsController;->getSharedPrefKey(JI)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 95
+    .line 96
     iget v2, v8, Lorg/telegram/messenger/NotificationsSettingsFacade;->currentAccount:I
 
     invoke-static {v2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v2
 
-    .line 96
+    .line 97
     iget v5, v8, Lorg/telegram/messenger/NotificationsSettingsFacade;->currentAccount:I
 
     invoke-static {v5}, Lorg/telegram/tgnet/ConnectionsManager;->getInstance(I)Lorg/telegram/tgnet/ConnectionsManager;
 
     move-result-object v5
 
-    .line 97
+    .line 98
     iget v6, v8, Lorg/telegram/messenger/NotificationsSettingsFacade;->currentAccount:I
 
     invoke-static {v6}, Lorg/telegram/messenger/MessagesStorage;->getInstance(I)Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v6
 
-    .line 98
+    .line 99
     iget v7, v8, Lorg/telegram/messenger/NotificationsSettingsFacade;->currentAccount:I
 
     invoke-static {v7}, Lorg/telegram/messenger/NotificationsController;->getInstance(I)Lorg/telegram/messenger/NotificationsController;
 
     move-result-object v7
 
-    .line 100
+    .line 101
     invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/NotificationsSettingsFacade;->getPreferences()Landroid/content/SharedPreferences;
 
     move-result-object v9
@@ -149,7 +149,7 @@
 
     move-result v9
 
-    .line 101
+    .line 102
     invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/NotificationsSettingsFacade;->getPreferences()Landroid/content/SharedPreferences;
 
     move-result-object v10
@@ -174,7 +174,7 @@
 
     move-result v10
 
-    .line 102
+    .line 103
     invoke-direct/range {p0 .. p0}, Lorg/telegram/messenger/NotificationsSettingsFacade;->getPreferences()Landroid/content/SharedPreferences;
 
     move-result-object v13
@@ -183,18 +183,18 @@
 
     move-result-object v13
 
-    .line 104
+    .line 105
     iget v12, v0, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->flags:I
 
     const/4 v15, 0x2
 
     and-int/2addr v12, v15
 
-    const-string v15, "silent_"
+    const-string/jumbo v15, "silent_"
 
     if-eqz v12, :cond_0
 
-    .line 105
+    .line 106
     new-instance v12, Ljava/lang/StringBuilder;
 
     invoke-direct {v12}, Ljava/lang/StringBuilder;-><init>()V
@@ -213,7 +213,7 @@
 
     goto :goto_0
 
-    .line 107
+    .line 108
     :cond_0
     new-instance v12, Ljava/lang/StringBuilder;
 
@@ -234,7 +234,7 @@
 
     if-nez p3, :cond_1
 
-    .line 112
+    .line 113
     iget-object v2, v2, Lorg/telegram/messenger/MessagesController;->dialogs_dict:Landroidx/collection/LongSparseArray;
 
     invoke-virtual {v2, v3, v4}, Landroidx/collection/LongSparseArray;->get(J)Ljava/lang/Object;
@@ -248,10 +248,10 @@
     :cond_1
     if-eqz v12, :cond_2
 
-    .line 115
+    .line 116
     iput-object v0, v12, Lorg/telegram/tgnet/TLRPC$Dialog;->notify_settings:Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;
 
-    .line 118
+    .line 119
     :cond_2
     iget v2, v0, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->flags:I
 
@@ -263,7 +263,7 @@
 
     if-eqz v2, :cond_c
 
-    .line 119
+    .line 120
     iget v2, v0, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->mute_until:I
 
     invoke-virtual {v5}, Lorg/telegram/tgnet/ConnectionsManager;->getCurrentTime()I
@@ -272,7 +272,7 @@
 
     if-le v2, v8, :cond_9
 
-    .line 121
+    .line 122
     iget v2, v0, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->mute_until:I
 
     invoke-virtual {v5}, Lorg/telegram/tgnet/ConnectionsManager;->getCurrentTime()I
@@ -289,7 +289,7 @@
 
     if-eq v9, v2, :cond_4
 
-    .line 124
+    .line 125
     new-instance v5, Ljava/lang/StringBuilder;
 
     invoke-direct {v5}, Ljava/lang/StringBuilder;-><init>()V
@@ -306,7 +306,7 @@
 
     if-eqz v12, :cond_3
 
-    .line 126
+    .line 127
     iget-object v1, v12, Lorg/telegram/tgnet/TLRPC$Dialog;->notify_settings:Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;
 
     const v2, 0x7fffffff
@@ -332,7 +332,7 @@
 
     if-ne v9, v2, :cond_7
 
-    .line 130
+    .line 131
     iget v5, v0, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->mute_until:I
 
     if-eq v10, v5, :cond_6
@@ -344,7 +344,7 @@
 
     goto :goto_2
 
-    .line 132
+    .line 133
     :cond_7
     :goto_1
     new-instance v5, Ljava/lang/StringBuilder;
@@ -361,7 +361,7 @@
 
     invoke-interface {v13, v5, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 133
+    .line 134
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -380,7 +380,7 @@
 
     if-eqz v12, :cond_8
 
-    .line 135
+    .line 136
     iget-object v1, v12, Lorg/telegram/tgnet/TLRPC$Dialog;->notify_settings:Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;
 
     const/4 v2, 0x0
@@ -390,7 +390,7 @@
     :cond_8
     move/from16 v16, v7
 
-    .line 138
+    .line 139
     :goto_2
     iget v1, v0, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->mute_until:I
 
@@ -407,12 +407,12 @@
 
     or-long/2addr v1, v7
 
-    .line 141
+    .line 142
     invoke-virtual {v6, v3, v4, v1, v2}, Lorg/telegram/messenger/MessagesStorage;->setDialogFlags(JJ)V
 
     move-object v1, v15
 
-    .line 142
+    .line 143
     invoke-virtual {v1, v3, v4}, Lorg/telegram/messenger/NotificationsController;->removeNotificationsForDialog(J)V
 
     goto :goto_8
@@ -424,7 +424,7 @@
 
     if-eqz v12, :cond_a
 
-    .line 148
+    .line 149
     iget-object v2, v12, Lorg/telegram/tgnet/TLRPC$Dialog;->notify_settings:Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;
 
     const/4 v5, 0x0
@@ -436,7 +436,7 @@
     :cond_a
     const/4 v5, 0x0
 
-    .line 150
+    .line 151
     :goto_4
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -464,7 +464,7 @@
 
     const-wide/16 v1, 0x0
 
-    .line 153
+    .line 154
     invoke-virtual {v6, v3, v4, v1, v2}, Lorg/telegram/messenger/MessagesStorage;->setDialogFlags(JJ)V
 
     goto :goto_7
@@ -476,14 +476,14 @@
 
     if-eqz v12, :cond_d
 
-    .line 160
+    .line 161
     iget-object v2, v12, Lorg/telegram/tgnet/TLRPC$Dialog;->notify_settings:Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;
 
     const/4 v5, 0x0
 
     iput v5, v2, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->mute_until:I
 
-    .line 162
+    .line 163
     :cond_d
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -513,14 +513,14 @@
 
     const-wide/16 v1, 0x0
 
-    .line 165
+    .line 166
     invoke-virtual {v6, v3, v4, v1, v2}, Lorg/telegram/messenger/MessagesStorage;->setDialogFlags(JJ)V
 
     :cond_f
     :goto_7
     move/from16 v16, v15
 
-    .line 168
+    .line 169
     :cond_10
     :goto_8
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->android_sound:Lorg/telegram/tgnet/TLRPC$NotificationSound;
@@ -539,12 +539,12 @@
 
     invoke-virtual/range {v0 .. v7}, Lorg/telegram/messenger/NotificationsSettingsFacade;->applySoundSettings(Lorg/telegram/tgnet/TLRPC$NotificationSound;Landroid/content/SharedPreferences$Editor;JIIZ)V
 
-    .line 169
+    .line 170
     invoke-interface {v13}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     if-eqz v16, :cond_11
 
-    .line 171
+    .line 172
     new-instance v0, Lorg/telegram/messenger/NotificationsSettingsFacade$$ExternalSyntheticLambda0;
 
     move-object/from16 v1, p0
@@ -571,7 +571,7 @@
 
     return-void
 
-    .line 93
+    .line 94
     :cond_0
     sget-object v0, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
@@ -595,7 +595,7 @@
 .end method
 
 .method public applySoundSettings(Lorg/telegram/tgnet/TLRPC$NotificationSound;Landroid/content/SharedPreferences$Editor;JIIZ)V
-    .locals 5
+    .locals 7
 
     if-nez p1, :cond_0
 
@@ -610,17 +610,17 @@
 
     if-eqz v0, :cond_1
 
-    .line 186
+    .line 187
     invoke-static {p3, p4, p5}, Lorg/telegram/messenger/NotificationsController;->getSharedPrefKey(JI)Ljava/lang/String;
 
     move-result-object p5
 
-    .line 187
+    .line 188
     new-instance p6, Ljava/lang/StringBuilder;
 
     invoke-direct {p6}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v2, "sound_"
+    const-string/jumbo v2, "sound_"
 
     invoke-virtual {p6, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -630,12 +630,12 @@
 
     move-result-object p6
 
-    .line 188
+    .line 189
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "sound_path_"
+    const-string/jumbo v3, "sound_path_"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -645,12 +645,12 @@
 
     move-result-object v2
 
-    .line 189
+    .line 190
     new-instance v3, Ljava/lang/StringBuilder;
 
     invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v4, "sound_document_id_"
+    const-string/jumbo v4, "sound_document_id_"
 
     invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -691,96 +691,157 @@
 
     const-string v2, "ChannelSoundPath"
 
-    .line 206
-    :goto_0
-    instance-of v3, p1, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundDefault;
-
-    if-eqz v3, :cond_4
-
-    const-string p1, "Default"
-
     .line 207
-    invoke-interface {p2, p6, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    :goto_0
+    instance-of v3, p1, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundLocal;
+
+    const-string v4, "NoSound"
+
+    const-string v5, "Default"
+
+    if-eqz v3, :cond_7
 
     .line 208
-    invoke-interface {p2, v2, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    move-object v3, p1
+
+    check-cast v3, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundLocal;
 
     .line 209
-    invoke-interface {p2, p5}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    iget-object v6, v3, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundLocal;->data:Ljava/lang/String;
+
+    invoke-virtual {v5, v6}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_4
+
+    .line 210
+    new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundDefault;
+
+    invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundDefault;-><init>()V
 
     goto :goto_1
 
-    .line 210
-    :cond_4
-    instance-of v3, p1, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundNone;
-
-    if-eqz v3, :cond_5
-
-    const-string p1, "NoSound"
-
     .line 211
-    invoke-interface {p2, p6, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    :cond_4
+    iget-object v6, v3, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundLocal;->data:Ljava/lang/String;
+
+    invoke-virtual {v4, v6}, Ljava/lang/String;->equalsIgnoreCase(Ljava/lang/String;)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_5
 
     .line 212
-    invoke-interface {p2, v2, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundNone;
 
-    .line 213
-    invoke-interface {p2, p5}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+    invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundNone;-><init>()V
 
     goto :goto_1
 
     .line 214
     :cond_5
+    iget-object v6, v3, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundLocal;->title:Ljava/lang/String;
+
+    invoke-static {v6}, Lorg/telegram/ui/NotificationsSoundActivity;->findRingtonePathByName(Ljava/lang/String;)Ljava/lang/String;
+
+    move-result-object v6
+
+    if-nez v6, :cond_6
+
+    return-void
+
+    .line 219
+    :cond_6
+    iput-object v6, v3, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundLocal;->data:Ljava/lang/String;
+
+    .line 224
+    :cond_7
+    :goto_1
+    instance-of v3, p1, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundDefault;
+
+    if-eqz v3, :cond_8
+
+    .line 225
+    invoke-interface {p2, p6, v5}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    .line 226
+    invoke-interface {p2, v2, v5}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    .line 227
+    invoke-interface {p2, p5}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    goto :goto_2
+
+    .line 228
+    :cond_8
+    instance-of v3, p1, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundNone;
+
+    if-eqz v3, :cond_9
+
+    .line 229
+    invoke-interface {p2, p6, v4}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    .line 230
+    invoke-interface {p2, v2, v4}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    .line 231
+    invoke-interface {p2, p5}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
+
+    goto :goto_2
+
+    .line 232
+    :cond_9
     instance-of v3, p1, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundLocal;
 
-    if-eqz v3, :cond_6
+    if-eqz v3, :cond_a
 
-    .line 215
+    .line 233
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundLocal;
 
-    .line 216
+    .line 234
     iget-object p3, p1, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundLocal;->title:Ljava/lang/String;
 
     invoke-interface {p2, p6, p3}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 217
+    .line 235
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundLocal;->data:Ljava/lang/String;
 
     invoke-interface {p2, v2, p1}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 218
+    .line 236
     invoke-interface {p2, p5}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    goto :goto_1
+    goto :goto_2
 
-    .line 219
-    :cond_6
+    .line 237
+    :cond_a
     instance-of p6, p1, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundRingtone;
 
-    if-eqz p6, :cond_8
+    if-eqz p6, :cond_c
 
-    .line 220
+    .line 238
     check-cast p1, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundRingtone;
 
-    .line 221
+    .line 239
     iget-wide v2, p1, Lorg/telegram/tgnet/TLRPC$TL_notificationSoundRingtone;->id:J
 
     invoke-interface {p2, p5, v2, v3}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
-    .line 222
+    .line 240
     iget p5, p0, Lorg/telegram/messenger/NotificationsSettingsFacade;->currentAccount:I
 
     invoke-static {p5}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
 
     move-result-object p5
 
-    invoke-virtual {p5}, Lorg/telegram/messenger/MediaDataController;->checkRingtones()V
+    invoke-virtual {p5, v1}, Lorg/telegram/messenger/MediaDataController;->checkRingtones(Z)V
 
-    if-eqz p7, :cond_7
+    if-eqz p7, :cond_b
 
-    if-eqz v0, :cond_7
+    if-eqz v0, :cond_b
 
-    .line 224
+    .line 242
     new-instance p5, Ljava/lang/StringBuilder;
 
     invoke-direct {p5}, Ljava/lang/StringBuilder;-><init>()V
@@ -797,8 +858,8 @@
 
     invoke-interface {p2, p3, v1}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 226
-    :cond_7
+    .line 244
+    :cond_b
     iget p2, p0, Lorg/telegram/messenger/NotificationsSettingsFacade;->currentAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -811,20 +872,20 @@
 
     invoke-virtual {p2, p3, p4}, Lorg/telegram/messenger/ringtone/RingtoneDataStore;->getDocument(J)Lorg/telegram/tgnet/TLRPC$Document;
 
-    :cond_8
-    :goto_1
+    :cond_c
+    :goto_2
     return-void
 .end method
 
 .method public clearPreference(JI)V
     .locals 1
 
-    .line 31
+    .line 32
     invoke-static {p1, p2, p3}, Lorg/telegram/messenger/NotificationsController;->getSharedPrefKey(JI)Ljava/lang/String;
 
     move-result-object p1
 
-    .line 32
+    .line 33
     invoke-direct {p0}, Lorg/telegram/messenger/NotificationsSettingsFacade;->getPreferences()Landroid/content/SharedPreferences;
 
     move-result-object p2
@@ -847,7 +908,7 @@
 
     move-result-object p3
 
-    .line 33
+    .line 34
     invoke-interface {p2, p3}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object p2
@@ -866,7 +927,7 @@
 
     move-result-object p3
 
-    .line 34
+    .line 35
     invoke-interface {p2, p3}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object p2
@@ -885,7 +946,7 @@
 
     move-result-object p3
 
-    .line 35
+    .line 36
     invoke-interface {p2, p3}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object p2
@@ -904,7 +965,7 @@
 
     move-result-object p3
 
-    .line 36
+    .line 37
     invoke-interface {p2, p3}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object p2
@@ -913,7 +974,7 @@
 
     invoke-direct {p3}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v0, "silent_"
+    const-string/jumbo v0, "silent_"
 
     invoke-virtual {p3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -923,12 +984,12 @@
 
     move-result-object p1
 
-    .line 37
+    .line 38
     invoke-interface {p2, p1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
     move-result-object p1
 
-    .line 38
+    .line 39
     invoke-interface {p1}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     return-void
@@ -937,12 +998,12 @@
 .method public getProperty(Ljava/lang/String;JII)I
     .locals 2
 
-    .line 44
+    .line 45
     invoke-static {p2, p3, p4}, Lorg/telegram/messenger/NotificationsController;->getSharedPrefKey(JI)Ljava/lang/String;
 
     move-result-object p4
 
-    .line 45
+    .line 46
     invoke-direct {p0}, Lorg/telegram/messenger/NotificationsSettingsFacade;->getPreferences()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -965,7 +1026,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 46
+    .line 47
     invoke-direct {p0}, Lorg/telegram/messenger/NotificationsSettingsFacade;->getPreferences()Landroid/content/SharedPreferences;
 
     move-result-object p2
@@ -991,12 +1052,12 @@
     :cond_0
     const/4 p4, 0x0
 
-    .line 48
+    .line 49
     invoke-static {p2, p3, p4}, Lorg/telegram/messenger/NotificationsController;->getSharedPrefKey(JI)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 49
+    .line 50
     invoke-direct {p0}, Lorg/telegram/messenger/NotificationsSettingsFacade;->getPreferences()Landroid/content/SharedPreferences;
 
     move-result-object p3
@@ -1023,12 +1084,12 @@
 .method public getProperty(Ljava/lang/String;JIJ)J
     .locals 2
 
-    .line 53
+    .line 54
     invoke-static {p2, p3, p4}, Lorg/telegram/messenger/NotificationsController;->getSharedPrefKey(JI)Ljava/lang/String;
 
     move-result-object p4
 
-    .line 54
+    .line 55
     invoke-direct {p0}, Lorg/telegram/messenger/NotificationsSettingsFacade;->getPreferences()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1051,7 +1112,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 55
+    .line 56
     invoke-direct {p0}, Lorg/telegram/messenger/NotificationsSettingsFacade;->getPreferences()Landroid/content/SharedPreferences;
 
     move-result-object p2
@@ -1077,12 +1138,12 @@
     :cond_0
     const/4 p4, 0x0
 
-    .line 57
+    .line 58
     invoke-static {p2, p3, p4}, Lorg/telegram/messenger/NotificationsController;->getSharedPrefKey(JI)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 58
+    .line 59
     invoke-direct {p0}, Lorg/telegram/messenger/NotificationsSettingsFacade;->getPreferences()Landroid/content/SharedPreferences;
 
     move-result-object p3
@@ -1109,12 +1170,12 @@
 .method public getProperty(Ljava/lang/String;JIZ)Z
     .locals 2
 
-    .line 62
+    .line 63
     invoke-static {p2, p3, p4}, Lorg/telegram/messenger/NotificationsController;->getSharedPrefKey(JI)Ljava/lang/String;
 
     move-result-object p4
 
-    .line 63
+    .line 64
     invoke-direct {p0}, Lorg/telegram/messenger/NotificationsSettingsFacade;->getPreferences()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1137,7 +1198,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 64
+    .line 65
     invoke-direct {p0}, Lorg/telegram/messenger/NotificationsSettingsFacade;->getPreferences()Landroid/content/SharedPreferences;
 
     move-result-object p2
@@ -1163,12 +1224,12 @@
     :cond_0
     const/4 p4, 0x0
 
-    .line 66
+    .line 67
     invoke-static {p2, p3, p4}, Lorg/telegram/messenger/NotificationsController;->getSharedPrefKey(JI)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 67
+    .line 68
     invoke-direct {p0}, Lorg/telegram/messenger/NotificationsSettingsFacade;->getPreferences()Landroid/content/SharedPreferences;
 
     move-result-object p3
@@ -1195,12 +1256,12 @@
 .method public getPropertyString(Ljava/lang/String;JILjava/lang/String;)Ljava/lang/String;
     .locals 2
 
-    .line 71
+    .line 72
     invoke-static {p2, p3, p4}, Lorg/telegram/messenger/NotificationsController;->getSharedPrefKey(JI)Ljava/lang/String;
 
     move-result-object p4
 
-    .line 72
+    .line 73
     invoke-direct {p0}, Lorg/telegram/messenger/NotificationsSettingsFacade;->getPreferences()Landroid/content/SharedPreferences;
 
     move-result-object v0
@@ -1223,7 +1284,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 73
+    .line 74
     invoke-direct {p0}, Lorg/telegram/messenger/NotificationsSettingsFacade;->getPreferences()Landroid/content/SharedPreferences;
 
     move-result-object p2
@@ -1249,12 +1310,12 @@
     :cond_0
     const/4 p4, 0x0
 
-    .line 75
+    .line 76
     invoke-static {p2, p3, p4}, Lorg/telegram/messenger/NotificationsController;->getSharedPrefKey(JI)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 76
+    .line 77
     invoke-direct {p0}, Lorg/telegram/messenger/NotificationsSettingsFacade;->getPreferences()Landroid/content/SharedPreferences;
 
     move-result-object p3
@@ -1281,7 +1342,7 @@
 .method public isDefault(JI)Z
     .locals 0
 
-    .line 26
+    .line 27
     invoke-static {p1, p2, p3}, Lorg/telegram/messenger/NotificationsController;->getSharedPrefKey(JI)Ljava/lang/String;
 
     const/4 p1, 0x0
@@ -1292,12 +1353,12 @@
 .method public removeProperty(Ljava/lang/String;JI)V
     .locals 0
 
-    .line 81
+    .line 82
     invoke-static {p2, p3, p4}, Lorg/telegram/messenger/NotificationsController;->getSharedPrefKey(JI)Ljava/lang/String;
 
     move-result-object p2
 
-    .line 82
+    .line 83
     invoke-direct {p0}, Lorg/telegram/messenger/NotificationsSettingsFacade;->getPreferences()Landroid/content/SharedPreferences;
 
     move-result-object p3
@@ -1330,7 +1391,7 @@
 .method public setSettingsForDialog(Lorg/telegram/tgnet/TLRPC$Dialog;Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;)V
     .locals 7
 
-    .line 231
+    .line 249
     invoke-direct {p0}, Lorg/telegram/messenger/NotificationsSettingsFacade;->getPreferences()Landroid/content/SharedPreferences;
 
     move-result-object p2
@@ -1339,14 +1400,14 @@
 
     move-result-object p2
 
-    .line 232
+    .line 250
     iget-object v0, p1, Lorg/telegram/tgnet/TLRPC$Dialog;->peer:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-static {v0}, Lorg/telegram/messenger/MessageObject;->getPeerId(Lorg/telegram/tgnet/TLRPC$Peer;)J
 
     move-result-wide v0
 
-    .line 234
+    .line 252
     iget-object v2, p1, Lorg/telegram/tgnet/TLRPC$Dialog;->notify_settings:Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;
 
     iget v2, v2, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->flags:I
@@ -1355,11 +1416,11 @@
 
     and-int/2addr v2, v3
 
-    const-string v4, "silent_"
+    const-string/jumbo v4, "silent_"
 
     if-eqz v2, :cond_0
 
-    .line 235
+    .line 253
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1380,7 +1441,7 @@
 
     goto :goto_0
 
-    .line 237
+    .line 255
     :cond_0
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -1396,7 +1457,7 @@
 
     invoke-interface {p2, v2}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 239
+    .line 257
     :goto_0
     iget v2, p0, Lorg/telegram/messenger/NotificationsSettingsFacade;->currentAccount:I
 
@@ -1404,7 +1465,7 @@
 
     move-result-object v2
 
-    .line 240
+    .line 258
     iget-object v4, p1, Lorg/telegram/tgnet/TLRPC$Dialog;->notify_settings:Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;
 
     iget v5, v4, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->flags:I
@@ -1415,7 +1476,7 @@
 
     if-eqz v5, :cond_3
 
-    .line 241
+    .line 259
     iget v4, v4, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->mute_until:I
 
     invoke-virtual {v2}, Lorg/telegram/tgnet/ConnectionsManager;->getCurrentTime()I
@@ -1424,7 +1485,7 @@
 
     if-le v4, v5, :cond_2
 
-    .line 242
+    .line 260
     iget-object v4, p1, Lorg/telegram/tgnet/TLRPC$Dialog;->notify_settings:Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;
 
     iget v4, v4, Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;->mute_until:I
@@ -1439,7 +1500,7 @@
 
     if-le v4, v2, :cond_1
 
-    .line 243
+    .line 261
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1454,7 +1515,7 @@
 
     invoke-interface {p2, v0, v3}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 244
+    .line 262
     iget-object p1, p1, Lorg/telegram/tgnet/TLRPC$Dialog;->notify_settings:Lorg/telegram/tgnet/TLRPC$PeerNotifySettings;
 
     const v0, 0x7fffffff
@@ -1463,7 +1524,7 @@
 
     goto :goto_1
 
-    .line 246
+    .line 264
     :cond_1
     new-instance v2, Ljava/lang/StringBuilder;
 
@@ -1481,7 +1542,7 @@
 
     invoke-interface {p2, v2, v3}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 247
+    .line 265
     new-instance v2, Ljava/lang/StringBuilder;
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
@@ -1504,7 +1565,7 @@
 
     goto :goto_1
 
-    .line 250
+    .line 268
     :cond_2
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -1524,7 +1585,7 @@
 
     goto :goto_1
 
-    .line 253
+    .line 271
     :cond_3
     new-instance p1, Ljava/lang/StringBuilder;
 
@@ -1540,7 +1601,7 @@
 
     invoke-interface {p2, p1}, Landroid/content/SharedPreferences$Editor;->remove(Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 256
+    .line 274
     :goto_1
     invoke-interface {p2}, Landroid/content/SharedPreferences$Editor;->apply()V
 

@@ -180,7 +180,7 @@
 
     const/4 v2, 0x5
 
-    const-string v3, "side"
+    const-string/jumbo v3, "side"
 
     invoke-direct {v0, v1, v2, v3}, Lcom/trustwallet/walletconnect/models/binance/WCBinanceTradeOrder$MessageKey;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
@@ -193,7 +193,7 @@
 
     const/4 v2, 0x6
 
-    const-string v3, "symbol"
+    const-string/jumbo v3, "symbol"
 
     invoke-direct {v0, v1, v2, v3}, Lcom/trustwallet/walletconnect/models/binance/WCBinanceTradeOrder$MessageKey;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
@@ -206,7 +206,7 @@
 
     const/4 v2, 0x7
 
-    const-string v3, "timeinforce"
+    const-string/jumbo v3, "timeinforce"
 
     invoke-direct {v0, v1, v2, v3}, Lcom/trustwallet/walletconnect/models/binance/WCBinanceTradeOrder$MessageKey;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 

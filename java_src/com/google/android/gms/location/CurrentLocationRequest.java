@@ -16,23 +16,23 @@ import com.google.android.gms.internal.location.zzdj;
 /* loaded from: classes3.dex */
 public final class CurrentLocationRequest extends AbstractSafeParcelable {
     public static final Parcelable.Creator<CurrentLocationRequest> CREATOR = new zzj();
-    @SafeParcelable.Field(defaultValueUnchecked = "Long.MAX_VALUE", getter = "getMaxUpdateAgeMillis", m775id = 1)
+    @SafeParcelable.Field(defaultValueUnchecked = "Long.MAX_VALUE", getter = "getMaxUpdateAgeMillis", m779id = 1)
     private final long zza;
-    @SafeParcelable.Field(defaultValueUnchecked = "Granularity.GRANULARITY_PERMISSION_LEVEL", getter = "getGranularity", m775id = 2)
+    @SafeParcelable.Field(defaultValueUnchecked = "Granularity.GRANULARITY_PERMISSION_LEVEL", getter = "getGranularity", m779id = 2)
     private final int zzb;
-    @SafeParcelable.Field(defaultValueUnchecked = "Priority.PRIORITY_BALANCED_POWER_ACCURACY", getter = "getPriority", m775id = 3)
+    @SafeParcelable.Field(defaultValueUnchecked = "Priority.PRIORITY_BALANCED_POWER_ACCURACY", getter = "getPriority", m779id = 3)
     private final int zzc;
-    @SafeParcelable.Field(defaultValueUnchecked = "Long.MAX_VALUE", getter = "getDurationMillis", m775id = 4)
+    @SafeParcelable.Field(defaultValueUnchecked = "Long.MAX_VALUE", getter = "getDurationMillis", m779id = 4)
     private final long zzd;
-    @SafeParcelable.Field(defaultValue = "false", getter = "isBypass", m775id = 5)
+    @SafeParcelable.Field(defaultValue = "false", getter = "isBypass", m779id = 5)
     private final boolean zze;
-    @SafeParcelable.Field(defaultValueUnchecked = "ThrottleBehavior.THROTTLE_BACKGROUND", getter = "getThrottleBehavior", m775id = 7)
+    @SafeParcelable.Field(defaultValueUnchecked = "ThrottleBehavior.THROTTLE_BACKGROUND", getter = "getThrottleBehavior", m779id = 7)
     private final int zzf;
-    @SafeParcelable.Field(getter = "getModuleId", m775id = 8)
+    @SafeParcelable.Field(getter = "getModuleId", m779id = 8)
     private final String zzg;
-    @SafeParcelable.Field(defaultValueUnchecked = "new android.os.WorkSource()", getter = "getWorkSource", m775id = 6)
+    @SafeParcelable.Field(defaultValueUnchecked = "new android.os.WorkSource()", getter = "getWorkSource", m779id = 6)
     private final WorkSource zzh;
-    @SafeParcelable.Field(getter = "getImpersonation", m775id = 9)
+    @SafeParcelable.Field(getter = "getImpersonation", m779id = 9)
     private final com.google.android.gms.internal.location.zzd zzi;
 
     /* compiled from: com.google.android.gms:play-services-location@@21.0.1 */
@@ -103,7 +103,7 @@ public final class CurrentLocationRequest extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public CurrentLocationRequest(@SafeParcelable.Param(m774id = 1) long j, @SafeParcelable.Param(m774id = 2) int i, @SafeParcelable.Param(m774id = 3) int i2, @SafeParcelable.Param(m774id = 4) long j2, @SafeParcelable.Param(m774id = 5) boolean z, @SafeParcelable.Param(m774id = 7) int i3, @SafeParcelable.Param(m774id = 8) String str, @SafeParcelable.Param(m774id = 6) WorkSource workSource, @SafeParcelable.Param(m774id = 9) com.google.android.gms.internal.location.zzd zzdVar) {
+    public CurrentLocationRequest(@SafeParcelable.Param(m778id = 1) long j, @SafeParcelable.Param(m778id = 2) int i, @SafeParcelable.Param(m778id = 3) int i2, @SafeParcelable.Param(m778id = 4) long j2, @SafeParcelable.Param(m778id = 5) boolean z, @SafeParcelable.Param(m778id = 7) int i3, @SafeParcelable.Param(m778id = 8) String str, @SafeParcelable.Param(m778id = 6) WorkSource workSource, @SafeParcelable.Param(m778id = 9) com.google.android.gms.internal.location.zzd zzdVar) {
         boolean z2 = true;
         if (Build.VERSION.SDK_INT >= 30 && str != null) {
             z2 = false;

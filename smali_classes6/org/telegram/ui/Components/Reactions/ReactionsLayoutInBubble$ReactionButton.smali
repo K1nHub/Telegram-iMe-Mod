@@ -300,11 +300,11 @@
     .line 566
     iget-object p1, v7, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;->static_icon:Lorg/telegram/tgnet/TLRPC$Document;
 
-    const/high16 p2, 0x3f800000    # 1.0f
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    const-string p4, "windowBackgroundGray"
+    const/high16 p4, 0x3f800000    # 1.0f
 
-    invoke-static {p1, p4, p2}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;Ljava/lang/String;F)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+    invoke-static {p1, p2, p4}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Lorg/telegram/tgnet/TLRPC$Document;IF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     move-result-object v5
 
@@ -910,10 +910,6 @@
     :cond_1
     iget-boolean v5, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->choosen:Z
 
-    const-string v7, "chat_outReactionButtonBackground"
-
-    const-string v8, "chat_inReactionButtonBackground"
-
     if-eqz v5, :cond_6
 
     .line 594
@@ -927,19 +923,19 @@
 
     if-eqz v5, :cond_2
 
-    move-object v5, v7
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outReactionButtonBackground:I
 
     goto :goto_1
 
     :cond_2
-    move-object v5, v8
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inReactionButtonBackground:I
 
     :goto_1
-    iget-object v9, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
+    iget-object v7, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
-    iget-object v9, v9, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    iget-object v7, v7, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v5, v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v5, v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v5
 
@@ -956,19 +952,19 @@
 
     if-eqz v5, :cond_3
 
-    const-string v5, "chat_outReactionButtonTextSelected"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outReactionButtonTextSelected:I
 
     goto :goto_2
 
     :cond_3
-    const-string v5, "chat_inReactionButtonTextSelected"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inReactionButtonTextSelected:I
 
     :goto_2
-    iget-object v9, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
+    iget-object v7, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
-    iget-object v9, v9, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    iget-object v7, v7, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v5, v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v5, v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v5
 
@@ -985,17 +981,19 @@
 
     if-eqz v5, :cond_4
 
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outReactionButtonBackground:I
+
     goto :goto_3
 
     :cond_4
-    move-object v7, v8
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inReactionButtonBackground:I
 
     :goto_3
-    iget-object v5, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
+    iget-object v7, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
-    iget-object v5, v5, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    iget-object v7, v7, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v7, v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v5, v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v5
 
@@ -1012,15 +1010,15 @@
 
     if-eqz v5, :cond_5
 
-    const-string v5, "chat_outBubble"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outBubble:I
 
     goto :goto_4
 
     :cond_5
-    const-string v5, "chat_inBubble"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inBubble:I
 
     :goto_4
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -1040,19 +1038,19 @@
 
     if-eqz v5, :cond_7
 
-    const-string v5, "chat_outReactionButtonText"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outReactionButtonText:I
 
     goto :goto_5
 
     :cond_7
-    const-string v5, "chat_inReactionButtonText"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inReactionButtonText:I
 
     :goto_5
-    iget-object v9, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
+    iget-object v7, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
-    iget-object v9, v9, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    iget-object v7, v7, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v5, v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v5, v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v5
 
@@ -1069,17 +1067,19 @@
 
     if-eqz v5, :cond_8
 
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chat_outReactionButtonBackground:I
+
     goto :goto_6
 
     :cond_8
-    move-object v7, v8
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inReactionButtonBackground:I
 
     :goto_6
-    iget-object v5, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
+    iget-object v7, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
-    iget-object v5, v5, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    iget-object v7, v7, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v7, v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v5, v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v5
 
@@ -1105,13 +1105,13 @@
     iput v5, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->backgroundColor:I
 
     .line 602
-    iget-object v5, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chat_serviceText:I
 
-    iget-object v5, v5, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    iget-object v7, v0, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$ReactionButton;->this$0:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
-    const-string v7, "chat_serviceText"
+    iget-object v7, v7, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v7, v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v5, v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v5
 

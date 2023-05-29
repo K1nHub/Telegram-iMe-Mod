@@ -24,6 +24,8 @@
 
 .field public static final Companion:Lcom/iMe/fork/enums/ExternalApp$Companion;
 
+.field public static final enum QUICK_LOGIN:Lcom/iMe/fork/enums/ExternalApp;
+
 .field public static final enum VIBER:Lcom/iMe/fork/enums/ExternalApp;
 
 .field public static final enum WHATSAPP:Lcom/iMe/fork/enums/ExternalApp;
@@ -39,7 +41,7 @@
 .method private static final synthetic $values()[Lcom/iMe/fork/enums/ExternalApp;
     .locals 3
 
-    const/4 v0, 0x3
+    const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/iMe/fork/enums/ExternalApp;
 
@@ -58,6 +60,12 @@
     sget-object v1, Lcom/iMe/fork/enums/ExternalApp;->VIBER:Lcom/iMe/fork/enums/ExternalApp;
 
     const/4 v2, 0x2
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/iMe/fork/enums/ExternalApp;->QUICK_LOGIN:Lcom/iMe/fork/enums/ExternalApp;
+
+    const/4 v2, 0x3
 
     aput-object v1, v0, v2
 
@@ -105,6 +113,19 @@
     invoke-direct {v0, v1, v2, v3}, Lcom/iMe/fork/enums/ExternalApp;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 
     sput-object v0, Lcom/iMe/fork/enums/ExternalApp;->VIBER:Lcom/iMe/fork/enums/ExternalApp;
+
+    .line 10
+    new-instance v0, Lcom/iMe/fork/enums/ExternalApp;
+
+    const-string v1, "QUICK_LOGIN"
+
+    const/4 v2, 0x3
+
+    const-string v3, "com.iMe.quicklogin"
+
+    invoke-direct {v0, v1, v2, v3}, Lcom/iMe/fork/enums/ExternalApp;-><init>(Ljava/lang/String;ILjava/lang/String;)V
+
+    sput-object v0, Lcom/iMe/fork/enums/ExternalApp;->QUICK_LOGIN:Lcom/iMe/fork/enums/ExternalApp;
 
     invoke-static {}, Lcom/iMe/fork/enums/ExternalApp;->$values()[Lcom/iMe/fork/enums/ExternalApp;
 
@@ -197,7 +218,7 @@
 
     const/4 v0, 0x0
 
-    .line 12
+    .line 13
     :try_start_0
     sget-object v1, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 

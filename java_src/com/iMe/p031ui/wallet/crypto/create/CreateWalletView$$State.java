@@ -207,17 +207,17 @@ public class CreateWalletView$$State extends MvpViewState<CreateWalletView> impl
         public final String password;
 
         /* renamed from: wallet  reason: collision with root package name */
-        public final Wallet f1836wallet;
+        public final Wallet f1844wallet;
 
         CreateNewWalletWithPasswordCommand(CreateWalletView$$State createWalletView$$State, Wallet wallet2, String str) {
             super("createNewWalletWithPassword", OneExecutionStateStrategy.class);
-            this.f1836wallet = wallet2;
+            this.f1844wallet = wallet2;
             this.password = str;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(CreateWalletView createWalletView) {
-            createWalletView.createNewWalletWithPassword(this.f1836wallet, this.password);
+            createWalletView.createNewWalletWithPassword(this.f1844wallet, this.password);
         }
     }
 

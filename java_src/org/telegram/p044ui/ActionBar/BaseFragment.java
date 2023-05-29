@@ -24,6 +24,7 @@ import android.view.accessibility.AccessibilityManager;
 import android.view.animation.DecelerateInterpolator;
 import android.widget.FrameLayout;
 import androidx.core.graphics.ColorUtils;
+import androidx.core.util.Supplier;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.iMe.fork.controller.AlbumsController;
 import com.iMe.fork.controller.BackupController;
@@ -63,6 +64,7 @@ import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p044ui.ActionBar.ActionBarPopupWindow;
+import org.telegram.p044ui.ActionBar.BaseFragment;
 import org.telegram.p044ui.ActionBar.INavigationLayout;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.PasscodeView;
@@ -72,7 +74,7 @@ import timber.log.Timber;
 /* renamed from: org.telegram.ui.ActionBar.BaseFragment */
 /* loaded from: classes5.dex */
 public abstract class BaseFragment {
-    protected C3306ActionBar actionBar;
+    protected C3356ActionBar actionBar;
     protected Bundle arguments;
     protected int classGuid;
     protected int currentAccount;
@@ -93,7 +95,18 @@ public abstract class BaseFragment {
     private PreviewDelegate previewDelegate;
     private final Rect rect;
     private boolean removingFromStack;
+    private Theme.ResourcesProvider resourceProvider;
     protected Dialog visibleDialog;
+
+    /* renamed from: org.telegram.ui.ActionBar.BaseFragment$BottomSheetParams */
+    /* loaded from: classes5.dex */
+    public static class BottomSheetParams {
+        public boolean allowNestedScroll;
+        public Runnable onDismiss;
+        public Runnable onOpenAnimationFinished;
+        public Runnable onPreFinished;
+        public boolean transitionFromLeft;
+    }
 
     /* renamed from: org.telegram.ui.ActionBar.BaseFragment$PreviewDelegate */
     /* loaded from: classes5.dex */
@@ -142,10 +155,6 @@ public abstract class BaseFragment {
         return -1;
     }
 
-    public Theme.ResourcesProvider getResourceProvider() {
-        return null;
-    }
-
     public boolean hasForceLightStatusBar() {
         return false;
     }
@@ -189,6 +198,9 @@ public abstract class BaseFragment {
 
     /* JADX INFO: Access modifiers changed from: protected */
     public void onDialogDismiss(Dialog dialog) {
+    }
+
+    public void onFragmentClosed() {
     }
 
     public boolean onFragmentCreate() {
@@ -267,13 +279,13 @@ public abstract class BaseFragment {
         if (this.passcodeView == null && this.parentLayout != null && (getParentActivity() instanceof LaunchActivity) && lockedSection != null && AndroidUtilities.needShowPasscode(false, this.currentAccount, lockedSection)) {
             PasscodeView passcodeView = new PasscodeView(this.parentLayout.getView().getContext(), lockedSection, this, null);
             this.passcodeView = passcodeView;
-            passcodeView.onShow(true, false, -1, -1, new Runnable() { // from class: org.telegram.ui.ActionBar.BaseFragment$$ExternalSyntheticLambda2
+            passcodeView.onShow(true, false, -1, -1, new Runnable() { // from class: org.telegram.ui.ActionBar.BaseFragment$$ExternalSyntheticLambda3
                 @Override // java.lang.Runnable
                 public final void run() {
                     BaseFragment.this.lambda$checkPasscode$0(lockedSection);
                 }
             }, null);
-            this.passcodeView.setDelegate(new PasscodeView.PasscodeViewDelegate() { // from class: org.telegram.ui.ActionBar.BaseFragment$$ExternalSyntheticLambda3
+            this.passcodeView.setDelegate(new PasscodeView.PasscodeViewDelegate() { // from class: org.telegram.ui.ActionBar.BaseFragment$$ExternalSyntheticLambda4
                 @Override // org.telegram.p044ui.Components.PasscodeView.PasscodeViewDelegate
                 public final void didAcceptedPassword(PasscodeView passcodeView2) {
                     BaseFragment.this.lambda$checkPasscode$2(passcodeView2);
@@ -297,7 +309,7 @@ public abstract class BaseFragment {
         if (passcodeView2 == null) {
             return;
         }
-        passcodeView2.animate().alpha(BitmapDescriptorFactory.HUE_RED).translationX(-AndroidUtilities.m50dp(48)).setDuration(150L).setInterpolator(new DecelerateInterpolator(1.5f)).withEndAction(new Runnable() { // from class: org.telegram.ui.ActionBar.BaseFragment$$ExternalSyntheticLambda1
+        passcodeView2.animate().alpha(BitmapDescriptorFactory.HUE_RED).translationX(-AndroidUtilities.m54dp(48)).setDuration(150L).setInterpolator(new DecelerateInterpolator(1.5f)).withEndAction(new Runnable() { // from class: org.telegram.ui.ActionBar.BaseFragment$$ExternalSyntheticLambda2
             @Override // java.lang.Runnable
             public final void run() {
                 BaseFragment.this.lambda$checkPasscode$1();
@@ -417,7 +429,7 @@ public abstract class BaseFragment {
         return this.fragmentBeginToShow;
     }
 
-    public C3306ActionBar getActionBar() {
+    public C3356ActionBar getActionBar() {
         return this.actionBar;
     }
 
@@ -451,12 +463,12 @@ public abstract class BaseFragment {
 
     public void setInPreviewMode(boolean z) {
         this.inPreviewMode = z;
-        C3306ActionBar c3306ActionBar = this.actionBar;
-        if (c3306ActionBar != null) {
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        if (c3356ActionBar != null) {
             if (z) {
-                c3306ActionBar.setOccupyStatusBar(false);
+                c3356ActionBar.setOccupyStatusBar(false);
             } else {
-                c3306ActionBar.setOccupyStatusBar(Build.VERSION.SDK_INT >= 21);
+                c3356ActionBar.setOccupyStatusBar(Build.VERSION.SDK_INT >= 21);
             }
         }
     }
@@ -474,20 +486,20 @@ public abstract class BaseFragment {
                     onRemoveFromParent();
                     viewGroup.removeViewInLayout(this.fragmentView);
                 } catch (Exception e) {
-                    FileLog.m45e(e);
+                    FileLog.m49e(e);
                 }
             }
             this.fragmentView = null;
             onDestroyView();
         }
-        C3306ActionBar c3306ActionBar = this.actionBar;
-        if (c3306ActionBar != null) {
-            ViewGroup viewGroup2 = (ViewGroup) c3306ActionBar.getParent();
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        if (c3356ActionBar != null) {
+            ViewGroup viewGroup2 = (ViewGroup) c3356ActionBar.getParent();
             if (viewGroup2 != null) {
                 try {
                     viewGroup2.removeViewInLayout(this.actionBar);
                 } catch (Exception e2) {
-                    FileLog.m45e(e2);
+                    FileLog.m49e(e2);
                 }
             }
             this.actionBar = null;
@@ -499,7 +511,7 @@ public abstract class BaseFragment {
                 try {
                     viewGroup3.removeViewInLayout(this.pinnedPlayerView);
                 } catch (Exception e3) {
-                    Timber.m4e(e3);
+                    Timber.m6e(e3);
                 }
             }
             this.pinnedPlayerView = null;
@@ -511,7 +523,7 @@ public abstract class BaseFragment {
                 try {
                     viewGroup4.removeViewInLayout(this.passcodeView);
                 } catch (Exception e4) {
-                    Timber.m4e(e4);
+                    Timber.m6e(e4);
                 }
             }
             this.passcodeView = null;
@@ -539,7 +551,7 @@ public abstract class BaseFragment {
                         onRemoveFromParent();
                         viewGroup2.removeViewInLayout(this.fragmentView);
                     } catch (Exception e) {
-                        FileLog.m45e(e);
+                        FileLog.m49e(e);
                     }
                 }
                 INavigationLayout iNavigationLayout2 = this.parentLayout;
@@ -557,7 +569,7 @@ public abstract class BaseFragment {
                     try {
                         viewGroup.removeViewInLayout(this.actionBar);
                     } catch (Exception e2) {
-                        FileLog.m45e(e2);
+                        FileLog.m49e(e2);
                     }
                 }
                 if (z) {
@@ -566,7 +578,7 @@ public abstract class BaseFragment {
             }
             INavigationLayout iNavigationLayout4 = this.parentLayout;
             if (iNavigationLayout4 != null && this.actionBar == null) {
-                C3306ActionBar createActionBar = createActionBar(iNavigationLayout4.getView().getContext());
+                C3356ActionBar createActionBar = createActionBar(iNavigationLayout4.getView().getContext());
                 this.actionBar = createActionBar;
                 if (createActionBar != null) {
                     createActionBar.parentFragment = this;
@@ -579,7 +591,7 @@ public abstract class BaseFragment {
                     try {
                         viewGroup3.removeViewInLayout(this.pinnedPlayerView);
                     } catch (Exception e3) {
-                        Timber.m4e(e3);
+                        Timber.m6e(e3);
                     }
                 }
                 INavigationLayout iNavigationLayout5 = this.parentLayout;
@@ -599,7 +611,7 @@ public abstract class BaseFragment {
                     try {
                         viewGroup4.removeViewInLayout(this.passcodeView);
                     } catch (Exception e4) {
-                        Timber.m4e(e4);
+                        Timber.m6e(e4);
                     }
                 }
                 INavigationLayout iNavigationLayout6 = this.parentLayout;
@@ -611,17 +623,17 @@ public abstract class BaseFragment {
         }
     }
 
-    public C3306ActionBar createActionBar(Context context) {
-        C3306ActionBar c3306ActionBar = new C3306ActionBar(context, getResourceProvider());
-        c3306ActionBar.setBackgroundColor(getThemedColor("actionBarDefault"));
-        c3306ActionBar.setItemsBackgroundColor(getThemedColor("actionBarDefaultSelector"), false);
-        c3306ActionBar.setItemsBackgroundColor(getThemedColor("actionBarActionModeDefaultSelector"), true);
-        c3306ActionBar.setItemsColor(getThemedColor("actionBarDefaultIcon"), false);
-        c3306ActionBar.setItemsColor(getThemedColor("actionBarActionModeDefaultIcon"), true);
+    public C3356ActionBar createActionBar(Context context) {
+        C3356ActionBar c3356ActionBar = new C3356ActionBar(context, getResourceProvider());
+        c3356ActionBar.setBackgroundColor(getThemedColor(Theme.key_actionBarDefault));
+        c3356ActionBar.setItemsBackgroundColor(getThemedColor(Theme.key_actionBarDefaultSelector), false);
+        c3356ActionBar.setItemsBackgroundColor(getThemedColor(Theme.key_actionBarActionModeDefaultSelector), true);
+        c3356ActionBar.setItemsColor(getThemedColor(Theme.key_actionBarDefaultIcon), false);
+        c3356ActionBar.setItemsColor(getThemedColor(Theme.key_actionBarActionModeDefaultIcon), true);
         if (this.inPreviewMode || this.inBubbleMode) {
-            c3306ActionBar.setOccupyStatusBar(false);
+            c3356ActionBar.setOccupyStatusBar(false);
         }
-        return c3306ActionBar;
+        return c3356ActionBar;
     }
 
     public void movePreviewFragment(float f) {
@@ -687,14 +699,14 @@ public abstract class BaseFragment {
         getConnectionsManager().cancelRequestsForGuid(this.classGuid);
         getMessagesStorage().cancelTasksForGuid(this.classGuid);
         this.isFinished = true;
-        C3306ActionBar c3306ActionBar = this.actionBar;
-        if (c3306ActionBar != null) {
-            c3306ActionBar.setEnabled(false);
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        if (c3356ActionBar != null) {
+            c3356ActionBar.setEnabled(false);
         }
         if (!hasForceLightStatusBar() || AndroidUtilities.isTablet() || getParentLayout() == null || getParentLayout().getLastFragment() != this || getParentActivity() == null || this.finishing) {
             return;
         }
-        AndroidUtilities.setLightStatusBar(getParentActivity().getWindow(), Theme.getColor("actionBarDefault") == -1);
+        AndroidUtilities.setLightStatusBar(getParentActivity().getWindow(), Theme.getColor(Theme.key_actionBarDefault) == -1);
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
@@ -707,12 +719,16 @@ public abstract class BaseFragment {
 
     public void onResume() {
         this.isPaused = false;
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        if (c3356ActionBar != null) {
+            c3356ActionBar.onResume();
+        }
     }
 
     public void onPause() {
-        C3306ActionBar c3306ActionBar = this.actionBar;
-        if (c3306ActionBar != null) {
-            c3306ActionBar.onPause();
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        if (c3356ActionBar != null) {
+            c3356ActionBar.onPause();
         }
         this.isPaused = true;
         try {
@@ -722,7 +738,7 @@ public abstract class BaseFragment {
                 this.visibleDialog = null;
             }
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
     }
 
@@ -818,7 +834,7 @@ public abstract class BaseFragment {
             dialog.dismiss();
             this.visibleDialog = null;
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
     }
 
@@ -830,11 +846,11 @@ public abstract class BaseFragment {
                 this.visibleDialog = null;
             }
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
-        C3306ActionBar c3306ActionBar = this.actionBar;
-        if (c3306ActionBar != null) {
-            c3306ActionBar.onPause();
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        if (c3356ActionBar != null) {
+            c3356ActionBar.onPause();
         }
     }
 
@@ -845,7 +861,7 @@ public abstract class BaseFragment {
     }
 
     public void onBecomeFullyVisible() {
-        C3306ActionBar actionBar;
+        C3356ActionBar actionBar;
         if (!((AccessibilityManager) ApplicationLoader.applicationContext.getSystemService("accessibility")).isEnabled() || (actionBar = getActionBar()) == null) {
             return;
         }
@@ -874,7 +890,7 @@ public abstract class BaseFragment {
                     this.visibleDialog = null;
                 }
             } catch (Exception e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
             }
             try {
                 this.visibleDialog = dialog;
@@ -888,7 +904,7 @@ public abstract class BaseFragment {
                 this.visibleDialog.show();
                 return this.visibleDialog;
             } catch (Exception e2) {
-                FileLog.m45e(e2);
+                FileLog.m49e(e2);
             }
         }
         return null;
@@ -993,21 +1009,38 @@ public abstract class BaseFragment {
     }
 
     public INavigationLayout[] showAsSheet(BaseFragment baseFragment) {
+        return showAsSheet(baseFragment, null);
+    }
+
+    public INavigationLayout[] showAsSheet(BaseFragment baseFragment, BottomSheetParams bottomSheetParams) {
         if (getParentActivity() == null) {
             return null;
         }
-        INavigationLayout[] iNavigationLayoutArr = {INavigationLayout.CC.newLayout(getParentActivity())};
-        DialogC33651 dialogC33651 = new DialogC33651(this, getParentActivity(), true, iNavigationLayoutArr, baseFragment);
-        baseFragment.setParentDialog(dialogC33651);
-        dialogC33651.show();
+        INavigationLayout[] iNavigationLayoutArr = {INavigationLayout.CC.newLayout(getParentActivity(), new Supplier() { // from class: org.telegram.ui.ActionBar.BaseFragment$$ExternalSyntheticLambda1
+            @Override // androidx.core.util.Supplier
+            public final Object get() {
+                BottomSheet lambda$showAsSheet$4;
+                lambda$showAsSheet$4 = BaseFragment.lambda$showAsSheet$4(r1);
+                return lambda$showAsSheet$4;
+            }
+        })};
+        final BottomSheet[] bottomSheetArr = {new DialogC34141(this, getParentActivity(), true, baseFragment.getResourceProvider(), iNavigationLayoutArr, baseFragment, bottomSheetParams)};
+        if (bottomSheetParams != null) {
+            bottomSheetArr[0].setAllowNestedScroll(bottomSheetParams.allowNestedScroll);
+            bottomSheetArr[0].transitionFromRight(bottomSheetParams.transitionFromLeft);
+        }
+        baseFragment.setParentDialog(bottomSheetArr[0]);
+        bottomSheetArr[0].show();
         return iNavigationLayoutArr;
     }
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.ActionBar.BaseFragment$1 */
     /* loaded from: classes5.dex */
-    class DialogC33651 extends BottomSheet {
+    public class DialogC34141 extends BottomSheet {
         final /* synthetic */ INavigationLayout[] val$actionBarLayout;
         final /* synthetic */ BaseFragment val$fragment;
+        final /* synthetic */ BottomSheetParams val$params;
 
         @Override // org.telegram.p044ui.ActionBar.BottomSheet
         protected boolean canDismissWithSwipe() {
@@ -1015,10 +1048,12 @@ public abstract class BaseFragment {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        DialogC33651(BaseFragment baseFragment, Context context, boolean z, INavigationLayout[] iNavigationLayoutArr, final BaseFragment baseFragment2) {
-            super(context, z);
+        DialogC34141(BaseFragment baseFragment, Context context, boolean z, Theme.ResourcesProvider resourcesProvider, INavigationLayout[] iNavigationLayoutArr, final BaseFragment baseFragment2, final BottomSheetParams bottomSheetParams) {
+            super(context, z, resourcesProvider);
             this.val$actionBarLayout = iNavigationLayoutArr;
             this.val$fragment = baseFragment2;
+            this.val$params = bottomSheetParams;
+            this.drawNavigationBar = true;
             iNavigationLayoutArr[0].setFragmentStack(new ArrayList());
             iNavigationLayoutArr[0].addFragmentToStack(baseFragment2);
             iNavigationLayoutArr[0].showLastFragment();
@@ -1027,13 +1062,29 @@ public abstract class BaseFragment {
             view.setPadding(i, 0, i, 0);
             this.containerView = iNavigationLayoutArr[0].getView();
             setApplyBottomPadding(false);
-            setApplyBottomPadding(false);
             setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.ActionBar.BaseFragment$1$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
-                    BaseFragment.this.onFragmentDestroy();
+                    BaseFragment.DialogC34141.lambda$new$0(BaseFragment.this, bottomSheetParams, dialogInterface);
                 }
             });
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public static /* synthetic */ void lambda$new$0(BaseFragment baseFragment, BottomSheetParams bottomSheetParams, DialogInterface dialogInterface) {
+            Runnable runnable;
+            baseFragment.onPause();
+            baseFragment.onFragmentDestroy();
+            if (bottomSheetParams == null || (runnable = bottomSheetParams.onDismiss) == null) {
+                return;
+            }
+            runnable.run();
+        }
+
+        @Override // org.telegram.p044ui.ActionBar.BottomSheet, android.app.Dialog
+        protected void onCreate(Bundle bundle) {
+            super.onCreate(bundle);
+            fixNavigationBar(Theme.getColor(Theme.key_dialogBackgroundGray, this.val$fragment.getResourceProvider()));
         }
 
         @Override // android.app.Dialog
@@ -1048,13 +1099,33 @@ public abstract class BaseFragment {
 
         @Override // org.telegram.p044ui.ActionBar.BottomSheet, android.app.Dialog, android.content.DialogInterface
         public void dismiss() {
+            BottomSheetParams bottomSheetParams;
+            Runnable runnable;
+            if (!isDismissed() && (bottomSheetParams = this.val$params) != null && (runnable = bottomSheetParams.onPreFinished) != null) {
+                runnable.run();
+            }
             super.dismiss();
             this.val$actionBarLayout[0] = null;
         }
+
+        @Override // org.telegram.p044ui.ActionBar.BottomSheet
+        public void onOpenAnimationEnd() {
+            Runnable runnable;
+            BottomSheetParams bottomSheetParams = this.val$params;
+            if (bottomSheetParams == null || (runnable = bottomSheetParams.onOpenAnimationFinished) == null) {
+                return;
+            }
+            runnable.run();
+        }
     }
 
-    public int getThemedColor(String str) {
-        return Theme.getColor(str, getResourceProvider());
+    /* JADX INFO: Access modifiers changed from: private */
+    public static /* synthetic */ BottomSheet lambda$showAsSheet$4(BottomSheet[] bottomSheetArr) {
+        return bottomSheetArr[0];
+    }
+
+    public int getThemedColor(int i) {
+        return Theme.getColor(i, getResourceProvider());
     }
 
     public Drawable getThemedDrawable(String str) {
@@ -1062,7 +1133,7 @@ public abstract class BaseFragment {
     }
 
     public int getNavigationBarColor() {
-        return Theme.getColor("windowBackgroundGray");
+        return Theme.getColor(Theme.key_windowBackgroundGray, this.resourceProvider);
     }
 
     public void setNavigationBarColor(int i) {
@@ -1085,6 +1156,10 @@ public abstract class BaseFragment {
         this.parentDialog = dialog;
     }
 
+    public Theme.ResourcesProvider getResourceProvider() {
+        return this.resourceProvider;
+    }
+
     public boolean isRemovingFromStack() {
         return this.removingFromStack;
     }
@@ -1097,12 +1172,15 @@ public abstract class BaseFragment {
         int color;
         if (!hasForceLightStatusBar() || Theme.getCurrentTheme().isDark()) {
             Theme.ResourcesProvider resourceProvider = getResourceProvider();
-            C3306ActionBar c3306ActionBar = this.actionBar;
-            String str = (c3306ActionBar == null || !c3306ActionBar.isActionModeShowed()) ? "actionBarDefault" : "actionBarActionModeDefault";
+            int i = Theme.key_actionBarDefault;
+            C3356ActionBar c3356ActionBar = this.actionBar;
+            if (c3356ActionBar != null && c3356ActionBar.isActionModeShowed()) {
+                i = Theme.key_actionBarActionModeDefault;
+            }
             if (resourceProvider != null) {
-                color = resourceProvider.getColorOrDefault(str);
+                color = resourceProvider.getColorOrDefault(i);
             } else {
-                color = Theme.getColor(str, null, true);
+                color = Theme.getColor(i, null, true);
             }
             return ColorUtils.calculateLuminance(color) > 0.699999988079071d;
         }
@@ -1119,5 +1197,9 @@ public abstract class BaseFragment {
             this.isFinished = false;
             this.finishing = false;
         }
+    }
+
+    public void setResourceProvider(Theme.ResourcesProvider resourcesProvider) {
+        this.resourceProvider = resourcesProvider;
     }
 }

@@ -112,10 +112,10 @@
 
     invoke-virtual {v1, v3}, Landroid/text/TextPaint;->setTextSize(F)V
 
-    const-string v3, "premiumStartSmallStarsColor2"
-
     .line 35
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_premiumStartSmallStarsColor2:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 

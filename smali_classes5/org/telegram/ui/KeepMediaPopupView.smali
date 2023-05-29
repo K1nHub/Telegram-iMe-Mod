@@ -68,10 +68,10 @@
     return-void
 .end method
 
-.method public static synthetic $r8$lambda$ghoZ9ALiYcc3B5EoAOgmEYyM5FM(Lorg/telegram/ui/KeepMediaPopupView;Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
+.method public static synthetic $r8$lambda$eSo8V6DxgB3En6VusM2hPq11LD8(Lorg/telegram/ui/KeepMediaPopupView;Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
     .locals 0
 
-    invoke-direct/range {p0 .. p6}, Lorg/telegram/ui/KeepMediaPopupView;->lambda$new$1(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
+    invoke-direct/range {p0 .. p7}, Lorg/telegram/ui/KeepMediaPopupView;->lambda$new$1(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
 
     move-result p0
 
@@ -220,14 +220,14 @@
 
     iput-object v3, p0, Lorg/telegram/ui/KeepMediaPopupView;->delete:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
-    const-string v5, "windowBackgroundWhiteRedText"
-
     .line 64
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
+
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -305,10 +305,10 @@
 
     iput-object v3, p0, Lorg/telegram/ui/KeepMediaPopupView;->gap:Landroid/widget/FrameLayout;
 
-    const-string v5, "actionBarDefaultSubmenuSeparator"
-
     .line 73
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuSeparator:I
+
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
@@ -322,9 +322,9 @@
     .line 75
     sget v5, Lorg/telegram/messenger/R$drawable;->greydivider:I
 
-    const-string v6, "windowBackgroundGrayShadow"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
-    invoke-static {p2, v5, v6, v0}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/graphics/drawable/Drawable;
+    invoke-static {p2, v5, v6, v0}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;IILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -386,7 +386,7 @@
 
     move p1, v4
 
-    .line 135
+    .line 141
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/KeepMediaPopupView;->checkItems:Ljava/util/ArrayList;
 
@@ -396,7 +396,7 @@
 
     if-ge p1, v0, :cond_0
 
-    .line 136
+    .line 142
     iget-object v0, p0, Lorg/telegram/ui/KeepMediaPopupView;->checkItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -407,7 +407,7 @@
 
     iget v0, v0, Lorg/telegram/ui/KeepMediaPopupView$CheckItem;->type:I
 
-    .line 137
+    .line 143
     iget-object v5, p0, Lorg/telegram/ui/KeepMediaPopupView;->checkItems:Ljava/util/ArrayList;
 
     invoke-virtual {v5, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -428,7 +428,7 @@
 
     goto :goto_0
 
-    .line 152
+    .line 158
     :cond_0
     new-instance p1, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
@@ -436,14 +436,14 @@
 
     iput-object p1, p0, Lorg/telegram/ui/KeepMediaPopupView;->description:Landroid/widget/TextView;
 
-    .line 153
+    .line 159
     sget p2, Lorg/telegram/messenger/R$id;->fit_width_tag:I
 
     invoke-virtual {p1, p2, v2}, Landroid/widget/TextView;->setTag(ILjava/lang/Object;)V
 
     const/16 p2, 0xd
 
-    .line 154
+    .line 160
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -460,35 +460,35 @@
 
     const/high16 p2, 0x41500000    # 13.0f
 
-    .line 155
+    .line 161
     invoke-virtual {p1, v1, p2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string p2, "actionBarDefaultSubmenuItem"
+    .line 162
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
 
-    .line 156
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 157
+    .line 163
     invoke-static {}, Landroid/text/method/LinkMovementMethod;->getInstance()Landroid/text/method/MovementMethod;
 
     move-result-object p2
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
 
-    const-string p2, "windowBackgroundWhiteLinkText"
+    .line 164
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteLinkText:I
 
-    .line 158
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setLinkTextColor(I)V
 
-    .line 159
+    .line 165
     sget p2, Lorg/telegram/messenger/R$string;->KeepMediaPopupDescription:I
 
     const-string v0, "KeepMediaPopupDescription"
@@ -515,7 +515,7 @@
 
     const/4 v7, 0x0
 
-    .line 160
+    .line 166
     invoke-static/range {v0 .. v7}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIFIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object p2
@@ -537,101 +537,109 @@
 .method private static synthetic lambda$new$0(Lorg/telegram/ui/CacheChatsExceptionsFragment;Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;)V
     .locals 0
 
-    .line 122
+    .line 128
     invoke-virtual {p0, p1}, Lorg/telegram/ui/CacheChatsExceptionsFragment;->showPopupFor(Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;)V
 
     return-void
 .end method
 
-.method private synthetic lambda$new$1(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
+.method private synthetic lambda$new$1(Lorg/telegram/ui/DialogsActivity;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
     .locals 2
 
     const/4 p2, 0x0
 
-    const/4 p4, 0x0
+    const/4 p4, 0x1
 
-    .line 103
+    if-eqz p7, :cond_0
+
+    .line 104
+    invoke-interface {p7, p2}, Lcom/iMe/fork/utils/Callbacks$Callback1;->invoke(Ljava/lang/Object;)V
+
+    return p4
+
+    :cond_0
+    const/4 p5, 0x0
+
+    .line 109
     :goto_0
     invoke-virtual {p3}, Ljava/util/ArrayList;->size()I
 
-    move-result p5
+    move-result p6
 
-    if-ge p4, p5, :cond_0
+    if-ge p5, p6, :cond_1
 
-    .line 104
+    .line 110
     iget-object p2, p0, Lorg/telegram/ui/KeepMediaPopupView;->exceptions:Ljava/util/ArrayList;
 
-    new-instance p5, Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;
+    new-instance p6, Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;
 
-    invoke-virtual {p3, p4}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-virtual {p3, p5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
-    move-result-object p6
+    move-result-object p7
 
-    check-cast p6, Lorg/telegram/messenger/MessagesStorage$TopicKey;
+    check-cast p7, Lorg/telegram/messenger/MessagesStorage$TopicKey;
 
-    iget-wide v0, p6, Lorg/telegram/messenger/MessagesStorage$TopicKey;->dialogId:J
+    iget-wide v0, p7, Lorg/telegram/messenger/MessagesStorage$TopicKey;->dialogId:J
 
-    sget p6, Lorg/telegram/messenger/CacheByChatsController;->KEEP_MEDIA_ONE_DAY:I
+    sget p7, Lorg/telegram/messenger/CacheByChatsController;->KEEP_MEDIA_ONE_DAY:I
 
-    invoke-direct {p5, v0, v1, p6}, Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;-><init>(JI)V
+    invoke-direct {p6, v0, v1, p7}, Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;-><init>(JI)V
 
-    invoke-virtual {p2, p5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
+    invoke-virtual {p2, p6}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    add-int/lit8 p4, p4, 0x1
+    add-int/lit8 p5, p5, 0x1
 
-    move-object p2, p5
+    move-object p2, p6
 
     goto :goto_0
 
-    .line 106
-    :cond_0
+    .line 112
+    :cond_1
     iget-object p3, p0, Lorg/telegram/ui/KeepMediaPopupView;->cacheByChatsController:Lorg/telegram/messenger/CacheByChatsController;
 
-    iget p4, p0, Lorg/telegram/ui/KeepMediaPopupView;->currentType:I
+    iget p5, p0, Lorg/telegram/ui/KeepMediaPopupView;->currentType:I
 
-    iget-object p5, p0, Lorg/telegram/ui/KeepMediaPopupView;->exceptions:Ljava/util/ArrayList;
+    iget-object p6, p0, Lorg/telegram/ui/KeepMediaPopupView;->exceptions:Ljava/util/ArrayList;
 
-    invoke-virtual {p3, p4, p5}, Lorg/telegram/messenger/CacheByChatsController;->saveKeepMediaExceptions(ILjava/util/ArrayList;)V
+    invoke-virtual {p3, p5, p6}, Lorg/telegram/messenger/CacheByChatsController;->saveKeepMediaExceptions(ILjava/util/ArrayList;)V
 
-    .line 108
+    .line 114
     new-instance p3, Landroid/os/Bundle;
 
     invoke-direct {p3}, Landroid/os/Bundle;-><init>()V
 
-    .line 109
-    iget p4, p0, Lorg/telegram/ui/KeepMediaPopupView;->currentType:I
+    .line 115
+    iget p5, p0, Lorg/telegram/ui/KeepMediaPopupView;->currentType:I
 
-    const-string p5, "type"
+    const-string p6, "type"
 
-    invoke-virtual {p3, p5, p4}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
+    invoke-virtual {p3, p6, p5}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 111
-    new-instance p4, Lorg/telegram/ui/KeepMediaPopupView$1;
+    .line 117
+    new-instance p5, Lorg/telegram/ui/KeepMediaPopupView$1;
 
-    invoke-direct {p4, p0, p3, p1}, Lorg/telegram/ui/KeepMediaPopupView$1;-><init>(Lorg/telegram/ui/KeepMediaPopupView;Landroid/os/Bundle;Lorg/telegram/ui/DialogsActivity;)V
+    invoke-direct {p5, p0, p3, p1}, Lorg/telegram/ui/KeepMediaPopupView$1;-><init>(Lorg/telegram/ui/KeepMediaPopupView;Landroid/os/Bundle;Lorg/telegram/ui/DialogsActivity;)V
 
-    .line 120
+    .line 126
     iget-object p1, p0, Lorg/telegram/ui/KeepMediaPopupView;->exceptions:Ljava/util/ArrayList;
 
-    invoke-virtual {p4, p1}, Lorg/telegram/ui/CacheChatsExceptionsFragment;->setExceptions(Ljava/util/ArrayList;)V
+    invoke-virtual {p5, p1}, Lorg/telegram/ui/CacheChatsExceptionsFragment;->setExceptions(Ljava/util/ArrayList;)V
 
-    .line 121
+    .line 127
     iget-object p1, p0, Lorg/telegram/ui/KeepMediaPopupView;->parentFragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    invoke-virtual {p1, p4}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+    invoke-virtual {p1, p5}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
-    .line 122
+    .line 128
     new-instance p1, Lorg/telegram/ui/KeepMediaPopupView$$ExternalSyntheticLambda2;
 
-    invoke-direct {p1, p4, p2}, Lorg/telegram/ui/KeepMediaPopupView$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/CacheChatsExceptionsFragment;Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;)V
+    invoke-direct {p1, p5, p2}, Lorg/telegram/ui/KeepMediaPopupView$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/CacheChatsExceptionsFragment;Lorg/telegram/messenger/CacheByChatsController$KeepMediaException;)V
 
     const-wide/16 p2, 0x96
 
     invoke-static {p1, p2, p3}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    const/4 p1, 0x1
-
-    return p1
+    return p4
 .end method
 
 .method private synthetic lambda$new$2(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/view/View;)V
@@ -723,35 +731,35 @@
 
     invoke-virtual {v0, p2}, Lorg/telegram/ui/DialogsActivity;->setDelegate(Lorg/telegram/ui/DialogsActivity$DialogsActivityDelegate;)V
 
-    .line 125
+    .line 131
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     goto :goto_1
 
-    .line 127
+    .line 133
     :cond_2
     new-instance p2, Landroid/os/Bundle;
 
     invoke-direct {p2}, Landroid/os/Bundle;-><init>()V
 
-    .line 128
+    .line 134
     iget v0, p0, Lorg/telegram/ui/KeepMediaPopupView;->currentType:I
 
     const-string v1, "type"
 
     invoke-virtual {p2, v1, v0}, Landroid/os/Bundle;->putInt(Ljava/lang/String;I)V
 
-    .line 129
+    .line 135
     new-instance v0, Lorg/telegram/ui/CacheChatsExceptionsFragment;
 
     invoke-direct {v0, p2}, Lorg/telegram/ui/CacheChatsExceptionsFragment;-><init>(Landroid/os/Bundle;)V
 
-    .line 130
+    .line 136
     iget-object p2, p0, Lorg/telegram/ui/KeepMediaPopupView;->exceptions:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p2}, Lorg/telegram/ui/CacheChatsExceptionsFragment;->setExceptions(Ljava/util/ArrayList;)V
 
-    .line 131
+    .line 137
     invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
 
     :goto_1
@@ -761,40 +769,40 @@
 .method private synthetic lambda$new$3(ILandroid/view/View;)V
     .locals 1
 
-    .line 138
+    .line 144
     iget-object p2, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->window:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
 
-    .line 139
+    .line 145
     iget p2, p0, Lorg/telegram/ui/KeepMediaPopupView;->currentType:I
 
     if-ltz p2, :cond_0
 
-    .line 140
+    .line 146
     iget-object v0, p0, Lorg/telegram/ui/KeepMediaPopupView;->cacheByChatsController:Lorg/telegram/messenger/CacheByChatsController;
 
     invoke-virtual {v0, p2, p1}, Lorg/telegram/messenger/CacheByChatsController;->setKeepMedia(II)V
 
-    .line 141
+    .line 147
     iget-object p2, p0, Lorg/telegram/ui/KeepMediaPopupView;->callback:Lorg/telegram/ui/KeepMediaPopupView$Callback;
 
     if-eqz p2, :cond_1
 
-    .line 142
+    .line 148
     iget v0, p0, Lorg/telegram/ui/KeepMediaPopupView;->currentType:I
 
     invoke-interface {p2, v0, p1}, Lorg/telegram/ui/KeepMediaPopupView$Callback;->onKeepMediaChange(II)V
 
     goto :goto_0
 
-    .line 145
+    .line 151
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/KeepMediaPopupView;->callback:Lorg/telegram/ui/KeepMediaPopupView$Callback;
 
     if-eqz v0, :cond_1
 
-    .line 146
+    .line 152
     invoke-interface {v0, p2, p1}, Lorg/telegram/ui/KeepMediaPopupView$Callback;->onKeepMediaChange(II)V
 
     :cond_1
@@ -805,12 +813,12 @@
 .method private updateAvatarsPosition()V
     .locals 4
 
-    .line 250
+    .line 256
     iget-object v0, p0, Lorg/telegram/ui/KeepMediaPopupView;->exceptions:Ljava/util/ArrayList;
 
     if-eqz v0, :cond_0
 
-    .line 251
+    .line 257
     iget-object v0, p0, Lorg/telegram/ui/KeepMediaPopupView;->exceptionsView:Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;
 
     iget-object v0, v0, Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
@@ -850,7 +858,7 @@
 .method public setCallback(Lorg/telegram/ui/KeepMediaPopupView$Callback;)V
     .locals 0
 
-    .line 266
+    .line 272
     iput-object p1, p0, Lorg/telegram/ui/KeepMediaPopupView;->callback:Lorg/telegram/ui/KeepMediaPopupView$Callback;
 
     return-void
@@ -859,10 +867,10 @@
 .method public update(I)V
     .locals 8
 
-    .line 166
+    .line 172
     iput p1, p0, Lorg/telegram/ui/KeepMediaPopupView;->currentType:I
 
-    .line 167
+    .line 173
     iget-object v0, p0, Lorg/telegram/ui/KeepMediaPopupView;->cacheByChatsController:Lorg/telegram/messenger/CacheByChatsController;
 
     invoke-virtual {v0, p1}, Lorg/telegram/messenger/CacheByChatsController;->getKeepMediaExceptions(I)Ljava/util/ArrayList;
@@ -871,7 +879,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/KeepMediaPopupView;->exceptions:Ljava/util/ArrayList;
 
-    .line 168
+    .line 174
     invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result p1
@@ -884,7 +892,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 169
+    .line 175
     iget-object p1, p0, Lorg/telegram/ui/KeepMediaPopupView;->exceptionsView:Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;
 
     iget-object p1, p1, Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;->titleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -899,7 +907,7 @@
 
     invoke-virtual {p1, v3}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setText(Ljava/lang/CharSequence;)Z
 
-    .line 170
+    .line 176
     iget-object p1, p0, Lorg/telegram/ui/KeepMediaPopupView;->exceptionsView:Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;
 
     iget-object p1, p1, Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;->titleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -910,7 +918,7 @@
 
     invoke-virtual {p1, v3}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setRightPadding(I)V
 
-    .line 171
+    .line 177
     iget-object p1, p0, Lorg/telegram/ui/KeepMediaPopupView;->exceptionsView:Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;
 
     iget-object p1, p1, Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
@@ -925,7 +933,7 @@
 
     invoke-virtual {p1, v2, v3, v4}, Lorg/telegram/ui/Components/AvatarsImageView;->setObject(IILorg/telegram/tgnet/TLObject;)V
 
-    .line 172
+    .line 178
     iget-object p1, p0, Lorg/telegram/ui/KeepMediaPopupView;->exceptionsView:Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;
 
     iget-object p1, p1, Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
@@ -938,7 +946,7 @@
 
     invoke-virtual {p1, v1, v3, v4}, Lorg/telegram/ui/Components/AvatarsImageView;->setObject(IILorg/telegram/tgnet/TLObject;)V
 
-    .line 173
+    .line 179
     iget-object p1, p0, Lorg/telegram/ui/KeepMediaPopupView;->exceptionsView:Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;
 
     iget-object p1, p1, Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
@@ -953,7 +961,7 @@
 
     invoke-virtual {p1, v1, v3, v4}, Lorg/telegram/ui/Components/AvatarsImageView;->setObject(IILorg/telegram/tgnet/TLObject;)V
 
-    .line 174
+    .line 180
     iget-object p1, p0, Lorg/telegram/ui/KeepMediaPopupView;->exceptionsView:Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;
 
     iget-object p1, p1, Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
@@ -965,7 +973,7 @@
     :cond_0
     const/4 p1, 0x3
 
-    .line 176
+    .line 182
     iget-object v3, p0, Lorg/telegram/ui/KeepMediaPopupView;->exceptions:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
@@ -976,7 +984,7 @@
 
     move-result p1
 
-    .line 177
+    .line 183
     iget-object v3, p0, Lorg/telegram/ui/KeepMediaPopupView;->exceptionsView:Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;
 
     iget-object v3, v3, Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;->titleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -997,7 +1005,7 @@
 
     invoke-virtual {v3, v4}, Lorg/telegram/ui/ActionBar/SimpleTextView;->setRightPadding(I)V
 
-    .line 178
+    .line 184
     iget-object v3, p0, Lorg/telegram/ui/KeepMediaPopupView;->exceptionsView:Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;
 
     iget-object v3, v3, Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;->titleView:Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -1035,7 +1043,7 @@
     :goto_0
     if-ge v1, p1, :cond_1
 
-    .line 180
+    .line 186
     iget-object v3, p0, Lorg/telegram/ui/KeepMediaPopupView;->exceptionsView:Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;
 
     iget-object v3, v3, Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;->avatarsImageView:Lorg/telegram/ui/Components/AvatarsImageView;
@@ -1072,7 +1080,7 @@
 
     goto :goto_0
 
-    .line 182
+    .line 188
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/KeepMediaPopupView;->exceptionsView:Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;
 
@@ -1080,18 +1088,18 @@
 
     invoke-virtual {p1, v2}, Lorg/telegram/ui/Components/AvatarsImageView;->commitTransition(Z)V
 
-    .line 184
+    .line 190
     :goto_1
     iget-object p1, p0, Lorg/telegram/ui/KeepMediaPopupView;->delete:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 185
+    .line 191
     iget-object p1, p0, Lorg/telegram/ui/KeepMediaPopupView;->description:Landroid/widget/TextView;
 
     invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 186
+    .line 192
     invoke-direct {p0}, Lorg/telegram/ui/KeepMediaPopupView;->updateAvatarsPosition()V
 
     return-void
@@ -1102,17 +1110,17 @@
 
     const/4 v0, -0x1
 
-    .line 190
+    .line 196
     iput v0, p0, Lorg/telegram/ui/KeepMediaPopupView;->currentType:I
 
-    .line 191
+    .line 197
     iget-object v0, p0, Lorg/telegram/ui/KeepMediaPopupView;->gap:Landroid/widget/FrameLayout;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 192
+    .line 198
     iget-object v0, p0, Lorg/telegram/ui/KeepMediaPopupView;->delete:Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     const/16 v2, 0x8
@@ -1129,12 +1137,12 @@
     :goto_0
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 193
+    .line 199
     iget-object p1, p0, Lorg/telegram/ui/KeepMediaPopupView;->description:Landroid/widget/TextView;
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 194
+    .line 200
     iget-object p1, p0, Lorg/telegram/ui/KeepMediaPopupView;->exceptionsView:Lorg/telegram/ui/KeepMediaPopupView$ExceptionsView;
 
     invoke-virtual {p1, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V

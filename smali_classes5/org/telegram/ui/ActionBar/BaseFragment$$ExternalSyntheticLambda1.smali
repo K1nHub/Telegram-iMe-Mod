@@ -2,32 +2,34 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/lang/Runnable;
+.implements Landroidx/core/util/Supplier;
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
+.field public final synthetic f$0:[Lorg/telegram/ui/ActionBar/BottomSheet;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+.method public synthetic constructor <init>([Lorg/telegram/ui/ActionBar/BottomSheet;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
+    iput-object p1, p0, Lorg/telegram/ui/ActionBar/BaseFragment$$ExternalSyntheticLambda1;->f$0:[Lorg/telegram/ui/ActionBar/BottomSheet;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final run()V
+.method public final get()Ljava/lang/Object;
     .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/ActionBar/BaseFragment;
+    iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment$$ExternalSyntheticLambda1;->f$0:[Lorg/telegram/ui/ActionBar/BottomSheet;
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->$r8$lambda$MS3ZIT6gzIFzhIC4Q5GH_2nqB2M(Lorg/telegram/ui/ActionBar/BaseFragment;)V
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->$r8$lambda$2v1BOLf7rKog94Ss4PTmKQ60r3s([Lorg/telegram/ui/ActionBar/BottomSheet;)Lorg/telegram/ui/ActionBar/BottomSheet;
 
-    return-void
+    move-result-object v0
+
+    return-object v0
 .end method

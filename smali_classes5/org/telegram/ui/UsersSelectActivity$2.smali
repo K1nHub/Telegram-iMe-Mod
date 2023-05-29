@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/UsersSelectActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 469
+    .line 470
     iput-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$2;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     invoke-direct {p0, p2}, Landroid/view/ViewGroup;-><init>(Landroid/content/Context;)V
@@ -35,12 +35,12 @@
 .method protected drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
     .locals 0
 
-    .line 506
+    .line 507
     invoke-super {p0, p1, p2, p3, p4}, Landroid/view/ViewGroup;->drawChild(Landroid/graphics/Canvas;Landroid/view/View;J)Z
 
     move-result p3
 
-    .line 507
+    .line 508
     iget-object p4, p0, Lorg/telegram/ui/UsersSelectActivity$2;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     invoke-static {p4}, Lorg/telegram/ui/UsersSelectActivity;->access$1300(Lorg/telegram/ui/UsersSelectActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -57,7 +57,7 @@
 
     if-ne p2, p4, :cond_1
 
-    .line 508
+    .line 509
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/UsersSelectActivity$2;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
@@ -84,7 +84,7 @@
 .method protected onLayout(ZIIII)V
     .locals 5
 
-    .line 493
+    .line 494
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$2;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/UsersSelectActivity;->access$1200(Lorg/telegram/ui/UsersSelectActivity;)Landroid/widget/ScrollView;
@@ -115,7 +115,7 @@
 
     invoke-virtual {p1, v2, v2, v0, v1}, Landroid/widget/ScrollView;->layout(IIII)V
 
-    .line 494
+    .line 495
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$2;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/UsersSelectActivity;->access$1300(Lorg/telegram/ui/UsersSelectActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -166,7 +166,7 @@
 
     invoke-virtual {p1, v2, v0, v1, v3}, Landroid/view/ViewGroup;->layout(IIII)V
 
-    .line 495
+    .line 496
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$2;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/UsersSelectActivity;->access$1400(Lorg/telegram/ui/UsersSelectActivity;)Lorg/telegram/ui/Components/EmptyTextProgressView;
@@ -217,7 +217,7 @@
 
     invoke-virtual {p1, v2, v0, v1, v3}, Landroid/widget/FrameLayout;->layout(IIII)V
 
-    .line 497
+    .line 498
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$2;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/UsersSelectActivity;->access$1500(Lorg/telegram/ui/UsersSelectActivity;)Landroid/widget/ImageView;
@@ -226,7 +226,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 498
+    .line 499
     sget-boolean p1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/16 v0, 0xe
@@ -263,7 +263,7 @@
     :goto_0
     sub-int/2addr p5, p3
 
-    .line 499
+    .line 500
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
@@ -282,7 +282,7 @@
 
     sub-int/2addr p5, p2
 
-    .line 500
+    .line 501
     iget-object p2, p0, Lorg/telegram/ui/UsersSelectActivity$2;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/UsersSelectActivity;->access$1500(Lorg/telegram/ui/UsersSelectActivity;)Landroid/widget/ImageView;
@@ -322,20 +322,20 @@
 .method protected onMeasure(II)V
     .locals 6
 
-    .line 472
+    .line 473
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
 
-    .line 473
+    .line 474
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p2
 
-    .line 474
+    .line 475
     invoke-virtual {p0, p1, p2}, Landroid/view/ViewGroup;->setMeasuredDimension(II)V
 
-    .line 476
+    .line 477
     invoke-static {}, Lorg/telegram/messenger/AndroidUtilities;->isTablet()Z
 
     move-result v0
@@ -348,7 +348,7 @@
 
     goto :goto_0
 
-    .line 479
+    .line 480
     :cond_0
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -360,12 +360,12 @@
     :goto_0
     const/16 v0, 0x90
 
-    .line 477
+    .line 478
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    .line 482
+    .line 483
     :goto_1
     iget-object v2, p0, Lorg/telegram/ui/UsersSelectActivity$2;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
@@ -387,7 +387,7 @@
 
     invoke-virtual {v2, v4, v0}, Landroid/widget/ScrollView;->measure(II)V
 
-    .line 483
+    .line 484
     iget-object v0, p0, Lorg/telegram/ui/UsersSelectActivity$2;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/UsersSelectActivity;->access$1300(Lorg/telegram/ui/UsersSelectActivity;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -416,7 +416,7 @@
 
     invoke-virtual {v0, v2, v4}, Landroid/view/ViewGroup;->measure(II)V
 
-    .line 484
+    .line 485
     iget-object v0, p0, Lorg/telegram/ui/UsersSelectActivity$2;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/UsersSelectActivity;->access$1400(Lorg/telegram/ui/UsersSelectActivity;)Lorg/telegram/ui/Components/EmptyTextProgressView;
@@ -445,7 +445,7 @@
 
     invoke-virtual {v0, p1, p2}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 485
+    .line 486
     iget-object p1, p0, Lorg/telegram/ui/UsersSelectActivity$2;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/UsersSelectActivity;->access$1500(Lorg/telegram/ui/UsersSelectActivity;)Landroid/widget/ImageView;
@@ -454,7 +454,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 486
+    .line 487
     sget p1, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 p2, 0x15
@@ -471,7 +471,7 @@
 
     move-result p1
 
-    .line 487
+    .line 488
     iget-object p2, p0, Lorg/telegram/ui/UsersSelectActivity$2;->this$0:Lorg/telegram/ui/UsersSelectActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/UsersSelectActivity;->access$1500(Lorg/telegram/ui/UsersSelectActivity;)Landroid/widget/ImageView;

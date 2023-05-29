@@ -2,32 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnDismissListener;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda23;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda23;
+
+    invoke-direct {v0}, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda23;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda23;->INSTANCE:Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda23;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda23;->f$0:Lorg/telegram/ui/DialogsActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onDismiss(Landroid/content/DialogInterface;)V
-    .locals 1
+.method public final onClick(Landroid/content/DialogInterface;I)V
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda23;->f$0:Lorg/telegram/ui/DialogsActivity;
-
-    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$I1ymzY5OFQBjc7i0eczlb0OlwJI(Lorg/telegram/ui/DialogsActivity;Landroid/content/DialogInterface;)V
+    invoke-static {p1, p2}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$seIb2YOK8vdPSXI49YoSAFd6ajg(Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

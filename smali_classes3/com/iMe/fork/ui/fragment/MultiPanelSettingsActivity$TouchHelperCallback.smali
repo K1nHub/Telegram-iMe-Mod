@@ -77,7 +77,7 @@
 
     move-result p1
 
-    sget p2, Lcom/iMe/common/IdFabric$ViewTypes;->MOVING_CHECK:I
+    sget p2, Lcom/iMe/common/IdFabric$ViewTypes;->MOVING_CHECK_CELL:I
 
     const/4 v0, 0x0
 

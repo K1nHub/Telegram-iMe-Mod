@@ -934,7 +934,7 @@
 .method public final kickCoordinator$okhttp(Lokhttp3/internal/concurrent/TaskQueue;)V
     .locals 3
 
-    const-string v0, "taskQueue"
+    const-string/jumbo v0, "taskQueue"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

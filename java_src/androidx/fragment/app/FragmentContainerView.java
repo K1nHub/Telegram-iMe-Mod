@@ -16,6 +16,7 @@ import androidx.core.view.WindowInsetsCompat;
 import androidx.fragment.R$styleable;
 import java.util.ArrayList;
 import java.util.List;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: FragmentContainerView.kt */
 /* loaded from: classes.dex */
@@ -25,10 +26,56 @@ public final class FragmentContainerView extends FrameLayout {
     private boolean drawDisappearingViewsFirst;
     private final List<View> transitioningFragmentViews;
 
+    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
+    public FragmentContainerView(Context context, AttributeSet attributeSet) {
+        this(context, attributeSet, 0, 4, null);
+        Intrinsics.checkNotNullParameter(context, "context");
+    }
+
     @Override // android.view.View
     public WindowInsets onApplyWindowInsets(WindowInsets insets) {
         Intrinsics.checkNotNullParameter(insets, "insets");
         return insets;
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public FragmentContainerView(Context context) {
+        super(context);
+        Intrinsics.checkNotNullParameter(context, "context");
+        this.disappearingFragmentChildren = new ArrayList();
+        this.transitioningFragmentViews = new ArrayList();
+        this.drawDisappearingViewsFirst = true;
+    }
+
+    public /* synthetic */ FragmentContainerView(Context context, AttributeSet attributeSet, int i, int i2, DefaultConstructorMarker defaultConstructorMarker) {
+        this(context, attributeSet, (i2 & 4) != 0 ? 0 : i);
+    }
+
+    /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+    public FragmentContainerView(Context context, AttributeSet attributeSet, int i) {
+        super(context, attributeSet, i);
+        String str;
+        Intrinsics.checkNotNullParameter(context, "context");
+        this.disappearingFragmentChildren = new ArrayList();
+        this.transitioningFragmentViews = new ArrayList();
+        this.drawDisappearingViewsFirst = true;
+        if (attributeSet != null) {
+            String classAttribute = attributeSet.getClassAttribute();
+            int[] FragmentContainerView = R$styleable.FragmentContainerView;
+            Intrinsics.checkNotNullExpressionValue(FragmentContainerView, "FragmentContainerView");
+            TypedArray obtainStyledAttributes = context.obtainStyledAttributes(attributeSet, FragmentContainerView, 0, 0);
+            if (classAttribute == null) {
+                classAttribute = obtainStyledAttributes.getString(R$styleable.FragmentContainerView_android_name);
+                str = "android:name";
+            } else {
+                str = "class";
+            }
+            obtainStyledAttributes.recycle();
+            if (classAttribute == null || isInEditMode()) {
+                return;
+            }
+            throw new UnsupportedOperationException("FragmentContainerView must be within a FragmentActivity to use " + str + "=\"" + classAttribute + '\"');
+        }
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */

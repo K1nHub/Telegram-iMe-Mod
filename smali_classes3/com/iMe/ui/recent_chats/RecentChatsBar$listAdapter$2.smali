@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/ui/recent_chats/RecentChatsBar;-><init>(Landroid/content/Context;ILcom/iMe/ui/recent_chats/RecentChatsBar$HorizontalListViewDelegate;)V
+    value = Lcom/iMe/ui/recent_chats/RecentChatsBar;-><init>(Landroid/content/Context;ILcom/iMe/ui/recent_chats/RecentChatsBar$Delegate;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -48,7 +48,7 @@
 .method public final invoke()Lcom/iMe/ui/recent_chats/RecentChatsBar$ListAdapter;
     .locals 2
 
-    .line 28
+    .line 27
     new-instance v0, Lcom/iMe/ui/recent_chats/RecentChatsBar$ListAdapter;
 
     iget-object v1, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar$listAdapter$2;->this$0:Lcom/iMe/ui/recent_chats/RecentChatsBar;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 28
+    .line 27
     invoke-virtual {p0}, Lcom/iMe/ui/recent_chats/RecentChatsBar$listAdapter$2;->invoke()Lcom/iMe/ui/recent_chats/RecentChatsBar$ListAdapter;
 
     move-result-object v0

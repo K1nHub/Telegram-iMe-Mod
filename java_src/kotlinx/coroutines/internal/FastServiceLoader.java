@@ -104,9 +104,9 @@ public final class FastServiceLoader {
         String url2 = url.toString();
         startsWith$default = StringsKt__StringsJVMKt.startsWith$default(url2, "jar", false, 2, null);
         if (startsWith$default) {
-            substringAfter$default = StringsKt__StringsKt.substringAfter$default(url2, "jar:file:", null, 2, null);
+            substringAfter$default = StringsKt__StringsKt.substringAfter$default(url2, "jar:file:", (String) null, 2, (Object) null);
             substringBefore$default = StringsKt__StringsKt.substringBefore$default(substringAfter$default, '!', (String) null, 2, (Object) null);
-            substringAfter$default2 = StringsKt__StringsKt.substringAfter$default(url2, "!/", null, 2, null);
+            substringAfter$default2 = StringsKt__StringsKt.substringAfter$default(url2, "!/", (String) null, 2, (Object) null);
             JarFile jarFile = new JarFile(substringBefore$default, false);
             try {
                 BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(jarFile.getInputStream(new ZipEntry(substringAfter$default2)), "UTF-8"));

@@ -27,6 +27,8 @@
     <string name="abc_shareactionprovider_share_with">Compartilhar com</string>
     <string name="abc_shareactionprovider_share_with_application">Compartilhar com %s</string>
     <string name="abc_toolbar_collapse_description">Recolher</string>
+    <string name="nav_app_bar_navigate_up_description">Navegar para cima</string>
+    <string name="nav_app_bar_open_drawer_description">Abrir gaveta de navegação</string>
     <string name="search_menu_title">Pesquisar</string>
     <string name="status_bar_notification_info_overflow">999+</string>
 </resources>

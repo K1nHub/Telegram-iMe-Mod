@@ -23,7 +23,7 @@ public final class SimplexWebViewProcessingFragment$presenter$2 extends Lambda i
     @Override // kotlin.jvm.functions.Function0
     public final SimplexWebViewProcessingPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2092xd821ec28(this.this$0, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2131xd821ec28(this.this$0, null, null));
         return (SimplexWebViewProcessingPresenter) lazy.getValue();
     }
 }

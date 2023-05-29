@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lcom/iMe/ui/topics/TopicsAlert;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/util/List;ZLcom/iMe/ui/topics/TopicsAlert$TopicsAlertDelegate;)V
+    value = Lcom/iMe/ui/topics/TopicsAlert;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/util/List;Lcom/iMe/fork/utils/Callbacks$Callback2;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -48,7 +48,7 @@
 .method public final invoke()Lcom/iMe/ui/topics/TopicsAlert$ListAdapter;
     .locals 2
 
-    .line 57
+    .line 64
     new-instance v0, Lcom/iMe/ui/topics/TopicsAlert$ListAdapter;
 
     iget-object v1, p0, Lcom/iMe/ui/topics/TopicsAlert$listAdapter$2;->this$0:Lcom/iMe/ui/topics/TopicsAlert;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 57
+    .line 64
     invoke-virtual {p0}, Lcom/iMe/ui/topics/TopicsAlert$listAdapter$2;->invoke()Lcom/iMe/ui/topics/TopicsAlert$ListAdapter;
 
     move-result-object v0

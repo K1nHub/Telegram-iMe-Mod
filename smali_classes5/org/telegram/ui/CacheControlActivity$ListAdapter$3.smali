@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/CacheControlActivity$ListAdapter;)V
     .locals 0
 
-    .line 2526
+    .line 2546
     iput-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public clear()V
     .locals 1
 
-    .line 2548
+    .line 2568
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
@@ -51,7 +51,7 @@
 .method public clearSelection()V
     .locals 2
 
-    .line 2553
+    .line 2573
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
@@ -66,7 +66,7 @@
 
     if-lez v0, :cond_0
 
-    .line 2554
+    .line 2574
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
@@ -75,7 +75,7 @@
 
     invoke-virtual {v0}, Lorg/telegram/ui/Storage/CacheModel;->clearSelection()V
 
-    .line 2555
+    .line 2575
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
@@ -86,7 +86,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 2556
+    .line 2576
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
@@ -99,7 +99,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/CachedMediaLayout;->showActionMode(Z)V
 
-    .line 2557
+    .line 2577
     iget-object v0, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
@@ -127,7 +127,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 2530
+    .line 2550
     iget-object p2, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 
     iget-object p2, p2, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
@@ -144,7 +144,7 @@
 
     goto :goto_0
 
-    .line 2535
+    .line 2555
     :cond_0
     iget-object p2, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 
@@ -154,7 +154,7 @@
 
     goto :goto_1
 
-    .line 2531
+    .line 2551
     :cond_1
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
@@ -165,7 +165,7 @@
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Storage/CacheModel;->toggleSelect(Lorg/telegram/ui/CacheControlActivity$DialogFileEntities;)V
 
-    .line 2532
+    .line 2552
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
@@ -176,7 +176,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/CachedMediaLayout;->updateVisibleRows()V
 
-    .line 2533
+    .line 2553
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
@@ -189,7 +189,7 @@
     :cond_2
     if-eqz p2, :cond_3
 
-    .line 2540
+    .line 2560
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
@@ -198,7 +198,7 @@
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Storage/CacheModel;->toggleSelect(Lorg/telegram/ui/Storage/CacheModel$FileInfo;)V
 
-    .line 2541
+    .line 2561
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;
@@ -209,7 +209,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/CachedMediaLayout;->updateVisibleRows()V
 
-    .line 2542
+    .line 2562
     iget-object p1, p0, Lorg/telegram/ui/CacheControlActivity$ListAdapter$3;->this$1:Lorg/telegram/ui/CacheControlActivity$ListAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/CacheControlActivity$ListAdapter;->this$0:Lorg/telegram/ui/CacheControlActivity;

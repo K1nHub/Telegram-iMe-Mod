@@ -42,18 +42,18 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/EmojiView;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 0
 
-    .line 1439
+    .line 1420
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    .line 1440
+    .line 1421
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     const/4 p1, 0x1
 
-    .line 1434
+    .line 1415
     iput-boolean p1, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->first:Z
 
-    .line 1441
+    .line 1422
     invoke-static {p2}, Landroid/view/ViewConfiguration;->get(Landroid/content/Context;)Landroid/view/ViewConfiguration;
 
     move-result-object p1
@@ -72,21 +72,21 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 4
 
-    .line 1446
+    .line 1427
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->isDragging()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1447
+    .line 1428
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
 
     return p1
 
-    .line 1449
+    .line 1430
     :cond_0
     invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getParent()Landroid/view/ViewParent;
 
@@ -96,14 +96,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 1450
+    .line 1431
     invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
 
     invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 1452
+    .line 1433
     :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -113,19 +113,19 @@
 
     if-nez v0, :cond_2
 
-    .line 1453
+    .line 1434
     iput-boolean v2, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->draggingHorizontally:Z
 
     iput-boolean v2, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->draggingVertically:Z
 
-    .line 1454
+    .line 1435
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->downX:F
 
-    .line 1455
+    .line 1436
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
 
     move-result v0
@@ -134,7 +134,7 @@
 
     goto :goto_0
 
-    .line 1457
+    .line 1438
     :cond_2
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->draggingVertically:Z
 
@@ -152,7 +152,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 1458
+    .line 1439
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
 
     move-result v0
@@ -173,17 +173,17 @@
 
     if-ltz v0, :cond_4
 
-    .line 1459
+    .line 1440
     iput-boolean v1, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->draggingVertically:Z
 
-    .line 1460
+    .line 1441
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->downY:F
 
-    .line 1461
+    .line 1442
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$5300(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$DragListener;
@@ -192,12 +192,12 @@
 
     invoke-interface {p1}, Lorg/telegram/ui/Components/EmojiView$DragListener;->onDragStart()V
 
-    .line 1462
+    .line 1443
     iget-boolean p1, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->startedScroll:Z
 
     if-eqz p1, :cond_3
 
-    .line 1463
+    .line 1444
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$5400(Lorg/telegram/ui/Components/EmojiView;)Landroidx/viewpager/widget/ViewPager;
@@ -206,13 +206,13 @@
 
     invoke-virtual {p1}, Landroidx/viewpager/widget/ViewPager;->endFakeDrag()V
 
-    .line 1464
+    .line 1445
     iput-boolean v2, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->startedScroll:Z
 
     :cond_3
     return v1
 
-    .line 1470
+    .line 1451
     :cond_4
     :goto_0
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
@@ -225,21 +225,21 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 7
 
-    .line 1475
+    .line 1456
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->isDragging()Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    .line 1476
+    .line 1457
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
 
     return p1
 
-    .line 1478
+    .line 1459
     :cond_0
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->first:Z
 
@@ -247,17 +247,17 @@
 
     if-eqz v0, :cond_1
 
-    .line 1479
+    .line 1460
     iput-boolean v1, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->first:Z
 
-    .line 1480
+    .line 1461
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->lastX:F
 
-    .line 1482
+    .line 1463
     :cond_1
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -273,7 +273,7 @@
 
     if-ne v0, v2, :cond_3
 
-    .line 1483
+    .line 1464
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -283,7 +283,7 @@
 
     invoke-static {v0, v2}, Lorg/telegram/ui/Components/EmojiView;->access$5502(Lorg/telegram/ui/Components/EmojiView;F)F
 
-    .line 1485
+    .line 1466
     :cond_3
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
@@ -293,19 +293,19 @@
 
     if-nez v0, :cond_4
 
-    .line 1486
+    .line 1467
     iput-boolean v1, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->draggingHorizontally:Z
 
     iput-boolean v1, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->draggingVertically:Z
 
-    .line 1487
+    .line 1468
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->downX:F
 
-    .line 1488
+    .line 1469
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
 
     move-result v0
@@ -314,7 +314,7 @@
 
     goto/16 :goto_0
 
-    .line 1490
+    .line 1471
     :cond_4
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->draggingVertically:Z
 
@@ -332,7 +332,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 1491
+    .line 1472
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawX()F
 
     move-result v0
@@ -369,10 +369,10 @@
 
     if-eqz v0, :cond_5
 
-    .line 1492
+    .line 1473
     iput-boolean v2, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->draggingHorizontally:Z
 
-    .line 1493
+    .line 1474
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$5600(Lorg/telegram/ui/Components/EmojiView;)Ljava/lang/Runnable;
@@ -381,17 +381,17 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1494
+    .line 1475
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0, v2}, Lorg/telegram/ui/Components/EmojiView;->access$702(Lorg/telegram/ui/Components/EmojiView;Z)Z
 
-    .line 1495
+    .line 1476
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$800(Lorg/telegram/ui/Components/EmojiView;)V
 
-    .line 1497
+    .line 1478
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$5700(Lorg/telegram/ui/Components/EmojiView;)Ljava/lang/Runnable;
@@ -400,19 +400,19 @@
 
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->cancelRunOnUIThread(Ljava/lang/Runnable;)V
 
-    .line 1498
+    .line 1479
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0, v2}, Lorg/telegram/ui/Components/EmojiView;->access$102(Lorg/telegram/ui/Components/EmojiView;Z)Z
 
-    .line 1499
+    .line 1480
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0, v2}, Lorg/telegram/ui/Components/EmojiView;->access$200(Lorg/telegram/ui/Components/EmojiView;Z)V
 
     goto :goto_0
 
-    .line 1501
+    .line 1482
     :cond_5
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
 
@@ -434,17 +434,17 @@
 
     if-ltz v0, :cond_6
 
-    .line 1502
+    .line 1483
     iput-boolean v2, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->draggingVertically:Z
 
-    .line 1503
+    .line 1484
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getRawY()F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->downY:F
 
-    .line 1504
+    .line 1485
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$5300(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$DragListener;
@@ -453,12 +453,12 @@
 
     invoke-interface {v0}, Lorg/telegram/ui/Components/EmojiView$DragListener;->onDragStart()V
 
-    .line 1505
+    .line 1486
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->startedScroll:Z
 
     if-eqz v0, :cond_6
 
-    .line 1506
+    .line 1487
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$5400(Lorg/telegram/ui/Components/EmojiView;)Landroidx/viewpager/widget/ViewPager;
@@ -467,10 +467,10 @@
 
     invoke-virtual {v0}, Landroidx/viewpager/widget/ViewPager;->endFakeDrag()V
 
-    .line 1507
+    .line 1488
     iput-boolean v1, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->startedScroll:Z
 
-    .line 1513
+    .line 1494
     :cond_6
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->this$0:Lorg/telegram/ui/Components/EmojiView;
@@ -497,7 +497,7 @@
 
     if-ne v0, v5, :cond_8
 
-    .line 1514
+    .line 1495
     :cond_7
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -507,7 +507,7 @@
 
     invoke-static {v0, v3, v4}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 1517
+    .line 1498
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -529,7 +529,7 @@
 
     if-ne v0, v5, :cond_a
 
-    .line 1518
+    .line 1499
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -539,31 +539,31 @@
 
     invoke-static {v0, v3, v4}, Lorg/telegram/messenger/AndroidUtilities;->runOnUIThread(Ljava/lang/Runnable;J)V
 
-    .line 1520
+    .line 1501
     :cond_a
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->draggingVertically:Z
 
     if-eqz v0, :cond_f
 
-    .line 1521
+    .line 1502
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->vTracker:Landroid/view/VelocityTracker;
 
     if-nez v0, :cond_b
 
-    .line 1522
+    .line 1503
     invoke-static {}, Landroid/view/VelocityTracker;->obtain()Landroid/view/VelocityTracker;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->vTracker:Landroid/view/VelocityTracker;
 
-    .line 1524
+    .line 1505
     :cond_b
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->vTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0, p1}, Landroid/view/VelocityTracker;->addMovement(Landroid/view/MotionEvent;)V
 
-    .line 1525
+    .line 1506
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -578,7 +578,7 @@
 
     goto :goto_1
 
-    .line 1538
+    .line 1519
     :cond_c
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -602,7 +602,7 @@
 
     goto :goto_3
 
-    .line 1526
+    .line 1507
     :cond_d
     :goto_1
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->vTracker:Landroid/view/VelocityTracker;
@@ -611,31 +611,31 @@
 
     invoke-virtual {v0, v3}, Landroid/view/VelocityTracker;->computeCurrentVelocity(I)V
 
-    .line 1527
+    .line 1508
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->vTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v0}, Landroid/view/VelocityTracker;->getYVelocity()F
 
     move-result v0
 
-    .line 1528
+    .line 1509
     iget-object v3, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->vTracker:Landroid/view/VelocityTracker;
 
     invoke-virtual {v3}, Landroid/view/VelocityTracker;->recycle()V
 
     const/4 v3, 0x0
 
-    .line 1529
+    .line 1510
     iput-object v3, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->vTracker:Landroid/view/VelocityTracker;
 
-    .line 1530
+    .line 1511
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result p1
 
     if-ne p1, v2, :cond_e
 
-    .line 1531
+    .line 1512
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/EmojiView;->access$5300(Lorg/telegram/ui/Components/EmojiView;)Lorg/telegram/ui/Components/EmojiView$DragListener;
@@ -646,7 +646,7 @@
 
     goto :goto_2
 
-    .line 1533
+    .line 1514
     :cond_e
     iget-object p1, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -656,28 +656,28 @@
 
     invoke-interface {p1}, Lorg/telegram/ui/Components/EmojiView$DragListener;->onDragCancel()V
 
-    .line 1535
+    .line 1516
     :goto_2
     iput-boolean v2, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->first:Z
 
-    .line 1536
+    .line 1517
     iput-boolean v1, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->draggingHorizontally:Z
 
     iput-boolean v1, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->draggingVertically:Z
 
-    .line 1540
+    .line 1521
     :goto_3
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ScrollSlidingTabStrip;->cancelLongPress()V
 
     return v2
 
-    .line 1543
+    .line 1524
     :cond_f
     invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getTranslationX()F
 
     move-result v0
 
-    .line 1544
+    .line 1525
     invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getScrollX()I
 
     move-result v3
@@ -690,7 +690,7 @@
 
     if-nez v4, :cond_11
 
-    .line 1545
+    .line 1526
     iget-boolean v4, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->startedScroll:Z
 
     if-nez v4, :cond_10
@@ -707,7 +707,7 @@
 
     if-gez v4, :cond_10
 
-    .line 1546
+    .line 1527
     iget-object v3, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/EmojiView;->access$5400(Lorg/telegram/ui/Components/EmojiView;)Landroidx/viewpager/widget/ViewPager;
@@ -720,10 +720,10 @@
 
     if-eqz v3, :cond_11
 
-    .line 1547
+    .line 1528
     iput-boolean v2, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->startedScroll:Z
 
-    .line 1548
+    .line 1529
     invoke-virtual {p0}, Landroid/widget/HorizontalScrollView;->getTranslationX()F
 
     move-result v3
@@ -732,7 +732,7 @@
 
     goto :goto_4
 
-    .line 1550
+    .line 1531
     :cond_10
     iget-boolean v4, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->startedScroll:Z
 
@@ -750,7 +750,7 @@
 
     if-lez v3, :cond_11
 
-    .line 1551
+    .line 1532
     iget-object v3, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/EmojiView;->access$5400(Lorg/telegram/ui/Components/EmojiView;)Landroidx/viewpager/widget/ViewPager;
@@ -763,7 +763,7 @@
 
     if-eqz v3, :cond_11
 
-    .line 1552
+    .line 1533
     iget-object v3, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/EmojiView;->access$5400(Lorg/telegram/ui/Components/EmojiView;)Landroidx/viewpager/widget/ViewPager;
@@ -772,20 +772,20 @@
 
     invoke-virtual {v3}, Landroidx/viewpager/widget/ViewPager;->endFakeDrag()V
 
-    .line 1553
+    .line 1534
     iput-boolean v1, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->startedScroll:Z
 
-    .line 1557
+    .line 1538
     :cond_11
     :goto_4
     iget-boolean v3, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->startedScroll:Z
 
     if-eqz v3, :cond_12
 
-    .line 1558
+    .line 1539
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
 
-    .line 1561
+    .line 1542
     :try_start_0
     iput v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->lastTranslateX:F
     :try_end_0
@@ -796,7 +796,7 @@
     :catch_0
     move-exception v0
 
-    .line 1564
+    .line 1545
     :try_start_1
     iget-object v3, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
@@ -808,14 +808,14 @@
     :try_end_1
     .catch Ljava/lang/Exception; {:try_start_1 .. :try_end_1} :catch_1
 
-    .line 1568
+    .line 1549
     :catch_1
     iput-boolean v1, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->startedScroll:Z
 
-    .line 1569
+    .line 1550
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
 
-    .line 1572
+    .line 1553
     :cond_12
     :goto_5
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getX()F
@@ -824,7 +824,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->lastX:F
 
-    .line 1573
+    .line 1554
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
 
     move-result v0
@@ -837,21 +837,21 @@
 
     if-ne v0, v2, :cond_14
 
-    .line 1574
+    .line 1555
     :cond_13
     iput-boolean v2, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->first:Z
 
-    .line 1575
+    .line 1556
     iput-boolean v1, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->draggingHorizontally:Z
 
     iput-boolean v1, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->draggingVertically:Z
 
-    .line 1576
+    .line 1557
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->startedScroll:Z
 
     if-eqz v0, :cond_14
 
-    .line 1577
+    .line 1558
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/EmojiView;->access$5400(Lorg/telegram/ui/Components/EmojiView;)Landroidx/viewpager/widget/ViewPager;
@@ -860,10 +860,10 @@
 
     invoke-virtual {v0}, Landroidx/viewpager/widget/ViewPager;->endFakeDrag()V
 
-    .line 1578
+    .line 1559
     iput-boolean v1, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->startedScroll:Z
 
-    .line 1581
+    .line 1562
     :cond_14
     iget-boolean v0, p0, Lorg/telegram/ui/Components/EmojiView$DraggableScrollSlidingTabStrip;->startedScroll:Z
 

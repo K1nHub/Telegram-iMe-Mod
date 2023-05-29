@@ -162,6 +162,42 @@
     return p0
 .end method
 
+.method public static final convertToListIfNotCollection(Ljava/lang/Iterable;)Ljava/util/Collection;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/lang/Iterable<",
+            "+TT;>;)",
+            "Ljava/util/Collection<",
+            "TT;>;"
+        }
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 147
+    instance-of v0, p0, Ljava/util/Collection;
+
+    if-eqz v0, :cond_0
+
+    check-cast p0, Ljava/util/Collection;
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {p0}, Lkotlin/collections/CollectionsKt;->toList(Ljava/lang/Iterable;)Ljava/util/List;
+
+    move-result-object p0
+
+    :goto_0
+    return-object p0
+.end method
+
 .method private static final filterInPlace$CollectionsKt__MutableCollectionsKt(Ljava/lang/Iterable;Lkotlin/jvm/functions/Function1;Z)Z
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
@@ -352,6 +388,40 @@
     return v2
 .end method
 
+.method public static removeAll(Ljava/lang/Iterable;Lkotlin/jvm/functions/Function1;)Z
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/lang/Iterable<",
+            "+TT;>;",
+            "Lkotlin/jvm/functions/Function1<",
+            "-TT;",
+            "Ljava/lang/Boolean;",
+            ">;)Z"
+        }
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "predicate"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const/4 v0, 0x1
+
+    .line 211
+    invoke-static {p0, p1, v0}, Lkotlin/collections/CollectionsKt__MutableCollectionsKt;->filterInPlace$CollectionsKt__MutableCollectionsKt(Ljava/lang/Iterable;Lkotlin/jvm/functions/Function1;Z)Z
+
+    move-result p0
+
+    return p0
+.end method
+
 .method public static removeAll(Ljava/util/List;Lkotlin/jvm/functions/Function1;)Z
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -427,4 +497,78 @@
     invoke-direct {p0, v0}, Ljava/util/NoSuchElementException;-><init>(Ljava/lang/String;)V
 
     throw p0
+.end method
+
+.method public static removeLastOrNull(Ljava/util/List;)Ljava/lang/Object;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/List<",
+            "TT;>;)TT;"
+        }
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 267
+    invoke-interface {p0}, Ljava/util/List;->isEmpty()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    const/4 p0, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    invoke-static {p0}, Lkotlin/collections/CollectionsKt;->getLastIndex(Ljava/util/List;)I
+
+    move-result v0
+
+    invoke-interface {p0, v0}, Ljava/util/List;->remove(I)Ljava/lang/Object;
+
+    move-result-object p0
+
+    :goto_0
+    return-object p0
+.end method
+
+.method public static final retainAll(Ljava/util/Collection;Ljava/lang/Iterable;)Z
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<T:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/Collection<",
+            "-TT;>;",
+            "Ljava/lang/Iterable<",
+            "+TT;>;)Z"
+        }
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    const-string v0, "elements"
+
+    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 175
+    invoke-static {p1}, Lkotlin/collections/CollectionsKt__MutableCollectionsKt;->convertToListIfNotCollection(Ljava/lang/Iterable;)Ljava/util/Collection;
+
+    move-result-object p1
+
+    invoke-interface {p0, p1}, Ljava/util/Collection;->retainAll(Ljava/util/Collection;)Z
+
+    move-result p0
+
+    return p0
 .end method

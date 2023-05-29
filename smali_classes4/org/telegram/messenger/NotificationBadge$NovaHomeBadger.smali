@@ -78,7 +78,7 @@
 
     move-result-object v1
 
-    const-string v2, "tag"
+    const-string/jumbo v2, "tag"
 
     invoke-virtual {v0, v2, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
 

@@ -381,7 +381,7 @@
 
     iput-wide p1, p0, Lio/grpc/internal/DnsNameResolver;->cacheTtlNanos:J
 
-    const-string p1, "stopwatch"
+    const-string/jumbo p1, "stopwatch"
 
     .line 186
     invoke-static {p5, p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -397,7 +397,7 @@
 
     move-result-object p1
 
-    const-string p2, "syncContext"
+    const-string/jumbo p2, "syncContext"
 
     invoke-static {p1, p2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

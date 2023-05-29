@@ -48,7 +48,7 @@ public class FirebaseModelManager {
         if (this.zzawr.containsKey(firebaseLocalModel.getModelName())) {
             GmsLogger gmsLogger = zzass;
             String valueOf = String.valueOf(firebaseLocalModel.getModelName());
-            gmsLogger.m777w("FirebaseModelManager", valueOf.length() != 0 ? "The local model name is already registered: ".concat(valueOf) : new String("The local model name is already registered: "));
+            gmsLogger.m781w("FirebaseModelManager", valueOf.length() != 0 ? "The local model name is already registered: ".concat(valueOf) : new String("The local model name is already registered: "));
             return false;
         }
         this.zzawr.put(firebaseLocalModel.getModelName(), firebaseLocalModel);

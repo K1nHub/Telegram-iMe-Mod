@@ -255,7 +255,7 @@ public class MessagingAnalytics {
             return;
         }
         try {
-            Transport transport = transportFactory.getTransport("FCM_CLIENT_EVENT_LOGGING", MessagingClientEventExtension.class, Encoding.m807of("proto"), MessagingAnalytics$$ExternalSyntheticLambda0.INSTANCE);
+            Transport transport = transportFactory.getTransport("FCM_CLIENT_EVENT_LOGGING", MessagingClientEventExtension.class, Encoding.m811of("proto"), MessagingAnalytics$$ExternalSyntheticLambda0.INSTANCE);
             MessagingClientEventExtension.Builder newBuilder = MessagingClientEventExtension.newBuilder();
             newBuilder.setMessagingClientEvent(eventToProto);
             transport.send(Event.ofTelemetry(newBuilder.build()));

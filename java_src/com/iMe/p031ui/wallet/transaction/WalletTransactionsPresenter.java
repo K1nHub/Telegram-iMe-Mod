@@ -187,14 +187,14 @@ public final class WalletTransactionsPresenter extends BasePresenter<WalletTrans
     }
 
     private final <T> void loadInternal(boolean z, boolean z2, Observable<Result<T>> observable, Function1<? super T, Unit> function1) {
-        Observable<Result<T>> doFinally = observable.distinctUntilChanged().observeOn(this.schedulersProvider.mo693ui()).doFinally(new Action() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsPresenter$$ExternalSyntheticLambda0
+        Observable<Result<T>> doFinally = observable.distinctUntilChanged().observeOn(this.schedulersProvider.mo698ui()).doFinally(new Action() { // from class: com.iMe.ui.wallet.transaction.WalletTransactionsPresenter$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Action
             public final void run() {
                 WalletTransactionsPresenter.loadInternal$lambda$0(WalletTransactionsPresenter.this);
             }
         });
         Intrinsics.checkNotNullExpressionValue(doFinally, "observable\n             …e.showRefreshing(false) }");
-        Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2367x713e530(function1, z2, this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2368x713e531((BaseView) getViewState())));
+        Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2406x713e530(function1, z2, this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2407x713e531((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -223,9 +223,9 @@ public final class WalletTransactionsPresenter extends BasePresenter<WalletTrans
 
     private final void listenEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
-        Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo693ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2365x655d1dad(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2366x655d1dae(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2404x655d1dad(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2405x655d1dae(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

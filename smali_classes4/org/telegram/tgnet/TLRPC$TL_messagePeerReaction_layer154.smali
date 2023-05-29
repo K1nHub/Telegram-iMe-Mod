@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 2737
+    .line 3157
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 2741
+    .line 3161
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -50,7 +50,7 @@
     :cond_0
     move v1, v2
 
-    .line 2742
+    .line 3162
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->big:Z
 
@@ -60,11 +60,11 @@
 
     move v2, v3
 
-    .line 2743
+    .line 3163
     :cond_1
     iput-boolean v2, p0, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->unread:Z
 
-    .line 2744
+    .line 3164
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -75,7 +75,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
-    .line 2745
+    .line 3165
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -92,12 +92,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 2749
+    .line 3169
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messagePeerReaction_layer154;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2750
+    .line 3170
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->big:Z
 
     if-eqz v0, :cond_0
@@ -116,7 +116,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->flags:I
 
-    .line 2751
+    .line 3171
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->unread:Z
 
     if-eqz v1, :cond_1
@@ -131,15 +131,15 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->flags:I
 
-    .line 2752
+    .line 3172
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 2753
+    .line 3173
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->peer_id:Lorg/telegram/tgnet/TLRPC$Peer;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 2754
+    .line 3174
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$MessagePeerReaction;->reaction:Lorg/telegram/tgnet/TLRPC$Reaction;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V

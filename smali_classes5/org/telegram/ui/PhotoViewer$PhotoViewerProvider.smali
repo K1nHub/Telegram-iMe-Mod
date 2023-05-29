@@ -24,6 +24,9 @@
 .method public abstract canCaptureMorePhotos()Z
 .end method
 
+.method public abstract canLoadMoreAvatars()Z
+.end method
+
 .method public abstract canReplace(I)Z
 .end method
 
@@ -77,13 +80,7 @@
     .end annotation
 .end method
 
-.method public abstract getSubtitleFor(I)Ljava/lang/CharSequence;
-.end method
-
 .method public abstract getThumbForPhoto(Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$FileLocation;I)Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
-.end method
-
-.method public abstract getTitleFor(I)Ljava/lang/CharSequence;
 .end method
 
 .method public abstract getTotalImageCount()I
@@ -105,6 +102,9 @@
 .end method
 
 .method public abstract onClose()V
+.end method
+
+.method public abstract onDeletePhoto(I)Z
 .end method
 
 .method public abstract onOpen()V

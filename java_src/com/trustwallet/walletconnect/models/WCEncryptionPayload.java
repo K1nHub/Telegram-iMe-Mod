@@ -8,7 +8,7 @@ public final class WCEncryptionPayload {
     private final String hmac;
 
     /* renamed from: iv */
-    private final String f387iv;
+    private final String f390iv;
 
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -16,17 +16,17 @@ public final class WCEncryptionPayload {
         }
         if (obj instanceof WCEncryptionPayload) {
             WCEncryptionPayload wCEncryptionPayload = (WCEncryptionPayload) obj;
-            return Intrinsics.areEqual(this.data, wCEncryptionPayload.data) && Intrinsics.areEqual(this.hmac, wCEncryptionPayload.hmac) && Intrinsics.areEqual(this.f387iv, wCEncryptionPayload.f387iv);
+            return Intrinsics.areEqual(this.data, wCEncryptionPayload.data) && Intrinsics.areEqual(this.hmac, wCEncryptionPayload.hmac) && Intrinsics.areEqual(this.f390iv, wCEncryptionPayload.f390iv);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((this.data.hashCode() * 31) + this.hmac.hashCode()) * 31) + this.f387iv.hashCode();
+        return (((this.data.hashCode() * 31) + this.hmac.hashCode()) * 31) + this.f390iv.hashCode();
     }
 
     public String toString() {
-        return "WCEncryptionPayload(data=" + this.data + ", hmac=" + this.hmac + ", iv=" + this.f387iv + ')';
+        return "WCEncryptionPayload(data=" + this.data + ", hmac=" + this.hmac + ", iv=" + this.f390iv + ')';
     }
 
     public WCEncryptionPayload(String data, String hmac, String iv) {
@@ -35,7 +35,7 @@ public final class WCEncryptionPayload {
         Intrinsics.checkNotNullParameter(iv, "iv");
         this.data = data;
         this.hmac = hmac;
-        this.f387iv = iv;
+        this.f390iv = iv;
     }
 
     public final String getData() {
@@ -47,6 +47,6 @@ public final class WCEncryptionPayload {
     }
 
     public final String getIv() {
-        return this.f387iv;
+        return this.f390iv;
     }
 }

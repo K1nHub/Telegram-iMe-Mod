@@ -33,10 +33,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 41209
+    .line 42058
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 41214
+    .line 42063
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -49,7 +49,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_emojiGroup;
     .locals 1
 
-    .line 41217
+    .line 42066
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_emojiGroup;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -60,7 +60,7 @@
 
     return-object p0
 
-    .line 41219
+    .line 42068
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -86,13 +86,13 @@
 
     throw p0
 
-    .line 41224
+    .line 42073
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_emojiGroup;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_emojiGroup;-><init>()V
 
-    .line 41225
+    .line 42074
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_emojiGroup;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -103,21 +103,21 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 41230
+    .line 42079
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_emojiGroup;->title:Ljava/lang/String;
 
-    .line 41231
+    .line 42080
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_emojiGroup;->icon_emoji_id:J
 
-    .line 41232
+    .line 42081
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -132,7 +132,7 @@
 
     return-void
 
-    .line 41235
+    .line 42084
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -156,7 +156,7 @@
 
     throw p1
 
-    .line 41239
+    .line 42088
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -165,7 +165,7 @@
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 41241
+    .line 42090
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_emojiGroup;->emoticons:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
@@ -185,34 +185,34 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 3
 
-    .line 41246
+    .line 42095
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_emojiGroup;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 41247
+    .line 42096
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_emojiGroup;->title:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 41248
+    .line 42097
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_emojiGroup;->icon_emoji_id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
     const v0, 0x1cb5c415
 
-    .line 41249
+    .line 42098
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 41250
+    .line 42099
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_emojiGroup;->emoticons:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 41251
+    .line 42100
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -220,7 +220,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 41253
+    .line 42102
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_emojiGroup;->emoticons:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

@@ -17,7 +17,7 @@ public final class EventMessage implements Metadata.Entry {
     private int hashCode;
 
     /* renamed from: id */
-    public final long f108id;
+    public final long f111id;
     public final byte[] messageData;
     public final String schemeIdUri;
     public final String value;
@@ -51,7 +51,7 @@ public final class EventMessage implements Metadata.Entry {
         this.schemeIdUri = str;
         this.value = str2;
         this.durationMs = j;
-        this.f108id = j2;
+        this.f111id = j2;
         this.messageData = bArr;
     }
 
@@ -59,7 +59,7 @@ public final class EventMessage implements Metadata.Entry {
         this.schemeIdUri = (String) Util.castNonNull(parcel.readString());
         this.value = (String) Util.castNonNull(parcel.readString());
         this.durationMs = parcel.readLong();
-        this.f108id = parcel.readLong();
+        this.f111id = parcel.readLong();
         this.messageData = (byte[]) Util.castNonNull(parcel.createByteArray());
     }
 
@@ -114,7 +114,7 @@ public final class EventMessage implements Metadata.Entry {
             String str2 = this.value;
             int hashCode2 = str2 != null ? str2.hashCode() : 0;
             long j = this.durationMs;
-            long j2 = this.f108id;
+            long j2 = this.f111id;
             this.hashCode = ((((((hashCode + hashCode2) * 31) + ((int) (j ^ (j >>> 32)))) * 31) + ((int) (j2 ^ (j2 >>> 32)))) * 31) + Arrays.hashCode(this.messageData);
         }
         return this.hashCode;
@@ -128,11 +128,11 @@ public final class EventMessage implements Metadata.Entry {
             return false;
         }
         EventMessage eventMessage = (EventMessage) obj;
-        return this.durationMs == eventMessage.durationMs && this.f108id == eventMessage.f108id && Util.areEqual(this.schemeIdUri, eventMessage.schemeIdUri) && Util.areEqual(this.value, eventMessage.value) && Arrays.equals(this.messageData, eventMessage.messageData);
+        return this.durationMs == eventMessage.durationMs && this.f111id == eventMessage.f111id && Util.areEqual(this.schemeIdUri, eventMessage.schemeIdUri) && Util.areEqual(this.value, eventMessage.value) && Arrays.equals(this.messageData, eventMessage.messageData);
     }
 
     public String toString() {
-        return "EMSG: scheme=" + this.schemeIdUri + ", id=" + this.f108id + ", durationMs=" + this.durationMs + ", value=" + this.value;
+        return "EMSG: scheme=" + this.schemeIdUri + ", id=" + this.f111id + ", durationMs=" + this.durationMs + ", value=" + this.value;
     }
 
     @Override // android.os.Parcelable
@@ -140,7 +140,7 @@ public final class EventMessage implements Metadata.Entry {
         parcel.writeString(this.schemeIdUri);
         parcel.writeString(this.value);
         parcel.writeLong(this.durationMs);
-        parcel.writeLong(this.f108id);
+        parcel.writeLong(this.f111id);
         parcel.writeByteArray(this.messageData);
     }
 }

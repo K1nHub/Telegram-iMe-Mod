@@ -27,7 +27,7 @@
 
     iput-object p1, p0, Lio/grpc/internal/ChannelLoggerImpl;->tracer:Lio/grpc/internal/ChannelTracer;
 
-    const-string p1, "time"
+    const-string/jumbo p1, "time"
 
     .line 34
     invoke-static {p2, p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

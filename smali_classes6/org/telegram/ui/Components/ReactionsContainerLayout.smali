@@ -124,6 +124,8 @@
 
 .field public nextRecentReaction:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
+.field final notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
+
 .field private otherViewsScale:F
 
 .field parentLayout:Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;
@@ -251,7 +253,7 @@
 .method static constructor <clinit>()V
     .locals 3
 
-    .line 78
+    .line 79
     new-instance v0, Lorg/telegram/ui/Components/ReactionsContainerLayout$1;
 
     const-class v1, Ljava/lang/Float;
@@ -268,10 +270,10 @@
 .method public constructor <init>(Lorg/telegram/ui/ActionBar/BaseFragment;Landroid/content/Context;ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 6
 
-    .line 169
+    .line 171
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 98
+    .line 99
     new-instance v0, Landroid/graphics/Paint;
 
     const/4 v1, 0x1
@@ -280,7 +282,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->bgPaint:Landroid/graphics/Paint;
 
-    .line 99
+    .line 100
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
@@ -295,17 +297,17 @@
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 102
+    .line 103
     iput v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->transitionProgress:F
 
-    .line 103
+    .line 104
     new-instance v2, Landroid/graphics/RectF;
 
     invoke-direct {v2}, Landroid/graphics/RectF;-><init>()V
 
     iput-object v2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->rect:Landroid/graphics/RectF;
 
-    .line 104
+    .line 105
     new-instance v2, Landroid/graphics/Path;
 
     invoke-direct {v2}, Landroid/graphics/Path;-><init>()V
@@ -314,7 +316,7 @@
 
     const/16 v2, 0x48
 
-    .line 105
+    .line 106
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -325,7 +327,7 @@
 
     const/16 v2, 0x8
 
-    .line 106
+    .line 107
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
@@ -338,19 +340,19 @@
 
     div-float/2addr v3, v4
 
-    .line 107
+    .line 108
     iput v3, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->smallCircleRadius:F
 
     const/16 v3, 0x24
 
-    .line 108
+    .line 109
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
     iput v3, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->bigCircleOffset:I
 
-    .line 122
+    .line 123
     new-instance v3, Ljava/util/ArrayList;
 
     const/16 v4, 0x14
@@ -359,7 +361,7 @@
 
     iput-object v3, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->visibleReactionsList:Ljava/util/List;
 
-    .line 123
+    .line 124
     new-instance v3, Ljava/util/ArrayList;
 
     const/16 v5, 0xa
@@ -368,14 +370,14 @@
 
     iput-object v3, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->premiumLockedReactions:Ljava/util/List;
 
-    .line 124
+    .line 125
     new-instance v3, Ljava/util/ArrayList;
 
     invoke-direct {v3, v4}, Ljava/util/ArrayList;-><init>(I)V
 
     iput-object v3, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->allReactionsList:Ljava/util/List;
 
-    .line 129
+    .line 130
     new-instance v3, Ljava/util/HashSet;
 
     invoke-direct {v3}, Ljava/util/HashSet;-><init>()V
@@ -386,36 +388,43 @@
 
     new-array v4, v3, [I
 
-    .line 131
+    .line 132
     iput-object v4, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->location:[I
 
-    .line 135
+    .line 136
     new-instance v4, Landroid/graphics/Rect;
 
     invoke-direct {v4}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v4, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->shadowPad:Landroid/graphics/Rect;
 
-    .line 139
+    .line 140
     new-instance v4, Ljava/util/ArrayList;
 
     invoke-direct {v4}, Ljava/util/ArrayList;-><init>()V
-
-    .line 160
-    new-instance v4, Ljava/util/HashSet;
-
-    invoke-direct {v4}, Ljava/util/HashSet;-><init>()V
-
-    iput-object v4, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->lastVisibleViews:Ljava/util/HashSet;
 
     .line 161
     new-instance v4, Ljava/util/HashSet;
 
     invoke-direct {v4}, Ljava/util/HashSet;-><init>()V
 
+    iput-object v4, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->lastVisibleViews:Ljava/util/HashSet;
+
+    .line 162
+    new-instance v4, Ljava/util/HashSet;
+
+    invoke-direct {v4}, Ljava/util/HashSet;-><init>()V
+
     iput-object v4, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->lastVisibleViewsTmp:Ljava/util/HashSet;
 
-    .line 170
+    .line 168
+    new-instance v4, Lorg/telegram/messenger/AnimationNotificationsLocker;
+
+    invoke-direct {v4}, Lorg/telegram/messenger/AnimationNotificationsLocker;-><init>()V
+
+    iput-object v4, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
+
+    .line 172
     invoke-virtual {p2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v4
@@ -428,32 +437,32 @@
 
     iput v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->durationScale:F
 
-    .line 171
+    .line 173
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->selectedPaint:Landroid/graphics/Paint;
 
-    const-string v4, "listSelectorSDK21"
+    .line 174
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    .line 172
-    invoke-static {v4, p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v4, p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v4
 
     invoke-virtual {v0, v4}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 173
+    .line 175
     iput-object p4, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    .line 174
+    .line 176
     iput p3, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->currentAccount:I
 
-    .line 175
+    .line 177
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    .line 177
+    .line 179
     new-instance p1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     const/4 v0, 0x0
@@ -462,25 +471,25 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->nextRecentReaction:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
-    .line 178
+    .line 180
     invoke-virtual {p1, v2}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 179
+    .line 181
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->nextRecentReaction:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     iput-boolean v0, p1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->touchable:Z
 
-    .line 180
+    .line 182
     iget-object p1, p1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->pressedBackupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {p1, v2}, Landroid/view/View;->setVisibility(I)V
 
-    .line 182
+    .line 184
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->nextRecentReaction:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;)V
 
-    .line 184
+    .line 186
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->animationsEnabled()Z
 
     move-result p1
@@ -501,7 +510,7 @@
     :goto_0
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->animationEnabled:Z
 
-    .line 186
+    .line 188
     sget p1, Lorg/telegram/messenger/R$drawable;->reactions_bubble_shadow:I
 
     invoke-static {p2, p1}, Landroidx/core/content/ContextCompat;->getDrawable(Landroid/content/Context;I)Landroid/graphics/drawable/Drawable;
@@ -514,7 +523,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->shadow:Landroid/graphics/drawable/Drawable;
 
-    .line 187
+    .line 189
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->shadowPad:Landroid/graphics/Rect;
 
     const/4 v1, 0x7
@@ -531,14 +540,14 @@
 
     iput v1, p1, Landroid/graphics/Rect;->left:I
 
-    .line 188
+    .line 190
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->shadow:Landroid/graphics/drawable/Drawable;
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "chat_messagePanelShadow"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelShadow:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -548,42 +557,42 @@
 
     invoke-virtual {p1, v1}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
-    .line 190
+    .line 192
     new-instance p1, Lorg/telegram/ui/Components/ReactionsContainerLayout$2;
 
     invoke-direct {p1, p0, p2}, Lorg/telegram/ui/Components/ReactionsContainerLayout$2;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;Landroid/content/Context;)V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    .line 211
+    .line 213
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->setClipChildren(Z)V
 
-    .line 212
+    .line 214
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView;->setClipToPadding(Z)V
 
-    .line 213
+    .line 215
     new-instance v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$3;
 
     invoke-direct {v1, p0, p2, v0, v0}, Lorg/telegram/ui/Components/ReactionsContainerLayout$3;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;Landroid/content/Context;IZ)V
 
     iput-object v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->linearLayoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
-    .line 265
+    .line 267
     new-instance v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$4;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout$4;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
 
     invoke-virtual {p1, v1}, Landroidx/recyclerview/widget/RecyclerView;->addItemDecoration(Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;)V
 
-    .line 288
+    .line 290
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->linearLayoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p1, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 289
+    .line 291
     invoke-virtual {p1, v3}, Landroid/view/ViewGroup;->setOverScrollMode(I)V
 
-    .line 290
+    .line 292
     new-instance v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;
 
     invoke-direct {v1, p0, p2}, Lorg/telegram/ui/Components/ReactionsContainerLayout$5;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;Landroid/content/Context;)V
@@ -592,7 +601,7 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 409
+    .line 412
     new-instance p2, Lorg/telegram/ui/Components/ReactionsContainerLayout$LeftRightShadowsListener;
 
     const/4 v1, 0x0
@@ -601,28 +610,28 @@
 
     invoke-virtual {p1, p2}, Landroidx/recyclerview/widget/RecyclerView;->addOnScrollListener(Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
 
-    .line 410
+    .line 413
     new-instance p2, Lorg/telegram/ui/Components/ReactionsContainerLayout$6;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout$6;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
 
     invoke-virtual {p1, p2}, Landroidx/recyclerview/widget/RecyclerView;->addOnScrollListener(Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
 
-    .line 444
+    .line 447
     new-instance p2, Lorg/telegram/ui/Components/ReactionsContainerLayout$7;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout$7;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
 
     invoke-virtual {p1, p2}, Landroidx/recyclerview/widget/RecyclerView;->addItemDecoration(Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;)V
 
-    .line 455
+    .line 458
     new-instance p2, Lorg/telegram/ui/Components/ReactionsContainerLayout$$ExternalSyntheticLambda3;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
 
-    .line 461
+    .line 464
     new-instance p2, Lorg/telegram/ui/Components/ReactionsContainerLayout$$ExternalSyntheticLambda4;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout$$ExternalSyntheticLambda4;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
@@ -631,23 +640,23 @@
 
     const/4 p2, -0x1
 
-    .line 469
+    .line 472
     invoke-static {p2, p2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p2
 
     invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 470
+    .line 473
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
 
-    .line 471
+    .line 474
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setClipToPadding(Z)V
 
-    .line 472
+    .line 475
     invoke-direct {p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->invalidateShaders()V
 
-    .line 474
+    .line 477
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object p2
@@ -666,7 +675,7 @@
 
     sub-int/2addr p2, p1
 
-    .line 475
+    .line 478
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->nextRecentReaction:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -683,7 +692,7 @@
 
     iput v0, p1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 476
+    .line 479
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->nextRecentReaction:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -692,18 +701,18 @@
 
     iput p2, p1, Landroid/view/ViewGroup$LayoutParams;->height:I
 
-    .line 478
+    .line 481
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->bgPaint:Landroid/graphics/Paint;
 
-    const-string p2, "actionBarDefaultSubmenuBackground"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuBackground:I
 
-    invoke-static {p2, p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {p2, p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 479
+    .line 482
     invoke-static {p3}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
 
     move-result-object p1
@@ -716,7 +725,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Components/ReactionsContainerLayout;)F
     .locals 0
 
-    .line 76
+    .line 77
     iget p0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->transitionProgress:F
 
     return p0
@@ -725,7 +734,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
     .locals 0
 
-    .line 76
+    .line 77
     iget-object p0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pressedReaction:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
     return-object p0
@@ -734,7 +743,7 @@
 .method static synthetic access$1000(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Ljava/util/List;
     .locals 0
 
-    .line 76
+    .line 77
     iget-object p0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->visibleReactionsList:Ljava/util/List;
 
     return-object p0
@@ -743,7 +752,7 @@
 .method static synthetic access$102(Lorg/telegram/ui/Components/ReactionsContainerLayout;Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;)Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
     .locals 0
 
-    .line 76
+    .line 77
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pressedReaction:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
     return-object p1
@@ -752,7 +761,7 @@
 .method static synthetic access$1100(Lorg/telegram/ui/Components/ReactionsContainerLayout;FF)V
     .locals 0
 
-    .line 76
+    .line 77
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->showUnlockPremium(FF)V
 
     return-void
@@ -761,7 +770,7 @@
 .method static synthetic access$1300(Lorg/telegram/ui/Components/ReactionsContainerLayout;)[I
     .locals 0
 
-    .line 76
+    .line 77
     iget-object p0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->location:[I
 
     return-object p0
@@ -770,7 +779,7 @@
 .method static synthetic access$1400(Lorg/telegram/ui/Components/ReactionsContainerLayout;Landroid/view/View;F)V
     .locals 0
 
-    .line 76
+    .line 77
     invoke-direct {p0, p1, p2}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->setChildScale(Landroid/view/View;F)V
 
     return-void
@@ -779,7 +788,7 @@
 .method static synthetic access$1600(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Landroidx/recyclerview/widget/LinearLayoutManager;
     .locals 0
 
-    .line 76
+    .line 77
     iget-object p0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->linearLayoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
     return-object p0
@@ -788,7 +797,7 @@
 .method static synthetic access$1700(Lorg/telegram/ui/Components/ReactionsContainerLayout;)F
     .locals 0
 
-    .line 76
+    .line 77
     iget p0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->leftAlpha:F
 
     return p0
@@ -797,7 +806,7 @@
 .method static synthetic access$1702(Lorg/telegram/ui/Components/ReactionsContainerLayout;F)F
     .locals 0
 
-    .line 76
+    .line 77
     iput p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->leftAlpha:F
 
     return p1
@@ -806,7 +815,7 @@
 .method static synthetic access$1800(Lorg/telegram/ui/Components/ReactionsContainerLayout;)F
     .locals 0
 
-    .line 76
+    .line 77
     iget p0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->rightAlpha:F
 
     return p0
@@ -815,7 +824,7 @@
 .method static synthetic access$1802(Lorg/telegram/ui/Components/ReactionsContainerLayout;F)F
     .locals 0
 
-    .line 76
+    .line 77
     iput p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->rightAlpha:F
 
     return p1
@@ -824,7 +833,7 @@
 .method static synthetic access$1900(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Landroid/graphics/Paint;
     .locals 0
 
-    .line 76
+    .line 77
     iget-object p0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->rightShadowPaint:Landroid/graphics/Paint;
 
     return-object p0
@@ -833,7 +842,7 @@
 .method static synthetic access$200(Lorg/telegram/ui/Components/ReactionsContainerLayout;)F
     .locals 0
 
-    .line 76
+    .line 77
     invoke-direct {p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->getPullingLeftProgress()F
 
     move-result p0
@@ -844,7 +853,7 @@
 .method static synthetic access$2000(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Landroid/graphics/Paint;
     .locals 0
 
-    .line 76
+    .line 77
     iget-object p0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->leftShadowPaint:Landroid/graphics/Paint;
 
     return-object p0
@@ -853,7 +862,7 @@
 .method static synthetic access$2100(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Z
     .locals 0
 
-    .line 76
+    .line 77
     iget-boolean p0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->allReactionsIsDefault:Z
 
     return p0
@@ -862,7 +871,7 @@
 .method static synthetic access$2200(Lorg/telegram/ui/Components/ReactionsContainerLayout;)I
     .locals 0
 
-    .line 76
+    .line 77
     iget p0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->currentAccount:I
 
     return p0
@@ -871,7 +880,7 @@
 .method static synthetic access$2300(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Z
     .locals 0
 
-    .line 76
+    .line 77
     iget-boolean p0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->animationEnabled:Z
 
     return p0
@@ -880,7 +889,7 @@
 .method static synthetic access$2402(Lorg/telegram/ui/Components/ReactionsContainerLayout;I)I
     .locals 0
 
-    .line 76
+    .line 77
     iput p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pressedReactionPosition:I
 
     return p1
@@ -889,7 +898,7 @@
 .method static synthetic access$2500(Lorg/telegram/ui/Components/ReactionsContainerLayout;)F
     .locals 0
 
-    .line 76
+    .line 77
     iget p0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pressedProgress:F
 
     return p0
@@ -898,7 +907,7 @@
 .method static synthetic access$2502(Lorg/telegram/ui/Components/ReactionsContainerLayout;F)F
     .locals 0
 
-    .line 76
+    .line 77
     iput p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pressedProgress:F
 
     return p1
@@ -907,7 +916,7 @@
 .method static synthetic access$2600(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionsContainerDelegate;
     .locals 0
 
-    .line 76
+    .line 77
     iget-object p0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->delegate:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionsContainerDelegate;
 
     return-object p0
@@ -916,7 +925,7 @@
 .method static synthetic access$2700(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Z
     .locals 0
 
-    .line 76
+    .line 77
     iget-boolean p0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->clicked:Z
 
     return p0
@@ -925,7 +934,7 @@
 .method static synthetic access$2702(Lorg/telegram/ui/Components/ReactionsContainerLayout;Z)Z
     .locals 0
 
-    .line 76
+    .line 77
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->clicked:Z
 
     return p1
@@ -934,7 +943,7 @@
 .method static synthetic access$2800(Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
     .locals 0
 
-    .line 76
+    .line 77
     invoke-direct {p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->cancelPressed()V
 
     return-void
@@ -943,7 +952,7 @@
 .method static synthetic access$2900(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Landroid/graphics/Paint;
     .locals 0
 
-    .line 76
+    .line 77
     iget-object p0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->selectedPaint:Landroid/graphics/Paint;
 
     return-object p0
@@ -952,7 +961,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
     .locals 0
 
-    .line 76
+    .line 77
     invoke-direct {p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->showCustomEmojiReactionDialog()V
 
     return-void
@@ -961,7 +970,7 @@
 .method static synthetic access$3000(Lorg/telegram/ui/Components/ReactionsContainerLayout;)F
     .locals 0
 
-    .line 76
+    .line 77
     iget p0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->cancelPressedProgress:F
 
     return p0
@@ -970,7 +979,7 @@
 .method static synthetic access$3002(Lorg/telegram/ui/Components/ReactionsContainerLayout;F)F
     .locals 0
 
-    .line 76
+    .line 77
     iput p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->cancelPressedProgress:F
 
     return p1
@@ -979,7 +988,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
     .locals 0
 
-    .line 76
+    .line 77
     invoke-direct {p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->animatePullingBack()V
 
     return-void
@@ -988,7 +997,7 @@
 .method static synthetic access$500(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Landroidx/recyclerview/widget/RecyclerView$Adapter;
     .locals 0
 
-    .line 76
+    .line 77
     iget-object p0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->listAdapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
     return-object p0
@@ -997,7 +1006,7 @@
 .method static synthetic access$600(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Z
     .locals 0
 
-    .line 76
+    .line 77
     invoke-direct {p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->showUnlockPremiumButton()Z
 
     move-result p0
@@ -1008,7 +1017,7 @@
 .method static synthetic access$700(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
     .locals 0
 
-    .line 76
+    .line 77
     iget-object p0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->premiumLockIconView:Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
 
     return-object p0
@@ -1017,7 +1026,7 @@
 .method static synthetic access$702(Lorg/telegram/ui/Components/ReactionsContainerLayout;Lorg/telegram/ui/Components/Premium/PremiumLockIconView;)Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
     .locals 0
 
-    .line 76
+    .line 77
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->premiumLockIconView:Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
 
     return-object p1
@@ -1026,7 +1035,7 @@
 .method static synthetic access$800(Lorg/telegram/ui/Components/ReactionsContainerLayout;)Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;
     .locals 0
 
-    .line 76
+    .line 77
     iget-object p0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->customEmojiReactionsIconView:Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;
 
     return-object p0
@@ -1035,7 +1044,7 @@
 .method static synthetic access$802(Lorg/telegram/ui/Components/ReactionsContainerLayout;Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;)Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;
     .locals 0
 
-    .line 76
+    .line 77
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->customEmojiReactionsIconView:Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;
 
     return-object p1
@@ -1044,7 +1053,7 @@
 .method public static allowSmoothEnterTransition()Z
     .locals 1
 
-    .line 1720
+    .line 1731
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->deviceIsHigh()Z
 
     move-result v0
@@ -1055,7 +1064,7 @@
 .method private animatePullingBack()V
     .locals 4
 
-    .line 483
+    .line 486
     iget v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pullingLeftOffset:F
 
     const/4 v1, 0x0
@@ -1076,28 +1085,28 @@
 
     aput v1, v2, v0
 
-    .line 484
+    .line 487
     invoke-static {v2}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pullingDownBackAnimator:Landroid/animation/ValueAnimator;
 
-    .line 485
+    .line 488
     new-instance v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 492
+    .line 495
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pullingDownBackAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v1, 0x96
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 493
+    .line 496
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pullingDownBackAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
@@ -1109,24 +1118,24 @@
 .method private cancelPressed()V
     .locals 3
 
-    .line 1544
+    .line 1555
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pressedReaction:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
     if-eqz v0, :cond_0
 
     const/4 v0, 0x0
 
-    .line 1545
+    .line 1556
     iput v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->cancelPressedProgress:F
 
-    .line 1546
+    .line 1557
     iget v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pressedProgress:F
 
     const/4 v1, 0x2
 
     new-array v1, v1, [F
 
-    .line 1547
+    .line 1558
     fill-array-data v1, :array_0
 
     invoke-static {v1}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -1135,37 +1144,37 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->cancelPressedAnimation:Landroid/animation/ValueAnimator;
 
-    .line 1548
-    new-instance v2, Lorg/telegram/ui/Components/ReactionsContainerLayout$8;
+    .line 1559
+    new-instance v2, Lorg/telegram/ui/Components/ReactionsContainerLayout$9;
 
-    invoke-direct {v2, p0, v0}, Lorg/telegram/ui/Components/ReactionsContainerLayout$8;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;F)V
+    invoke-direct {v2, p0, v0}, Lorg/telegram/ui/Components/ReactionsContainerLayout$9;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;F)V
 
     invoke-virtual {v1, v2}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 1556
+    .line 1567
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->cancelPressedAnimation:Landroid/animation/ValueAnimator;
 
-    new-instance v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$9;
+    new-instance v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$10;
 
-    invoke-direct {v1, p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout$9;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
+    invoke-direct {v1, p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout$10;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
 
-    .line 1566
+    .line 1577
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->cancelPressedAnimation:Landroid/animation/ValueAnimator;
 
     const-wide/16 v1, 0x96
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 1567
+    .line 1578
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->cancelPressedAnimation:Landroid/animation/ValueAnimator;
 
     sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1568
+    .line 1579
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->cancelPressedAnimation:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
@@ -1185,7 +1194,7 @@
 .method private checkPressedProgress(Landroid/graphics/Canvas;Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;)V
     .locals 11
 
-    .line 844
+    .line 847
     iget v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pullingLeftOffset:F
 
     const/4 v1, 0x0
@@ -1196,12 +1205,12 @@
 
     if-eqz v0, :cond_0
 
-    .line 845
+    .line 848
     invoke-direct {p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->getPullingLeftProgress()F
 
     move-result v0
 
-    .line 846
+    .line 849
     invoke-virtual {p2}, Landroid/widget/FrameLayout;->getLeft()I
 
     move-result v3
@@ -1232,7 +1241,7 @@
 
     const/16 v0, 0x2e
 
-    .line 847
+    .line 850
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -1246,7 +1255,7 @@
     :cond_0
     move v3, v1
 
-    .line 849
+    .line 852
     :goto_0
     iget-object v0, p2, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->currentReaction:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
@@ -1260,7 +1269,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 850
+    .line 853
     iget-object v0, p2, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->loopImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v0}, Landroid/view/View;->getVisibility()I
@@ -1276,7 +1285,7 @@
     :cond_1
     iget-object v0, p2, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->enterImageView:Lorg/telegram/ui/Components/BackupImageView;
 
-    .line 851
+    .line 854
     :goto_1
     invoke-virtual {p2}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
@@ -1288,7 +1297,7 @@
 
     invoke-virtual {p2, v5}, Landroid/widget/FrameLayout;->setPivotX(F)V
 
-    .line 852
+    .line 855
     invoke-virtual {v0}, Landroid/view/View;->getY()F
 
     move-result v5
@@ -1303,39 +1312,39 @@
 
     invoke-virtual {p2, v5}, Landroid/widget/FrameLayout;->setPivotY(F)V
 
-    .line 853
+    .line 856
     iget v5, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pressedViewScale:F
 
     invoke-virtual {p2, v5}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 854
+    .line 857
     iget v5, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pressedViewScale:F
 
     invoke-virtual {p2, v5}, Landroid/widget/FrameLayout;->setScaleY(F)V
 
-    .line 856
+    .line 859
     iget-boolean v5, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->clicked:Z
 
     if-nez v5, :cond_5
 
-    .line 857
+    .line 860
     iget-object v5, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->cancelPressedAnimation:Landroid/animation/ValueAnimator;
 
     const/4 v6, 0x0
 
     if-nez v5, :cond_3
 
-    .line 858
+    .line 861
     iget-object v5, p2, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->pressedBackupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v5, v6}, Landroid/view/View;->setVisibility(I)V
 
-    .line 859
+    .line 862
     iget-object v5, p2, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->pressedBackupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v5, v2}, Landroid/view/View;->setAlpha(F)V
 
-    .line 860
+    .line 863
     iget-object v5, p2, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->pressedBackupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v5}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
@@ -1374,13 +1383,13 @@
 
     if-eqz v5, :cond_4
 
-    .line 861
+    .line 864
     :cond_2
     invoke-virtual {v0, v1}, Landroid/view/View;->setAlpha(F)V
 
     goto :goto_2
 
-    .line 864
+    .line 867
     :cond_3
     iget-object v5, p2, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->pressedBackupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -1390,12 +1399,12 @@
 
     invoke-virtual {v5, v7}, Landroid/view/View;->setAlpha(F)V
 
-    .line 865
+    .line 868
     iget v5, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->cancelPressedProgress:F
 
     invoke-virtual {v0, v5}, Landroid/view/View;->setAlpha(F)V
 
-    .line 867
+    .line 870
     :cond_4
     :goto_2
     iget v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pressedProgress:F
@@ -1404,10 +1413,10 @@
 
     if-nez v0, :cond_5
 
-    .line 868
+    .line 871
     iput-boolean v4, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->clicked:Z
 
-    .line 869
+    .line 872
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v7
@@ -1422,25 +1431,25 @@
 
     if-lez v0, :cond_5
 
-    .line 870
+    .line 873
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v7
 
     iput-wide v7, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->lastReactionSentTime:J
 
-    .line 871
+    .line 874
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->delegate:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionsContainerDelegate;
 
     iget-object v2, p2, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->currentReaction:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
     invoke-interface {v0, p2, v2, v4, v6}, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionsContainerDelegate;->onReactionClicked(Landroid/view/View;Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;ZZ)V
 
-    .line 876
+    .line 879
     :cond_5
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 877
+    .line 880
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0}, Landroid/view/ViewGroup;->getX()F
@@ -1453,7 +1462,7 @@
 
     add-float/2addr v0, v2
 
-    .line 878
+    .line 881
     invoke-virtual {p2}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v2
@@ -1484,7 +1493,7 @@
 
     if-gez v5, :cond_6
 
-    .line 879
+    .line 882
     invoke-virtual {p2}, Landroid/widget/FrameLayout;->getTranslationX()F
 
     move-result v5
@@ -1497,12 +1506,12 @@
 
     sub-float/2addr v0, v3
 
-    .line 880
+    .line 883
     invoke-virtual {p2, v0}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
     goto :goto_3
 
-    .line 881
+    .line 884
     :cond_6
     invoke-virtual {p2}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
@@ -1532,7 +1541,7 @@
 
     if-gtz v4, :cond_7
 
-    .line 882
+    .line 885
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v1
@@ -1560,10 +1569,10 @@
     :cond_7
     sub-float/2addr v1, v3
 
-    .line 884
+    .line 887
     invoke-virtual {p2, v1}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 886
+    .line 889
     :goto_3
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -1577,7 +1586,7 @@
 
     add-float/2addr v0, v1
 
-    .line 887
+    .line 890
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getY()F
@@ -1592,7 +1601,7 @@
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 888
+    .line 891
     invoke-virtual {p2}, Landroid/widget/FrameLayout;->getScaleX()F
 
     move-result v0
@@ -1611,15 +1620,15 @@
 
     invoke-virtual {p1, v0, v1, v2, v3}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 889
+    .line 892
     invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 890
+    .line 893
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     goto :goto_5
 
-    .line 892
+    .line 895
     :cond_8
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -1627,7 +1636,7 @@
 
     move-result p1
 
-    .line 894
+    .line 897
     invoke-virtual {p2}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
@@ -1672,22 +1681,22 @@
 
     sub-float/2addr v0, v5
 
-    .line 896
+    .line 899
     iget v4, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pressedReactionPosition:I
 
     if-ge p1, v4, :cond_9
 
-    .line 897
+    .line 900
     invoke-virtual {p2, v1}, Landroid/widget/FrameLayout;->setPivotX(F)V
 
     neg-float p1, v0
 
-    .line 898
+    .line 901
     invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
     goto :goto_4
 
-    .line 900
+    .line 903
     :cond_9
     invoke-virtual {p2}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
@@ -1701,10 +1710,10 @@
 
     sub-float/2addr v0, v3
 
-    .line 901
+    .line 904
     invoke-virtual {p2, v0}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 903
+    .line 906
     :goto_4
     iget-object p1, p2, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->enterImageView:Lorg/telegram/ui/Components/BackupImageView;
 
@@ -1724,38 +1733,38 @@
 
     invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->setPivotY(F)V
 
-    .line 904
+    .line 907
     iget p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->otherViewsScale:F
 
     invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 905
+    .line 908
     iget p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->otherViewsScale:F
 
     invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->setScaleY(F)V
 
-    .line 906
+    .line 909
     iget-object p1, p2, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->enterImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget v0, p2, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->sideScale:F
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setScaleX(F)V
 
-    .line 907
+    .line 910
     iget-object p1, p2, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->enterImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     iget v0, p2, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->sideScale:F
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setScaleY(F)V
 
-    .line 908
+    .line 911
     iget-object p1, p2, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->pressedBackupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     const/4 v0, 0x4
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
 
-    .line 910
+    .line 913
     iget-object p1, p2, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->enterImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {p1, v2}, Landroid/view/View;->setAlpha(F)V
@@ -1767,14 +1776,14 @@
 .method private checkPressedProgressForOtherViews(Landroid/view/View;)V
     .locals 5
 
-    .line 827
+    .line 830
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v0, p1}, Landroidx/recyclerview/widget/RecyclerView;->getChildAdapterPosition(Landroid/view/View;)I
 
     move-result v0
 
-    .line 829
+    .line 832
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v1
@@ -1821,24 +1830,24 @@
 
     sub-float/2addr v1, v2
 
-    .line 831
+    .line 834
     iget v2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pressedReactionPosition:I
 
     if-ge v0, v2, :cond_0
 
     const/4 v0, 0x0
 
-    .line 832
+    .line 835
     invoke-virtual {p1, v0}, Landroid/view/View;->setPivotX(F)V
 
     neg-float v0, v1
 
-    .line 833
+    .line 836
     invoke-virtual {p1, v0}, Landroid/view/View;->setTranslationX(F)V
 
     goto :goto_0
 
-    .line 835
+    .line 838
     :cond_0
     invoke-virtual {p1}, Landroid/view/View;->getMeasuredWidth()I
 
@@ -1848,16 +1857,16 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setPivotX(F)V
 
-    .line 836
+    .line 839
     invoke-virtual {p1, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 838
+    .line 841
     :goto_0
     iget v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->otherViewsScale:F
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setScaleX(F)V
 
-    .line 839
+    .line 842
     iget v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->otherViewsScale:F
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setScaleY(F)V
@@ -1868,10 +1877,10 @@
 .method private drawBubbles(Landroid/graphics/Canvas;FFFI)V
     .locals 9
 
-    .line 800
+    .line 803
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 802
+    .line 805
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->rect:Landroid/graphics/RectF;
 
     iget v0, v0, Landroid/graphics/RectF;->bottom:F
@@ -1964,7 +1973,7 @@
 
     invoke-virtual {p1, v3, v0, v2, v4}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
-    .line 803
+    .line 806
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-nez v0, :cond_1
@@ -1993,7 +2002,7 @@
     :goto_1
     int-to-float v0, v0
 
-    .line 804
+    .line 807
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
 
     move-result v2
@@ -2012,7 +2021,7 @@
 
     add-float/2addr v2, v3
 
-    .line 805
+    .line 808
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingTop()I
 
     move-result v3
@@ -2037,22 +2046,22 @@
 
     const/4 v3, 0x3
 
-    .line 806
+    .line 809
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
-    .line 807
+    .line 810
     iget-object v4, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->shadow:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v4, p5}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 808
+    .line 811
     iget-object v4, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->bgPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v4, p5}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 809
+    .line 812
     iget-object p5, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->shadow:Landroid/graphics/drawable/Drawable;
 
     sub-float v4, v0, p2
@@ -2085,17 +2094,17 @@
 
     invoke-virtual {p5, v4, v6, v7, v5}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 810
+    .line 813
     iget-object p5, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->shadow:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p5, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 811
+    .line 814
     iget-object p5, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->bgPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, v0, v2, p2, p5}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 813
+    .line 816
     sget-boolean p5, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-nez p5, :cond_3
@@ -2133,7 +2142,7 @@
 
     sub-float/2addr p5, v0
 
-    .line 814
+    .line 817
     :goto_3
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
 
@@ -2153,7 +2162,7 @@
 
     add-float/2addr v0, v2
 
-    .line 815
+    .line 818
     iget v2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->smallCircleRadius:F
 
     add-float/2addr v2, v3
@@ -2176,14 +2185,14 @@
 
     const/4 v1, 0x1
 
-    .line 816
+    .line 819
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
     neg-int v1, v1
 
-    .line 817
+    .line 820
     iget-object v2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->shadow:Landroid/graphics/drawable/Drawable;
 
     sub-float v3, p5, p2
@@ -2216,27 +2225,27 @@
 
     invoke-virtual {v2, p3, v3, v4, p2}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 818
+    .line 821
     iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->shadow:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p2, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 819
+    .line 822
     iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->bgPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, p5, v0, p4, p2}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 820
+    .line 823
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 822
+    .line 825
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->shadow:Landroid/graphics/drawable/Drawable;
 
     const/16 p2, 0xff
 
     invoke-virtual {p1, p2}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 823
+    .line 826
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->bgPaint:Landroid/graphics/Paint;
 
     invoke-virtual {p1, p2}, Landroid/graphics/Paint;->setAlpha(I)V
@@ -2255,14 +2264,14 @@
         }
     .end annotation
 
-    .line 1012
+    .line 1015
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->allReactionsAvailable:Z
 
     const/4 v1, 0x0
 
     if-nez v0, :cond_1
 
-    .line 1014
+    .line 1017
     iget v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -2273,7 +2282,7 @@
 
     move-result-object v0
 
-    .line 1015
+    .line 1018
     :goto_0
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -2281,7 +2290,7 @@
 
     if-ge v1, v2, :cond_0
 
-    .line 1016
+    .line 1019
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -2292,7 +2301,7 @@
 
     move-result-object v2
 
-    .line 1017
+    .line 1020
     invoke-interface {p1, v2}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v1, v1, 0x1
@@ -2302,7 +2311,7 @@
     :cond_0
     return-void
 
-    .line 1021
+    .line 1024
     :cond_1
     iget v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->currentAccount:I
 
@@ -2314,7 +2323,7 @@
 
     move-result-object v0
 
-    .line 1022
+    .line 1025
     new-instance v2, Ljava/util/HashSet;
 
     invoke-direct {v2}, Ljava/util/HashSet;-><init>()V
@@ -2323,7 +2332,7 @@
 
     move v4, v3
 
-    .line 1024
+    .line 1027
     :goto_1
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -2331,7 +2340,7 @@
 
     if-ge v3, v5, :cond_5
 
-    .line 1025
+    .line 1028
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v5
@@ -2342,7 +2351,7 @@
 
     move-result-object v5
 
-    .line 1026
+    .line 1029
     invoke-virtual {v2, v5}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
     move-result v6
@@ -2369,11 +2378,11 @@
 
     if-nez v6, :cond_3
 
-    .line 1027
+    .line 1030
     :cond_2
     invoke-virtual {v2, v5}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1028
+    .line 1031
     invoke-interface {p1, v5}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     add-int/lit8 v4, v4, 0x1
@@ -2390,7 +2399,7 @@
 
     goto :goto_1
 
-    .line 1036
+    .line 1039
     :cond_5
     :goto_2
     iget v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->currentAccount:I
@@ -2405,7 +2414,7 @@
 
     move v3, v1
 
-    .line 1037
+    .line 1040
     :goto_3
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
@@ -2413,7 +2422,7 @@
 
     if-ge v3, v4, :cond_7
 
-    .line 1038
+    .line 1041
     invoke-virtual {v0, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
@@ -2424,17 +2433,17 @@
 
     move-result-object v4
 
-    .line 1039
+    .line 1042
     invoke-virtual {v2, v4}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
     move-result v5
 
     if-nez v5, :cond_6
 
-    .line 1040
+    .line 1043
     invoke-virtual {v2, v4}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1041
+    .line 1044
     invoke-interface {p1, v4}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_6
@@ -2442,7 +2451,7 @@
 
     goto :goto_3
 
-    .line 1046
+    .line 1049
     :cond_7
     iget v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->currentAccount:I
 
@@ -2454,7 +2463,7 @@
 
     move-result-object v0
 
-    .line 1047
+    .line 1050
     :goto_4
     invoke-interface {v0}, Ljava/util/List;->size()I
 
@@ -2462,7 +2471,7 @@
 
     if-ge v1, v3, :cond_9
 
-    .line 1048
+    .line 1051
     invoke-interface {v0, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -2473,17 +2482,17 @@
 
     move-result-object v3
 
-    .line 1049
+    .line 1052
     invoke-virtual {v2, v3}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
 
     move-result v4
 
     if-nez v4, :cond_8
 
-    .line 1050
+    .line 1053
     invoke-virtual {v2, v3}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
-    .line 1051
+    .line 1054
     invoke-interface {p1, v3}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
     :cond_8
@@ -2506,14 +2515,14 @@
         }
     .end annotation
 
-    .line 1001
+    .line 1004
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     const/4 v1, 0x0
 
-    .line 1002
+    .line 1005
     :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
 
@@ -2521,7 +2530,7 @@
 
     if-ge v1, v2, :cond_1
 
-    .line 1003
+    .line 1006
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object v2
@@ -2534,10 +2543,10 @@
 
     add-int/lit8 v1, v1, -0x1
 
-    .line 1005
+    .line 1008
     invoke-interface {p1, v1}, Ljava/util/List;->remove(I)Ljava/lang/Object;
 
-    .line 1007
+    .line 1010
     :cond_0
     invoke-interface {p1, v1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
@@ -2558,7 +2567,7 @@
 .method private getPullingLeftProgress()F
     .locals 3
 
-    .line 915
+    .line 918
     iget v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pullingLeftOffset:F
 
     const/16 v1, 0x2a
@@ -2587,12 +2596,12 @@
 
     const/16 v0, 0x18
 
-    .line 928
+    .line 931
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    .line 929
+    .line 932
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
 
     move-result v1
@@ -2603,14 +2612,14 @@
 
     div-float/2addr v1, v2
 
-    const-string v2, "actionBarDefaultSubmenuBackground"
+    .line 933
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuBackground:I
 
-    .line 930
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
-    .line 931
+    .line 934
     iget-object v11, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->leftShadowPaint:Landroid/graphics/Paint;
 
     new-instance v12, Landroid/graphics/LinearGradient;
@@ -2635,7 +2644,7 @@
 
     invoke-virtual {v11, v12}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 932
+    .line 935
     iget-object v11, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->rightShadowPaint:Landroid/graphics/Paint;
 
     new-instance v12, Landroid/graphics/LinearGradient;
@@ -2662,7 +2671,7 @@
 
     invoke-virtual {v11, v12}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    .line 933
+    .line 936
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -2671,7 +2680,7 @@
 .method private synthetic lambda$animatePullingBack$2(Landroid/animation/ValueAnimator;)V
     .locals 0
 
-    .line 486
+    .line 489
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pullingDownBackAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -2686,15 +2695,15 @@
 
     iput p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pullingLeftOffset:F
 
-    .line 487
+    .line 490
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->customReactionsContainer:Landroid/widget/FrameLayout;
 
     if-eqz p1, :cond_0
 
-    .line 488
+    .line 491
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 490
+    .line 493
     :cond_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
@@ -2704,7 +2713,7 @@
 .method private synthetic lambda$clearRecentReactions$4(Landroid/content/DialogInterface;I)V
     .locals 0
 
-    .line 1162
+    .line 1173
     iget p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->currentAccount:I
 
     invoke-static {p1}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -2713,23 +2722,23 @@
 
     invoke-virtual {p1}, Lorg/telegram/messenger/MediaDataController;->clearRecentReactions()V
 
-    .line 1163
+    .line 1174
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
-    .line 1164
+    .line 1175
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->fillRecentReactionsList(Ljava/util/List;)V
 
-    .line 1165
+    .line 1176
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->setVisibleReactionsList(Ljava/util/List;)V
 
-    .line 1166
+    .line 1177
     iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->lastVisibleViews:Ljava/util/HashSet;
 
     invoke-virtual {p2}, Ljava/util/HashSet;->clear()V
 
-    .line 1167
+    .line 1178
     iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->reactionsWindow:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->setRecentReactions(Ljava/util/List;)V
@@ -2740,7 +2749,7 @@
 .method private synthetic lambda$new$0(Landroid/view/View;I)V
     .locals 1
 
-    .line 456
+    .line 459
     iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->delegate:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionsContainerDelegate;
 
     if-eqz p2, :cond_0
@@ -2749,10 +2758,10 @@
 
     if-eqz v0, :cond_0
 
-    .line 457
+    .line 460
     check-cast p1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
-    .line 458
+    .line 461
     iget-object p1, p1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->currentReaction:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
     const/4 v0, 0x0
@@ -2766,7 +2775,7 @@
 .method private synthetic lambda$new$1(Landroid/view/View;I)Z
     .locals 2
 
-    .line 462
+    .line 465
     iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->delegate:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionsContainerDelegate;
 
     const/4 v0, 0x0
@@ -2777,10 +2786,10 @@
 
     if-eqz v1, :cond_0
 
-    .line 463
+    .line 466
     check-cast p1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
-    .line 464
+    .line 467
     iget-object p1, p1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->currentReaction:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
     const/4 v1, 0x1
@@ -2798,7 +2807,7 @@
 
     const/4 v0, 0x0
 
-    .line 511
+    .line 514
     iput-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->reactionsWindow:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     return-void
@@ -2807,23 +2816,23 @@
 .method private setChildScale(Landroid/view/View;F)V
     .locals 1
 
-    .line 530
+    .line 533
     instance-of v0, p1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     if-eqz v0, :cond_0
 
-    .line 531
+    .line 534
     check-cast p1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     iput p2, p1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->sideScale:F
 
     goto :goto_0
 
-    .line 533
+    .line 536
     :cond_0
     invoke-virtual {p1, p2}, Landroid/view/View;->setScaleX(F)V
 
-    .line 534
+    .line 537
     invoke-virtual {p1, p2}, Landroid/view/View;->setScaleY(F)V
 
     :goto_0
@@ -2841,12 +2850,12 @@
         }
     .end annotation
 
-    .line 558
+    .line 561
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->visibleReactionsList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 559
+    .line 562
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->showCustomEmojiReaction()Z
 
     move-result v0
@@ -2857,7 +2866,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 561
+    .line 564
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v0, v0, Landroid/graphics/Point;->x:I
@@ -2891,7 +2900,7 @@
 
     move v0, v2
 
-    .line 568
+    .line 571
     :cond_1
     :goto_0
     invoke-interface {p1}, Ljava/util/List;->size()I
@@ -2904,7 +2913,7 @@
 
     if-ge v3, v4, :cond_2
 
-    .line 569
+    .line 572
     iget-object v4, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->visibleReactionsList:Ljava/util/List;
 
     invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2919,7 +2928,7 @@
 
     goto :goto_0
 
-    .line 571
+    .line 574
     :cond_2
     invoke-interface {p1}, Ljava/util/List;->size()I
 
@@ -2927,7 +2936,7 @@
 
     if-ge v3, v0, :cond_4
 
-    .line 572
+    .line 575
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->nextRecentReaction:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     invoke-interface {p1, v3}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2942,20 +2951,20 @@
 
     goto :goto_1
 
-    .line 575
+    .line 578
     :cond_3
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->visibleReactionsList:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 577
+    .line 580
     :cond_4
     :goto_1
     iput-boolean v2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->allReactionsIsDefault:Z
 
     move v0, v1
 
-    .line 578
+    .line 581
     :goto_2
     iget-object v2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->visibleReactionsList:Ljava/util/List;
 
@@ -2965,7 +2974,7 @@
 
     if-ge v0, v2, :cond_6
 
-    .line 579
+    .line 582
     iget-object v2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->visibleReactionsList:Ljava/util/List;
 
     invoke-interface {v2, v0}, Ljava/util/List;->get(I)Ljava/lang/Object;
@@ -2982,7 +2991,7 @@
 
     if-eqz v2, :cond_5
 
-    .line 580
+    .line 583
     iput-boolean v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->allReactionsIsDefault:Z
 
     :cond_5
@@ -2990,18 +2999,18 @@
 
     goto :goto_2
 
-    .line 583
+    .line 586
     :cond_6
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->allReactionsList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->clear()V
 
-    .line 584
+    .line 587
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->allReactionsList:Ljava/util/List;
 
     invoke-interface {v0, p1}, Ljava/util/List;->addAll(Ljava/util/Collection;)Z
 
-    .line 586
+    .line 589
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v0
@@ -3020,7 +3029,7 @@
 
     sub-int/2addr v0, v1
 
-    .line 587
+    .line 590
     invoke-interface {p1}, Ljava/util/List;->size()I
 
     move-result p1
@@ -3035,7 +3044,7 @@
 
     if-ge v0, p1, :cond_7
 
-    .line 588
+    .line 591
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object p1
@@ -3044,7 +3053,7 @@
 
     iput v0, p1, Landroid/view/ViewGroup$LayoutParams;->width:I
 
-    .line 591
+    .line 594
     :cond_7
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->listAdapter:Landroidx/recyclerview/widget/RecyclerView$Adapter;
 
@@ -3056,7 +3065,7 @@
 .method private showCustomEmojiReactionDialog()V
     .locals 7
 
-    .line 506
+    .line 509
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->reactionsWindow:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     if-nez v0, :cond_1
@@ -3073,7 +3082,7 @@
 
     goto :goto_0
 
-    .line 509
+    .line 512
     :cond_0
     new-instance v0, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
@@ -3093,7 +3102,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->reactionsWindow:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
-    .line 510
+    .line 513
     new-instance v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$$ExternalSyntheticLambda2;
 
     invoke-direct {v1, p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
@@ -3108,7 +3117,7 @@
 .method private showUnlockPremium(FF)V
     .locals 2
 
-    .line 525
+    .line 528
     new-instance p1, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;
 
     iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
@@ -3119,7 +3128,7 @@
 
     invoke-direct {p1, p2, v0, v1}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;IZ)V
 
-    .line 526
+    .line 529
     invoke-virtual {p1}, Lorg/telegram/ui/Components/Premium/PremiumFeatureBottomSheet;->show()V
 
     return-void
@@ -3128,7 +3137,7 @@
 .method private showUnlockPremiumButton()Z
     .locals 1
 
-    .line 521
+    .line 524
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->premiumLockedReactions:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->isEmpty()Z
@@ -3163,7 +3172,7 @@
 .method public clearRecentReactions()V
     .locals 3
 
-    .line 1158
+    .line 1169
     new-instance v0, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -3174,7 +3183,7 @@
 
     sget v1, Lorg/telegram/messenger/R$string;->ClearRecentReactionsAlertTitle:I
 
-    .line 1159
+    .line 1170
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -3185,7 +3194,7 @@
 
     sget v1, Lorg/telegram/messenger/R$string;->ClearRecentReactionsAlertMessage:I
 
-    .line 1160
+    .line 1171
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -3196,7 +3205,7 @@
 
     sget v1, Lorg/telegram/messenger/R$string;->ClearButton:I
 
-    .line 1161
+    .line 1172
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -3211,7 +3220,7 @@
 
     sget v1, Lorg/telegram/messenger/R$string;->Cancel:I
 
-    .line 1169
+    .line 1180
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object v1
@@ -3222,17 +3231,17 @@
 
     move-result-object v0
 
-    .line 1170
+    .line 1181
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog$Builder;->create()Lorg/telegram/ui/ActionBar/AlertDialog;
 
     move-result-object v0
 
-    .line 1171
+    .line 1182
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/AlertDialog;->show()V
 
     const/4 v1, -0x1
 
-    .line 1172
+    .line 1183
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/AlertDialog;->getButton(I)Landroid/view/View;
 
     move-result-object v0
@@ -3241,10 +3250,10 @@
 
     if-eqz v0, :cond_0
 
-    const-string v1, "dialogTextRed"
+    .line 1185
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
 
-    .line 1174
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -3257,19 +3266,19 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 4
 
-    .line 1592
+    .line 1603
     sget p2, Lorg/telegram/messenger/NotificationCenter;->chatInfoDidLoad:I
 
     if-ne p1, p2, :cond_0
 
     const/4 p1, 0x0
 
-    .line 1593
+    .line 1604
     aget-object p2, p3, p1
 
     check-cast p2, Lorg/telegram/tgnet/TLRPC$ChatFull;
 
-    .line 1594
+    .line 1605
     iget-wide v0, p2, Lorg/telegram/tgnet/TLRPC$ChatFull;->id:J
 
     iget-wide v2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->waitingLoadingChatId:J
@@ -3290,17 +3299,17 @@
 
     if-nez p2, :cond_0
 
-    .line 1595
+    .line 1606
     iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->messageObject:Lorg/telegram/messenger/MessageObject;
 
     const/4 p3, 0x0
 
     invoke-virtual {p0, p2, p3}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->setMessage(Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$ChatFull;)V
 
-    .line 1596
+    .line 1607
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 1597
+    .line 1608
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->startEnterAnimation(Z)V
 
     :cond_0
@@ -3310,17 +3319,17 @@
 .method public dismissParent(Z)V
     .locals 1
 
-    .line 1110
+    .line 1121
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->reactionsWindow:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     if-eqz v0, :cond_0
 
-    .line 1111
+    .line 1122
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->dismiss(Z)V
 
     const/4 p1, 0x0
 
-    .line 1112
+    .line 1123
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->reactionsWindow:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     :cond_0
@@ -3330,7 +3339,7 @@
 .method public dismissWindow()V
     .locals 1
 
-    .line 498
+    .line 501
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->reactionsWindow:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;->dismiss()V
@@ -3345,7 +3354,7 @@
 
     move-object/from16 v7, p1
 
-    .line 597
+    .line 600
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v0
@@ -3360,14 +3369,14 @@
 
     move-result-wide v0
 
-    .line 598
+    .line 601
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v2
 
     iput-wide v2, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->lastUpdate:J
 
-    .line 600
+    .line 603
     iget-boolean v2, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->isFlippedVertically:Z
 
     const/high16 v3, 0x435c0000    # 220.0f
@@ -3390,14 +3399,14 @@
 
     add-float/2addr v8, v0
 
-    .line 601
+    .line 604
     invoke-static {v5, v8}, Ljava/lang/Math;->min(FF)F
 
     move-result v0
 
     iput v0, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->flipVerticalProgress:F
 
-    .line 602
+    .line 605
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     goto :goto_0
@@ -3405,7 +3414,7 @@
     :cond_0
     if-nez v2, :cond_1
 
-    .line 603
+    .line 606
     iget v2, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->flipVerticalProgress:F
 
     cmpl-float v8, v2, v4
@@ -3418,17 +3427,17 @@
 
     sub-float/2addr v2, v0
 
-    .line 604
+    .line 607
     invoke-static {v4, v2}, Ljava/lang/Math;->max(FF)F
 
     move-result v0
 
     iput v0, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->flipVerticalProgress:F
 
-    .line 605
+    .line 608
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 608
+    .line 611
     :cond_1
     :goto_0
     iget v0, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->transitionProgress:F
@@ -3449,7 +3458,7 @@
 
     div-float v3, v0, v2
 
-    .line 609
+    .line 612
     iget v0, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->bigCircleRadius:F
 
     mul-float v2, v0, v3
@@ -3458,38 +3467,38 @@
 
     mul-float v8, v0, v3
 
-    .line 611
+    .line 614
     iget-object v0, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->lastVisibleViewsTmp:Ljava/util/HashSet;
 
     invoke-virtual {v0}, Ljava/util/HashSet;->clear()V
 
-    .line 612
+    .line 615
     iget-object v0, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->lastVisibleViewsTmp:Ljava/util/HashSet;
 
     iget-object v9, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->lastVisibleViews:Ljava/util/HashSet;
 
     invoke-virtual {v0, v9}, Ljava/util/HashSet;->addAll(Ljava/util/Collection;)Z
 
-    .line 613
+    .line 616
     iget-object v0, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->lastVisibleViews:Ljava/util/HashSet;
 
     invoke-virtual {v0}, Ljava/util/HashSet;->clear()V
 
-    .line 615
+    .line 618
     iget-boolean v0, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->prepareAnimation:Z
 
     if-eqz v0, :cond_2
 
-    .line 616
+    .line 619
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 619
+    .line 622
     :cond_2
     iget-object v0, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pressedReaction:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
     if-eqz v0, :cond_4
 
-    .line 620
+    .line 623
     iget v0, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pressedProgress:F
 
     cmpl-float v9, v0, v5
@@ -3500,21 +3509,21 @@
 
     add-float/2addr v0, v9
 
-    .line 621
+    .line 624
     iput v0, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pressedProgress:F
 
     cmpl-float v0, v0, v5
 
     if-ltz v0, :cond_3
 
-    .line 623
+    .line 626
     iput v5, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pressedProgress:F
 
-    .line 625
+    .line 628
     :cond_3
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->invalidate()V
 
-    .line 630
+    .line 633
     :cond_4
     iget v0, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->pressedProgress:F
 
@@ -3532,15 +3541,15 @@
 
     sub-float v0, v5, v0
 
-    .line 631
+    .line 634
     iput v0, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->otherViewsScale:F
 
-    .line 633
+    .line 636
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v0
 
-    .line 634
+    .line 637
     sget-boolean v10, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-nez v10, :cond_6
@@ -3575,14 +3584,14 @@
     :goto_2
     mul-float/2addr v10, v11
 
-    .line 636
+    .line 639
     iget v11, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->transitionProgress:F
 
     cmpl-float v12, v11, v5
 
     if-eqz v12, :cond_7
 
-    .line 638
+    .line 641
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getHeight()I
 
     move-result v12
@@ -3593,7 +3602,7 @@
 
     invoke-virtual {v7, v11, v11, v10, v12}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 642
+    .line 645
     :cond_7
     sget-boolean v11, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
@@ -3605,7 +3614,7 @@
 
     goto :goto_3
 
-    .line 645
+    .line 648
     :cond_8
     iget v11, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->transitionProgress:F
 
@@ -3619,7 +3628,7 @@
 
     goto :goto_4
 
-    .line 643
+    .line 646
     :cond_9
     :goto_3
     iget v11, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->transitionProgress:F
@@ -3632,26 +3641,26 @@
 
     move v1, v4
 
-    .line 647
+    .line 650
     :goto_4
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->getPullingLeftProgress()F
 
     move-result v12
 
-    .line 648
+    .line 651
     invoke-virtual/range {p0 .. p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->expandSize()F
 
     move-result v13
 
-    .line 649
+    .line 652
     iget-object v14, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->chatScrimPopupContainerLayout:Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;
 
     if-eqz v14, :cond_a
 
-    .line 650
+    .line 653
     invoke-virtual {v14, v13}, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->setExpandSize(F)V
 
-    .line 652
+    .line 655
     :cond_a
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getWidth()I
 
@@ -3671,7 +3680,7 @@
 
     mul-float/2addr v14, v15
 
-    .line 653
+    .line 656
     iget-object v15, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->rect:Landroid/graphics/RectF;
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getPaddingLeft()I
@@ -3740,7 +3749,7 @@
 
     invoke-virtual {v15, v4, v9, v5, v14}, Landroid/graphics/RectF;->set(FFFF)V
 
-    .line 654
+    .line 657
     iget-object v4, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->rect:Landroid/graphics/RectF;
 
     invoke-virtual {v4}, Landroid/graphics/RectF;->height()F
@@ -3757,7 +3766,7 @@
 
     iput v4, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->radius:F
 
-    .line 655
+    .line 658
     iget-object v4, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->shadow:Landroid/graphics/drawable/Drawable;
 
     iget v5, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->customEmojiReactionsEnterProgress:F
@@ -3784,7 +3793,7 @@
 
     invoke-virtual {v4, v5}, Landroid/graphics/drawable/Drawable;->setAlpha(I)V
 
-    .line 656
+    .line 659
     iget-object v4, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->shadow:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getPaddingLeft()I
@@ -3879,25 +3888,25 @@
 
     invoke-virtual {v4, v1, v5, v11, v13}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 657
+    .line 660
     iget-object v1, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->shadow:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v1, v7}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 659
+    .line 662
     invoke-virtual {v7, v0}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
-    .line 661
+    .line 664
     iget-boolean v0, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->skipDraw:Z
 
     if-nez v0, :cond_c
 
-    .line 662
+    .line 665
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v0
 
-    .line 663
+    .line 666
     iget v1, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->transitionProgress:F
 
     const/high16 v4, 0x3f800000    # 1.0f
@@ -3906,7 +3915,7 @@
 
     if-eqz v5, :cond_b
 
-    .line 665
+    .line 668
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getHeight()I
 
     move-result v4
@@ -3919,7 +3928,7 @@
 
     invoke-virtual {v7, v1, v1, v10, v4}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 667
+    .line 670
     :cond_b
     iget-object v1, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->rect:Landroid/graphics/RectF;
 
@@ -3929,16 +3938,16 @@
 
     invoke-virtual {v7, v1, v4, v4, v5}, Landroid/graphics/Canvas;->drawRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Paint;)V
 
-    .line 668
+    .line 671
     invoke-virtual {v7, v0}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
-    .line 671
+    .line 674
     :cond_c
     iget-object v0, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->mPath:Landroid/graphics/Path;
 
     invoke-virtual {v0}, Landroid/graphics/Path;->rewind()V
 
-    .line 672
+    .line 675
     iget-object v0, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->mPath:Landroid/graphics/Path;
 
     iget-object v1, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->rect:Landroid/graphics/RectF;
@@ -3949,12 +3958,12 @@
 
     invoke-virtual {v0, v1, v4, v4, v5}, Landroid/graphics/Path;->addRoundRect(Landroid/graphics/RectF;FFLandroid/graphics/Path$Direction;)V
 
-    .line 674
+    .line 677
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     move-result v0
 
-    .line 675
+    .line 678
     iget v1, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->transitionProgress:F
 
     const/high16 v4, 0x3f800000    # 1.0f
@@ -3963,7 +3972,7 @@
 
     if-eqz v5, :cond_d
 
-    .line 677
+    .line 680
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getHeight()I
 
     move-result v4
@@ -3976,7 +3985,7 @@
 
     invoke-virtual {v7, v1, v1, v10, v4}, Landroid/graphics/Canvas;->scale(FFFF)V
 
-    .line 680
+    .line 683
     :cond_d
     iget v1, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->transitionProgress:F
 
@@ -4006,7 +4015,7 @@
 
     move v11, v10
 
-    .line 683
+    .line 686
     :goto_5
     iget-object v13, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -4016,14 +4025,14 @@
 
     if-ge v9, v13, :cond_1f
 
-    .line 684
+    .line 687
     iget-object v13, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v13, v9}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v13
 
-    .line 685
+    .line 688
     iget v14, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->transitionProgress:F
 
     cmpl-float v14, v14, v5
@@ -4036,7 +4045,7 @@
 
     if-eqz v5, :cond_e
 
-    .line 686
+    .line 689
     invoke-virtual {v13}, Landroid/view/View;->getLeft()I
 
     move-result v5
@@ -4057,7 +4066,7 @@
 
     const/high16 v11, 0x43480000    # 200.0f
 
-    .line 687
+    .line 690
     iget-object v14, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v14}, Landroid/view/ViewGroup;->getMeasuredWidth()I
@@ -4080,13 +4089,13 @@
 
     float-to-int v11, v5
 
-    .line 689
+    .line 692
     :cond_e
     instance-of v5, v13, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     if-eqz v5, :cond_14
 
-    .line 690
+    .line 693
     iget-object v5, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v5, v9}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -4095,22 +4104,22 @@
 
     check-cast v5, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
-    .line 691
+    .line 694
     invoke-direct {v6, v7, v5}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->checkPressedProgress(Landroid/graphics/Canvas;Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;)V
 
-    .line 692
+    .line 695
     invoke-virtual {v13}, Landroid/view/View;->getLeft()I
 
     move-result v14
 
     if-le v14, v10, :cond_f
 
-    .line 693
+    .line 696
     invoke-virtual {v13}, Landroid/view/View;->getLeft()I
 
     move-result v10
 
-    .line 695
+    .line 698
     :cond_f
     iget-boolean v13, v5, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->hasEnterAnimation:Z
 
@@ -4134,7 +4143,7 @@
 
     goto/16 :goto_b
 
-    .line 698
+    .line 701
     :cond_11
     invoke-virtual {v5}, Landroid/widget/FrameLayout;->getX()F
 
@@ -4184,7 +4193,7 @@
 
     if-gez v13, :cond_13
 
-    .line 699
+    .line 702
     iget-object v13, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->lastVisibleViewsTmp:Ljava/util/HashSet;
 
     invoke-virtual {v13, v5}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
@@ -4193,12 +4202,12 @@
 
     if-nez v13, :cond_12
 
-    .line 700
+    .line 703
     invoke-virtual {v5, v11}, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->play(I)Z
 
     add-int/lit8 v11, v11, 0x1e
 
-    .line 703
+    .line 706
     :cond_12
     iget-object v13, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->lastVisibleViews:Ljava/util/HashSet;
 
@@ -4206,7 +4215,7 @@
 
     goto :goto_6
 
-    .line 704
+    .line 707
     :cond_13
     invoke-static {v5}, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->access$1500(Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;)Z
 
@@ -4214,18 +4223,18 @@
 
     if-nez v13, :cond_10
 
-    .line 705
+    .line 708
     invoke-virtual {v5}, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->resetAnimation()V
 
     goto :goto_6
 
-    .line 708
+    .line 711
     :cond_14
     iget-object v5, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->premiumLockContainer:Landroid/widget/FrameLayout;
 
     if-ne v13, v5, :cond_18
 
-    .line 709
+    .line 712
     invoke-virtual {v13}, Landroid/view/View;->getX()F
 
     move-result v5
@@ -4274,7 +4283,7 @@
 
     if-gez v5, :cond_17
 
-    .line 710
+    .line 713
     iget-object v5, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->lastVisibleViewsTmp:Ljava/util/HashSet;
 
     invoke-virtual {v5, v13}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
@@ -4283,7 +4292,7 @@
 
     if-nez v5, :cond_16
 
-    .line 711
+    .line 714
     iget v5, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->transitionProgress:F
 
     const/high16 v14, 0x3f800000    # 1.0f
@@ -4292,12 +4301,12 @@
 
     if-eqz v5, :cond_15
 
-    .line 712
+    .line 715
     iget-object v5, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->premiumLockIconView:Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
 
     invoke-virtual {v5}, Lorg/telegram/ui/Components/Premium/PremiumLockIconView;->resetAnimation()V
 
-    .line 714
+    .line 717
     :cond_15
     iget-object v5, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->premiumLockIconView:Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
 
@@ -4305,7 +4314,7 @@
 
     add-int/lit8 v11, v11, 0x1e
 
-    .line 717
+    .line 720
     :cond_16
     iget-object v5, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->lastVisibleViews:Ljava/util/HashSet;
 
@@ -4313,20 +4322,20 @@
 
     goto :goto_7
 
-    .line 719
+    .line 722
     :cond_17
     iget-object v5, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->premiumLockIconView:Lorg/telegram/ui/Components/Premium/PremiumLockIconView;
 
     invoke-virtual {v5}, Lorg/telegram/ui/Components/Premium/PremiumLockIconView;->resetAnimation()V
 
-    .line 722
+    .line 725
     :cond_18
     :goto_7
     iget-object v5, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->customReactionsContainer:Landroid/widget/FrameLayout;
 
     if-ne v13, v5, :cond_1e
 
-    .line 723
+    .line 726
     invoke-virtual {v13}, Landroid/view/View;->getX()F
 
     move-result v5
@@ -4375,7 +4384,7 @@
 
     if-gez v5, :cond_1d
 
-    .line 724
+    .line 727
     iget-object v5, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->lastVisibleViewsTmp:Ljava/util/HashSet;
 
     invoke-virtual {v5, v13}, Ljava/util/HashSet;->contains(Ljava/lang/Object;)Z
@@ -4384,7 +4393,7 @@
 
     if-nez v5, :cond_1c
 
-    .line 725
+    .line 728
     iget v5, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->transitionProgress:F
 
     const/high16 v14, 0x3f800000    # 1.0f
@@ -4393,12 +4402,12 @@
 
     if-eqz v5, :cond_19
 
-    .line 726
+    .line 729
     iget-object v5, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->customEmojiReactionsIconView:Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;
 
     invoke-virtual {v5}, Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;->resetAnimation()V
 
-    .line 728
+    .line 731
     :cond_19
     iget-object v5, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->customEmojiReactionsIconView:Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;
 
@@ -4432,7 +4441,7 @@
 
     add-int/lit8 v11, v11, 0x1e
 
-    .line 731
+    .line 734
     :cond_1c
     iget-object v5, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->lastVisibleViews:Ljava/util/HashSet;
 
@@ -4440,7 +4449,7 @@
 
     goto :goto_a
 
-    .line 733
+    .line 736
     :cond_1d
     iget-object v5, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->customEmojiReactionsIconView:Lorg/telegram/ui/Components/ReactionsContainerLayout$InternalImageView;
 
@@ -4451,7 +4460,7 @@
     :cond_1e
     const/high16 v15, 0x40000000    # 2.0f
 
-    .line 736
+    .line 739
     :goto_a
     invoke-direct {v6, v13}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->checkPressedProgressForOtherViews(Landroid/view/View;)V
 
@@ -4469,14 +4478,14 @@
 
     if-lez v9, :cond_21
 
-    .line 740
+    .line 743
     invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->getPullingLeftProgress()F
 
     move-result v5
 
     const/16 v9, 0x20
 
-    .line 741
+    .line 744
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v11
@@ -4485,7 +4494,7 @@
 
     int-to-float v10, v10
 
-    .line 742
+    .line 745
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v11
@@ -4512,7 +4521,7 @@
 
     mul-float/2addr v11, v5
 
-    .line 743
+    .line 746
     invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -4521,7 +4530,7 @@
 
     mul-float/2addr v11, v9
 
-    .line 745
+    .line 748
     iget-object v9, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->nextRecentReaction:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     invoke-virtual {v9}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
@@ -4530,7 +4539,7 @@
 
     if-nez v9, :cond_20
 
-    .line 746
+    .line 749
     iget-object v9, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->nextRecentReaction:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     invoke-static {v13}, Ljava/lang/Float;->valueOf(F)Ljava/lang/Float;
@@ -4539,12 +4548,12 @@
 
     invoke-virtual {v9, v12}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 747
+    .line 750
     iget-object v9, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->nextRecentReaction:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     invoke-virtual {v9}, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->resetAnimation()V
 
-    .line 748
+    .line 751
     iget-object v9, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->nextRecentReaction:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     invoke-virtual {v9, v1}, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->play(I)Z
@@ -4552,22 +4561,22 @@
     :cond_20
     const/4 v9, 0x0
 
-    .line 750
+    .line 753
     invoke-static {v5, v13, v9}, Lorg/telegram/messenger/Utilities;->clamp(FFF)F
 
     move-result v5
 
-    .line 751
+    .line 754
     iget-object v9, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->nextRecentReaction:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     invoke-virtual {v9, v5}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 752
+    .line 755
     iget-object v9, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->nextRecentReaction:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     invoke-virtual {v9, v5}, Landroid/widget/FrameLayout;->setScaleY(F)V
 
-    .line 753
+    .line 756
     iget-object v5, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->nextRecentReaction:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     iget-object v9, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -4592,14 +4601,14 @@
 
     invoke-virtual {v5, v9}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
-    .line 754
+    .line 757
     iget-object v5, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->nextRecentReaction:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     invoke-virtual {v5, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     goto :goto_c
 
-    .line 756
+    .line 759
     :cond_21
     iget-object v1, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->nextRecentReaction:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
@@ -4607,7 +4616,7 @@
 
     invoke-virtual {v1, v5}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 757
+    .line 760
     iget-object v1, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->nextRecentReaction:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
@@ -4616,14 +4625,14 @@
 
     if-eqz v1, :cond_22
 
-    .line 758
+    .line 761
     iget-object v1, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->nextRecentReaction:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     const/4 v5, 0x0
 
     invoke-virtual {v1, v5}, Landroid/widget/FrameLayout;->setTag(Ljava/lang/Object;)V
 
-    .line 763
+    .line 766
     :cond_22
     :goto_c
     iget-boolean v1, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->skipDraw:Z
@@ -4634,7 +4643,7 @@
 
     if-eqz v1, :cond_23
 
-    .line 764
+    .line 767
     iget v0, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->customEmojiReactionsEnterProgress:F
 
     const v1, 0x3e4ccccd    # 0.2f
@@ -4663,7 +4672,7 @@
 
     float-to-int v5, v0
 
-    .line 765
+    .line 768
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
 
     move-object/from16 v0, p0
@@ -4672,21 +4681,21 @@
 
     move v4, v8
 
-    .line 766
+    .line 769
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->drawBubbles(Landroid/graphics/Canvas;FFFI)V
 
-    .line 767
+    .line 770
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void
 
-    .line 771
+    .line 774
     :cond_23
     iget-object v1, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->mPath:Landroid/graphics/Path;
 
     invoke-virtual {v7, v1}, Landroid/graphics/Canvas;->clipPath(Landroid/graphics/Path;)Z
 
-    .line 772
+    .line 775
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-nez v1, :cond_24
@@ -4719,7 +4728,7 @@
 
     invoke-virtual {v7, v1, v4}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 773
+    .line 776
     iget-object v1, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     move/from16 v14, v17
@@ -4728,15 +4737,15 @@
 
     invoke-virtual {v1, v5}, Landroid/view/ViewGroup;->setTranslationX(F)V
 
-    .line 774
+    .line 777
     invoke-super/range {p0 .. p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
-    .line 776
+    .line 779
     iget-object v1, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->leftShadowPaint:Landroid/graphics/Paint;
 
     if-eqz v1, :cond_26
 
-    .line 777
+    .line 780
     iget v1, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->leftAlpha:F
 
     iget v5, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->transitionProgress:F
@@ -4749,7 +4758,7 @@
 
     move-result v1
 
-    .line 778
+    .line 781
     iget-object v4, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->leftShadowPaint:Landroid/graphics/Paint;
 
     const/high16 v5, 0x437f0000    # 255.0f
@@ -4760,20 +4769,20 @@
 
     invoke-virtual {v4, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 779
+    .line 782
     iget-object v1, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->rect:Landroid/graphics/RectF;
 
     iget-object v4, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->leftShadowPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v7, v1, v4}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
 
-    .line 781
+    .line 784
     :cond_26
     iget-object v1, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->rightShadowPaint:Landroid/graphics/Paint;
 
     if-eqz v1, :cond_27
 
-    .line 782
+    .line 785
     iget v1, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->rightAlpha:F
 
     iget v4, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->transitionProgress:F
@@ -4788,7 +4797,7 @@
 
     move-result v1
 
-    .line 783
+    .line 786
     iget-object v4, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->rightShadowPaint:Landroid/graphics/Paint;
 
     const/high16 v5, 0x437f0000    # 255.0f
@@ -4799,14 +4808,14 @@
 
     invoke-virtual {v4, v1}, Landroid/graphics/Paint;->setAlpha(I)V
 
-    .line 784
+    .line 787
     iget-object v1, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->rect:Landroid/graphics/RectF;
 
     iget-object v4, v6, Lorg/telegram/ui/Components/ReactionsContainerLayout;->rightShadowPaint:Landroid/graphics/Paint;
 
     invoke-virtual {v7, v1, v4}, Landroid/graphics/Canvas;->drawRect(Landroid/graphics/RectF;Landroid/graphics/Paint;)V
 
-    .line 786
+    .line 789
     :cond_27
     invoke-virtual {v7, v0}, Landroid/graphics/Canvas;->restoreToCount(I)V
 
@@ -4818,10 +4827,10 @@
 
     move v4, v8
 
-    .line 788
+    .line 791
     invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->drawBubbles(Landroid/graphics/Canvas;FFFI)V
 
-    .line 789
+    .line 792
     invoke-virtual/range {p0 .. p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -4830,7 +4839,7 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 1604
+    .line 1615
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getAlpha()F
 
     move-result v0
@@ -4845,7 +4854,7 @@
 
     return p1
 
-    .line 1607
+    .line 1618
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -4857,7 +4866,7 @@
 .method public drawBubbles(Landroid/graphics/Canvas;)V
     .locals 9
 
-    .line 793
+    .line 796
     iget v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->transitionProgress:F
 
     const/high16 v1, 0x3f800000    # 1.0f
@@ -4878,7 +4887,7 @@
 
     div-float v6, v0, v2
 
-    .line 794
+    .line 797
     iget v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->bigCircleRadius:F
 
     mul-float v5, v0, v6
@@ -4887,7 +4896,7 @@
 
     mul-float v7, v0, v6
 
-    .line 795
+    .line 798
     iget v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->customEmojiReactionsEnterProgress:F
 
     const v2, 0x3e4ccccd    # 0.2f
@@ -4916,7 +4925,7 @@
 
     move-object v4, p1
 
-    .line 796
+    .line 799
     invoke-direct/range {v3 .. v8}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->drawBubbles(Landroid/graphics/Canvas;FFFI)V
 
     return-void
@@ -4925,7 +4934,7 @@
 .method public expandSize()F
     .locals 2
 
-    .line 1712
+    .line 1723
     invoke-direct {p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->getPullingLeftProgress()F
 
     move-result v0
@@ -4950,7 +4959,7 @@
 .method public getItemsCount()I
     .locals 2
 
-    .line 1098
+    .line 1109
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->visibleReactionsList:Ljava/util/List;
 
     invoke-interface {v0}, Ljava/util/List;->size()I
@@ -4971,7 +4980,7 @@
 .method public getReactionsWindow()Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
     .locals 1
 
-    .line 502
+    .line 505
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->reactionsWindow:Lorg/telegram/ui/Components/Reactions/CustomEmojiReactionsWindow;
 
     return-object v0
@@ -4980,12 +4989,12 @@
 .method public getTotalWidth()I
     .locals 3
 
-    .line 1089
+    .line 1100
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->getItemsCount()I
 
     move-result v0
 
-    .line 1090
+    .line 1101
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->showCustomEmojiReaction()Z
 
     move-result v1
@@ -4994,7 +5003,7 @@
 
     if-nez v1, :cond_0
 
-    .line 1091
+    .line 1102
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -5023,7 +5032,7 @@
 
     return v1
 
-    .line 1093
+    .line 1104
     :cond_0
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -5045,7 +5054,7 @@
 .method public isFlippedVertically()Z
     .locals 1
 
-    .line 543
+    .line 546
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->isFlippedVertically:Z
 
     return v0
@@ -5054,10 +5063,10 @@
 .method protected onAttachedToWindow()V
     .locals 2
 
-    .line 1580
+    .line 1591
     invoke-super {p0}, Landroid/widget/FrameLayout;->onAttachedToWindow()V
 
-    .line 1581
+    .line 1592
     iget v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -5074,7 +5083,7 @@
 .method public onCustomEmojiWindowOpened()V
     .locals 0
 
-    .line 1154
+    .line 1165
     invoke-direct {p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->animatePullingBack()V
 
     return-void
@@ -5083,10 +5092,10 @@
 .method protected onDetachedFromWindow()V
     .locals 2
 
-    .line 1586
+    .line 1597
     invoke-super {p0}, Landroid/widget/FrameLayout;->onDetachedFromWindow()V
 
-    .line 1587
+    .line 1598
     iget v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
@@ -5103,14 +5112,14 @@
 .method public onReactionClicked(Landroid/view/View;Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;Z)V
     .locals 2
 
-    .line 1117
+    .line 1128
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->delegate:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionsContainerDelegate;
 
     if-eqz v0, :cond_0
 
     const/4 v1, 0x1
 
-    .line 1118
+    .line 1129
     invoke-interface {v0, p1, p2, p3, v1}, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionsContainerDelegate;->onReactionClicked(Landroid/view/View;Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;ZZ)V
 
     :cond_0
@@ -5120,10 +5129,10 @@
 .method protected onSizeChanged(IIII)V
     .locals 0
 
-    .line 920
+    .line 923
     invoke-super {p0, p1, p2, p3, p4}, Landroid/widget/FrameLayout;->onSizeChanged(IIII)V
 
-    .line 921
+    .line 924
     invoke-direct {p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->invalidateShaders()V
 
     return-void
@@ -5132,10 +5141,10 @@
 .method public prepareAnimation(Z)V
     .locals 0
 
-    .line 1125
+    .line 1136
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->prepareAnimation:Z
 
-    .line 1126
+    .line 1137
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -5144,7 +5153,7 @@
 .method public setAlpha(F)V
     .locals 2
 
-    .line 1612
+    .line 1623
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getAlpha()F
 
     move-result v0
@@ -5159,14 +5168,14 @@
 
     if-nez v0, :cond_1
 
-    .line 1613
+    .line 1624
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->lastVisibleViews:Ljava/util/HashSet;
 
     invoke-virtual {v0}, Ljava/util/HashSet;->clear()V
 
     const/4 v0, 0x0
 
-    .line 1614
+    .line 1625
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -5176,7 +5185,7 @@
 
     if-ge v0, v1, :cond_1
 
-    .line 1615
+    .line 1626
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -5187,7 +5196,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 1616
+    .line 1627
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -5196,7 +5205,7 @@
 
     check-cast v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
-    .line 1617
+    .line 1628
     invoke-virtual {v1}, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->resetAnimation()V
 
     :cond_0
@@ -5204,7 +5213,7 @@
 
     goto :goto_0
 
-    .line 1621
+    .line 1632
     :cond_1
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
@@ -5214,7 +5223,7 @@
 .method public setChatScrimView(Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;)V
     .locals 0
 
-    .line 1181
+    .line 1192
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->chatScrimPopupContainerLayout:Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;
 
     return-void
@@ -5223,10 +5232,10 @@
 .method public setCustomEmojiEnterProgress(F)V
     .locals 2
 
-    .line 1102
+    .line 1113
     iput p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->customEmojiReactionsEnterProgress:F
 
-    .line 1103
+    .line 1114
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->chatScrimPopupContainerLayout:Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;
 
     if-eqz v0, :cond_0
@@ -5235,10 +5244,10 @@
 
     sub-float/2addr v1, p1
 
-    .line 1104
+    .line 1115
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->setPopupAlpha(F)V
 
-    .line 1106
+    .line 1117
     :cond_0
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
@@ -5248,7 +5257,7 @@
 .method public setDelegate(Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionsContainerDelegate;)V
     .locals 0
 
-    .line 539
+    .line 542
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->delegate:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionsContainerDelegate;
 
     return-void
@@ -5257,10 +5266,10 @@
 .method public setFlippedVertically(Z)V
     .locals 0
 
-    .line 547
+    .line 550
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->isFlippedVertically:Z
 
-    .line 548
+    .line 551
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -5269,15 +5278,15 @@
 .method public setMessage(Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$ChatFull;)V
     .locals 6
 
-    .line 945
+    .line 948
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->messageObject:Lorg/telegram/messenger/MessageObject;
 
-    .line 947
+    .line 950
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
 
-    .line 948
+    .line 951
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->isForwardedChannelPost()Z
 
     move-result v1
@@ -5288,7 +5297,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 949
+    .line 952
     iget p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->currentAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -5307,7 +5316,7 @@
 
     if-nez p2, :cond_0
 
-    .line 951
+    .line 954
     invoke-virtual {p1}, Lorg/telegram/messenger/MessageObject;->getFromChatId()J
 
     move-result-wide v0
@@ -5316,7 +5325,7 @@
 
     iput-wide v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->waitingLoadingChatId:J
 
-    .line 952
+    .line 955
     iget p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->currentAccount:I
 
     invoke-static {p2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -5333,7 +5342,7 @@
 
     const/4 p1, 0x4
 
-    .line 953
+    .line 956
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
     return-void
@@ -5341,14 +5350,14 @@
     :cond_0
     if-eqz p2, :cond_8
 
-    .line 958
+    .line 961
     iget-object v1, p2, Lorg/telegram/tgnet/TLRPC$ChatFull;->available_reactions:Lorg/telegram/tgnet/TLRPC$ChatReactions;
 
     instance-of v4, v1, Lorg/telegram/tgnet/TLRPC$TL_chatReactionsAll;
 
     if-eqz v4, :cond_2
 
-    .line 959
+    .line 962
     iget v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->currentAccount:I
 
     invoke-static {v1}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -5367,38 +5376,38 @@
 
     if-eqz p2, :cond_1
 
-    .line 960
+    .line 963
     invoke-static {p2}, Lorg/telegram/messenger/ChatObject;->isChannelAndNotMegaGroup(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
     move-result p2
 
     if-nez p2, :cond_1
 
-    .line 961
+    .line 964
     iput-boolean v3, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->allReactionsAvailable:Z
 
     goto :goto_0
 
-    .line 963
+    .line 966
     :cond_1
     iput-boolean v2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->allReactionsAvailable:Z
 
-    .line 965
+    .line 968
     :goto_0
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->fillRecentReactionsList(Ljava/util/List;)V
 
     goto/16 :goto_2
 
-    .line 966
+    .line 969
     :cond_2
     instance-of v3, v1, Lorg/telegram/tgnet/TLRPC$TL_chatReactionsSome;
 
     if-eqz v3, :cond_6
 
-    .line 967
+    .line 970
     check-cast v1, Lorg/telegram/tgnet/TLRPC$TL_chatReactionsSome;
 
-    .line 968
+    .line 971
     iget-object p2, v1, Lorg/telegram/tgnet/TLRPC$TL_chatReactionsSome;->reactions:Ljava/util/ArrayList;
 
     invoke-virtual {p2}, Ljava/util/ArrayList;->iterator()Ljava/util/Iterator;
@@ -5419,7 +5428,7 @@
 
     check-cast v1, Lorg/telegram/tgnet/TLRPC$Reaction;
 
-    .line 969
+    .line 972
     iget v3, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->currentAccount:I
 
     invoke-static {v3}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -5447,7 +5456,7 @@
 
     check-cast v4, Lorg/telegram/tgnet/TLRPC$TL_availableReaction;
 
-    .line 970
+    .line 973
     instance-of v5, v1, Lorg/telegram/tgnet/TLRPC$TL_reactionEmoji;
 
     if-eqz v5, :cond_5
@@ -5466,21 +5475,6 @@
 
     if-eqz v4, :cond_5
 
-    .line 971
-    invoke-static {v1}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->fromTLReaction(Lorg/telegram/tgnet/TLRPC$Reaction;)Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
-
-    move-result-object v1
-
-    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
-
-    goto :goto_1
-
-    .line 973
-    :cond_5
-    instance-of v4, v1, Lorg/telegram/tgnet/TLRPC$TL_reactionCustomEmoji;
-
-    if-eqz v4, :cond_4
-
     .line 974
     invoke-static {v1}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->fromTLReaction(Lorg/telegram/tgnet/TLRPC$Reaction;)Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
@@ -5490,7 +5484,22 @@
 
     goto :goto_1
 
-    .line 980
+    .line 976
+    :cond_5
+    instance-of v4, v1, Lorg/telegram/tgnet/TLRPC$TL_reactionCustomEmoji;
+
+    if-eqz v4, :cond_4
+
+    .line 977
+    invoke-static {v1}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;->fromTLReaction(Lorg/telegram/tgnet/TLRPC$Reaction;)Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
+
+    move-result-object v1
+
+    invoke-interface {v0, v1}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+
+    goto :goto_1
+
+    .line 983
     :cond_6
     sget-boolean v1, Lorg/telegram/messenger/BuildVars;->DEBUG_PRIVATE_VERSION:Z
 
@@ -5498,7 +5507,7 @@
 
     goto :goto_2
 
-    .line 981
+    .line 984
     :cond_7
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -5522,22 +5531,22 @@
 
     throw p1
 
-    .line 985
+    .line 988
     :cond_8
     iput-boolean v3, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->allReactionsAvailable:Z
 
-    .line 986
+    .line 989
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->fillRecentReactionsList(Ljava/util/List;)V
 
-    .line 988
+    .line 991
     :cond_9
     :goto_2
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->filterReactions(Ljava/util/List;)V
 
-    .line 989
+    .line 992
     invoke-direct {p0, v0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->setVisibleReactionsList(Ljava/util/List;)V
 
-    .line 991
+    .line 994
     iget-object p2, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$Message;->reactions:Lorg/telegram/tgnet/TLRPC$TL_messageReactions;
@@ -5548,7 +5557,7 @@
 
     if-eqz p2, :cond_b
 
-    .line 992
+    .line 995
     :goto_3
     iget-object p2, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
@@ -5562,7 +5571,7 @@
 
     if-ge v2, p2, :cond_b
 
-    .line 993
+    .line 996
     iget-object p2, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object p2, p2, Lorg/telegram/tgnet/TLRPC$Message;->reactions:Lorg/telegram/tgnet/TLRPC$TL_messageReactions;
@@ -5579,7 +5588,7 @@
 
     if-eqz p2, :cond_a
 
-    .line 994
+    .line 997
     iget-object p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->selectedReactions:Ljava/util/HashSet;
 
     iget-object v0, p1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
@@ -5614,10 +5623,10 @@
 .method public setMirrorX(Z)V
     .locals 0
 
-    .line 552
+    .line 555
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->mirrorX:Z
 
-    .line 553
+    .line 556
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
     return-void
@@ -5626,7 +5635,7 @@
 .method public setParentLayout(Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;)V
     .locals 0
 
-    .line 1716
+    .line 1727
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->parentLayout:Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;
 
     return-void
@@ -5635,12 +5644,12 @@
 .method public setSkipDraw(Z)V
     .locals 4
 
-    .line 1132
+    .line 1143
     iget-boolean v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->skipDraw:Z
 
     if-eq v0, p1, :cond_4
 
-    .line 1133
+    .line 1144
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->skipDraw:Z
 
     if-nez p1, :cond_3
@@ -5649,7 +5658,7 @@
 
     move v0, p1
 
-    .line 1135
+    .line 1146
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -5659,7 +5668,7 @@
 
     if-ge v0, v1, :cond_3
 
-    .line 1136
+    .line 1147
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -5670,7 +5679,7 @@
 
     if-eqz v1, :cond_2
 
-    .line 1137
+    .line 1148
     iget-object v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
@@ -5679,7 +5688,7 @@
 
     check-cast v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
-    .line 1138
+    .line 1149
     iget-boolean v2, v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->hasEnterAnimation:Z
 
     if-eqz v2, :cond_1
@@ -5708,30 +5717,30 @@
 
     if-eqz v2, :cond_1
 
-    .line 1139
+    .line 1150
     :cond_0
     iget-object v2, v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->loopImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     invoke-virtual {v2, p1}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1140
+    .line 1151
     iget-object v2, v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->enterImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     const/4 v3, 0x4
 
     invoke-virtual {v2, v3}, Landroid/view/View;->setVisibility(I)V
 
-    .line 1141
+    .line 1152
     iget-boolean v2, v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->shouldSwitchToLoopView:Z
 
     if-eqz v2, :cond_1
 
     const/4 v2, 0x1
 
-    .line 1142
+    .line 1153
     iput-boolean v2, v1, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->switchedToLoopView:Z
 
-    .line 1145
+    .line 1156
     :cond_1
     invoke-virtual {v1}, Landroid/widget/FrameLayout;->invalidate()V
 
@@ -5740,7 +5749,7 @@
 
     goto :goto_0
 
-    .line 1149
+    .line 1160
     :cond_3
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
@@ -5751,15 +5760,15 @@
 .method public setTransitionProgress(F)V
     .locals 2
 
-    .line 937
+    .line 940
     iput p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->transitionProgress:F
 
-    .line 938
+    .line 941
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->parentLayout:Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;
 
     if-eqz v0, :cond_1
 
-    .line 939
+    .line 942
     iget-boolean v1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->animatePopup:Z
 
     if-eqz v1, :cond_0
@@ -5778,7 +5787,7 @@
     :goto_0
     invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/ChatScrimPopupContainerLayout;->setReactionsTransitionProgress(F)V
 
-    .line 941
+    .line 944
     :cond_1
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->invalidate()V
 
@@ -5788,7 +5797,7 @@
 .method public setTranslationX(F)V
     .locals 1
 
-    .line 1626
+    .line 1637
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getTranslationX()F
 
     move-result v0
@@ -5797,7 +5806,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 1627
+    .line 1638
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setTranslationX(F)V
 
     :cond_0
@@ -5807,7 +5816,7 @@
 .method public showCustomEmojiReaction()Z
     .locals 1
 
-    .line 517
+    .line 520
     iget v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->currentAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
@@ -5836,20 +5845,25 @@
 .method public startEnterAnimation(Z)V
     .locals 4
 
-    .line 1074
+    .line 1077
     iput-boolean p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->animatePopup:Z
 
     const/4 p1, 0x0
 
-    .line 1075
+    .line 1078
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->setTransitionProgress(F)V
 
     const/high16 p1, 0x3f800000    # 1.0f
 
-    .line 1076
+    .line 1079
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->setAlpha(F)V
 
-    .line 1077
+    .line 1080
+    iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout;->notificationsLocker:Lorg/telegram/messenger/AnimationNotificationsLocker;
+
+    invoke-virtual {p1}, Lorg/telegram/messenger/AnimationNotificationsLocker;->lock()V
+
+    .line 1082
     invoke-static {}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->allowSmoothEnterTransition()Z
 
     move-result p1
@@ -5862,7 +5876,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1078
+    .line 1083
     sget-object p1, Lorg/telegram/ui/Components/ReactionsContainerLayout;->TRANSITION_PROGRESS_VALUE:Landroid/util/Property;
 
     new-array v3, v3, [F
@@ -5877,19 +5891,16 @@
 
     move-result-object p1
 
-    .line 1079
+    .line 1084
     new-instance v1, Landroid/view/animation/OvershootInterpolator;
 
     invoke-direct {v1, v0}, Landroid/view/animation/OvershootInterpolator;-><init>(F)V
 
     invoke-virtual {p1, v1}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1080
-    invoke-virtual {p1}, Landroid/animation/ObjectAnimator;->start()V
-
     goto :goto_0
 
-    .line 1082
+    .line 1086
     :cond_0
     sget-object p1, Lorg/telegram/ui/Components/ReactionsContainerLayout;->TRANSITION_PROGRESS_VALUE:Landroid/util/Property;
 
@@ -5905,17 +5916,24 @@
 
     move-result-object p1
 
-    .line 1083
+    .line 1087
     new-instance v1, Landroid/view/animation/OvershootInterpolator;
 
     invoke-direct {v1, v0}, Landroid/view/animation/OvershootInterpolator;-><init>(F)V
 
     invoke-virtual {p1, v1}, Landroid/animation/ObjectAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 1084
+    .line 1089
+    :goto_0
+    new-instance v0, Lorg/telegram/ui/Components/ReactionsContainerLayout$8;
+
+    invoke-direct {v0, p0}, Lorg/telegram/ui/Components/ReactionsContainerLayout$8;-><init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
+
+    invoke-virtual {p1, v0}, Landroid/animation/ObjectAnimator;->addListener(Landroid/animation/Animator$AnimatorListener;)V
+
+    .line 1096
     invoke-virtual {p1}, Landroid/animation/ObjectAnimator;->start()V
 
-    :goto_0
     return-void
 
     :array_0

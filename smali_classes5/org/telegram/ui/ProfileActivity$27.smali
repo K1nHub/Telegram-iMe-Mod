@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;Landroid/content/Context;)V
     .locals 0
 
-    .line 4698
+    .line 4768
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$27;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     iput-object p3, p0, Lorg/telegram/ui/ProfileActivity$27;->val$context:Landroid/content/Context;
@@ -39,19 +39,19 @@
 .method protected createTextView()Landroid/widget/TextView;
     .locals 3
 
-    .line 4701
+    .line 4771
     new-instance v0, Landroid/widget/TextView;
 
     iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$27;->val$context:Landroid/content/Context;
 
     invoke-direct {v0, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 4702
+    .line 4772
     iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$27;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    const-string v2, "player_actionBarSubtitle"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_player_actionBarSubtitle:I
 
-    invoke-virtual {v1, v2}, Lorg/telegram/ui/ProfileActivity;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/ProfileActivity;->getThemedColor(I)I
 
     move-result v1
 
@@ -61,20 +61,20 @@
 
     const/high16 v2, 0x41600000    # 14.0f
 
-    .line 4703
+    .line 4773
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 4704
+    .line 4774
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 4705
+    .line 4775
     sget-object v1, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
     const/4 v1, 0x3
 
-    .line 4706
+    .line 4776
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
     return-object v0

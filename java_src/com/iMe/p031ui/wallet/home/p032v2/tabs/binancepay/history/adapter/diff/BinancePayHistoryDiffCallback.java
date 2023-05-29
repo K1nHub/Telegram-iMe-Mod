@@ -7,7 +7,7 @@ import com.iMe.model.wallet.home.pay.BinanceTransactionItem;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: BinancePayHistoryDiffCallback.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.history.adapter.diff.BinancePayHistoryDiffCallback */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class BinancePayHistoryDiffCallback extends DiffUtil.ItemCallback<BaseNode> {
     @Override // androidx.recyclerview.widget.DiffUtil.ItemCallback
     public Object getChangePayload(BaseNode oldItem, BaseNode newItem) {

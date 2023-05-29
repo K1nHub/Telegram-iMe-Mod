@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/ActionBar;Landroid/content/Context;Lorg/telegram/ui/ActionBar/ActionBar;)V
     .locals 0
 
-    .line 585
+    .line 587
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBar$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-direct {p0, p2, p3}, Lorg/telegram/ui/ActionBar/ActionBarMenu;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/ActionBar;)V
@@ -35,7 +35,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 7
 
-    .line 596
+    .line 598
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBar$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBar;
 
     iget-boolean v1, v0, Lorg/telegram/ui/ActionBar/ActionBar;->blurredBackground:Z
@@ -46,7 +46,7 @@
 
     if-eqz v1, :cond_0
 
-    .line 597
+    .line 599
     iget-object v0, v0, Lorg/telegram/ui/ActionBar/ActionBar;->rectTmp:Landroid/graphics/Rect;
 
     invoke-virtual {p0}, Landroid/widget/LinearLayout;->getMeasuredWidth()I
@@ -61,7 +61,7 @@
 
     invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/Rect;->set(IIII)V
 
-    .line 598
+    .line 600
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBar$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBar;
 
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/ActionBar;->blurScrimPaint:Landroid/graphics/Paint;
@@ -72,7 +72,7 @@
 
     invoke-virtual {v1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 599
+    .line 601
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBar$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBar;
 
     iget-object v1, v0, Lorg/telegram/ui/ActionBar/ActionBar;->contentView:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
@@ -89,7 +89,7 @@
 
     invoke-virtual/range {v1 .. v6}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->drawBlurRect(Landroid/graphics/Canvas;FLandroid/graphics/Rect;Landroid/graphics/Paint;Z)V
 
-    .line 601
+    .line 603
     :cond_0
     invoke-super {p0, p1}, Landroid/widget/LinearLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
@@ -99,17 +99,17 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 606
+    .line 608
     invoke-super {p0}, Landroid/widget/LinearLayout;->onAttachedToWindow()V
 
-    .line 607
+    .line 609
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBar$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBar;
 
     iget-object v0, v0, Lorg/telegram/ui/ActionBar/ActionBar;->contentView:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     if-eqz v0, :cond_0
 
-    .line 608
+    .line 610
     iget-object v0, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->blurBehindViews:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
@@ -121,17 +121,17 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 614
+    .line 616
     invoke-super {p0}, Landroid/widget/LinearLayout;->onDetachedFromWindow()V
 
-    .line 615
+    .line 617
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBar$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBar;
 
     iget-object v0, v0, Lorg/telegram/ui/ActionBar/ActionBar;->contentView:Lorg/telegram/ui/Components/SizeNotifierFrameLayout;
 
     if-eqz v0, :cond_0
 
-    .line 616
+    .line 618
     iget-object v0, v0, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->blurBehindViews:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p0}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
@@ -143,19 +143,19 @@
 .method public setBackgroundColor(I)V
     .locals 1
 
-    .line 588
+    .line 590
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/ActionBar$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBar;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/ActionBar/ActionBar;->access$002(Lorg/telegram/ui/ActionBar/ActionBar;I)I
 
-    .line 589
+    .line 591
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBar$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBar;
 
     iget-boolean v0, p1, Lorg/telegram/ui/ActionBar/ActionBar;->blurredBackground:Z
 
     if-nez v0, :cond_0
 
-    .line 590
+    .line 592
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/ActionBar;->access$000(Lorg/telegram/ui/ActionBar/ActionBar;)I
 
     move-result p1

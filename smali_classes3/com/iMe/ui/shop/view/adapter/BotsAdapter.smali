@@ -314,7 +314,7 @@
 
     const/4 v6, 0x0
 
-    invoke-static/range {v0 .. v6}, Lcom/iMe/ui/smartpanel/extension/ImageViewExtKt;->loadFrom$default(Landroid/widget/ImageView;Ljava/lang/String;Landroid/content/Context;Landroid/graphics/drawable/Drawable;ZILjava/lang/Object;)V
+    invoke-static/range {v0 .. v6}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->loadFrom$default(Landroid/widget/ImageView;Ljava/lang/String;Landroid/content/Context;Landroid/graphics/drawable/Drawable;ZILjava/lang/Object;)V
 
     .line 47
     iget-object v0, p1, Lorg/telegram/messenger/databinding/ForkShopItemListBinding;->botName:Landroid/widget/TextView;
@@ -328,9 +328,9 @@
     .line 48
     iget-object v0, p1, Lorg/telegram/messenger/databinding/ForkShopItemListBinding;->botName:Landroid/widget/TextView;
 
-    const-string v1, "windowBackgroundWhiteBlackText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -449,9 +449,7 @@
 
     const/high16 v4, 0x3f800000    # 1.0f
 
-    const-string v5, "chats_actionBackground"
-
-    const-string v6, "shopButton"
+    const-string v5, "shopButton"
 
     packed-switch v2, :pswitch_data_0
 
@@ -461,7 +459,9 @@
     :pswitch_0
     iget-object v2, p1, Lorg/telegram/messenger/databinding/ForkShopItemListBinding;->shopButton:Lme/grantland/widget/AutofitTextView;
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
+
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
@@ -475,7 +475,7 @@
 
     move-result v1
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -487,7 +487,7 @@
     :pswitch_1
     iget-object v2, p1, Lorg/telegram/messenger/databinding/ForkShopItemListBinding;->shopButton:Lme/grantland/widget/AutofitTextView;
 
-    invoke-static {v2, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget v5, Lorg/telegram/messenger/R$color;->colorShopButtonTextDisable:I
 
@@ -519,7 +519,7 @@
     :pswitch_2
     iget-object v2, p1, Lorg/telegram/messenger/databinding/ForkShopItemListBinding;->shopButton:Lme/grantland/widget/AutofitTextView;
 
-    invoke-static {v2, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget v4, Lorg/telegram/messenger/R$color;->colorShopButtonTextDisable:I
 
@@ -534,14 +534,16 @@
     :pswitch_3
     iget-object v1, p1, Lorg/telegram/messenger/databinding/ForkShopItemListBinding;->shopButton:Lme/grantland/widget/AutofitTextView;
 
-    invoke-static {v1, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget v2, Lorg/telegram/messenger/R$color;->colorShopButtonTextLight:I
 
     invoke-static {v1, v2}, Lcom/iMe/ui/shop/util/TextViewExtKt;->setTextColor(Landroid/widget/TextView;I)V
 
     .line 70
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -553,14 +555,16 @@
     :pswitch_4
     iget-object v1, p1, Lorg/telegram/messenger/databinding/ForkShopItemListBinding;->shopButton:Lme/grantland/widget/AutofitTextView;
 
-    invoke-static {v1, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget v2, Lorg/telegram/messenger/R$color;->colorShopButtonTextLight:I
 
     invoke-static {v1, v2}, Lcom/iMe/ui/shop/util/TextViewExtKt;->setTextColor(Landroid/widget/TextView;I)V
 
     .line 66
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -572,14 +576,16 @@
     :pswitch_5
     iget-object v1, p1, Lorg/telegram/messenger/databinding/ForkShopItemListBinding;->shopButton:Lme/grantland/widget/AutofitTextView;
 
-    invoke-static {v1, v6}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v1, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     sget v2, Lorg/telegram/messenger/R$color;->colorShopButtonTextLight:I
 
     invoke-static {v1, v2}, Lcom/iMe/ui/shop/util/TextViewExtKt;->setTextColor(Landroid/widget/TextView;I)V
 
     .line 62
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

@@ -20,7 +20,7 @@ public class TextBlockCell extends FrameLayout {
         super(context);
         TextView textView = new TextView(context);
         this.textView = textView;
-        textView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         this.textView.setTextSize(1, 16.0f);
         this.textView.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         addView(this.textView, LayoutHelper.createFrame(-1, -2, (LocaleController.isRTL ? 5 : 3) | 48, 23, 10, 23, 10));
@@ -44,7 +44,7 @@ public class TextBlockCell extends FrameLayout {
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         if (this.needDivider) {
-            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m50dp(19), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m50dp(19) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m54dp(19), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m54dp(19) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
         }
     }
 }

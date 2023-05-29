@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/Components/ShareAlert$5;
-.super Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;
+.super Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;
 .source "ShareAlert.java"
 
 
@@ -22,36 +22,23 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ShareAlert;)V
     .locals 0
 
-    .line 981
+    .line 1133
     iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$5;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
-    invoke-direct {p0}, Landroidx/recyclerview/widget/GridLayoutManager$SpanSizeLookup;-><init>()V
+    invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getSpanSize(I)I
+.method public onItemClick(I)V
     .locals 0
 
-    if-nez p1, :cond_0
-
-    .line 985
+    .line 1136
     iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$5;->this$0:Lorg/telegram/ui/Components/ShareAlert;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert;->access$8400(Lorg/telegram/ui/Components/ShareAlert;)Landroidx/recyclerview/widget/GridLayoutManager;
+    invoke-virtual {p1}, Lorg/telegram/ui/Components/ShareAlert;->onBackPressed()V
 
-    move-result-object p1
-
-    invoke-virtual {p1}, Landroidx/recyclerview/widget/GridLayoutManager;->getSpanCount()I
-
-    move-result p1
-
-    return p1
-
-    :cond_0
-    const/4 p1, 0x1
-
-    return p1
+    return-void
 .end method

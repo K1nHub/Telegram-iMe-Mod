@@ -8,7 +8,7 @@ import com.google.mlkit.common.model.RemoteModel;
 import com.google.mlkit.common.sdkinternal.LazyInstanceMap;
 import com.google.mlkit.common.sdkinternal.SharedPrefManager;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class zzcz {
     private final zzcv zzc;
     private final RemoteModel zzd;
@@ -23,7 +23,7 @@ public final class zzcz {
     }
 
     /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-    /* loaded from: classes.dex */
+    /* loaded from: classes3.dex */
     public static class zza extends LazyInstanceMap<RemoteModel, zzcz> {
         private final zzcv zza;
         private final SharedPrefManager zzb;

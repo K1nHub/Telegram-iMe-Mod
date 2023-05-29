@@ -121,19 +121,19 @@
         }
     .end annotation
 
-    .line 313
+    .line 316
     sget-object v0, Lorg/telegram/messenger/LiteMode;->onPowerSaverAppliedListeners:Ljava/util/HashSet;
 
     if-nez v0, :cond_0
 
-    .line 314
+    .line 317
     new-instance v0, Ljava/util/HashSet;
 
     invoke-direct {v0}, Ljava/util/HashSet;-><init>()V
 
     sput-object v0, Lorg/telegram/messenger/LiteMode;->onPowerSaverAppliedListeners:Ljava/util/HashSet;
 
-    .line 316
+    .line 319
     :cond_0
     sget-object v0, Lorg/telegram/messenger/LiteMode;->onPowerSaverAppliedListeners:Ljava/util/HashSet;
 
@@ -723,9 +723,17 @@
     if-lez p0, :cond_1
 
     .line 307
-    invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->reloadWallpaper()V
+    invoke-static {}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->updateLiteValues()V
 
     :cond_1
+    if-lez p0, :cond_2
+
+    const/4 p0, 0x1
+
+    .line 310
+    invoke-static {p0}, Lorg/telegram/ui/ActionBar/Theme;->reloadWallpaper(Z)V
+
+    :cond_2
     return-void
 .end method
 
@@ -863,12 +871,12 @@
         }
     .end annotation
 
-    .line 320
+    .line 323
     sget-object v0, Lorg/telegram/messenger/LiteMode;->onPowerSaverAppliedListeners:Ljava/util/HashSet;
 
     if-eqz v0, :cond_0
 
-    .line 321
+    .line 324
     invoke-virtual {v0, p0}, Ljava/util/HashSet;->remove(Ljava/lang/Object;)Z
 
     :cond_0
@@ -1018,7 +1026,7 @@
     .line 164
     iget-object v3, v2, Lorg/telegram/tgnet/TLRPC$TL_jsonObjectValue;->key:Ljava/lang/String;
 
-    const-string v4, "settings_mask"
+    const-string/jumbo v4, "settings_mask"
 
     invoke-virtual {v4, v3}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 

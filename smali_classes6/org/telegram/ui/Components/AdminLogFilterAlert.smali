@@ -313,9 +313,9 @@
     .line 129
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "dialogBackground"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -389,9 +389,9 @@
     .line 217
     iget-object p4, p0, Lorg/telegram/ui/Components/AdminLogFilterAlert;->listView:Lorg/telegram/ui/Components/RecyclerListView;
 
-    const-string v1, "dialogScrollGlow"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogScrollGlow:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -499,9 +499,9 @@
     .line 347
     iget-object p1, p0, Lorg/telegram/ui/Components/AdminLogFilterAlert;->saveButton:Lorg/telegram/ui/ActionBar/BottomSheet$BottomSheetCell;
 
-    const-string p3, "dialogTextBlue2"
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlue2:I
 
-    invoke-static {p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p3
 

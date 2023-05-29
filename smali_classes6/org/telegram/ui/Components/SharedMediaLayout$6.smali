@@ -35,7 +35,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/SharedMediaLayout;Landroid/content/Context;)V
     .locals 0
 
-    .line 1589
+    .line 1590
     iput-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6;->val$context:Landroid/content/Context;
@@ -48,7 +48,7 @@
 .method private synthetic lambda$onClick$0(Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;Landroid/view/View;)V
     .locals 2
 
-    .line 1613
+    .line 1614
     iget-object p3, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {p3}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$2400(Lorg/telegram/ui/Components/SharedMediaLayout;)Z
@@ -59,7 +59,7 @@
 
     return-void
 
-    .line 1616
+    .line 1617
     :cond_0
     iget-object p3, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -73,7 +73,7 @@
 
     move-result p3
 
-    .line 1617
+    .line 1618
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-virtual {v0, p3, v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->getNextMediaColumnsCount(IZ)I
@@ -84,10 +84,10 @@
 
     const/4 v0, 0x0
 
-    .line 1618
+    .line 1619
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 1619
+    .line 1620
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
@@ -100,7 +100,7 @@
 
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1621
+    .line 1622
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -110,17 +110,17 @@
 
     if-eq p1, p3, :cond_3
 
-    .line 1622
+    .line 1623
     invoke-virtual {p2}, Landroid/widget/FrameLayout;->isEnabled()Z
 
     move-result p1
 
     if-nez p1, :cond_2
 
-    .line 1623
+    .line 1624
     invoke-virtual {p2, v1}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 1624
+    .line 1625
     invoke-virtual {p2}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
 
     move-result-object p1
@@ -133,11 +133,11 @@
 
     invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
 
-    .line 1626
+    .line 1627
     :cond_2
     invoke-static {p3}, Lorg/telegram/messenger/SharedConfig;->setMediaColumnsCount(I)V
 
-    .line 1627
+    .line 1628
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {p1, p3}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$2600(Lorg/telegram/ui/Components/SharedMediaLayout;I)V
@@ -151,21 +151,21 @@
 .method public onClick(Landroid/view/View;)V
     .locals 8
 
-    .line 1592
+    .line 1593
     new-instance p1, Lorg/telegram/ui/Cells/DividerCell;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6;->val$context:Landroid/content/Context;
 
     invoke-direct {p1, v0}, Lorg/telegram/ui/Cells/DividerCell;-><init>(Landroid/content/Context;)V
 
-    .line 1593
+    .line 1594
     new-instance v0, Lorg/telegram/ui/Components/SharedMediaLayout$6$1;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6;->val$context:Landroid/content/Context;
 
     invoke-direct {v0, p0, v1, p1}, Lorg/telegram/ui/Components/SharedMediaLayout$6$1;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout$6;Landroid/content/Context;Landroid/view/View;)V
 
-    .line 1608
+    .line 1609
     new-instance v1, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6;->val$context:Landroid/content/Context;
@@ -176,14 +176,14 @@
 
     invoke-direct {v1, v2, v3, v4}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZ)V
 
-    .line 1609
+    .line 1610
     new-instance v2, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     iget-object v5, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6;->val$context:Landroid/content/Context;
 
     invoke-direct {v2, v5, v4, v4}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZ)V
 
-    .line 1611
+    .line 1612
     sget v5, Lorg/telegram/messenger/R$string;->MediaZoomIn:I
 
     const-string v6, "MediaZoomIn"
@@ -196,17 +196,17 @@
 
     invoke-virtual {v1, v5, v6}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 1612
+    .line 1613
     new-instance v5, Lorg/telegram/ui/Components/SharedMediaLayout$6$$ExternalSyntheticLambda0;
 
     invoke-direct {v5, p0, v1, v2}, Lorg/telegram/ui/Components/SharedMediaLayout$6$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout$6;Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;)V
 
     invoke-virtual {v1, v5}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1630
+    .line 1631
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->addView(Landroid/view/View;)V
 
-    .line 1632
+    .line 1633
     sget v5, Lorg/telegram/messenger/R$string;->MediaZoomOut:I
 
     const-string v6, "MediaZoomOut"
@@ -219,14 +219,14 @@
 
     invoke-virtual {v2, v5, v6}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 1633
+    .line 1634
     new-instance v5, Lorg/telegram/ui/Components/SharedMediaLayout$6$2;
 
     invoke-direct {v5, p0, v2, v1}, Lorg/telegram/ui/Components/SharedMediaLayout$6$2;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout$6;Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;)V
 
     invoke-virtual {v2, v5}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1655
+    .line 1656
     iget-object v5, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v5}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$2500(Lorg/telegram/ui/Components/SharedMediaLayout;)I
@@ -239,15 +239,15 @@
 
     if-ne v5, v7, :cond_0
 
-    .line 1656
+    .line 1657
     invoke-virtual {v1, v4}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 1657
+    .line 1658
     invoke-virtual {v1, v6}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
     goto :goto_0
 
-    .line 1658
+    .line 1659
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -259,18 +259,18 @@
 
     if-ne v1, v5, :cond_1
 
-    .line 1659
+    .line 1660
     invoke-virtual {v2, v4}, Landroid/widget/FrameLayout;->setEnabled(Z)V
 
-    .line 1660
+    .line 1661
     invoke-virtual {v2, v6}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
-    .line 1663
+    .line 1664
     :cond_1
     :goto_0
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->addView(Landroid/view/View;)V
 
-    .line 1664
+    .line 1665
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$600(Lorg/telegram/ui/Components/SharedMediaLayout;)[Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaData;
@@ -351,7 +351,7 @@
     :goto_1
     move v1, v3
 
-    .line 1665
+    .line 1666
     :goto_2
     iget-object v2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
@@ -365,14 +365,14 @@
 
     if-nez v2, :cond_9
 
-    .line 1666
+    .line 1667
     new-instance v2, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     iget-object v5, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6;->val$context:Landroid/content/Context;
 
     invoke-direct {v2, v5, v4, v4}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZ)V
 
-    .line 1667
+    .line 1668
     sget v5, Lorg/telegram/messenger/R$string;->Calendar:I
 
     const-string v6, "Calendar"
@@ -385,10 +385,10 @@
 
     invoke-virtual {v2, v5, v6}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 1668
+    .line 1669
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->addView(Landroid/view/View;)V
 
-    .line 1669
+    .line 1670
     new-instance v5, Lorg/telegram/ui/Components/SharedMediaLayout$6$3;
 
     invoke-direct {v5, p0}, Lorg/telegram/ui/Components/SharedMediaLayout$6$3;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout$6;)V
@@ -397,24 +397,24 @@
 
     if-eqz v1, :cond_9
 
-    .line 1680
+    .line 1681
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->addView(Landroid/view/View;)V
 
-    .line 1681
+    .line 1682
     new-instance p1, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6;->val$context:Landroid/content/Context;
 
     invoke-direct {p1, v1, v3, v4, v4}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZZ)V
 
-    .line 1682
+    .line 1683
     new-instance v1, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;
 
     iget-object v2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6;->val$context:Landroid/content/Context;
 
     invoke-direct {v1, v2, v3, v4, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;-><init>(Landroid/content/Context;ZZZ)V
 
-    .line 1684
+    .line 1685
     sget v2, Lorg/telegram/messenger/R$string;->MediaShowPhotos:I
 
     const-string v5, "MediaShowPhotos"
@@ -425,7 +425,7 @@
 
     invoke-virtual {p1, v2, v4}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 1685
+    .line 1686
     iget-object v2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$600(Lorg/telegram/ui/Components/SharedMediaLayout;)[Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaData;
@@ -464,17 +464,17 @@
     :goto_4
     invoke-virtual {p1, v2}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 1686
+    .line 1687
     new-instance v2, Lorg/telegram/ui/Components/SharedMediaLayout$6$4;
 
     invoke-direct {v2, p0, v1, p1}, Lorg/telegram/ui/Components/SharedMediaLayout$6$4;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout$6;Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;)V
 
     invoke-virtual {p1, v2}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1704
+    .line 1705
     invoke-virtual {v0, p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->addView(Landroid/view/View;)V
 
-    .line 1707
+    .line 1708
     sget v2, Lorg/telegram/messenger/R$string;->MediaShowVideos:I
 
     const-string v5, "MediaShowVideos"
@@ -485,7 +485,7 @@
 
     invoke-virtual {v1, v2, v4}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setTextAndIcon(Ljava/lang/CharSequence;I)V
 
-    .line 1708
+    .line 1709
     iget-object v2, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 
     invoke-static {v2}, Lorg/telegram/ui/Components/SharedMediaLayout;->access$600(Lorg/telegram/ui/Components/SharedMediaLayout;)[Lorg/telegram/ui/Components/SharedMediaLayout$SharedMediaData;
@@ -519,17 +519,17 @@
     :goto_5
     invoke-virtual {v1, v3}, Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;->setChecked(Z)V
 
-    .line 1709
+    .line 1710
     new-instance v2, Lorg/telegram/ui/Components/SharedMediaLayout$6$5;
 
     invoke-direct {v2, p0, p1, v1}, Lorg/telegram/ui/Components/SharedMediaLayout$6$5;-><init>(Lorg/telegram/ui/Components/SharedMediaLayout$6;Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;Lorg/telegram/ui/ActionBar/ActionBarMenuSubItem;)V
 
     invoke-virtual {v1, v2}, Landroid/widget/FrameLayout;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 1727
+    .line 1728
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->addView(Landroid/view/View;)V
 
-    .line 1731
+    .line 1732
     :cond_9
     iget-object p1, p0, Lorg/telegram/ui/Components/SharedMediaLayout$6;->this$0:Lorg/telegram/ui/Components/SharedMediaLayout;
 

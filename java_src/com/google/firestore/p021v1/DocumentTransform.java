@@ -232,7 +232,7 @@ public final class DocumentTransform extends GeneratedMessageLite<DocumentTransf
         /* renamed from: com.google.firestore.v1.DocumentTransform$FieldTransform$Builder */
         /* loaded from: classes3.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<FieldTransform, Builder> implements MessageLiteOrBuilder {
-            /* synthetic */ Builder(C10521 c10521) {
+            /* synthetic */ Builder(C10571 c10571) {
                 this();
             }
 
@@ -273,7 +273,7 @@ public final class DocumentTransform extends GeneratedMessageLite<DocumentTransf
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-            switch (C10521.f205xa1df5c61[methodToInvoke.ordinal()]) {
+            switch (C10571.f208xa1df5c61[methodToInvoke.ordinal()]) {
                 case 1:
                     return new FieldTransform();
                 case 2:
@@ -312,40 +312,40 @@ public final class DocumentTransform extends GeneratedMessageLite<DocumentTransf
 
     /* renamed from: com.google.firestore.v1.DocumentTransform$1 */
     /* loaded from: classes3.dex */
-    static /* synthetic */ class C10521 {
+    static /* synthetic */ class C10571 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
-        static final /* synthetic */ int[] f205xa1df5c61;
+        static final /* synthetic */ int[] f208xa1df5c61;
 
         static {
             int[] iArr = new int[GeneratedMessageLite.MethodToInvoke.values().length];
-            f205xa1df5c61 = iArr;
+            f208xa1df5c61 = iArr;
             try {
                 iArr[GeneratedMessageLite.MethodToInvoke.NEW_MUTABLE_INSTANCE.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f205xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
+                f208xa1df5c61[GeneratedMessageLite.MethodToInvoke.NEW_BUILDER.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f205xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
+                f208xa1df5c61[GeneratedMessageLite.MethodToInvoke.BUILD_MESSAGE_INFO.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f205xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
+                f208xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_DEFAULT_INSTANCE.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f205xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
+                f208xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_PARSER.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f205xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
+                f208xa1df5c61[GeneratedMessageLite.MethodToInvoke.GET_MEMOIZED_IS_INITIALIZED.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f205xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
+                f208xa1df5c61[GeneratedMessageLite.MethodToInvoke.SET_MEMOIZED_IS_INITIALIZED.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
@@ -358,7 +358,7 @@ public final class DocumentTransform extends GeneratedMessageLite<DocumentTransf
     /* renamed from: com.google.firestore.v1.DocumentTransform$Builder */
     /* loaded from: classes3.dex */
     public static final class Builder extends GeneratedMessageLite.Builder<DocumentTransform, Builder> implements MessageLiteOrBuilder {
-        /* synthetic */ Builder(C10521 c10521) {
+        /* synthetic */ Builder(C10571 c10571) {
             this();
         }
 
@@ -369,7 +369,7 @@ public final class DocumentTransform extends GeneratedMessageLite<DocumentTransf
 
     @Override // com.google.protobuf.GeneratedMessageLite
     protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke methodToInvoke, Object obj, Object obj2) {
-        switch (C10521.f205xa1df5c61[methodToInvoke.ordinal()]) {
+        switch (C10571.f208xa1df5c61[methodToInvoke.ordinal()]) {
             case 1:
                 return new DocumentTransform();
             case 2:

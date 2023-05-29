@@ -14,11 +14,11 @@ import org.bouncycastle.util.p042io.Streams;
 public class LMSPrivateKeyParameters extends LMSKeyParameters {
 
     /* renamed from: T1 */
-    private static CacheKey f1310T1;
+    private static CacheKey f1315T1;
     private static CacheKey[] internedKeys;
 
     /* renamed from: I */
-    private final byte[] f1311I;
+    private final byte[] f1316I;
     private final byte[] masterSecret;
     private final int maxCacheR;
     private final int maxQ;
@@ -27,7 +27,7 @@ public class LMSPrivateKeyParameters extends LMSKeyParameters {
     private LMSPublicKeyParameters publicKey;
 
     /* renamed from: q */
-    private int f1312q;
+    private int f1317q;
     private final Map<CacheKey, byte[]> tCache;
     private final Digest tDigest;
 
@@ -51,7 +51,7 @@ public class LMSPrivateKeyParameters extends LMSKeyParameters {
 
     static {
         CacheKey cacheKey = new CacheKey(1);
-        f1310T1 = cacheKey;
+        f1315T1 = cacheKey;
         CacheKey[] cacheKeyArr = new CacheKey[TsExtractor.TS_STREAM_TYPE_AC3];
         internedKeys = cacheKeyArr;
         cacheKeyArr[1] = cacheKey;
@@ -70,8 +70,8 @@ public class LMSPrivateKeyParameters extends LMSKeyParameters {
         super(true);
         this.parameters = lMSigParameters;
         this.otsParameters = lMOtsParameters;
-        this.f1312q = i;
-        this.f1311I = Arrays.clone(bArr);
+        this.f1317q = i;
+        this.f1316I = Arrays.clone(bArr);
         this.maxQ = i2;
         this.masterSecret = Arrays.clone(bArr2);
         this.maxCacheR = 1 << (lMSigParameters.getH() + 1);
@@ -183,7 +183,7 @@ public class LMSPrivateKeyParameters extends LMSKeyParameters {
             return false;
         }
         LMSPrivateKeyParameters lMSPrivateKeyParameters = (LMSPrivateKeyParameters) obj;
-        if (this.f1312q == lMSPrivateKeyParameters.f1312q && this.maxQ == lMSPrivateKeyParameters.maxQ && Arrays.areEqual(this.f1311I, lMSPrivateKeyParameters.f1311I)) {
+        if (this.f1317q == lMSPrivateKeyParameters.f1317q && this.maxQ == lMSPrivateKeyParameters.maxQ && Arrays.areEqual(this.f1316I, lMSPrivateKeyParameters.f1316I)) {
             LMSigParameters lMSigParameters = this.parameters;
             if (lMSigParameters == null ? lMSPrivateKeyParameters.parameters == null : lMSigParameters.equals(lMSPrivateKeyParameters.parameters)) {
                 LMOtsParameters lMOtsParameters = this.otsParameters;
@@ -214,11 +214,11 @@ public class LMSPrivateKeyParameters extends LMSKeyParameters {
 
     @Override // org.bouncycastle.pqc.crypto.lms.LMSKeyParameters, org.bouncycastle.util.Encodable
     public byte[] getEncoded() throws IOException {
-        return Composer.compose().u32str(0).u32str(this.parameters.getType()).u32str(this.otsParameters.getType()).bytes(this.f1311I).u32str(this.f1312q).u32str(this.maxQ).u32str(this.masterSecret.length).bytes(this.masterSecret).build();
+        return Composer.compose().u32str(0).u32str(this.parameters.getType()).u32str(this.otsParameters.getType()).bytes(this.f1316I).u32str(this.f1317q).u32str(this.maxQ).u32str(this.masterSecret.length).bytes(this.masterSecret).build();
     }
 
     public byte[] getI() {
-        return Arrays.clone(this.f1311I);
+        return Arrays.clone(this.f1316I);
     }
 
     public byte[] getMasterSecret() {
@@ -233,7 +233,7 @@ public class LMSPrivateKeyParameters extends LMSKeyParameters {
         LMSPublicKeyParameters lMSPublicKeyParameters;
         synchronized (this) {
             if (this.publicKey == null) {
-                this.publicKey = new LMSPublicKeyParameters(this.parameters, this.otsParameters, findT(f1310T1), this.f1311I);
+                this.publicKey = new LMSPublicKeyParameters(this.parameters, this.otsParameters, findT(f1315T1), this.f1316I);
             }
             lMSPublicKeyParameters = this.publicKey;
         }
@@ -245,7 +245,7 @@ public class LMSPrivateKeyParameters extends LMSKeyParameters {
     }
 
     public int hashCode() {
-        int hashCode = ((this.f1312q * 31) + Arrays.hashCode(this.f1311I)) * 31;
+        int hashCode = ((this.f1317q * 31) + Arrays.hashCode(this.f1316I)) * 31;
         LMSigParameters lMSigParameters = this.parameters;
         int hashCode2 = (hashCode + (lMSigParameters != null ? lMSigParameters.hashCode() : 0)) * 31;
         LMOtsParameters lMOtsParameters = this.otsParameters;

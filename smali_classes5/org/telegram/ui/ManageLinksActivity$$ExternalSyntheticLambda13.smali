@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/iMe/fork/utils/Callbacks$Callback2;
+.implements Lcom/iMe/fork/utils/Callbacks$Callback;
 
 
 # instance fields
@@ -22,16 +22,12 @@
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;Ljava/lang/Object;)V
+.method public final invoke()V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$$ExternalSyntheticLambda13;->f$0:Lorg/telegram/ui/ManageLinksActivity;
 
-    check-cast p1, Lcom/iMe/model/twitter/TwitterUserItem;
-
-    check-cast p2, Ljava/lang/String;
-
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ManageLinksActivity;->$r8$lambda$PJ1cKyJ2vbpLP1Axbm1hGAq9r5Q(Lorg/telegram/ui/ManageLinksActivity;Lcom/iMe/model/twitter/TwitterUserItem;Ljava/lang/String;)V
+    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     return-void
 .end method

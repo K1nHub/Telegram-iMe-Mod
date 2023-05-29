@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$18;)V
     .locals 0
 
-    .line 2129
+    .line 2143
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$18$1;->this$1:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$18;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -50,7 +50,7 @@
 
     const/16 p1, 0x7e
 
-    .line 2132
+    .line 2146
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1

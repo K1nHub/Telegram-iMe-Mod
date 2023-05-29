@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 213
+    .line 214
     check-cast p1, Lorg/telegram/ui/StatisticActivity$ChartViewData;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter$setupAmountListener$2;->invoke(Lorg/telegram/ui/StatisticActivity$ChartViewData;)V
@@ -62,12 +62,12 @@
 .method public final invoke(Lorg/telegram/ui/StatisticActivity$ChartViewData;)V
     .locals 1
 
-    .line 214
+    .line 215
     iget-object v0, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter$setupAmountListener$2;->this$0:Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;
 
     invoke-static {v0, p1}, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;->access$setChartViewData$p(Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;Lorg/telegram/ui/StatisticActivity$ChartViewData;)V
 
-    .line 215
+    .line 216
     iget-object p1, p0, Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter$setupAmountListener$2;->this$0:Lcom/iMe/ui/wallet/staking/calculator/StakingCalculatorPresenter;
 
     invoke-virtual {p1}, Lmoxy/MvpPresenter;->getViewState()Lmoxy/MvpView;

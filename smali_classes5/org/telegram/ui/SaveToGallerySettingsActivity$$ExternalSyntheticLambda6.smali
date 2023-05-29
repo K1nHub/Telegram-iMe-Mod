@@ -22,8 +22,8 @@
 
 
 # virtual methods
-.method public final didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
-    .locals 6
+.method public final didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
+    .locals 7
 
     iget-object v0, p0, Lorg/telegram/ui/SaveToGallerySettingsActivity$$ExternalSyntheticLambda6;->f$0:Lorg/telegram/ui/SaveToGallerySettingsActivity;
 
@@ -37,7 +37,9 @@
 
     move-object v5, p5
 
-    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/SaveToGallerySettingsActivity;->$r8$lambda$1sqtMmQEKo8Cz4wu7qUz6grd4bI(Lorg/telegram/ui/SaveToGallerySettingsActivity;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
+    move-object v6, p6
+
+    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/SaveToGallerySettingsActivity;->$r8$lambda$r3vHCg09XfzwcfGulKXJpY1x6ds(Lorg/telegram/ui/SaveToGallerySettingsActivity;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
 
     move-result p1
 

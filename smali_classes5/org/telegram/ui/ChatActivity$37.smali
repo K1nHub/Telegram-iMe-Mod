@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/ChatActivity$37;
-.super Lorg/telegram/ui/Components/BlurredFrameLayout;
+.super Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;
 .source "ChatActivity.java"
 
 
@@ -17,110 +17,69 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/ChatActivity;
 
+.field final synthetic val$messagesSearchLayoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
+
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)V
+.method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroidx/recyclerview/widget/LinearLayoutManager;)V
     .locals 0
 
-    .line 8465
+    .line 8386
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$37;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/BlurredFrameLayout;-><init>(Landroid/content/Context;Lorg/telegram/ui/Components/SizeNotifierFrameLayout;)V
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$37;->val$messagesSearchLayoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
+
+    invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onDraw(Landroid/graphics/Canvas;)V
-    .locals 10
-
-    .line 8485
-    sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_composeShadowDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v0}, Landroid/graphics/drawable/Drawable;->getIntrinsicHeight()I
-
-    move-result v0
-
-    .line 8486
-    sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->chat_composeShadowDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
-
-    move-result v2
-
-    const/4 v3, 0x0
-
-    invoke-virtual {v1, v3, v3, v2, v0}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
-
-    .line 8487
-    sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->chat_composeShadowDrawable:Landroid/graphics/drawable/Drawable;
-
-    invoke-virtual {v1, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
-
-    .line 8488
-    sget-object v7, Lorg/telegram/messenger/AndroidUtilities;->rectTmp2:Landroid/graphics/Rect;
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
-
-    move-result v1
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
-
-    move-result v2
-
-    invoke-virtual {v7, v3, v0, v1, v2}, Landroid/graphics/Rect;->set(IIII)V
-
-    .line 8489
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$37;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    iget-object v4, v0, Lorg/telegram/ui/ChatActivity;->contentView:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getY()F
-
-    move-result v6
-
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$37;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    const-string v1, "paintChatComposeBackground"
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/ChatActivity;->access$26400(Lorg/telegram/ui/ChatActivity;Ljava/lang/String;)Landroid/graphics/Paint;
-
-    move-result-object v8
-
-    const/4 v9, 0x0
-
-    move-object v5, p1
-
-    invoke-virtual/range {v4 .. v9}, Lorg/telegram/ui/Components/SizeNotifierFrameLayout;->drawBlurRect(Landroid/graphics/Canvas;FLandroid/graphics/Rect;Landroid/graphics/Paint;Z)V
-
-    return-void
-.end method
-
-.method public setVisibility(I)V
+.method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 8473
-    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->setVisibility(I)V
+    .line 8389
+    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$37;->val$messagesSearchLayoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
-    .line 8474
-    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$37;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$26200(Lorg/telegram/ui/ChatActivity;)Z
+    invoke-virtual {p1}, Landroidx/recyclerview/widget/LinearLayoutManager;->findLastVisibleItemPosition()I
 
     move-result p1
 
-    if-eqz p1, :cond_0
+    const/4 p2, -0x1
 
-    .line 8475
+    if-ne p1, p2, :cond_0
+
+    const/4 p2, 0x0
+
+    goto :goto_0
+
+    :cond_0
+    move p2, p1
+
+    :goto_0
+    if-lez p2, :cond_1
+
+    .line 8391
+    iget-object p2, p0, Lorg/telegram/ui/ChatActivity$37;->val$messagesSearchLayoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
+
+    invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->getItemCount()I
+
+    move-result p2
+
+    add-int/lit8 p2, p2, -0x5
+
+    if-le p1, p2, :cond_1
+
+    .line 8392
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$37;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->access$26300(Lorg/telegram/ui/ChatActivity;)Landroid/view/View;
+    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMediaDataController()Lorg/telegram/messenger/MediaDataController;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Landroid/view/View;->requestLayout()V
+    invoke-virtual {p1}, Lorg/telegram/messenger/MediaDataController;->loadMoreSearchMessages()V
 
-    :cond_0
+    :cond_1
     return-void
 .end method

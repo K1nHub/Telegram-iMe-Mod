@@ -28,6 +28,7 @@ import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import com.iMe.storage.domain.utils.p030rx.event.DomainRxEvents;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p033rx.SchedulersExtKt;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
 import io.reactivex.disposables.Disposables;
@@ -43,7 +44,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 /* compiled from: StakingProgrammesPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.staking.programmes.StakingProgrammesPresenter */
@@ -154,9 +155,9 @@ public final class StakingProgrammesPresenter extends BasePresenter<StakingProgr
             ((StakingProgrammesView) getViewState()).onLoadMoreComplete();
             return;
         }
-        Observable<Result<StakingProgrammes>> observeOn = getProgrammesObservable(l).observeOn(this.schedulersProvider.mo693ui());
+        Observable<Result<StakingProgrammes>> observeOn = getProgrammesObservable(l).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "getProgrammesObservable(…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2310x899d4c1(z2, this, z, z3)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2311x899d4c2(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2349x899d4c1(z2, this, z, z3)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2350x899d4c2(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         this.stakingProgrammesLoadingDisposable = subscribe;
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
@@ -304,7 +305,7 @@ public final class StakingProgrammesPresenter extends BasePresenter<StakingProgr
         }
         if (this.items.isEmpty()) {
             List<BaseNode> list2 = this.items;
-            listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull(new HeaderItemWithRightButton(this.resourceManager.getString(C3242R.string.staking_programmes_count, Integer.valueOf(i)), C3242R.C3244drawable.fork_ic_sort_28), getFiltersListItem());
+            listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull(new HeaderItemWithRightButton(this.resourceManager.getString(C3290R.string.staking_programmes_count, Integer.valueOf(i)), C3290R.C3292drawable.fork_ic_sort_28), getFiltersListItem());
             list2.addAll(listOfNotNull);
         }
         this.stakingProgrammes.addAll(list);
@@ -339,15 +340,13 @@ public final class StakingProgrammesPresenter extends BasePresenter<StakingProgr
     public final void renderGlobalStateItemsList(GlobalState globalState) {
         List listOfNotNull;
         List<BaseNode> mutableList;
-        listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull(new HeaderItemWithRightButton(this.resourceManager.getString(C3242R.string.staking_list_header), C3242R.C3244drawable.fork_ic_sort_28), getFiltersListItem(), new GlobalStateItem(globalState));
+        listOfNotNull = CollectionsKt__CollectionsKt.listOfNotNull(new HeaderItemWithRightButton(this.resourceManager.getString(C3290R.string.staking_list_header), C3290R.C3292drawable.fork_ic_sort_28), getFiltersListItem(), new GlobalStateItem(globalState));
         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) listOfNotNull);
         ((StakingProgrammesView) getViewState()).renderItems(mutableList);
     }
 
     private final void loadAccountLevelAndOpenStaking(StakingDetailsItem stakingDetailsItem) {
-        Observable observeOn = AccountLevelInteractor.getAccountLevelRemote$default(this.accountLevelInteractor, 0L, 1, null).observeOn(this.schedulersProvider.mo693ui());
-        Intrinsics.checkNotNullExpressionValue(observeOn, "accountLevelInteractor\n …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2308x98688320(this, stakingDetailsItem)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2309x98688321((BaseView) getViewState())));
+        Disposable subscribe = SchedulersExtKt.scheduleIO(AccountLevelInteractor.getAccountLevelRemote$default(this.accountLevelInteractor, 0L, 1, null)).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2347x98688320(this, stakingDetailsItem)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2348x98688321((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -363,9 +362,9 @@ public final class StakingProgrammesPresenter extends BasePresenter<StakingProgr
 
     private final void listenEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
-        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.StakingProgrammesRefresh.class).observeOn(rxEventBus.getSchedulersProvider().mo693ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.StakingProgrammesRefresh.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2306xee2d436d(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2307xee2d436e(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2345xee2d436d(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2346xee2d436e(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

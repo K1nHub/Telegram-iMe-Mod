@@ -37,16 +37,16 @@
 
     if-eqz p2, :cond_0
 
-    const-string p2, "dialogTextBlack"
+    .line 43
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
     goto :goto_0
 
     :cond_0
-    const-string p2, "windowBackgroundWhiteBlackText"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    .line 43
     :goto_0
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -217,14 +217,14 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Cells/CheckBoxUserCell;->checkBox:Lorg/telegram/ui/Components/Switch;
 
-    const-string p1, "switchTrack"
-
-    const-string v1, "switchTrackChecked"
-
-    const-string v4, "windowBackgroundWhite"
-
     .line 55
-    invoke-virtual {p2, p1, v1, v4, v4}, Lorg/telegram/ui/Components/Switch;->setColors(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrack:I
+
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackChecked:I
+
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-virtual {p2, p1, v1, v4, v4}, Lorg/telegram/ui/Components/Switch;->setColors(IIII)V
 
     .line 56
     iget-object p1, p0, Lorg/telegram/ui/Cells/CheckBoxUserCell;->checkBox:Lorg/telegram/ui/Components/Switch;

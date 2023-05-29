@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/Components/AlertsCreator$3;
-.super Lorg/telegram/ui/Components/URLSpanNoUnderline;
+.super Landroid/text/style/URLSpan;
 .source "AlertsCreator.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/Components/AlertsCreator;->createSupportAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)Lorg/telegram/ui/ActionBar/AlertDialog;
+    value = Lorg/telegram/ui/Components/AlertsCreator;->showOpenUrlAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;ZZZZLorg/telegram/messenger/browser/Browser$Progress;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Z)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -15,17 +15,17 @@
 
 
 # instance fields
-.field final synthetic val$fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
+.field final synthetic val$open:Ljava/lang/Runnable;
 
 
 # direct methods
-.method constructor <init>(Ljava/lang/String;Lorg/telegram/ui/ActionBar/BaseFragment;)V
+.method constructor <init>(Ljava/lang/String;Ljava/lang/Runnable;)V
     .locals 0
 
-    .line 1623
-    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$3;->val$fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
+    .line 1582
+    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$3;->val$open:Ljava/lang/Runnable;
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/URLSpanNoUnderline;-><init>(Ljava/lang/String;)V
+    invoke-direct {p0, p1}, Landroid/text/style/URLSpan;-><init>(Ljava/lang/String;)V
 
     return-void
 .end method
@@ -33,15 +33,12 @@
 
 # virtual methods
 .method public onClick(Landroid/view/View;)V
-    .locals 1
+    .locals 0
 
-    .line 1626
-    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$3;->val$fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
+    .line 1585
+    iget-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$3;->val$open:Ljava/lang/Runnable;
 
-    invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->dismissCurrentDialog()V
-
-    .line 1627
-    invoke-super {p0, p1}, Lorg/telegram/ui/Components/URLSpanNoUnderline;->onClick(Landroid/view/View;)V
+    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
 
     return-void
 .end method

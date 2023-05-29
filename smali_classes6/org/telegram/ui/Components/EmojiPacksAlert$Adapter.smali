@@ -563,9 +563,9 @@
     .line 1236
     iget-object p2, p0, Lorg/telegram/ui/Components/EmojiPacksAlert$Adapter;->this$0:Lorg/telegram/ui/Components/EmojiPacksAlert;
 
-    const-string v0, "chat_emojiPanelTrendingDescription"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelTrendingDescription:I
 
-    invoke-static {p2, v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4200(Lorg/telegram/ui/Components/EmojiPacksAlert;Ljava/lang/String;)I
+    invoke-static {p2, v0}, Lorg/telegram/ui/Components/EmojiPacksAlert;->access$4200(Lorg/telegram/ui/Components/EmojiPacksAlert;I)I
 
     move-result p2
 

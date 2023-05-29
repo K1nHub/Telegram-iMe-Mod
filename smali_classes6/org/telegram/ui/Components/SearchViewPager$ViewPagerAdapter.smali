@@ -38,19 +38,19 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/SearchViewPager;)V
     .locals 0
 
-    .line 971
+    .line 970
     iput-object p1, p0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/ViewPagerFixed$Adapter;-><init>()V
 
-    .line 965
+    .line 964
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;->items:Ljava/util/ArrayList;
 
-    .line 972
+    .line 971
     invoke-virtual {p0}, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;->updateItems()V
 
     return-void
@@ -61,7 +61,7 @@
 .method public bindView(Landroid/view/View;II)V
     .locals 2
 
-    .line 1059
+    .line 1058
     iget-object p3, p0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
     iget-object v0, p3, Lorg/telegram/ui/Components/SearchViewPager;->lastSearchString:Ljava/lang/String;
@@ -80,7 +80,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 1019
+    .line 1018
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/SearchViewPager;->searchContainer:Landroid/widget/FrameLayout;
@@ -92,7 +92,7 @@
 
     if-ne p1, v0, :cond_1
 
-    .line 1021
+    .line 1020
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
     new-instance v0, Lorg/telegram/ui/Components/SearchDownloadsContainer;
@@ -107,7 +107,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/SearchViewPager;->access$702(Lorg/telegram/ui/Components/SearchViewPager;Lorg/telegram/ui/Components/SearchDownloadsContainer;)Lorg/telegram/ui/Components/SearchDownloadsContainer;
 
-    .line 1022
+    .line 1021
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/SearchViewPager;->access$700(Lorg/telegram/ui/Components/SearchViewPager;)Lorg/telegram/ui/Components/SearchDownloadsContainer;
@@ -122,7 +122,7 @@
 
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView;->addOnScrollListener(Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;)V
 
-    .line 1029
+    .line 1028
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/SearchViewPager;->access$700(Lorg/telegram/ui/Components/SearchViewPager;)Lorg/telegram/ui/Components/SearchDownloadsContainer;
@@ -133,7 +133,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/SearchDownloadsContainer;->setUiCallback(Lorg/telegram/ui/FilteredSearchView$UiCallback;)V
 
-    .line 1030
+    .line 1029
     iget-object p1, p0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/SearchViewPager;->access$700(Lorg/telegram/ui/Components/SearchViewPager;)Lorg/telegram/ui/Components/SearchDownloadsContainer;
@@ -142,7 +142,7 @@
 
     return-object p1
 
-    .line 1032
+    .line 1031
     :cond_1
     new-instance p1, Lorg/telegram/ui/FilteredSearchView;
 
@@ -152,19 +152,19 @@
 
     invoke-direct {p1, v0}, Lorg/telegram/ui/FilteredSearchView;-><init>(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
-    .line 1033
+    .line 1032
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/SearchViewPager;->chatPreviewDelegate:Lorg/telegram/ui/Components/SearchViewPager$ChatPreviewDelegate;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/FilteredSearchView;->setChatPreviewDelegate(Lorg/telegram/ui/Components/SearchViewPager$ChatPreviewDelegate;)V
 
-    .line 1034
+    .line 1033
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/FilteredSearchView;->setUiCallback(Lorg/telegram/ui/FilteredSearchView$UiCallback;)V
 
-    .line 1035
+    .line 1034
     iget-object v0, p1, Lorg/telegram/ui/FilteredSearchView;->recyclerListView:Lorg/telegram/ui/Components/RecyclerListView;
 
     new-instance v1, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter$2;
@@ -179,7 +179,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 1013
+    .line 1012
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -192,7 +192,7 @@
 .method public getItemTitle(I)Ljava/lang/String;
     .locals 2
 
-    .line 1002
+    .line 1001
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -207,7 +207,7 @@
 
     if-nez v0, :cond_0
 
-    .line 1003
+    .line 1002
     sget p1, Lorg/telegram/messenger/R$string;->SearchAllChatsShort:I
 
     const-string v0, "SearchAllChatsShort"
@@ -218,7 +218,7 @@
 
     return-object p1
 
-    .line 1004
+    .line 1003
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;->items:Ljava/util/ArrayList;
 
@@ -236,7 +236,7 @@
 
     if-ne v0, v1, :cond_1
 
-    .line 1005
+    .line 1004
     sget p1, Lorg/telegram/messenger/R$string;->DownloadsTabs:I
 
     const-string v0, "DownloadsTabs"
@@ -247,7 +247,7 @@
 
     return-object p1
 
-    .line 1007
+    .line 1006
     :cond_1
     sget-object v0, Lorg/telegram/ui/Adapters/FiltersView;->filters:[Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;
 
@@ -263,7 +263,9 @@
 
     aget-object p1, v0, p1
 
-    iget-object p1, p1, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;->title:Ljava/lang/String;
+    invoke-virtual {p1}, Lorg/telegram/ui/Adapters/FiltersView$MediaFilterData;->getTitle()Ljava/lang/String;
+
+    move-result-object p1
 
     return-object p1
 .end method
@@ -271,7 +273,7 @@
 .method public getItemViewType(I)I
     .locals 2
 
-    .line 1048
+    .line 1047
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -290,7 +292,7 @@
 
     return v1
 
-    .line 1051
+    .line 1050
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;->items:Ljava/util/ArrayList;
 
@@ -310,7 +312,7 @@
 
     return p1
 
-    .line 1054
+    .line 1053
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;->items:Ljava/util/ArrayList;
 
@@ -332,12 +334,12 @@
 .method public updateItems()V
     .locals 5
 
-    .line 976
+    .line 975
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->clear()V
 
-    .line 977
+    .line 976
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;->items:Ljava/util/ArrayList;
 
     new-instance v1, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter$Item;
@@ -350,7 +352,7 @@
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 978
+    .line 977
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/SearchViewPager;->access$600(Lorg/telegram/ui/Components/SearchViewPager;)Z
@@ -359,22 +361,22 @@
 
     if-nez v0, :cond_1
 
-    .line 979
+    .line 978
     new-instance v0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter$Item;
 
     const/4 v1, 0x2
 
     invoke-direct {v0, p0, v1, v3}, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter$Item;-><init>(Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;ILorg/telegram/ui/Components/SearchViewPager$1;)V
 
-    .line 980
+    .line 979
     iput v2, v0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter$Item;->filterIndex:I
 
-    .line 981
+    .line 980
     iget-object v2, p0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 982
+    .line 981
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;->this$0:Lorg/telegram/ui/Components/SearchViewPager;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/SearchViewPager;->includeDownloads()Z
@@ -385,7 +387,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 983
+    .line 982
     iget-object v0, p0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;->items:Ljava/util/ArrayList;
 
     new-instance v4, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter$Item;
@@ -394,59 +396,59 @@
 
     invoke-virtual {v0, v4}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 985
+    .line 984
     :cond_0
     new-instance v0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter$Item;
 
     invoke-direct {v0, p0, v1, v3}, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter$Item;-><init>(Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;ILorg/telegram/ui/Components/SearchViewPager$1;)V
 
-    .line 986
+    .line 985
     iput v2, v0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter$Item;->filterIndex:I
 
-    .line 987
+    .line 986
     iget-object v2, p0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 988
+    .line 987
     new-instance v0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter$Item;
 
     invoke-direct {v0, p0, v1, v3}, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter$Item;-><init>(Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;ILorg/telegram/ui/Components/SearchViewPager$1;)V
 
-    .line 989
+    .line 988
     iput v1, v0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter$Item;->filterIndex:I
 
-    .line 990
+    .line 989
     iget-object v2, p0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 991
+    .line 990
     new-instance v0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter$Item;
 
     invoke-direct {v0, p0, v1, v3}, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter$Item;-><init>(Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;ILorg/telegram/ui/Components/SearchViewPager$1;)V
 
     const/4 v2, 0x3
 
-    .line 992
+    .line 991
     iput v2, v0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter$Item;->filterIndex:I
 
-    .line 993
+    .line 992
     iget-object v2, p0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 994
+    .line 993
     new-instance v0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter$Item;
 
     invoke-direct {v0, p0, v1, v3}, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter$Item;-><init>(Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;ILorg/telegram/ui/Components/SearchViewPager$1;)V
 
     const/4 v1, 0x4
 
-    .line 995
+    .line 994
     iput v1, v0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter$Item;->filterIndex:I
 
-    .line 996
+    .line 995
     iget-object v1, p0, Lorg/telegram/ui/Components/SearchViewPager$ViewPagerAdapter;->items:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z

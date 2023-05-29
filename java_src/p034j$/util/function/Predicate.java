@@ -7,7 +7,7 @@ public interface Predicate<T> {
     /* loaded from: classes2.dex */
     public final /* synthetic */ class CC {
         public static Predicate $default$negate(Predicate predicate) {
-            return new C2650a(predicate);
+            return new C2689a(predicate);
         }
     }
 
@@ -16,7 +16,7 @@ public interface Predicate<T> {
     Predicate<T> negate();
 
     /* renamed from: or */
-    Predicate<T> mo21or(Predicate<? super T> predicate);
+    Predicate<T> mo23or(Predicate<? super T> predicate);
 
     boolean test(T t);
 }

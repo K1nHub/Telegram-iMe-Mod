@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.source.dash.manifest;
 
 import android.net.Uri;
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.exoplayer2.offline.FilterableManifest;
 import com.google.android.exoplayer2.offline.StreamKey;
 import com.google.android.exoplayer2.util.Util;
@@ -57,7 +57,7 @@ public class DashManifest implements FilterableManifest<DashManifest> {
     public final long getPeriodDurationMs(int i) {
         if (i == this.periods.size() - 1) {
             long j = this.durationMs;
-            return j == C0470C.TIME_UNSET ? C0470C.TIME_UNSET : j - this.periods.get(i).startMs;
+            return j == C0475C.TIME_UNSET ? C0475C.TIME_UNSET : j - this.periods.get(i).startMs;
         }
         return this.periods.get(i + 1).startMs - this.periods.get(i).startMs;
     }
@@ -78,23 +78,23 @@ public class DashManifest implements FilterableManifest<DashManifest> {
         int i = 0;
         while (true) {
             int periodCount = getPeriodCount();
-            j = C0470C.TIME_UNSET;
+            j = C0475C.TIME_UNSET;
             if (i >= periodCount) {
                 break;
             }
             if (((StreamKey) linkedList.peek()).periodIndex != i) {
                 long periodDurationMs = getPeriodDurationMs(i);
-                if (periodDurationMs != C0470C.TIME_UNSET) {
+                if (periodDurationMs != C0475C.TIME_UNSET) {
                     j2 += periodDurationMs;
                 }
             } else {
                 Period period = getPeriod(i);
-                arrayList.add(new Period(period.f129id, period.startMs - j2, copyAdaptationSets(period.adaptationSets, linkedList), period.eventStreams));
+                arrayList.add(new Period(period.f132id, period.startMs - j2, copyAdaptationSets(period.adaptationSets, linkedList), period.eventStreams));
             }
             i++;
         }
         long j3 = this.durationMs;
-        if (j3 != C0470C.TIME_UNSET) {
+        if (j3 != C0475C.TIME_UNSET) {
             j = j3 - j2;
         }
         return new DashManifest(this.availabilityStartTimeMs, j, this.minBufferTimeMs, this.dynamic, this.minUpdatePeriodMs, this.timeShiftBufferDepthMs, this.suggestedPresentationDelayMs, this.publishTimeMs, this.programInformation, this.utcTiming, this.serviceDescription, this.location, arrayList);
@@ -116,7 +116,7 @@ public class DashManifest implements FilterableManifest<DashManifest> {
                     break;
                 }
             } while (poll.groupIndex == i2);
-            arrayList.add(new AdaptationSet(adaptationSet.f127id, adaptationSet.type, arrayList2, adaptationSet.accessibilityDescriptors, adaptationSet.essentialProperties, adaptationSet.supplementalProperties));
+            arrayList.add(new AdaptationSet(adaptationSet.f130id, adaptationSet.type, arrayList2, adaptationSet.accessibilityDescriptors, adaptationSet.essentialProperties, adaptationSet.supplementalProperties));
         } while (poll.periodIndex == i);
         linkedList.addFirst(poll);
         return arrayList;

@@ -8,18 +8,14 @@
 # instance fields
 .field public final synthetic f$0:[Z
 
-.field public final synthetic f$1:I
-
 
 # direct methods
-.method public synthetic constructor <init>([ZI)V
+.method public synthetic constructor <init>([Z)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda96;->f$0:[Z
-
-    iput p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda96;->f$1:I
 
     return-void
 .end method
@@ -27,13 +23,11 @@
 
 # virtual methods
 .method public final onClick(Landroid/view/View;)V
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda96;->f$0:[Z
 
-    iget v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda96;->f$1:I
-
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$pIzYLVSdX4sowGK7ytj9vHm9TQo([ZILandroid/view/View;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$oC-onyZmpwv4CT1xmYneu4EyIuY([ZLandroid/view/View;)V
 
     return-void
 .end method

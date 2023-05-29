@@ -8,13 +8,13 @@ import android.widget.FrameLayout;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import com.google.android.material.shape.MaterialShapeDrawable;
-import com.iMe.p031ui.smartpanel.extension.ImageViewExtKt;
+import com.iMe.utils.extentions.common.ImageViewExtKt;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.databinding.ForkContentImageHeaderBinding;
 import org.telegram.p044ui.ActionBar.Theme;
 /* compiled from: ImageHeaderView.kt */
@@ -66,7 +66,7 @@ public final class ImageHeaderView extends FrameLayout {
         if (num != null) {
             AppCompatImageView setupViewData$lambda$1$lambda$0 = forkContentImageHeaderBinding.imageNetworkIcon;
             Intrinsics.checkNotNullExpressionValue(setupViewData$lambda$1$lambda$0, "setupViewData$lambda$1$lambda$0");
-            ViewExtKt.visible(setupViewData$lambda$1$lambda$0);
+            ViewExtKt.visible$default(setupViewData$lambda$1$lambda$0, false, 1, null);
             setupViewData$lambda$1$lambda$0.setImageResource(num.intValue());
         }
         forkContentImageHeaderBinding.textTitle.setText(titleText);
@@ -82,7 +82,7 @@ public final class ImageHeaderView extends FrameLayout {
         Intrinsics.checkNotNullExpressionValue(imageIcon, "imageIcon");
         Context context = getContext();
         Intrinsics.checkNotNullExpressionValue(context, "context");
-        ImageViewExtKt.loadFromWithPlaceholderResId(imageIcon, iconUrl, context, Integer.valueOf(C3242R.C3244drawable.fork_ic_internal_logo), true);
+        ImageViewExtKt.loadFromWithPlaceholderResId(imageIcon, iconUrl, context, Integer.valueOf(C3290R.C3292drawable.fork_ic_internal_logo), true);
         forkContentImageHeaderBinding.textTitle.setText(titleText);
         forkContentImageHeaderBinding.textSubtitle.setText(subtitleText);
     }
@@ -91,14 +91,14 @@ public final class ImageHeaderView extends FrameLayout {
         ForkContentImageHeaderBinding forkContentImageHeaderBinding = this.binding;
         AppCompatImageView appCompatImageView = forkContentImageHeaderBinding.imageNetworkIcon;
         MaterialShapeDrawable materialShapeDrawable = new MaterialShapeDrawable();
-        materialShapeDrawable.setFillColor(ColorStateList.valueOf(Theme.getColor("windowBackgroundWhite")));
+        materialShapeDrawable.setFillColor(ColorStateList.valueOf(Theme.getColor(Theme.key_windowBackgroundWhite)));
         materialShapeDrawable.setCornerSize(getNetworkIconCornerSize());
         appCompatImageView.setBackground(materialShapeDrawable);
         AppCompatTextView setupColors$lambda$5$lambda$4 = forkContentImageHeaderBinding.textTitle;
-        setupColors$lambda$5$lambda$4.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        setupColors$lambda$5$lambda$4.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$5$lambda$4, "setupColors$lambda$5$lambda$4");
         ViewExtKt.withMediumTypeface(setupColors$lambda$5$lambda$4);
-        forkContentImageHeaderBinding.textSubtitle.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText"));
+        forkContentImageHeaderBinding.textSubtitle.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText));
     }
 
     private final void setupView() {

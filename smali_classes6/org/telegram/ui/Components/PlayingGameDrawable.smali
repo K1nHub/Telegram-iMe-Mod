@@ -251,17 +251,17 @@
 
     if-eqz v2, :cond_1
 
-    const-string v2, "chats_actionMessage"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionMessage:I
 
     goto :goto_1
 
     :cond_1
-    const-string v2, "chat_status"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_status:I
 
     :goto_1
     iget-object v3, v0, Lorg/telegram/ui/Components/PlayingGameDrawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v2, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v2, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v2
 
@@ -468,15 +468,15 @@
 
     if-eqz v2, :cond_7
 
-    const-string v2, "windowBackgroundWhite"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
     goto :goto_5
 
     :cond_7
-    const-string v2, "actionBarDefault"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
 
     :goto_5
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 

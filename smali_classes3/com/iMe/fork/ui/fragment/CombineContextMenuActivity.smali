@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nCombineContextMenuActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CombineContextMenuActivity.kt\ncom/iMe/fork/ui/fragment/CombineContextMenuActivity\n+ 2 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n*L\n1#1,228:1\n205#2,4:229\n*S KotlinDebug\n*F\n+ 1 CombineContextMenuActivity.kt\ncom/iMe/fork/ui/fragment/CombineContextMenuActivity\n*L\n65#1:229,4\n*E\n"
+    value = "SMAP\nCombineContextMenuActivity.kt\nKotlin\n*S Kotlin\n*F\n+ 1 CombineContextMenuActivity.kt\ncom/iMe/fork/ui/fragment/CombineContextMenuActivity\n+ 2 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n*L\n1#1,230:1\n219#2,4:231\n*S KotlinDebug\n*F\n+ 1 CombineContextMenuActivity.kt\ncom/iMe/fork/ui/fragment/CombineContextMenuActivity\n*L\n67#1:231,4\n*E\n"
 .end annotation
 
 
@@ -80,7 +80,7 @@
 
     new-array v1, v1, [Lkotlin/reflect/KProperty;
 
-    .line 31
+    .line 33
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
     const-string v3, "rootView"
@@ -97,7 +97,7 @@
 
     aput-object v2, v1, v5
 
-    .line 32
+    .line 34
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
     const-string v3, "listAdapter"
@@ -114,7 +114,7 @@
 
     aput-object v2, v1, v3
 
-    .line 33
+    .line 35
     new-instance v2, Lkotlin/jvm/internal/PropertyReference1Impl;
 
     const-string v3, "listView"
@@ -153,12 +153,12 @@
 .method public constructor <init>(Z)V
     .locals 2
 
-    .line 28
+    .line 30
     invoke-direct {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;-><init>()V
 
     iput-boolean p1, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->currentMessagesContextMenu:Z
 
-    .line 31
+    .line 33
     new-instance p1, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity$rootView$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity$rootView$2;-><init>(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;)V
@@ -173,7 +173,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->rootView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    .line 32
+    .line 34
     new-instance p1, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity$listAdapter$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity$listAdapter$2;-><init>(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;)V
@@ -184,7 +184,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->listAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    .line 33
+    .line 35
     new-instance p1, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity$listView$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity$listView$2;-><init>(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;)V
@@ -195,14 +195,14 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->listView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
-    .line 36
+    .line 38
     invoke-static {}, Lcom/iMe/fork/enums/MessagePopupItem;->values()[Lcom/iMe/fork/enums/MessagePopupItem;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->messagesPopupItems:[Lcom/iMe/fork/enums/MessagePopupItem;
 
-    .line 37
+    .line 39
     invoke-static {}, Lcom/iMe/fork/enums/PhotoViewerMenuItem;->values()[Lcom/iMe/fork/enums/PhotoViewerMenuItem;
 
     move-result-object p1
@@ -223,7 +223,7 @@
 
     move p1, p3
 
-    .line 28
+    .line 30
     :cond_0
     invoke-direct {p0, p1}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;-><init>(Z)V
 
@@ -233,7 +233,7 @@
 .method public static final synthetic access$getEnableRow$p(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;)I
     .locals 0
 
-    .line 28
+    .line 30
     iget p0, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->enableRow:I
 
     return p0
@@ -242,7 +242,7 @@
 .method public static final synthetic access$getListAdapter(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;)Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity$ListAdapter;
     .locals 0
 
-    .line 28
+    .line 30
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->getListAdapter()Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity$ListAdapter;
 
     move-result-object p0
@@ -253,7 +253,7 @@
 .method public static final synthetic access$getMediaSwitchTopicsBarRow$p(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;)I
     .locals 0
 
-    .line 28
+    .line 30
     iget p0, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->mediaSwitchTopicsBarRow:I
 
     return p0
@@ -262,7 +262,7 @@
 .method public static final synthetic access$getMessagesPopupItems$p(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;)[Lcom/iMe/fork/enums/MessagePopupItem;
     .locals 0
 
-    .line 28
+    .line 30
     iget-object p0, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->messagesPopupItems:[Lcom/iMe/fork/enums/MessagePopupItem;
 
     return-object p0
@@ -271,7 +271,7 @@
 .method public static final synthetic access$getPhotoViewerMenuItems$p(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;)[Lcom/iMe/fork/enums/PhotoViewerMenuItem;
     .locals 0
 
-    .line 28
+    .line 30
     iget-object p0, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->photoViewerMenuItems:[Lcom/iMe/fork/enums/PhotoViewerMenuItem;
 
     return-object p0
@@ -280,7 +280,7 @@
 .method public static final synthetic access$getRowCount$p(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;)I
     .locals 0
 
-    .line 28
+    .line 30
     iget p0, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->rowCount:I
 
     return p0
@@ -289,7 +289,7 @@
 .method public static final synthetic access$getTabsRowStart$p(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;)I
     .locals 0
 
-    .line 28
+    .line 30
     iget p0, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->tabsRowStart:I
 
     return p0
@@ -298,7 +298,7 @@
 .method public static final synthetic access$initListView(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;)Lorg/telegram/ui/Components/RecyclerListView;
     .locals 0
 
-    .line 28
+    .line 30
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->initListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object p0
@@ -309,7 +309,7 @@
 .method public static final synthetic access$initRootView(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;)Landroid/widget/FrameLayout;
     .locals 0
 
-    .line 28
+    .line 30
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->initRootView()Landroid/widget/FrameLayout;
 
     move-result-object p0
@@ -320,7 +320,7 @@
 .method public static final synthetic access$isClickableViewType(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;I)Z
     .locals 0
 
-    .line 28
+    .line 30
     invoke-direct {p0, p1}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->isClickableViewType(I)Z
 
     move-result p0
@@ -331,7 +331,7 @@
 .method public static final synthetic access$setEnableRow$p(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;I)V
     .locals 0
 
-    .line 28
+    .line 30
     iput p1, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->enableRow:I
 
     return-void
@@ -340,7 +340,7 @@
 .method public static final synthetic access$setMediaSwitchTopicsBarRow$p(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;I)V
     .locals 0
 
-    .line 28
+    .line 30
     iput p1, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->mediaSwitchTopicsBarRow:I
 
     return-void
@@ -349,7 +349,7 @@
 .method public static final synthetic access$setRowCount$p(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;I)V
     .locals 0
 
-    .line 28
+    .line 30
     iput p1, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->rowCount:I
 
     return-void
@@ -358,7 +358,7 @@
 .method public static final synthetic access$setTabsRowEnd$p(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;I)V
     .locals 0
 
-    .line 28
+    .line 30
     iput p1, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->tabsRowEnd:I
 
     return-void
@@ -367,7 +367,7 @@
 .method public static final synthetic access$setTabsRowStart$p(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;I)V
     .locals 0
 
-    .line 28
+    .line 30
     iput p1, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->tabsRowStart:I
 
     return-void
@@ -376,7 +376,7 @@
 .method public static final synthetic access$setTopicsBar$p(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;Lcom/iMe/fork/ui/view/MediaSwitchTopicsBar;)V
     .locals 0
 
-    .line 28
+    .line 30
     iput-object p1, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->topicsBar:Lcom/iMe/fork/ui/view/MediaSwitchTopicsBar;
 
     return-void
@@ -385,7 +385,7 @@
 .method private final getListAdapter()Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity$ListAdapter;
     .locals 3
 
-    .line 32
+    .line 34
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->listAdapter$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     sget-object v1, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
@@ -406,7 +406,7 @@
 .method private final getListView()Lorg/telegram/ui/Components/RecyclerListView;
     .locals 3
 
-    .line 33
+    .line 35
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->listView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     sget-object v1, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
@@ -427,7 +427,7 @@
 .method private final getRootView()Landroid/widget/FrameLayout;
     .locals 3
 
-    .line 31
+    .line 33
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->rootView$delegate:Lcom/iMe/utils/extentions/delegate/ResettableLazy;
 
     sget-object v1, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->$$delegatedProperties:[Lkotlin/reflect/KProperty;
@@ -452,7 +452,7 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 64
+    .line 66
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->topicsBar:Lcom/iMe/fork/ui/view/MediaSwitchTopicsBar;
 
     const/4 v1, 0x0
@@ -468,14 +468,14 @@
     :cond_0
     invoke-virtual {v0}, Lcom/iMe/fork/ui/view/MediaSwitchTopicsBar;->updateSelectedTopicAndColors()V
 
-    .line 65
+    .line 67
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object p0
 
     const/4 v0, 0x0
 
-    .line 205
+    .line 219
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v2
@@ -483,7 +483,7 @@
     :goto_0
     if-ge v0, v2, :cond_3
 
-    .line 206
+    .line 220
     invoke-virtual {p0, v0}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
@@ -492,7 +492,7 @@
 
     invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 65
+    .line 67
     instance-of v4, v3, Lcom/iMe/fork/ui/view/SortingFilterCell;
 
     if-eqz v4, :cond_1
@@ -521,7 +521,7 @@
 .method private final initListView()Lorg/telegram/ui/Components/RecyclerListView;
     .locals 3
 
-    .line 109
+    .line 111
     new-instance v0, Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -532,10 +532,10 @@
 
     const/4 v1, 0x1
 
-    .line 110
+    .line 112
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setFocusable(Z)V
 
-    .line 111
+    .line 113
     new-instance v1, Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -546,14 +546,14 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 112
+    .line 114
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->getListAdapter()Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity$ListAdapter;
 
     move-result-object v1
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 113
+    .line 115
     new-instance v1, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity$$ExternalSyntheticLambda1;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;)V
@@ -570,22 +570,22 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 115
+    .line 117
     instance-of v0, p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
     if-eqz v0, :cond_0
 
-    .line 116
+    .line 118
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextCheckCell;->toggleCheckbox()V
+    invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextCheckCell;->toggleCheckBox()V
 
-    .line 117
+    .line 119
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getToolsController()Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object p0
 
-    .line 118
+    .line 120
     invoke-virtual {p0}, Lcom/iMe/fork/controller/ToolsController;->isMessagePopupAggregatorEnabled()Z
 
     move-result p1
@@ -594,18 +594,18 @@
 
     invoke-virtual {p0, p1}, Lcom/iMe/fork/controller/ToolsController;->setMessagePopupAggregatorEnabled(Z)V
 
-    .line 119
+    .line 121
     invoke-virtual {p0}, Lcom/iMe/fork/controller/ToolsController;->saveConfig()V
 
     goto :goto_0
 
-    .line 122
+    .line 124
     :cond_0
     instance-of v0, p1, Lorg/telegram/ui/Cells/TextCheckBoxCell;
 
     if-eqz v0, :cond_4
 
-    .line 123
+    .line 125
     check-cast p1, Lorg/telegram/ui/Cells/TextCheckBoxCell;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/TextCheckBoxCell;->isChecked()Z
@@ -616,12 +616,12 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/TextCheckBoxCell;->setChecked(Z)V
 
-    .line 124
+    .line 126
     iget-boolean p1, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->currentMessagesContextMenu:Z
 
     if-eqz p1, :cond_2
 
-    .line 125
+    .line 127
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getToolsController()Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object p1
@@ -630,7 +630,7 @@
 
     move-result-object p1
 
-    .line 126
+    .line 128
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->messagesPopupItems:[Lcom/iMe/fork/enums/MessagePopupItem;
 
     iget p0, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->tabsRowStart:I
@@ -639,29 +639,29 @@
 
     aget-object p0, v0, p2
 
-    .line 127
+    .line 129
     invoke-interface {p1, p0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result p2
 
     if-eqz p2, :cond_1
 
-    .line 128
+    .line 130
     invoke-interface {p1, p0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 130
+    .line 132
     :cond_1
     invoke-interface {p1, p0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 133
+    .line 135
     :cond_2
     sget-object p1, Lorg/telegram/messenger/SharedConfig;->selectedPhotoViewerMenuItems:Ljava/util/Set;
 
-    .line 134
+    .line 136
     iget-object v0, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->photoViewerMenuItems:[Lcom/iMe/fork/enums/PhotoViewerMenuItem;
 
     iget p0, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->tabsRowStart:I
@@ -670,19 +670,19 @@
 
     aget-object p0, v0, p2
 
-    .line 135
+    .line 137
     invoke-interface {p1, p0}, Ljava/util/Set;->contains(Ljava/lang/Object;)Z
 
     move-result p2
 
     if-eqz p2, :cond_3
 
-    .line 136
+    .line 138
     invoke-interface {p1, p0}, Ljava/util/Set;->remove(Ljava/lang/Object;)Z
 
     goto :goto_0
 
-    .line 138
+    .line 140
     :cond_3
     invoke-interface {p1, p0}, Ljava/util/Set;->add(Ljava/lang/Object;)Z
 
@@ -694,7 +694,7 @@
 .method private final initRootView()Landroid/widget/FrameLayout;
     .locals 2
 
-    .line 105
+    .line 107
     new-instance v0, Landroid/widget/FrameLayout;
 
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -703,10 +703,10 @@
 
     invoke-direct {v0, v1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    const-string v1, "windowBackgroundGray"
+    .line 108
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    .line 106
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -718,8 +718,8 @@
 .method private final isClickableViewType(I)Z
     .locals 1
 
-    .line 146
-    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK:I
+    .line 148
+    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CHECK_CELL:I
 
     if-eq p1, v0, :cond_1
 
@@ -745,20 +745,20 @@
 .method private final setupActionBar()V
     .locals 2
 
-    .line 91
+    .line 93
     iget-object v0, p0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    .line 92
+    .line 94
     sget v1, Lorg/telegram/messenger/R$drawable;->ic_ab_back:I
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setBackButtonImage(I)V
 
     const/4 v1, 0x1
 
-    .line 93
+    .line 95
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setAllowOverlayTitle(Z)V
 
-    .line 94
+    .line 96
     sget v1, Lorg/telegram/messenger/R$string;->settings_interface_message_context_menu:I
 
     invoke-static {v1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -767,7 +767,7 @@
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/ActionBar;->setTitle(Ljava/lang/CharSequence;)V
 
-    .line 95
+    .line 97
     new-instance v1, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity$setupActionBar$1$1;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity$setupActionBar$1$1;-><init>(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;)V
@@ -782,14 +782,14 @@
 .method public final getCurrentMessagesContextMenu()Z
     .locals 1
 
-    .line 28
+    .line 30
     iget-boolean v0, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->currentMessagesContextMenu:Z
 
     return v0
 .end method
 
 .method public getThemeDescriptions()Ljava/util/ArrayList;
-    .locals 19
+    .locals 28
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "()",
@@ -805,17 +805,20 @@
 
     new-array v1, v1, [Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    .line 63
+    .line 65
     new-instance v10, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v3, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->fragmentView:Landroid/view/View;
 
     sget v4, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
 
-    .line 62
+    .line 64
     new-instance v8, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity$$ExternalSyntheticLambda0;
 
     invoke-direct {v8, v0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity$$ExternalSyntheticLambda0;-><init>(Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;)V
+
+    .line 68
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
     const/4 v5, 0x0
 
@@ -823,23 +826,23 @@
 
     const/4 v7, 0x0
 
-    const-string v9, "windowBackgroundGray"
-
     move-object v2, v10
 
-    .line 63
-    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    .line 65
+    invoke-direct/range {v2 .. v9}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v2, 0x0
 
     aput-object v10, v1, v2
 
-    .line 67
+    .line 69
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v12, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
     sget v13, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_BACKGROUND:I
+
+    sget v19, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefault:I
 
     const/4 v14, 0x0
 
@@ -849,22 +852,24 @@
 
     const/16 v17, 0x0
 
-    const-string v18, "actionBarDefault"
-
     move-object v11, v3
 
-    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move/from16 v18, v19
 
-    const/4 v4, 0x1
+    invoke-direct/range {v11 .. v18}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    aput-object v3, v1, v4
+    const/4 v12, 0x1
 
-    .line 68
+    aput-object v3, v1, v12
+
+    .line 70
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    iget-object v6, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
+    iget-object v5, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    sget v7, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_ITEMSCOLOR:I
+    sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_ITEMSCOLOR:I
+
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultIcon:I
 
     const/4 v8, 0x0
 
@@ -872,416 +877,436 @@
 
     const/4 v10, 0x0
 
-    const/4 v11, 0x0
+    move-object v4, v3
 
-    const-string v12, "actionBarDefaultIcon"
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    move-object v5, v3
+    const/4 v4, 0x2
 
-    invoke-direct/range {v5 .. v12}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
-
-    const/4 v5, 0x2
-
-    aput-object v3, v1, v5
-
-    .line 69
-    new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
-
-    iget-object v7, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
-
-    sget v8, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_TITLECOLOR:I
-
-    const/4 v12, 0x0
-
-    const-string v13, "actionBarDefaultTitle"
-
-    move-object v6, v3
-
-    invoke-direct/range {v6 .. v13}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
-
-    const/4 v5, 0x3
-
-    aput-object v3, v1, v5
-
-    .line 70
-    new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
-
-    iget-object v7, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
-
-    sget v8, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_SELECTORCOLOR:I
-
-    const-string v13, "actionBarDefaultSelector"
-
-    move-object v6, v3
-
-    invoke-direct/range {v6 .. v13}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
-
-    const/4 v5, 0x4
-
-    aput-object v3, v1, v5
+    aput-object v3, v1, v4
 
     .line 71
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
+    iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    move-result-object v7
+    sget v22, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_TITLECOLOR:I
 
-    sget v8, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_LISTGLOWCOLOR:I
+    sget v27, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultTitle:I
 
-    const-string v13, "actionBarDefault"
+    const/16 v23, 0x0
 
-    move-object v6, v3
+    const/16 v24, 0x0
 
-    invoke-direct/range {v6 .. v13}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    const/16 v25, 0x0
 
-    const/4 v5, 0x5
+    const/16 v26, 0x0
 
-    aput-object v3, v1, v5
+    move-object/from16 v20, v3
+
+    move-object/from16 v21, v4
+
+    invoke-direct/range {v20 .. v27}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
+
+    const/4 v4, 0x3
+
+    aput-object v3, v1, v4
 
     .line 72
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
-    invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
+    iget-object v4, v0, Lorg/telegram/ui/ActionBar/BaseFragment;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    move-result-object v7
+    sget v22, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_AB_SELECTORCOLOR:I
 
-    sget v8, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_SELECTOR:I
+    sget v27, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSelector:I
 
-    const-string v13, "listSelectorSDK21"
+    move-object/from16 v20, v3
 
-    move-object v6, v3
+    move-object/from16 v21, v4
 
-    invoke-direct/range {v6 .. v13}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v20 .. v27}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    const/4 v5, 0x6
+    const/4 v4, 0x4
 
-    aput-object v3, v1, v5
+    aput-object v3, v1, v4
 
     .line 73
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v7
+    move-result-object v5
 
-    new-array v9, v4, [Ljava/lang/Class;
+    sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_LISTGLOWCOLOR:I
 
-    const-class v5, Landroid/view/View;
+    move-object v4, v3
 
-    aput-object v5, v9, v2
+    move/from16 v11, v19
 
-    sget-object v10, Lorg/telegram/ui/ActionBar/Theme;->dividerPaint:Landroid/graphics/Paint;
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    const/4 v8, 0x0
+    const/4 v4, 0x5
 
-    const-string v13, "divider"
-
-    move-object v6, v3
-
-    invoke-direct/range {v6 .. v13}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
-
-    const/4 v5, 0x7
-
-    aput-object v3, v1, v5
+    aput-object v3, v1, v4
 
     .line 74
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v7
+    move-result-object v14
 
-    sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CELLBACKGROUNDCOLOR:I
+    sget v15, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_SELECTOR:I
 
-    sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CHECKTAG:I
+    sget v20, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    or-int v8, v5, v6
+    const/16 v18, 0x0
 
-    new-array v9, v4, [Ljava/lang/Class;
+    const/16 v19, 0x0
 
-    const-class v5, Lorg/telegram/ui/Cells/TextCheckCell;
+    move-object v13, v3
 
-    aput-object v5, v9, v2
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    const/4 v10, 0x0
+    const/4 v4, 0x6
 
-    const-string v13, "windowBackgroundChecked"
-
-    move-object v6, v3
-
-    invoke-direct/range {v6 .. v13}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
-
-    const/16 v5, 0x8
-
-    aput-object v3, v1, v5
+    aput-object v3, v1, v4
 
     .line 75
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v7
+    move-result-object v14
 
-    sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CELLBACKGROUNDCOLOR:I
+    new-array v4, v12, [Ljava/lang/Class;
 
-    sget v6, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CHECKTAG:I
+    const-class v5, Landroid/view/View;
 
-    or-int v8, v5, v6
+    aput-object v5, v4, v2
 
-    new-array v9, v4, [Ljava/lang/Class;
+    sget-object v17, Lorg/telegram/ui/ActionBar/Theme;->dividerPaint:Landroid/graphics/Paint;
 
-    const-class v5, Lorg/telegram/ui/Cells/TextCheckCell;
+    sget v20, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
 
-    aput-object v5, v9, v2
+    const/4 v15, 0x0
 
-    const-string v13, "windowBackgroundUnchecked"
+    move-object v13, v3
 
-    move-object v6, v3
+    move-object/from16 v16, v4
 
-    invoke-direct/range {v6 .. v13}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    const/16 v5, 0x9
+    const/4 v4, 0x7
 
-    aput-object v3, v1, v5
+    aput-object v3, v1, v4
 
     .line 76
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v7
+    move-result-object v14
 
-    new-array v9, v4, [Ljava/lang/Class;
+    sget v4, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CELLBACKGROUNDCOLOR:I
+
+    sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CHECKTAG:I
+
+    or-int v15, v4, v5
+
+    new-array v4, v12, [Ljava/lang/Class;
 
     const-class v5, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    aput-object v5, v9, v2
+    aput-object v5, v4, v2
 
-    const-string v5, "textView"
+    sget v20, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundChecked:I
 
-    filled-new-array {v5}, [Ljava/lang/String;
+    const/16 v17, 0x0
 
-    move-result-object v10
+    move-object v13, v3
 
-    const/4 v8, 0x0
+    move-object/from16 v16, v4
 
-    const/4 v13, 0x0
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    const-string v14, "windowBackgroundCheckText"
+    const/16 v4, 0x8
 
-    move-object v6, v3
-
-    invoke-direct/range {v6 .. v14}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
-
-    const/16 v6, 0xa
-
-    aput-object v3, v1, v6
+    aput-object v3, v1, v4
 
     .line 77
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v8
+    move-result-object v14
 
-    new-array v10, v4, [Ljava/lang/Class;
+    sget v4, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CELLBACKGROUNDCOLOR:I
 
-    const-class v6, Lorg/telegram/ui/Cells/TextCheckCell;
+    sget v5, Lorg/telegram/ui/ActionBar/ThemeDescription;->FLAG_CHECKTAG:I
 
-    aput-object v6, v10, v2
+    or-int v15, v4, v5
 
-    const-string v6, "checkBox"
+    new-array v4, v12, [Ljava/lang/Class;
 
-    filled-new-array {v6}, [Ljava/lang/String;
+    const-class v5, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    move-result-object v11
+    aput-object v5, v4, v2
 
-    const/4 v9, 0x0
+    sget v20, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundUnchecked:I
 
-    const/4 v14, 0x0
+    move-object v13, v3
 
-    const-string v15, "switchTrackBlue"
+    move-object/from16 v16, v4
 
-    move-object v7, v3
+    invoke-direct/range {v13 .. v20}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    invoke-direct/range {v7 .. v15}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    const/16 v4, 0x9
 
-    const/16 v7, 0xb
-
-    aput-object v3, v1, v7
+    aput-object v3, v1, v4
 
     .line 78
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v9
+    move-result-object v14
 
-    new-array v11, v4, [Ljava/lang/Class;
+    new-array v4, v12, [Ljava/lang/Class;
 
-    const-class v7, Lorg/telegram/ui/Cells/TextCheckCell;
+    const-class v5, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    aput-object v7, v11, v2
+    aput-object v5, v4, v2
 
-    filled-new-array {v6}, [Ljava/lang/String;
+    const-string v5, "textView"
 
-    move-result-object v12
+    filled-new-array {v5}, [Ljava/lang/String;
 
-    const/4 v10, 0x0
+    move-result-object v17
+
+    sget v21, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundCheckText:I
 
     const/4 v15, 0x0
 
-    const-string v16, "switchTrackBlueChecked"
+    const/16 v20, 0x0
 
-    move-object v8, v3
+    move-object v13, v3
 
-    invoke-direct/range {v8 .. v16}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move-object/from16 v16, v4
 
-    const/16 v7, 0xc
+    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    aput-object v3, v1, v7
+    const/16 v4, 0xa
+
+    aput-object v3, v1, v4
 
     .line 79
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v9
+    move-result-object v14
 
-    new-array v11, v4, [Ljava/lang/Class;
+    new-array v4, v12, [Ljava/lang/Class;
 
-    const-class v7, Lorg/telegram/ui/Cells/TextCheckCell;
+    const-class v6, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    aput-object v7, v11, v2
+    aput-object v6, v4, v2
+
+    const-string v6, "checkBox"
 
     filled-new-array {v6}, [Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v17
 
-    const-string v16, "switchTrackBlueThumb"
+    sget v21, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackBlue:I
 
-    move-object v8, v3
+    move-object v13, v3
 
-    invoke-direct/range {v8 .. v16}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move-object/from16 v16, v4
 
-    const/16 v7, 0xd
+    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    aput-object v3, v1, v7
+    const/16 v4, 0xb
+
+    aput-object v3, v1, v4
 
     .line 80
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v9
+    move-result-object v14
 
-    new-array v11, v4, [Ljava/lang/Class;
+    new-array v4, v12, [Ljava/lang/Class;
 
     const-class v7, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    aput-object v7, v11, v2
+    aput-object v7, v4, v2
 
     filled-new-array {v6}, [Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v17
 
-    const-string v16, "switchTrackBlueThumbChecked"
+    sget v21, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackBlueChecked:I
 
-    move-object v8, v3
+    move-object v13, v3
 
-    invoke-direct/range {v8 .. v16}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move-object/from16 v16, v4
 
-    const/16 v7, 0xe
+    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    aput-object v3, v1, v7
+    const/16 v4, 0xc
+
+    aput-object v3, v1, v4
 
     .line 81
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v9
+    move-result-object v14
 
-    new-array v11, v4, [Ljava/lang/Class;
+    new-array v4, v12, [Ljava/lang/Class;
 
     const-class v7, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    aput-object v7, v11, v2
+    aput-object v7, v4, v2
 
     filled-new-array {v6}, [Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v17
 
-    const-string v16, "switchTrackBlueSelector"
+    sget v21, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackBlueThumb:I
 
-    move-object v8, v3
+    move-object v13, v3
 
-    invoke-direct/range {v8 .. v16}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move-object/from16 v16, v4
 
-    const/16 v7, 0xf
+    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    aput-object v3, v1, v7
+    const/16 v4, 0xd
+
+    aput-object v3, v1, v4
 
     .line 82
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v9
+    move-result-object v14
 
-    new-array v11, v4, [Ljava/lang/Class;
+    new-array v4, v12, [Ljava/lang/Class;
 
     const-class v7, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    aput-object v7, v11, v2
+    aput-object v7, v4, v2
 
     filled-new-array {v6}, [Ljava/lang/String;
 
-    move-result-object v12
+    move-result-object v17
 
-    const-string v16, "switchTrackBlueSelectorChecked"
+    sget v21, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackBlueThumbChecked:I
 
-    move-object v8, v3
+    move-object v13, v3
 
-    invoke-direct/range {v8 .. v16}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    move-object/from16 v16, v4
 
-    const/16 v6, 0x10
+    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
-    aput-object v3, v1, v6
+    const/16 v4, 0xe
+
+    aput-object v3, v1, v4
 
     .line 83
     new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
-    move-result-object v8
+    move-result-object v14
 
-    new-array v10, v4, [Ljava/lang/Class;
+    new-array v4, v12, [Ljava/lang/Class;
 
-    const-class v4, Lorg/telegram/ui/Cells/TextCheckBoxCell;
+    const-class v7, Lorg/telegram/ui/Cells/TextCheckCell;
 
-    aput-object v4, v10, v2
+    aput-object v7, v4, v2
+
+    filled-new-array {v6}, [Ljava/lang/String;
+
+    move-result-object v17
+
+    sget v21, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackBlueSelector:I
+
+    move-object v13, v3
+
+    move-object/from16 v16, v4
+
+    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
+
+    const/16 v4, 0xf
+
+    aput-object v3, v1, v4
+
+    .line 84
+    new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
+
+    invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
+
+    move-result-object v14
+
+    new-array v4, v12, [Ljava/lang/Class;
+
+    const-class v7, Lorg/telegram/ui/Cells/TextCheckCell;
+
+    aput-object v7, v4, v2
+
+    filled-new-array {v6}, [Ljava/lang/String;
+
+    move-result-object v17
+
+    sget v21, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackBlueSelectorChecked:I
+
+    move-object v13, v3
+
+    move-object/from16 v16, v4
+
+    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
+
+    const/16 v4, 0x10
+
+    aput-object v3, v1, v4
+
+    .line 85
+    new-instance v3, Lorg/telegram/ui/ActionBar/ThemeDescription;
+
+    invoke-direct/range {p0 .. p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
+
+    move-result-object v14
+
+    new-array v4, v12, [Ljava/lang/Class;
+
+    const-class v6, Lorg/telegram/ui/Cells/TextCheckBoxCell;
+
+    aput-object v6, v4, v2
 
     filled-new-array {v5}, [Ljava/lang/String;
 
-    move-result-object v11
+    move-result-object v17
 
-    const/4 v9, 0x0
+    sget v21, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    const/4 v12, 0x0
+    move-object v13, v3
 
-    const-string v15, "windowBackgroundWhiteBlackText"
+    move-object/from16 v16, v4
 
-    move-object v7, v3
-
-    invoke-direct/range {v7 .. v15}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v13 .. v21}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;[Ljava/lang/String;[Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/16 v2, 0x11
 
     aput-object v3, v1, v2
 
-    .line 62
+    .line 64
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->arrayListOf([Ljava/lang/Object;)Ljava/util/ArrayList;
 
     move-result-object v1
@@ -1292,7 +1317,7 @@
 .method public bridge synthetic onCreateView(Landroid/content/Context;)Landroid/view/View;
     .locals 0
 
-    .line 28
+    .line 30
     invoke-virtual {p0, p1}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->onCreateView(Landroid/content/Context;)Landroid/widget/FrameLayout;
 
     move-result-object p1
@@ -1307,15 +1332,15 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 53
+    .line 55
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->getRootView()Landroid/widget/FrameLayout;
 
     move-result-object p1
 
-    .line 54
+    .line 56
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->setupActionBar()V
 
-    .line 55
+    .line 57
     invoke-direct {p0}, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v0
@@ -1328,17 +1353,17 @@
 .method public onFragmentDestroy()V
     .locals 1
 
-    .line 48
+    .line 50
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getToolsController()Lcom/iMe/fork/controller/ToolsController;
 
     move-result-object v0
 
     invoke-virtual {v0}, Lcom/iMe/fork/controller/ToolsController;->saveConfig()V
 
-    .line 49
+    .line 51
     invoke-static {}, Lorg/telegram/messenger/SharedConfig;->saveConfig()V
 
-    .line 50
+    .line 52
     invoke-super {p0}, Lcom/iMe/ui/base/mvp/MvpFragment;->onFragmentDestroy()V
 
     return-void
@@ -1353,7 +1378,7 @@
 .method public final setCurrentMessagesContextMenu(Z)V
     .locals 0
 
-    .line 28
+    .line 30
     iput-boolean p1, p0, Lcom/iMe/fork/ui/fragment/CombineContextMenuActivity;->currentMessagesContextMenu:Z
 
     return-void

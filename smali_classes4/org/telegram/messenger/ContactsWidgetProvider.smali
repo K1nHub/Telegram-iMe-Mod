@@ -81,7 +81,7 @@
 
     invoke-virtual {v1, v3}, Landroid/content/Intent;->setData(Landroid/net/Uri;)Landroid/content/Intent;
 
-    const-string v3, "shortcut_widget"
+    const-string/jumbo v3, "shortcut_widget"
 
     const/4 v4, 0x0
 
@@ -391,7 +391,7 @@
     .line 38
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->postInitApplication()V
 
-    const-string v0, "shortcut_widget"
+    const-string/jumbo v0, "shortcut_widget"
 
     const/4 v1, 0x0
 

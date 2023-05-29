@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/NotificationsCustomSettingsActivity;)V
     .locals 0
 
-    .line 667
+    .line 673
     iput-object p1, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$5;->this$0:Lorg/telegram/ui/NotificationsCustomSettingsActivity;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 670
+    .line 676
     iget-object v0, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$5;->this$0:Lorg/telegram/ui/NotificationsCustomSettingsActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/NotificationsCustomSettingsActivity;->access$600(Lorg/telegram/ui/NotificationsCustomSettingsActivity;)Landroid/animation/AnimatorSet;
@@ -48,7 +48,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 671
+    .line 677
     iget-object p1, p0, Lorg/telegram/ui/NotificationsCustomSettingsActivity$5;->this$0:Lorg/telegram/ui/NotificationsCustomSettingsActivity;
 
     const/4 v0, 0x0

@@ -237,7 +237,7 @@
 .method public final getShortId()Ljava/lang/String;
     .locals 2
 
-    .line 16
+    .line 14
     iget-object v0, p0, Lcom/iMe/model/wallet/home/pay/BinanceAccountItem;->info:Lcom/iMe/storage/domain/model/binancepay/BinanceUserInfo;
 
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/binancepay/BinanceUserInfo;->getId()Ljava/lang/String;
@@ -266,7 +266,7 @@
 
     goto :goto_0
 
-    .line 17
+    .line 15
     :cond_0
     iget-object v0, p0, Lcom/iMe/model/wallet/home/pay/BinanceAccountItem;->info:Lcom/iMe/storage/domain/model/binancepay/BinanceUserInfo;
 

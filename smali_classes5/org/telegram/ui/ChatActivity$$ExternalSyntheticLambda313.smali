@@ -8,18 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$BotInlineResult;
+.field public final synthetic f$1:Lorg/telegram/messenger/MessageObject$GroupedMessages;
+
+.field public final synthetic f$2:Lorg/telegram/messenger/MessageObject;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$BotInlineResult;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject$GroupedMessages;Lorg/telegram/messenger/MessageObject;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda313;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda313;->f$1:Lorg/telegram/tgnet/TLRPC$BotInlineResult;
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda313;->f$1:Lorg/telegram/messenger/MessageObject$GroupedMessages;
+
+    iput-object p3, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda313;->f$2:Lorg/telegram/messenger/MessageObject;
 
     return-void
 .end method
@@ -27,13 +31,21 @@
 
 # virtual methods
 .method public final didSelectDate(ZILjava/lang/String;)V
-    .locals 2
+    .locals 6
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda313;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda313;->f$1:Lorg/telegram/tgnet/TLRPC$BotInlineResult;
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda313;->f$1:Lorg/telegram/messenger/MessageObject$GroupedMessages;
 
-    invoke-static {v0, v1, p1, p2, p3}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$mQhZstBjsQ7Aw9IFS55G8rgrz5o(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$BotInlineResult;ZILjava/lang/String;)V
+    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda313;->f$2:Lorg/telegram/messenger/MessageObject;
+
+    move v3, p1
+
+    move v4, p2
+
+    move-object v5, p3
+
+    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$xeFQY5V6tq9VrBq4gYUzZgY9D5o(Lorg/telegram/ui/ChatActivity;Lorg/telegram/messenger/MessageObject$GroupedMessages;Lorg/telegram/messenger/MessageObject;ZILjava/lang/String;)V
 
     return-void
 .end method

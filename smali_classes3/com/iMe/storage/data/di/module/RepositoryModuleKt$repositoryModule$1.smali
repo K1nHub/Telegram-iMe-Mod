@@ -664,7 +664,7 @@
     new-instance v1, Lorg/koin/core/definition/BeanDefinition;
 
     .line 113
-    const-class v2, Lcom/iMe/storage/domain/repository/twitter/TwitterRepository;
+    const-class v2, Lcom/iMe/storage/domain/repository/socialMedia/TwitterRepository;
 
     invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 

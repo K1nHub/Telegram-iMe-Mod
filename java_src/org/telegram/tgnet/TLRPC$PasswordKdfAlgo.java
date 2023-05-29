@@ -6,7 +6,7 @@ public abstract class TLRPC$PasswordKdfAlgo extends TLObject {
         if (i == -732254058) {
             tLRPC$TL_passwordKdfAlgoUnknown = new TLRPC$TL_passwordKdfAlgoUnknown();
         } else {
-            tLRPC$TL_passwordKdfAlgoUnknown = i != 982592842 ? null : new C3305x72c667f();
+            tLRPC$TL_passwordKdfAlgoUnknown = i != 982592842 ? null : new C3355x72c667f();
         }
         if (tLRPC$TL_passwordKdfAlgoUnknown == null && z) {
             throw new RuntimeException(String.format("can't parse magic %x in PasswordKdfAlgo", Integer.valueOf(i)));

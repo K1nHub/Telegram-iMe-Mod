@@ -4,11 +4,13 @@ import android.app.Activity;
 import android.content.res.ColorStateList;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.LinearLayout;
 import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
+import androidx.cardview.widget.CardView;
 import androidx.core.p010os.BundleKt;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -47,7 +49,7 @@ import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkContentWalletTransactionDetailsLayoutBinding;
@@ -212,19 +214,19 @@ public final class WalletTransactionDetailsBottomSheetDialog extends MvpBottomSh
         if (!(str == null || str.length() == 0)) {
             AppCompatTextView textCommentTitle = binding.textCommentTitle;
             Intrinsics.checkNotNullExpressionValue(textCommentTitle, "textCommentTitle");
-            ViewExtKt.visible(textCommentTitle);
+            ViewExtKt.visible$default(textCommentTitle, false, 1, null);
             DividerView dividerComment = binding.dividerComment;
             Intrinsics.checkNotNullExpressionValue(dividerComment, "dividerComment");
-            ViewExtKt.visible(dividerComment);
+            ViewExtKt.visible$default(dividerComment, false, 1, null);
             AppCompatTextView setupScreenWithData$lambda$2$lambda$0 = binding.textCommentValue;
             Intrinsics.checkNotNullExpressionValue(setupScreenWithData$lambda$2$lambda$0, "setupScreenWithData$lambda$2$lambda$0");
-            ViewExtKt.visible(setupScreenWithData$lambda$2$lambda$0);
+            ViewExtKt.visible$default(setupScreenWithData$lambda$2$lambda$0, false, 1, null);
             setupScreenWithData$lambda$2$lambda$0.setText(str);
         }
         if (num != null) {
             AppCompatImageView setupScreenWithData$lambda$2$lambda$1 = binding.imageStakingIcon;
             Intrinsics.checkNotNullExpressionValue(setupScreenWithData$lambda$2$lambda$1, "setupScreenWithData$lambda$2$lambda$1");
-            ViewExtKt.visible(setupScreenWithData$lambda$2$lambda$1);
+            ViewExtKt.visible$default(setupScreenWithData$lambda$2$lambda$1, false, 1, null);
             setupScreenWithData$lambda$2$lambda$1.setImageResource(num.intValue());
         }
         AppCompatTextView textFeeTitle = binding.textFeeTitle;
@@ -292,7 +294,7 @@ public final class WalletTransactionDetailsBottomSheetDialog extends MvpBottomSh
 
     @Override // com.iMe.p031ui.wallet.transaction.details.WalletTransactionDetailsView
     public void openProfileScreen(long j) {
-        ProfileActivity profileActivity = new ProfileActivity(BundleKt.bundleOf(TuplesKt.m80to("user_id", Long.valueOf(j))));
+        ProfileActivity profileActivity = new ProfileActivity(BundleKt.bundleOf(TuplesKt.m85to("user_id", Long.valueOf(j))));
         profileActivity.setPlayProfileAnimation(0);
         this.fragment.presentFragment(profileActivity);
         dismiss();
@@ -357,7 +359,7 @@ public final class WalletTransactionDetailsBottomSheetDialog extends MvpBottomSh
     @Override // com.iMe.p031ui.wallet.transaction.details.WalletTransactionDetailsView
     public void onSuccessCancelTransaction(String txHash) {
         Intrinsics.checkNotNullParameter(txHash, "txHash");
-        showDialog(DialogsFactoryKt.createSuccessAlert$default(this.fragment, getResourceManager().getString(C3242R.string.wallet_cancel_transaction_success_dialog_title), getResourceManager().getString(C3242R.string.wallet_cancel_transaction_success_dialog_description), null, null, new Callbacks$Callback() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$$ExternalSyntheticLambda3
+        showDialog(DialogsFactoryKt.createSuccessAlert$default(this.fragment, getResourceManager().getString(C3290R.string.wallet_cancel_transaction_success_dialog_title), getResourceManager().getString(C3290R.string.wallet_cancel_transaction_success_dialog_description), null, null, new Callbacks$Callback() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$$ExternalSyntheticLambda3
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 WalletTransactionDetailsBottomSheetDialog.onSuccessCancelTransaction$lambda$9(WalletTransactionDetailsBottomSheetDialog.this);
@@ -374,7 +376,7 @@ public final class WalletTransactionDetailsBottomSheetDialog extends MvpBottomSh
     @Override // com.iMe.p031ui.wallet.transaction.details.WalletTransactionDetailsView
     public void onSuccessBoostTransaction(String txHash) {
         Intrinsics.checkNotNullParameter(txHash, "txHash");
-        showDialog(DialogsFactoryKt.createSuccessAlert$default(this.fragment, getResourceManager().getString(C3242R.string.wallet_boost_transaction_success_dialog_title), getResourceManager().getString(C3242R.string.wallet_boost_transaction_success_dialog_description), null, null, new Callbacks$Callback() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$$ExternalSyntheticLambda2
+        showDialog(DialogsFactoryKt.createSuccessAlert$default(this.fragment, getResourceManager().getString(C3290R.string.wallet_boost_transaction_success_dialog_title), getResourceManager().getString(C3290R.string.wallet_boost_transaction_success_dialog_description), null, null, new Callbacks$Callback() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$$ExternalSyntheticLambda2
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 WalletTransactionDetailsBottomSheetDialog.onSuccessBoostTransaction$lambda$10(WalletTransactionDetailsBottomSheetDialog.this);
@@ -392,10 +394,10 @@ public final class WalletTransactionDetailsBottomSheetDialog extends MvpBottomSh
         final ActionBarMenuItem setupActionItem$lambda$13 = getBinding().itemMoreOptions;
         setupActionItem$lambda$13.setLongClickEnabled(false);
         setupActionItem$lambda$13.setSubMenuOpenSide(2);
-        setupActionItem$lambda$13.setIcon(C3242R.C3244drawable.ic_ab_other);
+        setupActionItem$lambda$13.setIcon(C3290R.C3292drawable.ic_ab_other);
         Intrinsics.checkNotNullExpressionValue(setupActionItem$lambda$13, "setupActionItem$lambda$13");
         ViewExtKt.setCircleRippleBackground(setupActionItem$lambda$13);
-        setupActionItem$lambda$13.addSubItem(IdFabric$Menu.SHARE, C3242R.C3244drawable.msg_shareout, getResourceManager().getString(C3242R.string.common_share));
+        setupActionItem$lambda$13.addSubItem(IdFabric$Menu.SHARE, C3290R.C3292drawable.msg_shareout, getResourceManager().getString(C3290R.string.common_share));
         setupActionItem$lambda$13.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsBottomSheetDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -408,7 +410,7 @@ public final class WalletTransactionDetailsBottomSheetDialog extends MvpBottomSh
                 WalletTransactionDetailsBottomSheetDialog.setupActionItem$lambda$13$lambda$12(WalletTransactionDetailsBottomSheetDialog.this, i);
             }
         });
-        setupActionItem$lambda$13.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3242R.string.AccDescrMoreOptions));
+        setupActionItem$lambda$13.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3290R.string.AccDescrMoreOptions));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -431,18 +433,25 @@ public final class WalletTransactionDetailsBottomSheetDialog extends MvpBottomSh
 
     private final void setupColors() {
         ForkContentWalletTransactionDetailsLayoutBinding binding = getBinding();
-        this.shadowDrawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor("actionBarDefault"), PorterDuff.Mode.SRC_IN));
-        binding.constraintRoot.setBackgroundColor(Theme.getColor("windowBackgroundGray"));
-        binding.cardViewTransactionInfo.setCardBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-        binding.linearActions.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-        binding.constraintBottomAction.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-        binding.constraintLayoutHeader.setBackgroundColor(Theme.getColor("actionBarDefault"));
-        binding.textTransactionType.setTextColor(Theme.getColor("actionBarDefaultTitle"));
+        Drawable drawable = this.shadowDrawable;
+        int i = Theme.key_actionBarDefault;
+        drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.SRC_IN));
+        binding.constraintRoot.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
+        CardView cardView = binding.cardViewTransactionInfo;
+        int i2 = Theme.key_windowBackgroundWhite;
+        cardView.setCardBackgroundColor(Theme.getColor(i2));
+        binding.linearActions.setBackgroundColor(Theme.getColor(i2));
+        binding.constraintBottomAction.setBackgroundColor(Theme.getColor(i2));
+        binding.constraintLayoutHeader.setBackgroundColor(Theme.getColor(i));
+        AppCompatTextView appCompatTextView = binding.textTransactionType;
+        int i3 = Theme.key_actionBarDefaultTitle;
+        appCompatTextView.setTextColor(Theme.getColor(i3));
         AppCompatImageView appCompatImageView = binding.imageStakingIcon;
         MaterialShapeDrawable materialShapeDrawable = new MaterialShapeDrawable();
-        materialShapeDrawable.setFillColor(ColorStateList.valueOf(Theme.getColor("windowBackgroundWhite")));
+        materialShapeDrawable.setFillColor(ColorStateList.valueOf(Theme.getColor(i2)));
         materialShapeDrawable.setCornerSize(getNetworkIconCornerSize());
         appCompatImageView.setBackground(materialShapeDrawable);
+        int i4 = Theme.key_windowBackgroundWhiteBlackText;
         AppCompatTextView textFeeTitle = binding.textFeeTitle;
         Intrinsics.checkNotNullExpressionValue(textFeeTitle, "textFeeTitle");
         AppCompatTextView textProcessingTitle = binding.textProcessingTitle;
@@ -455,7 +464,8 @@ public final class WalletTransactionDetailsBottomSheetDialog extends MvpBottomSh
         Intrinsics.checkNotNullExpressionValue(textStatusTitle, "textStatusTitle");
         AppCompatTextView textCommentTitle = binding.textCommentTitle;
         Intrinsics.checkNotNullExpressionValue(textCommentTitle, "textCommentTitle");
-        ViewExtKt.setTextsColor("windowBackgroundWhiteBlackText", textFeeTitle, textProcessingTitle, textDateTitle, textRecipientTitle, textStatusTitle, textCommentTitle);
+        ViewExtKt.setTextsColor(i4, textFeeTitle, textProcessingTitle, textDateTitle, textRecipientTitle, textStatusTitle, textCommentTitle);
+        int i5 = Theme.key_windowBackgroundWhiteGrayText2;
         AppCompatTextView textFeeValue = binding.textFeeValue;
         Intrinsics.checkNotNullExpressionValue(textFeeValue, "textFeeValue");
         AppCompatTextView textProcessingValue = binding.textProcessingValue;
@@ -468,24 +478,25 @@ public final class WalletTransactionDetailsBottomSheetDialog extends MvpBottomSh
         Intrinsics.checkNotNullExpressionValue(textStatusValue, "textStatusValue");
         AppCompatTextView textCommentValue = binding.textCommentValue;
         Intrinsics.checkNotNullExpressionValue(textCommentValue, "textCommentValue");
-        ViewExtKt.setTextsColor("windowBackgroundWhiteGrayText2", textFeeValue, textProcessingValue, textDateValue, textRecipientValue, textStatusValue, textCommentValue);
+        ViewExtKt.setTextsColor(i5, textFeeValue, textProcessingValue, textDateValue, textRecipientValue, textStatusValue, textCommentValue);
         AppCompatTextView setupColors$lambda$19$lambda$15 = binding.textSectionName;
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$19$lambda$15, "setupColors$lambda$19$lambda$15");
         ViewExtKt.withMediumTypeface(setupColors$lambda$19$lambda$15);
-        setupColors$lambda$19$lambda$15.setTextColor(Theme.getColor("windowBackgroundWhiteBlueHeader"));
+        int i6 = Theme.key_windowBackgroundWhiteBlueHeader;
+        setupColors$lambda$19$lambda$15.setTextColor(Theme.getColor(i6));
         AppCompatTextView setupColors$lambda$19$lambda$16 = binding.textSectionActions;
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$19$lambda$16, "setupColors$lambda$19$lambda$16");
         ViewExtKt.withMediumTypeface(setupColors$lambda$19$lambda$16);
-        setupColors$lambda$19$lambda$16.setTextColor(Theme.getColor("windowBackgroundWhiteBlueHeader"));
+        setupColors$lambda$19$lambda$16.setTextColor(Theme.getColor(i6));
         AppCompatTextView setupColors$lambda$19$lambda$17 = binding.textTransactionAmount;
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$19$lambda$17, "setupColors$lambda$19$lambda$17");
         ViewExtKt.withMediumTypeface(setupColors$lambda$19$lambda$17);
-        setupColors$lambda$19$lambda$17.setTextColor(Theme.getColor("actionBarDefaultTitle"));
+        setupColors$lambda$19$lambda$17.setTextColor(Theme.getColor(i3));
         AppCompatTextView setupColors$lambda$19$lambda$18 = binding.textActionCancel;
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$19$lambda$18, "setupColors$lambda$19$lambda$18");
         ViewExtKt.setRippleBackground(setupColors$lambda$19$lambda$18, true);
         ViewExtKt.withMediumTypeface(setupColors$lambda$19$lambda$18);
-        setupColors$lambda$19$lambda$18.setTextColor(Theme.getColor("chats_actionBackground"));
+        setupColors$lambda$19$lambda$18.setTextColor(Theme.getColor(Theme.key_chats_actionBackground));
     }
 
     private final void setupRecycleView() {
@@ -496,15 +507,15 @@ public final class WalletTransactionDetailsBottomSheetDialog extends MvpBottomSh
 
     private final void setupTexts() {
         ForkContentWalletTransactionDetailsLayoutBinding binding = getBinding();
-        binding.textActionCancel.setText(getResourceManager().getString(C3242R.string.common_ok));
-        binding.textSectionName.setText(getResourceManager().getString(C3242R.string.wallet_transaction_details_section_info));
-        binding.textSectionActions.setText(getResourceManager().getString(C3242R.string.wallet_transaction_details_section_actions));
-        binding.textFeeTitle.setText(getResourceManager().getString(C3242R.string.wallet_transaction_details_fee_title));
-        binding.textProcessingTitle.setText(getResourceManager().getString(C3242R.string.wallet_transaction_details_processing_title));
-        binding.textDateTitle.setText(getResourceManager().getString(C3242R.string.wallet_transaction_details_date_title));
-        binding.textRecipientTitle.setText(getResourceManager().getString(C3242R.string.wallet_transaction_details_recipient_title));
-        binding.textStatusTitle.setText(getResourceManager().getString(C3242R.string.wallet_transaction_details_status_title));
-        binding.textCommentTitle.setText(getResourceManager().getString(C3242R.string.wallet_transaction_details_comment_title));
+        binding.textActionCancel.setText(getResourceManager().getString(C3290R.string.common_ok));
+        binding.textSectionName.setText(getResourceManager().getString(C3290R.string.wallet_transaction_details_section_info));
+        binding.textSectionActions.setText(getResourceManager().getString(C3290R.string.wallet_transaction_details_section_actions));
+        binding.textFeeTitle.setText(getResourceManager().getString(C3290R.string.wallet_transaction_details_fee_title));
+        binding.textProcessingTitle.setText(getResourceManager().getString(C3290R.string.wallet_transaction_details_processing_title));
+        binding.textDateTitle.setText(getResourceManager().getString(C3290R.string.wallet_transaction_details_date_title));
+        binding.textRecipientTitle.setText(getResourceManager().getString(C3290R.string.wallet_transaction_details_recipient_title));
+        binding.textStatusTitle.setText(getResourceManager().getString(C3290R.string.wallet_transaction_details_status_title));
+        binding.textCommentTitle.setText(getResourceManager().getString(C3290R.string.wallet_transaction_details_comment_title));
     }
 
     private final void setupListeners() {
@@ -620,7 +631,7 @@ public final class WalletTransactionDetailsBottomSheetDialog extends MvpBottomSh
         /* JADX WARN: Multi-variable type inference failed */
         public static /* synthetic */ WalletTransactionDetailsBottomSheetDialog newInstance$default(Companion companion, BaseFragment baseFragment, ScreenType screenType, Callbacks$Callback1 callbacks$Callback1, int i, Object obj) {
             if ((i & 4) != 0) {
-                callbacks$Callback1 = C2376xc5bfbef6.INSTANCE;
+                callbacks$Callback1 = C2415xc5bfbef6.INSTANCE;
             }
             return companion.newInstance(baseFragment, screenType, callbacks$Callback1);
         }

@@ -495,7 +495,7 @@
     return-object v0
 .end method
 
-.method public final getPercentageTextColor(Lcom/iMe/model/staking/StakingAnnualPercentageMode;)Ljava/lang/String;
+.method public final getPercentageTextColor(Lcom/iMe/model/staking/StakingAnnualPercentageMode;)I
     .locals 1
 
     const-string v0, "annualPercentageMode"
@@ -507,15 +507,16 @@
 
     if-ne v0, p1, :cond_0
 
-    const-string p1, "windowBackgroundWhiteBlueText"
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText:I
 
     goto :goto_0
 
+    .line 22
     :cond_0
-    const-string p1, "windowBackgroundWhiteBlackText"
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
     :goto_0
-    return-object p1
+    return p1
 .end method
 
 .method public final getTokenBalance()Lcom/iMe/storage/domain/model/wallet/token/TokenBalance;

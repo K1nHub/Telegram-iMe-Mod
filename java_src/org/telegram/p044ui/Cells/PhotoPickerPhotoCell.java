@@ -12,12 +12,13 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
+import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.BackupImageView;
 import org.telegram.p044ui.Components.CheckBox2;
 import org.telegram.p044ui.Components.LayoutHelper;
@@ -39,7 +40,7 @@ public class PhotoPickerPhotoCell extends FrameLayout {
         setWillNotDraw(false);
         BackupImageView backupImageView = new BackupImageView(context);
         this.imageView = backupImageView;
-        backupImageView.setRoundRadius(AndroidUtilities.m50dp(4));
+        backupImageView.setRoundRadius(AndroidUtilities.m54dp(4));
         addView(this.imageView, LayoutHelper.createFrame(-1, -1));
         FrameLayout frameLayout = new FrameLayout(context);
         this.checkFrame = frameLayout;
@@ -58,11 +59,11 @@ public class PhotoPickerPhotoCell extends FrameLayout {
                 fArr[2] = 0.0f;
                 fArr[1] = 0.0f;
                 fArr[0] = 0.0f;
-                float m50dp = AndroidUtilities.m50dp(4);
-                fArr[7] = m50dp;
-                fArr[6] = m50dp;
-                fArr[5] = m50dp;
-                fArr[4] = m50dp;
+                float m54dp = AndroidUtilities.m54dp(4);
+                fArr[7] = m54dp;
+                fArr[6] = m54dp;
+                fArr[5] = m54dp;
+                fArr[4] = m54dp;
                 this.path.reset();
                 this.path.addRoundRect(this.rect, this.radii, Path.Direction.CW);
                 this.path.close();
@@ -72,10 +73,10 @@ public class PhotoPickerPhotoCell extends FrameLayout {
         };
         this.videoInfoContainer = frameLayout2;
         frameLayout2.setWillNotDraw(false);
-        this.videoInfoContainer.setPadding(AndroidUtilities.m50dp(3), 0, AndroidUtilities.m50dp(3), 0);
+        this.videoInfoContainer.setPadding(AndroidUtilities.m54dp(3), 0, AndroidUtilities.m54dp(3), 0);
         addView(this.videoInfoContainer, LayoutHelper.createFrame(-1, 16, 83));
         ImageView imageView = new ImageView(context);
-        imageView.setImageResource(C3242R.C3244drawable.ic_video);
+        imageView.setImageResource(C3290R.C3292drawable.ic_video);
         this.videoInfoContainer.addView(imageView, LayoutHelper.createFrame(-2, -2, 19));
         TextView textView = new TextView(context);
         this.videoTextView = textView;
@@ -86,7 +87,7 @@ public class PhotoPickerPhotoCell extends FrameLayout {
         CheckBox2 checkBox2 = new CheckBox2(context, 24);
         this.checkBox = checkBox2;
         checkBox2.setDrawBackgroundAsArc(11);
-        this.checkBox.setColor("chat_attachCheckBoxBackground", "chat_attachPhotoBackground", "chat_attachCheckBoxCheck");
+        this.checkBox.setColor(Theme.key_chat_attachCheckBoxBackground, Theme.key_chat_attachPhotoBackground, Theme.key_chat_attachCheckBoxCheck);
         addView(this.checkBox, LayoutHelper.createFrame(26, 26, 51, 55, 4, 0, 0));
         this.checkBox.setVisibility(0);
         setFocusable(true);
@@ -112,7 +113,7 @@ public class PhotoPickerPhotoCell extends FrameLayout {
     }
 
     public void updateColors() {
-        this.checkBox.setColor("chat_attachCheckBoxBackground", "chat_attachPhotoBackground", "chat_attachCheckBoxCheck");
+        this.checkBox.setColor(Theme.key_chat_attachCheckBoxBackground, Theme.key_chat_attachPhotoBackground, Theme.key_chat_attachCheckBoxCheck);
     }
 
     public void setNum(int i) {
@@ -120,22 +121,22 @@ public class PhotoPickerPhotoCell extends FrameLayout {
     }
 
     public void setImage(MediaController.PhotoEntry photoEntry) {
-        Drawable drawable = getResources().getDrawable(C3242R.C3244drawable.nophotos);
+        Drawable drawable = getResources().getDrawable(C3290R.C3292drawable.nophotos);
         String str = photoEntry.thumbPath;
         if (str != null) {
             this.imageView.setImage(str, null, drawable);
         } else if (photoEntry.path != null) {
-            this.imageView.setOrientation(photoEntry.orientation, true);
+            this.imageView.setOrientation(photoEntry.orientation, photoEntry.invert, true);
             if (photoEntry.isVideo) {
                 this.videoInfoContainer.setVisibility(0);
                 this.videoTextView.setText(AndroidUtilities.formatShortDuration(photoEntry.duration));
-                setContentDescription(LocaleController.getString("AttachVideo", C3242R.string.AttachVideo) + ", " + LocaleController.formatDuration(photoEntry.duration));
+                setContentDescription(LocaleController.getString("AttachVideo", C3290R.string.AttachVideo) + ", " + LocaleController.formatDuration(photoEntry.duration));
                 BackupImageView backupImageView = this.imageView;
                 backupImageView.setImage("vthumb://" + photoEntry.imageId + ":" + photoEntry.path, null, drawable);
                 return;
             }
             this.videoInfoContainer.setVisibility(4);
-            setContentDescription(LocaleController.getString("AttachPhoto", C3242R.string.AttachPhoto));
+            setContentDescription(LocaleController.getString("AttachPhoto", C3290R.string.AttachPhoto));
             BackupImageView backupImageView2 = this.imageView;
             backupImageView2.setImage("thumb://" + photoEntry.imageId + ":" + photoEntry.path, null, drawable);
         } else {
@@ -144,7 +145,7 @@ public class PhotoPickerPhotoCell extends FrameLayout {
     }
 
     public void setImage(MediaController.SearchImage searchImage) {
-        Drawable drawable = getResources().getDrawable(C3242R.C3244drawable.nophotos);
+        Drawable drawable = getResources().getDrawable(C3290R.C3292drawable.nophotos);
         TLRPC$PhotoSize tLRPC$PhotoSize = searchImage.thumbPhotoSize;
         if (tLRPC$PhotoSize != null) {
             this.imageView.setImage(ImageLocation.getForPhoto(tLRPC$PhotoSize, searchImage.photo), (String) null, drawable, searchImage);

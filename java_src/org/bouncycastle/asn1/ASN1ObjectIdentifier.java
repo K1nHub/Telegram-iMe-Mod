@@ -307,7 +307,7 @@ public class ASN1ObjectIdentifier extends ASN1Primitive {
     }
 
     /* renamed from: on */
-    public boolean m66on(ASN1ObjectIdentifier aSN1ObjectIdentifier) {
+    public boolean m70on(ASN1ObjectIdentifier aSN1ObjectIdentifier) {
         String id = getId();
         String id2 = aSN1ObjectIdentifier.getId();
         return id.length() > id2.length() && id.charAt(id2.length()) == '.' && id.startsWith(id2);

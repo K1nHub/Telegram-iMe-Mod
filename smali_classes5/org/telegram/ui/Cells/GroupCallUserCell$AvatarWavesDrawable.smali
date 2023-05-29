@@ -107,9 +107,9 @@
 
     iget-object p1, p1, Lorg/telegram/ui/Components/BlobDrawable;->paint:Landroid/graphics/Paint;
 
-    const-string p2, "voipgroup_speakingText"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_speakingText:I
 
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -126,7 +126,7 @@
 
     iget-object p1, p1, Lorg/telegram/ui/Components/BlobDrawable;->paint:Landroid/graphics/Paint;
 
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -271,10 +271,10 @@
 
     if-eqz v0, :cond_7
 
-    const-string v0, "voipgroup_speakingText"
-
     .line 1024
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_speakingText:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -284,15 +284,15 @@
 
     if-ne v3, v4, :cond_6
 
-    const-string v3, "voipgroup_mutedByAdminIcon"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_mutedByAdminIcon:I
 
     goto :goto_1
 
     :cond_6
-    const-string v3, "voipgroup_listeningText"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_listeningText:I
 
     :goto_1
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 

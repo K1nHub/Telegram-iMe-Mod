@@ -10,7 +10,7 @@ public class ProgressView {
     public int height;
     public int width;
     public float currentProgress = BitmapDescriptorFactory.HUE_RED;
-    public float progressHeight = AndroidUtilities.m51dp(2.0f);
+    public float progressHeight = AndroidUtilities.m55dp(2.0f);
     private Paint innerPaint = new Paint();
     private Paint outerPaint = new Paint();
 

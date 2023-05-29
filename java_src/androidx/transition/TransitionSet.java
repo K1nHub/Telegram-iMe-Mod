@@ -280,6 +280,16 @@ public class TransitionSet extends Transition {
         }
     }
 
+    /* JADX INFO: Access modifiers changed from: protected */
+    @Override // androidx.transition.Transition
+    public void cancel() {
+        super.cancel();
+        int size = this.mTransitions.size();
+        for (int i = 0; i < size; i++) {
+            this.mTransitions.get(i).cancel();
+        }
+    }
+
     @Override // androidx.transition.Transition
     public void setPropagation(TransitionPropagation transitionPropagation) {
         super.setPropagation(transitionPropagation);
@@ -316,12 +326,12 @@ public class TransitionSet extends Transition {
 
     @Override // androidx.transition.Transition
     /* renamed from: clone */
-    public Transition mo876clone() {
-        TransitionSet transitionSet = (TransitionSet) super.mo876clone();
+    public Transition mo884clone() {
+        TransitionSet transitionSet = (TransitionSet) super.mo884clone();
         transitionSet.mTransitions = new ArrayList<>();
         int size = this.mTransitions.size();
         for (int i = 0; i < size; i++) {
-            transitionSet.addTransitionInternal(this.mTransitions.get(i).mo876clone());
+            transitionSet.addTransitionInternal(this.mTransitions.get(i).mo884clone());
         }
         return transitionSet;
     }

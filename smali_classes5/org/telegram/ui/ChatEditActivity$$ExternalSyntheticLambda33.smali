@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/MessagesStorage$BooleanCallback;
+.implements Landroid/widget/TextView$OnEditorActionListener;
 
 
 # instance fields
@@ -22,12 +22,14 @@
 
 
 # virtual methods
-.method public final run(Z)V
+.method public final onEditorAction(Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatEditActivity$$ExternalSyntheticLambda33;->f$0:Lorg/telegram/ui/ChatEditActivity;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChatEditActivity;->$r8$lambda$JkLvSszsx04qS4f-HCaQnJwrUF4(Lorg/telegram/ui/ChatEditActivity;Z)V
+    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/ChatEditActivity;->$r8$lambda$YOocWybrTIApLTqhvzrS6dBWNDc(Lorg/telegram/ui/ChatEditActivity;Landroid/widget/TextView;ILandroid/view/KeyEvent;)Z
 
-    return-void
+    move-result p1
+
+    return p1
 .end method

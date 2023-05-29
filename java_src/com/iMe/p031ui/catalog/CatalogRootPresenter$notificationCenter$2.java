@@ -7,7 +7,7 @@ import org.telegram.messenger.NotificationCenter;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CatalogRootPresenter.kt */
 /* renamed from: com.iMe.ui.catalog.CatalogRootPresenter$notificationCenter$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class CatalogRootPresenter$notificationCenter$2 extends Lambda implements Function0<NotificationCenter> {
     final /* synthetic */ CatalogRootPresenter this$0;
 

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;)V
     .locals 0
 
-    .line 8234
+    .line 7955
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -44,7 +44,7 @@
 
     new-array v2, v1, [Z
 
-    .line 8238
+    .line 7959
     new-instance v3, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
     iget-object v4, v0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
@@ -57,7 +57,7 @@
 
     invoke-direct {v3, v4}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;-><init>(Landroid/content/Context;)V
 
-    .line 8240
+    .line 7961
     new-instance v4, Landroid/widget/LinearLayout;
 
     iget-object v5, v0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
@@ -70,12 +70,12 @@
 
     invoke-direct {v4, v5}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
-    .line 8241
+    .line 7962
     invoke-virtual {v4, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
     const/16 v5, 0x15
 
-    .line 8242
+    .line 7963
     invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v6
@@ -88,7 +88,7 @@
 
     invoke-virtual {v4, v6, v7, v5, v7}, Landroid/widget/LinearLayout;->setPadding(IIII)V
 
-    .line 8244
+    .line 7965
     new-instance v5, Landroid/widget/ImageView;
 
     iget-object v6, v0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
@@ -101,7 +101,7 @@
 
     invoke-direct {v5, v6}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 8245
+    .line 7966
     sget v6, Lorg/telegram/messenger/R$drawable;->smiles_info:I
 
     invoke-virtual {v5, v6}, Landroid/widget/ImageView;->setImageResource(I)V
@@ -120,14 +120,14 @@
 
     const/4 v14, 0x0
 
-    .line 8246
+    .line 7967
     invoke-static/range {v8 .. v14}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v6
 
     invoke-virtual {v4, v5, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 8248
+    .line 7969
     new-instance v5, Landroid/widget/TextView;
 
     iget-object v6, v0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
@@ -140,7 +140,7 @@
 
     invoke-direct {v5, v6}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 8249
+    .line 7970
     sget v6, Lorg/telegram/messenger/R$string;->EmojiSuggestions:I
 
     const-string v8, "EmojiSuggestions"
@@ -153,23 +153,23 @@
 
     const/high16 v6, 0x41700000    # 15.0f
 
-    .line 8250
+    .line 7971
     invoke-virtual {v5, v1, v6}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 8251
+    .line 7972
     iget-object v8, v0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
 
     iget-object v8, v8, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    const-string v9, "dialogTextBlue2"
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlue2:I
 
-    invoke-static {v8, v9}, Lorg/telegram/ui/Components/EmojiView;->access$2300(Lorg/telegram/ui/Components/EmojiView;Ljava/lang/String;)I
+    invoke-static {v8, v9}, Lorg/telegram/ui/Components/EmojiView;->access$2300(Lorg/telegram/ui/Components/EmojiView;I)I
 
     move-result v8
 
     invoke-virtual {v5, v8}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 8252
+    .line 7973
     sget-boolean v8, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/4 v9, 0x5
@@ -190,7 +190,7 @@
 
     const-string v8, "fonts/rmedium.ttf"
 
-    .line 8253
+    .line 7974
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v8
@@ -211,14 +211,14 @@
 
     const/16 v17, 0x0
 
-    .line 8254
+    .line 7975
     invoke-static/range {v11 .. v17}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v8
 
     invoke-virtual {v4, v5, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 8256
+    .line 7977
     new-instance v5, Landroid/widget/TextView;
 
     iget-object v8, v0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
@@ -231,7 +231,7 @@
 
     invoke-direct {v5, v8}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 8257
+    .line 7978
     sget v8, Lorg/telegram/messenger/R$string;->EmojiSuggestionsInfo:I
 
     const-string v11, "EmojiSuggestionsInfo"
@@ -246,23 +246,23 @@
 
     invoke-virtual {v5, v8}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 8258
+    .line 7979
     invoke-virtual {v5, v1, v6}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 8259
+    .line 7980
     iget-object v8, v0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
 
     iget-object v8, v8, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    const-string v11, "dialogTextBlack"
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
-    invoke-static {v8, v11}, Lorg/telegram/ui/Components/EmojiView;->access$2300(Lorg/telegram/ui/Components/EmojiView;Ljava/lang/String;)I
+    invoke-static {v8, v11}, Lorg/telegram/ui/Components/EmojiView;->access$2300(Lorg/telegram/ui/Components/EmojiView;I)I
 
     move-result v8
 
     invoke-virtual {v5, v8}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 8260
+    .line 7981
     sget-boolean v8, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v8, :cond_1
@@ -291,14 +291,14 @@
 
     const/16 v17, 0x0
 
-    .line 8261
+    .line 7982
     invoke-static/range {v11 .. v17}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v8
 
     invoke-virtual {v4, v5, v8}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 8263
+    .line 7984
     new-instance v5, Landroid/widget/TextView;
 
     iget-object v8, v0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
@@ -311,14 +311,14 @@
 
     invoke-direct {v5, v8}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 8264
+    .line 7985
     sget v8, Lorg/telegram/messenger/R$string;->EmojiSuggestionsUrl:I
 
     new-array v11, v1, [Ljava/lang/Object;
 
     iget-object v12, v0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
 
-    invoke-static {v12}, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;->access$19900(Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;)Ljava/lang/String;
+    invoke-static {v12}, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;->access$19100(Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;)Ljava/lang/String;
 
     move-result-object v12
 
@@ -326,7 +326,7 @@
 
     iget-object v12, v0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
 
-    invoke-static {v12}, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;->access$19900(Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;)Ljava/lang/String;
+    invoke-static {v12}, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;->access$19100(Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;)Ljava/lang/String;
 
     move-result-object v12
 
@@ -337,7 +337,7 @@
 
     iget-object v12, v12, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    invoke-static {v12}, Lorg/telegram/ui/Components/EmojiView;->access$9600(Lorg/telegram/ui/Components/EmojiView;)[Ljava/lang/String;
+    invoke-static {v12}, Lorg/telegram/ui/Components/EmojiView;->access$9000(Lorg/telegram/ui/Components/EmojiView;)[Ljava/lang/String;
 
     move-result-object v12
 
@@ -352,23 +352,23 @@
 
     invoke-virtual {v5, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 8265
+    .line 7986
     invoke-virtual {v5, v1, v6}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 8266
+    .line 7987
     iget-object v1, v0, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2;->this$1:Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
-    const-string v6, "dialogTextLink"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextLink:I
 
-    invoke-static {v1, v6}, Lorg/telegram/ui/Components/EmojiView;->access$2300(Lorg/telegram/ui/Components/EmojiView;Ljava/lang/String;)I
+    invoke-static {v1, v6}, Lorg/telegram/ui/Components/EmojiView;->access$2300(Lorg/telegram/ui/Components/EmojiView;I)I
 
     move-result v1
 
     invoke-virtual {v5, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 8267
+    .line 7988
     sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     if-eqz v1, :cond_3
@@ -395,24 +395,24 @@
 
     const/16 v16, 0x10
 
-    .line 8268
+    .line 7989
     invoke-static/range {v10 .. v16}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v1
 
     invoke-virtual {v4, v5, v1}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 8269
+    .line 7990
     new-instance v1, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2$1;
 
     invoke-direct {v1, v0, v2, v3}, Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2$1;-><init>(Lorg/telegram/ui/Components/EmojiView$EmojiSearchAdapter$2;[ZLorg/telegram/ui/ActionBar/BottomSheet$Builder;)V
 
     invoke-virtual {v5, v1}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 8307
+    .line 8028
     invoke-virtual {v3, v4}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->setCustomView(Landroid/view/View;)Lorg/telegram/ui/ActionBar/BottomSheet$Builder;
 
-    .line 8308
+    .line 8029
     invoke-virtual {v3}, Lorg/telegram/ui/ActionBar/BottomSheet$Builder;->show()Lorg/telegram/ui/ActionBar/BottomSheet;
 
     return-void

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/WallpapersListActivity$SearchAdapter;Landroid/content/Context;)V
     .locals 0
 
-    .line 1657
+    .line 1704
     iput-object p1, p0, Lorg/telegram/ui/WallpapersListActivity$SearchAdapter$1;->this$1:Lorg/telegram/ui/WallpapersListActivity$SearchAdapter;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Cells/WallpaperCell;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected onWallpaperClick(Ljava/lang/Object;I)V
     .locals 4
 
-    .line 1660
+    .line 1707
     iget-object p2, p0, Lorg/telegram/ui/WallpapersListActivity$SearchAdapter$1;->this$1:Lorg/telegram/ui/WallpapersListActivity$SearchAdapter;
 
     iget-object p2, p2, Lorg/telegram/ui/WallpapersListActivity$SearchAdapter;->this$0:Lorg/telegram/ui/WallpapersListActivity;

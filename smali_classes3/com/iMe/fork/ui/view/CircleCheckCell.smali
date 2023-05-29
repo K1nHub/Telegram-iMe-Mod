@@ -57,16 +57,16 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 21
+    .line 22
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 19
+    .line 20
     iput p2, p0, Lcom/iMe/fork/ui/view/CircleCheckCell;->iconSize:I
 
-    .line 20
+    .line 21
     iput-object p3, p0, Lcom/iMe/fork/ui/view/CircleCheckCell;->iconScaleType:Landroid/widget/ImageView$ScaleType;
 
-    .line 31
+    .line 32
     new-instance p1, Lcom/iMe/fork/ui/view/CircleCheckCell$circleView$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/view/CircleCheckCell$circleView$2;-><init>(Lcom/iMe/fork/ui/view/CircleCheckCell;)V
@@ -77,7 +77,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/CircleCheckCell;->circleView$delegate:Lkotlin/Lazy;
 
-    .line 32
+    .line 33
     new-instance p1, Lcom/iMe/fork/ui/view/CircleCheckCell$iconView$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/view/CircleCheckCell$iconView$2;-><init>(Lcom/iMe/fork/ui/view/CircleCheckCell;)V
@@ -88,7 +88,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/CircleCheckCell;->iconView$delegate:Lkotlin/Lazy;
 
-    .line 33
+    .line 34
     new-instance p1, Lcom/iMe/fork/ui/view/CircleCheckCell$nameTextView$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/view/CircleCheckCell$nameTextView$2;-><init>(Lcom/iMe/fork/ui/view/CircleCheckCell;)V
@@ -99,7 +99,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/CircleCheckCell;->nameTextView$delegate:Lkotlin/Lazy;
 
-    .line 34
+    .line 35
     new-instance p1, Lcom/iMe/fork/ui/view/CircleCheckCell$checkBox$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/view/CircleCheckCell$checkBox$2;-><init>(Lcom/iMe/fork/ui/view/CircleCheckCell;)V
@@ -110,7 +110,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/CircleCheckCell;->checkBox$delegate:Lkotlin/Lazy;
 
-    .line 37
+    .line 38
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/CircleCheckCell;->init()V
 
     return-void
@@ -119,7 +119,7 @@
 .method public static final synthetic access$initCheckBox(Lcom/iMe/fork/ui/view/CircleCheckCell;)Lorg/telegram/ui/Components/CheckBox2;
     .locals 0
 
-    .line 17
+    .line 18
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/CircleCheckCell;->initCheckBox()Lorg/telegram/ui/Components/CheckBox2;
 
     move-result-object p0
@@ -130,7 +130,7 @@
 .method public static final synthetic access$initCircleView(Lcom/iMe/fork/ui/view/CircleCheckCell;)Landroid/view/View;
     .locals 0
 
-    .line 17
+    .line 18
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/CircleCheckCell;->initCircleView()Landroid/view/View;
 
     move-result-object p0
@@ -141,7 +141,7 @@
 .method public static final synthetic access$initIconView(Lcom/iMe/fork/ui/view/CircleCheckCell;)Landroid/widget/ImageView;
     .locals 0
 
-    .line 17
+    .line 18
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/CircleCheckCell;->initIconView()Landroid/widget/ImageView;
 
     move-result-object p0
@@ -152,7 +152,7 @@
 .method public static final synthetic access$initNameTextView(Lcom/iMe/fork/ui/view/CircleCheckCell;)Landroid/widget/TextView;
     .locals 0
 
-    .line 17
+    .line 18
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/CircleCheckCell;->initNameTextView()Landroid/widget/TextView;
 
     move-result-object p0
@@ -163,7 +163,7 @@
 .method private final getCheckBox()Lorg/telegram/ui/Components/CheckBox2;
     .locals 1
 
-    .line 34
+    .line 35
     iget-object v0, p0, Lcom/iMe/fork/ui/view/CircleCheckCell;->checkBox$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -178,7 +178,7 @@
 .method private final getCircleView()Landroid/view/View;
     .locals 1
 
-    .line 31
+    .line 32
     iget-object v0, p0, Lcom/iMe/fork/ui/view/CircleCheckCell;->circleView$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -193,7 +193,7 @@
 .method private final getIconView()Landroid/widget/ImageView;
     .locals 1
 
-    .line 32
+    .line 33
     iget-object v0, p0, Lcom/iMe/fork/ui/view/CircleCheckCell;->iconView$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -208,7 +208,7 @@
 .method private final getNameTextView()Landroid/widget/TextView;
     .locals 1
 
-    .line 33
+    .line 34
     iget-object v0, p0, Lcom/iMe/fork/ui/view/CircleCheckCell;->nameTextView$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -223,7 +223,7 @@
 .method private final init()V
     .locals 8
 
-    .line 56
+    .line 57
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/CircleCheckCell;->getCircleView()Landroid/view/View;
 
     move-result-object v0
@@ -248,7 +248,7 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 57
+    .line 58
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/CircleCheckCell;->getIconView()Landroid/widget/ImageView;
 
     move-result-object v0
@@ -269,7 +269,7 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 58
+    .line 59
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/CircleCheckCell;->getNameTextView()Landroid/widget/TextView;
 
     move-result-object v0
@@ -292,7 +292,7 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 59
+    .line 60
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/CircleCheckCell;->getCheckBox()Lorg/telegram/ui/Components/CheckBox2;
 
     move-result-object v0
@@ -321,7 +321,7 @@
 .method private final initCheckBox()Lorg/telegram/ui/Components/CheckBox2;
     .locals 4
 
-    .line 78
+    .line 79
     new-instance v0, Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -332,26 +332,26 @@
 
     invoke-direct {v0, v1, v2}, Lorg/telegram/ui/Components/CheckBox2;-><init>(Landroid/content/Context;I)V
 
-    const/4 v1, 0x0
-
-    const-string v2, "dialogBackground"
-
-    const-string v3, "dialogRoundCheckBoxCheck"
-
-    .line 79
-    invoke-virtual {v0, v1, v2, v3}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
-
-    const/4 v1, 0x0
-
     .line 80
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogRoundCheckBoxCheck:I
+
+    const/4 v3, -0x1
+
+    invoke-virtual {v0, v3, v1, v2}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
+
+    const/4 v1, 0x0
+
+    .line 81
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/CheckBox2;->setDrawUnchecked(Z)V
 
     const/4 v1, 0x4
 
-    .line 81
+    .line 82
     invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/CheckBox2;->setDrawBackgroundAsArc(I)V
 
-    .line 82
+    .line 83
     new-instance v1, Lcom/iMe/fork/ui/view/CircleCheckCell$$ExternalSyntheticLambda0;
 
     invoke-direct {v1, v0, p0}, Lcom/iMe/fork/ui/view/CircleCheckCell$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/CheckBox2;Lcom/iMe/fork/ui/view/CircleCheckCell;)V
@@ -372,7 +372,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 83
+    .line 84
     invoke-virtual {p0}, Lorg/telegram/ui/Components/CheckBox2;->getProgress()F
 
     move-result p0
@@ -385,14 +385,14 @@
 
     sub-float/2addr p2, p0
 
-    .line 84
+    .line 85
     invoke-direct {p1}, Lcom/iMe/fork/ui/view/CircleCheckCell;->getCircleView()Landroid/view/View;
 
     move-result-object p0
 
     invoke-virtual {p0, p2}, Landroid/view/View;->setScaleX(F)V
 
-    .line 85
+    .line 86
     invoke-direct {p1}, Lcom/iMe/fork/ui/view/CircleCheckCell;->getCircleView()Landroid/view/View;
 
     move-result-object p0
@@ -405,7 +405,7 @@
 .method private final initCircleView()Landroid/view/View;
     .locals 2
 
-    .line 62
+    .line 63
     new-instance v0, Landroid/view/View;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -420,7 +420,7 @@
 .method private final initIconView()Landroid/widget/ImageView;
     .locals 2
 
-    .line 64
+    .line 65
     new-instance v0, Landroid/widget/ImageView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -429,7 +429,7 @@
 
     invoke-direct {v0, v1}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
 
-    .line 65
+    .line 66
     iget-object v1, p0, Lcom/iMe/fork/ui/view/CircleCheckCell;->iconScaleType:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
@@ -440,7 +440,7 @@
 .method private final initNameTextView()Landroid/widget/TextView;
     .locals 4
 
-    .line 68
+    .line 69
     new-instance v0, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -451,26 +451,26 @@
 
     const/4 v1, 0x1
 
-    .line 69
+    .line 70
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setAllCaps(Z)V
 
     const/4 v2, 0x2
 
-    .line 70
+    .line 71
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 71
+    .line 72
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 72
+    .line 73
     sget-object v3, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v0, v3}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    const-string v3, "dialogTextBlack"
+    .line 74
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
-    .line 73
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -478,10 +478,10 @@
 
     const/high16 v3, 0x41300000    # 11.0f
 
-    .line 74
+    .line 75
     invoke-virtual {v0, v1, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 75
+    .line 76
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setLines(I)V
 
     return-object v0
@@ -492,7 +492,7 @@
 .method public final getIconScaleType()Landroid/widget/ImageView$ScaleType;
     .locals 1
 
-    .line 20
+    .line 21
     iget-object v0, p0, Lcom/iMe/fork/ui/view/CircleCheckCell;->iconScaleType:Landroid/widget/ImageView$ScaleType;
 
     return-object v0
@@ -501,7 +501,7 @@
 .method public final getIconSize()I
     .locals 1
 
-    .line 19
+    .line 20
     iget v0, p0, Lcom/iMe/fork/ui/view/CircleCheckCell;->iconSize:I
 
     return v0
@@ -510,7 +510,7 @@
 .method public final isChecked()Z
     .locals 1
 
-    .line 25
+    .line 26
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/CircleCheckCell;->getCheckBox()Lorg/telegram/ui/Components/CheckBox2;
 
     move-result-object v0
@@ -525,7 +525,7 @@
 .method public final setChecked(Z)V
     .locals 2
 
-    .line 27
+    .line 28
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/CircleCheckCell;->getCheckBox()Lorg/telegram/ui/Components/CheckBox2;
 
     move-result-object v0
@@ -544,21 +544,21 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 43
+    .line 44
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/CircleCheckCell;->getNameTextView()Landroid/widget/TextView;
 
     move-result-object v0
 
     invoke-virtual {v0, p3}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 44
+    .line 45
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/CircleCheckCell;->getIconView()Landroid/widget/ImageView;
 
     move-result-object p3
 
     invoke-virtual {p3, p2}, Landroid/widget/ImageView;->setImageResource(I)V
 
-    .line 45
+    .line 46
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/CircleCheckCell;->getCircleView()Landroid/view/View;
 
     move-result-object p2
@@ -569,13 +569,13 @@
 
     const/4 v0, 0x1
 
-    .line 46
+    .line 47
     invoke-virtual {p3, v0}, Landroid/graphics/drawable/GradientDrawable;->setShape(I)V
 
-    .line 47
+    .line 48
     invoke-virtual {p3, p1}, Landroid/graphics/drawable/GradientDrawable;->setColor(I)V
 
-    .line 45
+    .line 46
     invoke-virtual {p2, p3}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     return-void

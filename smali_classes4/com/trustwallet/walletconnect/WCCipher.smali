@@ -135,7 +135,7 @@
 
     move-result-object p1
 
-    const-string v3, "this as java.lang.String).toLowerCase()"
+    const-string/jumbo v3, "this as java.lang.String).toLowerCase()"
 
     invoke-static {p1, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 

@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ManageLinksActivity;)V
     .locals 0
 
-    .line 699
+    .line 696
     iput-object p1, p0, Lorg/telegram/ui/ManageLinksActivity$1;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -46,25 +46,25 @@
 .method public didFindQr(Ljava/lang/String;)V
     .locals 2
 
-    .line 702
+    .line 699
     iget-object v0, p0, Lorg/telegram/ui/ManageLinksActivity$1;->this$0:Lorg/telegram/ui/ManageLinksActivity;
 
     iget-object v1, v0, Lorg/telegram/ui/ManageLinksActivity;->sendPresenter:Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;
 
     if-eqz v1, :cond_0
 
-    .line 703
+    .line 700
     invoke-virtual {v1, p1}, Lcom/iMe/ui/wallet/actions/send/amount/WalletSendAmountPresenter;->validateRecipientAddress(Ljava/lang/String;)V
 
     goto :goto_0
 
-    .line 704
+    .line 701
     :cond_0
     iget-object v0, v0, Lorg/telegram/ui/ManageLinksActivity;->donationsPresenter:Lcom/iMe/ui/wallet/donations/WalletDonationsPresenter;
 
     if-eqz v0, :cond_1
 
-    .line 705
+    .line 702
     invoke-virtual {v0, p1}, Lcom/iMe/ui/wallet/donations/WalletDonationsPresenter;->linkAddress(Ljava/lang/String;)V
 
     :cond_1

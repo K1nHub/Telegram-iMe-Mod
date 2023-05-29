@@ -247,7 +247,7 @@
 
     if-ne v8, v9, :cond_6
 
-    const-string v8, "sha1"
+    const-string/jumbo v8, "sha1"
 
     .line 173
     invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
@@ -280,7 +280,7 @@
     return-void
 
     :cond_4
-    const-string v8, "sha256"
+    const-string/jumbo v8, "sha256"
 
     .line 169
     invoke-virtual {v7, v8}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

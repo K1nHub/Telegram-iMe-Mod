@@ -24,7 +24,7 @@ public final class EventMessageEncoder {
             }
             writeNullTerminatedString(this.dataOutputStream, str);
             this.dataOutputStream.writeLong(eventMessage.durationMs);
-            this.dataOutputStream.writeLong(eventMessage.f108id);
+            this.dataOutputStream.writeLong(eventMessage.f111id);
             this.dataOutputStream.write(eventMessage.messageData);
             this.dataOutputStream.flush();
             return this.byteArrayOutputStream.toByteArray();

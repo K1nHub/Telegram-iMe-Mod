@@ -49,7 +49,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;)V
     .locals 0
 
-    .line 2678
+    .line 2685
     iput-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -60,7 +60,7 @@
 .method private synthetic lambda$needOpenInviteLink$0([ZLandroid/content/DialogInterface;)V
     .locals 1
 
-    .line 2730
+    .line 2737
     iget-object p2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
     iget-object p2, p2, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
@@ -71,7 +71,7 @@
 
     const/4 p2, 0x1
 
-    .line 2731
+    .line 2738
     aput-boolean p2, p1, v0
 
     return-void
@@ -80,7 +80,7 @@
 .method private synthetic lambda$needOpenInviteLink$1(Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;Lorg/telegram/tgnet/TLRPC$TL_messages_exportedChatInvite;[ZLorg/telegram/ui/ActionBar/AlertDialog;)V
     .locals 3
 
-    .line 2750
+    .line 2757
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
@@ -89,7 +89,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$6202(Lorg/telegram/ui/ChannelAdminLogActivity;Z)Z
 
-    .line 2751
+    .line 2758
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
@@ -114,20 +114,20 @@
     :goto_0
     invoke-virtual {v0, p1, v2}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 2752
+    .line 2759
     aget-boolean p1, p3, v1
 
     if-eqz p1, :cond_1
 
     return-void
 
-    .line 2755
+    .line 2762
     :cond_1
     invoke-virtual {p4}, Lorg/telegram/ui/ActionBar/AlertDialog;->dismiss()V
 
     if-eqz p2, :cond_2
 
-    .line 2757
+    .line 2764
     iget-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
@@ -140,7 +140,7 @@
 
     goto :goto_1
 
-    .line 2759
+    .line 2766
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
@@ -175,12 +175,12 @@
 
     if-nez p5, :cond_1
 
-    .line 2738
+    .line 2745
     check-cast p4, Lorg/telegram/tgnet/TLRPC$TL_messages_exportedChatInvite;
 
     const/4 p5, 0x0
 
-    .line 2739
+    .line 2746
     :goto_0
     iget-object v0, p4, Lorg/telegram/tgnet/TLRPC$messages_ExportedChatInvite;->users:Ljava/util/ArrayList;
 
@@ -190,7 +190,7 @@
 
     if-ge p5, v0, :cond_2
 
-    .line 2740
+    .line 2747
     iget-object v0, p4, Lorg/telegram/tgnet/TLRPC$messages_ExportedChatInvite;->users:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p5}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -199,7 +199,7 @@
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 2741
+    .line 2748
     iget-object v1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
     iget-object v1, v1, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
@@ -210,7 +210,7 @@
 
     if-nez v1, :cond_0
 
-    .line 2742
+    .line 2749
     iget-object v1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
     iget-object v1, v1, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
@@ -221,7 +221,7 @@
 
     invoke-static {v1, v2}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$6502(Lorg/telegram/ui/ChannelAdminLogActivity;Ljava/util/HashMap;)Ljava/util/HashMap;
 
-    .line 2744
+    .line 2751
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
@@ -249,7 +249,7 @@
     :cond_2
     move-object v3, p4
 
-    .line 2749
+    .line 2756
     new-instance p4, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3$$ExternalSyntheticLambda1;
 
     move-object v0, p4
@@ -284,12 +284,12 @@
 .method public didClickImage(Lorg/telegram/ui/Cells/ChatActionCell;)V
     .locals 9
 
-    .line 2681
+    .line 2688
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/ChatActionCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
 
     move-result-object v1
 
-    .line 2682
+    .line 2689
     invoke-static {}, Lorg/telegram/ui/PhotoViewer;->getInstance()Lorg/telegram/ui/PhotoViewer;
 
     move-result-object p1
@@ -300,7 +300,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/PhotoViewer;->setParentActivity(Lorg/telegram/ui/ActionBar/BaseFragment;)V
 
-    .line 2683
+    .line 2690
     iget-object p1, v1, Lorg/telegram/messenger/MessageObject;->photoThumbs:Ljava/util/ArrayList;
 
     const/16 v0, 0x280
@@ -311,7 +311,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 2685
+    .line 2692
     iget-object v0, v1, Lorg/telegram/messenger/MessageObject;->messageOwner:Lorg/telegram/tgnet/TLRPC$Message;
 
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$Message;->action:Lorg/telegram/tgnet/TLRPC$MessageAction;
@@ -322,7 +322,7 @@
 
     move-result-object v0
 
-    .line 2686
+    .line 2693
     invoke-static {}, Lorg/telegram/ui/PhotoViewer;->getInstance()Lorg/telegram/ui/PhotoViewer;
 
     move-result-object v1
@@ -341,7 +341,7 @@
 
     goto :goto_0
 
-    .line 2688
+    .line 2695
     :cond_0
     invoke-static {}, Lorg/telegram/ui/PhotoViewer;->getInstance()Lorg/telegram/ui/PhotoViewer;
 
@@ -372,7 +372,7 @@
 .method public didLongPress(Lorg/telegram/ui/Cells/ChatActionCell;FF)Z
     .locals 0
 
-    .line 2694
+    .line 2701
     iget-object p2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
     iget-object p2, p2, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
@@ -401,7 +401,7 @@
 .method public getBaseFragment()Lorg/telegram/ui/ActionBar/BaseFragment;
     .locals 1
 
-    .line 2774
+    .line 2781
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
@@ -412,7 +412,7 @@
 .method public getDialogId()J
     .locals 2
 
-    .line 2779
+    .line 2786
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
@@ -449,7 +449,7 @@
 .method public needOpenInviteLink(Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;)V
     .locals 5
 
-    .line 2716
+    .line 2723
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
@@ -462,7 +462,7 @@
 
     return-void
 
-    .line 2719
+    .line 2726
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
@@ -502,12 +502,12 @@
     :goto_0
     if-nez v0, :cond_2
 
-    .line 2721
+    .line 2728
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getExportedChatInvite;
 
     invoke-direct {v0}, Lorg/telegram/tgnet/TLRPC$TL_messages_getExportedChatInvite;-><init>()V
 
-    .line 2722
+    .line 2729
     iget-object v1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
     iget-object v1, v1, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
@@ -532,12 +532,12 @@
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getExportedChatInvite;->peer:Lorg/telegram/tgnet/TLRPC$InputPeer;
 
-    .line 2723
+    .line 2730
     iget-object v1, p1, Lorg/telegram/tgnet/TLRPC$TL_chatInviteExported;->link:Ljava/lang/String;
 
     iput-object v1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_getExportedChatInvite;->link:Ljava/lang/String;
 
-    .line 2725
+    .line 2732
     iget-object v1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
     iget-object v1, v1, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
@@ -548,7 +548,7 @@
 
     new-array v1, v2, [Z
 
-    .line 2728
+    .line 2735
     new-instance v2, Lorg/telegram/ui/ActionBar/AlertDialog;
 
     iget-object v3, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
@@ -563,7 +563,7 @@
 
     invoke-direct {v2, v3, v4}, Lorg/telegram/ui/ActionBar/AlertDialog;-><init>(Landroid/content/Context;I)V
 
-    .line 2729
+    .line 2736
     new-instance v3, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3$$ExternalSyntheticLambda0;
 
     invoke-direct {v3, p0, v1}, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;[Z)V
@@ -572,10 +572,10 @@
 
     const-wide/16 v3, 0x12c
 
-    .line 2733
+    .line 2740
     invoke-virtual {v2, v3, v4}, Lorg/telegram/ui/ActionBar/AlertDialog;->showDelayed(J)V
 
-    .line 2735
+    .line 2742
     iget-object v3, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
     iget-object v3, v3, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
@@ -592,7 +592,7 @@
 
     move-result p1
 
-    .line 2763
+    .line 2770
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
@@ -613,13 +613,13 @@
 
     goto :goto_1
 
-    .line 2764
+    .line 2771
     :cond_2
     instance-of p1, v0, Lorg/telegram/tgnet/TLRPC$TL_messages_exportedChatInvite;
 
     if-eqz p1, :cond_3
 
-    .line 2765
+    .line 2772
     iget-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
@@ -634,7 +634,7 @@
 
     goto :goto_1
 
-    .line 2767
+    .line 2774
     :cond_3
     iget-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
@@ -673,7 +673,7 @@
 
     if-gez v0, :cond_0
 
-    .line 2700
+    .line 2707
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
@@ -682,10 +682,10 @@
 
     const-string v1, "chat_id"
 
-    .line 2701
+    .line 2708
     invoke-virtual {v0, v1, p1, p2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 2702
+    .line 2709
     iget-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
@@ -708,7 +708,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 2703
+    .line 2710
     iget-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
     iget-object p1, p1, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
@@ -723,7 +723,7 @@
 
     goto :goto_0
 
-    .line 2705
+    .line 2712
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
@@ -745,34 +745,34 @@
 
     if-eqz v0, :cond_1
 
-    .line 2706
+    .line 2713
     new-instance v0, Landroid/os/Bundle;
 
     invoke-direct {v0}, Landroid/os/Bundle;-><init>()V
 
     const-string v1, "user_id"
 
-    .line 2707
+    .line 2714
     invoke-virtual {v0, v1, p1, p2}, Landroid/os/Bundle;->putLong(Ljava/lang/String;J)V
 
-    .line 2708
+    .line 2715
     iget-object v1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
     iget-object v1, v1, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {v1, v0, p1, p2}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$5100(Lorg/telegram/ui/ChannelAdminLogActivity;Landroid/os/Bundle;J)V
 
-    .line 2709
+    .line 2716
     new-instance p1, Lorg/telegram/ui/ProfileActivity;
 
     invoke-direct {p1, v0}, Lorg/telegram/ui/ProfileActivity;-><init>(Landroid/os/Bundle;)V
 
     const/4 p2, 0x0
 
-    .line 2710
+    .line 2717
     invoke-virtual {p1, p2}, Lorg/telegram/ui/ProfileActivity;->setPlayProfileAnimation(I)V
 
-    .line 2711
+    .line 2718
     iget-object p2, p0, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter$3;->this$1:Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;
 
     iget-object p2, p2, Lorg/telegram/ui/ChannelAdminLogActivity$ChatActivityAdapter;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;

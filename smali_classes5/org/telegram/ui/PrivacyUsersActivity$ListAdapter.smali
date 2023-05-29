@@ -34,32 +34,32 @@
 .method public constructor <init>(Lorg/telegram/ui/PrivacyUsersActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 404
+    .line 403
     iput-object p1, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 405
+    .line 404
     iput-object p2, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     return-void
 .end method
 
 .method private synthetic lambda$onCreateViewHolder$0(Lorg/telegram/ui/Cells/ManageChatUserCell;Z)Z
-    .locals 0
+    .locals 1
 
     if-eqz p2, :cond_0
 
-    .line 428
+    .line 427
     iget-object p2, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getTag()Ljava/lang/Object;
 
-    move-result-object p1
+    move-result-object v0
 
-    check-cast p1, Ljava/lang/Long;
+    check-cast v0, Ljava/lang/Long;
 
-    invoke-static {p2, p1}, Lorg/telegram/ui/PrivacyUsersActivity;->access$1200(Lorg/telegram/ui/PrivacyUsersActivity;Ljava/lang/Long;)V
+    invoke-static {p2, v0, p1}, Lorg/telegram/ui/PrivacyUsersActivity;->access$1200(Lorg/telegram/ui/PrivacyUsersActivity;Ljava/lang/Long;Landroid/view/View;)V
 
     :cond_0
     const/4 p1, 0x1
@@ -72,7 +72,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 410
+    .line 409
     iget-object v0, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PrivacyUsersActivity;->access$100(Lorg/telegram/ui/PrivacyUsersActivity;)I
@@ -85,7 +85,7 @@
 .method public getItemViewType(I)I
     .locals 1
 
-    .line 555
+    .line 554
     iget-object v0, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PrivacyUsersActivity;->access$1000(Lorg/telegram/ui/PrivacyUsersActivity;)I
@@ -98,7 +98,7 @@
 
     return p1
 
-    .line 557
+    .line 556
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
@@ -112,7 +112,7 @@
 
     return p1
 
-    .line 559
+    .line 558
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
@@ -126,7 +126,7 @@
 
     return p1
 
-    .line 561
+    .line 560
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
@@ -161,7 +161,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 1
 
-    .line 415
+    .line 414
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result p1
@@ -194,7 +194,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 8
 
-    .line 460
+    .line 459
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -219,13 +219,13 @@
 
     goto/16 :goto_4
 
-    .line 541
+    .line 540
     :cond_0
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/HeaderCell;
 
-    .line 542
+    .line 541
     iget-object v0, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PrivacyUsersActivity;->access$900(Lorg/telegram/ui/PrivacyUsersActivity;)I
@@ -234,7 +234,7 @@
 
     if-ne p2, v0, :cond_16
 
-    .line 543
+    .line 542
     iget-object p2, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/PrivacyUsersActivity;->access$200(Lorg/telegram/ui/PrivacyUsersActivity;)I
@@ -243,7 +243,7 @@
 
     if-ne p2, v3, :cond_1
 
-    .line 544
+    .line 543
     iget-object p2, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
     invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -264,7 +264,7 @@
 
     goto/16 :goto_4
 
-    .line 546
+    .line 545
     :cond_1
     sget p2, Lorg/telegram/messenger/R$string;->PrivacyExceptions:I
 
@@ -278,20 +278,20 @@
 
     goto/16 :goto_4
 
-    .line 528
+    .line 527
     :cond_2
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/ManageChatTextCell;
 
-    const-string p2, "windowBackgroundWhiteBlueIcon"
+    .line 528
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueIcon:I
 
-    const-string v0, "windowBackgroundWhiteBlueButton"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueButton:I
 
-    .line 529
-    invoke-virtual {p1, p2, v0}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setColors(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p1, p2, v0}, Lorg/telegram/ui/Cells/ManageChatTextCell;->setColors(II)V
 
-    .line 531
+    .line 530
     iget-object p2, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/PrivacyUsersActivity;->access$800(Lorg/telegram/ui/PrivacyUsersActivity;)Z
@@ -300,7 +300,7 @@
 
     if-eqz p2, :cond_3
 
-    .line 532
+    .line 531
     sget p2, Lorg/telegram/messenger/R$string;->EmpryUsersPlaceholder:I
 
     const-string v0, "EmpryUsersPlaceholder"
@@ -315,7 +315,7 @@
 
     goto/16 :goto_4
 
-    .line 534
+    .line 533
     :cond_3
     iget-object p2, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
@@ -325,7 +325,7 @@
 
     if-ne p2, v3, :cond_4
 
-    .line 535
+    .line 534
     sget p2, Lorg/telegram/messenger/R$string;->BlockUser:I
 
     const-string v0, "BlockUser"
@@ -340,7 +340,7 @@
 
     goto/16 :goto_4
 
-    .line 537
+    .line 536
     :cond_4
     sget p2, Lorg/telegram/messenger/R$string;->PrivacyAddAnException:I
 
@@ -371,24 +371,22 @@
 
     goto/16 :goto_4
 
-    .line 507
+    .line 506
     :cond_6
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
-    .line 508
+    .line 507
     iget-object v0, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PrivacyUsersActivity;->access$600(Lorg/telegram/ui/PrivacyUsersActivity;)I
 
     move-result v0
 
-    const-string v4, "windowBackgroundGrayShadow"
-
     if-ne p2, v0, :cond_9
 
-    .line 509
+    .line 508
     iget-object p2, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/PrivacyUsersActivity;->access$200(Lorg/telegram/ui/PrivacyUsersActivity;)I
@@ -397,10 +395,10 @@
 
     if-ne p2, v3, :cond_7
 
-    .line 510
+    .line 509
     invoke-virtual {p1, v2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
-    .line 511
+    .line 510
     sget p2, Lorg/telegram/messenger/R$string;->BlockedUsersInfo:I
 
     const-string v0, "BlockedUsersInfo"
@@ -416,13 +414,13 @@
     :cond_7
     const/16 p2, 0x8
 
-    .line 513
+    .line 512
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
-    .line 514
+    .line 513
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 516
+    .line 515
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
@@ -434,12 +432,14 @@
 
     if-ne p2, v0, :cond_8
 
-    .line 517
+    .line 516
     iget-object p2, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    invoke-static {p2, v0, v4}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
@@ -447,13 +447,15 @@
 
     goto/16 :goto_4
 
-    .line 519
+    .line 518
     :cond_8
     iget-object p2, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider:I
 
-    invoke-static {p2, v0, v4}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
@@ -461,7 +463,7 @@
 
     goto/16 :goto_4
 
-    .line 521
+    .line 520
     :cond_9
     iget-object v0, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
@@ -473,20 +475,22 @@
 
     const/16 p2, 0xc
 
-    .line 522
+    .line 521
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setFixedSize(I)V
 
     const-string p2, ""
 
-    .line 523
+    .line 522
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;->setText(Ljava/lang/CharSequence;)V
 
-    .line 524
+    .line 523
     iget-object p2, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->mContext:Landroid/content/Context;
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    invoke-static {p2, v0, v4}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
+
+    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
@@ -494,13 +498,13 @@
 
     goto/16 :goto_4
 
-    .line 462
+    .line 461
     :cond_a
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
-    .line 464
+    .line 463
     iget-object v0, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/PrivacyUsersActivity;->access$200(Lorg/telegram/ui/PrivacyUsersActivity;)I
@@ -509,7 +513,7 @@
 
     if-ne v0, v3, :cond_b
 
-    .line 465
+    .line 464
     iget-object v0, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -532,7 +536,7 @@
 
     goto :goto_1
 
-    .line 467
+    .line 466
     :cond_b
     iget-object v0, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
@@ -558,7 +562,7 @@
 
     move-result-wide v4
 
-    .line 469
+    .line 468
     :goto_1
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
@@ -572,7 +576,7 @@
 
     if-lez v0, :cond_11
 
-    .line 471
+    .line 470
     iget-object v0, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -591,7 +595,7 @@
 
     if-nez v0, :cond_d
 
-    .line 474
+    .line 473
     sget v0, Lorg/telegram/messenger/R$string;->common_id:I
 
     new-array v1, v3, [Ljava/lang/Object;
@@ -606,14 +610,14 @@
 
     move-result-object v0
 
-    .line 475
+    .line 474
     sget v1, Lorg/telegram/messenger/R$string;->NumberUnknown:I
 
     invoke-static {v6, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
 
     move-result-object v1
 
-    .line 476
+    .line 475
     invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
     move-result-object v4
@@ -635,13 +639,13 @@
 
     goto/16 :goto_4
 
-    .line 480
+    .line 479
     :cond_d
     iget-boolean v4, v0, Lorg/telegram/tgnet/TLRPC$User;->bot:Z
 
     if-eqz v4, :cond_e
 
-    .line 481
+    .line 480
     new-instance v4, Ljava/lang/StringBuilder;
 
     invoke-direct {v4}, Ljava/lang/StringBuilder;-><init>()V
@@ -680,7 +684,7 @@
 
     goto :goto_2
 
-    .line 482
+    .line 481
     :cond_e
     iget-object v4, v0, Lorg/telegram/tgnet/TLRPC$User;->phone:Ljava/lang/String;
 
@@ -692,7 +696,7 @@
 
     if-eqz v4, :cond_f
 
-    .line 483
+    .line 482
     invoke-static {}, Lorg/telegram/PhoneFormat/PhoneFormat;->getInstance()Lorg/telegram/PhoneFormat/PhoneFormat;
 
     move-result-object v4
@@ -719,7 +723,7 @@
 
     goto :goto_2
 
-    .line 485
+    .line 484
     :cond_f
     sget v4, Lorg/telegram/messenger/R$string;->NumberUnknown:I
 
@@ -727,7 +731,7 @@
 
     move-result-object v4
 
-    .line 487
+    .line 486
     :goto_2
     iget-object v5, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
@@ -746,7 +750,7 @@
 
     goto :goto_4
 
-    .line 490
+    .line 489
     :cond_11
     iget-object v0, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
@@ -766,7 +770,7 @@
 
     if-eqz v0, :cond_16
 
-    .line 493
+    .line 492
     iget v4, v0, Lorg/telegram/tgnet/TLRPC$Chat;->participants_count:I
 
     if-eqz v4, :cond_12
@@ -775,20 +779,20 @@
 
     const-string v6, "Members"
 
-    .line 494
+    .line 493
     invoke-static {v6, v4, v5}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
 
     move-result-object v4
 
     goto :goto_3
 
-    .line 495
+    .line 494
     :cond_12
     iget-boolean v4, v0, Lorg/telegram/tgnet/TLRPC$Chat;->has_geo:Z
 
     if-eqz v4, :cond_13
 
-    .line 496
+    .line 495
     sget v4, Lorg/telegram/messenger/R$string;->MegaLocation:I
 
     const-string v5, "MegaLocation"
@@ -799,7 +803,7 @@
 
     goto :goto_3
 
-    .line 497
+    .line 496
     :cond_13
     invoke-static {v0}, Lorg/telegram/messenger/ChatObject;->isPublic(Lorg/telegram/tgnet/TLRPC$Chat;)Z
 
@@ -807,7 +811,7 @@
 
     if-nez v4, :cond_14
 
-    .line 498
+    .line 497
     sget v4, Lorg/telegram/messenger/R$string;->MegaPrivate:I
 
     const-string v5, "MegaPrivate"
@@ -818,7 +822,7 @@
 
     goto :goto_3
 
-    .line 500
+    .line 499
     :cond_14
     sget v4, Lorg/telegram/messenger/R$string;->MegaPublic:I
 
@@ -828,7 +832,7 @@
 
     move-result-object v4
 
-    .line 502
+    .line 501
     :goto_3
     iget-object v5, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->this$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
@@ -851,11 +855,9 @@
 .end method
 
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
-    .locals 8
+    .locals 7
 
     const/4 v0, 0x1
-
-    const-string v1, "windowBackgroundWhite"
 
     if-eqz p2, :cond_3
 
@@ -869,25 +871,27 @@
 
     if-eq p2, v0, :cond_0
 
-    .line 442
+    .line 441
     new-instance p1, Lorg/telegram/ui/Cells/HeaderCell;
 
-    iget-object v3, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->mContext:Landroid/content/Context;
+    iget-object v2, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->mContext:Landroid/content/Context;
 
-    const/16 v5, 0x15
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
 
-    const/16 v6, 0xb
+    const/16 v4, 0x15
 
-    const/4 v7, 0x0
+    const/16 v5, 0xb
 
-    const-string v4, "windowBackgroundWhiteBlueHeader"
+    const/4 v6, 0x0
 
-    move-object v2, p1
+    move-object v1, p1
 
-    invoke-direct/range {v2 .. v7}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;Ljava/lang/String;IIZ)V
+    invoke-direct/range {v1 .. v6}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;IIIZ)V
 
-    .line 443
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    .line 442
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -895,12 +899,12 @@
 
     const/16 p2, 0x2b
 
-    .line 444
+    .line 443
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/HeaderCell;->setHeight(I)V
 
     goto :goto_0
 
-    .line 448
+    .line 447
     :cond_0
     new-instance p2, Lorg/telegram/ui/Cells/TextCell;
 
@@ -910,7 +914,7 @@
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Cells/TextCell;-><init>(Landroid/content/Context;)V
 
-    .line 449
+    .line 448
     sget p1, Lorg/telegram/messenger/R$string;->NotificationsDeleteAllException:I
 
     const-string v0, "NotificationsDeleteAllException"
@@ -923,15 +927,17 @@
 
     invoke-virtual {p2, p1, v0}, Lorg/telegram/ui/Cells/TextCell;->setText(Ljava/lang/String;Z)V
 
-    const/4 p1, 0x0
+    const/4 p1, -0x1
 
-    const-string v0, "windowBackgroundWhiteRedText5"
+    .line 449
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
-    .line 450
-    invoke-virtual {p2, p1, v0}, Lorg/telegram/ui/Cells/TextCell;->setColors(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p2, p1, v0}, Lorg/telegram/ui/Cells/TextCell;->setColors(II)V
 
-    .line 452
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    .line 451
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -941,7 +947,7 @@
 
     goto :goto_0
 
-    .line 437
+    .line 436
     :cond_1
     new-instance p1, Lorg/telegram/ui/Cells/ManageChatTextCell;
 
@@ -949,8 +955,10 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/ManageChatTextCell;-><init>(Landroid/content/Context;)V
 
-    .line 438
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    .line 437
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -958,7 +966,7 @@
 
     goto :goto_0
 
-    .line 434
+    .line 433
     :cond_2
     new-instance p1, Lorg/telegram/ui/Cells/TextInfoPrivacyCell;
 
@@ -968,33 +976,35 @@
 
     goto :goto_0
 
-    .line 424
+    .line 423
     :cond_3
     new-instance p1, Lorg/telegram/ui/Cells/ManageChatUserCell;
 
     iget-object p2, p0, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;->mContext:Landroid/content/Context;
 
-    const/4 v2, 0x7
+    const/4 v1, 0x7
 
-    const/4 v3, 0x6
+    const/4 v2, 0x6
 
-    invoke-direct {p1, p2, v2, v3, v0}, Lorg/telegram/ui/Cells/ManageChatUserCell;-><init>(Landroid/content/Context;IIZ)V
+    invoke-direct {p1, p2, v1, v2, v0}, Lorg/telegram/ui/Cells/ManageChatUserCell;-><init>(Landroid/content/Context;IIZ)V
 
-    .line 425
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    .line 424
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setBackgroundColor(I)V
 
-    .line 426
+    .line 425
     new-instance p2, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0}, Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/PrivacyUsersActivity$ListAdapter;)V
 
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/ManageChatUserCell;->setDelegate(Lorg/telegram/ui/Cells/ManageChatUserCell$ManageChatUserCellDelegate;)V
 
-    .line 455
+    .line 454
     :goto_0
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 

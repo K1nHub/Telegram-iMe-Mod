@@ -10,9 +10,9 @@
 
 .field private circleColor:I
 
-.field private circleColorKey:Ljava/lang/String;
+.field private circleColorKey:I
 
-.field private circleCrossfadeColorKey:Ljava/lang/String;
+.field private circleCrossfadeColorKey:I
 
 .field private circleCrossfadeColorProgress:F
 
@@ -22,7 +22,7 @@
 
 .field private circlePressedColor:I
 
-.field private circlePressedColorKey:Ljava/lang/String;
+.field private circlePressedColorKey:I
 
 .field private circleRadius:I
 
@@ -32,11 +32,11 @@
 
 .field private iconColor:I
 
-.field private iconColorKey:Ljava/lang/String;
+.field private iconColorKey:I
 
 .field private iconPressedColor:I
 
-.field private iconPressedColorKey:Ljava/lang/String;
+.field private iconPressedColorKey:I
 
 .field private isPressed:Z
 
@@ -88,7 +88,7 @@
 .end method
 
 .method public constructor <init>(Landroid/view/View;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
-    .locals 2
+    .locals 3
 
     .line 77
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -106,47 +106,62 @@
     iput v0, p0, Lorg/telegram/ui/Components/RadialProgress2;->progressColor:I
 
     .line 38
-    new-instance v0, Landroid/graphics/Paint;
+    new-instance v1, Landroid/graphics/Paint;
 
-    const/4 v1, 0x1
+    const/4 v2, 0x1
 
-    invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
+    invoke-direct {v1, v2}, Landroid/graphics/Paint;-><init>(I)V
 
-    iput-object v0, p0, Lorg/telegram/ui/Components/RadialProgress2;->overlayPaint:Landroid/graphics/Paint;
+    iput-object v1, p0, Lorg/telegram/ui/Components/RadialProgress2;->overlayPaint:Landroid/graphics/Paint;
 
     .line 39
-    new-instance v0, Landroid/graphics/Paint;
+    new-instance v1, Landroid/graphics/Paint;
 
-    invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
+    invoke-direct {v1, v2}, Landroid/graphics/Paint;-><init>(I)V
 
-    iput-object v0, p0, Lorg/telegram/ui/Components/RadialProgress2;->circlePaint:Landroid/graphics/Paint;
+    iput-object v1, p0, Lorg/telegram/ui/Components/RadialProgress2;->circlePaint:Landroid/graphics/Paint;
 
     .line 40
-    new-instance v0, Landroid/graphics/Paint;
+    new-instance v1, Landroid/graphics/Paint;
 
-    invoke-direct {v0, v1}, Landroid/graphics/Paint;-><init>(I)V
+    invoke-direct {v1, v2}, Landroid/graphics/Paint;-><init>(I)V
 
-    iput-object v0, p0, Lorg/telegram/ui/Components/RadialProgress2;->circleMiniPaint:Landroid/graphics/Paint;
+    iput-object v1, p0, Lorg/telegram/ui/Components/RadialProgress2;->circleMiniPaint:Landroid/graphics/Paint;
 
-    const/high16 v0, 0x3f800000    # 1.0f
+    const/high16 v1, 0x3f800000    # 1.0f
 
     .line 43
-    iput v0, p0, Lorg/telegram/ui/Components/RadialProgress2;->miniIconScale:F
+    iput v1, p0, Lorg/telegram/ui/Components/RadialProgress2;->miniIconScale:F
+
+    .line 48
+    iput v0, p0, Lorg/telegram/ui/Components/RadialProgress2;->circleColorKey:I
+
+    .line 49
+    iput v0, p0, Lorg/telegram/ui/Components/RadialProgress2;->circleCrossfadeColorKey:I
 
     .line 51
-    iput v0, p0, Lorg/telegram/ui/Components/RadialProgress2;->circleCheckProgress:F
+    iput v1, p0, Lorg/telegram/ui/Components/RadialProgress2;->circleCheckProgress:F
+
+    .line 52
+    iput v0, p0, Lorg/telegram/ui/Components/RadialProgress2;->circlePressedColorKey:I
+
+    .line 53
+    iput v0, p0, Lorg/telegram/ui/Components/RadialProgress2;->iconColorKey:I
+
+    .line 54
+    iput v0, p0, Lorg/telegram/ui/Components/RadialProgress2;->iconPressedColorKey:I
 
     .line 59
-    iput v0, p0, Lorg/telegram/ui/Components/RadialProgress2;->overrideCircleAlpha:F
+    iput v1, p0, Lorg/telegram/ui/Components/RadialProgress2;->overrideCircleAlpha:F
 
     .line 63
-    iput-boolean v1, p0, Lorg/telegram/ui/Components/RadialProgress2;->drawBackground:Z
+    iput-boolean v2, p0, Lorg/telegram/ui/Components/RadialProgress2;->drawBackground:Z
 
     .line 68
-    iput v0, p0, Lorg/telegram/ui/Components/RadialProgress2;->overrideAlpha:F
+    iput v1, p0, Lorg/telegram/ui/Components/RadialProgress2;->overrideAlpha:F
 
     .line 71
-    iput v0, p0, Lorg/telegram/ui/Components/RadialProgress2;->overlayImageAlpha:F
+    iput v1, p0, Lorg/telegram/ui/Components/RadialProgress2;->overlayImageAlpha:F
 
     .line 78
     iput-object p2, p0, Lorg/telegram/ui/Components/RadialProgress2;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
@@ -154,7 +169,7 @@
     .line 79
     new-instance p2, Landroid/graphics/Paint;
 
-    invoke-direct {p2, v1}, Landroid/graphics/Paint;-><init>(I)V
+    invoke-direct {p2, v2}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object p2, p0, Lorg/telegram/ui/Components/RadialProgress2;->miniProgressBackgroundPaint:Landroid/graphics/Paint;
 
@@ -169,7 +184,7 @@
     iput-object p2, p0, Lorg/telegram/ui/Components/RadialProgress2;->overlayImageView:Lorg/telegram/messenger/ImageReceiver;
 
     .line 84
-    invoke-virtual {p2, v1}, Lorg/telegram/messenger/ImageReceiver;->setInvalidateAll(Z)V
+    invoke-virtual {p2, v2}, Lorg/telegram/messenger/ImageReceiver;->setInvalidateAll(Z)V
 
     .line 86
     new-instance p2, Lorg/telegram/ui/Components/MediaActionDrawable;
@@ -204,7 +219,7 @@
     .line 91
     iget-object p1, p0, Lorg/telegram/ui/Components/RadialProgress2;->miniMediaActionDrawable:Lorg/telegram/ui/Components/MediaActionDrawable;
 
-    invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/MediaActionDrawable;->setMini(Z)V
+    invoke-virtual {p1, v2}, Lorg/telegram/ui/Components/MediaActionDrawable;->setMini(Z)V
 
     .line 92
     iget-object p1, p0, Lorg/telegram/ui/Components/RadialProgress2;->miniMediaActionDrawable:Lorg/telegram/ui/Components/MediaActionDrawable;
@@ -239,39 +254,16 @@
     return-void
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
+.method private getThemedColor(I)I
     .locals 1
 
     .line 532
     iget-object v0, p0, Lorg/telegram/ui/Components/RadialProgress2;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 533
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
@@ -469,19 +461,19 @@
 
     if-eqz v6, :cond_b
 
-    iget-object v6, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleCrossfadeColorKey:Ljava/lang/String;
+    iget v6, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleCrossfadeColorKey:I
 
-    if-nez v6, :cond_b
+    if-gez v6, :cond_b
 
     .line 321
-    iget-object v6, v0, Lorg/telegram/ui/Components/RadialProgress2;->iconPressedColorKey:Ljava/lang/String;
+    iget v6, v0, Lorg/telegram/ui/Components/RadialProgress2;->iconPressedColorKey:I
 
-    if-eqz v6, :cond_9
+    if-ltz v6, :cond_9
 
     .line 322
     iget-object v7, v0, Lorg/telegram/ui/Components/RadialProgress2;->miniMediaActionDrawable:Lorg/telegram/ui/Components/MediaActionDrawable;
 
-    invoke-direct {v0, v6}, Lorg/telegram/ui/Components/RadialProgress2;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v0, v6}, Lorg/telegram/ui/Components/RadialProgress2;->getThemedColor(I)I
 
     move-result v6
 
@@ -499,14 +491,14 @@
 
     .line 326
     :goto_3
-    iget-object v6, v0, Lorg/telegram/ui/Components/RadialProgress2;->circlePressedColorKey:Ljava/lang/String;
+    iget v6, v0, Lorg/telegram/ui/Components/RadialProgress2;->circlePressedColorKey:I
 
-    if-eqz v6, :cond_a
+    if-ltz v6, :cond_a
 
     .line 327
     iget-object v7, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleMiniPaint:Landroid/graphics/Paint;
 
-    invoke-direct {v0, v6}, Lorg/telegram/ui/Components/RadialProgress2;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v0, v6}, Lorg/telegram/ui/Components/RadialProgress2;->getThemedColor(I)I
 
     move-result v6
 
@@ -526,14 +518,14 @@
 
     .line 332
     :cond_b
-    iget-object v6, v0, Lorg/telegram/ui/Components/RadialProgress2;->iconColorKey:Ljava/lang/String;
+    iget v6, v0, Lorg/telegram/ui/Components/RadialProgress2;->iconColorKey:I
 
-    if-eqz v6, :cond_c
+    if-ltz v6, :cond_c
 
     .line 333
     iget-object v7, v0, Lorg/telegram/ui/Components/RadialProgress2;->miniMediaActionDrawable:Lorg/telegram/ui/Components/MediaActionDrawable;
 
-    invoke-direct {v0, v6}, Lorg/telegram/ui/Components/RadialProgress2;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v0, v6}, Lorg/telegram/ui/Components/RadialProgress2;->getThemedColor(I)I
 
     move-result v6
 
@@ -551,25 +543,25 @@
 
     .line 337
     :goto_4
-    iget-object v6, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleColorKey:Ljava/lang/String;
+    iget v6, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleColorKey:I
 
-    if-eqz v6, :cond_e
+    if-ltz v6, :cond_e
 
     .line 338
-    iget-object v7, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleCrossfadeColorKey:Ljava/lang/String;
+    iget v7, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleCrossfadeColorKey:I
 
-    if-eqz v7, :cond_d
+    if-ltz v7, :cond_d
 
     .line 339
     iget-object v7, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleMiniPaint:Landroid/graphics/Paint;
 
-    invoke-direct {v0, v6}, Lorg/telegram/ui/Components/RadialProgress2;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v0, v6}, Lorg/telegram/ui/Components/RadialProgress2;->getThemedColor(I)I
 
     move-result v6
 
-    iget-object v8, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleCrossfadeColorKey:Ljava/lang/String;
+    iget v8, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleCrossfadeColorKey:I
 
-    invoke-direct {v0, v8}, Lorg/telegram/ui/Components/RadialProgress2;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v0, v8}, Lorg/telegram/ui/Components/RadialProgress2;->getThemedColor(I)I
 
     move-result v8
 
@@ -589,7 +581,7 @@
     :cond_d
     iget-object v7, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleMiniPaint:Landroid/graphics/Paint;
 
-    invoke-direct {v0, v6}, Lorg/telegram/ui/Components/RadialProgress2;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v0, v6}, Lorg/telegram/ui/Components/RadialProgress2;->getThemedColor(I)I
 
     move-result v6
 
@@ -612,14 +604,14 @@
     if-eqz v6, :cond_11
 
     .line 350
-    iget-object v6, v0, Lorg/telegram/ui/Components/RadialProgress2;->iconPressedColorKey:Ljava/lang/String;
+    iget v6, v0, Lorg/telegram/ui/Components/RadialProgress2;->iconPressedColorKey:I
 
-    if-eqz v6, :cond_f
+    if-ltz v6, :cond_f
 
     .line 351
     iget-object v7, v0, Lorg/telegram/ui/Components/RadialProgress2;->mediaActionDrawable:Lorg/telegram/ui/Components/MediaActionDrawable;
 
-    invoke-direct {v0, v6}, Lorg/telegram/ui/Components/RadialProgress2;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v0, v6}, Lorg/telegram/ui/Components/RadialProgress2;->getThemedColor(I)I
 
     move-result v6
 
@@ -628,9 +620,9 @@
     .line 352
     iget-object v7, v0, Lorg/telegram/ui/Components/RadialProgress2;->mediaActionDrawable:Lorg/telegram/ui/Components/MediaActionDrawable;
 
-    iget-object v8, v0, Lorg/telegram/ui/Components/RadialProgress2;->circlePressedColorKey:Ljava/lang/String;
+    iget v8, v0, Lorg/telegram/ui/Components/RadialProgress2;->circlePressedColorKey:I
 
-    invoke-direct {v0, v8}, Lorg/telegram/ui/Components/RadialProgress2;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v0, v8}, Lorg/telegram/ui/Components/RadialProgress2;->getThemedColor(I)I
 
     move-result v8
 
@@ -657,14 +649,14 @@
 
     .line 357
     :goto_6
-    iget-object v7, v0, Lorg/telegram/ui/Components/RadialProgress2;->circlePressedColorKey:Ljava/lang/String;
+    iget v7, v0, Lorg/telegram/ui/Components/RadialProgress2;->circlePressedColorKey:I
 
-    if-eqz v7, :cond_10
+    if-ltz v7, :cond_10
 
     .line 358
     iget-object v8, v0, Lorg/telegram/ui/Components/RadialProgress2;->circlePaint:Landroid/graphics/Paint;
 
-    invoke-direct {v0, v7}, Lorg/telegram/ui/Components/RadialProgress2;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v0, v7}, Lorg/telegram/ui/Components/RadialProgress2;->getThemedColor(I)I
 
     move-result v7
 
@@ -684,14 +676,14 @@
 
     .line 363
     :cond_11
-    iget-object v6, v0, Lorg/telegram/ui/Components/RadialProgress2;->iconColorKey:Ljava/lang/String;
+    iget v6, v0, Lorg/telegram/ui/Components/RadialProgress2;->iconColorKey:I
 
-    if-eqz v6, :cond_12
+    if-ltz v6, :cond_12
 
     .line 364
     iget-object v7, v0, Lorg/telegram/ui/Components/RadialProgress2;->mediaActionDrawable:Lorg/telegram/ui/Components/MediaActionDrawable;
 
-    invoke-direct {v0, v6}, Lorg/telegram/ui/Components/RadialProgress2;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v0, v6}, Lorg/telegram/ui/Components/RadialProgress2;->getThemedColor(I)I
 
     move-result v6
 
@@ -700,9 +692,9 @@
     .line 365
     iget-object v7, v0, Lorg/telegram/ui/Components/RadialProgress2;->mediaActionDrawable:Lorg/telegram/ui/Components/MediaActionDrawable;
 
-    iget-object v8, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleColorKey:Ljava/lang/String;
+    iget v8, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleColorKey:I
 
-    invoke-direct {v0, v8}, Lorg/telegram/ui/Components/RadialProgress2;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v0, v8}, Lorg/telegram/ui/Components/RadialProgress2;->getThemedColor(I)I
 
     move-result v8
 
@@ -729,14 +721,14 @@
 
     .line 370
     :goto_7
-    iget-object v7, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleColorKey:Ljava/lang/String;
+    iget v7, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleColorKey:I
 
-    if-eqz v7, :cond_13
+    if-ltz v7, :cond_13
 
     .line 371
     iget-object v8, v0, Lorg/telegram/ui/Components/RadialProgress2;->circlePaint:Landroid/graphics/Paint;
 
-    invoke-direct {v0, v7}, Lorg/telegram/ui/Components/RadialProgress2;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v0, v7}, Lorg/telegram/ui/Components/RadialProgress2;->getThemedColor(I)I
 
     move-result v7
 
@@ -760,9 +752,9 @@
 
     if-nez v7, :cond_14
 
-    iget-object v7, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleCrossfadeColorKey:Ljava/lang/String;
+    iget v7, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleCrossfadeColorKey:I
 
-    if-eqz v7, :cond_15
+    if-ltz v7, :cond_15
 
     :cond_14
     iget-object v7, v0, Lorg/telegram/ui/Components/RadialProgress2;->miniDrawCanvas:Landroid/graphics/Canvas;
@@ -828,9 +820,9 @@
 
     if-nez v7, :cond_16
 
-    iget-object v7, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleCrossfadeColorKey:Ljava/lang/String;
+    iget v7, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleCrossfadeColorKey:I
 
-    if-eqz v7, :cond_17
+    if-ltz v7, :cond_17
 
     :cond_16
     iget-object v7, v0, Lorg/telegram/ui/Components/RadialProgress2;->miniDrawCanvas:Landroid/graphics/Canvas;
@@ -1048,9 +1040,9 @@
 
     if-eqz v3, :cond_1a
 
-    iget-object v6, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleCrossfadeColorKey:Ljava/lang/String;
+    iget v6, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleCrossfadeColorKey:I
 
-    if-eqz v6, :cond_1a
+    if-ltz v6, :cond_1a
 
     iget v6, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleCheckProgress:F
 
@@ -1105,9 +1097,9 @@
 
     if-nez v8, :cond_1b
 
-    iget-object v8, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleCrossfadeColorKey:Ljava/lang/String;
+    iget v8, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleCrossfadeColorKey:I
 
-    if-eqz v8, :cond_1c
+    if-ltz v8, :cond_1c
 
     :cond_1b
     iget-object v8, v0, Lorg/telegram/ui/Components/RadialProgress2;->miniDrawCanvas:Landroid/graphics/Canvas;
@@ -1210,9 +1202,9 @@
 
     if-nez v2, :cond_20
 
-    iget-object v2, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleCrossfadeColorKey:Ljava/lang/String;
+    iget v2, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleCrossfadeColorKey:I
 
-    if-eqz v2, :cond_21
+    if-ltz v2, :cond_21
 
     :cond_20
     iget-object v2, v0, Lorg/telegram/ui/Components/RadialProgress2;->miniDrawCanvas:Landroid/graphics/Canvas;
@@ -1304,9 +1296,9 @@
 
     if-nez v2, :cond_25
 
-    iget-object v2, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleCrossfadeColorKey:Ljava/lang/String;
+    iget v2, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleCrossfadeColorKey:I
 
-    if-eqz v2, :cond_24
+    if-ltz v2, :cond_24
 
     goto :goto_f
 
@@ -1362,9 +1354,9 @@
 
     if-nez v2, :cond_28
 
-    iget-object v2, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleCrossfadeColorKey:Ljava/lang/String;
+    iget v2, v0, Lorg/telegram/ui/Components/RadialProgress2;->circleCrossfadeColorKey:I
 
-    if-eqz v2, :cond_31
+    if-ltz v2, :cond_31
 
     .line 476
     :cond_28
@@ -1741,13 +1733,13 @@
     return-void
 .end method
 
-.method public getCircleColorKey()Ljava/lang/String;
+.method public getCircleColorKey()I
     .locals 1
 
     .line 528
-    iget-object v0, p0, Lorg/telegram/ui/Components/RadialProgress2;->circleColorKey:Ljava/lang/String;
+    iget v0, p0, Lorg/telegram/ui/Components/RadialProgress2;->circleColorKey:I
 
-    return-object v0
+    return v0
 .end method
 
 .method public getIcon()I
@@ -1822,6 +1814,29 @@
 
     .line 121
     iget v0, p0, Lorg/telegram/ui/Components/RadialProgress2;->circleRadius:I
+
+    return v0
+.end method
+
+.method public getTransitionProgress()F
+    .locals 1
+
+    .line 544
+    iget-boolean v0, p0, Lorg/telegram/ui/Components/RadialProgress2;->drawMiniIcon:Z
+
+    if-eqz v0, :cond_0
+
+    iget-object v0, p0, Lorg/telegram/ui/Components/RadialProgress2;->miniMediaActionDrawable:Lorg/telegram/ui/Components/MediaActionDrawable;
+
+    goto :goto_0
+
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/Components/RadialProgress2;->mediaActionDrawable:Lorg/telegram/ui/Components/MediaActionDrawable;
+
+    :goto_0
+    invoke-virtual {v0}, Lorg/telegram/ui/Components/MediaActionDrawable;->getTransitionProgress()F
+
+    move-result v0
 
     return v0
 .end method
@@ -1937,11 +1952,11 @@
     return-void
 .end method
 
-.method public setCircleCrossfadeColor(Ljava/lang/String;FF)V
+.method public setCircleCrossfadeColor(IFF)V
     .locals 0
 
     .line 169
-    iput-object p1, p0, Lorg/telegram/ui/Components/RadialProgress2;->circleCrossfadeColorKey:Ljava/lang/String;
+    iput p1, p0, Lorg/telegram/ui/Components/RadialProgress2;->circleCrossfadeColorKey:I
 
     .line 170
     iput p2, p0, Lorg/telegram/ui/Components/RadialProgress2;->circleCrossfadeColorProgress:F
@@ -1954,7 +1969,7 @@
     .line 172
     iput p2, p0, Lorg/telegram/ui/Components/RadialProgress2;->miniIconScale:F
 
-    if-eqz p1, :cond_0
+    if-ltz p1, :cond_0
 
     .line 174
     invoke-virtual {p0}, Lorg/telegram/ui/Components/RadialProgress2;->initMiniIcons()V
@@ -1977,52 +1992,52 @@
     return-void
 .end method
 
-.method public setColors(IIII)V
+.method public setColorKeys(IIII)V
     .locals 0
 
     .line 151
-    iput p1, p0, Lorg/telegram/ui/Components/RadialProgress2;->circleColor:I
+    iput p1, p0, Lorg/telegram/ui/Components/RadialProgress2;->circleColorKey:I
 
     .line 152
-    iput p2, p0, Lorg/telegram/ui/Components/RadialProgress2;->circlePressedColor:I
+    iput p2, p0, Lorg/telegram/ui/Components/RadialProgress2;->circlePressedColorKey:I
 
     .line 153
-    iput p3, p0, Lorg/telegram/ui/Components/RadialProgress2;->iconColor:I
+    iput p3, p0, Lorg/telegram/ui/Components/RadialProgress2;->iconColorKey:I
 
     .line 154
-    iput p4, p0, Lorg/telegram/ui/Components/RadialProgress2;->iconPressedColor:I
-
-    const/4 p1, 0x0
-
-    .line 155
-    iput-object p1, p0, Lorg/telegram/ui/Components/RadialProgress2;->circleColorKey:Ljava/lang/String;
-
-    .line 156
-    iput-object p1, p0, Lorg/telegram/ui/Components/RadialProgress2;->circlePressedColorKey:Ljava/lang/String;
-
-    .line 157
-    iput-object p1, p0, Lorg/telegram/ui/Components/RadialProgress2;->iconColorKey:Ljava/lang/String;
-
-    .line 158
-    iput-object p1, p0, Lorg/telegram/ui/Components/RadialProgress2;->iconPressedColorKey:Ljava/lang/String;
+    iput p4, p0, Lorg/telegram/ui/Components/RadialProgress2;->iconPressedColorKey:I
 
     return-void
 .end method
 
-.method public setColors(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public setColors(IIII)V
     .locals 0
 
+    .line 158
+    iput p1, p0, Lorg/telegram/ui/Components/RadialProgress2;->circleColor:I
+
+    .line 159
+    iput p2, p0, Lorg/telegram/ui/Components/RadialProgress2;->circlePressedColor:I
+
+    .line 160
+    iput p3, p0, Lorg/telegram/ui/Components/RadialProgress2;->iconColor:I
+
+    .line 161
+    iput p4, p0, Lorg/telegram/ui/Components/RadialProgress2;->iconPressedColor:I
+
+    const/4 p1, -0x1
+
     .line 162
-    iput-object p1, p0, Lorg/telegram/ui/Components/RadialProgress2;->circleColorKey:Ljava/lang/String;
+    iput p1, p0, Lorg/telegram/ui/Components/RadialProgress2;->circleColorKey:I
 
     .line 163
-    iput-object p2, p0, Lorg/telegram/ui/Components/RadialProgress2;->circlePressedColorKey:Ljava/lang/String;
+    iput p1, p0, Lorg/telegram/ui/Components/RadialProgress2;->circlePressedColorKey:I
 
     .line 164
-    iput-object p3, p0, Lorg/telegram/ui/Components/RadialProgress2;->iconColorKey:Ljava/lang/String;
+    iput p1, p0, Lorg/telegram/ui/Components/RadialProgress2;->iconColorKey:I
 
     .line 165
-    iput-object p4, p0, Lorg/telegram/ui/Components/RadialProgress2;->iconPressedColorKey:Ljava/lang/String;
+    iput p1, p0, Lorg/telegram/ui/Components/RadialProgress2;->iconPressedColorKey:I
 
     return-void
 .end method
@@ -2202,7 +2217,7 @@
 .method public setMaxIconSize(I)V
     .locals 0
 
-    .line 537
+    .line 536
     iput p1, p0, Lorg/telegram/ui/Components/RadialProgress2;->maxIconSize:I
 
     return-void
@@ -2320,7 +2335,7 @@
 .method public setOverlayImageAlpha(F)V
     .locals 0
 
-    .line 541
+    .line 540
     iput p1, p0, Lorg/telegram/ui/Components/RadialProgress2;->overlayImageAlpha:F
 
     return-void

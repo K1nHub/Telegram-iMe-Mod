@@ -8,7 +8,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPreferencesMigrationManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PreferencesMigrationManager.kt\ncom/iMe/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n+ 4 Koin.kt\norg/koin/core/Koin\n+ 5 SharedPrefferencesExt.kt\ncom/iMe/storage/data/utils/extentions/SharedPrefferencesExtKt\n+ 6 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 7 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,109:1\n41#2,6:110\n47#2:117\n133#3:116\n107#4:118\n14#5,4:119\n766#6:123\n857#6,2:124\n1855#6:126\n1855#6,2:128\n1856#6:130\n1#7:127\n*S KotlinDebug\n*F\n+ 1 PreferencesMigrationManager.kt\ncom/iMe/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto\n*L\n39#1:110,6\n39#1:117\n39#1:116\n39#1:118\n40#1:119,4\n78#1:123\n78#1:124,2\n79#1:126\n85#1:128,2\n79#1:130\n*E\n"
+    value = "SMAP\nPreferencesMigrationManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PreferencesMigrationManager.kt\ncom/iMe/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n+ 4 Koin.kt\norg/koin/core/Koin\n+ 5 SharedPrefferencesExt.kt\ncom/iMe/storage/data/utils/extentions/SharedPrefferencesExtKt\n+ 6 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 7 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,110:1\n41#2,6:111\n47#2:118\n133#3:117\n107#4:119\n14#5,4:120\n766#6:124\n857#6,2:125\n1855#6:127\n1855#6,2:129\n1856#6:131\n1#7:128\n*S KotlinDebug\n*F\n+ 1 PreferencesMigrationManager.kt\ncom/iMe/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto\n*L\n39#1:111,6\n39#1:118\n39#1:117\n39#1:119\n40#1:120,4\n79#1:124\n79#1:125,2\n80#1:127\n86#1:129,2\n80#1:131\n*E\n"
 .end annotation
 
 
@@ -52,7 +52,7 @@
         }
     .end annotation
 
-    .line 78
+    .line 79
     sget-object v0, Lcom/iMe/storage/domain/model/crypto/NetworkType;->Companion:Lcom/iMe/storage/domain/model/crypto/NetworkType$Companion;
 
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/NetworkType$Companion;->getAvailableNetworks()Ljava/util/List;
@@ -85,7 +85,7 @@
 
     check-cast v3, Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
-    .line 78
+    .line 79
     invoke-virtual {v3}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v3
@@ -135,12 +135,12 @@
 
     check-cast v0, Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
-    .line 80
+    .line 81
     invoke-interface {p1, v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getTokensSettings(Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lcom/iMe/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;
 
     move-result-object v1
 
-    .line 82
+    .line 83
     sget-object v2, Lcom/iMe/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;->Companion:Lcom/iMe/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata$Companion;
 
     invoke-virtual {v2, v0}, Lcom/iMe/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata$Companion;->getDefaultTokensSettings(Lcom/iMe/storage/domain/model/crypto/NetworkType;)Lcom/iMe/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;
@@ -153,7 +153,7 @@
 
     if-nez v2, :cond_2
 
-    .line 83
+    .line 84
     new-instance v2, Lkotlin/jvm/internal/Ref$IntRef;
 
     invoke-direct {v2}, Lkotlin/jvm/internal/Ref$IntRef;-><init>()V
@@ -246,7 +246,7 @@
 
     check-cast v4, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    .line 86
+    .line 87
     sget-object v5, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;
 
     invoke-virtual {v5, v0}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;->getTokensByNetwork(Lcom/iMe/storage/domain/model/crypto/NetworkType;)Ljava/util/List;
@@ -259,31 +259,31 @@
 
     if-eqz v5, :cond_5
 
-    .line 89
+    .line 90
     invoke-virtual {v1}, Lcom/iMe/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;->getStates()Ljava/util/List;
 
     move-result-object v5
 
-    .line 90
+    .line 91
     new-instance v6, Lcom/iMe/storage/data/locale/prefs/model/WalletCryptoTokensSettingsTokenState;
 
-    .line 91
+    .line 92
     invoke-virtual {v4}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->getName()Ljava/lang/String;
 
     move-result-object v4
 
-    .line 92
+    .line 93
     iget v7, v2, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 
     const/4 v8, 0x1
 
-    .line 90
+    .line 91
     invoke-direct {v6, v4, v7, v8}, Lcom/iMe/storage/data/locale/prefs/model/WalletCryptoTokensSettingsTokenState;-><init>(Ljava/lang/String;IZ)V
 
-    .line 89
+    .line 90
     invoke-interface {v5, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
 
-    .line 96
+    .line 97
     iget v4, v2, Lkotlin/jvm/internal/Ref$IntRef;->element:I
 
     add-int/2addr v4, v8
@@ -292,13 +292,13 @@
 
     goto :goto_3
 
-    .line 100
+    .line 101
     :cond_6
     invoke-interface {p1, v1, v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->saveTokensSettings(Lcom/iMe/storage/data/locale/prefs/model/WalletCryptoTokensSettingsMetadata;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
 
     goto/16 :goto_1
 
-    .line 83
+    .line 84
     :cond_7
     new-instance p1, Ljava/util/NoSuchElementException;
 
@@ -405,23 +405,25 @@
     add-int/2addr v2, v3
 
     :goto_1
-    const/16 v4, 0xa
+    const/16 v4, 0xb
 
     if-ge v2, v4, :cond_1
 
-    const/16 v5, 0x9
+    const/16 v5, 0xa
 
-    const/16 v6, 0x8
+    const/16 v6, 0x9
 
-    const/4 v7, 0x7
+    const/16 v7, 0x8
 
-    const/4 v8, 0x6
+    const/4 v8, 0x7
 
-    const/4 v9, 0x5
+    const/4 v9, 0x6
 
-    const/4 v10, 0x4
+    const/4 v10, 0x5
 
-    const/4 v11, 0x3
+    const/4 v11, 0x4
+
+    const/4 v12, 0x3
 
     const/4 v13, 0x2
 
@@ -431,8 +433,22 @@
 
     goto/16 :goto_2
 
-    .line 70
+    .line 71
     :pswitch_0
+    sget-object v4, Lcom/iMe/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;->INSTANCE:Lcom/iMe/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;
+
+    sget-object v5, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->BTCMT:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+
+    invoke-static {v5}, Lkotlin/collections/CollectionsKt;->listOf(Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v5
+
+    invoke-direct {v4, v1, v1, v5}, Lcom/iMe/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;->addSupportForNewTokens(Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/storage/BasePreferenceHelper;Ljava/util/List;)V
+
+    goto/16 :goto_2
+
+    .line 70
+    :pswitch_1
     sget-object v4, Lcom/iMe/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;->INSTANCE:Lcom/iMe/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;
 
     sget-object v5, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->HT:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
@@ -446,7 +462,7 @@
     goto/16 :goto_2
 
     .line 69
-    :pswitch_1
+    :pswitch_2
     sget-object v4, Lcom/iMe/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;->INSTANCE:Lcom/iMe/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;
 
     new-array v5, v13, [Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
@@ -468,7 +484,7 @@
     goto/16 :goto_2
 
     .line 68
-    :pswitch_2
+    :pswitch_3
     sget-object v4, Lcom/iMe/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;->INSTANCE:Lcom/iMe/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;
 
     sget-object v5, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->FTM:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
@@ -482,7 +498,7 @@
     goto/16 :goto_2
 
     .line 60
-    :pswitch_3
+    :pswitch_4
     invoke-interface {v1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getOldWalletPublicAddress()Ljava/lang/String;
 
     move-result-object v4
@@ -548,13 +564,13 @@
     goto/16 :goto_2
 
     .line 58
-    :pswitch_4
+    :pswitch_5
     invoke-interface {v1}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->resetAllTokensSettings()V
 
     goto/16 :goto_2
 
     .line 57
-    :pswitch_5
+    :pswitch_6
     sget-object v4, Lcom/iMe/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;->INSTANCE:Lcom/iMe/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;
 
     new-array v5, v13, [Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
@@ -576,125 +592,125 @@
     goto/16 :goto_2
 
     .line 49
-    :pswitch_6
+    :pswitch_7
     sget-object v15, Lcom/iMe/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;->INSTANCE:Lcom/iMe/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;
 
-    const/16 v12, 0x15
+    const/16 v4, 0x15
 
-    new-array v12, v12, [Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    new-array v4, v4, [Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     .line 50
     sget-object v16, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->GFX:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    aput-object v16, v12, v14
+    aput-object v16, v4, v14
 
     sget-object v14, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->D11:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    aput-object v14, v12, v3
+    aput-object v14, v4, v3
 
     sget-object v14, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->DVD:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    aput-object v14, v12, v13
+    aput-object v14, v4, v13
 
     .line 51
     sget-object v13, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->METIS:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    aput-object v13, v12, v11
+    aput-object v13, v4, v12
 
-    sget-object v11, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->CTSI:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sget-object v12, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->CTSI:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    aput-object v11, v12, v10
+    aput-object v12, v4, v11
 
-    sget-object v10, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->SAITO:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sget-object v11, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->SAITO:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    aput-object v10, v12, v9
+    aput-object v11, v4, v10
 
     .line 52
-    sget-object v9, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->ZCX:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sget-object v10, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->ZCX:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    aput-object v9, v12, v8
+    aput-object v10, v4, v9
 
-    sget-object v8, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->CEEK:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sget-object v9, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->CEEK:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    aput-object v8, v12, v7
+    aput-object v9, v4, v8
 
-    sget-object v7, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->XEND:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sget-object v8, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->XEND:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    aput-object v7, v12, v6
+    aput-object v8, v4, v7
 
-    sget-object v6, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->SHR:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sget-object v7, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->SHR:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    aput-object v6, v12, v5
+    aput-object v7, v4, v6
 
     .line 53
-    sget-object v5, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->BOSON:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sget-object v6, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->BOSON:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    aput-object v5, v12, v4
+    aput-object v6, v4, v5
 
-    sget-object v4, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->KONO:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sget-object v5, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->KONO:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    const/16 v5, 0xb
+    const/16 v6, 0xb
 
-    aput-object v4, v12, v5
+    aput-object v5, v4, v6
 
-    const/16 v4, 0xc
+    const/16 v5, 0xc
 
-    sget-object v5, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->KFT:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sget-object v6, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->KFT:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    aput-object v5, v12, v4
+    aput-object v6, v4, v5
 
-    const/16 v4, 0xd
+    const/16 v5, 0xd
 
     .line 54
-    sget-object v5, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->OM:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sget-object v6, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->OM:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    aput-object v5, v12, v4
+    aput-object v6, v4, v5
 
-    const/16 v4, 0xe
+    const/16 v5, 0xe
 
-    sget-object v5, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->ROYA:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sget-object v6, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->ROYA:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    aput-object v5, v12, v4
+    aput-object v6, v4, v5
 
-    const/16 v4, 0xf
+    const/16 v5, 0xf
 
-    sget-object v5, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->CVR:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sget-object v6, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->CVR:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    aput-object v5, v12, v4
+    aput-object v6, v4, v5
 
-    const/16 v4, 0x10
+    const/16 v5, 0x10
 
-    sget-object v5, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->SKILL:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sget-object v6, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->SKILL:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    aput-object v5, v12, v4
+    aput-object v6, v4, v5
 
-    const/16 v4, 0x11
+    const/16 v5, 0x11
 
     .line 55
-    sget-object v5, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->YAY:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sget-object v6, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->YAY:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    aput-object v5, v12, v4
+    aput-object v6, v4, v5
 
-    const/16 v4, 0x12
+    const/16 v5, 0x12
 
-    sget-object v5, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->KABY:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sget-object v6, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->KABY:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    aput-object v5, v12, v4
+    aput-object v6, v4, v5
 
-    const/16 v4, 0x13
+    const/16 v5, 0x13
 
-    sget-object v5, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->USDO:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sget-object v6, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->USDO:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    aput-object v5, v12, v4
+    aput-object v6, v4, v5
 
-    const/16 v4, 0x14
+    const/16 v5, 0x14
 
-    sget-object v5, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->FUSE:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sget-object v6, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->FUSE:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    aput-object v5, v12, v4
+    aput-object v6, v4, v5
 
     .line 49
-    invoke-static {v12}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
+    invoke-static {v4}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v4
 
@@ -703,8 +719,8 @@
     goto :goto_2
 
     .line 45
-    :pswitch_7
-    sget-object v12, Lcom/iMe/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;->INSTANCE:Lcom/iMe/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;
+    :pswitch_8
+    sget-object v4, Lcom/iMe/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;->INSTANCE:Lcom/iMe/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;
 
     const/16 v15, 0xb
 
@@ -725,48 +741,48 @@
 
     sget-object v13, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->LSS:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    aput-object v13, v15, v11
+    aput-object v13, v15, v12
 
-    sget-object v11, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->GAINS:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sget-object v12, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->GAINS:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+
+    aput-object v12, v15, v11
+
+    sget-object v11, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->UNN:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     aput-object v11, v15, v10
 
-    sget-object v10, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->UNN:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    .line 47
+    sget-object v10, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->DEXT:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     aput-object v10, v15, v9
 
-    .line 47
-    sget-object v9, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->DEXT:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sget-object v9, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->TOMOE:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     aput-object v9, v15, v8
 
-    sget-object v8, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->TOMOE:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sget-object v8, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->FLURRY:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     aput-object v8, v15, v7
 
-    sget-object v7, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->FLURRY:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sget-object v7, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->FRM:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     aput-object v7, v15, v6
 
-    sget-object v6, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->FRM:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sget-object v6, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->DOP:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     aput-object v6, v15, v5
-
-    sget-object v5, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->DOP:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
-
-    aput-object v5, v15, v4
 
     .line 45
     invoke-static {v15}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
-    move-result-object v4
+    move-result-object v5
 
-    invoke-direct {v12, v1, v1, v4}, Lcom/iMe/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;->addSupportForNewTokens(Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/storage/BasePreferenceHelper;Ljava/util/List;)V
+    invoke-direct {v4, v1, v1, v5}, Lcom/iMe/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;->addSupportForNewTokens(Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/storage/BasePreferenceHelper;Ljava/util/List;)V
 
     goto :goto_2
 
     .line 44
-    :pswitch_8
+    :pswitch_9
     sget-object v4, Lcom/iMe/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;->INSTANCE:Lcom/iMe/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;
 
     sget-object v5, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->UFI:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
@@ -777,7 +793,7 @@
 
     invoke-direct {v4, v1, v1, v5}, Lcom/iMe/storage/data/locale/prefs/migration/PreferencesMigrationManager$Crypto;->addSupportForNewTokens(Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/storage/BasePreferenceHelper;Ljava/util/List;)V
 
-    .line 72
+    .line 73
     :goto_2
     invoke-interface {v1, v2}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->setPrefsVersion(I)V
 
@@ -793,8 +809,11 @@
 
     return-void
 
+    nop
+
     :pswitch_data_0
     .packed-switch 0x1
+        :pswitch_9
         :pswitch_8
         :pswitch_7
         :pswitch_6

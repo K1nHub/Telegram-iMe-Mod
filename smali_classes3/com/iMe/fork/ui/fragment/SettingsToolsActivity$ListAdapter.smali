@@ -54,7 +54,7 @@
     .locals 0
 
     .line 96
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_SETTINGS:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_SETTINGS_CELL:I
 
     return p1
 .end method
@@ -150,10 +150,10 @@
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Cells/TextCell;-><init>(Landroid/content/Context;)V
 
-    const-string p2, "windowBackgroundWhite"
-
     .line 100
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 

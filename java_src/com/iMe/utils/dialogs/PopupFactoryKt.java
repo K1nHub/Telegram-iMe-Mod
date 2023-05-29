@@ -22,7 +22,7 @@ public final class PopupFactoryKt {
         final ListPopupWindow listPopupWindow = new ListPopupWindow(view.getContext());
         listPopupWindow.setWidth(AndroidUtilities.displaySize.x / 2);
         listPopupWindow.setAnchorView(view);
-        listPopupWindow.setBackgroundDrawable(new ColorDrawable(Theme.getColor("windowBackgroundWhite")));
+        listPopupWindow.setBackgroundDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundWhite)));
         Context context = view.getContext();
         Intrinsics.checkNotNullExpressionValue(context, "context");
         listPopupWindow.setAdapter(new PopupOptionsAdapter(context, options));

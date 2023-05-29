@@ -2,8 +2,10 @@ package kotlin.sequences;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Iterator;
 import java.util.LinkedHashSet;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.Set;
 import kotlin.Pair;
 import kotlin.collections.CollectionsKt__CollectionsKt;
@@ -12,10 +14,31 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__AppendableKt;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: _Sequences.kt */
 /* loaded from: classes4.dex */
 public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
+    public static <T> T firstOrNull(Sequence<? extends T> sequence) {
+        Intrinsics.checkNotNullParameter(sequence, "<this>");
+        Iterator<? extends T> it = sequence.iterator();
+        if (it.hasNext()) {
+            return it.next();
+        }
+        return null;
+    }
+
+    public static <T> T last(Sequence<? extends T> sequence) {
+        Intrinsics.checkNotNullParameter(sequence, "<this>");
+        Iterator<? extends T> it = sequence.iterator();
+        if (!it.hasNext()) {
+            throw new NoSuchElementException("Sequence is empty.");
+        }
+        T next = it.next();
+        while (it.hasNext()) {
+            next = it.next();
+        }
+        return next;
+    }
+
     /* JADX WARN: Multi-variable type inference failed */
     public static <T> Sequence<T> drop(Sequence<? extends T> sequence, int i) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
@@ -37,6 +60,20 @@ public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
         return new FilteringSequence(sequence, false, predicate);
     }
 
+    public static <T> Sequence<T> filterNotNull(Sequence<? extends T> sequence) {
+        Sequence<T> filterNot;
+        Intrinsics.checkNotNullParameter(sequence, "<this>");
+        filterNot = filterNot(sequence, SequencesKt___SequencesKt$filterNotNull$1.INSTANCE);
+        Intrinsics.checkNotNull(filterNot, "null cannot be cast to non-null type kotlin.sequences.Sequence<T of kotlin.sequences.SequencesKt___SequencesKt.filterNotNull>");
+        return filterNot;
+    }
+
+    public static <T> Sequence<T> takeWhile(Sequence<? extends T> sequence, Function1<? super T, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(sequence, "<this>");
+        Intrinsics.checkNotNullParameter(predicate, "predicate");
+        return new TakeWhileSequence(sequence, predicate);
+    }
+
     public static final <T, C extends Collection<? super T>> C toCollection(Sequence<? extends T> sequence, C destination) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         Intrinsics.checkNotNullParameter(destination, "destination");
@@ -47,13 +84,15 @@ public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
     }
 
     public static <T> List<T> toList(Sequence<? extends T> sequence) {
+        List mutableList;
         List<T> optimizeReadOnlyList;
         Intrinsics.checkNotNullParameter(sequence, "<this>");
-        optimizeReadOnlyList = CollectionsKt__CollectionsKt.optimizeReadOnlyList(toMutableList(sequence));
+        mutableList = toMutableList(sequence);
+        optimizeReadOnlyList = CollectionsKt__CollectionsKt.optimizeReadOnlyList(mutableList);
         return optimizeReadOnlyList;
     }
 
-    public static final <T> List<T> toMutableList(Sequence<? extends T> sequence) {
+    public static <T> List<T> toMutableList(Sequence<? extends T> sequence) {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         return (List) toCollection(sequence, new ArrayList());
     }
@@ -69,6 +108,14 @@ public class SequencesKt___SequencesKt extends SequencesKt___SequencesJvmKt {
         Intrinsics.checkNotNullParameter(sequence, "<this>");
         Intrinsics.checkNotNullParameter(transform, "transform");
         return new TransformingSequence(sequence, transform);
+    }
+
+    public static <T, R> Sequence<R> mapNotNull(Sequence<? extends T> sequence, Function1<? super T, ? extends R> transform) {
+        Sequence<R> filterNotNull;
+        Intrinsics.checkNotNullParameter(sequence, "<this>");
+        Intrinsics.checkNotNullParameter(transform, "transform");
+        filterNotNull = filterNotNull(new TransformingSequence(sequence, transform));
+        return filterNotNull;
     }
 
     public static <T> Sequence<Pair<T, T>> zipWithNext(Sequence<? extends T> sequence) {

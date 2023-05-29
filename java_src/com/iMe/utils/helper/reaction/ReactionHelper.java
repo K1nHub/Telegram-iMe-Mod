@@ -14,7 +14,7 @@ import java.util.regex.Pattern;
 import kotlin.collections.ArraysKt;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
@@ -39,7 +39,7 @@ public final class ReactionHelper {
         if (parentActivity == null) {
             return;
         }
-        DialogUtils.createDialog$default(parentActivity, new DialogModel(LocaleController.getInternalString(C3242R.string.chat_reaction_dialog_title), LocaleController.getInternalString(C3242R.string.chat_reaction_dialog_text), LocaleController.getInternalString(C3242R.string.common_cancel), LocaleController.getInternalString(C3242R.string.chat_reaction_start)), new Callbacks$Callback() { // from class: com.iMe.utils.helper.reaction.ReactionHelper$$ExternalSyntheticLambda0
+        DialogUtils.createDialog$default(parentActivity, new DialogModel(LocaleController.getInternalString(C3290R.string.chat_reaction_dialog_title), LocaleController.getInternalString(C3290R.string.chat_reaction_dialog_text), LocaleController.getInternalString(C3290R.string.common_cancel), LocaleController.getInternalString(C3290R.string.chat_reaction_start)), new Callbacks$Callback() { // from class: com.iMe.utils.helper.reaction.ReactionHelper$$ExternalSyntheticLambda0
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 ReactionHelper.showReactionActivationAlert$lambda$0(BaseFragment.this);
@@ -64,7 +64,7 @@ public final class ReactionHelper {
                 if (!it.hasNext()) {
                     break;
                 }
-                if (((TLRPC$Dialog) it.next()).f1433id == AppConfiguration$Reaction.getBotId()) {
+                if (((TLRPC$Dialog) it.next()).f1439id == AppConfiguration$Reaction.getBotId()) {
                     z = true;
                     continue;
                 } else {

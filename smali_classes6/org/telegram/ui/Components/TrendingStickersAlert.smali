@@ -119,11 +119,11 @@
     return-object p0
 .end method
 
-.method static synthetic access$1200(Lorg/telegram/ui/Components/TrendingStickersAlert;Ljava/lang/String;)I
+.method static synthetic access$1200(Lorg/telegram/ui/Components/TrendingStickersAlert;I)I
     .locals 0
 
     .line 28
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 
@@ -157,33 +157,33 @@
     return p0
 .end method
 
-.method static synthetic access$1600(Lorg/telegram/ui/Components/TrendingStickersAlert;Ljava/lang/String;)I
+.method static synthetic access$1600(Lorg/telegram/ui/Components/TrendingStickersAlert;I)I
     .locals 0
 
     .line 28
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 
     return p0
 .end method
 
-.method static synthetic access$1700(Lorg/telegram/ui/Components/TrendingStickersAlert;Ljava/lang/String;)I
+.method static synthetic access$1700(Lorg/telegram/ui/Components/TrendingStickersAlert;I)I
     .locals 0
 
     .line 28
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 
     return p0
 .end method
 
-.method static synthetic access$1800(Lorg/telegram/ui/Components/TrendingStickersAlert;Ljava/lang/String;)I
+.method static synthetic access$1800(Lorg/telegram/ui/Components/TrendingStickersAlert;I)I
     .locals 0
 
     .line 28
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 
@@ -217,11 +217,11 @@
     return p0
 .end method
 
-.method static synthetic access$2100(Lorg/telegram/ui/Components/TrendingStickersAlert;Ljava/lang/String;)I
+.method static synthetic access$2100(Lorg/telegram/ui/Components/TrendingStickersAlert;I)I
     .locals 0
 
     .line 28
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result p0
 
@@ -394,6 +394,8 @@
 
     aput-object v3, v9, v4
 
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
+
     const/4 v6, 0x0
 
     const/4 v7, 0x0
@@ -402,11 +404,9 @@
 
     const/4 v10, 0x0
 
-    const-string v11, "dialogBackground"
-
     move-object v4, v2
 
-    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v4 .. v11}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -414,6 +414,8 @@
     new-instance v2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     iget-object v13, v0, Lorg/telegram/ui/Components/TrendingStickersAlert;->alertContainerView:Lorg/telegram/ui/Components/TrendingStickersAlert$AlertContainerView;
+
+    sget v19, Lorg/telegram/ui/ActionBar/Theme;->key_sheet_scrollUp:I
 
     const/4 v14, 0x0
 
@@ -425,11 +427,9 @@
 
     const/16 v18, 0x0
 
-    const-string v19, "key_sheet_scrollUp"
-
     move-object v12, v2
 
-    invoke-direct/range {v12 .. v19}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v12 .. v19}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 

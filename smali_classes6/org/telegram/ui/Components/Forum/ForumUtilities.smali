@@ -709,9 +709,9 @@
 
     if-nez p1, :cond_0
 
-    const-string v7, "chat_inMenu"
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inMenu:I
 
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -1240,9 +1240,9 @@
 
     const/high16 p2, 0x3f400000    # 0.75f
 
-    const-string p3, "actionBarDefaultIcon"
+    sget p3, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultIcon:I
 
-    invoke-static {p3, p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {p3, p4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p3
 
@@ -1307,9 +1307,9 @@
     .line 64
     new-instance p1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string p2, "actionBarDefaultTitle"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultTitle:I
 
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 

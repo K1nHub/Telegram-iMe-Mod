@@ -51,6 +51,23 @@ public class CollectionsKt__MutableCollectionsKt extends CollectionsKt__MutableC
         return collection.addAll(asList);
     }
 
+    public static final <T> Collection<T> convertToListIfNotCollection(Iterable<? extends T> iterable) {
+        Intrinsics.checkNotNullParameter(iterable, "<this>");
+        return iterable instanceof Collection ? (Collection) iterable : CollectionsKt.toList(iterable);
+    }
+
+    public static final <T> boolean retainAll(Collection<? super T> collection, Iterable<? extends T> elements) {
+        Intrinsics.checkNotNullParameter(collection, "<this>");
+        Intrinsics.checkNotNullParameter(elements, "elements");
+        return collection.retainAll(convertToListIfNotCollection(elements));
+    }
+
+    public static <T> boolean removeAll(Iterable<? extends T> iterable, Function1<? super T, Boolean> predicate) {
+        Intrinsics.checkNotNullParameter(iterable, "<this>");
+        Intrinsics.checkNotNullParameter(predicate, "predicate");
+        return filterInPlace$CollectionsKt__MutableCollectionsKt((Iterable) iterable, (Function1) predicate, true);
+    }
+
     private static final <T> boolean filterInPlace$CollectionsKt__MutableCollectionsKt(Iterable<? extends T> iterable, Function1<? super T, Boolean> function1, boolean z) {
         Iterator<? extends T> it = iterable.iterator();
         boolean z2 = false;
@@ -67,6 +84,14 @@ public class CollectionsKt__MutableCollectionsKt extends CollectionsKt__MutableC
         Intrinsics.checkNotNullParameter(list, "<this>");
         if (list.isEmpty()) {
             throw new NoSuchElementException("List is empty.");
+        }
+        return list.remove(CollectionsKt.getLastIndex(list));
+    }
+
+    public static <T> T removeLastOrNull(List<T> list) {
+        Intrinsics.checkNotNullParameter(list, "<this>");
+        if (list.isEmpty()) {
+            return null;
         }
         return list.remove(CollectionsKt.getLastIndex(list));
     }

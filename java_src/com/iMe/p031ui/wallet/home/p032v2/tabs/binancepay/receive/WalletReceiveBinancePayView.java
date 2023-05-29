@@ -11,7 +11,7 @@ import moxy.viewstate.strategy.alias.AddToEndSingle;
 /* compiled from: WalletReceiveBinancePayView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.receive.WalletReceiveBinancePayView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface WalletReceiveBinancePayView extends BaseView {
     void openChatScreen(long j);
 

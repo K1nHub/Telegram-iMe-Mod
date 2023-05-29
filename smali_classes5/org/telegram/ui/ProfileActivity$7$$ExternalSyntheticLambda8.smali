@@ -8,18 +8,14 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ProfileActivity$7;
 
-.field public final synthetic f$1:Z
-
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity$7;Z)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity$7;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$7$$ExternalSyntheticLambda8;->f$0:Lorg/telegram/ui/ProfileActivity$7;
-
-    iput-boolean p2, p0, Lorg/telegram/ui/ProfileActivity$7$$ExternalSyntheticLambda8;->f$1:Z
 
     return-void
 .end method
@@ -27,13 +23,11 @@
 
 # virtual methods
 .method public final run()V
-    .locals 2
+    .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$7$$ExternalSyntheticLambda8;->f$0:Lorg/telegram/ui/ProfileActivity$7;
 
-    iget-boolean v1, p0, Lorg/telegram/ui/ProfileActivity$7$$ExternalSyntheticLambda8;->f$1:Z
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/ProfileActivity$7;->$r8$lambda$lBRc3DhtBMCgf8fAn8buAQjb23Y(Lorg/telegram/ui/ProfileActivity$7;Z)V
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity$7;->$r8$lambda$pKujhOdlHGPS_fwpq6MrZHV285M(Lorg/telegram/ui/ProfileActivity$7;)V
 
     return-void
 .end method

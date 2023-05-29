@@ -26,10 +26,10 @@ public class FileStoreImpl implements FileStore {
             if (file.exists() || file.mkdirs()) {
                 return file;
             }
-            Logger.getLogger().m716w("Couldn't create file");
+            Logger.getLogger().m720w("Couldn't create file");
             return null;
         }
-        Logger.getLogger().m716w("Null File");
+        Logger.getLogger().m720w("Null File");
         return null;
     }
 }

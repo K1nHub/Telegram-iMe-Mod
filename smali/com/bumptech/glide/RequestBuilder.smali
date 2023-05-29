@@ -1671,6 +1671,50 @@
     .end packed-switch
 .end method
 
+.method public listener(Lcom/bumptech/glide/request/RequestListener;)Lcom/bumptech/glide/RequestBuilder;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lcom/bumptech/glide/request/RequestListener<",
+            "TTranscodeType;>;)",
+            "Lcom/bumptech/glide/RequestBuilder<",
+            "TTranscodeType;>;"
+        }
+    .end annotation
+
+    .line 187
+    invoke-virtual {p0}, Lcom/bumptech/glide/request/BaseRequestOptions;->isAutoCloneEnabled()Z
+
+    move-result v0
+
+    if-eqz v0, :cond_0
+
+    .line 188
+    invoke-virtual {p0}, Lcom/bumptech/glide/RequestBuilder;->clone()Lcom/bumptech/glide/RequestBuilder;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lcom/bumptech/glide/RequestBuilder;->listener(Lcom/bumptech/glide/request/RequestListener;)Lcom/bumptech/glide/RequestBuilder;
+
+    move-result-object p1
+
+    return-object p1
+
+    :cond_0
+    const/4 v0, 0x0
+
+    .line 190
+    iput-object v0, p0, Lcom/bumptech/glide/RequestBuilder;->requestListeners:Ljava/util/List;
+
+    .line 191
+    invoke-virtual {p0, p1}, Lcom/bumptech/glide/RequestBuilder;->addListener(Lcom/bumptech/glide/request/RequestListener;)Lcom/bumptech/glide/RequestBuilder;
+
+    move-result-object p1
+
+    return-object p1
+.end method
+
 .method public load(Ljava/lang/Object;)Lcom/bumptech/glide/RequestBuilder;
     .locals 0
     .annotation system Ldalvik/annotation/Signature;

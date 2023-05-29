@@ -74,13 +74,13 @@
 
 .field private semHaptics:Z
 
-.field private thumbCheckedColorKey:Ljava/lang/String;
+.field private thumbCheckedColorKey:I
 
-.field private thumbColorKey:Ljava/lang/String;
+.field private thumbColorKey:I
 
-.field private trackCheckedColorKey:Ljava/lang/String;
+.field private trackCheckedColorKey:I
 
-.field private trackColorKey:Ljava/lang/String;
+.field private trackColorKey:I
 
 
 # direct methods
@@ -128,23 +128,23 @@
     .line 71
     iput p1, p0, Lorg/telegram/ui/Components/Switch;->iconProgress:F
 
-    const-string p1, "switch2Track"
-
     .line 75
-    iput-object p1, p0, Lorg/telegram/ui/Components/Switch;->trackColorKey:Ljava/lang/String;
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_fill_RedNormal:I
 
-    const-string p1, "switch2TrackChecked"
+    iput p1, p0, Lorg/telegram/ui/Components/Switch;->trackColorKey:I
 
     .line 76
-    iput-object p1, p0, Lorg/telegram/ui/Components/Switch;->trackCheckedColorKey:Ljava/lang/String;
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_switch2TrackChecked:I
 
-    const-string p1, "windowBackgroundWhite"
+    iput p1, p0, Lorg/telegram/ui/Components/Switch;->trackCheckedColorKey:I
 
     .line 77
-    iput-object p1, p0, Lorg/telegram/ui/Components/Switch;->thumbColorKey:Ljava/lang/String;
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    iput p1, p0, Lorg/telegram/ui/Components/Switch;->thumbColorKey:I
 
     .line 78
-    iput-object p1, p0, Lorg/telegram/ui/Components/Switch;->thumbCheckedColorKey:Ljava/lang/String;
+    iput p1, p0, Lorg/telegram/ui/Components/Switch;->thumbCheckedColorKey:I
 
     const/4 p1, 0x2
 
@@ -814,20 +814,20 @@
 
     .line 435
     :goto_3
-    iget-object v6, v0, Lorg/telegram/ui/Components/Switch;->trackColorKey:Ljava/lang/String;
+    iget v6, v0, Lorg/telegram/ui/Components/Switch;->trackColorKey:I
 
     iget-object v7, v0, Lorg/telegram/ui/Components/Switch;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v6, v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v6, v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v6
 
     .line 436
-    iget-object v7, v0, Lorg/telegram/ui/Components/Switch;->trackCheckedColorKey:Ljava/lang/String;
+    iget v7, v0, Lorg/telegram/ui/Components/Switch;->trackCheckedColorKey:I
 
     iget-object v10, v0, Lorg/telegram/ui/Components/Switch;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v7, v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v7, v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v7
 
@@ -1241,20 +1241,20 @@
 
     .line 490
     :goto_c
-    iget-object v4, v0, Lorg/telegram/ui/Components/Switch;->thumbColorKey:Ljava/lang/String;
+    iget v4, v0, Lorg/telegram/ui/Components/Switch;->thumbColorKey:I
 
     iget-object v10, v0, Lorg/telegram/ui/Components/Switch;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v4, v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v4, v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v4
 
     .line 491
-    iget-object v10, v0, Lorg/telegram/ui/Components/Switch;->thumbCheckedColorKey:Ljava/lang/String;
+    iget v10, v0, Lorg/telegram/ui/Components/Switch;->thumbCheckedColorKey:I
 
     iget-object v11, v0, Lorg/telegram/ui/Components/Switch;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v10, v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v10, v11}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v10
 
@@ -1959,20 +1959,20 @@
     return-void
 .end method
 
-.method public setColors(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public setColors(IIII)V
     .locals 0
 
     .line 243
-    iput-object p1, p0, Lorg/telegram/ui/Components/Switch;->trackColorKey:Ljava/lang/String;
+    iput p1, p0, Lorg/telegram/ui/Components/Switch;->trackColorKey:I
 
     .line 244
-    iput-object p2, p0, Lorg/telegram/ui/Components/Switch;->trackCheckedColorKey:Ljava/lang/String;
+    iput p2, p0, Lorg/telegram/ui/Components/Switch;->trackCheckedColorKey:I
 
     .line 245
-    iput-object p3, p0, Lorg/telegram/ui/Components/Switch;->thumbColorKey:Ljava/lang/String;
+    iput p3, p0, Lorg/telegram/ui/Components/Switch;->thumbColorKey:I
 
     .line 246
-    iput-object p4, p0, Lorg/telegram/ui/Components/Switch;->thumbCheckedColorKey:Ljava/lang/String;
+    iput p4, p0, Lorg/telegram/ui/Components/Switch;->thumbCheckedColorKey:I
 
     return-void
 .end method
@@ -2161,19 +2161,17 @@
     if-eqz v1, :cond_6
 
     .line 219
-    iget-object v1, p0, Lorg/telegram/ui/Components/Switch;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
-
-    const-string v6, "switchTrackBlueSelectorChecked"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackBlueSelectorChecked:I
 
     goto :goto_1
 
     :cond_6
-    iget-object v1, p0, Lorg/telegram/ui/Components/Switch;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
-
-    const-string v6, "switchTrackBlueSelector"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackBlueSelector:I
 
     :goto_1
-    invoke-static {v6, v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    iget-object v6, p0, Lorg/telegram/ui/Components/Switch;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+
+    invoke-static {v1, v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v1
 
@@ -2296,17 +2294,17 @@
 
     if-eqz v1, :cond_0
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/Switch;->trackCheckedColorKey:Ljava/lang/String;
+    iget v1, p0, Lorg/telegram/ui/Components/Switch;->trackCheckedColorKey:I
 
     goto :goto_0
 
     :cond_0
-    iget-object v1, p0, Lorg/telegram/ui/Components/Switch;->trackColorKey:Ljava/lang/String;
+    iget v1, p0, Lorg/telegram/ui/Components/Switch;->trackColorKey:I
 
     :goto_0
     iget-object v2, p0, Lorg/telegram/ui/Components/Switch;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v1
 

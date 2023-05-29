@@ -10,7 +10,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: SwitchNetworkView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.base.mvp.SwitchNetworkView */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public interface SwitchNetworkView extends BaseView {
     void setupNetworkType(NetworkType networkType);
 

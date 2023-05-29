@@ -10,7 +10,7 @@ import android.view.WindowManager;
 import android.widget.FrameLayout;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.NotificationCenter;
+import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p044ui.Components.CubicBezierInterpolator;
 import org.telegram.p044ui.VoIPFragment;
@@ -18,9 +18,9 @@ import org.telegram.p044ui.VoIPFragment;
 /* loaded from: classes6.dex */
 public class VoIPWindowView extends FrameLayout {
     Activity activity;
-    private int animationIndex;
     boolean finished;
     protected boolean lockOnScreen;
+    private AnimationNotificationsLocker notificationsLocker;
     private int orientationBefore;
     boolean runEnterTransition;
     boolean startDragging;
@@ -30,7 +30,7 @@ public class VoIPWindowView extends FrameLayout {
 
     public VoIPWindowView(Activity activity, boolean z) {
         super(activity);
-        this.animationIndex = -1;
+        this.notificationsLocker = new AnimationNotificationsLocker();
         this.activity = activity;
         setSystemUiVisibility(1792);
         setFitsSystemWindows(true);
@@ -132,12 +132,12 @@ public class VoIPWindowView extends FrameLayout {
                 return;
             }
         }
-        final int i = UserConfig.selectedAccount;
-        this.animationIndex = NotificationCenter.getInstance(i).setAnimationInProgress(this.animationIndex, null);
+        int i = UserConfig.selectedAccount;
+        this.notificationsLocker.lock();
         animate().translationX(getMeasuredWidth()).setListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.voip.VoIPWindowView.1
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
             public void onAnimationEnd(Animator animator) {
-                NotificationCenter.getInstance(i).onAnimationFinish(VoIPWindowView.this.animationIndex);
+                VoIPWindowView.this.notificationsLocker.unlock();
                 if (VoIPWindowView.this.getParent() != null) {
                     VoIPWindowView voIPWindowView = VoIPWindowView.this;
                     voIPWindowView.activity.setRequestedOrientation(voIPWindowView.orientationBefore);

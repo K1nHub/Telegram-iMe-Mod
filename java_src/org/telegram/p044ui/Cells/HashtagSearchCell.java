@@ -15,9 +15,9 @@ public class HashtagSearchCell extends TextView {
     public HashtagSearchCell(Context context) {
         super(context);
         setGravity(16);
-        setPadding(AndroidUtilities.m50dp(16), 0, AndroidUtilities.m50dp(16), 0);
+        setPadding(AndroidUtilities.m54dp(16), 0, AndroidUtilities.m54dp(16), 0);
         setTextSize(1, 17.0f);
-        setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
     }
 
     public void setNeedDivider(boolean z) {
@@ -26,7 +26,7 @@ public class HashtagSearchCell extends TextView {
 
     @Override // android.widget.TextView, android.view.View
     protected void onMeasure(int i, int i2) {
-        setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m50dp(48) + 1);
+        setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m54dp(48) + 1);
     }
 
     @Override // android.widget.TextView, android.view.View

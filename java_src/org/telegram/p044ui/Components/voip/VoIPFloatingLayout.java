@@ -24,7 +24,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.p044ui.Components.CubicBezierInterpolator;
 /* renamed from: org.telegram.ui.Components.voip.VoIPFloatingLayout */
 /* loaded from: classes6.dex */
@@ -138,7 +138,7 @@ public class VoIPFloatingLayout extends FrameLayout {
                         int measuredWidth = view.getMeasuredWidth();
                         int measuredHeight = view.getMeasuredHeight();
                         if (VoIPFloatingLayout.this.floatingMode) {
-                            f2 = AndroidUtilities.m50dp(4);
+                            f2 = AndroidUtilities.m54dp(4);
                         }
                         outline.setRoundRect(0, 0, measuredWidth, measuredHeight, f2);
                     }
@@ -147,7 +147,7 @@ public class VoIPFloatingLayout extends FrameLayout {
             setClipToOutline(true);
         }
         this.mutedPaint.setColor(ColorUtils.setAlphaComponent(-16777216, 102));
-        this.mutedDrawable = ContextCompat.getDrawable(context, C3242R.C3244drawable.calls_mute_mini);
+        this.mutedDrawable = ContextCompat.getDrawable(context, C3290R.C3292drawable.calls_mute_mini);
     }
 
     @Override // android.widget.FrameLayout, android.view.View
@@ -171,7 +171,7 @@ public class VoIPFloatingLayout extends FrameLayout {
         if (getMeasuredHeight() != this.lastH && getMeasuredWidth() != this.lastW) {
             this.path.reset();
             this.rectF.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), getMeasuredHeight());
-            this.path.addRoundRect(this.rectF, AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(4), Path.Direction.CW);
+            this.path.addRoundRect(this.rectF, AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4), Path.Direction.CW);
             this.path.toggleInverseFillType();
         }
         this.lastH = getMeasuredHeight();
@@ -180,10 +180,10 @@ public class VoIPFloatingLayout extends FrameLayout {
     }
 
     private void updatePadding() {
-        this.leftPadding = AndroidUtilities.m50dp(16);
-        this.rightPadding = AndroidUtilities.m50dp(16);
-        this.topPadding = this.uiVisible ? AndroidUtilities.m50dp(60) : AndroidUtilities.m50dp(16);
-        this.bottomPadding = AndroidUtilities.m50dp(this.uiVisible ? 100 : 16) + this.bottomOffset;
+        this.leftPadding = AndroidUtilities.m54dp(16);
+        this.rightPadding = AndroidUtilities.m54dp(16);
+        this.topPadding = this.uiVisible ? AndroidUtilities.m54dp(60) : AndroidUtilities.m54dp(16);
+        this.bottomPadding = AndroidUtilities.m54dp(this.uiVisible ? 100 : 16) + this.bottomOffset;
     }
 
     public void setDelegate(VoIPFloatingLayoutDelegate voIPFloatingLayoutDelegate) {
@@ -232,12 +232,12 @@ public class VoIPFloatingLayout extends FrameLayout {
             }
         }
         int measuredWidth = getMeasuredWidth() >> 1;
-        int measuredHeight = getMeasuredHeight() - ((int) ((AndroidUtilities.m50dp(18) * 1.0f) / getScaleY()));
+        int measuredHeight = getMeasuredHeight() - ((int) ((AndroidUtilities.m54dp(18) * 1.0f) / getScaleY()));
         canvas.save();
         float f = measuredWidth;
         float f2 = measuredHeight;
         canvas.scale((1.0f / getScaleX()) * this.toFloatingModeProgress * this.mutedProgress, (1.0f / getScaleY()) * this.toFloatingModeProgress * this.mutedProgress, f, f2);
-        canvas.drawCircle(f, f2, AndroidUtilities.m50dp(14), this.mutedPaint);
+        canvas.drawCircle(f, f2, AndroidUtilities.m54dp(14), this.mutedPaint);
         Drawable drawable = this.mutedDrawable;
         drawable.setBounds(measuredWidth - (drawable.getIntrinsicWidth() / 2), measuredHeight - (this.mutedDrawable.getIntrinsicHeight() / 2), measuredWidth + (this.mutedDrawable.getIntrinsicWidth() / 2), measuredHeight + (this.mutedDrawable.getIntrinsicHeight() / 2));
         this.mutedDrawable.draw(canvas);

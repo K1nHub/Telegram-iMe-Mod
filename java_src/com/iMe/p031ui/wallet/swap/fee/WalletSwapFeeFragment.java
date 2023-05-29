@@ -32,8 +32,8 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3242R;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.messenger.C3290R;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Cells.HeaderCell;
@@ -121,18 +121,21 @@ public final class WalletSwapFeeFragment extends WalletAuthFragment implements W
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextSettingsCell.class, SlideChooseView.class, HeaderCell.class}, null, null, null, "windowBackgroundWhite"), new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "windowBackgroundGray"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, "actionBarDefault"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, "listSelectorSDK21"), new ThemeDescription(getListView(), 0, new Class[]{TextSettingsCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"), new ThemeDescription(getListView(), 0, new Class[]{TextSettingsCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteValueText"), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, "windowBackgroundGrayShadow"), new ThemeDescription(getListView(), 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayText4"), new ThemeDescription(getListView(), 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlueHeader"), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, "switchTrack"), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, "switchTrackChecked"), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, "windowBackgroundWhiteGrayText"));
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        int i = ThemeDescription.FLAG_BACKGROUND;
+        int i2 = Theme.key_actionBarDefault;
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextSettingsCell.class, SlideChooseView.class, HeaderCell.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray), new ThemeDescription(c3356ActionBar, i, null, null, null, null, i2), new ThemeDescription(getListView(), ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector), new ThemeDescription(getListView(), 0, new Class[]{TextSettingsCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText), new ThemeDescription(getListView(), 0, new Class[]{TextSettingsCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteValueText), new ThemeDescription(getListView(), ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, Theme.key_windowBackgroundGrayShadow), new ThemeDescription(getListView(), 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4), new ThemeDescription(getListView(), 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, Theme.key_switchTrack), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, Theme.key_switchTrackChecked), new ThemeDescription(getListView(), 0, new Class[]{SlideChooseView.class}, null, null, null, Theme.key_windowBackgroundWhiteGrayText));
         return arrayListOf;
     }
 
     private final void setupActionBar() {
-        C3306ActionBar c3306ActionBar = this.actionBar;
-        c3306ActionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
-        c3306ActionBar.setTitle(getResourceManager().getString(C3242R.string.wallet_swap_transaction_options_toolbar_title));
-        c3306ActionBar.setAllowOverlayTitle(true);
-        c3306ActionBar.createMenu();
-        c3306ActionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.swap.fee.WalletSwapFeeFragment$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        c3356ActionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        c3356ActionBar.setTitle(getResourceManager().getString(C3290R.string.wallet_swap_transaction_options_toolbar_title));
+        c3356ActionBar.setAllowOverlayTitle(true);
+        c3356ActionBar.createMenu();
+        c3356ActionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.swap.fee.WalletSwapFeeFragment$setupActionBar$1$1
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletSwapFeeFragment.this.finishFragment();
@@ -189,7 +192,7 @@ public final class WalletSwapFeeFragment extends WalletAuthFragment implements W
     /* JADX INFO: Access modifiers changed from: private */
     public final FrameLayout createRootView() {
         FrameLayout frameLayout = new FrameLayout(getParentActivity());
-        frameLayout.setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+        frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         return frameLayout;
     }
 
@@ -221,15 +224,15 @@ public final class WalletSwapFeeFragment extends WalletAuthFragment implements W
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int i) {
             View view;
             Intrinsics.checkNotNullParameter(parent, "parent");
-            if (i == IdFabric$ViewTypes.TEXT_INFO_PRIVACY) {
+            if (i == IdFabric$ViewTypes.TEXT_INFO_PRIVACY_CELL) {
                 view = new TextInfoPrivacyCell(this.mContext);
             } else if (i == IdFabric$ViewTypes.SLIDE_CHOOSE) {
                 View slideChooseView = new SlideChooseView(this.mContext);
-                slideChooseView.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                slideChooseView.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 view = slideChooseView;
             } else {
                 HeaderCell headerCell = new HeaderCell(this.mContext);
-                headerCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                headerCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 view = headerCell;
             }
             RecyclerListView.Holder holder = new RecyclerListView.Holder(view);
@@ -246,29 +249,29 @@ public final class WalletSwapFeeFragment extends WalletAuthFragment implements W
             try {
                 View view = holder.itemView;
                 WalletSwapFeeFragment walletSwapFeeFragment = this.this$0;
-                if (holder.getItemViewType() == IdFabric$ViewTypes.TEXT_INFO_PRIVACY && (view instanceof TextInfoPrivacyCell)) {
+                if (holder.getItemViewType() == IdFabric$ViewTypes.TEXT_INFO_PRIVACY_CELL && (view instanceof TextInfoPrivacyCell)) {
                     if (i == walletSwapFeeFragment.slipInfoRow) {
-                        ((TextInfoPrivacyCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3242R.string.wallet_swap_transaction_options_slip_description));
+                        ((TextInfoPrivacyCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3290R.string.wallet_swap_transaction_options_slip_description));
                     } else if (i == walletSwapFeeFragment.deadlineInfoRow) {
-                        ((TextInfoPrivacyCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3242R.string.wallet_swap_transaction_options_deadline_description));
+                        ((TextInfoPrivacyCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3290R.string.wallet_swap_transaction_options_deadline_description));
                     } else {
                         GasPriceInfo info = walletSwapFeeFragment.getPresenter().getSelectedFee().getInfo();
                         ResourceManager resourceManager = walletSwapFeeFragment.getResourceManager();
-                        int i2 = C3242R.string.wallet_amount_send_fee_format;
+                        int i2 = C3290R.string.wallet_amount_send_fee_format;
                         Double valueOf = Double.valueOf(info.getFee());
                         TokenInfo.Companion companion = TokenInfo.Companion;
                         Float valueOf2 = Float.valueOf(info.getFeeInDollars());
                         TokenInfo.Fiat.USD usd = TokenInfo.Fiat.USD.INSTANCE;
                         ((TextInfoPrivacyCell) view).setText(resourceManager.getString(i2, Integer.valueOf(info.getDuration()), BalanceFormatter.formatBalance(valueOf, companion.map(walletSwapFeeFragment.getPresenter().getMetadata().getFeeTokenCode()).getDecimals()), walletSwapFeeFragment.getResourceManager().getString(companion.map(walletSwapFeeFragment.getPresenter().getMetadata().getFeeTokenCode()).getShortName()), BalanceFormatter.formatBalance(valueOf2, usd.getDecimals()), walletSwapFeeFragment.getResourceManager().getString(usd.getShortName())));
                     }
-                    ((TextInfoPrivacyCell) view).setBackground(Theme.getThemedDrawable(this.mContext, C3242R.C3244drawable.greydivider, "windowBackgroundGrayShadow"));
-                } else if (holder.getItemViewType() == IdFabric$ViewTypes.HEADER && (view instanceof HeaderCell)) {
+                    ((TextInfoPrivacyCell) view).setBackground(Theme.getThemedDrawable(this.mContext, C3290R.C3292drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                } else if (holder.getItemViewType() == IdFabric$ViewTypes.HEADER_CELL && (view instanceof HeaderCell)) {
                     if (i == walletSwapFeeFragment.slipHeaderRow) {
-                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3242R.string.wallet_swap_transaction_options_slip_header));
+                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3290R.string.wallet_swap_transaction_options_slip_header));
                     } else if (i == walletSwapFeeFragment.deadlineHeaderRow) {
-                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3242R.string.wallet_swap_transaction_options_deadline_header));
+                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3290R.string.wallet_swap_transaction_options_deadline_header));
                     } else {
-                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3242R.string.wallet_swap_transaction_options_fee_header));
+                        ((HeaderCell) view).setText(walletSwapFeeFragment.getResourceManager().getString(C3290R.string.wallet_swap_transaction_options_fee_header));
                     }
                 } else if (holder.getItemViewType() == IdFabric$ViewTypes.SLIDE_CHOOSE && (view instanceof SlideChooseView)) {
                     if (i == walletSwapFeeFragment.slipChooserRow) {
@@ -286,16 +289,16 @@ public final class WalletSwapFeeFragment extends WalletAuthFragment implements W
                     }
                 }
             } catch (Exception e) {
-                Timber.m4e(e);
+                Timber.m6e(e);
             }
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemViewType(int i) {
             if ((i == this.this$0.slipInfoRow || i == this.this$0.deadlineInfoRow) || i == this.this$0.feeInfoRow) {
-                return IdFabric$ViewTypes.TEXT_INFO_PRIVACY;
+                return IdFabric$ViewTypes.TEXT_INFO_PRIVACY_CELL;
             }
-            return (i == this.this$0.slipChooserRow || i == this.this$0.deadlineChooserRow) || i == this.this$0.feeChooserRow ? IdFabric$ViewTypes.SLIDE_CHOOSE : IdFabric$ViewTypes.HEADER;
+            return (i == this.this$0.slipChooserRow || i == this.this$0.deadlineChooserRow) || i == this.this$0.feeChooserRow ? IdFabric$ViewTypes.SLIDE_CHOOSE : IdFabric$ViewTypes.HEADER_CELL;
         }
 
         private final void setupChooser(final RecyclerListView.Holder holder) {

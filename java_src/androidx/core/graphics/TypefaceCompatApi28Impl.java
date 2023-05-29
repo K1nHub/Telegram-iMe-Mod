@@ -1,7 +1,7 @@
 package androidx.core.graphics;
 
 import android.graphics.Typeface;
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import java.lang.reflect.Array;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
@@ -12,7 +12,7 @@ public class TypefaceCompatApi28Impl extends TypefaceCompatApi26Impl {
         try {
             Object newInstance = Array.newInstance(this.mFontFamily, 1);
             Array.set(newInstance, 0, obj);
-            return (Typeface) this.mCreateFromFamiliesWithDefault.invoke(null, newInstance, C0470C.SANS_SERIF_NAME, -1, -1);
+            return (Typeface) this.mCreateFromFamiliesWithDefault.invoke(null, newInstance, C0475C.SANS_SERIF_NAME, -1, -1);
         } catch (IllegalAccessException | InvocationTargetException e) {
             throw new RuntimeException(e);
         }

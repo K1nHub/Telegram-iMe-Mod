@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/Components/ShareAlert$11;
-.super Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;
+.super Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;
 .source "ShareAlert.java"
 
 
@@ -14,43 +14,88 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lorg/telegram/ui/Components/ShareAlert;
-
-
 # direct methods
 .method constructor <init>(Lorg/telegram/ui/Components/ShareAlert;)V
     .locals 0
 
-    .line 1124
-    iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$11;->this$0:Lorg/telegram/ui/Components/ShareAlert;
-
-    invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
+    .line 1260
+    invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
-    .locals 0
+.method public getItemOffsets(Landroid/graphics/Rect;Landroid/view/View;Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;)V
+    .locals 1
 
-    if-eqz p3, :cond_0
+    .line 1263
+    invoke-virtual {p3, p2}, Landroidx/recyclerview/widget/RecyclerView;->getChildViewHolder(Landroid/view/View;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
-    .line 1128
-    iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$11;->this$0:Lorg/telegram/ui/Components/ShareAlert;
+    move-result-object p2
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert;->access$6600(Lorg/telegram/ui/Components/ShareAlert;)V
+    check-cast p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
-    .line 1129
-    iget-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$11;->this$0:Lorg/telegram/ui/Components/ShareAlert;
+    const/4 p3, 0x4
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/ShareAlert;->access$2700(Lorg/telegram/ui/Components/ShareAlert;)I
+    if-eqz p2, :cond_2
+
+    .line 1265
+    invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result p2
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/Components/ShareAlert;->access$2602(Lorg/telegram/ui/Components/ShareAlert;I)I
+    .line 1266
+    rem-int/2addr p2, p3
+
+    const/4 p4, 0x0
+
+    if-nez p2, :cond_0
+
+    move v0, p4
+
+    goto :goto_0
 
     :cond_0
+    invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v0
+
+    :goto_0
+    iput v0, p1, Landroid/graphics/Rect;->left:I
+
+    const/4 v0, 0x3
+
+    if-ne p2, v0, :cond_1
+
+    goto :goto_1
+
+    .line 1267
+    :cond_1
+    invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result p4
+
+    :goto_1
+    iput p4, p1, Landroid/graphics/Rect;->right:I
+
+    goto :goto_2
+
+    .line 1269
+    :cond_2
+    invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result p2
+
+    iput p2, p1, Landroid/graphics/Rect;->left:I
+
+    .line 1270
+    invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result p2
+
+    iput p2, p1, Landroid/graphics/Rect;->right:I
+
+    :goto_2
     return-void
 .end method

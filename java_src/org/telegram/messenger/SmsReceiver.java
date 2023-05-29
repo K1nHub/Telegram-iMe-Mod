@@ -46,7 +46,7 @@ public class SmsReceiver extends BroadcastReceiver {
                 }
             }
         } catch (Throwable th) {
-            FileLog.m45e(th);
+            FileLog.m49e(th);
         }
     }
 

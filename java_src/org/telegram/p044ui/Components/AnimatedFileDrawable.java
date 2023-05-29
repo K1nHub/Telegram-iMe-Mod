@@ -148,8 +148,8 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.AnimatedFileDrawable$2 */
     /* loaded from: classes6.dex */
-    public class RunnableC39932 implements Runnable {
-        RunnableC39932() {
+    public class RunnableC40492 implements Runnable {
+        RunnableC40492() {
         }
 
         @Override // java.lang.Runnable
@@ -174,7 +174,7 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
             Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.AnimatedFileDrawable$2$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AnimatedFileDrawable.RunnableC39932.this.lambda$run$1();
+                    AnimatedFileDrawable.RunnableC40492.this.lambda$run$1();
                 }
             };
             animatedFileDrawable3.cacheGenRunnable = runnable;
@@ -187,7 +187,7 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.AnimatedFileDrawable$2$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    AnimatedFileDrawable.RunnableC39932.this.lambda$run$0();
+                    AnimatedFileDrawable.RunnableC40492.this.lambda$run$0();
                 }
             });
         }
@@ -639,7 +639,7 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
             i = (iArr[2] == 90 || iArr[2] == 270) ? iArr[0] : iArr[1];
         }
         if (i == 0) {
-            return AndroidUtilities.m50dp(100);
+            return AndroidUtilities.m54dp(100);
         }
         return (int) (i * this.scaleFactor);
     }
@@ -652,7 +652,7 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
             i = (iArr[2] == 90 || iArr[2] == 270) ? iArr[1] : iArr[0];
         }
         if (i == 0) {
-            return AndroidUtilities.m50dp(100);
+            return AndroidUtilities.m54dp(100);
         }
         return (int) (i * this.scaleFactor);
     }
@@ -706,7 +706,7 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
             int[] iArr = this.metaData;
             i = (iArr[2] == 90 || iArr[2] == 270) ? iArr[0] : iArr[1];
         }
-        return i == 0 ? AndroidUtilities.m50dp(100) : i;
+        return i == 0 ? AndroidUtilities.m54dp(100) : i;
     }
 
     @Override // android.graphics.drawable.Drawable
@@ -716,7 +716,7 @@ public class AnimatedFileDrawable extends BitmapDrawable implements Animatable, 
             int[] iArr = this.metaData;
             i = (iArr[2] == 90 || iArr[2] == 270) ? iArr[1] : iArr[0];
         }
-        return i == 0 ? AndroidUtilities.m50dp(100) : i;
+        return i == 0 ? AndroidUtilities.m54dp(100) : i;
     }
 
     public Bitmap getBackgroundBitmap() {

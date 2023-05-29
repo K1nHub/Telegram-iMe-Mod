@@ -38,13 +38,15 @@ public final class KoinJavaAppKt$start$1 extends Lambda implements Function1<Koi
     public final void invoke2(KoinApplication startKoin) {
         List plus;
         List plus2;
-        List<Module> plus3;
+        List plus3;
+        List<Module> plus4;
         Intrinsics.checkNotNullParameter(startKoin, "$this$startKoin");
         KoinExtKt.androidContext(startKoin, this.$context);
         KoinExtKt.androidLogger$default(startKoin, null, 1, null);
-        plus = CollectionsKt___CollectionsKt.plus((Collection) DataComponentKt.getDataModules(), (Iterable) DomainComponentKt.getDomainModules());
-        plus2 = CollectionsKt___CollectionsKt.plus((Collection) plus, (Iterable) PresentationComponentKt.getPresentationModules());
-        plus3 = CollectionsKt___CollectionsKt.plus(plus2, StakingModuleKt.getStakingModule());
-        startKoin.modules(plus3);
+        plus = CollectionsKt___CollectionsKt.plus((Collection) FeaturesComponentKt.getFeatureModules(), (Iterable) DataComponentKt.getDataModules());
+        plus2 = CollectionsKt___CollectionsKt.plus((Collection) plus, (Iterable) DomainComponentKt.getDomainModules());
+        plus3 = CollectionsKt___CollectionsKt.plus((Collection) plus2, (Iterable) PresentationComponentKt.getPresentationModules());
+        plus4 = CollectionsKt___CollectionsKt.plus(plus3, StakingModuleKt.getStakingModule());
+        startKoin.modules(plus4);
     }
 }

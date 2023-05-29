@@ -333,9 +333,9 @@
     .line 233
     sget v1, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    const-string v3, "windowBackgroundGrayShadow"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
-    invoke-static {v2, v1, v3}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {v2, v1, v3}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 
@@ -2186,9 +2186,9 @@
     :try_start_1
     new-instance v0, Lorg/telegram/ui/Components/ForegroundColorSpanThemable;
 
-    const-string v9, "chats_attachMessage"
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_chats_attachMessage:I
 
-    invoke-direct {v0, v9}, Lorg/telegram/ui/Components/ForegroundColorSpanThemable;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v9}, Lorg/telegram/ui/Components/ForegroundColorSpanThemable;-><init>(I)V
 
     invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
 
@@ -2293,9 +2293,9 @@
     :try_start_2
     new-instance v0, Lorg/telegram/ui/Components/ForegroundColorSpanThemable;
 
-    const-string v6, "chats_nameMessage"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_chats_nameMessage:I
 
-    invoke-direct {v0, v6}, Lorg/telegram/ui/Components/ForegroundColorSpanThemable;-><init>(Ljava/lang/String;)V
+    invoke-direct {v0, v6}, Lorg/telegram/ui/Components/ForegroundColorSpanThemable;-><init>(I)V
 
     invoke-interface {v4}, Ljava/lang/CharSequence;->length()I
 

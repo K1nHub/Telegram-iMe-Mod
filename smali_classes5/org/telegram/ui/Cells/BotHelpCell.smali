@@ -109,10 +109,10 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/messenger/ImageReceiver;->setCrossfadeDuration(I)V
 
-    const-string p1, "listSelectorSDK21"
-
     .line 92
-    invoke-static {p1, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
+    invoke-static {p1, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
@@ -132,46 +132,23 @@
     return-void
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
+.method private getThemedColor(I)I
     .locals 1
 
     .line 390
     iget-object v0, p0, Lorg/telegram/ui/Cells/BotHelpCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 391
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
 .method private getThemedDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
     .locals 1
 
-    .line 395
+    .line 394
     iget-object v0, p0, Lorg/telegram/ui/Cells/BotHelpCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     if-eqz v0, :cond_0
@@ -190,7 +167,7 @@
 
     goto :goto_1
 
-    .line 396
+    .line 395
     :cond_1
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getThemeDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
 
@@ -505,9 +482,9 @@
     .line 346
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->chat_msgTextPaint:Landroid/text/TextPaint;
 
-    const-string v3, "chat_messageTextIn"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messageTextIn:I
 
-    invoke-direct {p0, v3}, Lorg/telegram/ui/Cells/BotHelpCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v3}, Lorg/telegram/ui/Cells/BotHelpCell;->getThemedColor(I)I
 
     move-result v3
 
@@ -516,9 +493,9 @@
     .line 347
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->chat_msgTextPaint:Landroid/text/TextPaint;
 
-    const-string v3, "chat_messageLinkIn"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messageLinkIn:I
 
-    invoke-direct {p0, v3}, Lorg/telegram/ui/Cells/BotHelpCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v3}, Lorg/telegram/ui/Cells/BotHelpCell;->getThemedColor(I)I
 
     move-result v3
 
@@ -1801,7 +1778,7 @@
 .method protected verifyDrawable(Landroid/graphics/drawable/Drawable;)Z
     .locals 1
 
-    .line 401
+    .line 400
     iget-object v0, p0, Lorg/telegram/ui/Cells/BotHelpCell;->selectorDrawable:Landroid/graphics/drawable/Drawable;
 
     if-eq p1, v0, :cond_1

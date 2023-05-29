@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -52,7 +52,7 @@ public class EmptyTextProgressView extends FrameLayout {
         this.progressView = view;
         LinearLayout linearLayout = new LinearLayout(context);
         this.textViewLayout = linearLayout;
-        linearLayout.setPadding(AndroidUtilities.m50dp(20), 0, AndroidUtilities.m50dp(20), 0);
+        linearLayout.setPadding(AndroidUtilities.m54dp(20), 0, AndroidUtilities.m54dp(20), 0);
         this.textViewLayout.setGravity(1);
         this.textViewLayout.setClipChildren(false);
         this.textViewLayout.setClipToPadding(false);
@@ -66,9 +66,9 @@ public class EmptyTextProgressView extends FrameLayout {
         TextView textView = new TextView(context);
         this.textView = textView;
         textView.setTextSize(1, 20.0f);
-        this.textView.setTextColor(getThemedColor("emptyListPlaceholder"));
+        this.textView.setTextColor(getThemedColor(Theme.key_emptyListPlaceholder));
         this.textView.setGravity(1);
-        this.textView.setText(LocaleController.getString("NoResult", C3242R.string.NoResult));
+        this.textView.setText(LocaleController.getString("NoResult", C3290R.string.NoResult));
         this.textViewLayout.addView(this.textView, LayoutHelper.createLinear(-2, -2, 17));
         addView(this.textViewLayout, LayoutHelper.createFrame(-2, -2));
         AndroidUtilities.updateViewVisibilityAnimated(this.textView, false, 2.0f, false);
@@ -120,10 +120,10 @@ public class EmptyTextProgressView extends FrameLayout {
         }
         Drawable mutate = getContext().getResources().getDrawable(i).mutate();
         if (mutate != null) {
-            mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor("emptyListPlaceholder"), PorterDuff.Mode.MULTIPLY));
+            mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_emptyListPlaceholder), PorterDuff.Mode.MULTIPLY));
         }
         this.textView.setCompoundDrawablesWithIntrinsicBounds((Drawable) null, mutate, (Drawable) null, (Drawable) null);
-        this.textView.setCompoundDrawablePadding(AndroidUtilities.m50dp(1));
+        this.textView.setCompoundDrawablePadding(AndroidUtilities.m54dp(1));
     }
 
     public void setTextSize(int i) {
@@ -157,7 +157,7 @@ public class EmptyTextProgressView extends FrameLayout {
                 } else {
                     int i8 = this.showAtPos;
                     if (i8 == 2) {
-                        measuredHeight = (AndroidUtilities.m50dp(100) - childAt.getMeasuredHeight()) / 2;
+                        measuredHeight = (AndroidUtilities.m54dp(100) - childAt.getMeasuredHeight()) / 2;
                         paddingTop = getPaddingTop();
                     } else if (i8 == 1) {
                         measuredHeight = ((i6 / 2) - childAt.getMeasuredHeight()) / 2;
@@ -182,9 +182,7 @@ public class EmptyTextProgressView extends FrameLayout {
         super.requestLayout();
     }
 
-    private int getThemedColor(String str) {
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-        return color != null ? color.intValue() : Theme.getColor(str);
+    private int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 }

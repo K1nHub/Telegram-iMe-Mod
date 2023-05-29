@@ -14,7 +14,7 @@ import androidx.core.content.ContextCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.iMe.common.IdFabric$CustomType;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.p044ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.TransformableLoginButtonView */
 /* loaded from: classes6.dex */
@@ -37,8 +37,8 @@ public class TransformableLoginButtonView extends View {
         this.drawBackground = true;
         this.transformType = 0;
         this.rect = new RectF();
-        this.backgroundPaint.setColor(Theme.getColor("chats_actionBackground"));
-        this.outlinePaint.setStrokeWidth(AndroidUtilities.m50dp(2));
+        this.backgroundPaint.setColor(Theme.getColor(Theme.key_chats_actionBackground));
+        this.outlinePaint.setStrokeWidth(AndroidUtilities.m54dp(2));
         this.outlinePaint.setStyle(Paint.Style.STROKE);
         this.outlinePaint.setStrokeCap(Paint.Cap.ROUND);
     }
@@ -83,53 +83,53 @@ public class TransformableLoginButtonView extends View {
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         if (this.drawBackground) {
-            float m51dp = AndroidUtilities.m51dp(((this.transformType == 0 ? this.progress : 1.0f) * 26.0f) + 6.0f);
+            float m55dp = AndroidUtilities.m55dp(((this.transformType == 0 ? this.progress : 1.0f) * 26.0f) + 6.0f);
             this.rect.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getWidth(), getHeight());
-            canvas.drawRoundRect(this.rect, m51dp, m51dp, this.backgroundPaint);
+            canvas.drawRoundRect(this.rect, m55dp, m55dp, this.backgroundPaint);
         }
         int i = this.transformType;
         if (i == IdFabric$CustomType.TRANSFORMABLE_LOGIN_BUTTON_SEARCH) {
-            Drawable drawable = ContextCompat.getDrawable(getContext(), C3242R.C3244drawable.fork_ic_search_contact_30);
+            Drawable drawable = ContextCompat.getDrawable(getContext(), C3290R.C3292drawable.fork_ic_search_contact_30);
             int intrinsicWidth = drawable.getIntrinsicWidth();
             int width = (getWidth() - intrinsicWidth) / 2;
             int height = (getHeight() - intrinsicWidth) / 2;
             drawable.setBounds(width, height, width + intrinsicWidth, intrinsicWidth + height);
-            drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor("chats_actionIcon"), PorterDuff.Mode.MULTIPLY));
+            drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_actionIcon), PorterDuff.Mode.MULTIPLY));
             drawable.draw(canvas);
         } else if (i == 0) {
             TextPaint textPaint = this.textPaint;
             if (textPaint != null && this.buttonText != null) {
                 int alpha = textPaint.getAlpha();
                 this.textPaint.setAlpha((int) (alpha * (1.0f - (Math.min(0.6f, this.progress) / 0.6f))));
-                canvas.drawText(this.buttonText, (getWidth() - this.buttonWidth) / 2.0f, ((getHeight() / 2.0f) + (this.textPaint.getTextSize() / 2.0f)) - AndroidUtilities.m51dp(1.75f), this.textPaint);
+                canvas.drawText(this.buttonText, (getWidth() - this.buttonWidth) / 2.0f, ((getHeight() / 2.0f) + (this.textPaint.getTextSize() / 2.0f)) - AndroidUtilities.m55dp(1.75f), this.textPaint);
                 this.textPaint.setAlpha(alpha);
             }
             float max = (Math.max(0.4f, this.progress) - 0.4f) / 0.6f;
             if (max != BitmapDescriptorFactory.HUE_RED) {
-                float m51dp2 = AndroidUtilities.m51dp(21.0f) + ((getWidth() - (AndroidUtilities.m51dp(21.0f) * 2)) * max);
+                float m55dp2 = AndroidUtilities.m55dp(21.0f) + ((getWidth() - (AndroidUtilities.m55dp(21.0f) * 2)) * max);
                 float height2 = getHeight() / 2.0f;
-                canvas.drawLine(AndroidUtilities.m51dp(21.0f), height2, m51dp2, height2, this.outlinePaint);
-                double m51dp3 = AndroidUtilities.m51dp(9.0f) * max;
-                float cos = (float) (m51dp2 - (Math.cos(0.7853981633974483d) * m51dp3));
-                float sin = (float) (Math.sin(0.7853981633974483d) * m51dp3);
-                canvas.drawLine(m51dp2, height2, cos, height2 - sin, this.outlinePaint);
-                canvas.drawLine(m51dp2, height2, cos, height2 + sin, this.outlinePaint);
+                canvas.drawLine(AndroidUtilities.m55dp(21.0f), height2, m55dp2, height2, this.outlinePaint);
+                double m55dp3 = AndroidUtilities.m55dp(9.0f) * max;
+                float cos = (float) (m55dp2 - (Math.cos(0.7853981633974483d) * m55dp3));
+                float sin = (float) (Math.sin(0.7853981633974483d) * m55dp3);
+                canvas.drawLine(m55dp2, height2, cos, height2 - sin, this.outlinePaint);
+                canvas.drawLine(m55dp2, height2, cos, height2 + sin, this.outlinePaint);
             }
         } else if (i == 1) {
-            float m51dp4 = AndroidUtilities.m51dp(21.0f);
-            float width2 = getWidth() - AndroidUtilities.m51dp(21.0f);
+            float m55dp4 = AndroidUtilities.m55dp(21.0f);
+            float width2 = getWidth() - AndroidUtilities.m55dp(21.0f);
             float height3 = getHeight() / 2.0f;
             canvas.save();
-            canvas.translate((-AndroidUtilities.m50dp(2)) * this.progress, BitmapDescriptorFactory.HUE_RED);
+            canvas.translate((-AndroidUtilities.m54dp(2)) * this.progress, BitmapDescriptorFactory.HUE_RED);
             canvas.rotate(this.progress * 90.0f, getWidth() / 2.0f, getHeight() / 2.0f);
-            canvas.drawLine(((width2 - m51dp4) * this.progress) + m51dp4, height3, width2, height3, this.outlinePaint);
-            int m51dp5 = AndroidUtilities.m51dp((this.progress * (-1.0f)) + 9.0f);
-            int m51dp6 = AndroidUtilities.m51dp((this.progress * 7.0f) + 9.0f);
+            canvas.drawLine(((width2 - m55dp4) * this.progress) + m55dp4, height3, width2, height3, this.outlinePaint);
+            int m55dp5 = AndroidUtilities.m55dp((this.progress * (-1.0f)) + 9.0f);
+            int m55dp6 = AndroidUtilities.m55dp((this.progress * 7.0f) + 9.0f);
             double d = width2;
-            double d2 = m51dp5;
+            double d2 = m55dp5;
             double d3 = height3;
             canvas.drawLine(width2, height3, (float) (d - (Math.cos(0.7853981633974483d) * d2)), (float) ((d2 * Math.sin(0.7853981633974483d)) + d3), this.outlinePaint);
-            double d4 = m51dp6;
+            double d4 = m55dp6;
             canvas.drawLine(width2, height3, (float) (d - (Math.cos(0.7853981633974483d) * d4)), (float) (d3 - (d4 * Math.sin(0.7853981633974483d))), this.outlinePaint);
             canvas.restore();
         }

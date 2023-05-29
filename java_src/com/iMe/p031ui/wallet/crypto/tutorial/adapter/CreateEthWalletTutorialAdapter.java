@@ -60,8 +60,8 @@ public final class CreateEthWalletTutorialAdapter extends PagerAdapter {
         ForkItemAdapterWalletEthTutorialBinding inflate = ForkItemAdapterWalletEthTutorialBinding.inflate(LayoutInflater.from(this.context), collection, false);
         Intrinsics.checkNotNullExpressionValue(inflate, "inflate(LayoutInflater.f…text), collection, false)");
         TutorialPage tutorialPage = this.items.get(i);
-        inflate.textTitle.setTextColor(Theme.getColor("chat_messagePanelText"));
-        inflate.textDescription.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
+        inflate.textTitle.setTextColor(Theme.getColor(Theme.key_chat_messagePanelText));
+        inflate.textDescription.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
         RLottieImageView rLottieImageView = inflate.imageLogo;
         rLottieImageView.setAutoRepeat(true);
         rLottieImageView.setAnimation(tutorialPage.getAnimatedIcon(), ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);

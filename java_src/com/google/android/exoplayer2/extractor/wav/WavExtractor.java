@@ -165,7 +165,7 @@ public final class WavExtractor implements Extractor {
         this.dataEndPosition = this.dataStartPosition + longValue;
         long length = extractorInput.getLength();
         if (length != -1 && this.dataEndPosition > length) {
-            Log.m792w(TAG, "Data exceeds input length: " + this.dataEndPosition + ", " + length);
+            Log.m796w(TAG, "Data exceeds input length: " + this.dataEndPosition + ", " + length);
             this.dataEndPosition = length;
         }
         ((OutputWriter) Assertions.checkNotNull(this.outputWriter)).init(this.dataStartPosition, this.dataEndPosition);

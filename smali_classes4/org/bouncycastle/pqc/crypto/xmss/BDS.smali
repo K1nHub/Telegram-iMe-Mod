@@ -2047,7 +2047,7 @@
     :cond_3
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "stack == null"
+    const-string/jumbo v1, "stack == null"
 
     invoke-direct {v0, v1}, Ljava/lang/IllegalStateException;-><init>(Ljava/lang/String;)V
 

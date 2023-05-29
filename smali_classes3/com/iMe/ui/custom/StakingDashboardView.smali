@@ -253,10 +253,10 @@
     .line 105
     invoke-virtual {v7, v8, v9}, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->setSize(J)V
 
-    const-string v8, "dialogIcon"
-
     .line 106
-    iput-object v8, v7, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->color:Ljava/lang/String;
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_dialogIcon:I
+
+    iput v8, v7, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->colorKey:I
 
     .line 107
     sget-object v8, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -316,10 +316,10 @@
 
     invoke-virtual {v7, v9}, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->setSizeAsDouble(Ljava/lang/Double;)V
 
-    const-string v9, "statisticChartLine_green"
-
     .line 119
-    iput-object v9, v7, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->color:Ljava/lang/String;
+    sget v9, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_green:I
+
+    iput v9, v7, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->colorKey:I
 
     .line 116
     invoke-interface {v3, v7}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -352,10 +352,10 @@
 
     invoke-virtual {v6, v7}, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->setSizeAsDouble(Ljava/lang/Double;)V
 
-    const-string v7, "statisticChartLine_blue"
-
     .line 126
-    iput-object v7, v6, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->color:Ljava/lang/String;
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_blue:I
+
+    iput v7, v6, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->colorKey:I
 
     .line 123
     invoke-interface {v3, v6}, Ljava/util/List;->add(Ljava/lang/Object;)Z
@@ -670,10 +670,10 @@
     .line 157
     invoke-virtual {v3, v5, v6}, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->setSize(J)V
 
-    const-string v5, "dialogIcon"
-
     .line 158
-    iput-object v5, v3, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->color:Ljava/lang/String;
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_dialogIcon:I
+
+    iput v5, v3, Lorg/telegram/ui/Components/StorageDiagramView$ClearViewData;->colorKey:I
 
     .line 159
     sget-object v5, Lkotlin/Unit;->INSTANCE:Lkotlin/Unit;
@@ -758,10 +758,10 @@
     .line 62
     iget-object v0, p0, Lcom/iMe/ui/custom/StakingDashboardView;->binding:Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;
 
-    const-string v1, "windowBackgroundGray"
-
     .line 63
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -770,10 +770,10 @@
     .line 64
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->textHeader:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v2, "windowBackgroundWhiteGrayText2"
-
     .line 65
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -789,24 +789,26 @@
     .line 68
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->cardStakingDashboard:Landroidx/cardview/widget/CardView;
 
-    const-string v2, "windowBackgroundWhite"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v3
+    move-result v2
 
-    invoke-virtual {v1, v3}, Landroidx/cardview/widget/CardView;->setCardBackgroundColor(I)V
+    invoke-virtual {v1, v2}, Landroidx/cardview/widget/CardView;->setCardBackgroundColor(I)V
 
     .line 69
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->viewDiagram:Lorg/telegram/ui/Components/StorageDiagramView;
 
     invoke-virtual {v1}, Landroid/view/View;->invalidate()V
 
-    const/4 v1, 0x2
-
-    new-array v3, v1, [Landroid/widget/TextView;
-
     .line 70
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
+
+    const/4 v2, 0x2
+
+    new-array v3, v2, [Landroid/widget/TextView;
+
     iget-object v4, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->textStakedTitle:Landroid/widget/TextView;
 
     const-string v5, "textStakedTitle"
@@ -827,20 +829,18 @@
 
     aput-object v4, v3, v6
 
-    const-string v4, "windowBackgroundWhiteGrayText"
+    invoke-static {v1, v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setTextsColor(I[Landroid/widget/TextView;)V
 
-    invoke-static {v4, v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->setTextsColor(Ljava/lang/String;[Landroid/widget/TextView;)V
-
-    new-array v1, v1, [Landroid/widget/TextView;
+    new-array v1, v2, [Landroid/widget/TextView;
 
     .line 71
-    iget-object v3, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->textStakedValue:Landroid/widget/TextView;
+    iget-object v2, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->textStakedValue:Landroid/widget/TextView;
 
-    aput-object v3, v1, v5
+    aput-object v2, v1, v5
 
-    iget-object v3, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->textProfitValue:Landroid/widget/TextView;
+    iget-object v2, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->textProfitValue:Landroid/widget/TextView;
 
-    aput-object v3, v1, v6
+    aput-object v2, v1, v6
 
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->listOf([Ljava/lang/Object;)Ljava/util/List;
 
@@ -854,32 +854,32 @@
     :goto_0
     invoke-interface {v1}, Ljava/util/Iterator;->hasNext()Z
 
-    move-result v3
+    move-result v2
 
-    if-eqz v3, :cond_0
+    if-eqz v2, :cond_0
 
     invoke-interface {v1}, Ljava/util/Iterator;->next()Ljava/lang/Object;
 
-    move-result-object v3
+    move-result-object v2
 
     .line 5
-    check-cast v3, Landroid/widget/TextView;
-
-    const-string v4, "windowBackgroundWhiteBlackText"
+    check-cast v2, Landroid/widget/TextView;
 
     .line 72
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    move-result v4
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v3, v4}, Landroid/widget/TextView;->setTextColor(I)V
+    move-result v3
 
-    const-string v4, "setupColors$lambda$6$lambda$4"
+    invoke-virtual {v2, v3}, Landroid/widget/TextView;->setTextColor(I)V
+
+    const-string v3, "setupColors$lambda$6$lambda$4"
 
     .line 73
-    invoke-static {v3, v4}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {v2, v3}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
+    invoke-static {v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
     goto :goto_0
 
@@ -887,65 +887,67 @@
     :cond_0
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->viewStakedDot:Landroid/view/View;
 
-    const/4 v3, 0x6
+    const/4 v2, 0x6
 
     .line 76
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v4
-
-    const-string v5, "statisticChartLine_blue"
-
-    .line 77
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v5
-
-    .line 75
-    invoke-static {v4, v5}, Lorg/telegram/ui/ActionBar/Theme;->createCircleDrawable(II)Landroid/graphics/drawable/ShapeDrawable;
-
-    move-result-object v4
-
-    invoke-virtual {v1, v4}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
-
-    .line 79
-    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->viewProfitDot:Landroid/view/View;
-
-    .line 80
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
-    const-string v4, "statisticChartLine_green"
+    .line 77
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_blue:I
 
-    .line 81
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
-    .line 79
+    .line 75
     invoke-static {v3, v4}, Lorg/telegram/ui/ActionBar/Theme;->createCircleDrawable(II)Landroid/graphics/drawable/ShapeDrawable;
 
     move-result-object v3
 
     invoke-virtual {v1, v3}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 83
-    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->divider:Lcom/iMe/ui/custom/DividerView;
+    .line 79
+    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->viewProfitDot:Landroid/view/View;
 
-    const-string v3, "divider"
+    .line 80
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    move-result v2
+
+    .line 81
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_statisticChartLine_green:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
-    invoke-virtual {v1, v3}, Landroid/view/View;->setBackgroundColor(I)V
+    .line 79
+    invoke-static {v2, v3}, Lorg/telegram/ui/ActionBar/Theme;->createCircleDrawable(II)Landroid/graphics/drawable/ShapeDrawable;
+
+    move-result-object v2
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setBackground(Landroid/graphics/drawable/Drawable;)V
+
+    .line 83
+    iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->divider:Lcom/iMe/ui/custom/DividerView;
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v2
+
+    invoke-virtual {v1, v2}, Landroid/view/View;->setBackgroundColor(I)V
 
     .line 84
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentStakingDashboardBinding;->horizontalActionButtons:Lcom/iMe/ui/custom/HorizontalActionButtonsView;
 
     .line 85
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

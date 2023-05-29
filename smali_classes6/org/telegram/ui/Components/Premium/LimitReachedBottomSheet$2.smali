@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)V
     .locals 0
 
-    .line 355
+    .line 375
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 479
+    .line 499
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
     iget v0, v0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->rowCount:I
@@ -46,7 +46,7 @@
 .method public getItemViewType(I)I
     .locals 3
 
-    .line 459
+    .line 479
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
     iget v1, v0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->headerRow:I
@@ -57,7 +57,7 @@
 
     return p1
 
-    .line 461
+    .line 481
     :cond_0
     iget v1, v0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->dividerRow:I
 
@@ -67,7 +67,7 @@
 
     return p1
 
-    .line 463
+    .line 483
     :cond_1
     iget v1, v0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->chatsTitleRow:I
 
@@ -77,7 +77,7 @@
 
     return p1
 
-    .line 465
+    .line 485
     :cond_2
     iget v1, v0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->loadingRow:I
 
@@ -87,7 +87,7 @@
 
     return v2
 
-    .line 467
+    .line 487
     :cond_3
     iget v1, v0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->emptyViewDividerRow:I
 
@@ -97,7 +97,7 @@
 
     return p1
 
-    .line 470
+    .line 490
     :cond_4
     iget p1, v0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->type:I
 
@@ -124,7 +124,7 @@
 .method public isEnabled(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;)Z
     .locals 4
 
-    .line 358
+    .line 378
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
     iget v1, v0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->type:I
@@ -143,7 +143,7 @@
 
     return v2
 
-    .line 361
+    .line 381
     :cond_0
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -171,7 +171,7 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 7
 
-    .line 418
+    .line 438
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
     move-result v0
@@ -186,12 +186,12 @@
 
     if-ne v0, v4, :cond_3
 
-    .line 419
+    .line 439
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/GroupCreateUserCell;
 
-    .line 420
+    .line 440
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
     iget v4, v0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->type:I
@@ -202,7 +202,7 @@
 
     if-ne v4, v5, :cond_1
 
-    .line 421
+    .line 441
     invoke-static {v0}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$200(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)Ljava/util/ArrayList;
 
     move-result-object v0
@@ -219,7 +219,7 @@
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 422
+    .line 442
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$300(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)Ljava/util/ArrayList;
@@ -238,7 +238,7 @@
 
     check-cast v1, Ljava/lang/String;
 
-    .line 423
+    .line 443
     iget-object v4, v0, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
 
     int-to-float p2, p2
@@ -263,7 +263,7 @@
     :goto_0
     invoke-virtual {p1, v0, v4, v1, v2}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setObject(Lorg/telegram/tgnet/TLObject;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
 
-    .line 424
+    .line 444
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
     iget-object p2, p2, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->selectedChats:Ljava/util/HashSet;
@@ -279,7 +279,7 @@
     :cond_1
     if-ne v4, v1, :cond_a
 
-    .line 426
+    .line 446
     invoke-static {v0}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$400(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)Ljava/util/ArrayList;
 
     move-result-object v0
@@ -296,7 +296,7 @@
 
     check-cast v0, Lorg/telegram/tgnet/TLRPC$User;
 
-    .line 427
+    .line 447
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$500(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)I
@@ -309,7 +309,7 @@
 
     move-result-object v1
 
-    .line 428
+    .line 448
     iget-object v4, v0, Lorg/telegram/tgnet/TLRPC$User;->first_name:Ljava/lang/String;
 
     iget-object v5, v0, Lorg/telegram/tgnet/TLRPC$User;->last_name:Ljava/lang/String;
@@ -340,7 +340,7 @@
     :goto_1
     invoke-virtual {p1, v0, v4, v1, v2}, Lorg/telegram/ui/Cells/GroupCreateUserCell;->setObject(Lorg/telegram/tgnet/TLObject;Ljava/lang/CharSequence;Ljava/lang/CharSequence;Z)V
 
-    .line 429
+    .line 449
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
     iget-object p2, p2, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->selectedChats:Ljava/util/HashSet;
@@ -353,7 +353,7 @@
 
     goto/16 :goto_3
 
-    .line 431
+    .line 451
     :cond_3
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -361,7 +361,7 @@
 
     if-ne v0, v2, :cond_5
 
-    .line 432
+    .line 452
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
     iget-object v1, v0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->chats:Ljava/util/ArrayList;
@@ -376,20 +376,20 @@
 
     check-cast p2, Lorg/telegram/tgnet/TLRPC$Chat;
 
-    .line 433
+    .line 453
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/AdminedChannelCell;
 
-    .line 434
+    .line 454
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/AdminedChannelCell;->getCurrentChannel()Lorg/telegram/tgnet/TLRPC$Chat;
 
     move-result-object v0
 
-    .line 435
+    .line 455
     invoke-virtual {p1, p2, v3}, Lorg/telegram/ui/Cells/AdminedChannelCell;->setChannel(Lorg/telegram/tgnet/TLRPC$Chat;Z)V
 
-    .line 436
+    .line 456
     iget-object v1, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->selectedChats:Ljava/util/HashSet;
@@ -410,7 +410,7 @@
 
     goto :goto_3
 
-    .line 437
+    .line 457
     :cond_5
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getItemViewType()I
 
@@ -420,26 +420,26 @@
 
     if-ne p2, v0, :cond_a
 
-    .line 438
+    .line 458
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Cells/HeaderCell;
 
-    .line 439
+    .line 459
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
     iget v0, p2, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->type:I
 
     if-ne v0, v1, :cond_8
 
-    .line 440
+    .line 460
     invoke-static {p2}, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->access$000(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;)Z
 
     move-result p2
 
     if-eqz p2, :cond_6
 
-    .line 441
+    .line 461
     sget p2, Lorg/telegram/messenger/R$string;->ChannelInviteViaLink:I
 
     const-string v0, "ChannelInviteViaLink"
@@ -452,7 +452,7 @@
 
     goto :goto_3
 
-    .line 443
+    .line 463
     :cond_6
     iget-object p2, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
@@ -466,7 +466,7 @@
 
     if-ne p2, v2, :cond_7
 
-    .line 444
+    .line 464
     sget p2, Lorg/telegram/messenger/R$string;->ChannelInviteViaLinkRestricted2:I
 
     const-string v0, "ChannelInviteViaLinkRestricted2"
@@ -479,7 +479,7 @@
 
     goto :goto_3
 
-    .line 446
+    .line 466
     :cond_7
     sget p2, Lorg/telegram/messenger/R$string;->ChannelInviteViaLinkRestricted3:I
 
@@ -498,7 +498,7 @@
 
     if-ne v0, p2, :cond_9
 
-    .line 450
+    .line 470
     sget p2, Lorg/telegram/messenger/R$string;->YourPublicCommunities:I
 
     const-string v0, "YourPublicCommunities"
@@ -511,7 +511,7 @@
 
     goto :goto_3
 
-    .line 452
+    .line 472
     :cond_9
     sget p2, Lorg/telegram/messenger/R$string;->LastActiveCommunities:I
 
@@ -531,7 +531,7 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 3
 
-    .line 368
+    .line 388
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
     move-result-object p1
@@ -544,7 +544,7 @@
 
     packed-switch p2, :pswitch_data_0
 
-    .line 372
+    .line 392
     new-instance p2, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$HeaderView;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
@@ -556,7 +556,7 @@
 
     goto :goto_2
 
-    .line 404
+    .line 424
     :pswitch_0
     new-instance p1, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$2$2;
 
@@ -570,7 +570,7 @@
 
     goto :goto_2
 
-    .line 396
+    .line 416
     :pswitch_1
     new-instance p2, Lorg/telegram/ui/Components/FlickerLoadingView;
 
@@ -578,7 +578,7 @@
 
     invoke-direct {p2, p1, v0}, Lorg/telegram/ui/Components/FlickerLoadingView;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
-    .line 397
+    .line 417
     iget-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$2;->this$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
     iget p1, p1, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->type:I
@@ -597,20 +597,20 @@
     :goto_1
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/FlickerLoadingView;->setViewType(I)V
 
-    .line 398
+    .line 418
     invoke-virtual {p2, v2}, Lorg/telegram/ui/Components/FlickerLoadingView;->setIsSingleCell(Z)V
 
-    .line 399
+    .line 419
     invoke-virtual {p2, v2}, Lorg/telegram/ui/Components/FlickerLoadingView;->setIgnoreHeightCheck(Z)V
 
     const/16 p1, 0xa
 
-    .line 400
+    .line 420
     invoke-virtual {p2, p1}, Lorg/telegram/ui/Components/FlickerLoadingView;->setItemsCount(I)V
 
     goto :goto_0
 
-    .line 393
+    .line 413
     :pswitch_2
     new-instance p2, Lorg/telegram/ui/Cells/GroupCreateUserCell;
 
@@ -618,13 +618,13 @@
 
     goto :goto_0
 
-    .line 389
+    .line 409
     :pswitch_3
     new-instance p2, Lorg/telegram/ui/Cells/HeaderCell;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;)V
 
-    .line 390
+    .line 410
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -633,15 +633,15 @@
 
     goto :goto_0
 
-    .line 386
+    .line 406
     :pswitch_4
     new-instance p2, Lorg/telegram/ui/Cells/ShadowSectionCell;
 
     const/16 v0, 0xc
 
-    const-string v1, "windowBackgroundGray"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -649,7 +649,7 @@
 
     goto :goto_0
 
-    .line 375
+    .line 395
     :pswitch_5
     new-instance p2, Lorg/telegram/ui/Cells/AdminedChannelCell;
 
@@ -663,7 +663,7 @@
 
     goto :goto_0
 
-    .line 412
+    .line 432
     :goto_2
     new-instance p2, Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
@@ -675,7 +675,7 @@
 
     invoke-virtual {p1, p2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 413
+    .line 433
     new-instance p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p2, p1}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V

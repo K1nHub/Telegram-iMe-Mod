@@ -8,38 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/MessagesController;
 
-.field public final synthetic f$1:Landroid/content/Context;
+.field public final synthetic f$1:J
 
-.field public final synthetic f$2:Lorg/telegram/ui/ActionBar/AlertDialog;
-
-.field public final synthetic f$3:Lorg/telegram/messenger/MessagesStorage$LongCallback;
-
-.field public final synthetic f$4:Ljava/lang/Runnable;
-
-.field public final synthetic f$5:Lorg/telegram/ui/ActionBar/BaseFragment;
-
-.field public final synthetic f$6:Lorg/telegram/tgnet/TLRPC$TL_messages_migrateChat;
+.field public final synthetic f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_setChatAvailableReactions;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Landroid/content/Context;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/messenger/MessagesStorage$LongCallback;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_messages_migrateChat;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;JLorg/telegram/tgnet/TLRPC$TL_messages_setChatAvailableReactions;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda334;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda334;->f$1:Landroid/content/Context;
+    iput-wide p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda334;->f$1:J
 
-    iput-object p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda334;->f$2:Lorg/telegram/ui/ActionBar/AlertDialog;
-
-    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda334;->f$3:Lorg/telegram/messenger/MessagesStorage$LongCallback;
-
-    iput-object p5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda334;->f$4:Ljava/lang/Runnable;
-
-    iput-object p6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda334;->f$5:Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    iput-object p7, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda334;->f$6:Lorg/telegram/tgnet/TLRPC$TL_messages_migrateChat;
+    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda334;->f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_setChatAvailableReactions;
 
     return-void
 .end method
@@ -47,27 +31,19 @@
 
 # virtual methods
 .method public final run(Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
-    .locals 9
+    .locals 6
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda334;->f$0:Lorg/telegram/messenger/MessagesController;
 
-    iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda334;->f$1:Landroid/content/Context;
+    iget-wide v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda334;->f$1:J
 
-    iget-object v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda334;->f$2:Lorg/telegram/ui/ActionBar/AlertDialog;
+    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda334;->f$2:Lorg/telegram/tgnet/TLRPC$TL_messages_setChatAvailableReactions;
 
-    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda334;->f$3:Lorg/telegram/messenger/MessagesStorage$LongCallback;
+    move-object v4, p1
 
-    iget-object v4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda334;->f$4:Ljava/lang/Runnable;
+    move-object v5, p2
 
-    iget-object v5, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda334;->f$5:Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    iget-object v6, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda334;->f$6:Lorg/telegram/tgnet/TLRPC$TL_messages_migrateChat;
-
-    move-object v7, p1
-
-    move-object v8, p2
-
-    invoke-static/range {v0 .. v8}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$91DPLD73Odpg8tnKLkyrMadMjMs(Lorg/telegram/messenger/MessagesController;Landroid/content/Context;Lorg/telegram/ui/ActionBar/AlertDialog;Lorg/telegram/messenger/MessagesStorage$LongCallback;Ljava/lang/Runnable;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/tgnet/TLRPC$TL_messages_migrateChat;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
+    invoke-static/range {v0 .. v5}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$ML8SEAPWNztcUEORroeWvEXmz3w(Lorg/telegram/messenger/MessagesController;JLorg/telegram/tgnet/TLRPC$TL_messages_setChatAvailableReactions;Lorg/telegram/tgnet/TLObject;Lorg/telegram/tgnet/TLRPC$TL_error;)V
 
     return-void
 .end method

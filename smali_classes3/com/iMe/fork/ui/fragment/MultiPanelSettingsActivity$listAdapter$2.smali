@@ -48,7 +48,7 @@
 .method public final invoke()Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;
     .locals 2
 
-    .line 38
+    .line 40
     new-instance v0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;
 
     iget-object v1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$listAdapter$2;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
@@ -61,7 +61,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 38
+    .line 40
     invoke-virtual {p0}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$listAdapter$2;->invoke()Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;
 
     move-result-object v0

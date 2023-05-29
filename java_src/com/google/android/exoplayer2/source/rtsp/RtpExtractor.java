@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.source.rtsp;
 
 import android.os.SystemClock;
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.exoplayer2.extractor.Extractor;
 import com.google.android.exoplayer2.extractor.ExtractorInput;
 import com.google.android.exoplayer2.extractor.ExtractorOutput;
@@ -23,10 +23,10 @@ final class RtpExtractor implements Extractor {
     private final ParsableByteArray rtpPacketDataBuffer = new ParsableByteArray();
     private final Object lock = new Object();
     private final RtpPacketReorderingQueue reorderingQueue = new RtpPacketReorderingQueue();
-    private volatile long firstTimestamp = C0470C.TIME_UNSET;
+    private volatile long firstTimestamp = C0475C.TIME_UNSET;
     private volatile int firstSequenceNumber = -1;
-    private long nextRtpTimestamp = C0470C.TIME_UNSET;
-    private long playbackStartTimeUs = C0470C.TIME_UNSET;
+    private long nextRtpTimestamp = C0475C.TIME_UNSET;
+    private long playbackStartTimeUs = C0475C.TIME_UNSET;
 
     private static long getCutoffTimeMs(long j) {
         return j - 30;
@@ -68,7 +68,7 @@ final class RtpExtractor implements Extractor {
     public void init(ExtractorOutput extractorOutput) {
         this.payloadReader.createTracks(extractorOutput, this.trackId);
         extractorOutput.endTracks();
-        extractorOutput.seekMap(new SeekMap.Unseekable(C0470C.TIME_UNSET));
+        extractorOutput.seekMap(new SeekMap.Unseekable(C0475C.TIME_UNSET));
         this.output = extractorOutput;
     }
 
@@ -96,7 +96,7 @@ final class RtpExtractor implements Extractor {
             return 0;
         }
         if (!this.firstPacketRead) {
-            if (this.firstTimestamp == C0470C.TIME_UNSET) {
+            if (this.firstTimestamp == C0475C.TIME_UNSET) {
                 this.firstTimestamp = poll.timestamp;
             }
             if (this.firstSequenceNumber == -1) {
@@ -112,12 +112,12 @@ final class RtpExtractor implements Extractor {
                     this.payloadReader.consume(this.rtpPacketDataBuffer, poll.timestamp, poll.sequenceNumber, poll.marker);
                     poll = this.reorderingQueue.poll(cutoffTimeMs);
                 } while (poll != null);
-            } else if (this.nextRtpTimestamp != C0470C.TIME_UNSET && this.playbackStartTimeUs != C0470C.TIME_UNSET) {
+            } else if (this.nextRtpTimestamp != C0475C.TIME_UNSET && this.playbackStartTimeUs != C0475C.TIME_UNSET) {
                 this.reorderingQueue.reset();
                 this.payloadReader.seek(this.nextRtpTimestamp, this.playbackStartTimeUs);
                 this.isSeekPending = false;
-                this.nextRtpTimestamp = C0470C.TIME_UNSET;
-                this.playbackStartTimeUs = C0470C.TIME_UNSET;
+                this.nextRtpTimestamp = C0475C.TIME_UNSET;
+                this.playbackStartTimeUs = C0475C.TIME_UNSET;
             }
         }
         return 0;

@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended;
+.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
 
 
 # instance fields
@@ -22,30 +22,12 @@
 
 
 # virtual methods
-.method public synthetic hasDoubleTap(Landroid/view/View;I)Z
-    .locals 0
-
-    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended$-CC;->$default$hasDoubleTap(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended;Landroid/view/View;I)Z
-
-    move-result p1
-
-    return p1
-.end method
-
-.method public synthetic onDoubleTap(Landroid/view/View;IFF)V
-    .locals 0
-
-    invoke-static {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended$-CC;->$default$onDoubleTap(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended;Landroid/view/View;IFF)V
-
-    return-void
-.end method
-
-.method public final onItemClick(Landroid/view/View;IFF)V
+.method public final onItemClick(Landroid/view/View;I)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$$ExternalSyntheticLambda25;->f$0:Lorg/telegram/ui/ThemePreviewActivity;
 
-    invoke-static {v0, p1, p2, p3, p4}, Lorg/telegram/ui/ThemePreviewActivity;->$r8$lambda$csbs872778iVXA3fkD5CoCFveV0(Lorg/telegram/ui/ThemePreviewActivity;Landroid/view/View;IFF)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ThemePreviewActivity;->$r8$lambda$hfrAgWrzCZk2b5HHz56dM97mdrU(Lorg/telegram/ui/ThemePreviewActivity;Landroid/view/View;I)V
 
     return-void
 .end method

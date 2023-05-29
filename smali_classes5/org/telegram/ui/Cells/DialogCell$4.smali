@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Cells/DialogCell;)V
     .locals 0
 
-    .line 4572
+    .line 4590
     iput-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$4;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 2
 
-    .line 4575
+    .line 4593
     iget-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$4;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/DialogCell;->access$600(Lorg/telegram/ui/Cells/DialogCell;)Z
@@ -80,7 +80,7 @@
     :goto_1
     add-int/2addr p1, v0
 
-    .line 4576
+    .line 4594
     iget-object v0, p0, Lorg/telegram/ui/Cells/DialogCell$4;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/DialogCell;->access$900(Lorg/telegram/ui/Cells/DialogCell;)I
@@ -89,7 +89,7 @@
 
     if-eq v0, p1, :cond_2
 
-    .line 4577
+    .line 4595
     iget-object v0, p0, Lorg/telegram/ui/Cells/DialogCell$4;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/DialogCell;->access$900(Lorg/telegram/ui/Cells/DialogCell;)I
@@ -100,13 +100,13 @@
 
     goto :goto_2
 
-    .line 4579
+    .line 4597
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$4;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     invoke-static {p1, v1}, Lorg/telegram/ui/Cells/DialogCell;->access$1102(Lorg/telegram/ui/Cells/DialogCell;Z)Z
 
-    .line 4580
+    .line 4598
     iget-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$4;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 
     invoke-static {p1}, Lorg/telegram/ui/Cells/DialogCell;->access$900(Lorg/telegram/ui/Cells/DialogCell;)I
@@ -115,7 +115,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Cells/DialogCell;->access$1202(Lorg/telegram/ui/Cells/DialogCell;I)I
 
-    .line 4582
+    .line 4600
     :goto_2
     iget-object p1, p0, Lorg/telegram/ui/Cells/DialogCell$4;->this$0:Lorg/telegram/ui/Cells/DialogCell;
 

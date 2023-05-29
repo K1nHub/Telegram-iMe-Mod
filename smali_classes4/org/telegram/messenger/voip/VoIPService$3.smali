@@ -48,7 +48,7 @@
 
     const-string v0, "audio"
 
-    const-string v1, "state"
+    const-string/jumbo v1, "state"
 
     const/4 v2, 0x2
 

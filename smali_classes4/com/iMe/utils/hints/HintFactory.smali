@@ -38,8 +38,14 @@
     .line 50
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setAlpha(F)V
 
+    const/4 p1, 0x0
+
+    const/4 p2, 0x1
+
+    const/4 p3, 0x0
+
     .line 51
-    invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->invisible(Landroid/view/View;)V
+    invoke-static {v0, p1, p2, p3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->invisible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 52
     new-instance p1, Lcom/iMe/utils/hints/HintFactory$$ExternalSyntheticLambda0;
@@ -54,7 +60,7 @@
 .method private static final createHintView$lambda$2$lambda$1(Lcom/iMe/utils/hints/HintFactory;)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

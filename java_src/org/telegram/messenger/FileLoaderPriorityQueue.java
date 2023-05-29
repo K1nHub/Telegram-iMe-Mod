@@ -4,17 +4,21 @@ import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import java.util.ArrayList;
 /* loaded from: classes4.dex */
 public class FileLoaderPriorityQueue {
-    private final int maxActiveOperationsCount;
+    public static final int TYPE_LARGE = 1;
+    public static final int TYPE_SMALL = 0;
+    int currentAccount;
     String name;
+    int type;
     private ArrayList<FileLoadOperation> allOperations = new ArrayList<>();
     private int PRIORITY_VALUE_MAX = ProgressiveMediaSource.DEFAULT_LOADING_CHECK_INTERVAL_BYTES;
     private int PRIORITY_VALUE_NORMAL = 65536;
     private int PRIORITY_VALUE_LOW = 0;
 
     /* JADX INFO: Access modifiers changed from: package-private */
-    public FileLoaderPriorityQueue(String str, int i) {
+    public FileLoaderPriorityQueue(int i, String str, int i2) {
+        this.currentAccount = i;
         this.name = str;
-        this.maxActiveOperationsCount = i;
+        this.type = i2;
     }
 
     public void add(FileLoadOperation fileLoadOperation) {
@@ -54,7 +58,7 @@ public class FileLoaderPriorityQueue {
     }
 
     public void checkLoadingOperations() {
-        int i = this.maxActiveOperationsCount;
+        int i = this.type == 1 ? MessagesController.getInstance(this.currentAccount).largeQueueMaxActiveOperations : MessagesController.getInstance(this.currentAccount).smallQueueMaxActiveOperations;
         boolean z = false;
         int i2 = 0;
         for (int i3 = 0; i3 < this.allOperations.size(); i3++) {
@@ -73,11 +77,11 @@ public class FileLoaderPriorityQueue {
         }
     }
 
-    public void remove(FileLoadOperation fileLoadOperation) {
+    public boolean remove(FileLoadOperation fileLoadOperation) {
         if (fileLoadOperation == null) {
-            return;
+            return false;
         }
-        this.allOperations.remove(fileLoadOperation);
+        return this.allOperations.remove(fileLoadOperation);
     }
 
     public int getCount() {

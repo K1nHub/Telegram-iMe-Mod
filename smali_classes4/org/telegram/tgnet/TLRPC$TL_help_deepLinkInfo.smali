@@ -35,10 +35,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 4323
+    .line 4743
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$help_DeepLinkInfo;-><init>()V
 
-    .line 4329
+    .line 4749
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -53,7 +53,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 4332
+    .line 4752
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -75,25 +75,25 @@
     :cond_0
     move v0, v2
 
-    .line 4333
+    .line 4753
     :goto_0
     iput-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_help_deepLinkInfo;->update_app:Z
 
-    .line 4334
+    .line 4754
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_help_deepLinkInfo;->message:Ljava/lang/String;
 
-    .line 4335
+    .line 4755
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_help_deepLinkInfo;->flags:I
 
     and-int/lit8 v0, v0, 0x2
 
     if-eqz v0, :cond_4
 
-    .line 4336
+    .line 4756
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -106,7 +106,7 @@
 
     return-void
 
-    .line 4339
+    .line 4759
     :cond_1
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -128,7 +128,7 @@
 
     throw p1
 
-    .line 4343
+    .line 4763
     :cond_2
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -137,7 +137,7 @@
     :goto_1
     if-ge v2, v0, :cond_4
 
-    .line 4345
+    .line 4765
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v1
@@ -150,7 +150,7 @@
 
     return-void
 
-    .line 4349
+    .line 4769
     :cond_3
     iget-object v3, p0, Lorg/telegram/tgnet/TLRPC$TL_help_deepLinkInfo;->entities:Ljava/util/ArrayList;
 
@@ -167,12 +167,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 3
 
-    .line 4355
+    .line 4775
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_help_deepLinkInfo;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 4356
+    .line 4776
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_help_deepLinkInfo;->update_app:Z
 
     if-eqz v0, :cond_0
@@ -191,15 +191,15 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_help_deepLinkInfo;->flags:I
 
-    .line 4357
+    .line 4777
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 4358
+    .line 4778
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_help_deepLinkInfo;->message:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 4359
+    .line 4779
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$TL_help_deepLinkInfo;->flags:I
 
     and-int/lit8 v0, v0, 0x2
@@ -208,17 +208,17 @@
 
     const v0, 0x1cb5c415
 
-    .line 4360
+    .line 4780
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 4361
+    .line 4781
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_help_deepLinkInfo;->entities:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 4362
+    .line 4782
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -226,7 +226,7 @@
     :goto_1
     if-ge v1, v0, :cond_1
 
-    .line 4364
+    .line 4784
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_help_deepLinkInfo;->entities:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

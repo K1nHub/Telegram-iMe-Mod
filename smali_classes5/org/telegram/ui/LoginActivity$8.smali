@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/LoginActivity$8;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Landroid/view/ViewOutlineProvider;
 .source "LoginActivity.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/LoginActivity;->setCustomKeyboardVisible(ZZ)V
+    value = Lorg/telegram/ui/LoginActivity;->createView(Landroid/content/Context;)Landroid/view/View;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,54 +14,35 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lorg/telegram/ui/LoginActivity;
-
-
 # direct methods
 .method constructor <init>(Lorg/telegram/ui/LoginActivity;)V
     .locals 0
 
-    .line 956
-    iput-object p1, p0, Lorg/telegram/ui/LoginActivity$8;->this$0:Lorg/telegram/ui/LoginActivity;
-
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    .line 883
+    invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
+.method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
     .locals 2
 
-    .line 959
-    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$8;->this$0:Lorg/telegram/ui/LoginActivity;
+    const/16 p1, 0x38
 
-    invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$700(Lorg/telegram/ui/LoginActivity;)Lorg/telegram/ui/Components/CustomPhoneKeyboardView;
+    .line 887
+    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result-object v0
+    move-result v0
 
-    const/16 v1, 0x8
+    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setVisibility(I)V
+    move-result p1
 
-    .line 961
-    iget-object v0, p0, Lorg/telegram/ui/LoginActivity$8;->this$0:Lorg/telegram/ui/LoginActivity;
+    const/4 v1, 0x0
 
-    invoke-static {v0}, Lorg/telegram/ui/LoginActivity;->access$1000(Lorg/telegram/ui/LoginActivity;)Landroid/animation/ValueAnimator;
+    invoke-virtual {p2, v1, v1, v0, p1}, Landroid/graphics/Outline;->setOval(IIII)V
 
-    move-result-object v0
-
-    if-ne v0, p1, :cond_0
-
-    .line 962
-    iget-object p1, p0, Lorg/telegram/ui/LoginActivity$8;->this$0:Lorg/telegram/ui/LoginActivity;
-
-    const/4 v0, 0x0
-
-    invoke-static {p1, v0}, Lorg/telegram/ui/LoginActivity;->access$1002(Lorg/telegram/ui/LoginActivity;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
-
-    :cond_0
     return-void
 .end method

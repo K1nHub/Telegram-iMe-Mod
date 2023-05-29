@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;Landroid/content/Context;IZILandroidx/recyclerview/widget/RecyclerView;)V
     .locals 6
 
-    .line 346
+    .line 345
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$3;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout;
 
     move-object v0, p0
@@ -47,7 +47,7 @@
 .method public smoothScrollToPosition(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;I)V
     .locals 0
 
-    .line 349
+    .line 348
     new-instance p2, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$3$1;
 
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
@@ -56,10 +56,10 @@
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$3$1;-><init>(Lorg/telegram/ui/Components/ChatAttachAlertContactsLayout$3;Landroid/content/Context;)V
 
-    .line 362
+    .line 361
     invoke-virtual {p2, p3}, Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;->setTargetPosition(I)V
 
-    .line 363
+    .line 362
     invoke-virtual {p0, p2}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->startSmoothScroll(Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;)V
 
     return-void

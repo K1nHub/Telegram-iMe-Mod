@@ -89,19 +89,19 @@
 .end method
 
 .method private final markChecked(Z)V
-    .locals 3
+    .locals 2
 
     .line 60
     iget-object v0, p0, Lcom/iMe/ui/custom/backup/BackupWordView;->binding:Lorg/telegram/messenger/databinding/ForkContentBackupWordBinding;
-
-    const-string v1, "chats_actionBackground"
 
     if-eqz p1, :cond_0
 
     .line 62
     iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentBackupWordBinding;->cardWord:Landroidx/cardview/widget/CardView;
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -110,9 +110,9 @@
     .line 63
     iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentBackupWordBinding;->textWord:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v0, "actionBarDefaultTitle"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultTitle:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -124,18 +124,20 @@
     :cond_0
     iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentBackupWordBinding;->cardWord:Landroidx/cardview/widget/CardView;
 
-    const-string v2, "windowBackgroundWhite"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v2
+    move-result v1
 
-    invoke-virtual {p1, v2}, Landroidx/cardview/widget/CardView;->setCardBackgroundColor(I)V
+    invoke-virtual {p1, v1}, Landroidx/cardview/widget/CardView;->setCardBackgroundColor(I)V
 
     .line 66
     iget-object p1, v0, Lorg/telegram/messenger/databinding/ForkContentBackupWordBinding;->textWord:Landroidx/appcompat/widget/AppCompatTextView;
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -174,9 +176,9 @@
     .line 43
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentBackupWordBinding;->cardWord:Landroidx/cardview/widget/CardView;
 
-    const-string v2, "windowBackgroundWhite"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -185,10 +187,10 @@
     .line 44
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentBackupWordBinding;->textWord:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v1, "chats_actionBackground"
-
     .line 45
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

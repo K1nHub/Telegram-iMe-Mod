@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/EmojiView;Landroid/content/Context;I)V
     .locals 0
 
-    .line 5275
+    .line 4995
     iput-object p1, p0, Lorg/telegram/ui/Components/EmojiView$40;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     invoke-direct {p0, p2, p3}, Landroidx/recyclerview/widget/LinearSmoothScrollerCustom;-><init>(Landroid/content/Context;I)V
@@ -35,12 +35,12 @@
 .method public onEnd()V
     .locals 2
 
-    .line 5278
+    .line 4998
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$40;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     const/4 v1, 0x0
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->access$7402(Lorg/telegram/ui/Components/EmojiView;Z)Z
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->access$6802(Lorg/telegram/ui/Components/EmojiView;Z)Z
 
     return-void
 .end method
@@ -48,12 +48,12 @@
 .method protected onStart()V
     .locals 2
 
-    .line 5283
+    .line 5003
     iget-object v0, p0, Lorg/telegram/ui/Components/EmojiView$40;->this$0:Lorg/telegram/ui/Components/EmojiView;
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->access$7402(Lorg/telegram/ui/Components/EmojiView;Z)Z
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/EmojiView;->access$6802(Lorg/telegram/ui/Components/EmojiView;Z)Z
 
     return-void
 .end method

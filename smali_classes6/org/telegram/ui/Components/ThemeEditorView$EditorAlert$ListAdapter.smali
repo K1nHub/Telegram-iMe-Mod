@@ -78,12 +78,16 @@
     check-cast v1, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     .line 1311
-    invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/ThemeDescription;->getCurrentKey()Ljava/lang/String;
+    invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/ThemeDescription;->getCurrentKey()I
 
-    move-result-object v2
+    move-result v2
 
     .line 1312
-    invoke-virtual {p1, v2}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v3
+
+    invoke-virtual {p1, v3}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
 
     move-result-object v3
 
@@ -97,6 +101,10 @@
     invoke-direct {v3}, Ljava/util/ArrayList;-><init>()V
 
     .line 1315
+    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v2
+
     invoke-virtual {p1, v2, v3}, Ljava/util/HashMap;->put(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
     .line 1316
@@ -120,7 +128,11 @@
 
     if-lt p2, p3, :cond_2
 
-    const-string p2, "windowBackgroundGray"
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+
+    invoke-static {v7}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object p2
 
     invoke-virtual {p1, p2}, Ljava/util/HashMap;->containsKey(Ljava/lang/Object;)Z
 
@@ -148,11 +160,9 @@
 
     const/4 v6, 0x0
 
-    const-string v7, "windowBackgroundGray"
-
     move-object v0, p2
 
-    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v0 .. v7}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     invoke-virtual {p1, p2}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
@@ -302,17 +312,13 @@
     check-cast p2, Lorg/telegram/ui/ActionBar/ThemeDescription;
 
     .line 1367
-    invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/ThemeDescription;->getCurrentKey()Ljava/lang/String;
-
-    move-result-object v1
-
-    const-string v2, "chat_wallpaper"
-
-    invoke-virtual {v1, v2}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    invoke-virtual {p2}, Lorg/telegram/ui/ActionBar/ThemeDescription;->getCurrentKey()I
 
     move-result v1
 
-    if-eqz v1, :cond_0
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_wallpaper:I
+
+    if-ne v1, v2, :cond_0
 
     goto :goto_0
 

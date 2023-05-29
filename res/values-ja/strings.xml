@@ -101,6 +101,8 @@
     <string name="mtrl_picker_toggle_to_day_selection">タップすると、日の選択に切り替わります</string>
     <string name="mtrl_picker_toggle_to_text_input_mode">テキスト入力モードに切り替え</string>
     <string name="mtrl_picker_toggle_to_year_selection">タップすると、年の選択に切り替わります</string>
+    <string name="nav_app_bar_navigate_up_description">上へ移動</string>
+    <string name="nav_app_bar_open_drawer_description">ナビゲーション ドロワーを開く</string>
     <string name="password_toggle_content_description">パスワードを表示</string>
     <string name="search_menu_title">検索</string>
     <string name="status_bar_notification_info_overflow">999+</string>

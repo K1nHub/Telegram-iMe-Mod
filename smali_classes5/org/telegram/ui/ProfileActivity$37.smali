@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;Ljava/util/ArrayList;Ljava/lang/String;ZLjava/lang/String;Z)V
     .locals 7
 
-    .line 5581
+    .line 5625
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$37;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     move-object v0, p0
@@ -55,7 +55,7 @@
 .method private synthetic lambda$onSend$0(Landroidx/collection/LongSparseArray;I)V
     .locals 9
 
-    .line 5585
+    .line 5629
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$37;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -96,15 +96,15 @@
     const-wide/16 v4, 0x0
 
     :goto_0
-    const-string p1, "undo_background"
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_undo_background:I
 
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v7
 
-    const-string p1, "undo_infoColor"
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_undo_infoColor:I
 
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->getThemedColor(I)I
 
     move-result v8
 
@@ -134,7 +134,7 @@
         }
     .end annotation
 
-    .line 5584
+    .line 5628
     new-instance p3, Lorg/telegram/ui/ProfileActivity$37$$ExternalSyntheticLambda0;
 
     invoke-direct {p3, p0, p1, p2}, Lorg/telegram/ui/ProfileActivity$37$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/ProfileActivity$37;Landroidx/collection/LongSparseArray;I)V

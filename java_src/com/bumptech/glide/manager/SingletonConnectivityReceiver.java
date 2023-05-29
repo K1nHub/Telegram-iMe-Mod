@@ -106,12 +106,12 @@ final class SingletonConnectivityReceiver {
         private final GlideSuppliers.GlideSupplier<ConnectivityManager> connectivityManager;
         boolean isConnected;
         final ConnectivityMonitor.ConnectivityListener listener;
-        private final ConnectivityManager.NetworkCallback networkCallback = new C04411();
+        private final ConnectivityManager.NetworkCallback networkCallback = new C04461();
 
         /* renamed from: com.bumptech.glide.manager.SingletonConnectivityReceiver$FrameworkConnectivityMonitorPostApi24$1 */
         /* loaded from: classes.dex */
-        class C04411 extends ConnectivityManager.NetworkCallback {
-            C04411() {
+        class C04461 extends ConnectivityManager.NetworkCallback {
+            C04461() {
             }
 
             @Override // android.net.ConnectivityManager.NetworkCallback
@@ -128,7 +128,7 @@ final class SingletonConnectivityReceiver {
                 Util.postOnUiThread(new Runnable() { // from class: com.bumptech.glide.manager.SingletonConnectivityReceiver.FrameworkConnectivityMonitorPostApi24.1.1
                     @Override // java.lang.Runnable
                     public void run() {
-                        C04411.this.onConnectivityChange(z);
+                        C04461.this.onConnectivityChange(z);
                     }
                 });
             }

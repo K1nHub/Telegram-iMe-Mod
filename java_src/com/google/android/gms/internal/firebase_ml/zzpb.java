@@ -46,7 +46,7 @@ public final class zzpb extends BroadcastReceiver {
                 firebaseApp.getApplicationContext().unregisterReceiver(this);
             } catch (IllegalArgumentException e) {
                 gmsLogger = zzoz.zzass;
-                gmsLogger.m776w("ModelDownloadManager", "Exception thrown while trying to unregister the broadcast receiver for the download", e);
+                gmsLogger.m780w("ModelDownloadManager", "Exception thrown while trying to unregister the broadcast receiver for the download", e);
             }
             map = this.zzavu.zzavl;
             map.remove(Long.valueOf(this.zzavs));

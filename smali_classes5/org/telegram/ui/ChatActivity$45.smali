@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/ChatActivity$45;
-.super Lorg/telegram/ui/Components/UnreadCounterTextView;
+.super Landroid/widget/TextView;
 .source "ChatActivity.java"
 
 
@@ -15,6 +15,8 @@
 
 
 # instance fields
+.field cellFlickerDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
+
 .field final synthetic this$0:Lorg/telegram/ui/ChatActivity;
 
 
@@ -22,63 +24,127 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 8994
+    .line 8907
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$45;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-direct {p0, p2}, Lorg/telegram/ui/Components/UnreadCounterTextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
-    .locals 1
+.method protected onDraw(Landroid/graphics/Canvas;)V
+    .locals 4
 
-    .line 9014
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$45;->this$0:Lorg/telegram/ui/ChatActivity;
+    .line 8912
+    invoke-super {p0, p1}, Landroid/widget/TextView;->onDraw(Landroid/graphics/Canvas;)V
 
-    iget-object v0, v0, Lorg/telegram/ui/ChatActivity;->themeDelegate:Lorg/telegram/ui/ChatActivity$ThemeDelegate;
+    .line 8913
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$45;->cellFlickerDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
 
-    return-object v0
+    if-nez v0, :cond_0
+
+    .line 8914
+    new-instance v0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;-><init>()V
+
+    iput-object v0, p0, Lorg/telegram/ui/ChatActivity$45;->cellFlickerDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
+
+    const/4 v1, 0x0
+
+    .line 8915
+    iput-boolean v1, v0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->drawFrame:Z
+
+    const/high16 v1, 0x40000000    # 2.0f
+
+    .line 8916
+    iput v1, v0, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->repeatProgress:F
+
+    .line 8918
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$45;->cellFlickerDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
+
+    invoke-virtual {p0}, Landroid/widget/TextView;->getMeasuredWidth()I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->setParentWidth(I)V
+
+    .line 8919
+    sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->rectTmp:Landroid/graphics/RectF;
+
+    invoke-virtual {p0}, Landroid/widget/TextView;->getMeasuredWidth()I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    invoke-virtual {p0}, Landroid/widget/TextView;->getMeasuredHeight()I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v0, v3, v3, v1, v2}, Landroid/graphics/RectF;->set(FFFF)V
+
+    .line 8920
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$45;->cellFlickerDrawable:Lorg/telegram/ui/Components/voip/CellFlickerDrawable;
+
+    const/4 v2, 0x4
+
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v2
+
+    int-to-float v2, v2
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v1, p1, v0, v2, v3}, Lorg/telegram/ui/Components/voip/CellFlickerDrawable;->draw(Landroid/graphics/Canvas;Landroid/graphics/RectF;FLandroid/view/View;)V
+
+    .line 8921
+    invoke-virtual {p0}, Landroid/widget/TextView;->invalidate()V
+
+    return-void
 .end method
 
-.method protected getTopOffset()F
+.method public setVisibility(I)V
     .locals 1
 
-    const/4 v0, 0x2
+    .line 8926
+    invoke-super {p0, p1}, Landroid/widget/TextView;->setVisibility(I)V
 
-    .line 9019
-    invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v0
-
-    neg-int v0, v0
-
-    int-to-float v0, v0
-
-    return v0
-.end method
-
-.method protected isTouchFullWidth()Z
-    .locals 1
-
-    .line 9009
+    .line 8928
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$45;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$28400(Lorg/telegram/ui/ChatActivity;)Landroidx/collection/LongSparseArray;
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$17200(Lorg/telegram/ui/ChatActivity;)Lorg/telegram/ui/Components/BlurredFrameLayout;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    invoke-virtual {v0}, Landroid/widget/FrameLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
-    const/4 v0, 0x1
+    move-result-object v0
+
+    if-nez p1, :cond_0
+
+    const/16 p1, 0x43
 
     goto :goto_0
 
     :cond_0
-    const/4 v0, 0x0
+    const/16 p1, 0x33
 
+    .line 8929
     :goto_0
-    return v0
+    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result p1
+
+    iput p1, v0, Landroid/view/ViewGroup$LayoutParams;->height:I
+
+    return-void
 .end method

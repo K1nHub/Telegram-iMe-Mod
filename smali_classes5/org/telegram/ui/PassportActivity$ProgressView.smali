@@ -46,9 +46,9 @@
     .line 7204
     iget-object p1, p0, Lorg/telegram/ui/PassportActivity$ProgressView;->paint:Landroid/graphics/Paint;
 
-    const-string v0, "login_progressInner"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_login_progressInner:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -57,9 +57,9 @@
     .line 7205
     iget-object p1, p0, Lorg/telegram/ui/PassportActivity$ProgressView;->paint2:Landroid/graphics/Paint;
 
-    const-string v0, "login_progressOuter"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_login_progressOuter:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

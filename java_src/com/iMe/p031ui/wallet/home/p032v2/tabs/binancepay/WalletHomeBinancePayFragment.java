@@ -57,7 +57,7 @@ import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.databinding.ForkFragmentWalletHomeBinancePayBinding;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p044ui.ActionBar.AlertDialog;
@@ -67,7 +67,7 @@ import org.telegram.p044ui.ActionIntroActivity;
 import org.telegram.p044ui.ManageLinksActivity;
 /* compiled from: WalletHomeBinancePayFragment.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayFragment */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment implements WalletHomeBinancePayView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(WalletHomeBinancePayFragment.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/home/v2/tabs/binancepay/WalletHomeBinancePayPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(WalletHomeBinancePayFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletHomeBinancePayBinding;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -141,7 +141,7 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, "windowBackgroundGray"));
+        }, Theme.key_windowBackgroundGray));
         return arrayListOf;
     }
 
@@ -149,7 +149,7 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
     public static final void getThemeDescriptions$lambda$0(WalletHomeBinancePayFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         this$0.getBinancePayRecycleAdapter().notifyDataSetChanged();
-        this$0.getBinding().getRoot().setColorSchemeColors(Theme.getColor("chats_actionBackground"));
+        this$0.getBinding().getRoot().setColorSchemeColors(Theme.getColor(Theme.key_chats_actionBackground));
     }
 
     @Override // com.iMe.p031ui.wallet.home.p032v2.tabs.WalletHomeTabFragment
@@ -327,8 +327,8 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
 
     private final void setupColors() {
         ForkFragmentWalletHomeBinancePayBinding binding = getBinding();
-        binding.getRoot().setColorSchemeColors(Theme.getColor("chats_actionBackground"));
-        binding.getRoot().setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+        binding.getRoot().setColorSchemeColors(Theme.getColor(Theme.key_chats_actionBackground));
+        binding.getRoot().setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
     }
 
     private final void setupListeners() {
@@ -380,7 +380,7 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
         Intrinsics.checkNotNullParameter(view, "<anonymous parameter 1>");
         BaseNode baseNode = (BaseNode) this$0.getBinancePayRecycleAdapter().getItem(i);
         if (baseNode instanceof CardButtonItem) {
-            if (((CardButtonItem) baseNode).getId() == C3242R.C3245id.binance_pay_link) {
+            if (((CardButtonItem) baseNode).getId() == C3290R.C3293id.binance_pay_link) {
                 this$0.getPresenter().startBinancePayLoginFlow();
             }
         } else if (baseNode instanceof BinanceBalanceItem) {
@@ -395,20 +395,20 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
         Intrinsics.checkNotNullParameter(view, "view");
         BaseNode baseNode = (BaseNode) this$0.getBinancePayRecycleAdapter().getItem(i);
         int id = view.getId();
-        if (id == C3242R.C3245id.image_copy) {
+        if (id == C3290R.C3293id.image_copy) {
             if (baseNode instanceof BinanceAccountItem) {
                 ContextExtKt.copyToClipboard$default(((BinanceAccountItem) baseNode).getInfo().getId(), null, 2, null);
             }
-        } else if (id == C3242R.C3245id.image_wallet_crypto_tokens_settings) {
+        } else if (id == C3290R.C3293id.image_wallet_crypto_tokens_settings) {
             this$0.presentFragment(WalletHomeCryptoTokensSettingsFragment.Companion.newInstance(new WalletHomeCryptoTokensSettingsFragment.ScreenType.Binance(SelectableMappingKt.mapToSelectableBinanceTokenBalanceInfo(this$0.getPresenter().getBalances()))));
-        } else if (id == C3242R.C3245id.image_wallet_order_tokens) {
+        } else if (id == C3290R.C3293id.image_wallet_order_tokens) {
             this$0.showDialog(DialogsFactoryKt.createSelectTokensOrderTypeDialog(this$0, this$0.getResourceManager(), this$0.getPresenter().getSelectedTokensOrderType(), new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayFragment$$ExternalSyntheticLambda4
                 @Override // com.iMe.fork.utils.Callbacks$Callback1
                 public final void invoke(Object obj) {
                     WalletHomeBinancePayFragment.setupListeners$lambda$14$lambda$13$lambda$12(WalletHomeBinancePayFragment.this, (TokenOrderType) obj);
                 }
             }));
-        } else if (id == C3242R.C3245id.image_wallet_crypto_eye) {
+        } else if (id == C3290R.C3293id.image_wallet_crypto_eye) {
             this$0.getPresenter().switchHiddenBalance();
         }
     }
@@ -456,7 +456,7 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
 
     /* compiled from: WalletHomeBinancePayFragment.kt */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayFragment$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

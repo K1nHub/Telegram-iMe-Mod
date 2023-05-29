@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;)V
     .locals 0
 
-    .line 168
+    .line 186
     iput-object p1, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$2;->this$0:Lorg/telegram/ui/RestrictedLanguagesSelectActivity;
 
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBarMenuItem$ActionBarMenuItemSearchListener;-><init>()V
@@ -35,38 +35,26 @@
 .method public onSearchCollapse()V
     .locals 2
 
-    .line 176
+    .line 193
     iget-object v0, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$2;->this$0:Lorg/telegram/ui/RestrictedLanguagesSelectActivity;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->search(Ljava/lang/String;)V
 
-    .line 177
+    .line 194
     iget-object v0, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$2;->this$0:Lorg/telegram/ui/RestrictedLanguagesSelectActivity;
 
-    const/4 v1, 0x0
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$002(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;Z)Z
-
-    .line 178
-    iget-object v0, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$2;->this$0:Lorg/telegram/ui/RestrictedLanguagesSelectActivity;
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$102(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;Z)Z
-
-    .line 179
-    iget-object v0, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$2;->this$0:Lorg/telegram/ui/RestrictedLanguagesSelectActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$200(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {v0}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$000(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;)Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 180
+    .line 195
     iget-object v0, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$2;->this$0:Lorg/telegram/ui/RestrictedLanguagesSelectActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$300(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;)Lorg/telegram/ui/Components/EmptyTextProgressView;
+    invoke-static {v0}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$100(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;)Lorg/telegram/ui/Components/EmptyTextProgressView;
 
     move-result-object v0
 
@@ -74,16 +62,16 @@
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 181
+    .line 196
     iget-object v0, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$2;->this$0:Lorg/telegram/ui/RestrictedLanguagesSelectActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$200(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {v0}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$000(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;)Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v0
 
     iget-object v1, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$2;->this$0:Lorg/telegram/ui/RestrictedLanguagesSelectActivity;
 
-    invoke-static {v1}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$400(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;)Lorg/telegram/ui/RestrictedLanguagesSelectActivity$ListAdapter;
+    invoke-static {v1}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$200(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;)Lorg/telegram/ui/RestrictedLanguagesSelectActivity$ListAdapter;
 
     move-result-object v1
 
@@ -94,14 +82,7 @@
 .end method
 
 .method public onSearchExpand()V
-    .locals 2
-
-    .line 171
-    iget-object v0, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$2;->this$0:Lorg/telegram/ui/RestrictedLanguagesSelectActivity;
-
-    const/4 v1, 0x1
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$002(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;Z)Z
+    .locals 0
 
     return-void
 .end method
@@ -109,7 +90,7 @@
 .method public onTextChanged(Landroid/widget/EditText;)V
     .locals 1
 
-    .line 187
+    .line 202
     invoke-virtual {p1}, Landroid/widget/EditText;->getText()Landroid/text/Editable;
 
     move-result-object p1
@@ -118,44 +99,37 @@
 
     move-result-object p1
 
-    .line 188
+    .line 203
     iget-object v0, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$2;->this$0:Lorg/telegram/ui/RestrictedLanguagesSelectActivity;
 
     invoke-virtual {v0, p1}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->search(Ljava/lang/String;)V
 
-    .line 189
+    .line 204
     invoke-virtual {p1}, Ljava/lang/String;->length()I
 
     move-result p1
 
     if-eqz p1, :cond_0
 
-    .line 190
+    .line 205
     iget-object p1, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$2;->this$0:Lorg/telegram/ui/RestrictedLanguagesSelectActivity;
 
-    const/4 v0, 0x1
-
-    invoke-static {p1, v0}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$102(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;Z)Z
-
-    .line 191
-    iget-object p1, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$2;->this$0:Lorg/telegram/ui/RestrictedLanguagesSelectActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$200(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {p1}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$000(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;)Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object p1
 
     if-eqz p1, :cond_1
 
-    .line 192
+    .line 206
     iget-object p1, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$2;->this$0:Lorg/telegram/ui/RestrictedLanguagesSelectActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$200(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {p1}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$000(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;)Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object p1
 
     iget-object v0, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$2;->this$0:Lorg/telegram/ui/RestrictedLanguagesSelectActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$500(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;)Lorg/telegram/ui/RestrictedLanguagesSelectActivity$ListAdapter;
+    invoke-static {v0}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$300(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;)Lorg/telegram/ui/RestrictedLanguagesSelectActivity$ListAdapter;
 
     move-result-object v0
 
@@ -163,32 +137,20 @@
 
     goto :goto_0
 
-    .line 195
+    .line 209
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$2;->this$0:Lorg/telegram/ui/RestrictedLanguagesSelectActivity;
 
-    const/4 v0, 0x0
-
-    invoke-static {p1, v0}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$002(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;Z)Z
-
-    .line 196
-    iget-object p1, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$2;->this$0:Lorg/telegram/ui/RestrictedLanguagesSelectActivity;
-
-    invoke-static {p1, v0}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$102(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;Z)Z
-
-    .line 197
-    iget-object p1, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$2;->this$0:Lorg/telegram/ui/RestrictedLanguagesSelectActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$200(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {p1}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$000(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;)Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object p1
 
     if-eqz p1, :cond_1
 
-    .line 198
+    .line 210
     iget-object p1, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$2;->this$0:Lorg/telegram/ui/RestrictedLanguagesSelectActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$300(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;)Lorg/telegram/ui/Components/EmptyTextProgressView;
+    invoke-static {p1}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$100(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;)Lorg/telegram/ui/Components/EmptyTextProgressView;
 
     move-result-object p1
 
@@ -196,16 +158,16 @@
 
     invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
 
-    .line 199
+    .line 211
     iget-object p1, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$2;->this$0:Lorg/telegram/ui/RestrictedLanguagesSelectActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$200(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;)Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {p1}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$000(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;)Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object p1
 
     iget-object v0, p0, Lorg/telegram/ui/RestrictedLanguagesSelectActivity$2;->this$0:Lorg/telegram/ui/RestrictedLanguagesSelectActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$400(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;)Lorg/telegram/ui/RestrictedLanguagesSelectActivity$ListAdapter;
+    invoke-static {v0}, Lorg/telegram/ui/RestrictedLanguagesSelectActivity;->access$200(Lorg/telegram/ui/RestrictedLanguagesSelectActivity;)Lorg/telegram/ui/RestrictedLanguagesSelectActivity$ListAdapter;
 
     move-result-object v0
 

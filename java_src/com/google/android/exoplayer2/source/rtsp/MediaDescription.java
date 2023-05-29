@@ -193,7 +193,7 @@ public final class MediaDescription {
     public ImmutableMap<String, String> getFmtpParametersAsMap() {
         String str = this.attributes.get(SessionDescription.ATTR_FMTP);
         if (str == null) {
-            return ImmutableMap.m733of();
+            return ImmutableMap.m737of();
         }
         String[] splitAtFirst = Util.splitAtFirst(str, " ");
         Assertions.checkArgument(splitAtFirst.length == 2, str);

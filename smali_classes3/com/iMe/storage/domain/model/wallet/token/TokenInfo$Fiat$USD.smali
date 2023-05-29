@@ -34,16 +34,16 @@
 .method private constructor <init>()V
     .locals 13
 
-    .line 1083
+    .line 1096
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->USD:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    .line 1086
+    .line 1099
     sget v4, Lcom/iMe/storage/R$string;->currency_dollar:I
 
-    .line 1087
+    .line 1100
     sget v5, Lcom/iMe/storage/R$string;->currency_short_dollar:I
 
-    .line 1090
+    .line 1103
     invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
 
     move-result v9
@@ -66,7 +66,7 @@
 
     move-object v0, p0
 
-    .line 1082
+    .line 1095
     invoke-direct/range {v0 .. v12}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat;-><init>(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;IIIILcom/iMe/storage/domain/model/wallet/token/TokenType;IIIIILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void
@@ -98,7 +98,7 @@
 
     goto :goto_0
 
-    .line 1097
+    .line 1110
     :cond_1
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Fiat;->getDecimals()I
 

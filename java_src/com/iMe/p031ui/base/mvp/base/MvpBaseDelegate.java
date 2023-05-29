@@ -19,7 +19,7 @@ import org.telegram.p044ui.ActionBar.AlertDialog;
 import timber.log.Timber;
 /* compiled from: MvpBaseDelegate.kt */
 /* renamed from: com.iMe.ui.base.mvp.base.MvpBaseDelegate */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public abstract class MvpBaseDelegate<T> implements BaseDelegate<T> {
     private MvpDelegate<T> mMvpDelegate;
     private final Lazy progressDialog$delegate;
@@ -51,7 +51,7 @@ public abstract class MvpBaseDelegate<T> implements BaseDelegate<T> {
     public Dialog showDialog(Dialog dialog) {
         Intrinsics.checkNotNullParameter(dialog, "dialog");
         Dialog dialog2 = this.visibleDialog;
-        if (dialog2 != null && dialog2 != null) {
+        if (dialog2 != null) {
             dialog2.dismiss();
         }
         this.visibleDialog = dialog;
@@ -132,7 +132,7 @@ public abstract class MvpBaseDelegate<T> implements BaseDelegate<T> {
                 mvpDelegate3.onDestroy();
             }
         } catch (Exception e) {
-            Timber.m4e(e);
+            Timber.m6e(e);
         }
     }
 
@@ -187,7 +187,7 @@ public abstract class MvpBaseDelegate<T> implements BaseDelegate<T> {
                     progressDialog.dismiss();
                 }
             } catch (Exception e) {
-                Timber.m4e(e);
+                Timber.m6e(e);
             }
         }
     }

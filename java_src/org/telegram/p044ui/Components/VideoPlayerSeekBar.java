@@ -69,8 +69,8 @@ public class VideoPlayerSeekBar {
     private boolean pressedDelayed = false;
     private RectF rect = new RectF();
     private float bufferedAnimationValue = 1.0f;
-    private int lineHeight = AndroidUtilities.m50dp(4);
-    private int smallLineHeight = AndroidUtilities.m50dp(2);
+    private int lineHeight = AndroidUtilities.m54dp(4);
+    private int smallLineHeight = AndroidUtilities.m54dp(2);
     private int fromThumbX = 0;
     private float animateThumbProgress = 1.0f;
     private float timestampsAppearing = BitmapDescriptorFactory.HUE_RED;
@@ -96,8 +96,8 @@ public class VideoPlayerSeekBar {
             strokePaint.setStrokeWidth(1.0f);
         }
         this.parentView = view;
-        thumbWidth = AndroidUtilities.m50dp(24);
-        this.currentRadius = AndroidUtilities.m50dp(6);
+        thumbWidth = AndroidUtilities.m54dp(24);
+        this.currentRadius = AndroidUtilities.m54dp(6);
         this.animateThumbLoopBackProgress = new AnimatedFloat((float) BitmapDescriptorFactory.HUE_RED, view, 0L, 300L, CubicBezierInterpolator.EASE_OUT_QUINT);
     }
 
@@ -196,7 +196,7 @@ public class VideoPlayerSeekBar {
         this.progress = f;
         int ceil = (int) Math.ceil((this.width - thumbWidth) * f);
         if (z) {
-            if (Math.abs(ceil - this.thumbX) > AndroidUtilities.m50dp(10)) {
+            if (Math.abs(ceil - this.thumbX) > AndroidUtilities.m54dp(10)) {
                 float interpolation = CubicBezierInterpolator.DEFAULT.getInterpolation(this.animateThumbProgress);
                 this.fromThumbX = (int) ((this.thumbX * interpolation) + (this.fromThumbX * (1.0f - interpolation)));
                 this.animateThumbProgress = BitmapDescriptorFactory.HUE_RED;
@@ -215,7 +215,7 @@ public class VideoPlayerSeekBar {
                 this.thumbX = i - i2;
             }
         }
-        if (Math.abs(this.animatedThumbX - this.thumbX) > AndroidUtilities.m50dp(8)) {
+        if (Math.abs(this.animatedThumbX - this.thumbX) > AndroidUtilities.m54dp(8)) {
             this.animatedThumbX = this.thumbX;
         }
     }
@@ -319,19 +319,19 @@ public class VideoPlayerSeekBar {
             if (this.timestampLabelPaint == null) {
                 TextPaint textPaint = new TextPaint(1);
                 this.timestampLabelPaint = textPaint;
-                textPaint.setTextSize(AndroidUtilities.m50dp(12));
+                textPaint.setTextSize(AndroidUtilities.m54dp(12));
                 this.timestampLabelPaint.setColor(-1);
             }
             for (URLSpanNoUnderline uRLSpanNoUnderline : uRLSpanNoUnderlineArr) {
                 if (uRLSpanNoUnderline != null && uRLSpanNoUnderline.getURL() != null && uRLSpanNoUnderline.label != null && uRLSpanNoUnderline.getURL().startsWith("video?") && (parseInt = Utilities.parseInt((CharSequence) uRLSpanNoUnderline.getURL().substring(6))) != null && parseInt.intValue() >= 0) {
                     SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(uRLSpanNoUnderline.label);
-                    Emoji.replaceEmoji(spannableStringBuilder, this.timestampLabelPaint.getFontMetricsInt(), AndroidUtilities.m50dp(14), false);
+                    Emoji.replaceEmoji(spannableStringBuilder, this.timestampLabelPaint.getFontMetricsInt(), AndroidUtilities.m54dp(14), false);
                     this.timestamps.add(new Pair<>(Float.valueOf(((float) (parseInt.intValue() * 1000)) / ((float) j)), spannableStringBuilder));
                 }
             }
             Collections.sort(this.timestamps, VideoPlayerSeekBar$$ExternalSyntheticLambda1.INSTANCE);
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
             this.timestamps = null;
             this.currentTimestamp = -1;
             this.timestampsAppearing = BitmapDescriptorFactory.HUE_RED;
@@ -359,10 +359,10 @@ public class VideoPlayerSeekBar {
         this.rect.left = this.horizontalPadding + AndroidUtilities.lerp(thumbWidth / 2.0f, (float) BitmapDescriptorFactory.HUE_RED, this.transitionProgress);
         RectF rectF = this.rect;
         int i5 = this.height;
-        rectF.top = AndroidUtilities.lerp((i5 - this.lineHeight) / 2.0f, (i5 - AndroidUtilities.m50dp(3)) - this.smallLineHeight, this.transitionProgress);
+        rectF.top = AndroidUtilities.lerp((i5 - this.lineHeight) / 2.0f, (i5 - AndroidUtilities.m54dp(3)) - this.smallLineHeight, this.transitionProgress);
         RectF rectF2 = this.rect;
         int i6 = this.height;
-        rectF2.bottom = AndroidUtilities.lerp((this.lineHeight + i6) / 2.0f, i6 - AndroidUtilities.m50dp(3), this.transitionProgress);
+        rectF2.bottom = AndroidUtilities.lerp((this.lineHeight + i6) / 2.0f, i6 - AndroidUtilities.m54dp(3), this.transitionProgress);
         float f = this.thumbX;
         float min = Math.min(this.animatedThumbX, f);
         this.animatedThumbX = min;
@@ -424,8 +424,8 @@ public class VideoPlayerSeekBar {
                 drawProgressBar(canvas, this.rect, paint);
             }
         }
-        float m50dp = AndroidUtilities.m50dp(this.pressed ? 8 : 6);
-        if (this.currentRadius != m50dp) {
+        float m54dp = AndroidUtilities.m54dp(this.pressed ? 8 : 6);
+        if (this.currentRadius != m54dp) {
             long elapsedRealtime = SystemClock.elapsedRealtime();
             long j = elapsedRealtime - this.lastUpdateTime;
             this.lastUpdateTime = elapsedRealtime;
@@ -433,17 +433,17 @@ public class VideoPlayerSeekBar {
                 j = 16;
             }
             float f13 = this.currentRadius;
-            if (f13 < m50dp) {
-                float m50dp2 = f13 + (AndroidUtilities.m50dp(1) * (((float) j) / 60.0f));
-                this.currentRadius = m50dp2;
-                if (m50dp2 > m50dp) {
-                    this.currentRadius = m50dp;
+            if (f13 < m54dp) {
+                float m54dp2 = f13 + (AndroidUtilities.m54dp(1) * (((float) j) / 60.0f));
+                this.currentRadius = m54dp2;
+                if (m54dp2 > m54dp) {
+                    this.currentRadius = m54dp;
                 }
             } else {
-                float m50dp3 = f13 - (AndroidUtilities.m50dp(1) * (((float) j) / 60.0f));
-                this.currentRadius = m50dp3;
-                if (m50dp3 < m50dp) {
-                    this.currentRadius = m50dp;
+                float m54dp3 = f13 - (AndroidUtilities.m54dp(1) * (((float) j) / 60.0f));
+                this.currentRadius = m54dp3;
+                if (m54dp3 < m54dp) {
+                    this.currentRadius = m54dp;
                 }
             }
             View view2 = this.parentView;
@@ -491,29 +491,29 @@ public class VideoPlayerSeekBar {
         int i;
         int i2;
         int i3 = 1;
-        float m50dp = AndroidUtilities.m50dp(AndroidUtilities.lerp(2, 1, this.transitionProgress));
+        float m54dp = AndroidUtilities.m54dp(AndroidUtilities.lerp(2, 1, this.transitionProgress));
         ArrayList<Pair<Float, CharSequence>> arrayList = this.timestamps;
         if (arrayList == null || arrayList.isEmpty()) {
-            canvas.drawRoundRect(rectF, m50dp, m50dp, paint2);
+            canvas.drawRoundRect(rectF, m54dp, m54dp, paint2);
             return;
         }
         float f = rectF.bottom;
         float lerp = this.horizontalPadding + AndroidUtilities.lerp(thumbWidth / 2.0f, (float) BitmapDescriptorFactory.HUE_RED, this.transitionProgress);
         float lerp2 = this.horizontalPadding + AndroidUtilities.lerp(this.width - (thumbWidth / 2.0f), this.parentView.getWidth() - (this.horizontalPadding * 2.0f), this.transitionProgress);
         AndroidUtilities.rectTmp.set(rectF);
-        float m51dp = AndroidUtilities.m51dp(this.timestampsAppearing * 1.0f) / 2.0f;
+        float m55dp = AndroidUtilities.m55dp(this.timestampsAppearing * 1.0f) / 2.0f;
         if (tmpPath == null) {
             tmpPath = new Path();
         }
         tmpPath.reset();
-        float m50dp2 = AndroidUtilities.m50dp(4) / (lerp2 - lerp);
+        float m54dp2 = AndroidUtilities.m54dp(4) / (lerp2 - lerp);
         int i4 = 0;
         while (true) {
             i = -1;
             if (i4 >= this.timestamps.size()) {
                 i4 = -1;
                 break;
-            } else if (((Float) this.timestamps.get(i4).first).floatValue() >= m50dp2) {
+            } else if (((Float) this.timestamps.get(i4).first).floatValue() >= m54dp2) {
                 break;
             } else {
                 i4++;
@@ -526,7 +526,7 @@ public class VideoPlayerSeekBar {
         while (true) {
             if (size < 0) {
                 break;
-            } else if (1.0f - ((Float) this.timestamps.get(size).first).floatValue() >= m50dp2) {
+            } else if (1.0f - ((Float) this.timestamps.get(size).first).floatValue() >= m54dp2) {
                 i = size + 1;
                 break;
             } else {
@@ -541,13 +541,13 @@ public class VideoPlayerSeekBar {
         while (i6 <= i5) {
             float floatValue = i6 == i4 ? BitmapDescriptorFactory.HUE_RED : ((Float) this.timestamps.get(i6 - 1).first).floatValue();
             float floatValue2 = i6 == i5 ? 1.0f : ((Float) this.timestamps.get(i6).first).floatValue();
-            while (i6 != i5 && i6 != 0 && i6 < this.timestamps.size() - i3 && ((Float) this.timestamps.get(i6).first).floatValue() - floatValue <= m50dp2) {
+            while (i6 != i5 && i6 != 0 && i6 < this.timestamps.size() - i3 && ((Float) this.timestamps.get(i6).first).floatValue() - floatValue <= m54dp2) {
                 i6++;
                 floatValue2 = ((Float) this.timestamps.get(i6).first).floatValue();
             }
             RectF rectF2 = AndroidUtilities.rectTmp;
-            rectF2.left = AndroidUtilities.lerp(lerp, lerp2, floatValue) + (i6 > 0 ? m51dp : BitmapDescriptorFactory.HUE_RED);
-            float lerp3 = AndroidUtilities.lerp(lerp, lerp2, floatValue2) - (i6 < i5 ? m51dp : BitmapDescriptorFactory.HUE_RED);
+            rectF2.left = AndroidUtilities.lerp(lerp, lerp2, floatValue) + (i6 > 0 ? m55dp : BitmapDescriptorFactory.HUE_RED);
+            float lerp3 = AndroidUtilities.lerp(lerp, lerp2, floatValue2) - (i6 < i5 ? m55dp : BitmapDescriptorFactory.HUE_RED);
             rectF2.right = lerp3;
             float f2 = rectF.right;
             int i7 = lerp3 > f2 ? i3 : 0;
@@ -568,11 +568,11 @@ public class VideoPlayerSeekBar {
                 if (i6 == i4 || (i7 != 0 && rectF2.left >= rectF.left)) {
                     i2 = i5;
                     float[] fArr = tmpRadii;
-                    fArr[7] = m50dp;
-                    fArr[6] = m50dp;
-                    fArr[1] = m50dp;
-                    fArr[0] = m50dp;
-                    float f5 = 0.7f * m50dp * this.timestampsAppearing;
+                    fArr[7] = m54dp;
+                    fArr[6] = m54dp;
+                    fArr[1] = m54dp;
+                    fArr[0] = m54dp;
+                    float f5 = 0.7f * m54dp * this.timestampsAppearing;
                     fArr[5] = f5;
                     fArr[4] = f5;
                     fArr[3] = f5;
@@ -580,19 +580,19 @@ public class VideoPlayerSeekBar {
                 } else if (i6 >= i5) {
                     float[] fArr2 = tmpRadii;
                     i2 = i5;
-                    float f6 = 0.7f * m50dp * this.timestampsAppearing;
+                    float f6 = 0.7f * m54dp * this.timestampsAppearing;
                     fArr2[7] = f6;
                     fArr2[6] = f6;
                     fArr2[1] = f6;
                     fArr2[0] = f6;
-                    fArr2[5] = m50dp;
-                    fArr2[4] = m50dp;
-                    fArr2[3] = m50dp;
-                    fArr2[2] = m50dp;
+                    fArr2[5] = m54dp;
+                    fArr2[4] = m54dp;
+                    fArr2[3] = m54dp;
+                    fArr2[2] = m54dp;
                 } else {
                     i2 = i5;
                     float[] fArr3 = tmpRadii;
-                    float f7 = this.timestampsAppearing * 0.7f * m50dp;
+                    float f7 = this.timestampsAppearing * 0.7f * m54dp;
                     fArr3[5] = f7;
                     fArr3[4] = f7;
                     fArr3[3] = f7;
@@ -638,7 +638,7 @@ public class VideoPlayerSeekBar {
         float lerp = this.horizontalPadding + AndroidUtilities.lerp(thumbWidth / 2.0f, (float) BitmapDescriptorFactory.HUE_RED, this.transitionProgress);
         float lerp2 = this.horizontalPadding + AndroidUtilities.lerp(this.width - (thumbWidth / 2.0f), this.parentView.getWidth() - (this.horizontalPadding * 2.0f), this.transitionProgress);
         float f3 = this.horizontalPadding + (this.width - (thumbWidth / 2.0f));
-        float abs = Math.abs(lerp - f3) - AndroidUtilities.m50dp(16);
+        float abs = Math.abs(lerp - f3) - AndroidUtilities.m54dp(16);
         float f4 = this.lastWidth;
         if (f4 > BitmapDescriptorFactory.HUE_RED && Math.abs(f4 - abs) > 0.01f) {
             StaticLayout[] staticLayoutArr = this.timestampLabel;
@@ -701,11 +701,11 @@ public class VideoPlayerSeekBar {
         float interpolation = CubicBezierInterpolator.DEFAULT.getInterpolation(this.timestampChangeT);
         canvas.save();
         int i2 = this.height;
-        canvas.translate(lerp + ((lerp2 - f) * this.transitionProgress), AndroidUtilities.lerp((this.lineHeight + i2) / 2.0f, i2 - AndroidUtilities.m50dp(3), this.transitionProgress) + AndroidUtilities.m50dp(12));
+        canvas.translate(lerp + ((lerp2 - f) * this.transitionProgress), AndroidUtilities.lerp((this.lineHeight + i2) / 2.0f, i2 - AndroidUtilities.m54dp(3), this.transitionProgress) + AndroidUtilities.m54dp(12));
         if (this.timestampLabel[1] != null) {
             canvas.save();
             if (this.timestampChangeDirection != 0) {
-                canvas.translate(AndroidUtilities.m50dp(8) + (AndroidUtilities.m50dp(16) * (-this.timestampChangeDirection) * interpolation), BitmapDescriptorFactory.HUE_RED);
+                canvas.translate(AndroidUtilities.m54dp(8) + (AndroidUtilities.m54dp(16) * (-this.timestampChangeDirection) * interpolation), BitmapDescriptorFactory.HUE_RED);
             }
             canvas.translate(BitmapDescriptorFactory.HUE_RED, (-this.timestampLabel[1].getHeight()) / 2.0f);
             this.timestampLabelPaint.setAlpha((int) ((1.0f - this.transitionProgress) * 255.0f * (1.0f - interpolation) * this.timestampsAppearing));
@@ -715,7 +715,7 @@ public class VideoPlayerSeekBar {
         if (this.timestampLabel[0] != null) {
             canvas.save();
             if (this.timestampChangeDirection != 0) {
-                canvas.translate(AndroidUtilities.m50dp(8) + (AndroidUtilities.m50dp(16) * this.timestampChangeDirection * (1.0f - interpolation)), BitmapDescriptorFactory.HUE_RED);
+                canvas.translate(AndroidUtilities.m54dp(8) + (AndroidUtilities.m54dp(16) * this.timestampChangeDirection * (1.0f - interpolation)), BitmapDescriptorFactory.HUE_RED);
             }
             canvas.translate(BitmapDescriptorFactory.HUE_RED, (-this.timestampLabel[0].getHeight()) / 2.0f);
             this.timestampLabelPaint.setAlpha((int) ((1.0f - this.transitionProgress) * 255.0f * interpolation * this.timestampsAppearing));
@@ -729,14 +729,14 @@ public class VideoPlayerSeekBar {
         if (this.timestampLabelPaint == null) {
             TextPaint textPaint = new TextPaint(1);
             this.timestampLabelPaint = textPaint;
-            textPaint.setTextSize(AndroidUtilities.m50dp(12));
+            textPaint.setTextSize(AndroidUtilities.m54dp(12));
             this.timestampLabelPaint.setColor(-1);
         }
         String str = charSequence == null ? "" : charSequence;
         if (Build.VERSION.SDK_INT >= 23) {
-            return StaticLayout.Builder.obtain(str, 0, str.length(), this.timestampLabelPaint, i).setMaxLines(1).setAlignment(Layout.Alignment.ALIGN_CENTER).setEllipsize(TextUtils.TruncateAt.END).setEllipsizedWidth(Math.min(AndroidUtilities.m50dp(400), i)).build();
+            return StaticLayout.Builder.obtain(str, 0, str.length(), this.timestampLabelPaint, i).setMaxLines(1).setAlignment(Layout.Alignment.ALIGN_CENTER).setEllipsize(TextUtils.TruncateAt.END).setEllipsizedWidth(Math.min(AndroidUtilities.m54dp(400), i)).build();
         }
-        return new StaticLayout(str, 0, str.length(), this.timestampLabelPaint, i, Layout.Alignment.ALIGN_CENTER, 1.0f, BitmapDescriptorFactory.HUE_RED, false, TextUtils.TruncateAt.END, Math.min(AndroidUtilities.m50dp(400), i));
+        return new StaticLayout(str, 0, str.length(), this.timestampLabelPaint, i, Layout.Alignment.ALIGN_CENTER, 1.0f, BitmapDescriptorFactory.HUE_RED, false, TextUtils.TruncateAt.END, Math.min(AndroidUtilities.m54dp(400), i));
     }
 
     private void setPaintColor(int i, float f) {

@@ -6,7 +6,7 @@ public interface Predicate<T> {
     Predicate<T> negate();
 
     /* renamed from: or */
-    Predicate<T> mo11or(Predicate<? super T> predicate);
+    Predicate<T> mo13or(Predicate<? super T> predicate);
 
     boolean test(T t);
 
@@ -27,7 +27,7 @@ public interface Predicate<T> {
 
                 @Override // org.webrtc.Predicate
                 /* renamed from: or */
-                public /* synthetic */ Predicate mo11or(Predicate predicate2) {
+                public /* synthetic */ Predicate mo13or(Predicate predicate2) {
                     return CC.$default$or(this, predicate2);
                 }
 
@@ -52,7 +52,7 @@ public interface Predicate<T> {
 
                 @Override // org.webrtc.Predicate
                 /* renamed from: or */
-                public /* synthetic */ Predicate mo11or(Predicate predicate2) {
+                public /* synthetic */ Predicate mo13or(Predicate predicate2) {
                     return CC.$default$or(this, predicate2);
                 }
 
@@ -77,7 +77,7 @@ public interface Predicate<T> {
 
                 @Override // org.webrtc.Predicate
                 /* renamed from: or */
-                public /* synthetic */ Predicate mo11or(Predicate predicate) {
+                public /* synthetic */ Predicate mo13or(Predicate predicate) {
                     return CC.$default$or(this, predicate);
                 }
 

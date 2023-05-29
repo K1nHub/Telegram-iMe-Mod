@@ -14,7 +14,7 @@ public class DataCacheGenerator implements DataFetcherGenerator, DataFetcher.Dat
     private final List<Key> cacheKeys;
 
     /* renamed from: cb */
-    private final DataFetcherGenerator.FetcherReadyCallback f81cb;
+    private final DataFetcherGenerator.FetcherReadyCallback f84cb;
     private final DecodeHelper<?> helper;
     private volatile ModelLoader.LoadData<?> loadData;
     private int modelLoaderIndex;
@@ -32,7 +32,7 @@ public class DataCacheGenerator implements DataFetcherGenerator, DataFetcher.Dat
         this.sourceIdIndex = -1;
         this.cacheKeys = list;
         this.helper = decodeHelper;
-        this.f81cb = fetcherReadyCallback;
+        this.f84cb = fetcherReadyCallback;
     }
 
     /* JADX WARN: Code restructure failed: missing block: B:11:0x001b, code lost:
@@ -174,11 +174,11 @@ public class DataCacheGenerator implements DataFetcherGenerator, DataFetcher.Dat
 
     @Override // com.bumptech.glide.load.data.DataFetcher.DataCallback
     public void onDataReady(Object obj) {
-        this.f81cb.onDataFetcherReady(this.sourceKey, obj, this.loadData.fetcher, DataSource.DATA_DISK_CACHE, this.sourceKey);
+        this.f84cb.onDataFetcherReady(this.sourceKey, obj, this.loadData.fetcher, DataSource.DATA_DISK_CACHE, this.sourceKey);
     }
 
     @Override // com.bumptech.glide.load.data.DataFetcher.DataCallback
     public void onLoadFailed(Exception exc) {
-        this.f81cb.onDataFetcherFailed(this.sourceKey, exc, this.loadData.fetcher, DataSource.DATA_DISK_CACHE);
+        this.f84cb.onDataFetcherFailed(this.sourceKey, exc, this.loadData.fetcher, DataSource.DATA_DISK_CACHE);
     }
 }

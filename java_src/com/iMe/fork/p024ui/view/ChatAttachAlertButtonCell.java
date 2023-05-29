@@ -57,7 +57,7 @@ public final class ChatAttachAlertButtonCell extends LinearLayout {
         Intrinsics.checkNotNullParameter(button, "button");
         this.titleView.setText(button.getTitle());
         this.lottieImageView.setAnimation(button.getIconResId(), 26, 26);
-        this.lottieImageView.setBackground(Theme.createCircleDrawable(AndroidUtilities.m50dp(46), Theme.getColor(button.getColorKey())));
+        this.lottieImageView.setBackground(Theme.createCircleDrawable(AndroidUtilities.m54dp(46), Theme.getColor(button.getColorKey())));
         this.checkBox.setChecked(z, false);
         this.needDivider = z2;
         setWillNotDraw(!z2);
@@ -65,7 +65,7 @@ public final class ChatAttachAlertButtonCell extends LinearLayout {
 
     @Override // android.widget.LinearLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(48) + (this.needDivider ? 1 : 0), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(48) + (this.needDivider ? 1 : 0), 1073741824));
     }
 
     @Override // android.widget.LinearLayout, android.view.View
@@ -88,7 +88,7 @@ public final class ChatAttachAlertButtonCell extends LinearLayout {
         ViewExtKt.singleLine(textView);
         textView.setGravity(8388627);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         textView.setTextSize(1, 16.0f);
         return textView;
     }

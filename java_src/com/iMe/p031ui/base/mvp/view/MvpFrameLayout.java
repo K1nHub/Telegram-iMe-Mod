@@ -12,7 +12,7 @@ import org.koin.core.Koin;
 import org.koin.java.KoinJavaComponent;
 /* compiled from: MvpFrameLayout.kt */
 /* renamed from: com.iMe.ui.base.mvp.view.MvpFrameLayout */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class MvpFrameLayout extends FrameLayout implements ICustomMvpView<MvpFrameLayout> {
     private final Lazy mMvpDelegate$delegate;
 

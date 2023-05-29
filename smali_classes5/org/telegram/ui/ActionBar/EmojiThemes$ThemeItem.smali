@@ -17,16 +17,7 @@
 # instance fields
 .field public accentId:I
 
-.field public currentPreviewColors:Ljava/util/HashMap;
-    .annotation system Ldalvik/annotation/Signature;
-        value = {
-            "Ljava/util/HashMap<",
-            "Ljava/lang/String;",
-            "Ljava/lang/Integer;",
-            ">;"
-        }
-    .end annotation
-.end field
+.field public currentPreviewColors:Landroid/util/SparseIntArray;
 
 .field public inBubbleColor:I
 
@@ -57,12 +48,12 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 616
+    .line 603
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     const/4 v0, -0x1
 
-    .line 621
+    .line 608
     iput v0, p0, Lorg/telegram/ui/ActionBar/EmojiThemes$ThemeItem;->accentId:I
 
     return-void
@@ -71,7 +62,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/ActionBar/EmojiThemes$ThemeItem;)Ljava/lang/String;
     .locals 0
 
-    .line 616
+    .line 603
     iget-object p0, p0, Lorg/telegram/ui/ActionBar/EmojiThemes$ThemeItem;->wallpaperLink:Ljava/lang/String;
 
     return-object p0
@@ -80,7 +71,7 @@
 .method static synthetic access$002(Lorg/telegram/ui/ActionBar/EmojiThemes$ThemeItem;Ljava/lang/String;)Ljava/lang/String;
     .locals 0
 
-    .line 616
+    .line 603
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/EmojiThemes$ThemeItem;->wallpaperLink:Ljava/lang/String;
 
     return-object p1

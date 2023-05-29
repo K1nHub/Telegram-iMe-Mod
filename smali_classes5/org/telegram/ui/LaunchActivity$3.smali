@@ -3,12 +3,12 @@
 .source "LaunchActivity.java"
 
 # interfaces
-.implements Landroid/view/View$OnTouchListener;
+.implements Lj$/util/function/Consumer;
 
 
 # annotations
-.annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/LaunchActivity;->showDisableSideMenuArchiveButtonPopup(Landroid/view/View;)V
+.annotation system Ldalvik/annotation/EnclosingClass;
+    value = Lorg/telegram/ui/LaunchActivity;
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -16,86 +16,58 @@
     name = null
 .end annotation
 
-
-# instance fields
-.field private final popupRect:Landroid/graphics/Rect;
-
-.field final synthetic val$window:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Ljava/lang/Object;",
+        "Lj$/util/function/Consumer<",
+        "Ljava/lang/Boolean;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/LaunchActivity;Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)V
+.method constructor <init>(Lorg/telegram/ui/LaunchActivity;)V
     .locals 0
 
-    .line 504
-    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$3;->val$window:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
-
+    .line 676
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    .line 506
-    new-instance p1, Landroid/graphics/Rect;
-
-    invoke-direct {p1}, Landroid/graphics/Rect;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$3;->popupRect:Landroid/graphics/Rect;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
-    .locals 1
+.method public accept(Ljava/lang/Boolean;)V
+    .locals 0
 
-    .line 510
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getActionMasked()I
-
-    move-result v0
-
-    if-nez v0, :cond_0
-
-    .line 511
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$3;->val$window:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
-
-    invoke-virtual {v0}, Landroid/widget/PopupWindow;->isShowing()Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    .line 512
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$3;->popupRect:Landroid/graphics/Rect;
-
-    invoke-virtual {p1, v0}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
-
-    .line 513
-    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$3;->popupRect:Landroid/graphics/Rect;
-
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getX()F
-
-    move-result v0
-
-    float-to-int v0, v0
-
-    invoke-virtual {p2}, Landroid/view/MotionEvent;->getY()F
-
-    move-result p2
-
-    float-to-int p2, p2
-
-    invoke-virtual {p1, v0, p2}, Landroid/graphics/Rect;->contains(II)Z
+    .line 679
+    invoke-virtual {p1}, Ljava/lang/Boolean;->booleanValue()Z
 
     move-result p1
 
-    if-nez p1, :cond_0
+    sput-boolean p1, Lorg/telegram/ui/LaunchActivity;->systemBlurEnabled:Z
 
-    .line 514
-    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$3;->val$window:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
+    return-void
+.end method
 
-    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->dismiss()V
+.method public bridge synthetic accept(Ljava/lang/Object;)V
+    .locals 0
 
-    :cond_0
-    const/4 p1, 0x0
+    .line 676
+    check-cast p1, Ljava/lang/Boolean;
 
-    return p1
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/LaunchActivity$3;->accept(Ljava/lang/Boolean;)V
+
+    return-void
+.end method
+
+.method public synthetic andThen(Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
+    .locals 0
+
+    invoke-static {p0, p1}, Lj$/util/function/Consumer$-CC;->$default$andThen(Lj$/util/function/Consumer;Lj$/util/function/Consumer;)Lj$/util/function/Consumer;
+
+    move-result-object p1
+
+    return-object p1
 .end method

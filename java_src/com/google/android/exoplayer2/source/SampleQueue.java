@@ -389,7 +389,7 @@ public class SampleQueue implements TrackOutput {
             r0.append(r6)
             java.lang.String r0 = r0.toString()
             java.lang.String r6 = "SampleQueue"
-            com.google.android.exoplayer2.util.Log.m792w(r6, r0)
+            com.google.android.exoplayer2.util.Log.m796w(r6, r0)
             r8.loggedUnexpectedNonSyncSample = r2
         L50:
             r0 = r14 | 1

@@ -31,10 +31,10 @@
 .method public constructor <init>()V
     .locals 1
 
-    .line 36243
+    .line 37092
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
-    .line 36247
+    .line 37096
     new-instance v0, Ljava/util/ArrayList;
 
     invoke-direct {v0}, Ljava/util/ArrayList;-><init>()V
@@ -47,7 +47,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideoSourceGroup;
     .locals 1
 
-    .line 36250
+    .line 37099
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideoSourceGroup;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -58,7 +58,7 @@
 
     return-object p0
 
-    .line 36252
+    .line 37101
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -84,13 +84,13 @@
 
     throw p0
 
-    .line 36257
+    .line 37106
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideoSourceGroup;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideoSourceGroup;-><init>()V
 
-    .line 36258
+    .line 37107
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideoSourceGroup;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -101,14 +101,14 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 4
 
-    .line 36263
+    .line 37112
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideoSourceGroup;->semantics:Ljava/lang/String;
 
-    .line 36264
+    .line 37113
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -123,7 +123,7 @@
 
     return-void
 
-    .line 36267
+    .line 37116
     :cond_0
     new-instance p1, Ljava/lang/RuntimeException;
 
@@ -147,7 +147,7 @@
 
     throw p1
 
-    .line 36271
+    .line 37120
     :cond_1
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
@@ -156,7 +156,7 @@
     :goto_0
     if-ge v1, v0, :cond_2
 
-    .line 36273
+    .line 37122
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideoSourceGroup;->sources:Ljava/util/ArrayList;
 
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
@@ -180,29 +180,29 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 3
 
-    .line 36278
+    .line 37127
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideoSourceGroup;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 36279
+    .line 37128
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideoSourceGroup;->semantics:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
     const v0, 0x1cb5c415
 
-    .line 36280
+    .line 37129
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 36281
+    .line 37130
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideoSourceGroup;->sources:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
 
     move-result v0
 
-    .line 36282
+    .line 37131
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     const/4 v1, 0x0
@@ -210,7 +210,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 36284
+    .line 37133
     iget-object v2, p0, Lorg/telegram/tgnet/TLRPC$TL_groupCallParticipantVideoSourceGroup;->sources:Ljava/util/ArrayList;
 
     invoke-virtual {v2, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;

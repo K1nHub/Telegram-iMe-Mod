@@ -135,9 +135,9 @@
     .line 1614
     iget-object p1, p0, Lorg/telegram/ui/Charts/BaseChartView$SharedUiComponents;->canvas:Landroid/graphics/Canvas;
 
-    const-string p2, "windowBackgroundWhite"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 

@@ -26,7 +26,7 @@ public final class RequestAppUpdateMetadata {
     }
 
     public int hashCode() {
-        return (((BotsDbModel$$ExternalSyntheticBackport0.m702m(this.lastRequestTime) * 31) + this.count) * 31) + this.version.hashCode();
+        return (((BotsDbModel$$ExternalSyntheticBackport0.m706m(this.lastRequestTime) * 31) + this.count) * 31) + this.version.hashCode();
     }
 
     public String toString() {

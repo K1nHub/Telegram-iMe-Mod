@@ -5,27 +5,17 @@
 .implements Lcom/iMe/fork/utils/Callbacks$Callback1;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda68;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda68;
-
-    invoke-direct {v0}, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda68;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda68;->INSTANCE:Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda68;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda68;->f$0:Lorg/telegram/ui/DialogsActivity;
 
     return-void
 .end method
@@ -33,11 +23,13 @@
 
 # virtual methods
 .method public final invoke(Ljava/lang/Object;)V
-    .locals 0
+    .locals 1
 
-    check-cast p1, Ljava/lang/Boolean;
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda68;->f$0:Lorg/telegram/ui/DialogsActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$MHACkCvoS5yPBJS4KUS_PZ0jx5o(Ljava/lang/Boolean;)V
+    check-cast p1, Ljava/lang/Long;
+
+    invoke-static {v0, p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$KICIHnj9hnXLPlPFkxazSO0tIsk(Lorg/telegram/ui/DialogsActivity;Ljava/lang/Long;)V
 
     return-void
 .end method

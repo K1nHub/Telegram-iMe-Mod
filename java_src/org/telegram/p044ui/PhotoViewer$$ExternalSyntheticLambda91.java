@@ -11,8 +11,8 @@ public final /* synthetic */ class PhotoViewer$$ExternalSyntheticLambda91 implem
 
     @Override // org.telegram.p044ui.Components.NumberPicker.Formatter
     public final String format(int i) {
-        String lambda$setParentActivity$32;
-        lambda$setParentActivity$32 = PhotoViewer.lambda$setParentActivity$32(i);
-        return lambda$setParentActivity$32;
+        String lambda$setParentActivity$30;
+        lambda$setParentActivity$30 = PhotoViewer.lambda$setParentActivity$30(i);
+        return lambda$setParentActivity$30;
     }
 }

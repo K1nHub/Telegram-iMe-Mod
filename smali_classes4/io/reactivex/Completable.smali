@@ -32,7 +32,7 @@
 .method public static create(Lio/reactivex/CompletableOnSubscribe;)Lio/reactivex/Completable;
     .locals 1
 
-    const-string v0, "source is null"
+    const-string/jumbo v0, "source is null"
 
     .line 309
     invoke-static {p0, v0}, Lio/reactivex/internal/functions/ObjectHelper;->requireNonNull(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;

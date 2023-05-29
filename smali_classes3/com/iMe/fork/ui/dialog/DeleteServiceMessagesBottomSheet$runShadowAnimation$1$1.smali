@@ -86,7 +86,7 @@
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
+    .locals 3
 
     const-string v0, "animation"
 
@@ -122,6 +122,8 @@
     .line 238
     iget-boolean p1, p0, Lcom/iMe/fork/ui/dialog/DeleteServiceMessagesBottomSheet$runShadowAnimation$1$1;->$show:Z
 
+    const/4 v0, 0x0
+
     if-nez p1, :cond_0
 
     .line 239
@@ -133,7 +135,9 @@
 
     aget-object p1, p1, v1
 
-    invoke-static {p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->invisible(Landroid/view/View;)V
+    const/4 v2, 0x1
+
+    invoke-static {p1, v1, v2, v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->invisible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 241
     :cond_0
@@ -142,8 +146,6 @@
     invoke-static {p1}, Lcom/iMe/fork/ui/dialog/DeleteServiceMessagesBottomSheet;->access$getShadowAnimation$p(Lcom/iMe/fork/ui/dialog/DeleteServiceMessagesBottomSheet;)[Landroid/animation/AnimatorSet;
 
     move-result-object p1
-
-    const/4 v0, 0x0
 
     aput-object v0, p1, v1
 

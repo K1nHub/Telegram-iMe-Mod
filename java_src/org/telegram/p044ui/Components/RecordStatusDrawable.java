@@ -34,7 +34,7 @@ public class RecordStatusDrawable extends StatusDrawable {
             this.currentPaint = paint;
             paint.setStyle(Paint.Style.STROKE);
             this.currentPaint.setStrokeCap(Paint.Cap.ROUND);
-            this.currentPaint.setStrokeWidth(AndroidUtilities.m50dp(2));
+            this.currentPaint.setStrokeWidth(AndroidUtilities.m54dp(2));
         }
     }
 
@@ -89,8 +89,8 @@ public class RecordStatusDrawable extends StatusDrawable {
             paint = Theme.chat_statusRecordPaint;
         }
         int i = 2;
-        if (paint.getStrokeWidth() != AndroidUtilities.m50dp(2)) {
-            paint.setStrokeWidth(AndroidUtilities.m50dp(2));
+        if (paint.getStrokeWidth() != AndroidUtilities.m54dp(2)) {
+            paint.setStrokeWidth(AndroidUtilities.m54dp(2));
         }
         canvas.save();
         int intrinsicHeight = getIntrinsicHeight() / 2;
@@ -99,7 +99,7 @@ public class RecordStatusDrawable extends StatusDrawable {
         } else if (this.isChat) {
             i = 1;
         }
-        canvas.translate(BitmapDescriptorFactory.HUE_RED, intrinsicHeight + AndroidUtilities.m50dp(i));
+        canvas.translate(BitmapDescriptorFactory.HUE_RED, intrinsicHeight + AndroidUtilities.m54dp(i));
         for (int i2 = 0; i2 < 4; i2++) {
             if (i2 == 0) {
                 paint.setAlpha((int) (this.alpha * this.progress));
@@ -108,9 +108,9 @@ public class RecordStatusDrawable extends StatusDrawable {
             } else {
                 paint.setAlpha(this.alpha);
             }
-            float m50dp = (AndroidUtilities.m50dp(4) * i2) + (AndroidUtilities.m50dp(4) * this.progress);
-            float f = -m50dp;
-            this.rect.set(f, f, m50dp, m50dp);
+            float m54dp = (AndroidUtilities.m54dp(4) * i2) + (AndroidUtilities.m54dp(4) * this.progress);
+            float f = -m54dp;
+            this.rect.set(f, f, m54dp, m54dp);
             canvas.drawArc(this.rect, -15.0f, 30.0f, false, paint);
         }
         canvas.restore();
@@ -126,11 +126,11 @@ public class RecordStatusDrawable extends StatusDrawable {
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicWidth() {
-        return AndroidUtilities.m50dp(18);
+        return AndroidUtilities.m54dp(18);
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicHeight() {
-        return AndroidUtilities.m50dp(14);
+        return AndroidUtilities.m54dp(14);
     }
 }

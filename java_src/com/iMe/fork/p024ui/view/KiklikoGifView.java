@@ -36,7 +36,7 @@ public final class KiklikoGifView extends FrameLayout {
         this.gifView$delegate = lazy;
         lazy2 = LazyKt__LazyJVMKt.lazy(new KiklikoGifView$mutedIconView$2(this));
         this.mutedIconView$delegate = lazy2;
-        setBackgroundColor(Theme.getColor("chat_emojiSearchBackground"));
+        setBackgroundColor(Theme.getColor(Theme.key_chat_emojiSearchBackground));
         addView(getGifView(), LayoutHelper.createFrame(-1, -1));
         addView(getMutedIconView(), LayoutHelper.createFrame(14, 14, 51, 3, 1, 0, 0));
     }

@@ -15,15 +15,15 @@ import java.util.Arrays;
 @SafeParcelable.Reserved({1000})
 /* loaded from: classes3.dex */
 public final class LocationAvailability extends AbstractSafeParcelable implements ReflectedParcelable {
-    @SafeParcelable.Field(defaultValueUnchecked = "LocationAvailability.STATUS_UNSUCCESSFUL", m775id = 4)
+    @SafeParcelable.Field(defaultValueUnchecked = "LocationAvailability.STATUS_UNSUCCESSFUL", m779id = 4)
     int zzc;
-    @SafeParcelable.Field(defaultValueUnchecked = "LocationAvailability.STATUS_UNKNOWN", getter = "getCellStatus", m775id = 1)
+    @SafeParcelable.Field(defaultValueUnchecked = "LocationAvailability.STATUS_UNKNOWN", getter = "getCellStatus", m779id = 1)
     private final int zzd;
-    @SafeParcelable.Field(defaultValueUnchecked = "LocationAvailability.STATUS_UNKNOWN", getter = "getWifiStatus", m775id = 2)
+    @SafeParcelable.Field(defaultValueUnchecked = "LocationAvailability.STATUS_UNKNOWN", getter = "getWifiStatus", m779id = 2)
     private final int zze;
-    @SafeParcelable.Field(defaultValueUnchecked = SessionDescription.SUPPORTED_SDP_VERSION, getter = "getElapsedRealtimeNs", m775id = 3)
+    @SafeParcelable.Field(defaultValueUnchecked = SessionDescription.SUPPORTED_SDP_VERSION, getter = "getElapsedRealtimeNs", m779id = 3)
     private final long zzf;
-    @SafeParcelable.Field(getter = "getBatchedStatus", m775id = 5)
+    @SafeParcelable.Field(getter = "getBatchedStatus", m779id = 5)
     private final zzac[] zzg;
     public static final LocationAvailability zza = new LocationAvailability(0, 1, 1, 0, null, true);
     public static final LocationAvailability zzb = new LocationAvailability(1000, 1, 1, 0, null, false);
@@ -31,7 +31,7 @@ public final class LocationAvailability extends AbstractSafeParcelable implement
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public LocationAvailability(@SafeParcelable.Param(m774id = 4) int i, @SafeParcelable.Param(m774id = 1) int i2, @SafeParcelable.Param(m774id = 2) int i3, @SafeParcelable.Param(m774id = 3) long j, @SafeParcelable.Param(m774id = 5) zzac[] zzacVarArr, @SafeParcelable.Param(m774id = 6) boolean z) {
+    public LocationAvailability(@SafeParcelable.Param(m778id = 4) int i, @SafeParcelable.Param(m778id = 1) int i2, @SafeParcelable.Param(m778id = 2) int i3, @SafeParcelable.Param(m778id = 3) long j, @SafeParcelable.Param(m778id = 5) zzac[] zzacVarArr, @SafeParcelable.Param(m778id = 6) boolean z) {
         this.zzc = i < 1000 ? 0 : 1000;
         this.zzd = i2;
         this.zze = i3;

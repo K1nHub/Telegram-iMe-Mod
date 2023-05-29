@@ -144,6 +144,38 @@
     throw p1
 .end method
 
+.method public scheduleResumeAfterDelay(JLkotlinx/coroutines/CancellableContinuation;)Ljava/lang/Void;
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(J",
+            "Lkotlinx/coroutines/CancellableContinuation<",
+            "-",
+            "Lkotlin/Unit;",
+            ">;)",
+            "Ljava/lang/Void;"
+        }
+    .end annotation
+
+    .line 111
+    invoke-direct {p0}, Lkotlinx/coroutines/internal/MissingMainCoroutineDispatcher;->missing()Ljava/lang/Void;
+
+    new-instance p1, Lkotlin/KotlinNothingValueException;
+
+    invoke-direct {p1}, Lkotlin/KotlinNothingValueException;-><init>()V
+
+    throw p1
+.end method
+
+.method public bridge synthetic scheduleResumeAfterDelay(JLkotlinx/coroutines/CancellableContinuation;)V
+    .locals 0
+
+    .line 88
+    invoke-virtual {p0, p1, p2, p3}, Lkotlinx/coroutines/internal/MissingMainCoroutineDispatcher;->scheduleResumeAfterDelay(JLkotlinx/coroutines/CancellableContinuation;)Ljava/lang/Void;
+
+    return-void
+.end method
+
 .method public toString()Ljava/lang/String;
     .locals 3
 

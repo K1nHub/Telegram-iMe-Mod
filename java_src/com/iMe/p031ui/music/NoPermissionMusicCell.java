@@ -10,23 +10,24 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
+import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Components.LayoutHelper;
 /* compiled from: NoPermissionMusicCell.kt */
 /* renamed from: com.iMe.ui.music.NoPermissionMusicCell */
 /* loaded from: classes3.dex */
 public final class NoPermissionMusicCell extends LinearLayout {
-    private final String buttonDefaultColor;
-    private final String buttonPressedColor;
-    private final String buttonTextColor;
-    private final String iconCircleColor;
-    private final String iconColor;
+    private final int buttonDefaultColor;
+    private final int buttonPressedColor;
+    private final int buttonTextColor;
+    private final int iconCircleColor;
+    private final int iconColor;
     private final Lazy noPermissionImageView$delegate;
     private final Lazy noPermissionSubtitle$delegate;
     private final Lazy noPermissionTitle$delegate;
     private final Lazy requestButton$delegate;
-    private final String subtitleColor;
-    private final String titleColor;
+    private final int subtitleColor;
+    private final int titleColor;
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public NoPermissionMusicCell(Activity context) {
@@ -44,13 +45,13 @@ public final class NoPermissionMusicCell extends LinearLayout {
         this.noPermissionSubtitle$delegate = lazy3;
         lazy4 = LazyKt__LazyJVMKt.lazy(new NoPermissionMusicCell$requestButton$2(context, this));
         this.requestButton$delegate = lazy4;
-        this.iconColor = "chats_actionIcon";
-        this.iconCircleColor = "chats_actionBackground";
-        this.titleColor = "chats_nameMessage_threeLines";
-        this.subtitleColor = "chats_message";
-        this.buttonTextColor = "featuredStickers_buttonText";
-        this.buttonDefaultColor = "featuredStickers_addButton";
-        this.buttonPressedColor = "featuredStickers_addButtonPressed";
+        this.iconColor = Theme.key_chats_actionIcon;
+        this.iconCircleColor = Theme.key_chats_actionBackground;
+        this.titleColor = Theme.key_chats_nameMessage_threeLines;
+        this.subtitleColor = Theme.key_chats_message;
+        this.buttonTextColor = Theme.key_featuredStickers_buttonText;
+        this.buttonDefaultColor = Theme.key_featuredStickers_addButton;
+        this.buttonPressedColor = Theme.key_featuredStickers_addButtonPressed;
         setGravity(17);
         setOrientation(1);
         addView(getNoPermissionImageView(), LayoutHelper.createLinear(100, 100));

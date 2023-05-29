@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Lambda;
 import org.koin.p043mp.KoinPlatformTools;
 /* compiled from: WalletHomeFragment.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.WalletHomeFragment$presenter$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class WalletHomeFragment$presenter$2 extends Lambda implements Function0<WalletHomePresenter> {
     final /* synthetic */ WalletHomeFragment this$0;
 

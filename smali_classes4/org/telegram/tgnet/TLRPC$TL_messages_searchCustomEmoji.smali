@@ -23,7 +23,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 50805
+    .line 51806
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -34,7 +34,7 @@
 .method public deserializeResponse(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLObject;
     .locals 0
 
-    .line 50812
+    .line 51813
     invoke-static {p1, p2, p3}, Lorg/telegram/tgnet/TLRPC$EmojiList;->TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$EmojiList;
 
     move-result-object p1
@@ -45,17 +45,17 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 50816
+    .line 51817
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchCustomEmoji;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 50817
+    .line 51818
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchCustomEmoji;->emoticon:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 50818
+    .line 51819
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$TL_messages_searchCustomEmoji;->hash:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V

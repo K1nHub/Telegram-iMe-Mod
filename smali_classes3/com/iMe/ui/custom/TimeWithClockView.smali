@@ -180,10 +180,10 @@
 .method public final applyColors()V
     .locals 1
 
-    const-string v0, "chats_date"
-
     .line 35
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chats_date:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

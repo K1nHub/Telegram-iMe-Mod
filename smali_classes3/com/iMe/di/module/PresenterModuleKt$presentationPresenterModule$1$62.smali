@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/ui/catalog/tabs/all/CatalogAllPresenter;",
+        "Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesPresenter;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$62\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,433:1\n44#2:434\n129#3,5:435\n129#3,5:440\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$62\n*L\n380#1:434\n382#1:435,5\n383#1:440,5\n*E\n"
+    value = "SMAP\nPresenterModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$62\n+ 2 ParametersHolder.kt\norg/koin/core/parameter/ParametersHolder\n+ 3 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,432:1\n44#2:433\n129#3,5:434\n129#3,5:439\n*S KotlinDebug\n*F\n+ 1 PresenterModule.kt\ncom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$62\n*L\n385#1:433\n387#1:434,5\n388#1:439,5\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,7 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/catalog/tabs/all/CatalogAllPresenter;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesPresenter;
     .locals 6
 
     const-string v0, "$this$factory"
@@ -89,8 +89,8 @@
 
     check-cast v1, Lcom/iMe/storage/domain/model/catalog/ChatType;
 
-    .line 381
-    new-instance p2, Lcom/iMe/ui/catalog/tabs/all/CatalogAllPresenter;
+    .line 386
+    new-instance p2, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesPresenter;
 
     .line 133
     const-class v0, Lcom/iMe/storage/domain/interactor/catalog/CatalogInteractor;
@@ -160,8 +160,8 @@
 
     move-object v5, p1
 
-    .line 381
-    invoke-direct/range {v0 .. v5}, Lcom/iMe/ui/catalog/tabs/all/CatalogAllPresenter;-><init>(Lcom/iMe/storage/domain/model/catalog/ChatType;Lcom/iMe/storage/domain/interactor/catalog/CatalogInteractor;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/manager/TelegramApi;)V
+    .line 386
+    invoke-direct/range {v0 .. v5}, Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesPresenter;-><init>(Lcom/iMe/storage/domain/model/catalog/ChatType;Lcom/iMe/storage/domain/interactor/catalog/CatalogInteractor;Lcom/iMe/storage/domain/utils/system/ResourceManager;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;Lcom/iMe/manager/TelegramApi;)V
 
     return-object p2
 .end method
@@ -169,12 +169,12 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 380
+    .line 385
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$62;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/catalog/tabs/all/CatalogAllPresenter;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/PresenterModuleKt$presentationPresenterModule$1$62;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesPresenter;
 
     move-result-object p1
 

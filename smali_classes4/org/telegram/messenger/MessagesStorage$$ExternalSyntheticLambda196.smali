@@ -8,22 +8,22 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/messenger/MessagesStorage;
 
-.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$messages_Dialogs;
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLRPC$Vector;
 
-.field public final synthetic f$2:I
+.field public final synthetic f$2:Ljava/lang/Runnable;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/tgnet/TLRPC$messages_Dialogs;I)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/tgnet/TLRPC$Vector;Ljava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda196;->f$0:Lorg/telegram/messenger/MessagesStorage;
 
-    iput-object p2, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda196;->f$1:Lorg/telegram/tgnet/TLRPC$messages_Dialogs;
+    iput-object p2, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda196;->f$1:Lorg/telegram/tgnet/TLRPC$Vector;
 
-    iput p3, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda196;->f$2:I
+    iput-object p3, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda196;->f$2:Ljava/lang/Runnable;
 
     return-void
 .end method
@@ -35,11 +35,11 @@
 
     iget-object v0, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda196;->f$0:Lorg/telegram/messenger/MessagesStorage;
 
-    iget-object v1, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda196;->f$1:Lorg/telegram/tgnet/TLRPC$messages_Dialogs;
+    iget-object v1, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda196;->f$1:Lorg/telegram/tgnet/TLRPC$Vector;
 
-    iget v2, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda196;->f$2:I
+    iget-object v2, p0, Lorg/telegram/messenger/MessagesStorage$$ExternalSyntheticLambda196;->f$2:Ljava/lang/Runnable;
 
-    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$pAr1EME5x9PMLK27B3zTnjSXwSQ(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/tgnet/TLRPC$messages_Dialogs;I)V
+    invoke-static {v0, v1, v2}, Lorg/telegram/messenger/MessagesStorage;->$r8$lambda$HRnklBzdmHGFDu8-YIA-l8FROqo(Lorg/telegram/messenger/MessagesStorage;Lorg/telegram/tgnet/TLRPC$Vector;Ljava/lang/Runnable;)V
 
     return-void
 .end method

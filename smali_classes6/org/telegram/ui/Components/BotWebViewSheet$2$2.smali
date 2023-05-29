@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/BotWebViewSheet$2;Z)V
     .locals 0
 
-    .line 404
+    .line 410
     iput-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2$2;->this$1:Lorg/telegram/ui/Components/BotWebViewSheet$2;
 
     iput-boolean p2, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2$2;->val$isProgressVisible:Z
@@ -39,12 +39,12 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 407
+    .line 413
     iget-boolean p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2$2;->val$isProgressVisible:Z
 
     if-nez p1, :cond_0
 
-    .line 408
+    .line 414
     iget-object p1, p0, Lorg/telegram/ui/Components/BotWebViewSheet$2$2;->this$1:Lorg/telegram/ui/Components/BotWebViewSheet$2;
 
     iget-object p1, p1, Lorg/telegram/ui/Components/BotWebViewSheet$2;->this$0:Lorg/telegram/ui/Components/BotWebViewSheet;

@@ -350,9 +350,11 @@
 
     iget-object v3, p2, Lorg/telegram/messenger/MediaController$AlbumEntry;->coverPhoto:Lorg/telegram/messenger/MediaController$PhotoEntry;
 
-    iget v3, v3, Lorg/telegram/messenger/MediaController$PhotoEntry;->orientation:I
+    iget v4, v3, Lorg/telegram/messenger/MediaController$PhotoEntry;->orientation:I
 
-    invoke-virtual {v0, v3, v2}, Lorg/telegram/ui/Components/BackupImageView;->setOrientation(IZ)V
+    iget v3, v3, Lorg/telegram/messenger/MediaController$PhotoEntry;->invert:I
+
+    invoke-virtual {v0, v4, v3, v2}, Lorg/telegram/ui/Components/BackupImageView;->setOrientation(IIZ)V
 
     .line 137
     iget-object v0, p2, Lorg/telegram/messenger/MediaController$AlbumEntry;->coverPhoto:Lorg/telegram/messenger/MediaController$PhotoEntry;

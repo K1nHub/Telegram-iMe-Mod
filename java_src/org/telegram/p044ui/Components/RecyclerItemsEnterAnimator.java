@@ -70,19 +70,19 @@ public class RecyclerItemsEnterAnimator {
             ofFloat.start();
             i--;
         }
-        ViewTreeObserver$OnPreDrawListenerC49682 viewTreeObserver$OnPreDrawListenerC49682 = new ViewTreeObserver$OnPreDrawListenerC49682(progressView, i);
-        this.preDrawListeners.add(viewTreeObserver$OnPreDrawListenerC49682);
-        this.listView.getViewTreeObserver().addOnPreDrawListener(viewTreeObserver$OnPreDrawListenerC49682);
+        ViewTreeObserver$OnPreDrawListenerC50422 viewTreeObserver$OnPreDrawListenerC50422 = new ViewTreeObserver$OnPreDrawListenerC50422(progressView, i);
+        this.preDrawListeners.add(viewTreeObserver$OnPreDrawListenerC50422);
+        this.listView.getViewTreeObserver().addOnPreDrawListener(viewTreeObserver$OnPreDrawListenerC50422);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.RecyclerItemsEnterAnimator$2 */
     /* loaded from: classes6.dex */
-    public class ViewTreeObserver$OnPreDrawListenerC49682 implements ViewTreeObserver.OnPreDrawListener {
+    public class ViewTreeObserver$OnPreDrawListenerC50422 implements ViewTreeObserver.OnPreDrawListener {
         final /* synthetic */ int val$finalFrom;
         final /* synthetic */ View val$finalProgressView;
 
-        ViewTreeObserver$OnPreDrawListenerC49682(View view, int i) {
+        ViewTreeObserver$OnPreDrawListenerC50422(View view, int i) {
             this.val$finalProgressView = view;
             this.val$finalFrom = i;
         }
@@ -105,7 +105,7 @@ public class RecyclerItemsEnterAnimator {
                     ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.RecyclerItemsEnterAnimator$2$$ExternalSyntheticLambda0
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                            RecyclerItemsEnterAnimator.ViewTreeObserver$OnPreDrawListenerC49682.this.lambda$onPreDraw$0(childAdapterPosition, valueAnimator);
+                            RecyclerItemsEnterAnimator.ViewTreeObserver$OnPreDrawListenerC50422.this.lambda$onPreDraw$0(childAdapterPosition, valueAnimator);
                         }
                     });
                     ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.RecyclerItemsEnterAnimator.2.1

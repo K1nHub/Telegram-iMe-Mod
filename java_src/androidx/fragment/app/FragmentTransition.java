@@ -78,4 +78,9 @@ public class FragmentTransition {
             arrayList.get(size).setVisibility(i);
         }
     }
+
+    /* JADX INFO: Access modifiers changed from: package-private */
+    public static boolean supportsTransition() {
+        return (PLATFORM_IMPL == null && SUPPORT_IMPL == null) ? false : true;
+    }
 }

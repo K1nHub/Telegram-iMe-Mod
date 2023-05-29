@@ -108,9 +108,9 @@
     .line 147
     new-instance v6, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v7, "dialogBackground"
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -225,11 +225,11 @@
 
     iget-object v8, v8, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
 
-    const/high16 v10, 0x3f800000    # 1.0f
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    const-string v12, "windowBackgroundGray"
+    const/high16 v12, 0x3f800000    # 1.0f
 
-    invoke-static {v8, v12, v10}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Ljava/util/ArrayList;Ljava/lang/String;F)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+    invoke-static {v8, v10, v12}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Ljava/util/ArrayList;IF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     move-result-object v15
 
@@ -346,10 +346,10 @@
     .line 251
     invoke-virtual {v6, v7, v8}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v8, "dialogTextBlack"
-
     .line 252
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v10
 
@@ -406,10 +406,10 @@
 
     invoke-direct {v6, v10}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    const-string v10, "dialogTextGray3"
-
     .line 259
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextGray3:I
+
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v10
 
@@ -427,10 +427,10 @@
 
     invoke-virtual {v6, v12}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
 
-    const-string v12, "dialogTextLink"
-
     .line 262
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextLink:I
+
+    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v13
 
@@ -503,7 +503,7 @@
     invoke-direct {v4, v6}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     .line 268
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
@@ -520,7 +520,7 @@
     invoke-virtual {v4, v6}, Landroid/widget/TextView;->setMovementMethod(Landroid/text/method/MovementMethod;)V
 
     .line 271
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
@@ -636,10 +636,10 @@
 
     iput-object v4, v0, Lorg/telegram/ui/Components/UpdateAppAlertDialog;->shadow:Landroid/view/View;
 
-    const-string v6, "dialogShadowLine"
-
     .line 285
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_dialogShadowLine:I
+
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 

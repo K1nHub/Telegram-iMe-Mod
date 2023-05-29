@@ -32,10 +32,10 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/MaxFileSizeCell;->textView:Landroid/widget/TextView;
 
-    const-string v1, "dialogTextBlack"
-
     .line 46
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -144,10 +144,10 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/MaxFileSizeCell;->sizeTextView:Landroid/widget/TextView;
 
-    const-string v6, "dialogTextBlue2"
-
     .line 57
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlue2:I
+
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 

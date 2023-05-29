@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/LinkActionView;Landroid/content/Context;Landroid/widget/FrameLayout;)V
     .locals 0
 
-    .line 536
+    .line 538
     iput-object p1, p0, Lorg/telegram/ui/Components/LinkActionView$1;->this$0:Lorg/telegram/ui/Components/LinkActionView;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/LinkActionView$1;->val$finalContainer:Landroid/widget/FrameLayout;
@@ -41,10 +41,10 @@
 
     const/high16 v0, 0x33000000
 
-    .line 540
+    .line 542
     invoke-virtual {p1, v0}, Landroid/graphics/Canvas;->drawColor(I)V
 
-    .line 541
+    .line 543
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkActionView$1;->this$0:Lorg/telegram/ui/Components/LinkActionView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/LinkActionView;->access$300(Lorg/telegram/ui/Components/LinkActionView;)Landroid/widget/FrameLayout;
@@ -59,10 +59,10 @@
 
     invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/Components/LinkActionView;->access$400(Lorg/telegram/ui/Components/LinkActionView;Landroid/widget/FrameLayout;Landroid/widget/FrameLayout;[F)V
 
-    .line 542
+    .line 544
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 543
+    .line 545
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkActionView$1;->this$0:Lorg/telegram/ui/Components/LinkActionView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/LinkActionView;->access$300(Lorg/telegram/ui/Components/LinkActionView;)Landroid/widget/FrameLayout;
@@ -101,7 +101,7 @@
 
     const/4 v2, 0x0
 
-    .line 545
+    .line 547
     iget-object v4, p0, Lorg/telegram/ui/Components/LinkActionView$1;->this$0:Lorg/telegram/ui/Components/LinkActionView;
 
     iget-object v4, v4, Lorg/telegram/ui/Components/LinkActionView;->point:[F
@@ -126,7 +126,7 @@
 
     invoke-virtual {p1, v2, v4, v0, v1}, Landroid/graphics/Canvas;->clipRect(FFFF)Z
 
-    .line 547
+    .line 549
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkActionView$1;->this$0:Lorg/telegram/ui/Components/LinkActionView;
 
@@ -140,7 +140,7 @@
 
     invoke-virtual {p1, v1, v0}, Landroid/graphics/Canvas;->translate(FF)V
 
-    .line 549
+    .line 551
     iget-object v0, p0, Lorg/telegram/ui/Components/LinkActionView$1;->this$0:Lorg/telegram/ui/Components/LinkActionView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/LinkActionView;->access$300(Lorg/telegram/ui/Components/LinkActionView;)Landroid/widget/FrameLayout;
@@ -149,7 +149,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->draw(Landroid/graphics/Canvas;)V
 
-    .line 550
+    .line 552
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
     return-void

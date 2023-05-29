@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/RecyclerListView;Landroid/content/Context;)V
     .locals 0
 
-    .line 2627
+    .line 2638
     iput-object p1, p0, Lorg/telegram/ui/Components/RecyclerListView$5;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method public requestLayout()V
     .locals 3
 
-    .line 2630
+    .line 2641
     invoke-super {p0}, Landroid/widget/FrameLayout;->requestLayout()V
 
-    .line 2632
+    .line 2643
     :try_start_0
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$5;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
 
@@ -46,7 +46,7 @@
 
     move-result v0
 
-    .line 2633
+    .line 2644
     iget-object v1, p0, Lorg/telegram/ui/Components/RecyclerListView$5;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {v1}, Landroid/view/ViewGroup;->getMeasuredHeight()I
@@ -55,7 +55,7 @@
 
     const/high16 v2, 0x40000000    # 2.0f
 
-    .line 2634
+    .line 2645
     invoke-static {v0, v2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v0
@@ -66,7 +66,7 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 2635
+    .line 2646
     iget-object v0, p0, Lorg/telegram/ui/Components/RecyclerListView$5;->this$0:Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/RecyclerListView;->access$3200(Lorg/telegram/ui/Components/RecyclerListView;)Landroid/widget/FrameLayout;

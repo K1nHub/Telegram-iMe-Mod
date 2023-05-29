@@ -659,7 +659,7 @@
     goto :goto_1
 
     :cond_2
-    const-string p3, "text/plain"
+    const-string/jumbo p3, "text/plain"
 
     :cond_3
     :goto_1

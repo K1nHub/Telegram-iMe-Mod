@@ -102,25 +102,25 @@
 
     const/4 v0, 0x0
 
-    .line 37
+    .line 44
     invoke-direct {p0, p1, v0}, Lorg/telegram/ui/ActionBar/BottomSheet;-><init>(Landroid/content/Context;Z)V
 
-    .line 32
+    .line 39
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->activity:Landroid/app/Activity;
 
-    .line 33
+    .line 40
     iput-object p2, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->type:Lcom/iMe/fork/enums/FilterActivityType;
 
-    .line 34
+    .line 41
     iput-object p3, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->currentFilterIcon:Lcom/iMe/storage/domain/model/filters/FilterIcon;
 
-    .line 35
+    .line 42
     iput-object p4, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->currentTopicIcon:Lcom/iMe/storage/data/repository/topics/Topic;
 
-    .line 36
+    .line 43
     iput-object p5, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->selectIconDelegate:Lcom/iMe/fork/utils/Callbacks$Callback2;
 
-    .line 40
+    .line 47
     new-instance p1, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$icons$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$icons$2;-><init>(Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;)V
@@ -131,7 +131,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->icons$delegate:Lkotlin/Lazy;
 
-    .line 41
+    .line 48
     new-instance p1, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$rootView$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$rootView$2;-><init>(Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;)V
@@ -142,7 +142,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->rootView$delegate:Lkotlin/Lazy;
 
-    .line 42
+    .line 49
     new-instance p1, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$listView$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$listView$2;-><init>(Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;)V
@@ -153,7 +153,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->listView$delegate:Lkotlin/Lazy;
 
-    .line 43
+    .line 50
     new-instance p1, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$deleteButton$2;
 
     invoke-direct {p1, p0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$deleteButton$2;-><init>(Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;)V
@@ -164,7 +164,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->deleteButton$delegate:Lkotlin/Lazy;
 
-    .line 46
+    .line 53
     sget p1, Lorg/telegram/messenger/R$string;->select_icon:I
 
     invoke-static {p1}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
@@ -175,14 +175,14 @@
 
     invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/ActionBar/BottomSheet;->setTitle(Ljava/lang/CharSequence;Z)V
 
-    .line 47
+    .line 54
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->getRootView()Landroid/widget/LinearLayout;
 
     move-result-object p1
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/ActionBar/BottomSheet;->setCustomView(Landroid/view/View;)V
 
-    .line 48
+    .line 55
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->setupListeners()V
 
     return-void
@@ -191,7 +191,7 @@
 .method public static final synthetic access$getIcons(Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;)Ljava/util/List;
     .locals 0
 
-    .line 31
+    .line 38
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->getIcons()Ljava/util/List;
 
     move-result-object p0
@@ -202,7 +202,7 @@
 .method public static final synthetic access$initDeleteButton(Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;)Lorg/telegram/ui/Components/ReportAlert$BottomSheetCell;
     .locals 0
 
-    .line 31
+    .line 38
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->initDeleteButton()Lorg/telegram/ui/Components/ReportAlert$BottomSheetCell;
 
     move-result-object p0
@@ -213,7 +213,7 @@
 .method public static final synthetic access$initIcons(Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;)Ljava/util/List;
     .locals 0
 
-    .line 31
+    .line 38
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->initIcons()Ljava/util/List;
 
     move-result-object p0
@@ -224,7 +224,7 @@
 .method public static final synthetic access$initListView(Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;)Lorg/telegram/ui/Components/RecyclerListView;
     .locals 0
 
-    .line 31
+    .line 38
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->initListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object p0
@@ -235,7 +235,7 @@
 .method public static final synthetic access$initRootView(Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;)Landroid/widget/LinearLayout;
     .locals 0
 
-    .line 31
+    .line 38
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->initRootView()Landroid/widget/LinearLayout;
 
     move-result-object p0
@@ -246,7 +246,7 @@
 .method private final getDeleteButton()Lorg/telegram/ui/Components/ReportAlert$BottomSheetCell;
     .locals 1
 
-    .line 43
+    .line 50
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->deleteButton$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -269,7 +269,7 @@
         }
     .end annotation
 
-    .line 40
+    .line 47
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->icons$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -284,7 +284,7 @@
 .method private final getListView()Lorg/telegram/ui/Components/RecyclerListView;
     .locals 1
 
-    .line 42
+    .line 49
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->listView$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -299,7 +299,7 @@
 .method private final getRootView()Landroid/widget/LinearLayout;
     .locals 1
 
-    .line 41
+    .line 48
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->rootView$delegate:Lkotlin/Lazy;
 
     invoke-interface {v0}, Lkotlin/Lazy;->getValue()Ljava/lang/Object;
@@ -314,7 +314,7 @@
 .method private final initDeleteButton()Lorg/telegram/ui/Components/ReportAlert$BottomSheetCell;
     .locals 3
 
-    .line 81
+    .line 88
     new-instance v0, Lorg/telegram/ui/Components/ReportAlert$BottomSheetCell;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -325,10 +325,10 @@
 
     const/4 v1, 0x0
 
-    .line 82
+    .line 89
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
-    .line 83
+    .line 90
     invoke-virtual {v0}, Lorg/telegram/ui/Components/ReportAlert$BottomSheetCell;->getBackgroundPublic()Landroid/view/View;
 
     move-result-object v1
@@ -339,7 +339,7 @@
 
     invoke-virtual {v1, v2}, Landroid/view/View;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 87
+    .line 94
     sget v1, Lorg/telegram/messenger/R$string;->Delete:I
 
     const-string v2, "Delete"
@@ -360,14 +360,14 @@
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 84
+    .line 91
     iget-object p1, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->selectIconDelegate:Lcom/iMe/fork/utils/Callbacks$Callback2;
 
     const/4 v0, 0x0
 
     invoke-interface {p1, v0, v0}, Lcom/iMe/fork/utils/Callbacks$Callback2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 85
+    .line 92
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
     return-void
@@ -384,7 +384,7 @@
         }
     .end annotation
 
-    .line 59
+    .line 66
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->type:Lcom/iMe/fork/enums/FilterActivityType;
 
     sget-object v1, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$WhenMappings;->$EnumSwitchMapping$0:[I
@@ -403,7 +403,7 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 61
+    .line 68
     invoke-static {}, Lcom/iMe/storage/data/repository/topics/Topic;->values()[Lcom/iMe/storage/data/repository/topics/Topic;
 
     move-result-object v0
@@ -421,7 +421,7 @@
 
     throw v0
 
-    .line 60
+    .line 67
     :cond_1
     invoke-static {}, Lcom/iMe/storage/domain/model/filters/FilterIcon;->values()[Lcom/iMe/storage/domain/model/filters/FilterIcon;
 
@@ -438,7 +438,7 @@
 .method private final initListView()Lorg/telegram/ui/Components/RecyclerListView;
     .locals 4
 
-    .line 73
+    .line 80
     new-instance v0, Lorg/telegram/ui/Components/RecyclerListView;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -449,10 +449,10 @@
 
     const/4 v1, 0x2
 
-    .line 74
+    .line 81
     invoke-virtual {v0, v1}, Landroid/view/ViewGroup;->setOverScrollMode(I)V
 
-    .line 75
+    .line 82
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->activity:Landroid/app/Activity;
 
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->isInLandscapeMode(Landroid/app/Activity;)Z
@@ -468,7 +468,7 @@
     :cond_0
     const/4 v1, 0x7
 
-    .line 76
+    .line 83
     :goto_0
     new-instance v2, Lorg/telegram/ui/Components/ExtendedGridLayoutManager;
 
@@ -480,7 +480,7 @@
 
     invoke-virtual {v0, v2}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 77
+    .line 84
     new-instance v1, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$GridAdapter;
 
     invoke-direct {v1, p0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet$GridAdapter;-><init>(Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;)V
@@ -489,7 +489,7 @@
 
     const/16 v1, 0xa
 
-    .line 78
+    .line 85
     invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
     move-result-object v1
@@ -502,7 +502,7 @@
 .method private final initRootView()Landroid/widget/LinearLayout;
     .locals 5
 
-    .line 64
+    .line 71
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-virtual {p0}, Landroid/app/Dialog;->getContext()Landroid/content/Context;
@@ -513,10 +513,10 @@
 
     const/4 v1, 0x1
 
-    .line 65
+    .line 72
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 66
+    .line 73
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v1
@@ -533,7 +533,7 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 67
+    .line 74
     iget-object v1, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->currentFilterIcon:Lcom/iMe/storage/domain/model/filters/FilterIcon;
 
     if-nez v1, :cond_0
@@ -542,11 +542,11 @@
 
     if-eqz v1, :cond_1
 
-    .line 68
+    .line 75
     :cond_0
     invoke-virtual {p0, v3}, Lorg/telegram/ui/ActionBar/BottomSheet;->setApplyBottomPadding(Z)V
 
-    .line 69
+    .line 76
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->getDeleteButton()Lorg/telegram/ui/Components/ReportAlert$BottomSheetCell;
 
     move-result-object v1
@@ -568,7 +568,7 @@
 .method private final setupListeners()V
     .locals 2
 
-    .line 91
+    .line 98
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->getListView()Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v0
@@ -589,7 +589,7 @@
 
     invoke-static {p0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 92
+    .line 99
     invoke-direct {p0}, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->getIcons()Ljava/util/List;
 
     move-result-object p1
@@ -600,7 +600,7 @@
 
     check-cast p1, Ljava/lang/Enum;
 
-    .line 93
+    .line 100
     iget-object p2, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->currentFilterIcon:Lcom/iMe/storage/domain/model/filters/FilterIcon;
 
     if-eq p2, p1, :cond_2
@@ -611,7 +611,7 @@
 
     goto :goto_1
 
-    .line 97
+    .line 104
     :cond_0
     iget-object p2, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->type:Lcom/iMe/fork/enums/FilterActivityType;
 
@@ -631,7 +631,7 @@
 
     goto :goto_0
 
-    .line 98
+    .line 105
     :cond_1
     sget-object v0, Lcom/iMe/fork/enums/FilterActivityType;->TOPIC:Lcom/iMe/fork/enums/FilterActivityType;
 
@@ -645,7 +645,7 @@
 
     invoke-interface {p2, v1, p1}, Lcom/iMe/fork/utils/Callbacks$Callback2;->invoke(Ljava/lang/Object;Ljava/lang/Object;)V
 
-    .line 101
+    .line 108
     :goto_0
     invoke-virtual {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
@@ -667,7 +667,7 @@
 .method public final getCurrentFilterIcon()Lcom/iMe/storage/domain/model/filters/FilterIcon;
     .locals 1
 
-    .line 34
+    .line 41
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->currentFilterIcon:Lcom/iMe/storage/domain/model/filters/FilterIcon;
 
     return-object v0
@@ -676,7 +676,7 @@
 .method public final getCurrentTopicIcon()Lcom/iMe/storage/data/repository/topics/Topic;
     .locals 1
 
-    .line 35
+    .line 42
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->currentTopicIcon:Lcom/iMe/storage/data/repository/topics/Topic;
 
     return-object v0
@@ -685,7 +685,7 @@
 .method public final getType()Lcom/iMe/fork/enums/FilterActivityType;
     .locals 1
 
-    .line 33
+    .line 40
     iget-object v0, p0, Lcom/iMe/fork/ui/dialog/SelectIconBottomSheet;->type:Lcom/iMe/fork/enums/FilterActivityType;
 
     return-object v0

@@ -163,9 +163,9 @@
     .line 4477
     iget-object v0, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
-    const-string v1, "switchTrackBlue"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_switchTrackBlue:I
 
-    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v0
 
@@ -176,9 +176,9 @@
 
     iget-object v1, p0, Lorg/telegram/ui/PaymentFormActivity$BottomFrameLayout;->this$0:Lorg/telegram/ui/PaymentFormActivity;
 
-    const-string v2, "contacts_inviteBackground"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_contacts_inviteBackground:I
 
-    invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result v1
 

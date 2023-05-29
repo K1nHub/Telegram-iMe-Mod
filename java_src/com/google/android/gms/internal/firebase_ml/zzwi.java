@@ -1270,7 +1270,7 @@ public final class zzwi<T> implements zzwu<T> {
                 int i10 = (zzdm & i5) >>> 20;
                 int i11 = this.zzbvf[i8];
                 long j2 = zzdm & 1048575;
-                int i12 = (i10 < zzur.zzbrj.m762id() || i10 > zzur.zzbrw.m762id()) ? 0 : this.zzbvf[i8 + 2] & 1048575;
+                int i12 = (i10 < zzur.zzbrj.m766id() || i10 > zzur.zzbrw.m766id()) ? 0 : this.zzbvf[i8 + 2] & 1048575;
                 switch (i10) {
                     case 0:
                         if (zza((zzwi<T>) t, i8)) {
@@ -1905,7 +1905,7 @@ public final class zzwi<T> implements zzwu<T> {
                 }
                 i = i19;
             } else {
-                i = (!this.zzbvn || i18 < zzur.zzbrj.m762id() || i18 > zzur.zzbrw.m762id()) ? 0 : this.zzbvf[i14 + 2] & 1048575;
+                i = (!this.zzbvn || i18 < zzur.zzbrj.m766id() || i18 > zzur.zzbrw.m766id()) ? 0 : this.zzbvf[i14 + 2] & 1048575;
                 i2 = 0;
             }
             long j3 = zzdm2 & 1048575;

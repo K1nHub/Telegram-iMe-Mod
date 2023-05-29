@@ -4,14 +4,8 @@ import android.os.Build;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewParent;
-import android.view.accessibility.AccessibilityEvent;
 /* loaded from: classes.dex */
 public final class ViewParentCompat {
-    @Deprecated
-    public static boolean requestSendAccessibilityEvent(ViewParent viewParent, View view, AccessibilityEvent accessibilityEvent) {
-        return viewParent.requestSendAccessibilityEvent(view, accessibilityEvent);
-    }
-
     public static boolean onStartNestedScroll(ViewParent viewParent, View view, View view2, int i, int i2) {
         if (viewParent instanceof NestedScrollingParent2) {
             return ((NestedScrollingParent2) viewParent).onStartNestedScroll(view, view2, i, i2);

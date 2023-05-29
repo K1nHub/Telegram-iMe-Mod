@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/InstantCameraView;)V
     .locals 0
 
-    .line 636
+    .line 639
     iput-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$9;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,17 +38,17 @@
 .method public onSurfaceTextureAvailable(Landroid/graphics/SurfaceTexture;II)V
     .locals 3
 
-    .line 639
+    .line 642
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
     if-eqz v0, :cond_0
 
     const-string v0, "camera surface available"
 
-    .line 640
+    .line 643
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 642
+    .line 645
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$9;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
@@ -60,7 +60,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 643
+    .line 646
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$9;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/InstantCameraView;->access$300(Lorg/telegram/ui/Components/InstantCameraView;)Z
@@ -71,7 +71,7 @@
 
     return-void
 
-    .line 646
+    .line 649
     :cond_1
     sget-boolean v0, Lorg/telegram/messenger/BuildVars;->LOGS_ENABLED:Z
 
@@ -79,10 +79,10 @@
 
     const-string v0, "start create thread"
 
-    .line 647
+    .line 650
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->d(Ljava/lang/String;)V
 
-    .line 649
+    .line 652
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/Components/InstantCameraView$9;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
@@ -101,7 +101,7 @@
 .method public onSurfaceTextureDestroyed(Landroid/graphics/SurfaceTexture;)Z
     .locals 2
 
-    .line 664
+    .line 667
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$9;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/InstantCameraView;->access$200(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;
@@ -112,7 +112,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 665
+    .line 668
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$9;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/InstantCameraView;->access$200(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;
@@ -123,12 +123,12 @@
 
     invoke-virtual {p1, v1}, Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;->shutdown(I)V
 
-    .line 666
+    .line 669
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$9;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/InstantCameraView;->access$202(Lorg/telegram/ui/Components/InstantCameraView;Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;)Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;
 
-    .line 668
+    .line 671
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$9;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
@@ -138,7 +138,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 669
+    .line 672
     invoke-static {}, Lorg/telegram/messenger/camera/CameraController;->getInstance()Lorg/telegram/messenger/camera/CameraController;
 
     move-result-object p1
@@ -160,7 +160,7 @@
 .method public onSurfaceTextureSizeChanged(Landroid/graphics/SurfaceTexture;II)V
     .locals 0
 
-    .line 655
+    .line 658
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$9;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/InstantCameraView;->access$200(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;
@@ -169,7 +169,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 656
+    .line 659
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$9;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/InstantCameraView;->access$200(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;
@@ -178,7 +178,7 @@
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;->access$402(Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;I)I
 
-    .line 657
+    .line 660
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$9;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/InstantCameraView;->access$200(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;
@@ -187,7 +187,7 @@
 
     invoke-static {p1, p3}, Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;->access$502(Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;I)I
 
-    .line 658
+    .line 661
     iget-object p1, p0, Lorg/telegram/ui/Components/InstantCameraView$9;->this$0:Lorg/telegram/ui/Components/InstantCameraView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/InstantCameraView;->access$200(Lorg/telegram/ui/Components/InstantCameraView;)Lorg/telegram/ui/Components/InstantCameraView$CameraGLThread;

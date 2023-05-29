@@ -11,7 +11,7 @@ import org.koin.p043mp.KoinPlatformTools;
 import org.telegram.tgnet.TLRPC$Chat;
 /* compiled from: ChannelDetailsBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.catalog.details.ChannelDetailsBottomSheetDialog$presenter$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class ChannelDetailsBottomSheetDialog$presenter$2 extends Lambda implements Function0<ChannelDetailsPresenter> {
     final /* synthetic */ CampaignItem $campaign;
     final /* synthetic */ TLRPC$Chat $chat;
@@ -29,13 +29,13 @@ final class ChannelDetailsBottomSheetDialog$presenter$2 extends Lambda implement
     /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: ChannelDetailsBottomSheetDialog.kt */
     /* renamed from: com.iMe.ui.catalog.details.ChannelDetailsBottomSheetDialog$presenter$2$1 */
-    /* loaded from: classes3.dex */
-    public static final class C19261 extends Lambda implements Function0<ParametersHolder> {
+    /* loaded from: classes.dex */
+    public static final class C19981 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ CampaignItem $campaign;
         final /* synthetic */ TLRPC$Chat $chat;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C19261(CampaignItem campaignItem, TLRPC$Chat tLRPC$Chat) {
+        C19981(CampaignItem campaignItem, TLRPC$Chat tLRPC$Chat) {
             super(0);
             this.$campaign = campaignItem;
             this.$chat = tLRPC$Chat;
@@ -51,7 +51,7 @@ final class ChannelDetailsBottomSheetDialog$presenter$2 extends Lambda implement
     @Override // kotlin.jvm.functions.Function0
     public final ChannelDetailsPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C1924xf609b581(this.this$0, null, new C19261(this.$campaign, this.$chat)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C1996xf609b581(this.this$0, null, new C19981(this.$campaign, this.$chat)));
         return (ChannelDetailsPresenter) lazy.getValue();
     }
 }

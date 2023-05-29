@@ -28,7 +28,7 @@ import android.util.Base64;
 import android.util.SparseLongArray;
 import android.view.Display;
 import android.view.WindowManager;
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.exoplayer2.ExoPlayerLibraryInfo;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.MediaItem;
@@ -232,7 +232,7 @@ public final class Util {
                     if (i != 32) {
                         return 0;
                     }
-                    return C0470C.ENCODING_PCM_32BIT;
+                    return C0475C.ENCODING_PCM_32BIT;
                 }
                 return 536870912;
             }
@@ -278,7 +278,7 @@ public final class Util {
     }
 
     public static long msToUs(long j) {
-        return (j == C0470C.TIME_UNSET || j == Long.MIN_VALUE) ? j : j * 1000;
+        return (j == C0475C.TIME_UNSET || j == Long.MIN_VALUE) ? j : j * 1000;
     }
 
     private static boolean shouldEscapeCharacter(char c) {
@@ -858,7 +858,7 @@ public final class Util {
     }
 
     public static long usToMs(long j) {
-        return (j == C0470C.TIME_UNSET || j == Long.MIN_VALUE) ? j : j / 1000;
+        return (j == C0475C.TIME_UNSET || j == Long.MIN_VALUE) ? j : j / 1000;
     }
 
     public static long parseXsDuration(String str) {
@@ -1124,11 +1124,11 @@ public final class Util {
         }
         switch (c) {
             case 0:
-                return C0470C.PLAYREADY_UUID;
+                return C0475C.PLAYREADY_UUID;
             case 1:
-                return C0470C.WIDEVINE_UUID;
+                return C0475C.WIDEVINE_UUID;
             case 2:
-                return C0470C.CLEARKEY_UUID;
+                return C0475C.CLEARKEY_UUID;
             default:
                 try {
                     return UUID.fromString(str);
@@ -1279,7 +1279,7 @@ public final class Util {
     }
 
     public static String getStringForTime(StringBuilder sb, Formatter formatter, long j) {
-        if (j == C0470C.TIME_UNSET) {
+        if (j == C0475C.TIME_UNSET) {
             j = 0;
         }
         String str = j < 0 ? "-" : "";
@@ -1511,7 +1511,7 @@ public final class Util {
                     }
                 } catch (NumberFormatException unused) {
                 }
-                Log.m796e(TAG, "Invalid display size: " + systemProperty);
+                Log.m800e(TAG, "Invalid display size: " + systemProperty);
             }
             if ("Sony".equals(MANUFACTURER) && MODEL.startsWith("BRAVIA") && context.getPackageManager().hasSystemFeature("com.sony.dtv.hardware.panel.qfhd")) {
                 return new Point(3840, 2160);
@@ -1558,7 +1558,7 @@ public final class Util {
     }
 
     public static long getNowUnixTimeMs(long j) {
-        if (j == C0470C.TIME_UNSET) {
+        if (j == C0475C.TIME_UNSET) {
             return System.currentTimeMillis();
         }
         return j + android.os.SystemClock.elapsedRealtime();
@@ -1651,7 +1651,7 @@ public final class Util {
             Class<?> cls = Class.forName("android.os.SystemProperties");
             return (String) cls.getMethod("get", String.class).invoke(cls, str);
         } catch (Exception e) {
-            Log.m795e(TAG, "Failed to read system property " + str, e);
+            Log.m799e(TAG, "Failed to read system property " + str, e);
             return null;
         }
     }

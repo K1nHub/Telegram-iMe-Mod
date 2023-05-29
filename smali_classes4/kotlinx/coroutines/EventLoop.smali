@@ -35,6 +35,33 @@
     return-void
 .end method
 
+.method public static synthetic decrementUseCount$default(Lkotlinx/coroutines/EventLoop;ZILjava/lang/Object;)V
+    .locals 0
+
+    if-nez p3, :cond_1
+
+    and-int/lit8 p2, p2, 0x1
+
+    if-eqz p2, :cond_0
+
+    const/4 p1, 0x0
+
+    .line 108
+    :cond_0
+    invoke-virtual {p0, p1}, Lkotlinx/coroutines/EventLoop;->decrementUseCount(Z)V
+
+    return-void
+
+    :cond_1
+    new-instance p0, Ljava/lang/UnsupportedOperationException;
+
+    const-string p1, "Super calls with default arguments not supported in this target, function: decrementUseCount"
+
+    invoke-direct {p0, p1}, Ljava/lang/UnsupportedOperationException;-><init>(Ljava/lang/String;)V
+
+    throw p0
+.end method
+
 .method private final delta(Z)J
     .locals 2
 
@@ -278,6 +305,26 @@
     return v0
 .end method
 
+.method public processNextEvent()J
+    .locals 2
+
+    .line 54
+    invoke-virtual {p0}, Lkotlinx/coroutines/EventLoop;->processUnconfinedEvent()Z
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const-wide v0, 0x7fffffffffffffffL
+
+    return-wide v0
+
+    :cond_0
+    const-wide/16 v0, 0x0
+
+    return-wide v0
+.end method
+
 .method public final processUnconfinedEvent()Z
     .locals 2
 
@@ -307,6 +354,14 @@
     invoke-virtual {v0}, Lkotlinx/coroutines/DispatchedTask;->run()V
 
     const/4 v0, 0x1
+
+    return v0
+.end method
+
+.method public shouldBeProcessedFromContext()Z
+    .locals 1
+
+    const/4 v0, 0x0
 
     return v0
 .end method

@@ -84,6 +84,17 @@
 
     invoke-virtual/range {v2 .. v12}, Lorg/telegram/messenger/MessagesController;->markDialogAsRead(JIIIZIIZI)V
 
+    .line 37
+    invoke-static {p2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    move-wide/from16 v2, p3
+
+    invoke-virtual {v0, v2, v3, v1}, Lorg/telegram/messenger/MessagesController;->markReactionsAsRead(JI)V
+
     return-void
 .end method
 
@@ -122,7 +133,7 @@
 .method private static synthetic lambda$onReceive$2(Lorg/telegram/messenger/AccountInstance;Lorg/telegram/tgnet/TLRPC$Chat;IJI)V
     .locals 13
 
-    .line 47
+    .line 48
     invoke-virtual {p0}, Lorg/telegram/messenger/AccountInstance;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v0
@@ -133,7 +144,7 @@
 
     invoke-virtual {v0, p1, v1}, Lorg/telegram/messenger/MessagesController;->putChat(Lorg/telegram/tgnet/TLRPC$Chat;Z)V
 
-    .line 48
+    .line 49
     invoke-static {p2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
 
     move-result-object v2
@@ -158,13 +169,24 @@
 
     invoke-virtual/range {v2 .. v12}, Lorg/telegram/messenger/MessagesController;->markDialogAsRead(JIIIZIIZI)V
 
+    .line 50
+    invoke-static {p2}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v0
+
+    const/4 v1, 0x0
+
+    move-wide/from16 v2, p3
+
+    invoke-virtual {v0, v2, v3, v1}, Lorg/telegram/messenger/MessagesController;->markReactionsAsRead(JI)V
+
     return-void
 .end method
 
 .method private static synthetic lambda$onReceive$3(Lorg/telegram/messenger/AccountInstance;JII)V
     .locals 10
 
-    .line 45
+    .line 46
     invoke-virtual {p0}, Lorg/telegram/messenger/AccountInstance;->getMessagesStorage()Lorg/telegram/messenger/MessagesStorage;
 
     move-result-object v0
@@ -175,7 +197,7 @@
 
     move-result-object v5
 
-    .line 46
+    .line 47
     new-instance v0, Lorg/telegram/messenger/AutoMessageHeardReceiver$$ExternalSyntheticLambda2;
 
     move-object v3, v0
@@ -198,159 +220,186 @@
 
 # virtual methods
 .method public onReceive(Landroid/content/Context;Landroid/content/Intent;)V
-    .locals 13
+    .locals 16
+
+    move-object/from16 v0, p2
 
     .line 21
     invoke-static {}, Lorg/telegram/messenger/ApplicationLoader;->postInitApplication()V
 
-    const-string p1, "dialog_id"
+    const-string v1, "dialog_id"
 
-    const-wide/16 v0, 0x0
+    const-wide/16 v2, 0x0
 
     .line 22
-    invoke-virtual {p2, p1, v0, v1}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
+    invoke-virtual {v0, v1, v2, v3}, Landroid/content/Intent;->getLongExtra(Ljava/lang/String;J)J
 
-    move-result-wide v4
+    move-result-wide v14
 
-    const-string p1, "max_id"
+    const-string v1, "max_id"
 
-    const/4 v2, 0x0
+    const/4 v13, 0x0
 
     .line 23
-    invoke-virtual {p2, p1, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-virtual {v0, v1, v13}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
-    move-result p1
+    move-result v1
 
-    const-string v3, "currentAccount"
+    const-string v4, "currentAccount"
 
     .line 24
-    invoke-virtual {p2, v3, v2}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
+    invoke-virtual {v0, v4, v13}, Landroid/content/Intent;->getIntExtra(Ljava/lang/String;I)I
 
-    move-result v6
+    move-result v0
 
-    cmp-long p2, v4, v0
+    cmp-long v2, v14, v2
 
-    if-eqz p2, :cond_3
+    if-eqz v2, :cond_3
 
-    if-eqz p1, :cond_3
+    if-eqz v1, :cond_3
 
     .line 25
-    invoke-static {v6}, Lorg/telegram/messenger/UserConfig;->isValidAccount(I)Z
+    invoke-static {v0}, Lorg/telegram/messenger/UserConfig;->isValidAccount(I)Z
 
-    move-result p2
+    move-result v2
 
-    if-nez p2, :cond_0
+    if-nez v2, :cond_0
 
-    goto :goto_0
+    goto/16 :goto_0
 
     .line 28
     :cond_0
-    invoke-static {v6}, Lorg/telegram/messenger/AccountInstance;->getInstance(I)Lorg/telegram/messenger/AccountInstance;
+    invoke-static {v0}, Lorg/telegram/messenger/AccountInstance;->getInstance(I)Lorg/telegram/messenger/AccountInstance;
 
-    move-result-object v3
+    move-result-object v5
 
     .line 29
-    invoke-static {v4, v5}, Lorg/telegram/messenger/DialogObject;->isUserDialog(J)Z
+    invoke-static {v14, v15}, Lorg/telegram/messenger/DialogObject;->isUserDialog(J)Z
 
-    move-result p2
+    move-result v2
 
-    if-eqz p2, :cond_1
+    if-eqz v2, :cond_1
 
     .line 30
-    invoke-virtual {v3}, Lorg/telegram/messenger/AccountInstance;->getMessagesController()Lorg/telegram/messenger/MessagesController;
-
-    move-result-object p2
-
-    invoke-static {v4, v5}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    invoke-virtual {p2, v0}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
-
-    move-result-object p2
-
-    if-nez p2, :cond_2
-
-    .line 32
-    sget-object p2, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
-
-    new-instance v0, Lorg/telegram/messenger/AutoMessageHeardReceiver$$ExternalSyntheticLambda1;
-
-    move-object v2, v0
-
-    move v7, p1
-
-    invoke-direct/range {v2 .. v7}, Lorg/telegram/messenger/AutoMessageHeardReceiver$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/messenger/AccountInstance;JII)V
-
-    invoke-virtual {p2, v0}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
-
-    return-void
-
-    .line 41
-    :cond_1
-    invoke-static {v4, v5}, Lorg/telegram/messenger/DialogObject;->isChatDialog(J)Z
-
-    move-result p2
-
-    if-eqz p2, :cond_2
-
-    .line 42
-    invoke-virtual {v3}, Lorg/telegram/messenger/AccountInstance;->getMessagesController()Lorg/telegram/messenger/MessagesController;
-
-    move-result-object p2
-
-    neg-long v0, v4
-
-    invoke-static {v0, v1}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
-
-    move-result-object v0
-
-    invoke-virtual {p2, v0}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
-
-    move-result-object p2
-
-    if-nez p2, :cond_2
-
-    .line 44
-    sget-object p2, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
-
-    new-instance v0, Lorg/telegram/messenger/AutoMessageHeardReceiver$$ExternalSyntheticLambda0;
-
-    move-object v2, v0
-
-    move v7, p1
-
-    invoke-direct/range {v2 .. v7}, Lorg/telegram/messenger/AutoMessageHeardReceiver$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/messenger/AccountInstance;JII)V
-
-    invoke-virtual {p2, v0}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
-
-    return-void
-
-    .line 54
-    :cond_2
-    invoke-static {v6}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+    invoke-virtual {v5}, Lorg/telegram/messenger/AccountInstance;->getMessagesController()Lorg/telegram/messenger/MessagesController;
 
     move-result-object v2
 
-    const/4 v7, 0x0
+    invoke-static {v14, v15}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
 
-    const/4 v8, 0x0
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lorg/telegram/messenger/MessagesController;->getUser(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$User;
+
+    move-result-object v2
+
+    if-nez v2, :cond_2
+
+    .line 32
+    sget-object v2, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
+
+    new-instance v3, Lorg/telegram/messenger/AutoMessageHeardReceiver$$ExternalSyntheticLambda1;
+
+    move-object v4, v3
+
+    move-wide v6, v14
+
+    move v8, v0
+
+    move v9, v1
+
+    invoke-direct/range {v4 .. v9}, Lorg/telegram/messenger/AutoMessageHeardReceiver$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/messenger/AccountInstance;JII)V
+
+    invoke-virtual {v2, v3}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
+
+    return-void
+
+    .line 42
+    :cond_1
+    invoke-static {v14, v15}, Lorg/telegram/messenger/DialogObject;->isChatDialog(J)Z
+
+    move-result v2
+
+    if-eqz v2, :cond_2
+
+    .line 43
+    invoke-virtual {v5}, Lorg/telegram/messenger/AccountInstance;->getMessagesController()Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v2
+
+    neg-long v3, v14
+
+    invoke-static {v3, v4}, Ljava/lang/Long;->valueOf(J)Ljava/lang/Long;
+
+    move-result-object v3
+
+    invoke-virtual {v2, v3}, Lorg/telegram/messenger/MessagesController;->getChat(Ljava/lang/Long;)Lorg/telegram/tgnet/TLRPC$Chat;
+
+    move-result-object v2
+
+    if-nez v2, :cond_2
+
+    .line 45
+    sget-object v2, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
+
+    new-instance v3, Lorg/telegram/messenger/AutoMessageHeardReceiver$$ExternalSyntheticLambda0;
+
+    move-object v4, v3
+
+    move-wide v6, v14
+
+    move v8, v0
+
+    move v9, v1
+
+    invoke-direct/range {v4 .. v9}, Lorg/telegram/messenger/AutoMessageHeardReceiver$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/messenger/AccountInstance;JII)V
+
+    invoke-virtual {v2, v3}, Lorg/telegram/messenger/DispatchQueue;->postRunnable(Ljava/lang/Runnable;)Z
+
+    return-void
+
+    .line 56
+    :cond_2
+    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v4
 
     const/4 v9, 0x0
 
     const/4 v10, 0x0
 
-    const/4 v11, 0x1
+    const/4 v11, 0x0
 
     const/4 v12, 0x0
 
-    move-wide v3, v4
+    const/4 v2, 0x1
 
-    move v5, p1
+    const/4 v3, 0x0
 
-    move v6, p1
+    move-wide v5, v14
 
-    invoke-virtual/range {v2 .. v12}, Lorg/telegram/messenger/MessagesController;->markDialogAsRead(JIIIZIIZI)V
+    move v7, v1
+
+    move v8, v1
+
+    move v1, v13
+
+    move v13, v2
+
+    move-wide v1, v14
+
+    move v14, v3
+
+    invoke-virtual/range {v4 .. v14}, Lorg/telegram/messenger/MessagesController;->markDialogAsRead(JIIIZIIZI)V
+
+    .line 57
+    invoke-static {v0}, Lorg/telegram/messenger/MessagesController;->getInstance(I)Lorg/telegram/messenger/MessagesController;
+
+    move-result-object v0
+
+    const/4 v3, 0x0
+
+    invoke-virtual {v0, v1, v2, v3}, Lorg/telegram/messenger/MessagesController;->markReactionsAsRead(JI)V
 
     :cond_3
     :goto_0

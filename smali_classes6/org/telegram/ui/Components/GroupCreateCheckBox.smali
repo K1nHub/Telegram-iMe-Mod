@@ -14,7 +14,7 @@
 
 .field private backgroundInnerPaint:Landroid/graphics/Paint;
 
-.field private backgroundKey:Ljava/lang/String;
+.field private backgroundKey:I
 
 .field private backgroundPaint:Landroid/graphics/Paint;
 
@@ -22,7 +22,7 @@
 
 .field private checkAnimator:Landroid/animation/ObjectAnimator;
 
-.field private checkKey:Ljava/lang/String;
+.field private checkKey:I
 
 .field private checkPaint:Landroid/graphics/Paint;
 
@@ -30,7 +30,7 @@
 
 .field private drawBitmap:Landroid/graphics/Bitmap;
 
-.field private innerKey:Ljava/lang/String;
+.field private innerKey:I
 
 .field private innerRadDiff:I
 
@@ -45,38 +45,38 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 4
 
-    .line 53
+    .line 54
     invoke-direct {p0, p1}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
     const/4 p1, 0x1
 
-    .line 37
+    .line 38
     iput-boolean p1, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->isCheckAnimation:Z
 
     const/high16 v0, 0x3f800000    # 1.0f
 
-    .line 43
+    .line 44
     iput v0, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->checkScale:F
 
-    const-string v0, "checkboxCheck"
-
-    .line 45
-    iput-object v0, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->backgroundKey:Ljava/lang/String;
-
     .line 46
-    iput-object v0, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->checkKey:Ljava/lang/String;
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxCheck:I
 
-    const-string v0, "checkbox"
+    iput v0, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->backgroundKey:I
 
     .line 47
-    iput-object v0, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->innerKey:Ljava/lang/String;
+    iput v0, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->checkKey:I
 
-    .line 54
+    .line 48
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_checkbox:I
+
+    iput v0, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->innerKey:I
+
+    .line 55
     sget-object v0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->eraser:Landroid/graphics/Paint;
 
     if-nez v0, :cond_0
 
-    .line 55
+    .line 56
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, p1}, Landroid/graphics/Paint;-><init>(I)V
@@ -85,10 +85,10 @@
 
     const/4 v1, 0x0
 
-    .line 56
+    .line 57
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 57
+    .line 58
     sget-object v0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->eraser:Landroid/graphics/Paint;
 
     new-instance v2, Landroid/graphics/PorterDuffXfermode;
@@ -99,24 +99,24 @@
 
     invoke-virtual {v0, v2}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 58
+    .line 59
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, p1}, Landroid/graphics/Paint;-><init>(I)V
 
     sput-object v0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->eraser2:Landroid/graphics/Paint;
 
-    .line 59
+    .line 60
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
-    .line 60
+    .line 61
     sget-object v0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->eraser2:Landroid/graphics/Paint;
 
     sget-object v1, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
-    .line 61
+    .line 62
     sget-object v0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->eraser2:Landroid/graphics/Paint;
 
     new-instance v1, Landroid/graphics/PorterDuffXfermode;
@@ -127,7 +127,7 @@
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setXfermode(Landroid/graphics/Xfermode;)Landroid/graphics/Xfermode;
 
-    .line 64
+    .line 65
     :cond_0
     new-instance v0, Landroid/graphics/Paint;
 
@@ -135,35 +135,35 @@
 
     iput-object v0, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->backgroundPaint:Landroid/graphics/Paint;
 
-    .line 65
+    .line 66
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, p1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->backgroundInnerPaint:Landroid/graphics/Paint;
 
-    .line 66
+    .line 67
     new-instance v0, Landroid/graphics/Paint;
 
     invoke-direct {v0, p1}, Landroid/graphics/Paint;-><init>(I)V
 
     iput-object v0, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->checkPaint:Landroid/graphics/Paint;
 
-    .line 67
+    .line 68
     sget-object p1, Landroid/graphics/Paint$Style;->STROKE:Landroid/graphics/Paint$Style;
 
     invoke-virtual {v0, p1}, Landroid/graphics/Paint;->setStyle(Landroid/graphics/Paint$Style;)V
 
     const/4 p1, 0x2
 
-    .line 68
+    .line 69
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->innerRadDiff:I
 
-    .line 69
+    .line 70
     iget-object p1, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->checkPaint:Landroid/graphics/Paint;
 
     const/high16 v0, 0x3fc00000    # 1.5f
@@ -176,7 +176,7 @@
 
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 70
+    .line 71
     sget-object p1, Lorg/telegram/ui/Components/GroupCreateCheckBox;->eraser2:Landroid/graphics/Paint;
 
     const/16 v0, 0x1c
@@ -191,7 +191,7 @@
 
     const/16 p1, 0x18
 
-    .line 72
+    .line 73
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
@@ -208,7 +208,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->drawBitmap:Landroid/graphics/Bitmap;
 
-    .line 73
+    .line 74
     new-instance p1, Landroid/graphics/Canvas;
 
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->drawBitmap:Landroid/graphics/Bitmap;
@@ -217,7 +217,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->bitmapCanvas:Landroid/graphics/Canvas;
 
-    .line 74
+    .line 75
     invoke-virtual {p0}, Lorg/telegram/ui/Components/GroupCreateCheckBox;->updateColors()V
 
     return-void
@@ -226,7 +226,7 @@
 .method private animateToCheckedState(Z)V
     .locals 2
 
-    .line 116
+    .line 117
     iput-boolean p1, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->isCheckAnimation:Z
 
     const/4 v0, 0x1
@@ -249,7 +249,7 @@
 
     const-string p1, "progress"
 
-    .line 117
+    .line 118
     invoke-static {p0, p1, v0}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Ljava/lang/String;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object p1
@@ -258,10 +258,10 @@
 
     const-wide/16 v0, 0x12c
 
-    .line 118
+    .line 119
     invoke-virtual {p1, v0, v1}, Landroid/animation/ObjectAnimator;->setDuration(J)Landroid/animation/ObjectAnimator;
 
-    .line 119
+    .line 120
     iget-object p1, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->checkAnimator:Landroid/animation/ObjectAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ObjectAnimator;->start()V
@@ -272,12 +272,12 @@
 .method private cancelCheckAnimator()V
     .locals 1
 
-    .line 110
+    .line 111
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->checkAnimator:Landroid/animation/ObjectAnimator;
 
     if-eqz v0, :cond_0
 
-    .line 111
+    .line 112
     invoke-virtual {v0}, Landroid/animation/ObjectAnimator;->cancel()V
 
     :cond_0
@@ -291,7 +291,7 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    .line 102
+    .line 103
     iget v0, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->progress:F
 
     return v0
@@ -300,15 +300,15 @@
 .method protected onAttachedToWindow()V
     .locals 1
 
-    .line 124
+    .line 125
     invoke-super {p0}, Landroid/view/View;->onAttachedToWindow()V
 
-    .line 125
+    .line 126
     invoke-virtual {p0}, Lorg/telegram/ui/Components/GroupCreateCheckBox;->updateColors()V
 
     const/4 v0, 0x1
 
-    .line 126
+    .line 127
     iput-boolean v0, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->attachedToWindow:Z
 
     return-void
@@ -317,12 +317,12 @@
 .method protected onDetachedFromWindow()V
     .locals 1
 
-    .line 131
+    .line 132
     invoke-super {p0}, Landroid/view/View;->onDetachedFromWindow()V
 
     const/4 v0, 0x0
 
-    .line 132
+    .line 133
     iput-boolean v0, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->attachedToWindow:Z
 
     return-void
@@ -331,7 +331,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 13
 
-    .line 159
+    .line 160
     invoke-virtual {p0}, Landroid/view/View;->getVisibility()I
 
     move-result v0
@@ -340,7 +340,7 @@
 
     return-void
 
-    .line 162
+    .line 163
     :cond_0
     iget v0, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->progress:F
 
@@ -350,7 +350,7 @@
 
     if-eqz v0, :cond_7
 
-    .line 163
+    .line 164
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0
@@ -359,14 +359,14 @@
 
     div-int/2addr v0, v2
 
-    .line 164
+    .line 165
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
 
     move-result v3
 
     div-int/2addr v3, v2
 
-    .line 165
+    .line 166
     sget-object v4, Lorg/telegram/ui/Components/GroupCreateCheckBox;->eraser2:Landroid/graphics/Paint;
 
     const/16 v5, 0x1e
@@ -379,14 +379,14 @@
 
     invoke-virtual {v4, v5}, Landroid/graphics/Paint;->setStrokeWidth(F)V
 
-    .line 167
+    .line 168
     iget-object v4, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->drawBitmap:Landroid/graphics/Bitmap;
 
     const/4 v5, 0x0
 
     invoke-virtual {v4, v5}, Landroid/graphics/Bitmap;->eraseColor(I)V
 
-    .line 169
+    .line 170
     iget v4, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->progress:F
 
     const/high16 v5, 0x3f000000    # 0.5f
@@ -418,7 +418,7 @@
 
     div-float/2addr v8, v5
 
-    .line 172
+    .line 173
     :goto_1
     iget-boolean v5, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->isCheckAnimation:Z
 
@@ -436,7 +436,7 @@
 
     if-gez v9, :cond_4
 
-    .line 175
+    .line 176
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -456,7 +456,7 @@
 
     if-gez v9, :cond_5
 
-    .line 177
+    .line 178
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v9
@@ -491,7 +491,7 @@
 
     int-to-float v5, v3
 
-    .line 183
+    .line 184
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v10
@@ -516,7 +516,7 @@
 
     invoke-virtual {p1, v4, v5, v10, v2}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 186
+    .line 187
     :cond_6
     iget v2, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->innerRadDiff:I
 
@@ -526,7 +526,7 @@
 
     sub-float/2addr v2, v9
 
-    .line 187
+    .line 188
     iget-object v4, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->bitmapCanvas:Landroid/graphics/Canvas;
 
     int-to-float v5, v0
@@ -537,7 +537,7 @@
 
     invoke-virtual {v4, v5, v9, v2, v10}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 188
+    .line 189
     iget-object v4, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->bitmapCanvas:Landroid/graphics/Canvas;
 
     sub-float/2addr v7, v6
@@ -548,7 +548,7 @@
 
     invoke-virtual {v4, v5, v9, v2, v6}, Landroid/graphics/Canvas;->drawCircle(FFFLandroid/graphics/Paint;)V
 
-    .line 189
+    .line 190
     iget-object v2, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->drawBitmap:Landroid/graphics/Bitmap;
 
     const/4 v4, 0x0
@@ -557,7 +557,7 @@
 
     const/16 v1, 0xa
 
-    .line 191
+    .line 192
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -572,7 +572,7 @@
 
     const/4 v2, 0x5
 
-    .line 192
+    .line 193
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
@@ -587,7 +587,7 @@
 
     const/4 v4, 0x1
 
-    .line 193
+    .line 194
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -596,7 +596,7 @@
 
     const/4 v4, 0x4
 
-    .line 194
+    .line 195
     invoke-static {v4}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v4
@@ -611,7 +611,7 @@
 
     float-to-double v5, v2
 
-    .line 195
+    .line 196
     invoke-static {v5, v6}, Ljava/lang/Math;->sqrt(D)D
 
     move-result-wide v5
@@ -626,7 +626,7 @@
 
     sub-float v9, v3, v2
 
-    .line 196
+    .line 197
     iget-object v10, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->checkPaint:Landroid/graphics/Paint;
 
     move-object v5, p1
@@ -641,7 +641,7 @@
 
     float-to-double v1, v1
 
-    .line 197
+    .line 198
     invoke-static {v1, v2}, Ljava/lang/Math;->sqrt(D)D
 
     move-result-wide v1
@@ -650,7 +650,7 @@
 
     const v2, 0x3f99999a    # 1.2f
 
-    .line 198
+    .line 199
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(F)I
 
     move-result v2
@@ -663,7 +663,7 @@
 
     sub-float v11, v3, v1
 
-    .line 199
+    .line 200
     iget-object v12, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->checkPaint:Landroid/graphics/Paint;
 
     move-object v7, p1
@@ -679,7 +679,7 @@
 .method public setCheckScale(F)V
     .locals 0
 
-    .line 106
+    .line 107
     iput p1, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->checkScale:F
 
     return-void
@@ -688,30 +688,30 @@
 .method public setChecked(ZZ)V
     .locals 1
 
-    .line 136
+    .line 137
     iget-boolean v0, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->isChecked:Z
 
     if-ne p1, v0, :cond_0
 
     return-void
 
-    .line 139
+    .line 140
     :cond_0
     iput-boolean p1, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->isChecked:Z
 
-    .line 141
+    .line 142
     iget-boolean v0, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->attachedToWindow:Z
 
     if-eqz v0, :cond_1
 
     if-eqz p2, :cond_1
 
-    .line 142
+    .line 143
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/GroupCreateCheckBox;->animateToCheckedState(Z)V
 
     goto :goto_1
 
-    .line 144
+    .line 145
     :cond_1
     invoke-direct {p0}, Lorg/telegram/ui/Components/GroupCreateCheckBox;->cancelCheckAnimator()V
 
@@ -724,7 +724,7 @@
     :cond_2
     const/4 p1, 0x0
 
-    .line 145
+    .line 146
     :goto_0
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/GroupCreateCheckBox;->setProgress(F)V
 
@@ -732,19 +732,19 @@
     return-void
 .end method
 
-.method public setColorKeysOverrides(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+.method public setColorKeysOverrides(III)V
     .locals 0
 
-    .line 78
-    iput-object p1, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->checkKey:Ljava/lang/String;
-
     .line 79
-    iput-object p2, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->innerKey:Ljava/lang/String;
+    iput p1, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->checkKey:I
 
     .line 80
-    iput-object p3, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->backgroundKey:Ljava/lang/String;
+    iput p2, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->innerKey:I
 
     .line 81
+    iput p3, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->backgroundKey:I
+
+    .line 82
     invoke-virtual {p0}, Lorg/telegram/ui/Components/GroupCreateCheckBox;->updateColors()V
 
     return-void
@@ -753,7 +753,7 @@
 .method public setInnerRadDiff(I)V
     .locals 0
 
-    .line 154
+    .line 155
     iput p1, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->innerRadDiff:I
 
     return-void
@@ -764,7 +764,7 @@
     .annotation build Landroidx/annotation/Keep;
     .end annotation
 
-    .line 93
+    .line 94
     iget v0, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->progress:F
 
     cmpl-float v0, v0, p1
@@ -773,11 +773,11 @@
 
     return-void
 
-    .line 96
+    .line 97
     :cond_0
     iput p1, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->progress:F
 
-    .line 97
+    .line 98
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void
@@ -786,40 +786,40 @@
 .method public updateColors()V
     .locals 2
 
-    .line 85
+    .line 86
     iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->backgroundInnerPaint:Landroid/graphics/Paint;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->innerKey:Ljava/lang/String;
+    iget v1, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->innerKey:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v1
-
-    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
-
-    .line 86
-    iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->backgroundPaint:Landroid/graphics/Paint;
-
-    iget-object v1, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->backgroundKey:Ljava/lang/String;
-
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 87
-    iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->checkPaint:Landroid/graphics/Paint;
+    iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->backgroundPaint:Landroid/graphics/Paint;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->checkKey:Ljava/lang/String;
+    iget v1, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->backgroundKey:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
     invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
 
     .line 88
+    iget-object v0, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->checkPaint:Landroid/graphics/Paint;
+
+    iget v1, p0, Lorg/telegram/ui/Components/GroupCreateCheckBox;->checkKey:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 89
     invoke-virtual {p0}, Landroid/view/View;->invalidate()V
 
     return-void

@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.source;
 
 import android.os.Handler;
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.source.MediaSource;
 import com.google.android.exoplayer2.source.MediaSourceEventListener;
@@ -86,7 +86,7 @@ public interface MediaSourceEventListener {
         }
 
         public void loadStarted(LoadEventInfo loadEventInfo, int i) {
-            loadStarted(loadEventInfo, i, -1, null, 0, null, C0470C.TIME_UNSET, C0470C.TIME_UNSET);
+            loadStarted(loadEventInfo, i, -1, null, 0, null, C0475C.TIME_UNSET, C0475C.TIME_UNSET);
         }
 
         public void loadStarted(LoadEventInfo loadEventInfo, int i, int i2, Format format, int i3, Object obj, long j, long j2) {
@@ -113,7 +113,7 @@ public interface MediaSourceEventListener {
         }
 
         public void loadCompleted(LoadEventInfo loadEventInfo, int i) {
-            loadCompleted(loadEventInfo, i, -1, null, 0, null, C0470C.TIME_UNSET, C0470C.TIME_UNSET);
+            loadCompleted(loadEventInfo, i, -1, null, 0, null, C0475C.TIME_UNSET, C0475C.TIME_UNSET);
         }
 
         public void loadCompleted(LoadEventInfo loadEventInfo, int i, int i2, Format format, int i3, Object obj, long j, long j2) {
@@ -140,7 +140,7 @@ public interface MediaSourceEventListener {
         }
 
         public void loadCanceled(LoadEventInfo loadEventInfo, int i) {
-            loadCanceled(loadEventInfo, i, -1, null, 0, null, C0470C.TIME_UNSET, C0470C.TIME_UNSET);
+            loadCanceled(loadEventInfo, i, -1, null, 0, null, C0475C.TIME_UNSET, C0475C.TIME_UNSET);
         }
 
         public void loadCanceled(LoadEventInfo loadEventInfo, int i, int i2, Format format, int i3, Object obj, long j, long j2) {
@@ -167,7 +167,7 @@ public interface MediaSourceEventListener {
         }
 
         public void loadError(LoadEventInfo loadEventInfo, int i, IOException iOException, boolean z) {
-            loadError(loadEventInfo, i, -1, null, 0, null, C0470C.TIME_UNSET, C0470C.TIME_UNSET, iOException, z);
+            loadError(loadEventInfo, i, -1, null, 0, null, C0475C.TIME_UNSET, C0475C.TIME_UNSET, iOException, z);
         }
 
         public void loadError(LoadEventInfo loadEventInfo, int i, int i2, Format format, int i3, Object obj, long j, long j2, IOException iOException, boolean z) {
@@ -218,7 +218,7 @@ public interface MediaSourceEventListener {
         }
 
         public void downstreamFormatChanged(int i, Format format, int i2, Object obj, long j) {
-            downstreamFormatChanged(new MediaLoadData(1, i, format, i2, obj, adjustMediaTime(j), C0470C.TIME_UNSET));
+            downstreamFormatChanged(new MediaLoadData(1, i, format, i2, obj, adjustMediaTime(j), C0475C.TIME_UNSET));
         }
 
         public void downstreamFormatChanged(final MediaLoadData mediaLoadData) {
@@ -242,7 +242,7 @@ public interface MediaSourceEventListener {
 
         private long adjustMediaTime(long j) {
             long usToMs = Util.usToMs(j);
-            return usToMs == C0470C.TIME_UNSET ? C0470C.TIME_UNSET : this.mediaTimeOffsetMs + usToMs;
+            return usToMs == C0475C.TIME_UNSET ? C0475C.TIME_UNSET : this.mediaTimeOffsetMs + usToMs;
         }
 
         /* JADX INFO: Access modifiers changed from: private */

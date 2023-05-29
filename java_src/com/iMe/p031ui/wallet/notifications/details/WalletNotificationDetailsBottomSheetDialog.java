@@ -27,7 +27,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.databinding.ForkContentWalletNotificationDetailsLayoutBinding;
 import org.telegram.p044ui.ActionBar.AlertDialog;
 import org.telegram.p044ui.ActionBar.BaseFragment;
@@ -124,7 +124,7 @@ public final class WalletNotificationDetailsBottomSheetDialog extends MvpBottomS
 
     @Override // com.iMe.manager.wallet.WalletLinkClickableView
     public void actionOpenProfileScreen(long j) {
-        ProfileActivity profileActivity = new ProfileActivity(BundleKt.bundleOf(TuplesKt.m80to("user_id", Long.valueOf(j))));
+        ProfileActivity profileActivity = new ProfileActivity(BundleKt.bundleOf(TuplesKt.m85to("user_id", Long.valueOf(j))));
         profileActivity.setPlayProfileAnimation(0);
         this.fragment.presentFragment(profileActivity);
         dismiss();
@@ -217,22 +217,22 @@ public final class WalletNotificationDetailsBottomSheetDialog extends MvpBottomS
 
     private final void setupColors() {
         ForkContentWalletNotificationDetailsLayoutBinding binding = getBinding();
-        binding.linearRoot.setBackgroundColor(Theme.getColor("dialogBackground"));
-        binding.textMessage.setTextColor(Theme.getColor("chats_message"));
-        binding.textDate.setTextColor(Theme.getColor("chats_date"));
+        binding.linearRoot.setBackgroundColor(Theme.getColor(Theme.key_dialogBackground));
+        binding.textMessage.setTextColor(Theme.getColor(Theme.key_chats_message));
+        binding.textDate.setTextColor(Theme.getColor(Theme.key_chats_date));
         AppCompatTextView setupColors$lambda$9$lambda$7 = binding.textActionCancel;
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$9$lambda$7, "setupColors$lambda$9$lambda$7");
         ViewExtKt.setRippleBackground$default(setupColors$lambda$9$lambda$7, false, 1, null);
         ViewExtKt.withMediumTypeface(setupColors$lambda$9$lambda$7);
-        setupColors$lambda$9$lambda$7.setTextColor(Theme.getColor("chats_actionBackground"));
+        setupColors$lambda$9$lambda$7.setTextColor(Theme.getColor(Theme.key_chats_actionBackground));
         AppCompatTextView setupColors$lambda$9$lambda$8 = binding.textCategory;
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$9$lambda$8, "setupColors$lambda$9$lambda$8");
         ViewExtKt.withMediumTypeface(setupColors$lambda$9$lambda$8);
-        setupColors$lambda$9$lambda$8.setTextColor(Theme.getColor("chats_name"));
+        setupColors$lambda$9$lambda$8.setTextColor(Theme.getColor(Theme.key_chats_name));
     }
 
     private final void setupTexts() {
-        getBinding().textActionCancel.setText(getResourceManager().getString(C3242R.string.common_ok));
+        getBinding().textActionCancel.setText(getResourceManager().getString(C3290R.string.common_ok));
     }
 
     private final void setupListeners() {

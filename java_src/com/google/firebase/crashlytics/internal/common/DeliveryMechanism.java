@@ -8,19 +8,19 @@ public enum DeliveryMechanism {
     
 
     /* renamed from: id */
-    private final int f155id;
+    private final int f158id;
 
     DeliveryMechanism(int i) {
-        this.f155id = i;
+        this.f158id = i;
     }
 
     public int getId() {
-        return this.f155id;
+        return this.f158id;
     }
 
     @Override // java.lang.Enum
     public String toString() {
-        return Integer.toString(this.f155id);
+        return Integer.toString(this.f158id);
     }
 
     public static DeliveryMechanism determineFrom(String str) {

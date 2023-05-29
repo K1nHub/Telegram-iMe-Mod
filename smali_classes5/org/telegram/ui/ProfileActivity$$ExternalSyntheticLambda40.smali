@@ -6,24 +6,20 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ActionBar/AlertDialog;
+.field public final synthetic f$0:Lorg/telegram/ui/ProfileActivity;
 
-.field public final synthetic f$1:Z
-
-.field public final synthetic f$2:Landroid/app/Activity;
+.field public final synthetic f$1:Lorg/telegram/tgnet/TLObject;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ActionBar/AlertDialog;ZLandroid/app/Activity;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ProfileActivity;Lorg/telegram/tgnet/TLObject;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda40;->f$0:Lorg/telegram/ui/ActionBar/AlertDialog;
+    iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda40;->f$0:Lorg/telegram/ui/ProfileActivity;
 
-    iput-boolean p2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda40;->f$1:Z
-
-    iput-object p3, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda40;->f$2:Landroid/app/Activity;
+    iput-object p2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda40;->f$1:Lorg/telegram/tgnet/TLObject;
 
     return-void
 .end method
@@ -31,15 +27,13 @@
 
 # virtual methods
 .method public final run()V
-    .locals 3
+    .locals 2
 
-    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda40;->f$0:Lorg/telegram/ui/ActionBar/AlertDialog;
+    iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda40;->f$0:Lorg/telegram/ui/ProfileActivity;
 
-    iget-boolean v1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda40;->f$1:Z
+    iget-object v1, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda40;->f$1:Lorg/telegram/tgnet/TLObject;
 
-    iget-object v2, p0, Lorg/telegram/ui/ProfileActivity$$ExternalSyntheticLambda40;->f$2:Landroid/app/Activity;
-
-    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$576ykt493WYMHNGS2U6OO0hdCX4(Lorg/telegram/ui/ActionBar/AlertDialog;ZLandroid/app/Activity;)V
+    invoke-static {v0, v1}, Lorg/telegram/ui/ProfileActivity;->$r8$lambda$7VHGa3vXRFxGeo64_X0bbO4gU74(Lorg/telegram/ui/ProfileActivity;Lorg/telegram/tgnet/TLObject;)V
 
     return-void
 .end method

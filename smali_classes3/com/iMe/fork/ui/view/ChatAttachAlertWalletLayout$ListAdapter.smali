@@ -271,7 +271,7 @@
     :goto_3
     if-eqz v0, :cond_4
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL:I
 
     goto :goto_6
 
@@ -362,7 +362,7 @@
 
     if-ne p1, v0, :cond_b
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->CHAT_ATTACH_HEADER:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TOP_PADDING:I
 
     goto :goto_6
 
@@ -423,7 +423,7 @@
     move-result v0
 
     .line 419
-    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER:I
+    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL:I
 
     if-ne v0, v1, :cond_3
 
@@ -579,10 +579,10 @@
 
     invoke-virtual {p1, p2}, Lcom/iMe/fork/ui/view/TextNetworkSwitcherCell;->setText(Ljava/lang/String;)V
 
-    const-string p2, "windowBackgroundWhiteHintText"
-
     .line 440
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -773,7 +773,7 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 470
-    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER:I
+    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->HEADER_CELL:I
 
     if-ne p2, v0, :cond_0
 
@@ -781,17 +781,17 @@
 
     iget-object v2, p0, Lcom/iMe/fork/ui/view/ChatAttachAlertWalletLayout$ListAdapter;->mContext:Landroid/content/Context;
 
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueHeader:I
+
     const/16 v4, 0x15
 
     const/16 v5, 0xf
 
     const/4 v6, 0x0
 
-    const-string v3, "windowBackgroundWhiteBlueHeader"
-
     move-object v1, p1
 
-    invoke-direct/range {v1 .. v6}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;Ljava/lang/String;IIZ)V
+    invoke-direct/range {v1 .. v6}, Lorg/telegram/ui/Cells/HeaderCell;-><init>(Landroid/content/Context;IIIZ)V
 
     goto/16 :goto_0
 
@@ -813,9 +813,9 @@
 
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider:I
 
-    const-string v1, "windowBackgroundGrayShadow"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
-    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object p2
 
@@ -824,9 +824,9 @@
 
     new-instance v1, Landroid/graphics/drawable/ColorDrawable;
 
-    const-string v2, "windowBackgroundGray"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -866,7 +866,7 @@
 
     .line 480
     :cond_2
-    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->CHAT_ATTACH_HEADER:I
+    sget v0, Lcom/iMe/common/IdFabric$ViewTypes;->TOP_PADDING:I
 
     if-ne p2, v0, :cond_3
 

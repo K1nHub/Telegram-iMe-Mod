@@ -388,9 +388,9 @@
     .line 38
     iget-object v0, p0, Lorg/telegram/ui/Components/LoginOrView;->textPaint:Landroid/text/TextPaint;
 
-    const-string v1, "windowBackgroundWhiteGrayText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -399,9 +399,9 @@
     .line 39
     iget-object v0, p0, Lorg/telegram/ui/Components/LoginOrView;->linePaint:Landroid/graphics/Paint;
 
-    const-string v1, "key_sheet_scrollUp"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_sheet_scrollUp:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

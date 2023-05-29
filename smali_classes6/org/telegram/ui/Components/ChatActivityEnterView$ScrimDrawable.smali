@@ -24,12 +24,12 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
     .locals 1
 
-    .line 10748
+    .line 10724
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$ScrimDrawable;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-direct {p0}, Landroid/graphics/drawable/Drawable;-><init>()V
 
-    .line 10749
+    .line 10725
     new-instance p1, Landroid/graphics/Paint;
 
     invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
@@ -38,7 +38,7 @@
 
     const/4 v0, 0x0
 
-    .line 10750
+    .line 10726
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setColor(I)V
 
     return-void
@@ -49,10 +49,10 @@
 .method public draw(Landroid/graphics/Canvas;)V
     .locals 8
 
-    .line 10755
+    .line 10731
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$ScrimDrawable;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/EmojiView;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/EmojiView;
 
     move-result-object v0
 
@@ -60,7 +60,7 @@
 
     return-void
 
-    .line 10758
+    .line 10734
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$ScrimDrawable;->paint:Landroid/graphics/Paint;
 
@@ -84,7 +84,7 @@
 
     const/4 v4, 0x0
 
-    .line 10759
+    .line 10735
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$ScrimDrawable;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
     invoke-virtual {v0}, Landroid/widget/FrameLayout;->getWidth()I
@@ -95,7 +95,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$ScrimDrawable;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/EmojiView;
+    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1400(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/EmojiView;
 
     move-result-object v0
 

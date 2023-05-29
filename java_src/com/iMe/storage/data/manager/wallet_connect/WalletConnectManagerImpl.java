@@ -163,7 +163,7 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
     public void connectToStoredSessions() {
         if (this.cryptoAccessManager.isWalletCreated(BlockchainType.EVM)) {
             clear();
-            Single<Result<List<WCSessionStoreItem>>> subscribeOn = this.walletConnectInteractor.getWalletConnectSavedSessionsFirst().singleOrError().subscribeOn(this.schedulersProvider.mo694io());
+            Single<Result<List<WCSessionStoreItem>>> subscribeOn = this.walletConnectInteractor.getWalletConnectSavedSessionsFirst().singleOrError().subscribeOn(this.schedulersProvider.mo699io());
             final WalletConnectManagerImpl$connectToStoredSessions$1 walletConnectManagerImpl$connectToStoredSessions$1 = new WalletConnectManagerImpl$connectToStoredSessions$1(this);
             Consumer<? super Result<List<WCSessionStoreItem>>> consumer = new Consumer() { // from class: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda3
                 @Override // io.reactivex.functions.Consumer
@@ -233,7 +233,7 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
             return;
         }
         this.pendingSessionStoreItem = null;
-        Completable observeOn = this.walletConnectInteractor.insertWalletConnectSession(sessionStoreItem).observeOn(this.schedulersProvider.mo693ui());
+        Completable observeOn = this.walletConnectInteractor.insertWalletConnectSession(sessionStoreItem).observeOn(this.schedulersProvider.mo698ui());
         WalletConnectManagerImpl$$ExternalSyntheticLambda2 walletConnectManagerImpl$$ExternalSyntheticLambda2 = WalletConnectManagerImpl$$ExternalSyntheticLambda2.INSTANCE;
         final WalletConnectManagerImpl$approveNewSession$3 walletConnectManagerImpl$approveNewSession$3 = new WalletConnectManagerImpl$approveNewSession$3(this);
         Disposable subscribe = observeOn.subscribe(walletConnectManagerImpl$$ExternalSyntheticLambda2, new Consumer() { // from class: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda6
@@ -281,7 +281,7 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
     public void disconnect(final String sessionKey) {
         Intrinsics.checkNotNullParameter(sessionKey, "sessionKey");
         runWithErrorHandle(new WalletConnectManagerImpl$disconnect$1(this, sessionKey));
-        Completable observeOn = this.walletConnectInteractor.deleteWalletConnectSession(sessionKey).observeOn(this.schedulersProvider.mo693ui());
+        Completable observeOn = this.walletConnectInteractor.deleteWalletConnectSession(sessionKey).observeOn(this.schedulersProvider.mo698ui());
         Action action = new Action() { // from class: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Action
             public final void run() {
@@ -303,7 +303,7 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
     public static final void disconnect$lambda$8(WalletConnectManagerImpl this$0, String sessionKey) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(sessionKey, "$sessionKey");
-        CollectionsKt__MutableCollectionsKt.removeAll(this$0.sessionStoreItems, new WalletConnectManagerImpl$disconnect$2$1(sessionKey));
+        CollectionsKt__MutableCollectionsKt.removeAll((List) this$0.sessionStoreItems, (Function1) new WalletConnectManagerImpl$disconnect$2$1(sessionKey));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -315,7 +315,7 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
     @Override // com.iMe.storage.domain.manager.wallet_connect.WalletConnectManager
     public void disconnectAll() {
         runWithErrorHandle(new WalletConnectManagerImpl$disconnectAll$1(this));
-        Completable observeOn = this.walletConnectInteractor.deleteAllWalletConnectSessions().observeOn(this.schedulersProvider.mo693ui());
+        Completable observeOn = this.walletConnectInteractor.deleteAllWalletConnectSessions().observeOn(this.schedulersProvider.mo698ui());
         Action action = new Action() { // from class: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Action
             public final void run() {
@@ -390,7 +390,7 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
                 subscribeToErrors$lambda$16 = WalletConnectManagerImpl.subscribeToErrors$lambda$16(Function1.this, obj);
                 return subscribeToErrors$lambda$16;
             }
-        })).subscribeOn(this.schedulersProvider.mo694io()).observeOn(this.schedulersProvider.mo693ui());
+        })).subscribeOn(this.schedulersProvider.mo699io()).observeOn(this.schedulersProvider.mo698ui());
         final WalletConnectManagerImpl$subscribeToErrors$3 walletConnectManagerImpl$subscribeToErrors$3 = new WalletConnectManagerImpl$subscribeToErrors$3(this);
         Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda4
             @Override // io.reactivex.functions.Consumer
@@ -422,9 +422,9 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
 
     private final void subscribeToRxEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
-        Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo693ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Observable observeOn2 = observeOn.subscribeOn(this.schedulersProvider.mo694io()).observeOn(this.schedulersProvider.mo693ui());
+        Observable observeOn2 = observeOn.subscribeOn(this.schedulersProvider.mo699io()).observeOn(this.schedulersProvider.mo698ui());
         final WalletConnectManagerImpl$subscribeToRxEvents$1 walletConnectManagerImpl$subscribeToRxEvents$1 = new WalletConnectManagerImpl$subscribeToRxEvents$1(this);
         Disposable subscribe = observeOn2.subscribe(new Consumer() { // from class: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda5
             @Override // io.reactivex.functions.Consumer
@@ -485,7 +485,7 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
         String gasPrice = wCEthereumTransaction.getGasPrice();
         BigInteger convertFromWei = (gasPrice == null || (hexToBigIntegerOrNull = CryptoExtKt.hexToBigIntegerOrNull(gasPrice)) == null) ? null : NumberExtKt.convertFromWei(hexToBigIntegerOrNull, Convert.Unit.GWEI);
         String nonce = wCEthereumTransaction.getNonce();
-        Observable<Result<WalletConnectProcessedTransaction>> observeOn = walletConnectInteractor.getWalletConnectParamsForCryptoTransaction(new WalletConnectTransaction(from, str, bigInteger, data, hexToBigIntegerOrNull2, convertFromWei, nonce != null ? CryptoExtKt.hexToBigIntegerOrNull(nonce) : null, this.cryptoPreferenceHelper.getNetworkType())).observeOn(this.schedulersProvider.mo693ui());
+        Observable<Result<WalletConnectProcessedTransaction>> observeOn = walletConnectInteractor.getWalletConnectParamsForCryptoTransaction(new WalletConnectTransaction(from, str, bigInteger, data, hexToBigIntegerOrNull2, convertFromWei, nonce != null ? CryptoExtKt.hexToBigIntegerOrNull(nonce) : null, this.cryptoPreferenceHelper.getNetworkType())).observeOn(this.schedulersProvider.mo698ui());
         final WalletConnectManagerImpl$onTransactionProcessing$1$1 walletConnectManagerImpl$onTransactionProcessing$1$1 = new WalletConnectManagerImpl$onTransactionProcessing$1$1(this, j, wCSessionStoreItem, z);
         Consumer<? super Result<WalletConnectProcessedTransaction>> consumer = new Consumer() { // from class: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$$ExternalSyntheticLambda8
             @Override // io.reactivex.functions.Consumer
@@ -526,7 +526,7 @@ public final class WalletConnectManagerImpl implements WalletConnectManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void processError(Throwable th) {
-        Timber.m4e(th);
+        Timber.m6e(th);
         getEventsDelegate().onFailure(th);
     }
 

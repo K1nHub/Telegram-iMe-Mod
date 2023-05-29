@@ -1,7 +1,7 @@
 package com.google.android.gms.common.api.internal;
 
 import android.content.Context;
-import com.google.android.gms.auth.api.signin.internal.C0688Storage;
+import com.google.android.gms.auth.api.signin.internal.C0693Storage;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.common.api.Result;
 import com.google.android.gms.common.api.ResultCallback;
@@ -28,7 +28,7 @@ public final class zabb implements ResultCallback {
         Context context;
         Status status = (Status) result;
         context = this.zad.zan;
-        C0688Storage.getInstance(context).zac();
+        C0693Storage.getInstance(context).zac();
         if (status.isSuccess() && this.zad.isConnected()) {
             zabe zabeVar = this.zad;
             zabeVar.disconnect();

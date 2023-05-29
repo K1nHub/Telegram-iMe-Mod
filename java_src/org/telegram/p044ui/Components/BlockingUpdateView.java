@@ -26,7 +26,7 @@ import java.io.File;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -64,20 +64,22 @@ public class BlockingUpdateView extends FrameLayout implements NotificationCente
 
     public BlockingUpdateView(Context context) {
         super(context);
-        this.gradientDrawableTop = new GradientDrawable(GradientDrawable.Orientation.TOP_BOTTOM, new int[]{Theme.getColor("windowBackgroundWhite"), 0});
-        this.gradientDrawableBottom = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{Theme.getColor("windowBackgroundWhite"), 0});
-        setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-        int i = Build.VERSION.SDK_INT;
-        int i2 = i >= 21 ? (int) (AndroidUtilities.statusBarHeight / AndroidUtilities.density) : 0;
+        GradientDrawable.Orientation orientation = GradientDrawable.Orientation.TOP_BOTTOM;
+        int i = Theme.key_windowBackgroundWhite;
+        this.gradientDrawableTop = new GradientDrawable(orientation, new int[]{Theme.getColor(i), 0});
+        this.gradientDrawableBottom = new GradientDrawable(GradientDrawable.Orientation.BOTTOM_TOP, new int[]{Theme.getColor(i), 0});
+        setBackgroundColor(Theme.getColor(i));
+        int i2 = Build.VERSION.SDK_INT;
+        int i3 = i2 >= 21 ? (int) (AndroidUtilities.statusBarHeight / AndroidUtilities.density) : 0;
         FrameLayout frameLayout = new FrameLayout(context);
-        addView(frameLayout, new FrameLayout.LayoutParams(-1, AndroidUtilities.m50dp(176) + (i >= 21 ? AndroidUtilities.statusBarHeight : 0)));
+        addView(frameLayout, new FrameLayout.LayoutParams(-1, AndroidUtilities.m54dp(176) + (i2 >= 21 ? AndroidUtilities.statusBarHeight : 0)));
         RLottieImageView rLottieImageView = new RLottieImageView(context);
-        rLottieImageView.setAnimation(C3242R.raw.qr_code_logo, 108, 108);
+        rLottieImageView.setAnimation(C3290R.raw.qr_code_logo, 108, 108);
         rLottieImageView.playAnimation();
         rLottieImageView.getAnimatedDrawable().setAutoRepeat(1);
         rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
-        rLottieImageView.setPadding(0, 0, 0, AndroidUtilities.m50dp(14));
-        frameLayout.addView(rLottieImageView, LayoutHelper.createFrame(-2, -2, 17, 0, i2, 0, 0));
+        rLottieImageView.setPadding(0, 0, 0, AndroidUtilities.m54dp(14));
+        frameLayout.addView(rLottieImageView, LayoutHelper.createFrame(-2, -2, 17, 0, i3, 0, 0));
         rLottieImageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.BlockingUpdateView$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -87,26 +89,27 @@ public class BlockingUpdateView extends FrameLayout implements NotificationCente
         FrameLayout frameLayout2 = new FrameLayout(context);
         ScrollView scrollView = new ScrollView(context);
         this.scrollView = scrollView;
-        AndroidUtilities.setScrollViewEdgeEffectColor(scrollView, Theme.getColor("actionBarDefault"));
-        this.scrollView.setPadding(0, AndroidUtilities.m50dp(16), 0, AndroidUtilities.m50dp(16));
+        AndroidUtilities.setScrollViewEdgeEffectColor(scrollView, Theme.getColor(Theme.key_actionBarDefault));
+        this.scrollView.setPadding(0, AndroidUtilities.m54dp(16), 0, AndroidUtilities.m54dp(16));
         this.scrollView.setClipToPadding(false);
-        addView(this.scrollView, LayoutHelper.createFrame(-1, -1, 51, 27, i2 + 178, 27, (int) TsExtractor.TS_STREAM_TYPE_HDMV_DTS));
+        addView(this.scrollView, LayoutHelper.createFrame(-1, -1, 51, 27, i3 + 178, 27, (int) TsExtractor.TS_STREAM_TYPE_HDMV_DTS));
         this.scrollView.addView(frameLayout2);
         TextView textView = new TextView(context);
-        textView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        int i4 = Theme.key_windowBackgroundWhiteBlackText;
+        textView.setTextColor(Theme.getColor(i4));
         textView.setTextSize(1, 20.0f);
         textView.setGravity(49);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView.setText(LocaleController.getString("UpdateTelegram", C3242R.string.UpdateTelegram));
+        textView.setText(LocaleController.getString("UpdateTelegram", C3290R.string.UpdateTelegram));
         frameLayout2.addView(textView, LayoutHelper.createFrame(-2, -2, 49));
         TextView textView2 = new TextView(context);
         this.textView = textView2;
-        textView2.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
-        this.textView.setLinkTextColor(Theme.getColor("windowBackgroundWhiteLinkText"));
+        textView2.setTextColor(Theme.getColor(i4));
+        this.textView.setLinkTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteLinkText));
         this.textView.setTextSize(1, 15.0f);
         this.textView.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
         this.textView.setGravity(49);
-        this.textView.setLineSpacing(AndroidUtilities.m50dp(2), 1.0f);
+        this.textView.setLineSpacing(AndroidUtilities.m54dp(2), 1.0f);
         frameLayout2.addView(this.textView, LayoutHelper.createFrame(-2, -2, 51, 0, 44, 0, 0));
         FrameLayout frameLayout3 = new FrameLayout(this, context) { // from class: org.telegram.ui.Components.BlockingUpdateView.1
             CellFlickerDrawable cellFlickerDrawable;
@@ -123,23 +126,23 @@ public class BlockingUpdateView extends FrameLayout implements NotificationCente
                 this.cellFlickerDrawable.setParentWidth(getMeasuredWidth());
                 RectF rectF = AndroidUtilities.rectTmp;
                 rectF.set(BitmapDescriptorFactory.HUE_RED, BitmapDescriptorFactory.HUE_RED, getMeasuredWidth(), getMeasuredHeight());
-                this.cellFlickerDrawable.draw(canvas, rectF, AndroidUtilities.m50dp(4), null);
+                this.cellFlickerDrawable.draw(canvas, rectF, AndroidUtilities.m54dp(4), null);
                 invalidate();
             }
 
             @Override // android.widget.FrameLayout, android.view.View
-            protected void onMeasure(int i3, int i4) {
-                if (View.MeasureSpec.getSize(i3) > AndroidUtilities.m50dp(260)) {
-                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(320), 1073741824), i4);
+            protected void onMeasure(int i5, int i6) {
+                if (View.MeasureSpec.getSize(i5) > AndroidUtilities.m54dp(260)) {
+                    super.onMeasure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(320), 1073741824), i6);
                 } else {
-                    super.onMeasure(i3, i4);
+                    super.onMeasure(i5, i6);
                 }
             }
         };
         this.acceptButton = frameLayout3;
-        frameLayout3.setPadding(AndroidUtilities.m50dp(34), 0, AndroidUtilities.m50dp(34), 0);
-        this.acceptButton.setBackgroundDrawable(Theme.AdaptiveRipple.filledRect("featuredStickers_addButton", 4.0f));
-        this.acceptButton.setPadding(AndroidUtilities.m50dp(34), 0, AndroidUtilities.m50dp(34), 0);
+        frameLayout3.setPadding(AndroidUtilities.m54dp(34), 0, AndroidUtilities.m54dp(34), 0);
+        this.acceptButton.setBackgroundDrawable(Theme.AdaptiveRipple.filledRectByKey(Theme.key_featuredStickers_addButton, 4.0f));
+        this.acceptButton.setPadding(AndroidUtilities.m54dp(34), 0, AndroidUtilities.m54dp(34), 0);
         addView(this.acceptButton, LayoutHelper.createFrame(-2, 46, 81, 0, 0, 0, 45));
         this.acceptButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.BlockingUpdateView$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
@@ -156,12 +159,12 @@ public class BlockingUpdateView extends FrameLayout implements NotificationCente
         this.acceptButton.addView(this.acceptTextView, LayoutHelper.createFrame(-2, -2, 17));
         FrameLayout frameLayout4 = new FrameLayout(context) { // from class: org.telegram.ui.Components.BlockingUpdateView.2
             @Override // android.widget.FrameLayout, android.view.ViewGroup, android.view.View
-            protected void onLayout(boolean z, int i3, int i4, int i5, int i6) {
-                super.onLayout(z, i3, i4, i5, i6);
-                int m50dp = AndroidUtilities.m50dp(36);
-                int i7 = ((i5 - i3) - m50dp) / 2;
-                int i8 = ((i6 - i4) - m50dp) / 2;
-                BlockingUpdateView.this.radialProgress.setProgressRect(i7, i8, i7 + m50dp, m50dp + i8);
+            protected void onLayout(boolean z, int i5, int i6, int i7, int i8) {
+                super.onLayout(z, i5, i6, i7, i8);
+                int m54dp = AndroidUtilities.m54dp(36);
+                int i9 = ((i7 - i5) - m54dp) / 2;
+                int i10 = ((i8 - i6) - m54dp) / 2;
+                BlockingUpdateView.this.radialProgress.setProgressRect(i9, i10, i9 + m54dp, m54dp + i10);
             }
 
             @Override // android.view.View
@@ -271,11 +274,11 @@ public class BlockingUpdateView extends FrameLayout implements NotificationCente
                 try {
                     activity.startActivityForResult(intent, 500);
                 } catch (Exception e) {
-                    FileLog.m45e(e);
+                    FileLog.m49e(e);
                 }
             }
         } catch (Exception e2) {
-            FileLog.m45e(e2);
+            FileLog.m49e(e2);
         }
         return z;
     }
@@ -336,9 +339,9 @@ public class BlockingUpdateView extends FrameLayout implements NotificationCente
         this.textView.setText(spannableStringBuilder);
         if (tLRPC$TL_help_appUpdate.document instanceof TLRPC$TL_document) {
             TextView textView = this.acceptTextView;
-            textView.setText(LocaleController.getString("Update", C3242R.string.Update) + String.format(Locale.US, " (%1$s)", AndroidUtilities.formatFileSize(tLRPC$TL_help_appUpdate.document.size)));
+            textView.setText(LocaleController.getString("Update", C3290R.string.Update) + String.format(Locale.US, " (%1$s)", AndroidUtilities.formatFileSize(tLRPC$TL_help_appUpdate.document.size)));
         } else {
-            this.acceptTextView.setText(LocaleController.getString("Update", C3242R.string.Update));
+            this.acceptTextView.setText(LocaleController.getString("Update", C3290R.string.Update));
         }
         NotificationCenter.getInstance(this.accountNum).addObserver(this, NotificationCenter.fileLoaded);
         NotificationCenter.getInstance(this.accountNum).addObserver(this, NotificationCenter.fileLoadFailed);
@@ -384,9 +387,9 @@ public class BlockingUpdateView extends FrameLayout implements NotificationCente
     @Override // android.view.ViewGroup, android.view.View
     protected void dispatchDraw(Canvas canvas) {
         super.dispatchDraw(canvas);
-        this.gradientDrawableTop.setBounds(this.scrollView.getLeft(), this.scrollView.getTop(), this.scrollView.getRight(), this.scrollView.getTop() + AndroidUtilities.m50dp(16));
+        this.gradientDrawableTop.setBounds(this.scrollView.getLeft(), this.scrollView.getTop(), this.scrollView.getRight(), this.scrollView.getTop() + AndroidUtilities.m54dp(16));
         this.gradientDrawableTop.draw(canvas);
-        this.gradientDrawableBottom.setBounds(this.scrollView.getLeft(), this.scrollView.getBottom() - AndroidUtilities.m50dp(18), this.scrollView.getRight(), this.scrollView.getBottom());
+        this.gradientDrawableBottom.setBounds(this.scrollView.getLeft(), this.scrollView.getBottom() - AndroidUtilities.m54dp(18), this.scrollView.getRight(), this.scrollView.getBottom());
         this.gradientDrawableBottom.draw(canvas);
     }
 }

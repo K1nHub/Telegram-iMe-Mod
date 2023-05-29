@@ -81,7 +81,7 @@ public class BackgroundGradientDrawable extends GradientDrawable {
         }
 
         /* renamed from: of */
-        public static Sizes m29of(int i, int i2, int... iArr) {
+        public static Sizes m31of(int i, int i2, int... iArr) {
             return new Sizes(i, i2, iArr);
         }
 
@@ -102,12 +102,12 @@ public class BackgroundGradientDrawable extends GradientDrawable {
             int i = (int) (point.x * f);
             int i2 = (int) (point.y * f);
             if (i == i2) {
-                return m29of(i, i2, new int[0]);
+                return m31of(i, i2, new int[0]);
             }
             if (orientation == Orientation.BOTH) {
-                return m29of(i, i2, i2, i);
+                return m31of(i, i2, i2, i);
             }
-            return (orientation == Orientation.PORTRAIT) == (i < i2) ? m29of(i, i2, new int[0]) : m29of(i2, i, new int[0]);
+            return (orientation == Orientation.PORTRAIT) == (i < i2) ? m31of(i, i2, new int[0]) : m31of(i2, i, new int[0]);
         }
     }
 
@@ -383,40 +383,40 @@ public class BackgroundGradientDrawable extends GradientDrawable {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.BackgroundGradientDrawable$2 */
     /* loaded from: classes6.dex */
-    public static /* synthetic */ class C40562 {
+    public static /* synthetic */ class C41122 {
 
         /* renamed from: $SwitchMap$android$graphics$drawable$GradientDrawable$Orientation */
-        static final /* synthetic */ int[] f1613x8f1352bc;
+        static final /* synthetic */ int[] f1620x8f1352bc;
 
         static {
             int[] iArr = new int[GradientDrawable.Orientation.values().length];
-            f1613x8f1352bc = iArr;
+            f1620x8f1352bc = iArr;
             try {
                 iArr[GradientDrawable.Orientation.TOP_BOTTOM.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f1613x8f1352bc[GradientDrawable.Orientation.TR_BL.ordinal()] = 2;
+                f1620x8f1352bc[GradientDrawable.Orientation.TR_BL.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f1613x8f1352bc[GradientDrawable.Orientation.RIGHT_LEFT.ordinal()] = 3;
+                f1620x8f1352bc[GradientDrawable.Orientation.RIGHT_LEFT.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f1613x8f1352bc[GradientDrawable.Orientation.BR_TL.ordinal()] = 4;
+                f1620x8f1352bc[GradientDrawable.Orientation.BR_TL.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f1613x8f1352bc[GradientDrawable.Orientation.BOTTOM_TOP.ordinal()] = 5;
+                f1620x8f1352bc[GradientDrawable.Orientation.BOTTOM_TOP.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f1613x8f1352bc[GradientDrawable.Orientation.BL_TR.ordinal()] = 6;
+                f1620x8f1352bc[GradientDrawable.Orientation.BL_TR.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f1613x8f1352bc[GradientDrawable.Orientation.LEFT_RIGHT.ordinal()] = 7;
+                f1620x8f1352bc[GradientDrawable.Orientation.LEFT_RIGHT.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
         }
@@ -424,7 +424,7 @@ public class BackgroundGradientDrawable extends GradientDrawable {
 
     public static Rect getGradientPoints(GradientDrawable.Orientation orientation, int i, int i2) {
         Rect rect = new Rect();
-        switch (C40562.f1613x8f1352bc[orientation.ordinal()]) {
+        switch (C41122.f1620x8f1352bc[orientation.ordinal()]) {
             case 1:
                 int i3 = i / 2;
                 rect.left = i3;

@@ -123,7 +123,7 @@ public abstract class CircleCheckCell extends FrameLayout {
         textView.setMaxLines(2);
         textView.setGravity(1);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setTextColor(Theme.getColor("dialogTextBlack"));
+        textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
         textView.setTextSize(1, 11.0f);
         textView.setLines(2);
         return textView;
@@ -132,7 +132,7 @@ public abstract class CircleCheckCell extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final CheckBox2 initCheckBox() {
         final CheckBox2 checkBox2 = new CheckBox2(getContext(), 21);
-        checkBox2.setColor(null, "dialogBackground", "dialogRoundCheckBoxCheck");
+        checkBox2.setColor(-1, Theme.key_dialogBackground, Theme.key_dialogRoundCheckBoxCheck);
         checkBox2.setDrawUnchecked(false);
         checkBox2.setDrawBackgroundAsArc(4);
         checkBox2.setProgressDelegate(new CheckBoxBase.ProgressDelegate() { // from class: com.iMe.fork.ui.view.CircleCheckCell$$ExternalSyntheticLambda0

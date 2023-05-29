@@ -4,6 +4,7 @@ import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import com.iMe.model.common.NoChildNode;
 import com.iMe.storage.domain.model.wallet.token.TokenBalance;
 import kotlin.jvm.internal.Intrinsics;
+import org.telegram.p044ui.ActionBar.Theme;
 /* compiled from: StakingProgrammeItem.kt */
 /* loaded from: classes3.dex */
 public final class StakingProgrammeItem extends NoChildNode {
@@ -13,13 +14,13 @@ public final class StakingProgrammeItem extends NoChildNode {
     private final String endsAt;
 
     /* renamed from: id */
-    private final long f270id;
+    private final long f274id;
     private final boolean isParticipated;
     private final String name;
     private final TokenBalance tokenBalance;
 
     public final long component1() {
-        return this.f270id;
+        return this.f274id;
     }
 
     public final String component2() {
@@ -66,28 +67,28 @@ public final class StakingProgrammeItem extends NoChildNode {
         }
         if (obj instanceof StakingProgrammeItem) {
             StakingProgrammeItem stakingProgrammeItem = (StakingProgrammeItem) obj;
-            return this.f270id == stakingProgrammeItem.f270id && Intrinsics.areEqual(this.name, stakingProgrammeItem.name) && this.isParticipated == stakingProgrammeItem.isParticipated && Intrinsics.areEqual(this.tokenBalance, stakingProgrammeItem.tokenBalance) && Intrinsics.areEqual(this.apr, stakingProgrammeItem.apr) && Intrinsics.areEqual(this.apy, stakingProgrammeItem.apy) && this.annualPercentageMode == stakingProgrammeItem.annualPercentageMode && Intrinsics.areEqual(this.endsAt, stakingProgrammeItem.endsAt);
+            return this.f274id == stakingProgrammeItem.f274id && Intrinsics.areEqual(this.name, stakingProgrammeItem.name) && this.isParticipated == stakingProgrammeItem.isParticipated && Intrinsics.areEqual(this.tokenBalance, stakingProgrammeItem.tokenBalance) && Intrinsics.areEqual(this.apr, stakingProgrammeItem.apr) && Intrinsics.areEqual(this.apy, stakingProgrammeItem.apy) && this.annualPercentageMode == stakingProgrammeItem.annualPercentageMode && Intrinsics.areEqual(this.endsAt, stakingProgrammeItem.endsAt);
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int m702m = ((BotsDbModel$$ExternalSyntheticBackport0.m702m(this.f270id) * 31) + this.name.hashCode()) * 31;
+        int m706m = ((BotsDbModel$$ExternalSyntheticBackport0.m706m(this.f274id) * 31) + this.name.hashCode()) * 31;
         boolean z = this.isParticipated;
         int i = z;
         if (z != 0) {
             i = 1;
         }
-        return ((((((((((m702m + i) * 31) + this.tokenBalance.hashCode()) * 31) + this.apr.hashCode()) * 31) + this.apy.hashCode()) * 31) + this.annualPercentageMode.hashCode()) * 31) + this.endsAt.hashCode();
+        return ((((((((((m706m + i) * 31) + this.tokenBalance.hashCode()) * 31) + this.apr.hashCode()) * 31) + this.apy.hashCode()) * 31) + this.annualPercentageMode.hashCode()) * 31) + this.endsAt.hashCode();
     }
 
     public String toString() {
-        return "StakingProgrammeItem(id=" + this.f270id + ", name=" + this.name + ", isParticipated=" + this.isParticipated + ", tokenBalance=" + this.tokenBalance + ", apr=" + this.apr + ", apy=" + this.apy + ", annualPercentageMode=" + this.annualPercentageMode + ", endsAt=" + this.endsAt + ')';
+        return "StakingProgrammeItem(id=" + this.f274id + ", name=" + this.name + ", isParticipated=" + this.isParticipated + ", tokenBalance=" + this.tokenBalance + ", apr=" + this.apr + ", apy=" + this.apy + ", annualPercentageMode=" + this.annualPercentageMode + ", endsAt=" + this.endsAt + ')';
     }
 
     public final long getId() {
-        return this.f270id;
+        return this.f274id;
     }
 
     public final String getName() {
@@ -125,7 +126,7 @@ public final class StakingProgrammeItem extends NoChildNode {
         Intrinsics.checkNotNullParameter(apy, "apy");
         Intrinsics.checkNotNullParameter(annualPercentageMode, "annualPercentageMode");
         Intrinsics.checkNotNullParameter(endsAt, "endsAt");
-        this.f270id = j;
+        this.f274id = j;
         this.name = name;
         this.isParticipated = z;
         this.tokenBalance = tokenBalance;
@@ -135,8 +136,8 @@ public final class StakingProgrammeItem extends NoChildNode {
         this.endsAt = endsAt;
     }
 
-    public final String getPercentageTextColor(StakingAnnualPercentageMode annualPercentageMode) {
+    public final int getPercentageTextColor(StakingAnnualPercentageMode annualPercentageMode) {
         Intrinsics.checkNotNullParameter(annualPercentageMode, "annualPercentageMode");
-        return this.annualPercentageMode == annualPercentageMode ? "windowBackgroundWhiteBlueText" : "windowBackgroundWhiteBlackText";
+        return this.annualPercentageMode == annualPercentageMode ? Theme.key_windowBackgroundWhiteBlueText : Theme.key_windowBackgroundWhiteBlackText;
     }
 }

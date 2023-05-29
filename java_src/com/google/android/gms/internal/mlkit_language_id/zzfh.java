@@ -7,7 +7,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.RandomAccess;
 /* compiled from: com.google.mlkit:language-id@@16.1.1 */
-/* loaded from: classes.dex */
+/* loaded from: classes3.dex */
 public final class zzfh extends zzdi<String> implements zzfg, RandomAccess {
     private static final zzfh zza;
     private static final zzfg zzb;
@@ -82,7 +82,7 @@ public final class zzfh extends zzdi<String> implements zzfg, RandomAccess {
 
     @Override // com.google.android.gms.internal.mlkit_language_id.zzfg
     /* renamed from: a_ */
-    public final zzfg mo757a_() {
+    public final zzfg mo761a_() {
         return zza() ? new zzhi(this) : this;
     }
 
@@ -177,7 +177,7 @@ public final class zzfh extends zzdi<String> implements zzfg, RandomAccess {
     static {
         zzfh zzfhVar = new zzfh();
         zza = zzfhVar;
-        zzfhVar.mo758b_();
+        zzfhVar.mo762b_();
         zzb = zzfhVar;
     }
 }

@@ -6,7 +6,7 @@
 # instance fields
 .field private avatarDrawable:Lorg/telegram/ui/Components/AvatarDrawable;
 
-.field private backgroundColorKey:Ljava/lang/String;
+.field private backgroundColorKey:I
 
 .field checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
@@ -63,10 +63,10 @@
 
     iput v0, p0, Lorg/telegram/ui/Cells/HintDialogCell;->currentAccount:I
 
-    const-string v0, "windowBackgroundWhite"
-
     .line 183
-    iput-object v0, p0, Lorg/telegram/ui/Cells/HintDialogCell;->backgroundColorKey:Ljava/lang/String;
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    iput v0, p0, Lorg/telegram/ui/Cells/HintDialogCell;->backgroundColorKey:I
 
     .line 58
     iput-boolean p2, p0, Lorg/telegram/ui/Cells/HintDialogCell;->drawCheckbox:Z
@@ -123,9 +123,9 @@
     .line 72
     iget-object v0, p0, Lorg/telegram/ui/Cells/HintDialogCell;->nameTextView:Landroid/widget/TextView;
 
-    const-string v1, "windowBackgroundWhiteBlackText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -216,11 +216,11 @@
     .line 82
     iget-object v0, p0, Lorg/telegram/ui/Cells/HintDialogCell;->counterView:Lorg/telegram/ui/Components/CounterView;
 
-    const-string v1, "chats_unreadCounterText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_unreadCounterText:I
 
-    const-string v2, "chats_unreadCounter"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_unreadCounter:I
 
-    invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/CounterView;->setColors(Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, v2}, Lorg/telegram/ui/Components/CounterView;->setColors(II)V
 
     .line 83
     iget-object v0, p0, Lorg/telegram/ui/Cells/HintDialogCell;->counterView:Lorg/telegram/ui/Components/CounterView;
@@ -240,14 +240,14 @@
 
     iput-object p2, p0, Lorg/telegram/ui/Cells/HintDialogCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
-    const-string p1, "dialogRoundCheckBox"
-
-    const-string v0, "dialogBackground"
-
-    const-string v1, "dialogRoundCheckBoxCheck"
-
     .line 87
-    invoke-virtual {p2, p1, v0, v1}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogRoundCheckBox:I
+
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
+
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogRoundCheckBoxCheck:I
+
+    invoke-virtual {p2, p1, v0, v1}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
     .line 88
     iget-object p1, p0, Lorg/telegram/ui/Cells/HintDialogCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
@@ -533,9 +533,9 @@
     .line 211
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    iget-object v2, p0, Lorg/telegram/ui/Cells/HintDialogCell;->backgroundColorKey:Ljava/lang/String;
+    iget v2, p0, Lorg/telegram/ui/Cells/HintDialogCell;->backgroundColorKey:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -557,9 +557,9 @@
     .line 213
     sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->dialogs_onlineCirclePaint:Landroid/graphics/Paint;
 
-    const-string v2, "chats_onlineCircle"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_onlineCircle:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -643,9 +643,9 @@
     .line 227
     sget-object v2, Lorg/telegram/ui/ActionBar/Theme;->checkboxSquare_checkPaint:Landroid/graphics/Paint;
 
-    const-string v3, "dialogRoundCheckBox"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_dialogRoundCheckBox:I
 
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -750,29 +750,29 @@
     return-void
 .end method
 
-.method public setColors(Ljava/lang/String;Ljava/lang/String;)V
+.method public setColors(II)V
     .locals 2
 
     .line 143
     iget-object v0, p0, Lorg/telegram/ui/Cells/HintDialogCell;->nameTextView:Landroid/widget/TextView;
 
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 144
-    iput-object p2, p0, Lorg/telegram/ui/Cells/HintDialogCell;->backgroundColorKey:Ljava/lang/String;
+    iput p2, p0, Lorg/telegram/ui/Cells/HintDialogCell;->backgroundColorKey:I
 
     .line 145
     iget-object p1, p0, Lorg/telegram/ui/Cells/HintDialogCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
-    const-string v0, "dialogRoundCheckBox"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogRoundCheckBox:I
 
-    const-string v1, "dialogRoundCheckBoxCheck"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogRoundCheckBoxCheck:I
 
-    invoke-virtual {p1, v0, p2, v1}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p1, v0, p2, v1}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
     return-void
 .end method

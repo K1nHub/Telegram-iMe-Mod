@@ -22,7 +22,7 @@ public final class zznz implements BackgroundDetector.BackgroundStateChangeListe
         StringBuilder sb = new StringBuilder(34);
         sb.append("Background state changed to: ");
         sb.append(z);
-        gmsLogger.m779v("ModelResourceManager", sb.toString());
+        gmsLogger.m783v("ModelResourceManager", sb.toString());
         atomicLong = this.zzatt.zzatv;
         atomicLong.set(z ? ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS : 300000L);
         this.zzatt.zzlp();

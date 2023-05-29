@@ -63,7 +63,7 @@ public class CompactHashMap<K, V> extends AbstractMap<K, V> implements Serializa
 
     void init(int i) {
         Preconditions.checkArgument(i >= 0, "Expected size must be >= 0");
-        this.metadata = Ints.constrainToRange(i, 1, IdFabric$RequestCode.file_saving_directory);
+        this.metadata = Ints.constrainToRange(i, 1, IdFabric$RequestCode.FILE_SAVING_DIRECTORY);
     }
 
     boolean needsAllocArrays() {
@@ -191,7 +191,7 @@ public class CompactHashMap<K, V> extends AbstractMap<K, V> implements Serializa
     private void resizeMeMaybe(int i) {
         int min;
         int length = requireEntries().length;
-        if (i <= length || (min = Math.min((int) IdFabric$RequestCode.file_saving_directory, (Math.max(1, length >>> 1) + length) | 1)) == length) {
+        if (i <= length || (min = Math.min((int) IdFabric$RequestCode.FILE_SAVING_DIRECTORY, (Math.max(1, length >>> 1) + length) | 1)) == length) {
             return;
         }
         resizeEntries(min);
@@ -702,7 +702,7 @@ public class CompactHashMap<K, V> extends AbstractMap<K, V> implements Serializa
         incrementModCount();
         Map<K, V> delegateOrNull = delegateOrNull();
         if (delegateOrNull != null) {
-            this.metadata = Ints.constrainToRange(size(), 3, IdFabric$RequestCode.file_saving_directory);
+            this.metadata = Ints.constrainToRange(size(), 3, IdFabric$RequestCode.FILE_SAVING_DIRECTORY);
             delegateOrNull.clear();
             this.table = null;
             this.size = 0;

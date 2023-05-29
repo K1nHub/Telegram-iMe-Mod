@@ -18,7 +18,7 @@
 .method constructor <init>()V
     .locals 0
 
-    .line 114
+    .line 121
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$ItemDecoration;-><init>()V
 
     return-void
@@ -45,7 +45,7 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 116
+    .line 123
     invoke-virtual {p3, p2}, Landroidx/recyclerview/widget/RecyclerView;->getChildViewHolder(Landroid/view/View;)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
 
     move-result-object p2
@@ -56,14 +56,14 @@
 
     check-cast p2, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
-    .line 117
+    .line 124
     invoke-virtual {p2}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result p2
 
     const/4 p3, 0x4
 
-    .line 118
+    .line 125
     rem-int/2addr p2, p3
 
     const/4 p4, 0x0
@@ -88,7 +88,7 @@
 
     goto :goto_1
 
-    .line 119
+    .line 126
     :cond_1
     invoke-static {p3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 

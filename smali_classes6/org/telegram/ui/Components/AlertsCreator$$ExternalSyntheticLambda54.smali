@@ -2,38 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnDismissListener;
+.implements Landroid/content/DialogInterface$OnClickListener;
 
 
-# instance fields
-.field public final synthetic f$0:Landroid/widget/EditText;
-
-.field public final synthetic f$1:Landroid/widget/EditText;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda54;
 
 
 # direct methods
-.method public synthetic constructor <init>(Landroid/widget/EditText;Landroid/widget/EditText;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda54;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda54;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda54;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda54;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda54;->f$0:Landroid/widget/EditText;
-
-    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda54;->f$1:Landroid/widget/EditText;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onDismiss(Landroid/content/DialogInterface;)V
-    .locals 2
+.method public final onClick(Landroid/content/DialogInterface;I)V
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda54;->f$0:Landroid/widget/EditText;
-
-    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda54;->f$1:Landroid/widget/EditText;
-
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$Jge7vX2G9ZEOp4CFpngfWfDApHg(Landroid/widget/EditText;Landroid/widget/EditText;Landroid/content/DialogInterface;)V
+    invoke-static {p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$ZwcSLbQLIgbwtDuQuvfW064MFM8(Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

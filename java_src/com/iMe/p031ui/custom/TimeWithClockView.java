@@ -64,7 +64,7 @@ public final class TimeWithClockView extends AppCompatTextView {
     }
 
     public final void applyColors() {
-        setTextColor(Theme.getColor("chats_date"));
+        setTextColor(Theme.getColor(Theme.key_chats_date));
     }
 
     public final void setTime(TransactionItem transaction) {

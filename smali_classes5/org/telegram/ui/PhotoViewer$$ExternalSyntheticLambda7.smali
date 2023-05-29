@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda7;->f$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$peYywIYw8IHgDJmvIOIydyw1wII(Lorg/telegram/ui/PhotoViewer;Landroid/animation/ValueAnimator;)V
+    invoke-static {v0, p1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$mJwcSxDF4JNKnBRx_DXSuBmskFQ(Lorg/telegram/ui/PhotoViewer;Landroid/animation/ValueAnimator;)V
 
     return-void
 .end method

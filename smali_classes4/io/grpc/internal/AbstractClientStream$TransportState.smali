@@ -55,7 +55,7 @@
     .line 241
     iput-boolean p1, p0, Lio/grpc/internal/AbstractClientStream$TransportState;->deframerClosed:Z
 
-    const-string p1, "statsTraceCtx"
+    const-string/jumbo p1, "statsTraceCtx"
 
     .line 260
     invoke-static {p2, p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -214,7 +214,7 @@
     .line 281
     iget-boolean v0, p0, Lio/grpc/internal/AbstractClientStream$TransportState;->statusReported:Z
 
-    const-string v1, "status should have been reported on deframer closed"
+    const-string/jumbo v1, "status should have been reported on deframer closed"
 
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkState(ZLjava/lang/Object;)V
 
@@ -523,7 +523,7 @@
 .method protected inboundTrailersReceived(Lio/grpc/Metadata;Lio/grpc/Status;)V
     .locals 4
 
-    const-string v0, "status"
+    const-string/jumbo v0, "status"
 
     .line 388
     invoke-static {p2, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -641,7 +641,7 @@
 .method public final transportReportStatus(Lio/grpc/Status;Lio/grpc/internal/ClientStreamListener$RpcProgress;ZLio/grpc/Metadata;)V
     .locals 1
 
-    const-string v0, "status"
+    const-string/jumbo v0, "status"
 
     .line 436
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

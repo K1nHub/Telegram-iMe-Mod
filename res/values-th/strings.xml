@@ -101,6 +101,8 @@
     <string name="mtrl_picker_toggle_to_day_selection">แตะเพื่อสลับไปใช้การเลือกวัน</string>
     <string name="mtrl_picker_toggle_to_text_input_mode">สลับไปใช้โหมดป้อนข้อมูลข้อความ</string>
     <string name="mtrl_picker_toggle_to_year_selection">แตะเพื่อสลับไปใช้การเลือกปี</string>
+    <string name="nav_app_bar_navigate_up_description">นำทางขึ้น</string>
+    <string name="nav_app_bar_open_drawer_description">เปิดลิ้นชักการนำทาง</string>
     <string name="password_toggle_content_description">แสดงรหัสผ่าน</string>
     <string name="search_menu_title">ค้นหา</string>
     <string name="status_bar_notification_info_overflow">999+</string>

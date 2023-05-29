@@ -29,11 +29,11 @@ public final class WalletSelectTokenFragment$presenter$2 extends Lambda implemen
     /* compiled from: WalletSelectTokenFragment.kt */
     /* renamed from: com.iMe.ui.wallet.swap.token.WalletSelectTokenFragment$presenter$2$1 */
     /* loaded from: classes4.dex */
-    public static final class C23561 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C23951 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ WalletSelectTokenFragment this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C23561(WalletSelectTokenFragment walletSelectTokenFragment) {
+        C23951(WalletSelectTokenFragment walletSelectTokenFragment) {
             super(0);
             this.this$0 = walletSelectTokenFragment;
         }
@@ -59,7 +59,7 @@ public final class WalletSelectTokenFragment$presenter$2 extends Lambda implemen
     public final WalletSelectTokenPresenter invoke() {
         Lazy lazy;
         WalletSelectTokenFragment walletSelectTokenFragment = this.this$0;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2355x3527022a(walletSelectTokenFragment, null, new C23561(walletSelectTokenFragment)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2394x3527022a(walletSelectTokenFragment, null, new C23951(walletSelectTokenFragment)));
         return (WalletSelectTokenPresenter) lazy.getValue();
     }
 }

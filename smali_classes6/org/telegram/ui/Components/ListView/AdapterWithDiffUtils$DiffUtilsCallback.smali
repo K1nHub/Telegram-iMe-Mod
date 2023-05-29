@@ -42,7 +42,7 @@
 .method private constructor <init>(Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils;)V
     .locals 0
 
-    .line 41
+    .line 43
     invoke-direct {p0}, Landroidx/recyclerview/widget/DiffUtil$Callback;-><init>()V
 
     return-void
@@ -51,7 +51,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils;Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$1;)V
     .locals 0
 
-    .line 41
+    .line 43
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$DiffUtilsCallback;-><init>(Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils;)V
 
     return-void
@@ -70,7 +70,7 @@
 .method public areItemsTheSame(II)Z
     .locals 1
 
-    .line 63
+    .line 65
     iget-object v0, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$DiffUtilsCallback;->oldItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -97,7 +97,7 @@
 .method public getNewListSize()I
     .locals 1
 
-    .line 58
+    .line 60
     iget-object v0, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$DiffUtilsCallback;->newItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -110,7 +110,7 @@
 .method public getOldListSize()I
     .locals 1
 
-    .line 53
+    .line 55
     iget-object v0, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$DiffUtilsCallback;->oldItems:Ljava/util/ArrayList;
 
     invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
@@ -136,10 +136,10 @@
         }
     .end annotation
 
-    .line 47
+    .line 49
     iput-object p1, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$DiffUtilsCallback;->oldItems:Ljava/util/ArrayList;
 
-    .line 48
+    .line 50
     iput-object p2, p0, Lorg/telegram/ui/Components/ListView/AdapterWithDiffUtils$DiffUtilsCallback;->newItems:Ljava/util/ArrayList;
 
     return-void

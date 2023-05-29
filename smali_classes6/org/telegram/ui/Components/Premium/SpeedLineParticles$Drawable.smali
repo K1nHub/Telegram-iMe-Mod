@@ -311,10 +311,10 @@
 .method public updateColors()V
     .locals 2
 
-    const-string v0, "premiumStartSmallStarsColor2"
-
     .line 50
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_premiumStartSmallStarsColor2:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

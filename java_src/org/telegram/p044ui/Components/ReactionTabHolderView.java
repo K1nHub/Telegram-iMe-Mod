@@ -17,7 +17,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
@@ -48,12 +48,12 @@ public class ReactionTabHolderView extends FrameLayout {
         this.bgPaint = new Paint(1);
         new Path();
         this.rect = new RectF();
-        this.radius = AndroidUtilities.m50dp(32);
+        this.radius = AndroidUtilities.m54dp(32);
         View view = new View(context);
         this.overlaySelectorView = view;
         addView(view, LayoutHelper.createFrame(-1, -1));
         this.iconView = new ImageView(context);
-        Drawable mutate = ContextCompat.getDrawable(context, C3242R.C3244drawable.msg_reactions_filled).mutate();
+        Drawable mutate = ContextCompat.getDrawable(context, C3290R.C3292drawable.msg_reactions_filled).mutate();
         this.drawable = mutate;
         this.iconView.setImageDrawable(mutate);
         addView(this.iconView, LayoutHelper.createFrameRelatively(24.0f, 24.0f, 8388627, 8.0f, BitmapDescriptorFactory.HUE_RED, 8.0f, BitmapDescriptorFactory.HUE_RED));
@@ -63,25 +63,27 @@ public class ReactionTabHolderView extends FrameLayout {
         TextView textView = new TextView(context);
         this.counterView = textView;
         textView.setImportantForAccessibility(2);
-        this.counterView.setTextColor(Theme.getColor("avatar_nameInMessageBlue"));
+        this.counterView.setTextColor(Theme.getColor(Theme.key_avatar_nameInMessageBlue));
         this.counterView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         addView(this.counterView, LayoutHelper.createFrameRelatively(-1.0f, -2.0f, 8388627, 40.0f, BitmapDescriptorFactory.HUE_RED, 8.0f, BitmapDescriptorFactory.HUE_RED));
         this.outlinePaint.setStyle(Paint.Style.STROKE);
-        this.outlinePaint.setStrokeWidth(AndroidUtilities.m50dp(1));
+        this.outlinePaint.setStrokeWidth(AndroidUtilities.m54dp(1));
         setWillNotDraw(false);
         setOutlineProgress(this.outlineProgress);
     }
 
     public void setOutlineProgress(float f) {
         this.outlineProgress = f;
-        int color = Theme.getColor("chat_inReactionButtonBackground");
-        int alphaComponent = ColorUtils.setAlphaComponent(Theme.getColor("chat_inReactionButtonBackground"), 16);
-        int blendARGB = ColorUtils.blendARGB(Theme.getColor("chat_inReactionButtonText"), Theme.getColor("chat_inReactionButtonTextSelected"), f);
+        int i = Theme.key_chat_inReactionButtonBackground;
+        int color = Theme.getColor(i);
+        int alphaComponent = ColorUtils.setAlphaComponent(Theme.getColor(i), 16);
+        int i2 = Theme.key_chat_inReactionButtonTextSelected;
+        int blendARGB = ColorUtils.blendARGB(Theme.getColor(Theme.key_chat_inReactionButtonText), Theme.getColor(i2), f);
         this.bgPaint.setColor(ColorUtils.blendARGB(alphaComponent, color, f));
         this.counterView.setTextColor(blendARGB);
         this.drawable.setColorFilter(new PorterDuffColorFilter(blendARGB, PorterDuff.Mode.MULTIPLY));
         if (f == 1.0f) {
-            this.overlaySelectorView.setBackground(Theme.createSimpleSelectorRoundRectDrawable((int) this.radius, 0, ColorUtils.setAlphaComponent(Theme.getColor("chat_inReactionButtonTextSelected"), 76)));
+            this.overlaySelectorView.setBackground(Theme.createSimpleSelectorRoundRectDrawable((int) this.radius, 0, ColorUtils.setAlphaComponent(Theme.getColor(i2), 76)));
         } else if (f == BitmapDescriptorFactory.HUE_RED) {
             this.overlaySelectorView.setBackground(Theme.createSimpleSelectorRoundRectDrawable((int) this.radius, 0, ColorUtils.setAlphaComponent(color, 76)));
         }
@@ -104,7 +106,7 @@ public class ReactionTabHolderView extends FrameLayout {
         if (fromTLReaction.emojicon != null) {
             for (TLRPC$TL_availableReaction tLRPC$TL_availableReaction : MediaDataController.getInstance(i).getReactionsList()) {
                 if (tLRPC$TL_availableReaction.reaction.equals(this.reaction.emojicon)) {
-                    this.reactView.setImage(ImageLocation.getForDocument(tLRPC$TL_availableReaction.center_icon), "40_40_lastreactframe", "webp", DocumentObject.getSvgThumb(tLRPC$TL_availableReaction.static_icon, "windowBackgroundGray", 1.0f), tLRPC$TL_availableReaction);
+                    this.reactView.setImage(ImageLocation.getForDocument(tLRPC$TL_availableReaction.center_icon), "40_40_lastreactframe", "webp", DocumentObject.getSvgThumb(tLRPC$TL_availableReaction.static_icon, Theme.key_windowBackgroundGray, 1.0f), tLRPC$TL_availableReaction);
                     this.reactView.setVisibility(0);
                     this.iconView.setVisibility(8);
                     return;

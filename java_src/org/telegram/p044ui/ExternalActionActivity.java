@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -101,16 +101,16 @@ public class ExternalActionActivity extends Activity implements INavigationLayou
         ApplicationLoader.postInitApplication();
         requestWindowFeature(1);
         if (!SharedConfig.isVibrationEnabled) {
-            setTheme(C3242R.style.Theme_TMessages_NoHapticFeedback);
+            setTheme(C3290R.style.Theme_TMessages_NoHapticFeedback);
         } else {
-            setTheme(C3242R.style.Theme_TMessages);
+            setTheme(C3290R.style.Theme_TMessages);
         }
-        getWindow().setBackgroundDrawableResource(C3242R.C3244drawable.transparent);
+        getWindow().setBackgroundDrawableResource(C3290R.C3292drawable.transparent);
         if (SharedConfig.passcodeHash.length() > 0 && !SharedConfig.allowScreenCapture) {
             try {
                 getWindow().setFlags(8192, 8192);
             } catch (Exception e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
             }
         }
         super.onCreate(bundle);
@@ -161,7 +161,7 @@ public class ExternalActionActivity extends Activity implements INavigationLayou
             newLayout.setRemoveActionBarExtraHeight(true);
             this.layersActionBarLayout.setBackgroundView(frameLayout);
             this.layersActionBarLayout.setUseAlphaAnimations(true);
-            this.layersActionBarLayout.getView().setBackgroundResource(C3242R.C3244drawable.boxshadow);
+            this.layersActionBarLayout.getView().setBackgroundResource(C3290R.C3292drawable.boxshadow);
             relativeLayout.addView(this.layersActionBarLayout.getView(), LayoutHelper.createRelative(530, AndroidUtilities.isSmallTablet() ? 528 : 700));
             this.layersActionBarLayout.setFragmentStack(layerFragmentsStack);
             this.layersActionBarLayout.setDelegate(this);
@@ -314,9 +314,9 @@ public class ExternalActionActivity extends Activity implements INavigationLayou
                             this.layersActionBarLayout.showLastFragment();
                         }
                         AlertDialog.Builder builder = new AlertDialog.Builder(this);
-                        builder.setTitle(LocaleController.getString("AppName", C3242R.string.AppName));
-                        builder.setMessage(LocaleController.getString("PleaseLoginPassport", C3242R.string.PleaseLoginPassport));
-                        builder.setPositiveButton(LocaleController.getString("OK", C3242R.string.OK), null);
+                        builder.setTitle(LocaleController.getString("AppName", C3290R.string.AppName));
+                        builder.setMessage(LocaleController.getString("PleaseLoginPassport", C3290R.string.PleaseLoginPassport));
+                        builder.setPositiveButton(LocaleController.getString("OK", C3290R.string.OK), null);
                         builder.show();
                         return true;
                     } else if (activatedAccountsCount >= 2) {
@@ -439,7 +439,7 @@ public class ExternalActionActivity extends Activity implements INavigationLayou
         try {
             alertDialog.dismiss();
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
         if (tLObject != null) {
             MessagesController.getInstance(i).putUsers(tLRPC$TL_account_authorizationForm.users, false);
@@ -465,7 +465,7 @@ public class ExternalActionActivity extends Activity implements INavigationLayou
         try {
             alertDialog.dismiss();
             if ("APP_VERSION_OUTDATED".equals(tLRPC$TL_error.text)) {
-                AlertDialog showUpdateAppAlert = AlertsCreator.showUpdateAppAlert(this, LocaleController.getString("UpdateAppAlert", C3242R.string.UpdateAppAlert), true);
+                AlertDialog showUpdateAppAlert = AlertsCreator.showUpdateAppAlert(this, LocaleController.getString("UpdateAppAlert", C3290R.string.UpdateAppAlert), true);
                 if (showUpdateAppAlert != null) {
                     showUpdateAppAlert.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.ExternalActionActivity$$ExternalSyntheticLambda2
                         @Override // android.content.DialogInterface.OnDismissListener
@@ -486,7 +486,7 @@ public class ExternalActionActivity extends Activity implements INavigationLayou
                 finish();
             }
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
     }
 
@@ -537,8 +537,8 @@ public class ExternalActionActivity extends Activity implements INavigationLayou
             this.layersActionBarLayout.getView().setLayoutParams(layoutParams);
             if (!AndroidUtilities.isSmallTablet() || getResources().getConfiguration().orientation == 2) {
                 int i2 = (AndroidUtilities.displaySize.x / 100) * 35;
-                if (i2 < AndroidUtilities.m50dp(320)) {
-                    i2 = AndroidUtilities.m50dp(320);
+                if (i2 < AndroidUtilities.m54dp(320)) {
+                    i2 = AndroidUtilities.m54dp(320);
                 }
                 RelativeLayout.LayoutParams layoutParams2 = (RelativeLayout.LayoutParams) this.actionBarLayout.getView().getLayoutParams();
                 layoutParams2.width = i2;
@@ -634,11 +634,11 @@ public class ExternalActionActivity extends Activity implements INavigationLayou
                     if (ExternalActionActivity.this.lockRunnable == this) {
                         if (AndroidUtilities.needShowPasscode(true)) {
                             if (BuildVars.LOGS_ENABLED) {
-                                FileLog.m48d("lock app");
+                                FileLog.m52d("lock app");
                             }
                             ExternalActionActivity.this.showPasscodeActivity();
                         } else if (BuildVars.LOGS_ENABLED) {
-                            FileLog.m48d("didn't pass lock check");
+                            FileLog.m52d("didn't pass lock check");
                         }
                         ExternalActionActivity.this.lockRunnable = null;
                     }

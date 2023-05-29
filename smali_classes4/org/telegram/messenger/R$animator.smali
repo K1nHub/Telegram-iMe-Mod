@@ -66,6 +66,14 @@
 
 .field public static final mtrl_fab_transformation_sheet_expand_spec:I = 0x7f020019
 
+.field public static final nav_default_enter_anim:I = 0x7f02001a
+
+.field public static final nav_default_exit_anim:I = 0x7f02001b
+
+.field public static final nav_default_pop_enter_anim:I = 0x7f02001c
+
+.field public static final nav_default_pop_exit_anim:I = 0x7f02001d
+
 
 # direct methods
 .method private constructor <init>()V

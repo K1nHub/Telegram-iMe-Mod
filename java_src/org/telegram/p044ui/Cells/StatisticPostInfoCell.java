@@ -101,10 +101,14 @@ public class StatisticPostInfoCell extends FrameLayout {
         linearLayout3.addView(this.shares, LayoutHelper.createLinear(-2, -2));
         linearLayout.addView(linearLayout3, LayoutHelper.createFrame(-1, -2, 8388659, 0, 2, 0, 8));
         addView(linearLayout, LayoutHelper.createFrame(-1, -2, 0, 72, 0, 12, 0));
-        this.message.setTextColor(Theme.getColor("dialogTextBlack"));
-        this.views.setTextColor(Theme.getColor("dialogTextBlack"));
-        this.date.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText3"));
-        this.shares.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText3"));
+        TextView textView5 = this.message;
+        int i = Theme.key_dialogTextBlack;
+        textView5.setTextColor(Theme.getColor(i));
+        this.views.setTextColor(Theme.getColor(i));
+        TextView textView6 = this.date;
+        int i2 = Theme.key_windowBackgroundWhiteGrayText3;
+        textView6.setTextColor(Theme.getColor(i2));
+        this.shares.setTextColor(Theme.getColor(i2));
     }
 
     public void setData(StatisticActivity.RecentPostInfo recentPostInfo) {
@@ -113,10 +117,10 @@ public class StatisticPostInfoCell extends FrameLayout {
         ArrayList<TLRPC$PhotoSize> arrayList = messageObject.photoThumbs;
         if (arrayList != null) {
             this.imageView.setImage(ImageLocation.getForObject(FileLoader.getClosestPhotoSizeWithSize(arrayList, AndroidUtilities.getPhotoSize()), messageObject.photoThumbsObject), "50_50", ImageLocation.getForObject(FileLoader.getClosestPhotoSizeWithSize(messageObject.photoThumbs, 50), messageObject.photoThumbsObject), "b1", 0, messageObject);
-            this.imageView.setRoundRadius(AndroidUtilities.m50dp(4));
+            this.imageView.setRoundRadius(AndroidUtilities.m54dp(4));
         } else if (this.chat.chat_photo.sizes.size() > 0) {
             this.imageView.setImage(ImageLocation.getForPhoto(this.chat.chat_photo.sizes.get(0), this.chat.chat_photo), "50_50", (String) null, (Drawable) null, this.chat);
-            this.imageView.setRoundRadius(AndroidUtilities.m50dp(46) >> 1);
+            this.imageView.setRoundRadius(AndroidUtilities.m54dp(46) >> 1);
         }
         if (messageObject.isMusic()) {
             charSequence = String.format("%s, %s", messageObject.getMusicTitle().trim(), messageObject.getMusicAuthor().trim());
@@ -135,7 +139,7 @@ public class StatisticPostInfoCell extends FrameLayout {
     public void setData(StatisticActivity.MemberData memberData) {
         this.avatarDrawable.setInfo(memberData.user);
         this.imageView.setForUserOrChat(memberData.user, this.avatarDrawable);
-        this.imageView.setRoundRadius(AndroidUtilities.m50dp(46) >> 1);
+        this.imageView.setRoundRadius(AndroidUtilities.m54dp(46) >> 1);
         this.message.setText(memberData.user.first_name);
         this.date.setText(memberData.description);
         this.views.setVisibility(8);

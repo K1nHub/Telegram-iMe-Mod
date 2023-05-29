@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.Components.CubicBezierInterpolator;
 import org.telegram.p044ui.Components.EllipsizeSpanAnimator;
@@ -36,7 +36,7 @@ public class VoIPStatusTextView extends FrameLayout {
         for (int i = 0; i < 2; i++) {
             this.textView[i] = new TextView(context);
             this.textView[i].setTextSize(1, 15.0f);
-            this.textView[i].setShadowLayer(AndroidUtilities.m50dp(3), BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m51dp(0.6666667f), 1275068416);
+            this.textView[i].setShadowLayer(AndroidUtilities.m54dp(3), BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m55dp(0.6666667f), 1275068416);
             this.textView[i].setTextColor(-1);
             this.textView[i].setGravity(1);
             addView(this.textView[i]);
@@ -44,12 +44,12 @@ public class VoIPStatusTextView extends FrameLayout {
         TextView textView = new TextView(context);
         this.reconnectTextView = textView;
         textView.setTextSize(1, 15.0f);
-        this.reconnectTextView.setShadowLayer(AndroidUtilities.m50dp(3), BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m51dp(0.6666667f), 1275068416);
+        this.reconnectTextView.setShadowLayer(AndroidUtilities.m54dp(3), BitmapDescriptorFactory.HUE_RED, AndroidUtilities.m55dp(0.6666667f), 1275068416);
         this.reconnectTextView.setTextColor(-1);
         this.reconnectTextView.setGravity(1);
         addView(this.reconnectTextView, LayoutHelper.createFrame(-1, -2, 0, 0, 22, 0, 0));
         this.ellipsizeAnimator = new EllipsizeSpanAnimator(this);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString("VoipReconnecting", C3242R.string.VoipReconnecting));
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString("VoipReconnecting", C3290R.string.VoipReconnecting));
         SpannableString spannableString = new SpannableString("...");
         this.ellipsizeAnimator.wrap(spannableString, 0);
         spannableStringBuilder.append((CharSequence) spannableString);
@@ -147,7 +147,7 @@ public class VoIPStatusTextView extends FrameLayout {
     public void replaceViews(final View view, final View view2, Runnable runnable) {
         view.setVisibility(0);
         view2.setVisibility(0);
-        view2.setTranslationY(AndroidUtilities.m50dp(15));
+        view2.setTranslationY(AndroidUtilities.m54dp(15));
         view2.setAlpha(BitmapDescriptorFactory.HUE_RED);
         this.animationInProgress = true;
         ValueAnimator ofFloat = ValueAnimator.ofFloat(BitmapDescriptorFactory.HUE_RED, 1.0f);
@@ -158,7 +158,7 @@ public class VoIPStatusTextView extends FrameLayout {
                 VoIPStatusTextView.lambda$replaceViews$1(view2, view, valueAnimator);
             }
         });
-        this.animator.addListener(new C53491(view, view2, runnable));
+        this.animator.addListener(new C54251(view, view2, runnable));
         this.animator.setDuration(250L).setInterpolator(CubicBezierInterpolator.DEFAULT);
         this.animator.start();
     }
@@ -169,11 +169,11 @@ public class VoIPStatusTextView extends FrameLayout {
         float f = (floatValue * 0.6f) + 0.4f;
         float f2 = 1.0f - floatValue;
         float f3 = (0.6f * f2) + 0.4f;
-        view.setTranslationY(AndroidUtilities.m50dp(10) * f2);
+        view.setTranslationY(AndroidUtilities.m54dp(10) * f2);
         view.setAlpha(floatValue);
         view.setScaleX(f);
         view.setScaleY(f);
-        view2.setTranslationY((-AndroidUtilities.m50dp(10)) * floatValue);
+        view2.setTranslationY((-AndroidUtilities.m54dp(10)) * floatValue);
         view2.setAlpha(f2);
         view2.setScaleX(f3);
         view2.setScaleY(f3);
@@ -182,12 +182,12 @@ public class VoIPStatusTextView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.voip.VoIPStatusTextView$1 */
     /* loaded from: classes6.dex */
-    public class C53491 extends AnimatorListenerAdapter {
+    public class C54251 extends AnimatorListenerAdapter {
         final /* synthetic */ View val$in;
         final /* synthetic */ Runnable val$onEnd;
         final /* synthetic */ View val$out;
 
-        C53491(View view, View view2, Runnable runnable) {
+        C54251(View view, View view2, Runnable runnable) {
             this.val$out = view;
             this.val$in = view2;
             this.val$onEnd = runnable;
@@ -223,7 +223,7 @@ public class VoIPStatusTextView extends FrameLayout {
                     voIPStatusTextView3.replaceViews(textViewArr[0], textViewArr[1], new Runnable() { // from class: org.telegram.ui.Components.voip.VoIPStatusTextView$1$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            VoIPStatusTextView.C53491.this.lambda$onAnimationEnd$0();
+                            VoIPStatusTextView.C54251.this.lambda$onAnimationEnd$0();
                         }
                     });
                 }

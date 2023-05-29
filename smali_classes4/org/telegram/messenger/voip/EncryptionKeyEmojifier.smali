@@ -2253,7 +2253,7 @@
     :cond_1
     new-instance p0, Ljava/lang/IllegalArgumentException;
 
-    const-string v0, "sha256 needs to be exactly 32 bytes"
+    const-string/jumbo v0, "sha256 needs to be exactly 32 bytes"
 
     invoke-direct {p0, v0}, Ljava/lang/IllegalArgumentException;-><init>(Ljava/lang/String;)V
 

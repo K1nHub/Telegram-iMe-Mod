@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nMovingCheckCell.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovingCheckCell.kt\ncom/iMe/fork/ui/view/MovingCheckCell\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,237:1\n1855#2,2:238\n260#3:240\n*S KotlinDebug\n*F\n+ 1 MovingCheckCell.kt\ncom/iMe/fork/ui/view/MovingCheckCell\n*L\n131#1:238,2\n146#1:240\n*E\n"
+    value = "SMAP\nMovingCheckCell.kt\nKotlin\n*S Kotlin\n*F\n+ 1 MovingCheckCell.kt\ncom/iMe/fork/ui/view/MovingCheckCell\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 View.kt\nandroidx/core/view/ViewKt\n*L\n1#1,238:1\n1855#2,2:239\n260#3:241\n*S KotlinDebug\n*F\n+ 1 MovingCheckCell.kt\ncom/iMe/fork/ui/view/MovingCheckCell\n*L\n132#1:239,2\n147#1:241\n*E\n"
 .end annotation
 
 
@@ -53,52 +53,52 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 25
+    .line 26
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 28
+    .line 29
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/MovingCheckCell;->initIconView()Landroidx/appcompat/widget/AppCompatImageView;
 
     move-result-object p1
 
     iput-object p1, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->iconView:Landroidx/appcompat/widget/AppCompatImageView;
 
-    .line 36
+    .line 37
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/MovingCheckCell;->initMoveIconView()Landroid/widget/ImageView;
 
     move-result-object v0
 
     iput-object v0, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->moveIconView:Landroid/widget/ImageView;
 
-    .line 37
+    .line 38
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/MovingCheckCell;->initTitleContainer()Landroid/widget/LinearLayout;
 
     move-result-object v1
 
     iput-object v1, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->titleContainer:Landroid/widget/LinearLayout;
 
-    .line 38
+    .line 39
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/MovingCheckCell;->initTitleView()Landroid/widget/TextView;
 
     move-result-object v2
 
     iput-object v2, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->titleView:Landroid/widget/TextView;
 
-    .line 39
+    .line 40
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/MovingCheckCell;->initSecondTitleView()Landroid/widget/TextView;
 
     move-result-object v3
 
     iput-object v3, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->secondTitleView:Landroid/widget/TextView;
 
-    .line 40
+    .line 41
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/MovingCheckCell;->initSubtitleView()Landroid/widget/TextView;
 
     move-result-object v4
 
     iput-object v4, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->subtitleView:Landroid/widget/TextView;
 
-    .line 41
+    .line 42
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/MovingCheckCell;->initCheckBox()Lorg/telegram/ui/Components/CheckBoxSquare;
 
     move-result-object v5
@@ -119,7 +119,7 @@
 
     const/4 v12, 0x0
 
-    .line 45
+    .line 46
     invoke-static/range {v6 .. v12}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v6
@@ -138,7 +138,7 @@
 
     const/4 v13, 0x0
 
-    .line 51
+    .line 52
     invoke-static/range {v7 .. v13}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v0
@@ -149,7 +149,7 @@
 
     const/4 v0, -0x1
 
-    .line 58
+    .line 59
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p1
@@ -166,7 +166,7 @@
 
     const/4 v10, 0x0
 
-    .line 59
+    .line 60
     invoke-static/range {v6 .. v11}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object p1
@@ -181,7 +181,7 @@
 
     const/16 v11, 0x3c
 
-    .line 65
+    .line 66
     invoke-static/range {v6 .. v12}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p1
@@ -196,7 +196,7 @@
 
     const/16 v12, 0xa
 
-    .line 71
+    .line 72
     invoke-static/range {v6 .. v12}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p1
@@ -215,7 +215,7 @@
 
     const/4 v12, 0x0
 
-    .line 77
+    .line 78
     invoke-static/range {v6 .. v12}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object p1
@@ -224,7 +224,7 @@
 
     const/4 p1, 0x0
 
-    .line 83
+    .line 84
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
 
     return-void
@@ -233,7 +233,7 @@
 .method private final initCheckBox()Lorg/telegram/ui/Components/CheckBoxSquare;
     .locals 3
 
-    .line 211
+    .line 212
     new-instance v0, Lorg/telegram/ui/Components/CheckBoxSquare;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -250,7 +250,7 @@
 .method private final initIconView()Landroidx/appcompat/widget/AppCompatImageView;
     .locals 2
 
-    .line 176
+    .line 177
     new-instance v0, Landroidx/appcompat/widget/AppCompatImageView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -261,10 +261,10 @@
 
     const/16 v1, 0x8
 
-    .line 177
+    .line 178
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setVisibility(I)V
 
-    .line 178
+    .line 179
     sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER_INSIDE:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
@@ -275,7 +275,7 @@
 .method private final initMoveIconView()Landroid/widget/ImageView;
     .locals 4
 
-    .line 166
+    .line 167
     new-instance v0, Landroid/widget/ImageView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -286,20 +286,20 @@
 
     const/4 v1, 0x0
 
-    .line 167
+    .line 168
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setFocusable(Z)V
 
-    .line 168
+    .line 169
     sget-object v1, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
-    .line 169
+    .line 170
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "stickers_menu"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_stickers_menu:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -311,10 +311,10 @@
 
     const/4 v1, 0x1
 
-    .line 170
+    .line 171
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setClickable(Z)V
 
-    .line 171
+    .line 172
     sget v1, Lorg/telegram/messenger/R$drawable;->list_reorder:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
@@ -325,7 +325,7 @@
 .method private final initSecondTitleView()Landroid/widget/TextView;
     .locals 3
 
-    .line 191
+    .line 192
     new-instance v0, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -336,26 +336,26 @@
 
     const/4 v1, 0x1
 
-    .line 192
+    .line 193
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 193
+    .line 194
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSingleLine(Z)V
 
     const v2, 0x800013
 
-    .line 194
+    .line 195
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 195
+    .line 196
     sget-object v2, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    const-string v2, "windowBackgroundWhiteGrayText2"
+    .line 197
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
-    .line 196
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -363,10 +363,10 @@
 
     const/high16 v2, 0x41800000    # 16.0f
 
-    .line 197
+    .line 198
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 198
+    .line 199
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setLines(I)V
 
     return-object v0
@@ -375,7 +375,7 @@
 .method private final initSubtitleView()Landroid/widget/TextView;
     .locals 3
 
-    .line 201
+    .line 202
     new-instance v0, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -386,26 +386,26 @@
 
     const v1, 0x800003
 
-    .line 202
+    .line 203
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setGravity(I)V
 
     const/4 v1, 0x1
 
-    .line 203
+    .line 204
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 204
+    .line 205
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 205
+    .line 206
     sget-object v2, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    const-string v2, "windowBackgroundWhiteGrayText2"
+    .line 207
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
-    .line 206
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -413,10 +413,10 @@
 
     const/high16 v2, 0x41500000    # 13.0f
 
-    .line 207
+    .line 208
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 208
+    .line 209
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setLines(I)V
 
     return-object v0
@@ -425,7 +425,7 @@
 .method private final initTitleContainer()Landroid/widget/LinearLayout;
     .locals 2
 
-    .line 174
+    .line 175
     new-instance v0, Landroid/widget/LinearLayout;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -440,7 +440,7 @@
 .method private final initTitleView()Landroid/widget/TextView;
     .locals 3
 
-    .line 181
+    .line 182
     new-instance v0, Landroid/widget/TextView;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -451,26 +451,26 @@
 
     const/4 v1, 0x1
 
-    .line 182
+    .line 183
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 183
+    .line 184
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSingleLine(Z)V
 
     const v2, 0x800013
 
-    .line 184
+    .line 185
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 185
+    .line 186
     sget-object v2, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    const-string v2, "windowBackgroundWhiteBlackText"
+    .line 187
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    .line 186
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -478,10 +478,10 @@
 
     const/high16 v2, 0x41800000    # 16.0f
 
-    .line 187
+    .line 188
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 188
+    .line 189
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setLines(I)V
 
     return-object v0
@@ -490,7 +490,7 @@
 .method private final setFullHeightTitleView(Z)V
     .locals 3
 
-    .line 214
+    .line 215
     iget-object v0, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->titleContainer:Landroid/widget/LinearLayout;
 
     invoke-virtual {v0}, Landroid/widget/LinearLayout;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
@@ -512,7 +512,7 @@
     :cond_0
     const/4 v2, -0x2
 
-    .line 215
+    .line 216
     :goto_0
     iput v2, v1, Landroid/widget/FrameLayout$LayoutParams;->height:I
 
@@ -525,7 +525,7 @@
     :cond_1
     const/16 p1, 0xa
 
-    .line 216
+    .line 217
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -533,33 +533,24 @@
     :goto_1
     iput p1, v1, Landroid/widget/FrameLayout$LayoutParams;->topMargin:I
 
-    .line 214
+    .line 215
     invoke-virtual {v0, v1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     return-void
 .end method
 
-.method public static synthetic setIcon$default(Lcom/iMe/fork/ui/view/MovingCheckCell;ILjava/lang/String;Landroid/graphics/PorterDuff$Mode;ILjava/lang/Object;)V
-    .locals 1
+.method public static synthetic setIcon$default(Lcom/iMe/fork/ui/view/MovingCheckCell;IILandroid/graphics/PorterDuff$Mode;ILjava/lang/Object;)V
+    .locals 0
 
-    and-int/lit8 p5, p4, 0x2
-
-    const/4 v0, 0x0
-
-    if-eqz p5, :cond_0
-
-    move-object p2, v0
-
-    :cond_0
     and-int/lit8 p4, p4, 0x4
 
-    if-eqz p4, :cond_1
+    if-eqz p4, :cond_0
 
-    move-object p3, v0
+    const/4 p3, 0x0
 
-    .line 119
-    :cond_1
-    invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/fork/ui/view/MovingCheckCell;->setIcon(ILjava/lang/String;Landroid/graphics/PorterDuff$Mode;)V
+    .line 120
+    :cond_0
+    invoke-virtual {p0, p1, p2, p3}, Lcom/iMe/fork/ui/view/MovingCheckCell;->setIcon(IILandroid/graphics/PorterDuff$Mode;)V
 
     return-void
 .end method
@@ -571,7 +562,7 @@
 
     new-array v0, v0, [Landroid/view/View;
 
-    .line 131
+    .line 132
     iget-object v1, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->titleContainer:Landroid/widget/LinearLayout;
 
     const/4 v2, 0x0
@@ -606,7 +597,7 @@
 
     check-cast v1, Landroid/view/View;
 
-    .line 132
+    .line 133
     invoke-virtual {v1}, Landroid/view/View;->getLayoutParams()Landroid/view/ViewGroup$LayoutParams;
 
     move-result-object v2
@@ -619,14 +610,14 @@
 
     const/16 v3, 0x6c
 
-    .line 133
+    .line 134
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v3
 
     iput v3, v2, Landroid/widget/FrameLayout$LayoutParams;->leftMargin:I
 
-    .line 132
+    .line 133
     invoke-virtual {v1, v2}, Landroid/view/View;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
     goto :goto_0
@@ -640,7 +631,7 @@
 .method public final getIconView()Landroidx/appcompat/widget/AppCompatImageView;
     .locals 1
 
-    .line 28
+    .line 29
     iget-object v0, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->iconView:Landroidx/appcompat/widget/AppCompatImageView;
 
     return-object v0
@@ -649,7 +640,7 @@
 .method public final isChecked()Z
     .locals 1
 
-    .line 30
+    .line 31
     iget-object v0, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->checkBox:Lorg/telegram/ui/Components/CheckBoxSquare;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/CheckBoxSquare;->isChecked()Z
@@ -666,12 +657,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 153
+    .line 154
     iget-boolean v0, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->needDivider:Z
 
     if-eqz v0, :cond_0
 
-    .line 154
+    .line 155
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
 
     move-result v0
@@ -684,14 +675,14 @@
 
     const/16 v0, 0x3c
 
-    .line 156
+    .line 157
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     int-to-float v3, v0
 
-    .line 157
+    .line 158
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
@@ -704,7 +695,7 @@
 
     move v4, v6
 
-    .line 155
+    .line 156
     invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawLine(FFFFLandroid/graphics/Paint;)V
 
     :cond_0
@@ -714,7 +705,7 @@
 .method protected onMeasure(II)V
     .locals 2
 
-    .line 144
+    .line 145
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1
@@ -725,7 +716,7 @@
 
     move-result p1
 
-    .line 146
+    .line 147
     iget-object v0, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->subtitleView:Landroid/widget/TextView;
 
     .line 260
@@ -752,7 +743,7 @@
     :cond_1
     const/16 v0, 0x30
 
-    .line 146
+    .line 147
     :goto_1
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -762,12 +753,12 @@
 
     add-int/2addr v0, v1
 
-    .line 145
+    .line 146
     invoke-static {v0, p2}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result p2
 
-    .line 143
+    .line 144
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     return-void
@@ -776,7 +767,7 @@
 .method public final setChecked(Z)V
     .locals 2
 
-    .line 32
+    .line 33
     iget-object v0, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->checkBox:Lorg/telegram/ui/Components/CheckBoxSquare;
 
     const/4 v1, 0x1
@@ -786,24 +777,32 @@
     return-void
 .end method
 
-.method public final setIcon(ILjava/lang/String;Landroid/graphics/PorterDuff$Mode;)V
-    .locals 2
+.method public final setIcon(IILandroid/graphics/PorterDuff$Mode;)V
+    .locals 4
 
-    .line 120
+    .line 121
     iget-object v0, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->iconView:Landroidx/appcompat/widget/AppCompatImageView;
 
-    invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    const/4 v1, 0x0
 
-    if-eqz p2, :cond_0
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
+
+    invoke-static {v0, v1, v2, v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
+
+    const/4 v0, -0x1
+
+    if-eq p2, v0, :cond_0
 
     if-eqz p3, :cond_0
 
-    .line 122
+    .line 123
     iget-object v0, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->iconView:Landroidx/appcompat/widget/AppCompatImageView;
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -813,41 +812,47 @@
 
     goto :goto_0
 
-    .line 124
+    .line 125
     :cond_0
     iget-object p2, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->iconView:Landroidx/appcompat/widget/AppCompatImageView;
 
     invoke-virtual {p2}, Landroid/widget/ImageView;->clearColorFilter()V
 
-    .line 126
+    .line 127
     :goto_0
     iget-object p2, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->iconView:Landroidx/appcompat/widget/AppCompatImageView;
 
     invoke-virtual {p2, p1}, Landroidx/appcompat/widget/AppCompatImageView;->setImageResource(I)V
 
-    .line 127
+    .line 128
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/MovingCheckCell;->updateLeftMargins()V
 
     return-void
 .end method
 
 .method public final setImage(Landroid/graphics/Bitmap;)V
-    .locals 1
+    .locals 4
 
     const-string v0, "image"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 112
+    .line 113
     iget-object v0, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->iconView:Landroidx/appcompat/widget/AppCompatImageView;
 
-    .line 113
-    invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
+
+    const/4 v3, 0x0
 
     .line 114
+    invoke-static {v0, v1, v2, v3}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
+
+    .line 115
     invoke-virtual {v0, p1}, Landroidx/appcompat/widget/AppCompatImageView;->setImageBitmap(Landroid/graphics/Bitmap;)V
 
-    .line 116
+    .line 117
     invoke-direct {p0}, Lcom/iMe/fork/ui/view/MovingCheckCell;->updateLeftMargins()V
 
     return-void
@@ -860,7 +865,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 108
+    .line 109
     iget-object v0, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->secondTitleView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
@@ -869,47 +874,49 @@
 .end method
 
 .method public final setTextAndCheck(Ljava/lang/String;ZZ)V
-    .locals 2
+    .locals 3
 
     const-string v0, "text"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 89
+    .line 90
     iget-object v0, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->titleView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     const/4 p1, 0x1
 
-    .line 90
+    .line 91
     invoke-direct {p0, p1}, Lcom/iMe/fork/ui/view/MovingCheckCell;->setFullHeightTitleView(Z)V
 
-    .line 91
-    iget-object v0, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->subtitleView:Landroid/widget/TextView;
-
-    invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone(Landroid/view/View;)V
-
     .line 92
-    iget-object v0, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->checkBox:Lorg/telegram/ui/Components/CheckBoxSquare;
+    iget-object v0, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->subtitleView:Landroid/widget/TextView;
 
     const/4 v1, 0x0
 
-    invoke-virtual {v0, p2, v1}, Lorg/telegram/ui/Components/CheckBoxSquare;->setChecked(ZZ)V
+    const/4 v2, 0x0
+
+    invoke-static {v0, v1, p1, v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->gone$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 93
+    iget-object v0, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->checkBox:Lorg/telegram/ui/Components/CheckBoxSquare;
+
+    invoke-virtual {v0, p2, v1}, Lorg/telegram/ui/Components/CheckBoxSquare;->setChecked(ZZ)V
+
+    .line 94
     iput-boolean p3, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->needDivider:Z
 
     xor-int/2addr p1, p3
 
-    .line 94
+    .line 95
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
     return-void
 .end method
 
 .method public final setTextAndValueAndCheck(Ljava/lang/String;Ljava/lang/String;ZZ)V
-    .locals 1
+    .locals 2
 
     const-string v0, "text"
 
@@ -919,37 +926,41 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 98
+    .line 99
     iget-object v0, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->titleView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     const/4 p1, 0x0
 
-    .line 99
+    .line 100
     invoke-direct {p0, p1}, Lcom/iMe/fork/ui/view/MovingCheckCell;->setFullHeightTitleView(Z)V
 
-    .line 100
+    .line 101
     iget-object v0, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->subtitleView:Landroid/widget/TextView;
 
     invoke-virtual {v0, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    .line 101
+    .line 102
     iget-object p2, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->subtitleView:Landroid/widget/TextView;
 
-    invoke-static {p2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    const/4 v0, 0x1
 
-    .line 102
+    const/4 v1, 0x0
+
+    invoke-static {p2, p1, v0, v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
+
+    .line 103
     iget-object p2, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->checkBox:Lorg/telegram/ui/Components/CheckBoxSquare;
 
     invoke-virtual {p2, p3, p1}, Lorg/telegram/ui/Components/CheckBoxSquare;->setChecked(ZZ)V
 
-    .line 103
+    .line 104
     iput-boolean p4, p0, Lcom/iMe/fork/ui/view/MovingCheckCell;->needDivider:Z
 
     xor-int/lit8 p1, p4, 0x1
 
-    .line 104
+    .line 105
     invoke-virtual {p0, p1}, Landroid/widget/FrameLayout;->setWillNotDraw(Z)V
 
     return-void

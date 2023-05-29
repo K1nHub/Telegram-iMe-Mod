@@ -3,6 +3,7 @@ package com.iMe.fork.controller;
 import com.iMe.storage.data.locale.p027db.dao.main.DialogTranslationSettingsDao;
 import com.iMe.storage.data.mapper.dialogs.DialogSettingsMappingKt;
 import com.iMe.storage.domain.model.dialogs.DialogTranslationSettings;
+import java.util.Map;
 import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
@@ -32,10 +33,12 @@ public final class DialogTranslationController$setSettings$runnable$1 extends La
     public final void invoke2() {
         DialogTranslationSettingsDao dao;
         UserConfig userConfig;
+        Map map;
         dao = this.this$0.getDao();
         DialogTranslationSettings dialogTranslationSettings = this.$translationSettings;
         userConfig = this.this$0.getUserConfig();
         dao.insert((DialogTranslationSettingsDao) DialogSettingsMappingKt.mapToDb(dialogTranslationSettings, userConfig.clientUserId));
-        this.this$0.getTranslationSettings().put(Long.valueOf(this.$translationSettings.getDialogId()), this.$translationSettings);
+        map = this.this$0.translationSettings;
+        map.put(Long.valueOf(this.$translationSettings.getDialogId()), this.$translationSettings);
     }
 }

@@ -10,7 +10,7 @@ import android.widget.TextView;
 import com.iMe.p031ui.common.SimpleTextWatcher;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.BottomSheet;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -70,7 +70,7 @@ public class ReportAlert extends BottomSheet {
             super(context);
             View view = new View(context);
             this.background = view;
-            view.setBackground(Theme.AdaptiveRipple.filledRect("featuredStickers_addButton", 4.0f));
+            view.setBackground(Theme.AdaptiveRipple.filledRectByKey(Theme.key_featuredStickers_addButton, 4.0f));
             addView(this.background, LayoutHelper.createFrame(-1, -1, 0, 16, 16, 16, 16));
             TextView textView = new TextView(context);
             this.textView = textView;
@@ -79,7 +79,7 @@ public class ReportAlert extends BottomSheet {
             this.textView.setGravity(1);
             this.textView.setEllipsize(TextUtils.TruncateAt.END);
             this.textView.setGravity(17);
-            this.textView.setTextColor(Theme.getColor("featuredStickers_buttonText"));
+            this.textView.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
             this.textView.setTextSize(1, 14.0f);
             this.textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             addView(this.textView, LayoutHelper.createFrame(-2, -2, 17));
@@ -87,7 +87,7 @@ public class ReportAlert extends BottomSheet {
 
         @Override // android.widget.FrameLayout, android.view.View
         protected void onMeasure(int i, int i2) {
-            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(80), 1073741824));
+            super.onMeasure(i, View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(80), 1073741824));
         }
 
         public void setText(CharSequence charSequence) {
@@ -107,53 +107,55 @@ public class ReportAlert extends BottomSheet {
         RLottieImageView rLottieImageView = new RLottieImageView(context);
         if (z) {
             rLottieImageView.setAutoRepeat(true);
-            rLottieImageView.setAnimation(C3242R.raw.fork_template_name_input, 120, 120);
+            rLottieImageView.setAnimation(C3290R.raw.fork_template_name_input, 120, 120);
         } else {
-            rLottieImageView.setAnimation(C3242R.raw.report_police, 120, 120);
+            rLottieImageView.setAnimation(C3290R.raw.report_police, 120, 120);
         }
         rLottieImageView.playAnimation();
         frameLayout.addView(rLottieImageView, LayoutHelper.createFrame(160, 160, 49, 17, 14, 17, 0));
         TextView textView = new TextView(context);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         textView.setTextSize(1, 24.0f);
-        textView.setTextColor(Theme.getColor("dialogTextBlack"));
+        textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
         if (z) {
             if (str != null) {
-                textView.setText(LocaleController.getString("EditName", C3242R.string.EditName));
+                textView.setText(LocaleController.getString("EditName", C3290R.string.EditName));
             } else {
-                textView.setText(LocaleController.getInternalString(C3242R.string.create_chat_template));
+                textView.setText(LocaleController.getInternalString(C3290R.string.create_chat_template));
             }
         } else if (i == 0) {
-            textView.setText(LocaleController.getString("ReportTitleSpam", C3242R.string.ReportTitleSpam));
+            textView.setText(LocaleController.getString("ReportTitleSpam", C3290R.string.ReportTitleSpam));
         } else if (i == 6) {
-            textView.setText(LocaleController.getString("ReportTitleFake", C3242R.string.ReportTitleFake));
+            textView.setText(LocaleController.getString("ReportTitleFake", C3290R.string.ReportTitleFake));
         } else if (i == 1) {
-            textView.setText(LocaleController.getString("ReportTitleViolence", C3242R.string.ReportTitleViolence));
+            textView.setText(LocaleController.getString("ReportTitleViolence", C3290R.string.ReportTitleViolence));
         } else if (i == 2) {
-            textView.setText(LocaleController.getString("ReportTitleChild", C3242R.string.ReportTitleChild));
+            textView.setText(LocaleController.getString("ReportTitleChild", C3290R.string.ReportTitleChild));
         } else if (i == 5) {
-            textView.setText(LocaleController.getString("ReportTitlePornography", C3242R.string.ReportTitlePornography));
+            textView.setText(LocaleController.getString("ReportTitlePornography", C3290R.string.ReportTitlePornography));
         } else if (i == 100) {
-            textView.setText(LocaleController.getString("ReportChat", C3242R.string.ReportChat));
+            textView.setText(LocaleController.getString("ReportChat", C3290R.string.ReportChat));
         }
         frameLayout.addView(textView, LayoutHelper.createFrame(-2, -2, 49, 17, 197, 17, 0));
         TextView textView2 = new TextView(context);
         textView2.setTextSize(1, 14.0f);
-        textView2.setTextColor(Theme.getColor("dialogTextGray3"));
+        textView2.setTextColor(Theme.getColor(Theme.key_dialogTextGray3));
         textView2.setGravity(1);
         if (z) {
-            textView2.setText(LocaleController.getInternalString(C3242R.string.chat_template_name_info));
+            textView2.setText(LocaleController.getInternalString(C3290R.string.chat_template_name_info));
         } else {
-            textView2.setText(LocaleController.getString("ReportInfo", C3242R.string.ReportInfo));
+            textView2.setText(LocaleController.getString("ReportInfo", C3290R.string.ReportInfo));
         }
         frameLayout.addView(textView2, LayoutHelper.createFrame(-2, -2, 49, 30, 235, 30, 44));
         EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(context);
         this.editText = editTextBoldCursor;
         editTextBoldCursor.setTextSize(1, 18.0f);
-        this.editText.setHintTextColor(Theme.getColor("windowBackgroundWhiteHintText"));
-        this.editText.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        this.editText.setHintTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteHintText));
+        EditTextBoldCursor editTextBoldCursor2 = this.editText;
+        int i2 = Theme.key_windowBackgroundWhiteBlackText;
+        editTextBoldCursor2.setTextColor(Theme.getColor(i2));
         this.editText.setBackgroundDrawable(null);
-        this.editText.setLineColors(getThemedColor("windowBackgroundWhiteInputField"), getThemedColor("windowBackgroundWhiteInputFieldActivated"), getThemedColor("windowBackgroundWhiteRedText3"));
+        this.editText.setLineColors(getThemedColor(Theme.key_windowBackgroundWhiteInputField), getThemedColor(Theme.key_windowBackgroundWhiteInputFieldActivated), getThemedColor(Theme.key_text_RedRegular));
         this.editText.setMaxLines(1);
         this.editText.setLines(1);
         this.editText.setPadding(0, 0, 0, 0);
@@ -166,19 +168,19 @@ public class ReportAlert extends BottomSheet {
                 this.editText.setText(str);
                 this.editText.setSelection(str.length());
             }
-            this.editText.addTextChangedListener(new C49831(this, rLottieImageView));
-            this.editText.setHint(LocaleController.getInternalString(C3242R.string.chat_template_name_hint));
+            this.editText.addTextChangedListener(new C50571(this, rLottieImageView));
+            this.editText.setHint(LocaleController.getInternalString(C3290R.string.chat_template_name_hint));
         } else {
-            this.editText.setHint(LocaleController.getString("ReportHint", C3242R.string.ReportHint));
+            this.editText.setHint(LocaleController.getString("ReportHint", C3290R.string.ReportHint));
         }
-        this.editText.setCursorColor(Theme.getColor("windowBackgroundWhiteBlackText"));
-        this.editText.setCursorSize(AndroidUtilities.m50dp(20));
+        this.editText.setCursorColor(Theme.getColor(i2));
+        this.editText.setCursorSize(AndroidUtilities.m54dp(20));
         this.editText.setCursorWidth(1.5f);
         this.editText.setOnEditorActionListener(new TextView.OnEditorActionListener() { // from class: org.telegram.ui.Components.ReportAlert$$ExternalSyntheticLambda1
             @Override // android.widget.TextView.OnEditorActionListener
-            public final boolean onEditorAction(TextView textView3, int i2, KeyEvent keyEvent) {
+            public final boolean onEditorAction(TextView textView3, int i3, KeyEvent keyEvent) {
                 boolean lambda$new$2;
-                lambda$new$2 = ReportAlert.this.lambda$new$2(textView3, i2, keyEvent);
+                lambda$new$2 = ReportAlert.this.lambda$new$2(textView3, i3, keyEvent);
                 return lambda$new$2;
             }
         });
@@ -187,9 +189,9 @@ public class ReportAlert extends BottomSheet {
         this.clearButton = bottomSheetCell;
         bottomSheetCell.setBackground(null);
         if (z) {
-            this.clearButton.setText(LocaleController.getString("Done", C3242R.string.Done));
+            this.clearButton.setText(LocaleController.getString("Done", C3290R.string.Done));
         } else {
-            this.clearButton.setText(LocaleController.getString("ReportSend", C3242R.string.ReportSend));
+            this.clearButton.setText(LocaleController.getString("ReportSend", C3290R.string.ReportSend));
         }
         this.clearButton.background.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ReportAlert$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
@@ -203,11 +205,11 @@ public class ReportAlert extends BottomSheet {
 
     /* renamed from: org.telegram.ui.Components.ReportAlert$1 */
     /* loaded from: classes6.dex */
-    class C49831 extends SimpleTextWatcher {
+    class C50571 extends SimpleTextWatcher {
         private Runnable playAnimationRunnable;
         final /* synthetic */ RLottieImageView val$imageView;
 
-        C49831(ReportAlert reportAlert, final RLottieImageView rLottieImageView) {
+        C50571(ReportAlert reportAlert, final RLottieImageView rLottieImageView) {
             this.val$imageView = rLottieImageView;
             this.playAnimationRunnable = new Runnable() { // from class: org.telegram.ui.Components.ReportAlert$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable

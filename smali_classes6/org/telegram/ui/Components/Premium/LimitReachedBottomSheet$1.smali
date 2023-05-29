@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;Landroid/content/Context;)V
     .locals 0
 
-    .line 147
+    .line 153
     iput-object p1, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
@@ -35,10 +35,10 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 8
 
-    .line 150
+    .line 156
     invoke-super {p0, p1}, Landroid/view/View;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 151
+    .line 157
     iget-object v0, p0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet$1;->this$0:Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;
 
     iget v1, v0, Lorg/telegram/ui/Components/Premium/LimitReachedBottomSheet;->chatEndRow:I
@@ -55,7 +55,7 @@
 
     const/4 v4, 0x0
 
-    .line 152
+    .line 158
     invoke-virtual {p0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result v0

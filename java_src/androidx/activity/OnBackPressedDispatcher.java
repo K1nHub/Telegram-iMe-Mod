@@ -70,6 +70,10 @@ public final class OnBackPressedDispatcher {
         }
     }
 
+    public void addCallback(OnBackPressedCallback onBackPressedCallback) {
+        addCancellableCallback(onBackPressedCallback);
+    }
+
     Cancellable addCancellableCallback(OnBackPressedCallback onBackPressedCallback) {
         this.mOnBackPressedCallbacks.add(onBackPressedCallback);
         OnBackPressedCancellable onBackPressedCancellable = new OnBackPressedCancellable(onBackPressedCallback);
@@ -138,9 +142,8 @@ public final class OnBackPressedDispatcher {
         }
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
     /* loaded from: classes.dex */
-    public class LifecycleOnBackPressedCancellable implements LifecycleEventObserver, Cancellable {
+    private class LifecycleOnBackPressedCancellable implements LifecycleEventObserver, Cancellable {
         private Cancellable mCurrentCancellable;
         private final Lifecycle mLifecycle;
         private final OnBackPressedCallback mOnBackPressedCallback;

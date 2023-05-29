@@ -226,10 +226,10 @@
     .line 200
     invoke-virtual {p1, v0}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
 
-    const-string v0, "voipgroup_topPanelGray"
-
     .line 201
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_topPanelGray:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -248,9 +248,9 @@
 .end method
 
 .method public update(JF)V
-    .locals 17
+    .locals 15
 
-    move-object/from16 v0, p0
+    move-object v0, p0
 
     .line 134
     iget v1, v0, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->currentState:I
@@ -268,19 +268,19 @@
     .line 135
     iget v1, v0, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->color1:I
 
-    const-string v6, "voipgroup_overlayGreen1"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_overlayGreen1:I
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
-
-    const-string v8, "voipgroup_overlayGreen2"
 
     if-ne v1, v7, :cond_0
 
     iget v1, v0, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->color2:I
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_overlayGreen2:I
+
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -290,37 +290,39 @@
     :cond_0
     new-instance v1, Landroid/graphics/RadialGradient;
 
+    const/high16 v9, 0x43480000    # 200.0f
+
     const/high16 v10, 0x43480000    # 200.0f
 
     const/high16 v11, 0x43480000    # 200.0f
 
-    const/high16 v12, 0x43480000    # 200.0f
+    new-array v12, v3, [I
 
-    new-array v13, v3, [I
-
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
     iput v3, v0, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->color1:I
 
-    aput v3, v13, v2
+    aput v3, v12, v2
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_overlayGreen2:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
     iput v2, v0, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->color2:I
 
-    aput v2, v13, v5
+    aput v2, v12, v5
 
-    const/4 v14, 0x0
+    const/4 v13, 0x0
 
-    sget-object v15, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
+    sget-object v14, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
 
-    move-object v9, v1
+    move-object v8, v1
 
-    invoke-direct/range {v9 .. v15}, Landroid/graphics/RadialGradient;-><init>(FFF[I[FLandroid/graphics/Shader$TileMode;)V
+    invoke-direct/range {v8 .. v14}, Landroid/graphics/RadialGradient;-><init>(FFF[I[FLandroid/graphics/Shader$TileMode;)V
 
     iput-object v1, v0, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->shader:Landroid/graphics/Shader;
 
@@ -332,19 +334,19 @@
     .line 139
     iget v1, v0, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->color1:I
 
-    const-string v6, "voipgroup_overlayBlue1"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_overlayBlue1:I
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
-
-    const-string v8, "voipgroup_overlayBlue2"
 
     if-ne v1, v7, :cond_2
 
     iget v1, v0, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->color2:I
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_overlayBlue2:I
+
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -354,37 +356,39 @@
     :cond_2
     new-instance v1, Landroid/graphics/RadialGradient;
 
+    const/high16 v9, 0x43480000    # 200.0f
+
     const/high16 v10, 0x43480000    # 200.0f
 
     const/high16 v11, 0x43480000    # 200.0f
 
-    const/high16 v12, 0x43480000    # 200.0f
+    new-array v12, v3, [I
 
-    new-array v13, v3, [I
-
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
     iput v3, v0, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->color1:I
 
-    aput v3, v13, v2
+    aput v3, v12, v2
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_overlayBlue2:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
     iput v2, v0, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->color2:I
 
-    aput v2, v13, v5
+    aput v2, v12, v5
 
-    const/4 v14, 0x0
+    const/4 v13, 0x0
 
-    sget-object v15, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
+    sget-object v14, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
 
-    move-object v9, v1
+    move-object v8, v1
 
-    invoke-direct/range {v9 .. v15}, Landroid/graphics/RadialGradient;-><init>(FFF[I[FLandroid/graphics/Shader$TileMode;)V
+    invoke-direct/range {v8 .. v14}, Landroid/graphics/RadialGradient;-><init>(FFF[I[FLandroid/graphics/Shader$TileMode;)V
 
     iput-object v1, v0, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->shader:Landroid/graphics/Shader;
 
@@ -396,21 +400,19 @@
     .line 143
     iget v1, v0, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->color1:I
 
-    const-string v6, "voipgroup_mutedByAdminGradient"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_mutedByAdminGradient:I
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
-
-    const-string v8, "voipgroup_mutedByAdminGradient3"
-
-    const-string v9, "voipgroup_mutedByAdminGradient2"
 
     if-ne v1, v7, :cond_4
 
     iget v1, v0, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->color2:I
 
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_mutedByAdminGradient2:I
+
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -418,7 +420,9 @@
 
     iget v1, v0, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->color3:I
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_mutedByAdminGradient3:I
+
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
@@ -428,45 +432,49 @@
     :cond_4
     new-instance v1, Landroid/graphics/RadialGradient;
 
+    const/high16 v9, 0x43480000    # 200.0f
+
+    const/high16 v10, 0x43480000    # 200.0f
+
     const/high16 v11, 0x43480000    # 200.0f
 
-    const/high16 v12, 0x43480000    # 200.0f
+    new-array v12, v4, [I
 
-    const/high16 v13, 0x43480000    # 200.0f
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_mutedByAdminGradient2:I
 
-    new-array v14, v4, [I
-
-    invoke-static {v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 
     iput v7, v0, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->color2:I
 
-    aput v7, v14, v2
+    aput v7, v12, v2
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_voipgroup_mutedByAdminGradient3:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
     iput v2, v0, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->color3:I
 
-    aput v2, v14, v5
+    aput v2, v12, v5
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
     iput v2, v0, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->color1:I
 
-    aput v2, v14, v3
+    aput v2, v12, v3
 
-    const/4 v15, 0x0
+    const/4 v13, 0x0
 
-    sget-object v16, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
+    sget-object v14, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
 
-    move-object v10, v1
+    move-object v8, v1
 
-    invoke-direct/range {v10 .. v16}, Landroid/graphics/RadialGradient;-><init>(FFF[I[FLandroid/graphics/Shader$TileMode;)V
+    invoke-direct/range {v8 .. v14}, Landroid/graphics/RadialGradient;-><init>(FFF[I[FLandroid/graphics/Shader$TileMode;)V
 
     iput-object v1, v0, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->shader:Landroid/graphics/Shader;
 
@@ -523,7 +531,7 @@
     if-nez v2, :cond_7
 
     .line 155
-    invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->updateTargets()V
+    invoke-direct {p0}, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->updateTargets()V
 
     .line 157
     :cond_7
@@ -537,7 +545,7 @@
     iput v2, v0, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->startY:F
 
     .line 159
-    invoke-direct/range {p0 .. p0}, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->updateTargets()V
+    invoke-direct {p0}, Lorg/telegram/ui/Components/GroupCallPipButton$WeavingState;->updateTargets()V
 
     .line 161
     :cond_8

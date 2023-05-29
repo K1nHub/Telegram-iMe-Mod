@@ -10,6 +10,39 @@
 
 
 # direct methods
+.method public static asSequence(Ljava/util/Map;)Lkotlin/sequences/Sequence;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "<K:",
+            "Ljava/lang/Object;",
+            "V:",
+            "Ljava/lang/Object;",
+            ">(",
+            "Ljava/util/Map<",
+            "+TK;+TV;>;)",
+            "Lkotlin/sequences/Sequence<",
+            "Ljava/util/Map$Entry<",
+            "TK;TV;>;>;"
+        }
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 589
+    invoke-interface {p0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lkotlin/collections/CollectionsKt;->asSequence(Ljava/lang/Iterable;)Lkotlin/sequences/Sequence;
+
+    move-result-object p0
+
+    return-object p0
+.end method
+
 .method public static toList(Ljava/util/Map;)Ljava/util/List;
     .locals 4
     .annotation system Ldalvik/annotation/Signature;

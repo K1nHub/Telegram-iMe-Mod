@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nToolsController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ToolsController.kt\ncom/iMe/fork/controller/ToolsController\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,148:1\n9496#2,2:149\n9646#2,4:151\n215#3,2:155\n766#4:157\n857#4,2:158\n1179#4,2:160\n1253#4,4:162\n1045#4:166\n1549#4:167\n1620#4,3:168\n1549#4:171\n1620#4,3:172\n1179#4,2:175\n1253#4,4:177\n*S KotlinDebug\n*F\n+ 1 ToolsController.kt\ncom/iMe/fork/controller/ToolsController\n*L\n45#1:149,2\n45#1:151,4\n66#1:155,2\n100#1:157\n100#1:158,2\n101#1:160,2\n101#1:162,4\n128#1:166\n129#1:167\n129#1:168,3\n132#1:171\n132#1:172,3\n136#1:175,2\n136#1:177,4\n*E\n"
+    value = "SMAP\nToolsController.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ToolsController.kt\ncom/iMe/fork/controller/ToolsController\n+ 2 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n+ 3 _Maps.kt\nkotlin/collections/MapsKt___MapsKt\n+ 4 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n*L\n1#1,142:1\n9496#2,2:143\n9646#2,4:145\n215#3,2:149\n766#4:151\n857#4,2:152\n1179#4,2:154\n1253#4,4:156\n1045#4:160\n1549#4:161\n1620#4,3:162\n1549#4:165\n1620#4,3:166\n1179#4,2:169\n1253#4,4:171\n*S KotlinDebug\n*F\n+ 1 ToolsController.kt\ncom/iMe/fork/controller/ToolsController\n*L\n44#1:143,2\n44#1:145,4\n64#1:149,2\n97#1:151\n97#1:152,2\n98#1:154,2\n98#1:156,4\n122#1:160\n123#1:161\n123#1:162,3\n126#1:165\n126#1:166,3\n130#1:169,2\n130#1:171,4\n*E\n"
 .end annotation
 
 
@@ -36,8 +36,6 @@
 .field private isMessagePopupAggregatorEnabled:Z
 
 .field private isRememberLastDialogEnabled:Z
-
-.field private isRevokeByDefault:Z
 
 .field private isShowChannelBottomPanel:Z
 
@@ -98,7 +96,7 @@
 
     sput-object v0, Lcom/iMe/fork/controller/ToolsController;->Companion:Lcom/iMe/fork/controller/ToolsController$Companion;
 
-    .line 143
+    .line 137
     new-instance v0, Lj$/util/concurrent/ConcurrentHashMap;
 
     const/4 v1, 0x5
@@ -207,13 +205,6 @@
 
     iput-boolean p1, p0, Lcom/iMe/fork/controller/ToolsController;->isChannelWidePostsEnabled:Z
 
-    .line 29
-    invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User$Default;->isRevokeByDefault()Z
-
-    move-result p1
-
-    iput-boolean p1, p0, Lcom/iMe/fork/controller/ToolsController;->isRevokeByDefault:Z
-
     return-void
 .end method
 
@@ -253,7 +244,7 @@
         }
     .end annotation
 
-    .line 135
+    .line 129
     iget-object v0, p0, Lcom/iMe/fork/controller/ToolsController;->selectedChatAttachAlertButtons:Ljava/util/Map;
 
     invoke-interface {v0}, Ljava/util/Map;->entrySet()Ljava/util/Set;
@@ -301,7 +292,7 @@
     .line 1254
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 136
+    .line 130
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v3
@@ -341,7 +332,7 @@
 
     goto :goto_0
 
-    .line 137
+    .line 131
     :cond_0
     invoke-static {v2}, Lkotlin/collections/MapsKt;->toMutableMap(Ljava/util/Map;)Ljava/util/Map;
 
@@ -361,7 +352,7 @@
         }
     .end annotation
 
-    .line 131
+    .line 125
     iget-object v0, p0, Lcom/iMe/fork/controller/ToolsController;->selectedMessagePopupItems:Ljava/util/Set;
 
     .line 1549
@@ -394,7 +385,7 @@
     .line 1621
     check-cast v2, Lcom/iMe/fork/enums/MessagePopupItem;
 
-    .line 132
+    .line 126
     invoke-virtual {v2}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v2
@@ -404,7 +395,7 @@
 
     goto :goto_0
 
-    .line 133
+    .line 127
     :cond_0
     invoke-static {v1}, Lkotlin/collections/CollectionsKt;->toMutableList(Ljava/util/Collection;)Ljava/util/List;
 
@@ -504,7 +495,7 @@
         }
     .end annotation
 
-    .line 127
+    .line 121
     iget-object v0, p0, Lcom/iMe/fork/controller/ToolsController;->selectedDialogTypesForSwipeToGoToNextUnreadDialog:Ljava/util/Set;
 
     .line 1045
@@ -546,7 +537,7 @@
     .line 1621
     check-cast v2, Lcom/iMe/fork/enums/DialogType;
 
-    .line 129
+    .line 123
     invoke-virtual {v2}, Lcom/iMe/fork/enums/DialogType;->getNameResId()I
 
     move-result v2
@@ -591,15 +582,6 @@
     return v0
 .end method
 
-.method public final isRevokeByDefault()Z
-    .locals 1
-
-    .line 29
-    iget-boolean v0, p0, Lcom/iMe/fork/controller/ToolsController;->isRevokeByDefault:Z
-
-    return v0
-.end method
-
 .method public final isShowChannelBottomPanel()Z
     .locals 1
 
@@ -621,7 +603,7 @@
 .method public final isSilentSendingEnabledForDialog(J)Z
     .locals 4
 
-    .line 120
+    .line 114
     iget-boolean v0, p0, Lcom/iMe/fork/controller/ToolsController;->isSilentSendingEnabled:Z
 
     const/4 v1, 0x0
@@ -640,7 +622,7 @@
 
     goto :goto_0
 
-    .line 123
+    .line 117
     :cond_0
     sget-object v0, Lcom/iMe/fork/enums/DialogType;->Companion:Lcom/iMe/fork/enums/DialogType$Companion;
 
@@ -656,7 +638,7 @@
 
     move-result-object p1
 
-    .line 124
+    .line 118
     sget-object p2, Lcom/iMe/fork/enums/DialogType;->CHAT:Lcom/iMe/fork/enums/DialogType;
 
     if-eq p1, p2, :cond_1
@@ -698,7 +680,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 35
+    .line 34
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isSilentSendingEnabled()Ljava/lang/String;
 
     move-result-object v0
@@ -713,7 +695,7 @@
 
     iput-boolean v0, p0, Lcom/iMe/fork/controller/ToolsController;->isSilentSendingEnabled:Z
 
-    .line 36
+    .line 35
     sget-object v0, Lcom/iMe/fork/enums/SentMessageFont;->Companion:Lcom/iMe/fork/enums/SentMessageFont$Companion;
 
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->selectedSentMessageFont()Ljava/lang/String;
@@ -738,7 +720,7 @@
 
     iput-object v0, p0, Lcom/iMe/fork/controller/ToolsController;->selectedSentMessageFont:Lcom/iMe/fork/enums/SentMessageFont;
 
-    .line 37
+    .line 36
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isRememberLastDialogEnabled()Ljava/lang/String;
 
     move-result-object v0
@@ -753,7 +735,7 @@
 
     iput-boolean v0, p0, Lcom/iMe/fork/controller/ToolsController;->isRememberLastDialogEnabled:Z
 
-    .line 38
+    .line 37
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->rememberLastDialogId()Ljava/lang/String;
 
     move-result-object v0
@@ -768,7 +750,7 @@
 
     iput-wide v0, p0, Lcom/iMe/fork/controller/ToolsController;->rememberLastDialogId:J
 
-    .line 39
+    .line 38
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->rememberLastDialogTopicId()Ljava/lang/String;
 
     move-result-object v0
@@ -783,7 +765,7 @@
 
     iput v0, p0, Lcom/iMe/fork/controller/ToolsController;->rememberLastDialogTopicId:I
 
-    .line 41
+    .line 40
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isSwipeToGoToNextUnreadDialogEnabled()Ljava/lang/String;
 
     move-result-object v0
@@ -798,7 +780,7 @@
 
     iput-boolean v0, p0, Lcom/iMe/fork/controller/ToolsController;->isSwipeToGoToNextUnreadDialogEnabled:Z
 
-    .line 42
+    .line 41
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled()Ljava/lang/String;
 
     move-result-object v0
@@ -813,7 +795,7 @@
 
     iput-boolean v0, p0, Lcom/iMe/fork/controller/ToolsController;->isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled:Z
 
-    .line 43
+    .line 42
     sget-object v0, Lcom/iMe/fork/enums/DialogType;->Companion:Lcom/iMe/fork/enums/DialogType$Companion;
 
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->selectedDialogTypesForSwipeToGoToNextUnreadDialog()Ljava/lang/String;
@@ -834,7 +816,7 @@
 
     iput-object v0, p0, Lcom/iMe/fork/controller/ToolsController;->selectedDialogTypesForSwipeToGoToNextUnreadDialog:Ljava/util/Set;
 
-    .line 44
+    .line 43
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isShowChannelBottomPanel()Ljava/lang/String;
 
     move-result-object v0
@@ -849,7 +831,7 @@
 
     iput-boolean v0, p0, Lcom/iMe/fork/controller/ToolsController;->isShowChannelBottomPanel:Z
 
-    .line 45
+    .line 44
     invoke-static {}, Lcom/iMe/fork/enums/DialogType;->values()[Lcom/iMe/fork/enums/DialogType;
 
     move-result-object v0
@@ -881,7 +863,7 @@
 
     aget-object v4, v0, v3
 
-    .line 46
+    .line 45
     sget-object v5, Lcom/iMe/fork/enums/ChatAttachAlertButton;->Companion:Lcom/iMe/fork/enums/ChatAttachAlertButton$Companion;
 
     invoke-static {v4}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildEnabledChatAttachAlertButtonsKey(Lcom/iMe/fork/enums/DialogType;)Ljava/lang/String;
@@ -915,16 +897,16 @@
 
     goto :goto_0
 
-    .line 47
+    .line 46
     :cond_0
     invoke-static {v1}, Lkotlin/collections/MapsKt;->toMutableMap(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object v0
 
-    .line 45
+    .line 44
     iput-object v0, p0, Lcom/iMe/fork/controller/ToolsController;->selectedChatAttachAlertButtons:Ljava/util/Map;
 
-    .line 48
+    .line 47
     sget-object v0, Lcom/iMe/fork/enums/MessagePopupItem;->Companion:Lcom/iMe/fork/enums/MessagePopupItem$Companion;
 
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->selectedMessagePopupItems()Ljava/lang/String;
@@ -945,7 +927,7 @@
 
     iput-object v0, p0, Lcom/iMe/fork/controller/ToolsController;->selectedMessagePopupItems:Ljava/util/Set;
 
-    .line 49
+    .line 48
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isMessagePopupAggregatorEnabled()Ljava/lang/String;
 
     move-result-object v0
@@ -960,7 +942,7 @@
 
     iput-boolean v0, p0, Lcom/iMe/fork/controller/ToolsController;->isMessagePopupAggregatorEnabled:Z
 
-    .line 50
+    .line 49
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isChannelWidePostsEnabled()Ljava/lang/String;
 
     move-result-object v0
@@ -971,24 +953,9 @@
 
     invoke-interface {p1, v0, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
 
-    move-result v0
-
-    iput-boolean v0, p0, Lcom/iMe/fork/controller/ToolsController;->isChannelWidePostsEnabled:Z
-
-    .line 51
-    invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isRevokeByDefault()Ljava/lang/String;
-
-    move-result-object v0
-
-    invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User$Default;->isRevokeByDefault()Z
-
-    move-result v1
-
-    invoke-interface {p1, v0, v1}, Landroid/content/SharedPreferences;->getBoolean(Ljava/lang/String;Z)Z
-
     move-result p1
 
-    iput-boolean p1, p0, Lcom/iMe/fork/controller/ToolsController;->isRevokeByDefault:Z
+    iput-boolean p1, p0, Lcom/iMe/fork/controller/ToolsController;->isChannelWidePostsEnabled:Z
 
     return-void
 .end method
@@ -1000,14 +967,14 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 77
+    .line 74
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->isSilentSendingEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
 
     if-eqz v0, :cond_0
 
-    .line 78
+    .line 75
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->isSilentSendingEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -1018,7 +985,7 @@
 
     iput-boolean v0, p0, Lcom/iMe/fork/controller/ToolsController;->isSilentSendingEnabled:Z
 
-    .line 80
+    .line 77
     :cond_0
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->getSelectedSentMessageFont()Ljava/lang/String;
 
@@ -1026,7 +993,7 @@
 
     if-eqz v0, :cond_1
 
-    .line 81
+    .line 78
     sget-object v0, Lcom/iMe/fork/enums/SentMessageFont;->Companion:Lcom/iMe/fork/enums/SentMessageFont$Companion;
 
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->getSelectedSentMessageFont()Ljava/lang/String;
@@ -1039,7 +1006,7 @@
 
     iput-object v0, p0, Lcom/iMe/fork/controller/ToolsController;->selectedSentMessageFont:Lcom/iMe/fork/enums/SentMessageFont;
 
-    .line 83
+    .line 80
     :cond_1
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->isRememberLastDialogEnabled()Ljava/lang/Boolean;
 
@@ -1047,7 +1014,7 @@
 
     if-eqz v0, :cond_2
 
-    .line 84
+    .line 81
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->isRememberLastDialogEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -1058,7 +1025,7 @@
 
     iput-boolean v0, p0, Lcom/iMe/fork/controller/ToolsController;->isRememberLastDialogEnabled:Z
 
-    .line 86
+    .line 83
     :cond_2
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->isSwipeToGoToNextUnreadDialogEnabled()Ljava/lang/Boolean;
 
@@ -1066,7 +1033,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 87
+    .line 84
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->isSwipeToGoToNextUnreadDialogEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -1077,7 +1044,7 @@
 
     iput-boolean v0, p0, Lcom/iMe/fork/controller/ToolsController;->isSwipeToGoToNextUnreadDialogEnabled:Z
 
-    .line 89
+    .line 86
     :cond_3
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled()Ljava/lang/Boolean;
 
@@ -1085,7 +1052,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 90
+    .line 87
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -1096,7 +1063,7 @@
 
     iput-boolean v0, p0, Lcom/iMe/fork/controller/ToolsController;->isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled:Z
 
-    .line 92
+    .line 89
     :cond_4
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->getSwipeToGoToNextUnreadDialogTypes()Ljava/util/Set;
 
@@ -1104,7 +1071,7 @@
 
     if-eqz v0, :cond_5
 
-    .line 93
+    .line 90
     sget-object v0, Lcom/iMe/fork/enums/DialogType;->Companion:Lcom/iMe/fork/enums/DialogType$Companion;
 
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->getSwipeToGoToNextUnreadDialogTypes()Ljava/util/Set;
@@ -1117,7 +1084,7 @@
 
     iput-object v0, p0, Lcom/iMe/fork/controller/ToolsController;->selectedDialogTypesForSwipeToGoToNextUnreadDialog:Ljava/util/Set;
 
-    .line 95
+    .line 92
     :cond_5
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->isShowChannelBottomPanel()Ljava/lang/Boolean;
 
@@ -1125,7 +1092,7 @@
 
     if-eqz v0, :cond_6
 
-    .line 96
+    .line 93
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->isShowChannelBottomPanel()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -1136,7 +1103,7 @@
 
     iput-boolean v0, p0, Lcom/iMe/fork/controller/ToolsController;->isShowChannelBottomPanel:Z
 
-    .line 98
+    .line 95
     :cond_6
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->getChatAttachAlertButtons()Ljava/util/Map;
 
@@ -1144,7 +1111,7 @@
 
     if-eqz v0, :cond_b
 
-    .line 99
+    .line 96
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->getChatAttachAlertButtons()Ljava/util/Map;
 
     move-result-object v0
@@ -1179,7 +1146,7 @@
 
     check-cast v3, Ljava/util/Map$Entry;
 
-    .line 100
+    .line 97
     sget-object v4, Lcom/iMe/fork/enums/DialogType;->Companion:Lcom/iMe/fork/enums/DialogType$Companion;
 
     invoke-interface {v3}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -1251,7 +1218,7 @@
     .line 1254
     check-cast v1, Ljava/util/Map$Entry;
 
-    .line 101
+    .line 98
     sget-object v3, Lcom/iMe/fork/enums/DialogType;->Companion:Lcom/iMe/fork/enums/DialogType$Companion;
 
     invoke-interface {v1}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
@@ -1297,16 +1264,16 @@
 
     goto :goto_2
 
-    .line 102
+    .line 99
     :cond_a
     invoke-static {v2}, Lkotlin/collections/MapsKt;->toMutableMap(Ljava/util/Map;)Ljava/util/Map;
 
     move-result-object v0
 
-    .line 99
+    .line 96
     iput-object v0, p0, Lcom/iMe/fork/controller/ToolsController;->selectedChatAttachAlertButtons:Ljava/util/Map;
 
-    .line 104
+    .line 101
     :cond_b
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->getMessagePopupItems()Ljava/util/List;
 
@@ -1314,7 +1281,7 @@
 
     if-eqz v0, :cond_c
 
-    .line 105
+    .line 102
     sget-object v0, Lcom/iMe/fork/enums/MessagePopupItem;->Companion:Lcom/iMe/fork/enums/MessagePopupItem$Companion;
 
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->getMessagePopupItems()Ljava/util/List;
@@ -1331,7 +1298,7 @@
 
     iput-object v0, p0, Lcom/iMe/fork/controller/ToolsController;->selectedMessagePopupItems:Ljava/util/Set;
 
-    .line 107
+    .line 104
     :cond_c
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->isMessagePopupAggregatorEnabled()Ljava/lang/Boolean;
 
@@ -1339,7 +1306,7 @@
 
     if-eqz v0, :cond_d
 
-    .line 108
+    .line 105
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->isMessagePopupAggregatorEnabled()Ljava/lang/Boolean;
 
     move-result-object v0
@@ -1350,7 +1317,7 @@
 
     iput-boolean v0, p0, Lcom/iMe/fork/controller/ToolsController;->isMessagePopupAggregatorEnabled:Z
 
-    .line 110
+    .line 107
     :cond_d
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->isChannelWidePostsEnabled()Ljava/lang/Boolean;
 
@@ -1358,27 +1325,8 @@
 
     if-eqz v0, :cond_e
 
-    .line 111
+    .line 108
     invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->isChannelWidePostsEnabled()Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Ljava/lang/Boolean;->booleanValue()Z
-
-    move-result v0
-
-    iput-boolean v0, p0, Lcom/iMe/fork/controller/ToolsController;->isChannelWidePostsEnabled:Z
-
-    .line 113
-    :cond_e
-    invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->isRevokeByDefault()Ljava/lang/Boolean;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_f
-
-    .line 114
-    invoke-virtual {p1}, Lcom/iMe/fork/models/backup/Backup;->isRevokeByDefault()Ljava/lang/Boolean;
 
     move-result-object p1
 
@@ -1386,10 +1334,10 @@
 
     move-result p1
 
-    iput-boolean p1, p0, Lcom/iMe/fork/controller/ToolsController;->isRevokeByDefault:Z
+    iput-boolean p1, p0, Lcom/iMe/fork/controller/ToolsController;->isChannelWidePostsEnabled:Z
 
-    .line 116
-    :cond_f
+    .line 110
+    :cond_e
     invoke-virtual {p0}, Lcom/iMe/fork/controller/ToolsController;->saveConfig()V
 
     return-void
@@ -1398,7 +1346,7 @@
 .method public final saveConfig()V
     .locals 5
 
-    .line 56
+    .line 54
     invoke-virtual {p0}, Lorg/telegram/messenger/BaseController;->getUserConfig()Lorg/telegram/messenger/UserConfig;
 
     move-result-object v0
@@ -1411,7 +1359,7 @@
 
     move-result-object v0
 
-    .line 57
+    .line 55
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isSilentSendingEnabled()Ljava/lang/String;
 
     move-result-object v1
@@ -1420,7 +1368,7 @@
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 58
+    .line 56
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->selectedSentMessageFont()Ljava/lang/String;
 
     move-result-object v1
@@ -1433,7 +1381,7 @@
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 59
+    .line 57
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isRememberLastDialogEnabled()Ljava/lang/String;
 
     move-result-object v1
@@ -1442,7 +1390,7 @@
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 60
+    .line 58
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->rememberLastDialogId()Ljava/lang/String;
 
     move-result-object v1
@@ -1451,7 +1399,7 @@
 
     invoke-interface {v0, v1, v2, v3}, Landroid/content/SharedPreferences$Editor;->putLong(Ljava/lang/String;J)Landroid/content/SharedPreferences$Editor;
 
-    .line 61
+    .line 59
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->rememberLastDialogTopicId()Ljava/lang/String;
 
     move-result-object v1
@@ -1460,7 +1408,7 @@
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putInt(Ljava/lang/String;I)Landroid/content/SharedPreferences$Editor;
 
-    .line 62
+    .line 60
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isSwipeToGoToNextUnreadDialogEnabled()Ljava/lang/String;
 
     move-result-object v1
@@ -1469,7 +1417,7 @@
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 63
+    .line 61
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isSwipeToGoToNextUnreadDialogConsiderArchiveEnabled()Ljava/lang/String;
 
     move-result-object v1
@@ -1478,7 +1426,7 @@
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 64
+    .line 62
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->selectedDialogTypesForSwipeToGoToNextUnreadDialog()Ljava/lang/String;
 
     move-result-object v1
@@ -1493,7 +1441,7 @@
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putStringSet(Ljava/lang/String;Ljava/util/Set;)Landroid/content/SharedPreferences$Editor;
 
-    .line 65
+    .line 63
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isShowChannelBottomPanel()Ljava/lang/String;
 
     move-result-object v1
@@ -1502,7 +1450,7 @@
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 66
+    .line 64
     iget-object v1, p0, Lcom/iMe/fork/controller/ToolsController;->selectedChatAttachAlertButtons:Ljava/util/Map;
 
     .line 215
@@ -1527,7 +1475,7 @@
 
     check-cast v2, Ljava/util/Map$Entry;
 
-    .line 66
+    .line 64
     invoke-interface {v2}, Ljava/util/Map$Entry;->getKey()Ljava/lang/Object;
 
     move-result-object v3
@@ -1540,7 +1488,7 @@
 
     check-cast v2, Ljava/util/Set;
 
-    .line 67
+    .line 65
     invoke-static {v3}, Lcom/iMe/common/TelegramPreferenceKeys$User;->buildEnabledChatAttachAlertButtonsKey(Lcom/iMe/fork/enums/DialogType;)Ljava/lang/String;
 
     move-result-object v3
@@ -1555,7 +1503,7 @@
 
     goto :goto_0
 
-    .line 69
+    .line 67
     :cond_0
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->selectedMessagePopupItems()Ljava/lang/String;
 
@@ -1571,7 +1519,7 @@
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putStringSet(Ljava/lang/String;Ljava/util/Set;)Landroid/content/SharedPreferences$Editor;
 
-    .line 70
+    .line 68
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isMessagePopupAggregatorEnabled()Ljava/lang/String;
 
     move-result-object v1
@@ -1580,7 +1528,7 @@
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 71
+    .line 69
     invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isChannelWidePostsEnabled()Ljava/lang/String;
 
     move-result-object v1
@@ -1589,16 +1537,7 @@
 
     invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
 
-    .line 72
-    invoke-static {}, Lcom/iMe/common/TelegramPreferenceKeys$User;->isRevokeByDefault()Ljava/lang/String;
-
-    move-result-object v1
-
-    iget-boolean v2, p0, Lcom/iMe/fork/controller/ToolsController;->isRevokeByDefault:Z
-
-    invoke-interface {v0, v1, v2}, Landroid/content/SharedPreferences$Editor;->putBoolean(Ljava/lang/String;Z)Landroid/content/SharedPreferences$Editor;
-
-    .line 73
+    .line 70
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->apply()V
 
     return-void
@@ -1645,15 +1584,6 @@
 
     .line 19
     iput p1, p0, Lcom/iMe/fork/controller/ToolsController;->rememberLastDialogTopicId:I
-
-    return-void
-.end method
-
-.method public final setRevokeByDefault(Z)V
-    .locals 0
-
-    .line 29
-    iput-boolean p1, p0, Lcom/iMe/fork/controller/ToolsController;->isRevokeByDefault:Z
 
     return-void
 .end method

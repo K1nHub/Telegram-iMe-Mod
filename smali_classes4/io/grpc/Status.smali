@@ -686,7 +686,7 @@
 .method public static fromThrowable(Ljava/lang/Throwable;)Lio/grpc/Status;
     .locals 2
 
-    const-string v0, "t"
+    const-string/jumbo v0, "t"
 
     .line 397
     invoke-static {p0, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

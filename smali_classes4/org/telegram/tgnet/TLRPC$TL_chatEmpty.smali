@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 63295
+    .line 64308
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$Chat;-><init>()V
 
     return-void
@@ -28,7 +28,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 0
 
-    .line 63300
+    .line 64313
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide p1
@@ -37,7 +37,7 @@
 
     const-string p1, "DELETED"
 
-    .line 63302
+    .line 64315
     iput-object p1, p0, Lorg/telegram/tgnet/TLRPC$Chat;->title:Ljava/lang/String;
 
     return-void
@@ -46,12 +46,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 63306
+    .line 64319
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_chatEmpty;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 63307
+    .line 64320
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$Chat;->id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V

@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.LayoutHelper;
@@ -29,22 +29,22 @@ public class LocationLoadingCell extends FrameLayout {
         addView(radialProgressView, LayoutHelper.createFrame(-2, -2, 17));
         ImageView imageView = new ImageView(context);
         this.imageView = imageView;
-        imageView.setImageResource(C3242R.C3244drawable.location_empty);
-        this.imageView.setColorFilter(new PorterDuffColorFilter(getThemedColor("dialogEmptyImage"), PorterDuff.Mode.MULTIPLY));
+        imageView.setImageResource(C3290R.C3292drawable.location_empty);
+        this.imageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_dialogEmptyImage), PorterDuff.Mode.MULTIPLY));
         addView(this.imageView, LayoutHelper.createFrame(-2, -2, 17, 0, 0, 0, 24));
         TextView textView = new TextView(context);
         this.textView = textView;
-        textView.setTextColor(getThemedColor("dialogEmptyText"));
+        textView.setTextColor(getThemedColor(Theme.key_dialogEmptyText));
         this.textView.setGravity(17);
         this.textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.textView.setTextSize(1, 17.0f);
-        this.textView.setText(LocaleController.getString("NoPlacesFound", C3242R.string.NoPlacesFound));
+        this.textView.setText(LocaleController.getString("NoPlacesFound", C3290R.string.NoPlacesFound));
         addView(this.textView, LayoutHelper.createFrame(-2, -2, 17, 0, 34, 0, 0));
     }
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec((int) (AndroidUtilities.m50dp(56) * 2.5f), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec((int) (AndroidUtilities.m54dp(56) * 2.5f), 1073741824));
     }
 
     public void setLoading(boolean z) {
@@ -53,9 +53,7 @@ public class LocationLoadingCell extends FrameLayout {
         this.imageView.setVisibility(z ? 4 : 0);
     }
 
-    private int getThemedColor(String str) {
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-        return color != null ? color.intValue() : Theme.getColor(str);
+    private int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 }

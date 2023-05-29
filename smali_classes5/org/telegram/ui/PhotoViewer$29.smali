@@ -1,11 +1,11 @@
 .class Lorg/telegram/ui/PhotoViewer$29;
-.super Landroid/widget/FrameLayout;
+.super Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
 .source "PhotoViewer.java"
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/PhotoViewer;->lambda$setParentActivity$35(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Landroid/view/View;)V
+    value = Lorg/telegram/ui/PhotoViewer;->setParentActivity(Landroid/app/Activity;Lorg/telegram/ui/ActionBar/BaseFragment;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -14,173 +14,181 @@
 .end annotation
 
 
-# direct methods
-.method constructor <init>(Lorg/telegram/ui/PhotoViewer;Landroid/content/Context;)V
-    .locals 0
+# instance fields
+.field final synthetic this$0:Lorg/telegram/ui/PhotoViewer;
 
-    .line 6339
-    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
+
+# direct methods
+.method constructor <init>(Lorg/telegram/ui/PhotoViewer;Lorg/telegram/ui/PhotoViewer;Landroid/content/Context;Lorg/telegram/ui/Components/SizeNotifierFrameLayoutPhoto;Landroid/view/View;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    .locals 6
+
+    .line 7043
+    iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$29;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    move-object v0, p0
+
+    move-object v1, p2
+
+    move-object v2, p3
+
+    move-object v3, p4
+
+    move-object v4, p5
+
+    move-object v5, p6
+
+    invoke-direct/range {v0 .. v5}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;-><init>(Lorg/telegram/ui/PhotoViewer;Landroid/content/Context;Lorg/telegram/ui/Components/SizeNotifierFrameLayoutPhoto;Landroid/view/View;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected onLayout(ZIIII)V
-    .locals 4
+.method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 2
 
-    .line 6342
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getChildCount()I
+    const/4 v0, 0x0
+
+    .line 7047
+    :try_start_0
+    iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$29;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {v1}, Lorg/telegram/ui/PhotoViewer;->access$11300(Lorg/telegram/ui/PhotoViewer;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
+
+    move-result p1
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    if-eqz p1, :cond_0
+
+    const/4 v0, 0x1
+
+    :cond_0
+    return v0
+
+    :catch_0
+    move-exception p1
+
+    .line 7049
+    invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
+    return v0
+.end method
+
+.method protected extendActionMode(Landroid/view/ActionMode;Landroid/view/Menu;)V
+    .locals 0
+
+    .line 7074
+    iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$29;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$13700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_0
+
+    .line 7075
+    iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$29;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$13700(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/ChatActivity;
+
+    move-result-object p1
+
+    invoke-virtual {p1, p2}, Lorg/telegram/ui/ChatActivity;->extendActionMode(Landroid/view/Menu;)Z
+
+    :cond_0
+    return-void
+.end method
+
+.method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 2
+
+    const/4 v0, 0x0
+
+    .line 7057
+    :try_start_0
+    iget-object v1, p0, Lorg/telegram/ui/PhotoViewer$29;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {v1}, Lorg/telegram/ui/PhotoViewer;->access$11300(Lorg/telegram/ui/PhotoViewer;)Z
+
+    move-result v1
+
+    if-nez v1, :cond_0
+
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
+
+    move-result p1
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+
+    if-eqz p1, :cond_0
+
+    const/4 v0, 0x1
+
+    :cond_0
+    return v0
+
+    :catch_0
+    move-exception p1
+
+    .line 7059
+    invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+
+    return v0
+.end method
+
+.method public onTouchEvent(Landroid/view/MotionEvent;)Z
+    .locals 2
+
+    .line 7066
+    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$29;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$11300(Lorg/telegram/ui/PhotoViewer;)Z
+
+    move-result v0
+
+    const/4 v1, 0x1
+
+    if-eqz v0, :cond_0
+
+    invoke-virtual {p1}, Landroid/view/MotionEvent;->getAction()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    .line 7067
+    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$29;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    iput-boolean v1, v0, Lorg/telegram/ui/PhotoViewer;->keyboardAnimationEnabled:Z
+
+    .line 7069
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$29;->this$0:Lorg/telegram/ui/PhotoViewer;
+
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$11300(Lorg/telegram/ui/PhotoViewer;)Z
+
+    move-result v0
+
+    if-nez v0, :cond_1
+
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
 
-    sub-int/2addr p4, p2
-
-    const/4 p2, 0x0
-
-    :goto_0
-    if-ge p2, p1, :cond_2
-
-    .line 6345
-    invoke-virtual {p0, p2}, Landroid/widget/FrameLayout;->getChildAt(I)Landroid/view/View;
-
-    move-result-object p3
-
-    .line 6346
-    invoke-virtual {p3}, Landroid/view/View;->getTag()Ljava/lang/Object;
-
-    move-result-object p5
-
-    check-cast p5, Ljava/lang/Integer;
-
-    invoke-virtual {p5}, Ljava/lang/Integer;->intValue()I
-
-    move-result p5
-
-    const/4 v0, -0x1
-
-    if-ne p5, v0, :cond_0
-
-    .line 6347
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingRight()I
-
-    move-result p5
-
-    sub-int p5, p4, p5
-
-    invoke-virtual {p3}, Landroid/view/View;->getMeasuredWidth()I
-
-    move-result v0
-
-    sub-int/2addr p5, v0
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingTop()I
-
-    move-result v0
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingRight()I
-
-    move-result v1
-
-    sub-int v1, p4, v1
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingTop()I
-
-    move-result v2
-
-    invoke-virtual {p3}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result v3
-
-    add-int/2addr v2, v3
-
-    invoke-virtual {p3, p5, v0, v1, v2}, Landroid/view/View;->layout(IIII)V
-
-    goto :goto_1
-
-    .line 6348
-    :cond_0
-    invoke-virtual {p3}, Landroid/view/View;->getTag()Ljava/lang/Object;
-
-    move-result-object p5
-
-    check-cast p5, Ljava/lang/Integer;
-
-    invoke-virtual {p5}, Ljava/lang/Integer;->intValue()I
-
-    move-result p5
-
-    const/4 v0, -0x2
-
-    if-ne p5, v0, :cond_1
-
-    .line 6349
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingLeft()I
-
-    move-result p5
-
-    .line 6350
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingTop()I
-
-    move-result v0
-
-    invoke-virtual {p3}, Landroid/view/View;->getMeasuredWidth()I
-
-    move-result v1
-
-    add-int/2addr v1, p5
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingTop()I
-
-    move-result v2
-
-    invoke-virtual {p3}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result v3
-
-    add-int/2addr v2, v3
-
-    invoke-virtual {p3, p5, v0, v1, v2}, Landroid/view/View;->layout(IIII)V
-
-    goto :goto_1
-
-    .line 6352
-    :cond_1
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingLeft()I
-
-    move-result p5
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingTop()I
-
-    move-result v0
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingLeft()I
-
-    move-result v1
-
-    invoke-virtual {p3}, Landroid/view/View;->getMeasuredWidth()I
-
-    move-result v2
-
-    add-int/2addr v1, v2
-
-    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getPaddingTop()I
-
-    move-result v2
-
-    invoke-virtual {p3}, Landroid/view/View;->getMeasuredHeight()I
-
-    move-result v3
-
-    add-int/2addr v2, v3
-
-    invoke-virtual {p3, p5, v0, v1, v2}, Landroid/view/View;->layout(IIII)V
-
-    :goto_1
-    add-int/lit8 p2, p2, 0x1
+    if-eqz p1, :cond_1
 
     goto :goto_0
 
-    :cond_2
-    return-void
+    :cond_1
+    const/4 v1, 0x0
+
+    :goto_0
+    return v1
 .end method

@@ -20,7 +20,7 @@
     value = {
         "Lkotlin/jvm/internal/Lambda;",
         "Lkotlin/jvm/functions/Function0<",
-        "Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;",
+        "Lorg/telegram/messenger/databinding/ForkWebScreenBinding;",
         ">;"
     }
 .end annotation
@@ -49,14 +49,14 @@
     .locals 1
 
     .line 46
-    invoke-virtual {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment$binding$2;->invoke()Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;
+    invoke-virtual {p0}, Lcom/iMe/ui/wallet/crypto/buy/processing/SimplexWebViewProcessingFragment$binding$2;->invoke()Lorg/telegram/messenger/databinding/ForkWebScreenBinding;
 
     move-result-object v0
 
     return-object v0
 .end method
 
-.method public final invoke()Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;
+.method public final invoke()Lorg/telegram/messenger/databinding/ForkWebScreenBinding;
     .locals 1
 
     .line 46
@@ -70,7 +70,7 @@
 
     move-result-object v0
 
-    invoke-static {v0}, Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;->inflate(Landroid/view/LayoutInflater;)Lorg/telegram/messenger/databinding/ForkFragmentWebViewBinding;
+    invoke-static {v0}, Lorg/telegram/messenger/databinding/ForkWebScreenBinding;->inflate(Landroid/view/LayoutInflater;)Lorg/telegram/messenger/databinding/ForkWebScreenBinding;
 
     move-result-object v0
 

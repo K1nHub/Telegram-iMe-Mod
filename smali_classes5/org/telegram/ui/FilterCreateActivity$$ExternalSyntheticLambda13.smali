@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields
@@ -22,20 +22,12 @@
 
 
 # virtual methods
-.method public final didSetColor()V
+.method public final run()V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/FilterCreateActivity$$ExternalSyntheticLambda13;->f$0:Lorg/telegram/ui/FilterCreateActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/FilterCreateActivity;->$r8$lambda$qOdR1YBnWaC37EBIvjgPM99DWJ0(Lorg/telegram/ui/FilterCreateActivity;)V
-
-    return-void
-.end method
-
-.method public synthetic onAnimationProgress(F)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate$-CC;->$default$onAnimationProgress(Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;F)V
+    invoke-static {v0}, Lorg/telegram/ui/FilterCreateActivity;->$r8$lambda$8ZinwknOr1JbfQFJebEjyChkN8E(Lorg/telegram/ui/FilterCreateActivity;)V
 
     return-void
 .end method

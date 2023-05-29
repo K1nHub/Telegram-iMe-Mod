@@ -342,13 +342,13 @@
     .line 199
     iget-object p2, p0, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
-    const-string v2, "chat_attachCheckBoxBackground"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_attachCheckBoxBackground:I
 
-    const-string v4, "chat_attachPhotoBackground"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_attachPhotoBackground:I
 
-    const-string v5, "chat_attachCheckBoxCheck"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_chat_attachCheckBoxCheck:I
 
-    invoke-virtual {p2, v2, v4, v5}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p2, v2, v4, v5}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
     .line 200
     iget-object p2, p0, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
@@ -704,39 +704,16 @@
     return v0
 .end method
 
-.method protected getThemedColor(Ljava/lang/String;)I
+.method protected getThemedColor(I)I
     .locals 1
 
     .line 572
     iget-object v0, p0, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 573
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
@@ -843,9 +820,9 @@
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->backgroundPaint:Landroid/graphics/Paint;
 
-    const-string v1, "chat_attachPhotoBackground"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_attachPhotoBackground:I
 
-    invoke-virtual {p0, v1}, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->getThemedColor(I)I
 
     move-result v1
 
@@ -1910,9 +1887,11 @@
     :cond_2
     iget-object v2, p0, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->imageView:Lorg/telegram/ui/Components/BackupImageView;
 
-    iget p3, p3, Lorg/telegram/messenger/MediaController$PhotoEntry;->orientation:I
+    iget v5, p3, Lorg/telegram/messenger/MediaController$PhotoEntry;->orientation:I
 
-    invoke-virtual {v2, p3, v1}, Lorg/telegram/ui/Components/BackupImageView;->setOrientation(IZ)V
+    iget p3, p3, Lorg/telegram/messenger/MediaController$PhotoEntry;->invert:I
+
+    invoke-virtual {v2, v5, p3, v1}, Lorg/telegram/ui/Components/BackupImageView;->setOrientation(IIZ)V
 
     .line 342
     iget-object p3, p0, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->imageView:Lorg/telegram/ui/Components/BackupImageView;

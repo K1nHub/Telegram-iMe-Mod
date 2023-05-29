@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/QrActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 179
+    .line 180
     iput-object p1, p0, Lorg/telegram/ui/QrActivity$1;->this$0:Lorg/telegram/ui/QrActivity;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -37,7 +37,7 @@
 .method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 0
 
-    .line 185
+    .line 186
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
 
     const/4 p1, 0x1
@@ -48,7 +48,7 @@
 .method protected onLayout(ZIIII)V
     .locals 6
 
-    .line 211
+    .line 212
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result p1
@@ -68,7 +68,7 @@
     :cond_0
     move p1, p3
 
-    .line 213
+    .line 214
     :goto_0
     iget-object p2, p0, Lorg/telegram/ui/QrActivity$1;->this$0:Lorg/telegram/ui/QrActivity;
 
@@ -86,7 +86,7 @@
 
     invoke-virtual {p2, p3, p3, v0, v1}, Landroid/view/View;->layout(IIII)V
 
-    .line 216
+    .line 217
     iget-object p2, p0, Lorg/telegram/ui/QrActivity$1;->this$0:Lorg/telegram/ui/QrActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/QrActivity;->access$200(Lorg/telegram/ui/QrActivity;)Landroid/widget/FrameLayout;
@@ -99,7 +99,7 @@
 
     if-nez p2, :cond_1
 
-    .line 217
+    .line 218
     iget-object p2, p0, Lorg/telegram/ui/QrActivity$1;->this$0:Lorg/telegram/ui/QrActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/QrActivity;->access$200(Lorg/telegram/ui/QrActivity;)Landroid/widget/FrameLayout;
@@ -113,7 +113,7 @@
     :cond_1
     if-eqz p1, :cond_2
 
-    .line 221
+    .line 222
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result p2
@@ -134,7 +134,7 @@
 
     goto :goto_1
 
-    .line 222
+    .line 223
     :cond_2
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
@@ -171,7 +171,7 @@
 
     if-eqz p1, :cond_3
 
-    .line 224
+    .line 225
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
 
     move-result v1
@@ -208,7 +208,7 @@
 
     goto :goto_2
 
-    .line 225
+    .line 226
     :cond_3
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
 
@@ -228,7 +228,7 @@
 
     div-int/lit8 v1, v1, 0x2
 
-    .line 226
+    .line 227
     :goto_2
     iget-object v2, p0, Lorg/telegram/ui/QrActivity$1;->this$0:Lorg/telegram/ui/QrActivity;
 
@@ -264,7 +264,7 @@
 
     if-eqz p1, :cond_4
 
-    .line 229
+    .line 230
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result v2
@@ -283,14 +283,14 @@
 
     div-int/lit8 v2, v2, 0x2
 
-    .line 230
+    .line 231
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
     sub-int v0, v1, v0
 
-    .line 231
+    .line 232
     iget-object v3, p0, Lorg/telegram/ui/QrActivity$1;->this$0:Lorg/telegram/ui/QrActivity;
 
     invoke-static {v3}, Lorg/telegram/ui/QrActivity;->access$100(Lorg/telegram/ui/QrActivity;)Lorg/telegram/ui/Components/BackupImageView;
@@ -323,7 +323,7 @@
 
     invoke-virtual {v3, v2, v0, v4, v5}, Landroid/view/View;->layout(IIII)V
 
-    .line 234
+    .line 235
     :cond_4
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$1;->this$0:Lorg/telegram/ui/QrActivity;
 
@@ -339,7 +339,7 @@
 
     if-eqz p1, :cond_5
 
-    .line 236
+    .line 237
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getWidth()I
 
     move-result p4
@@ -358,7 +358,7 @@
 
     div-int/lit8 p4, p4, 0x2
 
-    .line 237
+    .line 238
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$1;->this$0:Lorg/telegram/ui/QrActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/QrActivity;->access$200(Lorg/telegram/ui/QrActivity;)Landroid/widget/FrameLayout;
@@ -383,7 +383,7 @@
 
     goto :goto_3
 
-    .line 239
+    .line 240
     :cond_5
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getHeight()I
 
@@ -403,7 +403,7 @@
 
     div-int/lit8 p3, p3, 0x2
 
-    .line 240
+    .line 241
     iget-object p5, p0, Lorg/telegram/ui/QrActivity$1;->this$0:Lorg/telegram/ui/QrActivity;
 
     invoke-static {p5}, Lorg/telegram/ui/QrActivity;->access$200(Lorg/telegram/ui/QrActivity;)Landroid/widget/FrameLayout;
@@ -436,7 +436,7 @@
 
     invoke-virtual {p5, v0, p3, p4, v2}, Landroid/widget/FrameLayout;->layout(IIII)V
 
-    .line 244
+    .line 245
     :cond_6
     :goto_3
     iget-object p3, p0, Lorg/telegram/ui/QrActivity$1;->this$0:Lorg/telegram/ui/QrActivity;
@@ -496,13 +496,13 @@
     :cond_7
     const/16 p2, 0x11
 
-    .line 246
+    .line 247
     :goto_4
     invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p2
 
-    .line 247
+    .line 248
     sget p3, Lorg/telegram/messenger/AndroidUtilities;->statusBarHeight:I
 
     if-eqz p1, :cond_8
@@ -521,7 +521,7 @@
 
     add-int/2addr p3, p1
 
-    .line 248
+    .line 249
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$1;->this$0:Lorg/telegram/ui/QrActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/QrActivity;->access$700(Lorg/telegram/ui/QrActivity;)Landroid/widget/ImageView;
@@ -560,12 +560,12 @@
 .method protected onMeasure(II)V
     .locals 6
 
-    .line 191
+    .line 192
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v0
 
-    .line 192
+    .line 193
     invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result v1
@@ -581,7 +581,7 @@
     :cond_0
     move v3, v2
 
-    .line 194
+    .line 195
     :goto_0
     iget-object v4, p0, Lorg/telegram/ui/QrActivity$1;->this$0:Lorg/telegram/ui/QrActivity;
 
@@ -601,7 +601,7 @@
     :goto_1
     invoke-virtual {v4, v5}, Landroid/view/View;->setVisibility(I)V
 
-    .line 195
+    .line 196
     invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
     const/16 p1, 0x104
@@ -610,7 +610,7 @@
 
     if-eqz v3, :cond_2
 
-    .line 197
+    .line 198
     iget-object p2, p0, Lorg/telegram/ui/QrActivity$1;->this$0:Lorg/telegram/ui/QrActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/QrActivity;->access$200(Lorg/telegram/ui/QrActivity;)Landroid/widget/FrameLayout;
@@ -629,7 +629,7 @@
 
     invoke-virtual {p2, v0, v1}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 198
+    .line 199
     iget-object p2, p0, Lorg/telegram/ui/QrActivity$1;->this$0:Lorg/telegram/ui/QrActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/QrActivity;->access$300(Lorg/telegram/ui/QrActivity;)Lorg/telegram/ui/QrActivity$QrView;
@@ -658,7 +658,7 @@
 
     goto :goto_2
 
-    .line 200
+    .line 201
     :cond_2
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$1;->this$0:Lorg/telegram/ui/QrActivity;
 
@@ -678,7 +678,7 @@
 
     invoke-virtual {v0, v1, p2}, Landroid/widget/FrameLayout;->measure(II)V
 
-    .line 201
+    .line 202
     iget-object p2, p0, Lorg/telegram/ui/QrActivity$1;->this$0:Lorg/telegram/ui/QrActivity;
 
     invoke-static {p2}, Lorg/telegram/ui/QrActivity;->access$300(Lorg/telegram/ui/QrActivity;)Lorg/telegram/ui/QrActivity$QrView;
@@ -705,13 +705,13 @@
 
     invoke-virtual {p2, p1, v0}, Landroid/view/View;->measure(II)V
 
-    .line 203
+    .line 204
     :goto_2
     iget-boolean p1, p0, Lorg/telegram/ui/QrActivity$1;->prevIsPortrait:Z
 
     if-eq p1, v3, :cond_3
 
-    .line 204
+    .line 205
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$1;->this$0:Lorg/telegram/ui/QrActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/QrActivity;->access$300(Lorg/telegram/ui/QrActivity;)Lorg/telegram/ui/QrActivity$QrView;
@@ -740,7 +740,7 @@
 
     invoke-virtual {p1, p2, v0, v2, v2}, Lorg/telegram/ui/QrActivity$QrView;->onSizeChanged(IIII)V
 
-    .line 206
+    .line 207
     :cond_3
     iput-boolean v3, p0, Lorg/telegram/ui/QrActivity$1;->prevIsPortrait:Z
 

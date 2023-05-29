@@ -129,9 +129,9 @@
 
     move-result-object v5
 
-    const-string v6, "dialogRoundCheckBoxCheck"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_dialogRoundCheckBoxCheck:I
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
@@ -144,9 +144,9 @@
 
     move-result-object v5
 
-    const-string v6, "dialogBackground"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
@@ -215,9 +215,9 @@
 
     move-result-object v5
 
-    const-string v7, "dialogRoundCheckBox"
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_dialogRoundCheckBox:I
 
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v7
 

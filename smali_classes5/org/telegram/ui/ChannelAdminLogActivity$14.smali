@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChannelAdminLogActivity;)V
     .locals 0
 
-    .line 1245
+    .line 1253
     iput-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$14;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public onAutoDeleteHistory(II)V
     .locals 9
 
-    .line 1248
+    .line 1256
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$14;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -55,7 +55,7 @@
 
     invoke-virtual {v0, v1, v2, p1}, Lorg/telegram/messenger/MessagesController;->setDialogHistoryTTL(JI)V
 
-    .line 1249
+    .line 1257
     iget-object p1, p0, Lorg/telegram/ui/ChannelAdminLogActivity$14;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMessagesController()Lorg/telegram/messenger/MessagesController;
@@ -74,7 +74,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 1251
+    .line 1259
     iget-object v0, p0, Lorg/telegram/ui/ChannelAdminLogActivity$14;->this$0:Lorg/telegram/ui/ChannelAdminLogActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/ChannelAdminLogActivity;->access$3600(Lorg/telegram/ui/ChannelAdminLogActivity;)Lorg/telegram/ui/Components/UndoView;

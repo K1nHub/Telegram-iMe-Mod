@@ -70,7 +70,7 @@ public class TextCheckCell extends FrameLayout {
         this.drawSwitchDivider = z;
     }
 
-    public boolean checkSwitchLocation(float f) {
+    public boolean isInSwitch(float f) {
         float switchDividerX = getSwitchDividerX();
         if (LocaleController.isRTL) {
             if (f < switchDividerX) {
@@ -91,22 +91,26 @@ public class TextCheckCell extends FrameLayout {
         if (i == 1) {
             this.height = 56;
             setDrawCheckRipple(true);
-            setColors("windowBackgroundCheckText", "switchTrackBlue", "switchTrackBlueChecked", "switchTrackBlueThumb", "switchTrackBlueThumbChecked");
+            setColors(Theme.key_windowBackgroundCheckText, Theme.key_switchTrackBlue, Theme.key_switchTrackBlueChecked, Theme.key_switchTrackBlueThumb, Theme.key_switchTrackBlueThumbChecked);
             setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         } else if (i == 0) {
             this.height = 50;
             setDrawCheckRipple(false);
-            setColors("windowBackgroundWhiteBlackText", "switchTrack", "switchTrackChecked", "windowBackgroundWhite", "windowBackgroundWhite");
+            int i2 = Theme.key_windowBackgroundWhiteBlackText;
+            int i3 = Theme.key_switchTrack;
+            int i4 = Theme.key_switchTrackChecked;
+            int i5 = Theme.key_windowBackgroundWhite;
+            setColors(i2, i3, i4, i5, i5);
             setTypeface(Typeface.DEFAULT);
         }
     }
 
-    public void toggleCheckbox() {
+    public void toggleCheckBox() {
         setChecked(!isChecked());
         if (this.type == 1) {
-            String str = isChecked() ? "windowBackgroundChecked" : "windowBackgroundUnchecked";
-            setBackgroundColorAnimated(isChecked(), Theme.getColor(str));
-            setTag(str);
+            int i = isChecked() ? Theme.key_windowBackgroundChecked : Theme.key_windowBackgroundUnchecked;
+            setBackgroundColorAnimated(isChecked(), Theme.getColor(i));
+            setTag(Integer.valueOf(i));
         }
     }
 
@@ -131,11 +135,10 @@ public class TextCheckCell extends FrameLayout {
         this.type = -1;
         this.height = 50;
         this.resourcesProvider = resourcesProvider;
-        int i2 = i;
-        this.padding = i2;
+        this.padding = i;
         TextView textView = new TextView(context);
         this.textView = textView;
-        textView.setTextColor(Theme.getColor(z ? "dialogTextBlack" : "windowBackgroundWhiteBlackText", resourcesProvider));
+        textView.setTextColor(Theme.getColor(z ? Theme.key_dialogTextBlack : Theme.key_windowBackgroundWhiteBlackText, resourcesProvider));
         this.textView.setTextSize(1, 16.0f);
         this.textView.setLines(1);
         this.textView.setMaxLines(1);
@@ -144,10 +147,10 @@ public class TextCheckCell extends FrameLayout {
         this.textView.setEllipsize(TextUtils.TruncateAt.END);
         TextView textView2 = this.textView;
         boolean z2 = LocaleController.isRTL;
-        addView(textView2, LayoutHelper.createFrame(-1, -1, (z2 ? 5 : 3) | 48, z2 ? 70 : i2, 0, z2 ? i2 : 70, 0));
+        addView(textView2, LayoutHelper.createFrame(-1, -1, (z2 ? 5 : 3) | 48, z2 ? 70 : i, 0, z2 ? i : 70, 0));
         TextView textView3 = new TextView(context);
         this.valueTextView = textView3;
-        textView3.setTextColor(Theme.getColor(z ? "dialogIcon" : "windowBackgroundWhiteGrayText2", resourcesProvider));
+        textView3.setTextColor(Theme.getColor(z ? Theme.key_dialogIcon : Theme.key_windowBackgroundWhiteGrayText2, resourcesProvider));
         this.valueTextView.setTextSize(1, 13.0f);
         this.valueTextView.setGravity(LocaleController.isRTL ? 5 : 3);
         this.valueTextView.setLines(1);
@@ -157,10 +160,13 @@ public class TextCheckCell extends FrameLayout {
         this.valueTextView.setEllipsize(TextUtils.TruncateAt.END);
         TextView textView4 = this.valueTextView;
         boolean z3 = LocaleController.isRTL;
-        addView(textView4, LayoutHelper.createFrame(-2, -2, (z3 ? 5 : 3) | 48, z3 ? 64 : i2, 36, z3 ? i2 : 64, 0));
+        addView(textView4, LayoutHelper.createFrame(-2, -2, (z3 ? 5 : 3) | 48, z3 ? 70 : i, 35, z3 ? i : 70, 0));
         Switch r3 = new Switch(context, resourcesProvider);
         this.checkBox = r3;
-        r3.setColors("switchTrack", "switchTrackChecked", "windowBackgroundWhite", "windowBackgroundWhite");
+        int i2 = Theme.key_switchTrack;
+        int i3 = Theme.key_switchTrackChecked;
+        int i4 = Theme.key_windowBackgroundWhite;
+        r3.setColors(i2, i3, i4, i4);
         addView(this.checkBox, LayoutHelper.createFrame(37, 20, (LocaleController.isRTL ? 3 : 5) | 16, 22, 0, 22, 0));
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.checkBox.getLayoutParams();
         this.switchWidth = layoutParams.width + layoutParams.leftMargin + layoutParams.rightMargin;
@@ -184,7 +190,7 @@ public class TextCheckCell extends FrameLayout {
         if (this.isMultiline) {
             super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(0, 0));
         } else {
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(this.valueTextView.getVisibility() == 0 ? 64 : this.height) + (this.needDivider ? 1 : 0), 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(this.valueTextView.getVisibility() == 0 ? 64 : this.height) + (this.needDivider ? 1 : 0), 1073741824));
         }
     }
 
@@ -202,16 +208,18 @@ public class TextCheckCell extends FrameLayout {
     public void setTextAndCheck(String str, boolean z, boolean z2) {
         this.textView.setText(str);
         this.isMultiline = false;
+        this.checkBox.setVisibility(0);
         this.checkBox.setChecked(z, this.attached);
         int i = this.type;
         if (i == 1) {
-            String str2 = z ? "windowBackgroundChecked" : "windowBackgroundUnchecked";
-            setTag(str2);
-            setBackgroundColor(Theme.getColor(str2));
+            int i2 = z ? Theme.key_windowBackgroundChecked : Theme.key_windowBackgroundUnchecked;
+            setTag(Integer.valueOf(i2));
+            setBackgroundColor(Theme.getColor(i2));
             this.checkBox.setOverrideColor(z ? 1 : 2);
         } else if (i == 0) {
-            setTag("windowBackgroundWhite");
-            setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+            int i3 = Theme.key_windowBackgroundWhite;
+            setTag(Integer.valueOf(i3));
+            setBackgroundColor(Theme.getColor(i3));
             this.checkBox.setOverrideColor(0);
         }
         this.needDivider = z2;
@@ -244,10 +252,10 @@ public class TextCheckCell extends FrameLayout {
         addView(this.checkBox, LayoutHelper.createFrame(37, 20, (LocaleController.isRTL ? 3 : 5) | 16, 22, 0, 22, 0));
     }
 
-    public void setColors(String str, String str2, String str3, String str4, String str5) {
-        this.textView.setTextColor(Theme.getColor(str, this.resourcesProvider));
-        this.checkBox.setColors(str2, str3, str4, str5);
-        this.textView.setTag(str);
+    public void setColors(int i, int i2, int i3, int i4, int i5) {
+        this.textView.setTextColor(Theme.getColor(i, this.resourcesProvider));
+        this.checkBox.setColors(i2, i3, i4, i5);
+        this.textView.setTag(Integer.valueOf(i));
     }
 
     public void setTypeface(Typeface typeface) {
@@ -273,6 +281,7 @@ public class TextCheckCell extends FrameLayout {
     public void setTextAndValueAndCheck(String str, String str2, boolean z, boolean z2, boolean z3) {
         this.textView.setText(str);
         this.valueTextView.setText(str2);
+        this.checkBox.setVisibility(0);
         this.checkBox.setChecked(z, false);
         this.needDivider = z3;
         this.valueTextView.setVisibility(0);
@@ -282,7 +291,7 @@ public class TextCheckCell extends FrameLayout {
             this.valueTextView.setMaxLines(0);
             this.valueTextView.setSingleLine(false);
             this.valueTextView.setEllipsize(null);
-            this.valueTextView.setPadding(0, 0, 0, AndroidUtilities.m50dp(11));
+            this.valueTextView.setPadding(0, 0, 0, AndroidUtilities.m54dp(11));
         } else {
             this.valueTextView.setLines(1);
             this.valueTextView.setMaxLines(1);
@@ -292,7 +301,7 @@ public class TextCheckCell extends FrameLayout {
         }
         FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) this.textView.getLayoutParams();
         layoutParams.height = -2;
-        layoutParams.topMargin = AndroidUtilities.m50dp(10);
+        layoutParams.topMargin = AndroidUtilities.m54dp(10);
         this.textView.setLayoutParams(layoutParams);
         setWillNotDraw(true ^ z3);
     }
@@ -378,7 +387,7 @@ public class TextCheckCell extends FrameLayout {
     public void setAnimationProgress(float f) {
         this.animationProgress = f;
         float lastTouchX = getLastTouchX();
-        this.checkBox.setOverrideColorProgress(lastTouchX, getMeasuredHeight() / 2, (Math.max(lastTouchX, getMeasuredWidth() - lastTouchX) + AndroidUtilities.m50dp(40)) * this.animationProgress);
+        this.checkBox.setOverrideColorProgress(lastTouchX, getMeasuredHeight() / 2, (Math.max(lastTouchX, getMeasuredWidth() - lastTouchX) + AndroidUtilities.m54dp(40)) * this.animationProgress);
     }
 
     public void setBackgroundColorAnimatedReverse(final int i) {
@@ -414,7 +423,7 @@ public class TextCheckCell extends FrameLayout {
 
     private float getLastTouchX() {
         if (this.isAnimatingToThumbInsteadOfTouch) {
-            return LocaleController.isRTL ? AndroidUtilities.m50dp(22) : getMeasuredWidth() - AndroidUtilities.m50dp(42);
+            return LocaleController.isRTL ? AndroidUtilities.m54dp(22) : getMeasuredWidth() - AndroidUtilities.m54dp(42);
         }
         return this.lastTouchX;
     }
@@ -425,12 +434,12 @@ public class TextCheckCell extends FrameLayout {
         int switchDividerX;
         int measuredHeight;
         if (this.drawSwitchDivider) {
-            int m50dp = AndroidUtilities.m50dp(this.height / 3);
-            canvas.drawRect(getSwitchDividerX(), (getMeasuredHeight() - m50dp) / 2, switchDividerX + 2, measuredHeight + m50dp, Theme.dividerPaint);
+            int m54dp = AndroidUtilities.m54dp(this.height / 3);
+            canvas.drawRect(getSwitchDividerX(), (getMeasuredHeight() - m54dp) / 2, switchDividerX + 2, measuredHeight + m54dp, Theme.dividerPaint);
         }
         if (this.animatedColorBackground != 0) {
             float lastTouchX = getLastTouchX();
-            canvas.drawCircle(lastTouchX, getMeasuredHeight() / 2, (Math.max(lastTouchX, getMeasuredWidth() - lastTouchX) + AndroidUtilities.m50dp(40)) * this.animationProgress, this.animationPaint);
+            canvas.drawCircle(lastTouchX, getMeasuredHeight() / 2, (Math.max(lastTouchX, getMeasuredWidth() - lastTouchX) + AndroidUtilities.m54dp(40)) * this.animationProgress, this.animationPaint);
         }
         if (this.needDivider) {
             ImageView imageView = this.imageView;
@@ -443,9 +452,9 @@ public class TextCheckCell extends FrameLayout {
                 return;
             }
             if (!LocaleController.isRTL) {
-                f = AndroidUtilities.m50dp(20);
+                f = AndroidUtilities.m54dp(20);
             }
-            canvas.drawLine(f, getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m50dp(20) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+            canvas.drawLine(f, getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m54dp(20) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
         }
     }
 
@@ -486,14 +495,14 @@ public class TextCheckCell extends FrameLayout {
             this.imageView = rLottieImageView;
             rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
             addView(this.imageView, LayoutHelper.createFrame(29, 29, (LocaleController.isRTL ? 5 : 3) | 16, 19, 0, 19, 0));
-            this.padding = AndroidUtilities.m50dp(65);
+            this.padding = AndroidUtilities.m54dp(65);
             ((ViewGroup.MarginLayoutParams) this.textView.getLayoutParams()).leftMargin = LocaleController.isRTL ? 70 : this.padding;
             ((ViewGroup.MarginLayoutParams) this.textView.getLayoutParams()).rightMargin = LocaleController.isRTL ? this.padding : 70;
         }
         this.imageView.setVisibility(0);
-        this.imageView.setPadding(AndroidUtilities.m50dp(2), AndroidUtilities.m50dp(2), AndroidUtilities.m50dp(2), AndroidUtilities.m50dp(2));
+        this.imageView.setPadding(AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(2));
         this.imageView.setImageResource(i2);
         this.imageView.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.SRC_IN));
-        this.imageView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m50dp(9), i));
+        this.imageView.setBackground(Theme.createRoundRectDrawable(AndroidUtilities.m54dp(9), i));
     }
 }

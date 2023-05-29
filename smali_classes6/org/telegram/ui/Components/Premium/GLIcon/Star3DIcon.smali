@@ -343,9 +343,9 @@
 
     new-array v13, v3, [I
 
-    const-string v4, "premiumGradient1"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient1:I
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -353,9 +353,9 @@
 
     aput v4, v13, v6
 
-    const-string v4, "premiumGradient2"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient2:I
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -363,9 +363,9 @@
 
     aput v4, v13, v5
 
-    const-string v4, "premiumGradient3"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient3:I
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -373,9 +373,9 @@
 
     aput v4, v13, v8
 
-    const-string v4, "premiumGradient4"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_premiumGradient4:I
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 

@@ -22,7 +22,7 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/ui/twitter/adapter/TweetsRecycleAdapter;",
+        "Lcom/iMe/feature/twitter/adapter/TweetsRecycleAdapter;",
         ">;"
     }
 .end annotation
@@ -61,7 +61,7 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/twitter/adapter/TweetsRecycleAdapter;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/feature/twitter/adapter/TweetsRecycleAdapter;
     .locals 3
 
     const-string v0, "$this$factory"
@@ -116,9 +116,9 @@
     .line 88
     check-cast p1, Lcom/iMe/ui/adapter/provider/TweetDatesProvider;
 
-    new-instance v0, Lcom/iMe/ui/twitter/adapter/TweetsRecycleAdapter;
+    new-instance v0, Lcom/iMe/feature/twitter/adapter/TweetsRecycleAdapter;
 
-    invoke-direct {v0, v1, p1, p2}, Lcom/iMe/ui/twitter/adapter/TweetsRecycleAdapter;-><init>(Lcom/iMe/ui/adapter/provider/TweetProvider;Lcom/iMe/ui/adapter/provider/TweetDatesProvider;Lcom/iMe/ui/adapter/provider/GlobalStateProvider;)V
+    invoke-direct {v0, v1, p1, p2}, Lcom/iMe/feature/twitter/adapter/TweetsRecycleAdapter;-><init>(Lcom/iMe/ui/adapter/provider/TweetProvider;Lcom/iMe/ui/adapter/provider/TweetDatesProvider;Lcom/iMe/ui/adapter/provider/GlobalStateProvider;)V
 
     return-object v0
 .end method
@@ -131,7 +131,7 @@
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$12;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/ui/twitter/adapter/TweetsRecycleAdapter;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/di/module/AdapterModuleKt$presentationAdapterModule$1$12;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/feature/twitter/adapter/TweetsRecycleAdapter;
 
     move-result-object p1
 

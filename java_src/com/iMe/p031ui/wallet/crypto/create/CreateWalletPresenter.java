@@ -24,7 +24,7 @@ import java.util.concurrent.TimeUnit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 /* compiled from: CreateWalletPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletPresenter */
@@ -68,11 +68,11 @@ public final class CreateWalletPresenter extends BasePresenter<CreateWalletView>
         CreateWalletScreenType createWalletScreenType = this.screenType;
         if (createWalletScreenType instanceof CreateWalletScreenType.WordsCheck) {
             if (((CreateWalletScreenType.WordsCheck) createWalletScreenType).getPassword().length() > 0) {
-                Observable<Result<Wallet>> observeOn = this.cryptoWalletInteractor.importWallet(StringExtKt.joinBySpace(((CreateWalletScreenType.WordsCheck) this.screenType).getSecretWords()), ((CreateWalletScreenType.WordsCheck) this.screenType).getPassword(), this.cryptoAccessManager.isAnyWalletCreated() ? "" : ((CreateWalletScreenType.WordsCheck) this.screenType).getPin(), this.cryptoPreferenceHelper.getCurrentBlockchainType()).observeOn(this.schedulersProvider.mo693ui());
+                Observable<Result<Wallet>> observeOn = this.cryptoWalletInteractor.importWallet(StringExtKt.joinBySpace(((CreateWalletScreenType.WordsCheck) this.screenType).getSecretWords()), ((CreateWalletScreenType.WordsCheck) this.screenType).getPassword(), this.cryptoAccessManager.isAnyWalletCreated() ? "" : ((CreateWalletScreenType.WordsCheck) this.screenType).getPin(), this.cryptoPreferenceHelper.getCurrentBlockchainType()).observeOn(this.schedulersProvider.mo698ui());
                 Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
                 T viewState = getViewState();
                 Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-                Disposable subscribe = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) viewState, false).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2104x69d5d2cf(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2105x69d5d2d0((BaseView) getViewState())));
+                Disposable subscribe = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) viewState, false).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2143x69d5d2cf(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2144x69d5d2d0((BaseView) getViewState())));
                 Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
                 BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
                 return;
@@ -88,9 +88,9 @@ public final class CreateWalletPresenter extends BasePresenter<CreateWalletView>
         if (r0 != null) {
             boolean z = r0.getPassword().length() > 0;
             if (r0.getAddress().length() > 0) {
-                validateSeedInternal(this.walletInteractor.isValidRestoredAddress(seed, r0.getAddress(), this.cryptoPreferenceHelper.getCurrentBlockchainType()), seed, this.resourceManager.getString(C3242R.string.wallet_restore_address_eth_error), z);
+                validateSeedInternal(this.walletInteractor.isValidRestoredAddress(seed, r0.getAddress(), this.cryptoPreferenceHelper.getCurrentBlockchainType()), seed, this.resourceManager.getString(C3290R.string.wallet_restore_address_eth_error), z);
             } else {
-                validateSeedInternal(this.walletInteractor.isValidSeed(seed, this.cryptoPreferenceHelper.getCurrentBlockchainType()), seed, this.resourceManager.getString(C3242R.string.wallet_restore_eth_error), z);
+                validateSeedInternal(this.walletInteractor.isValidSeed(seed, this.cryptoPreferenceHelper.getCurrentBlockchainType()), seed, this.resourceManager.getString(C3290R.string.wallet_restore_eth_error), z);
             }
         }
     }
@@ -101,11 +101,11 @@ public final class CreateWalletPresenter extends BasePresenter<CreateWalletView>
             ((CreateWalletView) getViewState()).createNewWallet();
             return;
         }
-        Observable<Result<Wallet>> observeOn = this.cryptoWalletInteractor.createLocalWallet(this.cryptoPreferenceHelper.getCurrentBlockchainType()).observeOn(this.schedulersProvider.mo693ui());
+        Observable<Result<Wallet>> observeOn = this.cryptoWalletInteractor.createLocalWallet(this.cryptoPreferenceHelper.getCurrentBlockchainType()).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2102x1004bc19(this, walletPassword)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2103x1004bc1a((BaseView) getViewState())));
+        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2141x1004bc19(this, walletPassword)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2142x1004bc1a((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -124,7 +124,7 @@ public final class CreateWalletPresenter extends BasePresenter<CreateWalletView>
     }
 
     private final void subscribeToQueryChanges() {
-        Observable<String> subscribeOn = this.searchQuerySubject.debounce(200L, TimeUnit.MILLISECONDS).distinctUntilChanged().subscribeOn(this.schedulersProvider.mo694io());
+        Observable<String> subscribeOn = this.searchQuerySubject.debounce(200L, TimeUnit.MILLISECONDS).distinctUntilChanged().subscribeOn(this.schedulersProvider.mo699io());
         final CreateWalletPresenter$subscribeToQueryChanges$1 createWalletPresenter$subscribeToQueryChanges$1 = new CreateWalletPresenter$subscribeToQueryChanges$1(this);
         Observable observeOn = subscribeOn.switchMap(new Function() { // from class: com.iMe.ui.wallet.crypto.create.CreateWalletPresenter$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Function
@@ -133,9 +133,9 @@ public final class CreateWalletPresenter extends BasePresenter<CreateWalletView>
                 subscribeToQueryChanges$lambda$3 = CreateWalletPresenter.subscribeToQueryChanges$lambda$3(Function1.this, obj);
                 return subscribeToQueryChanges$lambda$3;
             }
-        }).observeOn(this.schedulersProvider.mo693ui());
+        }).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "private fun subscribeToQ…     .autoDispose()\n    }");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2106x40636172(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2107x40636173(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2145x40636172(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2146x40636173(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -154,13 +154,13 @@ public final class CreateWalletPresenter extends BasePresenter<CreateWalletView>
 
     private final void validateSeedInternal(Observable<Result<Boolean>> observable, String str, String str2, boolean z) {
         if (this.screenType instanceof CreateWalletScreenType.Import) {
-            Observable<Result<Boolean>> observeOn = observable.observeOn(this.schedulersProvider.mo693ui());
+            Observable<Result<Boolean>> observeOn = observable.observeOn(this.schedulersProvider.mo698ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "validationObservable\n   …(schedulersProvider.ui())");
-            Observable<R> flatMap = observeOn.flatMap(new C2112x9ee4cc57(new C2108x17c7d15b(z, this, str)));
+            Observable<R> flatMap = observeOn.flatMap(new C2151x9ee4cc57(new C2147x17c7d15b(z, this, str)));
             Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
             T viewState = getViewState();
             Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-            Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) flatMap, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2109xa2ffd3d8(this, z, str, str2)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2110xa2ffd3d9((BaseView) getViewState())));
+            Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) flatMap, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2148xa2ffd3d8(this, z, str, str2)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2149xa2ffd3d9((BaseView) getViewState())));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }

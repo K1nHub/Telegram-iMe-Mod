@@ -1,13 +1,13 @@
 package com.google.zxing.common;
 
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.zxing.FormatException;
 import java.util.HashMap;
 import java.util.Map;
 /* loaded from: classes3.dex */
 public enum CharacterSetECI {
     Cp437(new int[]{0, 2}, new String[0]),
-    ISO8859_1(new int[]{1, 3}, C0470C.ISO88591_NAME),
+    ISO8859_1(new int[]{1, 3}, C0475C.ISO88591_NAME),
     ISO8859_2(4, "ISO-8859-2"),
     ISO8859_3(5, "ISO-8859-3"),
     ISO8859_4(6, "ISO-8859-4"),
@@ -29,7 +29,7 @@ public enum CharacterSetECI {
     Cp1256(24, "windows-1256"),
     UnicodeBigUnmarked(25, "UTF-16BE", "UnicodeBig"),
     UTF8(26, "UTF-8"),
-    ASCII(new int[]{27, 170}, C0470C.ASCII_NAME),
+    ASCII(new int[]{27, 170}, C0475C.ASCII_NAME),
     Big5(28),
     GB18030(29, "GB2312", "EUC_CN", "GBK"),
     EUC_KR(30, "EUC-KR");

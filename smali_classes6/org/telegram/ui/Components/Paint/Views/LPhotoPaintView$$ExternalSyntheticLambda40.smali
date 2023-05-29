@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/Paint/UndoStore$UndoStoreDelegate;
+.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;
 
 
 # instance fields
@@ -22,12 +22,12 @@
 
 
 # virtual methods
-.method public final historyChanged()V
+.method public final onItemClick(Landroid/view/View;I)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView$$ExternalSyntheticLambda40;->f$0:Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->$r8$lambda$sc72yFNQKZxig8aPceTg6EojU2Y(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;->$r8$lambda$j4tLf-wsDdlBuPX_i8NQW05FhtA(Lorg/telegram/ui/Components/Paint/Views/LPhotoPaintView;Landroid/view/View;I)V
 
     return-void
 .end method

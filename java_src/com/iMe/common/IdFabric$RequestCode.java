@@ -1,16 +1,20 @@
 package com.iMe.common;
 /* loaded from: classes3.dex */
 public class IdFabric$RequestCode {
-    public static final int file_saving_directory = 1073741823;
-    public static final int file_saving_write_storage_permission;
+    public static final int FILE_SAVING_DIRECTORY = 1073741823;
+    public static final int FILE_SAVING_WRITE_STORAGE_PERMISSION;
+    public static final int QUICK_LOGIN_AUTHORIZE;
 
     /* renamed from: id */
-    private static int f253id = 1073741823;
+    private static int f256id = 1073741823;
 
     static {
-        int i = file_saving_directory + 1;
-        f253id = i;
-        f253id = i + 1;
-        file_saving_write_storage_permission = i;
+        int i = FILE_SAVING_DIRECTORY + 1;
+        f256id = i;
+        int i2 = i + 1;
+        f256id = i2;
+        FILE_SAVING_WRITE_STORAGE_PERMISSION = i;
+        f256id = i2 + 1;
+        QUICK_LOGIN_AUTHORIZE = i2;
     }
 }

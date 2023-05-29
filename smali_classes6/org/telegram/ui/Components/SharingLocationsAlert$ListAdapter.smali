@@ -208,9 +208,9 @@
 
     iget-object v1, p0, Lorg/telegram/ui/Components/SharingLocationsAlert$ListAdapter;->this$0:Lorg/telegram/ui/Components/SharingLocationsAlert;
 
-    const-string v2, "dialogIcon"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogIcon:I
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/Components/SharingLocationsAlert;->access$800(Lorg/telegram/ui/Components/SharingLocationsAlert;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lorg/telegram/ui/Components/SharingLocationsAlert;->access$800(Lorg/telegram/ui/Components/SharingLocationsAlert;I)I
 
     move-result v1
 

@@ -18,7 +18,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 355
+    .line 352
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -37,7 +37,7 @@
 .method public final newInstance()Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;
     .locals 1
 
-    .line 359
+    .line 356
     new-instance v0, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;
 
     invoke-direct {v0}, Lcom/iMe/ui/wallet/home/v2/tabs/crypto/WalletHomeCryptoFragment;-><init>()V

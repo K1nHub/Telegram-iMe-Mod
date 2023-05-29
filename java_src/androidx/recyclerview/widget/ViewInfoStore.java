@@ -148,7 +148,7 @@ public class ViewInfoStore {
             try {
                 infoRecord = this.mLayoutHolderMap.removeAt(size);
             } catch (Exception e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
                 infoRecord = null;
             }
             if (infoRecord != null) {

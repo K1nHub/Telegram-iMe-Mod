@@ -20,14 +20,41 @@
 
 .field private final likesCountText:Ljava/lang/String;
 
+.field private final mediaInfo:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/domain/model/twitter/MediaInfoDomain;",
+            ">;"
+        }
+    .end annotation
+.end field
+
 .field private final retweetsCountText:Ljava/lang/String;
 
-.field private final text:Landroid/text/SpannableStringBuilder;
+.field private final text:Ljava/lang/String;
 
 
 # direct methods
-.method public constructor <init>(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/text/SpannableStringBuilder;Ljava/lang/String;Z)V
+.method public constructor <init>(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/util/List;)V
     .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(J",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Z",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/domain/model/twitter/MediaInfoDomain;",
+            ">;)V"
+        }
+    .end annotation
 
     const-string v0, "authorName"
 
@@ -61,7 +88,11 @@
 
     invoke-static {p10, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 17
+    const-string v0, "mediaInfo"
+
+    invoke-static {p12, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 18
     invoke-direct {p0}, Lcom/iMe/model/common/NoChildNode;-><init>()V
 
     .line 7
@@ -86,7 +117,7 @@
     iput-object p8, p0, Lcom/iMe/model/twitter/TweetItem;->retweetsCountText:Ljava/lang/String;
 
     .line 14
-    iput-object p9, p0, Lcom/iMe/model/twitter/TweetItem;->text:Landroid/text/SpannableStringBuilder;
+    iput-object p9, p0, Lcom/iMe/model/twitter/TweetItem;->text:Ljava/lang/String;
 
     .line 15
     iput-object p10, p0, Lcom/iMe/model/twitter/TweetItem;->date:Ljava/lang/String;
@@ -94,15 +125,18 @@
     .line 16
     iput-boolean p11, p0, Lcom/iMe/model/twitter/TweetItem;->isLiked:Z
 
+    .line 17
+    iput-object p12, p0, Lcom/iMe/model/twitter/TweetItem;->mediaInfo:Ljava/util/List;
+
     return-void
 .end method
 
-.method public static synthetic copy$default(Lcom/iMe/model/twitter/TweetItem;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/text/SpannableStringBuilder;Ljava/lang/String;ZILjava/lang/Object;)Lcom/iMe/model/twitter/TweetItem;
-    .locals 12
+.method public static synthetic copy$default(Lcom/iMe/model/twitter/TweetItem;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/util/List;ILjava/lang/Object;)Lcom/iMe/model/twitter/TweetItem;
+    .locals 13
 
     move-object v0, p0
 
-    move/from16 v1, p12
+    move/from16 v1, p13
 
     and-int/lit8 v2, v1, 0x1
 
@@ -125,7 +159,7 @@
     goto :goto_1
 
     :cond_1
-    move-object v4, p3
+    move-object/from16 v4, p3
 
     :goto_1
     and-int/lit8 v5, v1, 0x4
@@ -192,7 +226,7 @@
 
     if-eqz v10, :cond_7
 
-    iget-object v10, v0, Lcom/iMe/model/twitter/TweetItem;->text:Landroid/text/SpannableStringBuilder;
+    iget-object v10, v0, Lcom/iMe/model/twitter/TweetItem;->text:Ljava/lang/String;
 
     goto :goto_7
 
@@ -212,21 +246,33 @@
     move-object/from16 v11, p10
 
     :goto_8
-    and-int/lit16 v1, v1, 0x200
+    and-int/lit16 v12, v1, 0x200
 
-    if-eqz v1, :cond_9
+    if-eqz v12, :cond_9
 
-    iget-boolean v1, v0, Lcom/iMe/model/twitter/TweetItem;->isLiked:Z
+    iget-boolean v12, v0, Lcom/iMe/model/twitter/TweetItem;->isLiked:Z
 
     goto :goto_9
 
     :cond_9
-    move/from16 v1, p11
+    move/from16 v12, p11
 
     :goto_9
+    and-int/lit16 v1, v1, 0x400
+
+    if-eqz v1, :cond_a
+
+    iget-object v1, v0, Lcom/iMe/model/twitter/TweetItem;->mediaInfo:Ljava/util/List;
+
+    goto :goto_a
+
+    :cond_a
+    move-object/from16 v1, p12
+
+    :goto_a
     move-wide p1, v2
 
-    move-object p3, v4
+    move-object/from16 p3, v4
 
     move-object/from16 p4, v5
 
@@ -242,9 +288,11 @@
 
     move-object/from16 p10, v11
 
-    move/from16 p11, v1
+    move/from16 p11, v12
 
-    invoke-virtual/range {p0 .. p11}, Lcom/iMe/model/twitter/TweetItem;->copy(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/text/SpannableStringBuilder;Ljava/lang/String;Z)Lcom/iMe/model/twitter/TweetItem;
+    move-object/from16 p12, v1
+
+    invoke-virtual/range {p0 .. p12}, Lcom/iMe/model/twitter/TweetItem;->copy(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/util/List;)Lcom/iMe/model/twitter/TweetItem;
 
     move-result-object v0
 
@@ -267,6 +315,22 @@
     iget-boolean v0, p0, Lcom/iMe/model/twitter/TweetItem;->isLiked:Z
 
     return v0
+.end method
+
+.method public final component11()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/domain/model/twitter/MediaInfoDomain;",
+            ">;"
+        }
+    .end annotation
+
+    iget-object v0, p0, Lcom/iMe/model/twitter/TweetItem;->mediaInfo:Ljava/util/List;
+
+    return-object v0
 .end method
 
 .method public final component2()Ljava/lang/String;
@@ -317,10 +381,10 @@
     return-object v0
 .end method
 
-.method public final component8()Landroid/text/SpannableStringBuilder;
+.method public final component8()Ljava/lang/String;
     .locals 1
 
-    iget-object v0, p0, Lcom/iMe/model/twitter/TweetItem;->text:Landroid/text/SpannableStringBuilder;
+    iget-object v0, p0, Lcom/iMe/model/twitter/TweetItem;->text:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -333,8 +397,26 @@
     return-object v0
 .end method
 
-.method public final copy(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/text/SpannableStringBuilder;Ljava/lang/String;Z)Lcom/iMe/model/twitter/TweetItem;
-    .locals 13
+.method public final copy(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/util/List;)Lcom/iMe/model/twitter/TweetItem;
+    .locals 14
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(J",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Ljava/lang/String;",
+            "Z",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/domain/model/twitter/MediaInfoDomain;",
+            ">;)",
+            "Lcom/iMe/model/twitter/TweetItem;"
+        }
+    .end annotation
 
     const-string v0, "authorName"
 
@@ -384,6 +466,12 @@
 
     invoke-static {v11, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
+    const-string v0, "mediaInfo"
+
+    move-object/from16 v13, p12
+
+    invoke-static {v13, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
     new-instance v0, Lcom/iMe/model/twitter/TweetItem;
 
     move-object v1, v0
@@ -392,7 +480,7 @@
 
     move/from16 v12, p11
 
-    invoke-direct/range {v1 .. v12}, Lcom/iMe/model/twitter/TweetItem;-><init>(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Landroid/text/SpannableStringBuilder;Ljava/lang/String;Z)V
+    invoke-direct/range {v1 .. v13}, Lcom/iMe/model/twitter/TweetItem;-><init>(JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/util/List;)V
 
     return-object v0
 .end method
@@ -406,50 +494,29 @@
 
     return v0
 
-    .line 21
     :cond_0
-    const-class v1, Lcom/iMe/model/twitter/TweetItem;
-
-    if-eqz p1, :cond_1
-
-    invoke-virtual {p1}, Ljava/lang/Object;->getClass()Ljava/lang/Class;
-
-    move-result-object v2
-
-    goto :goto_0
-
-    :cond_1
-    const/4 v2, 0x0
-
-    :goto_0
-    invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
-
-    move-result v1
+    instance-of v1, p1, Lcom/iMe/model/twitter/TweetItem;
 
     const/4 v2, 0x0
 
-    if-nez v1, :cond_2
+    if-nez v1, :cond_1
 
     return v2
 
-    :cond_2
-    const-string v1, "null cannot be cast to non-null type com.iMe.model.twitter.TweetItem"
-
-    .line 23
-    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNull(Ljava/lang/Object;Ljava/lang/String;)V
-
+    :cond_1
     check-cast p1, Lcom/iMe/model/twitter/TweetItem;
 
-    .line 25
     iget-wide v3, p0, Lcom/iMe/model/twitter/TweetItem;->id:J
 
     iget-wide v5, p1, Lcom/iMe/model/twitter/TweetItem;->id:J
 
     cmp-long v1, v3, v5
 
-    if-nez v1, :cond_3
+    if-eqz v1, :cond_2
 
-    .line 26
+    return v2
+
+    :cond_2
     iget-object v1, p0, Lcom/iMe/model/twitter/TweetItem;->authorName:Ljava/lang/String;
 
     iget-object v3, p1, Lcom/iMe/model/twitter/TweetItem;->authorName:Ljava/lang/String;
@@ -458,9 +525,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-nez v1, :cond_3
 
-    .line 27
+    return v2
+
+    :cond_3
     iget-object v1, p0, Lcom/iMe/model/twitter/TweetItem;->authorNickname:Ljava/lang/String;
 
     iget-object v3, p1, Lcom/iMe/model/twitter/TweetItem;->authorNickname:Ljava/lang/String;
@@ -469,9 +538,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-nez v1, :cond_4
 
-    .line 28
+    return v2
+
+    :cond_4
     iget-object v1, p0, Lcom/iMe/model/twitter/TweetItem;->avatarUrl:Ljava/lang/String;
 
     iget-object v3, p1, Lcom/iMe/model/twitter/TweetItem;->avatarUrl:Ljava/lang/String;
@@ -480,9 +551,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-nez v1, :cond_5
 
-    .line 29
+    return v2
+
+    :cond_5
     iget-object v1, p0, Lcom/iMe/model/twitter/TweetItem;->likesCountText:Ljava/lang/String;
 
     iget-object v3, p1, Lcom/iMe/model/twitter/TweetItem;->likesCountText:Ljava/lang/String;
@@ -491,9 +564,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-nez v1, :cond_6
 
-    .line 30
+    return v2
+
+    :cond_6
     iget-object v1, p0, Lcom/iMe/model/twitter/TweetItem;->commentsCountText:Ljava/lang/String;
 
     iget-object v3, p1, Lcom/iMe/model/twitter/TweetItem;->commentsCountText:Ljava/lang/String;
@@ -502,9 +577,11 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-nez v1, :cond_7
 
-    .line 31
+    return v2
+
+    :cond_7
     iget-object v1, p0, Lcom/iMe/model/twitter/TweetItem;->retweetsCountText:Ljava/lang/String;
 
     iget-object v3, p1, Lcom/iMe/model/twitter/TweetItem;->retweetsCountText:Ljava/lang/String;
@@ -513,28 +590,24 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-nez v1, :cond_8
 
-    .line 32
-    iget-object v1, p0, Lcom/iMe/model/twitter/TweetItem;->text:Landroid/text/SpannableStringBuilder;
+    return v2
 
-    invoke-virtual {v1}, Landroid/text/SpannableStringBuilder;->toString()Ljava/lang/String;
+    :cond_8
+    iget-object v1, p0, Lcom/iMe/model/twitter/TweetItem;->text:Ljava/lang/String;
 
-    move-result-object v1
-
-    iget-object v3, p1, Lcom/iMe/model/twitter/TweetItem;->text:Landroid/text/SpannableStringBuilder;
-
-    invoke-virtual {v3}, Landroid/text/SpannableStringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v3
+    iget-object v3, p1, Lcom/iMe/model/twitter/TweetItem;->text:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-nez v1, :cond_9
 
-    .line 33
+    return v2
+
+    :cond_9
     iget-object v1, p0, Lcom/iMe/model/twitter/TweetItem;->date:Ljava/lang/String;
 
     iget-object v3, p1, Lcom/iMe/model/twitter/TweetItem;->date:Ljava/lang/String;
@@ -543,21 +616,33 @@
 
     move-result v1
 
-    if-eqz v1, :cond_3
+    if-nez v1, :cond_a
 
-    .line 34
+    return v2
+
+    :cond_a
     iget-boolean v1, p0, Lcom/iMe/model/twitter/TweetItem;->isLiked:Z
 
-    iget-boolean p1, p1, Lcom/iMe/model/twitter/TweetItem;->isLiked:Z
+    iget-boolean v3, p1, Lcom/iMe/model/twitter/TweetItem;->isLiked:Z
 
-    if-ne v1, p1, :cond_3
+    if-eq v1, v3, :cond_b
 
-    goto :goto_1
+    return v2
 
-    :cond_3
-    move v0, v2
+    :cond_b
+    iget-object v1, p0, Lcom/iMe/model/twitter/TweetItem;->mediaInfo:Ljava/util/List;
 
-    :goto_1
+    iget-object p1, p1, Lcom/iMe/model/twitter/TweetItem;->mediaInfo:Ljava/util/List;
+
+    invoke-static {v1, p1}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
+
+    move-result p1
+
+    if-nez p1, :cond_c
+
+    return v2
+
+    :cond_c
     return v0
 .end method
 
@@ -624,6 +709,23 @@
     return-object v0
 .end method
 
+.method public final getMediaInfo()Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/domain/model/twitter/MediaInfoDomain;",
+            ">;"
+        }
+    .end annotation
+
+    .line 17
+    iget-object v0, p0, Lcom/iMe/model/twitter/TweetItem;->mediaInfo:Ljava/util/List;
+
+    return-object v0
+.end method
+
 .method public final getRetweetsCountText()Ljava/lang/String;
     .locals 1
 
@@ -633,11 +735,11 @@
     return-object v0
 .end method
 
-.method public final getText()Landroid/text/SpannableStringBuilder;
+.method public final getText()Ljava/lang/String;
     .locals 1
 
     .line 14
-    iget-object v0, p0, Lcom/iMe/model/twitter/TweetItem;->text:Landroid/text/SpannableStringBuilder;
+    iget-object v0, p0, Lcom/iMe/model/twitter/TweetItem;->text:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -645,7 +747,6 @@
 .method public hashCode()I
     .locals 2
 
-    .line 38
     iget-wide v0, p0, Lcom/iMe/model/twitter/TweetItem;->id:J
 
     invoke-static {v0, v1}, Lcom/iMe/bots/data/model/database/BotsDbModel$$ExternalSyntheticBackport0;->m(J)I
@@ -654,7 +755,6 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 39
     iget-object v1, p0, Lcom/iMe/model/twitter/TweetItem;->authorName:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
@@ -665,7 +765,6 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 40
     iget-object v1, p0, Lcom/iMe/model/twitter/TweetItem;->authorNickname:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
@@ -676,7 +775,6 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 41
     iget-object v1, p0, Lcom/iMe/model/twitter/TweetItem;->avatarUrl:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
@@ -687,7 +785,6 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 42
     iget-object v1, p0, Lcom/iMe/model/twitter/TweetItem;->likesCountText:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
@@ -698,7 +795,6 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 43
     iget-object v1, p0, Lcom/iMe/model/twitter/TweetItem;->commentsCountText:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
@@ -709,7 +805,6 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 44
     iget-object v1, p0, Lcom/iMe/model/twitter/TweetItem;->retweetsCountText:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
@@ -720,12 +815,7 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 45
-    iget-object v1, p0, Lcom/iMe/model/twitter/TweetItem;->text:Landroid/text/SpannableStringBuilder;
-
-    invoke-virtual {v1}, Landroid/text/SpannableStringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v1
+    iget-object v1, p0, Lcom/iMe/model/twitter/TweetItem;->text:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
 
@@ -735,7 +825,6 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 46
     iget-object v1, p0, Lcom/iMe/model/twitter/TweetItem;->date:Ljava/lang/String;
 
     invoke-virtual {v1}, Ljava/lang/String;->hashCode()I
@@ -746,10 +835,20 @@
 
     mul-int/lit8 v0, v0, 0x1f
 
-    .line 47
     iget-boolean v1, p0, Lcom/iMe/model/twitter/TweetItem;->isLiked:Z
 
-    invoke-static {v1}, Lcom/iMe/model/twitter/TweetItem$$ExternalSyntheticBackport0;->m(Z)I
+    if-eqz v1, :cond_0
+
+    const/4 v1, 0x1
+
+    :cond_0
+    add-int/2addr v0, v1
+
+    mul-int/lit8 v0, v0, 0x1f
+
+    iget-object v1, p0, Lcom/iMe/model/twitter/TweetItem;->mediaInfo:Ljava/util/List;
+
+    invoke-virtual {v1}, Ljava/lang/Object;->hashCode()I
 
     move-result v1
 
@@ -834,9 +933,9 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    iget-object v1, p0, Lcom/iMe/model/twitter/TweetItem;->text:Landroid/text/SpannableStringBuilder;
+    iget-object v1, p0, Lcom/iMe/model/twitter/TweetItem;->text:Ljava/lang/String;
 
-    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     const-string v1, ", date="
 
@@ -853,6 +952,14 @@
     iget-boolean v1, p0, Lcom/iMe/model/twitter/TweetItem;->isLiked:Z
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Z)Ljava/lang/StringBuilder;
+
+    const-string v1, ", mediaInfo="
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    iget-object v1, p0, Lcom/iMe/model/twitter/TweetItem;->mediaInfo:Ljava/util/List;
+
+    invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/Object;)Ljava/lang/StringBuilder;
 
     const/16 v1, 0x29
 

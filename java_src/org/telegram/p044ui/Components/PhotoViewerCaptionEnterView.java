@@ -33,7 +33,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.iMe.fork.utils.Callbacks$Callback1;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
@@ -152,7 +152,7 @@ public class PhotoViewerCaptionEnterView extends FrameLayout implements Notifica
         ImageView imageView = new ImageView(context);
         this.emojiButton = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-        this.emojiButton.setPadding(AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(1), 0, 0);
+        this.emojiButton.setPadding(AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(1), 0, 0);
         this.emojiButton.setAlpha(0.58f);
         frameLayout.addView(this.emojiButton, LayoutHelper.createFrame(48, 48, 83));
         this.emojiButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.PhotoViewerCaptionEnterView$$ExternalSyntheticLambda4
@@ -161,16 +161,16 @@ public class PhotoViewerCaptionEnterView extends FrameLayout implements Notifica
                 PhotoViewerCaptionEnterView.this.lambda$new$0(view2);
             }
         });
-        this.emojiButton.setContentDescription(LocaleController.getString("Emoji", C3242R.string.Emoji));
+        this.emojiButton.setContentDescription(LocaleController.getString("Emoji", C3290R.string.Emoji));
         ImageView imageView2 = this.emojiButton;
         ReplaceableIconDrawable replaceableIconDrawable = new ReplaceableIconDrawable(context);
         this.emojiIconDrawable = replaceableIconDrawable;
         imageView2.setImageDrawable(replaceableIconDrawable);
         this.emojiIconDrawable.setColorFilter(new PorterDuffColorFilter(-1, PorterDuff.Mode.MULTIPLY));
-        this.emojiIconDrawable.setIcon(C3242R.C3244drawable.input_smile, false);
+        this.emojiIconDrawable.setIcon(C3290R.C3292drawable.input_smile, false);
         TextPaint textPaint = new TextPaint(1);
         this.lengthTextPaint = textPaint;
-        textPaint.setTextSize(AndroidUtilities.m50dp(13));
+        textPaint.setTextSize(AndroidUtilities.m54dp(13));
         this.lengthTextPaint.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.lengthTextPaint.setColor(-2500135);
         EditTextCaption editTextCaption = new EditTextCaption(context, null) { // from class: org.telegram.ui.Components.PhotoViewerCaptionEnterView.1
@@ -190,8 +190,8 @@ public class PhotoViewerCaptionEnterView extends FrameLayout implements Notifica
                     }
                     PhotoViewerCaptionEnterView.this.isInitLineCount = false;
                 } catch (Exception e) {
-                    setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m50dp(51));
-                    FileLog.m45e(e);
+                    setMeasuredDimension(View.MeasureSpec.getSize(i), AndroidUtilities.m54dp(51));
+                    FileLog.m49e(e);
                 }
             }
 
@@ -213,7 +213,7 @@ public class PhotoViewerCaptionEnterView extends FrameLayout implements Notifica
 
             @Override // android.view.View
             public boolean requestRectangleOnScreen(Rect rect) {
-                rect.bottom += AndroidUtilities.m50dp(1000);
+                rect.bottom += AndroidUtilities.m54dp(1000);
                 return super.requestRectangleOnScreen(rect);
             }
 
@@ -238,7 +238,7 @@ public class PhotoViewerCaptionEnterView extends FrameLayout implements Notifica
             }
         });
         this.messageEditText.setWindowView(this.windowView);
-        this.messageEditText.setHint(LocaleController.getString("AddCaption", C3242R.string.AddCaption));
+        this.messageEditText.setHint(LocaleController.getString("AddCaption", C3290R.string.AddCaption));
         this.messageEditText.setImeOptions(268435456);
         this.messageEditText.setLinkTextColor(-8994063);
         EditTextCaption editTextCaption2 = this.messageEditText;
@@ -247,10 +247,10 @@ public class PhotoViewerCaptionEnterView extends FrameLayout implements Notifica
         this.messageEditText.setHorizontallyScrolling(false);
         this.messageEditText.setTextSize(1, 18.0f);
         this.messageEditText.setGravity(80);
-        this.messageEditText.setPadding(0, AndroidUtilities.m50dp(11), 0, AndroidUtilities.m50dp(12));
+        this.messageEditText.setPadding(0, AndroidUtilities.m54dp(11), 0, AndroidUtilities.m54dp(12));
         this.messageEditText.setBackgroundDrawable(null);
         this.messageEditText.setCursorColor(-1);
-        this.messageEditText.setCursorSize(AndroidUtilities.m50dp(20));
+        this.messageEditText.setCursorSize(AndroidUtilities.m54dp(20));
         this.messageEditText.setTextColor(-1);
         this.messageEditText.setHighlightColor(1342177279);
         this.messageEditText.setHintTextColor(-1291845633);
@@ -269,11 +269,11 @@ public class PhotoViewerCaptionEnterView extends FrameLayout implements Notifica
                 PhotoViewerCaptionEnterView.this.lambda$new$4(view2);
             }
         });
-        this.messageEditText.addTextChangedListener(new C48052(photoViewer, sizeNotifierFrameLayoutPhoto));
-        this.doneDrawable = Theme.createCircleDrawable(AndroidUtilities.m50dp(16), -10043398);
-        this.checkDrawable = context.getResources().getDrawable(C3242R.C3244drawable.input_done).mutate();
-        CombinedDrawable combinedDrawable = new CombinedDrawable(this.doneDrawable, this.checkDrawable, 0, AndroidUtilities.m50dp(1));
-        combinedDrawable.setCustomSize(AndroidUtilities.m50dp(32), AndroidUtilities.m50dp(32));
+        this.messageEditText.addTextChangedListener(new C48782(photoViewer, sizeNotifierFrameLayoutPhoto));
+        this.doneDrawable = Theme.createCircleDrawable(AndroidUtilities.m54dp(16), -10043398);
+        this.checkDrawable = context.getResources().getDrawable(C3290R.C3292drawable.input_done).mutate();
+        CombinedDrawable combinedDrawable = new CombinedDrawable(this.doneDrawable, this.checkDrawable, 0, AndroidUtilities.m54dp(1));
+        combinedDrawable.setCustomSize(AndroidUtilities.m54dp(32), AndroidUtilities.m54dp(32));
         ImageView imageView3 = new ImageView(context);
         this.doneButton = imageView3;
         imageView3.setScaleType(ImageView.ScaleType.CENTER);
@@ -285,7 +285,7 @@ public class PhotoViewerCaptionEnterView extends FrameLayout implements Notifica
                 PhotoViewerCaptionEnterView.this.lambda$new$5(photoViewer, sizeNotifierFrameLayoutPhoto, view2);
             }
         });
-        imageView3.setContentDescription(LocaleController.getString("Done", C3242R.string.Done));
+        imageView3.setContentDescription(LocaleController.getString("Done", C3290R.string.Done));
         NumberTextView numberTextView = new NumberTextView(context);
         this.captionLimitView = numberTextView;
         numberTextView.setVisibility(8);
@@ -348,7 +348,7 @@ public class PhotoViewerCaptionEnterView extends FrameLayout implements Notifica
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.PhotoViewerCaptionEnterView$2 */
     /* loaded from: classes6.dex */
-    public class C48052 implements TextWatcher {
+    public class C48782 implements TextWatcher {
         boolean heightShouldBeChanged;
         boolean processChange = false;
         final /* synthetic */ SizeNotifierFrameLayoutPhoto val$parent;
@@ -358,7 +358,7 @@ public class PhotoViewerCaptionEnterView extends FrameLayout implements Notifica
         public void beforeTextChanged(CharSequence charSequence, int i, int i2, int i3) {
         }
 
-        C48052(PhotoViewer photoViewer, SizeNotifierFrameLayoutPhoto sizeNotifierFrameLayoutPhoto) {
+        C48782(PhotoViewer photoViewer, SizeNotifierFrameLayoutPhoto sizeNotifierFrameLayoutPhoto) {
             this.val$photoViewer = photoViewer;
             this.val$parent = sizeNotifierFrameLayoutPhoto;
         }
@@ -398,13 +398,13 @@ public class PhotoViewerCaptionEnterView extends FrameLayout implements Notifica
                 Method dump skipped, instructions count: 556
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Components.PhotoViewerCaptionEnterView.C48052.afterTextChanged(android.text.Editable):void");
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Components.PhotoViewerCaptionEnterView.C48782.afterTextChanged(android.text.Editable):void");
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$afterTextChanged$0(ValueAnimator valueAnimator) {
             PhotoViewerCaptionEnterView.this.sendButtonEnabledProgress = ((Float) valueAnimator.getAnimatedValue()).floatValue();
-            int themedColor = PhotoViewerCaptionEnterView.this.getThemedColor("dialogFloatingIcon");
+            int themedColor = PhotoViewerCaptionEnterView.this.getThemedColor(Theme.key_dialogFloatingIcon);
             Theme.setDrawableColor(PhotoViewerCaptionEnterView.this.checkDrawable, ColorUtils.setAlphaComponent(themedColor, (int) (Color.alpha(themedColor) * ((PhotoViewerCaptionEnterView.this.sendButtonEnabledProgress * 0.42f) + 0.58f))));
             PhotoViewerCaptionEnterView.this.doneButton.invalidate();
         }
@@ -513,8 +513,8 @@ public class PhotoViewerCaptionEnterView extends FrameLayout implements Notifica
     }
 
     public void updateColors() {
-        Theme.setDrawableColor(this.doneDrawable, getThemedColor("dialogFloatingButton"));
-        int themedColor = getThemedColor("dialogFloatingIcon");
+        Theme.setDrawableColor(this.doneDrawable, getThemedColor(Theme.key_dialogFloatingButton));
+        int themedColor = getThemedColor(Theme.key_dialogFloatingIcon);
         Theme.setDrawableColor(this.checkDrawable, ColorUtils.setAlphaComponent(themedColor, (int) (Color.alpha(themedColor) * ((this.sendButtonEnabledProgress * 0.42f) + 0.58f))));
         EmojiView emojiView = this.emojiView;
         if (emojiView != null) {
@@ -579,7 +579,7 @@ public class PhotoViewerCaptionEnterView extends FrameLayout implements Notifica
         try {
             return editTextCaption.getSelectionEnd() - this.messageEditText.getSelectionStart();
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
             return 0;
         }
     }
@@ -601,13 +601,13 @@ public class PhotoViewerCaptionEnterView extends FrameLayout implements Notifica
         }
 
         @Override // org.telegram.p044ui.ActionBar.Theme.ResourcesProvider
-        public /* synthetic */ int getColorOrDefault(String str) {
-            return Theme.ResourcesProvider.CC.$default$getColorOrDefault(this, str);
+        public /* synthetic */ int getColorOrDefault(int i) {
+            return Theme.ResourcesProvider.CC.$default$getColorOrDefault(this, i);
         }
 
         @Override // org.telegram.p044ui.ActionBar.Theme.ResourcesProvider
-        public /* synthetic */ Integer getCurrentColor(String str) {
-            return getColor(str);
+        public /* synthetic */ int getCurrentColor(int i) {
+            return getColor(i);
         }
 
         @Override // org.telegram.p044ui.ActionBar.Theme.ResourcesProvider
@@ -626,179 +626,66 @@ public class PhotoViewerCaptionEnterView extends FrameLayout implements Notifica
         }
 
         @Override // org.telegram.p044ui.ActionBar.Theme.ResourcesProvider
-        public /* synthetic */ void setAnimatedColor(String str, int i) {
-            Theme.ResourcesProvider.CC.$default$setAnimatedColor(this, str, i);
+        public /* synthetic */ void setAnimatedColor(int i, int i2) {
+            Theme.ResourcesProvider.CC.$default$setAnimatedColor(this, i, i2);
         }
 
         private DarkTheme(PhotoViewerCaptionEnterView photoViewerCaptionEnterView) {
         }
 
-        /* JADX WARN: Can't fix incorrect switch cases order, some code will duplicate */
         @Override // org.telegram.p044ui.ActionBar.Theme.ResourcesProvider
-        public Integer getColor(String str) {
-            char c;
-            str.hashCode();
-            switch (str.hashCode()) {
-                case -2139469579:
-                    if (str.equals("chat_emojiPanelEmptyText")) {
-                        c = 0;
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                case -1850167367:
-                    if (str.equals("chat_emojiPanelShadowLine")) {
-                        c = 1;
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                case -1849805674:
-                    if (str.equals("dialogBackground")) {
-                        c = 2;
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                case -1815610844:
-                    if (str.equals("chat_emojiPanelStickerPackSelectorLine")) {
-                        c = 3;
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                case -1633591792:
-                    if (str.equals("chat_emojiPanelStickerPackSelector")) {
-                        c = 4;
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                case -1345036363:
-                    if (str.equals("chat_emojiSearchBackground")) {
-                        c = 5;
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                case -1285599213:
-                    if (str.equals("chat_emojiBottomPanelIcon")) {
-                        c = 6;
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                case -343666293:
-                    if (str.equals("windowBackgroundWhite")) {
-                        c = 7;
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                case -249481380:
-                    if (str.equals("listSelectorSDK21")) {
-                        c = '\b';
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                case 339397761:
-                    if (str.equals("windowBackgroundWhiteBlackText")) {
-                        c = '\t';
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                case 421601145:
-                    if (str.equals("chat_emojiPanelIconSelected")) {
-                        c = '\n';
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                case 634019162:
-                    if (str.equals("chat_emojiPanelBackspace")) {
-                        c = 11;
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                case 1674318617:
-                    if (str.equals("divider")) {
-                        c = '\f';
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                case 1929729373:
-                    if (str.equals("progressCircle")) {
-                        c = '\r';
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                case 1976399936:
-                    if (str.equals("chat_emojiSearchIcon")) {
-                        c = 14;
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                case 2067556030:
-                    if (str.equals("chat_emojiPanelIcon")) {
-                        c = 15;
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                case 2133456819:
-                    if (str.equals("chat_emojiPanelBackground")) {
-                        c = 16;
-                        break;
-                    }
-                    c = 65535;
-                    break;
-                default:
-                    c = 65535;
-                    break;
+        public int getColor(int i) {
+            if (i == Theme.key_dialogBackground) {
+                return -14803426;
             }
-            switch (c) {
-                case 0:
-                    return -8553090;
-                case 1:
-                    return -1610612736;
-                case 2:
-                    return -14803426;
-                case 3:
-                    return -10177041;
-                case 4:
-                case 5:
-                    return 181267199;
-                case 6:
-                    return -9539985;
-                case 7:
-                    return -15198183;
-                case '\b':
-                    return 771751936;
-                case '\t':
-                    return -1;
-                case '\n':
-                    return -10177041;
-                case 11:
-                    return -9539985;
-                case '\f':
-                    return -16777216;
-                case '\r':
-                    return -10177027;
-                case 14:
-                    return -9211020;
-                case 15:
-                    return -9539985;
-                case 16:
-                    return -14803425;
-                default:
-                    return null;
+            if (i == Theme.key_windowBackgroundWhite) {
+                return -15198183;
             }
+            if (i == Theme.key_windowBackgroundWhiteBlackText) {
+                return -1;
+            }
+            if (i == Theme.key_chat_emojiPanelEmptyText) {
+                return -8553090;
+            }
+            if (i == Theme.key_progressCircle) {
+                return -10177027;
+            }
+            if (i == Theme.key_chat_emojiSearchIcon) {
+                return -9211020;
+            }
+            if (i == Theme.key_chat_emojiPanelStickerPackSelector || i == Theme.key_chat_emojiSearchBackground) {
+                return 181267199;
+            }
+            if (i == Theme.key_chat_emojiPanelIcon || i == Theme.key_chat_emojiBottomPanelIcon) {
+                return -9539985;
+            }
+            if (i == Theme.key_chat_emojiPanelIconSelected || i == Theme.key_chat_emojiPanelStickerPackSelectorLine) {
+                return -10177041;
+            }
+            if (i == Theme.key_chat_emojiPanelBackground) {
+                return -14803425;
+            }
+            if (i == Theme.key_chat_emojiPanelShadowLine) {
+                return -1610612736;
+            }
+            if (i == Theme.key_chat_emojiPanelBackspace) {
+                return -9539985;
+            }
+            if (i == Theme.key_listSelector) {
+                return 771751936;
+            }
+            if (i == Theme.key_divider) {
+                return -16777216;
+            }
+            if (i == Theme.key_dialogFloatingButton) {
+                return -10177041;
+            }
+            return i == Theme.key_dialogFloatingIcon ? -1 : 0;
+        }
+
+        @Override // org.telegram.p044ui.ActionBar.Theme.ResourcesProvider
+        public boolean contains(int i) {
+            return getColor(i) != 0;
         }
     }
 
@@ -957,8 +844,8 @@ public class PhotoViewerCaptionEnterView extends FrameLayout implements Notifica
 
             /* renamed from: org.telegram.ui.Components.PhotoViewerCaptionEnterView$3$1 */
             /* loaded from: classes6.dex */
-            class C48081 extends BaseFragment {
-                C48081() {
+            class C48811 extends BaseFragment {
+                C48811() {
                 }
 
                 @Override // org.telegram.p044ui.ActionBar.BaseFragment
@@ -986,11 +873,11 @@ public class PhotoViewerCaptionEnterView extends FrameLayout implements Notifica
                     return new Dialog(PhotoViewerCaptionEnterView.this.getContext()) { // from class: org.telegram.ui.Components.PhotoViewerCaptionEnterView.3.1.1
                         @Override // android.app.Dialog, android.content.DialogInterface
                         public void dismiss() {
-                            if ((C48081.this.getParentActivity() instanceof LaunchActivity) && ((LaunchActivity) C48081.this.getParentActivity()).getActionBarLayout() != null) {
-                                C48081 c48081 = C48081.this;
-                                ((BaseFragment) c48081).parentLayout = ((LaunchActivity) c48081.getParentActivity()).getActionBarLayout();
-                                if (((BaseFragment) C48081.this).parentLayout != null && ((BaseFragment) C48081.this).parentLayout.getLastFragment() != null && ((BaseFragment) C48081.this).parentLayout.getLastFragment().getVisibleDialog() != null) {
-                                    Dialog visibleDialog = ((BaseFragment) C48081.this).parentLayout.getLastFragment().getVisibleDialog();
+                            if ((C48811.this.getParentActivity() instanceof LaunchActivity) && ((LaunchActivity) C48811.this.getParentActivity()).getActionBarLayout() != null) {
+                                C48811 c48811 = C48811.this;
+                                ((BaseFragment) c48811).parentLayout = ((LaunchActivity) c48811.getParentActivity()).getActionBarLayout();
+                                if (((BaseFragment) C48811.this).parentLayout != null && ((BaseFragment) C48811.this).parentLayout.getLastFragment() != null && ((BaseFragment) C48811.this).parentLayout.getLastFragment().getVisibleDialog() != null) {
+                                    Dialog visibleDialog = ((BaseFragment) C48811.this).parentLayout.getLastFragment().getVisibleDialog();
                                     if (visibleDialog instanceof ChatAttachAlert) {
                                         ((ChatAttachAlert) visibleDialog).dismiss(true);
                                     } else {
@@ -1006,7 +893,7 @@ public class PhotoViewerCaptionEnterView extends FrameLayout implements Notifica
 
             @Override // org.telegram.p044ui.Components.EmojiView.EmojiViewDelegate
             public void onAnimatedEmojiUnlockClick() {
-                new PremiumFeatureBottomSheet(new C48081(), 11, false).show();
+                new PremiumFeatureBottomSheet(new C48811(), 11, false).show();
             }
 
             @Override // org.telegram.p044ui.Components.EmojiView.EmojiViewDelegate
@@ -1033,7 +920,7 @@ public class PhotoViewerCaptionEnterView extends FrameLayout implements Notifica
                         int length = selectionEnd + spannableString.length();
                         PhotoViewerCaptionEnterView.this.messageEditText.setSelection(length, length);
                     } catch (Exception e) {
-                        FileLog.m45e(e);
+                        FileLog.m49e(e);
                     }
                 } finally {
                     PhotoViewerCaptionEnterView.this.innerTextChange = false;
@@ -1049,12 +936,12 @@ public class PhotoViewerCaptionEnterView extends FrameLayout implements Notifica
                 try {
                     try {
                         PhotoViewerCaptionEnterView.this.innerTextChange = true;
-                        CharSequence replaceEmoji = Emoji.replaceEmoji(str, PhotoViewerCaptionEnterView.this.messageEditText.getPaint().getFontMetricsInt(), AndroidUtilities.m50dp(20), false);
+                        CharSequence replaceEmoji = Emoji.replaceEmoji(str, PhotoViewerCaptionEnterView.this.messageEditText.getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(20), false);
                         PhotoViewerCaptionEnterView.this.messageEditText.setText(PhotoViewerCaptionEnterView.this.messageEditText.getText().insert(selectionEnd, replaceEmoji));
                         int length = selectionEnd + replaceEmoji.length();
                         PhotoViewerCaptionEnterView.this.messageEditText.setSelection(length, length);
                     } catch (Exception e) {
-                        FileLog.m45e(e);
+                        FileLog.m49e(e);
                     }
                 } finally {
                     PhotoViewerCaptionEnterView.this.innerTextChange = false;
@@ -1074,12 +961,12 @@ public class PhotoViewerCaptionEnterView extends FrameLayout implements Notifica
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.messageEditText.getText());
             spannableStringBuilder.replace(i, i2 + i, charSequence);
             if (z) {
-                Emoji.replaceEmoji(spannableStringBuilder, this.messageEditText.getPaint().getFontMetricsInt(), AndroidUtilities.m50dp(20), false);
+                Emoji.replaceEmoji(spannableStringBuilder, this.messageEditText.getPaint().getFontMetricsInt(), AndroidUtilities.m54dp(20), false);
             }
             this.messageEditText.setText(spannableStringBuilder);
             this.messageEditText.setSelection(Math.min(i + charSequence.length(), this.messageEditText.length()));
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
     }
 
@@ -1111,7 +998,7 @@ public class PhotoViewerCaptionEnterView extends FrameLayout implements Notifica
             try {
                 editTextCaption.requestFocus();
             } catch (Exception e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
             }
         }
     }
@@ -1134,10 +1021,10 @@ public class PhotoViewerCaptionEnterView extends FrameLayout implements Notifica
             this.emojiView.setVisibility(0);
             this.delegate.onEmojiViewOpen();
             if (this.keyboardHeight <= 0) {
-                this.keyboardHeight = MessagesController.getGlobalEmojiSettings().getInt("kbd_height", AndroidUtilities.m50dp(200));
+                this.keyboardHeight = MessagesController.getGlobalEmojiSettings().getInt("kbd_height", AndroidUtilities.m54dp(200));
             }
             if (this.keyboardHeightLand <= 0) {
-                this.keyboardHeightLand = MessagesController.getGlobalEmojiSettings().getInt("kbd_height_land3", AndroidUtilities.m50dp(200));
+                this.keyboardHeightLand = MessagesController.getGlobalEmojiSettings().getInt("kbd_height_land3", AndroidUtilities.m54dp(200));
             }
             Point point = AndroidUtilities.displaySize;
             int i2 = point.x > point.y ? this.keyboardHeightLand : this.keyboardHeight;
@@ -1152,14 +1039,14 @@ public class PhotoViewerCaptionEnterView extends FrameLayout implements Notifica
             if (sizeNotifierFrameLayoutPhoto != null) {
                 this.emojiPadding = i2;
                 sizeNotifierFrameLayoutPhoto.requestLayout();
-                this.emojiIconDrawable.setIcon(C3242R.C3244drawable.input_keyboard, true);
+                this.emojiIconDrawable.setIcon(C3290R.C3292drawable.input_keyboard, true);
                 onWindowSizeChanged();
                 return;
             }
             return;
         }
         if (this.emojiButton != null) {
-            this.emojiIconDrawable.setIcon(C3242R.C3244drawable.input_smile, true);
+            this.emojiIconDrawable.setIcon(C3290R.C3292drawable.input_smile, true);
         }
         if (this.sizeNotifierLayout != null) {
             if (z && i == 0 && this.emojiView != null) {
@@ -1231,7 +1118,7 @@ public class PhotoViewerCaptionEnterView extends FrameLayout implements Notifica
             EditTextCaption editTextCaption = this.messageEditText;
             editTextCaption.setSelection(editTextCaption.length(), this.messageEditText.length());
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
     }
 
@@ -1257,7 +1144,7 @@ public class PhotoViewerCaptionEnterView extends FrameLayout implements Notifica
     public void onSizeChanged(int i, boolean z) {
         boolean z2;
         int i2;
-        if (i > AndroidUtilities.m50dp(50) && this.keyboardVisible && !AndroidUtilities.isInMultiwindow && !this.forceFloatingEmoji) {
+        if (i > AndroidUtilities.m54dp(50) && this.keyboardVisible && !AndroidUtilities.isInMultiwindow && !this.forceFloatingEmoji) {
             if (z) {
                 this.keyboardHeightLand = i;
                 MessagesController.getGlobalEmojiSettings().edit().putInt("kbd_height_land3", this.keyboardHeightLand).commit();
@@ -1324,10 +1211,8 @@ public class PhotoViewerCaptionEnterView extends FrameLayout implements Notifica
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public int getThemedColor(String str) {
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-        return color != null ? color.intValue() : Theme.getColor(str);
+    public int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 
     public Theme.ResourcesProvider getResourcesProvider() {

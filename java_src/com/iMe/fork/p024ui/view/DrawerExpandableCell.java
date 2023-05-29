@@ -15,7 +15,7 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.FileLog;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.CubicBezierInterpolator;
@@ -57,10 +57,10 @@ public final class DrawerExpandableCell extends FrameLayout {
             Drawable drawable = ContextCompat.getDrawable(getContext(), i);
             Intrinsics.checkNotNull(drawable);
             Drawable mutate = drawable.mutate();
-            mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor("chats_menuItemIcon"), PorterDuff.Mode.MULTIPLY));
+            mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_menuItemIcon), PorterDuff.Mode.MULTIPLY));
             textView.setCompoundDrawablesWithIntrinsicBounds(mutate, (Drawable) null, (Drawable) null, (Drawable) null);
         } catch (Throwable th) {
-            FileLog.m45e(th);
+            FileLog.m49e(th);
         }
     }
 
@@ -74,13 +74,13 @@ public final class DrawerExpandableCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(48), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(48), 1073741824));
     }
 
     @Override // android.view.ViewGroup, android.view.View
     protected void onAttachedToWindow() {
         super.onAttachedToWindow();
-        getTextView().setTextColor(Theme.getColor("chats_menuItemText"));
+        getTextView().setTextColor(Theme.getColor(Theme.key_chats_menuItemText));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -89,8 +89,8 @@ public final class DrawerExpandableCell extends FrameLayout {
         ViewExtKt.withMediumTypeface(textView);
         ViewExtKt.singleLine(textView);
         textView.setGravity(19);
-        textView.setCompoundDrawablePadding(AndroidUtilities.m50dp(29));
-        textView.setTextColor(Theme.getColor("chats_menuItemText"));
+        textView.setCompoundDrawablePadding(AndroidUtilities.m54dp(29));
+        textView.setTextColor(Theme.getColor(Theme.key_chats_menuItemText));
         textView.setTextSize(1, 15.0f);
         return textView;
     }
@@ -99,8 +99,8 @@ public final class DrawerExpandableCell extends FrameLayout {
     public final ImageView initArrowView() {
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("chats_menuItemIcon"), PorterDuff.Mode.MULTIPLY));
-        imageView.setImageResource(C3242R.C3244drawable.msg_expand);
+        imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_menuItemIcon), PorterDuff.Mode.MULTIPLY));
+        imageView.setImageResource(C3290R.C3292drawable.msg_expand);
         return imageView;
     }
 

@@ -24,12 +24,12 @@
 .method public constructor <init>(Lorg/telegram/ui/Components/FilterTabsView;Landroid/content/Context;)V
     .locals 0
 
-    .line 1959
+    .line 1924
     iput-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
 
-    .line 1960
+    .line 1925
     iput-object p2, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->mContext:Landroid/content/Context;
 
     return-void
@@ -40,10 +40,10 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 1965
+    .line 1930
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$1100(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$4700(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -57,10 +57,10 @@
 .method public getItemId(I)J
     .locals 2
 
-    .line 1970
+    .line 1935
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$5000(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/util/SparseIntArray;
+    invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$4800(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/util/SparseIntArray;
 
     move-result-object v0
 
@@ -92,10 +92,10 @@
 .method public moveElementToStart(I)V
     .locals 7
 
-    .line 2068
+    .line 2033
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$1100(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$4700(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -109,7 +109,7 @@
 
     goto/16 :goto_5
 
-    .line 2072
+    .line 2037
     :cond_0
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -117,12 +117,14 @@
 
     move-result-object v0
 
-    iget-object v0, v0, Lorg/telegram/messenger/MessagesController;->dialogFilters:Ljava/util/ArrayList;
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessagesController;->getDialogFilters()Ljava/util/ArrayList;
 
-    .line 2073
+    move-result-object v0
+
+    .line 2038
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$5000(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/util/SparseIntArray;
+    invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$4800(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/util/SparseIntArray;
 
     move-result-object v1
 
@@ -130,10 +132,10 @@
 
     move-result v1
 
-    .line 2074
+    .line 2039
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$1100(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
+    invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$4700(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
 
     move-result-object v2
 
@@ -150,10 +152,10 @@
     :goto_0
     if-ltz v3, :cond_1
 
-    .line 2077
+    .line 2042
     iget-object v4, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v4}, Lorg/telegram/ui/Components/FilterTabsView;->access$5000(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/util/SparseIntArray;
+    invoke-static {v4}, Lorg/telegram/ui/Components/FilterTabsView;->access$4800(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/util/SparseIntArray;
 
     move-result-object v4
 
@@ -161,7 +163,7 @@
 
     iget-object v6, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v6}, Lorg/telegram/ui/Components/FilterTabsView;->access$5000(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/util/SparseIntArray;
+    invoke-static {v6}, Lorg/telegram/ui/Components/FilterTabsView;->access$4800(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/util/SparseIntArray;
 
     move-result-object v6
 
@@ -175,7 +177,7 @@
 
     goto :goto_0
 
-    .line 2079
+    .line 2044
     :cond_1
     invoke-virtual {v0, p1}, Ljava/util/ArrayList;->remove(I)Ljava/lang/Object;
 
@@ -185,31 +187,31 @@
 
     const/4 v4, 0x0
 
-    .line 2080
+    .line 2045
     iput v4, v3, Lorg/telegram/messenger/MessagesController$DialogFilter;->order:I
 
-    .line 2081
+    .line 2046
     invoke-virtual {v0, v4, v3}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 2082
+    .line 2047
     iget-object v3, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$5000(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/util/SparseIntArray;
+    invoke-static {v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$4800(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/util/SparseIntArray;
 
     move-result-object v3
 
     invoke-virtual {v3, v4, v1}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 2083
+    .line 2048
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$1100(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
+    invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$4700(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
 
     move-result-object v1
 
     iget-object v3, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$1100(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
+    invoke-static {v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$4700(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
 
     move-result-object v3
 
@@ -221,10 +223,10 @@
 
     invoke-virtual {v1, v4, v3}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    .line 2084
+    .line 2049
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$1100(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
+    invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$4700(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
 
     move-result-object v1
 
@@ -241,10 +243,10 @@
     :goto_1
     if-gt v1, p1, :cond_2
 
-    .line 2086
+    .line 2051
     iget-object v3, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$1100(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
+    invoke-static {v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$4700(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
 
     move-result-object v3
 
@@ -256,7 +258,7 @@
 
     iput v1, v3, Lorg/telegram/ui/Components/FilterTabsView$Tab;->id:I
 
-    .line 2087
+    .line 2052
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
@@ -275,16 +277,16 @@
     :goto_2
     if-gt v0, p1, :cond_7
 
-    .line 2090
+    .line 2055
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$5400(Lorg/telegram/ui/Components/FilterTabsView;)I
+    invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$5200(Lorg/telegram/ui/Components/FilterTabsView;)I
 
     move-result v1
 
     if-ne v1, v0, :cond_4
 
-    .line 2091
+    .line 2056
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     if-ne v0, p1, :cond_3
@@ -297,23 +299,23 @@
     add-int/lit8 v3, v0, 0x1
 
     :goto_3
-    invoke-static {v1, v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$1802(Lorg/telegram/ui/Components/FilterTabsView;I)I
+    invoke-static {v1, v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$1402(Lorg/telegram/ui/Components/FilterTabsView;I)I
 
     move-result v3
 
-    invoke-static {v1, v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$5402(Lorg/telegram/ui/Components/FilterTabsView;I)I
+    invoke-static {v1, v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$5202(Lorg/telegram/ui/Components/FilterTabsView;I)I
 
-    .line 2093
+    .line 2058
     :cond_4
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$5500(Lorg/telegram/ui/Components/FilterTabsView;)I
+    invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$5300(Lorg/telegram/ui/Components/FilterTabsView;)I
 
     move-result v1
 
     if-ne v1, v0, :cond_6
 
-    .line 2094
+    .line 2059
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     if-ne v0, p1, :cond_5
@@ -326,31 +328,31 @@
     add-int/lit8 v3, v0, 0x1
 
     :goto_4
-    invoke-static {v1, v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$1902(Lorg/telegram/ui/Components/FilterTabsView;I)I
+    invoke-static {v1, v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$1502(Lorg/telegram/ui/Components/FilterTabsView;I)I
 
     move-result v3
 
-    invoke-static {v1, v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$5502(Lorg/telegram/ui/Components/FilterTabsView;I)I
+    invoke-static {v1, v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$5302(Lorg/telegram/ui/Components/FilterTabsView;I)I
 
     :cond_6
     add-int/lit8 v0, v0, 0x1
 
     goto :goto_2
 
-    .line 2097
+    .line 2062
     :cond_7
     invoke-virtual {p0, p1, v4}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemMoved(II)V
 
-    .line 2099
+    .line 2064
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$300(Lorg/telegram/ui/Components/FilterTabsView;)Lorg/telegram/ui/Components/FilterTabsView$FilterTabsViewDelegate;
+    invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$600(Lorg/telegram/ui/Components/FilterTabsView;)Lorg/telegram/ui/Components/FilterTabsView$FilterTabsViewDelegate;
 
     move-result-object v0
 
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$1100(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
+    invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$4700(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
 
     move-result-object v1
 
@@ -364,22 +366,22 @@
 
     invoke-interface {v0, p1, v2}, Lorg/telegram/ui/Components/FilterTabsView$FilterTabsViewDelegate;->onPageReorder(II)V
 
-    .line 2101
+    .line 2066
     iget-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/FilterTabsView;->access$5600(Lorg/telegram/ui/Components/FilterTabsView;)V
+    invoke-static {p1}, Lorg/telegram/ui/Components/FilterTabsView;->access$5400(Lorg/telegram/ui/Components/FilterTabsView;)V
 
-    .line 2103
+    .line 2068
     iget-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     const/4 v0, 0x1
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$5702(Lorg/telegram/ui/Components/FilterTabsView;Z)Z
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$5502(Lorg/telegram/ui/Components/FilterTabsView;Z)Z
 
-    .line 2104
+    .line 2069
     iget-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {p1}, Lorg/telegram/ui/Components/FilterTabsView;->access$4300(Lorg/telegram/ui/Components/FilterTabsView;)Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {p1}, Lorg/telegram/ui/Components/FilterTabsView;->access$4000(Lorg/telegram/ui/Components/FilterTabsView;)Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object p1
 
@@ -397,13 +399,13 @@
 .method public onBindViewHolder(Landroidx/recyclerview/widget/RecyclerView$ViewHolder;I)V
     .locals 2
 
-    .line 1985
+    .line 1950
     iget-object p1, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     check-cast p1, Lorg/telegram/ui/Components/FilterTabsView$TabView;
 
-    .line 1986
-    invoke-static {p1}, Lorg/telegram/ui/Components/FilterTabsView$TabView;->access$4500(Lorg/telegram/ui/Components/FilterTabsView$TabView;)Lorg/telegram/ui/Components/FilterTabsView$Tab;
+    .line 1951
+    invoke-static {p1}, Lorg/telegram/ui/Components/FilterTabsView$TabView;->access$4200(Lorg/telegram/ui/Components/FilterTabsView$TabView;)Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     move-result-object v0
 
@@ -418,11 +420,11 @@
     :cond_0
     const/4 v0, -0x1
 
-    .line 1987
+    .line 1952
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$1100(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
+    invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$4700(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
 
     move-result-object v1
 
@@ -434,15 +436,15 @@
 
     invoke-virtual {p1, v1, p2}, Lorg/telegram/ui/Components/FilterTabsView$TabView;->setTab(Lorg/telegram/ui/Components/FilterTabsView$Tab;I)V
 
-    .line 1988
+    .line 1953
     invoke-virtual {p1}, Lorg/telegram/ui/Components/FilterTabsView$TabView;->getId()I
 
     move-result p2
 
     if-eq v0, p2, :cond_2
 
-    .line 1989
-    invoke-static {p1}, Lorg/telegram/ui/Components/FilterTabsView$TabView;->access$4500(Lorg/telegram/ui/Components/FilterTabsView$TabView;)Lorg/telegram/ui/Components/FilterTabsView$Tab;
+    .line 1954
+    invoke-static {p1}, Lorg/telegram/ui/Components/FilterTabsView$TabView;->access$4200(Lorg/telegram/ui/Components/FilterTabsView$TabView;)Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
     move-result-object p2
 
@@ -458,7 +460,7 @@
     const/4 p2, 0x0
 
     :goto_1
-    invoke-static {p1, p2}, Lorg/telegram/ui/Components/FilterTabsView$TabView;->access$5102(Lorg/telegram/ui/Components/FilterTabsView$TabView;F)F
+    invoke-static {p1, p2}, Lorg/telegram/ui/Components/FilterTabsView$TabView;->access$4902(Lorg/telegram/ui/Components/FilterTabsView$TabView;F)F
 
     :cond_2
     return-void
@@ -467,7 +469,7 @@
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 2
 
-    .line 1980
+    .line 1945
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     new-instance p2, Lorg/telegram/ui/Components/FilterTabsView$TabView;
@@ -486,10 +488,10 @@
 .method public swapElements(II)V
     .locals 7
 
-    .line 2001
+    .line 1966
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$1100(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$4700(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -497,10 +499,10 @@
 
     move-result v0
 
-    .line 2003
+    .line 1968
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$5200(Lorg/telegram/ui/Components/FilterTabsView;)Z
+    invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$5000(Lorg/telegram/ui/Components/FilterTabsView;)Z
 
     move-result v1
 
@@ -519,7 +521,7 @@
 
     move v2, p2
 
-    .line 2008
+    .line 1973
     :goto_0
     sget v3, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -535,10 +537,10 @@
 
     sub-int/2addr v0, v3
 
-    .line 2010
+    .line 1975
     iget-object v4, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v4}, Lorg/telegram/ui/Components/FilterTabsView;->access$5300(Lorg/telegram/ui/Components/FilterTabsView;)Z
+    invoke-static {v4}, Lorg/telegram/ui/Components/FilterTabsView;->access$5100(Lorg/telegram/ui/Components/FilterTabsView;)Z
 
     move-result v4
 
@@ -563,7 +565,7 @@
 
     goto/16 :goto_3
 
-    .line 2018
+    .line 1983
     :cond_2
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
@@ -571,43 +573,45 @@
 
     move-result-object v0
 
-    iget-object v0, v0, Lorg/telegram/messenger/MessagesController;->dialogFilters:Ljava/util/ArrayList;
+    invoke-virtual {v0}, Lorg/telegram/messenger/MessagesController;->getDialogFilters()Ljava/util/ArrayList;
 
-    .line 2019
+    move-result-object v0
+
+    .line 1984
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v3
 
     check-cast v3, Lorg/telegram/messenger/MessagesController$DialogFilter;
 
-    .line 2020
+    .line 1985
     invoke-virtual {v0, v2}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v4
 
     check-cast v4, Lorg/telegram/messenger/MessagesController$DialogFilter;
 
-    .line 2021
+    .line 1986
     iget v5, v3, Lorg/telegram/messenger/MessagesController$DialogFilter;->order:I
 
-    .line 2022
+    .line 1987
     iget v6, v4, Lorg/telegram/messenger/MessagesController$DialogFilter;->order:I
 
     iput v6, v3, Lorg/telegram/messenger/MessagesController$DialogFilter;->order:I
 
-    .line 2023
+    .line 1988
     iput v5, v4, Lorg/telegram/messenger/MessagesController$DialogFilter;->order:I
 
-    .line 2024
+    .line 1989
     invoke-virtual {v0, v1, v4}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 2025
+    .line 1990
     invoke-virtual {v0, v2, v3}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 2027
+    .line 1992
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$1100(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
+    invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$4700(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
 
     move-result-object v0
 
@@ -617,10 +621,10 @@
 
     check-cast v0, Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
-    .line 2028
+    .line 1993
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$1100(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
+    invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$4700(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
 
     move-result-object v1
 
@@ -630,21 +634,21 @@
 
     check-cast v1, Lorg/telegram/ui/Components/FilterTabsView$Tab;
 
-    .line 2029
+    .line 1994
     iget v2, v0, Lorg/telegram/ui/Components/FilterTabsView$Tab;->id:I
 
-    .line 2030
+    .line 1995
     iget v3, v1, Lorg/telegram/ui/Components/FilterTabsView$Tab;->id:I
 
     iput v3, v0, Lorg/telegram/ui/Components/FilterTabsView$Tab;->id:I
 
-    .line 2031
+    .line 1996
     iput v2, v1, Lorg/telegram/ui/Components/FilterTabsView$Tab;->id:I
 
-    .line 2033
+    .line 1998
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$5000(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/util/SparseIntArray;
+    invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$4800(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/util/SparseIntArray;
 
     move-result-object v2
 
@@ -652,10 +656,10 @@
 
     move-result v2
 
-    .line 2034
+    .line 1999
     iget-object v3, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$5000(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/util/SparseIntArray;
+    invoke-static {v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$4800(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/util/SparseIntArray;
 
     move-result-object v3
 
@@ -663,28 +667,28 @@
 
     move-result v3
 
-    .line 2036
+    .line 2001
     iget-object v4, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v4}, Lorg/telegram/ui/Components/FilterTabsView;->access$5000(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/util/SparseIntArray;
+    invoke-static {v4}, Lorg/telegram/ui/Components/FilterTabsView;->access$4800(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/util/SparseIntArray;
 
     move-result-object v4
 
     invoke-virtual {v4, p1, v3}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 2037
+    .line 2002
     iget-object v3, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$5000(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/util/SparseIntArray;
+    invoke-static {v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$4800(Lorg/telegram/ui/Components/FilterTabsView;)Landroid/util/SparseIntArray;
 
     move-result-object v3
 
     invoke-virtual {v3, p2, v2}, Landroid/util/SparseIntArray;->put(II)V
 
-    .line 2039
+    .line 2004
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$300(Lorg/telegram/ui/Components/FilterTabsView;)Lorg/telegram/ui/Components/FilterTabsView$FilterTabsViewDelegate;
+    invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$600(Lorg/telegram/ui/Components/FilterTabsView;)Lorg/telegram/ui/Components/FilterTabsView$FilterTabsViewDelegate;
 
     move-result-object v2
 
@@ -694,134 +698,134 @@
 
     invoke-interface {v2, v3, v4}, Lorg/telegram/ui/Components/FilterTabsView$FilterTabsViewDelegate;->onPageReorder(II)V
 
-    .line 2041
+    .line 2006
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$5400(Lorg/telegram/ui/Components/FilterTabsView;)I
+    invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$5200(Lorg/telegram/ui/Components/FilterTabsView;)I
 
     move-result v2
 
     if-ne v2, p1, :cond_3
 
-    .line 2042
+    .line 2007
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v2, p2}, Lorg/telegram/ui/Components/FilterTabsView;->access$5402(Lorg/telegram/ui/Components/FilterTabsView;I)I
+    invoke-static {v2, p2}, Lorg/telegram/ui/Components/FilterTabsView;->access$5202(Lorg/telegram/ui/Components/FilterTabsView;I)I
 
-    .line 2043
+    .line 2008
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     iget v3, v0, Lorg/telegram/ui/Components/FilterTabsView$Tab;->id:I
 
-    invoke-static {v2, v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$1802(Lorg/telegram/ui/Components/FilterTabsView;I)I
+    invoke-static {v2, v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$1402(Lorg/telegram/ui/Components/FilterTabsView;I)I
 
     goto :goto_1
 
-    .line 2044
+    .line 2009
     :cond_3
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$5400(Lorg/telegram/ui/Components/FilterTabsView;)I
+    invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$5200(Lorg/telegram/ui/Components/FilterTabsView;)I
 
     move-result v2
 
     if-ne v2, p2, :cond_4
 
-    .line 2045
+    .line 2010
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v2, p1}, Lorg/telegram/ui/Components/FilterTabsView;->access$5402(Lorg/telegram/ui/Components/FilterTabsView;I)I
+    invoke-static {v2, p1}, Lorg/telegram/ui/Components/FilterTabsView;->access$5202(Lorg/telegram/ui/Components/FilterTabsView;I)I
 
-    .line 2046
+    .line 2011
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     iget v3, v1, Lorg/telegram/ui/Components/FilterTabsView$Tab;->id:I
 
-    invoke-static {v2, v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$1802(Lorg/telegram/ui/Components/FilterTabsView;I)I
+    invoke-static {v2, v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$1402(Lorg/telegram/ui/Components/FilterTabsView;I)I
 
-    .line 2049
+    .line 2014
     :cond_4
     :goto_1
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$5500(Lorg/telegram/ui/Components/FilterTabsView;)I
+    invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$5300(Lorg/telegram/ui/Components/FilterTabsView;)I
 
     move-result v2
 
     if-ne v2, p1, :cond_5
 
-    .line 2050
+    .line 2015
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v2, p2}, Lorg/telegram/ui/Components/FilterTabsView;->access$5502(Lorg/telegram/ui/Components/FilterTabsView;I)I
+    invoke-static {v2, p2}, Lorg/telegram/ui/Components/FilterTabsView;->access$5302(Lorg/telegram/ui/Components/FilterTabsView;I)I
 
-    .line 2051
+    .line 2016
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     iget v3, v0, Lorg/telegram/ui/Components/FilterTabsView$Tab;->id:I
 
-    invoke-static {v2, v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$1902(Lorg/telegram/ui/Components/FilterTabsView;I)I
+    invoke-static {v2, v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$1502(Lorg/telegram/ui/Components/FilterTabsView;I)I
 
     goto :goto_2
 
-    .line 2052
+    .line 2017
     :cond_5
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$5500(Lorg/telegram/ui/Components/FilterTabsView;)I
+    invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$5300(Lorg/telegram/ui/Components/FilterTabsView;)I
 
     move-result v2
 
     if-ne v2, p2, :cond_6
 
-    .line 2053
+    .line 2018
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v2, p1}, Lorg/telegram/ui/Components/FilterTabsView;->access$5502(Lorg/telegram/ui/Components/FilterTabsView;I)I
+    invoke-static {v2, p1}, Lorg/telegram/ui/Components/FilterTabsView;->access$5302(Lorg/telegram/ui/Components/FilterTabsView;I)I
 
-    .line 2054
+    .line 2019
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     iget v3, v1, Lorg/telegram/ui/Components/FilterTabsView$Tab;->id:I
 
-    invoke-static {v2, v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$1902(Lorg/telegram/ui/Components/FilterTabsView;I)I
+    invoke-static {v2, v3}, Lorg/telegram/ui/Components/FilterTabsView;->access$1502(Lorg/telegram/ui/Components/FilterTabsView;I)I
 
-    .line 2057
+    .line 2022
     :cond_6
     :goto_2
     iget-object v2, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$1100(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
+    invoke-static {v2}, Lorg/telegram/ui/Components/FilterTabsView;->access$4700(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
 
     move-result-object v2
 
     invoke-virtual {v2, p1, v1}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 2058
+    .line 2023
     iget-object v1, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$1100(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
+    invoke-static {v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$4700(Lorg/telegram/ui/Components/FilterTabsView;)Ljava/util/ArrayList;
 
     move-result-object v1
 
     invoke-virtual {v1, p2, v0}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
 
-    .line 2060
+    .line 2025
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$5600(Lorg/telegram/ui/Components/FilterTabsView;)V
+    invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$5400(Lorg/telegram/ui/Components/FilterTabsView;)V
 
-    .line 2062
+    .line 2027
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
     const/4 v1, 0x1
 
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$5702(Lorg/telegram/ui/Components/FilterTabsView;Z)Z
+    invoke-static {v0, v1}, Lorg/telegram/ui/Components/FilterTabsView;->access$5502(Lorg/telegram/ui/Components/FilterTabsView;Z)Z
 
-    .line 2063
+    .line 2028
     iget-object v0, p0, Lorg/telegram/ui/Components/FilterTabsView$ListAdapter;->this$0:Lorg/telegram/ui/Components/FilterTabsView;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$4300(Lorg/telegram/ui/Components/FilterTabsView;)Lorg/telegram/ui/Components/RecyclerListView;
+    invoke-static {v0}, Lorg/telegram/ui/Components/FilterTabsView;->access$4000(Lorg/telegram/ui/Components/FilterTabsView;)Lorg/telegram/ui/Components/RecyclerListView;
 
     move-result-object v0
 
@@ -831,7 +835,7 @@
 
     invoke-virtual {v0, v1}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
 
-    .line 2064
+    .line 2029
     invoke-virtual {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemMoved(II)V
 
     :cond_7

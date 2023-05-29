@@ -208,9 +208,9 @@
     .line 69
     iget-object v0, p0, Lorg/telegram/ui/Components/SimpleAvatarView;->selectPaint:Landroid/graphics/Paint;
 
-    const-string v1, "dialogTextBlue"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlue:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

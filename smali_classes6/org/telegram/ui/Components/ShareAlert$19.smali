@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/Components/ShareAlert$19;
-.super Landroid/view/ViewOutlineProvider;
+.super Landroid/widget/FrameLayout;
 .source "ShareAlert.java"
 
 
@@ -14,35 +14,67 @@
 .end annotation
 
 
+# instance fields
+.field final synthetic this$0:Lorg/telegram/ui/Components/ShareAlert;
+
+
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/ShareAlert;)V
+.method constructor <init>(Lorg/telegram/ui/Components/ShareAlert;Landroid/content/Context;)V
     .locals 0
 
-    .line 1467
-    invoke-direct {p0}, Landroid/view/ViewOutlineProvider;-><init>()V
+    .line 1597
+    iput-object p1, p0, Lorg/telegram/ui/Components/ShareAlert$19;->this$0:Lorg/telegram/ui/Components/ShareAlert;
+
+    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public getOutline(Landroid/view/View;Landroid/graphics/Outline;)V
-    .locals 2
+.method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
+    .locals 3
 
-    const/16 p1, 0x38
+    .line 1600
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
-    .line 1471
-    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 1601
+    iget-object v0, p0, Lorg/telegram/ui/Components/ShareAlert$19;->this$0:Lorg/telegram/ui/Components/ShareAlert;
+
+    iget-object v0, v0, Lorg/telegram/ui/Components/ShareAlert;->selectedDialogs:Landroidx/collection/LongSparseArray;
+
+    invoke-virtual {v0}, Landroidx/collection/LongSparseArray;->size()I
 
     move-result v0
 
-    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result p1
-
     const/4 v1, 0x0
 
-    invoke-virtual {p2, v1, v1, v0, p1}, Landroid/graphics/Outline;->setOval(IIII)V
+    new-array v1, v1, [Ljava/lang/Object;
+
+    const-string v2, "AccDescrShareInChats"
+
+    invoke-static {v2, v0, v1}, Lorg/telegram/messenger/LocaleController;->formatPluralString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setText(Ljava/lang/CharSequence;)V
+
+    .line 1602
+    const-class v0, Landroid/widget/Button;
+
+    invoke-virtual {v0}, Ljava/lang/Class;->getName()Ljava/lang/String;
+
+    move-result-object v0
+
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
+
+    const/4 v0, 0x1
+
+    .line 1603
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setLongClickable(Z)V
+
+    .line 1604
+    invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClickable(Z)V
 
     return-void
 .end method

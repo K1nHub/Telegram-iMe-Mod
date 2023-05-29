@@ -2,50 +2,64 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended;
+.implements Lorg/telegram/ui/Components/RecyclerListView$OnItemLongClickListenerExtended;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/LaunchActivity;
 
+.field public final synthetic f$1:Landroidx/recyclerview/widget/ItemTouchHelper;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/LaunchActivity;Landroidx/recyclerview/widget/ItemTouchHelper;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda122;->f$0:Lorg/telegram/ui/LaunchActivity;
 
+    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda122;->f$1:Landroidx/recyclerview/widget/ItemTouchHelper;
+
     return-void
 .end method
 
 
 # virtual methods
-.method public synthetic hasDoubleTap(Landroid/view/View;I)Z
-    .locals 0
+.method public final onItemClick(Landroid/view/View;IFF)Z
+    .locals 6
 
-    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended$-CC;->$default$hasDoubleTap(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended;Landroid/view/View;I)Z
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda122;->f$0:Lorg/telegram/ui/LaunchActivity;
+
+    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda122;->f$1:Landroidx/recyclerview/widget/ItemTouchHelper;
+
+    move-object v2, p1
+
+    move v3, p2
+
+    move v4, p3
+
+    move v5, p4
+
+    invoke-static/range {v0 .. v5}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$KJOkiHN46uoMILZ5owNesKKww-Y(Lorg/telegram/ui/LaunchActivity;Landroidx/recyclerview/widget/ItemTouchHelper;Landroid/view/View;IFF)Z
 
     move-result p1
 
     return p1
 .end method
 
-.method public synthetic onDoubleTap(Landroid/view/View;IFF)V
+.method public synthetic onLongClickRelease()V
     .locals 0
 
-    invoke-static {p0, p1, p2, p3, p4}, Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended$-CC;->$default$onDoubleTap(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListenerExtended;Landroid/view/View;IFF)V
+    invoke-static {p0}, Lorg/telegram/ui/Components/RecyclerListView$OnItemLongClickListenerExtended$-CC;->$default$onLongClickRelease(Lorg/telegram/ui/Components/RecyclerListView$OnItemLongClickListenerExtended;)V
 
     return-void
 .end method
 
-.method public final onItemClick(Landroid/view/View;IFF)V
-    .locals 1
+.method public synthetic onMove(FF)V
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$$ExternalSyntheticLambda122;->f$0:Lorg/telegram/ui/LaunchActivity;
-
-    invoke-static {v0, p1, p2, p3, p4}, Lorg/telegram/ui/LaunchActivity;->$r8$lambda$H3jeBybB2oBFT1f-ibIrLGQCOLw(Lorg/telegram/ui/LaunchActivity;Landroid/view/View;IFF)V
+    invoke-static {p0, p1, p2}, Lorg/telegram/ui/Components/RecyclerListView$OnItemLongClickListenerExtended$-CC;->$default$onMove(Lorg/telegram/ui/Components/RecyclerListView$OnItemLongClickListenerExtended;FF)V
 
     return-void
 .end method

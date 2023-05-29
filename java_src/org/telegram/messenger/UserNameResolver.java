@@ -35,7 +35,7 @@ public class UserNameResolver {
         if (cachedPeer != null) {
             if (System.currentTimeMillis() - cachedPeer.time < CACHE_TIME) {
                 consumer.accept(Long.valueOf(cachedPeer.peerId));
-                FileLog.m48d("resolve username from cache " + str + " " + cachedPeer.peerId);
+                FileLog.m52d("resolve username from cache " + str + " " + cachedPeer.peerId);
                 return;
             }
             this.resolvedCache.remove(str);
@@ -92,7 +92,7 @@ public class UserNameResolver {
             if (str2 == null || !str2.contains("FLOOD_WAIT") || (lastFragment = LaunchActivity.getLastFragment()) == null) {
                 return;
             }
-            BulletinFactory.m27of(lastFragment).createErrorBulletin(LocaleController.getString("FloodWait", C3242R.string.FloodWait)).show();
+            BulletinFactory.m29of(lastFragment).createErrorBulletin(LocaleController.getString("FloodWait", C3290R.string.FloodWait)).show();
             return;
         }
         TLRPC$TL_contacts_resolvedPeer tLRPC$TL_contacts_resolvedPeer = (TLRPC$TL_contacts_resolvedPeer) tLObject;
@@ -115,7 +115,7 @@ public class UserNameResolver {
         this.resolvedCache.remove(tLRPC$User.username);
         String str2 = tLRPC$User2.username;
         if (str2 != null) {
-            this.resolvedCache.put(str2, new CachedPeer(tLRPC$User2.f1567id));
+            this.resolvedCache.put(str2, new CachedPeer(tLRPC$User2.f1574id));
         }
     }
 
@@ -127,7 +127,7 @@ public class UserNameResolver {
         this.resolvedCache.remove(tLRPC$Chat.username);
         String str2 = tLRPC$Chat2.username;
         if (str2 != null) {
-            this.resolvedCache.put(str2, new CachedPeer(-tLRPC$Chat2.f1427id));
+            this.resolvedCache.put(str2, new CachedPeer(-tLRPC$Chat2.f1433id));
         }
     }
 

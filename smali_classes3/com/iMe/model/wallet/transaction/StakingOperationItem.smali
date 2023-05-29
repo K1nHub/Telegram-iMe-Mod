@@ -862,17 +862,17 @@
     return-object v0
 .end method
 
-.method public final getStatusColor()Ljava/lang/String;
+.method public final getStatusColor()I
     .locals 1
 
     .line 51
     iget-object v0, p0, Lcom/iMe/model/wallet/transaction/StakingOperationItem;->status:Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;
 
-    invoke-static {v0}, Lcom/iMe/utils/extentions/model/wallet/StakingOperationStatusExtKt;->color(Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;)Ljava/lang/String;
+    invoke-static {v0}, Lcom/iMe/utils/extentions/model/wallet/StakingOperationStatusExtKt;->colorKey(Lcom/iMe/storage/domain/model/staking/StakingOperationStatus;)I
 
-    move-result-object v0
+    move-result v0
 
-    return-object v0
+    return v0
 .end method
 
 .method public final getStatusText(Lcom/iMe/storage/domain/utils/system/ResourceManager;)Ljava/lang/String;

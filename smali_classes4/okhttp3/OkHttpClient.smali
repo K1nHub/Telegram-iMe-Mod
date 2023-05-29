@@ -890,7 +890,7 @@
     :cond_d
     new-instance v0, Ljava/lang/IllegalStateException;
 
-    const-string v1, "sslSocketFactory == null"
+    const-string/jumbo v1, "sslSocketFactory == null"
 
     invoke-virtual {v1}, Ljava/lang/Object;->toString()Ljava/lang/String;
 

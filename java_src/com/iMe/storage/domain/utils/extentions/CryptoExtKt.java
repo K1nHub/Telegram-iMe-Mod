@@ -114,7 +114,7 @@ public final class CryptoExtKt {
             removePrefix = StringsKt__StringsKt.removePrefix(str, "0x");
             return new BigInteger(removePrefix, 16);
         } catch (Exception e) {
-            Timber.m4e(e);
+            Timber.m6e(e);
             return null;
         }
     }

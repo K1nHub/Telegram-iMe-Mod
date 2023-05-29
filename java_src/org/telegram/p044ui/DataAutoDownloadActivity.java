@@ -17,13 +17,13 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.Collections;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.p044ui.ActionBar.BaseFragment;
 import org.telegram.p044ui.ActionBar.BottomSheet;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Cells.HeaderCell;
@@ -101,21 +101,21 @@ public class DataAutoDownloadActivity extends BaseFragment {
 
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
         int i = this.currentType;
         if (i == 0) {
-            this.actionBar.setTitle(LocaleController.getString("AutoDownloadOnMobileData", C3242R.string.AutoDownloadOnMobileData));
+            this.actionBar.setTitle(LocaleController.getString("AutoDownloadOnMobileData", C3290R.string.AutoDownloadOnMobileData));
         } else if (i == 1) {
-            this.actionBar.setTitle(LocaleController.getString("AutoDownloadOnWiFiData", C3242R.string.AutoDownloadOnWiFiData));
+            this.actionBar.setTitle(LocaleController.getString("AutoDownloadOnWiFiData", C3290R.string.AutoDownloadOnWiFiData));
         } else if (i == 2) {
-            this.actionBar.setTitle(LocaleController.getString("AutoDownloadOnRoamingData", C3242R.string.AutoDownloadOnRoamingData));
+            this.actionBar.setTitle(LocaleController.getString("AutoDownloadOnRoamingData", C3290R.string.AutoDownloadOnRoamingData));
         }
         if (AndroidUtilities.isTablet()) {
             this.actionBar.setOccupyStatusBar(false);
         }
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.DataAutoDownloadActivity.1
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.DataAutoDownloadActivity.1
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
                     DataAutoDownloadActivity.this.finishFragment();
@@ -125,7 +125,7 @@ public class DataAutoDownloadActivity extends BaseFragment {
         this.listAdapter = new ListAdapter(context);
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
-        frameLayout.setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+        frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         RecyclerListView recyclerListView = new RecyclerListView(context);
         this.listView = recyclerListView;
         recyclerListView.setVerticalScrollBarEnabled(false);
@@ -153,20 +153,21 @@ public class DataAutoDownloadActivity extends BaseFragment {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Removed duplicated region for block: B:20:0x005c  */
-    /* JADX WARN: Removed duplicated region for block: B:21:0x005e  */
-    /* JADX WARN: Removed duplicated region for block: B:25:0x006b  */
-    /* JADX WARN: Removed duplicated region for block: B:28:0x007c  */
-    /* JADX WARN: Removed duplicated region for block: B:29:0x0085  */
-    /* JADX WARN: Removed duplicated region for block: B:32:0x00b4  */
-    /* JADX WARN: Removed duplicated region for block: B:33:0x00bf  */
+    /* JADX WARN: Removed duplicated region for block: B:20:0x0058  */
+    /* JADX WARN: Removed duplicated region for block: B:21:0x005b  */
+    /* JADX WARN: Removed duplicated region for block: B:24:0x006c  */
+    /* JADX WARN: Removed duplicated region for block: B:25:0x006f  */
+    /* JADX WARN: Removed duplicated region for block: B:28:0x0081  */
+    /* JADX WARN: Removed duplicated region for block: B:29:0x008a  */
+    /* JADX WARN: Removed duplicated region for block: B:32:0x00b9  */
+    /* JADX WARN: Removed duplicated region for block: B:33:0x00c4  */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     public /* synthetic */ void lambda$createView$4(final android.view.View r30, final int r31, float r32, float r33) {
         /*
-            Method dump skipped, instructions count: 1450
+            Method dump skipped, instructions count: 1455
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.DataAutoDownloadActivity.lambda$createView$4(android.view.View, int, float, float):void");
@@ -459,20 +460,20 @@ public class DataAutoDownloadActivity extends BaseFragment {
                 TextCheckCell textCheckCell = (TextCheckCell) viewHolder.itemView;
                 if (i == DataAutoDownloadActivity.this.autoDownloadRow) {
                     textCheckCell.setDrawCheckRipple(true);
-                    textCheckCell.setTextAndCheck(LocaleController.getString("AutoDownloadMedia", C3242R.string.AutoDownloadMedia), DataAutoDownloadActivity.this.typePreset.enabled, false);
-                    textCheckCell.setTag(DataAutoDownloadActivity.this.typePreset.enabled ? "windowBackgroundChecked" : "windowBackgroundUnchecked");
-                    textCheckCell.setBackgroundColor(Theme.getColor(DataAutoDownloadActivity.this.typePreset.enabled ? "windowBackgroundChecked" : "windowBackgroundUnchecked"));
+                    textCheckCell.setTextAndCheck(LocaleController.getString("AutoDownloadMedia", C3290R.string.AutoDownloadMedia), DataAutoDownloadActivity.this.typePreset.enabled, false);
+                    textCheckCell.setTag(Integer.valueOf(DataAutoDownloadActivity.this.typePreset.enabled ? Theme.key_windowBackgroundChecked : Theme.key_windowBackgroundUnchecked));
+                    textCheckCell.setBackgroundColor(Theme.getColor(DataAutoDownloadActivity.this.typePreset.enabled ? Theme.key_windowBackgroundChecked : Theme.key_windowBackgroundUnchecked));
                 }
             } else if (itemViewType == 2) {
                 HeaderCell headerCell = (HeaderCell) viewHolder.itemView;
                 if (i != DataAutoDownloadActivity.this.usageHeaderRow) {
                     if (i == DataAutoDownloadActivity.this.typeHeaderRow) {
-                        headerCell.setText(LocaleController.getString("AutoDownloadTypes", C3242R.string.AutoDownloadTypes));
+                        headerCell.setText(LocaleController.getString("AutoDownloadTypes", C3290R.string.AutoDownloadTypes));
                         return;
                     }
                     return;
                 }
-                headerCell.setText(LocaleController.getString("AutoDownloadDataUsage", C3242R.string.AutoDownloadDataUsage));
+                headerCell.setText(LocaleController.getString("AutoDownloadDataUsage", C3290R.string.AutoDownloadDataUsage));
             } else if (itemViewType == 3) {
                 DataAutoDownloadActivity.this.updatePresetChoseView((SlideChooseView) viewHolder.itemView);
             } else if (itemViewType != 4) {
@@ -483,22 +484,22 @@ public class DataAutoDownloadActivity extends BaseFragment {
                 if (i != DataAutoDownloadActivity.this.typeSectionRow) {
                     if (i == DataAutoDownloadActivity.this.autoDownloadSectionRow) {
                         if (DataAutoDownloadActivity.this.usageHeaderRow == -1) {
-                            textInfoPrivacyCell.setBackgroundDrawable(Theme.getThemedDrawable(this.mContext, C3242R.C3244drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                            textInfoPrivacyCell.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3290R.C3292drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
                             if (DataAutoDownloadActivity.this.currentType != 0) {
                                 if (DataAutoDownloadActivity.this.currentType != 1) {
                                     if (DataAutoDownloadActivity.this.currentType == 2) {
-                                        textInfoPrivacyCell.setText(LocaleController.getString("AutoDownloadOnRoamingDataInfo", C3242R.string.AutoDownloadOnRoamingDataInfo));
+                                        textInfoPrivacyCell.setText(LocaleController.getString("AutoDownloadOnRoamingDataInfo", C3290R.string.AutoDownloadOnRoamingDataInfo));
                                     }
                                 } else {
-                                    textInfoPrivacyCell.setText(LocaleController.getString("AutoDownloadOnWiFiDataInfo", C3242R.string.AutoDownloadOnWiFiDataInfo));
+                                    textInfoPrivacyCell.setText(LocaleController.getString("AutoDownloadOnWiFiDataInfo", C3290R.string.AutoDownloadOnWiFiDataInfo));
                                 }
                             } else {
-                                textInfoPrivacyCell.setText(LocaleController.getString("AutoDownloadOnMobileDataInfo", C3242R.string.AutoDownloadOnMobileDataInfo));
+                                textInfoPrivacyCell.setText(LocaleController.getString("AutoDownloadOnMobileDataInfo", C3290R.string.AutoDownloadOnMobileDataInfo));
                             }
                             textInfoPrivacyCell.setImportantForAccessibility(1);
                             return;
                         }
-                        textInfoPrivacyCell.setBackgroundDrawable(Theme.getThemedDrawable(this.mContext, C3242R.C3244drawable.greydivider, "windowBackgroundGrayShadow"));
+                        textInfoPrivacyCell.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3290R.C3292drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                         textInfoPrivacyCell.setText(null);
                         textInfoPrivacyCell.setFixedSize(12);
                         if (Build.VERSION.SDK_INT >= 19) {
@@ -511,22 +512,22 @@ public class DataAutoDownloadActivity extends BaseFragment {
                     }
                     return;
                 }
-                textInfoPrivacyCell.setText(LocaleController.getString("AutoDownloadAudioInfo", C3242R.string.AutoDownloadAudioInfo));
-                textInfoPrivacyCell.setBackgroundDrawable(Theme.getThemedDrawable(this.mContext, C3242R.C3244drawable.greydivider, "windowBackgroundGrayShadow"));
+                textInfoPrivacyCell.setText(LocaleController.getString("AutoDownloadAudioInfo", C3290R.string.AutoDownloadAudioInfo));
+                textInfoPrivacyCell.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3290R.C3292drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                 textInfoPrivacyCell.setFixedSize(0);
                 textInfoPrivacyCell.setImportantForAccessibility(1);
             } else {
                 NotificationsCheckCell notificationsCheckCell = (NotificationsCheckCell) viewHolder.itemView;
                 if (i != DataAutoDownloadActivity.this.photosRow) {
                     if (i == DataAutoDownloadActivity.this.videosRow) {
-                        string = LocaleController.getString("AutoDownloadVideos", C3242R.string.AutoDownloadVideos);
+                        string = LocaleController.getString("AutoDownloadVideos", C3290R.string.AutoDownloadVideos);
                         i2 = 4;
                     } else {
                         i2 = 8;
-                        string = LocaleController.getString("AutoDownloadFiles", C3242R.string.AutoDownloadFiles);
+                        string = LocaleController.getString("AutoDownloadFiles", C3290R.string.AutoDownloadFiles);
                     }
                 } else {
-                    string = LocaleController.getString("AutoDownloadPhotos", C3242R.string.AutoDownloadPhotos);
+                    string = LocaleController.getString("AutoDownloadPhotos", C3290R.string.AutoDownloadPhotos);
                     i2 = 1;
                 }
                 DownloadController.Preset currentMobilePreset = DataAutoDownloadActivity.this.currentType == 0 ? DownloadController.getInstance(((BaseFragment) DataAutoDownloadActivity.this).currentAccount).getCurrentMobilePreset() : DataAutoDownloadActivity.this.currentType == 1 ? DownloadController.getInstance(((BaseFragment) DataAutoDownloadActivity.this).currentAccount).getCurrentWiFiPreset() : DownloadController.getInstance(((BaseFragment) DataAutoDownloadActivity.this).currentAccount).getCurrentRoamingPreset();
@@ -544,13 +545,13 @@ public class DataAutoDownloadActivity extends BaseFragment {
                             sb2.append(", ");
                         }
                         if (i3 == 0) {
-                            sb2.append(LocaleController.getString("AutoDownloadContacts", C3242R.string.AutoDownloadContacts));
+                            sb2.append(LocaleController.getString("AutoDownloadContacts", C3290R.string.AutoDownloadContacts));
                         } else if (i3 == 1) {
-                            sb2.append(LocaleController.getString("AutoDownloadPm", C3242R.string.AutoDownloadPm));
+                            sb2.append(LocaleController.getString("AutoDownloadPm", C3290R.string.AutoDownloadPm));
                         } else if (i3 == 2) {
-                            sb2.append(LocaleController.getString("AutoDownloadGroups", C3242R.string.AutoDownloadGroups));
+                            sb2.append(LocaleController.getString("AutoDownloadGroups", C3290R.string.AutoDownloadGroups));
                         } else if (i3 == 3) {
-                            sb2.append(LocaleController.getString("AutoDownloadChannels", C3242R.string.AutoDownloadChannels));
+                            sb2.append(LocaleController.getString("AutoDownloadChannels", C3290R.string.AutoDownloadChannels));
                         }
                         i4++;
                     }
@@ -559,19 +560,19 @@ public class DataAutoDownloadActivity extends BaseFragment {
                 if (i4 == 4) {
                     sb2.setLength(0);
                     if (i == DataAutoDownloadActivity.this.photosRow) {
-                        sb2.append(LocaleController.getString("AutoDownloadOnAllChats", C3242R.string.AutoDownloadOnAllChats));
+                        sb2.append(LocaleController.getString("AutoDownloadOnAllChats", C3290R.string.AutoDownloadOnAllChats));
                     } else {
-                        sb2.append(LocaleController.formatString("AutoDownloadUpToOnAllChats", C3242R.string.AutoDownloadUpToOnAllChats, AndroidUtilities.formatFileSize(j)));
+                        sb2.append(LocaleController.formatString("AutoDownloadUpToOnAllChats", C3290R.string.AutoDownloadUpToOnAllChats, AndroidUtilities.formatFileSize(j)));
                     }
                 } else if (i4 != 0) {
                     if (i == DataAutoDownloadActivity.this.photosRow) {
-                        sb = new StringBuilder(LocaleController.formatString("AutoDownloadOnFor", C3242R.string.AutoDownloadOnFor, sb2.toString()));
+                        sb = new StringBuilder(LocaleController.formatString("AutoDownloadOnFor", C3290R.string.AutoDownloadOnFor, sb2.toString()));
                     } else {
-                        sb = new StringBuilder(LocaleController.formatString("AutoDownloadOnUpToFor", C3242R.string.AutoDownloadOnUpToFor, AndroidUtilities.formatFileSize(j), sb2.toString()));
+                        sb = new StringBuilder(LocaleController.formatString("AutoDownloadOnUpToFor", C3290R.string.AutoDownloadOnUpToFor, AndroidUtilities.formatFileSize(j), sb2.toString()));
                     }
                     sb2 = sb;
                 } else {
-                    sb2.append(LocaleController.getString("AutoDownloadOff", C3242R.string.AutoDownloadOff));
+                    sb2.append(LocaleController.getString("AutoDownloadOff", C3290R.string.AutoDownloadOff));
                 }
                 if (DataAutoDownloadActivity.this.animateChecked) {
                     notificationsCheckCell.setChecked(i4 != 0);
@@ -623,7 +624,7 @@ public class DataAutoDownloadActivity extends BaseFragment {
             SlideChooseView slideChooseView;
             if (i == 0) {
                 TextCheckCell textCheckCell = new TextCheckCell(this.mContext);
-                textCheckCell.setColors("windowBackgroundCheckText", "switchTrackBlue", "switchTrackBlueChecked", "switchTrackBlueThumb", "switchTrackBlueThumbChecked");
+                textCheckCell.setColors(Theme.key_windowBackgroundCheckText, Theme.key_switchTrackBlue, Theme.key_switchTrackBlueChecked, Theme.key_switchTrackBlueThumb, Theme.key_switchTrackBlueThumbChecked);
                 textCheckCell.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
                 textCheckCell.setHeight(56);
                 slideChooseView = textCheckCell;
@@ -631,7 +632,7 @@ public class DataAutoDownloadActivity extends BaseFragment {
                 slideChooseView = new ShadowSectionCell(this.mContext);
             } else if (i == 2) {
                 View headerCell = new HeaderCell(this.mContext);
-                headerCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                headerCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 slideChooseView = headerCell;
             } else if (i == 3) {
                 SlideChooseView slideChooseView2 = new SlideChooseView(this.mContext);
@@ -646,15 +647,15 @@ public class DataAutoDownloadActivity extends BaseFragment {
                         SlideChooseView.Callback.CC.$default$onTouchEnd(this);
                     }
                 });
-                slideChooseView2.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                slideChooseView2.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 slideChooseView = slideChooseView2;
             } else if (i == 4) {
                 View notificationsCheckCell = new NotificationsCheckCell(this.mContext);
-                notificationsCheckCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                notificationsCheckCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 slideChooseView = notificationsCheckCell;
             } else {
                 View textInfoPrivacyCell = new TextInfoPrivacyCell(this.mContext);
-                textInfoPrivacyCell.setBackgroundDrawable(Theme.getThemedDrawable(this.mContext, C3242R.C3244drawable.greydivider_bottom, "windowBackgroundGrayShadow"));
+                textInfoPrivacyCell.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3290R.C3292drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
                 slideChooseView = textInfoPrivacyCell;
             }
             slideChooseView.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
@@ -685,13 +686,13 @@ public class DataAutoDownloadActivity extends BaseFragment {
         for (int i = 0; i < this.presets.size(); i++) {
             DownloadController.Preset preset = this.presets.get(i);
             if (preset == this.lowPreset) {
-                strArr[i] = LocaleController.getString("AutoDownloadLow", C3242R.string.AutoDownloadLow);
+                strArr[i] = LocaleController.getString("AutoDownloadLow", C3290R.string.AutoDownloadLow);
             } else if (preset == this.mediumPreset) {
-                strArr[i] = LocaleController.getString("AutoDownloadMedium", C3242R.string.AutoDownloadMedium);
+                strArr[i] = LocaleController.getString("AutoDownloadMedium", C3290R.string.AutoDownloadMedium);
             } else if (preset == this.highPreset) {
-                strArr[i] = LocaleController.getString("AutoDownloadHigh", C3242R.string.AutoDownloadHigh);
+                strArr[i] = LocaleController.getString("AutoDownloadHigh", C3290R.string.AutoDownloadHigh);
             } else {
-                strArr[i] = LocaleController.getString("AutoDownloadCustom", C3242R.string.AutoDownloadCustom);
+                strArr[i] = LocaleController.getString("AutoDownloadCustom", C3290R.string.AutoDownloadCustom);
             }
         }
         slideChooseView.setOptions(this.selectedPreset, strArr);
@@ -700,35 +701,41 @@ public class DataAutoDownloadActivity extends BaseFragment {
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayList = new ArrayList<>();
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{HeaderCell.class, NotificationsCheckCell.class, SlideChooseView.class}, null, null, null, "windowBackgroundWhite"));
-        arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "windowBackgroundGray"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, "actionBarDefault"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"));
-        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_SELECTOR, null, null, null, null, "listSelectorSDK21"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, Theme.dividerPaint, null, null, "divider"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{ShadowSectionCell.class}, null, null, null, "windowBackgroundGrayShadow"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlueHeader"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, "windowBackgroundChecked"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, "windowBackgroundUnchecked"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundCheckText"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackBlue"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackBlueChecked"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackBlueThumb"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackBlueThumbChecked"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackBlueSelector"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackBlueSelectorChecked"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{NotificationsCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{NotificationsCheckCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayText2"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{NotificationsCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrack"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{NotificationsCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackChecked"));
-        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, "windowBackgroundGrayShadow"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteGrayText4"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{SlideChooseView.class}, null, null, null, "switchTrack"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{SlideChooseView.class}, null, null, null, "switchTrackChecked"));
-        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{SlideChooseView.class}, null, null, null, "windowBackgroundWhiteGrayText"));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{HeaderCell.class, NotificationsCheckCell.class, SlideChooseView.class}, null, null, null, Theme.key_windowBackgroundWhite));
+        arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray));
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        int i = ThemeDescription.FLAG_BACKGROUND;
+        int i2 = Theme.key_actionBarDefault;
+        arrayList.add(new ThemeDescription(c3356ActionBar, i, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));
+        arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_SELECTOR, null, null, null, null, Theme.key_listSelector));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{View.class}, Theme.dividerPaint, null, null, Theme.key_divider));
+        int i3 = Theme.key_windowBackgroundGrayShadow;
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{ShadowSectionCell.class}, null, null, null, i3));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{HeaderCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlueHeader));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundChecked));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR | ThemeDescription.FLAG_CHECKTAG, new Class[]{TextCheckCell.class}, null, null, null, Theme.key_windowBackgroundUnchecked));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundCheckText));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlue));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueChecked));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueThumb));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueThumbChecked));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueSelector));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackBlueSelectorChecked));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{NotificationsCheckCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{NotificationsCheckCell.class}, new String[]{"valueTextView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText2));
+        int i4 = Theme.key_switchTrack;
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{NotificationsCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i4));
+        int i5 = Theme.key_switchTrackChecked;
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{NotificationsCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, i5));
+        arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_BACKGROUNDFILTER, new Class[]{TextInfoPrivacyCell.class}, null, null, null, i3));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{TextInfoPrivacyCell.class}, new String[]{"textView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteGrayText4));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{SlideChooseView.class}, null, null, null, i4));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{SlideChooseView.class}, null, null, null, i5));
+        arrayList.add(new ThemeDescription(this.listView, 0, new Class[]{SlideChooseView.class}, null, null, null, Theme.key_windowBackgroundWhiteGrayText));
         return arrayList;
     }
 }

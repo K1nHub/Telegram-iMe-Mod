@@ -1,9 +1,6 @@
 .class Lorg/telegram/ui/Components/ChatActivityEnterView$5;
-.super Ljava/lang/Object;
+.super Landroid/util/Property;
 .source "ChatActivityEnterView.java"
-
-# interfaces
-.implements Ljava/lang/Runnable;
 
 
 # annotations
@@ -16,201 +13,84 @@
     name = null
 .end annotation
 
-
-# instance fields
-.field private lastKnownPage:I
-
-.field final synthetic this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+.annotation system Ldalvik/annotation/Signature;
+    value = {
+        "Landroid/util/Property<",
+        "Landroid/view/View;",
+        "Ljava/lang/Integer;",
+        ">;"
+    }
+.end annotation
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
+.method constructor <init>(Lorg/telegram/ui/Components/ChatActivityEnterView;Ljava/lang/Class;Ljava/lang/String;)V
     .locals 0
 
-    .line 1011
-    iput-object p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$5;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    const/4 p1, -0x1
-
-    .line 1013
-    iput p1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$5;->lastKnownPage:I
+    .line 966
+    invoke-direct {p0, p2, p3}, Landroid/util/Property;-><init>(Ljava/lang/Class;Ljava/lang/String;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public run()V
-    .locals 8
+.method public get(Landroid/view/View;)Ljava/lang/Integer;
+    .locals 0
 
-    .line 1017
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$5;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    .line 969
+    invoke-virtual {p1}, Landroid/view/View;->getTranslationY()F
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/EmojiView;
+    move-result p1
 
-    move-result-object v0
+    invoke-static {p1}, Ljava/lang/Math;->round(F)I
 
-    if-eqz v0, :cond_7
+    move-result p1
 
-    .line 1018
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$5;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
 
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1500(Lorg/telegram/ui/Components/ChatActivityEnterView;)Lorg/telegram/ui/Components/EmojiView;
+    move-result-object p1
 
-    move-result-object v0
+    return-object p1
+.end method
 
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/EmojiView;->getCurrentPage()I
+.method public bridge synthetic get(Ljava/lang/Object;)Ljava/lang/Object;
+    .locals 0
 
-    move-result v0
+    .line 966
+    check-cast p1, Landroid/view/View;
 
-    .line 1019
-    iget v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$5;->lastKnownPage:I
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/ChatActivityEnterView$5;->get(Landroid/view/View;)Ljava/lang/Integer;
 
-    if-eq v0, v1, :cond_7
+    move-result-object p1
 
-    .line 1020
-    iput v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$5;->lastKnownPage:I
+    return-object p1
+.end method
 
-    .line 1021
-    iget-object v1, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$5;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+.method public set(Landroid/view/View;Ljava/lang/Integer;)V
+    .locals 0
 
-    invoke-static {v1}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1600(Lorg/telegram/ui/Components/ChatActivityEnterView;)Z
+    .line 974
+    invoke-virtual {p2}, Ljava/lang/Integer;->intValue()I
 
-    move-result v1
+    move-result p2
 
-    .line 1022
-    iget-object v2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$5;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    int-to-float p2, p2
 
-    const/4 v3, 0x2
+    invoke-virtual {p1, p2}, Landroid/view/View;->setTranslationY(F)V
 
-    const/4 v4, 0x0
+    return-void
+.end method
 
-    const/4 v5, 0x1
+.method public bridge synthetic set(Ljava/lang/Object;Ljava/lang/Object;)V
+    .locals 0
 
-    if-eq v0, v5, :cond_1
+    .line 966
+    check-cast p1, Landroid/view/View;
 
-    if-eq v0, v3, :cond_1
+    check-cast p2, Ljava/lang/Integer;
 
-    const/4 v6, 0x3
+    invoke-virtual {p0, p1, p2}, Lorg/telegram/ui/Components/ChatActivityEnterView$5;->set(Landroid/view/View;Ljava/lang/Integer;)V
 
-    if-ne v0, v6, :cond_0
-
-    goto :goto_0
-
-    :cond_0
-    move v6, v4
-
-    goto :goto_1
-
-    :cond_1
-    :goto_0
-    move v6, v5
-
-    :goto_1
-    invoke-static {v2, v6}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1602(Lorg/telegram/ui/Components/ChatActivityEnterView;Z)Z
-
-    .line 1023
-    iget-object v2, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$5;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {v2}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1700(Lorg/telegram/ui/Components/ChatActivityEnterView;)Z
-
-    move-result v2
-
-    .line 1024
-    iget-object v6, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$5;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    if-nez v0, :cond_2
-
-    move v7, v5
-
-    goto :goto_2
-
-    :cond_2
-    move v7, v4
-
-    :goto_2
-    invoke-static {v6, v7}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1702(Lorg/telegram/ui/Components/ChatActivityEnterView;Z)Z
-
-    .line 1025
-    iget-object v6, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$5;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {v6}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1800(Lorg/telegram/ui/Components/ChatActivityEnterView;)Z
-
-    move-result v6
-
-    if-eqz v6, :cond_5
-
-    .line 1026
-    iget-object v6, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$5;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {v6}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1900(Lorg/telegram/ui/Components/ChatActivityEnterView;)I
-
-    move-result v6
-
-    if-eqz v6, :cond_4
-
-    .line 1027
-    iget-object v4, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$5;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    if-nez v0, :cond_3
-
-    goto :goto_3
-
-    :cond_3
-    move v3, v5
-
-    :goto_3
-    invoke-static {v4, v3, v5}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$2000(Lorg/telegram/ui/Components/ChatActivityEnterView;IZ)V
-
-    .line 1028
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$5;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$2100(Lorg/telegram/ui/Components/ChatActivityEnterView;)V
-
-    goto :goto_4
-
-    .line 1029
-    :cond_4
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$5;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1600(Lorg/telegram/ui/Components/ChatActivityEnterView;)Z
-
-    move-result v0
-
-    if-nez v0, :cond_5
-
-    .line 1030
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$5;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-virtual {v0, v4, v5, v4}, Lorg/telegram/ui/Components/ChatActivityEnterView;->setStickersExpanded(ZZZ)V
-
-    .line 1033
-    :cond_5
-    :goto_4
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$5;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1600(Lorg/telegram/ui/Components/ChatActivityEnterView;)Z
-
-    move-result v0
-
-    if-ne v1, v0, :cond_6
-
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$5;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {v0}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$1700(Lorg/telegram/ui/Components/ChatActivityEnterView;)Z
-
-    move-result v0
-
-    if-eq v2, v0, :cond_7
-
-    .line 1034
-    :cond_6
-    iget-object v0, p0, Lorg/telegram/ui/Components/ChatActivityEnterView$5;->this$0:Lorg/telegram/ui/Components/ChatActivityEnterView;
-
-    invoke-static {v0, v5}, Lorg/telegram/ui/Components/ChatActivityEnterView;->access$100(Lorg/telegram/ui/Components/ChatActivityEnterView;Z)V
-
-    :cond_7
     return-void
 .end method

@@ -21,6 +21,7 @@ import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.StringExtKt;
 import com.iMe.utils.extentions.model.wallet.TokenBalanceExtKt;
 import com.iMe.utils.extentions.p033rx.RxExtKt$sam$i$io_reactivex_functions_Consumer$0;
+import com.iMe.utils.extentions.p033rx.SchedulersExtKt;
 import com.iMe.utils.formatter.DateFormatter;
 import io.reactivex.Observable;
 import io.reactivex.disposables.Disposable;
@@ -42,7 +43,7 @@ import kotlin.ranges.LongProgression;
 import kotlin.ranges.LongRange;
 import kotlin.ranges.RangesKt___RangesKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.p044ui.Charts.data.ChartData;
 import org.telegram.p044ui.StatisticActivity;
 import timber.log.Timber;
@@ -131,7 +132,7 @@ public final class StakingCalculatorPresenter extends BasePresenter<StakingCalcu
         String str;
         StakingDetailsItem stakingDetailsItem = this.selectedStakingProgramme;
         if (stakingDetailsItem != null) {
-            str = '(' + this.resourceManager.getString(this.selectedAmount >= stakingDetailsItem.getCompoundAccrualThreshold().doubleValue() ? C3242R.string.staking_details_apy : C3242R.string.staking_details_apr) + ')';
+            str = '(' + this.resourceManager.getString(this.selectedAmount >= stakingDetailsItem.getCompoundAccrualThreshold().doubleValue() ? C3290R.string.staking_details_apy : C3290R.string.staking_details_apr) + ')';
         } else {
             str = null;
         }
@@ -192,7 +193,7 @@ public final class StakingCalculatorPresenter extends BasePresenter<StakingCalcu
             }
             this.amountSubject.onNext(Double.valueOf(parseDouble));
         } catch (Exception e) {
-            Timber.m4e(e);
+            Timber.m6e(e);
         }
     }
 
@@ -218,9 +219,7 @@ public final class StakingCalculatorPresenter extends BasePresenter<StakingCalcu
     }
 
     private final void loadAccountLevelAndOpenStaking(StakingDetailsItem stakingDetailsItem) {
-        Observable observeOn = AccountLevelInteractor.getAccountLevelRemote$default(this.accountLevelInteractor, 0L, 1, null).observeOn(this.schedulersProvider.mo693ui());
-        Intrinsics.checkNotNullExpressionValue(observeOn, "accountLevelInteractor\n …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2292xca1b89cb(this, stakingDetailsItem)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2293xca1b89cc((BaseView) getViewState())));
+        Disposable subscribe = SchedulersExtKt.scheduleIO(AccountLevelInteractor.getAccountLevelRemote$default(this.accountLevelInteractor, 0L, 1, null)).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2331xca1b89cb(this, stakingDetailsItem)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2332xca1b89cc((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -247,9 +246,9 @@ public final class StakingCalculatorPresenter extends BasePresenter<StakingCalcu
         if (stakingDetailsItem == null || (networkType = stakingDetailsItem.getNetworkType()) == null) {
             return;
         }
-        Observable observeOn = WalletInteractor.getTokenBalance$default(walletInteractor, tokenCode, false, networkType, 2, null).observeOn(this.schedulersProvider.mo693ui());
+        Observable observeOn = WalletInteractor.getTokenBalance$default(walletInteractor, tokenCode, false, networkType, 2, null).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletInteractor\n       …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2294x30d40fe4(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2295x30d40fe5((BaseView) getViewState())));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2333x30d40fe4(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2334x30d40fe5((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -259,11 +258,11 @@ public final class StakingCalculatorPresenter extends BasePresenter<StakingCalcu
         String message;
         StakingCalculatorView stakingCalculatorView = (StakingCalculatorView) getViewState();
         if (errorModel.isNoConnectionStatus()) {
-            message = this.resourceManager.getString(C3242R.string.common_error_no_internet);
+            message = this.resourceManager.getString(C3290R.string.common_error_no_internet);
         } else {
             message = errorModel.getMessage(this.resourceManager);
             if (message.length() == 0) {
-                message = this.resourceManager.getString(C3242R.string.common_error_unexpected);
+                message = this.resourceManager.getString(C3290R.string.common_error_unexpected);
             }
         }
         stakingCalculatorView.showToast(message);
@@ -279,7 +278,7 @@ public final class StakingCalculatorPresenter extends BasePresenter<StakingCalcu
                 chartViewData = StakingCalculatorPresenter.setupAmountListener$lambda$12(Function1.this, obj);
                 return chartViewData;
             }
-        }).subscribeOn(this.schedulersProvider.mo694io()).observeOn(this.schedulersProvider.mo693ui());
+        }).subscribeOn(this.schedulersProvider.mo699io()).observeOn(this.schedulersProvider.mo698ui());
         final StakingCalculatorPresenter$setupAmountListener$2 stakingCalculatorPresenter$setupAmountListener$2 = new StakingCalculatorPresenter$setupAmountListener$2(this);
         Disposable subscribe = observeOn.subscribe(new Consumer() { // from class: com.iMe.ui.wallet.staking.calculator.StakingCalculatorPresenter$$ExternalSyntheticLambda0
             @Override // io.reactivex.functions.Consumer
@@ -345,7 +344,7 @@ public final class StakingCalculatorPresenter extends BasePresenter<StakingCalcu
         }
         this.tokenProfitText = '+' + TokenBalanceExtKt.getTotalBalanceShortText(TokenBalance.copy$default(TokenBalance.Companion.createEmptyBalanceFor(getTokenInfo()), null, ((Number) CollectionsKt.last((List<? extends Object>) arrayList)).doubleValue(), BitmapDescriptorFactory.HUE_RED, null, null, null, 61, null), this.resourceManager);
         ResourceManager resourceManager = this.resourceManager;
-        int i2 = C3242R.string.staking_details_profit;
+        int i2 = C3290R.string.staking_details_profit;
         StatisticActivity.ChartViewData chartViewData = new StatisticActivity.ChartViewData(resourceManager.getString(i2), 0);
         chartViewData.setup(new ChartData(TelegramStatisticsChartData.Companion.generateJSONObject(this.resourceManager.getString(i2), list, arrayList)));
         return chartViewData;

@@ -99,7 +99,7 @@ public abstract class TransferArgs implements TransactionArgs {
         }
 
         public int hashCode() {
-            int doubleToLongBits = ((((((((((((Double.doubleToLongBits(getAmount()) * 31) + getWeiConvertUnit().hashCode()) * 31) + this.recipientAddress.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m702m(this.chainId)) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode()) * 31;
+            int doubleToLongBits = ((((((((((((Double.doubleToLongBits(getAmount()) * 31) + getWeiConvertUnit().hashCode()) * 31) + this.recipientAddress.hashCode()) * 31) + BotsDbModel$$ExternalSyntheticBackport0.m706m(this.chainId)) * 31) + this.nonce.hashCode()) * 31) + this.gasPrice.hashCode()) * 31) + this.gasLimit.hashCode()) * 31;
             String str = this.contractAddress;
             return doubleToLongBits + (str == null ? 0 : str.hashCode());
         }

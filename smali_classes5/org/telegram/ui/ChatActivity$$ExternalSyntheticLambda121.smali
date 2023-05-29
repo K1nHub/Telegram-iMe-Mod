@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda121;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$VWbC2Kqyno94wb4RezyLqA9amyM(Lorg/telegram/ui/ChatActivity;Landroid/view/View;)Z
+    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$fqB-eCYaDb_BHxwxA3KkEY3SEmM(Lorg/telegram/ui/ChatActivity;Landroid/view/View;)Z
 
     move-result p1
 

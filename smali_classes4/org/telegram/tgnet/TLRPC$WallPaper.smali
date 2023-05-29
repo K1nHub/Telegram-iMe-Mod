@@ -24,12 +24,16 @@
 
 .field public slug:Ljava/lang/String;
 
+.field public stripedThumb:Landroid/graphics/Bitmap;
+
+.field public uploadingImage:Ljava/lang/String;
+
 
 # direct methods
 .method public constructor <init>()V
     .locals 0
 
-    .line 48368
+    .line 49367
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -44,7 +48,7 @@
 
     goto :goto_0
 
-    .line 48388
+    .line 49389
     :sswitch_0
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_wallPaper_layer94;
 
@@ -52,7 +56,7 @@
 
     goto :goto_0
 
-    .line 48394
+    .line 49395
     :sswitch_1
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_wallPaperNoFile;
 
@@ -60,7 +64,7 @@
 
     goto :goto_0
 
-    .line 48385
+    .line 49386
     :sswitch_2
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_wallPaper;
 
@@ -68,7 +72,7 @@
 
     goto :goto_0
 
-    .line 48391
+    .line 49392
     :sswitch_3
     new-instance v0, Lorg/telegram/tgnet/TLRPC$TL_wallPaperNoFile_layer128;
 
@@ -81,7 +85,7 @@
 
     goto :goto_1
 
-    .line 48398
+    .line 49399
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -111,7 +115,7 @@
     :goto_1
     if-eqz v0, :cond_2
 
-    .line 48401
+    .line 49402
     invoke-virtual {v0, p0, p2}, Lorg/telegram/tgnet/TLObject;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     :cond_2

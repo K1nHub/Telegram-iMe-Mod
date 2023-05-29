@@ -10,13 +10,13 @@
 
 .field public final synthetic f$1:Lorg/telegram/tgnet/TLObject;
 
-.field public final synthetic f$2:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
+.field public final synthetic f$2:I
 
-.field public final synthetic f$3:Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
+.field public final synthetic f$3:Lorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLObject;ILorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -25,9 +25,9 @@
 
     iput-object p2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda158;->f$1:Lorg/telegram/tgnet/TLObject;
 
-    iput-object p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda158;->f$2:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
+    iput p3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda158;->f$2:I
 
-    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda158;->f$3:Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
+    iput-object p4, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda158;->f$3:Lorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;
 
     return-void
 .end method
@@ -41,11 +41,11 @@
 
     iget-object v1, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda158;->f$1:Lorg/telegram/tgnet/TLObject;
 
-    iget-object v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda158;->f$2:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
+    iget v2, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda158;->f$2:I
 
-    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda158;->f$3:Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;
+    iget-object v3, p0, Lorg/telegram/messenger/MessagesController$$ExternalSyntheticLambda158;->f$3:Lorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;
 
-    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$QxxfeVcCxAOI7IAjRw2tz3B4u8I(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLObject;Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;)V
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/messenger/MessagesController;->$r8$lambda$vAnpF7LT-bVQ2fEFi-dEsoT3Vn4(Lorg/telegram/messenger/MessagesController;Lorg/telegram/tgnet/TLObject;ILorg/telegram/messenger/MessagesController$ChatlistUpdatesStat;)V
 
     return-void
 .end method

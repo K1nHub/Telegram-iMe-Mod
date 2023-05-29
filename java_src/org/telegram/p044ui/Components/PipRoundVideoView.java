@@ -36,7 +36,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.PipRoundVideoView */
 /* loaded from: classes6.dex */
@@ -151,18 +151,18 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
                 Drawable drawable = Theme.chat_roundVideoShadow;
                 if (drawable != null) {
                     drawable.setAlpha((int) (getAlpha() * 255.0f));
-                    Theme.chat_roundVideoShadow.setBounds(AndroidUtilities.m50dp(1), AndroidUtilities.m50dp(2), AndroidUtilities.m50dp(125), AndroidUtilities.m50dp(125));
+                    Theme.chat_roundVideoShadow.setBounds(AndroidUtilities.m54dp(1), AndroidUtilities.m54dp(2), AndroidUtilities.m54dp(125), AndroidUtilities.m54dp(125));
                     Theme.chat_roundVideoShadow.draw(canvas);
-                    Theme.chat_docBackPaint.setColor(Theme.getColor("chat_inBubble"));
+                    Theme.chat_docBackPaint.setColor(Theme.getColor(Theme.key_chat_inBubble));
                     Theme.chat_docBackPaint.setAlpha((int) (getAlpha() * 255.0f));
-                    canvas.drawCircle(AndroidUtilities.m50dp(63), AndroidUtilities.m50dp(63), AndroidUtilities.m51dp(59.5f), Theme.chat_docBackPaint);
+                    canvas.drawCircle(AndroidUtilities.m54dp(63), AndroidUtilities.m54dp(63), AndroidUtilities.m55dp(59.5f), Theme.chat_docBackPaint);
                 }
             }
         };
         this.windowView = frameLayout;
         frameLayout.setWillNotDraw(false);
-        this.videoWidth = AndroidUtilities.m50dp(126);
-        this.videoHeight = AndroidUtilities.m50dp(126);
+        this.videoWidth = AndroidUtilities.m54dp(126);
+        this.videoHeight = AndroidUtilities.m54dp(126);
         if (Build.VERSION.SDK_INT >= 21) {
             AspectRatioFrameLayout aspectRatioFrameLayout = new AspectRatioFrameLayout(activity) { // from class: org.telegram.ui.Components.PipRoundVideoView.2
                 @Override // android.view.ViewGroup
@@ -180,7 +180,7 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
             aspectRatioFrameLayout.setOutlineProvider(new ViewOutlineProvider(this) { // from class: org.telegram.ui.Components.PipRoundVideoView.3
                 @Override // android.view.ViewOutlineProvider
                 public void getOutline(View view, Outline outline) {
-                    outline.setOval(0, 0, AndroidUtilities.m50dp(120), AndroidUtilities.m50dp(120));
+                    outline.setOval(0, 0, AndroidUtilities.m54dp(120), AndroidUtilities.m54dp(120));
                 }
             });
             this.aspectRatioFrameLayout.setClipToOutline(true);
@@ -265,7 +265,7 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
             NotificationCenter.getInstance(i4).addObserver(this, NotificationCenter.messagePlayingProgressDidChanged);
             runShowHideAnimation(true);
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
     }
 
@@ -276,17 +276,17 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
             i3 = AndroidUtilities.displaySize.x;
         } else {
             i3 = AndroidUtilities.displaySize.y - i2;
-            i2 = C3306ActionBar.getCurrentActionBarHeight();
+            i2 = C3356ActionBar.getCurrentActionBarHeight();
         }
         int i4 = i3 - i2;
         if (i == 0) {
-            round = AndroidUtilities.m50dp(10);
+            round = AndroidUtilities.m54dp(10);
         } else if (i == 1) {
-            round = i4 - AndroidUtilities.m50dp(10);
+            round = i4 - AndroidUtilities.m54dp(10);
         } else {
-            round = Math.round((i4 - AndroidUtilities.m50dp(20)) * f) + AndroidUtilities.m50dp(10);
+            round = Math.round((i4 - AndroidUtilities.m54dp(20)) * f) + AndroidUtilities.m54dp(10);
         }
-        return !z ? round + C3306ActionBar.getCurrentActionBarHeight() : round;
+        return !z ? round + C3356ActionBar.getCurrentActionBarHeight() : round;
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate

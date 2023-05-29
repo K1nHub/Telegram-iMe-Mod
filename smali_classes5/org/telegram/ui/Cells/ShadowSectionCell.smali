@@ -166,8 +166,6 @@
     .line 71
     iget v0, p0, Lorg/telegram/ui/Cells/ShadowSectionCell;->backgroundColor:I
 
-    const-string v1, "windowBackgroundGrayShadow"
-
     if-nez v0, :cond_1
 
     .line 72
@@ -194,15 +192,17 @@
 
     invoke-direct {p0}, Lorg/telegram/ui/Cells/ShadowSectionCell;->getBackgroundResId()I
 
-    move-result v2
+    move-result v1
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
     iget-object v3, p0, Lorg/telegram/ui/Cells/ShadowSectionCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v1, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v2, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
-    move-result v1
+    move-result v2
 
-    invoke-static {v0, v2, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -212,13 +212,13 @@
 
     .line 78
     :cond_1
-    iget-boolean v2, p0, Lorg/telegram/ui/Cells/ShadowSectionCell;->top:Z
+    iget-boolean v1, p0, Lorg/telegram/ui/Cells/ShadowSectionCell;->top:Z
 
-    if-nez v2, :cond_2
+    if-nez v1, :cond_2
 
-    iget-boolean v2, p0, Lorg/telegram/ui/Cells/ShadowSectionCell;->bottom:Z
+    iget-boolean v1, p0, Lorg/telegram/ui/Cells/ShadowSectionCell;->bottom:Z
 
-    if-nez v2, :cond_2
+    if-nez v1, :cond_2
 
     .line 79
     invoke-virtual {p0, v0}, Landroid/view/View;->setBackgroundColor(I)V
@@ -233,15 +233,17 @@
 
     invoke-direct {p0}, Lorg/telegram/ui/Cells/ShadowSectionCell;->getBackgroundResId()I
 
-    move-result v2
+    move-result v1
+
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
     iget-object v3, p0, Lorg/telegram/ui/Cells/ShadowSectionCell;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    invoke-static {v1, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v2, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
-    move-result v1
+    move-result v2
 
-    invoke-static {v0, v2, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
+    invoke-static {v0, v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 

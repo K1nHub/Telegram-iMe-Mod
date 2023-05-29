@@ -57,7 +57,7 @@
 
     sput-object v0, Lio/grpc/Grpc;->TRANSPORT_ATTR_LOCAL_ADDR:Lio/grpc/Attributes$Key;
 
-    const-string v0, "ssl-session"
+    const-string/jumbo v0, "ssl-session"
 
     .line 55
     invoke-static {v0}, Lio/grpc/Attributes$Key;->create(Ljava/lang/String;)Lio/grpc/Attributes$Key;

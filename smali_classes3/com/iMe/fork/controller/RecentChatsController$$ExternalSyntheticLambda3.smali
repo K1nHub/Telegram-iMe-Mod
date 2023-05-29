@@ -33,7 +33,7 @@
 
     iget-object v1, p0, Lcom/iMe/fork/controller/RecentChatsController$$ExternalSyntheticLambda3;->f$1:Lcom/iMe/storage/domain/model/HistoryDialogModel;
 
-    invoke-static {v0, v1}, Lcom/iMe/fork/controller/RecentChatsController;->$r8$lambda$oDByoveeCveOZ9Wza-itxgCDRJQ(Lcom/iMe/fork/controller/RecentChatsController;Lcom/iMe/storage/domain/model/HistoryDialogModel;)V
+    invoke-static {v0, v1}, Lcom/iMe/fork/controller/RecentChatsController;->$r8$lambda$1k3Mr_IGiKAGyVdty5SBXk1Z1aQ(Lcom/iMe/fork/controller/RecentChatsController;Lcom/iMe/storage/domain/model/HistoryDialogModel;)V
 
     return-void
 .end method

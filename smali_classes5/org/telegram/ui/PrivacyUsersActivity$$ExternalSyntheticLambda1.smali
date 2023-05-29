@@ -8,14 +8,18 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
+.field public final synthetic f$1:Ljava/lang/Long;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/PrivacyUsersActivity;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/PrivacyUsersActivity;Ljava/lang/Long;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/PrivacyUsersActivity$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/PrivacyUsersActivity;
+
+    iput-object p2, p0, Lorg/telegram/ui/PrivacyUsersActivity$$ExternalSyntheticLambda1;->f$1:Ljava/lang/Long;
 
     return-void
 .end method
@@ -23,11 +27,13 @@
 
 # virtual methods
 .method public final run()V
-    .locals 1
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/PrivacyUsersActivity$$ExternalSyntheticLambda1;->f$0:Lorg/telegram/ui/PrivacyUsersActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/PrivacyUsersActivity;->$r8$lambda$1HeuepoUfffvTrkWX27idVAnc2k(Lorg/telegram/ui/PrivacyUsersActivity;)V
+    iget-object v1, p0, Lorg/telegram/ui/PrivacyUsersActivity$$ExternalSyntheticLambda1;->f$1:Ljava/lang/Long;
+
+    invoke-static {v0, v1}, Lorg/telegram/ui/PrivacyUsersActivity;->$r8$lambda$Tu5iOJSiC5UFbCjFJMWvmhqoiBA(Lorg/telegram/ui/PrivacyUsersActivity;Ljava/lang/Long;)V
 
     return-void
 .end method

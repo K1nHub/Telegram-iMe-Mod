@@ -17,8 +17,6 @@
 
 .field private allowGlobalResults:Z
 
-.field public crossAccountsForward:Z
-
 .field private currentAccount:I
 
 .field private delegate:Lorg/telegram/ui/Adapters/SearchAdapterHelper$SearchAdapterHelperDelegate;
@@ -85,6 +83,8 @@
 .end field
 
 .field private hashtagsLoadedFromDb:Z
+
+.field public isCrossForward:Z
 
 .field private lastFoundChannel:Ljava/lang/String;
 
@@ -327,9 +327,9 @@
     iput p2, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->currentAccount:I
 
     .line 122
-    iget-boolean p2, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->crossAccountsForward:Z
+    iget-boolean p2, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->isCrossForward:Z
 
-    iput-boolean p2, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->crossAccountsForward:Z
+    iput-boolean p2, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->isCrossForward:Z
 
     .line 124
     iput-boolean p1, p0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->allResultsAreGlobal:Z
@@ -1250,7 +1250,7 @@
 
     .line 283
     :cond_11
-    iget-boolean v9, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->crossAccountsForward:Z
+    iget-boolean v9, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->isCrossForward:Z
 
     if-eqz v9, :cond_12
 
@@ -1576,7 +1576,7 @@
 
     .line 339
     :cond_24
-    iget-boolean v6, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->crossAccountsForward:Z
+    iget-boolean v6, v0, Lorg/telegram/ui/Adapters/SearchAdapterHelper;->isCrossForward:Z
 
     if-eqz v6, :cond_25
 

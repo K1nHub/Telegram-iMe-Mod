@@ -15,7 +15,7 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.UserObject;
@@ -33,7 +33,7 @@ import org.telegram.tgnet.TLRPC$User;
 /* loaded from: classes3.dex */
 public final class AvatarDrawableCell extends FrameLayout {
     private final AvatarDrawable avatarDrawable;
-    private String backgroundColorKey;
+    private int backgroundColorKey;
     private final Lazy counterView$delegate;
     private final int currentAccount;
     private TLRPC$Chat currentChat;
@@ -69,7 +69,7 @@ public final class AvatarDrawableCell extends FrameLayout {
         lazy3 = LazyKt__LazyJVMKt.lazy(new AvatarDrawableCell$counterView$2(this));
         this.counterView$delegate = lazy3;
         this.avatarDrawable = new AvatarDrawable();
-        this.backgroundColorKey = "windowBackgroundGray";
+        this.backgroundColorKey = Theme.key_windowBackgroundGray;
         this.progressStage = 5;
         this.recentChatsController = RecentChatsController.Companion.getInstance(i);
         addView(getImageView(), LayoutHelper.createFrame(40, 40, 17));
@@ -92,11 +92,14 @@ public final class AvatarDrawableCell extends FrameLayout {
 
     public final void updateColors() {
         ImageView pinnedImageView = getPinnedImageView();
+        int alpha = Theme.dialogs_pinnedDrawable.getAlpha();
+        Theme.dialogs_pinnedDrawable.setAlpha(255);
         pinnedImageView.setBackground(Theme.createCircleDrawable(20, Theme.getColor(this.backgroundColorKey)));
-        pinnedImageView.setColorFilter(Theme.getColor("chats_pinnedIcon"));
-        pinnedImageView.setImageResource(C3242R.C3244drawable.list_pin);
+        pinnedImageView.setColorFilter(Theme.getColor(Theme.key_chats_pinnedIcon));
+        pinnedImageView.setImageResource(C3290R.C3292drawable.list_pin);
+        Theme.dialogs_pinnedDrawable.setAlpha(alpha);
         CounterView counterView = getCounterView();
-        counterView.setColors("chats_unreadCounterText", "chats_unreadCounter");
+        counterView.setColors(Theme.key_chats_unreadCounterText, Theme.key_chats_unreadCounter);
         counterView.setGravity(5);
     }
 
@@ -112,7 +115,7 @@ public final class AvatarDrawableCell extends FrameLayout {
         }
         this.dialogId = j;
         MessagesController messagesController = MessagesController.getInstance(this.currentAccount);
-        getImageView().setRoundRadius(AndroidUtilities.m50dp(messagesController.isForum(j) ? 10 : 20));
+        getImageView().setRoundRadius(AndroidUtilities.m54dp(messagesController.isForum(j) ? 10 : 20));
         if (DialogObject.isUserDialog(j)) {
             TLRPC$User user = messagesController.getUser(Long.valueOf(j));
             this.currentUser = user;
@@ -149,7 +152,7 @@ public final class AvatarDrawableCell extends FrameLayout {
             if (tLRPC$Chat != null) {
                 Intrinsics.checkNotNull(tLRPC$Chat, "null cannot be cast to non-null type org.telegram.tgnet.TLRPC.Chat");
                 if (tLRPC$Chat.forum) {
-                    drawCount(MessagesController.getInstance(this.currentAccount).getTopicsController().getForumUnreadCount(tLRPC$Chat.f1427id)[0]);
+                    drawCount(MessagesController.getInstance(this.currentAccount).getTopicsController().getForumUnreadCount(tLRPC$Chat.f1433id)[0]);
                 } else {
                     drawCount(tLRPC$Dialog.unread_count);
                 }
@@ -170,7 +173,7 @@ public final class AvatarDrawableCell extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final ImageView initPinnedImageView() {
         ImageView imageView = new ImageView(getContext());
-        ViewExtKt.gone(imageView);
+        ViewExtKt.gone$default(imageView, false, 1, null);
         return imageView;
     }
 
@@ -189,15 +192,15 @@ public final class AvatarDrawableCell extends FrameLayout {
         }
     }
 
-    /* JADX WARN: Removed duplicated region for block: B:61:0x026f  */
-    /* JADX WARN: Removed duplicated region for block: B:74:? A[RETURN, SYNTHETIC] */
+    /* JADX WARN: Removed duplicated region for block: B:63:0x0277  */
+    /* JADX WARN: Removed duplicated region for block: B:76:? A[RETURN, SYNTHETIC] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
     private final void drawOnline(android.graphics.Canvas r18) {
         /*
-            Method dump skipped, instructions count: 672
+            Method dump skipped, instructions count: 680
             To view this dump add '--comments-level debug' option
         */
         throw new UnsupportedOperationException("Method not decompiled: com.iMe.fork.p024ui.view.AvatarDrawableCell.drawOnline(android.graphics.Canvas):void");
@@ -208,11 +211,11 @@ public final class AvatarDrawableCell extends FrameLayout {
             this.showReactionProgress = tLRPC$Dialog.unread_reactions_count != 0 ? 1.0f : BitmapDescriptorFactory.HUE_RED;
             RectF rectF = new RectF();
             int i = this.lastUnreadCount;
-            int measuredHeight = getImageView().getMeasuredHeight() - AndroidUtilities.m50dp(5);
-            int measuredWidth = this.lastUnreadCount == 0 ? getImageView().getMeasuredWidth() - AndroidUtilities.m50dp(10) : 0;
+            int measuredHeight = getImageView().getMeasuredHeight() - AndroidUtilities.m54dp(5);
+            int measuredWidth = this.lastUnreadCount == 0 ? getImageView().getMeasuredWidth() - AndroidUtilities.m54dp(10) : 0;
             float f = measuredWidth;
             float f2 = measuredHeight;
-            rectF.set(f, f2, AndroidUtilities.m50dp(20) + f, AndroidUtilities.m50dp(20) + f2);
+            rectF.set(f, f2, AndroidUtilities.m54dp(20) + f, AndroidUtilities.m54dp(20) + f2);
             Paint paint = Theme.dialogs_reactionsCountPaint;
             canvas.save();
             float f3 = this.showReactionProgress;
@@ -220,7 +223,7 @@ public final class AvatarDrawableCell extends FrameLayout {
             float f4 = AndroidUtilities.density;
             canvas.drawRoundRect(rectF, f4 * 11.5f, f4 * 11.5f, paint);
             Theme.dialogs_reactionsCountPaint.setAlpha((int) ((1.0f - this.showReactionProgress) * 255));
-            BaseCell.setDrawableBounds(Theme.dialogs_reactionsMentionDrawable, measuredWidth + AndroidUtilities.m51dp(3.5f), measuredHeight + AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(12), AndroidUtilities.m50dp(12));
+            BaseCell.setDrawableBounds(Theme.dialogs_reactionsMentionDrawable, measuredWidth + AndroidUtilities.m55dp(3.5f), measuredHeight + AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(12));
             Theme.dialogs_reactionsMentionDrawable.draw(canvas);
             canvas.restore();
         }
@@ -230,41 +233,39 @@ public final class AvatarDrawableCell extends FrameLayout {
         if (this.recentChatsController.isDrawStatusType(DrawStatusType.MENTIONS)) {
             this.showMentionProgress = tLRPC$Dialog.unread_mentions_count != 0 ? 1.0f : BitmapDescriptorFactory.HUE_RED;
             RectF rectF = new RectF();
-            int measuredHeight = getImageView().getMeasuredHeight() - AndroidUtilities.m50dp(5);
+            int measuredHeight = getImageView().getMeasuredHeight() - AndroidUtilities.m54dp(5);
             float f = 0;
             float f2 = measuredHeight;
-            rectF.set(f, f2, AndroidUtilities.m50dp(20) + f, AndroidUtilities.m50dp(20) + f2);
+            rectF.set(f, f2, AndroidUtilities.m54dp(20) + f, AndroidUtilities.m54dp(20) + f2);
             Paint paint = Theme.dialogs_countPaint;
             canvas.save();
             float f3 = this.showMentionProgress;
             canvas.scale(f3, f3, rectF.centerX(), rectF.centerY());
             float f4 = AndroidUtilities.density;
             canvas.drawRoundRect(rectF, f4 * 11.5f, f4 * 11.5f, paint);
-            BaseCell.setDrawableBounds(Theme.dialogs_mentionDrawable, AndroidUtilities.m50dp(4) + 0, measuredHeight + AndroidUtilities.m50dp(4), AndroidUtilities.m50dp(12), AndroidUtilities.m50dp(12));
+            BaseCell.setDrawableBounds(Theme.dialogs_mentionDrawable, AndroidUtilities.m54dp(4) + 0, measuredHeight + AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(12));
             Theme.dialogs_mentionDrawable.draw(canvas);
             canvas.restore();
         }
     }
 
     private final void drawCount(int i) {
-        if (this.recentChatsController.isDrawStatusType(DrawStatusType.UNREAD_COUNT_CHATS)) {
-            if (i != 0) {
-                if (this.lastUnreadCount != i) {
-                    this.lastUnreadCount = i;
-                    getCounterView().setCountResentChats(true, MessagesController.getInstance(this.currentAccount).isDialogMuted(this.dialogId, 100), getImageView().getMeasuredWidth() - AndroidUtilities.m50dp(10), getImageView().getMeasuredHeight() - AndroidUtilities.m50dp(5));
-                    if (this.lastUnreadCount > 99) {
-                        this.lastUnreadCount = 99;
-                    }
-                    getCounterView().setCount(this.lastUnreadCount, false);
-                    getCounterView().counterDrawable.textPaint.setTextSize(AndroidUtilities.m50dp(10));
-                    return;
+        if (this.recentChatsController.isDrawStatusType(DrawStatusType.UNREAD_COUNT_CHATS) && i != 0) {
+            if (this.lastUnreadCount != i) {
+                this.lastUnreadCount = i;
+                getCounterView().setCountResentChats(true, MessagesController.getInstance(this.currentAccount).isDialogMuted(this.dialogId, 100), getImageView().getMeasuredWidth() - AndroidUtilities.m54dp(10), getImageView().getMeasuredHeight() - AndroidUtilities.m54dp(5));
+                if (this.lastUnreadCount > 99) {
+                    this.lastUnreadCount = 99;
                 }
+                getCounterView().setCount(this.lastUnreadCount, false);
+                getCounterView().counterDrawable.textPaint.setTextSize(AndroidUtilities.m54dp(10));
                 return;
             }
-            float f = 0;
-            getCounterView().setCountResentChats(true, MessagesController.getInstance(this.currentAccount).isDialogMuted(this.dialogId, 100), f, f);
-            this.lastUnreadCount = 0;
-            getCounterView().setCount(0, false);
+            return;
         }
+        float f = 0;
+        getCounterView().setCountResentChats(true, MessagesController.getInstance(this.currentAccount).isDialogMuted(this.dialogId, 100), f, f);
+        this.lastUnreadCount = 0;
+        getCounterView().setCount(0, false);
     }
 }

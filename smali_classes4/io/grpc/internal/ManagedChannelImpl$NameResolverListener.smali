@@ -300,7 +300,7 @@
 
     xor-int/lit8 v0, v0, 0x1
 
-    const-string v1, "the error status must not be OK"
+    const-string/jumbo v1, "the error status must not be OK"
 
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/Object;)V
 

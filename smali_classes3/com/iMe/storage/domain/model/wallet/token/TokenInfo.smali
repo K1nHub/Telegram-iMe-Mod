@@ -63,7 +63,7 @@
 
     sput-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;
 
-    .line 1114
+    .line 1127
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion$supportedTokens$2;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion$supportedTokens$2;
 
     invoke-static {v0}, Lkotlin/LazyKt;->lazy(Lkotlin/jvm/functions/Function0;)Lkotlin/Lazy;
@@ -250,7 +250,7 @@
 .method public final isEth()Z
     .locals 1
 
-    .line 1108
+    .line 1121
     instance-of v0, p0, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$ETH;
 
     return v0
@@ -259,7 +259,7 @@
 .method public final isLime()Z
     .locals 1
 
-    .line 1106
+    .line 1119
     instance-of v0, p0, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$LIME;
 
     return v0
@@ -268,7 +268,7 @@
 .method public final isUnknown()Z
     .locals 1
 
-    .line 1107
+    .line 1120
     instance-of v0, p0, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Basic$UNKNOWN;
 
     return v0

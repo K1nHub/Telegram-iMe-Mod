@@ -43,10 +43,10 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Cells/DialogsRequestedEmptyCell$1;->paint:Landroid/graphics/Paint;
 
-    const-string p2, "windowBackgroundWhite"
-
     .line 48
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 

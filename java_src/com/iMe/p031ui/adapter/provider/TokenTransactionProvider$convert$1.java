@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: TokenTransactionProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.TokenTransactionProvider$convert$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class TokenTransactionProvider$convert$1 extends Lambda implements Function1<TimeWithClockView, Unit> {
     final /* synthetic */ TransactionItem $item;
 

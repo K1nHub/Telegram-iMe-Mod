@@ -8,27 +8,27 @@ public final class Logging {
     }
 
     /* renamed from: d */
-    public static void m805d(String str, String str2, Object obj) {
+    public static void m809d(String str, String str2, Object obj) {
         Log.d(getTag(str), String.format(str2, obj));
     }
 
     /* renamed from: d */
-    public static void m804d(String str, String str2, Object... objArr) {
+    public static void m808d(String str, String str2, Object... objArr) {
         Log.d(getTag(str), String.format(str2, objArr));
     }
 
     /* renamed from: i */
-    public static void m802i(String str, String str2) {
+    public static void m806i(String str, String str2) {
         Log.i(getTag(str), str2);
     }
 
     /* renamed from: e */
-    public static void m803e(String str, String str2, Throwable th) {
+    public static void m807e(String str, String str2, Throwable th) {
         Log.e(getTag(str), str2, th);
     }
 
     /* renamed from: w */
-    public static void m801w(String str, String str2, Object obj) {
+    public static void m805w(String str, String str2, Object obj) {
         Log.w(getTag(str), String.format(str2, obj));
     }
 }

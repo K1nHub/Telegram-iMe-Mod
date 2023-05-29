@@ -30,8 +30,8 @@
 
 
 # virtual methods
-.method public final didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
-    .locals 8
+.method public final didSelectDialogs(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
+    .locals 9
 
     iget-object v0, p0, Lorg/telegram/ui/Components/BotWebViewMenuContainer$1$$ExternalSyntheticLambda3;->f$0:Lorg/telegram/ui/Components/BotWebViewMenuContainer$1;
 
@@ -49,7 +49,9 @@
 
     move-object v7, p5
 
-    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/Components/BotWebViewMenuContainer$1;->$r8$lambda$YWTae6U2B9IHftyA-szAGuiBiuE(Lorg/telegram/ui/Components/BotWebViewMenuContainer$1;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;)Z
+    move-object v8, p6
+
+    invoke-static/range {v0 .. v8}, Lorg/telegram/ui/Components/BotWebViewMenuContainer$1;->$r8$lambda$xpQeUyhQwBFa0KFVI0TbVStv44Q(Lorg/telegram/ui/Components/BotWebViewMenuContainer$1;Lorg/telegram/tgnet/TLRPC$User;Ljava/lang/String;Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;ZLorg/telegram/ui/TopicsFragment;Lcom/iMe/fork/utils/Callbacks$Callback1;)Z
 
     move-result p1
 

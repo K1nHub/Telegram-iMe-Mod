@@ -49,9 +49,9 @@
     .line 886
     iget-object p2, p0, Lorg/telegram/ui/DataUsage2Activity$SubtitleCell;->textView:Landroid/widget/TextView;
 
-    const-string v0, "windowBackgroundWhiteGrayText"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText:I
 
-    invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result p1
 

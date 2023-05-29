@@ -6,8 +6,8 @@ import io.reactivex.Scheduler;
 /* loaded from: classes3.dex */
 public interface SchedulersProvider {
     /* renamed from: io */
-    Scheduler mo694io();
+    Scheduler mo699io();
 
     /* renamed from: ui */
-    Scheduler mo693ui();
+    Scheduler mo698ui();
 }

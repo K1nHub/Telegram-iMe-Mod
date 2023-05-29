@@ -35,7 +35,7 @@
 
     check-cast p1, Lorg/telegram/ui/Components/BulletinFactory;
 
-    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/ShareAlert;->$r8$lambda$OGNnyNR1YIUWH9X5qGLuPlnweQo(Lorg/telegram/ui/Components/ShareAlert;ZLorg/telegram/ui/Components/BulletinFactory;)Lorg/telegram/ui/Components/Bulletin;
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/Components/ShareAlert;->$r8$lambda$06x1S8jWkWg53EP-IZQKNCJ8B3Y(Lorg/telegram/ui/Components/ShareAlert;ZLorg/telegram/ui/Components/BulletinFactory;)Lorg/telegram/ui/Components/Bulletin;
 
     move-result-object p1
 

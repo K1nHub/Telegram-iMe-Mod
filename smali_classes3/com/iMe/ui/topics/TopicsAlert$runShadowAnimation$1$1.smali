@@ -28,7 +28,7 @@
 
     iput-boolean p2, p0, Lcom/iMe/ui/topics/TopicsAlert$runShadowAnimation$1$1;->$show:Z
 
-    .line 227
+    .line 241
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
     return-void
@@ -43,7 +43,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 238
+    .line 252
     iget-object v0, p0, Lcom/iMe/ui/topics/TopicsAlert$runShadowAnimation$1$1;->this$0:Lcom/iMe/ui/topics/TopicsAlert;
 
     invoke-static {v0}, Lcom/iMe/ui/topics/TopicsAlert;->access$getShadowAnimation$p(Lcom/iMe/ui/topics/TopicsAlert;)Landroid/animation/AnimatorSet;
@@ -64,7 +64,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 239
+    .line 253
     iget-object p1, p0, Lcom/iMe/ui/topics/TopicsAlert$runShadowAnimation$1$1;->this$0:Lcom/iMe/ui/topics/TopicsAlert;
 
     const/4 v0, 0x0
@@ -76,13 +76,13 @@
 .end method
 
 .method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 1
+    .locals 3
 
     const-string v0, "animation"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 229
+    .line 243
     iget-object v0, p0, Lcom/iMe/ui/topics/TopicsAlert$runShadowAnimation$1$1;->this$0:Lcom/iMe/ui/topics/TopicsAlert;
 
     invoke-static {v0}, Lcom/iMe/ui/topics/TopicsAlert;->access$getShadowAnimation$p(Lcom/iMe/ui/topics/TopicsAlert;)Landroid/animation/AnimatorSet;
@@ -103,25 +103,29 @@
 
     if-eqz p1, :cond_1
 
-    .line 230
+    .line 244
     iget-boolean p1, p0, Lcom/iMe/ui/topics/TopicsAlert$runShadowAnimation$1$1;->$show:Z
+
+    const/4 v0, 0x0
 
     if-nez p1, :cond_0
 
-    .line 231
+    .line 245
     iget-object p1, p0, Lcom/iMe/ui/topics/TopicsAlert$runShadowAnimation$1$1;->this$0:Lcom/iMe/ui/topics/TopicsAlert;
 
     invoke-static {p1}, Lcom/iMe/ui/topics/TopicsAlert;->access$getTopShadow(Lcom/iMe/ui/topics/TopicsAlert;)Landroid/view/View;
 
     move-result-object p1
 
-    invoke-static {p1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->invisible(Landroid/view/View;)V
+    const/4 v1, 0x0
 
-    .line 233
+    const/4 v2, 0x1
+
+    invoke-static {p1, v1, v2, v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->invisible$default(Landroid/view/View;ZILjava/lang/Object;)V
+
+    .line 247
     :cond_0
     iget-object p1, p0, Lcom/iMe/ui/topics/TopicsAlert$runShadowAnimation$1$1;->this$0:Lcom/iMe/ui/topics/TopicsAlert;
-
-    const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lcom/iMe/ui/topics/TopicsAlert;->access$setShadowAnimation$p(Lcom/iMe/ui/topics/TopicsAlert;Landroid/animation/AnimatorSet;)V
 

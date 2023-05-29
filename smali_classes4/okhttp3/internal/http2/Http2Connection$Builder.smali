@@ -38,7 +38,7 @@
 .method public constructor <init>(ZLokhttp3/internal/concurrent/TaskRunner;)V
     .locals 1
 
-    const-string v0, "taskRunner"
+    const-string/jumbo v0, "taskRunner"
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -135,7 +135,7 @@
 
     if-nez v0, :cond_0
 
-    const-string v1, "sink"
+    const-string/jumbo v1, "sink"
 
     invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
@@ -151,7 +151,7 @@
 
     if-nez v0, :cond_0
 
-    const-string v1, "socket"
+    const-string/jumbo v1, "socket"
 
     invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
@@ -167,7 +167,7 @@
 
     if-nez v0, :cond_0
 
-    const-string v1, "source"
+    const-string/jumbo v1, "source"
 
     invoke-static {v1}, Lkotlin/jvm/internal/Intrinsics;->throwUninitializedPropertyAccessException(Ljava/lang/String;)V
 
@@ -214,7 +214,7 @@
         }
     .end annotation
 
-    const-string v0, "socket"
+    const-string/jumbo v0, "socket"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -222,11 +222,11 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "source"
+    const-string/jumbo v0, "source"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string v0, "sink"
+    const-string/jumbo v0, "sink"
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

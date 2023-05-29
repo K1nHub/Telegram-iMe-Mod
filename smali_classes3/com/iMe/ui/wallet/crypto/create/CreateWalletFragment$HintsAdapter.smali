@@ -177,10 +177,10 @@
     .line 1079
     invoke-virtual {p1, v0, v1}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v0, "actionBarDefaultSubmenuItem"
-
     .line 1080
-    invoke-virtual {p2, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
+
+    invoke-virtual {p2, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getThemedColor(I)I
 
     move-result p2
 

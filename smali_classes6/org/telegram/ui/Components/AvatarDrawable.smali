@@ -211,15 +211,15 @@
     .locals 1
 
     .line 146
-    sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[Ljava/lang/String;
+    sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[I
 
     invoke-static {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
 
     move-result p0
 
-    aget-object p0, v0, p0
+    aget p0, v0, p0
 
-    invoke-static {p0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p0
 
@@ -247,7 +247,7 @@
 
     .line 142
     :cond_0
-    sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[Ljava/lang/String;
+    sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[I
 
     array-length v0, v0
 
@@ -267,38 +267,38 @@
 .method public static getIconColorForId(JLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
     .locals 0
 
-    const-string p0, "avatar_actionBarIconBlue"
-
     .line 154
-    invoke-static {p0, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    sget p0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_actionBarIconBlue:I
+
+    invoke-static {p0, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p0
 
     return p0
 .end method
 
-.method public static getNameColorNameForId(J)Ljava/lang/String;
+.method public static getNameColorNameForId(J)I
     .locals 1
 
     .line 170
-    sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_nameInMessage:[Ljava/lang/String;
+    sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_nameInMessage:[I
 
     invoke-static {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
 
     move-result p0
 
-    aget-object p0, v0, p0
+    aget p0, v0, p0
 
-    return-object p0
+    return p0
 .end method
 
 .method public static getProfileBackColorForId(JLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
     .locals 0
 
-    const-string p0, "avatar_backgroundActionBarBlue"
-
     .line 166
-    invoke-static {p0, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    sget p0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundActionBarBlue:I
+
+    invoke-static {p0, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p0
 
@@ -309,15 +309,15 @@
     .locals 1
 
     .line 158
-    sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[Ljava/lang/String;
+    sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[I
 
     invoke-static {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
 
     move-result p0
 
-    aget-object p0, v0, p0
+    aget p0, v0, p0
 
-    invoke-static {p0, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {p0, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p0
 
@@ -327,49 +327,26 @@
 .method public static getProfileTextColorForId(JLorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
     .locals 0
 
-    const-string p0, "avatar_subtitleInProfileBlue"
-
     .line 162
-    invoke-static {p0, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    sget p0, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_subtitleInProfileBlue:I
+
+    invoke-static {p0, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p0
 
     return p0
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
+.method private getThemedColor(I)I
     .locals 1
 
     .line 544
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarDrawable;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 545
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
@@ -471,9 +448,9 @@
     .line 365
     iget-object v4, v1, Lorg/telegram/ui/Components/AvatarDrawable;->namePaint:Landroid/text/TextPaint;
 
-    const-string v5, "avatar_text"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_text:I
 
-    invoke-direct {v1, v5}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v1, v5}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
 
     move-result v5
 
@@ -676,9 +653,9 @@
     .line 388
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->avatar_backgroundPaint:Landroid/graphics/Paint;
 
-    const-string v7, "avatar_backgroundArchived"
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundArchived:I
 
-    invoke-direct {v1, v7}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v1, v7}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
 
     move-result v10
 
@@ -716,7 +693,7 @@
     .line 392
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getNonAnimatedColor(Ljava/lang/String;)I
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getNonAnimatedColor(I)I
 
     move-result v6
 
@@ -725,7 +702,7 @@
     .line 393
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->dialogs_archiveAvatarDrawable:Lorg/telegram/ui/Components/RLottieDrawable;
 
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getNonAnimatedColor(Ljava/lang/String;)I
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getNonAnimatedColor(I)I
 
     move-result v5
 
@@ -1497,18 +1474,18 @@
 
     const/4 v2, 0x2
 
-    const-string v3, "avatar_backgroundSaved"
+    const/16 v3, 0x65
 
-    const/16 v4, 0x65
+    const/4 v4, 0x0
 
-    const/4 v5, 0x0
+    const/4 v5, 0x1
 
-    const/4 v6, 0x1
-
-    if-ne p1, v4, :cond_0
+    if-ne p1, v3, :cond_0
 
     .line 198
-    invoke-direct {p0, v3}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundSaved:I
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
 
     move-result p1
 
@@ -1517,14 +1494,14 @@
     goto/16 :goto_1
 
     :cond_0
-    const/16 v7, 0x64
+    const/16 v6, 0x64
 
-    if-ne p1, v7, :cond_1
-
-    const-string p1, "avatar_backgroundViolet"
+    if-ne p1, v6, :cond_1
 
     .line 200
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundViolet:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -1533,17 +1510,17 @@
     goto/16 :goto_1
 
     :cond_1
-    const/16 v7, 0xd
+    const/16 v6, 0xd
 
-    if-ne p1, v7, :cond_2
+    if-ne p1, v6, :cond_2
 
     .line 203
-    iput-boolean v5, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
-
-    const-string p1, "chats_actionBackground"
+    iput-boolean v4, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
     .line 204
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
+
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 
@@ -1557,12 +1534,12 @@
     if-ne p1, v2, :cond_3
 
     .line 206
-    iput-boolean v5, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
-
-    const-string p1, "avatar_backgroundArchivedHidden"
+    iput-boolean v4, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
     .line 207
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundArchivedHidden:I
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
 
     move-result p1
 
@@ -1575,47 +1552,47 @@
     :cond_3
     if-eq p1, v1, :cond_d
 
-    if-eq p1, v6, :cond_d
+    if-eq p1, v5, :cond_d
 
     if-ne p1, v0, :cond_4
 
     goto/16 :goto_0
 
     :cond_4
-    const/4 v3, 0x3
+    const/4 v6, 0x3
 
     const-wide/16 v7, 0x5
 
-    if-ne p1, v3, :cond_5
+    if-ne p1, v6, :cond_5
 
     .line 213
-    iput-boolean v6, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
+    iput-boolean v5, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
     .line 214
-    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[Ljava/lang/String;
+    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[I
 
     invoke-static {v7, v8}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
 
-    move-result v3
+    move-result v6
 
-    aget-object p1, p1, v3
+    aget p1, p1, v6
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
     .line 215
-    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[Ljava/lang/String;
+    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[I
 
     invoke-static {v7, v8}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
 
-    move-result v3
+    move-result v6
 
-    aget-object p1, p1, v3
+    aget p1, p1, v6
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
 
     move-result p1
 
@@ -1624,38 +1601,38 @@
     goto/16 :goto_1
 
     :cond_5
-    const/4 v3, 0x4
+    const/4 v6, 0x4
 
-    if-ne p1, v3, :cond_6
+    if-ne p1, v6, :cond_6
 
     .line 217
-    iput-boolean v6, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
+    iput-boolean v5, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
     .line 218
-    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[Ljava/lang/String;
+    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[I
 
     invoke-static {v7, v8}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
 
-    move-result v3
+    move-result v6
 
-    aget-object p1, p1, v3
+    aget p1, p1, v6
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
     .line 219
-    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[Ljava/lang/String;
+    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[I
 
     invoke-static {v7, v8}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
 
-    move-result v3
+    move-result v6
 
-    aget-object p1, p1, v3
+    aget p1, p1, v6
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
 
     move-result p1
 
@@ -1664,40 +1641,40 @@
     goto/16 :goto_1
 
     :cond_6
-    const/4 v3, 0x5
+    const/4 v6, 0x5
 
     const-wide/16 v9, 0x4
 
-    if-ne p1, v3, :cond_7
+    if-ne p1, v6, :cond_7
 
     .line 221
-    iput-boolean v6, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
+    iput-boolean v5, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
     .line 222
-    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[Ljava/lang/String;
+    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[I
 
     invoke-static {v9, v10}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
 
-    move-result v3
+    move-result v6
 
-    aget-object p1, p1, v3
+    aget p1, p1, v6
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
     .line 223
-    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[Ljava/lang/String;
+    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[I
 
     invoke-static {v9, v10}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
 
-    move-result v3
+    move-result v6
 
-    aget-object p1, p1, v3
+    aget p1, p1, v6
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
 
     move-result p1
 
@@ -1706,40 +1683,40 @@
     goto/16 :goto_1
 
     :cond_7
-    const/4 v3, 0x6
+    const/4 v6, 0x6
 
-    if-ne p1, v3, :cond_8
+    if-ne p1, v6, :cond_8
 
     .line 225
-    iput-boolean v6, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
+    iput-boolean v5, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
     .line 226
-    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[Ljava/lang/String;
+    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[I
 
-    const-wide/16 v7, 0x3
+    const-wide/16 v6, 0x3
 
-    invoke-static {v7, v8}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
+    invoke-static {v6, v7}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
 
-    move-result v3
+    move-result v8
 
-    aget-object p1, p1, v3
+    aget p1, p1, v8
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
     .line 227
-    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[Ljava/lang/String;
+    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[I
 
-    invoke-static {v7, v8}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
+    invoke-static {v6, v7}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
 
-    move-result v3
+    move-result v6
 
-    aget-object p1, p1, v3
+    aget p1, p1, v6
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
 
     move-result p1
 
@@ -1748,40 +1725,40 @@
     goto/16 :goto_1
 
     :cond_8
-    const/4 v3, 0x7
+    const/4 v6, 0x7
 
-    if-ne p1, v3, :cond_9
+    if-ne p1, v6, :cond_9
 
     .line 229
-    iput-boolean v6, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
+    iput-boolean v5, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
     .line 230
-    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[Ljava/lang/String;
+    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[I
 
-    const-wide/16 v7, 0x1
+    const-wide/16 v6, 0x1
 
-    invoke-static {v7, v8}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
+    invoke-static {v6, v7}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
 
-    move-result v3
+    move-result v8
 
-    aget-object p1, p1, v3
+    aget p1, p1, v8
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
     .line 231
-    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[Ljava/lang/String;
+    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[I
 
-    invoke-static {v7, v8}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
+    invoke-static {v6, v7}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
 
-    move-result v3
+    move-result v6
 
-    aget-object p1, p1, v3
+    aget p1, p1, v6
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
 
     move-result p1
 
@@ -1790,40 +1767,40 @@
     goto/16 :goto_1
 
     :cond_9
-    const/16 v3, 0x8
+    const/16 v6, 0x8
 
-    if-ne p1, v3, :cond_a
+    if-ne p1, v6, :cond_a
 
     .line 233
-    iput-boolean v6, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
+    iput-boolean v5, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
     .line 234
-    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[Ljava/lang/String;
+    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[I
 
-    const-wide/16 v7, 0x0
+    const-wide/16 v6, 0x0
 
-    invoke-static {v7, v8}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
+    invoke-static {v6, v7}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
 
-    move-result v3
+    move-result v8
 
-    aget-object p1, p1, v3
+    aget p1, p1, v8
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
     .line 235
-    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[Ljava/lang/String;
+    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[I
 
-    invoke-static {v7, v8}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
+    invoke-static {v6, v7}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
 
-    move-result v3
+    move-result v6
 
-    aget-object p1, p1, v3
+    aget p1, p1, v6
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
 
     move-result p1
 
@@ -1832,40 +1809,40 @@
     goto/16 :goto_1
 
     :cond_a
-    const/16 v3, 0x9
+    const/16 v6, 0x9
 
-    if-ne p1, v3, :cond_b
+    if-ne p1, v6, :cond_b
 
     .line 237
-    iput-boolean v6, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
+    iput-boolean v5, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
     .line 238
-    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[Ljava/lang/String;
+    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[I
 
-    const-wide/16 v7, 0x6
+    const-wide/16 v6, 0x6
 
-    invoke-static {v7, v8}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
+    invoke-static {v6, v7}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
 
-    move-result v3
+    move-result v8
 
-    aget-object p1, p1, v3
+    aget p1, p1, v8
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
     .line 239
-    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[Ljava/lang/String;
+    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[I
 
-    invoke-static {v7, v8}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
+    invoke-static {v6, v7}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
 
-    move-result v3
+    move-result v6
 
-    aget-object p1, p1, v3
+    aget p1, p1, v6
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
 
     move-result p1
 
@@ -1874,38 +1851,38 @@
     goto :goto_1
 
     :cond_b
-    const/16 v3, 0xa
+    const/16 v6, 0xa
 
-    if-ne p1, v3, :cond_c
+    if-ne p1, v6, :cond_c
 
     .line 241
-    iput-boolean v6, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
+    iput-boolean v5, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
     .line 242
-    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[Ljava/lang/String;
+    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[I
 
     invoke-static {v7, v8}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
 
-    move-result v3
+    move-result v6
 
-    aget-object p1, p1, v3
+    aget p1, p1, v6
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
     .line 243
-    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[Ljava/lang/String;
+    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[I
 
     invoke-static {v7, v8}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
 
-    move-result v3
+    move-result v6
 
-    aget-object p1, p1, v3
+    aget p1, p1, v6
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
 
     move-result p1
 
@@ -1915,33 +1892,33 @@
 
     .line 245
     :cond_c
-    iput-boolean v6, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
+    iput-boolean v5, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
     .line 246
-    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[Ljava/lang/String;
+    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[I
 
     invoke-static {v9, v10}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
 
-    move-result v3
+    move-result v6
 
-    aget-object p1, p1, v3
+    aget p1, p1, v6
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
     .line 247
-    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[Ljava/lang/String;
+    sget-object p1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[I
 
     invoke-static {v9, v10}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
 
-    move-result v3
+    move-result v6
 
-    aget-object p1, p1, v3
+    aget p1, p1, v6
 
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
 
     move-result p1
 
@@ -1952,19 +1929,21 @@
     .line 209
     :cond_d
     :goto_0
-    iput-boolean v6, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
+    iput-boolean v5, p0, Lorg/telegram/ui/Components/AvatarDrawable;->hasGradient:Z
 
     .line 210
-    invoke-direct {p0, v3}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_backgroundSaved:I
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
 
     move-result p1
 
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
-    const-string p1, "avatar_background2Saved"
-
     .line 211
-    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_avatar_background2Saved:I
+
+    invoke-direct {p0, p1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
 
     move-result p1
 
@@ -1976,28 +1955,28 @@
 
     if-eq p1, v2, :cond_e
 
-    if-eq p1, v6, :cond_e
+    if-eq p1, v5, :cond_e
 
     if-eq p1, v1, :cond_e
 
     if-eq p1, v0, :cond_e
 
-    move v0, v6
+    move v0, v5
 
     goto :goto_2
 
     :cond_e
-    move v0, v5
+    move v0, v4
 
     :goto_2
     iput-boolean v0, p0, Lorg/telegram/ui/Components/AvatarDrawable;->needApplyColorAccent:Z
 
-    if-eq p1, v4, :cond_f
+    if-eq p1, v3, :cond_f
 
-    move v5, v6
+    move v4, v5
 
     :cond_f
-    and-int p1, v0, v5
+    and-int p1, v0, v4
 
     .line 250
     iput-boolean p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->needApplyColorAccent:Z
@@ -2083,30 +2062,30 @@
     iput-boolean v0, p0, Lorg/telegram/ui/Components/AvatarDrawable;->invalidateTextLayout:Z
 
     .line 312
-    sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[Ljava/lang/String;
+    sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background:[I
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
 
     move-result v2
 
-    aget-object v1, v1, v2
+    aget v1, v1, v2
 
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
 
     move-result v1
 
     iput v1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->color:I
 
     .line 313
-    sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[Ljava/lang/String;
+    sget-object v1, Lorg/telegram/ui/ActionBar/Theme;->keys_avatar_background2:[I
 
     invoke-static {p1, p2}, Lorg/telegram/ui/Components/AvatarDrawable;->getColorIndex(J)I
 
     move-result v2
 
-    aget-object v1, v1, v2
+    aget v1, v1, v2
 
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/AvatarDrawable;->getThemedColor(I)I
 
     move-result v1
 
@@ -2453,7 +2432,7 @@
 .method public setRoundRadius(I)V
     .locals 0
 
-    .line 549
+    .line 548
     iput p1, p0, Lorg/telegram/ui/Components/AvatarDrawable;->roundRadius:I
 
     return-void

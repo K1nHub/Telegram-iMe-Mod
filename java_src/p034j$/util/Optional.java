@@ -7,31 +7,31 @@ import java.util.Objects;
 public final class Optional<T> {
 
     /* renamed from: b */
-    private static final Optional f565b = new Optional();
+    private static final Optional f568b = new Optional();
 
     /* renamed from: a */
-    private final Object f566a;
+    private final Object f569a;
 
     private Optional() {
-        this.f566a = null;
+        this.f569a = null;
     }
 
     private Optional(Object obj) {
         Objects.requireNonNull(obj);
-        this.f566a = obj;
+        this.f569a = obj;
     }
 
     public static <T> Optional<T> empty() {
-        return f565b;
+        return f568b;
     }
 
     /* renamed from: of */
-    public static <T> Optional<T> m607of(T t) {
+    public static <T> Optional<T> m611of(T t) {
         return new Optional<>(t);
     }
 
     public static <T> Optional<T> ofNullable(T t) {
-        return t == null ? empty() : m607of(t);
+        return t == null ? empty() : m611of(t);
     }
 
     public boolean equals(Object obj) {
@@ -39,13 +39,13 @@ public final class Optional<T> {
             return true;
         }
         if (obj instanceof Optional) {
-            return AbstractC2615a.m586u(this.f566a, ((Optional) obj).f566a);
+            return AbstractC2654a.m590u(this.f569a, ((Optional) obj).f569a);
         }
         return false;
     }
 
     public T get() {
-        T t = (T) this.f566a;
+        T t = (T) this.f569a;
         if (t != null) {
             return t;
         }
@@ -53,7 +53,7 @@ public final class Optional<T> {
     }
 
     public int hashCode() {
-        Object obj = this.f566a;
+        Object obj = this.f569a;
         if (obj != null) {
             return obj.hashCode();
         }
@@ -61,11 +61,11 @@ public final class Optional<T> {
     }
 
     public boolean isPresent() {
-        return this.f566a != null;
+        return this.f569a != null;
     }
 
     public String toString() {
-        Object obj = this.f566a;
+        Object obj = this.f569a;
         return obj != null ? String.format("Optional[%s]", obj) : "Optional.empty";
     }
 }

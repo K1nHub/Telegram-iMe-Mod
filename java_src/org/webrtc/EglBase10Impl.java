@@ -81,7 +81,7 @@ public class EglBase10Impl implements EglBase10 {
         this.eglDisplay = eglDisplay;
         this.eglConfig = getEglConfig(egl10, eglDisplay, iArr);
         int openGlesVersionFromConfig = EglBase.CC.getOpenGlesVersionFromConfig(iArr);
-        Logging.m18d(TAG, "Using OpenGL ES version " + openGlesVersionFromConfig);
+        Logging.m20d(TAG, "Using OpenGL ES version " + openGlesVersionFromConfig);
         this.eglContext = createEglContext(eGLContext, this.eglDisplay, this.eglConfig, openGlesVersionFromConfig);
     }
 

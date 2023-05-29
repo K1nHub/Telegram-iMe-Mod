@@ -44,10 +44,10 @@
 
     if-ne p1, v0, :cond_0
 
-    const-string p1, "windowBackgroundWhiteRedText2"
-
     .line 222
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(Ljava/lang/String;)I
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
+
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(I)I
 
     move-result p1
 
@@ -63,11 +63,11 @@
 
     return-object p1
 
-    :cond_0
-    const-string p1, "listSelectorSDK21"
-
     .line 224
-    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(Ljava/lang/String;)I
+    :cond_0
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->getThemedColor(I)I
 
     move-result p1
 

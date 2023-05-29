@@ -245,17 +245,14 @@ public final class ForkTopicsController extends BaseController implements KoinCo
         removeTopicDialog(getTopicForDialog(j), j);
     }
 
-    public final void swapTopics(long j, long j2) {
-        TopicModel topic;
+    public final void swapTopics(TopicModel from, TopicModel to) {
         List<TopicModel> listOf;
-        TopicModel topic2 = getTopic(j);
-        if (topic2 == null || (topic = getTopic(j2)) == null) {
-            return;
-        }
-        int order = topic2.getOrder();
-        topic2.setOrder(topic.getOrder());
-        topic.setOrder(order);
-        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new TopicModel[]{topic2, topic});
+        Intrinsics.checkNotNullParameter(from, "from");
+        Intrinsics.checkNotNullParameter(to, "to");
+        int order = from.getOrder();
+        from.setOrder(to.getOrder());
+        to.setOrder(order);
+        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new TopicModel[]{from, to});
         insertTopics(listOf);
     }
 
@@ -274,7 +271,6 @@ public final class ForkTopicsController extends BaseController implements KoinCo
 
     public final void filterTopics() {
         boolean z;
-        Set<Number> plus;
         Collection<TopicModel> topicsList = getTopicsList();
         int size = topicsList.size();
         if (this.lastTopicsCount != size) {
@@ -286,15 +282,31 @@ public final class ForkTopicsController extends BaseController implements KoinCo
         for (TopicModel topicModel : topicsList) {
             ArrayList arrayList = new ArrayList();
             ArrayList arrayList2 = new ArrayList();
-            plus = SetsKt___SetsKt.plus((Set) topicModel.getPresets(), (Iterable) topicModel.getDialogs());
-            for (Number number : plus) {
+            for (Number number : topicModel.getPresets()) {
                 long longValue = number.longValue();
-                TLRPC$Dialog tLRPC$Dialog = getMessagesController().dialogs_dict.get(longValue);
-                if (tLRPC$Dialog != null && !getHiddenChatsController().isChatHidden(tLRPC$Dialog.f1433id)) {
-                    if (tLRPC$Dialog.folder_id == 0) {
-                        arrayList.add(Long.valueOf(longValue));
-                    } else {
-                        arrayList2.add(Long.valueOf(longValue));
+                TLRPC$Dialog dialog = getMessagesController().getDialog(longValue);
+                if (dialog != null) {
+                    Intrinsics.checkNotNullExpressionValue(dialog, "getDialog(did)");
+                    if (!getHiddenChatsController().isChatHidden(dialog.f1439id)) {
+                        if (dialog.folder_id == 0) {
+                            arrayList.add(Long.valueOf(longValue));
+                        } else {
+                            arrayList2.add(Long.valueOf(longValue));
+                        }
+                    }
+                }
+            }
+            for (Number number2 : topicModel.getDialogs()) {
+                long longValue2 = number2.longValue();
+                TLRPC$Dialog dialog2 = getMessagesController().getDialog(longValue2);
+                if (dialog2 != null) {
+                    Intrinsics.checkNotNullExpressionValue(dialog2, "getDialog(did)");
+                    if (!getHiddenChatsController().isChatHidden(dialog2.f1439id)) {
+                        if (dialog2.folder_id == 0) {
+                            arrayList.add(Long.valueOf(longValue2));
+                        } else {
+                            arrayList2.add(Long.valueOf(longValue2));
+                        }
                     }
                 }
             }
@@ -730,8 +742,8 @@ public final class ForkTopicsController extends BaseController implements KoinCo
         coerceAtLeast = RangesKt___RangesKt.coerceAtLeast(mapCapacity, 16);
         LinkedHashMap linkedHashMap = new LinkedHashMap(coerceAtLeast);
         for (TopicDb topicDb : newTopics) {
-            Pair m80to = TuplesKt.m80to(Long.valueOf(topicDb.getTopicId()), TopicMappingKt.mapToDomain(topicDb));
-            linkedHashMap.put(m80to.getFirst(), m80to.getSecond());
+            Pair m85to = TuplesKt.m85to(Long.valueOf(topicDb.getTopicId()), TopicMappingKt.mapToDomain(topicDb));
+            linkedHashMap.put(m85to.getFirst(), m85to.getSecond());
         }
         mutableMap = MapsKt__MapsKt.toMutableMap(linkedHashMap);
         this.topics = mutableMap;

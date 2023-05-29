@@ -39,10 +39,10 @@ public class Tooltip extends TextView {
                 Tooltip.this.lambda$new$0();
             }
         };
-        setBackgroundDrawable(Theme.createRoundRectDrawable(AndroidUtilities.m50dp(3), i));
+        setBackgroundDrawable(Theme.createRoundRectDrawable(AndroidUtilities.m54dp(3), i));
         setTextColor(i2);
         setTextSize(1, 14.0f);
-        setPadding(AndroidUtilities.m50dp(8), AndroidUtilities.m50dp(7), AndroidUtilities.m50dp(8), AndroidUtilities.m50dp(7));
+        setPadding(AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(7), AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(7));
         setGravity(16);
         viewGroup.addView(this, LayoutHelper.createFrame(-2, -2, 51, 5, 0, 5, 3));
         setVisibility(8);
@@ -68,7 +68,7 @@ public class Tooltip extends TextView {
         }
         int width = (i2 + (this.anchor.getWidth() / 2)) - (getMeasuredWidth() / 2);
         if (width >= 0) {
-            i = getMeasuredWidth() + width > view.getMeasuredWidth() ? (view.getMeasuredWidth() - getMeasuredWidth()) - AndroidUtilities.m50dp(16) : width;
+            i = getMeasuredWidth() + width > view.getMeasuredWidth() ? (view.getMeasuredWidth() - getMeasuredWidth()) - AndroidUtilities.m54dp(16) : width;
         }
         setTranslationX(i);
         setTranslationY(i3 - getMeasuredHeight());

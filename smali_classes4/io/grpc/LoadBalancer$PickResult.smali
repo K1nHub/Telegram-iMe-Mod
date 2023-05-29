@@ -60,7 +60,7 @@
     .line 497
     iput-object p2, p0, Lio/grpc/LoadBalancer$PickResult;->streamTracerFactory:Lio/grpc/ClientStreamTracer$Factory;
 
-    const-string p1, "status"
+    const-string/jumbo p1, "status"
 
     .line 498
     invoke-static {p3, p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -157,7 +157,7 @@
     .line 574
     new-instance v0, Lio/grpc/LoadBalancer$PickResult;
 
-    const-string v1, "subchannel"
+    const-string/jumbo v1, "subchannel"
 
     .line 575
     invoke-static {p0, v1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -326,7 +326,7 @@
 
     iget-object v1, p0, Lio/grpc/LoadBalancer$PickResult;->subchannel:Lio/grpc/LoadBalancer$Subchannel;
 
-    const-string v2, "subchannel"
+    const-string/jumbo v2, "subchannel"
 
     .line 665
     invoke-virtual {v0, v2, v1}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;
@@ -335,7 +335,7 @@
 
     iget-object v1, p0, Lio/grpc/LoadBalancer$PickResult;->streamTracerFactory:Lio/grpc/ClientStreamTracer$Factory;
 
-    const-string v2, "streamTracerFactory"
+    const-string/jumbo v2, "streamTracerFactory"
 
     .line 666
     invoke-virtual {v0, v2, v1}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;
@@ -344,7 +344,7 @@
 
     iget-object v1, p0, Lio/grpc/LoadBalancer$PickResult;->status:Lio/grpc/Status;
 
-    const-string v2, "status"
+    const-string/jumbo v2, "status"
 
     .line 667
     invoke-virtual {v0, v2, v1}, Lcom/google/common/base/MoreObjects$ToStringHelper;->add(Ljava/lang/String;Ljava/lang/Object;)Lcom/google/common/base/MoreObjects$ToStringHelper;

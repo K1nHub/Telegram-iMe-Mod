@@ -36,7 +36,7 @@ public final class zzod implements zzoo {
         File zza = zza(this.firebaseApp, this.zzauc);
         File file3 = new File(parentFile, "labels.txt");
         if (file.renameTo(file2) && zza.renameTo(file3)) {
-            zzass.m785d("AutoMLModelFileManager", "Rename to serving model successfully");
+            zzass.m789d("AutoMLModelFileManager", "Rename to serving model successfully");
             file2.setExecutable(false);
             file2.setWritable(false);
             file3.setExecutable(false);
@@ -64,16 +64,16 @@ public final class zzod implements zzoo {
             }
         }
         GmsLogger gmsLogger = zzass;
-        gmsLogger.m785d("AutoMLModelFileManager", "Rename to serving model failed, remove the temp file.");
+        gmsLogger.m789d("AutoMLModelFileManager", "Rename to serving model failed, remove the temp file.");
         if (!file.delete()) {
             String valueOf2 = String.valueOf(file.getAbsolutePath());
-            gmsLogger.m785d("AutoMLModelFileManager", valueOf2.length() != 0 ? "Failed to delete the temp model file: ".concat(valueOf2) : new String("Failed to delete the temp model file: "));
+            gmsLogger.m789d("AutoMLModelFileManager", valueOf2.length() != 0 ? "Failed to delete the temp model file: ".concat(valueOf2) : new String("Failed to delete the temp model file: "));
         }
         if (zza.delete()) {
             return null;
         }
         String valueOf3 = String.valueOf(zza.getAbsolutePath());
-        gmsLogger.m785d("AutoMLModelFileManager", valueOf3.length() != 0 ? "Failed to delete the temp labels file: ".concat(valueOf3) : new String("Failed to delete the temp labels file: "));
+        gmsLogger.m789d("AutoMLModelFileManager", valueOf3.length() != 0 ? "Failed to delete the temp labels file: ".concat(valueOf3) : new String("Failed to delete the temp labels file: "));
         return null;
     }
 
@@ -107,7 +107,7 @@ public final class zzod implements zzoo {
         if (!zzd.exists()) {
             GmsLogger gmsLogger = zzass;
             String valueOf2 = String.valueOf(zzd.getAbsolutePath());
-            gmsLogger.m785d("AutoMLModelFileManager", valueOf2.length() != 0 ? "Temp labels folder does not exist, creating one: ".concat(valueOf2) : new String("Temp labels folder does not exist, creating one: "));
+            gmsLogger.m789d("AutoMLModelFileManager", valueOf2.length() != 0 ? "Temp labels folder does not exist, creating one: ".concat(valueOf2) : new String("Temp labels folder does not exist, creating one: "));
             if (!zzd.mkdirs()) {
                 throw new FirebaseMLException("Failed to create a directory to hold the AutoML model's labels file.", 13);
             }

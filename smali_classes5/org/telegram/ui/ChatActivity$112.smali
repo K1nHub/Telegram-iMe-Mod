@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/ChatActivity$112;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Landroid/text/style/ClickableSpan;
 .source "ChatActivity.java"
 
 
@@ -22,82 +22,43 @@
 .method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 25333
+    .line 25249
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$112;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    invoke-direct {p0}, Landroid/text/style/ClickableSpan;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationCancel(Landroid/animation/Animator;)V
-    .locals 1
+.method public onClick(Landroid/view/View;)V
+    .locals 2
 
-    .line 25343
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$112;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$47000(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$112;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$47000(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    .line 25344
+    .line 25252
     iget-object p1, p0, Lorg/telegram/ui/ChatActivity$112;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    const/4 v0, 0x0
+    new-instance v0, Lorg/telegram/ui/PremiumPreviewFragment;
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$47002(Lorg/telegram/ui/ChatActivity;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
+    const/4 v1, 0x0
 
-    :cond_0
+    invoke-direct {v0, v1}, Lorg/telegram/ui/PremiumPreviewFragment;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {p1, v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
+
     return-void
 .end method
 
-.method public onAnimationEnd(Landroid/animation/Animator;)V
+.method public updateDrawState(Landroid/text/TextPaint;)V
     .locals 1
 
-    .line 25336
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$112;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$47000(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_0
-
-    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$112;->this$0:Lorg/telegram/ui/ChatActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->access$47000(Lorg/telegram/ui/ChatActivity;)Landroid/animation/AnimatorSet;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Ljava/lang/Object;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    .line 25337
-    iget-object p1, p0, Lorg/telegram/ui/ChatActivity$112;->this$0:Lorg/telegram/ui/ChatActivity;
+    .line 25257
+    invoke-super {p0, p1}, Landroid/text/style/ClickableSpan;->updateDrawState(Landroid/text/TextPaint;)V
 
     const/4 v0, 0x0
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/ChatActivity;->access$47002(Lorg/telegram/ui/ChatActivity;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
+    .line 25258
+    invoke-virtual {p1, v0}, Landroid/text/TextPaint;->setUnderlineText(Z)V
 
-    :cond_0
     return-void
 .end method

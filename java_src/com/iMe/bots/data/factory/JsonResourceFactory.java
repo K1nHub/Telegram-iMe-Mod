@@ -85,7 +85,7 @@ public final class JsonResourceFactory implements ResourceFactory {
             if (i < 0) {
                 CollectionsKt__CollectionsKt.throwIndexOverflow();
             }
-            arrayList.add(TuplesKt.m80to(Integer.valueOf(i), (String) obj));
+            arrayList.add(TuplesKt.m85to(Integer.valueOf(i), (String) obj));
             i = i2;
         }
         map = MapsKt__MapsKt.toMap(arrayList);
@@ -166,7 +166,7 @@ public final class JsonResourceFactory implements ResourceFactory {
             if (i2 < 0) {
                 CollectionsKt__CollectionsKt.throwIndexOverflow();
             }
-            arrayList.add(TuplesKt.m80to(Integer.valueOf(i2), (String) obj));
+            arrayList.add(TuplesKt.m85to(Integer.valueOf(i2), (String) obj));
             i2 = i3;
         }
         map = MapsKt__MapsKt.toMap(arrayList);
@@ -199,7 +199,7 @@ public final class JsonResourceFactory implements ResourceFactory {
             if (i2 < 0) {
                 CollectionsKt__CollectionsKt.throwIndexOverflow();
             }
-            arrayList.add(TuplesKt.m80to(Integer.valueOf(i2), ((ClassifierResponse.ClassifierItem) obj).getTag()));
+            arrayList.add(TuplesKt.m85to(Integer.valueOf(i2), ((ClassifierResponse.ClassifierItem) obj).getTag()));
             i2 = i3;
         }
         map = MapsKt__MapsKt.toMap(arrayList);

@@ -51,7 +51,7 @@ public class SurfaceTextureHelper {
                 try {
                     return new SurfaceTextureHelper(EglBase.Context.this, handler, z, yuvConverter, frameRefMonitor);
                 } catch (RuntimeException e) {
-                    Logging.m16e(SurfaceTextureHelper.TAG, str + " create failure", e);
+                    Logging.m18e(SurfaceTextureHelper.TAG, str + " create failure", e);
                     return null;
                 }
             }
@@ -97,7 +97,7 @@ public class SurfaceTextureHelper {
         this.setListenerRunnable = new Runnable() { // from class: org.webrtc.SurfaceTextureHelper.3
             @Override // java.lang.Runnable
             public void run() {
-                Logging.m18d(SurfaceTextureHelper.TAG, "Setting listener to " + SurfaceTextureHelper.this.pendingListener);
+                Logging.m20d(SurfaceTextureHelper.TAG, "Setting listener to " + SurfaceTextureHelper.this.pendingListener);
                 SurfaceTextureHelper surfaceTextureHelper = SurfaceTextureHelper.this;
                 surfaceTextureHelper.listener = surfaceTextureHelper.pendingListener;
                 SurfaceTextureHelper.this.pendingListener = null;
@@ -139,7 +139,7 @@ public class SurfaceTextureHelper {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$new$0(SurfaceTexture surfaceTexture) {
         if (this.hasPendingTexture) {
-            Logging.m18d(TAG, "A frame is already pending, dropping frame.");
+            Logging.m20d(TAG, "A frame is already pending, dropping frame.");
         }
         this.hasPendingTexture = true;
         tryDeliverTextureFrame();
@@ -162,7 +162,7 @@ public class SurfaceTextureHelper {
     }
 
     public void stopListening() {
-        Logging.m18d(TAG, "stopListening()");
+        Logging.m20d(TAG, "stopListening()");
         this.handler.removeCallbacks(this.setListenerRunnable);
         ThreadUtils.invokeAtFrontUninterruptibly(this.handler, new Runnable() { // from class: org.webrtc.SurfaceTextureHelper$$ExternalSyntheticLambda3
             @Override // java.lang.Runnable
@@ -263,7 +263,7 @@ public class SurfaceTextureHelper {
     }
 
     public void dispose() {
-        Logging.m18d(TAG, "dispose()");
+        Logging.m20d(TAG, "dispose()");
         ThreadUtils.invokeAtFrontUninterruptibly(this.handler, new Runnable() { // from class: org.webrtc.SurfaceTextureHelper$$ExternalSyntheticLambda1
             @Override // java.lang.Runnable
             public final void run() {
@@ -304,7 +304,7 @@ public class SurfaceTextureHelper {
             return;
         }
         if (this.textureWidth == 0 || this.textureHeight == 0) {
-            Logging.m14w(TAG, "Texture size has not been set.");
+            Logging.m16w(TAG, "Texture size has not been set.");
             return;
         }
         this.isTextureInUse = true;

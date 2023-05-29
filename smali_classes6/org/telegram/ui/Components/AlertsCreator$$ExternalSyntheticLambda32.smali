@@ -6,20 +6,16 @@
 
 
 # instance fields
-.field public final synthetic f$0:Lorg/telegram/tgnet/TLRPC$EncryptedChat;
-
-.field public final synthetic f$1:Lorg/telegram/ui/Components/NumberPicker;
+.field public final synthetic f$0:Lorg/telegram/messenger/MessagesStorage$IntCallback;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/tgnet/TLRPC$EncryptedChat;Lorg/telegram/ui/Components/NumberPicker;)V
+.method public synthetic constructor <init>(Lorg/telegram/messenger/MessagesStorage$IntCallback;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda32;->f$0:Lorg/telegram/tgnet/TLRPC$EncryptedChat;
-
-    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda32;->f$1:Lorg/telegram/ui/Components/NumberPicker;
+    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda32;->f$0:Lorg/telegram/messenger/MessagesStorage$IntCallback;
 
     return-void
 .end method
@@ -27,13 +23,11 @@
 
 # virtual methods
 .method public final onClick(Landroid/content/DialogInterface;I)V
-    .locals 2
+    .locals 1
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda32;->f$0:Lorg/telegram/tgnet/TLRPC$EncryptedChat;
+    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda32;->f$0:Lorg/telegram/messenger/MessagesStorage$IntCallback;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda32;->f$1:Lorg/telegram/ui/Components/NumberPicker;
-
-    invoke-static {v0, v1, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$w-xVyIfcTBSFBUmV9FNNeGQstkU(Lorg/telegram/tgnet/TLRPC$EncryptedChat;Lorg/telegram/ui/Components/NumberPicker;Landroid/content/DialogInterface;I)V
+    invoke-static {v0, p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$YmJkTlUEZ4jUomEnvhUGhy8Eg5w(Lorg/telegram/messenger/MessagesStorage$IntCallback;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

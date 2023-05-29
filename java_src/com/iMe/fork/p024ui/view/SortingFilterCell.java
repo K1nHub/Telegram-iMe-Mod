@@ -143,19 +143,21 @@ public final class SortingFilterCell extends LinearLayout {
     }
 
     public final void updateColors() {
-        setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
-        getCheckBoxLayout().setBackground(Theme.createSelectorDrawable(Theme.getColor("listSelectorSDK21"), 2));
-        getFabsLayout().setBackground(Theme.createSelectorDrawable(Theme.getColor("listSelectorSDK21"), 2));
+        setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
+        LinearLayout checkBoxLayout = getCheckBoxLayout();
+        int i = Theme.key_listSelector;
+        checkBoxLayout.setBackground(Theme.createSelectorDrawable(Theme.getColor(i), 2));
+        getFabsLayout().setBackground(Theme.createSelectorDrawable(Theme.getColor(i), 2));
         getCheckBox().invalidate();
-        getIconView().setColorFilter(new PorterDuffColorFilter(Theme.getColor("chats_actionBackground"), PorterDuff.Mode.SRC_IN));
-        getTextView().setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+        getIconView().setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_actionBackground), PorterDuff.Mode.SRC_IN));
+        getTextView().setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         getFabsView().updateColors();
-        getVerticalDivider().setBackgroundColor(Theme.getColor("divider"));
+        getVerticalDivider().setBackgroundColor(Theme.getColor(Theme.key_divider));
     }
 
     @Override // android.widget.LinearLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(48), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(48), 1073741824));
     }
 
     @Override // android.widget.LinearLayout, android.view.View

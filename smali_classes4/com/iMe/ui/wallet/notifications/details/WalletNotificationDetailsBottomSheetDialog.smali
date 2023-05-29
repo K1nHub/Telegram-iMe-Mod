@@ -259,7 +259,7 @@
 .method private static final actionMakeTransfer$lambda$1(Lcom/iMe/ui/wallet/notifications/details/WalletNotificationDetailsBottomSheetDialog;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/NetworkType;)V
     .locals 10
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -360,9 +360,9 @@
     .line 120
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletNotificationDetailsLayoutBinding;->linearRoot:Landroid/widget/LinearLayout;
 
-    const-string v2, "dialogBackground"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -371,9 +371,9 @@
     .line 121
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletNotificationDetailsLayoutBinding;->textMessage:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v2, "chats_message"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_message:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -382,9 +382,9 @@
     .line 122
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletNotificationDetailsLayoutBinding;->textDate:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v2, "chats_date"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_date:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -393,7 +393,7 @@
     .line 124
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletNotificationDetailsLayoutBinding;->textActionCancel:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v2, "setupColors$lambda$9$lambda$7"
+    const-string/jumbo v2, "setupColors$lambda$9$lambda$7"
 
     .line 125
     invoke-static {v1, v2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
@@ -409,10 +409,10 @@
     .line 126
     invoke-static {v1}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
-    const-string v2, "chats_actionBackground"
-
     .line 127
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -421,17 +421,17 @@
     .line 130
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkContentWalletNotificationDetailsLayoutBinding;->textCategory:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v1, "setupColors$lambda$9$lambda$8"
+    const-string/jumbo v1, "setupColors$lambda$9$lambda$8"
 
     .line 131
     invoke-static {v0, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     invoke-static {v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->withMediumTypeface(Landroid/widget/TextView;)V
 
-    const-string v1, "chats_name"
-
     .line 132
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_name:I
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -451,7 +451,7 @@
     .line 145
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkContentWalletNotificationDetailsLayoutBinding;->textActionCancel:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v0, "textActionCancel"
+    const-string/jumbo v0, "textActionCancel"
 
     invoke-static {v1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -717,7 +717,7 @@
     :goto_0
     if-eqz p1, :cond_1
 
-    const-string p1, "setupMessageClickableLink$lambda$4"
+    const-string/jumbo p1, "setupMessageClickableLink$lambda$4"
 
     .line 101
     invoke-static {v0, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V

@@ -2,34 +2,42 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/iMe/fork/utils/Callbacks$Callback1;
+.implements Landroid/view/View$OnTouchListener;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda111;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda111;
+
+    invoke-direct {v0}, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda111;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda111;->INSTANCE:Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda111;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda111;->f$0:Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final invoke(Ljava/lang/Object;)V
-    .locals 1
+.method public final onTouch(Landroid/view/View;Landroid/view/MotionEvent;)Z
+    .locals 0
 
-    iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda111;->f$0:Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;
+    invoke-static {p1, p2}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$UjwtWZltawSpUMqNXn_cMMXO1i0(Landroid/view/View;Landroid/view/MotionEvent;)Z
 
-    check-cast p1, Ljava/lang/String;
+    move-result p1
 
-    invoke-static {v0, p1}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$qrJnFddTNYIXXWV-g04_Z90SpHw(Lorg/telegram/ui/Components/AlertsCreator$ScheduleDatePickerDelegate;Ljava/lang/String;)V
-
-    return-void
+    return p1
 .end method

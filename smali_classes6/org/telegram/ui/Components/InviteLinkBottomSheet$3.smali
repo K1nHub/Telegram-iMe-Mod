@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/InviteLinkBottomSheet;Landroidx/recyclerview/widget/LinearLayoutManager;)V
     .locals 0
 
-    .line 276
+    .line 274
     iput-object p1, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$3;->this$0:Lorg/telegram/ui/Components/InviteLinkBottomSheet;
 
     iput-object p2, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$3;->val$layoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
@@ -39,12 +39,12 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 279
+    .line 277
     iget-object p1, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$3;->this$0:Lorg/telegram/ui/Components/InviteLinkBottomSheet;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/InviteLinkBottomSheet;->access$400(Lorg/telegram/ui/Components/InviteLinkBottomSheet;)V
 
-    .line 280
+    .line 278
     iget-object p1, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$3;->this$0:Lorg/telegram/ui/Components/InviteLinkBottomSheet;
 
     iget-boolean p2, p1, Lorg/telegram/ui/Components/InviteLinkBottomSheet;->hasMore:Z
@@ -55,14 +55,14 @@
 
     if-nez p1, :cond_0
 
-    .line 281
+    .line 279
     iget-object p1, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$3;->val$layoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/LinearLayoutManager;->findLastVisibleItemPosition()I
 
     move-result p1
 
-    .line 282
+    .line 280
     iget-object p2, p0, Lorg/telegram/ui/Components/InviteLinkBottomSheet$3;->this$0:Lorg/telegram/ui/Components/InviteLinkBottomSheet;
 
     iget p3, p2, Lorg/telegram/ui/Components/InviteLinkBottomSheet;->rowCount:I
@@ -73,7 +73,7 @@
 
     if-ge p3, p1, :cond_0
 
-    .line 283
+    .line 281
     invoke-virtual {p2}, Lorg/telegram/ui/Components/InviteLinkBottomSheet;->loadUsers()V
 
     :cond_0

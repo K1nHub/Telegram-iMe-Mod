@@ -143,7 +143,7 @@ public final class DialogUtils {
         builder.setSubtitle(model.getSubtitle());
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
-        int m50dp = AndroidUtilities.m50dp(2);
+        int m54dp = AndroidUtilities.m54dp(2);
         final int i = 0;
         for (Object obj : model.getItems()) {
             int i2 = i + 1;
@@ -152,13 +152,13 @@ public final class DialogUtils {
             }
             Pair pair = (Pair) obj;
             RadioColorCell radioColorCell = new RadioColorCell(context);
-            ViewExtKt.setHorizontalPadding(radioColorCell, Integer.valueOf(m50dp));
-            radioColorCell.setCheckColor(Theme.getColor("radioBackground"), Theme.getColor("dialogRadioBackgroundChecked"));
+            ViewExtKt.setHorizontalPadding(radioColorCell, Integer.valueOf(m54dp));
+            radioColorCell.setCheckColor(Theme.getColor(Theme.key_radioBackground), Theme.getColor(Theme.key_dialogRadioBackgroundChecked));
             radioColorCell.setTextAndValue((CharSequence) pair.getFirst(), ((Boolean) pair.getSecond()).booleanValue());
             radioColorCell.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.utils.dialogs.DialogUtils$$ExternalSyntheticLambda9
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
-                    DialogUtils.m691x4de0a121(Callbacks$Callback1.this, i, builder, view);
+                    DialogUtils.m696x4de0a121(Callbacks$Callback1.this, i, builder, view);
                 }
             });
             linearLayout.addView(radioColorCell);
@@ -177,7 +177,7 @@ public final class DialogUtils {
     }
 
     /* renamed from: createDialogWithRadioCellsList$lambda$15$lambda$13$lambda$12$lambda$11$lambda$10 */
-    public static final void m691x4de0a121(Callbacks$Callback1 itemSelectedListener, int i, AlertDialog.Builder this_apply, View view) {
+    public static final void m696x4de0a121(Callbacks$Callback1 itemSelectedListener, int i, AlertDialog.Builder this_apply, View view) {
         Intrinsics.checkNotNullParameter(itemSelectedListener, "$itemSelectedListener");
         Intrinsics.checkNotNullParameter(this_apply, "$this_apply");
         itemSelectedListener.invoke(Integer.valueOf(i));
@@ -198,9 +198,9 @@ public final class DialogUtils {
         builder.setTitle(model.getTitle());
         builder.setSubtitle(model.getSubtitle());
         final EditTextBoldCursor editTextBoldCursor = new EditTextBoldCursor(builder.getContext());
-        editTextBoldCursor.setCursorColor(Theme.getColor("chat_messagePanelCursor"));
-        editTextBoldCursor.setHintTextColor(Theme.getColor("chat_messagePanelHint"));
-        editTextBoldCursor.setTextColor(Theme.getColor("chat_messagePanelText"));
+        editTextBoldCursor.setCursorColor(Theme.getColor(Theme.key_chat_messagePanelCursor));
+        editTextBoldCursor.setHintTextColor(Theme.getColor(Theme.key_chat_messagePanelHint));
+        editTextBoldCursor.setTextColor(Theme.getColor(Theme.key_chat_messagePanelText));
         editTextBoldCursor.setTextSize(1, 16.0f);
         ViewExtKt.setHorizontalPadding(editTextBoldCursor, 8);
         ViewExtKt.singleLine(editTextBoldCursor);

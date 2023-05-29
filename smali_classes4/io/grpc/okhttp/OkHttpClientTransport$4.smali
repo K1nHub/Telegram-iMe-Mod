@@ -353,7 +353,7 @@
     :try_start_2
     iget-object v0, p0, Lio/grpc/okhttp/OkHttpClientTransport$4;->this$0:Lio/grpc/okhttp/OkHttpClientTransport;
 
-    const-string v2, "socket"
+    const-string/jumbo v2, "socket"
 
     invoke-static {v6, v2}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 

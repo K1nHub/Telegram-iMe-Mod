@@ -21,7 +21,7 @@
 .method private constructor <init>(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)V
     .locals 0
 
-    .line 587
+    .line 586
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -30,7 +30,7 @@
 .method synthetic constructor <init>(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$1;)V
     .locals 0
 
-    .line 587
+    .line 586
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$DarkTheme;-><init>(Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;)V
 
     return-void
@@ -46,515 +46,231 @@
     return-void
 .end method
 
-.method public getColor(Ljava/lang/String;)Ljava/lang/Integer;
-    .locals 3
+.method public contains(I)Z
+    .locals 0
 
-    .line 590
-    invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
-
-    invoke-virtual {p1}, Ljava/lang/String;->hashCode()I
-
-    move-result v0
-
-    const/4 v1, -0x1
-
-    sparse-switch v0, :sswitch_data_0
-
-    :goto_0
-    move p1, v1
-
-    goto/16 :goto_1
-
-    :sswitch_0
-    const-string v0, "chat_emojiPanelBackground"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    .line 631
+    invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView$DarkTheme;->getColor(I)I
 
     move-result p1
 
-    if-nez p1, :cond_0
+    if-eqz p1, :cond_0
+
+    const/4 p1, 0x1
 
     goto :goto_0
 
     :cond_0
-    const/16 p1, 0x10
-
-    goto/16 :goto_1
-
-    :sswitch_1
-    const-string v0, "chat_emojiPanelIcon"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_1
-
-    goto :goto_0
-
-    :cond_1
-    const/16 p1, 0xf
-
-    goto/16 :goto_1
-
-    :sswitch_2
-    const-string v0, "chat_emojiSearchIcon"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_2
-
-    goto :goto_0
-
-    :cond_2
-    const/16 p1, 0xe
-
-    goto/16 :goto_1
-
-    :sswitch_3
-    const-string v0, "progressCircle"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_3
-
-    goto :goto_0
-
-    :cond_3
-    const/16 p1, 0xd
-
-    goto/16 :goto_1
-
-    :sswitch_4
-    const-string v0, "divider"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_4
-
-    goto :goto_0
-
-    :cond_4
-    const/16 p1, 0xc
-
-    goto/16 :goto_1
-
-    :sswitch_5
-    const-string v0, "chat_emojiPanelBackspace"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_5
-
-    goto :goto_0
-
-    :cond_5
-    const/16 p1, 0xb
-
-    goto/16 :goto_1
-
-    :sswitch_6
-    const-string v0, "chat_emojiPanelIconSelected"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_6
-
-    goto :goto_0
-
-    :cond_6
-    const/16 p1, 0xa
-
-    goto/16 :goto_1
-
-    :sswitch_7
-    const-string v0, "windowBackgroundWhiteBlackText"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_7
-
-    goto :goto_0
-
-    :cond_7
-    const/16 p1, 0x9
-
-    goto/16 :goto_1
-
-    :sswitch_8
-    const-string v0, "listSelectorSDK21"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_8
-
-    goto :goto_0
-
-    :cond_8
-    const/16 p1, 0x8
-
-    goto/16 :goto_1
-
-    :sswitch_9
-    const-string v0, "windowBackgroundWhite"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_9
-
-    goto/16 :goto_0
-
-    :cond_9
-    const/4 p1, 0x7
-
-    goto :goto_1
-
-    :sswitch_a
-    const-string v0, "chat_emojiBottomPanelIcon"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_a
-
-    goto/16 :goto_0
-
-    :cond_a
-    const/4 p1, 0x6
-
-    goto :goto_1
-
-    :sswitch_b
-    const-string v0, "chat_emojiSearchBackground"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_b
-
-    goto/16 :goto_0
-
-    :cond_b
-    const/4 p1, 0x5
-
-    goto :goto_1
-
-    :sswitch_c
-    const-string v0, "chat_emojiPanelStickerPackSelector"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_c
-
-    goto/16 :goto_0
-
-    :cond_c
-    const/4 p1, 0x4
-
-    goto :goto_1
-
-    :sswitch_d
-    const-string v0, "chat_emojiPanelStickerPackSelectorLine"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_d
-
-    goto/16 :goto_0
-
-    :cond_d
-    const/4 p1, 0x3
-
-    goto :goto_1
-
-    :sswitch_e
-    const-string v0, "dialogBackground"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_e
-
-    goto/16 :goto_0
-
-    :cond_e
-    const/4 p1, 0x2
-
-    goto :goto_1
-
-    :sswitch_f
-    const-string v0, "chat_emojiPanelShadowLine"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_f
-
-    goto/16 :goto_0
-
-    :cond_f
-    const/4 p1, 0x1
-
-    goto :goto_1
-
-    :sswitch_10
-    const-string v0, "chat_emojiPanelEmptyText"
-
-    invoke-virtual {p1, v0}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
-
-    move-result p1
-
-    if-nez p1, :cond_10
-
-    goto/16 :goto_0
-
-    :cond_10
     const/4 p1, 0x0
 
-    :goto_1
-    const v0, -0x9b4a11
+    :goto_0
+    return p1
+.end method
+
+.method public getColor(I)I
+    .locals 4
+
+    .line 589
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
+
+    if-ne p1, v0, :cond_0
+
+    const p1, -0xe1e1e2
+
+    return p1
+
+    .line 591
+    :cond_0
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    if-ne p1, v0, :cond_1
+
+    const p1, -0xe7e7e7
+
+    return p1
+
+    .line 593
+    :cond_1
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    const/4 v1, -0x1
+
+    if-ne p1, v0, :cond_2
+
+    return v1
+
+    .line 595
+    :cond_2
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelEmptyText:I
+
+    if-ne p1, v0, :cond_3
+
+    const p1, -0x828282
+
+    return p1
+
+    .line 597
+    :cond_3
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_progressCircle:I
+
+    if-ne p1, v0, :cond_4
+
+    const p1, -0x9b4a03
+
+    return p1
+
+    .line 599
+    :cond_4
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiSearchIcon:I
+
+    if-ne p1, v0, :cond_5
+
+    const p1, -0x8c8c8c
+
+    return p1
+
+    .line 601
+    :cond_5
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelStickerPackSelector:I
+
+    if-eq p1, v0, :cond_12
+
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiSearchBackground:I
+
+    if-ne p1, v0, :cond_6
+
+    goto :goto_0
+
+    .line 603
+    :cond_6
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelIcon:I
 
     const v2, -0x919191
 
-    packed-switch p1, :pswitch_data_0
+    if-ne p1, v0, :cond_7
 
-    const/4 p1, 0x0
-
-    return-object p1
-
-    :pswitch_0
-    const p1, -0xe1e1e1
-
-    .line 607
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    return-object p1
-
-    .line 603
-    :pswitch_1
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_2
-    const p1, -0x8c8c8c
-
-    .line 599
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_3
-    const p1, -0x9b4a03
-
-    .line 598
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_4
-    const/high16 p1, -0x1000000
-
-    .line 613
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    return-object p1
-
-    .line 609
-    :pswitch_5
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    return-object p1
+    return v2
 
     .line 605
-    :pswitch_6
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    :cond_7
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiBottomPanelIcon:I
 
-    move-result-object p1
+    if-ne p1, v0, :cond_8
 
-    return-object p1
+    return v2
 
-    .line 593
-    :pswitch_7
-    invoke-static {v1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .line 607
+    :cond_8
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelIconSelected:I
 
-    move-result-object p1
+    const v3, -0x9b4a11
 
-    return-object p1
+    if-ne p1, v0, :cond_9
 
-    :pswitch_8
-    const/high16 p1, 0x2e000000
+    return v3
 
-    .line 612
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .line 609
+    :cond_9
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelStickerPackSelectorLine:I
 
-    move-result-object p1
+    if-ne p1, v0, :cond_a
 
-    return-object p1
+    return v3
 
-    :pswitch_9
-    const p1, -0xe7e7e7
+    .line 611
+    :cond_a
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelBackground:I
 
-    .line 592
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    if-ne p1, v0, :cond_b
 
-    move-result-object p1
+    const p1, -0xe1e1e1
 
-    return-object p1
+    return p1
 
-    .line 604
-    :pswitch_a
-    invoke-static {v2}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .line 613
+    :cond_b
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelShadowLine:I
 
-    move-result-object p1
+    if-ne p1, v0, :cond_c
 
-    return-object p1
-
-    :pswitch_b
-    const p1, 0xacdeaff
-
-    .line 601
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    return-object p1
-
-    .line 606
-    :pswitch_c
-    invoke-static {v0}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_d
-    const p1, -0xe1e1e2
-
-    .line 591
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
-
-    move-result-object p1
-
-    return-object p1
-
-    :pswitch_e
     const/high16 p1, -0x60000000
 
-    .line 608
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    return p1
 
-    move-result-object p1
+    .line 615
+    :cond_c
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelBackspace:I
 
-    return-object p1
+    if-ne p1, v0, :cond_d
 
-    :pswitch_f
-    const p1, -0x828282
+    return v2
 
-    .line 597
-    invoke-static {p1}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+    .line 617
+    :cond_d
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    move-result-object p1
+    if-ne p1, v0, :cond_e
 
-    return-object p1
+    const/high16 p1, 0x2e000000
 
-    :sswitch_data_0
-    .sparse-switch
-        -0x7f85b70b -> :sswitch_10
-        -0x6e475047 -> :sswitch_f
-        -0x6e41cb6a -> :sswitch_e
-        -0x6c3805dc -> :sswitch_d
-        -0x615ea1f0 -> :sswitch_c
-        -0x502ba04b -> :sswitch_b
-        -0x4ca0afed -> :sswitch_a
-        -0x147bee75 -> :sswitch_9
-        -0xedec8a4 -> :sswitch_8
-        0x143acc81 -> :sswitch_7
-        0x19211f79 -> :sswitch_6
-        0x25ca5d5a -> :sswitch_5
-        0x63cc1319 -> :sswitch_4
-        0x7305555d -> :sswitch_3
-        0x75cd7840 -> :sswitch_2
-        0x7b3c66be -> :sswitch_1
-        0x7f29f7b3 -> :sswitch_0
-    .end sparse-switch
+    return p1
 
-    :pswitch_data_0
-    .packed-switch 0x0
-        :pswitch_f
-        :pswitch_e
-        :pswitch_d
-        :pswitch_c
-        :pswitch_b
-        :pswitch_b
-        :pswitch_a
-        :pswitch_9
-        :pswitch_8
-        :pswitch_7
-        :pswitch_6
-        :pswitch_5
-        :pswitch_4
-        :pswitch_3
-        :pswitch_2
-        :pswitch_1
-        :pswitch_0
-    .end packed-switch
+    .line 619
+    :cond_e
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
+
+    if-ne p1, v0, :cond_f
+
+    const/high16 p1, -0x1000000
+
+    return p1
+
+    .line 621
+    :cond_f
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogFloatingButton:I
+
+    if-ne p1, v0, :cond_10
+
+    return v3
+
+    .line 623
+    :cond_10
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogFloatingIcon:I
+
+    if-ne p1, v0, :cond_11
+
+    return v1
+
+    :cond_11
+    const/4 p1, 0x0
+
+    return p1
+
+    :cond_12
+    :goto_0
+    const p1, 0xacdeaff
+
+    return p1
 .end method
 
-.method public synthetic getColorOrDefault(Ljava/lang/String;)I
+.method public synthetic getColorOrDefault(I)I
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getColorOrDefault(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/String;)I
+    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getColorOrDefault(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)I
 
     move-result p1
 
     return p1
 .end method
 
-.method public synthetic getCurrentColor(Ljava/lang/String;)Ljava/lang/Integer;
+.method public synthetic getCurrentColor(I)I
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getCurrentColor(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/String;)Ljava/lang/Integer;
+    invoke-static {p0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$getCurrentColor(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;I)I
 
-    move-result-object p1
+    move-result p1
 
-    return-object p1
+    return p1
 .end method
 
 .method public synthetic getDrawable(Ljava/lang/String;)Landroid/graphics/drawable/Drawable;
@@ -587,10 +303,10 @@
     return v0
 .end method
 
-.method public synthetic setAnimatedColor(Ljava/lang/String;I)V
+.method public synthetic setAnimatedColor(II)V
     .locals 0
 
-    invoke-static {p0, p1, p2}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$setAnimatedColor(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;Ljava/lang/String;I)V
+    invoke-static {p0, p1, p2}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider$-CC;->$default$setAnimatedColor(Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;II)V
 
     return-void
 .end method

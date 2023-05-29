@@ -71,13 +71,13 @@ public final class BotInfoActivity$observeBotAnalog$1 extends Lambda implements 
         if (r13 != 2) goto L22;
      */
     /* JADX WARN: Code restructure failed: missing block: B:23:0x0095, code lost:
-        r13 = org.telegram.messenger.LocaleController.getInternalString(org.telegram.messenger.C3242R.string.neurobots_store_bot_info_supported_language_en);
+        r13 = org.telegram.messenger.LocaleController.getInternalString(org.telegram.messenger.C3290R.string.neurobots_store_bot_info_supported_language_en);
      */
     /* JADX WARN: Code restructure failed: missing block: B:25:0x00a1, code lost:
         throw new kotlin.NoWhenBranchMatchedException();
      */
     /* JADX WARN: Code restructure failed: missing block: B:26:0x00a2, code lost:
-        r13 = org.telegram.messenger.LocaleController.getInternalString(org.telegram.messenger.C3242R.string.neurobots_store_bot_info_supported_language_ru);
+        r13 = org.telegram.messenger.LocaleController.getInternalString(org.telegram.messenger.C3290R.string.neurobots_store_bot_info_supported_language_ru);
      */
     /* JADX WARN: Code restructure failed: missing block: B:27:0x00a8, code lost:
         r0.setText(r13);
@@ -165,7 +165,7 @@ public final class BotInfoActivity$observeBotAnalog$1 extends Lambda implements 
             r13 = r1[r13]
             if (r13 == r4) goto La2
             if (r13 != r3) goto L9c
-            int r13 = org.telegram.messenger.C3242R.string.neurobots_store_bot_info_supported_language_en
+            int r13 = org.telegram.messenger.C3290R.string.neurobots_store_bot_info_supported_language_en
             java.lang.String r13 = org.telegram.messenger.LocaleController.getInternalString(r13)
             goto La8
         L9c:
@@ -173,7 +173,7 @@ public final class BotInfoActivity$observeBotAnalog$1 extends Lambda implements 
             r13.<init>()
             throw r13
         La2:
-            int r13 = org.telegram.messenger.C3242R.string.neurobots_store_bot_info_supported_language_ru
+            int r13 = org.telegram.messenger.C3290R.string.neurobots_store_bot_info_supported_language_ru
             java.lang.String r13 = org.telegram.messenger.LocaleController.getInternalString(r13)
         La8:
             r0.setText(r13)

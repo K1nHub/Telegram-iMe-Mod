@@ -49,7 +49,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 21
+    .line 19
     check-cast p1, Lcom/iMe/ui/topics/TopicView;
 
     invoke-virtual {p0, p1}, Lcom/iMe/ui/adapter/FiltersRecycleAdapter$convert$2;->invoke(Lcom/iMe/ui/topics/TopicView;)V
@@ -66,7 +66,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 22
+    .line 20
     iget-object v0, p0, Lcom/iMe/ui/adapter/FiltersRecycleAdapter$convert$2;->$item:Lcom/iMe/model/common/FilterItem;
 
     invoke-virtual {v0}, Lcom/iMe/model/common/FilterItem;->isSelected()Z

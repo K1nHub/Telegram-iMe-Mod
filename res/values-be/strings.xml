@@ -329,9 +329,6 @@
     <string name="collection_tab_all">Усе</string>
     <string name="collection_tab_categories">Катэгорыя</string>
     <string name="collection_tab_my">Мае</string>
-    <string name="combine_messages_alert_message">"Вы адпраўляеце паведамленні запар, і гэта можа раздражняць іншых карыстальнікаў.
-
-Уключыць опцыю, каб вашыя паведамленні, адпраўленыя запар на працягу 30 секунд, аб'ядноўваліся ў адно паведамленне?"</string>
     <string name="combine_messages_disable">"Выключыць аб'яднанне паведамленняў"</string>
     <string name="combine_messages_enable">"Уключыць аб'яднанне паведамленняў"</string>
     <string name="combine_messages_send_without_combine">"Адправіць без аб'яднання"</string>
@@ -420,15 +417,11 @@
     <string name="debug_option_choose_wallet_environment_dialog_title">Вы ўпэўнены?</string>
     <string name="deleting_messages">Выдаленне паведамленняў ... Апрацавана %1$d of %2$d</string>
     <string name="deleting_messages_success">Службовыя паведамленні выдалены</string>
-    <string name="dialog_message_enable_archive_in_drawer">"Пры адключэнні ўкладкі Усе чаты вы не зможаце ўвайсці ў архіў.
-
-Размясціць кнопку доступу да архіва ў бакавым меню?"</string>
     <string name="dialog_promo_discussion_group_description">група</string>
     <string name="dialog_promo_en_news_channel_description">англамоўны</string>
     <string name="dialog_promo_ru_news_channel_description">рускамоўны</string>
     <string name="dialog_promo_subscribe_subtitle">Тады падпісвайцеся на наш канал</string>
     <string name="dialog_promo_subscribe_title">Хочаце сачыць за навінамі iMe?</string>
-    <string name="dialog_title_enable_archive_in_drawer">Доступ да Архіва</string>
     <string name="dialogs_activity_move_to_folder">Перамясціць у тэчку</string>
     <string name="dialogs_albums_sort_alphabetically">Сартаваць па алфавіце</string>
     <string name="dialogs_albums_sort_date">Сартаваць па даце</string>
@@ -666,6 +659,8 @@
 Дадайце музыку ў плэйліст"</string>
     <string name="music_playlists_tab">Плэйлісты</string>
     <string name="music_tab_playlist">Плейлист</string>
+    <string name="nav_app_bar_navigate_up_description">Перайсці ўверх</string>
+    <string name="nav_app_bar_open_drawer_description">Адкрыць высоўнае меню навігацыі</string>
     <string name="neurobots_enable_dialog_description">Для ўключэння і канфігурацыі нейроботов перайдзіце ў налады</string>
     <string name="neurobots_enable_dialog_positive_btn_text">Перайсці</string>
     <string name="neurobots_enable_dialog_title">Нейроботы адключаныя</string>
@@ -885,7 +880,6 @@
     <string name="settings_neurobots_item_title">Налады нейроботов</string>
     <string name="settings_proxy_button_in_toolbar">Кнопка проксі</string>
     <string name="settings_reactions_enable_hint">Уключыце, каб функцыянал рэакцый адлюстроўваўся ў чатах</string>
-    <string name="settings_revoke_by_default">Выдаліць у субяседніка</string>
     <string name="settings_tools">Iнструменты</string>
     <string name="settings_tools_base_toolbar">Асноўны тулбар</string>
     <string name="settings_tools_bot_help_translate">Пераклад прывітання ў ботах</string>
@@ -903,8 +897,6 @@
     <string name="settings_tools_combine_messages_hint">"Калі вы часта адпраўляеце паведамленні запар, вы можаце раздражняць іншых карыстальнікаў.
 
 Уключыце гэтую опцыю, каб вашыя паведамленні, адпраўленыя на працягу 30 секунд, былі аб'яднаны ў адно паведамленне."</string>
-    <string name="settings_tools_custom_sharing">Мультишаринг</string>
-    <string name="settings_tools_custom_sharing_hint">Адлюстраванне ўкладак сартавання асноўнага і архіўнай спісу чатаў пры шаринге звонку. Напрыклад, калі вы дзяліцеся фота ў iMe з галерэі прылады.</string>
     <string name="settings_tools_customization">Кастомизация</string>
     <string name="settings_tools_design_icon">Дызайн іконак</string>
     <string name="settings_tools_message_popup_reactions">У кантэкстным меню</string>

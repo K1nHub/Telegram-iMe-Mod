@@ -2,42 +2,32 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/RecyclerListView$OnInterceptTouchListener;
+.implements Lorg/telegram/ui/Components/RecyclerAnimationScrollHelper$ScrollListener;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda322;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda322;
-
-    invoke-direct {v0}, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda322;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda322;->INSTANCE:Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda322;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda322;->f$0:Lorg/telegram/ui/ChatActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 0
+.method public final onScroll()V
+    .locals 1
 
-    invoke-static {p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$NbowayTmSDTbIiP8rxPAnGdMXoI(Landroid/view/MotionEvent;)Z
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda322;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    move-result p1
+    invoke-virtual {v0}, Lorg/telegram/ui/ChatActivity;->invalidateMessagesVisiblePart()V
 
-    return p1
+    return-void
 .end method

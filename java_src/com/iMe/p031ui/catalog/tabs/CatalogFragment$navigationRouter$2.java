@@ -6,7 +6,7 @@ import org.koin.core.parameter.ParametersHolder;
 import org.koin.core.parameter.ParametersHolderKt;
 /* compiled from: CatalogFragment.kt */
 /* renamed from: com.iMe.ui.catalog.tabs.CatalogFragment$navigationRouter$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class CatalogFragment$navigationRouter$2 extends Lambda implements Function0<ParametersHolder> {
     public static final CatalogFragment$navigationRouter$2 INSTANCE = new CatalogFragment$navigationRouter$2();
 

@@ -17,7 +17,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 20596
+    .line 21161
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$TL_webPage;-><init>()V
 
     return-void
@@ -28,49 +28,49 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 2
 
-    .line 20601
+    .line 21166
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->flags:I
 
-    .line 20602
+    .line 21167
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt64(Z)J
 
     move-result-wide v0
 
     iput-wide v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->id:J
 
-    .line 20603
+    .line 21168
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->url:Ljava/lang/String;
 
-    .line 20604
+    .line 21169
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->display_url:Ljava/lang/String;
 
-    .line 20605
+    .line 21170
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 20606
+    .line 21171
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->type:Ljava/lang/String;
 
-    .line 20608
+    .line 21173
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->flags:I
 
@@ -78,14 +78,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 20609
+    .line 21174
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->site_name:Ljava/lang/String;
 
-    .line 20611
+    .line 21176
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->flags:I
 
@@ -93,14 +93,14 @@
 
     if-eqz v0, :cond_2
 
-    .line 20612
+    .line 21177
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->title:Ljava/lang/String;
 
-    .line 20614
+    .line 21179
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->flags:I
 
@@ -108,14 +108,14 @@
 
     if-eqz v0, :cond_3
 
-    .line 20615
+    .line 21180
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->description:Ljava/lang/String;
 
-    .line 20617
+    .line 21182
     :cond_3
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->flags:I
 
@@ -123,7 +123,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 20618
+    .line 21183
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
@@ -134,7 +134,7 @@
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
-    .line 20620
+    .line 21185
     :cond_4
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->flags:I
 
@@ -142,14 +142,14 @@
 
     if-eqz v0, :cond_5
 
-    .line 20621
+    .line 21186
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->embed_url:Ljava/lang/String;
 
-    .line 20623
+    .line 21188
     :cond_5
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->flags:I
 
@@ -157,14 +157,14 @@
 
     if-eqz v0, :cond_6
 
-    .line 20624
+    .line 21189
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object v0
 
     iput-object v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->embed_type:Ljava/lang/String;
 
-    .line 20626
+    .line 21191
     :cond_6
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->flags:I
 
@@ -172,14 +172,14 @@
 
     if-eqz v0, :cond_7
 
-    .line 20627
+    .line 21192
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->embed_width:I
 
-    .line 20629
+    .line 21194
     :cond_7
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->flags:I
 
@@ -187,14 +187,14 @@
 
     if-eqz v0, :cond_8
 
-    .line 20630
+    .line 21195
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->embed_height:I
 
-    .line 20632
+    .line 21197
     :cond_8
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->flags:I
 
@@ -202,14 +202,14 @@
 
     if-eqz v0, :cond_9
 
-    .line 20633
+    .line 21198
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->duration:I
 
-    .line 20635
+    .line 21200
     :cond_9
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->flags:I
 
@@ -217,7 +217,7 @@
 
     if-eqz v0, :cond_a
 
-    .line 20636
+    .line 21201
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readString(Z)Ljava/lang/String;
 
     move-result-object p1
@@ -231,44 +231,44 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 20641
+    .line 21206
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_webPage_old;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 20642
+    .line 21207
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->flags:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 20643
+    .line 21208
     iget-wide v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->id:J
 
     invoke-virtual {p1, v0, v1}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt64(J)V
 
-    .line 20644
+    .line 21209
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->url:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 20645
+    .line 21210
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->display_url:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 20646
+    .line 21211
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->flags:I
 
     and-int/lit8 v0, v0, 0x1
 
     if-eqz v0, :cond_0
 
-    .line 20647
+    .line 21212
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->type:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 20649
+    .line 21214
     :cond_0
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->flags:I
 
@@ -276,12 +276,12 @@
 
     if-eqz v0, :cond_1
 
-    .line 20650
+    .line 21215
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->site_name:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 20652
+    .line 21217
     :cond_1
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->flags:I
 
@@ -289,12 +289,12 @@
 
     if-eqz v0, :cond_2
 
-    .line 20653
+    .line 21218
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->title:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 20655
+    .line 21220
     :cond_2
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->flags:I
 
@@ -302,12 +302,12 @@
 
     if-eqz v0, :cond_3
 
-    .line 20656
+    .line 21221
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->description:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 20658
+    .line 21223
     :cond_3
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->flags:I
 
@@ -315,12 +315,12 @@
 
     if-eqz v0, :cond_4
 
-    .line 20659
+    .line 21224
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->photo:Lorg/telegram/tgnet/TLRPC$Photo;
 
     invoke-virtual {v0, p1}, Lorg/telegram/tgnet/TLObject;->serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
 
-    .line 20661
+    .line 21226
     :cond_4
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->flags:I
 
@@ -328,12 +328,12 @@
 
     if-eqz v0, :cond_5
 
-    .line 20662
+    .line 21227
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->embed_url:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 20664
+    .line 21229
     :cond_5
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->flags:I
 
@@ -341,12 +341,12 @@
 
     if-eqz v0, :cond_6
 
-    .line 20665
+    .line 21230
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->embed_type:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V
 
-    .line 20667
+    .line 21232
     :cond_6
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->flags:I
 
@@ -354,12 +354,12 @@
 
     if-eqz v0, :cond_7
 
-    .line 20668
+    .line 21233
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->embed_width:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 20670
+    .line 21235
     :cond_7
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->flags:I
 
@@ -367,12 +367,12 @@
 
     if-eqz v0, :cond_8
 
-    .line 20671
+    .line 21236
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->embed_height:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 20673
+    .line 21238
     :cond_8
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->flags:I
 
@@ -380,12 +380,12 @@
 
     if-eqz v0, :cond_9
 
-    .line 20674
+    .line 21239
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->duration:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 20676
+    .line 21241
     :cond_9
     iget v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->flags:I
 
@@ -393,7 +393,7 @@
 
     if-eqz v0, :cond_a
 
-    .line 20677
+    .line 21242
     iget-object v0, p0, Lorg/telegram/tgnet/TLRPC$WebPage;->author:Ljava/lang/String;
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeString(Ljava/lang/String;)V

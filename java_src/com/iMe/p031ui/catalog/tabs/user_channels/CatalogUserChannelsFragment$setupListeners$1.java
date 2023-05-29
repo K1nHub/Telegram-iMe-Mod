@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CatalogUserChannelsFragment.kt */
 /* renamed from: com.iMe.ui.catalog.tabs.user_channels.CatalogUserChannelsFragment$setupListeners$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class CatalogUserChannelsFragment$setupListeners$1 extends Lambda implements Function1<View, Unit> {
     final /* synthetic */ CatalogUserChannelsFragment this$0;
 

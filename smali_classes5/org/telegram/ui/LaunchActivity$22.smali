@@ -1,14 +1,11 @@
 .class Lorg/telegram/ui/LaunchActivity$22;
-.super Ljava/lang/Object;
+.super Landroid/widget/FrameLayout;
 .source "LaunchActivity.java"
-
-# interfaces
-.implements Lorg/telegram/messenger/MessagesController$MessagesLoadedCallback;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/LaunchActivity;->lambda$runLinkRequest$70(Lorg/telegram/tgnet/TLRPC$TL_error;Lorg/telegram/tgnet/TLObject;ILorg/telegram/ui/ActionBar/AlertDialog;Ljava/lang/Runnable;Ljava/lang/String;)V
+    value = Lorg/telegram/ui/LaunchActivity;->createUpdateUI()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -18,162 +15,186 @@
 
 
 # instance fields
+.field private lastGradientWidth:I
+
+.field private matrix:Landroid/graphics/Matrix;
+
+.field private paint:Landroid/graphics/Paint;
+
 .field final synthetic this$0:Lorg/telegram/ui/LaunchActivity;
 
-.field final synthetic val$args:Landroid/os/Bundle;
-
-.field final synthetic val$canceled:[Z
-
-.field final synthetic val$dismissLoading:Ljava/lang/Runnable;
-
-.field final synthetic val$invite:Lorg/telegram/tgnet/TLRPC$ChatInvite;
+.field private updateGradient:Landroid/graphics/LinearGradient;
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/LaunchActivity;Ljava/lang/Runnable;[ZLandroid/os/Bundle;Lorg/telegram/tgnet/TLRPC$ChatInvite;)V
+.method constructor <init>(Lorg/telegram/ui/LaunchActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 4732
+    .line 5361
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$22;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$22;->val$dismissLoading:Ljava/lang/Runnable;
+    invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    iput-object p3, p0, Lorg/telegram/ui/LaunchActivity$22;->val$canceled:[Z
+    .line 5363
+    new-instance p1, Landroid/graphics/Paint;
 
-    iput-object p4, p0, Lorg/telegram/ui/LaunchActivity$22;->val$args:Landroid/os/Bundle;
+    invoke-direct {p1}, Landroid/graphics/Paint;-><init>()V
 
-    iput-object p5, p0, Lorg/telegram/ui/LaunchActivity$22;->val$invite:Lorg/telegram/tgnet/TLRPC$ChatInvite;
+    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$22;->paint:Landroid/graphics/Paint;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+    .line 5364
+    new-instance p1, Landroid/graphics/Matrix;
+
+    invoke-direct {p1}, Landroid/graphics/Matrix;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$22;->matrix:Landroid/graphics/Matrix;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onError()V
-    .locals 3
+.method public draw(Landroid/graphics/Canvas;)V
+    .locals 8
 
-    .line 4752
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$22;->this$0:Lorg/telegram/ui/LaunchActivity;
+    .line 5370
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$22;->updateGradient:Landroid/graphics/LinearGradient;
 
-    invoke-virtual {v0}, Landroid/app/Activity;->isFinishing()Z
+    if-eqz v0, :cond_0
+
+    .line 5371
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$22;->paint:Landroid/graphics/Paint;
+
+    const/4 v1, -0x1
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setColor(I)V
+
+    .line 5372
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$22;->paint:Landroid/graphics/Paint;
+
+    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$22;->updateGradient:Landroid/graphics/LinearGradient;
+
+    invoke-virtual {v0, v1}, Landroid/graphics/Paint;->setShader(Landroid/graphics/Shader;)Landroid/graphics/Shader;
+
+    .line 5373
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$22;->updateGradient:Landroid/graphics/LinearGradient;
+
+    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$22;->matrix:Landroid/graphics/Matrix;
+
+    invoke-virtual {v0, v1}, Landroid/graphics/LinearGradient;->setLocalMatrix(Landroid/graphics/Matrix;)V
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
+
+    .line 5374
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v0
 
-    if-nez v0, :cond_0
+    int-to-float v5, v0
 
-    .line 4753
-    invoke-static {}, Lorg/telegram/ui/LaunchActivity;->access$1800()Ljava/util/ArrayList;
+    invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+
+    move-result v0
+
+    int-to-float v6, v0
+
+    iget-object v7, p0, Lorg/telegram/ui/LaunchActivity$22;->paint:Landroid/graphics/Paint;
+
+    move-object v2, p1
+
+    invoke-virtual/range {v2 .. v7}, Landroid/graphics/Canvas;->drawRect(FFFFLandroid/graphics/Paint;)V
+
+    .line 5375
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$22;->this$0:Lorg/telegram/ui/LaunchActivity;
+
+    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$2400(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/Components/RadialProgress2;
 
     move-result-object v0
 
-    invoke-static {}, Lorg/telegram/ui/LaunchActivity;->access$1800()Ljava/util/ArrayList;
+    iget-object v1, p0, Lorg/telegram/ui/LaunchActivity$22;->updateGradient:Landroid/graphics/LinearGradient;
 
-    move-result-object v1
+    invoke-virtual {v0, v1}, Lorg/telegram/ui/Components/RadialProgress2;->setBackgroundGradientDrawable(Landroid/graphics/LinearGradient;)V
 
-    invoke-virtual {v1}, Ljava/util/ArrayList;->size()I
+    .line 5376
+    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$22;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    move-result v1
-
-    add-int/lit8 v1, v1, -0x1
-
-    invoke-virtual {v0, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$2400(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/Components/RadialProgress2;
 
     move-result-object v0
 
-    check-cast v0, Lorg/telegram/ui/ActionBar/BaseFragment;
+    invoke-virtual {v0, p1}, Lorg/telegram/ui/Components/RadialProgress2;->draw(Landroid/graphics/Canvas;)V
 
-    .line 4754
-    sget v1, Lorg/telegram/messenger/R$string;->JoinToGroupErrorNotExist:I
-
-    const-string v2, "JoinToGroupErrorNotExist"
-
-    invoke-static {v2, v1}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
-
-    move-result-object v1
-
-    invoke-static {v0, v1}, Lorg/telegram/ui/Components/AlertsCreator;->showSimpleAlert(Lorg/telegram/ui/ActionBar/BaseFragment;Ljava/lang/String;)Landroid/app/Dialog;
-
-    .line 4757
+    .line 5378
     :cond_0
-    :try_start_0
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$22;->val$dismissLoading:Ljava/lang/Runnable;
+    invoke-super {p0, p1}, Landroid/widget/FrameLayout;->draw(Landroid/graphics/Canvas;)V
 
-    invoke-interface {v0}, Ljava/lang/Runnable;->run()V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
-
-    goto :goto_0
-
-    :catch_0
-    move-exception v0
-
-    .line 4759
-    invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
-
-    :goto_0
     return-void
 .end method
 
-.method public onMessagesLoaded(Z)V
-    .locals 2
+.method protected onMeasure(II)V
+    .locals 8
 
-    .line 4736
-    :try_start_0
-    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$22;->val$dismissLoading:Ljava/lang/Runnable;
+    .line 5383
+    invoke-super {p0, p1, p2}, Landroid/widget/FrameLayout;->onMeasure(II)V
 
-    invoke-interface {p1}, Ljava/lang/Runnable;->run()V
-    :try_end_0
-    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
+    .line 5384
+    invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
-    goto :goto_0
+    move-result p1
 
-    :catch_0
-    move-exception p1
+    .line 5385
+    iget p2, p0, Lorg/telegram/ui/LaunchActivity$22;->lastGradientWidth:I
 
-    .line 4738
-    invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/Throwable;)V
+    if-eq p2, p1, :cond_0
 
-    .line 4740
-    :goto_0
-    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$22;->val$canceled:[Z
+    .line 5386
+    new-instance p2, Landroid/graphics/LinearGradient;
 
-    const/4 v0, 0x0
+    const/4 v1, 0x0
 
-    aget-boolean p1, p1, v0
+    const/4 v2, 0x0
 
-    if-eqz p1, :cond_0
+    int-to-float v3, p1
 
-    return-void
+    const/4 v4, 0x0
 
-    .line 4743
+    const/4 v0, 0x2
+
+    new-array v5, v0, [I
+
+    fill-array-data v5, :array_0
+
+    new-array v6, v0, [F
+
+    fill-array-data v6, :array_1
+
+    sget-object v7, Landroid/graphics/Shader$TileMode;->CLAMP:Landroid/graphics/Shader$TileMode;
+
+    move-object v0, p2
+
+    invoke-direct/range {v0 .. v7}, Landroid/graphics/LinearGradient;-><init>(FFFF[I[FLandroid/graphics/Shader$TileMode;)V
+
+    iput-object p2, p0, Lorg/telegram/ui/LaunchActivity$22;->updateGradient:Landroid/graphics/LinearGradient;
+
+    .line 5387
+    iput p1, p0, Lorg/telegram/ui/LaunchActivity$22;->lastGradientWidth:I
+
     :cond_0
-    new-instance p1, Lorg/telegram/ui/ChatActivity;
-
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$22;->val$args:Landroid/os/Bundle;
-
-    invoke-direct {p1, v0}, Lorg/telegram/ui/ChatActivity;-><init>(Landroid/os/Bundle;)V
-
-    .line 4744
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$22;->val$invite:Lorg/telegram/tgnet/TLRPC$ChatInvite;
-
-    instance-of v1, v0, Lorg/telegram/tgnet/TLRPC$TL_chatInvitePeek;
-
-    if-eqz v1, :cond_1
-
-    .line 4745
-    invoke-virtual {p1, v0}, Lorg/telegram/ui/ChatActivity;->setChatInvite(Lorg/telegram/tgnet/TLRPC$ChatInvite;)V
-
-    .line 4747
-    :cond_1
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$22;->this$0:Lorg/telegram/ui/LaunchActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$300(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/ActionBar/INavigationLayout;
-
-    move-result-object v0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/INavigationLayout;->presentFragment(Lorg/telegram/ui/ActionBar/BaseFragment;)Z
-
     return-void
+
+    nop
+
+    :array_0
+    .array-data 4
+        -0x96408e
+        -0xac4c53    # -2.8140004E38f
+    .end array-data
+
+    :array_1
+    .array-data 4
+        0x0
+        0x3f800000    # 1.0f
+    .end array-data
 .end method

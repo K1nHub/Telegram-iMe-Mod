@@ -71,12 +71,12 @@ public abstract class Scheduler {
             final long periodInNanoseconds;
 
             /* renamed from: sd */
-            final SequentialDisposable f435sd;
+            final SequentialDisposable f438sd;
             long startInNanoseconds;
 
             PeriodicTask(long j, Runnable runnable, long j2, SequentialDisposable sequentialDisposable, long j3) {
                 this.decoratedRun = runnable;
-                this.f435sd = sequentialDisposable;
+                this.f438sd = sequentialDisposable;
                 this.periodInNanoseconds = j3;
                 this.lastNowNanoseconds = j2;
                 this.startInNanoseconds = j;
@@ -86,7 +86,7 @@ public abstract class Scheduler {
             public void run() {
                 long j;
                 this.decoratedRun.run();
-                if (this.f435sd.isDisposed()) {
+                if (this.f438sd.isDisposed()) {
                     return;
                 }
                 Worker worker = Worker.this;
@@ -102,7 +102,7 @@ public abstract class Scheduler {
                         this.count = j6;
                         j = j5 + (j6 * j4);
                         this.lastNowNanoseconds = now;
-                        this.f435sd.replace(Worker.this.schedule(this, j - now, timeUnit));
+                        this.f438sd.replace(Worker.this.schedule(this, j - now, timeUnit));
                     }
                 }
                 long j7 = this.periodInNanoseconds;
@@ -112,7 +112,7 @@ public abstract class Scheduler {
                 this.startInNanoseconds = j8 - (j7 * j9);
                 j = j8;
                 this.lastNowNanoseconds = now;
-                this.f435sd.replace(Worker.this.schedule(this, j - now, timeUnit));
+                this.f438sd.replace(Worker.this.schedule(this, j - now, timeUnit));
             }
         }
     }
@@ -161,11 +161,11 @@ public abstract class Scheduler {
         Thread runner;
 
         /* renamed from: w */
-        final Worker f434w;
+        final Worker f437w;
 
         DisposeTask(Runnable runnable, Worker worker) {
             this.decoratedRun = runnable;
-            this.f434w = worker;
+            this.f437w = worker;
         }
 
         @Override // java.lang.Runnable
@@ -182,18 +182,18 @@ public abstract class Scheduler {
         @Override // io.reactivex.disposables.Disposable
         public void dispose() {
             if (this.runner == Thread.currentThread()) {
-                Worker worker = this.f434w;
+                Worker worker = this.f437w;
                 if (worker instanceof NewThreadWorker) {
                     ((NewThreadWorker) worker).shutdown();
                     return;
                 }
             }
-            this.f434w.dispose();
+            this.f437w.dispose();
         }
 
         @Override // io.reactivex.disposables.Disposable
         public boolean isDisposed() {
-            return this.f434w.isDisposed();
+            return this.f437w.isDisposed();
         }
     }
 }

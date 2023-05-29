@@ -1,11 +1,14 @@
 .class Lorg/telegram/ui/ChatActivity$81;
-.super Lorg/telegram/ui/Components/TextSelectionHint;
+.super Ljava/lang/Object;
 .source "ChatActivity.java"
+
+# interfaces
+.implements Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ChatActivity;->showTextSelectionHint(Lorg/telegram/messenger/MessageObject;)V
+    value = Lorg/telegram/ui/ChatActivity;->openScheduledMessages()V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -19,100 +22,81 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ChatActivity;Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+.method constructor <init>(Lorg/telegram/ui/ChatActivity;)V
     .locals 0
 
-    .line 12714
+    .line 12326
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$81;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/TextSelectionHint;-><init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected onDraw(Landroid/graphics/Canvas;)V
+.method public synthetic onForwardingMessagesChanged(Ljava/util/ArrayList;)V
     .locals 0
 
-    .line 12724
-    invoke-super {p0, p1}, Lorg/telegram/ui/Components/TextSelectionHint;->onDraw(Landroid/graphics/Canvas;)V
-
-    .line 12725
-    invoke-virtual {p0}, Lorg/telegram/ui/ChatActivity$81;->updatePosition()V
+    invoke-static {p0, p1}, Lorg/telegram/ui/ChatActivity$ChatActivityDelegate$-CC;->$default$onForwardingMessagesChanged(Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;Ljava/util/ArrayList;)V
 
     return-void
 .end method
 
-.method protected onMeasure(II)V
+.method public synthetic onReport()V
     .locals 0
 
-    .line 12718
-    invoke-super {p0, p1, p2}, Lorg/telegram/ui/Components/TextSelectionHint;->onMeasure(II)V
-
-    .line 12719
-    invoke-virtual {p0}, Lorg/telegram/ui/ChatActivity$81;->updatePosition()V
+    invoke-static {p0}, Lorg/telegram/ui/ChatActivity$ChatActivityDelegate$-CC;->$default$onReport(Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;)V
 
     return-void
 .end method
 
-.method public updatePosition()V
-    .locals 4
+.method public synthetic onUnpin(ZZZZLorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;Ljava/util/HashMap;)V
+    .locals 0
 
-    .line 12729
-    invoke-virtual {p0}, Landroid/view/View;->getMeasuredHeight()I
+    invoke-static/range {p0 .. p7}, Lorg/telegram/ui/ChatActivity$ChatActivityDelegate$-CC;->$default$onUnpin(Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;ZZZZLorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;Ljava/util/HashMap;)V
 
-    move-result v0
+    return-void
+.end method
 
-    const/16 v1, 0x10
+.method public openReplyMessage(I)V
+    .locals 7
 
-    invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    .line 12329
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$81;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    move-result v1
+    const/4 v2, 0x0
 
-    add-int/2addr v0, v1
+    const/4 v3, 0x1
 
-    neg-int v0, v0
+    const/4 v4, 0x0
 
-    .line 12730
-    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$81;->this$0:Lorg/telegram/ui/ChatActivity;
+    const/4 v5, 0x1
 
-    iget-object v1, v1, Lorg/telegram/ui/ChatActivity;->chatActivityEnterView:Lorg/telegram/ui/Components/ChatActivityEnterView;
+    const/4 v6, 0x0
 
-    invoke-virtual {v1}, Landroid/widget/FrameLayout;->getTop()I
+    move v1, p1
 
-    move-result v1
+    invoke-virtual/range {v0 .. v6}, Lorg/telegram/ui/ChatActivity;->scrollToMessageId(IIZIZI)V
 
-    iget-object v2, p0, Lorg/telegram/ui/ChatActivity$81;->this$0:Lorg/telegram/ui/ChatActivity;
+    return-void
+.end method
 
-    iget-object v2, v2, Lorg/telegram/ui/ChatActivity;->contentView:Lorg/telegram/ui/ChatActivity$ChatActivityFragmentView;
+.method public openSearch(Ljava/lang/String;)V
+    .locals 1
 
-    invoke-virtual {v2}, Landroid/widget/FrameLayout;->getMeasuredHeight()I
+    .line 12334
+    iget-object v0, p0, Lorg/telegram/ui/ChatActivity$81;->this$0:Lorg/telegram/ui/ChatActivity;
 
-    move-result v2
+    invoke-static {v0, p1}, Lorg/telegram/ui/ChatActivity;->access$14500(Lorg/telegram/ui/ChatActivity;Ljava/lang/String;)V
 
-    sub-int/2addr v1, v2
+    return-void
+.end method
 
-    int-to-float v2, v1
+.method public synthetic setFieldText(Ljava/lang/CharSequence;)V
+    .locals 0
 
-    add-int/2addr v1, v0
-
-    int-to-float v0, v1
-
-    .line 12731
-    invoke-virtual {p0}, Lorg/telegram/ui/Components/TextSelectionHint;->getPrepareProgress()F
-
-    move-result v1
-
-    const/high16 v3, 0x3f800000    # 1.0f
-
-    sub-float/2addr v3, v1
-
-    mul-float/2addr v0, v3
-
-    sub-float/2addr v2, v0
-
-    invoke-virtual {p0, v2}, Landroid/view/View;->setTranslationY(F)V
+    invoke-static {p0, p1}, Lorg/telegram/ui/ChatActivity$ChatActivityDelegate$-CC;->$default$setFieldText(Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;Ljava/lang/CharSequence;)V
 
     return-void
 .end method

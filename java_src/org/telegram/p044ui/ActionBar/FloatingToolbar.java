@@ -45,7 +45,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -273,32 +273,32 @@ public final class FloatingToolbar {
             ViewGroup createContentContainer = FloatingToolbar.this.createContentContainer(context);
             this.mContentContainer = createContentContainer;
             this.mPopupWindow = FloatingToolbar.createPopupWindow(createContentContainer);
-            this.mMarginHorizontal = AndroidUtilities.m50dp(16);
-            this.mMarginVertical = AndroidUtilities.m50dp(8);
-            this.mLineHeight = AndroidUtilities.m50dp(48);
-            int m50dp = AndroidUtilities.m50dp(8);
-            this.mIconTextSpacing = m50dp;
+            this.mMarginHorizontal = AndroidUtilities.m54dp(16);
+            this.mMarginVertical = AndroidUtilities.m54dp(8);
+            this.mLineHeight = AndroidUtilities.m54dp(48);
+            int m54dp = AndroidUtilities.m54dp(8);
+            this.mIconTextSpacing = m54dp;
             this.mLogAccelerateInterpolator = new LogAccelerateInterpolator();
             this.mFastOutSlowInInterpolator = AnimationUtils.loadInterpolator(context, 17563661);
             this.mLinearOutSlowInInterpolator = AnimationUtils.loadInterpolator(context, 17563662);
             this.mFastOutLinearInInterpolator = AnimationUtils.loadInterpolator(context, 17563663);
-            Drawable mutate = context.getDrawable(C3242R.C3244drawable.ft_avd_tooverflow).mutate();
+            Drawable mutate = context.getDrawable(C3290R.C3292drawable.ft_avd_tooverflow).mutate();
             this.mArrow = mutate;
             mutate.setAutoMirrored(true);
-            Drawable mutate2 = context.getDrawable(C3242R.C3244drawable.ft_avd_toarrow).mutate();
+            Drawable mutate2 = context.getDrawable(C3290R.C3292drawable.ft_avd_toarrow).mutate();
             this.mOverflow = mutate2;
             mutate2.setAutoMirrored(true);
-            AnimatedVectorDrawable animatedVectorDrawable = (AnimatedVectorDrawable) context.getDrawable(C3242R.C3244drawable.ft_avd_toarrow_animation).mutate();
+            AnimatedVectorDrawable animatedVectorDrawable = (AnimatedVectorDrawable) context.getDrawable(C3290R.C3292drawable.ft_avd_toarrow_animation).mutate();
             this.mToArrow = animatedVectorDrawable;
             animatedVectorDrawable.setAutoMirrored(true);
-            AnimatedVectorDrawable animatedVectorDrawable2 = (AnimatedVectorDrawable) context.getDrawable(C3242R.C3244drawable.ft_avd_tooverflow_animation).mutate();
+            AnimatedVectorDrawable animatedVectorDrawable2 = (AnimatedVectorDrawable) context.getDrawable(C3290R.C3292drawable.ft_avd_tooverflow_animation).mutate();
             this.mToOverflow = animatedVectorDrawable2;
             animatedVectorDrawable2.setAutoMirrored(true);
             ImageButton createOverflowButton = createOverflowButton();
             this.mOverflowButton = createOverflowButton;
             this.mOverflowButtonSize = measure(createOverflowButton);
             this.mMainPanel = createMainPanel();
-            this.mOverflowPanelViewHelper = new OverflowPanelViewHelper(context, m50dp);
+            this.mOverflowPanelViewHelper = new OverflowPanelViewHelper(context, m54dp);
             this.mOverflowPanel = createOverflowPanel();
             Animation.AnimationListener createOverflowAnimationListener = createOverflowAnimationListener();
             AnimationSet animationSet = new AnimationSet(true);
@@ -308,15 +308,15 @@ public final class FloatingToolbar {
             this.mCloseOverflowAnimation = animationSet2;
             animationSet2.setAnimationListener(createOverflowAnimationListener);
             this.mShowAnimation = FloatingToolbar.createEnterAnimation(createContentContainer);
-            this.mDismissAnimation = FloatingToolbar.createExitAnimation(createContentContainer, ImageReceiver.DEFAULT_CROSSFADE_DURATION, new C33873(FloatingToolbar.this));
-            this.mHideAnimation = FloatingToolbar.createExitAnimation(createContentContainer, 0, new C33884(FloatingToolbar.this));
+            this.mDismissAnimation = FloatingToolbar.createExitAnimation(createContentContainer, ImageReceiver.DEFAULT_CROSSFADE_DURATION, new C34363(FloatingToolbar.this));
+            this.mHideAnimation = FloatingToolbar.createExitAnimation(createContentContainer, 0, new C34374(FloatingToolbar.this));
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.ActionBar.FloatingToolbar$FloatingToolbarPopup$3 */
         /* loaded from: classes5.dex */
-        public class C33873 extends AnimatorListenerAdapter {
-            C33873(FloatingToolbar floatingToolbar) {
+        public class C34363 extends AnimatorListenerAdapter {
+            C34363(FloatingToolbar floatingToolbar) {
             }
 
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -324,7 +324,7 @@ public final class FloatingToolbar {
                 NotificationCenter.getInstance(UserConfig.selectedAccount).doOnIdle(new Runnable() { // from class: org.telegram.ui.ActionBar.FloatingToolbar$FloatingToolbarPopup$3$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FloatingToolbar.FloatingToolbarPopup.C33873.this.lambda$onAnimationEnd$0();
+                        FloatingToolbar.FloatingToolbarPopup.C34363.this.lambda$onAnimationEnd$0();
                     }
                 });
             }
@@ -339,8 +339,8 @@ public final class FloatingToolbar {
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.ActionBar.FloatingToolbar$FloatingToolbarPopup$4 */
         /* loaded from: classes5.dex */
-        public class C33884 extends AnimatorListenerAdapter {
-            C33884(FloatingToolbar floatingToolbar) {
+        public class C34374 extends AnimatorListenerAdapter {
+            C34374(FloatingToolbar floatingToolbar) {
             }
 
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -348,7 +348,7 @@ public final class FloatingToolbar {
                 NotificationCenter.getInstance(UserConfig.selectedAccount).doOnIdle(new Runnable() { // from class: org.telegram.ui.ActionBar.FloatingToolbar$FloatingToolbarPopup$4$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FloatingToolbar.FloatingToolbarPopup.C33884.this.lambda$onAnimationEnd$0();
+                        FloatingToolbar.FloatingToolbarPopup.C34374.this.lambda$onAnimationEnd$0();
                     }
                 });
             }
@@ -634,7 +634,7 @@ public final class FloatingToolbar {
                 this.mOverflowPanel.setAlpha(1.0f);
                 this.mOverflowPanel.setVisibility(0);
                 this.mOverflowButton.setImageDrawable(this.mArrow);
-                this.mOverflowButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3242R.string.AccDescrMoreOptions));
+                this.mOverflowButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3290R.string.AccDescrMoreOptions));
                 if (isInRTLMode()) {
                     this.mContentContainer.setX(this.mMarginHorizontal);
                     this.mMainPanel.setX(BitmapDescriptorFactory.HUE_RED);
@@ -666,7 +666,7 @@ public final class FloatingToolbar {
             this.mOverflowPanel.setAlpha(BitmapDescriptorFactory.HUE_RED);
             this.mOverflowPanel.setVisibility(4);
             this.mOverflowButton.setImageDrawable(this.mOverflow);
-            this.mOverflowButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3242R.string.AccDescrMoreOptions));
+            this.mOverflowButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3290R.string.AccDescrMoreOptions));
             if (hasOverflow()) {
                 if (isInRTLMode()) {
                     this.mContentContainer.setX(this.mMarginHorizontal);
@@ -748,9 +748,9 @@ public final class FloatingToolbar {
 
         private int getAdjustedToolbarWidth(int i) {
             refreshViewPort();
-            int width = this.mViewPortOnScreen.width() - (AndroidUtilities.m50dp(16) * 2);
+            int width = this.mViewPortOnScreen.width() - (AndroidUtilities.m54dp(16) * 2);
             if (i <= 0) {
-                i = AndroidUtilities.m50dp(400);
+                i = AndroidUtilities.m54dp(400);
             }
             return Math.min(i, width);
         }
@@ -926,16 +926,16 @@ public final class FloatingToolbar {
         private ImageButton createOverflowButton() {
             int themedColor;
             final ImageButton imageButton = new ImageButton(this.mContext);
-            imageButton.setLayoutParams(new ViewGroup.LayoutParams(AndroidUtilities.m50dp(56), AndroidUtilities.m50dp(48)));
-            imageButton.setPaddingRelative(AndroidUtilities.m50dp(16), AndroidUtilities.m50dp(12), AndroidUtilities.m50dp(16), AndroidUtilities.m50dp(12));
+            imageButton.setLayoutParams(new ViewGroup.LayoutParams(AndroidUtilities.m54dp(56), AndroidUtilities.m54dp(48)));
+            imageButton.setPaddingRelative(AndroidUtilities.m54dp(16), AndroidUtilities.m54dp(12), AndroidUtilities.m54dp(16), AndroidUtilities.m54dp(12));
             imageButton.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
             imageButton.setImageDrawable(this.mOverflow);
             if (FloatingToolbar.this.currentStyle == 0) {
-                themedColor = FloatingToolbar.this.getThemedColor("dialogTextBlack");
-                imageButton.setBackgroundDrawable(Theme.createSelectorDrawable(FloatingToolbar.this.getThemedColor("listSelectorSDK21"), 1));
+                themedColor = FloatingToolbar.this.getThemedColor(Theme.key_dialogTextBlack);
+                imageButton.setBackgroundDrawable(Theme.createSelectorDrawable(FloatingToolbar.this.getThemedColor(Theme.key_listSelector), 1));
             } else if (FloatingToolbar.this.currentStyle != 2) {
-                themedColor = FloatingToolbar.this.getThemedColor("windowBackgroundWhiteBlackText");
-                imageButton.setBackgroundDrawable(Theme.createSelectorDrawable(FloatingToolbar.this.getThemedColor("listSelectorSDK21"), 1));
+                themedColor = FloatingToolbar.this.getThemedColor(Theme.key_windowBackgroundWhiteBlackText);
+                imageButton.setBackgroundDrawable(Theme.createSelectorDrawable(FloatingToolbar.this.getThemedColor(Theme.key_listSelector), 1));
             } else {
                 themedColor = -328966;
                 imageButton.setBackgroundDrawable(Theme.createSelectorDrawable(1090519039, 1));
@@ -1003,12 +1003,12 @@ public final class FloatingToolbar {
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.ActionBar.FloatingToolbar$FloatingToolbarPopup$13  reason: invalid class name */
         /* loaded from: classes5.dex */
-        public class animationAnimation$AnimationListenerC338513 implements Animation.AnimationListener {
+        public class animationAnimation$AnimationListenerC343413 implements Animation.AnimationListener {
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationRepeat(Animation animation) {
             }
 
-            animationAnimation$AnimationListenerC338513() {
+            animationAnimation$AnimationListenerC343413() {
             }
 
             @Override // android.view.animation.Animation.AnimationListener
@@ -1023,7 +1023,7 @@ public final class FloatingToolbar {
                 FloatingToolbarPopup.this.mContentContainer.post(new Runnable() { // from class: org.telegram.ui.ActionBar.FloatingToolbar$FloatingToolbarPopup$13$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FloatingToolbar.FloatingToolbarPopup.animationAnimation$AnimationListenerC338513.this.lambda$onAnimationEnd$0();
+                        FloatingToolbar.FloatingToolbarPopup.animationAnimation$AnimationListenerC343413.this.lambda$onAnimationEnd$0();
                     }
                 });
             }
@@ -1036,7 +1036,7 @@ public final class FloatingToolbar {
         }
 
         private Animation.AnimationListener createOverflowAnimationListener() {
-            return new animationAnimation$AnimationListenerC338513();
+            return new animationAnimation$AnimationListenerC343413();
         }
 
         private Size measure(View view) {
@@ -1083,7 +1083,7 @@ public final class FloatingToolbar {
                 setOutlineProvider(new ViewOutlineProvider(this, floatingToolbarPopup) { // from class: org.telegram.ui.ActionBar.FloatingToolbar.FloatingToolbarPopup.OverflowPanel.1
                     @Override // android.view.ViewOutlineProvider
                     public void getOutline(View view, Outline outline) {
-                        outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight() + AndroidUtilities.m50dp(6), AndroidUtilities.m50dp(6));
+                        outline.setRoundRect(0, 0, view.getMeasuredWidth(), view.getMeasuredHeight() + AndroidUtilities.m54dp(6), AndroidUtilities.m54dp(6));
                     }
                 });
                 setClipToOutline(true);
@@ -1133,7 +1133,7 @@ public final class FloatingToolbar {
         public final class OverflowPanelViewHelper {
             private final Context mContext;
             private final int mIconTextSpacing;
-            private final int mSidePadding = AndroidUtilities.m50dp(18);
+            private final int mSidePadding = AndroidUtilities.m54dp(18);
             private final View mCalculator = createMenuButton(null);
 
             public OverflowPanelViewHelper(Context context, int i) {
@@ -1171,9 +1171,9 @@ public final class FloatingToolbar {
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setLayoutParams(new ViewGroup.LayoutParams(-2, -2));
         linearLayout.setOrientation(0);
-        linearLayout.setMinimumWidth(AndroidUtilities.m50dp(48));
-        linearLayout.setMinimumHeight(AndroidUtilities.m50dp(48));
-        linearLayout.setPaddingRelative(AndroidUtilities.m50dp(16), 0, AndroidUtilities.m50dp(16), 0);
+        linearLayout.setMinimumWidth(AndroidUtilities.m54dp(48));
+        linearLayout.setMinimumHeight(AndroidUtilities.m54dp(48));
+        linearLayout.setPaddingRelative(AndroidUtilities.m54dp(16), 0, AndroidUtilities.m54dp(16), 0);
         TextView textView = new TextView(context);
         textView.setGravity(17);
         textView.setSingleLine(true);
@@ -1183,23 +1183,23 @@ public final class FloatingToolbar {
         textView.setFocusable(false);
         textView.setImportantForAccessibility(2);
         textView.setFocusableInTouchMode(false);
-        int color = Theme.getColor("listSelectorSDK21");
+        int color = Theme.getColor(Theme.key_listSelector);
         int i2 = this.currentStyle;
         if (i2 == 0) {
-            textView.setTextColor(getThemedColor("dialogTextBlack"));
+            textView.setTextColor(getThemedColor(Theme.key_dialogTextBlack));
         } else if (i2 == 2) {
             textView.setTextColor(-328966);
             color = 1090519039;
         } else if (i2 == 1) {
-            textView.setTextColor(getThemedColor("windowBackgroundWhiteBlackText"));
+            textView.setTextColor(getThemedColor(Theme.key_windowBackgroundWhiteBlackText));
         }
         if (z || z2) {
             linearLayout.setBackgroundDrawable(Theme.createRadSelectorDrawable(color, z ? 6 : 0, z2 ? 6 : 0, z2 ? 6 : 0, z ? 6 : 0));
         } else {
             linearLayout.setBackgroundDrawable(Theme.getSelectorDrawable(color, false));
         }
-        textView.setPaddingRelative(AndroidUtilities.m50dp(11), 0, 0, 0);
-        linearLayout.addView(textView, new LinearLayout.LayoutParams(-2, AndroidUtilities.m50dp(48)));
+        textView.setPaddingRelative(AndroidUtilities.m54dp(11), 0, 0, 0);
+        linearLayout.addView(textView, new LinearLayout.LayoutParams(-2, AndroidUtilities.m54dp(48)));
         if (menuItem != null) {
             updateMenuItemButton(linearLayout, menuItem, i);
         }
@@ -1223,26 +1223,26 @@ public final class FloatingToolbar {
     public ViewGroup createContentContainer(Context context) {
         RelativeLayout relativeLayout = new RelativeLayout(context);
         ViewGroup.MarginLayoutParams marginLayoutParams = new ViewGroup.MarginLayoutParams(-2, -2);
-        int m50dp = AndroidUtilities.m50dp(20);
-        marginLayoutParams.rightMargin = m50dp;
-        marginLayoutParams.topMargin = m50dp;
-        marginLayoutParams.leftMargin = m50dp;
-        marginLayoutParams.bottomMargin = m50dp;
+        int m54dp = AndroidUtilities.m54dp(20);
+        marginLayoutParams.rightMargin = m54dp;
+        marginLayoutParams.topMargin = m54dp;
+        marginLayoutParams.leftMargin = m54dp;
+        marginLayoutParams.bottomMargin = m54dp;
         relativeLayout.setLayoutParams(marginLayoutParams);
-        relativeLayout.setElevation(AndroidUtilities.m50dp(2));
+        relativeLayout.setElevation(AndroidUtilities.m54dp(2));
         relativeLayout.setFocusable(true);
         relativeLayout.setFocusableInTouchMode(true);
         GradientDrawable gradientDrawable = new GradientDrawable();
         gradientDrawable.setShape(0);
-        float m50dp2 = AndroidUtilities.m50dp(6);
-        gradientDrawable.setCornerRadii(new float[]{m50dp2, m50dp2, m50dp2, m50dp2, m50dp2, m50dp2, m50dp2, m50dp2});
+        float m54dp2 = AndroidUtilities.m54dp(6);
+        gradientDrawable.setCornerRadii(new float[]{m54dp2, m54dp2, m54dp2, m54dp2, m54dp2, m54dp2, m54dp2, m54dp2});
         int i = this.currentStyle;
         if (i == 0) {
-            gradientDrawable.setColor(getThemedColor("dialogBackground"));
+            gradientDrawable.setColor(getThemedColor(Theme.key_dialogBackground));
         } else if (i == 2) {
             gradientDrawable.setColor(-115203550);
         } else if (i == 1) {
-            gradientDrawable.setColor(getThemedColor("windowBackgroundWhite"));
+            gradientDrawable.setColor(getThemedColor(Theme.key_windowBackgroundWhite));
         }
         relativeLayout.setBackgroundDrawable(gradientDrawable);
         relativeLayout.setLayoutParams(new ViewGroup.LayoutParams(-2, -2));
@@ -1251,10 +1251,8 @@ public final class FloatingToolbar {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public int getThemedColor(String str) {
-        Theme.ResourcesProvider resourcesProvider = this.resourcesProvider;
-        Integer color = resourcesProvider != null ? resourcesProvider.getColor(str) : null;
-        return color != null ? color.intValue() : Theme.getColor(str);
+    public int getThemedColor(int i) {
+        return Theme.getColor(i, this.resourcesProvider);
     }
 
     /* JADX INFO: Access modifiers changed from: private */

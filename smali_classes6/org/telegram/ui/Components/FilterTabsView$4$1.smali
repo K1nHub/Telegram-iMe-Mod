@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/FilterTabsView$4;Lorg/telegram/ui/Components/FilterTabsView$TabView;)V
     .locals 0
 
-    .line 1305
+    .line 1243
     iput-object p2, p0, Lorg/telegram/ui/Components/FilterTabsView$4$1;->val$tabView:Lorg/telegram/ui/Components/FilterTabsView$TabView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,7 +35,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 0
 
-    .line 1308
+    .line 1246
     iget-object p1, p0, Lorg/telegram/ui/Components/FilterTabsView$4$1;->val$tabView:Lorg/telegram/ui/Components/FilterTabsView$TabView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/FilterTabsView$TabView;->clearTransitionParams()V

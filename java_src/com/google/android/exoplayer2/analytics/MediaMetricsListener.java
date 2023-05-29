@@ -18,7 +18,7 @@ import android.os.SystemClock;
 import android.system.ErrnoException;
 import android.system.OsConstants;
 import android.util.Pair;
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.exoplayer2.DeviceInfo;
 import com.google.android.exoplayer2.ExoPlaybackException;
 import com.google.android.exoplayer2.ExoPlayerLibraryInfo;
@@ -840,7 +840,7 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
         timeline.getWindow(this.period.windowIndex, this.window);
         builder.setStreamType(getStreamType(this.window.mediaItem));
         Timeline.Window window = this.window;
-        if (window.durationUs != C0470C.TIME_UNSET && !window.isPlaceholder && !window.isDynamic && !window.isLive()) {
+        if (window.durationUs != C0475C.TIME_UNSET && !window.isPlaceholder && !window.isDynamic && !window.isLive()) {
             builder.setMediaDurationMillis(this.window.getDurationMs());
         }
         builder.setPlaybackType(this.window.isLive() ? 2 : 1);
@@ -1039,13 +1039,13 @@ public final class MediaMetricsListener implements AnalyticsListener, PlaybackSe
     private static int getDrmType(DrmInitData drmInitData) {
         for (int i = 0; i < drmInitData.schemeDataCount; i++) {
             UUID uuid = drmInitData.get(i).uuid;
-            if (uuid.equals(C0470C.WIDEVINE_UUID)) {
+            if (uuid.equals(C0475C.WIDEVINE_UUID)) {
                 return 3;
             }
-            if (uuid.equals(C0470C.PLAYREADY_UUID)) {
+            if (uuid.equals(C0475C.PLAYREADY_UUID)) {
                 return 2;
             }
-            if (uuid.equals(C0470C.CLEARKEY_UUID)) {
+            if (uuid.equals(C0475C.CLEARKEY_UUID)) {
                 return 6;
             }
         }

@@ -1,14 +1,11 @@
 .class Lorg/telegram/ui/LaunchActivity$18;
-.super Ljava/lang/Object;
+.super Lorg/telegram/ui/DialogsActivity;
 .source "LaunchActivity.java"
-
-# interfaces
-.implements Lorg/telegram/ui/Components/TermsOfServiceView$TermsOfServiceViewDelegate;
 
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/LaunchActivity;->showTosActivity(ILorg/telegram/tgnet/TLRPC$TL_help_termsOfService;)V
+    value = Lorg/telegram/ui/LaunchActivity;->openDialogsToSend(ZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -22,76 +19,61 @@
 
 
 # direct methods
-.method public static synthetic $r8$lambda$5oodfKt7S8DgQTdFjvfh8hPq5vk(Lorg/telegram/ui/LaunchActivity$18;)V
+.method constructor <init>(Lorg/telegram/ui/LaunchActivity;Landroid/os/Bundle;)V
     .locals 0
 
-    invoke-direct {p0}, Lorg/telegram/ui/LaunchActivity$18;->lambda$onAcceptTerms$0()V
-
-    return-void
-.end method
-
-.method constructor <init>(Lorg/telegram/ui/LaunchActivity;)V
-    .locals 0
-
-    .line 2065
+    .line 3670
     iput-object p1, p0, Lorg/telegram/ui/LaunchActivity$18;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    return-void
-.end method
-
-.method private synthetic lambda$onAcceptTerms$0()V
-    .locals 2
-
-    .line 2078
-    iget-object v0, p0, Lorg/telegram/ui/LaunchActivity$18;->this$0:Lorg/telegram/ui/LaunchActivity;
-
-    invoke-static {v0}, Lorg/telegram/ui/LaunchActivity;->access$1900(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/Components/TermsOfServiceView;
-
-    move-result-object v0
-
-    const/16 v1, 0x8
-
-    invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->setVisibility(I)V
+    invoke-direct {p0, p2}, Lorg/telegram/ui/DialogsActivity;-><init>(Landroid/os/Bundle;)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAcceptTerms(I)V
-    .locals 2
+.method public shouldShowNextButton(Lorg/telegram/ui/DialogsActivity;Ljava/util/ArrayList;Ljava/lang/CharSequence;Z)Z
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(",
+            "Lorg/telegram/ui/DialogsActivity;",
+            "Ljava/util/ArrayList<",
+            "Ljava/lang/Long;",
+            ">;",
+            "Ljava/lang/CharSequence;",
+            "Z)Z"
+        }
+    .end annotation
 
-    .line 2068
-    invoke-static {p1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
+    .line 3673
+    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$18;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    move-result-object v0
-
-    const/4 v1, 0x0
-
-    iput-object v1, v0, Lorg/telegram/messenger/UserConfig;->unacceptedTermsOfService:Lorg/telegram/tgnet/TLRPC$TL_help_termsOfService;
-
-    .line 2069
-    invoke-static {p1}, Lorg/telegram/messenger/UserConfig;->getInstance(I)Lorg/telegram/messenger/UserConfig;
+    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2000(Lorg/telegram/ui/LaunchActivity;)Landroid/net/Uri;
 
     move-result-object p1
 
-    const/4 v0, 0x0
+    const/4 p3, 0x0
 
-    invoke-virtual {p1, v0}, Lorg/telegram/messenger/UserConfig;->saveConfig(Z)V
+    if-eqz p1, :cond_0
 
-    .line 2070
+    return p3
+
+    .line 3676
+    :cond_0
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$18;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    iget-object p1, p1, Lorg/telegram/ui/LaunchActivity;->drawerLayoutContainer:Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;
+    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2100(Lorg/telegram/ui/LaunchActivity;)Ljava/util/ArrayList;
 
-    const/4 v1, 0x1
+    move-result-object p1
 
-    invoke-virtual {p1, v1, v0}, Lorg/telegram/ui/ActionBar/DrawerLayoutContainer;->setAllowOpenDrawer(ZZ)V
+    const/4 p4, 0x1
 
-    .line 2071
-    invoke-static {}, Lorg/telegram/ui/LaunchActivity;->access$1800()Ljava/util/ArrayList;
+    if-eqz p1, :cond_1
+
+    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$18;->this$0:Lorg/telegram/ui/LaunchActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2100(Lorg/telegram/ui/LaunchActivity;)Ljava/util/ArrayList;
 
     move-result-object p1
 
@@ -99,75 +81,60 @@
 
     move-result p1
 
-    if-lez p1, :cond_0
+    if-ne p1, p4, :cond_1
 
-    .line 2072
     invoke-static {}, Lorg/telegram/ui/LaunchActivity;->access$1800()Ljava/util/ArrayList;
 
     move-result-object p1
 
-    invoke-static {}, Lorg/telegram/ui/LaunchActivity;->access$1800()Ljava/util/ArrayList;
+    invoke-virtual {p1}, Ljava/util/ArrayList;->isEmpty()Z
 
-    move-result-object v0
+    move-result p1
 
-    invoke-virtual {v0}, Ljava/util/ArrayList;->size()I
+    if-nez p1, :cond_1
 
-    move-result v0
+    return p4
 
-    sub-int/2addr v0, v1
+    .line 3679
+    :cond_1
+    invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
-    invoke-virtual {p1, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
+    move-result p1
 
-    move-result-object p1
+    if-gt p1, p4, :cond_3
 
-    check-cast p1, Lorg/telegram/ui/ActionBar/BaseFragment;
-
-    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->onResume()V
-
-    .line 2074
-    :cond_0
+    .line 3680
     iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$18;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$1900(Lorg/telegram/ui/LaunchActivity;)Lorg/telegram/ui/Components/TermsOfServiceView;
+    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2200(Lorg/telegram/ui/LaunchActivity;)Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Landroid/widget/FrameLayout;->animate()Landroid/view/ViewPropertyAnimator;
+    if-nez p1, :cond_2
+
+    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$18;->this$0:Lorg/telegram/ui/LaunchActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2300(Lorg/telegram/ui/LaunchActivity;)Ljava/util/ArrayList;
 
     move-result-object p1
 
-    const/4 v0, 0x0
+    if-eqz p1, :cond_3
 
-    .line 2075
-    invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->alpha(F)Landroid/view/ViewPropertyAnimator;
+    iget-object p1, p0, Lorg/telegram/ui/LaunchActivity$18;->this$0:Lorg/telegram/ui/LaunchActivity;
 
-    move-result-object p1
-
-    const-wide/16 v0, 0x96
-
-    .line 2076
-    invoke-virtual {p1, v0, v1}, Landroid/view/ViewPropertyAnimator;->setDuration(J)Landroid/view/ViewPropertyAnimator;
+    invoke-static {p1}, Lorg/telegram/ui/LaunchActivity;->access$2300(Lorg/telegram/ui/LaunchActivity;)Ljava/util/ArrayList;
 
     move-result-object p1
 
-    sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->accelerateInterpolator:Landroid/view/animation/AccelerateInterpolator;
+    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
 
-    .line 2077
-    invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)Landroid/view/ViewPropertyAnimator;
+    move-result p1
 
-    move-result-object p1
+    if-lez p1, :cond_3
 
-    new-instance v0, Lorg/telegram/ui/LaunchActivity$18$$ExternalSyntheticLambda0;
+    :cond_2
+    move p3, p4
 
-    invoke-direct {v0, p0}, Lorg/telegram/ui/LaunchActivity$18$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/LaunchActivity$18;)V
-
-    .line 2078
-    invoke-virtual {p1, v0}, Landroid/view/ViewPropertyAnimator;->withEndAction(Ljava/lang/Runnable;)Landroid/view/ViewPropertyAnimator;
-
-    move-result-object p1
-
-    .line 2079
-    invoke-virtual {p1}, Landroid/view/ViewPropertyAnimator;->start()V
-
-    return-void
+    :cond_3
+    return p3
 .end method

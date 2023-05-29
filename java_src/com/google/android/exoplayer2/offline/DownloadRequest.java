@@ -31,7 +31,7 @@ public final class DownloadRequest implements Parcelable {
     public final byte[] data;
 
     /* renamed from: id */
-    public final String f118id;
+    public final String f121id;
     public final byte[] keySetId;
     public final String mimeType;
     public final List<StreamKey> streamKeys;
@@ -52,14 +52,14 @@ public final class DownloadRequest implements Parcelable {
         private byte[] data;
 
         /* renamed from: id */
-        private final String f119id;
+        private final String f122id;
         private byte[] keySetId;
         private String mimeType;
         private List<StreamKey> streamKeys;
         private final Uri uri;
 
         public Builder(String str, Uri uri) {
-            this.f119id = str;
+            this.f122id = str;
             this.uri = uri;
         }
 
@@ -89,12 +89,12 @@ public final class DownloadRequest implements Parcelable {
         }
 
         public DownloadRequest build() {
-            String str = this.f119id;
+            String str = this.f122id;
             Uri uri = this.uri;
             String str2 = this.mimeType;
             List list = this.streamKeys;
             if (list == null) {
-                list = ImmutableList.m740of();
+                list = ImmutableList.m744of();
             }
             return new DownloadRequest(str, uri, str2, list, this.keySetId, this.customCacheKey, this.data);
         }
@@ -106,7 +106,7 @@ public final class DownloadRequest implements Parcelable {
             boolean z = str3 == null;
             Assertions.checkArgument(z, "customCacheKey must be null for type: " + inferContentTypeForUriAndMimeType);
         }
-        this.f118id = str;
+        this.f121id = str;
         this.uri = uri;
         this.mimeType = str2;
         ArrayList arrayList = new ArrayList(list);
@@ -118,7 +118,7 @@ public final class DownloadRequest implements Parcelable {
     }
 
     DownloadRequest(Parcel parcel) {
-        this.f118id = (String) Util.castNonNull(parcel.readString());
+        this.f121id = (String) Util.castNonNull(parcel.readString());
         this.uri = Uri.parse((String) Util.castNonNull(parcel.readString()));
         this.mimeType = parcel.readString();
         int readInt = parcel.readInt();
@@ -137,12 +137,12 @@ public final class DownloadRequest implements Parcelable {
     }
 
     public DownloadRequest copyWithKeySetId(byte[] bArr) {
-        return new DownloadRequest(this.f118id, this.uri, this.mimeType, this.streamKeys, bArr, this.customCacheKey, this.data);
+        return new DownloadRequest(this.f121id, this.uri, this.mimeType, this.streamKeys, bArr, this.customCacheKey, this.data);
     }
 
     public DownloadRequest copyWithMergedRequest(DownloadRequest downloadRequest) {
         List emptyList;
-        Assertions.checkArgument(this.f118id.equals(downloadRequest.f118id));
+        Assertions.checkArgument(this.f121id.equals(downloadRequest.f121id));
         if (this.streamKeys.isEmpty() || downloadRequest.streamKeys.isEmpty()) {
             emptyList = Collections.emptyList();
         } else {
@@ -154,27 +154,27 @@ public final class DownloadRequest implements Parcelable {
                 }
             }
         }
-        return new DownloadRequest(this.f118id, downloadRequest.uri, downloadRequest.mimeType, emptyList, downloadRequest.keySetId, downloadRequest.customCacheKey, downloadRequest.data);
+        return new DownloadRequest(this.f121id, downloadRequest.uri, downloadRequest.mimeType, emptyList, downloadRequest.keySetId, downloadRequest.customCacheKey, downloadRequest.data);
     }
 
     public MediaItem toMediaItem() {
-        return new MediaItem.Builder().setMediaId(this.f118id).setUri(this.uri).setCustomCacheKey(this.customCacheKey).setMimeType(this.mimeType).setStreamKeys(this.streamKeys).build();
+        return new MediaItem.Builder().setMediaId(this.f121id).setUri(this.uri).setCustomCacheKey(this.customCacheKey).setMimeType(this.mimeType).setStreamKeys(this.streamKeys).build();
     }
 
     public String toString() {
-        return this.mimeType + ":" + this.f118id;
+        return this.mimeType + ":" + this.f121id;
     }
 
     public boolean equals(Object obj) {
         if (obj instanceof DownloadRequest) {
             DownloadRequest downloadRequest = (DownloadRequest) obj;
-            return this.f118id.equals(downloadRequest.f118id) && this.uri.equals(downloadRequest.uri) && Util.areEqual(this.mimeType, downloadRequest.mimeType) && this.streamKeys.equals(downloadRequest.streamKeys) && Arrays.equals(this.keySetId, downloadRequest.keySetId) && Util.areEqual(this.customCacheKey, downloadRequest.customCacheKey) && Arrays.equals(this.data, downloadRequest.data);
+            return this.f121id.equals(downloadRequest.f121id) && this.uri.equals(downloadRequest.uri) && Util.areEqual(this.mimeType, downloadRequest.mimeType) && this.streamKeys.equals(downloadRequest.streamKeys) && Arrays.equals(this.keySetId, downloadRequest.keySetId) && Util.areEqual(this.customCacheKey, downloadRequest.customCacheKey) && Arrays.equals(this.data, downloadRequest.data);
         }
         return false;
     }
 
     public final int hashCode() {
-        int hashCode = ((this.f118id.hashCode() * 31 * 31) + this.uri.hashCode()) * 31;
+        int hashCode = ((this.f121id.hashCode() * 31 * 31) + this.uri.hashCode()) * 31;
         String str = this.mimeType;
         int hashCode2 = (((((hashCode + (str != null ? str.hashCode() : 0)) * 31) + this.streamKeys.hashCode()) * 31) + Arrays.hashCode(this.keySetId)) * 31;
         String str2 = this.customCacheKey;
@@ -183,7 +183,7 @@ public final class DownloadRequest implements Parcelable {
 
     @Override // android.os.Parcelable
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.f118id);
+        parcel.writeString(this.f121id);
         parcel.writeString(this.uri.toString());
         parcel.writeString(this.mimeType);
         parcel.writeInt(this.streamKeys.size());

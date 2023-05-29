@@ -5,7 +5,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: CategoryWithCampaignsProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.CategoryWithCampaignsProvider$onLoadMoreChannels$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 final class CategoryWithCampaignsProvider$onLoadMoreChannels$1 extends Lambda implements Function1<Long, Unit> {
     public static final CategoryWithCampaignsProvider$onLoadMoreChannels$1 INSTANCE = new CategoryWithCampaignsProvider$onLoadMoreChannels$1();
 

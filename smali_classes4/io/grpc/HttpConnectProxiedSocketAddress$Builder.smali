@@ -97,7 +97,7 @@
 .method public setTargetAddress(Ljava/net/InetSocketAddress;)Lio/grpc/HttpConnectProxiedSocketAddress$Builder;
     .locals 1
 
-    const-string v0, "targetAddress"
+    const-string/jumbo v0, "targetAddress"
 
     .line 153
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

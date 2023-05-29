@@ -76,13 +76,13 @@ public final class WalletAirdropDialogPresenter extends BasePresenter<WalletAird
     public final void getTokensByAirdrop(String requestId) {
         Intrinsics.checkNotNullParameter(requestId, "requestId");
         Observable checkAirdropStart$default = AirdropInteractor.checkAirdropStart$default(this.airdropInteractor, requestId, null, 2, null);
-        final C2067x61f5919c c2067x61f5919c = new C2067x61f5919c(this);
-        Observable flatMap = checkAirdropStart$default.flatMap(new Function(c2067x61f5919c) { // from class: com.iMe.ui.wallet.airdrop.dialog.WalletAirdropDialogPresenter$inlined$sam$i$io_reactivex_functions_Function$0
+        final C2106x61f5919c c2106x61f5919c = new C2106x61f5919c(this);
+        Observable flatMap = checkAirdropStart$default.flatMap(new Function(c2106x61f5919c) { // from class: com.iMe.ui.wallet.airdrop.dialog.WalletAirdropDialogPresenter$inlined$sam$i$io_reactivex_functions_Function$0
             private final /* synthetic */ Function1 function;
 
             {
-                Intrinsics.checkNotNullParameter(c2067x61f5919c, "function");
-                this.function = c2067x61f5919c;
+                Intrinsics.checkNotNullParameter(c2106x61f5919c, "function");
+                this.function = c2106x61f5919c;
             }
 
             @Override // io.reactivex.functions.Function
@@ -91,11 +91,11 @@ public final class WalletAirdropDialogPresenter extends BasePresenter<WalletAird
             }
         });
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-        Observable observeOn = flatMap.observeOn(this.schedulersProvider.mo693ui());
+        Observable observeOn = flatMap.observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "airdropInteractor\n      …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2068x9d8065d9(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2069x9d8065da((BaseView) getViewState())));
+        Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2107x9d8065d9(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2108x9d8065da((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

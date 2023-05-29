@@ -63,15 +63,15 @@
     .line 381
     iget-object v0, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$6;->paint:Landroid/graphics/Paint;
 
-    iget-object v1, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$6;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuBackground:I
 
-    invoke-virtual {v1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    iget-object v2, p0, Lorg/telegram/ui/Components/AvatarConstructorFragment$6;->this$0:Lorg/telegram/ui/Components/AvatarConstructorFragment;
 
-    move-result-object v1
+    invoke-virtual {v2}, Lorg/telegram/ui/ActionBar/BaseFragment;->getResourceProvider()Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    const-string v2, "actionBarDefaultSubmenuBackground"
+    move-result-object v2
 
-    invoke-static {v2, v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v1, v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v1
 

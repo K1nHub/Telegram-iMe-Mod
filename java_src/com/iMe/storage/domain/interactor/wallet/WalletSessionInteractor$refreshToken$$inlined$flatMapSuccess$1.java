@@ -5,9 +5,9 @@ import com.iMe.storage.domain.model.wallet.SessionTokens;
 import com.iMe.storage.domain.repository.notification.PushNotificationRepository;
 import com.iMe.storage.domain.storage.PreferenceHelper;
 import com.iMe.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
-import com.iMe.storage.domain.utils.p030rx.SchedulersProvider;
 import io.reactivex.Observable;
 import io.reactivex.ObservableSource;
+import io.reactivex.schedulers.Schedulers;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
@@ -26,17 +26,14 @@ public final class WalletSessionInteractor$refreshToken$$inlined$flatMapSuccess$
     public final ObservableSource<? extends Result<? extends SessionTokens>> invoke(Result<? extends SessionTokens> result) {
         PreferenceHelper preferenceHelper;
         PushNotificationRepository pushNotificationRepository;
-        SchedulersProvider schedulersProvider;
         Intrinsics.checkNotNullParameter(result, "result");
         if (result instanceof Result.Success) {
             preferenceHelper = this.this$0.preferenceHelper;
             if (preferenceHelper.getPushAllowanceToken().length() == 0) {
                 pushNotificationRepository = this.this$0.notificationRepository;
-                Observable<R> flatMap = pushNotificationRepository.issuePushAllowanceToken().flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1902x36b1d932(this.this$0)));
+                Observable<R> flatMap = pushNotificationRepository.issuePushAllowanceToken().flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1973x36b1d932(this.this$0)));
                 Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
-                Observable map = flatMap.map(new WalletSessionInteractor$sam$io_reactivex_functions_Function$0(new WalletSessionInteractor$refreshToken$1$2(result)));
-                schedulersProvider = this.this$0.schedulersProvider;
-                Observable subscribeOn = map.subscribeOn(schedulersProvider.mo694io());
+                Observable subscribeOn = flatMap.map(new WalletSessionInteractor$sam$io_reactivex_functions_Function$0(new WalletSessionInteractor$refreshToken$1$2(result))).subscribeOn(Schedulers.m679io());
                 Intrinsics.checkNotNullExpressionValue(subscribeOn, "result ->\n              …                        }");
                 return subscribeOn;
             }

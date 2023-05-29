@@ -32,13 +32,13 @@ public class ScrollableHorizontalScrollView extends HorizontalScrollView {
         if (getChildCount() <= 0) {
             return false;
         }
-        int m50dp = AndroidUtilities.m50dp(50);
-        if (i < getScrollX() + m50dp) {
-            measuredWidth = i - m50dp;
-        } else if (i2 <= getScrollX() + (getMeasuredWidth() - m50dp)) {
+        int m54dp = AndroidUtilities.m54dp(50);
+        if (i < getScrollX() + m54dp) {
+            measuredWidth = i - m54dp;
+        } else if (i2 <= getScrollX() + (getMeasuredWidth() - m54dp)) {
             return false;
         } else {
-            measuredWidth = (i2 - getMeasuredWidth()) + m50dp;
+            measuredWidth = (i2 - getMeasuredWidth()) + m54dp;
         }
         scrollTo(MathUtils.clamp(measuredWidth, 0, getChildAt(0).getMeasuredWidth() - getMeasuredWidth()));
         return true;

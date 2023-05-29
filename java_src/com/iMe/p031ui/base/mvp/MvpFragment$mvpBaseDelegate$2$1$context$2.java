@@ -6,7 +6,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: MvpFragment.kt */
 /* renamed from: com.iMe.ui.base.mvp.MvpFragment$mvpBaseDelegate$2$1$context$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class MvpFragment$mvpBaseDelegate$2$1$context$2 extends Lambda implements Function0<Activity> {
     final /* synthetic */ MvpFragment this$0;
 

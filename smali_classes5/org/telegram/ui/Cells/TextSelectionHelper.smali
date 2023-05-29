@@ -1270,7 +1270,7 @@
 .end method
 
 .method private showActions()V
-    .locals 23
+    .locals 22
 
     move-object/from16 v0, p0
 
@@ -1444,17 +1444,11 @@
     .line 527
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    const-string v2, "actionBarDefaultSubmenuBackground"
+    const/16 v2, 0x30
 
-    const-string v4, "listSelectorSDK21"
+    const/4 v4, 0x2
 
-    const/16 v5, 0x30
-
-    const/4 v6, 0x2
-
-    const-string v7, "actionBarDefaultSubmenuItem"
-
-    const/4 v8, 0x0
+    const/4 v5, 0x0
 
     if-nez v1, :cond_5
 
@@ -1468,333 +1462,337 @@
     .line 529
     new-instance v1, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    iget-object v9, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->textSelectionOverlay:Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;
+    iget-object v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->textSelectionOverlay:Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;
 
-    invoke-virtual {v9}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v6}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object v9
+    move-result-object v6
 
-    invoke-direct {v1, v9}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, v6}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;-><init>(Landroid/content/Context;)V
 
     iput-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     .line 530
     invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
+    move-result v6
+
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v7
+
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result v8
+
+    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
     move-result v9
 
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v10
-
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v11
-
-    invoke-static {v3}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v12
-
-    invoke-virtual {v1, v9, v10, v11, v12}, Landroid/widget/FrameLayout;->setPadding(IIII)V
+    invoke-virtual {v1, v6, v7, v8, v9}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
     .line 531
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    iget-object v9, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->textSelectionOverlay:Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;
+    iget-object v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->textSelectionOverlay:Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;
 
-    invoke-virtual {v9}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v6}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object v9
+    move-result-object v6
 
-    invoke-virtual {v9}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+    invoke-virtual {v6}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
 
-    move-result-object v9
+    move-result-object v6
 
-    sget v10, Lorg/telegram/messenger/R$drawable;->menu_copy:I
+    sget v7, Lorg/telegram/messenger/R$drawable;->menu_copy:I
 
-    invoke-virtual {v9, v10}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-virtual {v6, v7}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v9
+    move-result-object v6
 
-    invoke-virtual {v1, v9}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v1, v6}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 532
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    invoke-virtual {v1, v8}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setAnimationEnabled(Z)V
+    invoke-virtual {v1, v5}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setAnimationEnabled(Z)V
 
     .line 533
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    new-instance v9, Lorg/telegram/ui/Cells/TextSelectionHelper$$ExternalSyntheticLambda3;
+    new-instance v6, Lorg/telegram/ui/Cells/TextSelectionHelper$$ExternalSyntheticLambda3;
 
-    invoke-direct {v9, v0}, Lorg/telegram/ui/Cells/TextSelectionHelper$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
+    invoke-direct {v6, v0}, Lorg/telegram/ui/Cells/TextSelectionHelper$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
 
-    invoke-virtual {v1, v9}, Landroid/widget/FrameLayout;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
+    invoke-virtual {v1, v6}, Landroid/widget/FrameLayout;->setOnTouchListener(Landroid/view/View$OnTouchListener;)V
 
     .line 541
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    invoke-virtual {v1, v8}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setShownFromBottom(Z)V
+    invoke-virtual {v1, v5}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setShownFromBottom(Z)V
 
     .line 543
     new-instance v1, Landroid/widget/TextView;
 
-    iget-object v9, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->textSelectionOverlay:Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;
+    iget-object v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->textSelectionOverlay:Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;
 
-    invoke-virtual {v9}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v6}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object v9
+    move-result-object v6
 
-    invoke-direct {v1, v9}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, v6}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->deleteView:Landroid/widget/TextView;
 
     .line 544
-    invoke-virtual {v0, v4}, Lorg/telegram/ui/Cells/TextSelectionHelper;->getThemedColor(Ljava/lang/String;)I
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
 
-    move-result v9
+    invoke-virtual {v0, v6}, Lorg/telegram/ui/Cells/TextSelectionHelper;->getThemedColor(I)I
 
-    invoke-static {v9, v6}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(II)Landroid/graphics/drawable/Drawable;
+    move-result v6
 
-    move-result-object v9
+    invoke-static {v6, v4}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(II)Landroid/graphics/drawable/Drawable;
 
-    invoke-virtual {v1, v9}, Landroid/widget/TextView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+    move-result-object v6
+
+    invoke-virtual {v1, v6}, Landroid/widget/TextView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
 
     .line 545
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->deleteView:Landroid/widget/TextView;
 
-    const/16 v9, 0x10
+    const/16 v6, 0x10
 
-    invoke-virtual {v1, v9}, Landroid/widget/TextView;->setGravity(I)V
+    invoke-virtual {v1, v6}, Landroid/widget/TextView;->setGravity(I)V
 
     .line 546
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->deleteView:Landroid/widget/TextView;
 
-    const/16 v10, 0x14
+    const/16 v7, 0x14
 
-    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v11
+    move-result v8
 
-    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v12
+    move-result v9
 
-    invoke-virtual {v1, v11, v8, v12, v8}, Landroid/widget/TextView;->setPadding(IIII)V
+    invoke-virtual {v1, v8, v5, v9, v5}, Landroid/widget/TextView;->setPadding(IIII)V
 
     .line 547
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->deleteView:Landroid/widget/TextView;
 
-    const/high16 v11, 0x41700000    # 15.0f
+    const/high16 v8, 0x41700000    # 15.0f
 
-    invoke-virtual {v1, v3, v11}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-virtual {v1, v3, v8}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 548
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->deleteView:Landroid/widget/TextView;
 
-    const-string v12, "fonts/rmedium.ttf"
+    const-string v9, "fonts/rmedium.ttf"
 
-    invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
-    move-result-object v13
+    move-result-object v10
 
-    invoke-virtual {v1, v13}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v1, v10}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 549
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->deleteView:Landroid/widget/TextView;
 
-    iget-object v13, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->textSelectionOverlay:Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;
+    iget-object v10, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->textSelectionOverlay:Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;
 
-    invoke-virtual {v13}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v10}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object v13
+    move-result-object v10
 
-    const v14, 0x1040001
+    const v11, 0x1040001
 
-    invoke-virtual {v13, v14}, Landroid/content/Context;->getString(I)Ljava/lang/String;
+    invoke-virtual {v10, v11}, Landroid/content/Context;->getString(I)Ljava/lang/String;
 
-    move-result-object v13
+    move-result-object v10
 
-    invoke-virtual {v1, v13}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v1, v10}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 550
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->deleteView:Landroid/widget/TextView;
 
-    invoke-virtual {v0, v7}, Lorg/telegram/ui/Cells/TextSelectionHelper;->getThemedColor(Ljava/lang/String;)I
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
 
-    move-result v13
+    invoke-virtual {v0, v10}, Lorg/telegram/ui/Cells/TextSelectionHelper;->getThemedColor(I)I
 
-    invoke-virtual {v1, v13}, Landroid/widget/TextView;->setTextColor(I)V
+    move-result v11
+
+    invoke-virtual {v1, v11}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 551
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->deleteView:Landroid/widget/TextView;
 
-    new-instance v13, Lorg/telegram/ui/Cells/TextSelectionHelper$$ExternalSyntheticLambda1;
+    new-instance v11, Lorg/telegram/ui/Cells/TextSelectionHelper$$ExternalSyntheticLambda1;
 
-    invoke-direct {v13, v0}, Lorg/telegram/ui/Cells/TextSelectionHelper$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
+    invoke-direct {v11, v0}, Lorg/telegram/ui/Cells/TextSelectionHelper$$ExternalSyntheticLambda1;-><init>(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
 
-    invoke-virtual {v1, v13}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v1, v11}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 556
     new-instance v1, Landroid/widget/LinearLayout;
 
-    iget-object v13, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->textSelectionOverlay:Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;
+    iget-object v11, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->textSelectionOverlay:Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;
 
-    invoke-virtual {v13}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v11}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object v13
+    move-result-object v11
 
-    invoke-direct {v1, v13}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, v11}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     .line 557
-    iget-object v13, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->deleteView:Landroid/widget/TextView;
+    iget-object v11, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->deleteView:Landroid/widget/TextView;
 
-    const/4 v14, -0x2
+    const/4 v12, -0x2
 
-    const/4 v15, -0x1
+    const/4 v13, -0x1
 
-    invoke-static {v14, v15}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static {v12, v13}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v6
+    move-result-object v14
 
-    invoke-virtual {v1, v13, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v1, v11, v14}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 558
-    new-instance v6, Landroid/view/View;
+    new-instance v11, Landroid/view/View;
 
-    iget-object v13, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->textSelectionOverlay:Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;
+    iget-object v14, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->textSelectionOverlay:Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;
 
-    invoke-virtual {v13}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v14}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object v13
+    move-result-object v14
 
-    invoke-direct {v6, v13}, Landroid/view/View;-><init>(Landroid/content/Context;)V
+    invoke-direct {v11, v14}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    iput-object v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupDivider:Landroid/view/View;
+    iput-object v11, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupDivider:Landroid/view/View;
 
-    const/16 v16, 0x1
+    const/4 v15, 0x1
 
-    const/16 v17, -0x1
+    const/16 v16, -0x1
 
-    const/16 v18, 0x10
+    const/16 v17, 0x10
 
-    const/16 v19, 0x0
+    const/16 v18, 0x0
 
-    const/16 v20, 0x8
+    const/16 v19, 0x8
 
-    const/16 v21, 0x0
+    const/16 v20, 0x0
 
-    const/16 v22, 0x8
+    const/16 v21, 0x8
 
     .line 559
-    invoke-static/range {v16 .. v22}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static/range {v15 .. v21}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v13
+    move-result-object v14
 
-    invoke-virtual {v1, v6, v13}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v1, v11, v14}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 560
-    new-instance v6, Landroid/widget/TextView;
+    new-instance v11, Landroid/widget/TextView;
 
-    iget-object v13, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->textSelectionOverlay:Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;
+    iget-object v14, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->textSelectionOverlay:Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;
 
-    invoke-virtual {v13}, Landroid/view/View;->getContext()Landroid/content/Context;
+    invoke-virtual {v14}, Landroid/view/View;->getContext()Landroid/content/Context;
 
-    move-result-object v13
+    move-result-object v14
 
-    invoke-direct {v6, v13}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v11, v14}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    iput-object v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupTranslateButton:Landroid/widget/TextView;
+    iput-object v11, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupTranslateButton:Landroid/widget/TextView;
 
     .line 561
-    invoke-virtual {v6, v9}, Landroid/widget/TextView;->setGravity(I)V
+    invoke-virtual {v11, v6}, Landroid/widget/TextView;->setGravity(I)V
 
     .line 562
     iget-object v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupTranslateButton:Landroid/widget/TextView;
 
-    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v9
+    move-result v11
 
-    invoke-static {v10}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v10
+    move-result v7
 
-    invoke-virtual {v6, v9, v8, v10, v8}, Landroid/widget/TextView;->setPadding(IIII)V
+    invoke-virtual {v6, v11, v5, v7, v5}, Landroid/widget/TextView;->setPadding(IIII)V
 
     .line 563
     iget-object v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupTranslateButton:Landroid/widget/TextView;
 
-    invoke-virtual {v6, v3, v11}, Landroid/widget/TextView;->setTextSize(IF)V
+    invoke-virtual {v6, v3, v8}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 564
     iget-object v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupTranslateButton:Landroid/widget/TextView;
 
-    invoke-static {v12}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
+    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
-    move-result-object v9
+    move-result-object v7
 
-    invoke-virtual {v6, v9}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
+    invoke-virtual {v6, v7}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
     .line 565
     iget-object v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupTranslateButton:Landroid/widget/TextView;
 
-    sget v9, Lorg/telegram/messenger/R$string;->sending_settings_translation_enable_item_title:I
+    sget v7, Lorg/telegram/messenger/R$string;->sending_settings_translation_enable_item_title:I
 
-    invoke-static {v9}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+    invoke-static {v7}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
 
-    move-result-object v9
+    move-result-object v7
 
-    invoke-virtual {v6, v9}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+    invoke-virtual {v6, v7}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
     .line 566
     iget-object v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupTranslateButton:Landroid/widget/TextView;
 
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result v9
+    move-result v7
 
-    invoke-virtual {v6, v9}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {v6, v7}, Landroid/widget/TextView;->setTextColor(I)V
 
     .line 567
     iget-object v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupTranslateButton:Landroid/widget/TextView;
 
-    new-instance v9, Lorg/telegram/ui/Cells/TextSelectionHelper$$ExternalSyntheticLambda2;
+    new-instance v7, Lorg/telegram/ui/Cells/TextSelectionHelper$$ExternalSyntheticLambda2;
 
-    invoke-direct {v9, v0}, Lorg/telegram/ui/Cells/TextSelectionHelper$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
+    invoke-direct {v7, v0}, Lorg/telegram/ui/Cells/TextSelectionHelper$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Cells/TextSelectionHelper;)V
 
-    invoke-virtual {v6, v9}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {v6, v7}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
     .line 568
     iget-object v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupTranslateButton:Landroid/widget/TextView;
 
-    invoke-static {v14, v15}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
+    invoke-static {v12, v13}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(II)Landroid/widget/LinearLayout$LayoutParams;
 
-    move-result-object v9
+    move-result-object v7
 
-    invoke-virtual {v1, v6, v9}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v1, v6, v7}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 569
     iget-object v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    invoke-static {v14, v5}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-static {v12, v2}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(II)Landroid/widget/FrameLayout$LayoutParams;
 
-    move-result-object v9
+    move-result-object v7
 
-    invoke-virtual {v6, v1, v9}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {v6, v1, v7}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     .line 572
     new-instance v1, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     iget-object v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    invoke-direct {v1, v6, v14, v14}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;-><init>(Landroid/view/View;II)V
+    invoke-direct {v1, v6, v12, v12}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;-><init>(Landroid/view/View;II)V
 
     iput-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     .line 573
-    invoke-virtual {v1, v8}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->setAnimationEnabled(Z)V
+    invoke-virtual {v1, v5}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->setAnimationEnabled(Z)V
 
     .line 574
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -1814,7 +1812,9 @@
     if-eqz v1, :cond_5
 
     .line 578
-    invoke-virtual {v0, v2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->getThemedColor(Ljava/lang/String;)I
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuBackground:I
+
+    invoke-virtual {v0, v6}, Lorg/telegram/ui/Cells/TextSelectionHelper;->getThemedColor(I)I
 
     move-result v6
 
@@ -1824,55 +1824,59 @@
     :cond_5
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->deleteView:Landroid/widget/TextView;
 
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuItem:I
+
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v7
+
+    invoke-virtual {v1, v7}, Landroid/widget/TextView;->setTextColor(I)V
+
+    .line 583
+    iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupDivider:Landroid/view/View;
+
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
+
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v7
+
+    invoke-virtual {v1, v7}, Landroid/view/View;->setBackgroundColor(I)V
+
+    .line 584
+    iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupTranslateButton:Landroid/widget/TextView;
+
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_listSelector:I
+
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v7
+
+    invoke-static {v7, v4}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(II)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v7
+
+    invoke-virtual {v1, v7}, Landroid/widget/TextView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
+
+    .line 585
+    iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupTranslateButton:Landroid/widget/TextView;
+
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
     invoke-virtual {v1, v6}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 583
-    iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupDivider:Landroid/view/View;
-
-    const-string v6, "divider"
-
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v6
-
-    invoke-virtual {v1, v6}, Landroid/view/View;->setBackgroundColor(I)V
-
-    .line 584
-    iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupTranslateButton:Landroid/widget/TextView;
-
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v4
-
-    const/4 v6, 0x2
-
-    invoke-static {v4, v6}, Lorg/telegram/ui/ActionBar/Theme;->createSelectorDrawable(II)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v4
-
-    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setBackgroundDrawable(Landroid/graphics/drawable/Drawable;)V
-
-    .line 585
-    iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupTranslateButton:Landroid/widget/TextView;
-
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result v4
-
-    invoke-virtual {v1, v4}, Landroid/widget/TextView;->setTextColor(I)V
-
     .line 586
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupLayout:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_actionBarDefaultSubmenuBackground:I
 
-    move-result v2
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    invoke-virtual {v1, v2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setBackgroundColor(I)V
+    move-result v6
+
+    invoke-virtual {v1, v6}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->setBackgroundColor(I)V
 
     .line 590
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectedView:Lorg/telegram/ui/Cells/TextSelectionHelper$SelectableView;
@@ -1887,36 +1891,34 @@
     neg-int v1, v1
 
     .line 592
-    iget v2, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
+    iget v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectionStart:I
 
-    invoke-virtual {v0, v2}, Lorg/telegram/ui/Cells/TextSelectionHelper;->offsetToCord(I)[I
+    invoke-virtual {v0, v6}, Lorg/telegram/ui/Cells/TextSelectionHelper;->offsetToCord(I)[I
 
-    move-result-object v2
+    move-result-object v6
 
     .line 593
-    aget v2, v2, v3
+    aget v3, v6, v3
 
-    iget v3, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->textY:I
+    iget v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->textY:I
 
-    add-int/2addr v2, v3
+    add-int/2addr v3, v6
 
-    int-to-float v2, v2
+    int-to-float v3, v3
 
-    iget-object v3, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectedView:Lorg/telegram/ui/Cells/TextSelectionHelper$SelectableView;
+    iget-object v6, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->selectedView:Lorg/telegram/ui/Cells/TextSelectionHelper$SelectableView;
 
-    invoke-interface {v3}, Lorg/telegram/ui/Cells/TextSelectionHelper$SelectableView;->getY()F
+    invoke-interface {v6}, Lorg/telegram/ui/Cells/TextSelectionHelper$SelectableView;->getY()F
 
-    move-result v3
+    move-result v6
 
-    add-float/2addr v2, v3
+    add-float/2addr v3, v6
 
-    float-to-int v2, v2
+    float-to-int v3, v3
 
-    const/4 v3, 0x2
+    div-int/2addr v1, v4
 
-    div-int/2addr v1, v3
-
-    add-int/2addr v2, v1
+    add-int/2addr v3, v1
 
     const/4 v1, 0x4
 
@@ -1924,26 +1926,26 @@
 
     move-result v1
 
-    sub-int/2addr v2, v1
+    sub-int/2addr v3, v1
 
-    if-gez v2, :cond_7
+    if-gez v3, :cond_7
 
     :cond_6
-    move v2, v8
+    move v3, v5
 
     .line 597
     :cond_7
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
-    iget-object v3, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->textSelectionOverlay:Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;
+    iget-object v4, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->textSelectionOverlay:Lorg/telegram/ui/Cells/TextSelectionHelper$TextSelectionOverlay;
 
-    invoke-static {v5}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v4
+    move-result v6
 
-    sub-int/2addr v2, v4
+    sub-int/2addr v3, v6
 
-    invoke-virtual {v1, v3, v5, v8, v2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->showAtLocation(Landroid/view/View;III)V
+    invoke-virtual {v1, v4, v2, v5, v3}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->showAtLocation(Landroid/view/View;III)V
 
     .line 598
     iget-object v1, v0, Lorg/telegram/ui/Cells/TextSelectionHelper;->popupWindow:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
@@ -3319,11 +3321,11 @@
     .end annotation
 .end method
 
-.method protected getThemedColor(Ljava/lang/String;)I
+.method protected getThemedColor(I)I
     .locals 0
 
     .line 2950
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p1
 

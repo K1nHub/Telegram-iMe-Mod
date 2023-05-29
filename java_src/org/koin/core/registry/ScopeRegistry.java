@@ -16,7 +16,7 @@ import org.koin.p043mp.KoinPlatformTools;
 /* loaded from: classes4.dex */
 public final class ScopeRegistry {
     public static final Companion Companion = new Companion(null);
-    private static final StringQualifier rootScopeQualifier = QualifierKt.m56_q("_root_");
+    private static final StringQualifier rootScopeQualifier = QualifierKt.m60_q("_root_");
     private final Koin _koin;
     private final HashSet<Qualifier> _scopeDefinitions;
     private final Map<String, Scope> _scopes;

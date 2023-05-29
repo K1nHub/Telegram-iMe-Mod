@@ -1,6 +1,7 @@
 package com.iMe.utils.extentions.common;
 
 import android.content.res.ColorStateList;
+import android.content.res.Resources;
 import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.graphics.drawable.Drawable;
@@ -10,6 +11,7 @@ import android.text.TextPaint;
 import android.text.method.LinkMovementMethod;
 import android.text.style.ClickableSpan;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
@@ -39,24 +41,46 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref$BooleanRef;
 import kotlin.jvm.internal.Ref$LongRef;
-import kotlin.text.StringsKt;
+import kotlin.text.StringsKt__StringsKt;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.p044ui.ActionBar.Theme;
 import timber.log.Timber;
 /* compiled from: ViewExt.kt */
 /* loaded from: classes4.dex */
 public final class ViewExtKt {
+    public static final int getDpToPx(int i) {
+        return getDpToPx(i);
+    }
+
+    public static final int getDpToPx(float f) {
+        return (int) (f * Resources.getSystem().getDisplayMetrics().density);
+    }
+
+    public static /* synthetic */ View inflate$default(ViewGroup viewGroup, int i, boolean z, int i2, Object obj) {
+        if ((i2 & 2) != 0) {
+            z = false;
+        }
+        return inflate(viewGroup, i, z);
+    }
+
+    public static final View inflate(ViewGroup viewGroup, int i, boolean z) {
+        Intrinsics.checkNotNullParameter(viewGroup, "<this>");
+        View inflate = LayoutInflater.from(viewGroup.getContext()).inflate(i, viewGroup, z);
+        Intrinsics.checkNotNullExpressionValue(inflate, "from(context).inflate(la…tRes, this, attachToRoot)");
+        return inflate;
+    }
+
     public static final void setVerticalPadding(View view, Number verticalPadding) {
         Intrinsics.checkNotNullParameter(view, "<this>");
         Intrinsics.checkNotNullParameter(verticalPadding, "verticalPadding");
-        view.setPadding(view.getPaddingLeft(), AndroidUtilities.m51dp(verticalPadding.floatValue()), view.getPaddingRight(), AndroidUtilities.m51dp(verticalPadding.floatValue()));
+        view.setPadding(view.getPaddingLeft(), AndroidUtilities.m55dp(verticalPadding.floatValue()), view.getPaddingRight(), AndroidUtilities.m55dp(verticalPadding.floatValue()));
     }
 
     public static final void setHorizontalPadding(View view, Number horizontalPadding) {
         Intrinsics.checkNotNullParameter(view, "<this>");
         Intrinsics.checkNotNullParameter(horizontalPadding, "horizontalPadding");
-        view.setPadding(AndroidUtilities.m51dp(horizontalPadding.floatValue()), view.getPaddingTop(), AndroidUtilities.m51dp(horizontalPadding.floatValue()), view.getPaddingBottom());
+        view.setPadding(AndroidUtilities.m55dp(horizontalPadding.floatValue()), view.getPaddingTop(), AndroidUtilities.m55dp(horizontalPadding.floatValue()), view.getPaddingBottom());
     }
 
     public static final void loadImage(ImageView imageView, SelectableToken token) {
@@ -124,19 +148,35 @@ public final class ViewExtKt {
         setRightDrawableOnClickListener(textView, new ViewExtKt$setRightDrawableOnClickListener$2(action));
     }
 
-    public static final void visible(View view) {
-        Intrinsics.checkNotNullParameter(view, "<this>");
-        view.setVisibility(0);
+    public static /* synthetic */ void visible$default(View view, boolean z, int i, Object obj) {
+        if ((i & 1) != 0) {
+            z = true;
+        }
+        visible(view, z);
     }
 
-    public static final void gone(View view) {
-        Intrinsics.checkNotNullParameter(view, "<this>");
-        view.setVisibility(8);
+    public static /* synthetic */ void gone$default(View view, boolean z, int i, Object obj) {
+        if ((i & 1) != 0) {
+            z = true;
+        }
+        gone(view, z);
     }
 
-    public static final void invisible(View view) {
+    public static final void gone(View view, boolean z) {
         Intrinsics.checkNotNullParameter(view, "<this>");
-        view.setVisibility(4);
+        view.setVisibility(z ? 8 : 0);
+    }
+
+    public static /* synthetic */ void invisible$default(View view, boolean z, int i, Object obj) {
+        if ((i & 1) != 0) {
+            z = true;
+        }
+        invisible(view, z);
+    }
+
+    public static final void invisible(View view, boolean z) {
+        Intrinsics.checkNotNullParameter(view, "<this>");
+        view.setVisibility(z ? 4 : 0);
     }
 
     public static /* synthetic */ void setRippleBackground$default(View view, boolean z, int i, Object obj) {
@@ -153,17 +193,17 @@ public final class ViewExtKt {
 
     public static final void setCircleRippleBackground(View view) {
         Intrinsics.checkNotNullParameter(view, "<this>");
-        view.setBackground(Theme.createSelectorDrawable(Theme.getColor("player_actionBarSelector"), 1));
+        view.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_player_actionBarSelector), 1));
     }
 
     public static final void setBoundedCircleRippleBackground(View view) {
         Intrinsics.checkNotNullParameter(view, "<this>");
-        view.setBackground(Theme.createSelectorDrawable(Theme.getColor("player_actionBarSelector"), 3));
+        view.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_player_actionBarSelector), 3));
     }
 
     public static final void setAutoSizedCircleRippleBackground(View view) {
         Intrinsics.checkNotNullParameter(view, "<this>");
-        view.setBackground(Theme.createSelectorDrawable(Theme.getColor("player_actionBarSelector"), 5));
+        view.setBackground(Theme.createSelectorDrawable(Theme.getColor(Theme.key_player_actionBarSelector), 5));
     }
 
     public static /* synthetic */ void setRippleForeground$default(View view, boolean z, int i, Object obj) {
@@ -250,13 +290,14 @@ public final class ViewExtKt {
     }
 
     public static final void setSubstringClickListener(TextView textView, String subString, final Callbacks$Callback handler) {
+        int indexOf$default;
         Intrinsics.checkNotNullParameter(textView, "<this>");
         Intrinsics.checkNotNullParameter(subString, "subString");
         Intrinsics.checkNotNullParameter(handler, "handler");
         try {
             CharSequence text = textView.getText();
             Intrinsics.checkNotNullExpressionValue(text, "text");
-            int indexOf$default = StringsKt.indexOf$default(text, subString, 0, false, 6, (Object) null);
+            indexOf$default = StringsKt__StringsKt.indexOf$default(text, subString, 0, false, 6, (Object) null);
             if (indexOf$default != -1) {
                 SpannableString spannableString = new SpannableString(textView.getText());
                 spannableString.setSpan(new ClickableSpan() { // from class: com.iMe.utils.extentions.common.ViewExtKt$setSubstringClickListener$clickSpan$1
@@ -269,7 +310,7 @@ public final class ViewExtKt {
                     @Override // android.text.style.ClickableSpan, android.text.style.CharacterStyle
                     public void updateDrawState(TextPaint ds) {
                         Intrinsics.checkNotNullParameter(ds, "ds");
-                        ds.linkColor = Theme.getColor("chats_actionBackground");
+                        ds.linkColor = Theme.getColor(Theme.key_chats_actionBackground);
                         super.updateDrawState(ds);
                     }
                 }, indexOf$default, subString.length() + indexOf$default, 33);
@@ -325,6 +366,11 @@ public final class ViewExtKt {
         }
     }
 
+    public static final void visible(View view, boolean z) {
+        Intrinsics.checkNotNullParameter(view, "<this>");
+        view.setVisibility(z ? 0 : 8);
+    }
+
     public static final void clearText(TextView textView) {
         Intrinsics.checkNotNullParameter(textView, "<this>");
         textView.setText("");
@@ -361,8 +407,8 @@ public final class ViewExtKt {
         Intrinsics.checkNotNullParameter(viewPager, "<this>");
         viewPager.setOffscreenPageLimit(3);
         viewPager.setClipToPadding(false);
-        int m51dp = AndroidUtilities.m51dp(24.0f);
-        viewPager.setPadding(m51dp, 0, m51dp, 0);
+        int m55dp = AndroidUtilities.m55dp(24.0f);
+        viewPager.setPadding(m55dp, 0, m55dp, 0);
     }
 
     public static final void withMediumTypeface(TextView textView) {
@@ -405,7 +451,7 @@ public final class ViewExtKt {
             try {
                 viewGroup.removeViewInLayout(view);
             } catch (Exception e) {
-                Timber.m4e(e);
+                Timber.m6e(e);
             }
         }
     }
@@ -419,20 +465,13 @@ public final class ViewExtKt {
 
     public static final void setGreyShadowBackground(View view, boolean z) {
         Intrinsics.checkNotNullParameter(view, "<this>");
-        view.setBackground(Theme.getThemedDrawable(view.getContext(), z ? C3242R.C3244drawable.greydivider_bottom : C3242R.C3244drawable.greydivider_top, "windowBackgroundGrayShadow"));
+        view.setBackground(Theme.getThemedDrawable(view.getContext(), z ? C3290R.C3292drawable.greydivider_bottom : C3290R.C3292drawable.greydivider_top, Theme.key_windowBackgroundGrayShadow));
     }
 
     public static final void setScale(View view, float f) {
         Intrinsics.checkNotNullParameter(view, "<this>");
         view.setScaleX(f);
         view.setScaleY(f);
-    }
-
-    public static final ViewPropertyAnimator scale(ViewPropertyAnimator viewPropertyAnimator, float f) {
-        Intrinsics.checkNotNullParameter(viewPropertyAnimator, "<this>");
-        ViewPropertyAnimator scaleY = viewPropertyAnimator.scaleX(f).scaleY(f);
-        Intrinsics.checkNotNullExpressionValue(scaleY, "scaleX(value).scaleY(value)");
-        return scaleY;
     }
 
     public static /* synthetic */ void setMargins$default(View view, int i, int i2, int i3, int i4, int i5, Object obj) {
@@ -459,6 +498,13 @@ public final class ViewExtKt {
         setMargins(view, i, i2, i3, i4);
     }
 
+    public static final ViewPropertyAnimator scale(ViewPropertyAnimator viewPropertyAnimator, float f) {
+        Intrinsics.checkNotNullParameter(viewPropertyAnimator, "<this>");
+        ViewPropertyAnimator scaleY = viewPropertyAnimator.scaleX(f).scaleY(f);
+        Intrinsics.checkNotNullExpressionValue(scaleY, "scaleX(value).scaleY(value)");
+        return scaleY;
+    }
+
     public static final void setMargins(View view, int i, int i2, int i3, int i4) {
         Intrinsics.checkNotNullParameter(view, "<this>");
         ViewGroup.LayoutParams layoutParams = view.getLayoutParams();
@@ -468,11 +514,10 @@ public final class ViewExtKt {
         view.setLayoutParams(marginLayoutParams);
     }
 
-    public static final void setTextsColor(String key, TextView... textViews) {
-        Intrinsics.checkNotNullParameter(key, "key");
+    public static final void setTextsColor(int i, TextView... textViews) {
         Intrinsics.checkNotNullParameter(textViews, "textViews");
         for (TextView textView : textViews) {
-            textView.setTextColor(Theme.getColor(key));
+            textView.setTextColor(Theme.getColor(i));
         }
     }
 }

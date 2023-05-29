@@ -27,7 +27,7 @@ import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 import org.koin.p043mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.databinding.ForkContentStakingDashboardBinding;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.StorageDiagramView;
@@ -103,29 +103,30 @@ public class StakingDashboardView extends FrameLayout implements KoinComponent {
     public final void setupColors() {
         List<TextView> listOf;
         ForkContentStakingDashboardBinding forkContentStakingDashboardBinding = this.binding;
-        setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+        setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         AppCompatTextView setupColors$lambda$6$lambda$3 = forkContentStakingDashboardBinding.textHeader;
-        setupColors$lambda$6$lambda$3.setTextColor(Theme.getColor("windowBackgroundWhiteGrayText2"));
+        setupColors$lambda$6$lambda$3.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2));
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$6$lambda$3, "setupColors$lambda$6$lambda$3");
         ViewExtKt.withMediumTypeface(setupColors$lambda$6$lambda$3);
-        forkContentStakingDashboardBinding.cardStakingDashboard.setCardBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+        forkContentStakingDashboardBinding.cardStakingDashboard.setCardBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
         forkContentStakingDashboardBinding.viewDiagram.invalidate();
+        int i = Theme.key_windowBackgroundWhiteGrayText;
         TextView textStakedTitle = forkContentStakingDashboardBinding.textStakedTitle;
         Intrinsics.checkNotNullExpressionValue(textStakedTitle, "textStakedTitle");
         TextView textProfitTitle = forkContentStakingDashboardBinding.textProfitTitle;
         Intrinsics.checkNotNullExpressionValue(textProfitTitle, "textProfitTitle");
-        ViewExtKt.setTextsColor("windowBackgroundWhiteGrayText", textStakedTitle, textProfitTitle);
+        ViewExtKt.setTextsColor(i, textStakedTitle, textProfitTitle);
         listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new TextView[]{forkContentStakingDashboardBinding.textStakedValue, forkContentStakingDashboardBinding.textProfitValue});
         for (TextView setupColors$lambda$6$lambda$4 : listOf) {
-            setupColors$lambda$6$lambda$4.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
+            setupColors$lambda$6$lambda$4.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
             Intrinsics.checkNotNullExpressionValue(setupColors$lambda$6$lambda$4, "setupColors$lambda$6$lambda$4");
             ViewExtKt.withMediumTypeface(setupColors$lambda$6$lambda$4);
         }
-        forkContentStakingDashboardBinding.viewStakedDot.setBackground(Theme.createCircleDrawable(AndroidUtilities.m50dp(6), Theme.getColor("statisticChartLine_blue")));
-        forkContentStakingDashboardBinding.viewProfitDot.setBackground(Theme.createCircleDrawable(AndroidUtilities.m50dp(6), Theme.getColor("statisticChartLine_green")));
-        forkContentStakingDashboardBinding.divider.setBackgroundColor(Theme.getColor("divider"));
+        forkContentStakingDashboardBinding.viewStakedDot.setBackground(Theme.createCircleDrawable(AndroidUtilities.m54dp(6), Theme.getColor(Theme.key_statisticChartLine_blue)));
+        forkContentStakingDashboardBinding.viewProfitDot.setBackground(Theme.createCircleDrawable(AndroidUtilities.m54dp(6), Theme.getColor(Theme.key_statisticChartLine_green)));
+        forkContentStakingDashboardBinding.divider.setBackgroundColor(Theme.getColor(Theme.key_divider));
         HorizontalActionButtonsView horizontalActionButtonsView = forkContentStakingDashboardBinding.horizontalActionButtons;
-        horizontalActionButtonsView.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+        horizontalActionButtonsView.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
         horizontalActionButtonsView.setupColors();
     }
 
@@ -137,9 +138,9 @@ public class StakingDashboardView extends FrameLayout implements KoinComponent {
             StorageDiagramView.ClearViewData[] clearViewDataArr = new StorageDiagramView.ClearViewData[16];
             for (int i = 0; i < 16; i++) {
                 StorageDiagramView.ClearViewData clearViewData = new StorageDiagramView.ClearViewData(null);
-                clearViewData.setStrokeWidth(AndroidUtilities.m51dp(1.5f));
+                clearViewData.setStrokeWidth(AndroidUtilities.m55dp(1.5f));
                 clearViewData.setSize(1L);
-                clearViewData.color = "dialogIcon";
+                clearViewData.colorKey = Theme.key_dialogIcon;
                 Unit unit = Unit.INSTANCE;
                 clearViewDataArr[i] = clearViewData;
             }
@@ -149,16 +150,16 @@ public class StakingDashboardView extends FrameLayout implements KoinComponent {
             ArrayList arrayList = new ArrayList();
             if (f2 > BitmapDescriptorFactory.HUE_RED) {
                 StorageDiagramView.ClearViewData clearViewData2 = new StorageDiagramView.ClearViewData(null);
-                clearViewData2.setStrokeWidth(AndroidUtilities.m50dp(3));
+                clearViewData2.setStrokeWidth(AndroidUtilities.m54dp(3));
                 clearViewData2.setSizeAsDouble(Double.valueOf(f2));
-                clearViewData2.color = "statisticChartLine_green";
+                clearViewData2.colorKey = Theme.key_statisticChartLine_green;
                 arrayList.add(clearViewData2);
             }
             if (f > BitmapDescriptorFactory.HUE_RED) {
                 StorageDiagramView.ClearViewData clearViewData3 = new StorageDiagramView.ClearViewData(null);
-                clearViewData3.setStrokeWidth(AndroidUtilities.m50dp(3));
+                clearViewData3.setStrokeWidth(AndroidUtilities.m54dp(3));
                 clearViewData3.setSizeAsDouble(Double.valueOf(f));
-                clearViewData3.color = "statisticChartLine_blue";
+                clearViewData3.colorKey = Theme.key_statisticChartLine_blue;
                 arrayList.add(clearViewData3);
             }
             Unit unit2 = Unit.INSTANCE;
@@ -182,16 +183,16 @@ public class StakingDashboardView extends FrameLayout implements KoinComponent {
         ForkContentStakingDashboardBinding forkContentStakingDashboardBinding = this.binding;
         StorageDiagramView storageDiagramView = forkContentStakingDashboardBinding.viewDiagram;
         StorageDiagramView.ClearViewData clearViewData = new StorageDiagramView.ClearViewData(null);
-        clearViewData.setStrokeWidth(AndroidUtilities.m51dp(1.5f));
+        clearViewData.setStrokeWidth(AndroidUtilities.m55dp(1.5f));
         clearViewData.setSize(1L);
-        clearViewData.color = "dialogIcon";
+        clearViewData.colorKey = Theme.key_dialogIcon;
         Unit unit = Unit.INSTANCE;
         storageDiagramView.setData(null, new StorageDiagramView.ClearViewData[]{clearViewData});
         storageDiagramView.setArcDrawingRadianOffset(0);
         storageDiagramView.setCustomCenterText("_");
         TextView textView = forkContentStakingDashboardBinding.textStakedValue;
         ResourceManager resourceManager = getResourceManager();
-        int i = C3242R.string.common_progress_state_title;
+        int i = C3290R.string.common_progress_state_title;
         textView.setText(resourceManager.getString(i));
         forkContentStakingDashboardBinding.textProfitValue.setText(getResourceManager().getString(i));
     }
@@ -205,12 +206,12 @@ public class StakingDashboardView extends FrameLayout implements KoinComponent {
     private final void setupViews() {
         List<HorizontalActionButtonItem> listOf;
         ForkContentStakingDashboardBinding forkContentStakingDashboardBinding = this.binding;
-        forkContentStakingDashboardBinding.textHeader.setText(getResourceManager().getString(C3242R.string.staking_dashboard_header));
-        forkContentStakingDashboardBinding.viewDiagram.setCustomSize(AndroidUtilities.m50dp(75));
-        forkContentStakingDashboardBinding.textStakedTitle.setText(getResourceManager().getString(C3242R.string.staking_dashboard_staked_title));
-        forkContentStakingDashboardBinding.textProfitTitle.setText(getResourceManager().getString(C3242R.string.staking_dashboard_profit_title));
+        forkContentStakingDashboardBinding.textHeader.setText(getResourceManager().getString(C3290R.string.staking_dashboard_header));
+        forkContentStakingDashboardBinding.viewDiagram.setCustomSize(AndroidUtilities.m54dp(75));
+        forkContentStakingDashboardBinding.textStakedTitle.setText(getResourceManager().getString(C3290R.string.staking_dashboard_staked_title));
+        forkContentStakingDashboardBinding.textProfitTitle.setText(getResourceManager().getString(C3290R.string.staking_dashboard_profit_title));
         HorizontalActionButtonsView horizontalActionButtonsView = forkContentStakingDashboardBinding.horizontalActionButtons;
-        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new HorizontalActionButtonItem[]{new HorizontalActionButtonItem(C3242R.C3244drawable.fork_wallet_staking_dashboard_calculator, getResourceManager().getString(C3242R.string.staking_dashboard_calculator), false, new StakingDashboardView$setupViews$1$1(this), 4, null), new HorizontalActionButtonItem(C3242R.C3244drawable.fork_wallet_staking_dashboard_history, getResourceManager().getString(C3242R.string.staking_dashboard_history), false, new StakingDashboardView$setupViews$1$2(this), 4, null)});
+        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new HorizontalActionButtonItem[]{new HorizontalActionButtonItem(C3290R.C3292drawable.fork_wallet_staking_dashboard_calculator, getResourceManager().getString(C3290R.string.staking_dashboard_calculator), false, new StakingDashboardView$setupViews$1$1(this), 4, null), new HorizontalActionButtonItem(C3290R.C3292drawable.fork_wallet_staking_dashboard_history, getResourceManager().getString(C3290R.string.staking_dashboard_history), false, new StakingDashboardView$setupViews$1$2(this), 4, null)});
         horizontalActionButtonsView.initButtons(listOf);
         showLoading();
     }

@@ -32,7 +32,7 @@
 
     move-object/from16 v0, p0
 
-    .line 241
+    .line 237
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v1
@@ -43,28 +43,28 @@
 
     move-object/from16 v1, p1
 
-    .line 242
+    .line 238
     iput-object v1, v0, Lorg/telegram/messenger/FilesMigrationService$FilesMigrationBottomSheet;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
-    .line 243
+    .line 239
     invoke-virtual {v0, v2}, Landroid/app/Dialog;->setCanceledOnTouchOutside(Z)V
 
-    .line 244
+    .line 240
     invoke-virtual/range {p1 .. p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
 
     move-result-object v1
 
-    .line 245
+    .line 241
     new-instance v3, Landroid/widget/LinearLayout;
 
     invoke-direct {v3, v1}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
 
     const/4 v4, 0x1
 
-    .line 246
+    .line 242
     invoke-virtual {v3, v4}, Landroid/widget/LinearLayout;->setOrientation(I)V
 
-    .line 248
+    .line 244
     new-instance v5, Lorg/telegram/ui/Components/StickerImageView;
 
     iget v6, v0, Lorg/telegram/ui/ActionBar/BottomSheet;->currentAccount:I
@@ -73,10 +73,10 @@
 
     const/4 v6, 0x7
 
-    .line 249
+    .line 245
     invoke-virtual {v5, v6}, Lorg/telegram/ui/Components/StickerImageView;->setStickerNum(I)V
 
-    .line 250
+    .line 246
     invoke-virtual {v5}, Lorg/telegram/ui/Components/BackupImageView;->getImageReceiver()Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v6
@@ -97,27 +97,27 @@
 
     const/4 v13, 0x0
 
-    .line 251
+    .line 247
     invoke-static/range {v7 .. v13}, Lorg/telegram/ui/Components/LayoutHelper;->createLinear(IIIIIII)Landroid/widget/LinearLayout$LayoutParams;
 
     move-result-object v6
 
     invoke-virtual {v3, v5, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 253
+    .line 249
     new-instance v5, Landroid/widget/TextView;
 
     invoke-direct {v5, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     const v6, 0x800003
 
-    .line 254
+    .line 250
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setGravity(I)V
 
-    const-string v7, "dialogTextBlack"
+    .line 251
+    sget v7, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlack:I
 
-    .line 255
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 
@@ -125,19 +125,19 @@
 
     const/high16 v8, 0x41a00000    # 20.0f
 
-    .line 256
+    .line 252
     invoke-virtual {v5, v4, v8}, Landroid/widget/TextView;->setTextSize(IF)V
 
     const-string v8, "fonts/rmedium.ttf"
 
-    .line 257
+    .line 253
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v9
 
     invoke-virtual {v5, v9}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 258
+    .line 254
     sget v9, Lorg/telegram/messenger/R$string;->MigrateOldFolderTitle:I
 
     const-string v10, "MigrateOldFolderTitle"
@@ -160,34 +160,34 @@
 
     const/16 v16, 0x0
 
-    .line 259
+    .line 255
     invoke-static/range {v10 .. v16}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v9
 
     invoke-virtual {v3, v5, v9}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 261
+    .line 257
     new-instance v5, Landroid/widget/TextView;
 
     invoke-direct {v5, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    .line 262
+    .line 258
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setGravity(I)V
 
     const/high16 v6, 0x41700000    # 15.0f
 
-    .line 263
+    .line 259
     invoke-virtual {v5, v4, v6}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 264
-    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    .line 260
+    invoke-static {v7}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 265
+    .line 261
     sget v6, Lorg/telegram/messenger/R$string;->MigrateOldFolderDescription:I
 
     const-string v7, "MigrateOldFolderDescription"
@@ -216,21 +216,21 @@
 
     const/16 v15, 0x10
 
-    .line 266
+    .line 262
     invoke-static/range {v9 .. v15}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v6
 
     invoke-virtual {v3, v5, v6}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 269
+    .line 265
     new-instance v5, Landroid/widget/TextView;
 
     invoke-direct {v5, v1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     const/16 v6, 0x22
 
-    .line 270
+    .line 266
     invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v7
@@ -243,22 +243,22 @@
 
     const/16 v6, 0x11
 
-    .line 271
+    .line 267
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setGravity(I)V
 
     const/high16 v6, 0x41600000    # 14.0f
 
-    .line 272
+    .line 268
     invoke-virtual {v5, v4, v6}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 273
+    .line 269
     invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->getTypeface(Ljava/lang/String;)Landroid/graphics/Typeface;
 
     move-result-object v6
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setTypeface(Landroid/graphics/Typeface;)V
 
-    .line 274
+    .line 270
     sget v6, Lorg/telegram/messenger/R$string;->MigrateOldFolderButton:I
 
     const-string v7, "MigrateOldFolderButton"
@@ -269,25 +269,25 @@
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    const-string v6, "featuredStickers_buttonText"
+    .line 272
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
 
-    .line 276
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v6
 
     invoke-virtual {v5, v6}, Landroid/widget/TextView;->setTextColor(I)V
 
+    .line 273
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
+
     new-array v4, v4, [F
 
-    const/high16 v6, 0x40c00000    # 6.0f
+    const/high16 v7, 0x40c00000    # 6.0f
 
-    aput v6, v4, v2
+    aput v7, v4, v2
 
-    const-string v2, "featuredStickers_addButton"
-
-    .line 277
-    invoke-static {v2, v4}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRect(Ljava/lang/String;[F)Landroid/graphics/drawable/Drawable;
+    invoke-static {v6, v4}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRectByKey(I[F)Landroid/graphics/drawable/Drawable;
 
     move-result-object v2
 
@@ -307,29 +307,29 @@
 
     const/16 v12, 0x10
 
-    .line 279
+    .line 275
     invoke-static/range {v6 .. v12}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
     move-result-object v2
 
     invoke-virtual {v3, v5, v2}, Landroid/widget/LinearLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 281
+    .line 277
     new-instance v2, Lorg/telegram/messenger/FilesMigrationService$FilesMigrationBottomSheet$$ExternalSyntheticLambda0;
 
     invoke-direct {v2, v0}, Lorg/telegram/messenger/FilesMigrationService$FilesMigrationBottomSheet$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/messenger/FilesMigrationService$FilesMigrationBottomSheet;)V
 
     invoke-virtual {v5, v2}, Landroid/widget/TextView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 285
+    .line 281
     new-instance v2, Landroid/widget/ScrollView;
 
     invoke-direct {v2, v1}, Landroid/widget/ScrollView;-><init>(Landroid/content/Context;)V
 
-    .line 286
+    .line 282
     invoke-virtual {v2, v3}, Landroid/widget/ScrollView;->addView(Landroid/view/View;)V
 
-    .line 287
+    .line 283
     invoke-virtual {v0, v2}, Lorg/telegram/ui/ActionBar/BottomSheet;->setCustomView(Landroid/view/View;)V
 
     return-void
@@ -338,7 +338,7 @@
 .method private synthetic lambda$new$0(Landroid/view/View;)V
     .locals 0
 
-    .line 282
+    .line 278
     invoke-virtual {p0}, Lorg/telegram/messenger/FilesMigrationService$FilesMigrationBottomSheet;->migrateOldFolder()V
 
     return-void
@@ -365,12 +365,12 @@
 .method public dismiss()V
     .locals 1
 
-    .line 318
+    .line 314
     invoke-super {p0}, Lorg/telegram/ui/ActionBar/BottomSheet;->dismiss()V
 
     const/4 v0, 0x0
 
-    .line 319
+    .line 315
     sput-object v0, Lorg/telegram/messenger/FilesMigrationService;->filesMigrationBottomSheet:Lorg/telegram/messenger/FilesMigrationService$FilesMigrationBottomSheet;
 
     return-void
@@ -379,7 +379,7 @@
 .method public migrateOldFolder()V
     .locals 7
 
-    .line 291
+    .line 287
     iget-object v0, p0, Lorg/telegram/messenger/FilesMigrationService$FilesMigrationBottomSheet;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-virtual {v0}, Lorg/telegram/ui/ActionBar/BaseFragment;->getParentActivity()Landroid/app/Activity;
@@ -393,7 +393,7 @@
     :cond_0
     const-string v1, "android.permission.WRITE_EXTERNAL_STORAGE"
 
-    .line 297
+    .line 293
     invoke-virtual {v0, v1}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v2
@@ -414,7 +414,7 @@
     :goto_0
     const-string v5, "android.permission.READ_EXTERNAL_STORAGE"
 
-    .line 298
+    .line 294
     invoke-virtual {v0, v5}, Landroid/app/Activity;->checkSelfPermission(Ljava/lang/String;)I
 
     move-result v6
@@ -433,16 +433,16 @@
 
     goto :goto_2
 
-    .line 312
+    .line 308
     :cond_3
     invoke-static {}, Lorg/telegram/messenger/FilesMigrationService;->start()V
 
-    .line 313
+    .line 309
     invoke-virtual {p0}, Lorg/telegram/messenger/FilesMigrationService$FilesMigrationBottomSheet;->dismiss()V
 
     return-void
 
-    .line 301
+    .line 297
     :cond_4
     :goto_2
     new-instance v4, Ljava/util/ArrayList;
@@ -451,16 +451,16 @@
 
     if-nez v3, :cond_5
 
-    .line 303
+    .line 299
     invoke-virtual {v4, v5}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
     :cond_5
     if-nez v2, :cond_6
 
-    .line 306
+    .line 302
     invoke-virtual {v4, v1}, Ljava/util/ArrayList;->add(Ljava/lang/Object;)Z
 
-    .line 308
+    .line 304
     :cond_6
     invoke-virtual {v4}, Ljava/util/ArrayList;->size()I
 
@@ -468,7 +468,7 @@
 
     new-array v1, v1, [Ljava/lang/String;
 
-    .line 309
+    .line 305
     invoke-virtual {v4, v1}, Ljava/util/ArrayList;->toArray([Ljava/lang/Object;)[Ljava/lang/Object;
 
     move-result-object v1

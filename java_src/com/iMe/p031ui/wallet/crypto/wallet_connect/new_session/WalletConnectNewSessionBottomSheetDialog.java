@@ -4,6 +4,7 @@ import android.graphics.PorterDuff;
 import android.graphics.PorterDuffColorFilter;
 import android.os.Bundle;
 import android.view.View;
+import androidx.appcompat.widget.AppCompatImageView;
 import androidx.appcompat.widget.AppCompatTextView;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import com.iMe.p031ui.base.mvp.MvpBottomSheet;
@@ -19,13 +20,14 @@ import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.databinding.ForkContentWalletConnectNewSessionBinding;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p044ui.ActionBar.BaseFragment;
+import org.telegram.p044ui.ActionBar.Theme;
 /* compiled from: WalletConnectNewSessionBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.new_session.WalletConnectNewSessionBottomSheetDialog */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletConnectNewSessionBottomSheetDialog extends MvpBottomSheet implements WalletConnectNewSessionView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(WalletConnectNewSessionBottomSheetDialog.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/crypto/wallet_connect/new_session/WalletConnectNewSessionPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(WalletConnectNewSessionBottomSheetDialog.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkContentWalletConnectNewSessionBinding;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -130,9 +132,9 @@ public final class WalletConnectNewSessionBottomSheetDialog extends MvpBottomShe
         Intrinsics.checkNotNullParameter(address, "address");
         Intrinsics.checkNotNullParameter(network, "network");
         ForkContentWalletConnectNewSessionBinding binding = getBinding();
-        binding.viewHeader.setupViewData(iconUrl, getResourceManager().getString(C3242R.string.wallet_connect_new_session_title, name), url);
-        binding.viewWalletCell.setupViewData(getResourceManager().getString(C3242R.string.wallet_connect_new_session_wallet), address, C3242R.C3244drawable.fork_ic_nav_wallet_24, true);
-        binding.viewNetworkCell.setupViewData(getResourceManager().getString(C3242R.string.wallet_connect_session_details_network), network, C3242R.C3244drawable.msg_language, true);
+        binding.viewHeader.setupViewData(iconUrl, getResourceManager().getString(C3290R.string.wallet_connect_new_session_title, name), url);
+        binding.viewWalletCell.setupViewData(getResourceManager().getString(C3290R.string.wallet_connect_new_session_wallet), address, C3290R.C3292drawable.fork_ic_nav_wallet_24, true);
+        binding.viewNetworkCell.setupViewData(getResourceManager().getString(C3290R.string.wallet_connect_session_details_network), network, C3290R.C3292drawable.msg_language, true);
     }
 
     @Override // android.app.Dialog
@@ -148,26 +150,29 @@ public final class WalletConnectNewSessionBottomSheetDialog extends MvpBottomShe
         binding.viewNetworkCell.setupColors();
         binding.buttonConnect.applyColors();
         ActionBarMenuItem setupColors$lambda$2$lambda$1 = binding.buttonClose;
-        setupColors$lambda$2$lambda$1.setIconColor(getThemedColor("windowBackgroundWhiteGrayIcon"));
+        setupColors$lambda$2$lambda$1.setIconColor(getThemedColor(Theme.key_windowBackgroundWhiteGrayIcon));
         Intrinsics.checkNotNullExpressionValue(setupColors$lambda$2$lambda$1, "setupColors$lambda$2$lambda$1");
         ViewExtKt.setCircleRippleBackground(setupColors$lambda$2$lambda$1);
+        int i = Theme.key_windowBackgroundWhiteBlackText;
         AppCompatTextView textViewBalance = binding.textViewBalance;
         Intrinsics.checkNotNullExpressionValue(textViewBalance, "textViewBalance");
         AppCompatTextView textTransactionsApproval = binding.textTransactionsApproval;
         Intrinsics.checkNotNullExpressionValue(textTransactionsApproval, "textTransactionsApproval");
-        ViewExtKt.setTextsColor("windowBackgroundWhiteBlackText", textViewBalance, textTransactionsApproval);
-        binding.imageViewBalance.setColorFilter(new PorterDuffColorFilter(getThemedColor("windowBackgroundWhiteBlueIcon"), PorterDuff.Mode.SRC_IN));
-        binding.imageTransactionsApproval.setColorFilter(new PorterDuffColorFilter(getThemedColor("windowBackgroundWhiteBlueIcon"), PorterDuff.Mode.SRC_IN));
+        ViewExtKt.setTextsColor(i, textViewBalance, textTransactionsApproval);
+        AppCompatImageView appCompatImageView = binding.imageViewBalance;
+        int i2 = Theme.key_windowBackgroundWhiteBlueIcon;
+        appCompatImageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(i2), PorterDuff.Mode.SRC_IN));
+        binding.imageTransactionsApproval.setColorFilter(new PorterDuffColorFilter(getThemedColor(i2), PorterDuff.Mode.SRC_IN));
     }
 
     private final void setupViews() {
         ForkContentWalletConnectNewSessionBinding binding = getBinding();
-        binding.textViewBalance.setText(getResourceManager().getString(C3242R.string.wallet_connect_new_session_view_balance));
-        binding.textTransactionsApproval.setText(getResourceManager().getString(C3242R.string.wallet_connect_new_transactions_approval));
-        binding.buttonConnect.setText(getResourceManager().getString(C3242R.string.wallet_connect_new_connection));
+        binding.textViewBalance.setText(getResourceManager().getString(C3290R.string.wallet_connect_new_session_view_balance));
+        binding.textTransactionsApproval.setText(getResourceManager().getString(C3290R.string.wallet_connect_new_transactions_approval));
+        binding.buttonConnect.setText(getResourceManager().getString(C3290R.string.wallet_connect_new_connection));
         ActionBarMenuItem actionBarMenuItem = getBinding().buttonClose;
         actionBarMenuItem.setLongClickEnabled(false);
-        actionBarMenuItem.setIcon(C3242R.C3244drawable.ic_close_white);
+        actionBarMenuItem.setIcon(C3290R.C3292drawable.ic_close_white);
     }
 
     private final void setupListeners() {
@@ -194,7 +199,7 @@ public final class WalletConnectNewSessionBottomSheetDialog extends MvpBottomShe
 
     /* compiled from: WalletConnectNewSessionBottomSheetDialog.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.new_session.WalletConnectNewSessionBottomSheetDialog$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

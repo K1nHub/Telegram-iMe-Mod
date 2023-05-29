@@ -51,9 +51,9 @@
     .line 37
     iget-object v0, p0, Lcom/iMe/ui/custom/ChooseRecipientOptionsView$backgroundPressedColor$2;->this$0:Lcom/iMe/ui/custom/ChooseRecipientOptionsView;
 
-    const-string v1, "chats_actionPressedBackground"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionPressedBackground:I
 
-    invoke-static {v0, v1}, Lcom/iMe/ui/custom/ChooseRecipientOptionsView;->access$getColorWithDefaultAlpha(Lcom/iMe/ui/custom/ChooseRecipientOptionsView;Ljava/lang/String;)I
+    invoke-static {v0, v1}, Lcom/iMe/ui/custom/ChooseRecipientOptionsView;->access$getColorWithDefaultAlpha(Lcom/iMe/ui/custom/ChooseRecipientOptionsView;I)I
 
     move-result v0
 

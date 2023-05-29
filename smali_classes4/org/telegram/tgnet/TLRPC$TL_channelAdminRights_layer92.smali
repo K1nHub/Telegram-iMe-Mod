@@ -39,7 +39,7 @@
 .method public constructor <init>()V
     .locals 0
 
-    .line 42917
+    .line 43772
     invoke-direct {p0}, Lorg/telegram/tgnet/TLObject;-><init>()V
 
     return-void
@@ -48,7 +48,7 @@
 .method public static TLdeserialize(Lorg/telegram/tgnet/AbstractSerializedData;IZ)Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;
     .locals 1
 
-    .line 42932
+    .line 43787
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->constructor:I
 
     if-eq v0, p1, :cond_1
@@ -59,7 +59,7 @@
 
     return-object p0
 
-    .line 42934
+    .line 43789
     :cond_0
     new-instance p0, Ljava/lang/RuntimeException;
 
@@ -85,13 +85,13 @@
 
     throw p0
 
-    .line 42939
+    .line 43794
     :cond_1
     new-instance p1, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;
 
     invoke-direct {p1}, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;-><init>()V
 
-    .line 42940
+    .line 43795
     invoke-virtual {p1, p0, p2}, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
 
     return-object p1
@@ -102,7 +102,7 @@
 .method public readParams(Lorg/telegram/tgnet/AbstractSerializedData;Z)V
     .locals 2
 
-    .line 42945
+    .line 43800
     invoke-virtual {p1, p2}, Lorg/telegram/tgnet/AbstractSerializedData;->readInt32(Z)I
 
     move-result p1
@@ -124,7 +124,7 @@
     :cond_0
     move p2, v0
 
-    .line 42946
+    .line 43801
     :goto_0
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->change_info:Z
 
@@ -139,7 +139,7 @@
     :cond_1
     move p2, v0
 
-    .line 42947
+    .line 43802
     :goto_1
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->post_messages:Z
 
@@ -154,7 +154,7 @@
     :cond_2
     move p2, v0
 
-    .line 42948
+    .line 43803
     :goto_2
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->edit_messages:Z
 
@@ -169,7 +169,7 @@
     :cond_3
     move p2, v0
 
-    .line 42949
+    .line 43804
     :goto_3
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->delete_messages:Z
 
@@ -184,7 +184,7 @@
     :cond_4
     move p2, v0
 
-    .line 42950
+    .line 43805
     :goto_4
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->ban_users:Z
 
@@ -199,7 +199,7 @@
     :cond_5
     move p2, v0
 
-    .line 42951
+    .line 43806
     :goto_5
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->invite_users:Z
 
@@ -214,7 +214,7 @@
     :cond_6
     move p2, v0
 
-    .line 42952
+    .line 43807
     :goto_6
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->pin_messages:Z
 
@@ -229,7 +229,7 @@
     :cond_7
     move p2, v0
 
-    .line 42953
+    .line 43808
     :goto_7
     iput-boolean p2, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->add_admins:Z
 
@@ -239,7 +239,7 @@
 
     move v0, v1
 
-    .line 42954
+    .line 43809
     :cond_8
     iput-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->manage_call:Z
 
@@ -249,12 +249,12 @@
 .method public serializeToStream(Lorg/telegram/tgnet/AbstractSerializedData;)V
     .locals 2
 
-    .line 42958
+    .line 43813
     sget v0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->constructor:I
 
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
-    .line 42959
+    .line 43814
     iget-boolean v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->change_info:Z
 
     if-eqz v0, :cond_0
@@ -273,7 +273,7 @@
     :goto_0
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->flags:I
 
-    .line 42960
+    .line 43815
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->post_messages:Z
 
     if-eqz v1, :cond_1
@@ -288,7 +288,7 @@
     :goto_1
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->flags:I
 
-    .line 42961
+    .line 43816
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->edit_messages:Z
 
     if-eqz v1, :cond_2
@@ -303,7 +303,7 @@
     :goto_2
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->flags:I
 
-    .line 42962
+    .line 43817
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->delete_messages:Z
 
     if-eqz v1, :cond_3
@@ -318,7 +318,7 @@
     :goto_3
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->flags:I
 
-    .line 42963
+    .line 43818
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->ban_users:Z
 
     if-eqz v1, :cond_4
@@ -333,7 +333,7 @@
     :goto_4
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->flags:I
 
-    .line 42964
+    .line 43819
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->invite_users:Z
 
     if-eqz v1, :cond_5
@@ -348,7 +348,7 @@
     :goto_5
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->flags:I
 
-    .line 42965
+    .line 43820
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->pin_messages:Z
 
     if-eqz v1, :cond_6
@@ -363,7 +363,7 @@
     :goto_6
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->flags:I
 
-    .line 42966
+    .line 43821
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->add_admins:Z
 
     if-eqz v1, :cond_7
@@ -378,7 +378,7 @@
     :goto_7
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->flags:I
 
-    .line 42967
+    .line 43822
     iget-boolean v1, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->manage_call:Z
 
     if-eqz v1, :cond_8
@@ -393,7 +393,7 @@
     :goto_8
     iput v0, p0, Lorg/telegram/tgnet/TLRPC$TL_channelAdminRights_layer92;->flags:I
 
-    .line 42968
+    .line 43823
     invoke-virtual {p1, v0}, Lorg/telegram/tgnet/AbstractSerializedData;->writeInt32(I)V
 
     return-void

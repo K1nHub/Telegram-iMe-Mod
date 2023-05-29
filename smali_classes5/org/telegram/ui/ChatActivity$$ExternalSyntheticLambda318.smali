@@ -2,32 +2,38 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/Components/ReactedUsersListView$OnCustomEmojiSelectedListener;
+.implements Lorg/telegram/ui/Components/FiltersListBottomSheet$FiltersListBottomSheetDelegate;
 
 
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/ui/ChatActivity;
 
+.field public final synthetic f$1:Ljava/util/ArrayList;
+
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;)V
+.method public synthetic constructor <init>(Lorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda318;->f$0:Lorg/telegram/ui/ChatActivity;
 
+    iput-object p2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda318;->f$1:Ljava/util/ArrayList;
+
     return-void
 .end method
 
 
 # virtual methods
-.method public final showCustomEmojiAlert(Lorg/telegram/ui/Components/ReactedUsersListView;Ljava/util/ArrayList;)V
-    .locals 1
+.method public final didSelectFilter(Lorg/telegram/messenger/MessagesController$DialogFilter;)V
+    .locals 2
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda318;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$ItlUMgrsdjXohJbikERbdPaZGms(Lorg/telegram/ui/ChatActivity;Lorg/telegram/ui/Components/ReactedUsersListView;Ljava/util/ArrayList;)V
+    iget-object v1, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda318;->f$1:Ljava/util/ArrayList;
+
+    invoke-static {v0, v1, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$HD1C44Y3VtlQ9YcW1Elw9I5uF44(Lorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;Lorg/telegram/messenger/MessagesController$DialogFilter;)V
 
     return-void
 .end method

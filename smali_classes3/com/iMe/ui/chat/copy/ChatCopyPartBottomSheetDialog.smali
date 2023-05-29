@@ -206,9 +206,9 @@
 
     move-result-object v1
 
-    const-string v2, "windowBackgroundWhite"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -232,9 +232,9 @@
     .line 52
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkChatCopyContentLayoutBinding;->buttonClose:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v2, "dialogTextRed"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -243,9 +243,9 @@
     .line 53
     iget-object v1, v0, Lorg/telegram/messenger/databinding/ForkChatCopyContentLayoutBinding;->textMessage:Landroidx/appcompat/widget/AppCompatTextView;
 
-    const-string v2, "chat_messagePanelText"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelText:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -254,9 +254,9 @@
     .line 54
     iget-object v0, v0, Lorg/telegram/messenger/databinding/ForkChatCopyContentLayoutBinding;->viewDivider:Landroid/view/View;
 
-    const-string v1, "divider"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

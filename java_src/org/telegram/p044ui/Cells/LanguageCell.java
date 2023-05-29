@@ -33,14 +33,14 @@ public class LanguageCell extends FrameLayout {
         setWillNotDraw(false);
         RadioButton radioButton = new RadioButton(context);
         this.radioButton = radioButton;
-        radioButton.setSize(AndroidUtilities.m50dp(20));
-        this.radioButton.setColor(Theme.getColor("dialogRadioBackground"), Theme.getColor("dialogRadioBackgroundChecked"));
+        radioButton.setSize(AndroidUtilities.m54dp(20));
+        this.radioButton.setColor(Theme.getColor(Theme.key_dialogRadioBackground), Theme.getColor(Theme.key_dialogRadioBackgroundChecked));
         RadioButton radioButton2 = this.radioButton;
         boolean z = LocaleController.isRTL;
         addView(radioButton2, LayoutHelper.createFrame(22, 22, (z ? 5 : 3) | 16, z ? 0 : 20, 0, z ? 20 : 0, 0));
         TextView textView = new TextView(context);
         this.textView = textView;
-        textView.setTextColor(Theme.getColor("dialogTextBlack"));
+        textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
         this.textView.setTextSize(1, 16.0f);
         this.textView.setSingleLine(true);
         this.textView.setEllipsize(TextUtils.TruncateAt.END);
@@ -50,7 +50,7 @@ public class LanguageCell extends FrameLayout {
         addView(textView2, LayoutHelper.createFrame(-1, -1, (z2 ? 5 : 3) | 48, z2 ? this.marginEndDp : this.marginStartDp, 0, z2 ? this.marginStartDp : this.marginEndDp, 17));
         TextView textView3 = new TextView(context);
         this.textView2 = textView3;
-        textView3.setTextColor(Theme.getColor("dialogTextGray3"));
+        textView3.setTextColor(Theme.getColor(Theme.key_dialogTextGray3));
         this.textView2.setTextSize(1, 13.0f);
         this.textView2.setSingleLine(true);
         this.textView2.setEllipsize(TextUtils.TruncateAt.END);
@@ -62,7 +62,7 @@ public class LanguageCell extends FrameLayout {
 
     @Override // android.widget.FrameLayout, android.view.View
     protected void onMeasure(int i, int i2) {
-        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m50dp(60) + (this.needDivider ? 1 : 0), 1073741824));
+        super.onMeasure(View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i), 1073741824), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(60) + (this.needDivider ? 1 : 0), 1073741824));
     }
 
     public void setLanguage(LocaleController.LocaleInfo localeInfo, String str, boolean z) {
@@ -95,7 +95,7 @@ public class LanguageCell extends FrameLayout {
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         if (this.needDivider) {
-            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m50dp(this.marginStartDp - 3), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m50dp(this.marginStartDp - 3) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
+            canvas.drawLine(LocaleController.isRTL ? BitmapDescriptorFactory.HUE_RED : AndroidUtilities.m54dp(this.marginStartDp - 3), getMeasuredHeight() - 1, getMeasuredWidth() - (LocaleController.isRTL ? AndroidUtilities.m54dp(this.marginStartDp - 3) : 0), getMeasuredHeight() - 1, Theme.dividerPaint);
         }
     }
 }

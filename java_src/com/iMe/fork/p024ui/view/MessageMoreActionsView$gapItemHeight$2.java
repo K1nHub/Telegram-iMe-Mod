@@ -16,6 +16,6 @@ final class MessageMoreActionsView$gapItemHeight$2 extends Lambda implements Fun
     /* JADX WARN: Can't rename method to resolve collision */
     @Override // kotlin.jvm.functions.Function0
     public final Integer invoke() {
-        return Integer.valueOf(AndroidUtilities.m50dp(8));
+        return Integer.valueOf(AndroidUtilities.m54dp(8));
     }
 }

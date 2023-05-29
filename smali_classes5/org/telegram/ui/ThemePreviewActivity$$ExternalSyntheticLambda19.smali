@@ -2,40 +2,40 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/messenger/ImageReceiver$ImageReceiverDelegate;
+.implements Ljava/lang/Runnable;
 
 
-# instance fields
-.field public final synthetic f$0:Lorg/telegram/ui/ThemePreviewActivity;
+# static fields
+.field public static final synthetic INSTANCE:Lorg/telegram/ui/ThemePreviewActivity$$ExternalSyntheticLambda19;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/ui/ThemePreviewActivity;)V
+.method static synthetic constructor <clinit>()V
+    .locals 1
+
+    new-instance v0, Lorg/telegram/ui/ThemePreviewActivity$$ExternalSyntheticLambda19;
+
+    invoke-direct {v0}, Lorg/telegram/ui/ThemePreviewActivity$$ExternalSyntheticLambda19;-><init>()V
+
+    sput-object v0, Lorg/telegram/ui/ThemePreviewActivity$$ExternalSyntheticLambda19;->INSTANCE:Lorg/telegram/ui/ThemePreviewActivity$$ExternalSyntheticLambda19;
+
+    return-void
+.end method
+
+.method private synthetic constructor <init>()V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
-
-    iput-object p1, p0, Lorg/telegram/ui/ThemePreviewActivity$$ExternalSyntheticLambda19;->f$0:Lorg/telegram/ui/ThemePreviewActivity;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final didSetImage(Lorg/telegram/messenger/ImageReceiver;ZZZ)V
-    .locals 1
-
-    iget-object v0, p0, Lorg/telegram/ui/ThemePreviewActivity$$ExternalSyntheticLambda19;->f$0:Lorg/telegram/ui/ThemePreviewActivity;
-
-    invoke-static {v0, p1, p2, p3, p4}, Lorg/telegram/ui/ThemePreviewActivity;->$r8$lambda$pU8TdyH3kQzj0OtT5ZJodkaFnzc(Lorg/telegram/ui/ThemePreviewActivity;Lorg/telegram/messenger/ImageReceiver;ZZZ)V
-
-    return-void
-.end method
-
-.method public synthetic onAnimationReady(Lorg/telegram/messenger/ImageReceiver;)V
+.method public final run()V
     .locals 0
 
-    invoke-static {p0, p1}, Lorg/telegram/messenger/ImageReceiver$ImageReceiverDelegate$-CC;->$default$onAnimationReady(Lorg/telegram/messenger/ImageReceiver$ImageReceiverDelegate;Lorg/telegram/messenger/ImageReceiver;)V
+    invoke-static {}, Lorg/telegram/ui/ThemePreviewActivity;->$r8$lambda$QCnwac4JTCvgoRaoNpNcmmm7kXA()V
 
     return-void
 .end method

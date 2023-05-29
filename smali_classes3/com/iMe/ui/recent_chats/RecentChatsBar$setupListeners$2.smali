@@ -27,7 +27,7 @@
 
     iput-object p1, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar$setupListeners$2;->this$0:Lcom/iMe/ui/recent_chats/RecentChatsBar;
 
-    .line 91
+    .line 83
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -40,10 +40,10 @@
 
     if-eqz p1, :cond_0
 
-    .line 94
+    .line 86
     iget-object p3, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar$setupListeners$2;->this$0:Lcom/iMe/ui/recent_chats/RecentChatsBar;
 
-    invoke-virtual {p3}, Lcom/iMe/ui/recent_chats/RecentChatsBar;->getDelegate()Lcom/iMe/ui/recent_chats/RecentChatsBar$HorizontalListViewDelegate;
+    invoke-virtual {p3}, Lcom/iMe/ui/recent_chats/RecentChatsBar;->getDelegate()Lcom/iMe/ui/recent_chats/RecentChatsBar$Delegate;
 
     move-result-object p3
 
@@ -59,7 +59,7 @@
 
     check-cast p2, Lcom/iMe/storage/domain/model/HistoryDialogModel;
 
-    invoke-interface {p3, p2, p1}, Lcom/iMe/ui/recent_chats/RecentChatsBar$HorizontalListViewDelegate;->onItemLongListener(Lcom/iMe/storage/domain/model/HistoryDialogModel;Landroid/view/View;)V
+    invoke-interface {p3, p2, p1}, Lcom/iMe/ui/recent_chats/RecentChatsBar$Delegate;->onRecentChatLongClick(Lcom/iMe/storage/domain/model/HistoryDialogModel;Landroid/view/View;)V
 
     :cond_0
     const/4 p1, 0x1
@@ -70,7 +70,7 @@
 .method public onLongClickRelease()V
     .locals 2
 
-    .line 106
+    .line 98
     sget-object v0, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v1, v0, Landroid/graphics/Point;->x:I
@@ -79,14 +79,14 @@
 
     if-le v1, v0, :cond_0
 
-    .line 107
+    .line 99
     iget-object v0, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar$setupListeners$2;->this$0:Lcom/iMe/ui/recent_chats/RecentChatsBar;
 
-    invoke-virtual {v0}, Lcom/iMe/ui/recent_chats/RecentChatsBar;->getDelegate()Lcom/iMe/ui/recent_chats/RecentChatsBar$HorizontalListViewDelegate;
+    invoke-virtual {v0}, Lcom/iMe/ui/recent_chats/RecentChatsBar;->getDelegate()Lcom/iMe/ui/recent_chats/RecentChatsBar$Delegate;
 
     move-result-object v0
 
-    invoke-interface {v0}, Lcom/iMe/ui/recent_chats/RecentChatsBar$HorizontalListViewDelegate;->onLongClickRelease()V
+    invoke-interface {v0}, Lcom/iMe/ui/recent_chats/RecentChatsBar$Delegate;->onLongClickRelease()V
 
     :cond_0
     return-void
@@ -95,7 +95,7 @@
 .method public onMove(FF)V
     .locals 1
 
-    .line 100
+    .line 92
     sget-object p1, Lorg/telegram/messenger/AndroidUtilities;->displaySize:Landroid/graphics/Point;
 
     iget v0, p1, Landroid/graphics/Point;->x:I
@@ -104,14 +104,14 @@
 
     if-le v0, p1, :cond_0
 
-    .line 101
+    .line 93
     iget-object p1, p0, Lcom/iMe/ui/recent_chats/RecentChatsBar$setupListeners$2;->this$0:Lcom/iMe/ui/recent_chats/RecentChatsBar;
 
-    invoke-virtual {p1}, Lcom/iMe/ui/recent_chats/RecentChatsBar;->getDelegate()Lcom/iMe/ui/recent_chats/RecentChatsBar$HorizontalListViewDelegate;
+    invoke-virtual {p1}, Lcom/iMe/ui/recent_chats/RecentChatsBar;->getDelegate()Lcom/iMe/ui/recent_chats/RecentChatsBar$Delegate;
 
     move-result-object p1
 
-    invoke-interface {p1, p2}, Lcom/iMe/ui/recent_chats/RecentChatsBar$HorizontalListViewDelegate;->onMove(F)V
+    invoke-interface {p1, p2}, Lcom/iMe/ui/recent_chats/RecentChatsBar$Delegate;->onMove(F)V
 
     :cond_0
     return-void

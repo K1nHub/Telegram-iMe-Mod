@@ -59,16 +59,15 @@ public final class DialogExtKt {
 
     public static final void makeRedPositiveButton(AlertDialog alertDialog) {
         Intrinsics.checkNotNullParameter(alertDialog, "<this>");
-        setButtonColor(alertDialog, -1, "dialogTextRed");
+        setButtonColor(alertDialog, -1, Theme.key_text_RedRegular);
     }
 
-    public static final void setButtonColor(AlertDialog alertDialog, int i, String colorKey) {
+    public static final void setButtonColor(AlertDialog alertDialog, int i, int i2) {
         Intrinsics.checkNotNullParameter(alertDialog, "<this>");
-        Intrinsics.checkNotNullParameter(colorKey, "colorKey");
         View button = alertDialog.getButton(i);
         TextView textView = button instanceof TextView ? (TextView) button : null;
         if (textView != null) {
-            textView.setTextColor(Theme.getColor(colorKey));
+            textView.setTextColor(Theme.getColor(i2));
         }
     }
 }

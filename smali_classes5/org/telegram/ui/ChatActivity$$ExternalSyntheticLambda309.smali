@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda309;->f$0:Lcom/iMe/fork/utils/Callbacks$Callback1;
 
-    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$bU7_52hdViyegDcb8Ddw0CUIT24(Lcom/iMe/fork/utils/Callbacks$Callback1;ZILjava/lang/String;)V
+    invoke-static {v0, p1, p2, p3}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$HJHcSE_cNbX6c_GToSfnxCx2rDY(Lcom/iMe/fork/utils/Callbacks$Callback1;ZILjava/lang/String;)V
 
     return-void
 .end method

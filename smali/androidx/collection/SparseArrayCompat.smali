@@ -378,6 +378,32 @@
     return-object v0
 .end method
 
+.method public containsValue(Ljava/lang/Object;)Z
+    .locals 0
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(TE;)Z"
+        }
+    .end annotation
+
+    .line 437
+    invoke-virtual {p0, p1}, Landroidx/collection/SparseArrayCompat;->indexOfValue(Ljava/lang/Object;)I
+
+    move-result p1
+
+    if-ltz p1, :cond_0
+
+    const/4 p1, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 p1, 0x0
+
+    :goto_0
+    return p1
+.end method
+
 .method public get(I)Ljava/lang/Object;
     .locals 1
     .annotation system Ldalvik/annotation/Signature;
@@ -437,6 +463,30 @@
     return-object p2
 .end method
 
+.method public indexOfKey(I)I
+    .locals 2
+
+    .line 401
+    iget-boolean v0, p0, Landroidx/collection/SparseArrayCompat;->mGarbage:Z
+
+    if-eqz v0, :cond_0
+
+    .line 402
+    invoke-direct {p0}, Landroidx/collection/SparseArrayCompat;->gc()V
+
+    .line 405
+    :cond_0
+    iget-object v0, p0, Landroidx/collection/SparseArrayCompat;->mKeys:[I
+
+    iget v1, p0, Landroidx/collection/SparseArrayCompat;->mSize:I
+
+    invoke-static {v0, v1, p1}, Landroidx/collection/ContainerHelpers;->binarySearch([III)I
+
+    move-result p1
+
+    return p1
+.end method
+
 .method public indexOfValue(Ljava/lang/Object;)I
     .locals 2
     .annotation system Ldalvik/annotation/Signature;
@@ -480,6 +530,27 @@
     const/4 p1, -0x1
 
     return p1
+.end method
+
+.method public isEmpty()Z
+    .locals 1
+
+    .line 352
+    invoke-virtual {p0}, Landroidx/collection/SparseArrayCompat;->size()I
+
+    move-result v0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
 .end method
 
 .method public keyAt(I)I
@@ -671,6 +742,61 @@
 
     :goto_0
     return-void
+.end method
+
+.method public removeAt(I)V
+    .locals 3
+
+    .line 171
+    iget-object v0, p0, Landroidx/collection/SparseArrayCompat;->mValues:[Ljava/lang/Object;
+
+    aget-object v1, v0, p1
+
+    sget-object v2, Landroidx/collection/SparseArrayCompat;->DELETED:Ljava/lang/Object;
+
+    if-eq v1, v2, :cond_0
+
+    .line 172
+    aput-object v2, v0, p1
+
+    const/4 p1, 0x1
+
+    .line 173
+    iput-boolean p1, p0, Landroidx/collection/SparseArrayCompat;->mGarbage:Z
+
+    :cond_0
+    return-void
+.end method
+
+.method public replace(ILjava/lang/Object;)Ljava/lang/Object;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "(ITE;)TE;"
+        }
+    .end annotation
+
+    .line 198
+    invoke-virtual {p0, p1}, Landroidx/collection/SparseArrayCompat;->indexOfKey(I)I
+
+    move-result p1
+
+    if-ltz p1, :cond_0
+
+    .line 200
+    iget-object v0, p0, Landroidx/collection/SparseArrayCompat;->mValues:[Ljava/lang/Object;
+
+    aget-object v1, v0, p1
+
+    .line 201
+    aput-object p2, v0, p1
+
+    return-object v1
+
+    :cond_0
+    const/4 p1, 0x0
+
+    return-object p1
 .end method
 
 .method public size()I

@@ -92,10 +92,10 @@
     .line 42
     invoke-virtual {p3, p2, v0}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v0, "chat_serviceText"
-
     .line 43
-    invoke-direct {p0, v0}, Lorg/telegram/ui/CreateTopicEmptyView;->getThemedColor(Ljava/lang/String;)I
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chat_serviceText:I
+
+    invoke-direct {p0, v0}, Lorg/telegram/ui/CreateTopicEmptyView;->getThemedColor(I)I
 
     move-result v1
 
@@ -133,7 +133,7 @@
     invoke-virtual {v1, p2, p1}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 52
-    invoke-direct {p0, v0}, Lorg/telegram/ui/CreateTopicEmptyView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v0}, Lorg/telegram/ui/CreateTopicEmptyView;->getThemedColor(I)I
 
     move-result p1
 
@@ -215,46 +215,23 @@
     return-void
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
+.method private getThemedColor(I)I
     .locals 1
 
     .line 68
     iget-object v0, p0, Lorg/telegram/ui/CreateTopicEmptyView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 69
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
 .method private getThemedPaint(Ljava/lang/String;)Landroid/graphics/Paint;
     .locals 1
 
-    .line 73
+    .line 72
     iget-object v0, p0, Lorg/telegram/ui/CreateTopicEmptyView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     if-eqz v0, :cond_0
@@ -273,7 +250,7 @@
 
     goto :goto_1
 
-    .line 74
+    .line 73
     :cond_1
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getThemePaint(Ljava/lang/String;)Landroid/graphics/Paint;
 
@@ -286,7 +263,7 @@
 .method private setSticker()V
     .locals 10
 
-    .line 81
+    .line 80
     sget v0, Lorg/telegram/messenger/UserConfig;->selectedAccount:I
 
     invoke-static {v0}, Lorg/telegram/messenger/MediaDataController;->getInstance(I)Lorg/telegram/messenger/MediaDataController;
@@ -301,14 +278,14 @@
 
     if-eqz v0, :cond_1
 
-    .line 84
+    .line 83
     iget-object v1, v0, Lorg/telegram/tgnet/TLRPC$Document;->thumbs:Ljava/util/ArrayList;
 
-    const v2, 0x3e4ccccd    # 0.2f
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_emptyListPlaceholder:I
 
-    const-string v3, "emptyListPlaceholder"
+    const v3, 0x3e4ccccd    # 0.2f
 
-    invoke-static {v1, v3, v2}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Ljava/util/ArrayList;Ljava/lang/String;F)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
+    invoke-static {v1, v2, v3}, Lorg/telegram/messenger/DocumentObject;->getSvgThumb(Ljava/util/ArrayList;IF)Lorg/telegram/messenger/SvgHelper$SvgDrawable;
 
     move-result-object v8
 
@@ -316,16 +293,16 @@
 
     const/16 v1, 0x200
 
-    .line 86
+    .line 85
     invoke-virtual {v8, v1, v1}, Lorg/telegram/messenger/SvgHelper$SvgDrawable;->overrideWidthAndHeight(II)V
 
-    .line 89
+    .line 88
     :cond_0
     invoke-static {v0}, Lorg/telegram/messenger/ImageLocation;->getForDocument(Lorg/telegram/tgnet/TLRPC$Document;)Lorg/telegram/messenger/ImageLocation;
 
     move-result-object v5
 
-    .line 90
+    .line 89
     iget-object v4, p0, Lorg/telegram/ui/CreateTopicEmptyView;->backupImageView:Lorg/telegram/ui/Components/BackupImageView;
 
     const/4 v6, 0x0

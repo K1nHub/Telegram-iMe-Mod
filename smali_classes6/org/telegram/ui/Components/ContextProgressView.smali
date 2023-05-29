@@ -8,7 +8,7 @@
 
 .field private innerColor:I
 
-.field private innerKey:Ljava/lang/String;
+.field private innerKey:I
 
 .field private innerPaint:Landroid/graphics/Paint;
 
@@ -16,7 +16,7 @@
 
 .field private outerColor:I
 
-.field private outerKey:Ljava/lang/String;
+.field private outerKey:I
 
 .field private outerPaint:Landroid/graphics/Paint;
 
@@ -105,45 +105,45 @@
 
     if-nez p2, :cond_0
 
-    const-string p1, "contextProgressInner1"
-
     .line 41
-    iput-object p1, p0, Lorg/telegram/ui/Components/ContextProgressView;->innerKey:Ljava/lang/String;
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_contextProgressInner1:I
 
-    const-string p1, "contextProgressOuter1"
+    iput p1, p0, Lorg/telegram/ui/Components/ContextProgressView;->innerKey:I
 
     .line 42
-    iput-object p1, p0, Lorg/telegram/ui/Components/ContextProgressView;->outerKey:Ljava/lang/String;
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_contextProgressOuter1:I
+
+    iput p1, p0, Lorg/telegram/ui/Components/ContextProgressView;->outerKey:I
 
     goto :goto_0
 
     :cond_0
     if-ne p2, v0, :cond_1
 
-    const-string p1, "contextProgressInner2"
-
     .line 44
-    iput-object p1, p0, Lorg/telegram/ui/Components/ContextProgressView;->innerKey:Ljava/lang/String;
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_contextProgressInner2:I
 
-    const-string p1, "contextProgressOuter2"
+    iput p1, p0, Lorg/telegram/ui/Components/ContextProgressView;->innerKey:I
 
     .line 45
-    iput-object p1, p0, Lorg/telegram/ui/Components/ContextProgressView;->outerKey:Ljava/lang/String;
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_contextProgressOuter2:I
+
+    iput p1, p0, Lorg/telegram/ui/Components/ContextProgressView;->outerKey:I
 
     goto :goto_0
 
     :cond_1
     if-ne p2, v1, :cond_2
 
-    const-string p1, "contextProgressInner3"
-
     .line 47
-    iput-object p1, p0, Lorg/telegram/ui/Components/ContextProgressView;->innerKey:Ljava/lang/String;
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_contextProgressInner3:I
 
-    const-string p1, "contextProgressOuter3"
+    iput p1, p0, Lorg/telegram/ui/Components/ContextProgressView;->innerKey:I
 
     .line 48
-    iput-object p1, p0, Lorg/telegram/ui/Components/ContextProgressView;->outerKey:Ljava/lang/String;
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_contextProgressOuter3:I
+
+    iput p1, p0, Lorg/telegram/ui/Components/ContextProgressView;->outerKey:I
 
     goto :goto_0
 
@@ -152,15 +152,15 @@
 
     if-ne p2, p1, :cond_3
 
-    const-string p1, "contextProgressInner4"
-
     .line 50
-    iput-object p1, p0, Lorg/telegram/ui/Components/ContextProgressView;->innerKey:Ljava/lang/String;
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_contextProgressInner4:I
 
-    const-string p1, "contextProgressOuter4"
+    iput p1, p0, Lorg/telegram/ui/Components/ContextProgressView;->innerKey:I
 
     .line 51
-    iput-object p1, p0, Lorg/telegram/ui/Components/ContextProgressView;->outerKey:Ljava/lang/String;
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_contextProgressOuter4:I
+
+    iput p1, p0, Lorg/telegram/ui/Components/ContextProgressView;->outerKey:I
 
     .line 53
     :cond_3
@@ -348,13 +348,13 @@
 .method public setColors(II)V
     .locals 1
 
-    const/4 v0, 0x0
+    const/4 v0, -0x1
 
     .line 57
-    iput-object v0, p0, Lorg/telegram/ui/Components/ContextProgressView;->innerKey:Ljava/lang/String;
+    iput v0, p0, Lorg/telegram/ui/Components/ContextProgressView;->innerKey:I
 
     .line 58
-    iput-object v0, p0, Lorg/telegram/ui/Components/ContextProgressView;->outerKey:Ljava/lang/String;
+    iput v0, p0, Lorg/telegram/ui/Components/ContextProgressView;->outerKey:I
 
     .line 59
     iput p1, p0, Lorg/telegram/ui/Components/ContextProgressView;->innerColor:I
@@ -391,14 +391,14 @@
     .locals 2
 
     .line 65
-    iget-object v0, p0, Lorg/telegram/ui/Components/ContextProgressView;->innerKey:Ljava/lang/String;
+    iget v0, p0, Lorg/telegram/ui/Components/ContextProgressView;->innerKey:I
 
-    if-eqz v0, :cond_0
+    if-ltz v0, :cond_0
 
     .line 66
     iget-object v1, p0, Lorg/telegram/ui/Components/ContextProgressView;->innerPaint:Landroid/graphics/Paint;
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -416,14 +416,14 @@
 
     .line 70
     :goto_0
-    iget-object v0, p0, Lorg/telegram/ui/Components/ContextProgressView;->outerKey:Ljava/lang/String;
+    iget v0, p0, Lorg/telegram/ui/Components/ContextProgressView;->outerKey:I
 
-    if-eqz v0, :cond_1
+    if-ltz v0, :cond_1
 
     .line 71
     iget-object v1, p0, Lorg/telegram/ui/Components/ContextProgressView;->outerPaint:Landroid/graphics/Paint;
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 

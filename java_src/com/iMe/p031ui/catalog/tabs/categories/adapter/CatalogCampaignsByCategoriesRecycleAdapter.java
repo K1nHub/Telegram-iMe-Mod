@@ -16,7 +16,7 @@ import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CatalogCampaignsByCategoriesRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.catalog.tabs.categories.adapter.CatalogCampaignsByCategoriesRecycleAdapter */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class CatalogCampaignsByCategoriesRecycleAdapter extends BaseNodeAdapter<BaseNode> implements LoadMoreModule {
     private final FilterProvider filterProvider;
     private final GlobalStateProvider globalStateProvider;

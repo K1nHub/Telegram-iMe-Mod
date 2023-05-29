@@ -111,18 +111,18 @@ public final class StakingPresenter extends BasePresenter<StakingView> {
     }
 
     private final void loadStakingTotalStats(boolean z) {
-        Observable<Result<StakingTotalStats>> observeOn = this.stakingInteractor.getStakingTotalStats().observeOn(this.schedulersProvider.mo693ui());
+        Observable<Result<StakingTotalStats>> observeOn = this.stakingInteractor.getStakingTotalStats().observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "stakingInteractor\n      …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2290xdeaf3e3c(this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2291xdeaf3e3d(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2329xdeaf3e3c(this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2330xdeaf3e3d(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
 
     private final void listenEvents() {
         RxEventBus rxEventBus = this.rxEventBus;
-        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.StakingTabRefreshStateChanged.class).observeOn(rxEventBus.getSchedulersProvider().mo693ui());
+        Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.StakingTabRefreshStateChanged.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2288xf624d8f6(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2289xf624d8f7(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2327xf624d8f6(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2328xf624d8f7(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;)V
     .locals 0
 
-    .line 607
+    .line 608
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$9;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,10 +35,10 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 610
+    .line 611
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 611
+    .line 612
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$9;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;->access$1600(Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -49,14 +49,14 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RecyclerListView;->setVisibility(I)V
 
-    .line 612
+    .line 613
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$9;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;->access$1202(Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;I)I
 
-    .line 613
+    .line 614
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$9;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;->access$000(Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -67,7 +67,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->setAlpha(F)V
 
-    .line 614
+    .line 615
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$9;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;->access$000(Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -76,7 +76,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->setScaleX(F)V
 
-    .line 615
+    .line 616
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$9;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;->access$000(Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -85,7 +85,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->setScaleY(F)V
 
-    .line 616
+    .line 617
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$9;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;->access$000(Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;)Lorg/telegram/ui/Components/RecyclerListView;
@@ -96,7 +96,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/ViewGroup;->setTranslationX(F)V
 
-    .line 617
+    .line 618
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout$9;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;->access$000(Lorg/telegram/ui/Components/ChatAttachAlertDocumentLayout;)Lorg/telegram/ui/Components/RecyclerListView;

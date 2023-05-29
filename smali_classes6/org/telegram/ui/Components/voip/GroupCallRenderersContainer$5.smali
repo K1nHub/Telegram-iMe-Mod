@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;Landroid/content/Context;Landroid/graphics/drawable/Drawable;)V
     .locals 0
 
-    .line 311
+    .line 312
     iput-object p1, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$5;->this$0:Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$5;->val$toastBackgroundDrawable:Landroid/graphics/drawable/Drawable;
@@ -39,7 +39,7 @@
 .method protected dispatchDraw(Landroid/graphics/Canvas;)V
     .locals 9
 
-    .line 314
+    .line 315
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$5;->this$0:Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;->access$100(Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;)F
@@ -54,7 +54,7 @@
 
     if-nez v0, :cond_0
 
-    .line 315
+    .line 316
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$5;->val$toastBackgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
@@ -67,7 +67,7 @@
 
     invoke-virtual {v0, v2, v2, v1, v3}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 316
+    .line 317
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$5;->this$0:Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;->access$200(Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;)Lorg/telegram/ui/Components/AvatarsImageView;
@@ -78,7 +78,7 @@
 
     invoke-virtual {v0, v1}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 317
+    .line 318
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$5;->this$0:Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;->access$300(Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;)Landroid/widget/TextView;
@@ -89,7 +89,7 @@
 
     goto :goto_0
 
-    .line 319
+    .line 320
     :cond_0
     sget-object v0, Lorg/telegram/ui/Components/CubicBezierInterpolator;->DEFAULT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
@@ -103,7 +103,7 @@
 
     move-result v0
 
-    .line 320
+    .line 321
     iget-object v3, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$5;->this$0:Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
 
     invoke-static {v3}, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;->access$400(Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;)F
@@ -122,7 +122,7 @@
 
     mul-float/2addr v3, v1
 
-    .line 321
+    .line 322
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$5;->this$0:Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;->access$500(Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;)F
@@ -145,7 +145,7 @@
 
     mul-float/2addr v0, v1
 
-    .line 322
+    .line 323
     iget-object v4, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$5;->val$toastBackgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     float-to-int v5, v3
@@ -180,7 +180,7 @@
 
     invoke-virtual {v4, v5, v2, v6, v1}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
-    .line 323
+    .line 324
     iget-object v1, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$5;->this$0:Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;->access$200(Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;)Lorg/telegram/ui/Components/AvatarsImageView;
@@ -189,7 +189,7 @@
 
     invoke-virtual {v1, v3}, Landroid/view/View;->setTranslationX(F)V
 
-    .line 324
+    .line 325
     iget-object v1, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$5;->this$0:Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
 
     invoke-static {v1}, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;->access$300(Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;)Landroid/widget/TextView;
@@ -200,13 +200,13 @@
 
     invoke-virtual {v1, v0}, Landroid/widget/TextView;->setTranslationX(F)V
 
-    .line 326
+    .line 327
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$5;->val$toastBackgroundDrawable:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
-    .line 327
+    .line 328
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->dispatchDraw(Landroid/graphics/Canvas;)V
 
     return-void

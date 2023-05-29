@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/TopicsFragment;Z)V
     .locals 0
 
-    .line 2453
+    .line 2455
     iput-object p1, p0, Lorg/telegram/ui/TopicsFragment$24;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     iput-boolean p2, p0, Lorg/telegram/ui/TopicsFragment$24;->val$bottomPannelVisibleLocal:Z
@@ -39,12 +39,12 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 2456
+    .line 2458
     iget-boolean p1, p0, Lorg/telegram/ui/TopicsFragment$24;->val$bottomPannelVisibleLocal:Z
 
     if-nez p1, :cond_0
 
-    .line 2457
+    .line 2459
     iget-object p1, p0, Lorg/telegram/ui/TopicsFragment$24;->this$0:Lorg/telegram/ui/TopicsFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/TopicsFragment;->access$6700(Lorg/telegram/ui/TopicsFragment;)Landroid/widget/FrameLayout;

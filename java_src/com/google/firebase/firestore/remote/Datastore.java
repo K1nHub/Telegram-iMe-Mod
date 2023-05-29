@@ -47,87 +47,87 @@ public class Datastore {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: com.google.firebase.firestore.remote.Datastore$1 */
     /* loaded from: classes3.dex */
-    public static /* synthetic */ class C10191 {
+    public static /* synthetic */ class C10241 {
 
         /* renamed from: $SwitchMap$com$google$firebase$firestore$FirebaseFirestoreException$Code */
-        static final /* synthetic */ int[] f183xf2f5b1d8;
+        static final /* synthetic */ int[] f186xf2f5b1d8;
 
         static {
             int[] iArr = new int[FirebaseFirestoreException.Code.values().length];
-            f183xf2f5b1d8 = iArr;
+            f186xf2f5b1d8 = iArr;
             try {
                 iArr[FirebaseFirestoreException.Code.OK.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
-                f183xf2f5b1d8[FirebaseFirestoreException.Code.CANCELLED.ordinal()] = 2;
+                f186xf2f5b1d8[FirebaseFirestoreException.Code.CANCELLED.ordinal()] = 2;
             } catch (NoSuchFieldError unused2) {
             }
             try {
-                f183xf2f5b1d8[FirebaseFirestoreException.Code.UNKNOWN.ordinal()] = 3;
+                f186xf2f5b1d8[FirebaseFirestoreException.Code.UNKNOWN.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
             try {
-                f183xf2f5b1d8[FirebaseFirestoreException.Code.DEADLINE_EXCEEDED.ordinal()] = 4;
+                f186xf2f5b1d8[FirebaseFirestoreException.Code.DEADLINE_EXCEEDED.ordinal()] = 4;
             } catch (NoSuchFieldError unused4) {
             }
             try {
-                f183xf2f5b1d8[FirebaseFirestoreException.Code.RESOURCE_EXHAUSTED.ordinal()] = 5;
+                f186xf2f5b1d8[FirebaseFirestoreException.Code.RESOURCE_EXHAUSTED.ordinal()] = 5;
             } catch (NoSuchFieldError unused5) {
             }
             try {
-                f183xf2f5b1d8[FirebaseFirestoreException.Code.INTERNAL.ordinal()] = 6;
+                f186xf2f5b1d8[FirebaseFirestoreException.Code.INTERNAL.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
             }
             try {
-                f183xf2f5b1d8[FirebaseFirestoreException.Code.UNAVAILABLE.ordinal()] = 7;
+                f186xf2f5b1d8[FirebaseFirestoreException.Code.UNAVAILABLE.ordinal()] = 7;
             } catch (NoSuchFieldError unused7) {
             }
             try {
-                f183xf2f5b1d8[FirebaseFirestoreException.Code.UNAUTHENTICATED.ordinal()] = 8;
+                f186xf2f5b1d8[FirebaseFirestoreException.Code.UNAUTHENTICATED.ordinal()] = 8;
             } catch (NoSuchFieldError unused8) {
             }
             try {
-                f183xf2f5b1d8[FirebaseFirestoreException.Code.INVALID_ARGUMENT.ordinal()] = 9;
+                f186xf2f5b1d8[FirebaseFirestoreException.Code.INVALID_ARGUMENT.ordinal()] = 9;
             } catch (NoSuchFieldError unused9) {
             }
             try {
-                f183xf2f5b1d8[FirebaseFirestoreException.Code.NOT_FOUND.ordinal()] = 10;
+                f186xf2f5b1d8[FirebaseFirestoreException.Code.NOT_FOUND.ordinal()] = 10;
             } catch (NoSuchFieldError unused10) {
             }
             try {
-                f183xf2f5b1d8[FirebaseFirestoreException.Code.ALREADY_EXISTS.ordinal()] = 11;
+                f186xf2f5b1d8[FirebaseFirestoreException.Code.ALREADY_EXISTS.ordinal()] = 11;
             } catch (NoSuchFieldError unused11) {
             }
             try {
-                f183xf2f5b1d8[FirebaseFirestoreException.Code.PERMISSION_DENIED.ordinal()] = 12;
+                f186xf2f5b1d8[FirebaseFirestoreException.Code.PERMISSION_DENIED.ordinal()] = 12;
             } catch (NoSuchFieldError unused12) {
             }
             try {
-                f183xf2f5b1d8[FirebaseFirestoreException.Code.FAILED_PRECONDITION.ordinal()] = 13;
+                f186xf2f5b1d8[FirebaseFirestoreException.Code.FAILED_PRECONDITION.ordinal()] = 13;
             } catch (NoSuchFieldError unused13) {
             }
             try {
-                f183xf2f5b1d8[FirebaseFirestoreException.Code.ABORTED.ordinal()] = 14;
+                f186xf2f5b1d8[FirebaseFirestoreException.Code.ABORTED.ordinal()] = 14;
             } catch (NoSuchFieldError unused14) {
             }
             try {
-                f183xf2f5b1d8[FirebaseFirestoreException.Code.OUT_OF_RANGE.ordinal()] = 15;
+                f186xf2f5b1d8[FirebaseFirestoreException.Code.OUT_OF_RANGE.ordinal()] = 15;
             } catch (NoSuchFieldError unused15) {
             }
             try {
-                f183xf2f5b1d8[FirebaseFirestoreException.Code.UNIMPLEMENTED.ordinal()] = 16;
+                f186xf2f5b1d8[FirebaseFirestoreException.Code.UNIMPLEMENTED.ordinal()] = 16;
             } catch (NoSuchFieldError unused16) {
             }
             try {
-                f183xf2f5b1d8[FirebaseFirestoreException.Code.DATA_LOSS.ordinal()] = 17;
+                f186xf2f5b1d8[FirebaseFirestoreException.Code.DATA_LOSS.ordinal()] = 17;
             } catch (NoSuchFieldError unused17) {
             }
         }
     }
 
     public static boolean isPermanentError(FirebaseFirestoreException.Code code) {
-        switch (C10191.f183xf2f5b1d8[code.ordinal()]) {
+        switch (C10241.f186xf2f5b1d8[code.ordinal()]) {
             case 1:
                 throw new IllegalArgumentException("Treated status OK as error");
             case 2:

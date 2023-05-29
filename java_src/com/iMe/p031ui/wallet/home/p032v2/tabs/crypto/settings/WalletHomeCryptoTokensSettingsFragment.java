@@ -41,11 +41,11 @@ import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkItemWalletHomeCryptoTokensSettingsHeaderBinding;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p044ui.ActionBar.C3306ActionBar;
+import org.telegram.p044ui.ActionBar.C3356ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Components.CheckBoxSquare;
@@ -108,7 +108,7 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
         Intrinsics.checkNotNullParameter(context, "context");
         FrameLayout frameLayout = new FrameLayout(context);
         setupActionBar();
-        frameLayout.setBackgroundColor(Theme.getColor("windowBackgroundGray"));
+        frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundGray));
         frameLayout.addView(getListView(), LayoutHelper.createFrame(-1, -1.0f));
         return frameLayout;
     }
@@ -132,7 +132,7 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, "windowBackgroundGray"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{MovingCheckCell.class}, null, null, null, "windowBackgroundWhite"), new ThemeDescription(getListView(), 0, new Class[]{MovingCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrack"), new ThemeDescription(getListView(), 0, new Class[]{MovingCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "switchTrackChecked"), new ThemeDescription(getListView(), 0, new Class[]{MovingCheckCell.class}, new String[]{"titleView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "windowBackgroundWhiteBlackText"), new ThemeDescription(getListView(), 0, new Class[]{MovingCheckCell.class}, new String[]{"moveIconView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, "stickers_menu"));
+        }, Theme.key_windowBackgroundGray), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(getListView(), ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{MovingCheckCell.class}, null, null, null, Theme.key_windowBackgroundWhite), new ThemeDescription(getListView(), 0, new Class[]{MovingCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrack), new ThemeDescription(getListView(), 0, new Class[]{MovingCheckCell.class}, new String[]{"checkBox"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_switchTrackChecked), new ThemeDescription(getListView(), 0, new Class[]{MovingCheckCell.class}, new String[]{"titleView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_windowBackgroundWhiteBlackText), new ThemeDescription(getListView(), 0, new Class[]{MovingCheckCell.class}, new String[]{"moveIconView"}, (Paint[]) null, (Drawable[]) null, (ThemeDescription.ThemeDescriptionDelegate) null, Theme.key_stickers_menu));
         return arrayListOf;
     }
 
@@ -161,15 +161,15 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
     }
 
     private final void setupActionBar() {
-        C3306ActionBar c3306ActionBar = this.actionBar;
-        c3306ActionBar.setBackButtonImage(C3242R.C3244drawable.ic_ab_back);
-        c3306ActionBar.setAllowOverlayTitle(true);
-        c3306ActionBar.setTitle(LocaleController.getInternalString(C3242R.string.wallet_home_crypto_tokens_settings_toolbar_title));
-        ActionBarMenuItem addItem = c3306ActionBar.createMenu().addItem(IdFabric$Menu.OPTIONS, C3242R.C3244drawable.ic_ab_other);
-        addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3242R.string.AccDescrMoreOptions));
-        addItem.addSubItem(IdFabric$Menu.RESET, C3242R.C3244drawable.msg_reset, LocaleController.getString("ThemeResetToDefaults", C3242R.string.ThemeResetToDefaults));
-        c3306ActionBar.setActionBarMenuOnItemClick(new C3306ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.home.v2.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$setupActionBar$1$2
-            @Override // org.telegram.p044ui.ActionBar.C3306ActionBar.ActionBarMenuOnItemClick
+        C3356ActionBar c3356ActionBar = this.actionBar;
+        c3356ActionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        c3356ActionBar.setAllowOverlayTitle(true);
+        c3356ActionBar.setTitle(LocaleController.getInternalString(C3290R.string.wallet_home_crypto_tokens_settings_toolbar_title));
+        ActionBarMenuItem addItem = c3356ActionBar.createMenu().addItem(IdFabric$Menu.OPTIONS, C3290R.C3292drawable.ic_ab_other);
+        addItem.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3290R.string.AccDescrMoreOptions));
+        addItem.addSubItem(IdFabric$Menu.RESET, C3290R.C3292drawable.msg_reset, LocaleController.getString("ThemeResetToDefaults", C3290R.string.ThemeResetToDefaults));
+        c3356ActionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.home.v2.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$setupActionBar$1$2
+            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WalletHomeCryptoTokensSettingsFragment.this.finishFragment();
@@ -233,7 +233,7 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
         @Override // org.telegram.p044ui.Components.RecyclerListView.SelectionAdapter
         public boolean isEnabled(RecyclerView.ViewHolder holder) {
             Intrinsics.checkNotNullParameter(holder, "holder");
-            return holder.getItemViewType() == IdFabric$ViewTypes.MOVING_CHECK;
+            return holder.getItemViewType() == IdFabric$ViewTypes.MOVING_CHECK_CELL;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -243,14 +243,14 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public int getItemViewType(int i) {
-            return i == WalletHomeCryptoTokensSettingsFragment.this.headerRow ? IdFabric$ViewTypes.HEADER : IdFabric$ViewTypes.MOVING_CHECK;
+            return i == WalletHomeCryptoTokensSettingsFragment.this.headerRow ? IdFabric$ViewTypes.HEADER_CELL : IdFabric$ViewTypes.MOVING_CHECK_CELL;
         }
 
         @Override // androidx.recyclerview.widget.RecyclerView.Adapter
         public RecyclerListView.Holder onCreateViewHolder(ViewGroup parent, int i) {
             RelativeLayout relativeLayout;
             Intrinsics.checkNotNullParameter(parent, "parent");
-            if (i == IdFabric$ViewTypes.HEADER) {
+            if (i == IdFabric$ViewTypes.HEADER_CELL) {
                 final ForkItemWalletHomeCryptoTokensSettingsHeaderBinding inflate = ForkItemWalletHomeCryptoTokensSettingsHeaderBinding.inflate(BaseFragmentExtKt.getLayoutInflater(WalletHomeCryptoTokensSettingsFragment.this));
                 final WalletHomeCryptoTokensSettingsFragment walletHomeCryptoTokensSettingsFragment = WalletHomeCryptoTokensSettingsFragment.this;
                 inflate.onlyPositiveCheckboxContainer.setOnClickListener(new View.OnClickListener() { // from class: com.iMe.ui.wallet.home.v2.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$ListAdapter$$ExternalSyntheticLambda0
@@ -272,15 +272,15 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
                 Activity parentActivity = WalletHomeCryptoTokensSettingsFragment.this.getParentActivity();
                 Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
                 MovingCheckCell movingCheckCell = new MovingCheckCell(parentActivity);
-                movingCheckCell.setBackgroundColor(Theme.getColor("windowBackgroundWhite"));
+                movingCheckCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                 AppCompatImageView iconView = movingCheckCell.getIconView();
-                iconView.setBackgroundResource(C3242R.C3244drawable.fork_bg_white_circle);
+                iconView.setBackgroundResource(C3290R.C3292drawable.fork_bg_white_circle);
                 ViewGroup.LayoutParams layoutParams = iconView.getLayoutParams();
                 Intrinsics.checkNotNull(layoutParams, "null cannot be cast to non-null type android.widget.FrameLayout.LayoutParams");
                 FrameLayout.LayoutParams layoutParams2 = (FrameLayout.LayoutParams) layoutParams;
-                int m51dp = AndroidUtilities.m51dp(35.0f);
-                layoutParams2.width = m51dp;
-                layoutParams2.height = m51dp;
+                int m55dp = AndroidUtilities.m55dp(35.0f);
+                layoutParams2.width = m55dp;
+                layoutParams2.height = m55dp;
                 iconView.setLayoutParams(layoutParams2);
                 relativeLayout = movingCheckCell;
             }
@@ -325,18 +325,18 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
         public void onBindViewHolder(RecyclerView.ViewHolder holder, int i) {
             Intrinsics.checkNotNullParameter(holder, "holder");
             int itemViewType = holder.getItemViewType();
-            if (itemViewType == IdFabric$ViewTypes.HEADER) {
+            if (itemViewType == IdFabric$ViewTypes.HEADER_CELL) {
                 ForkItemWalletHomeCryptoTokensSettingsHeaderBinding bind = ForkItemWalletHomeCryptoTokensSettingsHeaderBinding.bind(holder.itemView);
                 WalletHomeCryptoTokensSettingsFragment walletHomeCryptoTokensSettingsFragment = WalletHomeCryptoTokensSettingsFragment.this;
                 bind.onlyPositiveCheckbox.setChecked(walletHomeCryptoTokensSettingsFragment.getPresenter().getOnlyPositiveTokens(), false);
                 AppCompatTextView appCompatTextView = bind.onlyPositiveCheckboxText;
-                appCompatTextView.setTextColor(Theme.getColor("windowBackgroundWhiteBlackText"));
-                appCompatTextView.setText(walletHomeCryptoTokensSettingsFragment.getResourceManager().getString(C3242R.string.wallet_home_crypto_tokens_settings_only_positive));
+                appCompatTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
+                appCompatTextView.setText(walletHomeCryptoTokensSettingsFragment.getResourceManager().getString(C3290R.string.wallet_home_crypto_tokens_settings_only_positive));
                 NetworkTypeView onBindViewHolder$lambda$10$lambda$9 = bind.networkTypeView;
                 onBindViewHolder$lambda$10$lambda$9.setNetworkType(walletHomeCryptoTokensSettingsFragment.getPresenter().getCurrentNetworkType());
                 Intrinsics.checkNotNullExpressionValue(onBindViewHolder$lambda$10$lambda$9, "onBindViewHolder$lambda$10$lambda$9");
                 onBindViewHolder$lambda$10$lambda$9.setVisibility(walletHomeCryptoTokensSettingsFragment.getScreenType() instanceof ScreenType.Crypto ? 0 : 8);
-            } else if (itemViewType == IdFabric$ViewTypes.MOVING_CHECK) {
+            } else if (itemViewType == IdFabric$ViewTypes.MOVING_CHECK_CELL) {
                 View view = holder.itemView;
                 Intrinsics.checkNotNull(view, "null cannot be cast to non-null type com.iMe.fork.ui.view.MovingCheckCell");
                 final MovingCheckCell movingCheckCell = (MovingCheckCell) view;
@@ -356,7 +356,7 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
                         }
                     });
                 } else if (component1 instanceof SelectableToken.WithResLogo) {
-                    MovingCheckCell.setIcon$default(movingCheckCell, ((SelectableToken.WithResLogo) component1).getLogoRes(), null, null, 6, null);
+                    MovingCheckCell.setIcon$default(movingCheckCell, ((SelectableToken.WithResLogo) component1).getLogoRes(), -1, null, 4, null);
                 }
             }
         }
@@ -390,7 +390,7 @@ public final class WalletHomeCryptoTokensSettingsFragment extends WalletAuthFrag
         public int getMovementFlags(RecyclerView recyclerView, RecyclerView.ViewHolder viewHolder) {
             Intrinsics.checkNotNullParameter(recyclerView, "recyclerView");
             Intrinsics.checkNotNullParameter(viewHolder, "viewHolder");
-            return ItemTouchHelper.Callback.makeMovementFlags(viewHolder.getItemViewType() == IdFabric$ViewTypes.MOVING_CHECK ? 3 : 0, 0);
+            return ItemTouchHelper.Callback.makeMovementFlags(viewHolder.getItemViewType() == IdFabric$ViewTypes.MOVING_CHECK_CELL ? 3 : 0, 0);
         }
 
         @Override // androidx.recyclerview.widget.ItemTouchHelper.Callback

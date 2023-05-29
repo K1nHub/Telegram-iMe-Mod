@@ -116,9 +116,9 @@
     .line 276
     iget-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;->numberTextPaint:Landroid/text/TextPaint;
 
-    const-string v1, "windowBackgroundWhiteBlackText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -127,9 +127,9 @@
     .line 277
     iget-object v0, p0, Lorg/telegram/ui/Components/CustomPhoneKeyboardView$NumberButtonView;->symbolsTextPaint:Landroid/text/TextPaint;
 
-    const-string v1, "windowBackgroundWhiteHintText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

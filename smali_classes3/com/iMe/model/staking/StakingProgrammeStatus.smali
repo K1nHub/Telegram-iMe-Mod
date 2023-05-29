@@ -26,7 +26,7 @@
 
 
 # instance fields
-.field private final colorKey:Ljava/lang/String;
+.field private final colorKey:I
 
 .field private final textResId:I
 
@@ -74,13 +74,13 @@
 
     sget v1, Lorg/telegram/messenger/R$string;->staking_details_status_active:I
 
-    const-string v2, "ACTIVE"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inGreenCall:I
 
-    const/4 v3, 0x0
+    const-string v3, "ACTIVE"
 
-    const-string v4, "chat_inDownCall"
+    const/4 v4, 0x0
 
-    invoke-direct {v0, v2, v3, v1, v4}, Lcom/iMe/model/staking/StakingProgrammeStatus;-><init>(Ljava/lang/String;IILjava/lang/String;)V
+    invoke-direct {v0, v3, v4, v1, v2}, Lcom/iMe/model/staking/StakingProgrammeStatus;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Lcom/iMe/model/staking/StakingProgrammeStatus;->ACTIVE:Lcom/iMe/model/staking/StakingProgrammeStatus;
 
@@ -89,13 +89,13 @@
 
     sget v1, Lorg/telegram/messenger/R$string;->staking_details_status_withdrawal_available:I
 
-    const-string v2, "WITHDRAWAL_AVAILABLE"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlueText:I
 
-    const/4 v3, 0x1
+    const-string v3, "WITHDRAWAL_AVAILABLE"
 
-    const-string v4, "windowBackgroundWhiteBlueText"
+    const/4 v4, 0x1
 
-    invoke-direct {v0, v2, v3, v1, v4}, Lcom/iMe/model/staking/StakingProgrammeStatus;-><init>(Ljava/lang/String;IILjava/lang/String;)V
+    invoke-direct {v0, v3, v4, v1, v2}, Lcom/iMe/model/staking/StakingProgrammeStatus;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Lcom/iMe/model/staking/StakingProgrammeStatus;->WITHDRAWAL_AVAILABLE:Lcom/iMe/model/staking/StakingProgrammeStatus;
 
@@ -104,13 +104,13 @@
 
     sget v1, Lorg/telegram/messenger/R$string;->staking_details_status_short_of_funds:I
 
-    const-string v2, "SHORT_OF_FUNDS"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
-    const/4 v3, 0x2
+    const-string v3, "SHORT_OF_FUNDS"
 
-    const-string v4, "windowBackgroundWhiteRedText"
+    const/4 v4, 0x2
 
-    invoke-direct {v0, v2, v3, v1, v4}, Lcom/iMe/model/staking/StakingProgrammeStatus;-><init>(Ljava/lang/String;IILjava/lang/String;)V
+    invoke-direct {v0, v3, v4, v1, v2}, Lcom/iMe/model/staking/StakingProgrammeStatus;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Lcom/iMe/model/staking/StakingProgrammeStatus;->SHORT_OF_FUNDS:Lcom/iMe/model/staking/StakingProgrammeStatus;
 
@@ -119,11 +119,11 @@
 
     sget v1, Lorg/telegram/messenger/R$string;->staking_details_status_finished:I
 
-    const-string v2, "CLOSED"
+    const-string v3, "CLOSED"
 
-    const/4 v3, 0x3
+    const/4 v4, 0x3
 
-    invoke-direct {v0, v2, v3, v1, v4}, Lcom/iMe/model/staking/StakingProgrammeStatus;-><init>(Ljava/lang/String;IILjava/lang/String;)V
+    invoke-direct {v0, v3, v4, v1, v2}, Lcom/iMe/model/staking/StakingProgrammeStatus;-><init>(Ljava/lang/String;III)V
 
     sput-object v0, Lcom/iMe/model/staking/StakingProgrammeStatus;->CLOSED:Lcom/iMe/model/staking/StakingProgrammeStatus;
 
@@ -136,13 +136,11 @@
     return-void
 .end method
 
-.method private constructor <init>(Ljava/lang/String;IILjava/lang/String;)V
+.method private constructor <init>(Ljava/lang/String;III)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
-            "(I",
-            "Ljava/lang/String;",
-            ")V"
+            "(II)V"
         }
     .end annotation
 
@@ -153,7 +151,7 @@
     iput p3, p0, Lcom/iMe/model/staking/StakingProgrammeStatus;->textResId:I
 
     .line 9
-    iput-object p4, p0, Lcom/iMe/model/staking/StakingProgrammeStatus;->colorKey:Ljava/lang/String;
+    iput p4, p0, Lcom/iMe/model/staking/StakingProgrammeStatus;->colorKey:I
 
     return-void
 .end method
@@ -188,13 +186,13 @@
 
 
 # virtual methods
-.method public final getColorKey()Ljava/lang/String;
+.method public final getColorKey()I
     .locals 1
 
     .line 9
-    iget-object v0, p0, Lcom/iMe/model/staking/StakingProgrammeStatus;->colorKey:Ljava/lang/String;
+    iget v0, p0, Lcom/iMe/model/staking/StakingProgrammeStatus;->colorKey:I
 
-    return-object v0
+    return v0
 .end method
 
 .method public final getTextResId()I

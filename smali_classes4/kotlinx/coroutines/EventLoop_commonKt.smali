@@ -51,3 +51,34 @@
 
     return-object v0
 .end method
+
+.method public static final delayToNanos(J)J
+    .locals 3
+
+    const-wide/16 v0, 0x0
+
+    cmp-long v2, p0, v0
+
+    if-gtz v2, :cond_0
+
+    goto :goto_0
+
+    :cond_0
+    const-wide v0, 0x8637bd05af6L
+
+    cmp-long v0, p0, v0
+
+    if-ltz v0, :cond_1
+
+    const-wide v0, 0x7fffffffffffffffL
+
+    goto :goto_0
+
+    :cond_1
+    const-wide/32 v0, 0xf4240
+
+    mul-long/2addr v0, p0
+
+    :goto_0
+    return-wide v0
+.end method

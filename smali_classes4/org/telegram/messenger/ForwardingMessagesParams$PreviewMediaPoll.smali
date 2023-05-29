@@ -24,7 +24,7 @@
 .method public constructor <init>(Lorg/telegram/messenger/ForwardingMessagesParams;)V
     .locals 0
 
-    .line 258
+    .line 259
     iput-object p1, p0, Lorg/telegram/messenger/ForwardingMessagesParams$PreviewMediaPoll;->this$0:Lorg/telegram/messenger/ForwardingMessagesParams;
 
     invoke-direct {p0}, Lorg/telegram/tgnet/TLRPC$TL_messageMediaPoll;-><init>()V

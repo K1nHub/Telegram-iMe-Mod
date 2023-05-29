@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/PhotoViewer$27;
-.super Landroid/widget/ImageView;
+.super Lorg/telegram/ui/Components/CheckBox;
 .source "PhotoViewer.java"
 
 
@@ -19,61 +19,32 @@
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/PhotoViewer;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/PhotoViewer;Landroid/content/Context;I)V
     .locals 0
 
-    .line 5810
+    .line 6974
     iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-direct {p0, p2}, Landroid/widget/ImageView;-><init>(Landroid/content/Context;)V
+    invoke-direct {p0, p2, p3}, Lorg/telegram/ui/Components/CheckBox;-><init>(Landroid/content/Context;I)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public dispatchTouchEvent(Landroid/view/MotionEvent;)Z
-    .locals 1
-
-    .line 5813
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
-
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$11000(Lorg/telegram/ui/PhotoViewer;)Z
-
-    move-result v0
-
-    if-eqz v0, :cond_0
-
-    invoke-super {p0, p1}, Landroid/widget/ImageView;->dispatchTouchEvent(Landroid/view/MotionEvent;)Z
-
-    move-result p1
-
-    if-eqz p1, :cond_0
-
-    const/4 p1, 0x1
-
-    goto :goto_0
-
-    :cond_0
-    const/4 p1, 0x0
-
-    :goto_0
-    return p1
-.end method
-
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 1
 
-    .line 5818
+    .line 6977
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$11000(Lorg/telegram/ui/PhotoViewer;)Z
+    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$11300(Lorg/telegram/ui/PhotoViewer;)Z
 
     move-result v0
 
     if-eqz v0, :cond_0
 
-    invoke-super {p0, p1}, Landroid/widget/ImageView;->onTouchEvent(Landroid/view/MotionEvent;)Z
+    invoke-super {p0, p1}, Landroid/view/View;->onTouchEvent(Landroid/view/MotionEvent;)Z
 
     move-result p1
 
@@ -88,86 +59,4 @@
 
     :goto_0
     return p1
-.end method
-
-.method public setAlpha(F)V
-    .locals 1
-
-    .line 5839
-    invoke-super {p0, p1}, Landroid/widget/ImageView;->setAlpha(F)V
-
-    .line 5840
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
-
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$8700(Lorg/telegram/ui/PhotoViewer;)Landroid/widget/TextView;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setAlpha(F)V
-
-    return-void
-.end method
-
-.method public setTranslationY(F)V
-    .locals 1
-
-    .line 5833
-    invoke-super {p0, p1}, Landroid/widget/ImageView;->setTranslationY(F)V
-
-    .line 5834
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
-
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$8700(Lorg/telegram/ui/PhotoViewer;)Landroid/widget/TextView;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTranslationY(F)V
-
-    return-void
-.end method
-
-.method public setVisibility(I)V
-    .locals 1
-
-    .line 5823
-    invoke-super {p0, p1}, Landroid/widget/ImageView;->setVisibility(I)V
-
-    .line 5824
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
-
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$8300(Lorg/telegram/ui/PhotoViewer;)Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;
-
-    move-result-object v0
-
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/PhotoViewerCaptionEnterView;->getCaptionLimitOffset()I
-
-    move-result v0
-
-    if-gez v0, :cond_0
-
-    .line 5825
-    iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
-
-    invoke-static {v0}, Lorg/telegram/ui/PhotoViewer;->access$8700(Lorg/telegram/ui/PhotoViewer;)Landroid/widget/TextView;
-
-    move-result-object v0
-
-    invoke-virtual {v0, p1}, Landroid/widget/TextView;->setVisibility(I)V
-
-    goto :goto_0
-
-    .line 5827
-    :cond_0
-    iget-object p1, p0, Lorg/telegram/ui/PhotoViewer$27;->this$0:Lorg/telegram/ui/PhotoViewer;
-
-    invoke-static {p1}, Lorg/telegram/ui/PhotoViewer;->access$8700(Lorg/telegram/ui/PhotoViewer;)Landroid/widget/TextView;
-
-    move-result-object p1
-
-    const/16 v0, 0x8
-
-    invoke-virtual {p1, v0}, Landroid/widget/TextView;->setVisibility(I)V
-
-    :goto_0
-    return-void
 .end method

@@ -50,7 +50,7 @@
 .method protected varargs constructor <init>(IZ[Lcom/otaliastudios/opengl/program/GlShader;)V
     .locals 1
 
-    const-string v0, "shaders"
+    const-string/jumbo v0, "shaders"
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

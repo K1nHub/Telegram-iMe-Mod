@@ -13,6 +13,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
+import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Components.LayoutHelper;
 import org.telegram.p044ui.Components.ViewPagerFixed;
@@ -90,7 +91,7 @@ public class TabbedViewPager extends FrameLayout {
             emptyList = CollectionsKt__CollectionsKt.emptyList();
             return emptyList;
         }
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getPager(), ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "windowBackgroundGray"), new ThemeDescription(getTabsView(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.fork.ui.view.TabbedViewPager$$ExternalSyntheticLambda0
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getPager(), ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray), new ThemeDescription(getTabsView(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.fork.ui.view.TabbedViewPager$$ExternalSyntheticLambda0
             @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 TabbedViewPager.getThemeDescription$lambda$0(TabbedViewPager.this);

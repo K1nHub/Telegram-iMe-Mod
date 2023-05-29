@@ -39,7 +39,7 @@
 
     iget-object v2, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda48;->f$2:Ljava/util/concurrent/atomic/AtomicBoolean;
 
-    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$CYX9cDN8Sce5YN255bpVejsjufI(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$User;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/content/DialogInterface;I)V
+    invoke-static {v0, v1, v2, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$GlyTDFxNaZxhjeepQxC1YQlIeaM(Lorg/telegram/ui/ChatActivity;Lorg/telegram/tgnet/TLRPC$User;Ljava/util/concurrent/atomic/AtomicBoolean;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lcom/iMe/bots/usecase/AiBotsManager$FirebaseSnapshotCallback;
+.implements Landroid/view/animation/Interpolator;
 
 
 # static fields
@@ -32,10 +32,12 @@
 
 
 # virtual methods
-.method public final onSuccess()V
+.method public final getInterpolation(F)F
     .locals 0
 
-    invoke-static {}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$IuJOJajWSFIs_j4T5x_RmAdJO5s()V
+    invoke-static {p1}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$BhQTv0rwGpNtNFvx06SDX7JxmH8(F)F
 
-    return-void
+    move-result p1
+
+    return p1
 .end method

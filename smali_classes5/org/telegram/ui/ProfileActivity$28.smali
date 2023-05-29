@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ProfileActivity;Landroid/content/Context;)V
     .locals 0
 
-    .line 4735
+    .line 4805
     iput-object p1, p0, Lorg/telegram/ui/ProfileActivity$28;->this$0:Lorg/telegram/ui/ProfileActivity;
 
     invoke-direct {p0, p2}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
@@ -35,13 +35,13 @@
 .method public setAlpha(F)V
     .locals 1
 
-    .line 4756
+    .line 4826
     invoke-super {p0, p1}, Landroid/widget/ImageView;->setAlpha(F)V
 
-    .line 4757
+    .line 4827
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$28;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$12900(Lorg/telegram/ui/ProfileActivity;)Landroid/widget/ImageView;
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$13100(Lorg/telegram/ui/ProfileActivity;)Landroid/widget/ImageView;
 
     move-result-object v0
 
@@ -53,13 +53,13 @@
 .method public setScaleX(F)V
     .locals 1
 
-    .line 4744
+    .line 4814
     invoke-super {p0, p1}, Landroid/widget/ImageView;->setScaleX(F)V
 
-    .line 4745
+    .line 4815
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$28;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$12900(Lorg/telegram/ui/ProfileActivity;)Landroid/widget/ImageView;
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$13100(Lorg/telegram/ui/ProfileActivity;)Landroid/widget/ImageView;
 
     move-result-object v0
 
@@ -71,13 +71,13 @@
 .method public setScaleY(F)V
     .locals 1
 
-    .line 4750
+    .line 4820
     invoke-super {p0, p1}, Landroid/widget/ImageView;->setScaleY(F)V
 
-    .line 4751
+    .line 4821
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$28;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$12900(Lorg/telegram/ui/ProfileActivity;)Landroid/widget/ImageView;
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$13100(Lorg/telegram/ui/ProfileActivity;)Landroid/widget/ImageView;
 
     move-result-object v0
 
@@ -89,13 +89,13 @@
 .method public setTranslationY(F)V
     .locals 1
 
-    .line 4738
+    .line 4808
     invoke-super {p0, p1}, Landroid/widget/ImageView;->setTranslationY(F)V
 
-    .line 4739
+    .line 4809
     iget-object v0, p0, Lorg/telegram/ui/ProfileActivity$28;->this$0:Lorg/telegram/ui/ProfileActivity;
 
-    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$12900(Lorg/telegram/ui/ProfileActivity;)Landroid/widget/ImageView;
+    invoke-static {v0}, Lorg/telegram/ui/ProfileActivity;->access$13100(Lorg/telegram/ui/ProfileActivity;)Landroid/widget/ImageView;
 
     move-result-object v0
 

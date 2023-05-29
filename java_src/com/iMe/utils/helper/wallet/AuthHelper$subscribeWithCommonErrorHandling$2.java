@@ -23,7 +23,7 @@ public final class AuthHelper$subscribeWithCommonErrorHandling$2 extends Lambda 
 
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2(Throwable th) {
-        Timber.m4e(th);
+        Timber.m6e(th);
         if (th instanceof TimeoutException) {
             AuthHelper.onError$default(AuthHelper.INSTANCE, null, 1, null);
             return;

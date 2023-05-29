@@ -342,7 +342,7 @@
 .method public constructor <init>(Lorg/telegram/ui/Cells/ChatMessageCell;)V
     .locals 1
 
-    .line 19288
+    .line 19315
     iput-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -351,35 +351,35 @@
 
     new-array p1, p1, [I
 
-    .line 19366
+    .line 19393
     iput-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->imageRoundRadius:[I
 
     const/high16 p1, 0x3f800000    # 1.0f
 
-    .line 19367
+    .line 19394
     iput p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->captionEnterProgress:F
 
-    .line 19374
+    .line 19401
     iput p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->changePinnedBottomProgress:F
 
-    .line 19378
+    .line 19405
     new-instance v0, Landroid/graphics/Rect;
 
     invoke-direct {v0}, Landroid/graphics/Rect;-><init>()V
 
     iput-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingBackgroundRect:Landroid/graphics/Rect;
 
-    .line 19413
+    .line 19440
     iput p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateChangeProgress:F
 
-    .line 19414
+    .line 19441
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawBotButtons:Ljava/util/ArrayList;
 
-    .line 19415
+    .line 19442
     new-instance p1, Ljava/util/ArrayList;
 
     invoke-direct {p1}, Ljava/util/ArrayList;-><init>()V
@@ -388,38 +388,29 @@
 
     const/4 p1, -0x1
 
-    .line 19423
+    .line 19450
     iput p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastStatusDrawableParams:I
 
     const/4 p1, 0x2
 
     new-array v0, p1, [Landroid/text/StaticLayout;
 
-    .line 19449
+    .line 19476
     iput-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawnForwardedNameLayout:[Landroid/text/StaticLayout;
 
     new-array p1, p1, [Landroid/text/StaticLayout;
 
-    .line 19450
+    .line 19477
     iput-object p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animatingForwardedNameLayout:[Landroid/text/StaticLayout;
 
     return-void
 .end method
 
-.method static synthetic access$4300(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Z
+.method static synthetic access$4400(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Z
     .locals 0
 
-    .line 19288
+    .line 19315
     iget-boolean p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateButton:Z
-
-    return p0
-.end method
-
-.method static synthetic access$4400(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)F
-    .locals 0
-
-    .line 19288
-    iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateFromButtonX:F
 
     return p0
 .end method
@@ -427,152 +418,152 @@
 .method static synthetic access$4500(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)F
     .locals 0
 
-    .line 19288
+    .line 19315
+    iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateFromButtonX:F
+
+    return p0
+.end method
+
+.method static synthetic access$4600(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)F
+    .locals 0
+
+    .line 19315
     iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateFromButtonY:F
 
     return p0
 .end method
 
-.method static synthetic access$4600(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Ljava/util/ArrayList;
+.method static synthetic access$4700(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 19288
+    .line 19315
     iget-object p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateOutTextBlocks:Ljava/util/ArrayList;
 
     return-object p0
 .end method
 
-.method static synthetic access$4700(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)F
+.method static synthetic access$4800(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)F
     .locals 0
 
-    .line 19288
+    .line 19315
     iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateOutTextXOffset:F
 
     return p0
 .end method
 
-.method static synthetic access$4800(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Z
+.method static synthetic access$4900(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Z
     .locals 0
 
-    .line 19288
+    .line 19315
     iget-boolean p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateShouldDrawMenuDrawable:Z
 
     return p0
 .end method
 
-.method static synthetic access$5400(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Z
+.method static synthetic access$5500(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Z
     .locals 0
 
-    .line 19288
+    .line 19315
     iget-boolean p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateComments:Z
 
     return p0
 .end method
 
-.method static synthetic access$5500(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Landroid/text/StaticLayout;
+.method static synthetic access$5600(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Landroid/text/StaticLayout;
     .locals 0
 
-    .line 19288
+    .line 19315
     iget-object p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateCommentsLayout:Landroid/text/StaticLayout;
 
     return-object p0
 .end method
 
-.method static synthetic access$5600(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)I
+.method static synthetic access$5700(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)I
     .locals 0
 
-    .line 19288
+    .line 19315
     iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateTotalCommentWidth:I
 
     return p0
 .end method
 
-.method static synthetic access$5700(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Ljava/util/ArrayList;
+.method static synthetic access$5800(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 19288
+    .line 19315
     iget-object p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->transitionBotButtons:Ljava/util/ArrayList;
 
     return-object p0
 .end method
 
-.method static synthetic access$5800(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
+.method static synthetic access$5900(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
     .locals 0
 
-    .line 19288
+    .line 19315
     iget-object p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateOutAnimateEmoji:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
     return-object p0
 .end method
 
-.method static synthetic access$5900(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Z
+.method static synthetic access$6000(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Z
     .locals 0
 
-    .line 19288
+    .line 19315
     iget-boolean p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateSign:Z
 
     return p0
 .end method
 
-.method static synthetic access$6000(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)F
+.method static synthetic access$6100(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)F
     .locals 0
 
-    .line 19288
+    .line 19315
     iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateNameX:F
 
     return p0
 .end method
 
-.method static synthetic access$6100(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Landroid/text/StaticLayout;
+.method static synthetic access$6200(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Landroid/text/StaticLayout;
     .locals 0
 
-    .line 19288
+    .line 19315
     iget-object p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateOutCaptionLayout:Landroid/text/StaticLayout;
 
     return-object p0
 .end method
 
-.method static synthetic access$6200(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Z
+.method static synthetic access$6300(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Z
     .locals 0
 
-    .line 19288
+    .line 19315
     iget-boolean p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->moveCaption:Z
 
     return p0
 .end method
 
-.method static synthetic access$6300(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Landroid/text/StaticLayout;
+.method static synthetic access$6400(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Landroid/text/StaticLayout;
     .locals 0
 
-    .line 19288
+    .line 19315
     iget-object p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateReplyTextLayout:Landroid/text/StaticLayout;
 
     return-object p0
 .end method
 
-.method static synthetic access$6400(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
+.method static synthetic access$6500(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
     .locals 0
 
-    .line 19288
+    .line 19315
     iget-object p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateOutAnimateEmojiReply:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
     return-object p0
 .end method
 
-.method static synthetic access$6500(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)F
+.method static synthetic access$6600(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)F
     .locals 0
 
-    .line 19288
+    .line 19315
     iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateCommentX:F
-
-    return p0
-.end method
-
-.method static synthetic access$6600(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Z
-    .locals 0
-
-    .line 19288
-    iget-boolean p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateDrawCommentNumber:Z
 
     return p0
 .end method
@@ -580,17 +571,17 @@
 .method static synthetic access$6700(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Z
     .locals 0
 
-    .line 19288
-    iget-boolean p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateCommentDrawUnread:Z
+    .line 19315
+    iget-boolean p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateDrawCommentNumber:Z
 
     return p0
 .end method
 
-.method static synthetic access$6800(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)I
+.method static synthetic access$6800(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Z
     .locals 0
 
-    .line 19288
-    iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateCommentUnreadX:I
+    .line 19315
+    iget-boolean p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateCommentDrawUnread:Z
 
     return p0
 .end method
@@ -598,62 +589,62 @@
 .method static synthetic access$6900(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)I
     .locals 0
 
-    .line 19288
+    .line 19315
+    iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateCommentUnreadX:I
+
+    return p0
+.end method
+
+.method static synthetic access$7000(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)I
+    .locals 0
+
+    .line 19315
     iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateCommentArrowX:I
 
     return p0
 .end method
 
-.method static synthetic access$7000(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Z
+.method static synthetic access$7100(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Z
     .locals 0
 
-    .line 19288
+    .line 19315
     iget-boolean p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateShouldDrawTimeOnMedia:Z
 
     return p0
 .end method
 
-.method static synthetic access$7100(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Landroid/text/StaticLayout;
+.method static synthetic access$7200(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Landroid/text/StaticLayout;
     .locals 0
 
-    .line 19288
+    .line 19315
     iget-object p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateTimeLayout:Landroid/text/StaticLayout;
 
     return-object p0
 .end method
 
-.method static synthetic access$7200(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)I
+.method static synthetic access$7300(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)I
     .locals 0
 
-    .line 19288
+    .line 19315
     iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateTimeWidth:I
 
     return p0
 .end method
 
-.method static synthetic access$7300(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Z
+.method static synthetic access$7400(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Z
     .locals 0
 
-    .line 19288
+    .line 19315
     iget-boolean p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateEditedEnter:Z
 
     return p0
 .end method
 
-.method static synthetic access$7400(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)I
+.method static synthetic access$7500(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)I
     .locals 0
 
-    .line 19288
+    .line 19315
     iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateEditedWidthDiff:I
-
-    return p0
-.end method
-
-.method static synthetic access$7500(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Z
-    .locals 0
-
-    .line 19288
-    iget-boolean p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateReplies:Z
 
     return p0
 .end method
@@ -661,8 +652,8 @@
 .method static synthetic access$7600(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Z
     .locals 0
 
-    .line 19288
-    iget-boolean p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animatePinned:Z
+    .line 19315
+    iget-boolean p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateReplies:Z
 
     return p0
 .end method
@@ -670,70 +661,79 @@
 .method static synthetic access$7700(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Z
     .locals 0
 
-    .line 19288
+    .line 19315
+    iget-boolean p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animatePinned:Z
+
+    return p0
+.end method
+
+.method static synthetic access$7800(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Z
+    .locals 0
+
+    .line 19315
     iget-boolean p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateIsInBookmarks:Z
 
     return p0
 .end method
 
-.method static synthetic access$7800(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Landroid/text/StaticLayout;
+.method static synthetic access$7900(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Landroid/text/StaticLayout;
     .locals 0
 
-    .line 19288
+    .line 19315
     iget-object p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateEditedLayout:Landroid/text/StaticLayout;
 
     return-object p0
 .end method
 
-.method static synthetic access$8300(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Landroid/text/StaticLayout;
+.method static synthetic access$8400(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Landroid/text/StaticLayout;
     .locals 0
 
-    .line 19288
+    .line 19315
     iget-object p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateRepliesLayout:Landroid/text/StaticLayout;
 
     return-object p0
 .end method
 
-.method static synthetic access$8400(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)F
+.method static synthetic access$8500(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)F
     .locals 0
 
-    .line 19288
+    .line 19315
     iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateFromTimeXReplies:F
 
     return p0
 .end method
 
-.method static synthetic access$8502(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;F)F
+.method static synthetic access$8602(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;F)F
     .locals 0
 
-    .line 19288
+    .line 19315
     iput p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastTimeXReplies:F
 
     return p1
 .end method
 
-.method static synthetic access$8600(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)F
+.method static synthetic access$8700(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)F
     .locals 0
 
-    .line 19288
+    .line 19315
     iget p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateFromTimeXViews:F
 
     return p0
 .end method
 
-.method static synthetic access$8700(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Landroid/text/StaticLayout;
+.method static synthetic access$8800(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;)Landroid/text/StaticLayout;
     .locals 0
 
-    .line 19288
+    .line 19315
     iget-object p0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateViewsLayout:Landroid/text/StaticLayout;
 
     return-object p0
 .end method
 
-.method static synthetic access$8802(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;F)F
+.method static synthetic access$8902(Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;F)F
     .locals 0
 
-    .line 19288
+    .line 19315
     iput p1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastTimeXViews:F
 
     return p1
@@ -746,7 +746,7 @@
 
     move-object/from16 v0, p0
 
-    .line 19557
+    .line 19584
     iget-boolean v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->wasDraw:Z
 
     const/4 v2, 0x0
@@ -755,11 +755,11 @@
 
     return v2
 
-    .line 19562
+    .line 19589
     :cond_0
     iput-boolean v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateMessageText:Z
 
-    .line 19563
+    .line 19590
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$800(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -776,7 +776,7 @@
 
     if-eq v1, v3, :cond_a
 
-    .line 19565
+    .line 19592
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$800(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -813,7 +813,7 @@
 
     move v1, v2
 
-    .line 19566
+    .line 19593
     :goto_0
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingTextBlocks:Ljava/util/ArrayList;
 
@@ -823,7 +823,7 @@
 
     if-ge v1, v3, :cond_7
 
-    .line 19567
+    .line 19594
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$800(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -871,7 +871,7 @@
 
     move-result-object v3
 
-    .line 19568
+    .line 19595
     :goto_1
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingTextBlocks:Ljava/util/ArrayList;
 
@@ -918,7 +918,7 @@
 
     if-eqz v6, :cond_8
 
-    .line 19569
+    .line 19596
     :cond_4
     invoke-virtual {v3, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
@@ -928,7 +928,7 @@
 
     goto :goto_3
 
-    .line 19573
+    .line 19600
     :cond_5
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -936,7 +936,7 @@
 
     if-eqz v6, :cond_6
 
-    .line 19574
+    .line 19601
     invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$800(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
 
     move-result-object v3
@@ -980,20 +980,20 @@
     :goto_4
     if-nez v1, :cond_9
 
-    .line 19582
+    .line 19609
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateMessageText:Z
 
-    .line 19583
+    .line 19610
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingTextBlocks:Ljava/util/ArrayList;
 
     iput-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateOutTextBlocks:Ljava/util/ArrayList;
 
-    .line 19584
+    .line 19611
     iget v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastTextXOffset:F
 
     iput v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateOutTextXOffset:F
 
-    .line 19585
+    .line 19612
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateOutAnimateEmoji:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
@@ -1004,7 +1004,7 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateOutAnimateEmoji:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
-    .line 19586
+    .line 19613
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-object v3, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->animatedEmojiStack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
@@ -1025,7 +1025,7 @@
 
     goto :goto_5
 
-    .line 19589
+    .line 19616
     :cond_9
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -1046,40 +1046,77 @@
     :cond_a
     move v1, v2
 
-    .line 19592
+    .line 19619
     :goto_5
-    iget-object v7, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
+    iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    iget-object v3, v7, Lorg/telegram/ui/Cells/ChatMessageCell;->replyTextLayout:Landroid/text/StaticLayout;
+    iget-object v3, v3, Lorg/telegram/ui/Cells/ChatMessageCell;->replyTextLayout:Landroid/text/StaticLayout;
 
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawnReplyTextLayout:Landroid/text/StaticLayout;
 
-    if-eq v3, v6, :cond_b
+    if-eq v3, v6, :cond_d
 
-    .line 19593
-    iput-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateReplyTextLayout:Landroid/text/StaticLayout;
+    if-eqz v3, :cond_b
 
-    .line 19594
-    iget v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastReplyTextXOffset:I
+    .line 19620
+    invoke-virtual {v3}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
 
-    int-to-float v1, v1
+    move-result-object v3
 
-    iput v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateReplyTextOffset:F
+    goto :goto_6
 
-    const/4 v1, 0x0
+    :cond_b
+    move-object v3, v4
+
+    .line 19621
+    :goto_6
+    iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawnReplyTextLayout:Landroid/text/StaticLayout;
+
+    if-eqz v6, :cond_c
+
+    invoke-virtual {v6}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
+
+    move-result-object v6
+
+    goto :goto_7
+
+    :cond_c
+    move-object v6, v4
+
+    .line 19622
+    :goto_7
+    invoke-static {v3, v6}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+
+    move-result v3
+
+    if-nez v3, :cond_d
+
+    .line 19623
+    iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawnReplyTextLayout:Landroid/text/StaticLayout;
+
+    iput-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateReplyTextLayout:Landroid/text/StaticLayout;
+
+    .line 19624
+    iget v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastReplyTextXOffset:I
+
+    int-to-float v3, v3
+
+    iput v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateReplyTextOffset:F
+
+    const/4 v6, 0x0
+
+    .line 19625
+    iget-object v7, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     const/4 v8, 0x0
 
-    .line 19595
     iget-object v9, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateOutAnimateEmojiReply:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
     const/4 v10, 0x1
 
     new-array v11, v5, [Landroid/text/Layout;
 
-    aput-object v6, v11, v2
-
-    move v6, v1
+    aput-object v1, v11, v2
 
     invoke-static/range {v6 .. v11}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->update(ILandroid/view/View;ZLorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;Z[Landroid/text/Layout;)Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
@@ -1089,29 +1126,29 @@
 
     move v1, v5
 
-    .line 19598
-    :cond_b
+    .line 19629
+    :cond_d
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16700(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
+    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16800(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
 
     move-result v3
 
-    if-eqz v3, :cond_e
+    if-eqz v3, :cond_10
 
     iget-boolean v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingEdited:Z
 
-    if-nez v3, :cond_e
+    if-nez v3, :cond_10
 
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18200(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
+    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18300(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
 
     move-result-object v3
 
-    if-eqz v3, :cond_e
+    if-eqz v3, :cond_10
 
-    .line 19599
+    .line 19630
     sget v3, Lorg/telegram/messenger/R$string;->EditedMessage:I
 
     const-string v6, "EditedMessage"
@@ -1120,10 +1157,10 @@
 
     move-result-object v3
 
-    .line 19600
+    .line 19631
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18200(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
+    invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18300(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
 
     move-result-object v6
 
@@ -1131,7 +1168,7 @@
 
     move-result-object v6
 
-    .line 19601
+    .line 19632
     invoke-interface {v6}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
 
     move-result-object v7
@@ -1140,18 +1177,18 @@
 
     move-result v7
 
-    if-ltz v7, :cond_d
+    if-ltz v7, :cond_f
 
-    if-nez v7, :cond_c
+    if-nez v7, :cond_e
 
-    .line 19604
+    .line 19635
     new-instance v1, Landroid/text/StaticLayout;
 
     sget-object v9, Lorg/telegram/ui/ActionBar/Theme;->chat_timePaint:Landroid/text/TextPaint;
 
     iget-object v7, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v7}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18700(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    invoke-static {v7}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18800(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v7
 
@@ -1179,15 +1216,15 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateEditedLayout:Landroid/text/StaticLayout;
 
-    .line 19605
+    .line 19636
     new-instance v1, Landroid/text/SpannableStringBuilder;
 
     invoke-direct {v1}, Landroid/text/SpannableStringBuilder;-><init>()V
 
-    .line 19606
+    .line 19637
     invoke-virtual {v1, v3}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19607
+    .line 19638
     invoke-virtual {v3}, Ljava/lang/String;->length()I
 
     move-result v7
@@ -1202,7 +1239,7 @@
 
     invoke-virtual {v1, v6}, Landroid/text/SpannableStringBuilder;->append(Ljava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
 
-    .line 19608
+    .line 19639
     new-instance v6, Lorg/telegram/ui/Components/EmptyStubSpan;
 
     invoke-direct {v6}, Lorg/telegram/ui/Components/EmptyStubSpan;-><init>()V
@@ -1213,14 +1250,14 @@
 
     invoke-virtual {v1, v6, v2, v3, v2}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
 
-    .line 19609
+    .line 19640
     new-instance v3, Landroid/text/StaticLayout;
 
     sget-object v18, Lorg/telegram/ui/ActionBar/Theme;->chat_timePaint:Landroid/text/TextPaint;
 
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18700(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18800(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v6
 
@@ -1246,10 +1283,10 @@
 
     iput-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateTimeLayout:Landroid/text/StaticLayout;
 
-    .line 19610
+    .line 19641
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18300(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18400(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v1
 
@@ -1259,78 +1296,78 @@
 
     iput v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateEditedWidthDiff:I
 
-    goto :goto_6
+    goto :goto_8
 
-    .line 19612
-    :cond_c
+    .line 19643
+    :cond_e
     iput v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateEditedWidthDiff:I
 
-    .line 19613
+    .line 19644
     iput-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateEditedLayout:Landroid/text/StaticLayout;
 
-    .line 19614
+    .line 19645
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastTimeLayout:Landroid/text/StaticLayout;
 
     iput-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateTimeLayout:Landroid/text/StaticLayout;
 
-    .line 19616
-    :goto_6
+    .line 19647
+    :goto_8
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateEditedEnter:Z
 
-    .line 19617
+    .line 19648
     iget v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastTimeWidth:I
 
     iput v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateTimeWidth:I
 
-    .line 19618
+    .line 19649
     iget v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastTimeX:I
 
     iput v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateFromTimeX:I
 
-    .line 19619
+    .line 19650
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->shouldAnimateTimeX:Z
 
     move v1, v5
 
-    .line 19622
-    :cond_d
+    .line 19653
+    :cond_f
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iput-object v4, v3, Lorg/telegram/ui/Cells/ChatMessageCell;->accessibilityText:Ljava/lang/CharSequence;
 
-    goto :goto_7
+    goto :goto_9
 
-    .line 19623
-    :cond_e
+    .line 19654
+    :cond_10
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16700(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
+    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16800(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
 
     move-result v3
 
-    if-nez v3, :cond_f
+    if-nez v3, :cond_11
 
     iget-boolean v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingEdited:Z
 
-    if-eqz v3, :cond_f
+    if-eqz v3, :cond_11
 
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18200(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
+    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18300(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
 
     move-result-object v3
 
-    if-eqz v3, :cond_f
+    if-eqz v3, :cond_11
 
-    .line 19624
+    .line 19655
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastTimeLayout:Landroid/text/StaticLayout;
 
     iput-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateTimeLayout:Landroid/text/StaticLayout;
 
-    .line 19625
+    .line 19656
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18300(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18400(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v1
 
@@ -1340,83 +1377,83 @@
 
     iput v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateEditedWidthDiff:I
 
-    .line 19626
+    .line 19657
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateEditedEnter:Z
 
-    .line 19627
+    .line 19658
     iput v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateTimeWidth:I
 
-    .line 19628
+    .line 19659
     iget v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastTimeX:I
 
     iput v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateFromTimeX:I
 
-    .line 19629
+    .line 19660
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->shouldAnimateTimeX:Z
 
     move v1, v5
 
-    .line 19633
-    :cond_f
-    :goto_7
+    .line 19664
+    :cond_11
+    :goto_9
     iput-boolean v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateDrawBackground:Z
 
-    .line 19634
+    .line 19665
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$17700(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
+    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$17800(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
 
     move-result v3
 
     iget-boolean v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawBackground:Z
 
-    if-eq v3, v6, :cond_10
+    if-eq v3, v6, :cond_12
 
-    .line 19635
+    .line 19666
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateDrawBackground:Z
 
     move v1, v5
 
-    .line 19639
-    :cond_10
+    .line 19670
+    :cond_12
     iput-boolean v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateUseTranscribeButton:Z
 
-    .line 19640
+    .line 19671
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11200(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
+    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11300(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
 
     move-result v3
 
     iget-boolean v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastUseTranscribeButton:Z
 
-    if-eq v3, v6, :cond_11
+    if-eq v3, v6, :cond_13
 
-    .line 19641
+    .line 19672
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateUseTranscribeButton:Z
 
     move v1, v5
 
-    .line 19645
-    :cond_11
+    .line 19676
+    :cond_13
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11400(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
+    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11500(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
 
     move-result-object v3
 
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingCaptionLayout:Landroid/text/StaticLayout;
 
-    if-eq v3, v6, :cond_19
+    if-eq v3, v6, :cond_1b
 
-    if-nez v6, :cond_12
+    if-nez v6, :cond_14
 
     move-object v3, v4
 
-    goto :goto_8
+    goto :goto_a
 
-    .line 19646
-    :cond_12
+    .line 19677
+    :cond_14
     invoke-virtual {v6}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
 
     move-result-object v3
@@ -1425,24 +1462,24 @@
 
     move-result-object v3
 
-    .line 19647
-    :goto_8
+    .line 19678
+    :goto_a
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11400(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
+    invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11500(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
 
     move-result-object v6
 
-    if-nez v6, :cond_13
+    if-nez v6, :cond_15
 
     move-object v6, v4
 
-    goto :goto_9
+    goto :goto_b
 
-    :cond_13
+    :cond_15
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11400(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
+    invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11500(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
 
     move-result-object v6
 
@@ -1454,60 +1491,48 @@
 
     move-result-object v6
 
-    :goto_9
-    if-nez v6, :cond_14
+    :goto_b
+    if-nez v6, :cond_16
 
     move v7, v5
 
-    goto :goto_a
+    goto :goto_c
 
-    :cond_14
+    :cond_16
     move v7, v2
 
-    :goto_a
-    if-nez v3, :cond_15
+    :goto_c
+    if-nez v3, :cond_17
 
     move v8, v5
 
-    goto :goto_b
+    goto :goto_d
 
-    :cond_15
+    :cond_17
     move v8, v2
 
-    :goto_b
-    if-ne v7, v8, :cond_18
+    :goto_d
+    if-ne v7, v8, :cond_1a
 
-    if-eqz v3, :cond_16
+    if-eqz v3, :cond_18
 
-    .line 19648
+    .line 19679
     invoke-virtual {v3, v6}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
 
     move-result v3
 
-    if-nez v3, :cond_16
+    if-nez v3, :cond_18
 
-    goto :goto_c
+    goto :goto_e
 
-    .line 19655
-    :cond_16
+    .line 19686
+    :cond_18
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->updateCaptionLayout()V
 
-    .line 19656
+    .line 19687
     iget v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingCaptionX:F
-
-    iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
-
-    invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$13300(Lorg/telegram/ui/Cells/ChatMessageCell;)F
-
-    move-result v6
-
-    cmpl-float v3, v3, v6
-
-    if-nez v3, :cond_17
-
-    iget v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingCaptionY:F
 
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -1517,35 +1542,47 @@
 
     cmpl-float v3, v3, v6
 
-    if-eqz v3, :cond_1b
+    if-nez v3, :cond_19
 
-    .line 19657
-    :cond_17
+    iget v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingCaptionY:F
+
+    iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
+
+    invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$13500(Lorg/telegram/ui/Cells/ChatMessageCell;)F
+
+    move-result v6
+
+    cmpl-float v3, v3, v6
+
+    if-eqz v3, :cond_1d
+
+    .line 19688
+    :cond_19
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->moveCaption:Z
 
-    .line 19658
+    .line 19689
     iget v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingCaptionX:F
 
     iput v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->captionFromX:F
 
-    .line 19659
+    .line 19690
     iget v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingCaptionY:F
 
     iput v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->captionFromY:F
 
-    goto :goto_d
+    goto :goto_f
 
-    .line 19649
-    :cond_18
-    :goto_c
+    .line 19680
+    :cond_1a
+    :goto_e
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateReplaceCaptionLayout:Z
 
-    .line 19650
+    .line 19681
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingCaptionLayout:Landroid/text/StaticLayout;
 
     iput-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateOutCaptionLayout:Landroid/text/StaticLayout;
 
-    .line 19651
+    .line 19682
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     new-array v6, v5, [Landroid/text/Layout;
@@ -1558,14 +1595,14 @@
 
     iput-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateOutAnimateEmoji:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
-    .line 19652
+    .line 19683
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-object v3, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->animatedEmojiStack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
     new-array v6, v5, [Landroid/text/Layout;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11400(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11500(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
 
     move-result-object v7
 
@@ -1577,41 +1614,29 @@
 
     iput-object v3, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->animatedEmojiStack:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
-    goto :goto_d
+    goto :goto_f
 
-    .line 19663
-    :cond_19
+    .line 19694
+    :cond_1b
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11400(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
+    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11500(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
 
     move-result-object v3
 
-    if-eqz v3, :cond_1b
+    if-eqz v3, :cond_1d
 
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingCaptionLayout:Landroid/text/StaticLayout;
 
-    if-eqz v3, :cond_1b
+    if-eqz v3, :cond_1d
 
-    .line 19664
+    .line 19695
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->updateCaptionLayout()V
 
-    .line 19665
+    .line 19696
     iget v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingCaptionX:F
-
-    iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
-
-    invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$13300(Lorg/telegram/ui/Cells/ChatMessageCell;)F
-
-    move-result v6
-
-    cmpl-float v3, v3, v6
-
-    if-nez v3, :cond_1a
-
-    iget v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingCaptionY:F
 
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -1621,38 +1646,50 @@
 
     cmpl-float v3, v3, v6
 
-    if-eqz v3, :cond_1b
+    if-nez v3, :cond_1c
 
-    .line 19666
-    :cond_1a
+    iget v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingCaptionY:F
+
+    iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
+
+    invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$13500(Lorg/telegram/ui/Cells/ChatMessageCell;)F
+
+    move-result v6
+
+    cmpl-float v3, v3, v6
+
+    if-eqz v3, :cond_1d
+
+    .line 19697
+    :cond_1c
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->moveCaption:Z
 
-    .line 19667
+    .line 19698
     iget v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingCaptionX:F
 
     iput v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->captionFromX:F
 
-    .line 19668
+    .line 19699
     iget v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingCaptionY:F
 
     iput v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->captionFromY:F
 
-    :goto_d
+    :goto_f
     move v1, v5
 
-    .line 19672
-    :cond_1b
+    .line 19703
+    :cond_1d
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawBotButtons:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->isEmpty()Z
 
     move-result v3
 
-    if-eqz v3, :cond_1c
+    if-eqz v3, :cond_1e
 
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11500(Lorg/telegram/ui/Cells/ChatMessageCell;)Ljava/util/ArrayList;
+    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11600(Lorg/telegram/ui/Cells/ChatMessageCell;)Ljava/util/ArrayList;
 
     move-result-object v3
 
@@ -1660,10 +1697,10 @@
 
     move-result v3
 
-    if-nez v3, :cond_21
+    if-nez v3, :cond_23
 
-    .line 19673
-    :cond_1c
+    .line 19704
+    :cond_1e
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawBotButtons:Ljava/util/ArrayList;
 
     invoke-virtual {v3}, Ljava/util/ArrayList;->size()I
@@ -1672,7 +1709,7 @@
 
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11500(Lorg/telegram/ui/Cells/ChatMessageCell;)Ljava/util/ArrayList;
+    invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11600(Lorg/telegram/ui/Cells/ChatMessageCell;)Ljava/util/ArrayList;
 
     move-result-object v6
 
@@ -1680,24 +1717,24 @@
 
     move-result v6
 
-    if-eq v3, v6, :cond_1d
+    if-eq v3, v6, :cond_1f
 
-    .line 19674
+    .line 19705
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateBotButtonsChanged:Z
 
-    .line 19676
-    :cond_1d
+    .line 19707
+    :cond_1f
     iget-boolean v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateBotButtonsChanged:Z
 
-    if-nez v3, :cond_20
+    if-nez v3, :cond_22
 
     move v3, v2
 
-    .line 19677
-    :goto_e
+    .line 19708
+    :goto_10
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11500(Lorg/telegram/ui/Cells/ChatMessageCell;)Ljava/util/ArrayList;
+    invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11600(Lorg/telegram/ui/Cells/ChatMessageCell;)Ljava/util/ArrayList;
 
     move-result-object v6
 
@@ -1705,12 +1742,12 @@
 
     move-result v6
 
-    if-ge v3, v6, :cond_20
+    if-ge v3, v6, :cond_22
 
-    .line 19678
+    .line 19709
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11500(Lorg/telegram/ui/Cells/ChatMessageCell;)Ljava/util/ArrayList;
+    invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11600(Lorg/telegram/ui/Cells/ChatMessageCell;)Ljava/util/ArrayList;
 
     move-result-object v6
 
@@ -1720,7 +1757,7 @@
 
     check-cast v6, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;
 
-    .line 19679
+    .line 19710
     iget-object v7, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawBotButtons:Ljava/util/ArrayList;
 
     invoke-virtual {v7, v3}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
@@ -1729,7 +1766,7 @@
 
     check-cast v7, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;
 
-    .line 19680
+    .line 19711
     invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->access$1700(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)I
 
     move-result v8
@@ -1738,7 +1775,7 @@
 
     move-result v9
 
-    if-ne v8, v9, :cond_1f
+    if-ne v8, v9, :cond_21
 
     invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->access$1800(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)I
 
@@ -1748,68 +1785,68 @@
 
     move-result v9
 
-    if-ne v8, v9, :cond_1f
+    if-ne v8, v9, :cond_21
 
-    invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->access$3500(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)Landroid/text/StaticLayout;
+    invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->access$3600(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)Landroid/text/StaticLayout;
 
     move-result-object v6
 
-    invoke-static {v7}, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->access$3500(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)Landroid/text/StaticLayout;
+    invoke-static {v7}, Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;->access$3600(Lorg/telegram/ui/Cells/ChatMessageCell$BotButton;)Landroid/text/StaticLayout;
 
     move-result-object v7
 
-    if-eq v6, v7, :cond_1e
+    if-eq v6, v7, :cond_20
 
-    goto :goto_f
+    goto :goto_11
 
-    :cond_1e
+    :cond_20
     add-int/lit8 v3, v3, 0x1
 
-    goto :goto_e
+    goto :goto_10
 
-    .line 19681
-    :cond_1f
-    :goto_f
+    .line 19712
+    :cond_21
+    :goto_11
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateBotButtonsChanged:Z
 
-    .line 19686
-    :cond_20
+    .line 19717
+    :cond_22
     iget-boolean v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateBotButtonsChanged:Z
 
-    if-eqz v3, :cond_21
+    if-eqz v3, :cond_23
 
-    .line 19687
+    .line 19718
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->transitionBotButtons:Ljava/util/ArrayList;
 
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawBotButtons:Ljava/util/ArrayList;
 
     invoke-virtual {v3, v6}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 19691
-    :cond_21
+    .line 19722
+    :cond_23
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$9800(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$9900(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v3
 
     const/4 v6, 0x3
 
-    if-eq v3, v6, :cond_22
+    if-eq v3, v6, :cond_24
 
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$9800(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$9900(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v3
 
-    if-ne v3, v5, :cond_24
+    if-ne v3, v5, :cond_26
 
-    .line 19692
-    :cond_22
+    .line 19723
+    :cond_24
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$17800(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$17900(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v3
 
@@ -1819,11 +1856,11 @@
 
     cmpl-float v3, v3, v6
 
-    if-nez v3, :cond_23
+    if-nez v3, :cond_25
 
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$17900(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18000(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v3
 
@@ -1833,96 +1870,96 @@
 
     cmpl-float v3, v3, v6
 
-    if-eqz v3, :cond_24
+    if-eqz v3, :cond_26
 
-    .line 19693
-    :cond_23
+    .line 19724
+    :cond_25
     iget v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastButtonX:F
 
     iput v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateFromButtonX:F
 
-    .line 19694
+    .line 19725
     iget v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastButtonY:F
 
     iput v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateFromButtonY:F
 
-    .line 19695
+    .line 19726
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateButton:Z
 
     move v1, v5
 
-    .line 19702
-    :cond_24
+    .line 19733
+    :cond_26
     iget-boolean v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastIsPinned:Z
 
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-boolean v7, v6, Lorg/telegram/ui/Cells/ChatMessageCell;->isPinned:Z
 
-    if-eq v3, v7, :cond_25
+    if-eq v3, v7, :cond_27
 
-    .line 19703
+    .line 19734
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animatePinned:Z
 
-    .line 19706
+    .line 19737
     iput-object v4, v6, Lorg/telegram/ui/Cells/ChatMessageCell;->accessibilityText:Ljava/lang/CharSequence;
 
     move v1, v5
 
     move v3, v1
 
-    goto :goto_10
+    goto :goto_12
 
-    :cond_25
+    :cond_27
     move v3, v2
 
-    .line 19709
-    :goto_10
+    .line 19740
+    :goto_12
     iget-boolean v7, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastIsInBookmarks:Z
 
     iget-boolean v8, v6, Lorg/telegram/ui/Cells/ChatMessageCell;->isInBookmarks:Z
 
-    if-eq v7, v8, :cond_26
+    if-eq v7, v8, :cond_28
 
-    .line 19710
+    .line 19741
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateIsInBookmarks:Z
 
     move v1, v5
 
     move v3, v1
 
-    .line 19716
-    :cond_26
+    .line 19747
+    :cond_28
     iget-object v7, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastRepliesLayout:Landroid/text/StaticLayout;
 
-    if-nez v7, :cond_27
+    if-nez v7, :cond_29
 
-    invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$17400(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
+    invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$17500(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
 
     move-result-object v6
 
-    if-eqz v6, :cond_28
+    if-eqz v6, :cond_2a
 
-    :cond_27
+    :cond_29
     iget v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastRepliesCount:I
 
     iget-object v7, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v7}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$10700(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    invoke-static {v7}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$10800(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v7
 
-    if-eq v6, v7, :cond_28
+    if-eq v6, v7, :cond_2a
 
-    .line 19717
+    .line 19748
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastRepliesLayout:Landroid/text/StaticLayout;
 
     iput-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateRepliesLayout:Landroid/text/StaticLayout;
 
-    .line 19718
+    .line 19749
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateReplies:Z
 
-    .line 19721
+    .line 19752
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iput-object v4, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->accessibilityText:Ljava/lang/CharSequence;
@@ -1931,11 +1968,11 @@
 
     move v3, v1
 
-    .line 19724
-    :cond_28
+    .line 19755
+    :cond_2a
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastViewsLayout:Landroid/text/StaticLayout;
 
-    if-eqz v6, :cond_29
+    if-eqz v6, :cond_2b
 
     iget v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastViewsCount:I
 
@@ -1949,14 +1986,14 @@
 
     iget v7, v7, Lorg/telegram/tgnet/TLRPC$Message;->views:I
 
-    if-eq v6, v7, :cond_29
+    if-eq v6, v7, :cond_2b
 
-    .line 19725
+    .line 19756
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastViewsLayout:Landroid/text/StaticLayout;
 
     iput-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateViewsLayout:Landroid/text/StaticLayout;
 
-    .line 19728
+    .line 19759
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iput-object v4, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->accessibilityText:Ljava/lang/CharSequence;
@@ -1965,30 +2002,30 @@
 
     move v3, v1
 
-    .line 19731
-    :cond_29
+    .line 19762
+    :cond_2b
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$12200(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
+    invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$12300(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
 
     move-result-object v6
 
-    if-eqz v6, :cond_2b
+    if-eqz v6, :cond_2d
 
     iget v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastCommentsCount:I
 
     iget-object v7, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v7}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$10700(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    invoke-static {v7}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$10800(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v7
 
-    if-eq v6, v7, :cond_2b
+    if-eq v6, v7, :cond_2d
 
-    .line 19732
+    .line 19763
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastCommentLayout:Landroid/text/StaticLayout;
 
-    if-eqz v1, :cond_2a
+    if-eqz v1, :cond_2c
 
     invoke-virtual {v1}, Landroid/text/StaticLayout;->getText()Ljava/lang/CharSequence;
 
@@ -1996,7 +2033,7 @@
 
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$12200(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
+    invoke-static {v6}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$12300(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
 
     move-result-object v6
 
@@ -2008,62 +2045,62 @@
 
     move-result v1
 
-    if-nez v1, :cond_2a
+    if-nez v1, :cond_2c
 
-    .line 19733
+    .line 19764
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastCommentLayout:Landroid/text/StaticLayout;
 
     iput-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateCommentsLayout:Landroid/text/StaticLayout;
 
-    goto :goto_11
+    goto :goto_13
 
-    .line 19735
-    :cond_2a
+    .line 19766
+    :cond_2c
     iput-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateCommentsLayout:Landroid/text/StaticLayout;
 
-    .line 19737
-    :goto_11
+    .line 19768
+    :goto_13
     iget v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastTotalCommentWidth:I
 
     iput v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateTotalCommentWidth:I
 
-    .line 19738
+    .line 19769
     iget v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastCommentX:F
 
     iput v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateCommentX:F
 
-    .line 19739
+    .line 19770
     iget v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastCommentArrowX:I
 
     iput v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateCommentArrowX:I
 
-    .line 19740
+    .line 19771
     iget v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastCommentUnreadX:I
 
     iput v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateCommentUnreadX:I
 
-    .line 19741
+    .line 19772
     iget-boolean v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastCommentDrawUnread:Z
 
     iput-boolean v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateCommentDrawUnread:Z
 
-    .line 19742
+    .line 19773
     iget-boolean v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawCommentNumber:Z
 
     iput-boolean v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateDrawCommentNumber:Z
 
-    .line 19743
+    .line 19774
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateComments:Z
 
     move v1, v5
 
-    .line 19747
-    :cond_2b
+    .line 19778
+    :cond_2d
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastSignMessage:Ljava/lang/String;
 
     iget-object v7, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v7}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$17600(Lorg/telegram/ui/Cells/ChatMessageCell;)Ljava/lang/String;
+    invoke-static {v7}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$17700(Lorg/telegram/ui/Cells/ChatMessageCell;)Ljava/lang/String;
 
     move-result-object v7
 
@@ -2071,15 +2108,15 @@
 
     move-result v6
 
-    if-nez v6, :cond_2c
+    if-nez v6, :cond_2e
 
-    .line 19748
+    .line 19779
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateSign:Z
 
-    .line 19749
+    .line 19780
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$12800(Lorg/telegram/ui/Cells/ChatMessageCell;)F
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$12900(Lorg/telegram/ui/Cells/ChatMessageCell;)F
 
     move-result v1
 
@@ -2087,31 +2124,31 @@
 
     move v1, v5
 
-    .line 19753
-    :cond_2c
+    .line 19784
+    :cond_2e
     iget-boolean v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawTime:Z
 
     iget-object v7, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v7}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18000(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
+    invoke-static {v7}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18100(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
 
     move-result v7
 
-    if-ne v6, v7, :cond_2d
+    if-ne v6, v7, :cond_2f
 
-    .line 19754
+    .line 19785
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateDrawingTimeAlpha:Z
 
-    .line 19755
+    .line 19786
     iput-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateViewsLayout:Landroid/text/StaticLayout;
 
-    :goto_12
+    :goto_14
     move v1, v5
 
-    goto :goto_13
+    goto :goto_15
 
-    .line 19757
-    :cond_2d
+    .line 19788
+    :cond_2f
     iget-boolean v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastShouldDrawTimeOnMedia:Z
 
     iget-object v6, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -2120,38 +2157,38 @@
 
     move-result v6
 
-    if-eq v4, v6, :cond_2e
+    if-eq v4, v6, :cond_30
 
-    .line 19758
+    .line 19789
     iput-boolean v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateEditedEnter:Z
 
-    .line 19759
+    .line 19790
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateShouldDrawTimeOnMedia:Z
 
-    .line 19760
+    .line 19791
     iget v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastTimeX:I
 
     iput v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateFromTimeX:I
 
-    .line 19761
+    .line 19792
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastTimeLayout:Landroid/text/StaticLayout;
 
     iput-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateTimeLayout:Landroid/text/StaticLayout;
 
-    .line 19762
+    .line 19793
     iget v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastTimeWidth:I
 
     iput v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateTimeWidth:I
 
-    goto :goto_12
+    goto :goto_14
 
-    :cond_2e
-    if-nez v3, :cond_2f
+    :cond_30
+    if-nez v3, :cond_31
 
-    .line 19764
+    .line 19795
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18100(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18200(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v3
 
@@ -2163,71 +2200,41 @@
 
     move-result v3
 
-    if-le v3, v5, :cond_30
+    if-le v3, v5, :cond_32
 
-    .line 19765
-    :cond_2f
+    .line 19796
+    :cond_31
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->shouldAnimateTimeX:Z
 
-    .line 19766
+    .line 19797
     iget v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastTimeWidth:I
 
     iput v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateTimeWidth:I
 
-    .line 19767
+    .line 19798
     iget v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastTimeX:I
 
     iput v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateFromTimeX:I
 
-    .line 19768
+    .line 19799
     iget v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastTimeXViews:F
 
     iput v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateFromTimeXViews:F
 
-    .line 19769
+    .line 19800
     iget v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastTimeXReplies:F
 
     iput v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateFromTimeXReplies:F
 
-    .line 19770
+    .line 19801
     iget v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastTimeXPinned:F
 
     iput v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateFromTimeXPinned:F
 
-    .line 19773
-    :cond_30
-    :goto_13
-    iget-boolean v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastShouldDrawMenuDrawable:Z
-
-    iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
-
-    invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18400(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
-
-    move-result v4
-
-    if-eq v3, v4, :cond_31
-
-    .line 19774
-    iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateShouldDrawMenuDrawable:Z
-
-    .line 19777
-    :cond_31
-    iget-boolean v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastLocatinIsExpired:Z
-
-    iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
-
-    invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$300(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
-
-    move-result v4
-
-    if-eq v3, v4, :cond_32
-
-    .line 19778
-    iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateLocationIsExpired:Z
-
-    .line 19781
+    .line 19804
     :cond_32
-    iget-boolean v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastIsPlayingRound:Z
+    :goto_15
+    iget-boolean v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastShouldDrawMenuDrawable:Z
 
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -2237,18 +2244,48 @@
 
     if-eq v3, v4, :cond_33
 
-    .line 19782
+    .line 19805
+    iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateShouldDrawMenuDrawable:Z
+
+    .line 19808
+    :cond_33
+    iget-boolean v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastLocatinIsExpired:Z
+
+    iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
+
+    invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$300(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
+
+    move-result v4
+
+    if-eq v3, v4, :cond_34
+
+    .line 19809
+    iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateLocationIsExpired:Z
+
+    .line 19812
+    :cond_34
+    iget-boolean v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastIsPlayingRound:Z
+
+    iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
+
+    invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18600(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
+
+    move-result v4
+
+    if-eq v3, v4, :cond_35
+
+    .line 19813
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animatePlayingRound:Z
 
     move v1, v5
 
-    .line 19786
-    :cond_33
+    .line 19817
+    :cond_35
     iget v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingTextY:F
 
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$13600(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    invoke-static {v4}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$13700(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v4
 
@@ -2256,29 +2293,29 @@
 
     cmpl-float v3, v3, v4
 
-    if-eqz v3, :cond_34
+    if-eqz v3, :cond_36
 
-    .line 19787
+    .line 19818
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateText:Z
 
-    .line 19788
+    .line 19819
     iget v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingTextY:F
 
     iput v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateFromTextY:F
 
     move v1, v5
 
-    .line 19792
-    :cond_34
+    .line 19823
+    :cond_36
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$800(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
 
     move-result-object v3
 
-    if-eqz v3, :cond_35
+    if-eqz v3, :cond_37
 
-    .line 19793
+    .line 19824
     iget-boolean v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawnForwardedName:Z
 
     iget-object v4, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -2291,12 +2328,12 @@
 
     move-result v4
 
-    if-eq v3, v4, :cond_35
+    if-eq v3, v4, :cond_37
 
-    .line 19794
+    .line 19825
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateForwardedLayout:Z
 
-    .line 19795
+    .line 19826
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animatingForwardedNameLayout:[Landroid/text/StaticLayout;
 
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawnForwardedNameLayout:[Landroid/text/StaticLayout;
@@ -2305,35 +2342,35 @@
 
     aput-object v4, v1, v2
 
-    .line 19796
+    .line 19827
     aget-object v3, v3, v5
 
     aput-object v3, v1, v5
 
-    .line 19797
+    .line 19828
     iget v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastForwardNameX:F
 
     iput v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateForwardNameX:F
 
-    .line 19798
+    .line 19829
     iget v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastForwardedNamesOffset:I
 
     iput v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateForwardedNamesOffset:I
 
-    .line 19799
+    .line 19830
     iget v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastForwardNameWidth:I
 
     iput v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateForwardNameWidth:I
 
     move v1, v5
 
-    .line 19803
-    :cond_35
+    .line 19834
+    :cond_37
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18800(Lorg/telegram/ui/Cells/ChatMessageCell;)V
+    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18900(Lorg/telegram/ui/Cells/ChatMessageCell;)V
 
-    .line 19804
+    .line 19835
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-object v3, v3, Lorg/telegram/ui/Cells/ChatMessageCell;->reactionsLayoutInBubble:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
@@ -2342,12 +2379,12 @@
 
     move-result v3
 
-    if-eqz v3, :cond_36
+    if-eqz v3, :cond_38
 
     move v1, v5
 
-    .line 19807
-    :cond_36
+    .line 19838
+    :cond_38
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$800(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -2358,12 +2395,12 @@
 
     move-result v3
 
-    if-eqz v3, :cond_39
+    if-eqz v3, :cond_3b
 
-    .line 19808
+    .line 19839
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$13900(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    invoke-static {v3}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$14000(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v3
 
@@ -2371,11 +2408,11 @@
 
     iget-boolean v4, v4, Lorg/telegram/ui/Cells/ChatMessageCell;->drawPinnedBottom:Z
 
-    if-eqz v4, :cond_37
+    if-eqz v4, :cond_39
 
     const/4 v2, 0x2
 
-    :cond_37
+    :cond_39
     rsub-int/lit8 v2, v2, 0x1c
 
     invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
@@ -2386,45 +2423,45 @@
 
     int-to-float v2, v3
 
-    .line 19809
+    .line 19840
     iget-object v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-object v3, v3, Lorg/telegram/ui/Cells/ChatMessageCell;->reactionsLayoutInBubble:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
     iget-boolean v4, v3, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->isEmpty:Z
 
-    if-nez v4, :cond_38
+    if-nez v4, :cond_3a
 
-    .line 19810
+    .line 19841
     iget v3, v3, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->totalHeight:I
 
     int-to-float v3, v3
 
     sub-float/2addr v2, v3
 
-    .line 19812
-    :cond_38
+    .line 19843
+    :cond_3a
     iget v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawRoundVideoDotY:F
 
     cmpl-float v2, v2, v3
 
-    if-eqz v2, :cond_39
+    if-eqz v2, :cond_3b
 
-    .line 19813
+    .line 19844
     iput-boolean v5, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateRoundVideoDotY:Z
 
-    .line 19814
+    .line 19845
     iput v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateFromRoundVideoDotY:F
 
     move v1, v5
 
-    .line 19819
-    :cond_39
+    .line 19850
+    :cond_3b
     iget-object v2, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-object v3, v2, Lorg/telegram/ui/Cells/ChatMessageCell;->replyNameLayout:Landroid/text/StaticLayout;
 
-    if-eqz v3, :cond_3a
+    if-eqz v3, :cond_3c
 
     iget v2, v2, Lorg/telegram/ui/Cells/ChatMessageCell;->replyStartX:I
 
@@ -2434,30 +2471,30 @@
 
     cmpl-float v2, v2, v3
 
-    if-eqz v2, :cond_3a
+    if-eqz v2, :cond_3c
 
     const/4 v2, 0x0
 
     cmpl-float v2, v3, v2
 
-    if-eqz v2, :cond_3a
+    if-eqz v2, :cond_3c
 
-    .line 19821
+    .line 19852
     iput v3, v0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateFromReplyY:F
 
-    goto :goto_14
+    goto :goto_16
 
-    :cond_3a
+    :cond_3c
     move v5, v1
 
-    :goto_14
+    :goto_16
     return v5
 .end method
 
 .method public createStatusDrawableParams()I
     .locals 7
 
-    .line 19902
+    .line 19934
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$800(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -2478,7 +2515,7 @@
 
     if-eqz v0, :cond_8
 
-    .line 19908
+    .line 19940
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$800(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -2505,7 +2542,7 @@
 
     goto :goto_2
 
-    .line 19912
+    .line 19944
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -2529,7 +2566,7 @@
 
     goto :goto_3
 
-    .line 19916
+    .line 19948
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -2543,7 +2580,7 @@
 
     if-eqz v0, :cond_3
 
-    .line 19917
+    .line 19949
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$800(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -2635,7 +2672,7 @@
 
     return v0
 
-    .line 19928
+    .line 19960
     :cond_8
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -2666,7 +2703,7 @@
     :cond_9
     move v3, v4
 
-    .line 19929
+    .line 19961
     :cond_a
     :goto_7
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
@@ -2705,7 +2742,7 @@
 
     const/4 v0, 0x0
 
-    .line 19829
+    .line 19860
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->wasDraw:Z
 
     return-void
@@ -2716,13 +2753,13 @@
 
     const/4 v0, 0x1
 
-    .line 19462
+    .line 19489
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->wasDraw:Z
 
-    .line 19463
+    .line 19490
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16500(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/ImageReceiver;
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16600(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v1
 
@@ -2732,10 +2769,10 @@
 
     iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingImageX:F
 
-    .line 19464
+    .line 19491
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16500(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/ImageReceiver;
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16600(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v1
 
@@ -2745,10 +2782,10 @@
 
     iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingImageY:F
 
-    .line 19465
+    .line 19492
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16500(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/ImageReceiver;
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16600(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v1
 
@@ -2758,10 +2795,10 @@
 
     iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingImageW:F
 
-    .line 19466
+    .line 19493
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16500(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/ImageReceiver;
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16600(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v1
 
@@ -2771,10 +2808,10 @@
 
     iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingImageH:F
 
-    .line 19467
+    .line 19494
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16500(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/ImageReceiver;
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16600(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v1
 
@@ -2782,7 +2819,7 @@
 
     move-result-object v1
 
-    .line 19468
+    .line 19495
     iget-object v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->imageRoundRadius:[I
 
     const/4 v3, 0x0
@@ -2791,21 +2828,21 @@
 
     invoke-static {v1, v3, v2, v3, v4}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 19469
+    .line 19496
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16600(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 
     move-result-object v1
 
     if-eqz v1, :cond_0
 
-    .line 19470
+    .line 19497
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingBackgroundRect:Landroid/graphics/Rect;
 
     iget-object v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16600(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
+    invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 
     move-result-object v2
 
@@ -2815,7 +2852,7 @@
 
     invoke-virtual {v1, v2}, Landroid/graphics/Rect;->set(Landroid/graphics/Rect;)V
 
-    .line 19472
+    .line 19499
     :cond_0
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
@@ -2827,51 +2864,51 @@
 
     iput-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingTextBlocks:Ljava/util/ArrayList;
 
-    .line 19473
+    .line 19500
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16700(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16800(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
 
     move-result v1
 
     iput-boolean v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingEdited:Z
 
-    .line 19475
-    iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
-
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$13300(Lorg/telegram/ui/Cells/ChatMessageCell;)F
-
-    move-result v1
-
-    iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingCaptionX:F
-
-    .line 19476
+    .line 19502
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$13400(Lorg/telegram/ui/Cells/ChatMessageCell;)F
 
     move-result v1
 
-    iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingCaptionY:F
+    iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingCaptionX:F
 
-    .line 19478
+    .line 19503
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11400(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$13500(Lorg/telegram/ui/Cells/ChatMessageCell;)F
+
+    move-result v1
+
+    iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingCaptionY:F
+
+    .line 19505
+    iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
+
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11500(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
 
     move-result-object v1
 
     iput-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingCaptionLayout:Landroid/text/StaticLayout;
 
-    .line 19479
+    .line 19506
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawBotButtons:Ljava/util/ArrayList;
 
     invoke-virtual {v1}, Ljava/util/ArrayList;->clear()V
 
-    .line 19480
+    .line 19507
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11500(Lorg/telegram/ui/Cells/ChatMessageCell;)Ljava/util/ArrayList;
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11600(Lorg/telegram/ui/Cells/ChatMessageCell;)Ljava/util/ArrayList;
 
     move-result-object v1
 
@@ -2881,85 +2918,85 @@
 
     if-nez v1, :cond_1
 
-    .line 19481
+    .line 19508
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawBotButtons:Ljava/util/ArrayList;
 
     iget-object v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11500(Lorg/telegram/ui/Cells/ChatMessageCell;)Ljava/util/ArrayList;
+    invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11600(Lorg/telegram/ui/Cells/ChatMessageCell;)Ljava/util/ArrayList;
 
     move-result-object v2
 
     invoke-virtual {v1, v2}, Ljava/util/ArrayList;->addAll(Ljava/util/Collection;)Z
 
-    .line 19484
+    .line 19511
     :cond_1
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$12200(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$12300(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
 
     move-result-object v1
 
     if-eqz v1, :cond_2
 
-    .line 19485
+    .line 19512
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$10700(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$10800(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v1
 
     iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastCommentsCount:I
 
-    .line 19486
-    iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
-
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16800(Lorg/telegram/ui/Cells/ChatMessageCell;)I
-
-    move-result v1
-
-    iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastTotalCommentWidth:I
-
-    .line 19487
-    iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
-
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$12200(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastCommentLayout:Landroid/text/StaticLayout;
-
-    .line 19488
+    .line 19513
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16900(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v1
 
-    iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastCommentArrowX:I
+    iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastTotalCommentWidth:I
 
-    .line 19489
+    .line 19514
+    iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
+
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$12300(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
+
+    move-result-object v1
+
+    iput-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastCommentLayout:Landroid/text/StaticLayout;
+
+    .line 19515
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$17000(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v1
 
-    iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastCommentUnreadX:I
+    iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastCommentArrowX:I
 
-    .line 19490
+    .line 19516
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$17100(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$17100(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+
+    move-result v1
+
+    iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastCommentUnreadX:I
+
+    .line 19517
+    iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
+
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$17200(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
 
     move-result v1
 
     iput-boolean v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastCommentDrawUnread:Z
 
-    .line 19491
+    .line 19518
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$17200(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$17300(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v1
 
@@ -2967,26 +3004,26 @@
 
     iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastCommentX:F
 
-    .line 19492
+    .line 19519
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$17300(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$17400(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
 
     move-result v1
 
     iput-boolean v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawCommentNumber:Z
 
-    .line 19495
+    .line 19522
     :cond_2
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$10700(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$10800(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v1
 
     iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastRepliesCount:I
 
-    .line 19496
+    .line 19523
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getMessageObject()Lorg/telegram/messenger/MessageObject;
@@ -2999,73 +3036,62 @@
 
     iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastViewsCount:I
 
-    .line 19497
-    iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
-
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$17400(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
-
-    move-result-object v1
-
-    iput-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastRepliesLayout:Landroid/text/StaticLayout;
-
-    .line 19498
+    .line 19524
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$17500(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
 
     move-result-object v1
 
+    iput-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastRepliesLayout:Landroid/text/StaticLayout;
+
+    .line 19525
+    iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
+
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$17600(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
+
+    move-result-object v1
+
     iput-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastViewsLayout:Landroid/text/StaticLayout;
 
-    .line 19500
+    .line 19527
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-boolean v2, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->isPinned:Z
 
     iput-boolean v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastIsPinned:Z
 
-    .line 19501
+    .line 19528
     iget-boolean v2, v1, Lorg/telegram/ui/Cells/ChatMessageCell;->isInBookmarks:Z
 
     iput-boolean v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastIsInBookmarks:Z
 
-    .line 19503
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$17600(Lorg/telegram/ui/Cells/ChatMessageCell;)Ljava/lang/String;
+    .line 19530
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$17700(Lorg/telegram/ui/Cells/ChatMessageCell;)Ljava/lang/String;
 
     move-result-object v1
 
     iput-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastSignMessage:Ljava/lang/String;
 
-    .line 19505
+    .line 19532
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$17700(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$17800(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
 
     move-result v1
 
     iput-boolean v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawBackground:Z
 
-    .line 19506
+    .line 19533
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11200(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$11300(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
 
     move-result v1
 
     iput-boolean v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastUseTranscribeButton:Z
 
-    .line 19508
-    iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
-
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$17800(Lorg/telegram/ui/Cells/ChatMessageCell;)I
-
-    move-result v1
-
-    int-to-float v1, v1
-
-    iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastButtonX:F
-
-    .line 19509
+    .line 19535
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$17900(Lorg/telegram/ui/Cells/ChatMessageCell;)I
@@ -3074,12 +3100,23 @@
 
     int-to-float v1, v1
 
-    iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastButtonY:F
+    iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastButtonX:F
 
-    .line 19511
+    .line 19536
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18000(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18000(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+
+    move-result v1
+
+    int-to-float v1, v1
+
+    iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastButtonY:F
+
+    .line 19538
+    iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
+
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18100(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
 
     move-result v1
 
@@ -3087,34 +3124,34 @@
 
     iput-boolean v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawTime:Z
 
-    .line 19512
+    .line 19539
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18100(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18200(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v1
 
     iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastTimeX:I
 
-    .line 19513
+    .line 19540
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18200(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18300(Lorg/telegram/ui/Cells/ChatMessageCell;)Landroid/text/StaticLayout;
 
     move-result-object v1
 
     iput-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastTimeLayout:Landroid/text/StaticLayout;
 
-    .line 19514
+    .line 19541
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18300(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18400(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v1
 
     iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastTimeWidth:I
 
-    .line 19516
+    .line 19543
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->shouldDrawTimeOnMedia()Z
@@ -3123,7 +3160,7 @@
 
     iput-boolean v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastShouldDrawTimeOnMedia:Z
 
-    .line 19517
+    .line 19544
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->getTopMediaOffset()I
@@ -3132,16 +3169,16 @@
 
     iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastTopOffset:I
 
-    .line 19518
+    .line 19545
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18400(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18500(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
 
     move-result v1
 
     iput-boolean v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastShouldDrawMenuDrawable:Z
 
-    .line 19520
+    .line 19547
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$300(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
@@ -3150,19 +3187,19 @@
 
     iput-boolean v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastLocatinIsExpired:Z
 
-    .line 19521
+    .line 19548
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18500(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18600(Lorg/telegram/ui/Cells/ChatMessageCell;)Z
 
     move-result v1
 
     iput-boolean v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastIsPlayingRound:Z
 
-    .line 19523
+    .line 19550
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$13600(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$13700(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v1
 
@@ -3170,17 +3207,17 @@
 
     iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawingTextY:F
 
-    .line 19524
+    .line 19551
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$13500(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$13600(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
-    .line 19526
+    .line 19553
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawnForwardedNameLayout:[Landroid/text/StaticLayout;
 
     iget-object v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$9600(Lorg/telegram/ui/Cells/ChatMessageCell;)[Landroid/text/StaticLayout;
+    invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$9700(Lorg/telegram/ui/Cells/ChatMessageCell;)[Landroid/text/StaticLayout;
 
     move-result-object v2
 
@@ -3188,12 +3225,12 @@
 
     aput-object v2, v1, v3
 
-    .line 19527
+    .line 19554
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawnForwardedNameLayout:[Landroid/text/StaticLayout;
 
     iget-object v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$9600(Lorg/telegram/ui/Cells/ChatMessageCell;)[Landroid/text/StaticLayout;
+    invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$9700(Lorg/telegram/ui/Cells/ChatMessageCell;)[Landroid/text/StaticLayout;
 
     move-result-object v2
 
@@ -3201,7 +3238,7 @@
 
     aput-object v2, v1, v0
 
-    .line 19528
+    .line 19555
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$800(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -3214,34 +3251,34 @@
 
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawnForwardedName:Z
 
-    .line 19529
+    .line 19556
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$15000(Lorg/telegram/ui/Cells/ChatMessageCell;)F
+    invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$15100(Lorg/telegram/ui/Cells/ChatMessageCell;)F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastForwardNameX:F
 
-    .line 19530
+    .line 19557
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$14100(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$14200(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastForwardedNamesOffset:I
 
-    .line 19531
+    .line 19558
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$15300(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$15400(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastForwardNameWidth:I
 
-    .line 19532
+    .line 19559
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->getCurrentBackgroundLeft()I
@@ -3250,10 +3287,10 @@
 
     iput v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastBackgroundLeft:I
 
-    .line 19533
+    .line 19560
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16600(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
+    invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16700(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/ui/ActionBar/Theme$MessageDrawable;
 
     move-result-object v0
 
@@ -3265,7 +3302,7 @@
 
     iput v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastBackgroundRight:I
 
-    .line 19534
+    .line 19561
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$800(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -3276,35 +3313,35 @@
 
     iput v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastTextXOffset:F
 
-    .line 19536
+    .line 19563
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell;->replyTextLayout:Landroid/text/StaticLayout;
 
     iput-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawnReplyTextLayout:Landroid/text/StaticLayout;
 
-    .line 19537
-    invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18600(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    .line 19564
+    invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$18700(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastReplyTextXOffset:I
 
-    .line 19539
+    .line 19566
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-object v0, v0, Lorg/telegram/ui/Cells/ChatMessageCell;->reactionsLayoutInBubble:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;->recordDrawingState()V
 
-    .line 19540
+    .line 19567
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-object v1, v0, Lorg/telegram/ui/Cells/ChatMessageCell;->replyNameLayout:Landroid/text/StaticLayout;
 
     if-eqz v1, :cond_3
 
-    .line 19541
+    .line 19568
     iget v0, v0, Lorg/telegram/ui/Cells/ChatMessageCell;->replyStartY:I
 
     int-to-float v0, v0
@@ -3316,7 +3353,7 @@
     :cond_3
     const/4 v0, 0x0
 
-    .line 19543
+    .line 19570
     iput v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawReplyY:F
 
     :goto_0
@@ -3326,12 +3363,12 @@
 .method public recordDrawingStatePreview()V
     .locals 3
 
-    .line 19548
+    .line 19575
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawnForwardedNameLayout:[Landroid/text/StaticLayout;
 
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$9600(Lorg/telegram/ui/Cells/ChatMessageCell;)[Landroid/text/StaticLayout;
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$9700(Lorg/telegram/ui/Cells/ChatMessageCell;)[Landroid/text/StaticLayout;
 
     move-result-object v1
 
@@ -3341,12 +3378,12 @@
 
     aput-object v1, v0, v2
 
-    .line 19549
+    .line 19576
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawnForwardedNameLayout:[Landroid/text/StaticLayout;
 
     iget-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$9600(Lorg/telegram/ui/Cells/ChatMessageCell;)[Landroid/text/StaticLayout;
+    invoke-static {v1}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$9700(Lorg/telegram/ui/Cells/ChatMessageCell;)[Landroid/text/StaticLayout;
 
     move-result-object v1
 
@@ -3356,7 +3393,7 @@
 
     aput-object v1, v0, v2
 
-    .line 19550
+    .line 19577
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$800(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/MessageObject;
@@ -3369,28 +3406,28 @@
 
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastDrawnForwardedName:Z
 
-    .line 19551
+    .line 19578
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$15000(Lorg/telegram/ui/Cells/ChatMessageCell;)F
+    invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$15100(Lorg/telegram/ui/Cells/ChatMessageCell;)F
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastForwardNameX:F
 
-    .line 19552
+    .line 19579
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$14100(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$14200(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v0
 
     iput v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->lastForwardedNamesOffset:I
 
-    .line 19553
+    .line 19580
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$15300(Lorg/telegram/ui/Cells/ChatMessageCell;)I
+    invoke-static {v0}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$15400(Lorg/telegram/ui/Cells/ChatMessageCell;)I
 
     move-result v0
 
@@ -3404,39 +3441,39 @@
 
     const/4 v0, 0x0
 
-    .line 19833
+    .line 19864
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateIsInBookmarks:Z
 
-    .line 19834
+    .line 19865
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateChange:Z
 
-    .line 19835
+    .line 19866
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animatePinned:Z
 
-    .line 19836
+    .line 19867
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateBackgroundBoundsInner:Z
 
     const/4 v1, 0x0
 
-    .line 19838
+    .line 19869
     iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->deltaLeft:F
 
-    .line 19839
+    .line 19870
     iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->deltaRight:F
 
-    .line 19840
+    .line 19871
     iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->deltaBottom:F
 
-    .line 19841
+    .line 19872
     iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->deltaTop:F
 
-    .line 19842
+    .line 19873
     iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->toDeltaLeft:F
 
-    .line 19843
+    .line 19874
     iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->toDeltaRight:F
 
-    .line 19844
+    .line 19875
     iget-boolean v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->imageChangeBoundsTransition:Z
 
     if-eqz v2, :cond_0
@@ -3453,10 +3490,10 @@
 
     if-eqz v2, :cond_0
 
-    .line 19845
+    .line 19876
     iget-object v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16500(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/ImageReceiver;
+    invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16600(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v2
 
@@ -3470,16 +3507,16 @@
 
     invoke-virtual {v2, v3, v4, v5, v6}, Lorg/telegram/messenger/ImageReceiver;->setImageCoords(FFFF)V
 
-    .line 19847
+    .line 19878
     :cond_0
     iget-boolean v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateRadius:Z
 
     if-eqz v2, :cond_1
 
-    .line 19848
+    .line 19879
     iget-object v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
-    invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16500(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/ImageReceiver;
+    invoke-static {v2}, Lorg/telegram/ui/Cells/ChatMessageCell;->access$16600(Lorg/telegram/ui/Cells/ChatMessageCell;)Lorg/telegram/messenger/ImageReceiver;
 
     move-result-object v2
 
@@ -3487,145 +3524,148 @@
 
     invoke-virtual {v2, v3}, Lorg/telegram/messenger/ImageReceiver;->setRoundRadius([I)V
 
-    .line 19850
+    .line 19881
     :cond_1
     iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateToImageX:F
 
-    .line 19851
+    .line 19882
     iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateToImageY:F
 
-    .line 19852
+    .line 19883
     iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateToImageW:F
 
-    .line 19853
+    .line 19884
     iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateToImageH:F
 
-    .line 19854
+    .line 19885
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->imageChangeBoundsTransition:Z
 
     const/high16 v1, 0x3f800000    # 1.0f
 
-    .line 19855
+    .line 19886
     iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->changePinnedBottomProgress:F
 
-    .line 19856
+    .line 19887
     iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->captionEnterProgress:F
 
-    .line 19857
+    .line 19888
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateRadius:Z
 
-    .line 19858
+    .line 19889
     iput v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateChangeProgress:F
 
-    .line 19859
+    .line 19890
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateMessageText:Z
 
     const/4 v1, 0x0
 
-    .line 19860
+    .line 19891
     iput-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateOutTextBlocks:Ljava/util/ArrayList;
 
-    .line 19861
+    .line 19892
     iput-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateEditedLayout:Landroid/text/StaticLayout;
 
-    .line 19862
+    .line 19893
     iput-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateTimeLayout:Landroid/text/StaticLayout;
 
-    .line 19863
+    .line 19894
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateEditedEnter:Z
 
-    .line 19864
+    .line 19895
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateReplaceCaptionLayout:Z
 
-    .line 19865
+    .line 19896
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->transformGroupToSingleMessage:Z
 
-    .line 19866
+    .line 19897
     iput-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateOutCaptionLayout:Landroid/text/StaticLayout;
 
-    .line 19867
+    .line 19898
     iget-object v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-object v3, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateOutAnimateEmoji:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
     invoke-static {v2, v3}, Lorg/telegram/ui/Components/AnimatedEmojiSpan;->release(Landroid/view/View;Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;)V
 
-    .line 19868
+    .line 19899
     iput-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateOutAnimateEmoji:Lorg/telegram/ui/Components/AnimatedEmojiSpan$EmojiGroupedSpans;
 
-    .line 19869
+    .line 19900
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->moveCaption:Z
 
-    .line 19870
+    .line 19901
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateDrawingTimeAlpha:Z
 
-    .line 19871
+    .line 19902
     iget-object v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->transitionBotButtons:Ljava/util/ArrayList;
 
     invoke-virtual {v2}, Ljava/util/ArrayList;->clear()V
 
-    .line 19872
+    .line 19903
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateButton:Z
 
-    .line 19874
+    .line 19904
+    iput-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateReplyTextLayout:Landroid/text/StaticLayout;
+
+    .line 19906
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateReplies:Z
 
-    .line 19875
+    .line 19907
     iput-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateRepliesLayout:Landroid/text/StaticLayout;
 
-    .line 19877
+    .line 19909
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateComments:Z
 
-    .line 19878
+    .line 19910
     iput-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateCommentsLayout:Landroid/text/StaticLayout;
 
-    .line 19879
+    .line 19911
     iput-object v1, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateViewsLayout:Landroid/text/StaticLayout;
 
-    .line 19880
+    .line 19912
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateShouldDrawTimeOnMedia:Z
 
-    .line 19881
+    .line 19913
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateShouldDrawMenuDrawable:Z
 
-    .line 19882
+    .line 19914
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->shouldAnimateTimeX:Z
 
-    .line 19883
+    .line 19915
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateDrawBackground:Z
 
-    .line 19884
+    .line 19916
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateSign:Z
 
-    .line 19885
+    .line 19917
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateDrawingTimeAlpha:Z
 
-    .line 19886
+    .line 19918
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateLocationIsExpired:Z
 
-    .line 19887
+    .line 19919
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animatePlayingRound:Z
 
-    .line 19888
+    .line 19920
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateText:Z
 
-    .line 19889
+    .line 19921
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateForwardedLayout:Z
 
-    .line 19890
+    .line 19922
     iget-object v2, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animatingForwardedNameLayout:[Landroid/text/StaticLayout;
 
     aput-object v1, v2, v0
 
     const/4 v3, 0x1
 
-    .line 19891
+    .line 19923
     aput-object v1, v2, v3
 
-    .line 19892
+    .line 19924
     iput-boolean v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->animateRoundVideoDotY:Z
 
-    .line 19894
+    .line 19926
     iget-object v0, p0, Lorg/telegram/ui/Cells/ChatMessageCell$TransitionParams;->this$0:Lorg/telegram/ui/Cells/ChatMessageCell;
 
     iget-object v0, v0, Lorg/telegram/ui/Cells/ChatMessageCell;->reactionsLayoutInBubble:Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble;

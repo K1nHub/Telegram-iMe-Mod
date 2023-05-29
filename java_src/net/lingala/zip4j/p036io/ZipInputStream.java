@@ -8,17 +8,17 @@ import net.lingala.zip4j.exception.ZipException;
 public class ZipInputStream extends InputStream {
 
     /* renamed from: is */
-    private BaseInputStream f1229is;
+    private BaseInputStream f1234is;
 
     public ZipInputStream(BaseInputStream baseInputStream) {
-        this.f1229is = baseInputStream;
+        this.f1234is = baseInputStream;
     }
 
     @Override // java.io.InputStream
     public int read() throws IOException {
-        int read = this.f1229is.read();
+        int read = this.f1234is.read();
         if (read != -1) {
-            this.f1229is.getUnzipEngine().updateCRC(read);
+            this.f1234is.getUnzipEngine().updateCRC(read);
         }
         return read;
     }
@@ -30,9 +30,9 @@ public class ZipInputStream extends InputStream {
 
     @Override // java.io.InputStream
     public int read(byte[] bArr, int i, int i2) throws IOException {
-        int read = this.f1229is.read(bArr, i, i2);
-        if (read > 0 && this.f1229is.getUnzipEngine() != null) {
-            this.f1229is.getUnzipEngine().updateCRC(bArr, i, read);
+        int read = this.f1234is.read(bArr, i, i2);
+        if (read > 0 && this.f1234is.getUnzipEngine() != null) {
+            this.f1234is.getUnzipEngine().updateCRC(bArr, i, read);
         }
         return read;
     }
@@ -44,11 +44,11 @@ public class ZipInputStream extends InputStream {
 
     public void close(boolean z) throws IOException {
         try {
-            this.f1229is.close();
-            if (z || this.f1229is.getUnzipEngine() == null) {
+            this.f1234is.close();
+            if (z || this.f1234is.getUnzipEngine() == null) {
                 return;
             }
-            this.f1229is.getUnzipEngine().checkCRC();
+            this.f1234is.getUnzipEngine().checkCRC();
         } catch (ZipException e) {
             throw new IOException(e.getMessage());
         }
@@ -56,11 +56,11 @@ public class ZipInputStream extends InputStream {
 
     @Override // java.io.InputStream
     public int available() throws IOException {
-        return this.f1229is.available();
+        return this.f1234is.available();
     }
 
     @Override // java.io.InputStream
     public long skip(long j) throws IOException {
-        return this.f1229is.skip(j);
+        return this.f1234is.skip(j);
     }
 }

@@ -48,14 +48,6 @@
     return v0
 .end method
 
-.method public static $default$isCustomForward(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)Z
-    .locals 1
-
-    const/4 v0, 0x0
-
-    return v0
-.end method
-
 .method public static $default$measureKeyboardHeight(Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;)I
     .locals 1
 
@@ -70,7 +62,7 @@
 
     const/4 v0, 0x0
 
-    .line 577
+    .line 505
     invoke-interface {p0, p1, p2, p3, v0}, Lorg/telegram/ui/Components/ChatActivityEnterView$ChatActivityEnterViewDelegate;->needStartRecordVideo(IZIZ)V
 
     return-void

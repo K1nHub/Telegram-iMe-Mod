@@ -74,10 +74,10 @@
     .line 270
     iput p2, p0, Lorg/telegram/ui/Cells/SharedPhotoVideoCell;->type:I
 
-    const-string p2, "sharedMedia_photoPlaceholder"
-
     .line 272
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_sharedMedia_photoPlaceholder:I
+
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 

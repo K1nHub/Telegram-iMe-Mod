@@ -30,7 +30,7 @@ public class PhotoEditorSeekBar extends View {
         super(context);
         this.innerPaint = new Paint();
         this.outerPaint = new Paint(1);
-        this.thumbSize = AndroidUtilities.m50dp(16);
+        this.thumbSize = AndroidUtilities.m54dp(16);
         this.thumbDX = 0;
         this.progress = BitmapDescriptorFactory.HUE_RED;
         this.pressed = false;
@@ -124,15 +124,15 @@ public class PhotoEditorSeekBar extends View {
         int measuredWidth = getMeasuredWidth();
         int i = this.thumbSize;
         int i2 = (int) ((measuredWidth - i) * this.progress);
-        canvas.drawRect(i / 2, (getMeasuredHeight() / 2) - AndroidUtilities.m50dp(1), getMeasuredWidth() - (this.thumbSize / 2), (getMeasuredHeight() / 2) + AndroidUtilities.m50dp(1), this.innerPaint);
+        canvas.drawRect(i / 2, (getMeasuredHeight() / 2) - AndroidUtilities.m54dp(1), getMeasuredWidth() - (this.thumbSize / 2), (getMeasuredHeight() / 2) + AndroidUtilities.m54dp(1), this.innerPaint);
         if (this.minValue == 0) {
-            canvas.drawRect(this.thumbSize / 2, (getMeasuredHeight() / 2) - AndroidUtilities.m50dp(1), i2, (getMeasuredHeight() / 2) + AndroidUtilities.m50dp(1), this.outerPaint);
+            canvas.drawRect(this.thumbSize / 2, (getMeasuredHeight() / 2) - AndroidUtilities.m54dp(1), i2, (getMeasuredHeight() / 2) + AndroidUtilities.m54dp(1), this.outerPaint);
         } else if (this.progress > 0.5f) {
-            canvas.drawRect((getMeasuredWidth() / 2) - AndroidUtilities.m50dp(1), (getMeasuredHeight() - this.thumbSize) / 2, getMeasuredWidth() / 2, (getMeasuredHeight() + this.thumbSize) / 2, this.outerPaint);
-            canvas.drawRect(getMeasuredWidth() / 2, (getMeasuredHeight() / 2) - AndroidUtilities.m50dp(1), i2, (getMeasuredHeight() / 2) + AndroidUtilities.m50dp(1), this.outerPaint);
+            canvas.drawRect((getMeasuredWidth() / 2) - AndroidUtilities.m54dp(1), (getMeasuredHeight() - this.thumbSize) / 2, getMeasuredWidth() / 2, (getMeasuredHeight() + this.thumbSize) / 2, this.outerPaint);
+            canvas.drawRect(getMeasuredWidth() / 2, (getMeasuredHeight() / 2) - AndroidUtilities.m54dp(1), i2, (getMeasuredHeight() / 2) + AndroidUtilities.m54dp(1), this.outerPaint);
         } else {
-            canvas.drawRect(getMeasuredWidth() / 2, (getMeasuredHeight() - this.thumbSize) / 2, (getMeasuredWidth() / 2) + AndroidUtilities.m50dp(1), (getMeasuredHeight() + this.thumbSize) / 2, this.outerPaint);
-            canvas.drawRect(i2, (getMeasuredHeight() / 2) - AndroidUtilities.m50dp(1), getMeasuredWidth() / 2, (getMeasuredHeight() / 2) + AndroidUtilities.m50dp(1), this.outerPaint);
+            canvas.drawRect(getMeasuredWidth() / 2, (getMeasuredHeight() - this.thumbSize) / 2, (getMeasuredWidth() / 2) + AndroidUtilities.m54dp(1), (getMeasuredHeight() + this.thumbSize) / 2, this.outerPaint);
+            canvas.drawRect(i2, (getMeasuredHeight() / 2) - AndroidUtilities.m54dp(1), getMeasuredWidth() / 2, (getMeasuredHeight() / 2) + AndroidUtilities.m54dp(1), this.outerPaint);
         }
         int i3 = this.thumbSize;
         canvas.drawCircle(i2 + (i3 / 2), measuredHeight + (i3 / 2), i3 / 2, this.outerPaint);

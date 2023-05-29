@@ -6,7 +6,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: CatalogAllFragment.kt */
 /* renamed from: com.iMe.ui.catalog.tabs.all.CatalogAllFragment$setupListeners$2$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class CatalogAllFragment$setupListeners$2$1 extends Lambda implements Function0<Unit> {
     final /* synthetic */ CatalogAllFragment this$0;
 

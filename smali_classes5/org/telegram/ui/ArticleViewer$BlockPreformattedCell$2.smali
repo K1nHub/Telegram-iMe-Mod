@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;Landroid/content/Context;Lorg/telegram/ui/ArticleViewer;)V
     .locals 0
 
-    .line 11145
+    .line 11158
     iput-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell$2;->this$1:Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;
 
     invoke-direct {p0, p2}, Landroid/view/View;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 2
 
-    .line 11172
+    .line 11185
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell$2;->this$1:Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;
 
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;->access$20800(Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;)Lorg/telegram/ui/ArticleViewer$DrawingText;
@@ -44,17 +44,17 @@
 
     if-eqz v0, :cond_0
 
-    .line 11173
+    .line 11186
     invoke-virtual {p1}, Landroid/graphics/Canvas;->save()I
 
-    .line 11174
+    .line 11187
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell$2;->this$1:Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;
 
     iget-object v1, v0, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;->this$0:Lorg/telegram/ui/ArticleViewer;
 
     invoke-static {v1, p1, v0}, Lorg/telegram/ui/ArticleViewer;->access$14700(Lorg/telegram/ui/ArticleViewer;Landroid/graphics/Canvas;Lorg/telegram/ui/Cells/TextSelectionHelper$ArticleSelectableView;)V
 
-    .line 11175
+    .line 11188
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell$2;->this$1:Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;
 
     invoke-static {v0}, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;->access$20800(Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;)Lorg/telegram/ui/ArticleViewer$DrawingText;
@@ -63,10 +63,10 @@
 
     invoke-virtual {v0, p1, p0}, Lorg/telegram/ui/ArticleViewer$DrawingText;->draw(Landroid/graphics/Canvas;Landroid/view/View;)V
 
-    .line 11176
+    .line 11189
     invoke-virtual {p1}, Landroid/graphics/Canvas;->restore()V
 
-    .line 11177
+    .line 11190
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell$2;->this$1:Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;
 
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;->access$20800(Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;)Lorg/telegram/ui/ArticleViewer$DrawingText;
@@ -81,7 +81,7 @@
 
     iput v0, p1, Lorg/telegram/ui/ArticleViewer$DrawingText;->x:I
 
-    .line 11178
+    .line 11191
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell$2;->this$1:Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;
 
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;->access$20800(Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;)Lorg/telegram/ui/ArticleViewer$DrawingText;
@@ -103,7 +103,7 @@
 .method protected onMeasure(II)V
     .locals 9
 
-    .line 11151
+    .line 11164
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell$2;->this$1:Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;
 
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;->access$20700(Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;)Lorg/telegram/tgnet/TLRPC$TL_pageBlockPreformatted;
@@ -116,7 +116,7 @@
 
     if-eqz p1, :cond_1
 
-    .line 11152
+    .line 11165
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell$2;->this$1:Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;
 
     iget-object v1, p1, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;->this$0:Lorg/telegram/ui/ArticleViewer;
@@ -157,7 +157,7 @@
 
     invoke-static {p1, v1}, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;->access$20802(Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;Lorg/telegram/ui/ArticleViewer$DrawingText;)Lorg/telegram/ui/ArticleViewer$DrawingText;
 
-    .line 11153
+    .line 11166
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell$2;->this$1:Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;
 
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;->access$20800(Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;)Lorg/telegram/ui/ArticleViewer$DrawingText;
@@ -166,7 +166,7 @@
 
     if-eqz p1, :cond_2
 
-    .line 11154
+    .line 11167
     iget-object p1, p0, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell$2;->this$1:Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;
 
     invoke-static {p1}, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;->access$20800(Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;)Lorg/telegram/ui/ArticleViewer$DrawingText;
@@ -179,7 +179,7 @@
 
     add-int/2addr p1, p2
 
-    .line 11155
+    .line 11168
     iget-object v1, p0, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell$2;->this$1:Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;
 
     invoke-static {v1}, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;->access$20800(Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;)Lorg/telegram/ui/ArticleViewer$DrawingText;
@@ -193,7 +193,7 @@
     :goto_0
     if-ge p2, v1, :cond_0
 
-    .line 11156
+    .line 11169
     iget-object v2, p0, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell$2;->this$1:Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;
 
     invoke-static {v2}, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;->access$20800(Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;)Lorg/telegram/ui/ArticleViewer$DrawingText;
@@ -232,7 +232,7 @@
     :goto_1
     const/16 p1, 0x20
 
-    .line 11162
+    .line 11175
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -247,7 +247,7 @@
 .method public onTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 8
 
-    .line 11167
+    .line 11180
     iget-object v0, p0, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell$2;->this$1:Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;
 
     iget-object v1, v0, Lorg/telegram/ui/ArticleViewer$BlockPreformattedCell;->this$0:Lorg/telegram/ui/ArticleViewer;

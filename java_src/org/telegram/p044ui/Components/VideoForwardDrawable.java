@@ -56,7 +56,7 @@ public class VideoForwardDrawable extends Drawable {
         this.isRound = z;
         this.paint.setColor(-1);
         this.textPaint.setColor(-1);
-        this.textPaint.setTextSize(AndroidUtilities.m50dp(12));
+        this.textPaint.setTextSize(AndroidUtilities.m54dp(12));
         this.textPaint.setTextAlign(Paint.Align.CENTER);
         this.path1.reset();
         int i = 0;
@@ -68,10 +68,10 @@ public class VideoForwardDrawable extends Drawable {
             }
             if (i == 0) {
                 int i2 = i * 2;
-                this.path1.moveTo(AndroidUtilities.m50dp(iArr[i2]), AndroidUtilities.m50dp(iArr[i2 + 1]));
+                this.path1.moveTo(AndroidUtilities.m54dp(iArr[i2]), AndroidUtilities.m54dp(iArr[i2 + 1]));
             } else {
                 int i3 = i * 2;
-                this.path1.lineTo(AndroidUtilities.m50dp(iArr[i3]), AndroidUtilities.m50dp(iArr[i3 + 1]));
+                this.path1.lineTo(AndroidUtilities.m54dp(iArr[i3]), AndroidUtilities.m54dp(iArr[i3 + 1]));
             }
             i++;
         }
@@ -160,22 +160,22 @@ public class VideoForwardDrawable extends Drawable {
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicWidth() {
-        return AndroidUtilities.m50dp(32);
+        return AndroidUtilities.m54dp(32);
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getIntrinsicHeight() {
-        return AndroidUtilities.m50dp(32);
+        return AndroidUtilities.m54dp(32);
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getMinimumWidth() {
-        return AndroidUtilities.m50dp(32);
+        return AndroidUtilities.m54dp(32);
     }
 
     @Override // android.graphics.drawable.Drawable
     public int getMinimumHeight() {
-        return AndroidUtilities.m50dp(32);
+        return AndroidUtilities.m54dp(32);
     }
 
     public void addTime(long j) {

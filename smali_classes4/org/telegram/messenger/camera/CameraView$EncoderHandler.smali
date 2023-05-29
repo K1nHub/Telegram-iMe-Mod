@@ -140,7 +140,7 @@
 
     if-eqz v0, :cond_4
 
-    const-string v0, "stop encoder"
+    const-string/jumbo v0, "stop encoder"
 
     .line 2140
     invoke-static {v0}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V
@@ -160,7 +160,7 @@
 
     if-eqz p1, :cond_6
 
-    const-string p1, "start encoder"
+    const-string/jumbo p1, "start encoder"
 
     .line 2128
     invoke-static {p1}, Lorg/telegram/messenger/FileLog;->e(Ljava/lang/String;)V

@@ -310,7 +310,7 @@
 
     move-result-object p2
 
-    const-string p3, "throw with null exception"
+    const-string/jumbo p3, "throw with null exception"
 
     invoke-static {p2, p3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -468,7 +468,7 @@
     .line 382
     sget-object v4, Lokhttp3/Handshake;->Companion:Lokhttp3/Handshake$Companion;
 
-    const-string v5, "sslSocketSession"
+    const-string/jumbo v5, "sslSocketSession"
 
     invoke-static {v3, v5}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2941,7 +2941,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    const-string p1, "settings"
+    const-string/jumbo p1, "settings"
 
     invoke-static {p2, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -2975,7 +2975,7 @@
         }
     .end annotation
 
-    const-string v0, "stream"
+    const-string/jumbo v0, "stream"
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 

@@ -1,6 +1,9 @@
 .class Lorg/telegram/ui/Components/ReactionsContainerLayout$9;
-.super Landroid/animation/AnimatorListenerAdapter;
+.super Ljava/lang/Object;
 .source "ReactionsContainerLayout.java"
+
+# interfaces
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # annotations
@@ -17,45 +20,61 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
+.field final synthetic val$fromProgress:F
+
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;)V
+.method constructor <init>(Lorg/telegram/ui/Components/ReactionsContainerLayout;F)V
     .locals 0
 
-    .line 1556
+    .line 1559
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$9;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
-    invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
+    iput p2, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$9;->val$fromProgress:F
+
+    invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
 .end method
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
-
-    .line 1559
-    invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
-
-    .line 1560
-    iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$9;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
-
-    const/4 v0, 0x0
-
-    iput-object v0, p1, Lorg/telegram/ui/Components/ReactionsContainerLayout;->cancelPressedAnimation:Landroid/animation/ValueAnimator;
-
-    const/4 v1, 0x0
-
-    .line 1561
-    invoke-static {p1, v1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$2502(Lorg/telegram/ui/Components/ReactionsContainerLayout;F)F
+.method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
+    .locals 3
 
     .line 1562
-    iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$9;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+    iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$9;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
-    invoke-static {p1, v0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$102(Lorg/telegram/ui/Components/ReactionsContainerLayout;Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;)Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
+    invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
+
+    move-result-object p1
+
+    check-cast p1, Ljava/lang/Float;
+
+    invoke-virtual {p1}, Ljava/lang/Float;->floatValue()F
+
+    move-result p1
+
+    invoke-static {v0, p1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$3002(Lorg/telegram/ui/Components/ReactionsContainerLayout;F)F
 
     .line 1563
+    iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$9;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
+
+    iget v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$9;->val$fromProgress:F
+
+    invoke-static {p1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$3000(Lorg/telegram/ui/Components/ReactionsContainerLayout;)F
+
+    move-result v1
+
+    const/high16 v2, 0x3f800000    # 1.0f
+
+    sub-float/2addr v2, v1
+
+    mul-float/2addr v0, v2
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$2502(Lorg/telegram/ui/Components/ReactionsContainerLayout;F)F
+
+    .line 1564
     iget-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$9;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->invalidate()V

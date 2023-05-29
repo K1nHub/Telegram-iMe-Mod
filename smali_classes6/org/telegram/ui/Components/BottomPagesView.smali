@@ -4,7 +4,7 @@
 
 
 # instance fields
-.field private colorKey:Ljava/lang/String;
+.field private colorKey:I
 
 .field private currentPage:I
 
@@ -18,7 +18,7 @@
 
 .field private scrollPosition:I
 
-.field private selectedColorKey:Ljava/lang/String;
+.field private selectedColorKey:I
 
 .field private viewPager:Landroidx/viewpager/widget/ViewPager;
 
@@ -51,6 +51,14 @@
 
     iput-object p1, p0, Lorg/telegram/ui/Components/BottomPagesView;->rect:Landroid/graphics/RectF;
 
+    const/4 p1, -0x1
+
+    .line 27
+    iput p1, p0, Lorg/telegram/ui/Components/BottomPagesView;->colorKey:I
+
+    .line 28
+    iput p1, p0, Lorg/telegram/ui/Components/BottomPagesView;->selectedColorKey:I
+
     .line 32
     iput-object p2, p0, Lorg/telegram/ui/Components/BottomPagesView;->viewPager:Landroidx/viewpager/widget/ViewPager;
 
@@ -71,14 +79,14 @@
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     .line 55
-    iget-object v1, p0, Lorg/telegram/ui/Components/BottomPagesView;->colorKey:Ljava/lang/String;
+    iget v1, p0, Lorg/telegram/ui/Components/BottomPagesView;->colorKey:I
 
-    if-eqz v1, :cond_0
+    if-ltz v1, :cond_0
 
     .line 56
     iget-object v2, p0, Lorg/telegram/ui/Components/BottomPagesView;->paint:Landroid/graphics/Paint;
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -204,14 +212,14 @@
 
     .line 70
     :cond_3
-    iget-object v1, p0, Lorg/telegram/ui/Components/BottomPagesView;->selectedColorKey:Ljava/lang/String;
+    iget v1, p0, Lorg/telegram/ui/Components/BottomPagesView;->selectedColorKey:I
 
-    if-eqz v1, :cond_4
+    if-ltz v1, :cond_4
 
     .line 71
     iget-object v2, p0, Lorg/telegram/ui/Components/BottomPagesView;->paint:Landroid/graphics/Paint;
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -371,14 +379,14 @@
     return-void
 .end method
 
-.method public setColor(Ljava/lang/String;Ljava/lang/String;)V
+.method public setColor(II)V
     .locals 0
 
     .line 48
-    iput-object p1, p0, Lorg/telegram/ui/Components/BottomPagesView;->colorKey:Ljava/lang/String;
+    iput p1, p0, Lorg/telegram/ui/Components/BottomPagesView;->colorKey:I
 
     .line 49
-    iput-object p2, p0, Lorg/telegram/ui/Components/BottomPagesView;->selectedColorKey:Ljava/lang/String;
+    iput p2, p0, Lorg/telegram/ui/Components/BottomPagesView;->selectedColorKey:I
 
     return-void
 .end method

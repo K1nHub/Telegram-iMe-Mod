@@ -2,7 +2,7 @@ package org.webrtc;
 
 import android.os.Handler;
 import android.os.HandlerThread;
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.nio.ByteBuffer;
@@ -45,7 +45,7 @@ public class VideoFileRenderer implements VideoSink {
         this.outputFrameBuffer = ByteBuffer.allocateDirect(i3);
         FileOutputStream fileOutputStream = new FileOutputStream(str);
         this.videoOutFile = fileOutputStream;
-        fileOutputStream.write(("YUV4MPEG2 C420 W" + i + " H" + i2 + " Ip F30:1 A1:1\n").getBytes(Charset.forName(C0470C.ASCII_NAME)));
+        fileOutputStream.write(("YUV4MPEG2 C420 W" + i + " H" + i2 + " Ip F30:1 A1:1\n").getBytes(Charset.forName(C0475C.ASCII_NAME)));
         HandlerThread handlerThread = new HandlerThread("VideoFileRendererRenderThread");
         this.renderThread = handlerThread;
         handlerThread.start();
@@ -109,7 +109,7 @@ public class VideoFileRenderer implements VideoSink {
         YuvHelper.I420Rotate(i420Buffer.getDataY(), i420Buffer.getStrideY(), i420Buffer.getDataU(), i420Buffer.getStrideU(), i420Buffer.getDataV(), i420Buffer.getStrideV(), this.outputFrameBuffer, i420Buffer.getWidth(), i420Buffer.getHeight(), videoFrame.getRotation());
         i420Buffer.release();
         try {
-            this.videoOutFile.write("FRAME\n".getBytes(Charset.forName(C0470C.ASCII_NAME)));
+            this.videoOutFile.write("FRAME\n".getBytes(Charset.forName(C0475C.ASCII_NAME)));
             this.videoOutFile.write(this.outputFrameBuffer.array(), this.outputFrameBuffer.arrayOffset(), this.outputFrameSize);
             this.frameCount++;
         } catch (IOException e) {
@@ -136,7 +136,7 @@ public class VideoFileRenderer implements VideoSink {
             this.fileThread.join();
         } catch (InterruptedException e) {
             Thread.currentThread().interrupt();
-            Logging.m16e(TAG, "Interrupted while waiting for the write to disk to complete.", e);
+            Logging.m18e(TAG, "Interrupted while waiting for the write to disk to complete.", e);
         }
     }
 
@@ -152,7 +152,7 @@ public class VideoFileRenderer implements VideoSink {
     public /* synthetic */ void lambda$release$3() {
         try {
             this.videoOutFile.close();
-            Logging.m18d(TAG, "Video written to disk as " + this.outputFileName + ". The number of frames is " + this.frameCount + " and the dimensions of the frames are " + this.outputFileWidth + "x" + this.outputFileHeight + ".");
+            Logging.m20d(TAG, "Video written to disk as " + this.outputFileName + ". The number of frames is " + this.frameCount + " and the dimensions of the frames are " + this.outputFileWidth + "x" + this.outputFileHeight + ".");
             this.fileThread.quit();
         } catch (IOException e) {
             throw new RuntimeException("Error closing output file", e);

@@ -13,23 +13,23 @@ import java.util.List;
 /* loaded from: classes3.dex */
 public final class CircleOptions extends AbstractSafeParcelable {
     public static final Parcelable.Creator<CircleOptions> CREATOR = new zzc();
-    @SafeParcelable.Field(getter = "getCenter", m775id = 2)
+    @SafeParcelable.Field(getter = "getCenter", m779id = 2)
     private LatLng zza;
-    @SafeParcelable.Field(getter = "getRadius", m775id = 3)
+    @SafeParcelable.Field(getter = "getRadius", m779id = 3)
     private double zzb;
-    @SafeParcelable.Field(getter = "getStrokeWidth", m775id = 4)
+    @SafeParcelable.Field(getter = "getStrokeWidth", m779id = 4)
     private float zzc;
-    @SafeParcelable.Field(getter = "getStrokeColor", m775id = 5)
+    @SafeParcelable.Field(getter = "getStrokeColor", m779id = 5)
     private int zzd;
-    @SafeParcelable.Field(getter = "getFillColor", m775id = 6)
+    @SafeParcelable.Field(getter = "getFillColor", m779id = 6)
     private int zze;
-    @SafeParcelable.Field(getter = "getZIndex", m775id = 7)
+    @SafeParcelable.Field(getter = "getZIndex", m779id = 7)
     private float zzf;
-    @SafeParcelable.Field(getter = "isVisible", m775id = 8)
+    @SafeParcelable.Field(getter = "isVisible", m779id = 8)
     private boolean zzg;
-    @SafeParcelable.Field(getter = "isClickable", m775id = 9)
+    @SafeParcelable.Field(getter = "isClickable", m779id = 9)
     private boolean zzh;
-    @SafeParcelable.Field(getter = "getStrokePattern", m775id = 10)
+    @SafeParcelable.Field(getter = "getStrokePattern", m779id = 10)
     private List zzi;
 
     public CircleOptions() {
@@ -143,7 +143,7 @@ public final class CircleOptions extends AbstractSafeParcelable {
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public CircleOptions(@SafeParcelable.Param(m774id = 2) LatLng latLng, @SafeParcelable.Param(m774id = 3) double d, @SafeParcelable.Param(m774id = 4) float f, @SafeParcelable.Param(m774id = 5) int i, @SafeParcelable.Param(m774id = 6) int i2, @SafeParcelable.Param(m774id = 7) float f2, @SafeParcelable.Param(m774id = 8) boolean z, @SafeParcelable.Param(m774id = 9) boolean z2, @SafeParcelable.Param(m774id = 10) List list) {
+    public CircleOptions(@SafeParcelable.Param(m778id = 2) LatLng latLng, @SafeParcelable.Param(m778id = 3) double d, @SafeParcelable.Param(m778id = 4) float f, @SafeParcelable.Param(m778id = 5) int i, @SafeParcelable.Param(m778id = 6) int i2, @SafeParcelable.Param(m778id = 7) float f2, @SafeParcelable.Param(m778id = 8) boolean z, @SafeParcelable.Param(m778id = 9) boolean z2, @SafeParcelable.Param(m778id = 10) List list) {
         this.zza = latLng;
         this.zzb = d;
         this.zzc = f;

@@ -38,12 +38,12 @@ public class SpoilerEffectBitmapFactory {
 
     private SpoilerEffectBitmapFactory() {
         new Matrix();
-        int m50dp = AndroidUtilities.m50dp(SharedConfig.getDevicePerformanceClass() == 2 ? 200 : ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+        int m54dp = AndroidUtilities.m54dp(SharedConfig.getDevicePerformanceClass() == 2 ? 200 : ImageReceiver.DEFAULT_CROSSFADE_DURATION);
         Point point = AndroidUtilities.displaySize;
-        int min = (int) Math.min(Math.min(point.x, point.y) * 0.5f, m50dp);
+        int min = (int) Math.min(Math.min(point.x, point.y) * 0.5f, m54dp);
         this.size = min;
-        if (min < AndroidUtilities.m50dp(100)) {
-            this.size = AndroidUtilities.m50dp(100);
+        if (min < AndroidUtilities.m54dp(100)) {
+            this.size = AndroidUtilities.m54dp(100);
         }
     }
 
@@ -61,16 +61,16 @@ public class SpoilerEffectBitmapFactory {
             paint.setShader(new BitmapShader(bitmap, tileMode, tileMode));
             int i2 = this.size;
             int i3 = (int) (i2 / 10.0f);
-            int m50dp = (int) ((i2 / AndroidUtilities.m50dp(200)) * 60.0f);
+            int m54dp = (int) ((i2 / AndroidUtilities.m54dp(200)) * 60.0f);
             for (int i4 = 0; i4 < 10; i4++) {
                 for (int i5 = 0; i5 < 10; i5++) {
                     SpoilerEffect spoilerEffect = new SpoilerEffect();
                     int i6 = i3 * i4;
                     int i7 = i3 * i5;
-                    spoilerEffect.setBounds(i6, i7 - AndroidUtilities.m50dp(5), i6 + i3 + AndroidUtilities.m50dp(3), i7 + i3 + AndroidUtilities.m50dp(5));
+                    spoilerEffect.setBounds(i6, i7 - AndroidUtilities.m54dp(5), i6 + i3 + AndroidUtilities.m54dp(3), i7 + i3 + AndroidUtilities.m54dp(5));
                     spoilerEffect.drawPoints = true;
-                    spoilerEffect.particlePoints = (float[][]) Array.newInstance(float.class, SpoilerEffect.ALPHAS.length, m50dp * 2);
-                    spoilerEffect.setMaxParticlesCount(m50dp);
+                    spoilerEffect.particlePoints = (float[][]) Array.newInstance(float.class, SpoilerEffect.ALPHAS.length, m54dp * 2);
+                    spoilerEffect.setMaxParticlesCount(m54dp);
                     spoilerEffect.setColor(-1);
                     this.shaderSpoilerEffects.add(spoilerEffect);
                 }

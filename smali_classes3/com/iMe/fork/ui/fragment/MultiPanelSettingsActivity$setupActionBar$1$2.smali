@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$setupActionBar$1$2;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
-    .line 129
+    .line 130
     invoke-direct {p0}, Lorg/telegram/ui/ActionBar/ActionBar$ActionBarMenuOnItemClick;-><init>()V
 
     return-void
@@ -37,16 +37,22 @@
 
     const/4 v0, -0x1
 
-    if-eq p1, v0, :cond_1
+    if-ne p1, v0, :cond_0
 
-    const/4 v0, 0x1
+    .line 133
+    iget-object p1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$setupActionBar$1$2;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
-    if-eq p1, v0, :cond_0
+    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
 
     goto :goto_0
 
     .line 134
     :cond_0
+    sget v0, Lcom/iMe/common/IdFabric$Menu;->RESET:I
+
+    if-ne p1, v0, :cond_1
+
+    .line 135
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$setupActionBar$1$2;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->getMultiPanelController()Lcom/iMe/fork/controller/MultiPanelController;
@@ -55,12 +61,21 @@
 
     invoke-virtual {p1}, Lcom/iMe/fork/controller/MultiPanelController;->resetConfig()V
 
-    .line 135
+    .line 136
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$setupActionBar$1$2;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$readSettings(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)V
 
-    .line 136
+    .line 137
+    iget-object p1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$setupActionBar$1$2;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
+
+    invoke-static {p1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getListAdapter(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;->updateRows()V
+
+    .line 138
     iget-object p1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$setupActionBar$1$2;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
 
     invoke-static {p1}, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;->access$getListAdapter(Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;)Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$ListAdapter;
@@ -69,14 +84,7 @@
 
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    goto :goto_0
-
-    .line 132
     :cond_1
-    iget-object p1, p0, Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity$setupActionBar$1$2;->this$0:Lcom/iMe/fork/ui/fragment/MultiPanelSettingsActivity;
-
-    invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/BaseFragment;->finishFragment()V
-
     :goto_0
     return-void
 .end method

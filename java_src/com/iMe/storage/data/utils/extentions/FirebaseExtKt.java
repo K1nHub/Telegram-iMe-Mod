@@ -80,7 +80,7 @@ public final class FirebaseExtKt {
 
     /* JADX INFO: Access modifiers changed from: private */
     public static final void asObservableTask$lambda$9$lambda$8() {
-        Timber.m7d("cancelled", new Object[0]);
+        Timber.m9d("cancelled", new Object[0]);
     }
 
     public static final <TResult> Single<TResult> asSingleTask(final Task<TResult> task) {

@@ -27,7 +27,7 @@
         }
     .end annotation
 
-    .line 229
+    .line 248
     iput-object p1, p0, Lcom/iMe/ui/topics/TopicsBar$ListAdapter;->this$0:Lcom/iMe/ui/topics/TopicsBar;
 
     invoke-direct {p0}, Lorg/telegram/ui/Components/RecyclerListView$SelectionAdapter;-><init>()V
@@ -40,7 +40,7 @@
 .method public getItemCount()I
     .locals 1
 
-    .line 247
+    .line 264
     iget-object v0, p0, Lcom/iMe/ui/topics/TopicsBar$ListAdapter;->this$0:Lcom/iMe/ui/topics/TopicsBar;
 
     invoke-static {v0}, Lcom/iMe/ui/topics/TopicsBar;->access$getData$p(Lcom/iMe/ui/topics/TopicsBar;)Ljava/util/List;
@@ -69,7 +69,7 @@
 .method public final isNoTopicPosition(I)Z
     .locals 5
 
-    .line 233
+    .line 252
     iget-object v0, p0, Lcom/iMe/ui/topics/TopicsBar$ListAdapter;->this$0:Lcom/iMe/ui/topics/TopicsBar;
 
     invoke-static {v0}, Lcom/iMe/ui/topics/TopicsBar;->access$getData$p(Lcom/iMe/ui/topics/TopicsBar;)Ljava/util/List;
@@ -109,7 +109,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 268
+    .line 284
     iget-object p2, p1, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->itemView:Landroid/view/View;
 
     const-string v0, "null cannot be cast to non-null type com.iMe.ui.topics.TopicView"
@@ -120,7 +120,7 @@
 
     iget-object v0, p0, Lcom/iMe/ui/topics/TopicsBar$ListAdapter;->this$0:Lcom/iMe/ui/topics/TopicsBar;
 
-    .line 269
+    .line 285
     invoke-static {v0}, Lcom/iMe/ui/topics/TopicsBar;->access$getData$p(Lcom/iMe/ui/topics/TopicsBar;)Ljava/util/List;
 
     move-result-object v1
@@ -135,7 +135,7 @@
 
     check-cast v1, Lcom/iMe/storage/domain/model/topics/TopicModel;
 
-    .line 270
+    .line 286
     invoke-virtual {v1}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getTopicId()J
 
     move-result-wide v2
@@ -158,12 +158,31 @@
     :goto_0
     invoke-virtual {p2, v1, v0}, Lcom/iMe/ui/topics/TopicView;->setTopic(Lcom/iMe/storage/domain/model/topics/TopicModel;Z)V
 
-    .line 271
+    .line 287
     invoke-virtual {p1}, Landroidx/recyclerview/widget/RecyclerView$ViewHolder;->getAdapterPosition()I
 
     move-result p1
 
     iput p1, p2, Lcom/iMe/ui/topics/TopicView;->position:I
+
+    const/4 p1, 0x4
+
+    .line 288
+    invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+
+    move-result p1
+
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
+
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
+
+    move-result v0
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->createRoundRectDrawable(II)Landroid/graphics/drawable/Drawable;
+
+    move-result-object p1
+
+    invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     return-void
 .end method
@@ -171,7 +190,7 @@
 .method public bridge synthetic onCreateViewHolder(Landroid/view/ViewGroup;I)Landroidx/recyclerview/widget/RecyclerView$ViewHolder;
     .locals 0
 
-    .line 229
+    .line 248
     invoke-virtual {p0, p1, p2}, Lcom/iMe/ui/topics/TopicsBar$ListAdapter;->onCreateViewHolder(Landroid/view/ViewGroup;I)Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     move-result-object p1
@@ -180,13 +199,13 @@
 .end method
 
 .method public onCreateViewHolder(Landroid/view/ViewGroup;I)Lorg/telegram/ui/Components/RecyclerListView$Holder;
-    .locals 7
+    .locals 1
 
     const-string p2, "parent"
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 252
+    .line 269
     iget-object p1, p0, Lcom/iMe/ui/topics/TopicsBar$ListAdapter;->this$0:Lcom/iMe/ui/topics/TopicsBar;
 
     invoke-virtual {p1}, Landroid/widget/FrameLayout;->getContext()Landroid/content/Context;
@@ -199,26 +218,18 @@
 
     invoke-direct {p2, v0, p1}, Lcom/iMe/ui/topics/TopicsBar$ListAdapter$onCreateViewHolder$1;-><init>(Lcom/iMe/ui/topics/TopicsBar;Landroid/content/Context;)V
 
-    const/4 v1, -0x2
+    const/4 p1, -0x2
 
-    const/16 v2, 0x18
+    const/4 v0, -0x1
 
-    const/16 v3, 0x8
-
-    const/4 v6, 0x6
-
-    const/16 v5, 0x8
-
-    move v4, v6
-
-    .line 263
-    invoke-static/range {v1 .. v6}, Lorg/telegram/ui/Components/LayoutHelper;->createRecycler(IIIIII)Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
+    .line 279
+    invoke-static {p1, v0}, Lorg/telegram/ui/Components/LayoutHelper;->createRecycler(II)Landroidx/recyclerview/widget/RecyclerView$LayoutParams;
 
     move-result-object p1
 
-    invoke-virtual {p2, p1}, Landroid/widget/LinearLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p2, p1}, Landroid/widget/FrameLayout;->setLayoutParams(Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 251
+    .line 268
     new-instance p1, Lorg/telegram/ui/Components/RecyclerListView$Holder;
 
     invoke-direct {p1, p2}, Lorg/telegram/ui/Components/RecyclerListView$Holder;-><init>(Landroid/view/View;)V
@@ -227,68 +238,58 @@
 .end method
 
 .method public final swapElements(II)V
-    .locals 5
+    .locals 2
 
-    .line 236
+    .line 255
     iget-object v0, p0, Lcom/iMe/ui/topics/TopicsBar$ListAdapter;->this$0:Lcom/iMe/ui/topics/TopicsBar;
 
     invoke-static {v0}, Lcom/iMe/ui/topics/TopicsBar;->access$getData$p(Lcom/iMe/ui/topics/TopicsBar;)Ljava/util/List;
 
     move-result-object v0
 
-    invoke-interface {v0, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
+    invoke-static {v0, p1, p2}, Ljava/util/Collections;->swap(Ljava/util/List;II)V
+
+    .line 256
+    invoke-virtual {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemMoved(II)V
+
+    .line 257
+    sget-object v0, Lcom/iMe/fork/controller/ForkTopicsController;->Companion:Lcom/iMe/fork/controller/ForkTopicsController$Companion;
+
+    iget-object v1, p0, Lcom/iMe/ui/topics/TopicsBar$ListAdapter;->this$0:Lcom/iMe/ui/topics/TopicsBar;
+
+    invoke-static {v1}, Lcom/iMe/ui/topics/TopicsBar;->access$getCurrentAccount$p(Lcom/iMe/ui/topics/TopicsBar;)I
+
+    move-result v1
+
+    invoke-virtual {v0, v1}, Lcom/iMe/fork/controller/ForkTopicsController$Companion;->getInstance(I)Lcom/iMe/fork/controller/ForkTopicsController;
 
     move-result-object v0
 
-    check-cast v0, Lcom/iMe/storage/domain/model/topics/TopicModel;
+    iget-object v1, p0, Lcom/iMe/ui/topics/TopicsBar$ListAdapter;->this$0:Lcom/iMe/ui/topics/TopicsBar;
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getTopicId()J
+    invoke-static {v1}, Lcom/iMe/ui/topics/TopicsBar;->access$getData$p(Lcom/iMe/ui/topics/TopicsBar;)Ljava/util/List;
 
-    move-result-wide v0
+    move-result-object v1
 
-    .line 237
-    iget-object v2, p0, Lcom/iMe/ui/topics/TopicsBar$ListAdapter;->this$0:Lcom/iMe/ui/topics/TopicsBar;
-
-    invoke-static {v2}, Lcom/iMe/ui/topics/TopicsBar;->access$getData$p(Lcom/iMe/ui/topics/TopicsBar;)Ljava/util/List;
-
-    move-result-object v2
-
-    invoke-interface {v2, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
-
-    move-result-object v2
-
-    check-cast v2, Lcom/iMe/storage/domain/model/topics/TopicModel;
-
-    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/topics/TopicModel;->getTopicId()J
-
-    move-result-wide v2
-
-    .line 238
-    iget-object v4, p0, Lcom/iMe/ui/topics/TopicsBar$ListAdapter;->this$0:Lcom/iMe/ui/topics/TopicsBar;
-
-    invoke-static {v4}, Lcom/iMe/ui/topics/TopicsBar;->access$getData$p(Lcom/iMe/ui/topics/TopicsBar;)Ljava/util/List;
-
-    move-result-object v4
-
-    invoke-static {v4, p1, p2}, Ljava/util/Collections;->swap(Ljava/util/List;II)V
-
-    .line 239
-    invoke-virtual {p0, p1, p2}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyItemMoved(II)V
-
-    .line 240
-    sget-object p1, Lcom/iMe/fork/controller/ForkTopicsController;->Companion:Lcom/iMe/fork/controller/ForkTopicsController$Companion;
-
-    iget-object p2, p0, Lcom/iMe/ui/topics/TopicsBar$ListAdapter;->this$0:Lcom/iMe/ui/topics/TopicsBar;
-
-    invoke-static {p2}, Lcom/iMe/ui/topics/TopicsBar;->access$getCurrentAccount$p(Lcom/iMe/ui/topics/TopicsBar;)I
-
-    move-result p2
-
-    invoke-virtual {p1, p2}, Lcom/iMe/fork/controller/ForkTopicsController$Companion;->getInstance(I)Lcom/iMe/fork/controller/ForkTopicsController;
+    invoke-interface {v1, p1}, Ljava/util/List;->get(I)Ljava/lang/Object;
 
     move-result-object p1
 
-    invoke-virtual {p1, v0, v1, v2, v3}, Lcom/iMe/fork/controller/ForkTopicsController;->swapTopics(JJ)V
+    check-cast p1, Lcom/iMe/storage/domain/model/topics/TopicModel;
+
+    iget-object v1, p0, Lcom/iMe/ui/topics/TopicsBar$ListAdapter;->this$0:Lcom/iMe/ui/topics/TopicsBar;
+
+    invoke-static {v1}, Lcom/iMe/ui/topics/TopicsBar;->access$getData$p(Lcom/iMe/ui/topics/TopicsBar;)Ljava/util/List;
+
+    move-result-object v1
+
+    invoke-interface {v1, p2}, Ljava/util/List;->get(I)Ljava/lang/Object;
+
+    move-result-object p2
+
+    check-cast p2, Lcom/iMe/storage/domain/model/topics/TopicModel;
+
+    invoke-virtual {v0, p1, p2}, Lcom/iMe/fork/controller/ForkTopicsController;->swapTopics(Lcom/iMe/storage/domain/model/topics/TopicModel;Lcom/iMe/storage/domain/model/topics/TopicModel;)V
 
     return-void
 .end method

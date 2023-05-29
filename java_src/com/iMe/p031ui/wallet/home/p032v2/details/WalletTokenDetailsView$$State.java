@@ -26,7 +26,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetailsView> implements WalletTokenDetailsView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -451,7 +451,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$SetupTransactionsScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class SetupTransactionsScreenCommand extends ViewCommand<WalletTokenDetailsView> {
         public final TokenDetailsArgs args;
 
@@ -468,7 +468,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$SetupStakingDetailsScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class SetupStakingDetailsScreenCommand extends ViewCommand<WalletTokenDetailsView> {
         public final String annualTitleText;
         public final String annualValueText;
@@ -499,7 +499,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$SetupHorizontalActionButtonsCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class SetupHorizontalActionButtonsCommand extends ViewCommand<WalletTokenDetailsView> {
         public final List<HorizontalActionButtonItem> actionsItems;
 
@@ -516,7 +516,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$SetupRankBadgeCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class SetupRankBadgeCommand extends ViewCommand<WalletTokenDetailsView> {
         public final AccountLevel accountLevel;
         public final boolean isBadgeVisible;
@@ -535,7 +535,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$OnTabSelectedCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnTabSelectedCommand extends ViewCommand<WalletTokenDetailsView> {
         public final int position;
 
@@ -552,7 +552,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$OnSetupNavigationRouterCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OnSetupNavigationRouterCommand extends ViewCommand<WalletTokenDetailsView> {
         OnSetupNavigationRouterCommand(WalletTokenDetailsView$$State walletTokenDetailsView$$State) {
             super("onSetupNavigationRouter", AddToEndSingleStrategy.class);
@@ -566,7 +566,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$ShowAccountLevelDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowAccountLevelDialogCommand extends ViewCommand<WalletTokenDetailsView> {
         public final AccountLevelInformation level;
 
@@ -583,7 +583,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$ShowStakingConditionsDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowStakingConditionsDialogCommand extends ViewCommand<WalletTokenDetailsView> {
         public final StakingDetailsItem stakingDetails;
 
@@ -600,7 +600,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$ShowStatisticDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowStatisticDialogCommand extends ViewCommand<WalletTokenDetailsView> {
         public final StatisticDiagramModel distributionDiagramModel;
 
@@ -617,7 +617,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$ShowLevelRequiredDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowLevelRequiredDialogCommand extends ViewCommand<WalletTokenDetailsView> {
         public final AccountLevel minimalRank;
 
@@ -634,7 +634,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$OpenStakingReplenishScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenStakingReplenishScreenCommand extends ViewCommand<WalletTokenDetailsView> {
         public final StakingDetailsItem stakingDetails;
 
@@ -651,7 +651,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$OpenStakingProfitScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenStakingProfitScreenCommand extends ViewCommand<WalletTokenDetailsView> {
         public final StakingDetailsItem stakingDetails;
 
@@ -668,7 +668,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$OpenStakingWithdrawScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenStakingWithdrawScreenCommand extends ViewCommand<WalletTokenDetailsView> {
         public final StakingDetailsItem stakingDetails;
 
@@ -685,7 +685,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$OpenStakingCalculatorScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenStakingCalculatorScreenCommand extends ViewCommand<WalletTokenDetailsView> {
         public final StakingDetailsItem stakingDetails;
 
@@ -702,7 +702,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$OpenBuyScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenBuyScreenCommand extends ViewCommand<WalletTokenDetailsView> {
         public final TokenBuyCoordinatorArgs args;
 
@@ -719,7 +719,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$OpenSendScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenSendScreenCommand extends ViewCommand<WalletTokenDetailsView> {
         public final TokenCode code;
         public final NetworkType networkType;
@@ -738,7 +738,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$OpenReceiveScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenReceiveScreenCommand extends ViewCommand<WalletTokenDetailsView> {
         public final String address;
         public final TokenCode code;
@@ -759,7 +759,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$OpenBinanceReplenishScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenBinanceReplenishScreenCommand extends ViewCommand<WalletTokenDetailsView> {
         public final NetworkType networkType;
         public final TokenCode token;
@@ -778,7 +778,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$OpenBinanceSwapScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenBinanceSwapScreenCommand extends ViewCommand<WalletTokenDetailsView> {
         public final SelectableToken token;
 
@@ -795,7 +795,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$OpenBinanceReceiveScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenBinanceReceiveScreenCommand extends ViewCommand<WalletTokenDetailsView> {
         public final SelectableToken token;
 
@@ -812,7 +812,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$ShowRequiredVerifyDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowRequiredVerifyDialogCommand extends ViewCommand<WalletTokenDetailsView> {
         ShowRequiredVerifyDialogCommand(WalletTokenDetailsView$$State walletTokenDetailsView$$State) {
             super("showRequiredVerifyDialog", OneExecutionStateStrategy.class);
@@ -826,7 +826,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$ShowRequiredWalletCreatedDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowRequiredWalletCreatedDialogCommand extends ViewCommand<WalletTokenDetailsView> {
         public final Callbacks$Callback action;
 
@@ -843,7 +843,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$ShowToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowToastCommand extends ViewCommand<WalletTokenDetailsView> {
         public final String text;
 
@@ -860,7 +860,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletTokenDetailsView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -881,7 +881,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$ShowErrorToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletTokenDetailsView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;
@@ -900,7 +900,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$ShowAnimatedDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowAnimatedDialogCommand extends ViewCommand<WalletTokenDetailsView> {
         public final Callbacks$Callback action;
         public final AnimatedSpannableDialogModel model;
@@ -919,7 +919,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$ShowAlreadyCreatedWalletWarningDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowAlreadyCreatedWalletWarningDialogCommand extends ViewCommand<WalletTokenDetailsView> {
         public final Callbacks$Callback action;
         public final DialogModel dialogModel;
@@ -940,7 +940,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$ShowActivationConfirmationDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowActivationConfirmationDialogCommand extends ViewCommand<WalletTokenDetailsView> {
         public final Callbacks$Callback action;
         public final DialogModel dialogModel;
@@ -959,7 +959,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$OpenImportWalletScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenImportWalletScreenCommand extends ViewCommand<WalletTokenDetailsView> {
         public final String password;
         public final String walletAddress;
@@ -978,28 +978,28 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$OpenCreateWalletScreenCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class OpenCreateWalletScreenCommand extends ViewCommand<WalletTokenDetailsView> {
         public final String password;
 
         /* renamed from: wallet  reason: collision with root package name */
-        public final Wallet f1839wallet;
+        public final Wallet f1847wallet;
 
         OpenCreateWalletScreenCommand(WalletTokenDetailsView$$State walletTokenDetailsView$$State, Wallet wallet2, String str) {
             super("openCreateWalletScreen", OneExecutionStateStrategy.class);
-            this.f1839wallet = wallet2;
+            this.f1847wallet = wallet2;
             this.password = str;
         }
 
         @Override // moxy.viewstate.ViewCommand
         public void apply(WalletTokenDetailsView walletTokenDetailsView) {
-            walletTokenDetailsView.openCreateWalletScreen(this.f1839wallet, this.password);
+            walletTokenDetailsView.openCreateWalletScreen(this.f1847wallet, this.password);
         }
     }
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$ShowSelectOptionsDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowSelectOptionsDialogCommand extends ViewCommand<WalletTokenDetailsView> {
         public final String[] items;
         public final DialogInterface.OnClickListener listener;
@@ -1020,7 +1020,7 @@ public class WalletTokenDetailsView$$State extends MvpViewState<WalletTokenDetai
 
     /* compiled from: WalletTokenDetailsView$$State.java */
     /* renamed from: com.iMe.ui.wallet.home.v2.details.WalletTokenDetailsView$$State$ShowRefreshingCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowRefreshingCommand extends ViewCommand<WalletTokenDetailsView> {
         public final boolean show;
 

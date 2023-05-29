@@ -4311,7 +4311,7 @@ public class RecyclerView extends ViewGroup implements NestedScrollingChild {
                 onBindViewHolder(vh, i);
             } catch (Exception e) {
                 FirebaseCrashlytics.getInstance().recordException(e);
-                Timber.m4e(e);
+                Timber.m6e(e);
             }
         }
 

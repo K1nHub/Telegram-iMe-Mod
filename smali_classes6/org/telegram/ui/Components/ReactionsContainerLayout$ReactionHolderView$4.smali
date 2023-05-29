@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;)V
     .locals 0
 
-    .line 1476
+    .line 1487
     iput-object p1, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$4;->this$1:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,14 +38,14 @@
 .method public run()V
     .locals 3
 
-    .line 1479
+    .line 1490
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$4;->this$1:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     const/4 v1, 0x0
 
     invoke-virtual {v0, v1}, Landroid/widget/FrameLayout;->performHapticFeedback(I)Z
 
-    .line 1480
+    .line 1491
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$4;->this$1:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
@@ -64,7 +64,7 @@
 
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$2402(Lorg/telegram/ui/Components/ReactionsContainerLayout;I)I
 
-    .line 1481
+    .line 1492
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$4;->this$1:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     iget-object v1, v0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;
@@ -73,7 +73,7 @@
 
     invoke-static {v1, v0}, Lorg/telegram/ui/Components/ReactionsContainerLayout;->access$102(Lorg/telegram/ui/Components/ReactionsContainerLayout;Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;)Lorg/telegram/ui/Components/Reactions/ReactionsLayoutInBubble$VisibleReaction;
 
-    .line 1482
+    .line 1493
     iget-object v0, p0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView$4;->this$1:Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ReactionsContainerLayout$ReactionHolderView;->this$0:Lorg/telegram/ui/Components/ReactionsContainerLayout;

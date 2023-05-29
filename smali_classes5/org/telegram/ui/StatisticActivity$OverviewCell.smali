@@ -293,9 +293,9 @@
 
     aget-object v1, v1, v0
 
-    const-string v2, "windowBackgroundWhiteBlackText"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -306,9 +306,9 @@
 
     aget-object v1, v1, v0
 
-    const-string v2, "windowBackgroundWhiteGrayText2"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText2:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -323,7 +323,7 @@
 
     move-result-object v1
 
-    check-cast v1, Ljava/lang/String;
+    check-cast v1, Ljava/lang/Integer;
 
     if-eqz v1, :cond_0
 
@@ -332,7 +332,11 @@
 
     aget-object v2, v2, v0
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-virtual {v1}, Ljava/lang/Integer;->intValue()I
+
+    move-result v1
+
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -350,7 +354,7 @@
 
 # virtual methods
 .method public setData(Lorg/telegram/ui/StatisticActivity$OverviewChannelData;)V
-    .locals 8
+    .locals 6
 
     .line 2428
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->primary:[Landroid/widget/TextView;
@@ -412,20 +416,20 @@
 
     iget-boolean v5, p1, Lorg/telegram/ui/StatisticActivity$OverviewChannelData;->followersUp:Z
 
-    const-string v6, "windowBackgroundWhiteGreenText2"
-
-    const-string v7, "windowBackgroundWhiteRedText5"
-
     if-eqz v5, :cond_0
 
-    move-object v5, v6
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGreenText2:I
 
     goto :goto_0
 
     :cond_0
-    move-object v5, v7
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
     :goto_0
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
     .line 2435
@@ -455,14 +459,18 @@
 
     if-eqz v5, :cond_1
 
-    move-object v5, v6
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGreenText2:I
 
     goto :goto_1
 
     :cond_1
-    move-object v5, v7
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
     :goto_1
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
     .line 2438
@@ -483,13 +491,19 @@
 
     if-eqz v5, :cond_2
 
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGreenText2:I
+
     goto :goto_2
 
     :cond_2
-    move-object v6, v7
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
     :goto_2
-    invoke-virtual {v0, v6}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    invoke-virtual {v0, v5}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
     .line 2441
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->title:[Landroid/widget/TextView;
@@ -534,7 +548,7 @@
 .end method
 
 .method public setData(Lorg/telegram/ui/StatisticActivity$OverviewChatData;)V
-    .locals 8
+    .locals 6
 
     .line 2450
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->primary:[Landroid/widget/TextView;
@@ -596,20 +610,20 @@
 
     iget-boolean v5, p1, Lorg/telegram/ui/StatisticActivity$OverviewChatData;->membersUp:Z
 
-    const-string v6, "windowBackgroundWhiteGreenText2"
-
-    const-string v7, "windowBackgroundWhiteRedText5"
-
     if-eqz v5, :cond_0
 
-    move-object v5, v6
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGreenText2:I
 
     goto :goto_0
 
     :cond_0
-    move-object v5, v7
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
     :goto_0
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
     .line 2458
@@ -630,14 +644,18 @@
 
     if-eqz v5, :cond_1
 
-    move-object v5, v6
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGreenText2:I
 
     goto :goto_1
 
     :cond_1
-    move-object v5, v7
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
     :goto_1
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
     .line 2461
@@ -658,14 +676,18 @@
 
     if-eqz v5, :cond_2
 
-    move-object v5, v6
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGreenText2:I
 
     goto :goto_2
 
     :cond_2
-    move-object v5, v7
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
     :goto_2
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
     invoke-virtual {v0, v5}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
     .line 2463
@@ -686,13 +708,19 @@
 
     if-eqz v5, :cond_3
 
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGreenText2:I
+
     goto :goto_3
 
     :cond_3
-    move-object v6, v7
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedRegular:I
 
     :goto_3
-    invoke-virtual {v0, v6}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
+    invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
+
+    move-result-object v5
+
+    invoke-virtual {v0, v5}, Landroid/widget/TextView;->setTag(Ljava/lang/Object;)V
 
     .line 2466
     iget-object v0, p0, Lorg/telegram/ui/StatisticActivity$OverviewCell;->title:[Landroid/widget/TextView;

@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTopicProfileCell.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TopicProfileCell.kt\ncom/iMe/ui/topics/TopicProfileCell\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,134:1\n1#2:135\n*E\n"
+    value = "SMAP\nTopicProfileCell.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TopicProfileCell.kt\ncom/iMe/ui/topics/TopicProfileCell\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,131:1\n1#2:132\n*E\n"
 .end annotation
 
 
@@ -112,7 +112,7 @@
 
     const/16 v2, 0x13
 
-    const/16 v3, 0x17
+    const/16 v3, 0x10
 
     const/4 v4, 0x0
 
@@ -130,6 +130,8 @@
     invoke-direct {p0}, Lcom/iMe/ui/topics/TopicProfileCell;->getSelectTopicTextView()Lorg/telegram/ui/ActionBar/SimpleTextView;
 
     move-result-object p1
+
+    const/16 v3, 0x17
 
     invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
@@ -252,7 +254,7 @@
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
 
     .line 116
-    sget v1, Lorg/telegram/messenger/R$drawable;->fork_plus:I
+    sget v1, Lorg/telegram/messenger/R$drawable;->msg_add:I
 
     invoke-virtual {v0, v1}, Landroid/widget/ImageView;->setImageResource(I)V
 
@@ -383,36 +385,38 @@
 
     const/4 v0, 0x0
 
-    const/4 v1, 0x1
+    const/4 v1, 0x0
+
+    const/4 v2, 0x1
 
     if-eqz p1, :cond_0
 
     .line 50
     invoke-direct {p0}, Lcom/iMe/ui/topics/TopicProfileCell;->getTopicView()Lcom/iMe/ui/topics/TopicView;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-static {v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    invoke-static {v3, v1, v2, v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 51
     invoke-direct {p0}, Lcom/iMe/ui/topics/TopicProfileCell;->getSelectTopicTextView()Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-static {v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->invisible(Landroid/view/View;)V
+    invoke-static {v3, v1, v2, v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->invisible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 52
     invoke-direct {p0}, Lcom/iMe/ui/topics/TopicProfileCell;->getDeleteImageView()Landroid/widget/ImageView;
 
-    move-result-object v2
+    move-result-object v0
 
     .line 53
-    invoke-virtual {v2, v1}, Landroid/widget/ImageView;->setClickable(Z)V
-
-    const-string v3, "stickers_menuSelector"
+    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setClickable(Z)V
 
     .line 54
-    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_stickers_menuSelector:I
+
+    invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 
@@ -420,14 +424,14 @@
 
     move-result-object v3
 
-    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v0, v3}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     .line 56
     invoke-direct {p0}, Lcom/iMe/ui/topics/TopicProfileCell;->getTopicView()Lcom/iMe/ui/topics/TopicView;
 
-    move-result-object v2
+    move-result-object v0
 
-    invoke-virtual {v2, p1, v1}, Lcom/iMe/ui/topics/TopicView;->setTopic(Lcom/iMe/storage/domain/model/topics/TopicModel;Z)V
+    invoke-virtual {v0, p1, v2}, Lcom/iMe/ui/topics/TopicView;->setTopic(Lcom/iMe/storage/domain/model/topics/TopicModel;Z)V
 
     goto :goto_0
 
@@ -435,35 +439,33 @@
     :cond_0
     invoke-direct {p0}, Lcom/iMe/ui/topics/TopicProfileCell;->getTopicView()Lcom/iMe/ui/topics/TopicView;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-static {v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->invisible(Landroid/view/View;)V
+    invoke-static {v3, v1, v2, v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->invisible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 59
     invoke-direct {p0}, Lcom/iMe/ui/topics/TopicProfileCell;->getSelectTopicTextView()Lorg/telegram/ui/ActionBar/SimpleTextView;
 
-    move-result-object v2
+    move-result-object v3
 
-    invoke-static {v2}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible(Landroid/view/View;)V
+    invoke-static {v3, v1, v2, v0}, Lcom/iMe/utils/extentions/common/ViewExtKt;->visible$default(Landroid/view/View;ZILjava/lang/Object;)V
 
     .line 60
     invoke-direct {p0}, Lcom/iMe/ui/topics/TopicProfileCell;->getDeleteImageView()Landroid/widget/ImageView;
 
-    move-result-object v2
+    move-result-object v3
 
     .line 61
-    invoke-virtual {v2, v0}, Landroid/widget/ImageView;->setClickable(Z)V
-
-    const/4 v3, 0x0
+    invoke-virtual {v3, v1}, Landroid/widget/ImageView;->setClickable(Z)V
 
     .line 62
-    invoke-virtual {v2, v3}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
+    invoke-virtual {v3, v0}, Landroid/widget/ImageView;->setBackground(Landroid/graphics/drawable/Drawable;)V
 
     .line 65
     :goto_0
-    new-instance v2, Landroid/animation/AnimatorSet;
+    new-instance v0, Landroid/animation/AnimatorSet;
 
-    invoke-direct {v2}, Landroid/animation/AnimatorSet;-><init>()V
+    invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
 
     const/4 v3, 0x5
 
@@ -476,7 +478,7 @@
 
     sget-object v5, Landroid/widget/FrameLayout;->TRANSLATION_X:Landroid/util/Property;
 
-    new-array v6, v1, [F
+    new-array v6, v2, [F
 
     const/high16 v7, -0x3dc00000    # -48.0f
 
@@ -499,14 +501,14 @@
 
     int-to-float v9, v9
 
-    aput v9, v6, v0
+    aput v9, v6, v1
 
     .line 67
     invoke-static {v4, v5, v6}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v4
 
-    aput-object v4, v3, v0
+    aput-object v4, v3, v1
 
     .line 70
     invoke-direct {p0}, Lcom/iMe/ui/topics/TopicProfileCell;->getSelectTopicTextView()Lorg/telegram/ui/ActionBar/SimpleTextView;
@@ -515,7 +517,7 @@
 
     sget-object v5, Landroid/widget/FrameLayout;->ALPHA:Landroid/util/Property;
 
-    new-array v6, v1, [F
+    new-array v6, v2, [F
 
     const/high16 v9, 0x3f800000    # 1.0f
 
@@ -529,13 +531,13 @@
     move v10, v9
 
     :goto_2
-    aput v10, v6, v0
+    aput v10, v6, v1
 
     invoke-static {v4, v5, v6}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object v4
 
-    aput-object v4, v3, v1
+    aput-object v4, v3, v2
 
     const/4 v4, 0x2
 
@@ -546,7 +548,7 @@
 
     sget-object v6, Landroid/widget/FrameLayout;->TRANSLATION_X:Landroid/util/Property;
 
-    new-array v10, v1, [F
+    new-array v10, v2, [F
 
     if-eqz p1, :cond_3
 
@@ -560,7 +562,7 @@
 
     int-to-float v7, v7
 
-    aput v7, v10, v0
+    aput v7, v10, v1
 
     .line 73
     invoke-static {v5, v6, v10}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
@@ -578,7 +580,7 @@
 
     sget-object v6, Landroid/widget/FrameLayout;->ALPHA:Landroid/util/Property;
 
-    new-array v7, v1, [F
+    new-array v7, v2, [F
 
     if-eqz p1, :cond_4
 
@@ -588,7 +590,7 @@
     move v9, v8
 
     :goto_3
-    aput v9, v7, v0
+    aput v9, v7, v1
 
     invoke-static {v5, v6, v7}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
@@ -605,16 +607,16 @@
 
     sget-object v6, Landroid/widget/FrameLayout;->ROTATION:Landroid/util/Property;
 
-    new-array v1, v1, [F
+    new-array v2, v2, [F
 
     if-eqz p1, :cond_5
 
     const/high16 v8, 0x43070000    # 135.0f
 
     :cond_5
-    aput v8, v1, v0
+    aput v8, v2, v1
 
-    invoke-static {v5, v6, v1}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
+    invoke-static {v5, v6, v2}, Landroid/animation/ObjectAnimator;->ofFloat(Ljava/lang/Object;Landroid/util/Property;[F)Landroid/animation/ObjectAnimator;
 
     move-result-object p1
 
@@ -625,22 +627,22 @@
 
     move-result-object p1
 
-    invoke-virtual {v2, p1}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
+    invoke-virtual {v0, p1}, Landroid/animation/AnimatorSet;->playTogether(Ljava/util/Collection;)V
 
-    const-wide/16 v0, 0xc8
+    const-wide/16 v1, 0xc8
 
     .line 83
-    invoke-virtual {v2, v0, v1}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
+    invoke-virtual {v0, v1, v2}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
     .line 84
     sget-object p1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
-    invoke-virtual {v2, p1}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
+    invoke-virtual {v0, p1}, Landroid/animation/AnimatorSet;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
     .line 85
-    iput-object v2, p0, Lcom/iMe/ui/topics/TopicProfileCell;->animator:Landroid/animation/AnimatorSet;
+    iput-object v0, p0, Lcom/iMe/ui/topics/TopicProfileCell;->animator:Landroid/animation/AnimatorSet;
 
-    invoke-virtual {v2}, Landroid/animation/AnimatorSet;->start()V
+    invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
     return-void
 .end method
@@ -660,9 +662,9 @@
 
     move-result-object v0
 
-    const-string v1, "windowBackgroundWhiteBlackText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -675,9 +677,9 @@
 
     new-instance v1, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v2, "switch2TrackChecked"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_switch2TrackChecked:I
 
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 

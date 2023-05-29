@@ -5,7 +5,7 @@
 
 # annotations
 .annotation system Ldalvik/annotation/EnclosingMethod;
-    value = Lorg/telegram/ui/ChatEditActivity;->updateHistoryShow(ZZ)V
+    value = Lorg/telegram/ui/ChatEditActivity;->showAvatarProgress(ZZ)V
 .end annotation
 
 .annotation system Ldalvik/annotation/InnerClass;
@@ -17,21 +17,17 @@
 # instance fields
 .field final synthetic this$0:Lorg/telegram/ui/ChatEditActivity;
 
-.field final synthetic val$finalShow:Z
-
-.field final synthetic val$nextViews:Ljava/util/ArrayList;
+.field final synthetic val$show:Z
 
 
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/ChatEditActivity;ZLjava/util/ArrayList;)V
+.method constructor <init>(Lorg/telegram/ui/ChatEditActivity;Z)V
     .locals 0
 
-    .line 1685
+    .line 1717
     iput-object p1, p0, Lorg/telegram/ui/ChatEditActivity$10;->this$0:Lorg/telegram/ui/ChatEditActivity;
 
-    iput-boolean p2, p0, Lorg/telegram/ui/ChatEditActivity$10;->val$finalShow:Z
-
-    iput-object p3, p0, Lorg/telegram/ui/ChatEditActivity$10;->val$nextViews:Ljava/util/ArrayList;
+    iput-boolean p2, p0, Lorg/telegram/ui/ChatEditActivity$10;->val$show:Z
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
 
@@ -40,59 +36,76 @@
 
 
 # virtual methods
-.method public onAnimationEnd(Landroid/animation/Animator;)V
-    .locals 2
+.method public onAnimationCancel(Landroid/animation/Animator;)V
+    .locals 1
 
-    .line 1688
+    .line 1732
     iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$10;->this$0:Lorg/telegram/ui/ChatEditActivity;
-
-    invoke-static {p1}, Lorg/telegram/ui/ChatEditActivity;->access$1400(Lorg/telegram/ui/ChatEditActivity;)Lorg/telegram/ui/Cells/TextCell;
-
-    move-result-object p1
-
-    iget-boolean v0, p0, Lorg/telegram/ui/ChatEditActivity$10;->val$finalShow:Z
-
-    const/4 v1, 0x0
-
-    if-eqz v0, :cond_0
-
-    move v0, v1
-
-    goto :goto_0
-
-    :cond_0
-    const/16 v0, 0x8
-
-    :goto_0
-    invoke-virtual {p1, v0}, Landroid/widget/FrameLayout;->setVisibility(I)V
-
-    .line 1689
-    :goto_1
-    iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$10;->val$nextViews:Ljava/util/ArrayList;
-
-    invoke-virtual {p1}, Ljava/util/ArrayList;->size()I
-
-    move-result p1
-
-    if-ge v1, p1, :cond_1
-
-    .line 1690
-    iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$10;->val$nextViews:Ljava/util/ArrayList;
-
-    invoke-virtual {p1, v1}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
-
-    move-result-object p1
-
-    check-cast p1, Landroid/view/View;
 
     const/4 v0, 0x0
 
-    invoke-virtual {p1, v0}, Landroid/view/View;->setTranslationY(F)V
+    invoke-static {p1, v0}, Lorg/telegram/ui/ChatEditActivity;->access$1602(Lorg/telegram/ui/ChatEditActivity;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    add-int/lit8 v1, v1, 0x1
+    return-void
+.end method
 
-    goto :goto_1
+.method public onAnimationEnd(Landroid/animation/Animator;)V
+    .locals 1
 
+    .line 1720
+    iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$10;->this$0:Lorg/telegram/ui/ChatEditActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ChatEditActivity;->access$1600(Lorg/telegram/ui/ChatEditActivity;)Landroid/animation/AnimatorSet;
+
+    move-result-object p1
+
+    if-eqz p1, :cond_2
+
+    iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$10;->this$0:Lorg/telegram/ui/ChatEditActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ChatEditActivity;->access$1700(Lorg/telegram/ui/ChatEditActivity;)Lorg/telegram/ui/Components/RadialProgressView;
+
+    move-result-object p1
+
+    if-nez p1, :cond_0
+
+    goto :goto_0
+
+    .line 1723
+    :cond_0
+    iget-boolean p1, p0, Lorg/telegram/ui/ChatEditActivity$10;->val$show:Z
+
+    if-nez p1, :cond_1
+
+    .line 1724
+    iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$10;->this$0:Lorg/telegram/ui/ChatEditActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ChatEditActivity;->access$1700(Lorg/telegram/ui/ChatEditActivity;)Lorg/telegram/ui/Components/RadialProgressView;
+
+    move-result-object p1
+
+    const/4 v0, 0x4
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+
+    .line 1725
+    iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$10;->this$0:Lorg/telegram/ui/ChatEditActivity;
+
+    invoke-static {p1}, Lorg/telegram/ui/ChatEditActivity;->access$1500(Lorg/telegram/ui/ChatEditActivity;)Landroid/view/View;
+
+    move-result-object p1
+
+    invoke-virtual {p1, v0}, Landroid/view/View;->setVisibility(I)V
+
+    .line 1727
     :cond_1
+    iget-object p1, p0, Lorg/telegram/ui/ChatEditActivity$10;->this$0:Lorg/telegram/ui/ChatEditActivity;
+
+    const/4 v0, 0x0
+
+    invoke-static {p1, v0}, Lorg/telegram/ui/ChatEditActivity;->access$1602(Lorg/telegram/ui/ChatEditActivity;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
+
+    :cond_2
+    :goto_0
     return-void
 .end method

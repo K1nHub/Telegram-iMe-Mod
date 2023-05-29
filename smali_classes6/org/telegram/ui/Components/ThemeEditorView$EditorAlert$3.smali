@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;Lorg/telegram/ui/Components/ThemeEditorView;)V
     .locals 0
 
-    .line 815
+    .line 816
     iput-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$3;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -35,7 +35,7 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 818
+    .line 819
     iget-object p1, p0, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert$3;->this$1:Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;->access$2200(Lorg/telegram/ui/Components/ThemeEditorView$EditorAlert;)V

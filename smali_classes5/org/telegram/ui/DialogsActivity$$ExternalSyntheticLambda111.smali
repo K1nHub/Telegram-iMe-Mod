@@ -2,46 +2,44 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Ljava/util/Comparator;
+.implements Ljava/lang/Runnable;
 
 
-# static fields
-.field public static final synthetic INSTANCE:Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda111;
+# instance fields
+.field public final synthetic f$0:Lorg/telegram/ui/DialogsActivity;
+
+.field public final synthetic f$1:J
+
+.field public final synthetic f$2:Ljava/lang/Runnable;
 
 
 # direct methods
-.method static synthetic constructor <clinit>()V
-    .locals 1
-
-    new-instance v0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda111;
-
-    invoke-direct {v0}, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda111;-><init>()V
-
-    sput-object v0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda111;->INSTANCE:Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda111;
-
-    return-void
-.end method
-
-.method private synthetic constructor <init>()V
+.method public synthetic constructor <init>(Lorg/telegram/ui/DialogsActivity;JLjava/lang/Runnable;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
+
+    iput-object p1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda111;->f$0:Lorg/telegram/ui/DialogsActivity;
+
+    iput-wide p2, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda111;->f$1:J
+
+    iput-object p4, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda111;->f$2:Ljava/lang/Runnable;
 
     return-void
 .end method
 
 
 # virtual methods
-.method public final compare(Ljava/lang/Object;Ljava/lang/Object;)I
-    .locals 0
+.method public final run()V
+    .locals 4
 
-    check-cast p1, Ljava/lang/Integer;
+    iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda111;->f$0:Lorg/telegram/ui/DialogsActivity;
 
-    check-cast p2, Ljava/lang/Integer;
+    iget-wide v1, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda111;->f$1:J
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$iA7kNpNN9IEdn7EXxBoVprfr9cY(Ljava/lang/Integer;Ljava/lang/Integer;)I
+    iget-object v3, p0, Lorg/telegram/ui/DialogsActivity$$ExternalSyntheticLambda111;->f$2:Ljava/lang/Runnable;
 
-    move-result p1
+    invoke-static {v0, v1, v2, v3}, Lorg/telegram/ui/DialogsActivity;->$r8$lambda$QYb9HX6ntQs6LABqPvNCiow-Aws(Lorg/telegram/ui/DialogsActivity;JLjava/lang/Runnable;)V
 
-    return p1
+    return-void
 .end method

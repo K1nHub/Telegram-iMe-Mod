@@ -32,6 +32,8 @@
 
 .field public static final enum BOSON:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
+.field public static final enum BTCMT:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+
 .field public static final enum BUSD:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
 .field public static final enum CEEK:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
@@ -187,7 +189,7 @@
 .method private static final synthetic $values()[Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
     .locals 3
 
-    const/16 v0, 0x4f
+    const/16 v0, 0x50
 
     new-array v0, v0, [Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
@@ -647,21 +649,27 @@
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->INTERNAL:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->BTCMT:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     const/16 v2, 0x4c
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->USD:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->INTERNAL:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     const/16 v2, 0x4d
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->UNKNOWN:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->USD:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     const/16 v2, 0x4e
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->UNKNOWN:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+
+    const/16 v2, 0x4f
 
     aput-object v1, v0, v2
 
@@ -1507,34 +1515,45 @@
 
     sput-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->HT:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    .line 83
+    .line 82
     new-instance v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    const-string v1, "INTERNAL"
+    const-string v1, "BTCMT"
 
     const/16 v2, 0x4c
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->INTERNAL:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sput-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->BTCMT:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     .line 84
     new-instance v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    const-string v1, "USD"
+    const-string v1, "INTERNAL"
 
     const/16 v2, 0x4d
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;-><init>(Ljava/lang/String;I)V
 
-    sput-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->USD:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sput-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->INTERNAL:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     .line 85
     new-instance v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    const-string v1, "UNKNOWN"
+    const-string v1, "USD"
 
     const/16 v2, 0x4e
+
+    invoke-direct {v0, v1, v2}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;-><init>(Ljava/lang/String;I)V
+
+    sput-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->USD:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+
+    .line 86
+    new-instance v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+
+    const-string v1, "UNKNOWN"
+
+    const/16 v2, 0x4f
 
     invoke-direct {v0, v1, v2}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;-><init>(Ljava/lang/String;I)V
 
@@ -1616,7 +1635,7 @@
 .method public final getName()Ljava/lang/String;
     .locals 1
 
-    .line 87
+    .line 88
     invoke-virtual {p0}, Ljava/lang/Enum;->name()Ljava/lang/String;
 
     move-result-object v0
@@ -1627,7 +1646,7 @@
 .method public final isBscTokens()Z
     .locals 1
 
-    .line 94
+    .line 95
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;
 
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;->getBSCCodes()Ljava/util/List;
@@ -1644,7 +1663,7 @@
 .method public final isCryptoTokens()Z
     .locals 1
 
-    .line 99
+    .line 100
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->isBscTokens()Z
 
     move-result v0
@@ -1663,7 +1682,7 @@
 
     if-nez v0, :cond_1
 
-    .line 100
+    .line 101
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->isFantomTokens()Z
 
     move-result v0
@@ -1700,7 +1719,7 @@
 .method public final isEth()Z
     .locals 1
 
-    .line 91
+    .line 92
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->ETHER:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     if-ne p0, v0, :cond_0
@@ -1719,7 +1738,7 @@
 .method public final isEthAndTokens()Z
     .locals 1
 
-    .line 93
+    .line 94
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;
 
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;->getEthereumCodes()Ljava/util/List;
@@ -1736,7 +1755,7 @@
 .method public final isEthTokens()Z
     .locals 1
 
-    .line 92
+    .line 93
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;
 
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;->getEthereumCodes()Ljava/util/List;
@@ -1767,7 +1786,7 @@
 .method public final isFantomTokens()Z
     .locals 1
 
-    .line 96
+    .line 97
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;
 
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;->getFantomCodes()Ljava/util/List;
@@ -1784,7 +1803,7 @@
 .method public final isLime()Z
     .locals 1
 
-    .line 90
+    .line 91
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->LIME:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     if-ne p0, v0, :cond_0
@@ -1803,7 +1822,7 @@
 .method public final isPolygonTokens()Z
     .locals 1
 
-    .line 95
+    .line 96
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;
 
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;->getPolygonCodes()Ljava/util/List;
@@ -1820,7 +1839,7 @@
 .method public final isTonTokens()Z
     .locals 1
 
-    .line 98
+    .line 99
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;
 
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;->getTonCodes()Ljava/util/List;
@@ -1837,7 +1856,7 @@
 .method public final isTronTokens()Z
     .locals 1
 
-    .line 97
+    .line 98
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->Companion:Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;
 
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/wallet/token/TokenCode$Companion;->getTronCodes()Ljava/util/List;
@@ -1854,7 +1873,7 @@
 .method public final isUnknown()Z
     .locals 1
 
-    .line 89
+    .line 90
     sget-object v0, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->UNKNOWN:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     if-ne p0, v0, :cond_0

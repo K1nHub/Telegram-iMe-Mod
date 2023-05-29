@@ -274,10 +274,10 @@
 
     invoke-direct {v2, v4}, Landroid/view/View;-><init>(Landroid/content/Context;)V
 
-    const-string v4, "divider"
-
     .line 60
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_divider:I
+
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -344,10 +344,10 @@
     .line 67
     invoke-virtual {v2, v3, v5}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    const-string v12, "dialogTextBlue2"
-
     .line 68
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v12, Lorg/telegram/ui/ActionBar/Theme;->key_dialogTextBlue2:I
+
+    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v13
 
@@ -417,7 +417,7 @@
     invoke-virtual {v14, v3, v5}, Landroid/widget/TextView;->setTextSize(IF)V
 
     .line 78
-    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v3
 

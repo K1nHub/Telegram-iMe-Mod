@@ -210,13 +210,13 @@
     .line 94
     iget-object p1, p0, Lorg/telegram/ui/Cells/PhotoPickerPhotoCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
-    const-string v1, "chat_attachCheckBoxBackground"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_attachCheckBoxBackground:I
 
-    const-string v3, "chat_attachPhotoBackground"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_attachPhotoBackground:I
 
-    const-string v4, "chat_attachCheckBoxCheck"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chat_attachCheckBoxCheck:I
 
-    invoke-virtual {p1, v1, v3, v4}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {p1, v1, v3, v4}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
     .line 95
     iget-object p1, p0, Lorg/telegram/ui/Cells/PhotoPickerPhotoCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
@@ -343,9 +343,11 @@
 
     iget v3, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;->orientation:I
 
-    const/4 v4, 0x1
+    iget v4, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;->invert:I
 
-    invoke-virtual {v1, v3, v4}, Lorg/telegram/ui/Components/BackupImageView;->setOrientation(IZ)V
+    const/4 v5, 0x1
+
+    invoke-virtual {v1, v3, v4, v5}, Lorg/telegram/ui/Components/BackupImageView;->setOrientation(IIZ)V
 
     .line 140
     iget-boolean v1, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;->isVideo:Z
@@ -690,13 +692,13 @@
     .line 127
     iget-object v0, p0, Lorg/telegram/ui/Cells/PhotoPickerPhotoCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
-    const-string v1, "chat_attachCheckBoxBackground"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_attachCheckBoxBackground:I
 
-    const-string v2, "chat_attachPhotoBackground"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_attachPhotoBackground:I
 
-    const-string v3, "chat_attachCheckBoxCheck"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_chat_attachCheckBoxCheck:I
 
-    invoke-virtual {v0, v1, v2, v3}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, v2, v3}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
     return-void
 .end method

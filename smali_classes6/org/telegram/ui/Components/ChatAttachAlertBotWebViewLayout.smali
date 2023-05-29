@@ -295,9 +295,9 @@
     .line 170
     new-instance p1, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout$2;
 
-    const-string v0, "dialogBackground"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v0}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(I)I
 
     move-result v0
 
@@ -1138,9 +1138,9 @@
     .line 631
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertBotWebViewLayout;->webViewContainer:Lorg/telegram/ui/Components/BotWebViewContainer;
 
-    const-string p2, "dialogBackground"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    invoke-virtual {p0, p2}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, p2}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(I)I
 
     move-result p2
 
@@ -1480,10 +1480,10 @@
 
     check-cast v0, Landroid/widget/TextView;
 
-    const-string v1, "dialogTextRed"
-
     .line 251
-    invoke-virtual {p0, v1}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_text_RedBold:I
+
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(I)I
 
     move-result v1
 
@@ -1648,9 +1648,9 @@
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatAttachAlert;->actionBar:Lorg/telegram/ui/ActionBar/ActionBar;
 
-    const-string v1, "windowBackgroundWhite"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-virtual {p0, v1}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(Ljava/lang/String;)I
+    invoke-virtual {p0, v1}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(I)I
 
     move-result v1
 
@@ -2307,10 +2307,10 @@
 
     const-string p3, "bg_color"
 
-    const-string p4, "dialogBackground"
-
     .line 465
-    invoke-virtual {p0, p4}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(Ljava/lang/String;)I
+    sget p4, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
+
+    invoke-virtual {p0, p4}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(I)I
 
     move-result p4
 
@@ -2318,10 +2318,10 @@
 
     const-string p3, "secondary_bg_color"
 
-    const-string p4, "windowBackgroundGray"
-
     .line 466
-    invoke-virtual {p0, p4}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(Ljava/lang/String;)I
+    sget p4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+
+    invoke-virtual {p0, p4}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(I)I
 
     move-result p4
 
@@ -2329,10 +2329,10 @@
 
     const-string p3, "text_color"
 
-    const-string p4, "windowBackgroundWhiteBlackText"
-
     .line 467
-    invoke-virtual {p0, p4}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(Ljava/lang/String;)I
+    sget p4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
+
+    invoke-virtual {p0, p4}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(I)I
 
     move-result p4
 
@@ -2340,10 +2340,10 @@
 
     const-string p3, "hint_color"
 
-    const-string p4, "windowBackgroundWhiteHintText"
-
     .line 468
-    invoke-virtual {p0, p4}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(Ljava/lang/String;)I
+    sget p4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteHintText:I
+
+    invoke-virtual {p0, p4}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(I)I
 
     move-result p4
 
@@ -2351,10 +2351,10 @@
 
     const-string p3, "link_color"
 
-    const-string p4, "windowBackgroundWhiteLinkText"
-
     .line 469
-    invoke-virtual {p0, p4}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(Ljava/lang/String;)I
+    sget p4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteLinkText:I
+
+    invoke-virtual {p0, p4}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(I)I
 
     move-result p4
 
@@ -2362,10 +2362,10 @@
 
     const-string p3, "button_color"
 
-    const-string p4, "featuredStickers_addButton"
-
     .line 470
-    invoke-virtual {p0, p4}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(Ljava/lang/String;)I
+    sget p4, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
+
+    invoke-virtual {p0, p4}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(I)I
 
     move-result p4
 
@@ -2373,10 +2373,10 @@
 
     const-string p3, "button_text_color"
 
-    const-string p4, "featuredStickers_buttonText"
-
     .line 471
-    invoke-virtual {p0, p4}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(Ljava/lang/String;)I
+    sget p4, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
+
+    invoke-virtual {p0, p4}, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->getThemedColor(I)I
 
     move-result p4
 

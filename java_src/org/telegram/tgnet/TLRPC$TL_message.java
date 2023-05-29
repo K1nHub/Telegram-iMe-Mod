@@ -1,7 +1,7 @@
 package org.telegram.tgnet;
 
 import android.text.TextUtils;
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.exoplayer2.source.ProgressiveMediaSource;
 import org.telegram.messenger.LiteMode;
 /* loaded from: classes4.dex */
@@ -22,8 +22,8 @@ public class TLRPC$TL_message extends TLRPC$Message {
         this.edit_hide = (2097152 & readInt32) != 0;
         this.pinned = (16777216 & readInt32) != 0;
         this.noforwards = (67108864 & readInt32) != 0;
-        this.topic_start = (readInt32 & C0470C.BUFFER_FLAG_FIRST_SAMPLE) != 0;
-        this.f1451id = abstractSerializedData.readInt32(z);
+        this.topic_start = (readInt32 & C0475C.BUFFER_FLAG_FIRST_SAMPLE) != 0;
+        this.f1457id = abstractSerializedData.readInt32(z);
         if ((this.flags & 256) != 0) {
             this.from_id = TLRPC$Peer.TLdeserialize(abstractSerializedData, abstractSerializedData.readInt32(z), z);
         }
@@ -135,10 +135,10 @@ public class TLRPC$TL_message extends TLRPC$Message {
         this.flags = i9;
         int i10 = this.noforwards ? i9 | ConnectionsManager.FileTypeFile : i9 & (-67108865);
         this.flags = i10;
-        int i11 = this.topic_start ? i10 | C0470C.BUFFER_FLAG_FIRST_SAMPLE : i10 & (-134217729);
+        int i11 = this.topic_start ? i10 | C0475C.BUFFER_FLAG_FIRST_SAMPLE : i10 & (-134217729);
         this.flags = i11;
         abstractSerializedData.writeInt32(i11);
-        abstractSerializedData.writeInt32(this.f1451id);
+        abstractSerializedData.writeInt32(this.f1457id);
         if ((this.flags & 256) != 0) {
             this.from_id.serializeToStream(abstractSerializedData);
         }

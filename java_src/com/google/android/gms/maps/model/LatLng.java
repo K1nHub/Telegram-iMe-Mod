@@ -14,13 +14,13 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 public final class LatLng extends AbstractSafeParcelable implements ReflectedParcelable {
     @KeepForSdk
     public static final Parcelable.Creator<LatLng> CREATOR = new zzg();
-    @SafeParcelable.Field(m775id = 2)
+    @SafeParcelable.Field(m779id = 2)
     public final double latitude;
-    @SafeParcelable.Field(m775id = 3)
+    @SafeParcelable.Field(m779id = 3)
     public final double longitude;
 
     @SafeParcelable.Constructor
-    public LatLng(@SafeParcelable.Param(m774id = 2) double d, @SafeParcelable.Param(m774id = 3) double d2) {
+    public LatLng(@SafeParcelable.Param(m778id = 2) double d, @SafeParcelable.Param(m778id = 3) double d2) {
         if (d2 < -180.0d || d2 >= 180.0d) {
             this.longitude = ((((d2 - 180.0d) % 360.0d) + 360.0d) % 360.0d) - 180.0d;
         } else {

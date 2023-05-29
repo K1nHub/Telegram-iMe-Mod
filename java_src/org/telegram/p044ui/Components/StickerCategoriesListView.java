@@ -27,7 +27,7 @@ import java.util.Iterator;
 import org.telegram.SQLite.SQLiteDatabase;
 import org.telegram.SQLite.SQLitePreparedStatement;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 import org.telegram.messenger.Fetcher;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LiteMode;
@@ -131,7 +131,7 @@ public class StickerCategoriesListView extends RecyclerListView {
         this.rect1 = new RectF();
         this.rect2 = new RectF();
         this.rect3 = new RectF();
-        setPadding(0, 0, AndroidUtilities.m50dp(2), 0);
+        setPadding(0, 0, AndroidUtilities.m54dp(2), 0);
         Adapter adapter = new Adapter();
         this.adapter = adapter;
         setAdapter(adapter);
@@ -139,8 +139,7 @@ public class StickerCategoriesListView extends RecyclerListView {
         this.layoutManager = linearLayoutManager;
         setLayoutManager(linearLayoutManager);
         this.layoutManager.setOrientation(0);
-        this.selectedPaint.setColor(getThemedColor("listSelectorSDK21"));
-        setSelectorDrawableColor(0);
+        this.selectedPaint.setColor(getThemedColor(Theme.key_listSelector));
         setWillNotDraw(false);
         setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.Components.StickerCategoriesListView$$ExternalSyntheticLambda3
             @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemClickListener
@@ -177,6 +176,11 @@ public class StickerCategoriesListView extends RecyclerListView {
         }
     }
 
+    @Override // org.telegram.p044ui.Components.RecyclerListView
+    public Integer getSelectorColor(int i) {
+        return 0;
+    }
+
     public void setShownButtonsAtStart(float f) {
         this.shownButtonsAtStart = f;
     }
@@ -187,11 +191,11 @@ public class StickerCategoriesListView extends RecyclerListView {
         EmojiCategory[] emojiCategoryArr;
         if (i >= 1 && (emojiCategoryArr = this.categories) != null) {
             EmojiCategory emojiCategory = emojiCategoryArr[i - 1];
-            int m50dp = AndroidUtilities.m50dp(64);
-            if (getMeasuredWidth() - view.getRight() < m50dp) {
-                smoothScrollBy(m50dp - (getMeasuredWidth() - view.getRight()), 0, CubicBezierInterpolator.EASE_OUT_QUINT);
-            } else if (view.getLeft() < m50dp) {
-                smoothScrollBy(-(m50dp - view.getLeft()), 0, CubicBezierInterpolator.EASE_OUT_QUINT);
+            int m54dp = AndroidUtilities.m54dp(64);
+            if (getMeasuredWidth() - view.getRight() < m54dp) {
+                smoothScrollBy(m54dp - (getMeasuredWidth() - view.getRight()), 0, CubicBezierInterpolator.EASE_OUT_QUINT);
+            } else if (view.getLeft() < m54dp) {
+                smoothScrollBy(-(m54dp - view.getLeft()), 0, CubicBezierInterpolator.EASE_OUT_QUINT);
             }
             Utilities.Callback<EmojiCategory> callback = this.onCategoryClick;
             if (callback != null) {
@@ -412,10 +416,10 @@ public class StickerCategoriesListView extends RecyclerListView {
             this.backgroundPaint = new Paint(1);
         }
         this.backgroundPaint.setColor(i);
-        Drawable mutate = getContext().getResources().getDrawable(C3242R.C3244drawable.gradient_right).mutate();
+        Drawable mutate = getContext().getResources().getDrawable(C3290R.C3292drawable.gradient_right).mutate();
         this.leftBoundDrawable = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.MULTIPLY));
-        Drawable mutate2 = getContext().getResources().getDrawable(C3242R.C3244drawable.gradient_left).mutate();
+        Drawable mutate2 = getContext().getResources().getDrawable(C3290R.C3292drawable.gradient_left).mutate();
         this.rightBoundDrawable = mutate2;
         mutate2.setColorFilter(new PorterDuffColorFilter(i, PorterDuff.Mode.MULTIPLY));
     }
@@ -435,8 +439,8 @@ public class StickerCategoriesListView extends RecyclerListView {
                 }
             }
             if (i < i2) {
-                int width = (int) (i2 + ((getWidth() + AndroidUtilities.m50dp(32)) * (1.0f - this.categoriesShownT)));
-                canvas.drawRect((int) (i + ((getWidth() + AndroidUtilities.m50dp(32)) * (1.0f - this.categoriesShownT))), BitmapDescriptorFactory.HUE_RED, width, getHeight(), this.backgroundPaint);
+                int width = (int) (i2 + ((getWidth() + AndroidUtilities.m54dp(32)) * (1.0f - this.categoriesShownT)));
+                canvas.drawRect((int) (i + ((getWidth() + AndroidUtilities.m54dp(32)) * (1.0f - this.categoriesShownT))), BitmapDescriptorFactory.HUE_RED, width, getHeight(), this.backgroundPaint);
                 if (width < getWidth() && (drawable = this.leftBoundDrawable) != null) {
                     drawable.setAlpha(255);
                     Drawable drawable2 = this.leftBoundDrawable;
@@ -495,7 +499,7 @@ public class StickerCategoriesListView extends RecyclerListView {
             getChildBounds(view, this.rect1);
             getChildBounds(view2, this.rect2);
             AndroidUtilities.lerp(this.rect1, this.rect2, f4, this.rect3);
-            canvas.drawRoundRect(this.rect3, AndroidUtilities.m50dp(15), AndroidUtilities.m50dp(15), this.selectedPaint);
+            canvas.drawRoundRect(this.rect3, AndroidUtilities.m54dp(15), AndroidUtilities.m54dp(15), this.selectedPaint);
         }
         this.selectedPaint.setAlpha(alpha);
     }
@@ -503,7 +507,7 @@ public class StickerCategoriesListView extends RecyclerListView {
     private void getChildBounds(View view, RectF rectF) {
         float right = (view.getRight() + view.getLeft()) / 2.0f;
         float bottom = (view.getBottom() + view.getTop()) / 2.0f;
-        float width = ((view.getWidth() / 2.0f) - AndroidUtilities.m50dp(1)) * (view instanceof CategoryButton ? ((CategoryButton) view).getScale() : 1.0f);
+        float width = ((view.getWidth() / 2.0f) - AndroidUtilities.m54dp(1)) * (view instanceof CategoryButton ? ((CategoryButton) view).getScale() : 1.0f);
         rectF.set(right - width, bottom - width, right + width, bottom + width);
     }
 
@@ -543,9 +547,9 @@ public class StickerCategoriesListView extends RecyclerListView {
                         if (size <= 0) {
                             size = ((View) getParent()).getMeasuredWidth();
                         }
-                        int size2 = View.MeasureSpec.getSize(i3) - AndroidUtilities.m50dp(4);
+                        int size2 = View.MeasureSpec.getSize(i3) - AndroidUtilities.m54dp(4);
                         StickerCategoriesListView stickerCategoriesListView = StickerCategoriesListView.this;
-                        super.onMeasure(View.MeasureSpec.makeMeasureSpec(stickerCategoriesListView.paddingWidth = Math.max(stickerCategoriesListView.dontOccupyWidth > 0 ? StickerCategoriesListView.this.dontOccupyWidth + AndroidUtilities.m50dp(4) : 0, (int) (size - Math.min(((Adapter.this.getItemCount() - 1) * size2) + AndroidUtilities.m50dp(4), StickerCategoriesListView.this.shownButtonsAtStart * size2))), 1073741824), i3);
+                        super.onMeasure(View.MeasureSpec.makeMeasureSpec(stickerCategoriesListView.paddingWidth = Math.max(stickerCategoriesListView.dontOccupyWidth > 0 ? StickerCategoriesListView.this.dontOccupyWidth + AndroidUtilities.m54dp(4) : 0, (int) (size - Math.min(((Adapter.this.getItemCount() - 1) * size2) + AndroidUtilities.m54dp(4), StickerCategoriesListView.this.shownButtonsAtStart * size2))), 1073741824), i3);
                     }
                 };
             } else {
@@ -619,9 +623,9 @@ public class StickerCategoriesListView extends RecyclerListView {
             super(context);
             this.loaded = false;
             this.loadProgress = 1.0f;
-            setImageColor(StickerCategoriesListView.this.getThemedColor("chat_emojiPanelIcon"));
+            setImageColor(StickerCategoriesListView.this.getThemedColor(Theme.key_chat_emojiPanelIcon));
             setScaleType(ImageView.ScaleType.CENTER);
-            setBackground(Theme.createSelectorDrawable(StickerCategoriesListView.this.getThemedColor("listSelectorSDK21"), 1, AndroidUtilities.m50dp(15)));
+            setBackground(Theme.createSelectorDrawable(StickerCategoriesListView.this.getThemedColor(Theme.key_listSelector), 1, AndroidUtilities.m54dp(15)));
             setLayerNum(StickerCategoriesListView.this.layerNum);
         }
 
@@ -760,7 +764,7 @@ public class StickerCategoriesListView extends RecyclerListView {
         /* JADX INFO: Access modifiers changed from: private */
         public void updateSelectedT(float f) {
             this.selectedT = f;
-            setImageColor(ColorUtils.blendARGB(StickerCategoriesListView.this.getThemedColor("chat_emojiPanelIcon"), StickerCategoriesListView.this.getThemedColor("chat_emojiPanelIconSelected"), this.selectedT));
+            setImageColor(ColorUtils.blendARGB(StickerCategoriesListView.this.getThemedColor(Theme.key_chat_emojiPanelIcon), StickerCategoriesListView.this.getThemedColor(Theme.key_chat_emojiPanelIconSelected), this.selectedT));
             invalidate();
         }
 
@@ -789,7 +793,7 @@ public class StickerCategoriesListView extends RecyclerListView {
         @Override // android.widget.ImageView, android.view.View
         protected void onMeasure(int i, int i2) {
             int size = View.MeasureSpec.getSize(i2);
-            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.m50dp(4), 1073741824), View.MeasureSpec.makeMeasureSpec(size, 1073741824));
+            super.onMeasure(View.MeasureSpec.makeMeasureSpec(size - AndroidUtilities.m54dp(4), 1073741824), View.MeasureSpec.makeMeasureSpec(size, 1073741824));
         }
 
         public void play() {
@@ -1003,7 +1007,7 @@ public class StickerCategoriesListView extends RecyclerListView {
                 r8 = move-exception
                 r7 = r2
             L58:
-                org.telegram.messenger.FileLog.m45e(r8)     // Catch: java.lang.Throwable -> L68
+                org.telegram.messenger.FileLog.m49e(r8)     // Catch: java.lang.Throwable -> L68
                 java.lang.Long r8 = java.lang.Long.valueOf(r0)     // Catch: java.lang.Throwable -> L68
                 r9.run(r8, r2)     // Catch: java.lang.Throwable -> L68
                 if (r7 == 0) goto L67
@@ -1053,7 +1057,7 @@ public class StickerCategoriesListView extends RecyclerListView {
                     }
                 }
             } catch (Exception e) {
-                FileLog.m45e(e);
+                FileLog.m49e(e);
             }
         }
     }

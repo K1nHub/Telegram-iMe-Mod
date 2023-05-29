@@ -1,7 +1,7 @@
 package com.google.android.exoplayer2.source.smoothstreaming.manifest;
 
 import android.net.Uri;
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.exoplayer2.Format;
 import com.google.android.exoplayer2.extractor.mp4.TrackEncryptionBox;
 import com.google.android.exoplayer2.offline.FilterableManifest;
@@ -120,7 +120,7 @@ public class SsManifest implements FilterableManifest<SsManifest> {
     }
 
     public SsManifest(int i, int i2, long j, long j2, long j3, int i3, boolean z, ProtectionElement protectionElement, StreamElement[] streamElementArr) {
-        this(i, i2, j2 == 0 ? -9223372036854775807L : Util.scaleLargeTimestamp(j2, 1000000L, j), j3 != 0 ? Util.scaleLargeTimestamp(j3, 1000000L, j) : C0470C.TIME_UNSET, i3, z, protectionElement, streamElementArr);
+        this(i, i2, j2 == 0 ? -9223372036854775807L : Util.scaleLargeTimestamp(j2, 1000000L, j), j3 != 0 ? Util.scaleLargeTimestamp(j3, 1000000L, j) : C0475C.TIME_UNSET, i3, z, protectionElement, streamElementArr);
     }
 
     private SsManifest(int i, int i2, long j, long j2, int i3, boolean z, ProtectionElement protectionElement, StreamElement[] streamElementArr) {

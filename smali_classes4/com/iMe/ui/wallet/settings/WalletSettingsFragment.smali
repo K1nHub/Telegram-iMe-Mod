@@ -274,7 +274,7 @@
 .method private static final getThemeDescriptions$lambda$1(Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -346,9 +346,9 @@
 
     move-result-object v0
 
-    const-string/jumbo v1, "windowBackgroundGray"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -444,7 +444,7 @@
 .method private static final setupListeners$lambda$4(Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;Lcom/chad/library/adapter/base/BaseQuickAdapter;Landroid/view/View;I)V
     .locals 1
 
-    const-string v0, "this$0"
+    const-string/jumbo v0, "this$0"
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
@@ -580,18 +580,18 @@
 
     invoke-direct {v7, p0}, Lcom/iMe/ui/wallet/settings/WalletSettingsFragment$$ExternalSyntheticLambda1;-><init>(Lcom/iMe/ui/wallet/settings/WalletSettingsFragment;)V
 
+    .line 56
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGray:I
+
     const/4 v4, 0x0
 
     const/4 v5, 0x0
 
     const/4 v6, 0x0
 
-    const-string/jumbo v8, "windowBackgroundGray"
-
     move-object v1, v9
 
-    .line 56
-    invoke-direct/range {v1 .. v8}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;Ljava/lang/String;)V
+    invoke-direct/range {v1 .. v8}, Lorg/telegram/ui/ActionBar/ThemeDescription;-><init>(Landroid/view/View;I[Ljava/lang/Class;Landroid/graphics/Paint;[Landroid/graphics/drawable/Drawable;Lorg/telegram/ui/ActionBar/ThemeDescription$ThemeDescriptionDelegate;I)V
 
     const/4 v1, 0x0
 

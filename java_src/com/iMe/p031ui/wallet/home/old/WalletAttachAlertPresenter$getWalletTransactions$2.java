@@ -17,7 +17,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletAttachAlertPresenter.kt */
 /* renamed from: com.iMe.ui.wallet.home.old.WalletAttachAlertPresenter$getWalletTransactions$2 */
-/* loaded from: classes.dex */
+/* loaded from: classes4.dex */
 public final class WalletAttachAlertPresenter$getWalletTransactions$2 extends Lambda implements Function1<Result<? extends List<? extends Transaction>>, Unit> {
     final /* synthetic */ TokenCode $selectedTokenCode;
     final /* synthetic */ WalletAttachAlertPresenter this$0;

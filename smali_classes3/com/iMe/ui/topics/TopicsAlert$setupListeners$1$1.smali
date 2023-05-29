@@ -24,7 +24,7 @@
 
     iput-object p1, p0, Lcom/iMe/ui/topics/TopicsAlert$setupListeners$1$1;->this$0:Lcom/iMe/ui/topics/TopicsAlert;
 
-    .line 170
+    .line 185
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
 
     return-void
@@ -39,7 +39,7 @@
 
     invoke-static {p1, p2}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 172
+    .line 187
     iget-object p1, p0, Lcom/iMe/ui/topics/TopicsAlert$setupListeners$1$1;->this$0:Lcom/iMe/ui/topics/TopicsAlert;
 
     invoke-static {p1}, Lcom/iMe/ui/topics/TopicsAlert;->access$updateLayout(Lcom/iMe/ui/topics/TopicsAlert;)V

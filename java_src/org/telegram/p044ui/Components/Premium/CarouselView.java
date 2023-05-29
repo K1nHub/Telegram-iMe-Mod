@@ -9,7 +9,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.animation.OvershootInterpolator;
 import android.widget.OverScroller;
-import com.google.android.exoplayer2.C0470C;
+import com.google.android.exoplayer2.C0475C;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -25,10 +25,10 @@ public class CarouselView extends View implements PagerHeaderView {
     private Runnable autoScrollRunnable;
 
     /* renamed from: cX */
-    int f1688cX;
+    int f1695cX;
 
     /* renamed from: cY */
-    int f1689cY;
+    int f1696cY;
     Comparator<DrawingObject> comparator;
     private final ArrayList<? extends DrawingObject> drawingObjects;
     private final ArrayList<? extends DrawingObject> drawingObjectsSorted;
@@ -48,10 +48,10 @@ public class CarouselView extends View implements PagerHeaderView {
         public double angle;
 
         /* renamed from: x */
-        public float f1690x;
+        public float f1697x;
 
         /* renamed from: y */
-        public float f1691y;
+        public float f1698y;
         float yRelative;
 
         public void draw(Canvas canvas, float f, float f2, float f3) {
@@ -93,7 +93,7 @@ public class CarouselView extends View implements PagerHeaderView {
                     CarouselView.this.lambda$scrollToInternal$2(f2, f, valueAnimator2);
                 }
             });
-            this.autoScrollAnimation.addListener(new C48493(f));
+            this.autoScrollAnimation.addListener(new C49223(f));
             this.autoScrollAnimation.setInterpolator(new OvershootInterpolator());
             this.autoScrollAnimation.setDuration(600L);
             this.autoScrollAnimation.start();
@@ -110,10 +110,10 @@ public class CarouselView extends View implements PagerHeaderView {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Premium.CarouselView$3 */
     /* loaded from: classes6.dex */
-    public class C48493 extends AnimatorListenerAdapter {
+    public class C49223 extends AnimatorListenerAdapter {
         final /* synthetic */ float val$scrollTo;
 
-        C48493(float f) {
+        C49223(float f) {
             this.val$scrollTo = f;
         }
 
@@ -126,7 +126,7 @@ public class CarouselView extends View implements PagerHeaderView {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Premium.CarouselView$3$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CarouselView.C48493.this.lambda$onAnimationEnd$0();
+                    CarouselView.C49223.this.lambda$onAnimationEnd$0();
                 }
             });
         }
@@ -155,8 +155,8 @@ public class CarouselView extends View implements PagerHeaderView {
     @Override // android.view.View
     protected void onMeasure(int i, int i2) {
         super.onMeasure(i, i2);
-        this.f1688cX = getMeasuredWidth() >> 1;
-        this.f1689cY = getMeasuredHeight() >> 1;
+        this.f1695cX = getMeasuredWidth() >> 1;
+        this.f1696cY = getMeasuredHeight() >> 1;
     }
 
     @Override // android.view.View
@@ -211,22 +211,22 @@ public class CarouselView extends View implements PagerHeaderView {
                 scrollToInternal(this.offsetAngle - f4);
             }
         }
-        float min = (Math.min(getMeasuredWidth(), getMeasuredHeight() * 1.3f) - AndroidUtilities.m50dp(140)) * 0.5f;
+        float min = (Math.min(getMeasuredWidth(), getMeasuredHeight() * 1.3f) - AndroidUtilities.m54dp(140)) * 0.5f;
         float f6 = 0.6f * min;
         for (int i = 0; i < this.drawingObjects.size(); i++) {
             DrawingObject drawingObject = this.drawingObjects.get(i);
             double d = this.offsetAngle + (i * size);
             drawingObject.angle = d;
             double cos = drawingObject.angle - (Math.cos(Math.toRadians(d)) * 30.0d);
-            drawingObject.f1690x = (((float) Math.cos(Math.toRadians(cos))) * min) + this.f1688cX;
+            drawingObject.f1697x = (((float) Math.cos(Math.toRadians(cos))) * min) + this.f1695cX;
             float sin = (float) Math.sin(Math.toRadians(cos));
             drawingObject.yRelative = sin;
-            drawingObject.f1691y = (sin * f6) + this.f1689cY;
+            drawingObject.f1698y = (sin * f6) + this.f1696cY;
         }
         Collections.sort(this.drawingObjectsSorted, this.comparator);
         for (int i2 = 0; i2 < this.drawingObjectsSorted.size(); i2++) {
             DrawingObject drawingObject2 = this.drawingObjectsSorted.get(i2);
-            drawingObject2.draw(canvas, drawingObject2.f1690x, drawingObject2.f1691y, (((drawingObject2.yRelative + 1.0f) * 0.7f) / 2.0f) + 0.2f);
+            drawingObject2.draw(canvas, drawingObject2.f1697x, drawingObject2.f1698y, (((drawingObject2.yRelative + 1.0f) * 0.7f) / 2.0f) + 0.2f);
         }
         invalidate();
     }
@@ -234,7 +234,7 @@ public class CarouselView extends View implements PagerHeaderView {
     void scheduleAutoscroll() {
         AndroidUtilities.cancelRunOnUIThread(this.autoScrollRunnable);
         if (this.autoPlayEnabled) {
-            AndroidUtilities.runOnUIThread(this.autoScrollRunnable, C0470C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS);
+            AndroidUtilities.runOnUIThread(this.autoScrollRunnable, C0475C.DEFAULT_MAX_SEEK_TO_PREVIOUS_POSITION_MS);
         }
     }
 

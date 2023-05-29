@@ -324,7 +324,7 @@
     .line 137
     iget-boolean v0, p0, Lokhttp3/Cookie;->secure:Z
 
-    invoke-static {v0}, Lcom/iMe/model/twitter/TweetItem$$ExternalSyntheticBackport0;->m(Z)I
+    invoke-static {v0}, Lokhttp3/Cookie$$ExternalSyntheticBackport0;->m(Z)I
 
     move-result v0
 
@@ -335,7 +335,7 @@
     .line 138
     iget-boolean v0, p0, Lokhttp3/Cookie;->httpOnly:Z
 
-    invoke-static {v0}, Lcom/iMe/model/twitter/TweetItem$$ExternalSyntheticBackport0;->m(Z)I
+    invoke-static {v0}, Lokhttp3/Cookie$$ExternalSyntheticBackport0;->m(Z)I
 
     move-result v0
 
@@ -346,7 +346,7 @@
     .line 139
     iget-boolean v0, p0, Lokhttp3/Cookie;->persistent:Z
 
-    invoke-static {v0}, Lcom/iMe/model/twitter/TweetItem$$ExternalSyntheticBackport0;->m(Z)I
+    invoke-static {v0}, Lokhttp3/Cookie$$ExternalSyntheticBackport0;->m(Z)I
 
     move-result v0
 
@@ -357,7 +357,7 @@
     .line 140
     iget-boolean v0, p0, Lokhttp3/Cookie;->hostOnly:Z
 
-    invoke-static {v0}, Lcom/iMe/model/twitter/TweetItem$$ExternalSyntheticBackport0;->m(Z)I
+    invoke-static {v0}, Lokhttp3/Cookie$$ExternalSyntheticBackport0;->m(Z)I
 
     move-result v0
 

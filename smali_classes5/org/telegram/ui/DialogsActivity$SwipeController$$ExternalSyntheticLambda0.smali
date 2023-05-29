@@ -27,7 +27,7 @@
 
     iget-object v0, p0, Lorg/telegram/ui/DialogsActivity$SwipeController$$ExternalSyntheticLambda0;->f$0:Landroid/view/View;
 
-    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity$SwipeController;->$r8$lambda$Ot-V80ccSJlgQSX9T6ySvz1ngCM(Landroid/view/View;)V
+    invoke-static {v0}, Lorg/telegram/ui/DialogsActivity$SwipeController;->$r8$lambda$Cydm_nNsIvEmDFTlC4Hv7Mb0G8Y(Landroid/view/View;)V
 
     return-void
 .end method

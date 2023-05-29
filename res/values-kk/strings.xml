@@ -101,6 +101,8 @@
     <string name="mtrl_picker_toggle_to_day_selection">Күнді таңдауға ауысу үшін түртіңіз.</string>
     <string name="mtrl_picker_toggle_to_text_input_mode">Мәтін енгізу режиміне ауысу</string>
     <string name="mtrl_picker_toggle_to_year_selection">Жылды таңдауға ауысу үшін түртіңіз.</string>
+    <string name="nav_app_bar_navigate_up_description">Жоғары қарай жылжу</string>
+    <string name="nav_app_bar_open_drawer_description">Навигация тартпасын ашу</string>
     <string name="password_toggle_content_description">Құпия сөзді көрсету</string>
     <string name="search_menu_title">Іздеу</string>
     <string name="status_bar_notification_info_overflow">999+</string>

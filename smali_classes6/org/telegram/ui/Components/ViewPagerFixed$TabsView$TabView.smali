@@ -95,7 +95,7 @@
 .end method
 
 .method protected onDraw(Landroid/graphics/Canvas;)V
-    .locals 29
+    .locals 28
 
     move-object/from16 v0, p0
 
@@ -229,25 +229,27 @@
 
     iget v5, v5, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$Tab;->id:I
 
-    const-string v6, "chats_tabUnreadActiveBackground"
-
-    const-string v10, "chats_tabUnreadUnactiveBackground"
-
     if-ne v5, v1, :cond_3
 
     .line 990
     iget-object v5, v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$2200(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Ljava/lang/String;
+    invoke-static {v5}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$2200(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)I
 
-    move-result-object v5
+    move-result v5
 
     .line 991
-    iget-object v11, v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
+    iget-object v6, v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
-    invoke-static {v11}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$2300(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Ljava/lang/String;
+    invoke-static {v6}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$2300(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)I
 
-    move-result-object v11
+    move-result v6
+
+    .line 992
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_chats_tabUnreadActiveBackground:I
+
+    .line 993
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_chats_tabUnreadUnactiveBackground:I
 
     goto :goto_2
 
@@ -255,22 +257,22 @@
     :cond_3
     iget-object v5, v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
-    invoke-static {v5}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$2300(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Ljava/lang/String;
+    invoke-static {v5}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$2300(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)I
 
-    move-result-object v5
+    move-result v5
 
     .line 996
-    iget-object v11, v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
+    iget-object v6, v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
-    invoke-static {v11}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$2200(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Ljava/lang/String;
+    invoke-static {v6}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$2200(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)I
 
-    move-result-object v11
+    move-result v6
 
-    move-object/from16 v28, v10
+    .line 997
+    sget v10, Lorg/telegram/ui/ActionBar/Theme;->key_chats_tabUnreadUnactiveBackground:I
 
-    move-object v10, v6
-
-    move-object/from16 v6, v28
+    .line 998
+    sget v11, Lorg/telegram/ui/ActionBar/Theme;->key_chats_tabUnreadActiveBackground:I
 
     .line 1001
     :goto_2
@@ -303,11 +305,11 @@
 
     .line 1004
     :cond_5
-    iget-object v11, v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
+    iget-object v6, v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
-    invoke-static {v11}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$1600(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Landroid/text/TextPaint;
+    invoke-static {v6}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$1600(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Landroid/text/TextPaint;
 
-    move-result-object v11
+    move-result-object v6
 
     iget-object v12, v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
@@ -315,11 +317,11 @@
 
     move-result-object v12
 
-    invoke-static {v5, v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v5, v12}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v5
 
-    invoke-virtual {v11, v5}, Landroid/text/TextPaint;->setColor(I)V
+    invoke-virtual {v6, v5}, Landroid/text/TextPaint;->setColor(I)V
 
     goto :goto_4
 
@@ -338,9 +340,9 @@
 
     move-result-object v13
 
-    invoke-static {v11, v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v6, v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
-    move-result v11
+    move-result v6
 
     iget-object v13, v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
@@ -348,7 +350,7 @@
 
     move-result-object v13
 
-    invoke-static {v5, v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v5, v13}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v5
 
@@ -358,7 +360,7 @@
 
     move-result v13
 
-    invoke-static {v11, v5, v13}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
+    invoke-static {v6, v5, v13}, Landroidx/core/graphics/ColorUtils;->blendARGB(IIF)I
 
     move-result v5
 
@@ -370,13 +372,13 @@
 
     iget v5, v5, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$Tab;->counter:I
 
-    const/4 v11, 0x1
+    const/4 v6, 0x1
 
     const/4 v12, 0x0
 
     if-lez v5, :cond_7
 
-    new-array v13, v11, [Ljava/lang/Object;
+    new-array v13, v6, [Ljava/lang/Object;
 
     .line 1012
     invoke-static {v5}, Ljava/lang/Integer;->valueOf(I)Ljava/lang/Integer;
@@ -604,16 +606,16 @@
 
     move-result v9
 
-    sget-object v11, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
+    sget-object v6, Landroid/graphics/PorterDuff$Mode;->SRC_IN:Landroid/graphics/PorterDuff$Mode;
 
-    invoke-direct {v8, v9, v11}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
+    invoke-direct {v8, v9, v6}, Landroid/graphics/PorterDuffColorFilter;-><init>(ILandroid/graphics/PorterDuff$Mode;)V
 
     .line 1035
     invoke-static {v3}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabWithIcon;->access$1500(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabWithIcon;)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v9
+    move-result-object v6
 
-    invoke-virtual {v9, v8}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
+    invoke-virtual {v6, v8}, Landroid/graphics/drawable/Drawable;->setColorFilter(Landroid/graphics/ColorFilter;)V
 
     .line 1036
     invoke-virtual/range {p1 .. p1}, Landroid/graphics/Canvas;->save()I
@@ -623,28 +625,7 @@
     .line 1037
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
 
-    move-result v8
-
-    invoke-static {v3}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabWithIcon;->access$1500(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabWithIcon;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v9
-
-    invoke-virtual {v9}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
-
-    move-result v9
-
-    sub-int/2addr v8, v9
-
-    div-int/lit8 v8, v8, 0x2
-
-    int-to-float v8, v8
-
-    invoke-virtual {v7, v2, v8}, Landroid/graphics/Canvas;->translate(FF)V
-
-    .line 1038
-    invoke-static {v3}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabWithIcon;->access$1500(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabWithIcon;)Landroid/graphics/drawable/Drawable;
-
-    move-result-object v2
+    move-result v6
 
     invoke-static {v3}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabWithIcon;->access$1500(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabWithIcon;)Landroid/graphics/drawable/Drawable;
 
@@ -654,15 +635,36 @@
 
     move-result v8
 
+    sub-int/2addr v6, v8
+
+    div-int/lit8 v6, v6, 0x2
+
+    int-to-float v6, v6
+
+    invoke-virtual {v7, v2, v6}, Landroid/graphics/Canvas;->translate(FF)V
+
+    .line 1038
     invoke-static {v3}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabWithIcon;->access$1500(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabWithIcon;)Landroid/graphics/drawable/Drawable;
 
-    move-result-object v9
+    move-result-object v2
 
-    invoke-virtual {v9}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+    invoke-static {v3}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabWithIcon;->access$1500(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabWithIcon;)Landroid/graphics/drawable/Drawable;
 
-    move-result v9
+    move-result-object v6
 
-    invoke-virtual {v2, v12, v12, v8, v9}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
+    invoke-virtual {v6}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+
+    move-result v6
+
+    invoke-static {v3}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabWithIcon;->access$1500(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabWithIcon;)Landroid/graphics/drawable/Drawable;
+
+    move-result-object v8
+
+    invoke-virtual {v8}, Landroid/graphics/drawable/Drawable;->getIntrinsicWidth()I
+
+    move-result v8
+
+    invoke-virtual {v2, v12, v12, v6, v8}, Landroid/graphics/drawable/Drawable;->setBounds(IIII)V
 
     .line 1039
     invoke-static {v3}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabWithIcon;->access$1500(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabWithIcon;)Landroid/graphics/drawable/Drawable;
@@ -682,9 +684,9 @@
 
     iget-object v3, v3, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$Tab;->title:Ljava/lang/String;
 
-    iget-object v8, v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;->currentText:Ljava/lang/String;
+    iget-object v6, v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;->currentText:Ljava/lang/String;
 
-    invoke-static {v3, v8}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
+    invoke-static {v3, v6}, Landroid/text/TextUtils;->equals(Ljava/lang/CharSequence;Ljava/lang/CharSequence;)Z
 
     move-result v3
 
@@ -698,38 +700,38 @@
     iput-object v3, v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;->currentText:Ljava/lang/String;
 
     .line 1045
-    iget-object v8, v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
+    iget-object v6, v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
-    invoke-static {v8}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$1600(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Landroid/text/TextPaint;
+    invoke-static {v6}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$1600(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Landroid/text/TextPaint;
 
-    move-result-object v8
+    move-result-object v6
 
-    invoke-virtual {v8}, Landroid/text/TextPaint;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
+    invoke-virtual {v6}, Landroid/text/TextPaint;->getFontMetricsInt()Landroid/graphics/Paint$FontMetricsInt;
 
-    move-result-object v8
+    move-result-object v6
 
-    const/16 v9, 0xf
+    const/16 v8, 0xf
 
-    invoke-static {v9}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    move-result v9
+    move-result v8
 
-    invoke-static {v3, v8, v9, v12}, Lorg/telegram/messenger/Emoji;->replaceEmoji(Ljava/lang/CharSequence;Landroid/graphics/Paint$FontMetricsInt;IZ)Ljava/lang/CharSequence;
+    invoke-static {v3, v6, v8, v12}, Lorg/telegram/messenger/Emoji;->replaceEmoji(Ljava/lang/CharSequence;Landroid/graphics/Paint$FontMetricsInt;IZ)Ljava/lang/CharSequence;
 
     move-result-object v21
 
     .line 1046
     new-instance v3, Landroid/text/StaticLayout;
 
-    iget-object v8, v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
+    iget-object v6, v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
-    invoke-static {v8}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$1600(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Landroid/text/TextPaint;
+    invoke-static {v6}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$1600(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Landroid/text/TextPaint;
 
     move-result-object v22
 
-    const/16 v8, 0x190
+    const/16 v6, 0x190
 
-    invoke-static {v8}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
+    invoke-static {v6}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v23
 
@@ -785,21 +787,21 @@
 
     invoke-virtual/range {p0 .. p0}, Landroid/view/View;->getMeasuredHeight()I
 
-    move-result v8
+    move-result v6
 
-    iget v9, v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;->textHeight:I
+    iget v8, v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;->textHeight:I
 
-    sub-int/2addr v8, v9
+    sub-int/2addr v6, v8
 
-    div-int/lit8 v8, v8, 0x2
+    div-int/lit8 v6, v6, 0x2
 
-    const/4 v9, 0x1
+    const/4 v8, 0x1
 
-    add-int/2addr v8, v9
+    add-int/2addr v6, v8
 
-    int-to-float v8, v8
+    int-to-float v6, v6
 
-    invoke-virtual {v7, v3, v8}, Landroid/graphics/Canvas;->translate(FF)V
+    invoke-virtual {v7, v3, v6}, Landroid/graphics/Canvas;->translate(FF)V
 
     .line 1053
     iget-object v3, v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;->textLayout:Landroid/text/StaticLayout;
@@ -817,9 +819,9 @@
 
     iget v3, v3, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$Tab;->id:I
 
-    const v8, 0x7fffffff
+    const v6, 0x7fffffff
 
-    if-eq v3, v8, :cond_19
+    if-eq v3, v6, :cond_19
 
     iget-object v3, v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
@@ -835,9 +837,9 @@
 
     move-result v3
 
-    const/4 v8, 0x0
+    const/4 v6, 0x0
 
-    cmpl-float v3, v3, v8
+    cmpl-float v3, v3, v6
 
     if-eqz v3, :cond_19
 
@@ -849,32 +851,32 @@
 
     move-result-object v3
 
+    iget-object v6, v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
+
+    invoke-static {v6}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$3000(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)I
+
+    move-result v6
+
     iget-object v8, v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
 
-    invoke-static {v8}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$3000(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Ljava/lang/String;
+    invoke-static {v8}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$2400(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
     move-result-object v8
 
-    iget-object v9, v0, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView$TabView;->this$0:Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;
+    invoke-static {v6, v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
-    invoke-static {v9}, Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;->access$2400(Lorg/telegram/ui/Components/ViewPagerFixed$TabsView;)Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
+    move-result v6
 
-    move-result-object v9
-
-    invoke-static {v8, v9}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
-
-    move-result v8
-
-    invoke-virtual {v3, v8}, Landroid/text/TextPaint;->setColor(I)V
+    invoke-virtual {v3, v6}, Landroid/text/TextPaint;->setColor(I)V
 
     .line 1059
-    invoke-static {v6}, Lorg/telegram/ui/ActionBar/Theme;->hasThemeKey(Ljava/lang/String;)Z
+    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->hasThemeKey(I)Z
 
     move-result v3
 
     if-eqz v3, :cond_13
 
-    invoke-static {v10}, Lorg/telegram/ui/ActionBar/Theme;->hasThemeKey(Ljava/lang/String;)Z
+    invoke-static {v11}, Lorg/telegram/ui/ActionBar/Theme;->hasThemeKey(I)Z
 
     move-result v3
 
@@ -887,7 +889,7 @@
 
     move-result-object v3
 
-    invoke-static {v6, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v10, v3}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v3
 
@@ -942,7 +944,7 @@
 
     move-result-object v1
 
-    invoke-static {v10, v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v11, v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v1
 

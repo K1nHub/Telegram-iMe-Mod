@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/LocationActivity;)V
     .locals 0
 
-    .line 985
+    .line 992
     iput-object p1, p0, Lorg/telegram/ui/LocationActivity$10;->this$0:Lorg/telegram/ui/LocationActivity;
 
     invoke-direct {p0}, Landroidx/recyclerview/widget/RecyclerView$OnScrollListener;-><init>()V
@@ -35,7 +35,7 @@
 .method public onScrollStateChanged(Landroidx/recyclerview/widget/RecyclerView;I)V
     .locals 0
 
-    .line 988
+    .line 995
     iget-object p1, p0, Lorg/telegram/ui/LocationActivity$10;->this$0:Lorg/telegram/ui/LocationActivity;
 
     if-eqz p2, :cond_0
@@ -48,12 +48,12 @@
     const/4 p2, 0x0
 
     :goto_0
-    invoke-static {p1, p2}, Lorg/telegram/ui/LocationActivity;->access$2902(Lorg/telegram/ui/LocationActivity;Z)Z
+    invoke-static {p1, p2}, Lorg/telegram/ui/LocationActivity;->access$3002(Lorg/telegram/ui/LocationActivity;Z)Z
 
-    .line 989
+    .line 996
     iget-object p1, p0, Lorg/telegram/ui/LocationActivity$10;->this$0:Lorg/telegram/ui/LocationActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/LocationActivity;->access$2900(Lorg/telegram/ui/LocationActivity;)Z
+    invoke-static {p1}, Lorg/telegram/ui/LocationActivity;->access$3000(Lorg/telegram/ui/LocationActivity;)Z
 
     move-result p1
 
@@ -61,18 +61,18 @@
 
     iget-object p1, p0, Lorg/telegram/ui/LocationActivity$10;->this$0:Lorg/telegram/ui/LocationActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/LocationActivity;->access$3000(Lorg/telegram/ui/LocationActivity;)Lorg/telegram/messenger/IMapsProvider$ICameraUpdate;
+    invoke-static {p1}, Lorg/telegram/ui/LocationActivity;->access$3100(Lorg/telegram/ui/LocationActivity;)Lorg/telegram/messenger/IMapsProvider$ICameraUpdate;
 
     move-result-object p1
 
     if-eqz p1, :cond_1
 
-    .line 990
+    .line 997
     iget-object p1, p0, Lorg/telegram/ui/LocationActivity$10;->this$0:Lorg/telegram/ui/LocationActivity;
 
     const/4 p2, 0x0
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/LocationActivity;->access$3002(Lorg/telegram/ui/LocationActivity;Lorg/telegram/messenger/IMapsProvider$ICameraUpdate;)Lorg/telegram/messenger/IMapsProvider$ICameraUpdate;
+    invoke-static {p1, p2}, Lorg/telegram/ui/LocationActivity;->access$3102(Lorg/telegram/ui/LocationActivity;Lorg/telegram/messenger/IMapsProvider$ICameraUpdate;)Lorg/telegram/messenger/IMapsProvider$ICameraUpdate;
 
     :cond_1
     return-void
@@ -81,28 +81,28 @@
 .method public onScrolled(Landroidx/recyclerview/widget/RecyclerView;II)V
     .locals 0
 
-    .line 996
+    .line 1003
     iget-object p1, p0, Lorg/telegram/ui/LocationActivity$10;->this$0:Lorg/telegram/ui/LocationActivity;
 
     const/4 p2, 0x0
 
     invoke-static {p1, p2}, Lorg/telegram/ui/LocationActivity;->access$2300(Lorg/telegram/ui/LocationActivity;Z)V
 
-    .line 997
+    .line 1004
     iget-object p1, p0, Lorg/telegram/ui/LocationActivity$10;->this$0:Lorg/telegram/ui/LocationActivity;
 
-    invoke-static {p1}, Lorg/telegram/ui/LocationActivity;->access$3000(Lorg/telegram/ui/LocationActivity;)Lorg/telegram/messenger/IMapsProvider$ICameraUpdate;
+    invoke-static {p1}, Lorg/telegram/ui/LocationActivity;->access$3100(Lorg/telegram/ui/LocationActivity;)Lorg/telegram/messenger/IMapsProvider$ICameraUpdate;
 
     move-result-object p1
 
     if-eqz p1, :cond_0
 
-    .line 998
+    .line 1005
     iget-object p1, p0, Lorg/telegram/ui/LocationActivity$10;->this$0:Lorg/telegram/ui/LocationActivity;
 
     int-to-float p2, p3
 
-    invoke-static {p1, p2}, Lorg/telegram/ui/LocationActivity;->access$3116(Lorg/telegram/ui/LocationActivity;F)F
+    invoke-static {p1, p2}, Lorg/telegram/ui/LocationActivity;->access$3216(Lorg/telegram/ui/LocationActivity;F)F
 
     :cond_0
     return-void

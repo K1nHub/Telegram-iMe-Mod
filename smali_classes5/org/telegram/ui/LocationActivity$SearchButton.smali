@@ -24,7 +24,7 @@
 .method public constructor <init>(Landroid/content/Context;)V
     .locals 0
 
-    .line 256
+    .line 257
     invoke-direct {p0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     return-void
@@ -33,7 +33,7 @@
 .method private updateTranslationY()V
     .locals 2
 
-    .line 276
+    .line 277
     iget v0, p0, Lorg/telegram/ui/LocationActivity$SearchButton;->currentTranslationY:F
 
     iget v1, p0, Lorg/telegram/ui/LocationActivity$SearchButton;->additionanTranslationY:F
@@ -50,7 +50,7 @@
 .method public getTranslationX()F
     .locals 1
 
-    .line 261
+    .line 262
     iget v0, p0, Lorg/telegram/ui/LocationActivity$SearchButton;->additionanTranslationY:F
 
     return v0
@@ -59,10 +59,10 @@
 .method public setTranslation(F)V
     .locals 0
 
-    .line 271
+    .line 272
     iput p1, p0, Lorg/telegram/ui/LocationActivity$SearchButton;->currentTranslationY:F
 
-    .line 272
+    .line 273
     invoke-direct {p0}, Lorg/telegram/ui/LocationActivity$SearchButton;->updateTranslationY()V
 
     return-void
@@ -71,10 +71,10 @@
 .method public setTranslationX(F)V
     .locals 0
 
-    .line 266
+    .line 267
     iput p1, p0, Lorg/telegram/ui/LocationActivity$SearchButton;->additionanTranslationY:F
 
-    .line 267
+    .line 268
     invoke-direct {p0}, Lorg/telegram/ui/LocationActivity$SearchButton;->updateTranslationY()V
 
     return-void

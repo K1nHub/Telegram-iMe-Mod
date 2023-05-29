@@ -30,10 +30,10 @@
 .method public constructor <init>(Landroid/content/Context;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)V
     .locals 13
 
-    .line 706
+    .line 729
     invoke-direct {p0, p1}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 708
+    .line 731
     new-instance v0, Lorg/telegram/ui/Components/RadioButton;
 
     invoke-direct {v0, p1}, Lorg/telegram/ui/Components/RadioButton;-><init>(Landroid/content/Context;)V
@@ -42,31 +42,31 @@
 
     const/16 v1, 0x14
 
-    .line 709
+    .line 732
     invoke-static {v1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v2
 
     invoke-virtual {v0, v2}, Lorg/telegram/ui/Components/RadioButton;->setSize(I)V
 
-    .line 710
+    .line 733
     iget-object v0, p0, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->radioButton:Lorg/telegram/ui/Components/RadioButton;
 
-    const-string v2, "radioBackground"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_radioBackground:I
 
-    invoke-static {v2, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v2, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v2
 
-    const-string v3, "radioBackgroundChecked"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_radioBackgroundChecked:I
 
-    invoke-static {v3, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {v3, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result v3
 
     invoke-virtual {v0, v2, v3}, Lorg/telegram/ui/Components/RadioButton;->setColor(II)V
 
-    .line 711
+    .line 734
     iget-object v0, p0, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->radioButton:Lorg/telegram/ui/Components/RadioButton;
 
     sget-boolean v2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -123,7 +123,7 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 714
+    .line 737
     new-instance v0, Lorg/telegram/ui/Components/CheckBox2;
 
     const/16 v1, 0x18
@@ -132,26 +132,26 @@
 
     iput-object v0, p0, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
-    const/4 v1, 0x0
+    const/4 v1, -0x1
 
-    const-string v2, "windowBackgroundWhite"
+    .line 738
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    const-string v6, "checkboxCheck"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_checkboxCheck:I
 
-    .line 715
-    invoke-virtual {v0, v1, v2, v6}, Lorg/telegram/ui/Components/CheckBox2;->setColor(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;)V
+    invoke-virtual {v0, v1, v2, v6}, Lorg/telegram/ui/Components/CheckBox2;->setColor(III)V
 
-    .line 716
+    .line 739
     iget-object v0, p0, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v0, v5}, Lorg/telegram/ui/Components/CheckBox2;->setDrawUnchecked(Z)V
 
-    .line 717
+    .line 740
     iget-object v0, p0, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     invoke-virtual {v0, v4}, Lorg/telegram/ui/Components/CheckBox2;->setDrawBackgroundAsArc(I)V
 
-    .line 718
+    .line 741
     iget-object v0, p0, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     const/16 v6, 0x1a
@@ -204,59 +204,59 @@
 
     invoke-virtual {p0, v0, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    .line 719
+    .line 742
     iget-object v0, p0, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     const/4 v1, 0x1
 
     invoke-virtual {v0, v1, v5}, Lorg/telegram/ui/Components/CheckBox2;->setChecked(ZZ)V
 
-    .line 721
+    .line 744
     new-instance v0, Landroid/widget/TextView;
 
     invoke-direct {v0, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->textView:Landroid/widget/TextView;
 
-    const-string p1, "windowBackgroundWhiteBlackText"
+    .line 745
+    sget p1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    .line 722
-    invoke-static {p1, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
+    invoke-static {p1, p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 723
+    .line 746
     iget-object p1, p0, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->textView:Landroid/widget/TextView;
 
     const/high16 p2, 0x41800000    # 16.0f
 
     invoke-virtual {p1, v1, p2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 724
+    .line 747
     iget-object p1, p0, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 725
+    .line 748
     iget-object p1, p0, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 726
+    .line 749
     iget-object p1, p0, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->textView:Landroid/widget/TextView;
 
     invoke-virtual {p1, v1}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 727
+    .line 750
     iget-object p1, p0, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->textView:Landroid/widget/TextView;
 
     sget-object p2, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
-    .line 728
+    .line 751
     iget-object p1, p0, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->textView:Landroid/widget/TextView;
 
     sget-boolean p2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
@@ -275,7 +275,7 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 730
+    .line 753
     iget-object p1, p0, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->textView:Landroid/widget/TextView;
 
     const/4 v5, -0x2
@@ -334,7 +334,7 @@
 .method static synthetic access$1000(Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;)Lorg/telegram/ui/Components/RadioButton;
     .locals 0
 
-    .line 696
+    .line 719
     iget-object p0, p0, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->radioButton:Lorg/telegram/ui/Components/RadioButton;
 
     return-object p0
@@ -343,7 +343,7 @@
 .method static synthetic access$1100(Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;)Lorg/telegram/ui/Components/CheckBox2;
     .locals 0
 
-    .line 696
+    .line 719
     iget-object p0, p0, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->checkBox:Lorg/telegram/ui/Components/CheckBox2;
 
     return-object p0
@@ -352,7 +352,7 @@
 .method static synthetic access$800(Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;)Landroid/widget/TextView;
     .locals 0
 
-    .line 696
+    .line 719
     iget-object p0, p0, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->textView:Landroid/widget/TextView;
 
     return-object p0
@@ -361,7 +361,7 @@
 .method static synthetic access$902(Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;Z)Z
     .locals 0
 
-    .line 696
+    .line 719
     iput-boolean p1, p0, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->needDivider:Z
 
     return p1
@@ -372,12 +372,12 @@
 .method protected onDraw(Landroid/graphics/Canvas;)V
     .locals 9
 
-    .line 740
+    .line 763
     iget-boolean v0, p0, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->needDivider:Z
 
     if-eqz v0, :cond_2
 
-    .line 741
+    .line 764
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/4 v1, 0x0
@@ -448,20 +448,20 @@
 .method public onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
     .locals 1
 
-    .line 747
+    .line 770
     invoke-super {p0, p1}, Landroid/widget/FrameLayout;->onInitializeAccessibilityNodeInfo(Landroid/view/accessibility/AccessibilityNodeInfo;)V
 
     const-string v0, "android.widget.RadioButton"
 
-    .line 748
+    .line 771
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setClassName(Ljava/lang/CharSequence;)V
 
     const/4 v0, 0x1
 
-    .line 749
+    .line 772
     invoke-virtual {p1, v0}, Landroid/view/accessibility/AccessibilityNodeInfo;->setCheckable(Z)V
 
-    .line 750
+    .line 773
     iget-object v0, p0, Lorg/telegram/ui/NotificationsSoundActivity$ToneCell;->radioButton:Lorg/telegram/ui/Components/RadioButton;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/RadioButton;->isChecked()Z
@@ -476,7 +476,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 735
+    .line 758
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1

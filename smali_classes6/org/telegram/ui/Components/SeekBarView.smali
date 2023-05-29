@@ -244,10 +244,10 @@
 
     iput-object p3, p0, Lorg/telegram/ui/Components/SeekBarView;->outerPaint1:Landroid/graphics/Paint;
 
-    const-string v1, "player_progress"
-
     .line 112
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/SeekBarView;->getThemedColor(Ljava/lang/String;)I
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_player_progress:I
+
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/SeekBarView;->getThemedColor(I)I
 
     move-result v2
 
@@ -290,7 +290,7 @@
     if-lt p3, v2, :cond_0
 
     .line 119
-    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/SeekBarView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v1}, Lorg/telegram/ui/Components/SeekBarView;->getThemedColor(I)I
 
     move-result p3
 
@@ -1512,9 +1512,9 @@
     .line 759
     iget-object v0, p0, Lorg/telegram/ui/Components/SeekBarView;->timestampLabelPaint:Landroid/text/TextPaint;
 
-    const-string v5, "player_time"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_player_time:I
 
-    invoke-direct {p0, v5}, Lorg/telegram/ui/Components/SeekBarView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v5}, Lorg/telegram/ui/Components/SeekBarView;->getThemedColor(I)I
 
     move-result v5
 
@@ -1698,39 +1698,16 @@
     return-void
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
+.method private getThemedColor(I)I
     .locals 1
 
     .line 821
     iget-object v0, p0, Lorg/telegram/ui/Components/SeekBarView;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 822
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
@@ -1836,9 +1813,9 @@
     :cond_0
     iget-object v1, v0, Lorg/telegram/ui/Components/SeekBarView;->timestampLabelPaint:Landroid/text/TextPaint;
 
-    const-string v3, "player_time"
+    sget v3, Lorg/telegram/ui/ActionBar/Theme;->key_player_time:I
 
-    invoke-direct {v0, v3}, Lorg/telegram/ui/Components/SeekBarView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v0, v3}, Lorg/telegram/ui/Components/SeekBarView;->getThemedColor(I)I
 
     move-result v3
 
@@ -2221,9 +2198,9 @@
     .line 408
     iget-object v1, v0, Lorg/telegram/ui/Components/SeekBarView;->innerPaint1:Landroid/graphics/Paint;
 
-    const-string v2, "player_progressBackground"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_player_progressBackground:I
 
-    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/SeekBarView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v2}, Lorg/telegram/ui/Components/SeekBarView;->getThemedColor(I)I
 
     move-result v2
 
@@ -2308,9 +2285,9 @@
     .line 417
     iget-object v4, v0, Lorg/telegram/ui/Components/SeekBarView;->innerPaint1:Landroid/graphics/Paint;
 
-    const-string v6, "key_player_progressCachedBackground"
+    sget v6, Lorg/telegram/ui/ActionBar/Theme;->key_player_progressCachedBackground:I
 
-    invoke-direct {p0, v6}, Lorg/telegram/ui/Components/SeekBarView;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {p0, v6}, Lorg/telegram/ui/Components/SeekBarView;->getThemedColor(I)I
 
     move-result v6
 

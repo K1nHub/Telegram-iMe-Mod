@@ -13,50 +13,45 @@ import com.iMe.fork.p024ui.view.AvatarDrawableCell;
 import com.iMe.storage.domain.model.HistoryDialogModel;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
-import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.LayoutHelper;
 import org.telegram.p044ui.Components.RecyclerListView;
-import p034j$.util.Collection$EL;
-import p034j$.util.function.Predicate;
 /* compiled from: RecentChatsBar.kt */
 /* renamed from: com.iMe.ui.recent_chats.RecentChatsBar */
 /* loaded from: classes3.dex */
 public final class RecentChatsBar extends FrameLayout {
     private final int currentAccount;
     private final List<HistoryDialogModel> data;
-    private final HorizontalListViewDelegate delegate;
+    private final Delegate delegate;
     private final Lazy listAdapter$delegate;
     private final Lazy listView$delegate;
 
     /* compiled from: RecentChatsBar.kt */
-    /* renamed from: com.iMe.ui.recent_chats.RecentChatsBar$HorizontalListViewDelegate */
+    /* renamed from: com.iMe.ui.recent_chats.RecentChatsBar$Delegate */
     /* loaded from: classes3.dex */
-    public interface HorizontalListViewDelegate {
-        void onItemListener(HistoryDialogModel historyDialogModel, View view);
-
-        void onItemLongListener(HistoryDialogModel historyDialogModel, View view);
-
+    public interface Delegate {
         void onLongClickRelease();
 
         void onMove(float f);
+
+        void onRecentChatClick(HistoryDialogModel historyDialogModel, View view);
+
+        void onRecentChatLongClick(HistoryDialogModel historyDialogModel, View view);
     }
 
     public final int getCurrentAccount() {
         return this.currentAccount;
     }
 
-    public final HorizontalListViewDelegate getDelegate() {
+    public final Delegate getDelegate() {
         return this.delegate;
     }
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-    public RecentChatsBar(Context context, int i, HorizontalListViewDelegate delegate) {
+    public RecentChatsBar(Context context, int i, Delegate delegate) {
         super(context);
         Lazy lazy;
         Lazy lazy2;
@@ -70,7 +65,6 @@ public final class RecentChatsBar extends FrameLayout {
         this.listAdapter$delegate = lazy2;
         this.data = new ArrayList();
         addView(getListView(), LayoutHelper.createFrame(-1, -1));
-        updateColors();
         setupListeners();
     }
 
@@ -89,49 +83,12 @@ public final class RecentChatsBar extends FrameLayout {
         getListAdapter().notifyDataSetChanged();
     }
 
-    /* JADX INFO: Access modifiers changed from: private */
-    public static final boolean removeData$lambda$0(Function1 tmp0, Object obj) {
-        Intrinsics.checkNotNullParameter(tmp0, "$tmp0");
-        return ((Boolean) tmp0.invoke(obj)).booleanValue();
-    }
-
-    public final void removeData() {
-        List<HistoryDialogModel> list = this.data;
-        final RecentChatsBar$removeData$1 recentChatsBar$removeData$1 = RecentChatsBar$removeData$1.INSTANCE;
-        Collection$EL.removeIf(list, new Predicate() { // from class: com.iMe.ui.recent_chats.RecentChatsBar$$ExternalSyntheticLambda0
-            @Override // p034j$.util.function.Predicate
-            public /* synthetic */ Predicate and(Predicate predicate) {
-                return Objects.requireNonNull(predicate);
-            }
-
-            @Override // p034j$.util.function.Predicate
-            public /* synthetic */ Predicate negate() {
-                return Predicate.CC.$default$negate(this);
-            }
-
-            @Override // p034j$.util.function.Predicate
-            /* renamed from: or */
-            public /* synthetic */ Predicate mo21or(Predicate predicate) {
-                return Objects.requireNonNull(predicate);
-            }
-
-            @Override // p034j$.util.function.Predicate
-            public final boolean test(Object obj) {
-                boolean removeData$lambda$0;
-                removeData$lambda$0 = RecentChatsBar.removeData$lambda$0(Function1.this, obj);
-                return removeData$lambda$0;
-            }
-        });
-        getListAdapter().notifyDataSetChanged();
-    }
-
     public final void scrollToStart() {
         getListView().smoothScrollToPosition(0);
     }
 
-    public final void updateColors() {
+    public final void notifyDataSetChanged() {
         getListAdapter().notifyDataSetChanged();
-        getListView().setBackgroundColor(Theme.getColor("windowBackgroundGray"));
     }
 
     @Override // android.view.ViewGroup
@@ -158,8 +115,8 @@ public final class RecentChatsBar extends FrameLayout {
                 Intrinsics.checkNotNullParameter(view, "view");
                 Intrinsics.checkNotNullParameter(parent, "parent");
                 Intrinsics.checkNotNullParameter(state, "state");
-                outRect.right = AndroidUtilities.m50dp(4);
-                outRect.left = AndroidUtilities.m50dp(4);
+                outRect.right = AndroidUtilities.m54dp(4);
+                outRect.left = AndroidUtilities.m54dp(4);
             }
         });
         recyclerListView.setAdapter(getListAdapter());
@@ -167,17 +124,17 @@ public final class RecentChatsBar extends FrameLayout {
     }
 
     private final void setupListeners() {
-        getListView().setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: com.iMe.ui.recent_chats.RecentChatsBar$$ExternalSyntheticLambda1
+        getListView().setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: com.iMe.ui.recent_chats.RecentChatsBar$$ExternalSyntheticLambda0
             @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemClickListener
             public final void onItemClick(View view, int i) {
-                RecentChatsBar.setupListeners$lambda$2(RecentChatsBar.this, view, i);
+                RecentChatsBar.setupListeners$lambda$1(RecentChatsBar.this, view, i);
             }
         });
         getListView().setOnItemLongClickListener(new RecyclerListView.OnItemLongClickListenerExtended() { // from class: com.iMe.ui.recent_chats.RecentChatsBar$setupListeners$2
             @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemLongClickListenerExtended
             public boolean onItemClick(View view, int i, float f, float f2) {
                 if (view != null) {
-                    RecentChatsBar.this.getDelegate().onItemLongListener((HistoryDialogModel) RecentChatsBar.this.data.get(i), view);
+                    RecentChatsBar.this.getDelegate().onRecentChatLongClick((HistoryDialogModel) RecentChatsBar.this.data.get(i), view);
                     return true;
                 }
                 return true;
@@ -202,10 +159,10 @@ public final class RecentChatsBar extends FrameLayout {
     }
 
     /* JADX INFO: Access modifiers changed from: private */
-    public static final void setupListeners$lambda$2(RecentChatsBar this$0, View view, int i) {
+    public static final void setupListeners$lambda$1(RecentChatsBar this$0, View view, int i) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(view, "view");
-        this$0.delegate.onItemListener(this$0.data.get(i), view);
+        this$0.delegate.onRecentChatClick(this$0.data.get(i), view);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -227,7 +184,7 @@ public final class RecentChatsBar extends FrameLayout {
             Context context = RecentChatsBar.this.getContext();
             Intrinsics.checkNotNullExpressionValue(context, "context");
             AvatarDrawableCell avatarDrawableCell = new AvatarDrawableCell(context, RecentChatsBar.this.getCurrentAccount());
-            avatarDrawableCell.setLayoutParams(new RecyclerView.LayoutParams(AndroidUtilities.m50dp(50), -1));
+            avatarDrawableCell.setLayoutParams(new RecyclerView.LayoutParams(AndroidUtilities.m54dp(50), -1));
             return new RecyclerListView.Holder(avatarDrawableCell);
         }
 

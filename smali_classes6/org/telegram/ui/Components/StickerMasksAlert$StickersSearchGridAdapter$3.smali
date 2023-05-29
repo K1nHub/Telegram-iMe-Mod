@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;Landroid/content/Context;)V
     .locals 0
 
-    .line 1948
+    .line 1956
     iput-object p1, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$3;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
@@ -35,7 +35,7 @@
 .method protected onMeasure(II)V
     .locals 2
 
-    .line 1951
+    .line 1959
     iget-object p2, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$3;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
     iget-object p2, p2, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->this$0:Lorg/telegram/ui/Components/StickerMasksAlert;
@@ -48,7 +48,7 @@
 
     move-result p2
 
-    .line 1952
+    .line 1960
     iget-object v0, p0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter$3;->this$1:Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/StickerMasksAlert$StickersSearchGridAdapter;->this$0:Lorg/telegram/ui/Components/StickerMasksAlert;

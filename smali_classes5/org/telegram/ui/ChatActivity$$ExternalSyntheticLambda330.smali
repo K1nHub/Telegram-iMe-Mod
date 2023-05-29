@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Lorg/telegram/ui/GroupCreateActivity$ContactsAddActivityDelegate;
+.implements Lorg/telegram/ui/Delegates/ChatActivityMemberRequestsDelegate$Callback;
 
 
 # instance fields
@@ -22,20 +22,12 @@
 
 
 # virtual methods
-.method public final didSelectUsers(Ljava/util/ArrayList;I)V
+.method public final onEnterOffsetChanged()V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/ChatActivity$$ExternalSyntheticLambda330;->f$0:Lorg/telegram/ui/ChatActivity;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$ZzY8HBa-rzbcR7OzHZXh5uamRl8(Lorg/telegram/ui/ChatActivity;Ljava/util/ArrayList;I)V
-
-    return-void
-.end method
-
-.method public synthetic needAddBot(Lorg/telegram/tgnet/TLRPC$User;)V
-    .locals 0
-
-    invoke-static {p0, p1}, Lorg/telegram/ui/GroupCreateActivity$ContactsAddActivityDelegate$-CC;->$default$needAddBot(Lorg/telegram/ui/GroupCreateActivity$ContactsAddActivityDelegate;Lorg/telegram/tgnet/TLRPC$User;)V
+    invoke-static {v0}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$mB_KLWGyyTCyiLOW0qrYvY8tIH0(Lorg/telegram/ui/ChatActivity;)V
 
     return-void
 .end method

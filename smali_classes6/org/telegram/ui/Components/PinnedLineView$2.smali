@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/PinnedLineView;)V
     .locals 0
 
-    .line 266
+    .line 264
     iput-object p1, p0, Lorg/telegram/ui/Components/PinnedLineView$2;->this$0:Lorg/telegram/ui/Components/PinnedLineView;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,20 +35,20 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 269
+    .line 267
     iget-object p1, p0, Lorg/telegram/ui/Components/PinnedLineView$2;->this$0:Lorg/telegram/ui/Components/PinnedLineView;
 
     const/4 v0, 0x0
 
     iput-boolean v0, p1, Lorg/telegram/ui/Components/PinnedLineView;->replaceInProgress:Z
 
-    .line 270
+    .line 268
     iput-boolean v0, p1, Lorg/telegram/ui/Components/PinnedLineView;->animationInProgress:Z
 
-    .line 271
+    .line 269
     invoke-virtual {p1}, Landroid/view/View;->invalidate()V
 
-    .line 272
+    .line 270
     iget-object p1, p0, Lorg/telegram/ui/Components/PinnedLineView$2;->this$0:Lorg/telegram/ui/Components/PinnedLineView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/PinnedLineView;->access$000(Lorg/telegram/ui/Components/PinnedLineView;)I
@@ -57,7 +57,7 @@
 
     if-ltz p1, :cond_0
 
-    .line 273
+    .line 271
     iget-object p1, p0, Lorg/telegram/ui/Components/PinnedLineView$2;->this$0:Lorg/telegram/ui/Components/PinnedLineView;
 
     invoke-static {p1}, Lorg/telegram/ui/Components/PinnedLineView;->access$000(Lorg/telegram/ui/Components/PinnedLineView;)I
@@ -66,7 +66,7 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/Components/PinnedLineView;->access$100(Lorg/telegram/ui/Components/PinnedLineView;I)V
 
-    .line 274
+    .line 272
     iget-object p1, p0, Lorg/telegram/ui/Components/PinnedLineView$2;->this$0:Lorg/telegram/ui/Components/PinnedLineView;
 
     const/4 v0, -0x1

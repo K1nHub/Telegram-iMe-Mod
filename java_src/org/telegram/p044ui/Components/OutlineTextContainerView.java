@@ -59,15 +59,15 @@ public class OutlineTextContainerView extends FrameLayout {
         this.textPaint = new TextPaint(1);
         this.selectionSpring = new SpringAnimation(this, SELECTION_PROGRESS_PROPERTY);
         this.errorSpring = new SpringAnimation(this, ERROR_PROGRESS_PROPERTY);
-        this.strokeWidthRegular = Math.max(2, AndroidUtilities.m51dp(0.5f));
-        this.strokeWidthSelected = AndroidUtilities.m51dp(1.5f);
+        this.strokeWidthRegular = Math.max(2, AndroidUtilities.m55dp(0.5f));
+        this.strokeWidthSelected = AndroidUtilities.m55dp(1.5f);
         setWillNotDraw(false);
-        this.textPaint.setTextSize(AndroidUtilities.m50dp(16));
+        this.textPaint.setTextSize(AndroidUtilities.m54dp(16));
         this.outlinePaint.setStyle(Paint.Style.STROKE);
         this.outlinePaint.setStrokeCap(Paint.Cap.ROUND);
         this.outlinePaint.setStrokeWidth(this.strokeWidthRegular);
         updateColor();
-        setPadding(0, AndroidUtilities.m50dp(6), 0, 0);
+        setPadding(0, AndroidUtilities.m54dp(6), 0, 0);
     }
 
     public void setForceUseCenter(boolean z) {
@@ -95,17 +95,20 @@ public class OutlineTextContainerView extends FrameLayout {
     }
 
     public void updateColor() {
-        int color = Theme.getColor("windowBackgroundWhiteHintText");
-        int color2 = Theme.getColor("windowBackgroundWhiteValueText");
+        int color = Theme.getColor(Theme.key_windowBackgroundWhiteHintText);
+        int color2 = Theme.getColor(Theme.key_windowBackgroundWhiteValueText);
         boolean z = this.forceUseCenter;
         float f = BitmapDescriptorFactory.HUE_RED;
-        this.textPaint.setColor(ColorUtils.blendARGB(ColorUtils.blendARGB(color, color2, z ? 0.0f : this.selectionProgress), Theme.getColor("dialogTextRed"), this.errorProgress));
-        int color3 = Theme.getColor("windowBackgroundWhiteInputField");
-        int color4 = Theme.getColor("windowBackgroundWhiteInputFieldActivated");
+        int blendARGB = ColorUtils.blendARGB(color, color2, z ? 0.0f : this.selectionProgress);
+        TextPaint textPaint = this.textPaint;
+        int i = Theme.key_text_RedBold;
+        textPaint.setColor(ColorUtils.blendARGB(blendARGB, Theme.getColor(i), this.errorProgress));
+        int color3 = Theme.getColor(Theme.key_windowBackgroundWhiteInputField);
+        int color4 = Theme.getColor(Theme.key_windowBackgroundWhiteInputFieldActivated);
         if (!this.forceUseCenter) {
             f = this.selectionProgress;
         }
-        setColor(ColorUtils.blendARGB(ColorUtils.blendARGB(color3, color4, f), Theme.getColor("dialogTextRed"), this.errorProgress));
+        setColor(ColorUtils.blendARGB(ColorUtils.blendARGB(color3, color4, f), Theme.getColor(i), this.errorProgress));
     }
 
     public void animateSelection(float f) {
@@ -141,7 +144,7 @@ public class OutlineTextContainerView extends FrameLayout {
     @Override // android.view.View
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
-        float paddingTop = getPaddingTop() + ((this.textPaint.getTextSize() / 2.0f) - AndroidUtilities.m51dp(1.75f));
+        float paddingTop = getPaddingTop() + ((this.textPaint.getTextSize() / 2.0f) - AndroidUtilities.m55dp(1.75f));
         float height = (getHeight() / 2.0f) + (this.textPaint.getTextSize() / 2.0f);
         EditText editText = this.attachedEditText;
         boolean z = (editText != null && editText.length() == 0 && TextUtils.isEmpty(this.attachedEditText.getHint())) || this.forceUseCenter;
@@ -153,20 +156,20 @@ public class OutlineTextContainerView extends FrameLayout {
         float f2 = z ? 0.75f + ((1.0f - this.selectionProgress) * 0.25f) : 0.75f;
         float measureText = this.textPaint.measureText(this.mText) * f2;
         canvas.save();
-        this.rect.set(getPaddingLeft() + AndroidUtilities.m50dp(10), getPaddingTop(), (getWidth() - AndroidUtilities.m50dp(18)) - getPaddingRight(), getPaddingTop() + (strokeWidth * 2.0f));
+        this.rect.set(getPaddingLeft() + AndroidUtilities.m54dp(10), getPaddingTop(), (getWidth() - AndroidUtilities.m54dp(18)) - getPaddingRight(), getPaddingTop() + (strokeWidth * 2.0f));
         canvas.clipRect(this.rect, Region.Op.DIFFERENCE);
         this.rect.set(getPaddingLeft() + strokeWidth, getPaddingTop() + strokeWidth, (getWidth() - strokeWidth) - getPaddingRight(), (getHeight() - strokeWidth) - getPaddingBottom());
-        canvas.drawRoundRect(this.rect, AndroidUtilities.m50dp(6), AndroidUtilities.m50dp(6), this.outlinePaint);
+        canvas.drawRoundRect(this.rect, AndroidUtilities.m54dp(6), AndroidUtilities.m54dp(6), this.outlinePaint);
         canvas.restore();
-        float paddingLeft = getPaddingLeft() + AndroidUtilities.m50dp(10);
+        float paddingLeft = getPaddingLeft() + AndroidUtilities.m54dp(10);
         float paddingTop2 = getPaddingTop() + strokeWidth;
         float f3 = paddingLeft + (measureText / 2.0f);
-        canvas.drawLine(f3 + ((((paddingLeft + measureText) + AndroidUtilities.m50dp(10)) - f3) * (z ? this.selectionProgress : 1.0f)), paddingTop2, ((getWidth() - strokeWidth) - getPaddingRight()) - AndroidUtilities.m50dp(6), paddingTop2, this.outlinePaint);
-        float m50dp = f3 + AndroidUtilities.m50dp(4);
-        canvas.drawLine(paddingLeft, paddingTop2, m50dp + ((paddingLeft - m50dp) * (z ? this.selectionProgress : 1.0f)), paddingTop2, this.outlinePaint);
+        canvas.drawLine(f3 + ((((paddingLeft + measureText) + AndroidUtilities.m54dp(10)) - f3) * (z ? this.selectionProgress : 1.0f)), paddingTop2, ((getWidth() - strokeWidth) - getPaddingRight()) - AndroidUtilities.m54dp(6), paddingTop2, this.outlinePaint);
+        float m54dp = f3 + AndroidUtilities.m54dp(4);
+        canvas.drawLine(paddingLeft, paddingTop2, m54dp + ((paddingLeft - m54dp) * (z ? this.selectionProgress : 1.0f)), paddingTop2, this.outlinePaint);
         canvas.save();
-        canvas.scale(f2, f2, getPaddingLeft() + AndroidUtilities.m50dp(18), f);
-        canvas.drawText(this.mText, getPaddingLeft() + AndroidUtilities.m50dp(14), f, this.textPaint);
+        canvas.scale(f2, f2, getPaddingLeft() + AndroidUtilities.m54dp(18), f);
+        canvas.drawText(this.mText, getPaddingLeft() + AndroidUtilities.m54dp(14), f, this.textPaint);
         canvas.restore();
     }
 }

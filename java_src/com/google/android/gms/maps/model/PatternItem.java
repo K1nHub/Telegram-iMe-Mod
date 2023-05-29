@@ -16,15 +16,15 @@ import java.util.List;
 @SafeParcelable.Reserved({1})
 /* loaded from: classes3.dex */
 public class PatternItem extends AbstractSafeParcelable {
-    @SafeParcelable.Field(getter = "getType", m775id = 2)
+    @SafeParcelable.Field(getter = "getType", m779id = 2)
     private final int zzb;
-    @SafeParcelable.Field(getter = "getLength", m775id = 3)
+    @SafeParcelable.Field(getter = "getLength", m779id = 3)
     private final Float zzc;
     private static final String zza = PatternItem.class.getSimpleName();
     public static final Parcelable.Creator<PatternItem> CREATOR = new zzj();
 
     @SafeParcelable.Constructor
-    public PatternItem(@SafeParcelable.Param(m774id = 2) int i, @SafeParcelable.Param(m774id = 3) Float f) {
+    public PatternItem(@SafeParcelable.Param(m778id = 2) int i, @SafeParcelable.Param(m778id = 3) Float f) {
         boolean z = false;
         if (i == 1 || (f != null && f.floatValue() >= BitmapDescriptorFactory.HUE_RED)) {
             z = true;

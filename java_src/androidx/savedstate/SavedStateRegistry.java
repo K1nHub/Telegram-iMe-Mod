@@ -114,7 +114,7 @@ public final class SavedStateRegistry {
         lifecycle.addObserver(new LifecycleEventObserver() { // from class: androidx.savedstate.SavedStateRegistry$$ExternalSyntheticLambda0
             @Override // androidx.lifecycle.LifecycleEventObserver
             public final void onStateChanged(LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
-                SavedStateRegistry.m875performAttach$lambda4(SavedStateRegistry.this, lifecycleOwner, event);
+                SavedStateRegistry.m883performAttach$lambda4(SavedStateRegistry.this, lifecycleOwner, event);
             }
         });
         this.attached = true;
@@ -122,7 +122,7 @@ public final class SavedStateRegistry {
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: performAttach$lambda-4  reason: not valid java name */
-    public static final void m875performAttach$lambda4(SavedStateRegistry this$0, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
+    public static final void m883performAttach$lambda4(SavedStateRegistry this$0, LifecycleOwner lifecycleOwner, Lifecycle.Event event) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(lifecycleOwner, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(event, "event");

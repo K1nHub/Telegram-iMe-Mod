@@ -85,7 +85,7 @@
     .line 87
     iput v0, p0, Lio/grpc/internal/MessageFramer;->currentMessageSeqNo:I
 
-    const-string v0, "sink"
+    const-string/jumbo v0, "sink"
 
     .line 98
     invoke-static {p1, v0}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
@@ -107,7 +107,7 @@
 
     iput-object p1, p0, Lio/grpc/internal/MessageFramer;->bufferAllocator:Lio/grpc/internal/WritableBufferAllocator;
 
-    const-string p1, "statsTraceCtx"
+    const-string/jumbo p1, "statsTraceCtx"
 
     .line 100
     invoke-static {p3, p1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;

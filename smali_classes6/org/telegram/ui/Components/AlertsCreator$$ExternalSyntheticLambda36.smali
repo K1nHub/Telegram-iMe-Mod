@@ -8,34 +8,42 @@
 # instance fields
 .field public final synthetic f$0:Lorg/telegram/tgnet/TLRPC$User;
 
-.field public final synthetic f$1:Z
+.field public final synthetic f$1:Lorg/telegram/messenger/AccountInstance;
 
-.field public final synthetic f$2:Z
+.field public final synthetic f$2:[Lorg/telegram/ui/Cells/CheckBoxCell;
 
-.field public final synthetic f$3:Landroid/app/Activity;
+.field public final synthetic f$3:J
 
-.field public final synthetic f$4:Lorg/telegram/tgnet/TLRPC$UserFull;
+.field public final synthetic f$4:Lorg/telegram/tgnet/TLRPC$Chat;
 
-.field public final synthetic f$5:Lorg/telegram/messenger/AccountInstance;
+.field public final synthetic f$5:Lorg/telegram/tgnet/TLRPC$EncryptedChat;
+
+.field public final synthetic f$6:Z
+
+.field public final synthetic f$7:Lorg/telegram/messenger/MessagesStorage$IntCallback;
 
 
 # direct methods
-.method public synthetic constructor <init>(Lorg/telegram/tgnet/TLRPC$User;ZZLandroid/app/Activity;Lorg/telegram/tgnet/TLRPC$UserFull;Lorg/telegram/messenger/AccountInstance;)V
+.method public synthetic constructor <init>(Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/messenger/AccountInstance;[Lorg/telegram/ui/Cells/CheckBoxCell;JLorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$EncryptedChat;ZLorg/telegram/messenger/MessagesStorage$IntCallback;)V
     .locals 0
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     iput-object p1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda36;->f$0:Lorg/telegram/tgnet/TLRPC$User;
 
-    iput-boolean p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda36;->f$1:Z
+    iput-object p2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda36;->f$1:Lorg/telegram/messenger/AccountInstance;
 
-    iput-boolean p3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda36;->f$2:Z
+    iput-object p3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda36;->f$2:[Lorg/telegram/ui/Cells/CheckBoxCell;
 
-    iput-object p4, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda36;->f$3:Landroid/app/Activity;
+    iput-wide p4, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda36;->f$3:J
 
-    iput-object p5, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda36;->f$4:Lorg/telegram/tgnet/TLRPC$UserFull;
+    iput-object p6, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda36;->f$4:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    iput-object p6, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda36;->f$5:Lorg/telegram/messenger/AccountInstance;
+    iput-object p7, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda36;->f$5:Lorg/telegram/tgnet/TLRPC$EncryptedChat;
+
+    iput-boolean p8, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda36;->f$6:Z
+
+    iput-object p9, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda36;->f$7:Lorg/telegram/messenger/MessagesStorage$IntCallback;
 
     return-void
 .end method
@@ -43,25 +51,29 @@
 
 # virtual methods
 .method public final onClick(Landroid/content/DialogInterface;I)V
-    .locals 8
+    .locals 11
 
     iget-object v0, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda36;->f$0:Lorg/telegram/tgnet/TLRPC$User;
 
-    iget-boolean v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda36;->f$1:Z
+    iget-object v1, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda36;->f$1:Lorg/telegram/messenger/AccountInstance;
 
-    iget-boolean v2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda36;->f$2:Z
+    iget-object v2, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda36;->f$2:[Lorg/telegram/ui/Cells/CheckBoxCell;
 
-    iget-object v3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda36;->f$3:Landroid/app/Activity;
+    iget-wide v3, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda36;->f$3:J
 
-    iget-object v4, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda36;->f$4:Lorg/telegram/tgnet/TLRPC$UserFull;
+    iget-object v5, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda36;->f$4:Lorg/telegram/tgnet/TLRPC$Chat;
 
-    iget-object v5, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda36;->f$5:Lorg/telegram/messenger/AccountInstance;
+    iget-object v6, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda36;->f$5:Lorg/telegram/tgnet/TLRPC$EncryptedChat;
 
-    move-object v6, p1
+    iget-boolean v7, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda36;->f$6:Z
 
-    move v7, p2
+    iget-object v8, p0, Lorg/telegram/ui/Components/AlertsCreator$$ExternalSyntheticLambda36;->f$7:Lorg/telegram/messenger/MessagesStorage$IntCallback;
 
-    invoke-static/range {v0 .. v7}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$uKAFGoWZx3Y-G0MSTXn3SGzD5Fw(Lorg/telegram/tgnet/TLRPC$User;ZZLandroid/app/Activity;Lorg/telegram/tgnet/TLRPC$UserFull;Lorg/telegram/messenger/AccountInstance;Landroid/content/DialogInterface;I)V
+    move-object v9, p1
+
+    move v10, p2
+
+    invoke-static/range {v0 .. v10}, Lorg/telegram/ui/Components/AlertsCreator;->$r8$lambda$40z6nOAmv-R1nvutYLBMiYEpwwg(Lorg/telegram/tgnet/TLRPC$User;Lorg/telegram/messenger/AccountInstance;[Lorg/telegram/ui/Cells/CheckBoxCell;JLorg/telegram/tgnet/TLRPC$Chat;Lorg/telegram/tgnet/TLRPC$EncryptedChat;ZLorg/telegram/messenger/MessagesStorage$IntCallback;Landroid/content/DialogInterface;I)V
 
     return-void
 .end method

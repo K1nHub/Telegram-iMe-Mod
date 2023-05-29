@@ -3,4 +3,4 @@
 
 
 # static fields
-.field public static final dot:I = 0x7f09012d
+.field public static final dot:I = 0x7f090131

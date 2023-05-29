@@ -19,7 +19,7 @@
 
 .field private heightUpdateAnimator:Landroid/animation/ValueAnimator;
 
-.field private text1View:Landroid/widget/TextView;
+.field private text1View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
 .field private text2View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
@@ -38,18 +38,18 @@
 .method public constructor <init>(Lorg/telegram/ui/ChangeUsernameActivity;Landroid/content/Context;)V
     .locals 11
 
-    .line 598
+    .line 647
     iput-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->this$0:Lorg/telegram/ui/ChangeUsernameActivity;
 
-    .line 599
+    .line 648
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 601
-    invoke-static {p1, p0}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1402(Lorg/telegram/ui/ChangeUsernameActivity;Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;)Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;
+    .line 650
+    invoke-static {p1, p0}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1602(Lorg/telegram/ui/ChangeUsernameActivity;Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;)Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;
 
     const/16 v0, 0x12
 
-    .line 603
+    .line 652
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
@@ -72,12 +72,12 @@
 
     invoke-virtual {p0, v1, v2, v0, v3}, Landroid/widget/FrameLayout;->setPadding(IIII)V
 
-    .line 604
+    .line 653
     sget v0, Lorg/telegram/messenger/R$drawable;->greydivider_bottom:I
 
-    const-string v1, "windowBackgroundGrayShadow"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundGrayShadow:I
 
-    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawable(Landroid/content/Context;ILjava/lang/String;)Landroid/graphics/drawable/Drawable;
+    invoke-static {p2, v0, v1}, Lorg/telegram/ui/ActionBar/Theme;->getThemedDrawableByKey(Landroid/content/Context;II)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 
@@ -85,36 +85,36 @@
 
     const/4 v0, 0x0
 
-    .line 605
+    .line 654
     invoke-virtual {p0, v0}, Landroid/widget/FrameLayout;->setClipChildren(Z)V
 
-    .line 607
-    new-instance v1, Landroid/widget/TextView;
+    .line 656
+    new-instance v1, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
-    invoke-direct {v1, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {v1, p2}, Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;-><init>(Landroid/content/Context;)V
 
-    iput-object v1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text1View:Landroid/widget/TextView;
+    iput-object v1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text1View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     const/4 v2, 0x1
 
     const/high16 v3, 0x41700000    # 15.0f
 
-    .line 608
+    .line 657
     invoke-virtual {v1, v2, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 609
-    iget-object v1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text1View:Landroid/widget/TextView;
+    .line 658
+    iget-object v1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text1View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
-    const-string v4, "windowBackgroundWhiteGrayText8"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText8:I
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 610
-    iget-object v1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text1View:Landroid/widget/TextView;
+    .line 659
+    iget-object v1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text1View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     sget-boolean v5, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
@@ -134,30 +134,30 @@
     :goto_0
     invoke-virtual {v1, v5}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 611
-    iget-object v1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text1View:Landroid/widget/TextView;
+    .line 660
+    iget-object v1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text1View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
-    const-string v5, "windowBackgroundWhiteLinkText"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteLinkText:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v8
 
     invoke-virtual {v1, v8}, Landroid/widget/TextView;->setLinkTextColor(I)V
 
-    .line 612
-    iget-object v1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text1View:Landroid/widget/TextView;
+    .line 661
+    iget-object v1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text1View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
-    const-string v8, "windowBackgroundWhiteLinkSelection"
+    sget v8, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteLinkSelection:I
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v9
 
     invoke-virtual {v1, v9}, Landroid/widget/TextView;->setHighlightColor(I)V
 
-    .line 613
-    iget-object v1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text1View:Landroid/widget/TextView;
+    .line 662
+    iget-object v1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text1View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
@@ -169,35 +169,35 @@
 
     invoke-virtual {v1, v9, v0, v10, v0}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    .line 615
+    .line 664
     new-instance v1, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell$1;
 
     invoke-direct {v1, p0, p2, p1}, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell$1;-><init>(Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;Landroid/content/Context;Lorg/telegram/ui/ChangeUsernameActivity;)V
 
-    invoke-static {p1, v1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1502(Lorg/telegram/ui/ChangeUsernameActivity;Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;)Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
+    invoke-static {p1, v1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$1702(Lorg/telegram/ui/ChangeUsernameActivity;Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;)Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
-    move-result-object p1
+    move-result-object p2
 
-    iput-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text2View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
+    iput-object p2, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text2View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
-    .line 651
-    invoke-virtual {p1, v2, v3}, Landroid/widget/TextView;->setTextSize(IF)V
+    .line 700
+    invoke-virtual {p2, v2, v3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 652
-    iget-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text2View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
+    .line 701
+    iget-object p2, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text2View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result p2
+    move-result v1
 
-    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {p2, v1}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 653
-    iget-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text2View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
+    .line 702
+    iget-object p2, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text2View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
-    sget-boolean p2, Lorg/telegram/messenger/LocaleController;->isRTL:Z
+    sget-boolean v1, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
-    if-eqz p2, :cond_1
+    if-eqz v1, :cond_1
 
     goto :goto_1
 
@@ -205,71 +205,144 @@
     move v6, v7
 
     :goto_1
-    invoke-virtual {p1, v6}, Landroid/widget/TextView;->setGravity(I)V
+    invoke-virtual {p2, v6}, Landroid/widget/TextView;->setGravity(I)V
 
-    .line 654
-    iget-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text2View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
+    .line 703
+    iget-object p2, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text2View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result p2
+    move-result v1
 
-    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setLinkTextColor(I)V
+    invoke-virtual {p2, v1}, Landroid/widget/TextView;->setLinkTextColor(I)V
 
-    .line 655
-    iget-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text2View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
+    .line 704
+    iget-object p2, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text2View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
-    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v8}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
-    move-result p2
+    move-result v1
 
-    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setHighlightColor(I)V
+    invoke-virtual {p2, v1}, Landroid/widget/TextView;->setHighlightColor(I)V
 
-    .line 656
-    iget-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text2View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
-
-    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result p2
+    .line 705
+    iget-object p2, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text2View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v1
 
-    invoke-virtual {p1, p2, v0, v1, v0}, Landroid/widget/TextView;->setPadding(IIII)V
+    invoke-static {v7}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
-    .line 658
-    iget-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text1View:Landroid/widget/TextView;
+    move-result v3
 
-    const/4 p2, -0x1
+    invoke-virtual {p2, v1, v0, v3, v0}, Landroid/widget/TextView;->setPadding(IIII)V
 
-    const/4 v0, -0x2
+    .line 707
+    iget-object p2, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text1View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
-    const/16 v1, 0x30
+    const/4 v0, -0x1
 
-    invoke-static {p2, v0, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+    const/4 v1, -0x2
 
-    move-result-object v2
+    const/16 v3, 0x30
 
-    invoke-virtual {p0, p1, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-static {v0, v1, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 659
-    iget-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text2View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
+    move-result-object v4
 
-    invoke-static {p2, v0, v1}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-virtual {p0, p2, v4}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    move-result-object p2
+    .line 708
+    iget-object p2, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text2View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
-    invoke-virtual {p0, p1, p2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-static {v0, v1, v3}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(III)Landroid/widget/FrameLayout$LayoutParams;
 
-    .line 661
-    iget-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text1View:Landroid/widget/TextView;
+    move-result-object v1
+
+    invoke-virtual {p0, p2, v1}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+
+    .line 710
+    invoke-static {p1}, Lorg/telegram/ui/ChangeUsernameActivity;->access$400(Lorg/telegram/ui/ChangeUsernameActivity;)J
+
+    move-result-wide p1
+
+    const-wide/16 v3, 0x0
+
+    cmp-long p1, p1, v3
+
+    if-eqz p1, :cond_3
+
+    .line 711
+    sget p1, Lorg/telegram/messenger/R$string;->BotUsernameHelp:I
+
+    invoke-static {p1}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
+
+    move-result-object p1
+
+    .line 712
+    new-instance p2, Landroid/text/SpannableStringBuilder;
+
+    invoke-direct {p2, p1}, Landroid/text/SpannableStringBuilder;-><init>(Ljava/lang/CharSequence;)V
+
+    const/16 v1, 0x2a
+
+    .line 713
+    invoke-virtual {p1, v1}, Ljava/lang/String;->indexOf(I)I
+
+    move-result v3
+
+    .line 714
+    invoke-virtual {p1, v1}, Ljava/lang/String;->lastIndexOf(I)I
+
+    move-result p1
+
+    if-eq v3, v0, :cond_2
+
+    if-eq p1, v0, :cond_2
+
+    if-eq v3, p1, :cond_2
+
+    add-int/lit8 v0, p1, 0x1
+
+    const-string v1, ""
+
+    .line 716
+    invoke-virtual {p2, p1, v0, v1}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+
+    add-int/lit8 v0, v3, 0x1
+
+    .line 717
+    invoke-virtual {p2, v3, v0, v1}, Landroid/text/SpannableStringBuilder;->replace(IILjava/lang/CharSequence;)Landroid/text/SpannableStringBuilder;
+
+    .line 718
+    new-instance v0, Lorg/telegram/ui/Components/URLSpanNoUnderline;
+
+    const-string v1, "https://fragment.com"
+
+    invoke-direct {v0, v1}, Lorg/telegram/ui/Components/URLSpanNoUnderline;-><init>(Ljava/lang/String;)V
+
+    sub-int/2addr p1, v2
+
+    const/16 v1, 0x21
+
+    invoke-virtual {p2, v0, v3, p1, v1}, Landroid/text/SpannableStringBuilder;->setSpan(Ljava/lang/Object;III)V
+
+    .line 720
+    :cond_2
+    iget-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text1View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
+
+    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
+
+    goto :goto_2
+
+    .line 722
+    :cond_3
+    iget-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text1View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     sget p2, Lorg/telegram/messenger/R$string;->UsernameHelp:I
 
-    const-string v0, "UsernameHelp"
-
-    invoke-static {v0, p2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+    invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getString(I)Ljava/lang/String;
 
     move-result-object p2
 
@@ -279,13 +352,14 @@
 
     invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
+    :goto_2
     return-void
 .end method
 
-.method static synthetic access$2400(Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;)V
+.method static synthetic access$2600(Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;)V
     .locals 0
 
-    .line 593
+    .line 642
     invoke-direct {p0}, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->update()V
 
     return-void
@@ -294,7 +368,7 @@
 .method private synthetic lambda$update$0(FFIILandroid/animation/ValueAnimator;)V
     .locals 1
 
-    .line 688
+    .line 750
     invoke-virtual {p5}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
 
     move-result-object p5
@@ -305,8 +379,8 @@
 
     move-result p5
 
-    .line 689
-    iget-object v0, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text1View:Landroid/widget/TextView;
+    .line 751
+    iget-object v0, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text1View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-static {p1, p2, p5}, Lorg/telegram/messenger/AndroidUtilities;->lerp(FFF)F
 
@@ -314,7 +388,7 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setTranslationY(F)V
 
-    .line 690
+    .line 752
     invoke-static {p3, p4, p5}, Lorg/telegram/messenger/AndroidUtilities;->lerp(IIF)I
 
     move-result p1
@@ -325,7 +399,7 @@
 
     iput-object p1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->height:Ljava/lang/Integer;
 
-    .line 691
+    .line 753
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->requestLayout()V
 
     return-void
@@ -334,7 +408,7 @@
 .method private update()V
     .locals 8
 
-    .line 673
+    .line 735
     iget-object v0, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text2View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getVisibility()I
@@ -343,10 +417,10 @@
 
     if-nez v0, :cond_0
 
-    .line 674
+    .line 736
     iget-object v0, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text2View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
-    .line 675
+    .line 737
     invoke-virtual {p0}, Landroid/widget/FrameLayout;->getMeasuredWidth()I
 
     move-result v1
@@ -373,24 +447,24 @@
 
     const/high16 v3, -0x80000000
 
-    .line 676
+    .line 738
     invoke-static {v2, v3}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
 
     move-result v2
 
-    .line 674
+    .line 736
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->measure(II)V
 
-    .line 679
+    .line 741
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->heightUpdateAnimator:Landroid/animation/ValueAnimator;
 
     if-eqz v0, :cond_1
 
-    .line 680
+    .line 742
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->cancel()V
 
-    .line 682
+    .line 744
     :cond_1
     iget-object v0, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->height:Ljava/lang/Integer;
 
@@ -412,12 +486,12 @@
 
     const/16 v0, 0x1b
 
-    .line 683
+    .line 745
     invoke-static {v0}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result v0
 
-    iget-object v1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text1View:Landroid/widget/TextView;
+    iget-object v1, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text1View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {v1}, Landroid/widget/TextView;->getHeight()I
 
@@ -467,14 +541,14 @@
     :goto_1
     add-int v6, v0, v1
 
-    .line 684
-    iget-object v0, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text1View:Landroid/widget/TextView;
+    .line 746
+    iget-object v0, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text1View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getTranslationY()F
 
     move-result v3
 
-    .line 685
+    .line 747
     iget-object v0, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->text2View:Lorg/telegram/ui/Components/LinkSpanDrawable$LinksTextView;
 
     invoke-virtual {v0}, Landroid/widget/TextView;->getVisibility()I
@@ -521,7 +595,7 @@
 
     new-array v0, v0, [F
 
-    .line 686
+    .line 748
     fill-array-data v0, :array_0
 
     invoke-static {v0}, Landroid/animation/ValueAnimator;->ofFloat([F)Landroid/animation/ValueAnimator;
@@ -530,7 +604,7 @@
 
     iput-object v0, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->heightUpdateAnimator:Landroid/animation/ValueAnimator;
 
-    .line 687
+    .line 749
     new-instance v7, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell$$ExternalSyntheticLambda0;
 
     move-object v1, v7
@@ -541,21 +615,21 @@
 
     invoke-virtual {v0, v7}, Landroid/animation/ValueAnimator;->addUpdateListener(Landroid/animation/ValueAnimator$AnimatorUpdateListener;)V
 
-    .line 693
+    .line 755
     iget-object v0, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->heightUpdateAnimator:Landroid/animation/ValueAnimator;
 
     const-wide/16 v1, 0xc8
 
     invoke-virtual {v0, v1, v2}, Landroid/animation/ValueAnimator;->setDuration(J)Landroid/animation/ValueAnimator;
 
-    .line 694
+    .line 756
     iget-object v0, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->heightUpdateAnimator:Landroid/animation/ValueAnimator;
 
     sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT_QUINT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     invoke-virtual {v0, v1}, Landroid/animation/ValueAnimator;->setInterpolator(Landroid/animation/TimeInterpolator;)V
 
-    .line 695
+    .line 757
     iget-object v0, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->heightUpdateAnimator:Landroid/animation/ValueAnimator;
 
     invoke-virtual {v0}, Landroid/animation/ValueAnimator;->start()V
@@ -574,7 +648,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 668
+    .line 730
     iget-object v0, p0, Lorg/telegram/ui/ChangeUsernameActivity$UsernameHelpCell;->height:Ljava/lang/Integer;
 
     if-nez v0, :cond_0

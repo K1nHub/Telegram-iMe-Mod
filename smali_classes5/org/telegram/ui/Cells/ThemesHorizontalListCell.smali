@@ -119,7 +119,7 @@
 
     new-array v0, v0, [B
 
-    .line 67
+    .line 68
     sput-object v0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->bytes:[B
 
     return-void
@@ -142,43 +142,43 @@
         }
     .end annotation
 
-    .line 688
+    .line 682
     invoke-direct {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;-><init>(Landroid/content/Context;)V
-
-    .line 71
-    new-instance v0, Ljava/util/HashMap;
-
-    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
-
-    iput-object v0, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->loadingThemes:Ljava/util/HashMap;
 
     .line 72
     new-instance v0, Ljava/util/HashMap;
 
     invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
 
+    iput-object v0, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->loadingThemes:Ljava/util/HashMap;
+
+    .line 73
+    new-instance v0, Ljava/util/HashMap;
+
+    invoke-direct {v0}, Ljava/util/HashMap;-><init>()V
+
     iput-object v0, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->loadingWallpapers:Ljava/util/HashMap;
 
-    .line 690
+    .line 684
     iput-object p5, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->customThemes:Ljava/util/ArrayList;
 
-    .line 691
+    .line 685
     iput-object p4, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->defaultThemes:Ljava/util/ArrayList;
 
-    .line 692
+    .line 686
     iput p3, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->currentType:I
 
-    .line 693
+    .line 687
     iput-object p2, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     const/4 p2, 0x2
 
     if-ne p3, p2, :cond_0
 
-    const-string p2, "dialogBackground"
+    .line 690
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_dialogBackground:I
 
-    .line 696
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -186,11 +186,11 @@
 
     goto :goto_0
 
+    .line 692
     :cond_0
-    const-string p2, "windowBackgroundWhite"
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    .line 698
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
@@ -199,13 +199,13 @@
     :goto_0
     const/4 p2, 0x0
 
-    .line 700
+    .line 694
     invoke-virtual {p0, p2}, Landroidx/recyclerview/widget/RecyclerView;->setItemAnimator(Landroidx/recyclerview/widget/RecyclerView$ItemAnimator;)V
 
-    .line 701
+    .line 695
     invoke-virtual {p0, p2}, Landroid/view/ViewGroup;->setLayoutAnimation(Landroid/view/animation/LayoutAnimationController;)V
 
-    .line 702
+    .line 696
     new-instance p2, Lorg/telegram/ui/Cells/ThemesHorizontalListCell$1;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/Cells/ThemesHorizontalListCell$1;-><init>(Lorg/telegram/ui/Cells/ThemesHorizontalListCell;Landroid/content/Context;)V
@@ -214,23 +214,23 @@
 
     const/4 p2, 0x0
 
-    .line 708
+    .line 702
     invoke-virtual {p0, p2, p2, p2, p2}, Landroid/view/ViewGroup;->setPadding(IIII)V
 
-    .line 709
+    .line 703
     invoke-virtual {p0, p2}, Landroidx/recyclerview/widget/RecyclerView;->setClipToPadding(Z)V
 
-    .line 710
+    .line 704
     iget-object p3, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->horizontalLayoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p3, p2}, Landroidx/recyclerview/widget/LinearLayoutManager;->setOrientation(I)V
 
-    .line 711
+    .line 705
     iget-object p2, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->horizontalLayoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
     invoke-virtual {p0, p2}, Landroidx/recyclerview/widget/RecyclerView;->setLayoutManager(Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
 
-    .line 712
+    .line 706
     new-instance p2, Lorg/telegram/ui/Cells/ThemesHorizontalListCell$ThemesListAdapter;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/Cells/ThemesHorizontalListCell$ThemesListAdapter;-><init>(Lorg/telegram/ui/Cells/ThemesHorizontalListCell;Landroid/content/Context;)V
@@ -239,14 +239,14 @@
 
     invoke-virtual {p0, p2}, Lorg/telegram/ui/Components/RecyclerListView;->setAdapter(Landroidx/recyclerview/widget/RecyclerView$Adapter;)V
 
-    .line 713
+    .line 707
     new-instance p1, Lorg/telegram/ui/Cells/ThemesHorizontalListCell$$ExternalSyntheticLambda2;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Cells/ThemesHorizontalListCell$$ExternalSyntheticLambda2;-><init>(Lorg/telegram/ui/Cells/ThemesHorizontalListCell;)V
 
     invoke-virtual {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->setOnItemClickListener(Lorg/telegram/ui/Components/RecyclerListView$OnItemClickListener;)V
 
-    .line 723
+    .line 717
     new-instance p1, Lorg/telegram/ui/Cells/ThemesHorizontalListCell$$ExternalSyntheticLambda3;
 
     invoke-direct {p1, p0}, Lorg/telegram/ui/Cells/ThemesHorizontalListCell$$ExternalSyntheticLambda3;-><init>(Lorg/telegram/ui/Cells/ThemesHorizontalListCell;)V
@@ -259,7 +259,7 @@
 .method static synthetic access$000(Lorg/telegram/ui/Cells/ThemesHorizontalListCell;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 65
+    .line 66
     iget-object p0, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->defaultThemes:Ljava/util/ArrayList;
 
     return-object p0
@@ -268,7 +268,7 @@
 .method static synthetic access$100(Lorg/telegram/ui/Cells/ThemesHorizontalListCell;)Ljava/util/ArrayList;
     .locals 0
 
-    .line 65
+    .line 66
     iget-object p0, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->customThemes:Ljava/util/ArrayList;
 
     return-object p0
@@ -277,7 +277,7 @@
 .method static synthetic access$202(Lorg/telegram/ui/Cells/ThemesHorizontalListCell;I)I
     .locals 0
 
-    .line 65
+    .line 66
     iput p1, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->prevCount:I
 
     return p1
@@ -286,7 +286,7 @@
 .method static synthetic access$300(Lorg/telegram/ui/Cells/ThemesHorizontalListCell;)I
     .locals 0
 
-    .line 65
+    .line 66
     iget p0, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->currentType:I
 
     return p0
@@ -295,7 +295,7 @@
 .method static synthetic access$400(Lorg/telegram/ui/Cells/ThemesHorizontalListCell;)Ljava/util/HashMap;
     .locals 0
 
-    .line 65
+    .line 66
     iget-object p0, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->loadingWallpapers:Ljava/util/HashMap;
 
     return-object p0
@@ -304,7 +304,7 @@
 .method static synthetic access$500(Lorg/telegram/ui/Cells/ThemesHorizontalListCell;)Ljava/util/HashMap;
     .locals 0
 
-    .line 65
+    .line 66
     iget-object p0, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->loadingThemes:Ljava/util/HashMap;
 
     return-object p0
@@ -313,7 +313,7 @@
 .method private checkVisibleTheme(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)V
     .locals 5
 
-    .line 856
+    .line 850
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
@@ -323,34 +323,34 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 858
+    .line 852
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
 
-    .line 859
+    .line 853
     instance-of v3, v2, Lorg/telegram/ui/Cells/ThemesHorizontalListCell$InnerThemeView;
 
     if-eqz v3, :cond_0
 
-    .line 860
+    .line 854
     check-cast v2, Lorg/telegram/ui/Cells/ThemesHorizontalListCell$InnerThemeView;
 
-    .line 861
+    .line 855
     invoke-static {v2}, Lorg/telegram/ui/Cells/ThemesHorizontalListCell$InnerThemeView;->access$600(Lorg/telegram/ui/Cells/ThemesHorizontalListCell$InnerThemeView;)Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v3
 
     if-ne v3, p1, :cond_0
 
-    .line 862
+    .line 856
     invoke-static {v2}, Lorg/telegram/ui/Cells/ThemesHorizontalListCell$InnerThemeView;->access$700(Lorg/telegram/ui/Cells/ThemesHorizontalListCell$InnerThemeView;)Z
 
     move-result v3
 
     if-eqz v3, :cond_0
 
-    .line 863
+    .line 857
     invoke-static {v2}, Lorg/telegram/ui/Cells/ThemesHorizontalListCell$InnerThemeView;->access$600(Lorg/telegram/ui/Cells/ThemesHorizontalListCell$InnerThemeView;)Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v3
@@ -359,7 +359,7 @@
 
     iput-boolean v4, v3, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->themeLoaded:Z
 
-    .line 864
+    .line 858
     invoke-static {v2}, Lorg/telegram/ui/Cells/ThemesHorizontalListCell$InnerThemeView;->access$800(Lorg/telegram/ui/Cells/ThemesHorizontalListCell$InnerThemeView;)V
 
     :cond_0
@@ -374,7 +374,7 @@
 .method private synthetic lambda$didReceivedNotification$2(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)V
     .locals 0
 
-    .line 843
+    .line 837
     invoke-direct {p0, p1}, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->checkVisibleTheme(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)V
 
     return-void
@@ -383,7 +383,7 @@
 .method private synthetic lambda$didReceivedNotification$3(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;Ljava/io/File;)V
     .locals 1
 
-    .line 842
+    .line 836
     iget-object v0, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->pathToWallpaper:Ljava/lang/String;
 
     invoke-virtual {p1, p2, v0}, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->createBackground(Ljava/io/File;Ljava/lang/String;)Z
@@ -394,7 +394,7 @@
 
     iput-boolean p2, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->badWallpaper:Z
 
-    .line 843
+    .line 837
     new-instance p2, Lorg/telegram/ui/Cells/ThemesHorizontalListCell$$ExternalSyntheticLambda0;
 
     invoke-direct {p2, p0, p1}, Lorg/telegram/ui/Cells/ThemesHorizontalListCell$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Cells/ThemesHorizontalListCell;Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)V
@@ -407,7 +407,7 @@
 .method private synthetic lambda$new$0(Landroid/view/View;I)V
     .locals 1
 
-    .line 714
+    .line 708
     move-object p2, p1
 
     check-cast p2, Lorg/telegram/ui/Cells/ThemesHorizontalListCell$InnerThemeView;
@@ -418,12 +418,12 @@
 
     invoke-virtual {p0, p2}, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->selectTheme(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)V
 
-    .line 715
+    .line 709
     invoke-virtual {p1}, Landroid/view/View;->getLeft()I
 
     move-result p2
 
-    .line 716
+    .line 710
     invoke-virtual {p1}, Landroid/view/View;->getRight()I
 
     move-result p1
@@ -434,7 +434,7 @@
 
     const/16 p1, 0x8
 
-    .line 718
+    .line 712
     invoke-static {p1}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
 
     move-result p1
@@ -445,7 +445,7 @@
 
     goto :goto_0
 
-    .line 719
+    .line 713
     :cond_0
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
@@ -453,7 +453,7 @@
 
     if-le p1, p2, :cond_1
 
-    .line 720
+    .line 714
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getMeasuredWidth()I
 
     move-result p2
@@ -470,10 +470,10 @@
 .method private synthetic lambda$new$1(Landroid/view/View;I)Z
     .locals 0
 
-    .line 724
+    .line 718
     check-cast p1, Lorg/telegram/ui/Cells/ThemesHorizontalListCell$InnerThemeView;
 
-    .line 725
+    .line 719
     invoke-static {p1}, Lorg/telegram/ui/Cells/ThemesHorizontalListCell$InnerThemeView;->access$600(Lorg/telegram/ui/Cells/ThemesHorizontalListCell$InnerThemeView;)Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object p1
@@ -490,26 +490,26 @@
 .method public varargs didReceivedNotification(II[Ljava/lang/Object;)V
     .locals 1
 
-    .line 834
+    .line 828
     sget p2, Lorg/telegram/messenger/NotificationCenter;->fileLoaded:I
 
     const/4 v0, 0x0
 
     if-ne p1, p2, :cond_1
 
-    .line 835
+    .line 829
     aget-object p1, p3, v0
 
     check-cast p1, Ljava/lang/String;
 
     const/4 p2, 0x1
 
-    .line 836
+    .line 830
     aget-object p2, p3, p2
 
     check-cast p2, Ljava/io/File;
 
-    .line 837
+    .line 831
     iget-object p3, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->loadingThemes:Ljava/util/HashMap;
 
     invoke-virtual {p3, p1}, Ljava/util/HashMap;->get(Ljava/lang/Object;)Ljava/lang/Object;
@@ -520,12 +520,12 @@
 
     if-eqz p3, :cond_2
 
-    .line 839
+    .line 833
     iget-object v0, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->loadingThemes:Ljava/util/HashMap;
 
     invoke-virtual {v0, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
 
-    .line 840
+    .line 834
     iget-object p1, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->loadingWallpapers:Ljava/util/HashMap;
 
     invoke-virtual {p1, p3}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -534,7 +534,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 841
+    .line 835
     sget-object p1, Lorg/telegram/messenger/Utilities;->globalQueue:Lorg/telegram/messenger/DispatchQueue;
 
     new-instance v0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell$$ExternalSyntheticLambda1;
@@ -545,24 +545,24 @@
 
     goto :goto_0
 
-    .line 846
+    .line 840
     :cond_0
     invoke-direct {p0, p3}, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->checkVisibleTheme(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)V
 
     goto :goto_0
 
-    .line 849
+    .line 843
     :cond_1
     sget p2, Lorg/telegram/messenger/NotificationCenter;->fileLoadFailed:I
 
     if-ne p1, p2, :cond_2
 
-    .line 850
+    .line 844
     aget-object p1, p3, v0
 
     check-cast p1, Ljava/lang/String;
 
-    .line 851
+    .line 845
     iget-object p2, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->loadingThemes:Ljava/util/HashMap;
 
     invoke-virtual {p2, p1}, Ljava/util/HashMap;->remove(Ljava/lang/Object;)Ljava/lang/Object;
@@ -575,7 +575,7 @@
 .method public notifyDataSetChanged(I)V
     .locals 2
 
-    .line 782
+    .line 776
     iget v0, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->prevCount:I
 
     iget-object v1, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->adapter:Lorg/telegram/ui/Cells/ThemesHorizontalListCell$ThemesListAdapter;
@@ -588,13 +588,13 @@
 
     return-void
 
-    .line 785
+    .line 779
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->adapter:Lorg/telegram/ui/Cells/ThemesHorizontalListCell$ThemesListAdapter;
 
     invoke-virtual {v0}, Landroidx/recyclerview/widget/RecyclerView$Adapter;->notifyDataSetChanged()V
 
-    .line 786
+    .line 780
     iget v0, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->currentType:I
 
     const/4 v1, 0x1
@@ -612,7 +612,7 @@
 
     move-result-object v0
 
-    .line 787
+    .line 781
     :goto_0
     iget-object v1, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->prevThemeInfo:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
@@ -620,7 +620,7 @@
 
     const/4 v0, 0x0
 
-    .line 788
+    .line 782
     invoke-virtual {p0, p1, v0}, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->scrollToCurrentTheme(IZ)V
 
     :cond_2
@@ -630,7 +630,7 @@
 .method protected onAttachedToWindow()V
     .locals 3
 
-    .line 816
+    .line 810
     invoke-super {p0}, Lorg/telegram/ui/Components/RecyclerListView;->onAttachedToWindow()V
 
     const/4 v0, 0x0
@@ -640,7 +640,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 818
+    .line 812
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v1
@@ -649,7 +649,7 @@
 
     invoke-virtual {v1, p0, v2}, Lorg/telegram/messenger/NotificationCenter;->addObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 819
+    .line 813
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v1
@@ -669,7 +669,7 @@
 .method protected onDetachedFromWindow()V
     .locals 3
 
-    .line 825
+    .line 819
     invoke-super {p0}, Lorg/telegram/ui/Components/RecyclerListView;->onDetachedFromWindow()V
 
     const/4 v0, 0x0
@@ -679,7 +679,7 @@
 
     if-ge v0, v1, :cond_0
 
-    .line 827
+    .line 821
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v1
@@ -688,7 +688,7 @@
 
     invoke-virtual {v1, p0, v2}, Lorg/telegram/messenger/NotificationCenter;->removeObserver(Lorg/telegram/messenger/NotificationCenter$NotificationCenterDelegate;I)V
 
-    .line 828
+    .line 822
     invoke-static {v0}, Lorg/telegram/messenger/NotificationCenter;->getInstance(I)Lorg/telegram/messenger/NotificationCenter;
 
     move-result-object v1
@@ -708,15 +708,15 @@
 .method public onDraw(Landroid/graphics/Canvas;)V
     .locals 8
 
-    .line 802
+    .line 796
     invoke-super {p0, p1}, Landroidx/recyclerview/widget/RecyclerView;->onDraw(Landroid/graphics/Canvas;)V
 
-    .line 803
+    .line 797
     iget-boolean v0, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->drawDivider:Z
 
     if-eqz v0, :cond_2
 
-    .line 804
+    .line 798
     sget-boolean v0, Lorg/telegram/messenger/LocaleController;->isRTL:Z
 
     const/16 v1, 0x14
@@ -788,7 +788,7 @@
 .method public onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
     .locals 2
 
-    .line 794
+    .line 788
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -805,7 +805,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 795
+    .line 789
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -822,7 +822,7 @@
 
     invoke-interface {v0, v1}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
-    .line 797
+    .line 791
     :cond_0
     invoke-super {p0, p1}, Lorg/telegram/ui/Components/RecyclerListView;->onInterceptTouchEvent(Landroid/view/MotionEvent;)Z
 
@@ -836,7 +836,7 @@
 
     if-nez p1, :cond_0
 
-    .line 873
+    .line 867
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getParent()Landroid/view/ViewParent;
 
     move-result-object v0
@@ -845,7 +845,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 875
+    .line 869
     invoke-virtual {v0}, Landroid/view/View;->getMeasuredWidth()I
 
     move-result p1
@@ -855,7 +855,7 @@
 
     return-void
 
-    .line 881
+    .line 875
     :cond_1
     iget v0, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->currentType:I
 
@@ -877,7 +877,7 @@
     :goto_0
     iput-object v0, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->prevThemeInfo:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
-    .line 882
+    .line 876
     iget-object v1, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->defaultThemes:Ljava/util/ArrayList;
 
     invoke-virtual {v1, v0}, Ljava/util/ArrayList;->indexOf(Ljava/lang/Object;)I
@@ -886,7 +886,7 @@
 
     if-gez v0, :cond_3
 
-    .line 884
+    .line 878
     iget-object v0, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->customThemes:Ljava/util/ArrayList;
 
     iget-object v1, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->prevThemeInfo:Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
@@ -910,12 +910,12 @@
     :cond_3
     if-eqz p2, :cond_4
 
-    .line 890
+    .line 884
     invoke-virtual {p0, v0}, Landroidx/recyclerview/widget/RecyclerView;->smoothScrollToPosition(I)V
 
     goto :goto_1
 
-    .line 892
+    .line 886
     :cond_4
     iget-object p2, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->horizontalLayoutManager:Landroidx/recyclerview/widget/LinearLayoutManager;
 
@@ -938,7 +938,7 @@
 .method public selectTheme(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)V
     .locals 7
 
-    .line 731
+    .line 725
     iget-object v0, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->info:Lorg/telegram/tgnet/TLRPC$TL_theme;
 
     const/4 v1, 0x0
@@ -947,25 +947,25 @@
 
     if-eqz v0, :cond_2
 
-    .line 732
+    .line 726
     iget-boolean v3, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->themeLoaded:Z
 
     if-nez v3, :cond_0
 
     return-void
 
-    .line 735
+    .line 729
     :cond_0
     iget-object v0, v0, Lorg/telegram/tgnet/TLRPC$TL_theme;->document:Lorg/telegram/tgnet/TLRPC$Document;
 
     if-nez v0, :cond_2
 
-    .line 736
+    .line 730
     iget-object v0, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     if-eqz v0, :cond_1
 
-    .line 737
+    .line 731
     new-instance v3, Lorg/telegram/ui/ThemeSetUrlActivity;
 
     invoke-direct {v3, p1, v1, v2}, Lorg/telegram/ui/ThemeSetUrlActivity;-><init>(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;Lorg/telegram/ui/ActionBar/Theme$ThemeAccent;Z)V
@@ -975,7 +975,7 @@
     :cond_1
     return-void
 
-    .line 742
+    .line 736
     :cond_2
     iget-object v0, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->assetName:Ljava/lang/String;
 
@@ -987,10 +987,10 @@
 
     if-nez v0, :cond_3
 
-    .line 743
+    .line 737
     invoke-static {v3}, Lorg/telegram/ui/ActionBar/Theme$PatternsLoader;->createLoader(Z)V
 
-    .line 746
+    .line 740
     :cond_3
     sget-object v0, Lorg/telegram/messenger/ApplicationLoader;->applicationContext:Landroid/content/Context;
 
@@ -1004,7 +1004,7 @@
 
     move-result-object v0
 
-    .line 747
+    .line 741
     iget v4, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->currentType:I
 
     if-eq v4, v2, :cond_5
@@ -1033,15 +1033,15 @@
 
     invoke-interface {v0, v4, v5}, Landroid/content/SharedPreferences$Editor;->putString(Ljava/lang/String;Ljava/lang/String;)Landroid/content/SharedPreferences$Editor;
 
-    .line 748
+    .line 742
     invoke-interface {v0}, Landroid/content/SharedPreferences$Editor;->commit()Z
 
-    .line 750
+    .line 744
     iget v0, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->currentType:I
 
     if-ne v0, v2, :cond_7
 
-    .line 751
+    .line 745
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCurrentNightTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
     move-result-object v0
@@ -1050,13 +1050,13 @@
 
     return-void
 
-    .line 754
+    .line 748
     :cond_6
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->setCurrentNightTheme(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;)V
 
     goto :goto_2
 
-    .line 756
+    .line 750
     :cond_7
     invoke-static {}, Lorg/telegram/ui/ActionBar/Theme;->getCurrentTheme()Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;
 
@@ -1066,7 +1066,7 @@
 
     return-void
 
-    .line 759
+    .line 753
     :cond_8
     invoke-static {}, Lorg/telegram/messenger/NotificationCenter;->getGlobalInstance()Lorg/telegram/messenger/NotificationCenter;
 
@@ -1100,11 +1100,11 @@
 
     invoke-virtual {v0, v4, v5}, Lorg/telegram/messenger/NotificationCenter;->postNotificationName(I[Ljava/lang/Object;)V
 
-    .line 761
+    .line 755
     :goto_2
     invoke-virtual {p0}, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->updateRows()V
 
-    .line 763
+    .line 757
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
@@ -1112,17 +1112,17 @@
     :goto_3
     if-ge v3, v0, :cond_a
 
-    .line 765
+    .line 759
     invoke-virtual {p0, v3}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 766
+    .line 760
     instance-of v4, v1, Lorg/telegram/ui/Cells/ThemesHorizontalListCell$InnerThemeView;
 
     if-eqz v4, :cond_9
 
-    .line 767
+    .line 761
     check-cast v1, Lorg/telegram/ui/Cells/ThemesHorizontalListCell$InnerThemeView;
 
     invoke-virtual {v1}, Lorg/telegram/ui/Cells/ThemesHorizontalListCell$InnerThemeView;->updateCurrentThemeCheck()V
@@ -1132,18 +1132,18 @@
 
     goto :goto_3
 
-    .line 770
+    .line 764
     :cond_a
     iget v0, p1, Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;->currentAccentId:I
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/EmojiThemes;->saveCustomTheme(Lorg/telegram/ui/ActionBar/Theme$ThemeInfo;I)V
 
-    .line 772
+    .line 766
     iget p1, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->currentType:I
 
     if-eq p1, v2, :cond_b
 
-    .line 773
+    .line 767
     iget-object p1, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->fragment:Lorg/telegram/ui/ActionBar/BaseFragment;
 
     invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->turnOffAutoNight(Lorg/telegram/ui/ActionBar/BaseFragment;)V
@@ -1155,10 +1155,10 @@
 .method public setBackgroundColor(I)V
     .locals 0
 
-    .line 810
+    .line 804
     invoke-super {p0, p1}, Landroid/view/ViewGroup;->setBackgroundColor(I)V
 
-    .line 811
+    .line 805
     invoke-virtual {p0}, Lorg/telegram/ui/Components/RecyclerListView;->invalidateViews()V
 
     return-void
@@ -1167,7 +1167,7 @@
 .method public setDrawDivider(Z)V
     .locals 0
 
-    .line 778
+    .line 772
     iput-boolean p1, p0, Lorg/telegram/ui/Cells/ThemesHorizontalListCell;->drawDivider:Z
 
     return-void

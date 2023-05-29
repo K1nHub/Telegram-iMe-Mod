@@ -1,5 +1,5 @@
 .class Lorg/telegram/ui/PhotoViewer$28;
-.super Landroid/widget/LinearLayout;
+.super Landroidx/recyclerview/widget/LinearLayoutManager;
 .source "PhotoViewer.java"
 
 
@@ -14,194 +14,35 @@
 .end annotation
 
 
-# instance fields
-.field final synthetic this$0:Lorg/telegram/ui/PhotoViewer;
-
-
 # direct methods
-.method constructor <init>(Lorg/telegram/ui/PhotoViewer;Landroid/content/Context;)V
+.method constructor <init>(Lorg/telegram/ui/PhotoViewer;Landroid/content/Context;IZ)V
     .locals 0
 
-    .line 6052
-    iput-object p1, p0, Lorg/telegram/ui/PhotoViewer$28;->this$0:Lorg/telegram/ui/PhotoViewer;
-
-    invoke-direct {p0, p2}, Landroid/widget/LinearLayout;-><init>(Landroid/content/Context;)V
+    .line 7012
+    invoke-direct {p0, p2, p3, p4}, Landroidx/recyclerview/widget/LinearLayoutManager;-><init>(Landroid/content/Context;IZ)V
 
     return-void
 .end method
 
 
 # virtual methods
-.method protected onMeasure(II)V
-    .locals 6
+.method public smoothScrollToPosition(Landroidx/recyclerview/widget/RecyclerView;Landroidx/recyclerview/widget/RecyclerView$State;I)V
+    .locals 0
 
-    .line 6059
-    invoke-virtual {p0}, Landroid/widget/LinearLayout;->getChildCount()I
+    .line 7015
+    new-instance p2, Lorg/telegram/ui/PhotoViewer$28$1;
 
-    move-result v0
+    invoke-virtual {p1}, Landroid/view/ViewGroup;->getContext()Landroid/content/Context;
 
-    const/4 v1, 0x0
+    move-result-object p1
 
-    move v2, v1
+    invoke-direct {p2, p0, p1}, Lorg/telegram/ui/PhotoViewer$28$1;-><init>(Lorg/telegram/ui/PhotoViewer$28;Landroid/content/Context;)V
 
-    move v3, v2
+    .line 7021
+    invoke-virtual {p2, p3}, Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;->setTargetPosition(I)V
 
-    :goto_0
-    if-ge v2, v0, :cond_1
+    .line 7022
+    invoke-virtual {p0, p2}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->startSmoothScroll(Landroidx/recyclerview/widget/RecyclerView$SmoothScroller;)V
 
-    .line 6061
-    invoke-virtual {p0, v2}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v4
-
-    .line 6062
-    invoke-virtual {v4}, Landroid/view/View;->getVisibility()I
-
-    move-result v4
-
-    if-eqz v4, :cond_0
-
-    goto :goto_1
-
-    :cond_0
-    add-int/lit8 v3, v3, 0x1
-
-    :goto_1
-    add-int/lit8 v2, v2, 0x1
-
-    goto :goto_0
-
-    .line 6067
-    :cond_1
-    invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
-
-    move-result p1
-
-    .line 6068
-    invoke-static {p2}, Landroid/view/View$MeasureSpec;->getSize(I)I
-
-    move-result p2
-
-    if-eqz v3, :cond_6
-
-    const/16 v2, 0x46
-
-    .line 6071
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v2
-
-    div-int/2addr p1, v3
-
-    invoke-static {v2, p1}, Ljava/lang/Math;->min(II)I
-
-    move-result p1
-
-    .line 6072
-    iget-object v2, p0, Lorg/telegram/ui/PhotoViewer$28;->this$0:Lorg/telegram/ui/PhotoViewer;
-
-    invoke-static {v2}, Lorg/telegram/ui/PhotoViewer;->access$19800(Lorg/telegram/ui/PhotoViewer;)Landroid/widget/ImageView;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Landroid/widget/ImageView;->getVisibility()I
-
-    move-result v2
-
-    if-nez v2, :cond_3
-
-    .line 6075
-    iget-object v2, p0, Lorg/telegram/ui/PhotoViewer$28;->this$0:Lorg/telegram/ui/PhotoViewer;
-
-    invoke-static {v2}, Lorg/telegram/ui/PhotoViewer;->access$19900(Lorg/telegram/ui/PhotoViewer;)I
-
-    move-result v2
-
-    const/4 v4, 0x2
-
-    if-ge v2, v4, :cond_2
-
-    const/16 v2, 0x30
-
-    goto :goto_2
-
-    :cond_2
-    const/16 v2, 0x40
-
-    .line 6080
-    :goto_2
-    invoke-static {v2}, Lorg/telegram/messenger/AndroidUtilities;->dp(I)I
-
-    move-result v2
-
-    sub-int v2, p1, v2
-
-    div-int/2addr v2, v4
-
-    invoke-static {v1, v2}, Ljava/lang/Math;->max(II)I
-
-    move-result v2
-
-    .line 6081
-    iget-object v4, p0, Lorg/telegram/ui/PhotoViewer$28;->this$0:Lorg/telegram/ui/PhotoViewer;
-
-    invoke-static {v4}, Lorg/telegram/ui/PhotoViewer;->access$19800(Lorg/telegram/ui/PhotoViewer;)Landroid/widget/ImageView;
-
-    move-result-object v4
-
-    invoke-virtual {v4, v2, v1, v2, v1}, Landroid/widget/ImageView;->setPadding(IIII)V
-
-    :cond_3
-    :goto_3
-    if-ge v1, v0, :cond_5
-
-    .line 6085
-    invoke-virtual {p0, v1}, Landroid/widget/LinearLayout;->getChildAt(I)Landroid/view/View;
-
-    move-result-object v2
-
-    .line 6086
-    invoke-virtual {v2}, Landroid/view/View;->getVisibility()I
-
-    move-result v4
-
-    const/16 v5, 0x8
-
-    if-ne v4, v5, :cond_4
-
-    goto :goto_4
-
-    :cond_4
-    const/high16 v4, 0x40000000    # 2.0f
-
-    .line 6089
-    invoke-static {p1, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
-
-    move-result v5
-
-    invoke-static {p2, v4}, Landroid/view/View$MeasureSpec;->makeMeasureSpec(II)I
-
-    move-result v4
-
-    invoke-virtual {v2, v5, v4}, Landroid/view/View;->measure(II)V
-
-    :goto_4
-    add-int/lit8 v1, v1, 0x1
-
-    goto :goto_3
-
-    :cond_5
-    mul-int/2addr p1, v3
-
-    .line 6091
-    invoke-virtual {p0, p1, p2}, Landroid/widget/LinearLayout;->setMeasuredDimension(II)V
-
-    goto :goto_5
-
-    .line 6093
-    :cond_6
-    invoke-virtual {p0, p1, p2}, Landroid/widget/LinearLayout;->setMeasuredDimension(II)V
-
-    :goto_5
     return-void
 .end method

@@ -1,5 +1,5 @@
 !!brut.androlib.meta.MetaInfo
-apkFileName: 9.5.8+iMe+(13.04.23).apk
+apkFileName: 9.6.6+iMe+(13.05.23).apk
 compressionType: false
 doNotCompress:
 - resources.arsc
@@ -357,5 +357,5 @@ usesFramework:
   tag: null
 version: 2.7.0
 versionInfo:
-  versionCode: '950809'
-  versionName: 9.5.8
+  versionCode: '960609'
+  versionName: 9.6.6

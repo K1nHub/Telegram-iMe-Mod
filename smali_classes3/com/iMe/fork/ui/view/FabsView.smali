@@ -11,7 +11,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nFabsView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FabsView.kt\ncom/iMe/fork/ui/view/FabsView\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n*L\n1#1,57:1\n1855#2,2:58\n205#3,4:60\n*S KotlinDebug\n*F\n+ 1 FabsView.kt\ncom/iMe/fork/ui/view/FabsView\n*L\n23#1:58,2\n30#1:60,4\n*E\n"
+    value = "SMAP\nFabsView.kt\nKotlin\n*S Kotlin\n*F\n+ 1 FabsView.kt\ncom/iMe/fork/ui/view/FabsView\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 ViewExt.kt\ncom/iMe/utils/extentions/common/ViewExtKt\n*L\n1#1,57:1\n1855#2,2:58\n219#3,4:60\n*S KotlinDebug\n*F\n+ 1 FabsView.kt\ncom/iMe/fork/ui/view/FabsView\n*L\n23#1:58,2\n30#1:60,4\n*E\n"
 .end annotation
 
 
@@ -148,7 +148,7 @@
 .method public final updateColors()V
     .locals 6
 
-    .line 205
+    .line 219
     invoke-virtual {p0}, Landroid/view/ViewGroup;->getChildCount()I
 
     move-result v0
@@ -158,7 +158,7 @@
     :goto_0
     if-ge v1, v0, :cond_0
 
-    .line 206
+    .line 220
     invoke-virtual {p0, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v2
@@ -177,9 +177,9 @@
     .line 32
     new-instance v3, Landroid/graphics/PorterDuffColorFilter;
 
-    const-string v4, "chats_actionIcon"
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionIcon:I
 
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 
@@ -204,18 +204,18 @@
 
     move-result v4
 
-    const-string v5, "windowBackgroundWhite"
+    sget v5, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhite:I
 
-    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v5}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v5
 
     invoke-virtual {v3, v4, v5}, Landroid/graphics/drawable/GradientDrawable;->setStroke(II)V
 
-    const-string v4, "chats_actionBackground"
-
     .line 36
-    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v4, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
+
+    invoke-static {v4}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v4
 

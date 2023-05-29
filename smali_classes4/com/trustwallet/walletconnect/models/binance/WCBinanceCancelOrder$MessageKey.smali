@@ -101,7 +101,7 @@
 
     const/4 v2, 0x2
 
-    const-string v3, "symbol"
+    const-string/jumbo v3, "symbol"
 
     invoke-direct {v0, v1, v2, v3}, Lcom/trustwallet/walletconnect/models/binance/WCBinanceCancelOrder$MessageKey;-><init>(Ljava/lang/String;ILjava/lang/String;)V
 

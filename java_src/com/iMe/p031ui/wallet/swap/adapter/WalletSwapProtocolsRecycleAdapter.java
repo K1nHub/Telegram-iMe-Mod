@@ -31,6 +31,6 @@ public final class WalletSwapProtocolsRecycleAdapter extends BaseNodeAdapter<Bas
     protected int getItemType(List<? extends BaseNode> data, int i) {
         Intrinsics.checkNotNullParameter(data, "data");
         BaseNode baseNode = data.get(i);
-        return baseNode instanceof DexProtocolItem ? IdFabric$ViewTypes.SWAP_PROTOCOL : baseNode instanceof CexProtocolItem ? IdFabric$ViewTypes.CENTRALIZED_EXCHANGES : baseNode instanceof HeaderItem ? IdFabric$ViewTypes.HEADER : IdFabric$ViewTypes.SWAP_PROTOCOL;
+        return baseNode instanceof DexProtocolItem ? IdFabric$ViewTypes.SWAP_PROTOCOL : baseNode instanceof CexProtocolItem ? IdFabric$ViewTypes.CENTRALIZED_EXCHANGES : baseNode instanceof HeaderItem ? IdFabric$ViewTypes.HEADER_CELL : IdFabric$ViewTypes.SWAP_PROTOCOL;
     }
 }

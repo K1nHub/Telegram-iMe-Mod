@@ -8,7 +8,7 @@ import com.iMe.model.common.GlobalStateItem;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CampaignsByCategoriesDiffCallback.kt */
 /* renamed from: com.iMe.ui.catalog.tabs.categories.adapter.diff.CampaignsByCategoriesDiffCallback */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class CampaignsByCategoriesDiffCallback extends DiffUtil.ItemCallback<BaseNode> {
     @Override // androidx.recyclerview.widget.DiffUtil.ItemCallback
     public boolean areItemsTheSame(BaseNode oldItem, BaseNode newItem) {

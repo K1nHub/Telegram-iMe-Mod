@@ -13,10 +13,10 @@ public class PathAnimator {
     private float scale;
 
     /* renamed from: tx */
-    private float f1673tx;
+    private float f1680tx;
 
     /* renamed from: ty */
-    private float f1674ty;
+    private float f1681ty;
     private Path path = new Path();
     private float pathTime = -1.0f;
     private ArrayList<KeyFrame> keyFrames = new ArrayList<>();
@@ -39,10 +39,10 @@ public class PathAnimator {
     public static class MoveTo {
 
         /* renamed from: x */
-        public float f1683x;
+        public float f1690x;
 
         /* renamed from: y */
-        public float f1684y;
+        public float f1691y;
 
         private MoveTo() {
         }
@@ -54,10 +54,10 @@ public class PathAnimator {
     public static class LineTo {
 
         /* renamed from: x */
-        public float f1681x;
+        public float f1688x;
 
         /* renamed from: y */
-        public float f1682y;
+        public float f1689y;
 
         private LineTo() {
         }
@@ -69,22 +69,22 @@ public class PathAnimator {
     public static class CurveTo {
 
         /* renamed from: x */
-        public float f1675x;
+        public float f1682x;
 
         /* renamed from: x1 */
-        public float f1676x1;
+        public float f1683x1;
 
         /* renamed from: x2 */
-        public float f1677x2;
+        public float f1684x2;
 
         /* renamed from: y */
-        public float f1678y;
+        public float f1685y;
 
         /* renamed from: y1 */
-        public float f1679y1;
+        public float f1686y1;
 
         /* renamed from: y2 */
-        public float f1680y2;
+        public float f1687y2;
 
         private CurveTo() {
         }
@@ -92,8 +92,8 @@ public class PathAnimator {
 
     public PathAnimator(float f, float f2, float f3, float f4) {
         this.scale = f;
-        this.f1673tx = f2;
-        this.f1674ty = f3;
+        this.f1680tx = f2;
+        this.f1681ty = f3;
         this.durationScale = f4;
     }
 
@@ -110,32 +110,32 @@ public class PathAnimator {
                 char charAt = split[i].charAt(0);
                 if (charAt == 'C') {
                     CurveTo curveTo = new CurveTo();
-                    curveTo.f1676x1 = (Float.parseFloat(split[i + 1]) + this.f1673tx) * this.scale;
-                    curveTo.f1679y1 = (Float.parseFloat(split[i + 2]) + this.f1674ty) * this.scale;
-                    curveTo.f1677x2 = (Float.parseFloat(split[i + 3]) + this.f1673tx) * this.scale;
-                    curveTo.f1680y2 = (Float.parseFloat(split[i + 4]) + this.f1674ty) * this.scale;
-                    curveTo.f1675x = (Float.parseFloat(split[i + 5]) + this.f1673tx) * this.scale;
+                    curveTo.f1683x1 = (Float.parseFloat(split[i + 1]) + this.f1680tx) * this.scale;
+                    curveTo.f1686y1 = (Float.parseFloat(split[i + 2]) + this.f1681ty) * this.scale;
+                    curveTo.f1684x2 = (Float.parseFloat(split[i + 3]) + this.f1680tx) * this.scale;
+                    curveTo.f1687y2 = (Float.parseFloat(split[i + 4]) + this.f1681ty) * this.scale;
+                    curveTo.f1682x = (Float.parseFloat(split[i + 5]) + this.f1680tx) * this.scale;
                     i += 6;
-                    curveTo.f1678y = (Float.parseFloat(split[i]) + this.f1674ty) * this.scale;
+                    curveTo.f1685y = (Float.parseFloat(split[i]) + this.f1681ty) * this.scale;
                     keyFrame.commands.add(curveTo);
                 } else if (charAt == 'L') {
                     LineTo lineTo = new LineTo();
-                    lineTo.f1681x = (Float.parseFloat(split[i + 1]) + this.f1673tx) * this.scale;
+                    lineTo.f1688x = (Float.parseFloat(split[i + 1]) + this.f1680tx) * this.scale;
                     i += 2;
-                    lineTo.f1682y = (Float.parseFloat(split[i]) + this.f1674ty) * this.scale;
+                    lineTo.f1689y = (Float.parseFloat(split[i]) + this.f1681ty) * this.scale;
                     keyFrame.commands.add(lineTo);
                 } else if (charAt == 'M') {
                     MoveTo moveTo = new MoveTo();
-                    moveTo.f1683x = (Float.parseFloat(split[i + 1]) + this.f1673tx) * this.scale;
+                    moveTo.f1690x = (Float.parseFloat(split[i + 1]) + this.f1680tx) * this.scale;
                     i += 2;
-                    moveTo.f1684y = (Float.parseFloat(split[i]) + this.f1674ty) * this.scale;
+                    moveTo.f1691y = (Float.parseFloat(split[i]) + this.f1681ty) * this.scale;
                     keyFrame.commands.add(moveTo);
                 }
                 i++;
             }
             this.keyFrames.add(keyFrame);
         } catch (Exception e) {
-            FileLog.m45e(e);
+            FileLog.m49e(e);
         }
     }
 
@@ -187,44 +187,44 @@ public class PathAnimator {
                     MoveTo moveTo2 = (MoveTo) obj;
                     if (moveTo2 != null) {
                         Path path = this.path;
-                        float f4 = moveTo2.f1683x;
-                        float dpf2 = AndroidUtilities.dpf2(f4 + ((moveTo.f1683x - f4) * f2));
-                        float f5 = moveTo2.f1684y;
-                        path.moveTo(dpf2, AndroidUtilities.dpf2(f5 + ((moveTo.f1684y - f5) * f2)));
+                        float f4 = moveTo2.f1690x;
+                        float dpf2 = AndroidUtilities.dpf2(f4 + ((moveTo.f1690x - f4) * f2));
+                        float f5 = moveTo2.f1691y;
+                        path.moveTo(dpf2, AndroidUtilities.dpf2(f5 + ((moveTo.f1691y - f5) * f2)));
                     } else {
-                        this.path.moveTo(AndroidUtilities.dpf2(moveTo.f1683x), AndroidUtilities.dpf2(moveTo.f1684y));
+                        this.path.moveTo(AndroidUtilities.dpf2(moveTo.f1690x), AndroidUtilities.dpf2(moveTo.f1691y));
                     }
                 } else if (obj2 instanceof LineTo) {
                     LineTo lineTo = (LineTo) obj2;
                     LineTo lineTo2 = (LineTo) obj;
                     if (lineTo2 != null) {
                         Path path2 = this.path;
-                        float f6 = lineTo2.f1681x;
-                        float dpf22 = AndroidUtilities.dpf2(f6 + ((lineTo.f1681x - f6) * f2));
-                        float f7 = lineTo2.f1682y;
-                        path2.lineTo(dpf22, AndroidUtilities.dpf2(f7 + ((lineTo.f1682y - f7) * f2)));
+                        float f6 = lineTo2.f1688x;
+                        float dpf22 = AndroidUtilities.dpf2(f6 + ((lineTo.f1688x - f6) * f2));
+                        float f7 = lineTo2.f1689y;
+                        path2.lineTo(dpf22, AndroidUtilities.dpf2(f7 + ((lineTo.f1689y - f7) * f2)));
                     } else {
-                        this.path.lineTo(AndroidUtilities.dpf2(lineTo.f1681x), AndroidUtilities.dpf2(lineTo.f1682y));
+                        this.path.lineTo(AndroidUtilities.dpf2(lineTo.f1688x), AndroidUtilities.dpf2(lineTo.f1689y));
                     }
                 } else if (obj2 instanceof CurveTo) {
                     CurveTo curveTo = (CurveTo) obj2;
                     CurveTo curveTo2 = (CurveTo) obj;
                     if (curveTo2 != null) {
                         Path path3 = this.path;
-                        float f8 = curveTo2.f1676x1;
-                        float dpf23 = AndroidUtilities.dpf2(f8 + ((curveTo.f1676x1 - f8) * f2));
-                        float f9 = curveTo2.f1679y1;
-                        float dpf24 = AndroidUtilities.dpf2(f9 + ((curveTo.f1679y1 - f9) * f2));
-                        float f10 = curveTo2.f1677x2;
-                        float dpf25 = AndroidUtilities.dpf2(f10 + ((curveTo.f1677x2 - f10) * f2));
-                        float f11 = curveTo2.f1680y2;
-                        float dpf26 = AndroidUtilities.dpf2(f11 + ((curveTo.f1680y2 - f11) * f2));
-                        float f12 = curveTo2.f1675x;
-                        float dpf27 = AndroidUtilities.dpf2(f12 + ((curveTo.f1675x - f12) * f2));
-                        float f13 = curveTo2.f1678y;
-                        path3.cubicTo(dpf23, dpf24, dpf25, dpf26, dpf27, AndroidUtilities.dpf2(f13 + ((curveTo.f1678y - f13) * f2)));
+                        float f8 = curveTo2.f1683x1;
+                        float dpf23 = AndroidUtilities.dpf2(f8 + ((curveTo.f1683x1 - f8) * f2));
+                        float f9 = curveTo2.f1686y1;
+                        float dpf24 = AndroidUtilities.dpf2(f9 + ((curveTo.f1686y1 - f9) * f2));
+                        float f10 = curveTo2.f1684x2;
+                        float dpf25 = AndroidUtilities.dpf2(f10 + ((curveTo.f1684x2 - f10) * f2));
+                        float f11 = curveTo2.f1687y2;
+                        float dpf26 = AndroidUtilities.dpf2(f11 + ((curveTo.f1687y2 - f11) * f2));
+                        float f12 = curveTo2.f1682x;
+                        float dpf27 = AndroidUtilities.dpf2(f12 + ((curveTo.f1682x - f12) * f2));
+                        float f13 = curveTo2.f1685y;
+                        path3.cubicTo(dpf23, dpf24, dpf25, dpf26, dpf27, AndroidUtilities.dpf2(f13 + ((curveTo.f1685y - f13) * f2)));
                     } else {
-                        this.path.cubicTo(AndroidUtilities.dpf2(curveTo.f1676x1), AndroidUtilities.dpf2(curveTo.f1679y1), AndroidUtilities.dpf2(curveTo.f1677x2), AndroidUtilities.dpf2(curveTo.f1680y2), AndroidUtilities.dpf2(curveTo.f1675x), AndroidUtilities.dpf2(curveTo.f1678y));
+                        this.path.cubicTo(AndroidUtilities.dpf2(curveTo.f1683x1), AndroidUtilities.dpf2(curveTo.f1686y1), AndroidUtilities.dpf2(curveTo.f1684x2), AndroidUtilities.dpf2(curveTo.f1687y2), AndroidUtilities.dpf2(curveTo.f1682x), AndroidUtilities.dpf2(curveTo.f1685y));
                     }
                 }
             }

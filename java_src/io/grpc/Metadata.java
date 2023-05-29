@@ -270,18 +270,18 @@ public final class Metadata {
         abstract byte[] toBytes(T t);
 
         /* renamed from: of */
-        public static <T> Key<T> m680of(String str, AsciiMarshaller<T> asciiMarshaller) {
-            return m679of(str, false, (AsciiMarshaller) asciiMarshaller);
+        public static <T> Key<T> m685of(String str, AsciiMarshaller<T> asciiMarshaller) {
+            return m684of(str, false, (AsciiMarshaller) asciiMarshaller);
         }
 
         /* renamed from: of */
-        static <T> Key<T> m679of(String str, boolean z, AsciiMarshaller<T> asciiMarshaller) {
+        static <T> Key<T> m684of(String str, boolean z, AsciiMarshaller<T> asciiMarshaller) {
             return new AsciiKey(str, z, asciiMarshaller);
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: of */
-        public static <T> Key<T> m678of(String str, boolean z, TrustedAsciiMarshaller<T> trustedAsciiMarshaller) {
+        public static <T> Key<T> m683of(String str, boolean z, TrustedAsciiMarshaller<T> trustedAsciiMarshaller) {
             return new TrustedAsciiKey(str, z, trustedAsciiMarshaller);
         }
 

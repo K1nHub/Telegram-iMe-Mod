@@ -96,9 +96,9 @@
     .line 176
     sget-object v0, Lorg/telegram/ui/ActionBar/Theme;->chat_docBackPaint:Landroid/graphics/Paint;
 
-    const-string v1, "chat_inBubble"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chat_inBubble:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

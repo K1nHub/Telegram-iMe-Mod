@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/QrActivity;[I)V
     .locals 0
 
-    .line 652
+    .line 653
     iput-object p1, p0, Lorg/telegram/ui/QrActivity$5;->this$0:Lorg/telegram/ui/QrActivity;
 
     iput-object p2, p0, Lorg/telegram/ui/QrActivity$5;->val$newQrColors:[I
@@ -39,10 +39,10 @@
 .method public onAnimationCancel(Landroid/animation/Animator;)V
     .locals 9
 
-    .line 667
+    .line 668
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationCancel(Landroid/animation/Animator;)V
 
-    .line 668
+    .line 669
     check-cast p1, Landroid/animation/ValueAnimator;
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedValue()Ljava/lang/Object;
@@ -55,12 +55,12 @@
 
     move-result p1
 
-    .line 669
+    .line 670
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$5;->val$newQrColors:[I
 
     if-eqz v0, :cond_0
 
-    .line 670
+    .line 671
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$5;->this$0:Lorg/telegram/ui/QrActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/QrActivity;->access$1400(Lorg/telegram/ui/QrActivity;)[I
@@ -79,7 +79,7 @@
 
     move-result v0
 
-    .line 671
+    .line 672
     iget-object v2, p0, Lorg/telegram/ui/QrActivity$5;->this$0:Lorg/telegram/ui/QrActivity;
 
     invoke-static {v2}, Lorg/telegram/ui/QrActivity;->access$1400(Lorg/telegram/ui/QrActivity;)[I
@@ -98,7 +98,7 @@
 
     move-result v2
 
-    .line 672
+    .line 673
     iget-object v4, p0, Lorg/telegram/ui/QrActivity$5;->this$0:Lorg/telegram/ui/QrActivity;
 
     invoke-static {v4}, Lorg/telegram/ui/QrActivity;->access$1400(Lorg/telegram/ui/QrActivity;)[I
@@ -117,7 +117,7 @@
 
     move-result v4
 
-    .line 673
+    .line 674
     iget-object v6, p0, Lorg/telegram/ui/QrActivity$5;->this$0:Lorg/telegram/ui/QrActivity;
 
     invoke-static {v6}, Lorg/telegram/ui/QrActivity;->access$1400(Lorg/telegram/ui/QrActivity;)[I
@@ -148,7 +148,7 @@
 
     aput p1, v8, v7
 
-    .line 675
+    .line 676
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$5;->this$0:Lorg/telegram/ui/QrActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/QrActivity;->access$1400(Lorg/telegram/ui/QrActivity;)[I
@@ -164,15 +164,15 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 3
 
-    .line 655
+    .line 656
     invoke-super {p0, p1}, Landroid/animation/AnimatorListenerAdapter;->onAnimationEnd(Landroid/animation/Animator;)V
 
-    .line 656
+    .line 657
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$5;->val$newQrColors:[I
 
     if-eqz p1, :cond_0
 
-    .line 657
+    .line 658
     iget-object v0, p0, Lorg/telegram/ui/QrActivity$5;->this$0:Lorg/telegram/ui/QrActivity;
 
     invoke-static {v0}, Lorg/telegram/ui/QrActivity;->access$1400(Lorg/telegram/ui/QrActivity;)[I
@@ -185,7 +185,7 @@
 
     invoke-static {p1, v2, v0, v2, v1}, Ljava/lang/System;->arraycopy(Ljava/lang/Object;ILjava/lang/Object;II)V
 
-    .line 659
+    .line 660
     :cond_0
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$5;->this$0:Lorg/telegram/ui/QrActivity;
 
@@ -193,12 +193,12 @@
 
     invoke-static {p1, v0}, Lorg/telegram/ui/QrActivity;->access$902(Lorg/telegram/ui/QrActivity;Lorg/telegram/ui/Components/MotionBackgroundDrawable;)Lorg/telegram/ui/Components/MotionBackgroundDrawable;
 
-    .line 660
+    .line 661
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$5;->this$0:Lorg/telegram/ui/QrActivity;
 
     invoke-static {p1, v0}, Lorg/telegram/ui/QrActivity;->access$1502(Lorg/telegram/ui/QrActivity;Landroid/animation/ValueAnimator;)Landroid/animation/ValueAnimator;
 
-    .line 661
+    .line 662
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$5;->this$0:Lorg/telegram/ui/QrActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/QrActivity;->access$1000(Lorg/telegram/ui/QrActivity;)Lorg/telegram/ui/Components/MotionBackgroundDrawable;
@@ -209,7 +209,7 @@
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/MotionBackgroundDrawable;->setBackgroundAlpha(F)V
 
-    .line 662
+    .line 663
     iget-object p1, p0, Lorg/telegram/ui/QrActivity$5;->this$0:Lorg/telegram/ui/QrActivity;
 
     invoke-static {p1}, Lorg/telegram/ui/QrActivity;->access$1000(Lorg/telegram/ui/QrActivity;)Lorg/telegram/ui/Components/MotionBackgroundDrawable;

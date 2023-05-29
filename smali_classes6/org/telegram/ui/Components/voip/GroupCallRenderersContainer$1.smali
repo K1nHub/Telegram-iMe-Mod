@@ -25,7 +25,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;)V
     .locals 0
 
-    .line 121
+    .line 122
     iput-object p1, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$1;->this$0:Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
 
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
@@ -38,7 +38,7 @@
 .method public run()V
     .locals 3
 
-    .line 124
+    .line 125
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$1;->this$0:Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
 
     invoke-virtual {v0}, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;->canHideUI()Z
@@ -47,7 +47,7 @@
 
     if-nez v0, :cond_0
 
-    .line 125
+    .line 126
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$1;->this$0:Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;->hideUiRunnable:Ljava/lang/Runnable;
@@ -58,7 +58,7 @@
 
     return-void
 
-    .line 128
+    .line 129
     :cond_0
     iget-object v0, p0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer$1;->this$0:Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;
 
@@ -66,7 +66,7 @@
 
     iput-boolean v1, v0, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;->hideUiRunnableIsScheduled:Z
 
-    .line 129
+    .line 130
     invoke-static {v0, v1}, Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;->access$000(Lorg/telegram/ui/Components/voip/GroupCallRenderersContainer;Z)V
 
     return-void

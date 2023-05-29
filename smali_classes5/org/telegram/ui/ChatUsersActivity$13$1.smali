@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/ChatUsersActivity$13;Landroidx/recyclerview/widget/RecyclerView$LayoutManager;)V
     .locals 0
 
-    .line 1365
+    .line 1386
     iput-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$13$1;->this$1:Lorg/telegram/ui/ChatUsersActivity$13;
 
     iput-object p2, p0, Lorg/telegram/ui/ChatUsersActivity$13$1;->val$layoutManager:Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
@@ -39,7 +39,7 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 1
 
-    .line 1368
+    .line 1389
     iget-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$13$1;->this$1:Lorg/telegram/ui/ChatUsersActivity$13;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatUsersActivity$13;->val$finalProgressView:Landroid/view/View;
@@ -48,7 +48,7 @@
 
     invoke-virtual {p1, v0}, Landroid/view/View;->setAlpha(F)V
 
-    .line 1369
+    .line 1390
     iget-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$13$1;->val$layoutManager:Landroidx/recyclerview/widget/RecyclerView$LayoutManager;
 
     iget-object v0, p0, Lorg/telegram/ui/ChatUsersActivity$13$1;->this$1:Lorg/telegram/ui/ChatUsersActivity$13;
@@ -57,7 +57,7 @@
 
     invoke-virtual {p1, v0}, Landroidx/recyclerview/widget/RecyclerView$LayoutManager;->stopIgnoringView(Landroid/view/View;)V
 
-    .line 1370
+    .line 1391
     iget-object p1, p0, Lorg/telegram/ui/ChatUsersActivity$13$1;->this$1:Lorg/telegram/ui/ChatUsersActivity$13;
 
     iget-object p1, p1, Lorg/telegram/ui/ChatUsersActivity$13;->this$0:Lorg/telegram/ui/ChatUsersActivity;

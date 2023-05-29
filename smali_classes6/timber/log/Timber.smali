@@ -104,6 +104,17 @@
     return-void
 .end method
 
+.method public static varargs i(Ljava/lang/String;[Ljava/lang/Object;)V
+    .locals 1
+
+    .line 53
+    sget-object v0, Ltimber/log/Timber;->TREE_OF_SOULS:Ltimber/log/Timber$Tree;
+
+    invoke-virtual {v0, p0, p1}, Ltimber/log/Timber$Tree;->i(Ljava/lang/String;[Ljava/lang/Object;)V
+
+    return-void
+.end method
+
 .method public static plant(Ltimber/log/Timber$Tree;)V
     .locals 1
 

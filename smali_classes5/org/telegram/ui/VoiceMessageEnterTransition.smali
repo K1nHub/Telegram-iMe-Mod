@@ -237,39 +237,16 @@
     return-object p0
 .end method
 
-.method private getThemedColor(Ljava/lang/String;)I
+.method private getThemedColor(I)I
     .locals 1
 
     .line 187
     iget-object v0, p0, Lorg/telegram/ui/VoiceMessageEnterTransition;->resourcesProvider:Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;
 
-    if-eqz v0, :cond_0
-
-    invoke-interface {v0, p1}, Lorg/telegram/ui/ActionBar/Theme$ResourcesProvider;->getColor(Ljava/lang/String;)Ljava/lang/Integer;
-
-    move-result-object v0
-
-    goto :goto_0
-
-    :cond_0
-    const/4 v0, 0x0
-
-    :goto_0
-    if-eqz v0, :cond_1
-
-    .line 188
-    invoke-virtual {v0}, Ljava/lang/Integer;->intValue()I
+    invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(ILorg/telegram/ui/ActionBar/Theme$ResourcesProvider;)I
 
     move-result p1
 
-    goto :goto_1
-
-    :cond_1
-    invoke-static {p1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
-
-    move-result p1
-
-    :goto_1
     return p1
 .end method
 
@@ -602,9 +579,9 @@
     :goto_4
     iget-object v14, v0, Lorg/telegram/ui/VoiceMessageEnterTransition;->circlePaint:Landroid/graphics/Paint;
 
-    const-string v15, "chat_messagePanelVoiceBackground"
+    sget v15, Lorg/telegram/ui/ActionBar/Theme;->key_chat_messagePanelVoiceBackground:I
 
-    invoke-direct {v0, v15}, Lorg/telegram/ui/VoiceMessageEnterTransition;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v0, v15}, Lorg/telegram/ui/VoiceMessageEnterTransition;->getThemedColor(I)I
 
     move-result v15
 
@@ -614,11 +591,11 @@
 
     move-result-object v6
 
-    invoke-virtual {v6}, Lorg/telegram/ui/Components/RadialProgress2;->getCircleColorKey()Ljava/lang/String;
+    invoke-virtual {v6}, Lorg/telegram/ui/Components/RadialProgress2;->getCircleColorKey()I
 
-    move-result-object v6
+    move-result v6
 
-    invoke-direct {v0, v6}, Lorg/telegram/ui/VoiceMessageEnterTransition;->getThemedColor(Ljava/lang/String;)I
+    invoke-direct {v0, v6}, Lorg/telegram/ui/VoiceMessageEnterTransition;->getThemedColor(I)I
 
     move-result v6
 

@@ -35,11 +35,12 @@ import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p043mp.KoinPlatformTools;
 import org.telegram.messenger.databinding.ForkFragmentCatalogCategoriesBinding;
+import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.tgnet.TLRPC$Chat;
 /* compiled from: CatalogCategoriesFragment.kt */
 /* renamed from: com.iMe.ui.catalog.tabs.categories.CatalogCategoriesFragment */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class CatalogCategoriesFragment extends CatalogTabFragment implements CatalogCategoriesView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(CatalogCategoriesFragment.class, "presenter", "getPresenter()Lcom/iMe/ui/catalog/tabs/categories/CatalogCategoriesPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(CatalogCategoriesFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentCatalogCategoriesBinding;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -163,7 +164,7 @@ public final class CatalogCategoriesFragment extends CatalogTabFragment implemen
         SwipeRefreshLayout root = getBinding().getRoot();
         int i = ThemeDescription.FLAG_BACKGROUND;
         final CatalogCampaignsByCategoriesRecycleAdapter campaignsRecycleAdapter = getCampaignsRecycleAdapter();
-        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, "actionBarDefault"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, "actionBarDefaultIcon"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, "actionBarDefaultTitle"), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, "actionBarDefaultSelector"), new ThemeDescription(root, i, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.catalog.tabs.categories.CatalogCategoriesFragment$$ExternalSyntheticLambda4
+        arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_actionBarDefaultSelector), new ThemeDescription(root, i, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.catalog.tabs.categories.CatalogCategoriesFragment$$ExternalSyntheticLambda4
             @Override // org.telegram.p044ui.ActionBar.ThemeDescription.ThemeDescriptionDelegate
             public final void didSetColor() {
                 CatalogCampaignsByCategoriesRecycleAdapter.this.notifyDataSetChanged();
@@ -173,7 +174,7 @@ public final class CatalogCategoriesFragment extends CatalogTabFragment implemen
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, "windowBackgroundGray"));
+        }, Theme.key_windowBackgroundGray));
         return arrayListOf;
     }
 
@@ -204,7 +205,7 @@ public final class CatalogCategoriesFragment extends CatalogTabFragment implemen
     }
 
     private final void setupColors() {
-        getBinding().getRoot().setColorSchemeColors(getThemedColor("chats_actionBackground"));
+        getBinding().getRoot().setColorSchemeColors(getThemedColor(Theme.key_chats_actionBackground));
     }
 
     private final void setupListeners() {
@@ -261,7 +262,7 @@ public final class CatalogCategoriesFragment extends CatalogTabFragment implemen
 
     /* compiled from: CatalogCategoriesFragment.kt */
     /* renamed from: com.iMe.ui.catalog.tabs.categories.CatalogCategoriesFragment$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

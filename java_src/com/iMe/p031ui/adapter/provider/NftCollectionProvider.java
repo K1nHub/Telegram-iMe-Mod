@@ -9,10 +9,11 @@ import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
+import org.telegram.p044ui.ActionBar.Theme;
 /* compiled from: NftCollectionProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.NftCollectionProvider */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public final class NftCollectionProvider extends BaseNodeProvider<NftCollectionItem> {
     private final int itemViewType;
     private final int layoutId;
@@ -27,7 +28,7 @@ public final class NftCollectionProvider extends BaseNodeProvider<NftCollectionI
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
         this.itemViewType = IdFabric$ViewTypes.NFT_COLLECTION;
-        this.layoutId = C3242R.layout.fork_recycle_item_nft_collection;
+        this.layoutId = C3290R.layout.fork_recycle_item_nft_collection;
     }
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
@@ -44,20 +45,20 @@ public final class NftCollectionProvider extends BaseNodeProvider<NftCollectionI
     public void convert(BaseViewHolder helper, NftCollectionItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3242R.C3245id.card_nft_collection;
-        BaseViewHolder themedCardBackground = BaseQuickAdapterExtKt.setThemedCardBackground(BaseQuickAdapterExtKt.setRippleForeground(helper, i, false), i, "windowBackgroundWhite");
-        int i2 = C3242R.C3245id.text_collection_name;
-        BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(themedCardBackground, i2, "chats_actionBackground");
-        int i3 = C3242R.C3245id.text_collection_size;
-        BaseViewHolder mediumTypeface = BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i3, "chat_messagePanelText"), i3);
-        int i4 = C3242R.C3245id.image_arrow;
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setRotate(BaseQuickAdapterExtKt.setAlpha(BaseQuickAdapterExtKt.setThemedImageColor(mediumTypeface, i4, "windowBackgroundWhiteGrayText2"), i4, 0.5f), i4, item.isExpanded() ? BitmapDescriptorFactory.HUE_RED : 270.0f).setText(i3, this.resourceManager.getString(C3242R.string.nft_collection_size, Integer.valueOf(item.getTokens().size()))).setText(i2, item.getCollection().getTitle()), C3242R.C3245id.image_collection_image, new NftCollectionProvider$convert$1(this, item));
+        int i = C3290R.C3293id.card_nft_collection;
+        BaseViewHolder themedCardBackground = BaseQuickAdapterExtKt.setThemedCardBackground(BaseQuickAdapterExtKt.setRippleForeground(helper, i, false), i, Theme.key_windowBackgroundWhite);
+        int i2 = C3290R.C3293id.text_collection_name;
+        BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(themedCardBackground, i2, Theme.key_chats_actionBackground);
+        int i3 = C3290R.C3293id.text_collection_size;
+        BaseViewHolder mediumTypeface = BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i3, Theme.key_chat_messagePanelText), i3);
+        int i4 = C3290R.C3293id.image_arrow;
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setRotate(BaseQuickAdapterExtKt.setAlpha(BaseQuickAdapterExtKt.setThemedImageColor(mediumTypeface, i4, Theme.key_windowBackgroundWhiteGrayText2), i4, 0.5f), i4, item.isExpanded() ? BitmapDescriptorFactory.HUE_RED : 270.0f).setText(i3, this.resourceManager.getString(C3290R.string.nft_collection_size, Integer.valueOf(item.getTokens().size()))).setText(i2, item.getCollection().getTitle()), C3290R.C3293id.image_collection_image, new NftCollectionProvider$convert$1(this, item));
     }
 
     public void convert(BaseViewHolder helper, NftCollectionItem item, List<? extends Object> payloads) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
-        BaseQuickAdapterExtKt.setRotate(helper, C3242R.C3245id.image_arrow, item.isExpanded() ? BitmapDescriptorFactory.HUE_RED : 270.0f);
+        BaseQuickAdapterExtKt.setRotate(helper, C3290R.C3293id.image_arrow, item.isExpanded() ? BitmapDescriptorFactory.HUE_RED : 270.0f);
     }
 }

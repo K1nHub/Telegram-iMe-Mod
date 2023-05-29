@@ -88,13 +88,13 @@
 
     if-eqz p1, :cond_0
 
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->EMPTY:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->EMPTY_VIEW:I
 
     goto :goto_0
 
     .line 353
     :cond_0
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->LANGUAGE:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CELL_WITH_RIGHT_IMAGE:I
 
     :goto_0
     return p1
@@ -110,7 +110,7 @@
 
     move-result v0
 
-    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->LANGUAGE:I
+    sget v1, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CELL_WITH_RIGHT_IMAGE:I
 
     if-ne v0, v1, :cond_0
 
@@ -172,7 +172,7 @@
     move-result v1
 
     .line 368
-    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->LANGUAGE:I
+    sget v2, Lcom/iMe/common/IdFabric$ViewTypes;->TEXT_CELL_WITH_RIGHT_IMAGE:I
 
     if-ne v1, v2, :cond_1
 
@@ -213,9 +213,9 @@
     .line 371
     sget p2, Lorg/telegram/messenger/R$drawable;->ic_ab_done:I
 
-    const-string v0, "chats_actionBackground"
+    sget v0, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
-    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v0}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v0
 
@@ -225,7 +225,7 @@
 
     .line 373
     :cond_1
-    sget p2, Lcom/iMe/common/IdFabric$ViewTypes;->EMPTY:I
+    sget p2, Lcom/iMe/common/IdFabric$ViewTypes;->EMPTY_VIEW:I
 
     if-ne v1, p2, :cond_2
 
@@ -267,7 +267,7 @@
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
     .line 358
-    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->EMPTY:I
+    sget p1, Lcom/iMe/common/IdFabric$ViewTypes;->EMPTY_VIEW:I
 
     const-string v0, "context"
 

@@ -22,7 +22,7 @@
 .method constructor <init>(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;)V
     .locals 0
 
-    .line 913
+    .line 918
     iput-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-direct {p0}, Landroid/animation/AnimatorListenerAdapter;-><init>()V
@@ -35,14 +35,14 @@
 .method public onAnimationEnd(Landroid/animation/Animator;)V
     .locals 4
 
-    .line 916
+    .line 921
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     const/4 v0, 0x0
 
     invoke-static {p1, v0}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;->access$1002(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;Landroid/animation/AnimatorSet;)Landroid/animation/AnimatorSet;
 
-    .line 917
+    .line 922
     iget-object p1, p0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$2;->this$0:Lorg/telegram/ui/ActionBar/ActionBarPopupWindow;
 
     invoke-virtual {p1}, Landroid/widget/PopupWindow;->getContentView()Landroid/view/View;
@@ -51,17 +51,17 @@
 
     check-cast p1, Landroid/view/ViewGroup;
 
-    .line 919
+    .line 924
     instance-of v1, p1, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
     const/4 v2, 0x0
 
     if-eqz v1, :cond_0
 
-    .line 920
+    .line 925
     check-cast p1, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    .line 921
+    .line 926
     invoke-static {p1, v2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->access$602(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;Z)Z
 
     goto :goto_1
@@ -69,7 +69,7 @@
     :cond_0
     move v1, v2
 
-    .line 923
+    .line 928
     :goto_0
     invoke-virtual {p1}, Landroid/view/ViewGroup;->getChildCount()I
 
@@ -77,7 +77,7 @@
 
     if-ge v1, v3, :cond_2
 
-    .line 924
+    .line 929
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v3
@@ -86,14 +86,14 @@
 
     if-eqz v3, :cond_1
 
-    .line 925
+    .line 930
     invoke-virtual {p1, v1}, Landroid/view/ViewGroup;->getChildAt(I)Landroid/view/View;
 
     move-result-object v0
 
     check-cast v0, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;
 
-    .line 926
+    .line 931
     invoke-static {v0, v2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->access$602(Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;Z)Z
 
     :cond_1
@@ -104,7 +104,7 @@
     :cond_2
     move-object p1, v0
 
-    .line 930
+    .line 935
     :goto_1
     invoke-virtual {p1}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->getItemsCount()I
 
@@ -113,19 +113,19 @@
     :goto_2
     if-ge v2, v0, :cond_5
 
-    .line 932
+    .line 937
     invoke-virtual {p1, v2}, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$ActionBarPopupWindowLayout;->getItemAt(I)Landroid/view/View;
 
     move-result-object v1
 
-    .line 933
+    .line 938
     instance-of v3, v1, Lorg/telegram/ui/ActionBar/ActionBarPopupWindow$GapView;
 
     if-eqz v3, :cond_3
 
     goto :goto_4
 
-    .line 936
+    .line 941
     :cond_3
     invoke-virtual {v1}, Landroid/view/View;->isEnabled()Z
 

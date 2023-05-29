@@ -41,7 +41,7 @@
 
     check-cast p1, Ljava/lang/String;
 
-    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$MxHrgY6PTr20ckWgPOXtHbULG-Y(Lorg/telegram/ui/ChatActivity;Ljava/lang/CharSequence;Ljava/util/ArrayList;Ljava/lang/String;)V
+    invoke-static {v0, v1, v2, p1}, Lorg/telegram/ui/ChatActivity;->$r8$lambda$wDsYs7FThQtvuzwjeWeIZprOsh0(Lorg/telegram/ui/ChatActivity;Ljava/lang/CharSequence;Ljava/util/ArrayList;Ljava/lang/String;)V
 
     return-void
 .end method

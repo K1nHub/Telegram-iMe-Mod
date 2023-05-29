@@ -30,7 +30,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;)V
     .locals 1
 
-    .line 356
+    .line 357
     iput-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     const/4 v0, 0x0
@@ -43,7 +43,7 @@
 .method private synthetic lambda$onClose$0()V
     .locals 3
 
-    .line 371
+    .line 372
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     const/4 v1, -0x1
@@ -68,7 +68,7 @@
 .method public getPlaceForPhoto(Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$FileLocation;IZ)Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;
     .locals 1
 
-    .line 376
+    .line 377
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     invoke-static {p1, p3}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->access$1000(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;I)Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;
@@ -81,14 +81,14 @@
 
     new-array p2, p2, [I
 
-    .line 379
+    .line 380
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->getImageView()Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object p3
 
     invoke-virtual {p3, p2}, Landroid/view/View;->getLocationInWindow([I)V
 
-    .line 380
+    .line 381
     sget p3, Landroid/os/Build$VERSION;->SDK_INT:I
 
     const/16 p4, 0x1a
@@ -97,7 +97,7 @@
 
     if-ge p3, p4, :cond_0
 
-    .line 381
+    .line 382
     aget p3, p2, v0
 
     iget-object p4, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
@@ -112,32 +112,32 @@
 
     aput p3, p2, v0
 
-    .line 383
+    .line 384
     :cond_0
     new-instance p3, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;
 
     invoke-direct {p3}, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;-><init>()V
 
-    .line 384
+    .line 385
     aget p4, p2, v0
 
     iput p4, p3, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->viewX:I
 
     const/4 p4, 0x1
 
-    .line 385
+    .line 386
     aget p2, p2, p4
 
     iput p2, p3, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->viewY:I
 
-    .line 386
+    .line 387
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     iget-object p2, p2, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
 
     iput-object p2, p3, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->parentView:Landroid/view/View;
 
-    .line 387
+    .line 388
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->getImageView()Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object p2
@@ -148,21 +148,21 @@
 
     iput-object p2, p3, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->imageReceiver:Lorg/telegram/messenger/ImageReceiver;
 
-    .line 388
+    .line 389
     invoke-virtual {p2}, Lorg/telegram/messenger/ImageReceiver;->getBitmapSafe()Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
     move-result-object p2
 
     iput-object p2, p3, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->thumb:Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
 
-    .line 389
+    .line 390
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->getScale()F
 
     move-result p2
 
     iput p2, p3, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->scale:F
 
-    .line 390
+    .line 391
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     iget-object p2, p2, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -175,7 +175,7 @@
 
     iput p2, p3, Lorg/telegram/ui/PhotoViewer$PlaceProviderObject;->clipBottomAddition:I
 
-    .line 391
+    .line 392
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->showCheck(Z)V
 
     return-object p3
@@ -189,7 +189,7 @@
 .method public getThumbForPhoto(Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$FileLocation;I)Lorg/telegram/messenger/ImageReceiver$BitmapHolder;
     .locals 0
 
-    .line 424
+    .line 425
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     invoke-static {p1, p3}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->access$1000(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;I)Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;
@@ -198,7 +198,7 @@
 
     if-eqz p1, :cond_0
 
-    .line 426
+    .line 427
     invoke-virtual {p1}, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->getImageView()Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object p1
@@ -222,7 +222,7 @@
 .method public onApplyCaption(Ljava/lang/CharSequence;)V
     .locals 2
 
-    .line 453
+    .line 454
     invoke-static {}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->access$100()Ljava/util/HashMap;
 
     move-result-object p1
@@ -243,7 +243,7 @@
 
     if-lez p1, :cond_2
 
-    .line 454
+    .line 455
     invoke-static {}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->access$100()Ljava/util/HashMap;
 
     move-result-object p1
@@ -264,32 +264,32 @@
 
     const/4 v0, 0x0
 
-    .line 456
+    .line 457
     instance-of v1, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     if-eqz v1, :cond_0
 
-    .line 457
+    .line 458
     move-object v0, p1
 
     check-cast v0, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
-    .line 458
+    .line 459
     iget-object v0, v0, Lorg/telegram/messenger/MediaController$MediaEditState;->caption:Ljava/lang/CharSequence;
 
-    .line 460
+    .line 461
     :cond_0
     instance-of v1, p1, Lorg/telegram/messenger/MediaController$SearchImage;
 
     if-eqz v1, :cond_1
 
-    .line 461
+    .line 462
     check-cast p1, Lorg/telegram/messenger/MediaController$SearchImage;
 
-    .line 462
+    .line 463
     iget-object v0, p1, Lorg/telegram/messenger/MediaController$SearchImage;->caption:Ljava/lang/CharSequence;
 
-    .line 464
+    .line 465
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
@@ -306,12 +306,12 @@
 .method public onClose()V
     .locals 3
 
-    .line 370
+    .line 371
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->access$900(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;)V
 
-    .line 371
+    .line 372
     new-instance v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$1$$ExternalSyntheticLambda0;
 
     invoke-direct {v0, p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$1$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$1;)V
@@ -326,12 +326,12 @@
 .method public onOpen()V
     .locals 3
 
-    .line 359
+    .line 360
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     invoke-static {v0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->access$700(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;)V
 
-    .line 360
+    .line 361
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     const/4 v1, -0x1
@@ -346,7 +346,7 @@
 .method public onPreClose()V
     .locals 3
 
-    .line 365
+    .line 366
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     const/4 v1, -0x1
@@ -361,7 +361,7 @@
 .method public sendButtonPressed(ILorg/telegram/messenger/VideoEditedInfo;ZIZLjava/lang/String;Z)V
     .locals 8
 
-    .line 475
+    .line 476
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->access$000(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;I)Lorg/telegram/messenger/MediaController$PhotoEntry;
@@ -370,10 +370,10 @@
 
     if-eqz p1, :cond_0
 
-    .line 477
+    .line 478
     iput-object p2, p1, Lorg/telegram/messenger/MediaController$MediaEditState;->editedInfo:Lorg/telegram/messenger/VideoEditedInfo;
 
-    .line 479
+    .line 480
     :cond_0
     invoke-static {}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->access$100()Ljava/util/HashMap;
 
@@ -387,14 +387,14 @@
 
     if-eqz p1, :cond_1
 
-    .line 480
+    .line 481
     iget-object p2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     const/4 v0, -0x1
 
     invoke-static {p2, p1, v0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->access$300(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;Lorg/telegram/messenger/MediaController$PhotoEntry;I)I
 
-    .line 482
+    .line 483
     :cond_1
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
@@ -414,7 +414,7 @@
 
     return-void
 
-    .line 485
+    .line 486
     :cond_2
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
@@ -422,7 +422,7 @@
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/ChatAttachAlert;->applyCaption()V
 
-    .line 486
+    .line 487
     invoke-static {}, Lorg/telegram/ui/PhotoViewer;->getInstance()Lorg/telegram/ui/PhotoViewer;
 
     move-result-object p1
@@ -431,17 +431,17 @@
 
     if-eqz p1, :cond_5
 
-    .line 487
+    .line 488
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$BasePhotoProvider;->getSelectedPhotos()Ljava/util/HashMap;
 
     move-result-object p1
 
-    .line 488
+    .line 489
     invoke-virtual {p0}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$BasePhotoProvider;->getSelectedPhotosOrder()Ljava/util/ArrayList;
 
     move-result-object p2
 
-    .line 489
+    .line 490
     invoke-virtual {p1}, Ljava/util/HashMap;->isEmpty()Z
 
     move-result v0
@@ -450,7 +450,7 @@
 
     const/4 v0, 0x0
 
-    .line 490
+    .line 491
     :goto_0
     invoke-virtual {p2}, Ljava/util/ArrayList;->size()I
 
@@ -458,7 +458,7 @@
 
     if-ge v0, v1, :cond_5
 
-    .line 491
+    .line 492
     invoke-virtual {p2, v0}, Ljava/util/ArrayList;->get(I)Ljava/lang/Object;
 
     move-result-object v1
@@ -467,17 +467,17 @@
 
     move-result-object v1
 
-    .line 492
+    .line 493
     instance-of v2, v1, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     if-eqz v2, :cond_4
 
-    .line 493
+    .line 494
     check-cast v1, Lorg/telegram/messenger/MediaController$PhotoEntry;
 
     if-nez v0, :cond_3
 
-    .line 495
+    .line 496
     invoke-static {}, Lorg/telegram/ui/PhotoViewer;->getInstance()Lorg/telegram/ui/PhotoViewer;
 
     move-result-object v2
@@ -486,7 +486,7 @@
 
     iput-object v2, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->caption:Ljava/lang/CharSequence;
 
-    .line 496
+    .line 497
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     iget-object v1, v1, Lorg/telegram/ui/Components/ChatAttachAlert$AttachAlertLayout;->parentAlert:Lorg/telegram/ui/Components/ChatAttachAlert;
@@ -502,7 +502,7 @@
     :cond_3
     const/4 v2, 0x0
 
-    .line 500
+    .line 501
     iput-object v2, v1, Lorg/telegram/messenger/MediaController$MediaEditState;->caption:Ljava/lang/CharSequence;
 
     :cond_4
@@ -510,7 +510,7 @@
 
     goto :goto_0
 
-    .line 506
+    .line 507
     :cond_5
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
@@ -534,13 +534,41 @@
 
     invoke-interface/range {v0 .. v7}, Lorg/telegram/ui/Components/ChatAttachAlert$ChatAttachViewDelegate;->didPressedButton(IZZIZLjava/lang/String;Z)V
 
+    .line 508
+    invoke-static {}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->access$100()Ljava/util/HashMap;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/util/HashMap;->clear()V
+
+    .line 509
+    invoke-static {}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->access$1100()Ljava/util/ArrayList;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
+
+    .line 510
+    invoke-static {}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->access$400()Ljava/util/ArrayList;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/util/ArrayList;->clear()V
+
+    .line 511
+    invoke-static {}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->access$100()Ljava/util/HashMap;
+
+    move-result-object p1
+
+    invoke-virtual {p1}, Ljava/util/HashMap;->clear()V
+
     return-void
 .end method
 
 .method public updatePhotoAtIndex(I)V
-    .locals 5
+    .locals 6
 
-    .line 400
+    .line 401
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     invoke-static {v0, p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->access$1000(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;I)Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;
@@ -549,7 +577,7 @@
 
     if-eqz v0, :cond_4
 
-    .line 402
+    .line 403
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->getImageView()Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object v1
@@ -560,7 +588,7 @@
 
     invoke-virtual {v1, v2, v3}, Lorg/telegram/ui/Components/BackupImageView;->setOrientation(IZ)V
 
-    .line 403
+    .line 404
     iget-object v1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     invoke-static {v1, p1}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->access$000(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;I)Lorg/telegram/messenger/MediaController$PhotoEntry;
@@ -571,7 +599,7 @@
 
     return-void
 
-    .line 407
+    .line 408
     :cond_0
     iget-object v1, p1, Lorg/telegram/messenger/MediaController$MediaEditState;->thumbPath:Ljava/lang/String;
 
@@ -579,7 +607,7 @@
 
     if-eqz v1, :cond_1
 
-    .line 408
+    .line 409
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->getImageView()Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object v0
@@ -592,29 +620,31 @@
 
     goto :goto_0
 
-    .line 409
+    .line 410
     :cond_1
     iget-object v1, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;->path:Ljava/lang/String;
 
     if-eqz v1, :cond_3
 
-    .line 410
+    .line 411
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->getImageView()Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object v1
 
     iget v4, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;->orientation:I
 
-    invoke-virtual {v1, v4, v3}, Lorg/telegram/ui/Components/BackupImageView;->setOrientation(IZ)V
+    iget v5, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;->invert:I
 
-    .line 411
+    invoke-virtual {v1, v4, v5, v3}, Lorg/telegram/ui/Components/BackupImageView;->setOrientation(IIZ)V
+
+    .line 412
     iget-boolean v1, p1, Lorg/telegram/messenger/MediaController$PhotoEntry;->isVideo:Z
 
     const-string v3, ":"
 
     if-eqz v1, :cond_2
 
-    .line 412
+    .line 413
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->getImageView()Lorg/telegram/ui/Components/BackupImageView;
 
     move-result-object v0
@@ -647,7 +677,7 @@
 
     goto :goto_0
 
-    .line 414
+    .line 415
     :cond_2
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->getImageView()Lorg/telegram/ui/Components/BackupImageView;
 
@@ -681,7 +711,7 @@
 
     goto :goto_0
 
-    .line 417
+    .line 418
     :cond_3
     invoke-virtual {v0}, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->getImageView()Lorg/telegram/ui/Components/BackupImageView;
 
@@ -699,7 +729,7 @@
 .method public willHidePhotoViewer()V
     .locals 4
 
-    .line 441
+    .line 442
     iget-object v0, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     iget-object v0, v0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -713,7 +743,7 @@
     :goto_0
     if-ge v1, v0, :cond_1
 
-    .line 443
+    .line 444
     iget-object v2, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     iget-object v2, v2, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->gridView:Lorg/telegram/ui/Components/RecyclerListView;
@@ -722,17 +752,17 @@
 
     move-result-object v2
 
-    .line 444
+    .line 445
     instance-of v3, v2, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;
 
     if-eqz v3, :cond_0
 
-    .line 445
+    .line 446
     check-cast v2, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;
 
     const/4 v3, 0x1
 
-    .line 446
+    .line 447
     invoke-virtual {v2, v3}, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->showCheck(Z)V
 
     :cond_0
@@ -747,7 +777,7 @@
 .method public willSwitchFromPhoto(Lorg/telegram/messenger/MessageObject;Lorg/telegram/tgnet/TLRPC$FileLocation;I)V
     .locals 0
 
-    .line 433
+    .line 434
     iget-object p1, p0, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout$1;->this$0:Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;
 
     invoke-static {p1, p3}, Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;->access$1000(Lorg/telegram/ui/Components/ChatAttachAlertPhotoLayout;I)Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;
@@ -758,7 +788,7 @@
 
     const/4 p2, 0x1
 
-    .line 435
+    .line 436
     invoke-virtual {p1, p2}, Lorg/telegram/ui/Cells/PhotoAttachPhotoCell;->showCheck(Z)V
 
     :cond_0

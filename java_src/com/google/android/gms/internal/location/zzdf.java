@@ -15,24 +15,24 @@ import com.google.android.gms.common.internal.safeparcel.SafeParcelable;
 /* loaded from: classes.dex */
 public final class zzdf extends AbstractSafeParcelable {
     public static final Parcelable.Creator<zzdf> CREATOR = new zzdg();
-    @SafeParcelable.Field(defaultValueUnchecked = "LocationRequestUpdateData.OPERATION_ADD", getter = "getOperation", m775id = 1)
+    @SafeParcelable.Field(defaultValueUnchecked = "LocationRequestUpdateData.OPERATION_ADD", getter = "getOperation", m779id = 1)
     private final int zza;
-    @SafeParcelable.Field(defaultValueUnchecked = "null", getter = "getLocationRequest", m775id = 2)
+    @SafeParcelable.Field(defaultValueUnchecked = "null", getter = "getLocationRequest", m779id = 2)
     private final zzdd zzb;
-    @SafeParcelable.Field(defaultValueUnchecked = "null", getter = "getLocationListenerAsBinder", m775id = 3, type = "android.os.IBinder")
+    @SafeParcelable.Field(defaultValueUnchecked = "null", getter = "getLocationListenerAsBinder", m779id = 3, type = "android.os.IBinder")
     private final com.google.android.gms.location.zzu zzc;
-    @SafeParcelable.Field(defaultValueUnchecked = "null", getter = "getLocationCallbackAsBinder", m775id = 5, type = "android.os.IBinder")
+    @SafeParcelable.Field(defaultValueUnchecked = "null", getter = "getLocationCallbackAsBinder", m779id = 5, type = "android.os.IBinder")
     private final com.google.android.gms.location.zzr zzd;
-    @SafeParcelable.Field(defaultValueUnchecked = "null", getter = "getPendingIntent", m775id = 4)
+    @SafeParcelable.Field(defaultValueUnchecked = "null", getter = "getPendingIntent", m779id = 4)
     private final PendingIntent zze;
-    @SafeParcelable.Field(defaultValueUnchecked = "null", getter = "getFusedLocationProviderCallbackAsBinder", m775id = 6, type = "android.os.IBinder")
+    @SafeParcelable.Field(defaultValueUnchecked = "null", getter = "getFusedLocationProviderCallbackAsBinder", m779id = 6, type = "android.os.IBinder")
     private final zzk zzf;
-    @SafeParcelable.Field(defaultValueUnchecked = "null", getter = "getListenerId", m775id = 8)
+    @SafeParcelable.Field(defaultValueUnchecked = "null", getter = "getListenerId", m779id = 8)
     private final String zzg;
 
     /* JADX INFO: Access modifiers changed from: package-private */
     @SafeParcelable.Constructor
-    public zzdf(@SafeParcelable.Param(m774id = 1) int i, @SafeParcelable.Param(m774id = 2) zzdd zzddVar, @SafeParcelable.Param(m774id = 3) IBinder iBinder, @SafeParcelable.Param(m774id = 5) IBinder iBinder2, @SafeParcelable.Param(m774id = 4) PendingIntent pendingIntent, @SafeParcelable.Param(m774id = 6) IBinder iBinder3, @SafeParcelable.Param(m774id = 8) String str) {
+    public zzdf(@SafeParcelable.Param(m778id = 1) int i, @SafeParcelable.Param(m778id = 2) zzdd zzddVar, @SafeParcelable.Param(m778id = 3) IBinder iBinder, @SafeParcelable.Param(m778id = 5) IBinder iBinder2, @SafeParcelable.Param(m778id = 4) PendingIntent pendingIntent, @SafeParcelable.Param(m778id = 6) IBinder iBinder3, @SafeParcelable.Param(m778id = 8) String str) {
         this.zza = i;
         this.zzb = zzddVar;
         zzk zzkVar = null;

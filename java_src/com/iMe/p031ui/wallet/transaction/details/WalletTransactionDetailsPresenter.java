@@ -49,7 +49,7 @@ import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringNumberConversionsKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3242R;
+import org.telegram.messenger.C3290R;
 /* compiled from: WalletTransactionDetailsPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.transaction.details.WalletTransactionDetailsPresenter */
@@ -72,7 +72,7 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
         static {
             int[] iArr = new int[TransactionDirection.values().length];
             try {
-                iArr[TransactionDirection.f369IN.ordinal()] = 1;
+                iArr[TransactionDirection.f373IN.ordinal()] = 1;
             } catch (NoSuchFieldError unused) {
             }
             try {
@@ -119,7 +119,7 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
             String formatISODate = StringExtKt.formatISODate(item.getCreatedAt(), DateFormatter.DateType.DATE_AND_TIME);
             String transactionTitle = item.getTransactionTitle(this.resourceManager);
             String amount = item.getAmount(this.resourceManager);
-            String string = this.resourceManager.getString(C3242R.string.wallet_transaction_details_transaction_hash_title);
+            String string = this.resourceManager.getString(C3290R.string.wallet_transaction_details_transaction_hash_title);
             String txHash = item.getTxHash();
             if (txHash.length() == 0) {
                 txHash = "-";
@@ -149,27 +149,27 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
 
     private final String getRecipientOrSenderOrElseTitle(Transaction transaction) {
         if (transaction instanceof Transaction.Crypto.SimplexPurchase) {
-            return this.resourceManager.getString(C3242R.string.wallet_transaction_details_simplex_order_id_title);
+            return this.resourceManager.getString(C3290R.string.wallet_transaction_details_simplex_order_id_title);
         }
         if (transaction instanceof Transaction.Crypto.Swap ? true : transaction instanceof Transaction.Crypto.Approve) {
-            return this.resourceManager.getString(C3242R.string.wallet_transaction_details_transaction_hash_title);
+            return this.resourceManager.getString(C3290R.string.wallet_transaction_details_transaction_hash_title);
         }
         int i = WhenMappings.$EnumSwitchMapping$0[transaction.getDirection().ordinal()];
         if (i != 1) {
             if (i == 2 || i == 3) {
-                return this.resourceManager.getString(C3242R.string.wallet_transaction_details_recipient_title);
+                return this.resourceManager.getString(C3290R.string.wallet_transaction_details_recipient_title);
             }
             throw new NoWhenBranchMatchedException();
         }
-        return this.resourceManager.getString(C3242R.string.wallet_transaction_details_sender_title);
+        return this.resourceManager.getString(C3290R.string.wallet_transaction_details_sender_title);
     }
 
     private final String getRecipientOrSenderOrElseValue(Transaction transaction) {
         if (transaction instanceof Transaction.Referral) {
-            return this.resourceManager.getString(C3242R.string.wallet_transaction_details_sender_referral, ((Transaction.Referral) transaction).getInvitedUserId());
+            return this.resourceManager.getString(C3290R.string.wallet_transaction_details_sender_referral, ((Transaction.Referral) transaction).getInvitedUserId());
         }
         if (transaction instanceof Transaction.Lottery ? true : transaction instanceof Transaction.Registration) {
-            return this.resourceManager.getString(C3242R.string.wallet_transaction_details_sender_bonus);
+            return this.resourceManager.getString(C3290R.string.wallet_transaction_details_sender_bonus);
         }
         if (transaction instanceof Transaction.Transfer) {
             return ((Transaction.Transfer) transaction).getRecipientUserId();
@@ -193,7 +193,7 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
             }
             return ((Transaction.Crypto.Transfer) transaction).getSenderAddress();
         }
-        return this.resourceManager.getString(C3242R.string.wallet_transaction_details_sender);
+        return this.resourceManager.getString(C3290R.string.wallet_transaction_details_sender);
     }
 
     private final List<Pair<TransactionActionItem, Function0<Unit>>> resolveTransactionAction() {
@@ -201,13 +201,13 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
         List filterNotNull;
         List<Pair<TransactionActionItem, Function0<Unit>>> mutableList;
         Pair[] pairArr = new Pair[7];
-        pairArr[0] = canAskSupport() ? TuplesKt.m80to(TransactionActionItem.Support.INSTANCE, new WalletTransactionDetailsPresenter$resolveTransactionAction$1(this)) : null;
-        pairArr[1] = canSend() ? TuplesKt.m80to(TransactionActionItem.Send.INSTANCE, new WalletTransactionDetailsPresenter$resolveTransactionAction$2(this)) : null;
-        pairArr[2] = canOpenProfile() ? TuplesKt.m80to(TransactionActionItem.Profile.INSTANCE, new WalletTransactionDetailsPresenter$resolveTransactionAction$3(this)) : null;
-        pairArr[3] = canOpenScanSite() ? TuplesKt.m80to(new TransactionActionItem.OpenScan(getScanIconResId(), getOpenTitle()), new WalletTransactionDetailsPresenter$resolveTransactionAction$4(this)) : null;
-        pairArr[4] = canCopy() ? TuplesKt.m80to(new TransactionActionItem.Copy(getCopyTitle()), new WalletTransactionDetailsPresenter$resolveTransactionAction$5(this)) : null;
-        pairArr[5] = canCancelOrBoost() ? TuplesKt.m80to(TransactionActionItem.Cancel.INSTANCE, new WalletTransactionDetailsPresenter$resolveTransactionAction$6(this)) : null;
-        pairArr[6] = canCancelOrBoost() ? TuplesKt.m80to(TransactionActionItem.Boost.INSTANCE, new WalletTransactionDetailsPresenter$resolveTransactionAction$7(this)) : null;
+        pairArr[0] = canAskSupport() ? TuplesKt.m85to(TransactionActionItem.Support.INSTANCE, new WalletTransactionDetailsPresenter$resolveTransactionAction$1(this)) : null;
+        pairArr[1] = canSend() ? TuplesKt.m85to(TransactionActionItem.Send.INSTANCE, new WalletTransactionDetailsPresenter$resolveTransactionAction$2(this)) : null;
+        pairArr[2] = canOpenProfile() ? TuplesKt.m85to(TransactionActionItem.Profile.INSTANCE, new WalletTransactionDetailsPresenter$resolveTransactionAction$3(this)) : null;
+        pairArr[3] = canOpenScanSite() ? TuplesKt.m85to(new TransactionActionItem.OpenScan(getScanIconResId(), getOpenTitle()), new WalletTransactionDetailsPresenter$resolveTransactionAction$4(this)) : null;
+        pairArr[4] = canCopy() ? TuplesKt.m85to(new TransactionActionItem.Copy(getCopyTitle()), new WalletTransactionDetailsPresenter$resolveTransactionAction$5(this)) : null;
+        pairArr[5] = canCancelOrBoost() ? TuplesKt.m85to(TransactionActionItem.Cancel.INSTANCE, new WalletTransactionDetailsPresenter$resolveTransactionAction$6(this)) : null;
+        pairArr[6] = canCancelOrBoost() ? TuplesKt.m85to(TransactionActionItem.Boost.INSTANCE, new WalletTransactionDetailsPresenter$resolveTransactionAction$7(this)) : null;
         mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(pairArr);
         filterNotNull = CollectionsKt___CollectionsKt.filterNotNull(mutableListOf);
         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) filterNotNull);
@@ -242,11 +242,11 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
     public final void cancelTransaction(String str) {
         WalletTransactionDetailsBottomSheetDialog.ScreenType screenType = this.screenType;
         if (screenType instanceof WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) {
-            Observable<Result<String>> observeOn = this.cancelInteractor.cancelEthTransaction(((WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) screenType).getItem().getTransaction().getTokenCode(), str).observeOn(this.schedulersProvider.mo693ui());
+            Observable<Result<String>> observeOn = this.cancelInteractor.cancelEthTransaction(((WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) screenType).getItem().getTransaction().getTokenCode(), str).observeOn(this.schedulersProvider.mo698ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "cancelInteractor\n       …(schedulersProvider.ui())");
             T viewState = getViewState();
             Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-            Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2385xbfdb298e(this, str)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2386xbfdb298f((BaseView) getViewState())));
+            Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2424xbfdb298e(this, str)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2425xbfdb298f((BaseView) getViewState())));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
@@ -254,11 +254,11 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void boostTransaction(String str) {
-        Observable<Result<String>> observeOn = this.boostInteractor.boostEthTransaction(str).observeOn(this.schedulersProvider.mo693ui());
+        Observable<Result<String>> observeOn = this.boostInteractor.boostEthTransaction(str).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "boostInteractor\n        …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2383x2bc727d7(this, str)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2384x2bc727d8((BaseView) getViewState())));
+        Disposable subscribe = RxExtKt.withLoadingDialog$default((Observable) observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2422x2bc727d7(this, str)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2423x2bc727d8((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -266,7 +266,7 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
     private final String getOpenTitle() {
         NetworkType networkTypeByProcessing;
         ResourceManager resourceManager = this.resourceManager;
-        int i = C3242R.string.wallet_transaction_details_action_open_etherscan;
+        int i = C3290R.string.wallet_transaction_details_action_open_etherscan;
         Object[] objArr = new Object[1];
         WalletTransactionDetailsBottomSheetDialog.ScreenType screenType = this.screenType;
         if (screenType instanceof WalletTransactionDetailsBottomSheetDialog.ScreenType.StakingOperationDetails) {
@@ -402,7 +402,7 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
             if (transaction.getTokenCode().isCryptoTokens()) {
                 ((WalletTransactionDetailsView) getViewState()).openSendScreen(transaction.getTokenCode(), getNetworkTypeByProcessing(transaction), ((WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) this.screenType).getItem().getRecipientAddress());
             } else {
-                ((WalletTransactionDetailsView) getViewState()).showToast(this.resourceManager.getString(C3242R.string.wallet_feature_not_available));
+                ((WalletTransactionDetailsView) getViewState()).showToast(this.resourceManager.getString(C3290R.string.wallet_feature_not_available));
             }
         }
     }
@@ -506,14 +506,14 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
     private final int getCopyTitle() {
         WalletTransactionDetailsBottomSheetDialog.ScreenType screenType = this.screenType;
         if (screenType instanceof WalletTransactionDetailsBottomSheetDialog.ScreenType.StakingOperationDetails) {
-            return C3242R.string.wallet_transaction_details_action_copy_hash;
+            return C3290R.string.wallet_transaction_details_action_copy_hash;
         }
         if (screenType instanceof WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) {
             Transaction transaction = ((WalletTransactionDetailsBottomSheetDialog.ScreenType.TransactionDetails) screenType).getItem().getTransaction();
             if (transaction instanceof Transaction.Crypto.SimplexPurchase) {
-                return C3242R.string.wallet_token_details_action_copy_order_id;
+                return C3290R.string.wallet_token_details_action_copy_order_id;
             }
-            return transaction instanceof Transaction.Crypto.Swap ? true : transaction instanceof Transaction.Crypto.Approve ? C3242R.string.wallet_transaction_details_action_copy_hash : C3242R.string.wallet_transaction_details_action_copy_address;
+            return transaction instanceof Transaction.Crypto.Swap ? true : transaction instanceof Transaction.Crypto.Approve ? C3290R.string.wallet_transaction_details_action_copy_hash : C3290R.string.wallet_transaction_details_action_copy_address;
         }
         throw new NoWhenBranchMatchedException();
     }
@@ -554,7 +554,7 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
             throw new NoWhenBranchMatchedException();
         }
         if (Intrinsics.areEqual(feeAmount.stripTrailingZeros(), BigDecimal.ZERO)) {
-            return this.resourceManager.getString(C3242R.string.fee_nothing);
+            return this.resourceManager.getString(C3290R.string.fee_nothing);
         }
         TokenInfo map = TokenInfo.Companion.map(tokenCode);
         String str = BalanceFormatter.formatBalance(feeAmount, map.getDecimals()) + ' ' + this.resourceManager.getString(map.getShortName());
@@ -576,11 +576,11 @@ public final class WalletTransactionDetailsPresenter extends BasePresenter<Walle
     }
 
     private final DialogModel getConfirmCancelDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3242R.string.wallet_cancel_transaction_title), this.resourceManager.getString(C3242R.string.wallet_cancel_transaction_description), this.resourceManager.getString(C3242R.string.common_cancel), this.resourceManager.getString(C3242R.string.common_confirm));
+        return new DialogModel(this.resourceManager.getString(C3290R.string.wallet_cancel_transaction_title), this.resourceManager.getString(C3290R.string.wallet_cancel_transaction_description), this.resourceManager.getString(C3290R.string.common_cancel), this.resourceManager.getString(C3290R.string.common_confirm));
     }
 
     private final DialogModel getConfirmBoostDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3242R.string.wallet_boost_transaction_title), this.resourceManager.getString(C3242R.string.wallet_boost_transaction_description), this.resourceManager.getString(C3242R.string.common_cancel), this.resourceManager.getString(C3242R.string.common_confirm));
+        return new DialogModel(this.resourceManager.getString(C3290R.string.wallet_boost_transaction_title), this.resourceManager.getString(C3290R.string.wallet_boost_transaction_description), this.resourceManager.getString(C3290R.string.common_cancel), this.resourceManager.getString(C3290R.string.common_confirm));
     }
 
     private final void setupTransactionActions(List<Pair<TransactionActionItem, Function0<Unit>>> list) {

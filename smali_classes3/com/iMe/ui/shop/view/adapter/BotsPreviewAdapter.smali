@@ -226,7 +226,7 @@
 
     const/4 v6, 0x0
 
-    invoke-static/range {v0 .. v6}, Lcom/iMe/ui/smartpanel/extension/ImageViewExtKt;->loadFrom$default(Landroid/widget/ImageView;Ljava/lang/String;Landroid/content/Context;Landroid/graphics/drawable/Drawable;ZILjava/lang/Object;)V
+    invoke-static/range {v0 .. v6}, Lcom/iMe/utils/extentions/common/ImageViewExtKt;->loadFrom$default(Landroid/widget/ImageView;Ljava/lang/String;Landroid/content/Context;Landroid/graphics/drawable/Drawable;ZILjava/lang/Object;)V
 
     .line 43
     iget-object v0, p1, Lorg/telegram/messenger/databinding/ForkShopItemGridBinding;->botName:Landroid/widget/TextView;
@@ -240,9 +240,9 @@
     .line 44
     iget-object v0, p1, Lorg/telegram/messenger/databinding/ForkShopItemGridBinding;->botName:Landroid/widget/TextView;
 
-    const-string v1, "windowBackgroundWhiteBlackText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteBlackText:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -251,9 +251,9 @@
     .line 45
     iget-object v0, p1, Lorg/telegram/messenger/databinding/ForkShopItemGridBinding;->botInstalledIcon:Landroid/widget/ImageView;
 
-    const-string v1, "chats_actionBackground"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_chats_actionBackground:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 

@@ -26,10 +26,10 @@
 
     invoke-direct {v1, p1}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    const-string v2, "chat_emojiPanelTrendingDescription"
-
     .line 34
-    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_chat_emojiPanelTrendingDescription:I
+
+    invoke-static {v2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v2
 
@@ -102,9 +102,9 @@
     .line 42
     iget-object p1, p0, Lorg/telegram/ui/Cells/StickerSetGroupInfoCell;->addButton:Landroid/widget/TextView;
 
-    const-string v1, "featuredStickers_buttonText"
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_buttonText:I
 
-    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {v1}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result v1
 
@@ -129,15 +129,15 @@
     .line 45
     iget-object p1, p0, Lorg/telegram/ui/Cells/StickerSetGroupInfoCell;->addButton:Landroid/widget/TextView;
 
+    sget v1, Lorg/telegram/ui/ActionBar/Theme;->key_featuredStickers_addButton:I
+
     new-array v0, v0, [F
 
-    const/high16 v1, 0x40800000    # 4.0f
+    const/high16 v2, 0x40800000    # 4.0f
 
-    aput v1, v0, v5
+    aput v2, v0, v5
 
-    const-string v1, "featuredStickers_addButton"
-
-    invoke-static {v1, v0}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRect(Ljava/lang/String;[F)Landroid/graphics/drawable/Drawable;
+    invoke-static {v1, v0}, Lorg/telegram/ui/ActionBar/Theme$AdaptiveRipple;->filledRectByKey(I[F)Landroid/graphics/drawable/Drawable;
 
     move-result-object v0
 

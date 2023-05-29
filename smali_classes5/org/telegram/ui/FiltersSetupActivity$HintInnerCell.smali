@@ -29,20 +29,20 @@
     return-void
 .end method
 
-.method public constructor <init>(Lorg/telegram/ui/FiltersSetupActivity;Landroid/content/Context;)V
-    .locals 9
+.method public constructor <init>(Lorg/telegram/ui/FiltersSetupActivity;Landroid/content/Context;ILjava/lang/CharSequence;)V
+    .locals 7
 
-    .line 374
+    .line 337
     invoke-direct {p0, p2}, Landroid/widget/FrameLayout;-><init>(Landroid/content/Context;)V
 
-    .line 376
+    .line 339
     new-instance v0, Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-direct {v0, p2}, Lorg/telegram/ui/Components/RLottieImageView;-><init>(Landroid/content/Context;)V
 
     iput-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
-    .line 378
+    .line 341
     invoke-static {p1}, Lorg/telegram/ui/FiltersSetupActivity;->access$000(Lorg/telegram/ui/FiltersSetupActivity;)Lcom/iMe/fork/enums/FilterActivityType;
 
     move-result-object v0
@@ -51,189 +51,149 @@
 
     if-ne v0, v1, :cond_0
 
-    .line 379
-    iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
+    .line 342
+    iget-object p3, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
-    sget v2, Lorg/telegram/messenger/R$raw;->fork_topics:I
-
-    const/16 v3, 0x6e
-
-    invoke-virtual {v0, v2, v3, v3}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
-
-    goto :goto_0
-
-    .line 381
-    :cond_0
-    iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
-
-    sget v2, Lorg/telegram/messenger/R$raw;->filters:I
-
-    const/16 v3, 0x5a
-
-    invoke-virtual {v0, v2, v3, v3}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
-
-    .line 382
-    :goto_0
-    iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
-
-    sget-object v2, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
-
-    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
-
-    .line 383
-    iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
-
-    invoke-virtual {v0}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
-
-    .line 384
-    iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
-
-    const/4 v2, 0x2
-
-    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setImportantForAccessibility(I)V
-
-    .line 386
-    invoke-static {p1}, Lorg/telegram/ui/FiltersSetupActivity;->access$000(Lorg/telegram/ui/FiltersSetupActivity;)Lcom/iMe/fork/enums/FilterActivityType;
-
-    move-result-object v0
-
-    if-ne v0, v1, :cond_1
-
-    .line 387
-    iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
+    sget v0, Lorg/telegram/messenger/R$raw;->fork_topics:I
 
     const/16 v2, 0x6e
 
-    const/16 v3, 0x6e
+    invoke-virtual {p3, v0, v2, v2}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
 
-    const/16 v4, 0x31
+    goto :goto_0
+
+    .line 344
+    :cond_0
+    iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
+
+    const/16 v2, 0x5a
+
+    invoke-virtual {v0, p3, v2, v2}, Lorg/telegram/ui/Components/RLottieImageView;->setAnimation(III)V
+
+    .line 345
+    :goto_0
+    iget-object p3, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
+
+    sget-object v0, Landroid/widget/ImageView$ScaleType;->CENTER:Landroid/widget/ImageView$ScaleType;
+
+    invoke-virtual {p3, v0}, Landroid/widget/ImageView;->setScaleType(Landroid/widget/ImageView$ScaleType;)V
+
+    .line 346
+    iget-object p3, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
+
+    invoke-virtual {p3}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
+
+    .line 347
+    iget-object p3, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
+
+    const/4 v0, 0x2
+
+    invoke-virtual {p3, v0}, Landroid/widget/ImageView;->setImportantForAccessibility(I)V
+
+    .line 349
+    invoke-static {p1}, Lorg/telegram/ui/FiltersSetupActivity;->access$000(Lorg/telegram/ui/FiltersSetupActivity;)Lcom/iMe/fork/enums/FilterActivityType;
+
+    move-result-object p1
+
+    if-ne p1, v1, :cond_1
+
+    .line 350
+    iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
+
+    const/16 v0, 0x6e
+
+    const/16 v1, 0x6e
+
+    const/16 v2, 0x31
+
+    const/4 v3, 0x0
+
+    const/4 v4, 0x0
 
     const/4 v5, 0x0
 
     const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    const/4 v8, 0x0
+    move-result-object p3
 
-    invoke-static/range {v2 .. v8}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
-
-    move-result-object v2
-
-    invoke-virtual {p0, v0, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
+    invoke-virtual {p0, p1, p3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
     goto :goto_1
 
-    .line 389
+    .line 352
     :cond_1
-    iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
+    iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
-    const/16 v2, 0x5a
+    const/16 v0, 0x5a
 
-    const/16 v3, 0x5a
+    const/16 v1, 0x5a
 
-    const/16 v4, 0x31
+    const/16 v2, 0x31
+
+    const/4 v3, 0x0
+
+    const/16 v4, 0xe
 
     const/4 v5, 0x0
 
-    const/16 v6, 0xe
+    const/4 v6, 0x0
 
-    const/4 v7, 0x0
+    invoke-static/range {v0 .. v6}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
 
-    const/4 v8, 0x0
+    move-result-object p3
 
-    invoke-static/range {v2 .. v8}, Lorg/telegram/ui/Components/LayoutHelper;->createFrame(IIIIIII)Landroid/widget/FrameLayout$LayoutParams;
+    invoke-virtual {p0, p1, p3}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
 
-    move-result-object v2
-
-    invoke-virtual {p0, v0, v2}, Landroid/widget/FrameLayout;->addView(Landroid/view/View;Landroid/view/ViewGroup$LayoutParams;)V
-
-    .line 390
+    .line 353
     :goto_1
-    iget-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
+    iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
-    new-instance v2, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell$$ExternalSyntheticLambda0;
+    new-instance p3, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell$$ExternalSyntheticLambda0;
 
-    invoke-direct {v2, p0}, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;)V
+    invoke-direct {p3, p0}, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell$$ExternalSyntheticLambda0;-><init>(Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;)V
 
-    invoke-virtual {v0, v2}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
+    invoke-virtual {p1, p3}, Landroid/widget/ImageView;->setOnClickListener(Landroid/view/View$OnClickListener;)V
 
-    .line 397
-    new-instance v0, Landroid/widget/TextView;
+    .line 360
+    new-instance p1, Landroid/widget/TextView;
 
-    invoke-direct {v0, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
+    invoke-direct {p1, p2}, Landroid/widget/TextView;-><init>(Landroid/content/Context;)V
 
-    iput-object v0, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
+    iput-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
 
-    const-string p2, "windowBackgroundWhiteGrayText4"
+    .line 361
+    sget p2, Lorg/telegram/ui/ActionBar/Theme;->key_windowBackgroundWhiteGrayText4:I
 
-    .line 398
-    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(Ljava/lang/String;)I
+    invoke-static {p2}, Lorg/telegram/ui/ActionBar/Theme;->getColor(I)I
 
     move-result p2
 
-    invoke-virtual {v0, p2}, Landroid/widget/TextView;->setTextColor(I)V
+    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setTextColor(I)V
 
-    .line 399
-    iget-object p2, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
-
-    const/4 v0, 0x1
-
-    const/high16 v2, 0x41600000    # 14.0f
-
-    invoke-virtual {p2, v0, v2}, Landroid/widget/TextView;->setTextSize(IF)V
-
-    .line 400
-    iget-object p2, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
-
-    const/16 v0, 0x11
-
-    invoke-virtual {p2, v0}, Landroid/widget/TextView;->setGravity(I)V
-
-    .line 402
-    invoke-static {p1}, Lorg/telegram/ui/FiltersSetupActivity;->access$000(Lorg/telegram/ui/FiltersSetupActivity;)Lcom/iMe/fork/enums/FilterActivityType;
-
-    move-result-object p1
-
-    if-ne p1, v1, :cond_2
-
-    .line 403
+    .line 362
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
 
-    sget p2, Lorg/telegram/messenger/R$string;->topic_new_info:I
+    const/4 p2, 0x1
 
-    invoke-static {p2}, Lorg/telegram/messenger/LocaleController;->getInternalString(I)Ljava/lang/String;
+    const/high16 p3, 0x41600000    # 14.0f
 
-    move-result-object p2
+    invoke-virtual {p1, p2, p3}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    goto :goto_2
-
-    .line 405
-    :cond_2
+    .line 363
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
 
-    sget p2, Lorg/telegram/messenger/R$string;->CreateNewFilterInfo:I
+    const/16 p2, 0x11
 
-    const/4 v0, 0x0
+    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setGravity(I)V
 
-    new-array v0, v0, [Ljava/lang/Object;
+    .line 364
+    iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
 
-    const-string v1, "CreateNewFilterInfo"
+    invoke-virtual {p1, p4}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
-    invoke-static {v1, p2, v0}, Lorg/telegram/messenger/LocaleController;->formatString(Ljava/lang/String;I[Ljava/lang/Object;)Ljava/lang/String;
-
-    move-result-object p2
-
-    invoke-static {p2}, Lorg/telegram/messenger/AndroidUtilities;->replaceTags(Ljava/lang/String;)Landroid/text/SpannableStringBuilder;
-
-    move-result-object p2
-
-    invoke-virtual {p1, p2}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
-
-    .line 406
-    :goto_2
+    .line 365
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->messageTextView:Landroid/widget/TextView;
 
     const/4 v0, -0x1
@@ -262,7 +222,7 @@
 .method private synthetic lambda$new$0(Landroid/view/View;)V
     .locals 1
 
-    .line 391
+    .line 354
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieImageView;->isPlaying()Z
@@ -271,14 +231,14 @@
 
     if-nez p1, :cond_0
 
-    .line 392
+    .line 355
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     const/4 v0, 0x0
 
     invoke-virtual {p1, v0}, Lorg/telegram/ui/Components/RLottieImageView;->setProgress(F)V
 
-    .line 393
+    .line 356
     iget-object p1, p0, Lorg/telegram/ui/FiltersSetupActivity$HintInnerCell;->imageView:Lorg/telegram/ui/Components/RLottieImageView;
 
     invoke-virtual {p1}, Lorg/telegram/ui/Components/RLottieImageView;->playAnimation()V
@@ -292,7 +252,7 @@
 .method protected onMeasure(II)V
     .locals 1
 
-    .line 411
+    .line 370
     invoke-static {p1}, Landroid/view/View$MeasureSpec;->getSize(I)I
 
     move-result p1

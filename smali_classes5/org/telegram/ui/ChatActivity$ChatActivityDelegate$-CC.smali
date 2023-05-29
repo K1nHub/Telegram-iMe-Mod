@@ -4,7 +4,7 @@
 
 
 # direct methods
-.method public static $default$onCompleteForwardingEditing(Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;Ljava/util/ArrayList;)V
+.method public static $default$onForwardingMessagesChanged(Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;Ljava/util/ArrayList;)V
     .locals 0
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -50,6 +50,12 @@
 .end method
 
 .method public static $default$openSearch(Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;Ljava/lang/String;)V
+    .locals 0
+
+    return-void
+.end method
+
+.method public static $default$setFieldText(Lorg/telegram/ui/ChatActivity$ChatActivityDelegate;Ljava/lang/CharSequence;)V
     .locals 0
 
     return-void

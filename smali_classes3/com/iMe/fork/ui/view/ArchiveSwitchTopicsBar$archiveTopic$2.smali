@@ -48,7 +48,7 @@
 .method public final invoke()Lcom/iMe/ui/topics/TopicView;
     .locals 2
 
-    .line 18
+    .line 17
     iget-object v0, p0, Lcom/iMe/fork/ui/view/ArchiveSwitchTopicsBar$archiveTopic$2;->this$0:Lcom/iMe/fork/ui/view/ArchiveSwitchTopicsBar;
 
     const/4 v1, 0x1
@@ -63,7 +63,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 18
+    .line 17
     invoke-virtual {p0}, Lcom/iMe/fork/ui/view/ArchiveSwitchTopicsBar$archiveTopic$2;->invoke()Lcom/iMe/ui/topics/TopicView;
 
     move-result-object v0

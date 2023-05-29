@@ -66,7 +66,7 @@
 
     move-result-object v0
 
-    const-string v1, "targetPath"
+    const-string/jumbo v1, "targetPath"
 
     invoke-static {v0, v1}, Lcom/google/common/base/Preconditions;->checkNotNull(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
 
@@ -81,7 +81,7 @@
 
     move-result v1
 
-    const-string v2, "the path component (%s) of the target (%s) must start with \'/\'"
+    const-string/jumbo v2, "the path component (%s) of the target (%s) must start with \'/\'"
 
     invoke-static {v1, v2, v0, p1}, Lcom/google/common/base/Preconditions;->checkArgument(ZLjava/lang/String;Ljava/lang/Object;Ljava/lang/Object;)V
 

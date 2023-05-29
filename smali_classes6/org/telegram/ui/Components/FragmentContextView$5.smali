@@ -24,7 +24,7 @@
 .method constructor <init>(Lorg/telegram/ui/Components/FragmentContextView;Landroid/content/Context;Landroid/content/Context;)V
     .locals 0
 
-    .line 447
+    .line 453
     iput-object p1, p0, Lorg/telegram/ui/Components/FragmentContextView$5;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
     iput-object p3, p0, Lorg/telegram/ui/Components/FragmentContextView$5;->val$context:Landroid/content/Context;
@@ -39,7 +39,7 @@
 .method protected createTextView()Landroid/widget/TextView;
     .locals 3
 
-    .line 450
+    .line 456
     new-instance v0, Landroid/widget/TextView;
 
     iget-object v1, p0, Lorg/telegram/ui/Components/FragmentContextView$5;->val$context:Landroid/content/Context;
@@ -48,36 +48,36 @@
 
     const/4 v1, 0x1
 
-    .line 451
+    .line 457
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setMaxLines(I)V
 
-    .line 452
+    .line 458
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setLines(I)V
 
-    .line 453
+    .line 459
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setSingleLine(Z)V
 
-    .line 454
+    .line 460
     sget-object v2, Landroid/text/TextUtils$TruncateAt;->END:Landroid/text/TextUtils$TruncateAt;
 
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setEllipsize(Landroid/text/TextUtils$TruncateAt;)V
 
     const/4 v2, 0x3
 
-    .line 455
+    .line 461
     invoke-virtual {v0, v2}, Landroid/widget/TextView;->setGravity(I)V
 
     const/high16 v2, 0x41500000    # 13.0f
 
-    .line 456
+    .line 462
     invoke-virtual {v0, v1, v2}, Landroid/widget/TextView;->setTextSize(IF)V
 
-    .line 457
+    .line 463
     iget-object v1, p0, Lorg/telegram/ui/Components/FragmentContextView$5;->this$0:Lorg/telegram/ui/Components/FragmentContextView;
 
-    const-string v2, "inappPlayerClose"
+    sget v2, Lorg/telegram/ui/ActionBar/Theme;->key_inappPlayerClose:I
 
-    invoke-static {v1, v2}, Lorg/telegram/ui/Components/FragmentContextView;->access$1600(Lorg/telegram/ui/Components/FragmentContextView;Ljava/lang/String;)I
+    invoke-static {v1, v2}, Lorg/telegram/ui/Components/FragmentContextView;->access$1600(Lorg/telegram/ui/Components/FragmentContextView;I)I
 
     move-result v1
 

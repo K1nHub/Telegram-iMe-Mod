@@ -63,12 +63,12 @@ public final class FabsView extends FrameLayout {
             Intrinsics.checkNotNullExpressionValue(childAt, "getChildAt(i)");
             Intrinsics.checkNotNull(childAt, "null cannot be cast to non-null type android.widget.ImageView");
             ImageView imageView = (ImageView) childAt;
-            imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor("chats_actionIcon"), PorterDuff.Mode.SRC_IN));
+            imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_actionIcon), PorterDuff.Mode.SRC_IN));
             GradientDrawable gradientDrawable = new GradientDrawable();
             gradientDrawable.setShape(1);
-            gradientDrawable.setStroke(AndroidUtilities.m50dp(1), Theme.getColor("windowBackgroundWhite"));
-            gradientDrawable.setColor(Theme.getColor("chats_actionBackground"));
-            gradientDrawable.setSize(AndroidUtilities.m50dp(36), AndroidUtilities.m50dp(36));
+            gradientDrawable.setStroke(AndroidUtilities.m54dp(1), Theme.getColor(Theme.key_windowBackgroundWhite));
+            gradientDrawable.setColor(Theme.getColor(Theme.key_chats_actionBackground));
+            gradientDrawable.setSize(AndroidUtilities.m54dp(36), AndroidUtilities.m54dp(36));
             imageView.setBackground(gradientDrawable);
         }
     }

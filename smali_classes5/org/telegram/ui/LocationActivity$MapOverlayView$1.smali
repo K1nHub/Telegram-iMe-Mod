@@ -31,7 +31,7 @@
 .method constructor <init>(Lorg/telegram/ui/LocationActivity$MapOverlayView;Landroid/widget/FrameLayout;)V
     .locals 0
 
-    .line 354
+    .line 355
     iput-object p1, p0, Lorg/telegram/ui/LocationActivity$MapOverlayView$1;->this$1:Lorg/telegram/ui/LocationActivity$MapOverlayView;
 
     iput-object p2, p0, Lorg/telegram/ui/LocationActivity$MapOverlayView$1;->val$iconLayout:Landroid/widget/FrameLayout;
@@ -42,7 +42,7 @@
 
     new-array p1, p1, [F
 
-    .line 357
+    .line 358
     fill-array-data p1, :array_0
 
     iput-object p1, p0, Lorg/telegram/ui/LocationActivity$MapOverlayView$1;->animatorValues:[F
@@ -61,7 +61,7 @@
 .method public onAnimationUpdate(Landroid/animation/ValueAnimator;)V
     .locals 7
 
-    .line 361
+    .line 362
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity$MapOverlayView$1;->animatorValues:[F
 
     invoke-virtual {p1}, Landroid/animation/ValueAnimator;->getAnimatedFraction()F
@@ -78,7 +78,7 @@
 
     if-ltz v0, :cond_0
 
-    .line 362
+    .line 363
     iget-boolean v0, p0, Lorg/telegram/ui/LocationActivity$MapOverlayView$1;->startedInner:Z
 
     if-nez v0, :cond_0
@@ -93,7 +93,7 @@
 
     if-eqz v0, :cond_0
 
-    .line 363
+    .line 364
     new-instance v0, Landroid/animation/AnimatorSet;
 
     invoke-direct {v0}, Landroid/animation/AnimatorSet;-><init>()V
@@ -104,12 +104,12 @@
 
     const/4 v2, 0x0
 
-    .line 364
+    .line 365
     iget-object v3, p0, Lorg/telegram/ui/LocationActivity$MapOverlayView$1;->this$1:Lorg/telegram/ui/LocationActivity$MapOverlayView;
 
     iget-object v3, v3, Lorg/telegram/ui/LocationActivity$MapOverlayView;->this$0:Lorg/telegram/ui/LocationActivity;
 
-    .line 365
+    .line 366
     invoke-static {v3}, Lorg/telegram/ui/LocationActivity;->access$300(Lorg/telegram/ui/LocationActivity;)Landroid/widget/FrameLayout;
 
     move-result-object v3
@@ -132,7 +132,7 @@
 
     iget-object v2, v2, Lorg/telegram/ui/LocationActivity$MapOverlayView;->this$0:Lorg/telegram/ui/LocationActivity;
 
-    .line 366
+    .line 367
     invoke-static {v2}, Lorg/telegram/ui/LocationActivity;->access$300(Lorg/telegram/ui/LocationActivity;)Landroid/widget/FrameLayout;
 
     move-result-object v2
@@ -155,7 +155,7 @@
 
     iget-object v2, v2, Lorg/telegram/ui/LocationActivity$MapOverlayView;->this$0:Lorg/telegram/ui/LocationActivity;
 
-    .line 367
+    .line 368
     invoke-static {v2}, Lorg/telegram/ui/LocationActivity;->access$300(Lorg/telegram/ui/LocationActivity;)Landroid/widget/FrameLayout;
 
     move-result-object v2
@@ -172,10 +172,10 @@
 
     aput-object v2, v1, v5
 
-    .line 364
+    .line 365
     invoke-virtual {v0, v1}, Landroid/animation/AnimatorSet;->playTogether([Landroid/animation/Animator;)V
 
-    .line 368
+    .line 369
     new-instance v1, Landroid/view/animation/OvershootInterpolator;
 
     const v2, 0x3f828f5c    # 1.02f
@@ -186,13 +186,13 @@
 
     const-wide/16 v1, 0xfa
 
-    .line 369
+    .line 370
     invoke-virtual {v0, v1, v2}, Landroid/animation/AnimatorSet;->setDuration(J)Landroid/animation/AnimatorSet;
 
-    .line 370
+    .line 371
     invoke-virtual {v0}, Landroid/animation/AnimatorSet;->start()V
 
-    .line 371
+    .line 372
     iput-boolean v3, p0, Lorg/telegram/ui/LocationActivity$MapOverlayView$1;->startedInner:Z
 
     :cond_0
@@ -204,7 +204,7 @@
 
     if-gtz v1, :cond_1
 
-    .line 375
+    .line 376
     sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     div-float/2addr p1, v0
@@ -230,7 +230,7 @@
 
     const v0, 0x3e4ccccd    # 0.2f
 
-    .line 378
+    .line 379
     sget-object v1, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     div-float/2addr p1, v4
@@ -252,7 +252,7 @@
 
     const v1, 0x3dcccccd    # 0.1f
 
-    .line 381
+    .line 382
     sget-object v2, Lorg/telegram/ui/Components/CubicBezierInterpolator;->EASE_OUT:Lorg/telegram/ui/Components/CubicBezierInterpolator;
 
     div-float/2addr p1, v4
@@ -265,13 +265,13 @@
 
     add-float/2addr p1, v0
 
-    .line 383
+    .line 384
     :goto_0
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity$MapOverlayView$1;->val$iconLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setScaleX(F)V
 
-    .line 384
+    .line 385
     iget-object v0, p0, Lorg/telegram/ui/LocationActivity$MapOverlayView$1;->val$iconLayout:Landroid/widget/FrameLayout;
 
     invoke-virtual {v0, p1}, Landroid/widget/FrameLayout;->setScaleY(F)V

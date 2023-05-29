@@ -2,7 +2,7 @@
 .super Ljava/lang/Object;
 
 # interfaces
-.implements Landroid/view/View$OnApplyWindowInsetsListener;
+.implements Landroid/content/DialogInterface$OnDismissListener;
 
 
 # instance fields
@@ -22,14 +22,12 @@
 
 
 # virtual methods
-.method public final onApplyWindowInsets(Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
+.method public final onDismiss(Landroid/content/DialogInterface;)V
     .locals 1
 
     iget-object v0, p0, Lorg/telegram/ui/PhotoViewer$$ExternalSyntheticLambda21;->f$0:Lorg/telegram/ui/PhotoViewer;
 
-    invoke-static {v0, p1, p2}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$0OZBVflXUv4aGBydFXXzZotemSA(Lorg/telegram/ui/PhotoViewer;Landroid/view/View;Landroid/view/WindowInsets;)Landroid/view/WindowInsets;
+    invoke-static {v0, p1}, Lorg/telegram/ui/PhotoViewer;->$r8$lambda$QV0_vo5RmsgFpxj9fAw1OlehuSM(Lorg/telegram/ui/PhotoViewer;Landroid/content/DialogInterface;)V
 
-    move-result-object p1
-
-    return-object p1
+    return-void
 .end method

@@ -7,8 +7,9 @@ import moxy.MvpPresenter;
 import moxy.MvpView;
 /* compiled from: BasePresenter.kt */
 /* renamed from: com.iMe.ui.base.mvp.base.BasePresenter */
-/* loaded from: classes3.dex */
+/* loaded from: classes.dex */
 public class BasePresenter<T extends MvpView> extends MvpPresenter<T> {
+    private Disposable singleDisposable;
     private final CompositeDisposable subscriptions = new CompositeDisposable();
 
     public static /* synthetic */ void autoDispose$default(BasePresenter basePresenter, Disposable disposable, CompositeDisposable compositeDisposable, int i, Object obj) {
@@ -29,7 +30,21 @@ public class BasePresenter<T extends MvpView> extends MvpPresenter<T> {
     }
 
     /* JADX INFO: Access modifiers changed from: protected */
+    public final void singleDispose(Disposable disposable) {
+        Intrinsics.checkNotNullParameter(disposable, "<this>");
+        Disposable disposable2 = this.singleDisposable;
+        if (disposable2 != null) {
+            disposable2.dispose();
+        }
+        this.singleDisposable = disposable;
+    }
+
+    /* JADX INFO: Access modifiers changed from: protected */
     public void clearSubscriptions() {
+        Disposable disposable = this.singleDisposable;
+        if (disposable != null) {
+            disposable.dispose();
+        }
         this.subscriptions.clear();
     }
 
