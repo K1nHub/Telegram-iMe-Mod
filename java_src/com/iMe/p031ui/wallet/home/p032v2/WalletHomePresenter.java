@@ -45,7 +45,7 @@ public final class WalletHomePresenter extends BasePresenter<WalletHomeView> {
         RxEventBus rxEventBus = this.rxEventBus;
         Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2241x5fff07b7(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2242x5fff07b8(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2246x5fff07b7(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2247x5fff07b8(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

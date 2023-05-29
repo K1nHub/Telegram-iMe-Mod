@@ -61,7 +61,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.LocaleController;
@@ -75,7 +75,7 @@ import org.telegram.messenger.camera.CameraView;
 import org.telegram.messenger.camera.Size;
 import org.telegram.p044ui.ActionBar.BaseFragment;
 import org.telegram.p044ui.ActionBar.BottomSheet;
-import org.telegram.p044ui.ActionBar.C3356ActionBar;
+import org.telegram.p044ui.ActionBar.C3361ActionBar;
 import org.telegram.p044ui.ActionBar.INavigationLayout;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
@@ -130,7 +130,7 @@ public class CameraScanActivity extends BaseFragment {
     private float recognizedT = BitmapDescriptorFactory.HUE_RED;
     private float newRecognizedT = BitmapDescriptorFactory.HUE_RED;
     private float useRecognizedBounds = BitmapDescriptorFactory.HUE_RED;
-    private Runnable requestShot = new RunnableC36067();
+    private Runnable requestShot = new RunnableC36117();
     private float averageProcessTime = BitmapDescriptorFactory.HUE_RED;
     private long processTimesCount = 0;
 
@@ -191,7 +191,7 @@ public class CameraScanActivity extends BaseFragment {
 
     /* renamed from: org.telegram.ui.CameraScanActivity$1 */
     /* loaded from: classes5.dex */
-    public class DialogC35991 extends BottomSheet {
+    public class DialogC36041 extends BottomSheet {
         CameraScanActivity fragment;
         final /* synthetic */ INavigationLayout[] val$actionBarLayout;
         final /* synthetic */ boolean val$allowCustomScan;
@@ -205,7 +205,7 @@ public class CameraScanActivity extends BaseFragment {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        DialogC35991(Context context, boolean z, INavigationLayout[] iNavigationLayoutArr, int i, boolean z2, boolean z3, CameraScanActivityDelegate cameraScanActivityDelegate) {
+        DialogC36041(Context context, boolean z, INavigationLayout[] iNavigationLayoutArr, int i, boolean z2, boolean z3, CameraScanActivityDelegate cameraScanActivityDelegate) {
             super(context, z);
             this.val$actionBarLayout = iNavigationLayoutArr;
             this.val$type = i;
@@ -215,18 +215,18 @@ public class CameraScanActivity extends BaseFragment {
             iNavigationLayoutArr[0].setFragmentStack(new ArrayList());
             CameraScanActivity cameraScanActivity = new CameraScanActivity(i) { // from class: org.telegram.ui.CameraScanActivity.1.1
                 {
-                    DialogC35991.this = this;
+                    DialogC36041.this = this;
                 }
 
                 @Override // org.telegram.p044ui.ActionBar.BaseFragment
                 public void finishFragment() {
                     setFinishing(true);
-                    DialogC35991.this.dismiss();
+                    DialogC36041.this.dismiss();
                 }
 
                 @Override // org.telegram.p044ui.ActionBar.BaseFragment
                 public void removeSelfFromStack() {
-                    DialogC35991.this.dismiss();
+                    DialogC36041.this.dismiss();
                 }
             };
             this.fragment = cameraScanActivity;
@@ -249,7 +249,7 @@ public class CameraScanActivity extends BaseFragment {
             setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.CameraScanActivity$1$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnDismissListener
                 public final void onDismiss(DialogInterface dialogInterface) {
-                    CameraScanActivity.DialogC35991.this.lambda$new$0(dialogInterface);
+                    CameraScanActivity.DialogC36041.this.lambda$new$0(dialogInterface);
                 }
             });
         }
@@ -280,14 +280,14 @@ public class CameraScanActivity extends BaseFragment {
         if (activity == null) {
             return null;
         }
-        DialogC35991 dialogC35991 = new DialogC35991(activity, false, new INavigationLayout[]{INavigationLayout.CC.newLayout(activity)}, i, z2, z, cameraScanActivityDelegate);
-        dialogC35991.setUseLightStatusBar(false);
-        AndroidUtilities.setLightNavigationBar(dialogC35991.getWindow(), false);
-        AndroidUtilities.setNavigationBarColor(dialogC35991.getWindow(), -16777216, false);
-        dialogC35991.setUseLightStatusBar(false);
-        dialogC35991.getWindow().addFlags(512);
-        dialogC35991.show();
-        return dialogC35991;
+        DialogC36041 dialogC36041 = new DialogC36041(activity, false, new INavigationLayout[]{INavigationLayout.CC.newLayout(activity)}, i, z2, z, cameraScanActivityDelegate);
+        dialogC36041.setUseLightStatusBar(false);
+        AndroidUtilities.setLightNavigationBar(dialogC36041.getWindow(), false);
+        AndroidUtilities.setNavigationBarColor(dialogC36041.getWindow(), -16777216, false);
+        dialogC36041.setUseLightStatusBar(false);
+        dialogC36041.getWindow().addFlags(512);
+        dialogC36041.show();
+        return dialogC36041;
     }
 
     public CameraScanActivity(int i) {
@@ -330,7 +330,7 @@ public class CameraScanActivity extends BaseFragment {
 
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
         if (this.shownAsBottomSheet) {
             this.actionBar.setItemsColor(-1, false);
             this.actionBar.setItemsBackgroundColor(-1, false);
@@ -344,12 +344,12 @@ public class CameraScanActivity extends BaseFragment {
         if (!AndroidUtilities.isTablet() && !isQr()) {
             this.actionBar.showActionModeTop();
         }
-        this.actionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.CameraScanActivity.2
+        this.actionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.CameraScanActivity.2
             {
                 CameraScanActivity.this = this;
             }
 
-            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
+            @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     CameraScanActivity.this.finishFragment();
@@ -537,9 +537,9 @@ public class CameraScanActivity extends BaseFragment {
             initCameraView();
         }
         if (this.currentType == 0) {
-            C3356ActionBar c3356ActionBar = this.actionBar;
+            C3361ActionBar c3361ActionBar = this.actionBar;
             int i = Theme.key_windowBackgroundWhite;
-            c3356ActionBar.setBackgroundColor(Theme.getColor(i));
+            c3361ActionBar.setBackgroundColor(Theme.getColor(i));
             this.fragmentView.setBackgroundColor(Theme.getColor(i));
         } else {
             this.actionBar.setBackgroundDrawable(null);
@@ -552,7 +552,7 @@ public class CameraScanActivity extends BaseFragment {
         }
         int i2 = this.currentType;
         if (i2 == 2 || i2 == 3) {
-            this.actionBar.setTitle(LocaleController.getString("AuthAnotherClientScan", C3290R.string.AuthAnotherClientScan));
+            this.actionBar.setTitle(LocaleController.getString("AuthAnotherClientScan", C3295R.string.AuthAnotherClientScan));
         }
         final Paint paint = new Paint(1);
         paint.setPathEffect(LinkPath.getRoundedEffect());
@@ -659,22 +659,22 @@ public class CameraScanActivity extends BaseFragment {
         this.recognizedMrzView.setAlpha(BitmapDescriptorFactory.HUE_RED);
         int i3 = this.currentType;
         if (i3 == 0) {
-            this.titleTextView.setText(LocaleController.getString("PassportScanPassport", C3290R.string.PassportScanPassport));
-            this.descriptionText.setText(LocaleController.getString("PassportScanPassportInfo", C3290R.string.PassportScanPassportInfo));
+            this.titleTextView.setText(LocaleController.getString("PassportScanPassport", C3295R.string.PassportScanPassport));
+            this.descriptionText.setText(LocaleController.getString("PassportScanPassportInfo", C3295R.string.PassportScanPassportInfo));
             this.titleTextView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
             this.recognizedMrzView.setTypeface(Typeface.MONOSPACE);
         } else {
             if (i3 == IdFabric$CustomType.QR_CODE_SCANNER_CHAT_LINK) {
-                this.titleTextView.setText(LocaleController.getInternalString(C3290R.string.dialogs_qr_scanner_chat_link_hint));
+                this.titleTextView.setText(LocaleController.getInternalString(C3295R.string.dialogs_qr_scanner_chat_link_hint));
                 this.titleTextView.setTextSize(1, 16.0f);
             } else if (!this.needGalleryButton) {
                 if (i3 == 1 || i3 == 3) {
-                    this.titleTextView.setText(LocaleController.getString("AuthAnotherClientScan", C3290R.string.AuthAnotherClientScan));
+                    this.titleTextView.setText(LocaleController.getString("AuthAnotherClientScan", C3295R.string.AuthAnotherClientScan));
                 } else {
-                    LocaleController.getString("AuthAnotherClientInfo5", C3290R.string.AuthAnotherClientInfo5);
-                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getInternalString(C3290R.string.AuthAnotherClientInfo4));
-                    LocaleController.getString("AuthAnotherClientDownloadClientUrl", C3290R.string.AuthAnotherClientDownloadClientUrl);
-                    LocaleController.getString("AuthAnotherWebClientUrl", C3290R.string.AuthAnotherWebClientUrl);
+                    LocaleController.getString("AuthAnotherClientInfo5", C3295R.string.AuthAnotherClientInfo5);
+                    SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getInternalString(C3295R.string.AuthAnotherClientInfo4));
+                    LocaleController.getString("AuthAnotherClientDownloadClientUrl", C3295R.string.AuthAnotherClientDownloadClientUrl);
+                    LocaleController.getString("AuthAnotherWebClientUrl", C3295R.string.AuthAnotherWebClientUrl);
                     String[] strArr = {"https://apps.apple.com/us/app/ime-messenger/id1450480822", BuildVars.PLAYSTORE_APP_URL, "https://imem.app/desktop"};
                     int i4 = 0;
                     for (int i5 = 3; i4 < i5; i5 = 3) {
@@ -708,14 +708,14 @@ public class CameraScanActivity extends BaseFragment {
             this.recognizedMrzView.setTextSize(1, 16.0f);
             this.recognizedMrzView.setPadding(AndroidUtilities.m54dp(10), 0, AndroidUtilities.m54dp(10), AndroidUtilities.m54dp(10));
             if (!this.needGalleryButton) {
-                this.recognizedMrzView.setText(LocaleController.getString("AuthAnotherClientNotFound", C3290R.string.AuthAnotherClientNotFound));
+                this.recognizedMrzView.setText(LocaleController.getString("AuthAnotherClientNotFound", C3295R.string.AuthAnotherClientNotFound));
             }
             viewGroup.addView(this.recognizedMrzView);
             if (this.needGalleryButton) {
                 ImageView imageView = new ImageView(context);
                 this.galleryButton = imageView;
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
-                this.galleryButton.setImageResource(C3290R.C3292drawable.qr_gallery);
+                this.galleryButton.setImageResource(C3295R.C3297drawable.qr_gallery);
                 this.galleryButton.setBackgroundDrawable(Theme.createSelectorDrawableFromDrawables(Theme.createCircleDrawable(AndroidUtilities.m54dp(60), 587202559), Theme.createCircleDrawable(AndroidUtilities.m54dp(60), 1157627903)));
                 viewGroup.addView(this.galleryButton);
                 this.galleryButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CameraScanActivity$$ExternalSyntheticLambda2
@@ -728,7 +728,7 @@ public class CameraScanActivity extends BaseFragment {
             ImageView imageView2 = new ImageView(context);
             this.flashButton = imageView2;
             imageView2.setScaleType(ImageView.ScaleType.CENTER);
-            this.flashButton.setImageResource(C3290R.C3292drawable.qr_flashlight);
+            this.flashButton.setImageResource(C3295R.C3297drawable.qr_flashlight);
             this.flashButton.setBackgroundDrawable(Theme.createCircleDrawable(AndroidUtilities.m54dp(60), 587202559));
             viewGroup.addView(this.flashButton);
             this.flashButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.CameraScanActivity$$ExternalSyntheticLambda3
@@ -778,7 +778,7 @@ public class CameraScanActivity extends BaseFragment {
                             CameraScanActivity.this.removeSelfFromStack();
                         }
                         if (tryReadQr == null && CameraScanActivity.this.isAllowCustomScan) {
-                            ContextExtKt.toast(LocaleController.getInternalString(C3290R.string.custom_qr_error));
+                            ContextExtKt.toast(LocaleController.getInternalString(C3295R.string.custom_qr_error));
                             CameraScanActivity.this.removeSelfFromStack();
                         }
                     }
@@ -1070,8 +1070,8 @@ public class CameraScanActivity extends BaseFragment {
 
     /* renamed from: org.telegram.ui.CameraScanActivity$7 */
     /* loaded from: classes5.dex */
-    public class RunnableC36067 implements Runnable {
-        RunnableC36067() {
+    public class RunnableC36117 implements Runnable {
+        RunnableC36117() {
             CameraScanActivity.this = r1;
         }
 
@@ -1083,7 +1083,7 @@ public class CameraScanActivity extends BaseFragment {
             CameraScanActivity.this.handler.post(new Runnable() { // from class: org.telegram.ui.CameraScanActivity$7$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    CameraScanActivity.RunnableC36067.this.lambda$run$0();
+                    CameraScanActivity.RunnableC36117.this.lambda$run$0();
                 }
             });
         }
@@ -1334,7 +1334,7 @@ public class CameraScanActivity extends BaseFragment {
         private QrResult(CameraScanActivity cameraScanActivity) {
         }
 
-        /* synthetic */ QrResult(CameraScanActivity cameraScanActivity, DialogC35991 dialogC35991) {
+        /* synthetic */ QrResult(CameraScanActivity cameraScanActivity, DialogC36041 dialogC36041) {
             this(cameraScanActivity);
         }
     }

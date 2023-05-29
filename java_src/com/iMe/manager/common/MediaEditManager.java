@@ -21,7 +21,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.LocaleController;
@@ -112,7 +112,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
         if (rLottieDrawable == null) {
             return;
         }
-        showLoading$default(this, C3290R.string.custom_avatar_processing, null, 2, null);
+        showLoading$default(this, C3295R.string.custom_avatar_processing, null, 2, null);
         if (z) {
             prepareAvatarEditing();
         }
@@ -150,7 +150,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
             this.notificationCenter.addObserver(this, this.fileLoadingObserver);
             this.loadingFileUrl = nftTokenUrl;
             getImageLoader().loadHttpFile(nftTokenUrl, ext, this.currentAccount);
-            showLoading(C3290R.string.custom_avatar_downloading, new MediaEditManager$setNftAvatar$1(this, nftTokenUrl));
+            showLoading(C3295R.string.custom_avatar_downloading, new MediaEditManager$setNftAvatar$1(this, nftTokenUrl));
             return;
         }
         onCommonError();
@@ -322,7 +322,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
             r4.convertGifNft(r5)
             goto L77
         L67:
-            int r5 = org.telegram.messenger.C3290R.string.ImportErrorFileFormatInvalid
+            int r5 = org.telegram.messenger.C3295R.string.ImportErrorFileFormatInvalid
             java.lang.String r0 = "ImportErrorFileFormatInvalid"
             java.lang.String r5 = org.telegram.messenger.LocaleController.getString(r0, r5)
             java.lang.String r0 = "getString(\"ImportErrorFi…rtErrorFileFormatInvalid)"
@@ -362,7 +362,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
             }
         }).compress();
         Intrinsics.checkNotNullExpressionValue(compress, "private fun convertGifNf…cel(true)\n        }\n    }");
-        showLoading(C3290R.string.custom_avatar_processing, new MediaEditManager$convertGifNft$1(compress));
+        showLoading(C3295R.string.custom_avatar_processing, new MediaEditManager$convertGifNft$1(compress));
     }
 
     private final void prepareAvatarEditing() {
@@ -431,7 +431,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
             tLRPC$TL_photos_uploadProfilePhoto.video_start_ts = d;
             tLRPC$TL_photos_uploadProfilePhoto.flags = i | 4;
         }
-        showLoading(C3290R.string.custom_avatar_upload, new MediaEditManager$changeAvatar$1(this, this.parentFragment.getConnectionsManager().sendRequest(tLRPC$TL_photos_uploadProfilePhoto, new RequestDelegate() { // from class: com.iMe.manager.common.MediaEditManager$$ExternalSyntheticLambda3
+        showLoading(C3295R.string.custom_avatar_upload, new MediaEditManager$changeAvatar$1(this, this.parentFragment.getConnectionsManager().sendRequest(tLRPC$TL_photos_uploadProfilePhoto, new RequestDelegate() { // from class: com.iMe.manager.common.MediaEditManager$$ExternalSyntheticLambda3
             @Override // org.telegram.tgnet.RequestDelegate
             public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
                 MediaEditManager.changeAvatar$lambda$9(MediaEditManager.this, str, tLRPC$PhotoSize2, tLRPC$PhotoSize, tLObject, tLRPC$TL_error);
@@ -483,7 +483,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
             messagesStorage.clearUserPhotos(user.f1574id);
             arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(user);
             messagesStorage.putUsersAndChats(arrayListOf, null, false, true);
-            String internalString = LocaleController.getInternalString(C3290R.string.custom_avatar_success);
+            String internalString = LocaleController.getInternalString(C3295R.string.custom_avatar_success);
             Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.string.custom_avatar_success)");
             ContextExtKt.toast(internalString);
         }
@@ -528,7 +528,7 @@ public final class MediaEditManager implements NotificationCenter.NotificationCe
     }
 
     private final void onCommonError() {
-        String string = LocaleController.getString("ErrorOccurred", C3290R.string.ErrorOccurred);
+        String string = LocaleController.getString("ErrorOccurred", C3295R.string.ErrorOccurred);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"ErrorOccurred\", R.string.ErrorOccurred)");
         ContextExtKt.toast(string);
     }

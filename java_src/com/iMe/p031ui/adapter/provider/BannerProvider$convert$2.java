@@ -7,7 +7,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.p044ui.ActionBar.Theme;
 import ru.tinkoff.scrollingpagerindicator.ScrollingPagerIndicator;
 /* compiled from: BannerProvider.kt */
@@ -32,7 +32,7 @@ final class BannerProvider$convert$2 extends Lambda implements Function1<Scrolli
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2(ScrollingPagerIndicator applyForView) {
         Intrinsics.checkNotNullParameter(applyForView, "$this$applyForView");
-        applyForView.attachToRecyclerView((RecyclerView) this.$helper.getView(C3290R.C3293id.recycle_banners));
+        applyForView.attachToRecyclerView((RecyclerView) this.$helper.getView(C3295R.C3298id.recycle_banners));
         int i = Theme.key_chats_actionBackground;
         applyForView.setSelectedDotColor(Theme.getColor(i));
         applyForView.setDotColor(ViewExtKt.withAlpha(Theme.getColor(i), 55));

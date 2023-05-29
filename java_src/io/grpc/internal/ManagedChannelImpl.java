@@ -352,7 +352,7 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
 
     /* JADX INFO: Access modifiers changed from: package-private */
     public ManagedChannelImpl(AbstractManagedChannelImplBuilder<?> abstractManagedChannelImplBuilder, ClientTransportFactory clientTransportFactory, BackoffPolicy.Provider provider, ObjectPool<? extends Executor> objectPool, Supplier<Stopwatch> supplier, List<ClientInterceptor> list, final TimeProvider timeProvider) {
-        C25511 c25511;
+        C25561 c25561;
         SynchronizationContext synchronizationContext = new SynchronizationContext(new Thread.UncaughtExceptionHandler() { // from class: io.grpc.internal.ManagedChannelImpl.1
             @Override // java.lang.Thread.UncaughtExceptionHandler
             public void uncaughtException(Thread thread, Throwable th) {
@@ -430,9 +430,9 @@ public final class ManagedChannelImpl extends ManagedChannel implements Internal
             ServiceConfigHolder serviceConfigHolder = new ServiceConfigHolder(abstractManagedChannelImplBuilder.defaultServiceConfig, (ManagedChannelServiceConfig) parseServiceConfig.getConfig());
             this.defaultServiceConfig = serviceConfigHolder;
             this.lastServiceConfig = serviceConfigHolder;
-            c25511 = null;
+            c25561 = null;
         } else {
-            c25511 = null;
+            c25561 = null;
             this.defaultServiceConfig = null;
         }
         boolean z2 = abstractManagedChannelImplBuilder.lookUpServiceConfig;

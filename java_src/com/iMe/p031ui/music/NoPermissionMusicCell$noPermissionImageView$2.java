@@ -7,7 +7,7 @@ import android.widget.ImageView;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.internal.Lambda;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.p044ui.ActionBar.Theme;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: NoPermissionMusicCell.kt */
@@ -38,7 +38,7 @@ public final class NoPermissionMusicCell$noPermissionImageView$2 extends Lambda 
         int m55dp = AndroidUtilities.m55dp(100.0f);
         i2 = noPermissionMusicCell.iconCircleColor;
         imageView.setBackground(Theme.createCircleDrawable(m55dp, Theme.getColor(i2)));
-        imageView.setImageResource(C3290R.C3292drawable.fork_music_device_no_storage_permission);
+        imageView.setImageResource(C3295R.C3297drawable.fork_music_device_no_storage_permission);
         return imageView;
     }
 }

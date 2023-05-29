@@ -41,7 +41,7 @@ import kotlin.ranges.IntRange;
 import kotlin.ranges.RangesKt___RangesKt;
 import kotlin.text.StringsKt__StringsJVMKt;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
@@ -323,9 +323,9 @@ public final class PushNotificationsManager {
         intent.putExtra("userId", pushNotificationModel.getUserId());
         PendingIntent activity = PendingIntent.getActivity(ApplicationLoader.applicationContext, 0, intent, 1107296256);
         if (Build.VERSION.SDK_INT >= 26 && from.getNotificationChannel("iMe Messenger") == null) {
-            from.createNotificationChannel(new NotificationChannel("iMe Messenger", LocaleController.getString("AppName", C3290R.string.AppName), 3));
+            from.createNotificationChannel(new NotificationChannel("iMe Messenger", LocaleController.getString("AppName", C3295R.string.AppName), 3));
         }
-        Notification build = new NotificationCompat.Builder(ApplicationLoader.applicationContext, "iMe Messenger").setContentTitle(LocaleController.getString("AppName", C3290R.string.AppName)).setContentText(pushNotificationModel.getMessage()).setSmallIcon(C3290R.C3292drawable.fork_notification).setAutoCancel(true).setGroupSummary(true).setGroup(LocaleController.getInternalString(C3290R.string.drawer_wallet_item_title)).setContentIntent(activity).setColor(ContextCompat.getColor(ApplicationLoader.applicationContext, C3290R.C3291color.fork_color)).setCategory("msg").build();
+        Notification build = new NotificationCompat.Builder(ApplicationLoader.applicationContext, "iMe Messenger").setContentTitle(LocaleController.getString("AppName", C3295R.string.AppName)).setContentText(pushNotificationModel.getMessage()).setSmallIcon(C3295R.C3297drawable.fork_notification).setAutoCancel(true).setGroupSummary(true).setGroup(LocaleController.getInternalString(C3295R.string.drawer_wallet_item_title)).setContentIntent(activity).setColor(ContextCompat.getColor(ApplicationLoader.applicationContext, C3295R.C3296color.fork_color)).setCategory("msg").build();
         Intrinsics.checkNotNullExpressionValue(build, "Builder(ApplicationLoade…\n                .build()");
         from.notify((int) System.currentTimeMillis(), build);
     }

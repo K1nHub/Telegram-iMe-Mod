@@ -74,7 +74,7 @@ public final class SimplexInteractor {
         Intrinsics.checkNotNullParameter(fiatCurrency, "fiatCurrency");
         Intrinsics.checkNotNullParameter(digitalCurrency, "digitalCurrency");
         Intrinsics.checkNotNullParameter(networkType, "networkType");
-        Observable<R> map = this.simplexRepository.getBuyingCryptoQuote(formatQuotesArgs(fiatCurrency, digitalCurrency, networkType)).map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1971xd12431bd(this)));
+        Observable<R> map = this.simplexRepository.getBuyingCryptoQuote(formatQuotesArgs(fiatCurrency, digitalCurrency, networkType)).map(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1976xd12431bd(this)));
         Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
         Observable<Result<List<BuyingCryptoQuote>>> startWith = map.subscribeOn(this.schedulersProvider.mo699io()).startWith((Observable) Result.Companion.loading$default(Result.Companion, null, 1, null));
         Intrinsics.checkNotNullExpressionValue(startWith, "simplexRepository\n      …artWith(Result.loading())");

@@ -26,11 +26,11 @@ public final class EnterWalletPinFragment$presenter$2 extends Lambda implements 
     /* compiled from: EnterWalletPinFragment.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.enter.pin.EnterWalletPinFragment$presenter$2$1 */
     /* loaded from: classes3.dex */
-    public static final class C21671 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C21721 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ EnterWalletPinFragment this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C21671(EnterWalletPinFragment enterWalletPinFragment) {
+        C21721(EnterWalletPinFragment enterWalletPinFragment) {
             super(0);
             this.this$0 = enterWalletPinFragment;
         }
@@ -48,7 +48,7 @@ public final class EnterWalletPinFragment$presenter$2 extends Lambda implements 
     public final EnterWalletPinPresenter invoke() {
         Lazy lazy;
         EnterWalletPinFragment enterWalletPinFragment = this.this$0;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2164x2e9da3aa(enterWalletPinFragment, null, new C21671(enterWalletPinFragment)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2169x2e9da3aa(enterWalletPinFragment, null, new C21721(enterWalletPinFragment)));
         return (EnterWalletPinPresenter) lazy.getValue();
     }
 }

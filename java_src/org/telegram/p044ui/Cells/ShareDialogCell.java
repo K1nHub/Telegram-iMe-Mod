@@ -16,7 +16,7 @@ import androidx.dynamicanimation.animation.SpringAnimation;
 import androidx.dynamicanimation.animation.SpringForce;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
@@ -129,11 +129,11 @@ public class ShareDialogCell extends FrameLayout {
             this.user = user;
             this.avatarDrawable.setInfo(user);
             if (this.currentType != 2 && UserObject.isReplyUser(this.user)) {
-                this.nameTextView.setText(LocaleController.getString("RepliesTitle", C3290R.string.RepliesTitle));
+                this.nameTextView.setText(LocaleController.getString("RepliesTitle", C3295R.string.RepliesTitle));
                 this.avatarDrawable.setAvatarType(12);
                 this.imageView.setImage((ImageLocation) null, (String) null, this.avatarDrawable, this.user);
             } else if (this.currentType != 2 && UserObject.isUserSelf(this.user)) {
-                this.nameTextView.setText(LocaleController.getString("SavedMessages", C3290R.string.SavedMessages));
+                this.nameTextView.setText(LocaleController.getString("SavedMessages", C3295R.string.SavedMessages));
                 this.avatarDrawable.setAvatarType(1);
                 this.imageView.setImage((ImageLocation) null, (String) null, this.avatarDrawable, this.user);
             } else {
@@ -162,7 +162,7 @@ public class ShareDialogCell extends FrameLayout {
             }
             this.avatarDrawable.setInfo(chat);
             if (this.currentType != 2 && chat != null && ChatObject.isTemplatesChat(this.currentAccount, chat.f1433id)) {
-                this.nameTextView.setText(LocaleController.getInternalString(C3290R.string.chat_templates));
+                this.nameTextView.setText(LocaleController.getInternalString(C3295R.string.chat_templates));
                 this.avatarDrawable.setAvatarType(101);
                 this.imageView.setImage((ImageLocation) null, (String) null, this.avatarDrawable, chat);
             } else {
@@ -193,7 +193,7 @@ public class ShareDialogCell extends FrameLayout {
             return;
         }
         SimpleTextView simpleTextView = this.topicTextView;
-        int i = C3290R.C3293id.spring_tag;
+        int i = C3295R.C3298id.spring_tag;
         SpringAnimation springAnimation = (SpringAnimation) simpleTextView.getTag(i);
         if (springAnimation != null) {
             springAnimation.cancel();
@@ -248,7 +248,7 @@ public class ShareDialogCell extends FrameLayout {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$setTopic$2(DynamicAnimation dynamicAnimation, boolean z, float f, float f2) {
-        this.topicTextView.setTag(C3290R.C3293id.spring_tag, null);
+        this.topicTextView.setTag(C3295R.C3298id.spring_tag, null);
     }
 
     @Override // android.view.ViewGroup

@@ -5,5 +5,5 @@ import kotlin.Unit;
 /* loaded from: classes4.dex */
 public interface Delay {
     /* renamed from: scheduleResumeAfterDelay */
-    void mo1605scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation);
+    void mo1607scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation);
 }

@@ -27,7 +27,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -102,21 +102,21 @@ public class AcceptDeclineView extends View {
         TextPaint textPaint = new TextPaint(1);
         textPaint.setTextSize(AndroidUtilities.m54dp(11));
         textPaint.setColor(-1);
-        String string = LocaleController.getString("AcceptCall", C3290R.string.AcceptCall);
-        String string2 = LocaleController.getString("DeclineCall", C3290R.string.DeclineCall);
-        String string3 = LocaleController.getString("RetryCall", C3290R.string.RetryCall);
+        String string = LocaleController.getString("AcceptCall", C3295R.string.AcceptCall);
+        String string2 = LocaleController.getString("DeclineCall", C3295R.string.DeclineCall);
+        String string3 = LocaleController.getString("RetryCall", C3295R.string.RetryCall);
         this.acceptLayout = new StaticLayout(string, textPaint, (int) textPaint.measureText(string), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
         this.declineLayout = new StaticLayout(string2, textPaint, (int) textPaint.measureText(string2), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
         this.retryLayout = new StaticLayout(string3, textPaint, (int) textPaint.measureText(string3), Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
-        this.callDrawable = ContextCompat.getDrawable(context, C3290R.C3292drawable.calls_decline).mutate();
-        Drawable mutate = ContextCompat.getDrawable(context, C3290R.C3292drawable.ic_close_white).mutate();
+        this.callDrawable = ContextCompat.getDrawable(context, C3295R.C3297drawable.calls_decline).mutate();
+        Drawable mutate = ContextCompat.getDrawable(context, C3295R.C3297drawable.ic_close_white).mutate();
         this.cancelDrawable = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
         this.acceptCirclePaint.setColor(1061534797);
         Drawable createSimpleSelectorCircleDrawable = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.m54dp(52), 0, ColorUtils.setAlphaComponent(-1, 76));
         this.rippleDrawable = createSimpleSelectorCircleDrawable;
         createSimpleSelectorCircleDrawable.setCallback(this);
-        this.arrowDrawable = ContextCompat.getDrawable(context, C3290R.C3292drawable.call_arrow_right);
+        this.arrowDrawable = ContextCompat.getDrawable(context, C3295R.C3297drawable.call_arrow_right);
     }
 
     @Override // android.view.View

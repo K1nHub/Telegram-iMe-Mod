@@ -21,6 +21,9 @@
     .end annotation
 .end method
 
+.method public abstract getBTCWallet()Lcom/iMe/storage/domain/model/crypto/Wallet$BTC;
+.end method
+
 .method public abstract getCreatedWalletsBlockchains()Ljava/util/List;
     .annotation system Ldalvik/annotation/Signature;
         value = {

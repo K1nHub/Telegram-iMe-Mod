@@ -8,7 +8,7 @@ import org.telegram.p044ui.ActionBar.BaseFragment;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletConnectMessageSignBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.message_sign.WalletConnectMessageSignBottomSheetDialog$binding$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletConnectMessageSignBottomSheetDialog$binding$2 extends Lambda implements Function0<ForkContentWalletConnectMessageSignBinding> {
     final /* synthetic */ WalletConnectMessageSignBottomSheetDialog this$0;
 

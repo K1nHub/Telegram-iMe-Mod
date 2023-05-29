@@ -15,7 +15,7 @@ import com.iMe.common.IdFabric$CustomType;
 import com.iMe.fork.controller.ForkCommonController;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
@@ -59,7 +59,7 @@ public class DrawerUserCell extends FrameLayout implements NotificationCenter.No
     private void addMuteButton() {
         ImageView imageView = new ImageView(getContext());
         this.muteButton = imageView;
-        imageView.setImageResource(C3290R.C3292drawable.msg_unmute);
+        imageView.setImageResource(C3295R.C3297drawable.msg_unmute);
         this.muteButton.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         this.muteButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_menuItemIcon), PorterDuff.Mode.MULTIPLY));
         this.muteButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.DrawerUserCell$$ExternalSyntheticLambda0
@@ -82,9 +82,9 @@ public class DrawerUserCell extends FrameLayout implements NotificationCenter.No
             toast.cancel();
         }
         if (getForkCommonController().isAccountMuted()) {
-            string = LocaleController.getString("NotificationsMutedHint", C3290R.string.NotificationsMutedHint);
+            string = LocaleController.getString("NotificationsMutedHint", C3295R.string.NotificationsMutedHint);
         } else {
-            string = LocaleController.getString("NotificationsUnmutedHint", C3290R.string.NotificationsUnmutedHint);
+            string = LocaleController.getString("NotificationsUnmutedHint", C3295R.string.NotificationsUnmutedHint);
         }
         Toast makeText = Toast.makeText(ApplicationLoader.applicationContext, string, 0);
         this.currentMuteToast = makeText;
@@ -94,7 +94,7 @@ public class DrawerUserCell extends FrameLayout implements NotificationCenter.No
     private void updateMuteButtonIcon() {
         ImageView imageView = this.muteButton;
         if (imageView != null) {
-            imageView.setImageResource(getForkCommonController().isAccountMuted() ? C3290R.C3292drawable.msg_mute : C3290R.C3292drawable.msg_unmute);
+            imageView.setImageResource(getForkCommonController().isAccountMuted() ? C3295R.C3297drawable.msg_mute : C3295R.C3297drawable.msg_unmute);
         }
     }
 

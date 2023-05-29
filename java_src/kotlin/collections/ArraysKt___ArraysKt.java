@@ -153,6 +153,18 @@ public class ArraysKt___ArraysKt extends ArraysKt___ArraysJvmKt {
         }
     }
 
+    public static List<Byte> reversed(byte[] bArr) {
+        List<Byte> emptyList;
+        Intrinsics.checkNotNullParameter(bArr, "<this>");
+        if (bArr.length == 0) {
+            emptyList = CollectionsKt__CollectionsKt.emptyList();
+            return emptyList;
+        }
+        List<Byte> mutableList = toMutableList(bArr);
+        CollectionsKt___CollectionsJvmKt.reverse(mutableList);
+        return mutableList;
+    }
+
     /* JADX WARN: Type inference failed for: r1v1, types: [kotlin.collections.IntIterator, java.util.Iterator] */
     public static float[] reversedArray(float[] fArr) {
         Intrinsics.checkNotNullParameter(fArr, "<this>");

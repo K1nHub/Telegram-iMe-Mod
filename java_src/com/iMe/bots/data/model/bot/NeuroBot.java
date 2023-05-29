@@ -142,7 +142,7 @@ public final class NeuroBot implements AigramBot {
                         Intrinsics.checkNotNullParameter(exception, "exception");
                         Continuation<Object> continuation2 = safeContinuation;
                         Result.Companion companion = Result.Companion;
-                        continuation2.resumeWith(Result.m1574constructorimpl(ResultKt.createFailure(exception)));
+                        continuation2.resumeWith(Result.m1576constructorimpl(ResultKt.createFailure(exception)));
                     }
                 });
             }

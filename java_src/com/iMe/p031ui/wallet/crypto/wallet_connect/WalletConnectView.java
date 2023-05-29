@@ -9,7 +9,7 @@ import moxy.viewstate.strategy.alias.OneExecution;
 /* compiled from: WalletConnectView.kt */
 @AddToEndSingle
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectView */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public interface WalletConnectView extends BaseView, SwitchNetworkView {
     void setupSessionsItems(List<WalletConnectSessionItem> list);
 

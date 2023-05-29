@@ -8,7 +8,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletConnectFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment$setupListeners$1$3 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletConnectFragment$setupListeners$1$3 extends Lambda implements Function1<View, Unit> {
     final /* synthetic */ WalletConnectFragment this$0;
 

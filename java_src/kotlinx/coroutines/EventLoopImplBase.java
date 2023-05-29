@@ -19,7 +19,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
     private volatile /* synthetic */ int _isCompleted = 0;
 
     /* JADX INFO: Access modifiers changed from: private */
-    /* JADX WARN: Type inference failed for: r0v0, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r0v0, types: [boolean, int] */
     public final boolean isCompleted() {
         return this._isCompleted;
     }
@@ -90,7 +90,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
 
     @Override // kotlinx.coroutines.Delay
     /* renamed from: scheduleResumeAfterDelay */
-    public void mo1605scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation) {
+    public void mo1607scheduleResumeAfterDelay(long j, CancellableContinuation<? super Unit> cancellableContinuation) {
         long delayToNanos = EventLoop_commonKt.delayToNanos(j);
         if (delayToNanos < 4611686018427387903L) {
             AbstractTimeSourceKt.getTimeSource();
@@ -167,7 +167,7 @@ public abstract class EventLoopImplBase extends EventLoopImplPlatform implements
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public final void mo1604dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+    public final void mo1606dispatch(CoroutineContext coroutineContext, Runnable runnable) {
         enqueue(runnable);
     }
 

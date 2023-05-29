@@ -19,7 +19,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentWalletChooseRecipientOptionsBinding;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -154,17 +154,17 @@ public final class ChooseRecipientOptionsView extends FrameLayout implements Koi
     private final void setupViews() {
         ForkContentWalletChooseRecipientOptionsBinding forkContentWalletChooseRecipientOptionsBinding = this.binding;
         TextView setupViews$lambda$7$lambda$4 = forkContentWalletChooseRecipientOptionsBinding.textContacts;
-        setupViews$lambda$7$lambda$4.setText(LocaleController.getString("Contacts", C3290R.string.Contacts));
+        setupViews$lambda$7$lambda$4.setText(LocaleController.getString("Contacts", C3295R.string.Contacts));
         Intrinsics.checkNotNullExpressionValue(setupViews$lambda$7$lambda$4, "setupViews$lambda$7$lambda$4");
-        setSizedStartIcon(setupViews$lambda$7$lambda$4, C3290R.C3292drawable.fork_drawer_social_telegram);
+        setSizedStartIcon(setupViews$lambda$7$lambda$4, C3295R.C3297drawable.fork_drawer_social_telegram);
         TextView setupViews$lambda$7$lambda$5 = forkContentWalletChooseRecipientOptionsBinding.textTwitter;
-        setupViews$lambda$7$lambda$5.setText(getResourceManager().getString(C3290R.string.drawer_social_network_twitter));
+        setupViews$lambda$7$lambda$5.setText(getResourceManager().getString(C3295R.string.drawer_social_network_twitter));
         Intrinsics.checkNotNullExpressionValue(setupViews$lambda$7$lambda$5, "setupViews$lambda$7$lambda$5");
-        setSizedStartIcon(setupViews$lambda$7$lambda$5, C3290R.C3292drawable.fork_drawer_social_twitter);
+        setSizedStartIcon(setupViews$lambda$7$lambda$5, C3295R.C3297drawable.fork_drawer_social_twitter);
         TextView setupViews$lambda$7$lambda$6 = forkContentWalletChooseRecipientOptionsBinding.textQr;
-        setupViews$lambda$7$lambda$6.setText(getResourceManager().getString(C3290R.string.wallet_backup_secret_words_qr_title));
+        setupViews$lambda$7$lambda$6.setText(getResourceManager().getString(C3295R.string.wallet_backup_secret_words_qr_title));
         Intrinsics.checkNotNullExpressionValue(setupViews$lambda$7$lambda$6, "setupViews$lambda$7$lambda$6");
-        setSizedStartIcon(setupViews$lambda$7$lambda$6, C3290R.C3292drawable.msg_qrcode);
+        setSizedStartIcon(setupViews$lambda$7$lambda$6, C3295R.C3297drawable.msg_qrcode);
     }
 
     private final void setSizedStartIcon(TextView textView, int i) {

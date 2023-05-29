@@ -5,6 +5,7 @@ import com.iMe.storage.data.utils.extentions.NumberExtKt;
 import com.iMe.storage.domain.model.crypto.TronBlockHeader;
 import com.iMe.storage.domain.utils.crypto.Convert;
 import java.math.BigInteger;
+import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TransferArgs.kt */
@@ -383,6 +384,122 @@ public abstract class TransferArgs implements TransactionArgs {
             this.feeLimit = feeLimit;
             this.contractAddress = str;
             this.blockHeader = blockHeader;
+        }
+    }
+
+    /* compiled from: TransferArgs.kt */
+    /* loaded from: classes3.dex */
+    public static final class BTC extends TransferArgs {
+        private final double amount;
+        private final BigInteger byteFee;
+        private final String changeAddress;
+        private final String recipientAddress;
+        private final List<BitcoinUnspentOutput> utxos;
+
+        public static /* synthetic */ BTC copy$default(BTC btc, double d, String str, List list, String str2, BigInteger bigInteger, int i, Object obj) {
+            if ((i & 1) != 0) {
+                d = btc.getAmount();
+            }
+            double d2 = d;
+            if ((i & 2) != 0) {
+                str = btc.recipientAddress;
+            }
+            String str3 = str;
+            List<BitcoinUnspentOutput> list2 = list;
+            if ((i & 4) != 0) {
+                list2 = btc.utxos;
+            }
+            List list3 = list2;
+            if ((i & 8) != 0) {
+                str2 = btc.changeAddress;
+            }
+            String str4 = str2;
+            if ((i & 16) != 0) {
+                bigInteger = btc.byteFee;
+            }
+            return btc.copy(d2, str3, list3, str4, bigInteger);
+        }
+
+        public final double component1() {
+            return getAmount();
+        }
+
+        public final String component2() {
+            return this.recipientAddress;
+        }
+
+        public final List<BitcoinUnspentOutput> component3() {
+            return this.utxos;
+        }
+
+        public final String component4() {
+            return this.changeAddress;
+        }
+
+        public final BigInteger component5() {
+            return this.byteFee;
+        }
+
+        public final BTC copy(double d, String recipientAddress, List<BitcoinUnspentOutput> utxos, String changeAddress, BigInteger byteFee) {
+            Intrinsics.checkNotNullParameter(recipientAddress, "recipientAddress");
+            Intrinsics.checkNotNullParameter(utxos, "utxos");
+            Intrinsics.checkNotNullParameter(changeAddress, "changeAddress");
+            Intrinsics.checkNotNullParameter(byteFee, "byteFee");
+            return new BTC(d, recipientAddress, utxos, changeAddress, byteFee);
+        }
+
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj instanceof BTC) {
+                BTC btc = (BTC) obj;
+                return Double.compare(getAmount(), btc.getAmount()) == 0 && Intrinsics.areEqual(this.recipientAddress, btc.recipientAddress) && Intrinsics.areEqual(this.utxos, btc.utxos) && Intrinsics.areEqual(this.changeAddress, btc.changeAddress) && Intrinsics.areEqual(this.byteFee, btc.byteFee);
+            }
+            return false;
+        }
+
+        public int hashCode() {
+            return (((((((Double.doubleToLongBits(getAmount()) * 31) + this.recipientAddress.hashCode()) * 31) + this.utxos.hashCode()) * 31) + this.changeAddress.hashCode()) * 31) + this.byteFee.hashCode();
+        }
+
+        public String toString() {
+            return "BTC(amount=" + getAmount() + ", recipientAddress=" + this.recipientAddress + ", utxos=" + this.utxos + ", changeAddress=" + this.changeAddress + ", byteFee=" + this.byteFee + ')';
+        }
+
+        @Override // com.iMe.storage.domain.model.crypto.send.TransferArgs
+        public double getAmount() {
+            return this.amount;
+        }
+
+        public final String getRecipientAddress() {
+            return this.recipientAddress;
+        }
+
+        public final List<BitcoinUnspentOutput> getUtxos() {
+            return this.utxos;
+        }
+
+        public final String getChangeAddress() {
+            return this.changeAddress;
+        }
+
+        public final BigInteger getByteFee() {
+            return this.byteFee;
+        }
+
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        public BTC(double d, String recipientAddress, List<BitcoinUnspentOutput> utxos, String changeAddress, BigInteger byteFee) {
+            super(d, Convert.Unit.WEI8, null);
+            Intrinsics.checkNotNullParameter(recipientAddress, "recipientAddress");
+            Intrinsics.checkNotNullParameter(utxos, "utxos");
+            Intrinsics.checkNotNullParameter(changeAddress, "changeAddress");
+            Intrinsics.checkNotNullParameter(byteFee, "byteFee");
+            this.amount = d;
+            this.recipientAddress = recipientAddress;
+            this.utxos = utxos;
+            this.changeAddress = changeAddress;
+            this.byteFee = byteFee;
         }
     }
 }

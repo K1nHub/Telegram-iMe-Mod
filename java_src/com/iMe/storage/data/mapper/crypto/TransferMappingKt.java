@@ -34,6 +34,11 @@ public final class TransferMappingKt {
         return new CryptoTransferMetadata(mapToDomain, tokenCode, contractAddress);
     }
 
+    public static final CryptoTransferMetadata mapToDomain(CryptoTransferDataResponse.BTC btc) {
+        Intrinsics.checkNotNullParameter(btc, "<this>");
+        return new CryptoTransferMetadata(CryptoWalletMappingKt.mapToDomain(btc.getTransactionParams()), TokenCode.BTC, null);
+    }
+
     public static final CryptoTransferMetadata mapToDomain(ParamsForTonCryptoTransferResponse paramsForTonCryptoTransferResponse) {
         Intrinsics.checkNotNullParameter(paramsForTonCryptoTransferResponse, "<this>");
         BigInteger valueOf = BigInteger.valueOf(paramsForTonCryptoTransferResponse.getTransactionParams().getWalletSeqno());

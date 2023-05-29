@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBlockchainType.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BlockchainType.kt\ncom/iMe/storage/domain/model/crypto/BlockchainType$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,41:1\n1#2:42\n*E\n"
+    value = "SMAP\nBlockchainType.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BlockchainType.kt\ncom/iMe/storage/domain/model/crypto/BlockchainType$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,47:1\n1#2:48\n*E\n"
 .end annotation
 
 
@@ -22,7 +22,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 34
+    .line 40
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -49,11 +49,11 @@
         }
     .end annotation
 
-    const/4 v0, 0x2
+    const/4 v0, 0x3
 
     new-array v0, v0, [Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
-    .line 38
+    .line 44
     sget-object v1, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->EVM:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     const/4 v2, 0x0
@@ -63,6 +63,12 @@
     sget-object v1, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->TRON:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     const/4 v2, 0x1
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->BITCOIN:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+
+    const/4 v2, 0x2
 
     aput-object v1, v0, v2
 
@@ -80,7 +86,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 36
+    .line 42
     invoke-static {}, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->values()[Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     move-result-object v0

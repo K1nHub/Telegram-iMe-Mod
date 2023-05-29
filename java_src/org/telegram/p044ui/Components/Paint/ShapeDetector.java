@@ -197,14 +197,14 @@ public class ShapeDetector {
 
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$parseTemplates$0() {
-        C47961 c47961;
+        C48011 c48011;
         char c;
         String string;
         char c2;
         try {
             InputStream open = ApplicationLoader.applicationContext.getAssets().open("shapes.dat");
             while (true) {
-                c47961 = null;
+                c48011 = null;
                 c = 0;
                 if (open.available() <= 5) {
                     break;
@@ -243,7 +243,7 @@ public class ShapeDetector {
                     }
                     i2++;
                     c = c2;
-                    c47961 = null;
+                    c48011 = null;
                 }
             }
             open.close();

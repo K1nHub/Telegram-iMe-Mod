@@ -2,6 +2,7 @@ package com.iMe.storage.data.network.model.response.crypto.wallet;
 
 import com.iMe.bots.data.model.database.BotsDbModel$$ExternalSyntheticBackport0;
 import java.math.BigInteger;
+import java.util.List;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* compiled from: TransactionParamsResponse.kt */
@@ -190,6 +191,122 @@ public abstract class TransactionParamsResponse {
             Intrinsics.checkNotNullParameter(blockHeader, "blockHeader");
             this.feeLimit = feeLimit;
             this.blockHeader = blockHeader;
+        }
+    }
+
+    /* compiled from: TransactionParamsResponse.kt */
+    /* loaded from: classes3.dex */
+    public static final class BTC extends TransactionParamsResponse {
+        private final String changeAddress;
+        private final BitcoinGasPriceResponse fast;
+        private final BitcoinGasPriceResponse fastest;
+        private final BitcoinGasPriceResponse safeLow;
+        private final List<BitcoinUnspentOutputResponse> utxos;
+
+        public static /* synthetic */ BTC copy$default(BTC btc, BitcoinGasPriceResponse bitcoinGasPriceResponse, BitcoinGasPriceResponse bitcoinGasPriceResponse2, BitcoinGasPriceResponse bitcoinGasPriceResponse3, List list, String str, int i, Object obj) {
+            if ((i & 1) != 0) {
+                bitcoinGasPriceResponse = btc.fastest;
+            }
+            if ((i & 2) != 0) {
+                bitcoinGasPriceResponse2 = btc.fast;
+            }
+            BitcoinGasPriceResponse bitcoinGasPriceResponse4 = bitcoinGasPriceResponse2;
+            if ((i & 4) != 0) {
+                bitcoinGasPriceResponse3 = btc.safeLow;
+            }
+            BitcoinGasPriceResponse bitcoinGasPriceResponse5 = bitcoinGasPriceResponse3;
+            List<BitcoinUnspentOutputResponse> list2 = list;
+            if ((i & 8) != 0) {
+                list2 = btc.utxos;
+            }
+            List list3 = list2;
+            if ((i & 16) != 0) {
+                str = btc.changeAddress;
+            }
+            return btc.copy(bitcoinGasPriceResponse, bitcoinGasPriceResponse4, bitcoinGasPriceResponse5, list3, str);
+        }
+
+        public final BitcoinGasPriceResponse component1() {
+            return this.fastest;
+        }
+
+        public final BitcoinGasPriceResponse component2() {
+            return this.fast;
+        }
+
+        public final BitcoinGasPriceResponse component3() {
+            return this.safeLow;
+        }
+
+        public final List<BitcoinUnspentOutputResponse> component4() {
+            return this.utxos;
+        }
+
+        public final String component5() {
+            return this.changeAddress;
+        }
+
+        public final BTC copy(BitcoinGasPriceResponse fastest, BitcoinGasPriceResponse fast, BitcoinGasPriceResponse safeLow, List<BitcoinUnspentOutputResponse> utxos, String changeAddress) {
+            Intrinsics.checkNotNullParameter(fastest, "fastest");
+            Intrinsics.checkNotNullParameter(fast, "fast");
+            Intrinsics.checkNotNullParameter(safeLow, "safeLow");
+            Intrinsics.checkNotNullParameter(utxos, "utxos");
+            Intrinsics.checkNotNullParameter(changeAddress, "changeAddress");
+            return new BTC(fastest, fast, safeLow, utxos, changeAddress);
+        }
+
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj instanceof BTC) {
+                BTC btc = (BTC) obj;
+                return Intrinsics.areEqual(this.fastest, btc.fastest) && Intrinsics.areEqual(this.fast, btc.fast) && Intrinsics.areEqual(this.safeLow, btc.safeLow) && Intrinsics.areEqual(this.utxos, btc.utxos) && Intrinsics.areEqual(this.changeAddress, btc.changeAddress);
+            }
+            return false;
+        }
+
+        public int hashCode() {
+            return (((((((this.fastest.hashCode() * 31) + this.fast.hashCode()) * 31) + this.safeLow.hashCode()) * 31) + this.utxos.hashCode()) * 31) + this.changeAddress.hashCode();
+        }
+
+        public String toString() {
+            return "BTC(fastest=" + this.fastest + ", fast=" + this.fast + ", safeLow=" + this.safeLow + ", utxos=" + this.utxos + ", changeAddress=" + this.changeAddress + ')';
+        }
+
+        public final BitcoinGasPriceResponse getFastest() {
+            return this.fastest;
+        }
+
+        public final BitcoinGasPriceResponse getFast() {
+            return this.fast;
+        }
+
+        public final BitcoinGasPriceResponse getSafeLow() {
+            return this.safeLow;
+        }
+
+        public final List<BitcoinUnspentOutputResponse> getUtxos() {
+            return this.utxos;
+        }
+
+        public final String getChangeAddress() {
+            return this.changeAddress;
+        }
+
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        public BTC(BitcoinGasPriceResponse fastest, BitcoinGasPriceResponse fast, BitcoinGasPriceResponse safeLow, List<BitcoinUnspentOutputResponse> utxos, String changeAddress) {
+            super(null);
+            Intrinsics.checkNotNullParameter(fastest, "fastest");
+            Intrinsics.checkNotNullParameter(fast, "fast");
+            Intrinsics.checkNotNullParameter(safeLow, "safeLow");
+            Intrinsics.checkNotNullParameter(utxos, "utxos");
+            Intrinsics.checkNotNullParameter(changeAddress, "changeAddress");
+            this.fastest = fastest;
+            this.fast = fast;
+            this.safeLow = safeLow;
+            this.utxos = utxos;
+            this.changeAddress = changeAddress;
         }
     }
 }

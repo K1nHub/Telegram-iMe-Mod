@@ -27,7 +27,7 @@ import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 import org.koin.p043mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.databinding.ForkContentStakingDashboardBinding;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.StorageDiagramView;
@@ -192,7 +192,7 @@ public class StakingDashboardView extends FrameLayout implements KoinComponent {
         storageDiagramView.setCustomCenterText("_");
         TextView textView = forkContentStakingDashboardBinding.textStakedValue;
         ResourceManager resourceManager = getResourceManager();
-        int i = C3290R.string.common_progress_state_title;
+        int i = C3295R.string.common_progress_state_title;
         textView.setText(resourceManager.getString(i));
         forkContentStakingDashboardBinding.textProfitValue.setText(getResourceManager().getString(i));
     }
@@ -206,12 +206,12 @@ public class StakingDashboardView extends FrameLayout implements KoinComponent {
     private final void setupViews() {
         List<HorizontalActionButtonItem> listOf;
         ForkContentStakingDashboardBinding forkContentStakingDashboardBinding = this.binding;
-        forkContentStakingDashboardBinding.textHeader.setText(getResourceManager().getString(C3290R.string.staking_dashboard_header));
+        forkContentStakingDashboardBinding.textHeader.setText(getResourceManager().getString(C3295R.string.staking_dashboard_header));
         forkContentStakingDashboardBinding.viewDiagram.setCustomSize(AndroidUtilities.m54dp(75));
-        forkContentStakingDashboardBinding.textStakedTitle.setText(getResourceManager().getString(C3290R.string.staking_dashboard_staked_title));
-        forkContentStakingDashboardBinding.textProfitTitle.setText(getResourceManager().getString(C3290R.string.staking_dashboard_profit_title));
+        forkContentStakingDashboardBinding.textStakedTitle.setText(getResourceManager().getString(C3295R.string.staking_dashboard_staked_title));
+        forkContentStakingDashboardBinding.textProfitTitle.setText(getResourceManager().getString(C3295R.string.staking_dashboard_profit_title));
         HorizontalActionButtonsView horizontalActionButtonsView = forkContentStakingDashboardBinding.horizontalActionButtons;
-        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new HorizontalActionButtonItem[]{new HorizontalActionButtonItem(C3290R.C3292drawable.fork_wallet_staking_dashboard_calculator, getResourceManager().getString(C3290R.string.staking_dashboard_calculator), false, new StakingDashboardView$setupViews$1$1(this), 4, null), new HorizontalActionButtonItem(C3290R.C3292drawable.fork_wallet_staking_dashboard_history, getResourceManager().getString(C3290R.string.staking_dashboard_history), false, new StakingDashboardView$setupViews$1$2(this), 4, null)});
+        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new HorizontalActionButtonItem[]{new HorizontalActionButtonItem(C3295R.C3297drawable.fork_wallet_staking_dashboard_calculator, getResourceManager().getString(C3295R.string.staking_dashboard_calculator), false, new StakingDashboardView$setupViews$1$1(this), 4, null), new HorizontalActionButtonItem(C3295R.C3297drawable.fork_wallet_staking_dashboard_history, getResourceManager().getString(C3295R.string.staking_dashboard_history), false, new StakingDashboardView$setupViews$1$2(this), 4, null)});
         horizontalActionButtonsView.initButtons(listOf);
         showLoading();
     }

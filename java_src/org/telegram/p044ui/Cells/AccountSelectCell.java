@@ -9,7 +9,7 @@ import android.widget.FrameLayout;
 import android.widget.ImageView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
@@ -55,7 +55,7 @@ public class AccountSelectCell extends FrameLayout {
         if (z) {
             addView(this.textView, LayoutHelper.createFrame(-2, -2, 51, 61, 7, 8, 0));
             this.textView.setTextColor(Theme.getColor(Theme.key_voipgroup_nameText));
-            this.textView.setText(LocaleController.getString("VoipGroupDisplayAs", C3290R.string.VoipGroupDisplayAs));
+            this.textView.setText(LocaleController.getString("VoipGroupDisplayAs", C3295R.string.VoipGroupDisplayAs));
             TextView textView2 = new TextView(context);
             this.infoTextView = textView2;
             textView2.setTextColor(Theme.getColor(Theme.key_voipgroup_lastSeenText));
@@ -73,7 +73,7 @@ public class AccountSelectCell extends FrameLayout {
         this.textView.setTextColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem));
         ImageView imageView = new ImageView(context);
         this.checkImageView = imageView;
-        imageView.setImageResource(C3290R.C3292drawable.account_check);
+        imageView.setImageResource(C3295R.C3297drawable.account_check);
         this.checkImageView.setScaleType(ImageView.ScaleType.CENTER);
         this.checkImageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_menuItemCheck), PorterDuff.Mode.MULTIPLY));
         addView(this.checkImageView, LayoutHelper.createFrame(40, -1, 53, 0, 0, 6, 0));

@@ -43,7 +43,7 @@ import kotlin.ranges.LongProgression;
 import kotlin.ranges.LongRange;
 import kotlin.ranges.RangesKt___RangesKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.p044ui.Charts.data.ChartData;
 import org.telegram.p044ui.StatisticActivity;
 import timber.log.Timber;
@@ -132,7 +132,7 @@ public final class StakingCalculatorPresenter extends BasePresenter<StakingCalcu
         String str;
         StakingDetailsItem stakingDetailsItem = this.selectedStakingProgramme;
         if (stakingDetailsItem != null) {
-            str = '(' + this.resourceManager.getString(this.selectedAmount >= stakingDetailsItem.getCompoundAccrualThreshold().doubleValue() ? C3290R.string.staking_details_apy : C3290R.string.staking_details_apr) + ')';
+            str = '(' + this.resourceManager.getString(this.selectedAmount >= stakingDetailsItem.getCompoundAccrualThreshold().doubleValue() ? C3295R.string.staking_details_apy : C3295R.string.staking_details_apr) + ')';
         } else {
             str = null;
         }
@@ -219,7 +219,7 @@ public final class StakingCalculatorPresenter extends BasePresenter<StakingCalcu
     }
 
     private final void loadAccountLevelAndOpenStaking(StakingDetailsItem stakingDetailsItem) {
-        Disposable subscribe = SchedulersExtKt.scheduleIO(AccountLevelInteractor.getAccountLevelRemote$default(this.accountLevelInteractor, 0L, 1, null)).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2331xca1b89cb(this, stakingDetailsItem)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2332xca1b89cc((BaseView) getViewState())));
+        Disposable subscribe = SchedulersExtKt.scheduleIO(AccountLevelInteractor.getAccountLevelRemote$default(this.accountLevelInteractor, 0L, 1, null)).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2336xca1b89cb(this, stakingDetailsItem)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2337xca1b89cc((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -248,7 +248,7 @@ public final class StakingCalculatorPresenter extends BasePresenter<StakingCalcu
         }
         Observable observeOn = WalletInteractor.getTokenBalance$default(walletInteractor, tokenCode, false, networkType, 2, null).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "walletInteractor\n       …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2333x30d40fe4(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2334x30d40fe5((BaseView) getViewState())));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2338x30d40fe4(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2339x30d40fe5((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -258,11 +258,11 @@ public final class StakingCalculatorPresenter extends BasePresenter<StakingCalcu
         String message;
         StakingCalculatorView stakingCalculatorView = (StakingCalculatorView) getViewState();
         if (errorModel.isNoConnectionStatus()) {
-            message = this.resourceManager.getString(C3290R.string.common_error_no_internet);
+            message = this.resourceManager.getString(C3295R.string.common_error_no_internet);
         } else {
             message = errorModel.getMessage(this.resourceManager);
             if (message.length() == 0) {
-                message = this.resourceManager.getString(C3290R.string.common_error_unexpected);
+                message = this.resourceManager.getString(C3295R.string.common_error_unexpected);
             }
         }
         stakingCalculatorView.showToast(message);
@@ -344,7 +344,7 @@ public final class StakingCalculatorPresenter extends BasePresenter<StakingCalcu
         }
         this.tokenProfitText = '+' + TokenBalanceExtKt.getTotalBalanceShortText(TokenBalance.copy$default(TokenBalance.Companion.createEmptyBalanceFor(getTokenInfo()), null, ((Number) CollectionsKt.last((List<? extends Object>) arrayList)).doubleValue(), BitmapDescriptorFactory.HUE_RED, null, null, null, 61, null), this.resourceManager);
         ResourceManager resourceManager = this.resourceManager;
-        int i2 = C3290R.string.staking_details_profit;
+        int i2 = C3295R.string.staking_details_profit;
         StatisticActivity.ChartViewData chartViewData = new StatisticActivity.ChartViewData(resourceManager.getString(i2), 0);
         chartViewData.setup(new ChartData(TelegramStatisticsChartData.Companion.generateJSONObject(this.resourceManager.getString(i2), list, arrayList)));
         return chartViewData;

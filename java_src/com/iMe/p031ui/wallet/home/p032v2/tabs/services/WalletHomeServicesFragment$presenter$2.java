@@ -23,7 +23,7 @@ public final class WalletHomeServicesFragment$presenter$2 extends Lambda impleme
     @Override // kotlin.jvm.functions.Function0
     public final WalletHomeServicesPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2306x5871c8d8(this.this$0, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2311x5871c8d8(this.this$0, null, null));
         return (WalletHomeServicesPresenter) lazy.getValue();
     }
 }

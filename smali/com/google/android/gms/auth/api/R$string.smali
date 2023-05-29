@@ -50,7 +50,7 @@
 
 .field public static final common_signin_button_text_long:I = 0x7f111bc8
 
-.field public static final status_bar_notification_info_overflow:I = 0x7f111fff
+.field public static final status_bar_notification_info_overflow:I = 0x7f112002
 
 
 # direct methods

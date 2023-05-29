@@ -30,16 +30,16 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 9
+    .line 10
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 10
+    .line 11
     iput-object p1, p0, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->addressValue:Ljava/lang/String;
 
-    .line 11
+    .line 12
     iput-boolean p2, p0, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->isAddressSet:Z
 
-    .line 12
+    .line 13
     iput-boolean p3, p0, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->hasAccess:Z
 
     return-void
@@ -174,7 +174,7 @@
 .method public final getAddressValue()Ljava/lang/String;
     .locals 1
 
-    .line 10
+    .line 11
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->addressValue:Ljava/lang/String;
 
     return-object v0
@@ -183,7 +183,7 @@
 .method public final getHasAccess()Z
     .locals 1
 
-    .line 12
+    .line 13
     iget-boolean v0, p0, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->hasAccess:Z
 
     return v0
@@ -231,7 +231,7 @@
 .method public final isAddressSet()Z
     .locals 1
 
-    .line 11
+    .line 12
     iget-boolean v0, p0, Lcom/iMe/storage/domain/model/crypto/AccountInfo$Address;->isAddressSet:Z
 
     return v0

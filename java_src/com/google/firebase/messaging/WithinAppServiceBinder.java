@@ -7,14 +7,16 @@ import android.util.Log;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.messaging.WithinAppServiceConnection;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
 /* loaded from: classes3.dex */
-class WithinAppServiceBinder extends Binder {
+public class WithinAppServiceBinder extends Binder {
     private final IntentHandler intentHandler;
 
+    /* JADX INFO: Access modifiers changed from: package-private */
     /* compiled from: com.google.firebase:firebase-messaging@@23.0.0 */
     /* loaded from: classes3.dex */
-    interface IntentHandler {
+    public interface IntentHandler {
         Task<Void> handle(Intent intent);
     }
 

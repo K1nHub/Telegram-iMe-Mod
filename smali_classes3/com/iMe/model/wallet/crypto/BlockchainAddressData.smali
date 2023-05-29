@@ -22,6 +22,10 @@
 # static fields
 .field private static final synthetic $VALUES:[Lcom/iMe/model/wallet/crypto/BlockchainAddressData;
 
+.field public static final enum BTC_MAIN:Lcom/iMe/model/wallet/crypto/BlockchainAddressData;
+
+.field public static final enum BTC_TEST:Lcom/iMe/model/wallet/crypto/BlockchainAddressData;
+
 .field public static final Companion:Lcom/iMe/model/wallet/crypto/BlockchainAddressData$Companion;
 
 .field public static final enum EVM:Lcom/iMe/model/wallet/crypto/BlockchainAddressData;
@@ -41,7 +45,7 @@
 .method private static final synthetic $values()[Lcom/iMe/model/wallet/crypto/BlockchainAddressData;
     .locals 3
 
-    const/4 v0, 0x3
+    const/4 v0, 0x5
 
     new-array v0, v0, [Lcom/iMe/model/wallet/crypto/BlockchainAddressData;
 
@@ -63,13 +67,25 @@
 
     aput-object v1, v0, v2
 
+    sget-object v1, Lcom/iMe/model/wallet/crypto/BlockchainAddressData;->BTC_MAIN:Lcom/iMe/model/wallet/crypto/BlockchainAddressData;
+
+    const/4 v2, 0x3
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/iMe/model/wallet/crypto/BlockchainAddressData;->BTC_TEST:Lcom/iMe/model/wallet/crypto/BlockchainAddressData;
+
+    const/4 v2, 0x4
+
+    aput-object v1, v0, v2
+
     return-object v0
 .end method
 
 .method static constructor <clinit>()V
     .locals 12
 
-    .line 10
+    .line 11
     new-instance v0, Lcom/iMe/model/wallet/crypto/BlockchainAddressData;
 
     const-string v1, "EVM"
@@ -84,7 +100,7 @@
 
     sput-object v0, Lcom/iMe/model/wallet/crypto/BlockchainAddressData;->EVM:Lcom/iMe/model/wallet/crypto/BlockchainAddressData;
 
-    .line 11
+    .line 12
     new-instance v0, Lcom/iMe/model/wallet/crypto/BlockchainAddressData;
 
     const-string v1, "TON"
@@ -99,7 +115,7 @@
 
     sput-object v0, Lcom/iMe/model/wallet/crypto/BlockchainAddressData;->TON:Lcom/iMe/model/wallet/crypto/BlockchainAddressData;
 
-    .line 12
+    .line 13
     new-instance v0, Lcom/iMe/model/wallet/crypto/BlockchainAddressData;
 
     const-string v6, "TRON"
@@ -119,6 +135,34 @@
     invoke-direct/range {v5 .. v11}, Lcom/iMe/model/wallet/crypto/BlockchainAddressData;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     sput-object v0, Lcom/iMe/model/wallet/crypto/BlockchainAddressData;->TRON:Lcom/iMe/model/wallet/crypto/BlockchainAddressData;
+
+    .line 14
+    new-instance v0, Lcom/iMe/model/wallet/crypto/BlockchainAddressData;
+
+    const-string v1, "BTC_MAIN"
+
+    const/4 v2, 0x3
+
+    const-string v3, "(?:[13]{1}[a-km-zA-HJ-NP-Z1-9]{25,34}|bc1[a-z0-9]{39,59})"
+
+    const-string v4, "bitcoin:"
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lcom/iMe/model/wallet/crypto/BlockchainAddressData;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
+
+    sput-object v0, Lcom/iMe/model/wallet/crypto/BlockchainAddressData;->BTC_MAIN:Lcom/iMe/model/wallet/crypto/BlockchainAddressData;
+
+    .line 15
+    new-instance v0, Lcom/iMe/model/wallet/crypto/BlockchainAddressData;
+
+    const-string v1, "BTC_TEST"
+
+    const/4 v2, 0x4
+
+    const-string v3, "tb1[a-z0-9]{39}"
+
+    invoke-direct {v0, v1, v2, v3, v4}, Lcom/iMe/model/wallet/crypto/BlockchainAddressData;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
+
+    sput-object v0, Lcom/iMe/model/wallet/crypto/BlockchainAddressData;->BTC_TEST:Lcom/iMe/model/wallet/crypto/BlockchainAddressData;
 
     invoke-static {}, Lcom/iMe/model/wallet/crypto/BlockchainAddressData;->$values()[Lcom/iMe/model/wallet/crypto/BlockchainAddressData;
 
@@ -148,13 +192,13 @@
         }
     .end annotation
 
-    .line 6
+    .line 7
     invoke-direct {p0, p1, p2}, Ljava/lang/Enum;-><init>(Ljava/lang/String;I)V
 
-    .line 7
+    .line 8
     iput-object p3, p0, Lcom/iMe/model/wallet/crypto/BlockchainAddressData;->regex:Ljava/lang/String;
 
-    .line 8
+    .line 9
     iput-object p4, p0, Lcom/iMe/model/wallet/crypto/BlockchainAddressData;->prefix:Ljava/lang/String;
 
     return-void
@@ -169,7 +213,7 @@
 
     const-string p4, ""
 
-    .line 6
+    .line 7
     :cond_0
     invoke-direct {p0, p1, p2, p3, p4}, Lcom/iMe/model/wallet/crypto/BlockchainAddressData;-><init>(Ljava/lang/String;ILjava/lang/String;Ljava/lang/String;)V
 
@@ -209,7 +253,7 @@
 .method public final getPrefix()Ljava/lang/String;
     .locals 1
 
-    .line 8
+    .line 9
     iget-object v0, p0, Lcom/iMe/model/wallet/crypto/BlockchainAddressData;->prefix:Ljava/lang/String;
 
     return-object v0
@@ -218,7 +262,7 @@
 .method public final getRegex()Ljava/lang/String;
     .locals 1
 
-    .line 7
+    .line 8
     iget-object v0, p0, Lcom/iMe/model/wallet/crypto/BlockchainAddressData;->regex:Ljava/lang/String;
 
     return-object v0

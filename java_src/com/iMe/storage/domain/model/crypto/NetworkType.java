@@ -10,6 +10,7 @@ import com.iMe.storage.domain.model.wallet.token.TokenCode;
 import java.util.ArrayList;
 import java.util.List;
 import kotlin.collections.ArraysKt___ArraysKt;
+import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 /* JADX WARN: Enum visitor error
@@ -30,6 +31,7 @@ jadx.core.utils.exceptions.JadxRuntimeException: Init of enum BINANCE_SMART_CHAI
 public final class NetworkType {
     private static final /* synthetic */ NetworkType[] $VALUES;
     public static final NetworkType BINANCE_SMART_CHAIN;
+    public static final NetworkType BITCOIN;
     public static final Companion Companion;
     public static final NetworkType ETHEREUM;
     public static final NetworkType FANTOM;
@@ -75,7 +77,7 @@ public final class NetworkType {
     }
 
     private static final /* synthetic */ NetworkType[] $values() {
-        return new NetworkType[]{BINANCE_SMART_CHAIN, ETHEREUM, POLYGON, FANTOM, TRON, THE_OPEN_NETWORK};
+        return new NetworkType[]{BINANCE_SMART_CHAIN, ETHEREUM, POLYGON, FANTOM, TRON, BITCOIN, THE_OPEN_NETWORK};
     }
 
     public static final NetworkType map(String str) {
@@ -158,7 +160,8 @@ public final class NetworkType {
         POLYGON = new NetworkType("POLYGON", 2, R$drawable.fork_ic_polygon_logo, R$drawable.fork_ic_polygon_small_logo, R$string.wallet_network_type_polygon, R$string.wallet_network_type_polygon_short_name, R$string.wallet_network_scanner_polygon, R$drawable.fork_ic_polygon_26, R$color.wallet_network_type_polygon, 17170443, TokenCode.MATIC, blockchainType);
         FANTOM = new NetworkType("FANTOM", 3, R$drawable.fork_ic_fantom_logo, R$drawable.fork_ic_fantom_small_logo, R$string.wallet_network_type_fantom, R$string.wallet_network_type_fantom_short_name, R$string.wallet_network_scanner_fantom, R$drawable.fork_ic_ftmscan, R$color.wallet_network_type_fantom, 17170443, TokenCode.FTM, blockchainType);
         TRON = new NetworkType("TRON", 4, R$drawable.fork_ic_tron_logo, R$drawable.fork_ic_tron_small_logo, R$string.wallet_network_type_tron, R$string.wallet_network_type_tron_short_name, R$string.wallet_network_scanner_tron, R$drawable.fork_ic_tronscan, R$color.wallet_network_type_tron, 17170443, TokenCode.TRX, BlockchainType.TRON);
-        THE_OPEN_NETWORK = new NetworkType("THE_OPEN_NETWORK", 5, R$drawable.fork_ic_ton_logo, R$drawable.fork_ic_ton_small_logo, R$string.wallet_network_type_ton, R$string.wallet_network_type_ton_short_name, R$string.wallet_network_scanner_ton, R$drawable.fork_ic_tonscan, R$color.wallet_network_type_ton, 17170443, TokenCode.TON, BlockchainType.TON);
+        BITCOIN = new NetworkType("BITCOIN", 5, R$drawable.fork_ic_bitcoin_logo, R$drawable.fork_ic_bitcoin_small_logo, R$string.wallet_network_type_bitcoin, R$string.wallet_network_type_bitcoin_short_name, R$string.wallet_network_scanner_bitcoin, R$drawable.fork_ic_btcscan, R$color.wallet_network_type_bitcoin, 17170443, TokenCode.BTC, BlockchainType.BITCOIN);
+        THE_OPEN_NETWORK = new NetworkType("THE_OPEN_NETWORK", 6, R$drawable.fork_ic_ton_logo, R$drawable.fork_ic_ton_small_logo, R$string.wallet_network_type_ton, R$string.wallet_network_type_ton_short_name, R$string.wallet_network_scanner_ton, R$drawable.fork_ic_tonscan, R$color.wallet_network_type_ton, 17170443, TokenCode.TON, BlockchainType.TON);
         $VALUES = $values();
         Companion = new Companion(null);
     }
@@ -280,6 +283,10 @@ public final class NetworkType {
                 }
             }
             return arrayList;
+        }
+
+        public final List<NetworkType> getBinanceSupportedNetworks() {
+            return CollectionsKt.plus(CollectionsKt.plus(getEVMNetworks(), NetworkType.TRON), NetworkType.BITCOIN);
         }
 
         public final NetworkType fromChainId(long j) {

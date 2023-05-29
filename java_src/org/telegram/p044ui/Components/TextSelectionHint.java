@@ -20,7 +20,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.TextSelectionHint */
@@ -84,7 +84,7 @@ public class TextSelectionHint extends View {
                 animator.removeAllListeners();
                 this.f1751a.cancel();
             }
-            String string = LocaleController.getString("TextSelectionHit", C3290R.string.TextSelectionHit);
+            String string = LocaleController.getString("TextSelectionHit", C3295R.string.TextSelectionHit);
             Matcher matcher = Pattern.compile("\\*\\*.*\\*\\*").matcher(string);
             String group = matcher.matches() ? matcher.group() : null;
             String replace = string.replace("**", "");

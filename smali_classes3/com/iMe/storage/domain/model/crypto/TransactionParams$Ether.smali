@@ -44,22 +44,22 @@
 
     const/4 v0, 0x0
 
-    .line 19
+    .line 20
     invoke-direct {p0, p2, p1, p3, v0}, Lcom/iMe/storage/domain/model/crypto/TransactionParams;-><init>(Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 14
+    .line 15
     iput-object p1, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->medium:Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
-    .line 15
+    .line 16
     iput-object p2, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->fastest:Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
-    .line 16
+    .line 17
     iput-object p3, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->low:Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
-    .line 17
+    .line 18
     iput-object p4, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->nonce:Ljava/math/BigInteger;
 
-    .line 18
+    .line 19
     iput-object p5, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->chain:Lcom/iMe/storage/domain/model/crypto/Chain;
 
     return-void
@@ -322,7 +322,7 @@
 .method public final getChain()Lcom/iMe/storage/domain/model/crypto/Chain;
     .locals 1
 
-    .line 18
+    .line 19
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->chain:Lcom/iMe/storage/domain/model/crypto/Chain;
 
     return-object v0
@@ -331,7 +331,7 @@
 .method public getFastest()Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
     .locals 1
 
-    .line 15
+    .line 16
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->fastest:Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
     return-object v0
@@ -340,7 +340,7 @@
 .method public getLow()Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
     .locals 1
 
-    .line 16
+    .line 17
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->low:Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
     return-object v0
@@ -349,7 +349,7 @@
 .method public getMedium()Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
     .locals 1
 
-    .line 14
+    .line 15
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->medium:Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
     return-object v0
@@ -358,7 +358,7 @@
 .method public final getNonce()Ljava/math/BigInteger;
     .locals 1
 
-    .line 17
+    .line 18
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;->nonce:Ljava/math/BigInteger;
 
     return-object v0

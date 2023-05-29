@@ -54,7 +54,7 @@ public final class TONWalletTransferDataSourceImpl implements WalletTransferData
         if (str == null) {
             str = "";
         }
-        Observable map = tonApi.getParamsForCryptoTransfer(new GetParamsForTonCryptoTransferRequest(name, str, StringExtKt.orZero(str2))).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1615xf1226d95(this.firebaseErrorHandler)));
+        Observable map = tonApi.getParamsForCryptoTransfer(new GetParamsForTonCryptoTransferRequest(name, str, StringExtKt.orZero(str2))).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1618xf1226d95(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
         return map;
     }

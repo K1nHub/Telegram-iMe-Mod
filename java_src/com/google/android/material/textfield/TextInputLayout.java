@@ -165,7 +165,7 @@ public class TextInputLayout extends LinearLayout {
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r2v150 */
     /* JADX WARN: Type inference failed for: r2v46 */
-    /* JADX WARN: Type inference failed for: r2v47, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r2v47, types: [boolean, int] */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument

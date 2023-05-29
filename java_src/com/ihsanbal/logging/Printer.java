@@ -41,7 +41,7 @@ class Printer {
         String sb2 = sb.toString();
         String tag = builder.getTag(true);
         if (builder.getLogger() == null) {
-            C2429I.log(builder.getType(), tag, "┌────── Request ────────────────────────────────────────────────────────────────────────", builder.isLogHackEnable());
+            C2434I.log(builder.getType(), tag, "┌────── Request ────────────────────────────────────────────────────────────────────────", builder.isLogHackEnable());
         }
         int type = builder.getType();
         logLines(type, tag, new String[]{"URL: " + request.url()}, builder.getLogger(), false, builder.isLogHackEnable());
@@ -50,7 +50,7 @@ class Printer {
             logLines(builder.getType(), tag, sb2.split(str), builder.getLogger(), true, builder.isLogHackEnable());
         }
         if (builder.getLogger() == null) {
-            C2429I.log(builder.getType(), tag, "└───────────────────────────────────────────────────────────────────────────────────────", builder.isLogHackEnable());
+            C2434I.log(builder.getType(), tag, "└───────────────────────────────────────────────────────────────────────────────────────", builder.isLogHackEnable());
         }
     }
 
@@ -67,7 +67,7 @@ class Printer {
         String[] strArr = {"URL: " + str4, "\n"};
         String[] response = getResponse(str, j, i, z, builder.getLevel(), list, str3);
         if (builder.getLogger() == null) {
-            C2429I.log(builder.getType(), tag, "┌────── Response ───────────────────────────────────────────────────────────────────────", builder.isLogHackEnable());
+            C2434I.log(builder.getType(), tag, "┌────── Response ───────────────────────────────────────────────────────────────────────", builder.isLogHackEnable());
         }
         logLines(builder.getType(), tag, strArr, builder.getLogger(), true, builder.isLogHackEnable());
         logLines(builder.getType(), tag, response, builder.getLogger(), true, builder.isLogHackEnable());
@@ -75,7 +75,7 @@ class Printer {
             logLines(builder.getType(), tag, sb2.split(str5), builder.getLogger(), true, builder.isLogHackEnable());
         }
         if (builder.getLogger() == null) {
-            C2429I.log(builder.getType(), tag, "└───────────────────────────────────────────────────────────────────────────────────────", builder.isLogHackEnable());
+            C2434I.log(builder.getType(), tag, "└───────────────────────────────────────────────────────────────────────────────────────", builder.isLogHackEnable());
         }
     }
 
@@ -83,7 +83,7 @@ class Printer {
     public static void printFileRequest(LoggingInterceptor.Builder builder, Request request) {
         String tag = builder.getTag(true);
         if (builder.getLogger() == null) {
-            C2429I.log(builder.getType(), tag, "┌────── Request ────────────────────────────────────────────────────────────────────────", builder.isLogHackEnable());
+            C2434I.log(builder.getType(), tag, "┌────── Request ────────────────────────────────────────────────────────────────────────", builder.isLogHackEnable());
         }
         int type = builder.getType();
         logLines(type, tag, new String[]{"URL: " + request.url()}, builder.getLogger(), false, builder.isLogHackEnable());
@@ -92,7 +92,7 @@ class Printer {
             logLines(builder.getType(), tag, OMITTED_REQUEST, builder.getLogger(), true, builder.isLogHackEnable());
         }
         if (builder.getLogger() == null) {
-            C2429I.log(builder.getType(), tag, "└───────────────────────────────────────────────────────────────────────────────────────", builder.isLogHackEnable());
+            C2434I.log(builder.getType(), tag, "└───────────────────────────────────────────────────────────────────────────────────────", builder.isLogHackEnable());
         }
     }
 
@@ -100,12 +100,12 @@ class Printer {
     public static void printFileResponse(LoggingInterceptor.Builder builder, long j, boolean z, int i, String str, List<String> list, String str2) {
         String tag = builder.getTag(false);
         if (builder.getLogger() == null) {
-            C2429I.log(builder.getType(), tag, "┌────── Response ───────────────────────────────────────────────────────────────────────", builder.isLogHackEnable());
+            C2434I.log(builder.getType(), tag, "┌────── Response ───────────────────────────────────────────────────────────────────────", builder.isLogHackEnable());
         }
         logLines(builder.getType(), tag, getResponse(str, j, i, z, builder.getLevel(), list, str2), builder.getLogger(), true, builder.isLogHackEnable());
         logLines(builder.getType(), tag, OMITTED_RESPONSE, builder.getLogger(), true, builder.isLogHackEnable());
         if (builder.getLogger() == null) {
-            C2429I.log(builder.getType(), tag, "└───────────────────────────────────────────────────────────────────────────────────────", builder.isLogHackEnable());
+            C2434I.log(builder.getType(), tag, "└───────────────────────────────────────────────────────────────────────────────────────", builder.isLogHackEnable());
         }
     }
 
@@ -208,7 +208,7 @@ class Printer {
                     i5 = str2.length();
                 }
                 if (logger == null) {
-                    C2429I.log(i, str, "│ " + str2.substring(i4, i5), z2);
+                    C2434I.log(i, str, "│ " + str2.substring(i4, i5), z2);
                 } else {
                     logger.log(i, str, str2.substring(i4, i5));
                 }

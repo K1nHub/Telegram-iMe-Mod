@@ -13,7 +13,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Cells.PollEditTextCell;
@@ -159,7 +159,7 @@ public final class PollEditTextCellWrapper extends LinearLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final TextView initNoIconTextView() {
         TextView textView = new TextView(getContext());
-        textView.setText(LocaleController.getInternalString(C3290R.string.no_icon));
+        textView.setText(LocaleController.getInternalString(C3295R.string.no_icon));
         textView.setTextSize(1, 14.0f);
         return textView;
     }
@@ -168,7 +168,7 @@ public final class PollEditTextCellWrapper extends LinearLayout {
     public final ImageView initArrowImageView() {
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-        imageView.setImageResource(C3290R.C3292drawable.arrow_more);
+        imageView.setImageResource(C3295R.C3297drawable.arrow_more);
         return imageView;
     }
 

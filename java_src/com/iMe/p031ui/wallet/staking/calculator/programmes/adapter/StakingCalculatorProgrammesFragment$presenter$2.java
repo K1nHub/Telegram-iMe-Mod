@@ -23,7 +23,7 @@ final class StakingCalculatorProgrammesFragment$presenter$2 extends Lambda imple
     @Override // kotlin.jvm.functions.Function0
     public final StakingCalculatorProgrammesPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2337xaf318c7e(this.this$0, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2342xaf318c7e(this.this$0, null, null));
         return (StakingCalculatorProgrammesPresenter) lazy.getValue();
     }
 }

@@ -40,7 +40,7 @@ import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p043mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.databinding.ForkFragmentCatalogTabsBinding;
 import org.telegram.p044ui.ActionBar.BaseFragment;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -258,7 +258,7 @@ public final class CatalogFragment extends BottomNavigationTabFragment implement
     /* JADX INFO: Access modifiers changed from: private */
     public final List<CatalogNavigationTab> initPageTabs() {
         List<CatalogNavigationTab> listOf;
-        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new CatalogNavigationTab[]{new CatalogNavigationTab(C3290R.C3293id.catalog_all, new TabbedFragmentPage(getResourceManager().getString(C3290R.string.catalog_all), 0, CatalogAllFragment.Companion.newInstance(this.chatType), new CatalogFragment$initPageTabs$1(this), 2, null)), new CatalogNavigationTab(C3290R.C3293id.catalog_categories, new TabbedFragmentPage(getResourceManager().getString(C3290R.string.catalog_categories), 0, CatalogCategoriesFragment.Companion.newInstance(this.chatType), new CatalogFragment$initPageTabs$2(this), 2, null)), new CatalogNavigationTab(C3290R.C3293id.catalog_user_channels, new TabbedFragmentPage(getResourceManager().getString(C3290R.string.catalog_user_channels), 0, CatalogUserChannelsFragment.Companion.newInstance(this.chatType), new CatalogFragment$initPageTabs$3(this), 2, null))});
+        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new CatalogNavigationTab[]{new CatalogNavigationTab(C3295R.C3298id.catalog_all, new TabbedFragmentPage(getResourceManager().getString(C3295R.string.catalog_all), 0, CatalogAllFragment.Companion.newInstance(this.chatType), new CatalogFragment$initPageTabs$1(this), 2, null)), new CatalogNavigationTab(C3295R.C3298id.catalog_categories, new TabbedFragmentPage(getResourceManager().getString(C3295R.string.catalog_categories), 0, CatalogCategoriesFragment.Companion.newInstance(this.chatType), new CatalogFragment$initPageTabs$2(this), 2, null)), new CatalogNavigationTab(C3295R.C3298id.catalog_user_channels, new TabbedFragmentPage(getResourceManager().getString(C3295R.string.catalog_user_channels), 0, CatalogUserChannelsFragment.Companion.newInstance(this.chatType), new CatalogFragment$initPageTabs$3(this), 2, null))});
         for (CatalogNavigationTab catalogNavigationTab : listOf) {
             catalogNavigationTab.getPage().getFragment().setBottomNavigationDelegate(getBottomNavigationDelegate());
         }

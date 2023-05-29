@@ -4,11 +4,12 @@ import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AccountInfo.kt */
 /* loaded from: classes3.dex */
 public final class AccountInfo {
+    private final Address bitcoinAddress;
     private final Address ethAddress;
     private final Address tonAddress;
     private final Address tronAddress;
 
-    public static /* synthetic */ AccountInfo copy$default(AccountInfo accountInfo, Address address, Address address2, Address address3, int i, Object obj) {
+    public static /* synthetic */ AccountInfo copy$default(AccountInfo accountInfo, Address address, Address address2, Address address3, Address address4, int i, Object obj) {
         if ((i & 1) != 0) {
             address = accountInfo.ethAddress;
         }
@@ -18,7 +19,10 @@ public final class AccountInfo {
         if ((i & 4) != 0) {
             address3 = accountInfo.tronAddress;
         }
-        return accountInfo.copy(address, address2, address3);
+        if ((i & 8) != 0) {
+            address4 = accountInfo.bitcoinAddress;
+        }
+        return accountInfo.copy(address, address2, address3, address4);
     }
 
     public final Address component1() {
@@ -33,11 +37,16 @@ public final class AccountInfo {
         return this.tronAddress;
     }
 
-    public final AccountInfo copy(Address ethAddress, Address tonAddress, Address tronAddress) {
+    public final Address component4() {
+        return this.bitcoinAddress;
+    }
+
+    public final AccountInfo copy(Address ethAddress, Address tonAddress, Address tronAddress, Address bitcoinAddress) {
         Intrinsics.checkNotNullParameter(ethAddress, "ethAddress");
         Intrinsics.checkNotNullParameter(tonAddress, "tonAddress");
         Intrinsics.checkNotNullParameter(tronAddress, "tronAddress");
-        return new AccountInfo(ethAddress, tonAddress, tronAddress);
+        Intrinsics.checkNotNullParameter(bitcoinAddress, "bitcoinAddress");
+        return new AccountInfo(ethAddress, tonAddress, tronAddress, bitcoinAddress);
     }
 
     public boolean equals(Object obj) {
@@ -46,26 +55,28 @@ public final class AccountInfo {
         }
         if (obj instanceof AccountInfo) {
             AccountInfo accountInfo = (AccountInfo) obj;
-            return Intrinsics.areEqual(this.ethAddress, accountInfo.ethAddress) && Intrinsics.areEqual(this.tonAddress, accountInfo.tonAddress) && Intrinsics.areEqual(this.tronAddress, accountInfo.tronAddress);
+            return Intrinsics.areEqual(this.ethAddress, accountInfo.ethAddress) && Intrinsics.areEqual(this.tonAddress, accountInfo.tonAddress) && Intrinsics.areEqual(this.tronAddress, accountInfo.tronAddress) && Intrinsics.areEqual(this.bitcoinAddress, accountInfo.bitcoinAddress);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((this.ethAddress.hashCode() * 31) + this.tonAddress.hashCode()) * 31) + this.tronAddress.hashCode();
+        return (((((this.ethAddress.hashCode() * 31) + this.tonAddress.hashCode()) * 31) + this.tronAddress.hashCode()) * 31) + this.bitcoinAddress.hashCode();
     }
 
     public String toString() {
-        return "AccountInfo(ethAddress=" + this.ethAddress + ", tonAddress=" + this.tonAddress + ", tronAddress=" + this.tronAddress + ')';
+        return "AccountInfo(ethAddress=" + this.ethAddress + ", tonAddress=" + this.tonAddress + ", tronAddress=" + this.tronAddress + ", bitcoinAddress=" + this.bitcoinAddress + ')';
     }
 
-    public AccountInfo(Address ethAddress, Address tonAddress, Address tronAddress) {
+    public AccountInfo(Address ethAddress, Address tonAddress, Address tronAddress, Address bitcoinAddress) {
         Intrinsics.checkNotNullParameter(ethAddress, "ethAddress");
         Intrinsics.checkNotNullParameter(tonAddress, "tonAddress");
         Intrinsics.checkNotNullParameter(tronAddress, "tronAddress");
+        Intrinsics.checkNotNullParameter(bitcoinAddress, "bitcoinAddress");
         this.ethAddress = ethAddress;
         this.tonAddress = tonAddress;
         this.tronAddress = tronAddress;
+        this.bitcoinAddress = bitcoinAddress;
     }
 
     public final Address getEthAddress() {
@@ -78,6 +89,10 @@ public final class AccountInfo {
 
     public final Address getTronAddress() {
         return this.tronAddress;
+    }
+
+    public final Address getBitcoinAddress() {
+        return this.bitcoinAddress;
     }
 
     /* compiled from: AccountInfo.kt */

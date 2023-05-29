@@ -30,7 +30,7 @@ import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.tgnet.TLRPC$ChatParticipant;
 import timber.log.Timber;
 /* compiled from: ProfilePresenter.kt */
@@ -287,27 +287,27 @@ public final class ProfilePresenter extends BasePresenter<ProfileView> {
     }
 
     private final void showResetConfirmationDialog(SocialNetwork socialNetwork) {
-        ((ProfileView) getViewState()).showResetConfirmationDialog(new DialogModel(this.resourceManager.getString(C3290R.string.social_reset_account_title, socialNetwork.getSocialName()), this.resourceManager.getString(C3290R.string.social_reset_account_message, socialNetwork.getSocialName()), this.resourceManager.getString(C3290R.string.social_reset_account_negative_button), this.resourceManager.getString(C3290R.string.social_reset_account_positive_button)), socialNetwork);
+        ((ProfileView) getViewState()).showResetConfirmationDialog(new DialogModel(this.resourceManager.getString(C3295R.string.social_reset_account_title, socialNetwork.getSocialName()), this.resourceManager.getString(C3295R.string.social_reset_account_message, socialNetwork.getSocialName()), this.resourceManager.getString(C3295R.string.social_reset_account_negative_button), this.resourceManager.getString(C3295R.string.social_reset_account_positive_button)), socialNetwork);
     }
 
     private final void showNeedAuthorizeDialog() {
-        ((ProfileView) getViewState()).showNeedAuthorizeDialog(new DialogModel(this.resourceManager.getString(C3290R.string.wallet_crypto_wallet_not_created_dialog_title), this.resourceManager.getString(C3290R.string.wallet_crypto_wallet_not_created_dialog_description), this.resourceManager.getString(C3290R.string.common_cancel), this.resourceManager.getString(C3290R.string.common_ok)));
+        ((ProfileView) getViewState()).showNeedAuthorizeDialog(new DialogModel(this.resourceManager.getString(C3295R.string.wallet_crypto_wallet_not_created_dialog_title), this.resourceManager.getString(C3295R.string.wallet_crypto_wallet_not_created_dialog_description), this.resourceManager.getString(C3295R.string.common_cancel), this.resourceManager.getString(C3295R.string.common_ok)));
     }
 
     private final void showBeforeDialog(SocialNetwork socialNetwork) {
         String socialName = socialNetwork.getSocialName();
         String beforeConnectMessage = socialNetwork.getBeforeConnectMessage();
-        String string = this.resourceManager.getString(C3290R.string.common_ok);
+        String string = this.resourceManager.getString(C3295R.string.common_ok);
         Locale locale = Locale.ROOT;
         String upperCase = string.toUpperCase(locale);
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
-        String upperCase2 = this.resourceManager.getString(C3290R.string.common_cancel).toUpperCase(locale);
+        String upperCase2 = this.resourceManager.getString(C3295R.string.common_cancel).toUpperCase(locale);
         Intrinsics.checkNotNullExpressionValue(upperCase2, "this as java.lang.String).toUpperCase(Locale.ROOT)");
         ((ProfileView) getViewState()).showBeforeConnectMessage(socialNetwork, new DialogModel(socialName, beforeConnectMessage, upperCase2, upperCase));
     }
 
     private final void showLinkConfirmationDialog(long j) {
-        ((ProfileView) getViewState()).showLinkConfirmationDialog(new DialogModel(this.resourceManager.getString(C3290R.string.profile_twitter_link_confirmation_alert_title), this.resourceManager.getString(C3290R.string.profile_twitter_link_confirmation_alert_description), this.resourceManager.getString(C3290R.string.Cancel), this.resourceManager.getString(C3290R.string.common_confirm)), j);
+        ((ProfileView) getViewState()).showLinkConfirmationDialog(new DialogModel(this.resourceManager.getString(C3295R.string.profile_twitter_link_confirmation_alert_title), this.resourceManager.getString(C3295R.string.profile_twitter_link_confirmation_alert_description), this.resourceManager.getString(C3295R.string.Cancel), this.resourceManager.getString(C3295R.string.common_confirm)), j);
     }
 
     private final void startSocialAuth(SocialType socialType) {

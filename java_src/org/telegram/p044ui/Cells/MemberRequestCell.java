@@ -8,7 +8,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserObject;
 import org.telegram.p044ui.ActionBar.SimpleTextView;
@@ -69,10 +69,10 @@ public class MemberRequestCell extends FrameLayout {
         textView.setMaxLines(1);
         textView.setPadding(m54dp, 0, m54dp, 0);
         if (z) {
-            i = C3290R.string.AddToChannel;
+            i = C3295R.string.AddToChannel;
             str = "AddToChannel";
         } else {
-            i = C3290R.string.AddToGroup;
+            i = C3295R.string.AddToGroup;
             str = "AddToGroup";
         }
         textView.setText(LocaleController.getString(str, i));
@@ -93,7 +93,7 @@ public class MemberRequestCell extends FrameLayout {
         textView2.setGravity((LocaleController.isRTL ? 5 : 3) | 16);
         textView2.setMaxLines(1);
         textView2.setPadding(m54dp, 0, m54dp, 0);
-        textView2.setText(LocaleController.getString("Dismiss", C3290R.string.Dismiss));
+        textView2.setText(LocaleController.getString("Dismiss", C3295R.string.Dismiss));
         textView2.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueText));
         textView2.setTextSize(14.0f);
         textView2.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
@@ -138,17 +138,17 @@ public class MemberRequestCell extends FrameLayout {
         this.nameTextView.setText(UserObject.getUserName(tLRPC$User));
         String formatDateAudio = LocaleController.formatDateAudio(tLRPC$TL_chatInviteImporter.date, false);
         if (tLRPC$TL_chatInviteImporter.via_chatlist) {
-            this.statusTextView.setText(LocaleController.getString("JoinedViaFolder", C3290R.string.JoinedViaFolder));
+            this.statusTextView.setText(LocaleController.getString("JoinedViaFolder", C3295R.string.JoinedViaFolder));
             return;
         }
         long j = tLRPC$TL_chatInviteImporter.approved_by;
         if (j == 0) {
-            this.statusTextView.setText(LocaleController.formatString("RequestedToJoinAt", C3290R.string.RequestedToJoinAt, formatDateAudio));
+            this.statusTextView.setText(LocaleController.formatString("RequestedToJoinAt", C3295R.string.RequestedToJoinAt, formatDateAudio));
             return;
         }
         TLRPC$User tLRPC$User2 = longSparseArray.get(j);
         if (tLRPC$User2 != null) {
-            this.statusTextView.setText(LocaleController.formatString("AddedBy", C3290R.string.AddedBy, UserObject.getFirstName(tLRPC$User2), formatDateAudio));
+            this.statusTextView.setText(LocaleController.formatString("AddedBy", C3295R.string.AddedBy, UserObject.getFirstName(tLRPC$User2), formatDateAudio));
         } else {
             this.statusTextView.setText("");
         }

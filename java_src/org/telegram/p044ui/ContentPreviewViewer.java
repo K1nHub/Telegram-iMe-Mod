@@ -45,7 +45,7 @@ import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.FileLog;
@@ -151,7 +151,7 @@ public class ContentPreviewViewer {
     private boolean isVisible = false;
     private int keyboardHeight = AndroidUtilities.m54dp(200);
     private Paint paint = new Paint(1);
-    private Runnable showSheetRunnable = new RunnableC54562();
+    private Runnable showSheetRunnable = new RunnableC54612();
 
     /* renamed from: org.telegram.ui.ContentPreviewViewer$ContentPreviewViewerDelegate */
     /* loaded from: classes5.dex */
@@ -324,7 +324,7 @@ public class ContentPreviewViewer {
 
     public void updateToggleAutoPreviewItem() {
         boolean z = this.currentContentType == 0 ? SharedConfig.isSendingStickerConfirmationEnabled : SharedConfig.isSendingGifConfirmationEnabled;
-        this.toggleAutoPreviewItem.setTextAndIcon(LocaleController.getInternalString(z ? C3290R.string.content_preview_disable_preview : C3290R.string.content_preview_enable_preview), z ? C3290R.C3292drawable.fork_wallet_crypto_cipher_eye : C3290R.C3292drawable.fork_filter_icon_eye);
+        this.toggleAutoPreviewItem.setTextAndIcon(LocaleController.getInternalString(z ? C3295R.string.content_preview_disable_preview : C3295R.string.content_preview_enable_preview), z ? C3295R.C3297drawable.fork_wallet_crypto_cipher_eye : C3295R.C3297drawable.fork_filter_icon_eye);
     }
 
     private void releasePlayer() {
@@ -459,14 +459,14 @@ public class ContentPreviewViewer {
 
     /* renamed from: org.telegram.ui.ContentPreviewViewer$2 */
     /* loaded from: classes5.dex */
-    public class RunnableC54562 implements Runnable {
-        RunnableC54562() {
+    public class RunnableC54612 implements Runnable {
+        RunnableC54612() {
             ContentPreviewViewer.this = r1;
         }
 
         /* JADX WARN: Multi-variable type inference failed */
         /* JADX WARN: Type inference failed for: r2v0 */
-        /* JADX WARN: Type inference failed for: r2v1, types: [int, boolean] */
+        /* JADX WARN: Type inference failed for: r2v1, types: [boolean, int] */
         /* JADX WARN: Type inference failed for: r2v37 */
         @Override // java.lang.Runnable
         public void run() {
@@ -498,62 +498,62 @@ public class ContentPreviewViewer {
                     ContentPreviewViewer.this.containerView.invalidate();
                     if (ContentPreviewViewer.this.delegate != null) {
                         if (ContentPreviewViewer.this.delegate.needSend(ContentPreviewViewer.this.currentContentType) && !ContentPreviewViewer.this.delegate.isInScheduleMode()) {
-                            arrayList.add(LocaleController.getString("SendStickerPreview", C3290R.string.SendStickerPreview));
-                            arrayList3.add(Integer.valueOf(C3290R.C3292drawable.msg_send));
+                            arrayList.add(LocaleController.getString("SendStickerPreview", C3295R.string.SendStickerPreview));
+                            arrayList3.add(Integer.valueOf(C3295R.C3297drawable.msg_send));
                             arrayList2.add(0);
                         }
                         if (ContentPreviewViewer.this.delegate.needSend(ContentPreviewViewer.this.currentContentType) && !ContentPreviewViewer.this.delegate.isInScheduleMode()) {
-                            arrayList.add(LocaleController.getInternalString(C3290R.string.sticker_edit_and_send));
-                            arrayList3.add(Integer.valueOf(C3290R.C3292drawable.msg_edit));
+                            arrayList.add(LocaleController.getInternalString(C3295R.string.sticker_edit_and_send));
+                            arrayList3.add(Integer.valueOf(C3295R.C3297drawable.msg_edit));
                             arrayList2.add(Integer.valueOf(IdFabric$Menu.EDIT_AND_SEND));
                         }
-                        arrayList.add(LocaleController.getInternalString(C3290R.string.custom_avatar_set));
-                        arrayList3.add(Integer.valueOf(C3290R.C3292drawable.msg_openprofile));
+                        arrayList.add(LocaleController.getInternalString(C3295R.string.custom_avatar_set));
+                        arrayList3.add(Integer.valueOf(C3295R.C3297drawable.msg_openprofile));
                         arrayList2.add(Integer.valueOf(IdFabric$Menu.SET_AS_AVATAR));
                         if (ContentPreviewViewer.this.delegate.needSend(ContentPreviewViewer.this.currentContentType) && !ContentPreviewViewer.this.delegate.isInScheduleMode()) {
                             if (z2) {
-                                arrayList.add(LocaleController.getInternalString(C3290R.string.send_with_sound));
+                                arrayList.add(LocaleController.getInternalString(C3295R.string.send_with_sound));
                             } else {
-                                arrayList.add(LocaleController.getString("SendWithoutSound", C3290R.string.SendWithoutSound));
+                                arrayList.add(LocaleController.getString("SendWithoutSound", C3295R.string.SendWithoutSound));
                             }
                             if (z2) {
-                                arrayList3.add(Integer.valueOf(C3290R.C3292drawable.input_notify_on));
+                                arrayList3.add(Integer.valueOf(C3295R.C3297drawable.input_notify_on));
                             } else {
-                                arrayList3.add(Integer.valueOf(C3290R.C3292drawable.input_notify_off));
+                                arrayList3.add(Integer.valueOf(C3295R.C3297drawable.input_notify_off));
                             }
                             arrayList2.add(6);
                         }
                         if (ContentPreviewViewer.this.delegate.canSchedule()) {
-                            arrayList.add(LocaleController.getString("Schedule", C3290R.string.Schedule));
-                            arrayList3.add(Integer.valueOf(C3290R.C3292drawable.msg_autodelete));
+                            arrayList.add(LocaleController.getString("Schedule", C3295R.string.Schedule));
+                            arrayList3.add(Integer.valueOf(C3295R.C3297drawable.msg_autodelete));
                             arrayList2.add(3);
                         }
                         if (ContentPreviewViewer.this.currentStickerSet != null && ContentPreviewViewer.this.delegate.needOpen()) {
-                            arrayList.add(LocaleController.formatString("ViewPackPreview", C3290R.string.ViewPackPreview, new Object[0]));
-                            arrayList3.add(Integer.valueOf(C3290R.C3292drawable.msg_media));
+                            arrayList.add(LocaleController.formatString("ViewPackPreview", C3295R.string.ViewPackPreview, new Object[0]));
+                            arrayList3.add(Integer.valueOf(C3295R.C3297drawable.msg_media));
                             arrayList2.add(1);
                         }
                         if (ContentPreviewViewer.this.delegate.needRemove()) {
-                            arrayList.add(LocaleController.getString("ImportStickersRemoveMenu", C3290R.string.ImportStickersRemoveMenu));
-                            arrayList3.add(Integer.valueOf(C3290R.C3292drawable.msg_delete));
+                            arrayList.add(LocaleController.getString("ImportStickersRemoveMenu", C3295R.string.ImportStickersRemoveMenu));
+                            arrayList3.add(Integer.valueOf(C3295R.C3297drawable.msg_delete));
                             arrayList2.add(5);
                         }
                     }
                     if (!MessageObject.isMaskDocument(ContentPreviewViewer.this.currentDocument) && (isStickerInFavorites || (MediaDataController.getInstance(ContentPreviewViewer.this.currentAccount).canAddStickerToFavorites() && MessageObject.isStickerHasSet(ContentPreviewViewer.this.currentDocument)))) {
                         if (isStickerInFavorites) {
-                            i9 = C3290R.string.DeleteFromFavorites;
+                            i9 = C3295R.string.DeleteFromFavorites;
                             str = "DeleteFromFavorites";
                         } else {
-                            i9 = C3290R.string.AddToFavorites;
+                            i9 = C3295R.string.AddToFavorites;
                             str = "AddToFavorites";
                         }
                         arrayList.add(LocaleController.getString(str, i9));
-                        arrayList3.add(Integer.valueOf(isStickerInFavorites ? C3290R.C3292drawable.msg_unfave : C3290R.C3292drawable.msg_fave));
+                        arrayList3.add(Integer.valueOf(isStickerInFavorites ? C3295R.C3297drawable.msg_unfave : C3295R.C3297drawable.msg_fave));
                         arrayList2.add(2);
                     }
                     if (ContentPreviewViewer.this.isRecentSticker) {
-                        arrayList.add(LocaleController.getString("DeleteFromRecent", C3290R.string.DeleteFromRecent));
-                        arrayList3.add(Integer.valueOf(C3290R.C3292drawable.msg_delete));
+                        arrayList.add(LocaleController.getString("DeleteFromRecent", C3295R.string.DeleteFromRecent));
+                        arrayList3.add(Integer.valueOf(C3295R.C3297drawable.msg_delete));
                         arrayList2.add(4);
                     }
                     arrayList.add("");
@@ -566,12 +566,12 @@ public class ContentPreviewViewer {
                     for (int i10 = 0; i10 < arrayList3.size(); i10++) {
                         iArr[i10] = ((Integer) arrayList3.get(i10)).intValue();
                     }
-                    View$OnClickListenerC54571 view$OnClickListenerC54571 = new View$OnClickListenerC54571(arrayList2, isStickerInFavorites);
-                    ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(ContentPreviewViewer.this.containerView.getContext(), C3290R.C3292drawable.popup_fixed_alert3, ContentPreviewViewer.this.resourcesProvider);
+                    View$OnClickListenerC54621 view$OnClickListenerC54621 = new View$OnClickListenerC54621(arrayList2, isStickerInFavorites);
+                    ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(ContentPreviewViewer.this.containerView.getContext(), C3295R.C3297drawable.popup_fixed_alert3, ContentPreviewViewer.this.resourcesProvider);
                     for (int i11 = 0; i11 < arrayList.size(); i11++) {
                         ActionBarMenuSubItem addItem = ActionBarMenuItem.addItem(actionBarPopupWindowLayout, ((Integer) arrayList3.get(i11)).intValue(), (CharSequence) arrayList.get(i11), false, ContentPreviewViewer.this.resourcesProvider);
                         addItem.setTag(Integer.valueOf(i11));
-                        addItem.setOnClickListener(view$OnClickListenerC54571);
+                        addItem.setOnClickListener(view$OnClickListenerC54621);
                         if (i11 != arrayList2.size() - 1 && ((Integer) arrayList2.get(i11 + 1)).intValue() == IdFabric$Menu.TOGGLE_AUTO_PREVIEW) {
                             ActionBarMenuItem.addColoredGap(actionBarPopupWindowLayout, ContentPreviewViewer.this.resourcesProvider);
                         } else if (((Integer) arrayList2.get(i11)).intValue() == IdFabric$Menu.TOGGLE_AUTO_PREVIEW) {
@@ -581,7 +581,7 @@ public class ContentPreviewViewer {
                     }
                     ContentPreviewViewer.this.popupWindow = new ActionBarPopupWindow(actionBarPopupWindowLayout, -2, -2) { // from class: org.telegram.ui.ContentPreviewViewer.2.2
                         {
-                            RunnableC54562.this = this;
+                            RunnableC54612.this = this;
                         }
 
                         @Override // org.telegram.p044ui.ActionBar.ActionBarPopupWindow, android.widget.PopupWindow
@@ -600,7 +600,7 @@ public class ContentPreviewViewer {
                     ContentPreviewViewer.this.popupWindow.setScaleOut(true);
                     ContentPreviewViewer.this.popupWindow.setOutsideTouchable(true);
                     ContentPreviewViewer.this.popupWindow.setClippingEnabled(true);
-                    ContentPreviewViewer.this.popupWindow.setAnimationStyle(C3290R.style.PopupContextAnimation);
+                    ContentPreviewViewer.this.popupWindow.setAnimationStyle(C3295R.style.PopupContextAnimation);
                     ContentPreviewViewer.this.popupWindow.setFocusable(true);
                     actionBarPopupWindowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(1000), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(1000), Integer.MIN_VALUE));
                     ContentPreviewViewer.this.popupWindow.setInputMethodMode(2);
@@ -635,63 +635,63 @@ public class ContentPreviewViewer {
                     final ArrayList arrayList5 = new ArrayList();
                     ArrayList arrayList6 = new ArrayList();
                     if (z4) {
-                        arrayList4.add(LocaleController.getInternalString(C3290R.string.nft_preview_copy_token_id));
-                        arrayList6.add(Integer.valueOf(C3290R.C3292drawable.msg_copy));
+                        arrayList4.add(LocaleController.getInternalString(C3295R.string.nft_preview_copy_token_id));
+                        arrayList6.add(Integer.valueOf(C3295R.C3297drawable.msg_copy));
                         arrayList5.add(Integer.valueOf(IdFabric$Menu.NFT_COPY_ID));
-                        arrayList4.add(LocaleController.getInternalString(C3290R.string.nft_preview_open_contract));
-                        arrayList6.add(Integer.valueOf(C3290R.C3292drawable.fork_ic_etherscan_24));
+                        arrayList4.add(LocaleController.getInternalString(C3295R.string.nft_preview_open_contract));
+                        arrayList6.add(Integer.valueOf(C3295R.C3297drawable.fork_ic_etherscan_24));
                         arrayList5.add(Integer.valueOf(IdFabric$Menu.NFT_OPEN_CONTRACT));
-                        arrayList4.add(LocaleController.getInternalString(C3290R.string.custom_avatar_set));
-                        arrayList6.add(Integer.valueOf(C3290R.C3292drawable.msg_openprofile));
+                        arrayList4.add(LocaleController.getInternalString(C3295R.string.custom_avatar_set));
+                        arrayList6.add(Integer.valueOf(C3295R.C3297drawable.msg_openprofile));
                         arrayList5.add(Integer.valueOf(IdFabric$Menu.SET_AS_AVATAR));
-                        arrayList4.add(LocaleController.getInternalString(C3290R.string.nft_preview_open_source));
-                        arrayList6.add(Integer.valueOf(C3290R.C3292drawable.msg_photos));
+                        arrayList4.add(LocaleController.getInternalString(C3295R.string.nft_preview_open_source));
+                        arrayList6.add(Integer.valueOf(C3295R.C3297drawable.msg_photos));
                         arrayList5.add(Integer.valueOf(IdFabric$Menu.NFT_OPEN_SOURCE));
                     }
                     if (ContentPreviewViewer.this.delegate.needSend(ContentPreviewViewer.this.currentContentType) && !ContentPreviewViewer.this.delegate.isInScheduleMode()) {
                         if (z3) {
-                            arrayList4.add(LocaleController.getString("Send", C3290R.string.Send));
+                            arrayList4.add(LocaleController.getString("Send", C3295R.string.Send));
                         } else {
-                            arrayList4.add(LocaleController.getString("SendGifPreview", C3290R.string.SendGifPreview));
+                            arrayList4.add(LocaleController.getString("SendGifPreview", C3295R.string.SendGifPreview));
                         }
-                        arrayList6.add(Integer.valueOf(C3290R.C3292drawable.msg_send));
+                        arrayList6.add(Integer.valueOf(C3295R.C3297drawable.msg_send));
                         arrayList5.add(0);
-                        arrayList4.add(LocaleController.getInternalString(C3290R.string.custom_avatar_set));
-                        arrayList6.add(Integer.valueOf(C3290R.C3292drawable.msg_openprofile));
+                        arrayList4.add(LocaleController.getInternalString(C3295R.string.custom_avatar_set));
+                        arrayList6.add(Integer.valueOf(C3295R.C3297drawable.msg_openprofile));
                         arrayList5.add(Integer.valueOf(IdFabric$Menu.SET_AS_AVATAR));
                         if (z3) {
-                            arrayList4.add(LocaleController.getInternalString(C3290R.string.kikliko_send_as_gif));
-                            arrayList6.add(Integer.valueOf(C3290R.C3292drawable.smiles_tab_gif));
+                            arrayList4.add(LocaleController.getInternalString(C3295R.string.kikliko_send_as_gif));
+                            arrayList6.add(Integer.valueOf(C3295R.C3297drawable.smiles_tab_gif));
                             arrayList5.add(Integer.valueOf(IdFabric$Menu.SEND_AS_GIF));
                         }
                     }
                     if (ContentPreviewViewer.this.delegate.needSend(ContentPreviewViewer.this.currentContentType) && !ContentPreviewViewer.this.delegate.isInScheduleMode()) {
                         if (z2) {
-                            arrayList4.add(LocaleController.getInternalString(C3290R.string.send_with_sound));
+                            arrayList4.add(LocaleController.getInternalString(C3295R.string.send_with_sound));
                         } else {
-                            arrayList4.add(LocaleController.getString("SendWithoutSound", C3290R.string.SendWithoutSound));
+                            arrayList4.add(LocaleController.getString("SendWithoutSound", C3295R.string.SendWithoutSound));
                         }
                         if (z2) {
-                            arrayList6.add(Integer.valueOf(C3290R.C3292drawable.input_notify_on));
+                            arrayList6.add(Integer.valueOf(C3295R.C3297drawable.input_notify_on));
                         } else {
-                            arrayList6.add(Integer.valueOf(C3290R.C3292drawable.input_notify_off));
+                            arrayList6.add(Integer.valueOf(C3295R.C3297drawable.input_notify_off));
                         }
                         arrayList5.add(4);
                     }
                     if (ContentPreviewViewer.this.delegate.canSchedule()) {
-                        arrayList4.add(LocaleController.getString("Schedule", C3290R.string.Schedule));
-                        arrayList6.add(Integer.valueOf(C3290R.C3292drawable.msg_autodelete));
+                        arrayList4.add(LocaleController.getString("Schedule", C3295R.string.Schedule));
+                        arrayList6.add(Integer.valueOf(C3295R.C3297drawable.msg_autodelete));
                         arrayList5.add(3);
                     }
                     if (ContentPreviewViewer.this.currentDocument != null) {
                         z = MediaDataController.getInstance(ContentPreviewViewer.this.currentAccount).hasRecentGif(ContentPreviewViewer.this.currentDocument);
                         if (z) {
-                            arrayList4.add(LocaleController.formatString("Delete", C3290R.string.Delete, new Object[0]));
-                            arrayList6.add(Integer.valueOf(C3290R.C3292drawable.msg_delete));
+                            arrayList4.add(LocaleController.formatString("Delete", C3295R.string.Delete, new Object[0]));
+                            arrayList6.add(Integer.valueOf(C3295R.C3297drawable.msg_delete));
                             arrayList5.add(1);
                         } else {
-                            arrayList4.add(LocaleController.formatString("SaveToGIFs", C3290R.string.SaveToGIFs, new Object[0]));
-                            arrayList6.add(Integer.valueOf(C3290R.C3292drawable.msg_gif_add));
+                            arrayList4.add(LocaleController.formatString("SaveToGIFs", C3295R.string.SaveToGIFs, new Object[0]));
+                            arrayList6.add(Integer.valueOf(C3295R.C3297drawable.msg_gif_add));
                             arrayList5.add(2);
                         }
                     } else {
@@ -704,8 +704,8 @@ public class ContentPreviewViewer {
                             arrayList5.add(Integer.valueOf(IdFabric$Menu.TOGGLE_AUTO_PREVIEW));
                         }
                     } else {
-                        arrayList4.add(LocaleController.getString("ReportChat", C3290R.string.ReportChat));
-                        arrayList6.add(Integer.valueOf(C3290R.C3292drawable.msg_report));
+                        arrayList4.add(LocaleController.getString("ReportChat", C3295R.string.ReportChat));
+                        arrayList6.add(Integer.valueOf(C3295R.C3297drawable.msg_report));
                         arrayList5.add(Integer.valueOf(IdFabric$Menu.REPORT));
                     }
                     if (arrayList4.isEmpty()) {
@@ -715,14 +715,14 @@ public class ContentPreviewViewer {
                     for (int i12 = 0; i12 < arrayList6.size(); i12++) {
                         iArr2[i12] = ((Integer) arrayList6.get(i12)).intValue();
                     }
-                    ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout2 = new ActionBarPopupWindow.ActionBarPopupWindowLayout(ContentPreviewViewer.this.containerView.getContext(), C3290R.C3292drawable.popup_fixed_alert2, ContentPreviewViewer.this.resourcesProvider);
+                    ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout2 = new ActionBarPopupWindow.ActionBarPopupWindowLayout(ContentPreviewViewer.this.containerView.getContext(), C3295R.C3297drawable.popup_fixed_alert2, ContentPreviewViewer.this.resourcesProvider);
                     if (z3 || z4) {
                         actionBarPopupWindowLayout2.setFitItems(true);
                     }
                     View.OnClickListener onClickListener = new View.OnClickListener() { // from class: org.telegram.ui.ContentPreviewViewer$2$$ExternalSyntheticLambda2
                         @Override // android.view.View.OnClickListener
                         public final void onClick(View view) {
-                            ContentPreviewViewer.RunnableC54562.this.lambda$run$4(arrayList5, view);
+                            ContentPreviewViewer.RunnableC54612.this.lambda$run$4(arrayList5, view);
                         }
                     };
                     int i13 = 0;
@@ -730,7 +730,7 @@ public class ContentPreviewViewer {
                         int intValue = ((Integer) arrayList5.get(i13)).intValue();
                         if (i13 == 0 && (z3 || z4)) {
                             LinearLayout linearLayout = new LinearLayout(actionBarPopupWindowLayout2.getContext());
-                            linearLayout.setTag(C3290R.C3293id.fit_width_tag, Integer.valueOf((int) r2));
+                            linearLayout.setTag(C3295R.C3298id.fit_width_tag, Integer.valueOf((int) r2));
                             linearLayout.setOrientation(r2);
                             TextView textView = new TextView(actionBarPopupWindowLayout2.getContext());
                             textView.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText, ContentPreviewViewer.this.resourcesProvider));
@@ -751,7 +751,7 @@ public class ContentPreviewViewer {
                             if (!z3) {
                                 textView2.setText(ContentPreviewViewer.this.nftToken.getDescription());
                             } else {
-                                textView2.setText(LocaleController.getInternalString(C3290R.string.kikliko_promo));
+                                textView2.setText(LocaleController.getInternalString(C3295R.string.kikliko_promo));
                             }
                             linearLayout.addView(textView2, LayoutHelper.createFrame(-2, -2));
                             linearLayout.setPadding(AndroidUtilities.m54dp(18), AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(18), AndroidUtilities.m54dp(8));
@@ -777,7 +777,7 @@ public class ContentPreviewViewer {
                     }
                     ContentPreviewViewer.this.popupWindow = new ActionBarPopupWindow(actionBarPopupWindowLayout2, -2, -2) { // from class: org.telegram.ui.ContentPreviewViewer.2.4
                         {
-                            RunnableC54562.this = this;
+                            RunnableC54612.this = this;
                         }
 
                         @Override // org.telegram.p044ui.ActionBar.ActionBarPopupWindow, android.widget.PopupWindow
@@ -796,7 +796,7 @@ public class ContentPreviewViewer {
                     ContentPreviewViewer.this.popupWindow.setScaleOut(true);
                     ContentPreviewViewer.this.popupWindow.setOutsideTouchable(true);
                     ContentPreviewViewer.this.popupWindow.setClippingEnabled(true);
-                    ContentPreviewViewer.this.popupWindow.setAnimationStyle(C3290R.style.PopupContextAnimation);
+                    ContentPreviewViewer.this.popupWindow.setAnimationStyle(C3295R.style.PopupContextAnimation);
                     ContentPreviewViewer.this.popupWindow.setFocusable(true);
                     actionBarPopupWindowLayout2.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(1000), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(1000), Integer.MIN_VALUE));
                     ContentPreviewViewer.this.popupWindow.setInputMethodMode(2);
@@ -825,7 +825,7 @@ public class ContentPreviewViewer {
                         ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ContentPreviewViewer$2$$ExternalSyntheticLambda0
                             @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                             public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                                ContentPreviewViewer.RunnableC54562.this.lambda$run$5(valueAnimator);
+                                ContentPreviewViewer.RunnableC54612.this.lambda$run$5(valueAnimator);
                             }
                         });
                         ofFloat.setDuration(350L);
@@ -840,30 +840,30 @@ public class ContentPreviewViewer {
                 final ArrayList arrayList8 = new ArrayList();
                 ArrayList arrayList9 = new ArrayList();
                 if (ContentPreviewViewer.this.delegate.needSend(ContentPreviewViewer.this.currentContentType)) {
-                    arrayList7.add(LocaleController.getString("SendEmojiPreview", C3290R.string.SendEmojiPreview));
-                    arrayList9.add(Integer.valueOf(C3290R.C3292drawable.msg_send));
+                    arrayList7.add(LocaleController.getString("SendEmojiPreview", C3295R.string.SendEmojiPreview));
+                    arrayList9.add(Integer.valueOf(C3295R.C3297drawable.msg_send));
                     arrayList8.add(0);
                 }
                 Boolean canSetAsStatus = ContentPreviewViewer.this.delegate.canSetAsStatus(ContentPreviewViewer.this.currentDocument);
                 if (canSetAsStatus != null) {
                     if (canSetAsStatus.booleanValue()) {
-                        arrayList7.add(LocaleController.getString("SetAsEmojiStatus", C3290R.string.SetAsEmojiStatus));
-                        arrayList9.add(Integer.valueOf(C3290R.C3292drawable.msg_smile_status));
+                        arrayList7.add(LocaleController.getString("SetAsEmojiStatus", C3295R.string.SetAsEmojiStatus));
+                        arrayList9.add(Integer.valueOf(C3295R.C3297drawable.msg_smile_status));
                         arrayList8.add(1);
                     } else {
-                        arrayList7.add(LocaleController.getString("RemoveStatus", C3290R.string.RemoveStatus));
-                        arrayList9.add(Integer.valueOf(C3290R.C3292drawable.msg_smile_status));
+                        arrayList7.add(LocaleController.getString("RemoveStatus", C3295R.string.RemoveStatus));
+                        arrayList9.add(Integer.valueOf(C3295R.C3297drawable.msg_smile_status));
                         arrayList8.add(2);
                     }
                 }
                 if (ContentPreviewViewer.this.delegate.needCopy()) {
-                    arrayList7.add(LocaleController.getString("CopyEmojiPreview", C3290R.string.CopyEmojiPreview));
-                    arrayList9.add(Integer.valueOf(C3290R.C3292drawable.msg_copy));
+                    arrayList7.add(LocaleController.getString("CopyEmojiPreview", C3295R.string.CopyEmojiPreview));
+                    arrayList9.add(Integer.valueOf(C3295R.C3297drawable.msg_copy));
                     arrayList8.add(3);
                 }
                 if (ContentPreviewViewer.this.delegate.needRemoveFromRecent(ContentPreviewViewer.this.currentDocument)) {
-                    arrayList7.add(LocaleController.getString("RemoveFromRecent", C3290R.string.RemoveFromRecent));
-                    arrayList9.add(Integer.valueOf(C3290R.C3292drawable.msg_delete));
+                    arrayList7.add(LocaleController.getString("RemoveFromRecent", C3295R.string.RemoveFromRecent));
+                    arrayList9.add(Integer.valueOf(C3295R.C3297drawable.msg_delete));
                     arrayList8.add(4);
                 }
                 if (arrayList7.isEmpty()) {
@@ -873,11 +873,11 @@ public class ContentPreviewViewer {
                 for (int i15 = 0; i15 < arrayList9.size(); i15++) {
                     iArr3[i15] = ((Integer) arrayList9.get(i15)).intValue();
                 }
-                ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout3 = new ActionBarPopupWindow.ActionBarPopupWindowLayout(ContentPreviewViewer.this.containerView.getContext(), C3290R.C3292drawable.popup_fixed_alert2, ContentPreviewViewer.this.resourcesProvider);
+                ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout3 = new ActionBarPopupWindow.ActionBarPopupWindowLayout(ContentPreviewViewer.this.containerView.getContext(), C3295R.C3297drawable.popup_fixed_alert2, ContentPreviewViewer.this.resourcesProvider);
                 View.OnClickListener onClickListener2 = new View.OnClickListener() { // from class: org.telegram.ui.ContentPreviewViewer$2$$ExternalSyntheticLambda3
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view) {
-                        ContentPreviewViewer.RunnableC54562.this.lambda$run$0(arrayList8, view);
+                        ContentPreviewViewer.RunnableC54612.this.lambda$run$0(arrayList8, view);
                     }
                 };
                 int i16 = 0;
@@ -893,7 +893,7 @@ public class ContentPreviewViewer {
                 }
                 ContentPreviewViewer.this.popupWindow = new ActionBarPopupWindow(actionBarPopupWindowLayout3, -2, -2) { // from class: org.telegram.ui.ContentPreviewViewer.2.3
                     {
-                        RunnableC54562.this = this;
+                        RunnableC54612.this = this;
                     }
 
                     @Override // org.telegram.p044ui.ActionBar.ActionBarPopupWindow, android.widget.PopupWindow
@@ -912,7 +912,7 @@ public class ContentPreviewViewer {
                 ContentPreviewViewer.this.popupWindow.setScaleOut(true);
                 ContentPreviewViewer.this.popupWindow.setOutsideTouchable(true);
                 ContentPreviewViewer.this.popupWindow.setClippingEnabled(true);
-                ContentPreviewViewer.this.popupWindow.setAnimationStyle(C3290R.style.PopupContextAnimation);
+                ContentPreviewViewer.this.popupWindow.setAnimationStyle(C3295R.style.PopupContextAnimation);
                 ContentPreviewViewer.this.popupWindow.setFocusable(true);
                 actionBarPopupWindowLayout3.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(1000), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(1000), Integer.MIN_VALUE));
                 ContentPreviewViewer.this.popupWindow.setInputMethodMode(2);
@@ -942,7 +942,7 @@ public class ContentPreviewViewer {
                     ofFloat2.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.ContentPreviewViewer$2$$ExternalSyntheticLambda1
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                            ContentPreviewViewer.RunnableC54562.this.lambda$run$1(valueAnimator);
+                            ContentPreviewViewer.RunnableC54612.this.lambda$run$1(valueAnimator);
                         }
                     });
                     ofFloat2.setDuration(350L);
@@ -954,12 +954,12 @@ public class ContentPreviewViewer {
 
         /* renamed from: org.telegram.ui.ContentPreviewViewer$2$1 */
         /* loaded from: classes5.dex */
-        class View$OnClickListenerC54571 implements View.OnClickListener {
+        class View$OnClickListenerC54621 implements View.OnClickListener {
             final /* synthetic */ ArrayList val$actions;
             final /* synthetic */ boolean val$inFavs;
 
-            View$OnClickListenerC54571(ArrayList arrayList, boolean z) {
-                RunnableC54562.this = r1;
+            View$OnClickListenerC54621(ArrayList arrayList, boolean z) {
+                RunnableC54612.this = r1;
                 this.val$actions = arrayList;
                 this.val$inFavs = z;
             }
@@ -1081,7 +1081,7 @@ public class ContentPreviewViewer {
             } else if (((Integer) arrayList.get(intValue)).intValue() == IdFabric$Menu.SEND_AS_GIF) {
                 ContentPreviewViewer.this.delegate.sendKiklikoVideo(str, str2, true, true, 0);
             } else if (((Integer) arrayList.get(intValue)).intValue() == IdFabric$Menu.NFT_COPY_ID) {
-                ContextExtKt.copyToClipboard(ContentPreviewViewer.this.nftToken.getTokenId(), LocaleController.getString("TextCopied", C3290R.string.TextCopied));
+                ContextExtKt.copyToClipboard(ContentPreviewViewer.this.nftToken.getTokenId(), LocaleController.getString("TextCopied", C3295R.string.TextCopied));
             } else if (((Integer) arrayList.get(intValue)).intValue() == IdFabric$Menu.NFT_OPEN_CONTRACT) {
                 Browser.openUrl(ContentPreviewViewer.this.parentActivity, AppConfiguration$Crypto.formatScanTokenUrl(NetworkType.POLYGON, ContentPreviewViewer.this.nftToken.getCollection().getContractAddress()));
             } else if (((Integer) arrayList.get(intValue)).intValue() == IdFabric$Menu.NFT_OPEN_SOURCE) {
@@ -1135,7 +1135,7 @@ public class ContentPreviewViewer {
                     AlertsCreator.createScheduleDatePickerDialog(ContentPreviewViewer.this.parentActivity, contentPreviewViewerDelegate.getDialogId(), new AlertsCreator.ScheduleDatePickerDelegate() { // from class: org.telegram.ui.ContentPreviewViewer$2$$ExternalSyntheticLambda5
                         @Override // org.telegram.p044ui.Components.AlertsCreator.ScheduleDatePickerDelegate
                         public final void didSelectDate(boolean z, int i2, String str3) {
-                            ContentPreviewViewer.RunnableC54562.lambda$run$3(ContentPreviewViewer.ContentPreviewViewerDelegate.this, tLRPC$Document, tLRPC$BotInlineResult, obj, z, i2, str3);
+                            ContentPreviewViewer.RunnableC54612.lambda$run$3(ContentPreviewViewer.ContentPreviewViewerDelegate.this, tLRPC$Document, tLRPC$BotInlineResult, obj, z, i2, str3);
                         }
 
                         @Override // org.telegram.p044ui.Components.AlertsCreator.ScheduleDatePickerDelegate
@@ -1397,7 +1397,7 @@ public class ContentPreviewViewer {
             return;
         }
         this.parentActivity = activity;
-        this.slideUpDrawable = activity.getResources().getDrawable(C3290R.C3292drawable.preview_arrow);
+        this.slideUpDrawable = activity.getResources().getDrawable(C3295R.C3297drawable.preview_arrow);
         FrameLayout frameLayout = new FrameLayout(activity);
         this.windowView = frameLayout;
         frameLayout.setFocusable(true);

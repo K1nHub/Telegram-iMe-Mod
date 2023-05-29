@@ -8,7 +8,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
@@ -60,11 +60,11 @@ public class ChatGreetingsView extends LinearLayout {
         addView(this.stickerToSendView, LayoutHelper.createLinear(112, 112, 1, 0, 16, 0, 16));
         updateColors();
         if (i <= 0) {
-            this.titleView.setText(LocaleController.getString("NoMessages", C3290R.string.NoMessages));
-            this.descriptionView.setText(LocaleController.getString("NoMessagesGreetingsDescription", C3290R.string.NoMessagesGreetingsDescription));
+            this.titleView.setText(LocaleController.getString("NoMessages", C3295R.string.NoMessages));
+            this.descriptionView.setText(LocaleController.getString("NoMessagesGreetingsDescription", C3295R.string.NoMessagesGreetingsDescription));
         } else {
-            this.titleView.setText(LocaleController.formatString("NearbyPeopleGreetingsMessage", C3290R.string.NearbyPeopleGreetingsMessage, tLRPC$User.first_name, LocaleController.formatDistance(i, 1)));
-            this.descriptionView.setText(LocaleController.getString("NearbyPeopleGreetingsDescription", C3290R.string.NearbyPeopleGreetingsDescription));
+            this.titleView.setText(LocaleController.formatString("NearbyPeopleGreetingsMessage", C3295R.string.NearbyPeopleGreetingsMessage, tLRPC$User.first_name, LocaleController.formatDistance(i, 1)));
+            this.descriptionView.setText(LocaleController.getString("NearbyPeopleGreetingsDescription", C3295R.string.NearbyPeopleGreetingsDescription));
         }
         this.stickerToSendView.setContentDescription(this.descriptionView.getText());
         this.preloadedGreetingsSticker = tLRPC$Document;

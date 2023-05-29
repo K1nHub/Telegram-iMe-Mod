@@ -7181,7 +7181,7 @@ Settings > Tools > Chats > Templates"</string>
     <string name="collection_tab_all">All</string>
     <string name="collection_tab_categories">Categories</string>
     <string name="collection_tab_my">My</string>
-    <string name="com.crashlytics.android.build_id">96b50d69c1de4c748249900df49d2902</string>
+    <string name="com.crashlytics.android.build_id">68ca7691c16c406eb18246d96a74f94b</string>
     <string name="combine_messages_disable">Do not combine messages</string>
     <string name="combine_messages_enable">Combine messages</string>
     <string name="combine_messages_send_without_combine">Send without combining</string>
@@ -7262,6 +7262,8 @@ Settings > Tools > Chats > Templates"</string>
     <string name="currency_atd_site">https://a2dao.com/</string>
     <string name="currency_bcug">Blockchain Cuties Universe</string>
     <string name="currency_bcug_site">https://blockchaincuties.com/</string>
+    <string name="currency_bitcoin">Bitcoin</string>
+    <string name="currency_bitcoin_site">https://bitcoin.org/</string>
     <string name="currency_bnb">Binance Coin</string>
     <string name="currency_bnb_site">https://binance.com/en</string>
     <string name="currency_boson">Boson Protocol</string>
@@ -7375,6 +7377,7 @@ Settings > Tools > Chats > Templates"</string>
     <string name="currency_short_aave">AAVE</string>
     <string name="currency_short_atd">ATD</string>
     <string name="currency_short_bcug">BCUG</string>
+    <string name="currency_short_bitcoin">BTC</string>
     <string name="currency_short_bnb">BNB</string>
     <string name="currency_short_boson">BOSON</string>
     <string name="currency_short_btc">BTC</string>
@@ -7564,7 +7567,7 @@ and we will try to find his Telegram account"</string>
     <string name="drawer_profile_cell_avatar">Аvatar</string>
     <string name="drawer_social_network_app_store">App Store</string>
     <string name="drawer_social_network_google_play">Google Play</string>
-    <string name="drawer_social_network_site">Our site</string>
+    <string name="drawer_social_network_site">Our website</string>
     <string name="drawer_social_network_telegram">Telegram</string>
     <string name="drawer_social_network_twitter">Twitter</string>
     <string name="drawer_social_network_youtube">YouTube</string>
@@ -8774,6 +8777,8 @@ All operations are carried out on the blockchain without the participation of pe
     <string name="wallet_create_eth_pin_code_title">Come up with a PIN</string>
     <string name="wallet_create_eth_pin_code_toolbar_title">PIN</string>
     <string name="wallet_crypto_blockchains_active_wallets">Active wallets</string>
+    <string name="wallet_crypto_blockchains_bitcoin_subtitle">Bitcoin</string>
+    <string name="wallet_crypto_blockchains_bitcoin_title">Bitcoin</string>
     <string name="wallet_crypto_blockchains_description">A list of blockchains, that are activated on your crypto account.</string>
     <string name="wallet_crypto_blockchains_evm_subtitle">Ethereum, BNB Chain, Polygon, Fantom</string>
     <string name="wallet_crypto_blockchains_evm_title">EVM</string>
@@ -8876,6 +8881,8 @@ The main purpose of %4$s is to create a convenient infrastructure for using all 
 
 To use the previously linked crypto wallet address, log in to your account via restore using a passphrase."</string>
     <string name="wallet_details_created">Created</string>
+    <string name="wallet_details_info_bitcoin_description">This is your active account on Bitcoin blockchain.</string>
+    <string name="wallet_details_info_bitcoin_title">Bitcoin</string>
     <string name="wallet_details_info_evm_description">This is your active account on EVM-compatible blockchains such as Ethereum, BNB Chain, Polygon and Fantom.</string>
     <string name="wallet_details_info_evm_title">EVM</string>
     <string name="wallet_details_info_ton_description">This is your active account on The Open Network (TON) blockchain.</string>
@@ -8975,6 +8982,7 @@ Only you have access to your wallet, private keys and funds on your accounts."</
     <string name="wallet_navigation_settings">Settings</string>
     <string name="wallet_navigation_transactions">Transactions</string>
     <string name="wallet_navigation_wallet">Wallet</string>
+    <string name="wallet_network_scanner_bitcoin">Explorer</string>
     <string name="wallet_network_scanner_bsc">BscScan</string>
     <string name="wallet_network_scanner_eth">Etherscan</string>
     <string name="wallet_network_scanner_fantom">FTMScan</string>
@@ -8982,6 +8990,8 @@ Only you have access to your wallet, private keys and funds on your accounts."</
     <string name="wallet_network_scanner_ton">TonScan</string>
     <string name="wallet_network_scanner_tron">TronScan</string>
     <string name="wallet_network_type_bep20">BNB Chain</string>
+    <string name="wallet_network_type_bitcoin">Bitcoin</string>
+    <string name="wallet_network_type_bitcoin_short_name">Bitcoin</string>
     <string name="wallet_network_type_bsc_short_name">BNB Chain</string>
     <string name="wallet_network_type_dialog_title">Select network</string>
     <string name="wallet_network_type_erc20">Ethereum</string>
@@ -9113,7 +9123,7 @@ Slippage is a change in price between the moment you place your swap order and i
     <string name="wallet_token_details_eth_website">https://ethereum.org/en/</string>
     <string name="wallet_token_details_internal_point_website">https://imem.app</string>
     <string name="wallet_token_details_lime_description_website">https://telegra.ph/Lime-02-10</string>
-    <string name="wallet_token_details_site_action">Site</string>
+    <string name="wallet_token_details_site_action">Website</string>
     <string name="wallet_token_details_transactions">Transactions</string>
     <string name="wallet_token_details_transactions_all">All</string>
     <string name="wallet_token_details_transactions_incoming">Incoming</string>

@@ -26,7 +26,7 @@ import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
@@ -36,7 +36,7 @@ import org.telegram.messenger.browser.Browser;
 import org.telegram.p044ui.ActionBar.ActionBarMenu;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3356ActionBar;
+import org.telegram.p044ui.ActionBar.C3361ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Components.ContextProgressView;
@@ -165,10 +165,10 @@ public class WebviewActivity extends BaseFragment {
 
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.WebviewActivity.2
-            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.WebviewActivity.2
+            @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     WebviewActivity.this.finishFragment();
@@ -184,13 +184,13 @@ public class WebviewActivity extends BaseFragment {
             }
         });
         ActionBarMenu createMenu = this.actionBar.createMenu();
-        this.progressItem = createMenu.addItemWithWidth(1, C3290R.C3292drawable.share, AndroidUtilities.m54dp(54));
+        this.progressItem = createMenu.addItemWithWidth(1, C3295R.C3297drawable.share, AndroidUtilities.m54dp(54));
         int i = this.type;
         if (i == 0) {
-            createMenu.addItem(0, C3290R.C3292drawable.ic_ab_other).addSubItem(2, C3290R.C3292drawable.msg_openin, LocaleController.getString("OpenInExternalApp", C3290R.string.OpenInExternalApp));
+            createMenu.addItem(0, C3295R.C3297drawable.ic_ab_other).addSubItem(2, C3295R.C3297drawable.msg_openin, LocaleController.getString("OpenInExternalApp", C3295R.string.OpenInExternalApp));
             this.actionBar.setTitle(this.currentGame);
-            C3356ActionBar c3356ActionBar = this.actionBar;
-            c3356ActionBar.setSubtitle("@" + this.currentBot);
+            C3361ActionBar c3361ActionBar = this.actionBar;
+            c3361ActionBar.setSubtitle("@" + this.currentBot);
             ContextProgressView contextProgressView = new ContextProgressView(context, 1);
             this.progressView = contextProgressView;
             this.progressItem.addView(contextProgressView, LayoutHelper.createFrame(-1, -1));
@@ -204,7 +204,7 @@ public class WebviewActivity extends BaseFragment {
             this.actionBar.setItemsBackgroundColor(Theme.getColor(Theme.key_player_actionBarSelector), false);
             this.actionBar.setTitleColor(Theme.getColor(Theme.key_player_actionBarTitle));
             this.actionBar.setSubtitleColor(Theme.getColor(Theme.key_player_actionBarSubtitle));
-            this.actionBar.setTitle(LocaleController.getString("Statistics", C3290R.string.Statistics));
+            this.actionBar.setTitle(LocaleController.getString("Statistics", C3295R.string.Statistics));
             ContextProgressView contextProgressView2 = new ContextProgressView(context, 3);
             this.progressView = contextProgressView2;
             this.progressItem.addView(contextProgressView2, LayoutHelper.createFrame(-1, -1));
@@ -436,10 +436,10 @@ public class WebviewActivity extends BaseFragment {
             arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundWhite));
             arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_dialogBackground));
             arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_player_actionBarItems));
-            C3356ActionBar c3356ActionBar = this.actionBar;
+            C3361ActionBar c3361ActionBar = this.actionBar;
             int i = ThemeDescription.FLAG_AB_TITLECOLOR;
             int i2 = Theme.key_player_actionBarTitle;
-            arrayList.add(new ThemeDescription(c3356ActionBar, i, null, null, null, null, i2));
+            arrayList.add(new ThemeDescription(c3361ActionBar, i, null, null, null, null, i2));
             arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SUBTITLECOLOR, null, null, null, null, i2));
             arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, Theme.key_player_actionBarSelector));
             arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SUBMENUBACKGROUND, null, null, null, null, Theme.key_actionBarDefaultSubmenuBackground));

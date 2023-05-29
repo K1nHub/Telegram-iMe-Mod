@@ -6,6 +6,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoWalletInfo.kt */
 /* loaded from: classes3.dex */
 public final class CryptoWalletInfo {
+    private final String bitcoinAddress;
     private final String ethAddress;
     private final boolean isEthAddressOpenedForEverybody;
     private final String tonAddress;
@@ -31,31 +32,39 @@ public final class CryptoWalletInfo {
                 iArr[BlockchainType.TON.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
+            try {
+                iArr[BlockchainType.BITCOIN.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
 
-    public static /* synthetic */ CryptoWalletInfo copy$default(CryptoWalletInfo cryptoWalletInfo, String str, String str2, String str3, boolean z, List list, int i, Object obj) {
+    public static /* synthetic */ CryptoWalletInfo copy$default(CryptoWalletInfo cryptoWalletInfo, String str, String str2, String str3, String str4, boolean z, List list, int i, Object obj) {
         if ((i & 1) != 0) {
             str = cryptoWalletInfo.ethAddress;
         }
         if ((i & 2) != 0) {
             str2 = cryptoWalletInfo.tonAddress;
         }
-        String str4 = str2;
+        String str5 = str2;
         if ((i & 4) != 0) {
             str3 = cryptoWalletInfo.tronAddress;
         }
-        String str5 = str3;
+        String str6 = str3;
         if ((i & 8) != 0) {
+            str4 = cryptoWalletInfo.bitcoinAddress;
+        }
+        String str7 = str4;
+        if ((i & 16) != 0) {
             z = cryptoWalletInfo.isEthAddressOpenedForEverybody;
         }
         boolean z2 = z;
         List<Long> list2 = list;
-        if ((i & 16) != 0) {
+        if ((i & 32) != 0) {
             list2 = cryptoWalletInfo.usersWithAccessToEthAddress;
         }
-        return cryptoWalletInfo.copy(str, str4, str5, z2, list2);
+        return cryptoWalletInfo.copy(str, str5, str6, str7, z2, list2);
     }
 
     public final String component1() {
@@ -70,20 +79,25 @@ public final class CryptoWalletInfo {
         return this.tronAddress;
     }
 
-    public final boolean component4() {
+    public final String component4() {
+        return this.bitcoinAddress;
+    }
+
+    public final boolean component5() {
         return this.isEthAddressOpenedForEverybody;
     }
 
-    public final List<Long> component5() {
+    public final List<Long> component6() {
         return this.usersWithAccessToEthAddress;
     }
 
-    public final CryptoWalletInfo copy(String ethAddress, String tonAddress, String tronAddress, boolean z, List<Long> usersWithAccessToEthAddress) {
+    public final CryptoWalletInfo copy(String ethAddress, String tonAddress, String tronAddress, String bitcoinAddress, boolean z, List<Long> usersWithAccessToEthAddress) {
         Intrinsics.checkNotNullParameter(ethAddress, "ethAddress");
         Intrinsics.checkNotNullParameter(tonAddress, "tonAddress");
         Intrinsics.checkNotNullParameter(tronAddress, "tronAddress");
+        Intrinsics.checkNotNullParameter(bitcoinAddress, "bitcoinAddress");
         Intrinsics.checkNotNullParameter(usersWithAccessToEthAddress, "usersWithAccessToEthAddress");
-        return new CryptoWalletInfo(ethAddress, tonAddress, tronAddress, z, usersWithAccessToEthAddress);
+        return new CryptoWalletInfo(ethAddress, tonAddress, tronAddress, bitcoinAddress, z, usersWithAccessToEthAddress);
     }
 
     public boolean equals(Object obj) {
@@ -92,14 +106,14 @@ public final class CryptoWalletInfo {
         }
         if (obj instanceof CryptoWalletInfo) {
             CryptoWalletInfo cryptoWalletInfo = (CryptoWalletInfo) obj;
-            return Intrinsics.areEqual(this.ethAddress, cryptoWalletInfo.ethAddress) && Intrinsics.areEqual(this.tonAddress, cryptoWalletInfo.tonAddress) && Intrinsics.areEqual(this.tronAddress, cryptoWalletInfo.tronAddress) && this.isEthAddressOpenedForEverybody == cryptoWalletInfo.isEthAddressOpenedForEverybody && Intrinsics.areEqual(this.usersWithAccessToEthAddress, cryptoWalletInfo.usersWithAccessToEthAddress);
+            return Intrinsics.areEqual(this.ethAddress, cryptoWalletInfo.ethAddress) && Intrinsics.areEqual(this.tonAddress, cryptoWalletInfo.tonAddress) && Intrinsics.areEqual(this.tronAddress, cryptoWalletInfo.tronAddress) && Intrinsics.areEqual(this.bitcoinAddress, cryptoWalletInfo.bitcoinAddress) && this.isEthAddressOpenedForEverybody == cryptoWalletInfo.isEthAddressOpenedForEverybody && Intrinsics.areEqual(this.usersWithAccessToEthAddress, cryptoWalletInfo.usersWithAccessToEthAddress);
         }
         return false;
     }
 
     /* JADX WARN: Multi-variable type inference failed */
     public int hashCode() {
-        int hashCode = ((((this.ethAddress.hashCode() * 31) + this.tonAddress.hashCode()) * 31) + this.tronAddress.hashCode()) * 31;
+        int hashCode = ((((((this.ethAddress.hashCode() * 31) + this.tonAddress.hashCode()) * 31) + this.tronAddress.hashCode()) * 31) + this.bitcoinAddress.hashCode()) * 31;
         boolean z = this.isEthAddressOpenedForEverybody;
         int i = z;
         if (z != 0) {
@@ -109,17 +123,19 @@ public final class CryptoWalletInfo {
     }
 
     public String toString() {
-        return "CryptoWalletInfo(ethAddress=" + this.ethAddress + ", tonAddress=" + this.tonAddress + ", tronAddress=" + this.tronAddress + ", isEthAddressOpenedForEverybody=" + this.isEthAddressOpenedForEverybody + ", usersWithAccessToEthAddress=" + this.usersWithAccessToEthAddress + ')';
+        return "CryptoWalletInfo(ethAddress=" + this.ethAddress + ", tonAddress=" + this.tonAddress + ", tronAddress=" + this.tronAddress + ", bitcoinAddress=" + this.bitcoinAddress + ", isEthAddressOpenedForEverybody=" + this.isEthAddressOpenedForEverybody + ", usersWithAccessToEthAddress=" + this.usersWithAccessToEthAddress + ')';
     }
 
-    public CryptoWalletInfo(String ethAddress, String tonAddress, String tronAddress, boolean z, List<Long> usersWithAccessToEthAddress) {
+    public CryptoWalletInfo(String ethAddress, String tonAddress, String tronAddress, String bitcoinAddress, boolean z, List<Long> usersWithAccessToEthAddress) {
         Intrinsics.checkNotNullParameter(ethAddress, "ethAddress");
         Intrinsics.checkNotNullParameter(tonAddress, "tonAddress");
         Intrinsics.checkNotNullParameter(tronAddress, "tronAddress");
+        Intrinsics.checkNotNullParameter(bitcoinAddress, "bitcoinAddress");
         Intrinsics.checkNotNullParameter(usersWithAccessToEthAddress, "usersWithAccessToEthAddress");
         this.ethAddress = ethAddress;
         this.tonAddress = tonAddress;
         this.tronAddress = tronAddress;
+        this.bitcoinAddress = bitcoinAddress;
         this.isEthAddressOpenedForEverybody = z;
         this.usersWithAccessToEthAddress = usersWithAccessToEthAddress;
     }
@@ -136,6 +152,10 @@ public final class CryptoWalletInfo {
         return this.tronAddress;
     }
 
+    public final String getBitcoinAddress() {
+        return this.bitcoinAddress;
+    }
+
     public final boolean isEthAddressOpenedForEverybody() {
         return this.isEthAddressOpenedForEverybody;
     }
@@ -144,22 +164,18 @@ public final class CryptoWalletInfo {
         return this.usersWithAccessToEthAddress;
     }
 
-    /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
-    public CryptoWalletInfo(String ethAddress, boolean z, List<Long> usersWithAccessToEthAddress) {
-        this(ethAddress, "", "", z, usersWithAccessToEthAddress);
-        Intrinsics.checkNotNullParameter(ethAddress, "ethAddress");
-        Intrinsics.checkNotNullParameter(usersWithAccessToEthAddress, "usersWithAccessToEthAddress");
-    }
-
     public final String getAddressByBlockchain(BlockchainType blockchainType) {
         Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
         int i = WhenMappings.$EnumSwitchMapping$0[blockchainType.ordinal()];
         if (i != 1) {
             if (i != 2) {
-                if (i == 3) {
-                    return this.tonAddress;
+                if (i != 3) {
+                    if (i == 4) {
+                        return this.bitcoinAddress;
+                    }
+                    throw new NoWhenBranchMatchedException();
                 }
-                throw new NoWhenBranchMatchedException();
+                return this.tonAddress;
             }
             return this.tronAddress;
         }

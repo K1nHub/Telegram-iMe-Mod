@@ -45,7 +45,7 @@ public class GlProgram implements GlBindable {
             return;
         }
         if (this.ownsHandle) {
-            GLES20.glDeleteProgram(UInt.m1578constructorimpl(this.handle));
+            GLES20.glDeleteProgram(UInt.m1580constructorimpl(this.handle));
         }
         for (GlShader glShader : this.shaders) {
             glShader.release();
@@ -55,7 +55,7 @@ public class GlProgram implements GlBindable {
 
     @Override // com.otaliastudios.opengl.core.GlBindable
     public void bind() {
-        GLES20.glUseProgram(UInt.m1578constructorimpl(this.handle));
+        GLES20.glUseProgram(UInt.m1580constructorimpl(this.handle));
         Egloo.checkGlError("glUseProgram");
     }
 
@@ -91,23 +91,23 @@ public class GlProgram implements GlBindable {
 
         public final int create(GlShader... shaders) {
             Intrinsics.checkNotNullParameter(shaders, "shaders");
-            int m1578constructorimpl = UInt.m1578constructorimpl(GLES20.glCreateProgram());
+            int m1580constructorimpl = UInt.m1580constructorimpl(GLES20.glCreateProgram());
             Egloo.checkGlError("glCreateProgram");
-            if (m1578constructorimpl == 0) {
+            if (m1580constructorimpl == 0) {
                 throw new RuntimeException("Could not create program");
             }
             for (GlShader glShader : shaders) {
-                GLES20.glAttachShader(m1578constructorimpl, UInt.m1578constructorimpl(glShader.getId()));
+                GLES20.glAttachShader(m1580constructorimpl, UInt.m1580constructorimpl(glShader.getId()));
                 Egloo.checkGlError("glAttachShader");
             }
-            GLES20.glLinkProgram(m1578constructorimpl);
+            GLES20.glLinkProgram(m1580constructorimpl);
             int[] iArr = new int[1];
-            GLES20.glGetProgramiv(m1578constructorimpl, GlKt.getGL_LINK_STATUS(), iArr, 0);
+            GLES20.glGetProgramiv(m1580constructorimpl, GlKt.getGL_LINK_STATUS(), iArr, 0);
             if (iArr[0] == GlKt.getGL_TRUE()) {
-                return m1578constructorimpl;
+                return m1580constructorimpl;
             }
-            String stringPlus = Intrinsics.stringPlus("Could not link program: ", GLES20.glGetProgramInfoLog(m1578constructorimpl));
-            GLES20.glDeleteProgram(m1578constructorimpl);
+            String stringPlus = Intrinsics.stringPlus("Could not link program: ", GLES20.glGetProgramInfoLog(m1580constructorimpl));
+            GLES20.glDeleteProgram(m1580constructorimpl);
             throw new RuntimeException(stringPlus);
         }
 

@@ -644,69 +644,69 @@ public class PushListenerController {
         }
         switch (c) {
             case 0:
-                return LocaleController.formatString("PushChatReactContact", C3290R.string.PushChatReactContact, objArr);
+                return LocaleController.formatString("PushChatReactContact", C3295R.string.PushChatReactContact, objArr);
             case 1:
-                return LocaleController.formatString("PushReactGeoLocation", C3290R.string.PushReactGeoLocation, objArr);
+                return LocaleController.formatString("PushReactGeoLocation", C3295R.string.PushReactGeoLocation, objArr);
             case 2:
-                return LocaleController.formatString("PushChatReactNotext", C3290R.string.PushChatReactNotext, objArr);
+                return LocaleController.formatString("PushChatReactNotext", C3295R.string.PushChatReactNotext, objArr);
             case 3:
-                return LocaleController.formatString("PushReactNoText", C3290R.string.PushReactNoText, objArr);
+                return LocaleController.formatString("PushReactNoText", C3295R.string.PushReactNoText, objArr);
             case 4:
-                return LocaleController.formatString("PushChatReactInvoice", C3290R.string.PushChatReactInvoice, objArr);
+                return LocaleController.formatString("PushChatReactInvoice", C3295R.string.PushChatReactInvoice, objArr);
             case 5:
-                return LocaleController.formatString("PushReactContect", C3290R.string.PushReactContect, objArr);
+                return LocaleController.formatString("PushReactContect", C3295R.string.PushReactContect, objArr);
             case 6:
-                return LocaleController.formatString("PushChatReactSticker", C3290R.string.PushChatReactSticker, objArr);
+                return LocaleController.formatString("PushChatReactSticker", C3295R.string.PushChatReactSticker, objArr);
             case 7:
-                return LocaleController.formatString("PushReactGame", C3290R.string.PushReactGame, objArr);
+                return LocaleController.formatString("PushReactGame", C3295R.string.PushReactGame, objArr);
             case '\b':
-                return LocaleController.formatString("PushReactPoll", C3290R.string.PushReactPoll, objArr);
+                return LocaleController.formatString("PushReactPoll", C3295R.string.PushReactPoll, objArr);
             case '\t':
-                return LocaleController.formatString("PushReactQuiz", C3290R.string.PushReactQuiz, objArr);
+                return LocaleController.formatString("PushReactQuiz", C3295R.string.PushReactQuiz, objArr);
             case '\n':
-                return LocaleController.formatString("PushReactText", C3290R.string.PushReactText, objArr);
+                return LocaleController.formatString("PushReactText", C3295R.string.PushReactText, objArr);
             case 11:
-                return LocaleController.formatString("PushReactInvoice", C3290R.string.PushReactInvoice, objArr);
+                return LocaleController.formatString("PushReactInvoice", C3295R.string.PushReactInvoice, objArr);
             case '\f':
-                return LocaleController.formatString("PushChatReactDoc", C3290R.string.PushChatReactDoc, objArr);
+                return LocaleController.formatString("PushChatReactDoc", C3295R.string.PushChatReactDoc, objArr);
             case '\r':
-                return LocaleController.formatString("PushChatReactGeo", C3290R.string.PushChatReactGeo, objArr);
+                return LocaleController.formatString("PushChatReactGeo", C3295R.string.PushChatReactGeo, objArr);
             case 14:
-                return LocaleController.formatString("PushChatReactGif", C3290R.string.PushChatReactGif, objArr);
+                return LocaleController.formatString("PushChatReactGif", C3295R.string.PushChatReactGif, objArr);
             case 15:
-                return LocaleController.formatString("PushReactSticker", C3290R.string.PushReactSticker, objArr);
+                return LocaleController.formatString("PushReactSticker", C3295R.string.PushReactSticker, objArr);
             case 16:
-                return LocaleController.formatString("PushChatReactAudio", C3290R.string.PushChatReactAudio, objArr);
+                return LocaleController.formatString("PushChatReactAudio", C3295R.string.PushChatReactAudio, objArr);
             case 17:
-                return LocaleController.formatString("PushChatReactPhoto", C3290R.string.PushChatReactPhoto, objArr);
+                return LocaleController.formatString("PushChatReactPhoto", C3295R.string.PushChatReactPhoto, objArr);
             case 18:
-                return LocaleController.formatString("PushChatReactRound", C3290R.string.PushChatReactRound, objArr);
+                return LocaleController.formatString("PushChatReactRound", C3295R.string.PushChatReactRound, objArr);
             case 19:
-                return LocaleController.formatString("PushChatReactVideo", C3290R.string.PushChatReactVideo, objArr);
+                return LocaleController.formatString("PushChatReactVideo", C3295R.string.PushChatReactVideo, objArr);
             case 20:
-                return LocaleController.formatString("PushChatReactGeoLive", C3290R.string.PushChatReactGeoLive, objArr);
+                return LocaleController.formatString("PushChatReactGeoLive", C3295R.string.PushChatReactGeoLive, objArr);
             case 21:
-                return LocaleController.formatString("PushReactAudio", C3290R.string.PushReactAudio, objArr);
+                return LocaleController.formatString("PushReactAudio", C3295R.string.PushReactAudio, objArr);
             case 22:
-                return LocaleController.formatString("PushReactPhoto", C3290R.string.PushReactPhoto, objArr);
+                return LocaleController.formatString("PushReactPhoto", C3295R.string.PushReactPhoto, objArr);
             case 23:
-                return LocaleController.formatString("PushReactRound", C3290R.string.PushReactRound, objArr);
+                return LocaleController.formatString("PushReactRound", C3295R.string.PushReactRound, objArr);
             case 24:
-                return LocaleController.formatString("PushReactVideo", C3290R.string.PushReactVideo, objArr);
+                return LocaleController.formatString("PushReactVideo", C3295R.string.PushReactVideo, objArr);
             case 25:
-                return LocaleController.formatString("PushReactDoc", C3290R.string.PushReactDoc, objArr);
+                return LocaleController.formatString("PushReactDoc", C3295R.string.PushReactDoc, objArr);
             case 26:
-                return LocaleController.formatString("PushReactGeo", C3290R.string.PushReactGeo, objArr);
+                return LocaleController.formatString("PushReactGeo", C3295R.string.PushReactGeo, objArr);
             case 27:
-                return LocaleController.formatString("PushReactGif", C3290R.string.PushReactGif, objArr);
+                return LocaleController.formatString("PushReactGif", C3295R.string.PushReactGif, objArr);
             case 28:
-                return LocaleController.formatString("PushChatReactGame", C3290R.string.PushChatReactGame, objArr);
+                return LocaleController.formatString("PushChatReactGame", C3295R.string.PushChatReactGame, objArr);
             case 29:
-                return LocaleController.formatString("PushChatReactPoll", C3290R.string.PushChatReactPoll, objArr);
+                return LocaleController.formatString("PushChatReactPoll", C3295R.string.PushChatReactPoll, objArr);
             case 30:
-                return LocaleController.formatString("PushChatReactQuiz", C3290R.string.PushChatReactQuiz, objArr);
+                return LocaleController.formatString("PushChatReactQuiz", C3295R.string.PushChatReactQuiz, objArr);
             case 31:
-                return LocaleController.formatString("PushChatReactText", C3290R.string.PushChatReactText, objArr);
+                return LocaleController.formatString("PushChatReactText", C3295R.string.PushChatReactText, objArr);
             default:
                 return null;
         }

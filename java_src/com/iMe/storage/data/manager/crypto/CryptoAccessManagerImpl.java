@@ -70,6 +70,15 @@ public final class CryptoAccessManagerImpl implements CryptoAccessManager {
     }
 
     @Override // com.iMe.storage.domain.manager.crypto.CryptoAccessManager
+    public Wallet.BTC getBTCWallet() {
+        Wallet wallet2 = this.wallets.get(BlockchainType.BITCOIN);
+        if (wallet2 instanceof Wallet.BTC) {
+            return (Wallet.BTC) wallet2;
+        }
+        return null;
+    }
+
+    @Override // com.iMe.storage.domain.manager.crypto.CryptoAccessManager
     public List<Wallet> getAllWallets() {
         List<Wallet> list;
         list = CollectionsKt___CollectionsKt.toList(this.wallets.values());

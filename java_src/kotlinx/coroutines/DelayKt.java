@@ -21,7 +21,7 @@ public final class DelayKt {
         CancellableContinuationImpl cancellableContinuationImpl = new CancellableContinuationImpl(intercepted, 1);
         cancellableContinuationImpl.initCancellability();
         if (j < Long.MAX_VALUE) {
-            getDelay(cancellableContinuationImpl.getContext()).mo1605scheduleResumeAfterDelay(j, cancellableContinuationImpl);
+            getDelay(cancellableContinuationImpl.getContext()).mo1607scheduleResumeAfterDelay(j, cancellableContinuationImpl);
         }
         Object result = cancellableContinuationImpl.getResult();
         coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();

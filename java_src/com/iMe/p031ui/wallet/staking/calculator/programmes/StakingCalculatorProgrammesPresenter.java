@@ -60,7 +60,7 @@ public final class StakingCalculatorProgrammesPresenter extends BasePresenter<St
         }
         Observable<Result<StakingProgrammes>> observeOn = this.stakingInteractor.getStakingProgrammesList(StakingOrderType.DEFAULT, this.lastItemId).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "stakingInteractor\n      …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2335x773d9f9f(this, z3, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2336x773d9fa0(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2340x773d9f9f(this, z3, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2341x773d9fa0(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

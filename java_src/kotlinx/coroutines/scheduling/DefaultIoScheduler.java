@@ -35,13 +35,13 @@ public final class DefaultIoScheduler extends ExecutorCoroutineDispatcher implem
 
     @Override // java.util.concurrent.Executor
     public void execute(Runnable runnable) {
-        mo1604dispatch(EmptyCoroutineContext.INSTANCE, runnable);
+        mo1606dispatch(EmptyCoroutineContext.INSTANCE, runnable);
     }
 
     @Override // kotlinx.coroutines.CoroutineDispatcher
     /* renamed from: dispatch */
-    public void mo1604dispatch(CoroutineContext coroutineContext, Runnable runnable) {
-        f1840default.mo1604dispatch(coroutineContext, runnable);
+    public void mo1606dispatch(CoroutineContext coroutineContext, Runnable runnable) {
+        f1840default.mo1606dispatch(coroutineContext, runnable);
     }
 
     @Override // java.io.Closeable, java.lang.AutoCloseable

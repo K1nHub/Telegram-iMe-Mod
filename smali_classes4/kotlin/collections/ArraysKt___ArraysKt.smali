@@ -455,6 +455,54 @@
     return p0
 .end method
 
+.method public static reversed([B)Ljava/util/List;
+    .locals 1
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "([B)",
+            "Ljava/util/List<",
+            "Ljava/lang/Byte;",
+            ">;"
+        }
+    .end annotation
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 5746
+    array-length v0, p0
+
+    if-nez v0, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    if-eqz v0, :cond_1
+
+    invoke-static {}, Lkotlin/collections/CollectionsKt;->emptyList()Ljava/util/List;
+
+    move-result-object p0
+
+    return-object p0
+
+    .line 5747
+    :cond_1
+    invoke-static {p0}, Lkotlin/collections/ArraysKt___ArraysKt;->toMutableList([B)Ljava/util/List;
+
+    move-result-object p0
+
+    .line 5748
+    invoke-static {p0}, Lkotlin/collections/CollectionsKt___CollectionsJvmKt;->reverse(Ljava/util/List;)V
+
+    return-object p0
+.end method
+
 .method public static reversedArray([F)[F
     .locals 5
 

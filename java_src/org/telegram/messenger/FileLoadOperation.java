@@ -849,7 +849,7 @@ public class FileLoadOperation {
     /* JADX WARN: Removed duplicated region for block: B:334:0x089f  */
     /* JADX WARN: Removed duplicated region for block: B:355:0x0610 A[EXC_TOP_SPLITTER, SYNTHETIC] */
     /* JADX WARN: Type inference failed for: r1v36 */
-    /* JADX WARN: Type inference failed for: r1v37, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r1v37, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r1v42 */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -1500,7 +1500,7 @@ public class FileLoadOperation {
     /* JADX INFO: Access modifiers changed from: protected */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r11v0 */
-    /* JADX WARN: Type inference failed for: r11v1, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r11v1, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r11v8 */
     public void startDownloadRequest() {
         int i;

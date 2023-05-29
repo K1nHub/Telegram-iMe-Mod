@@ -1,7 +1,7 @@
 package org.telegram.p044ui.Components;
 
 import org.telegram.messenger.ChatObject;
-import org.telegram.p044ui.ActionBar.C3356ActionBar;
+import org.telegram.p044ui.ActionBar.C3361ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.tgnet.TLRPC$Chat;
 import org.telegram.tgnet.TLRPC$User;
@@ -41,7 +41,7 @@ public interface ChatActivityInterface {
 
     void checkAndUpdateAvatar();
 
-    C3356ActionBar getActionBar();
+    C3361ActionBar getActionBar();
 
     ChatAvatarContainer getAvatarContainer();
 

@@ -1,5 +1,6 @@
 package com.iMe.model.wallet.crypto;
 
+import com.iMe.storage.data.manager.common.EnvironmentManager;
 import com.iMe.storage.domain.model.crypto.BlockchainType;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.DefaultConstructorMarker;
@@ -9,7 +10,9 @@ import kotlin.jvm.internal.Intrinsics;
 public enum BlockchainAddressData {
     EVM("0x[a-fA-F0-9]{40}", "ethereum:"),
     TON("[a-zA-Z0-9-_]{48}", "ton://transfer/"),
-    TRON("T[a-zA-Z0-9]{33}", null, 2, null);
+    TRON("T[a-zA-Z0-9]{33}", null, 2, null),
+    BTC_MAIN("(?:[13]{1}[a-km-zA-HJ-NP-Z1-9]{25,34}|bc1[a-z0-9]{39,59})", "bitcoin:"),
+    BTC_TEST("tb1[a-z0-9]{39}", "bitcoin:");
     
     public static final Companion Companion = new Companion(null);
     private final String prefix;
@@ -55,6 +58,10 @@ public enum BlockchainAddressData {
                     iArr[BlockchainType.TRON.ordinal()] = 3;
                 } catch (NoSuchFieldError unused3) {
                 }
+                try {
+                    iArr[BlockchainType.BITCOIN.ordinal()] = 4;
+                } catch (NoSuchFieldError unused4) {
+                }
                 $EnumSwitchMapping$0 = iArr;
             }
         }
@@ -71,10 +78,13 @@ public enum BlockchainAddressData {
             int i = WhenMappings.$EnumSwitchMapping$0[blockchainType.ordinal()];
             if (i != 1) {
                 if (i != 2) {
-                    if (i == 3) {
-                        return BlockchainAddressData.TRON;
+                    if (i != 3) {
+                        if (i == 4) {
+                            return EnvironmentManager.INSTANCE.isProductionActive() ? BlockchainAddressData.BTC_MAIN : BlockchainAddressData.BTC_TEST;
+                        }
+                        throw new NoWhenBranchMatchedException();
                     }
-                    throw new NoWhenBranchMatchedException();
+                    return BlockchainAddressData.TRON;
                 }
                 return BlockchainAddressData.TON;
             }

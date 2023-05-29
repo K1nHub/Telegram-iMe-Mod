@@ -11,7 +11,8 @@ import kotlin.jvm.internal.Intrinsics;
 public enum BlockchainType {
     EVM("ETHEREUM_VM", R$drawable.fork_ic_evm_logo, R$string.wallet_crypto_blockchains_evm_title, R$string.wallet_crypto_blockchains_evm_subtitle),
     TRON("TRON_VM", R$drawable.fork_ic_tron_logo, R$string.wallet_crypto_blockchains_tron_title, R$string.wallet_crypto_blockchains_tron_subtitle),
-    TON("TON_VM", R$drawable.fork_ic_ton_logo, R$string.wallet_crypto_blockchains_ton_title, R$string.wallet_crypto_blockchains_ton_subtitle);
+    TON("TON_VM", R$drawable.fork_ic_ton_logo, R$string.wallet_crypto_blockchains_ton_title, R$string.wallet_crypto_blockchains_ton_subtitle),
+    BITCOIN("BITCOIN", R$drawable.fork_ic_bitcoin_logo, R$string.wallet_crypto_blockchains_bitcoin_title, R$string.wallet_crypto_blockchains_bitcoin_subtitle);
     
     public static final Companion Companion = new Companion(null);
     private final String backendName;
@@ -81,7 +82,7 @@ public enum BlockchainType {
         }
 
         public final List<BlockchainType> getBip39PhraseBasedBlockchains() {
-            return CollectionsKt.listOf((Object[]) new BlockchainType[]{BlockchainType.EVM, BlockchainType.TRON});
+            return CollectionsKt.listOf((Object[]) new BlockchainType[]{BlockchainType.EVM, BlockchainType.TRON, BlockchainType.BITCOIN});
         }
     }
 }

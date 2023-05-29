@@ -37,7 +37,7 @@ import moxy.MvpDelegate;
 import org.koin.core.Koin;
 import org.koin.java.KoinJavaComponent;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
@@ -48,7 +48,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.VideoEditedInfo;
 import org.telegram.p044ui.ActionBar.ActionBarMenu;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
-import org.telegram.p044ui.ActionBar.C3356ActionBar;
+import org.telegram.p044ui.ActionBar.C3361ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Cells.ChatActionCell;
 import org.telegram.p044ui.ChatActivity;
@@ -155,7 +155,7 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
         this.header.setMaxLines(1);
         this.header.setEllipsize(TextUtils.TruncateAt.END);
         this.header.setTextColor(getThemedColor(Theme.key_dialogTextBlack));
-        this.header.setText(LocaleController.getString("AttachMediaPreview", C3290R.string.AttachMediaPreview));
+        this.header.setText(LocaleController.getString("AttachMediaPreview", C3295R.string.AttachMediaPreview));
         this.header.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.header.setCompoundDrawablePadding(AndroidUtilities.m54dp(4));
         this.header.setPadding(0, 0, AndroidUtilities.m54dp(10), 0);
@@ -224,7 +224,7 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
         this.undoView = undoView;
         undoView.setEnterOffsetMargin(AndroidUtilities.m54dp(32));
         addView(this.undoView, LayoutHelper.createFrame(-1, -2, 83, 8, 0, 8, 52));
-        this.videoPlayImage = context.getResources().getDrawable(C3290R.C3292drawable.play_mini_video);
+        this.videoPlayImage = context.getResources().getDrawable(C3295R.C3297drawable.play_mini_video);
     }
 
     public void startMediaCrossfade() {
@@ -291,8 +291,8 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
         if (!this.shown || this.parentAlert.getPhotoLayout() == null) {
             return;
         }
-        this.parentAlert.getPhotoLayout().previewItem.setIcon(C3290R.C3292drawable.ic_ab_back);
-        this.parentAlert.getPhotoLayout().previewItem.setText(LocaleController.getString(C3290R.string.Back));
+        this.parentAlert.getPhotoLayout().previewItem.setIcon(C3295R.C3297drawable.ic_ab_back);
+        this.parentAlert.getPhotoLayout().previewItem.setText(LocaleController.getString(C3295R.string.Back));
     }
 
     @Override // org.telegram.p044ui.Components.ChatAttachAlert.AttachAlertLayout
@@ -306,8 +306,8 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
         this.headerAnimator = interpolator;
         interpolator.start();
         if (getSelectedItemsCount() > 1 && this.parentAlert.getPhotoLayout() != null) {
-            this.parentAlert.getPhotoLayout().previewItem.setIcon(C3290R.C3292drawable.msg_view_file);
-            this.parentAlert.getPhotoLayout().previewItem.setText(LocaleController.getString(C3290R.string.AttachMediaPreviewButton));
+            this.parentAlert.getPhotoLayout().previewItem.setIcon(C3295R.C3297drawable.msg_view_file);
+            this.parentAlert.getPhotoLayout().previewItem.setText(LocaleController.getString(C3295R.string.AttachMediaPreviewButton));
         }
         this.groupsView.toPhotoLayout(this.photoLayout, true);
     }
@@ -541,7 +541,7 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
             r4.ignoreLayout = r5
             android.view.ViewGroup$LayoutParams r5 = r4.getLayoutParams()
             android.widget.FrameLayout$LayoutParams r5 = (android.widget.FrameLayout.LayoutParams) r5
-            int r0 = org.telegram.p044ui.ActionBar.C3356ActionBar.getCurrentActionBarHeight()
+            int r0 = org.telegram.p044ui.ActionBar.C3361ActionBar.getCurrentActionBarHeight()
             r5.topMargin = r0
             boolean r5 = org.telegram.messenger.AndroidUtilities.isTablet()
             if (r5 != 0) goto L25
@@ -647,8 +647,8 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
                 Point point = AndroidUtilities.displaySize;
                 i = point.x > point.y ? 6 : 12;
             }
-            if (currentItemTop < C3356ActionBar.getCurrentActionBarHeight()) {
-                currentItemTop -= AndroidUtilities.m55dp((1.0f - (currentItemTop / C3356ActionBar.getCurrentActionBarHeight())) * i);
+            if (currentItemTop < C3361ActionBar.getCurrentActionBarHeight()) {
+                currentItemTop -= AndroidUtilities.m55dp((1.0f - (currentItemTop / C3361ActionBar.getCurrentActionBarHeight())) * i);
             }
             int max = Math.max(0, currentItemTop);
             canvas.save();
@@ -771,7 +771,7 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
             setWillNotDraw(false);
             ChatActionCell chatActionCell = new ChatActionCell(context, true, ChatAttachAlertPhotoLayoutPreview.this.themeDelegate);
             this.hintView = chatActionCell;
-            chatActionCell.setCustomText(LocaleController.getString("AttachMediaDragHint", C3290R.string.AttachMediaDragHint));
+            chatActionCell.setCustomText(LocaleController.getString("AttachMediaDragHint", C3295R.string.AttachMediaDragHint));
             addView(this.hintView);
         }
 
@@ -922,7 +922,7 @@ public class ChatAttachAlertPhotoLayoutPreview extends ChatAttachAlert.AttachAle
         }
 
         private int measureHeight() {
-            return Math.max(measurePureHeight(), (AndroidUtilities.displaySize.y - C3356ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.m54dp(45));
+            return Math.max(measurePureHeight(), (AndroidUtilities.displaySize.y - C3361ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.m54dp(45));
         }
 
         @Override // android.view.View

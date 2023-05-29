@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$6\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,105:1\n129#2,5:106\n129#2,5:111\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$6\n*L\n73#1:106,5\n74#1:111,5\n*E\n"
+    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$6\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,114:1\n129#2,5:115\n129#2,5:120\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$6\n*L\n76#1:115,5\n77#1:120,5\n*E\n"
 .end annotation
 
 
@@ -72,7 +72,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 72
+    .line 75
     new-instance p2, Lcom/iMe/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl;
 
     .line 133
@@ -127,7 +127,7 @@
 
     check-cast p1, Lcom/iMe/storage/data/network/api/own/WalletApi;
 
-    .line 72
+    .line 75
     invoke-direct {p2, v0, v2, v3, p1}, Lcom/iMe/storage/data/datasource/transfer/impl/EVMWalletTransferDataSourceImpl;-><init>(Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;Lcom/iMe/storage/data/network/api/own/CryptoWalletApi;Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/data/network/api/own/WalletApi;)V
 
     return-object p2
@@ -136,7 +136,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 71
+    .line 74
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

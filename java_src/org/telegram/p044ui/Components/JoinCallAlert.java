@@ -27,7 +27,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.FileLog;
@@ -347,7 +347,7 @@ public class JoinCallAlert extends BottomSheet {
         this.chats = new ArrayList<>(arrayList);
         this.delegate = joinCallAlertDelegate;
         this.currentType = i;
-        Drawable mutate = context.getResources().getDrawable(C3290R.C3292drawable.sheet_shadow_round).mutate();
+        Drawable mutate = context.getResources().getDrawable(C3295R.C3297drawable.sheet_shadow_round).mutate();
         this.shadowDrawable = mutate;
         if (i == 2) {
             if (VoIPService.getSharedInstance() != null) {
@@ -538,7 +538,7 @@ public class JoinCallAlert extends BottomSheet {
         if (i == 0) {
             RLottieImageView rLottieImageView = new RLottieImageView(context);
             rLottieImageView.setAutoRepeat(true);
-            rLottieImageView.setAnimation(C3290R.raw.utyan_schedule, 120, 120);
+            rLottieImageView.setAnimation(C3295R.raw.utyan_schedule, 120, 120);
             rLottieImageView.playAnimation();
             frameLayout.addView(rLottieImageView, LayoutHelper.createLinear(160, 160, 49, 17, 8, 17, 0));
         }
@@ -555,18 +555,18 @@ public class JoinCallAlert extends BottomSheet {
         this.textView.setEllipsize(TextUtils.TruncateAt.END);
         if (i == 0) {
             if (ChatObject.isChannelOrGiga(chat)) {
-                this.textView.setText(LocaleController.getString("StartVoipChannelTitle", C3290R.string.StartVoipChannelTitle));
+                this.textView.setText(LocaleController.getString("StartVoipChannelTitle", C3295R.string.StartVoipChannelTitle));
             } else {
-                this.textView.setText(LocaleController.getString("StartVoipChatTitle", C3290R.string.StartVoipChatTitle));
+                this.textView.setText(LocaleController.getString("StartVoipChatTitle", C3295R.string.StartVoipChatTitle));
             }
             frameLayout.addView(this.textView, LayoutHelper.createLinear(-2, -2, 49, 23, 16, 23, 0));
         } else {
             if (i == 2) {
-                this.textView.setText(LocaleController.getString("VoipGroupDisplayAs", C3290R.string.VoipGroupDisplayAs));
+                this.textView.setText(LocaleController.getString("VoipGroupDisplayAs", C3295R.string.VoipGroupDisplayAs));
             } else if (ChatObject.isChannelOrGiga(chat)) {
-                this.textView.setText(LocaleController.getString("VoipChannelJoinAs", C3290R.string.VoipChannelJoinAs));
+                this.textView.setText(LocaleController.getString("VoipChannelJoinAs", C3295R.string.VoipChannelJoinAs));
             } else {
-                this.textView.setText(LocaleController.getString("VoipGroupJoinAs", C3290R.string.VoipGroupJoinAs));
+                this.textView.setText(LocaleController.getString("VoipGroupJoinAs", C3295R.string.VoipGroupJoinAs));
             }
             frameLayout.addView(this.textView, LayoutHelper.createFrame(-2, -2, 51, 23, 8, 23, 0));
         }
@@ -595,13 +595,13 @@ public class JoinCallAlert extends BottomSheet {
         if (i == 0) {
             StringBuilder sb = new StringBuilder();
             if (ChatObject.isChannel(chat) && !chat.megagroup) {
-                sb.append(LocaleController.getString("VoipChannelStart2", C3290R.string.VoipChannelStart2));
+                sb.append(LocaleController.getString("VoipChannelStart2", C3295R.string.VoipChannelStart2));
             } else {
-                sb.append(LocaleController.getString("VoipGroupStart2", C3290R.string.VoipGroupStart2));
+                sb.append(LocaleController.getString("VoipGroupStart2", C3295R.string.VoipGroupStart2));
             }
             if (this.chats.size() > 1) {
                 sb.append("\n\n");
-                sb.append(LocaleController.getString("VoipChatDisplayedAs", C3290R.string.VoipChatDisplayedAs));
+                sb.append(LocaleController.getString("VoipChatDisplayedAs", C3295R.string.VoipChatDisplayedAs));
             } else {
                 this.listView.setVisibility(8);
             }
@@ -610,9 +610,9 @@ public class JoinCallAlert extends BottomSheet {
             frameLayout.addView(this.messageTextView, LayoutHelper.createLinear(-2, -2, 49, 23, 0, 23, 5));
         } else {
             if (z) {
-                this.messageTextView.setText(LocaleController.getString("VoipGroupStartAsInfoGroup", C3290R.string.VoipGroupStartAsInfoGroup));
+                this.messageTextView.setText(LocaleController.getString("VoipGroupStartAsInfoGroup", C3295R.string.VoipGroupStartAsInfoGroup));
             } else {
-                this.messageTextView.setText(LocaleController.getString("VoipGroupStartAsInfo", C3290R.string.VoipGroupStartAsInfo));
+                this.messageTextView.setText(LocaleController.getString("VoipGroupStartAsInfo", C3295R.string.VoipGroupStartAsInfo));
             }
             this.messageTextView.setGravity((LocaleController.isRTL ? 5 : 3) | 48);
             frameLayout.addView(this.messageTextView, LayoutHelper.createFrame(-2, -2, 51, 23, 0, 23, 5));
@@ -632,9 +632,9 @@ public class JoinCallAlert extends BottomSheet {
             frameLayout.addView(this.doneButton, LayoutHelper.createLinear(-1, 50, 51, 0, 0, 0, 0));
             BottomSheetCell bottomSheetCell2 = new BottomSheetCell(context, true);
             if (ChatObject.isChannelOrGiga(chat)) {
-                bottomSheetCell2.setText(LocaleController.getString("VoipChannelScheduleVoiceChat", C3290R.string.VoipChannelScheduleVoiceChat), false);
+                bottomSheetCell2.setText(LocaleController.getString("VoipChannelScheduleVoiceChat", C3295R.string.VoipChannelScheduleVoiceChat), false);
             } else {
-                bottomSheetCell2.setText(LocaleController.getString("VoipGroupScheduleVoiceChat", C3290R.string.VoipGroupScheduleVoiceChat), false);
+                bottomSheetCell2.setText(LocaleController.getString("VoipGroupScheduleVoiceChat", C3295R.string.VoipGroupScheduleVoiceChat), false);
             }
             bottomSheetCell2.background.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.JoinCallAlert$$ExternalSyntheticLambda2
                 @Override // android.view.View.OnClickListener
@@ -701,21 +701,21 @@ public class JoinCallAlert extends BottomSheet {
     private void updateDoneButton(boolean z, TLRPC$Chat tLRPC$Chat) {
         if (this.currentType == 0) {
             if (ChatObject.isChannelOrGiga(tLRPC$Chat)) {
-                this.doneButton.setText(LocaleController.formatString("VoipChannelStartVoiceChat", C3290R.string.VoipChannelStartVoiceChat, new Object[0]), z);
+                this.doneButton.setText(LocaleController.formatString("VoipChannelStartVoiceChat", C3295R.string.VoipChannelStartVoiceChat, new Object[0]), z);
                 return;
             } else {
-                this.doneButton.setText(LocaleController.formatString("VoipGroupStartVoiceChat", C3290R.string.VoipGroupStartVoiceChat, new Object[0]), z);
+                this.doneButton.setText(LocaleController.formatString("VoipGroupStartVoiceChat", C3295R.string.VoipGroupStartVoiceChat, new Object[0]), z);
                 return;
             }
         }
         long peerId = MessageObject.getPeerId(this.selectedPeer);
         if (DialogObject.isUserDialog(peerId)) {
-            this.doneButton.setText(LocaleController.formatString("VoipGroupContinueAs", C3290R.string.VoipGroupContinueAs, UserObject.getFirstName(MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(peerId)))), z);
+            this.doneButton.setText(LocaleController.formatString("VoipGroupContinueAs", C3295R.string.VoipGroupContinueAs, UserObject.getFirstName(MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(peerId)))), z);
             return;
         }
         TLRPC$Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-peerId));
         BottomSheetCell bottomSheetCell = this.doneButton;
-        int i = C3290R.string.VoipGroupContinueAs;
+        int i = C3295R.string.VoipGroupContinueAs;
         Object[] objArr = new Object[1];
         objArr[0] = chat != null ? chat.title : "";
         bottomSheetCell.setText(LocaleController.formatString("VoipGroupContinueAs", i, objArr), z);
@@ -826,7 +826,7 @@ public class JoinCallAlert extends BottomSheet {
             long peerId = MessageObject.getPeerId((TLRPC$Peer) JoinCallAlert.this.chats.get(i));
             if (peerId > 0) {
                 chat = MessagesController.getInstance(((BottomSheet) JoinCallAlert.this).currentAccount).getUser(Long.valueOf(peerId));
-                str = LocaleController.getString("VoipGroupPersonalAccount", C3290R.string.VoipGroupPersonalAccount);
+                str = LocaleController.getString("VoipGroupPersonalAccount", C3295R.string.VoipGroupPersonalAccount);
             } else {
                 chat = MessagesController.getInstance(((BottomSheet) JoinCallAlert.this).currentAccount).getChat(Long.valueOf(-peerId));
                 str = null;

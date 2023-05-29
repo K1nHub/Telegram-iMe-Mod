@@ -17,7 +17,7 @@ import androidx.core.content.ContextCompat;
 import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
@@ -53,7 +53,7 @@ public class ReactionTabHolderView extends FrameLayout {
         this.overlaySelectorView = view;
         addView(view, LayoutHelper.createFrame(-1, -1));
         this.iconView = new ImageView(context);
-        Drawable mutate = ContextCompat.getDrawable(context, C3290R.C3292drawable.msg_reactions_filled).mutate();
+        Drawable mutate = ContextCompat.getDrawable(context, C3295R.C3297drawable.msg_reactions_filled).mutate();
         this.drawable = mutate;
         this.iconView.setImageDrawable(mutate);
         addView(this.iconView, LayoutHelper.createFrameRelatively(24.0f, 24.0f, 8388627, 8.0f, BitmapDescriptorFactory.HUE_RED, 8.0f, BitmapDescriptorFactory.HUE_RED));

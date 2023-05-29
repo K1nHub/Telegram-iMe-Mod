@@ -11,6 +11,7 @@ public final class ManagerModuleKt {
     private static final StringQualifier EVM_BLOCKCHAIN_CRYPTO_WALLET_MANAGER = QualifierKt.named("EVM_BLOCKCHAIN_CRYPTO_WALLET_MANAGER");
     private static final StringQualifier TON_BLOCKCHAIN_CRYPTO_WALLET_MANAGER = QualifierKt.named("TON_BLOCKCHAIN_CRYPTO_WALLET_MANAGER");
     private static final StringQualifier TRON_BLOCKCHAIN_CRYPTO_WALLET_MANAGER = QualifierKt.named("TRON_BLOCKCHAIN_CRYPTO_WALLET_MANAGER");
+    private static final StringQualifier BTC_BLOCKCHAIN_CRYPTO_WALLET_MANAGER = QualifierKt.named("BTC_BLOCKCHAIN_CRYPTO_WALLET_MANAGER");
     private static Module dataManagerModule = ModuleDSLKt.module$default(false, ManagerModuleKt$dataManagerModule$1.INSTANCE, 1, null);
 
     public static final StringQualifier getEVM_BLOCKCHAIN_CRYPTO_WALLET_MANAGER() {
@@ -23,6 +24,10 @@ public final class ManagerModuleKt {
 
     public static final StringQualifier getTRON_BLOCKCHAIN_CRYPTO_WALLET_MANAGER() {
         return TRON_BLOCKCHAIN_CRYPTO_WALLET_MANAGER;
+    }
+
+    public static final StringQualifier getBTC_BLOCKCHAIN_CRYPTO_WALLET_MANAGER() {
+        return BTC_BLOCKCHAIN_CRYPTO_WALLET_MANAGER;
     }
 
     public static final Module getDataManagerModule() {

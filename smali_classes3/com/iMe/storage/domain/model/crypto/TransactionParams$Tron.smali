@@ -44,13 +44,13 @@
 
     move-object v3, p1
 
-    .line 28
+    .line 29
     invoke-direct/range {v1 .. v6}, Lcom/iMe/storage/domain/model/crypto/TransactionParams;-><init>(Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 26
+    .line 27
     iput-object p1, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Tron;->medium:Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
-    .line 27
+    .line 28
     iput-object p2, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Tron;->blockHeader:Lcom/iMe/storage/domain/model/crypto/TronBlockHeader;
 
     return-void
@@ -177,7 +177,7 @@
 .method public final getBlockHeader()Lcom/iMe/storage/domain/model/crypto/TronBlockHeader;
     .locals 1
 
-    .line 27
+    .line 28
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Tron;->blockHeader:Lcom/iMe/storage/domain/model/crypto/TronBlockHeader;
 
     return-object v0
@@ -186,7 +186,7 @@
 .method public getMedium()Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
     .locals 1
 
-    .line 26
+    .line 27
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Tron;->medium:Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
     return-object v0

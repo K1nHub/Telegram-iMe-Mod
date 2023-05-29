@@ -27,11 +27,11 @@ public final class WalletHomeBinancePayFragment$presenter$2 extends Lambda imple
     /* compiled from: WalletHomeBinancePayFragment.kt */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayFragment$presenter$2$1 */
     /* loaded from: classes4.dex */
-    public static final class C22561 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C22611 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ WalletHomeBinancePayFragment this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C22561(WalletHomeBinancePayFragment walletHomeBinancePayFragment) {
+        C22611(WalletHomeBinancePayFragment walletHomeBinancePayFragment) {
             super(0);
             this.this$0 = walletHomeBinancePayFragment;
         }
@@ -51,7 +51,7 @@ public final class WalletHomeBinancePayFragment$presenter$2 extends Lambda imple
     public final WalletHomeBinancePayPresenter invoke() {
         Lazy lazy;
         WalletHomeBinancePayFragment walletHomeBinancePayFragment = this.this$0;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2255x9b06ddc4(walletHomeBinancePayFragment, null, new C22561(walletHomeBinancePayFragment)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2260x9b06ddc4(walletHomeBinancePayFragment, null, new C22611(walletHomeBinancePayFragment)));
         return (WalletHomeBinancePayPresenter) lazy.getValue();
     }
 }

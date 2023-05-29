@@ -33,7 +33,7 @@ import com.iMe.common.IdFabric$CustomType;
 import com.iMe.fork.controller.FiltersController;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -113,11 +113,11 @@ public class UndoView extends FrameLayout {
     }
 
     public void showInfo(CharSequence charSequence, Runnable runnable) {
-        showWithAction(0L, 18, charSequence, Integer.valueOf(C3290R.raw.info), (Runnable) null, runnable);
+        showWithAction(0L, 18, charSequence, Integer.valueOf(C3295R.raw.info), (Runnable) null, runnable);
     }
 
     public void showError(CharSequence charSequence) {
-        showWithAction(0L, 18, charSequence, Integer.valueOf(C3290R.raw.error), (Runnable) null, (Runnable) null);
+        showWithAction(0L, 18, charSequence, Integer.valueOf(C3295R.raw.error), (Runnable) null, (Runnable) null);
     }
 
     private boolean isFoldersHidden() {
@@ -234,7 +234,7 @@ public class UndoView extends FrameLayout {
         });
         ImageView imageView = new ImageView(context);
         this.undoImageView = imageView;
-        imageView.setImageResource(C3290R.C3292drawable.chats_undo);
+        imageView.setImageResource(C3295R.C3297drawable.chats_undo);
         this.undoImageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(i2), PorterDuff.Mode.MULTIPLY));
         this.undoButton.addView(this.undoImageView, LayoutHelper.createLinear(-2, -2, 19, 4, 4, 0, 4));
         TextView textView5 = new TextView(context);
@@ -242,7 +242,7 @@ public class UndoView extends FrameLayout {
         textView5.setTextSize(1, 14.0f);
         this.undoTextView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.undoTextView.setTextColor(getThemedColor(i2));
-        this.undoTextView.setText(LocaleController.getString("Undo", C3290R.string.Undo));
+        this.undoTextView.setText(LocaleController.getString("Undo", C3295R.string.Undo));
         this.undoButton.addView(this.undoTextView, LayoutHelper.createLinear(-2, -2, 19, 6, 4, 8, 4));
         this.rect = new RectF(AndroidUtilities.m54dp(15), AndroidUtilities.m54dp(15), AndroidUtilities.m54dp(33), AndroidUtilities.m54dp(33));
         Paint paint = new Paint(1);

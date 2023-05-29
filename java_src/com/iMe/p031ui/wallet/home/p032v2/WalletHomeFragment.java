@@ -38,7 +38,7 @@ import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p043mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.databinding.ForkFragmentWalletHomeBinding;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
@@ -247,7 +247,7 @@ public final class WalletHomeFragment extends WalletTabFragment implements Navig
     /* JADX INFO: Access modifiers changed from: private */
     public final List<WalletHomeNavigationTab> initPageTabs() {
         List<WalletHomeNavigationTab> mutableListOf;
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new WalletHomeNavigationTab(C3290R.C3293id.wallet_home_crypto, new TabbedFragmentPage(getResourceManager().getString(C3290R.string.wallet_home_navigation_crypto), C3290R.C3292drawable.fork_ic_crypto_24, WalletHomeCryptoFragment.Companion.newInstance(), null, 8, null)), new WalletHomeNavigationTab(C3290R.C3293id.wallet_home_binance_pay, new TabbedFragmentPage(getResourceManager().getString(C3290R.string.wallet_home_navigation_binance_pay), C3290R.C3292drawable.fork_ic_binance_pay_24, WalletHomeBinancePayFragment.Companion.newInstance(), null, 8, null)), new WalletHomeNavigationTab(C3290R.C3293id.wallet_home_internal_points, new TabbedFragmentPage(getResourceManager().getString(C3290R.string.wallet_home_navigation_services), C3290R.C3292drawable.fork_ic_points_24, WalletHomeServicesFragment.Companion.newInstance(), null, 8, null)));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new WalletHomeNavigationTab(C3295R.C3298id.wallet_home_crypto, new TabbedFragmentPage(getResourceManager().getString(C3295R.string.wallet_home_navigation_crypto), C3295R.C3297drawable.fork_ic_crypto_24, WalletHomeCryptoFragment.Companion.newInstance(), null, 8, null)), new WalletHomeNavigationTab(C3295R.C3298id.wallet_home_binance_pay, new TabbedFragmentPage(getResourceManager().getString(C3295R.string.wallet_home_navigation_binance_pay), C3295R.C3297drawable.fork_ic_binance_pay_24, WalletHomeBinancePayFragment.Companion.newInstance(), null, 8, null)), new WalletHomeNavigationTab(C3295R.C3298id.wallet_home_internal_points, new TabbedFragmentPage(getResourceManager().getString(C3295R.string.wallet_home_navigation_services), C3295R.C3297drawable.fork_ic_points_24, WalletHomeServicesFragment.Companion.newInstance(), null, 8, null)));
         for (WalletHomeNavigationTab walletHomeNavigationTab : mutableListOf) {
             walletHomeNavigationTab.getPage().getFragment().setParentView(this);
         }

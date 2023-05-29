@@ -42,7 +42,7 @@ import kotlin.jvm.functions.Function2;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.browser.Browser;
@@ -61,7 +61,7 @@ import org.telegram.p044ui.LaunchActivity;
 public final class DialogsFactoryKt {
     public static /* synthetic */ Dialog showSuccessAlert$default(BaseFragment baseFragment, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, Callbacks$Callback callbacks$Callback, int i, Object obj) {
         if ((i & 4) != 0) {
-            charSequence3 = baseFragment.getParentActivity().getString(C3290R.string.common_ok);
+            charSequence3 = baseFragment.getParentActivity().getString(C3295R.string.common_ok);
             Intrinsics.checkNotNullExpressionValue(charSequence3, "this.parentActivity.getString(R.string.common_ok)");
         }
         if ((i & 8) != 0) {
@@ -80,7 +80,7 @@ public final class DialogsFactoryKt {
 
     public static /* synthetic */ Dialog showErrorAlert$default(BaseFragment baseFragment, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, Callbacks$Callback callbacks$Callback, int i, Object obj) {
         if ((i & 4) != 0) {
-            charSequence3 = baseFragment.getParentActivity().getString(C3290R.string.common_ok);
+            charSequence3 = baseFragment.getParentActivity().getString(C3295R.string.common_ok);
             Intrinsics.checkNotNullExpressionValue(charSequence3, "this.parentActivity.getString(R.string.common_ok)");
         }
         if ((i & 8) != 0) {
@@ -110,7 +110,7 @@ public final class DialogsFactoryKt {
 
     public static /* synthetic */ Dialog showErrorAlert$default(BaseFragment baseFragment, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, Function2 function2, Callbacks$Callback callbacks$Callback, int i, Object obj) {
         if ((i & 4) != 0) {
-            charSequence3 = baseFragment.getParentActivity().getString(C3290R.string.common_ok);
+            charSequence3 = baseFragment.getParentActivity().getString(C3295R.string.common_ok);
             Intrinsics.checkNotNullExpressionValue(charSequence3, "this.parentActivity.getString(R.string.common_ok)");
         }
         CharSequence charSequence4 = charSequence3;
@@ -137,7 +137,7 @@ public final class DialogsFactoryKt {
 
     public static /* synthetic */ Dialog createSuccessAlert$default(BaseFragment baseFragment, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, Function2 function2, Callbacks$Callback callbacks$Callback, int i, Object obj) {
         if ((i & 4) != 0) {
-            charSequence3 = baseFragment.getParentActivity().getString(C3290R.string.common_ok);
+            charSequence3 = baseFragment.getParentActivity().getString(C3295R.string.common_ok);
             Intrinsics.checkNotNullExpressionValue(charSequence3, "this.parentActivity.getString(R.string.common_ok)");
         }
         CharSequence charSequence4 = charSequence3;
@@ -157,8 +157,8 @@ public final class DialogsFactoryKt {
         Intrinsics.checkNotNullParameter(description, "description");
         Intrinsics.checkNotNullParameter(buttonText, "buttonText");
         Intrinsics.checkNotNullParameter(dialogApplyAction, "dialogApplyAction");
-        AlertDialog createDialog$default = createDialog$default(baseFragment, C3290R.C3292drawable.fork_ic_alert_success, 0, title, description, buttonText, callbacks$Callback, 2, null);
-        AppCompatTextView descriptionView = (AppCompatTextView) createDialog$default.getCustomView().findViewById(C3290R.C3293id.text_alert_description);
+        AlertDialog createDialog$default = createDialog$default(baseFragment, C3295R.C3297drawable.fork_ic_alert_success, 0, title, description, buttonText, callbacks$Callback, 2, null);
+        AppCompatTextView descriptionView = (AppCompatTextView) createDialog$default.getCustomView().findViewById(C3295R.C3298id.text_alert_description);
         Intrinsics.checkNotNullExpressionValue(descriptionView, "descriptionView");
         dialogApplyAction.invoke(descriptionView, createDialog$default);
         return createDialog$default;
@@ -166,7 +166,7 @@ public final class DialogsFactoryKt {
 
     public static /* synthetic */ Dialog createErrorAlert$default(BaseFragment baseFragment, CharSequence charSequence, CharSequence charSequence2, CharSequence charSequence3, Function2 function2, Callbacks$Callback callbacks$Callback, int i, Object obj) {
         if ((i & 4) != 0) {
-            charSequence3 = baseFragment.getParentActivity().getString(C3290R.string.common_ok);
+            charSequence3 = baseFragment.getParentActivity().getString(C3295R.string.common_ok);
             Intrinsics.checkNotNullExpressionValue(charSequence3, "this.parentActivity.getString(R.string.common_ok)");
         }
         CharSequence charSequence4 = charSequence3;
@@ -186,8 +186,8 @@ public final class DialogsFactoryKt {
         Intrinsics.checkNotNullParameter(description, "description");
         Intrinsics.checkNotNullParameter(buttonText, "buttonText");
         Intrinsics.checkNotNullParameter(dialogApplyAction, "dialogApplyAction");
-        AlertDialog createDialog$default = createDialog$default(baseFragment, C3290R.C3292drawable.fork_ic_alert_error, 0, title, description, buttonText, callbacks$Callback, 2, null);
-        AppCompatTextView descriptionView = (AppCompatTextView) createDialog$default.getCustomView().findViewById(C3290R.C3293id.text_alert_description);
+        AlertDialog createDialog$default = createDialog$default(baseFragment, C3295R.C3297drawable.fork_ic_alert_error, 0, title, description, buttonText, callbacks$Callback, 2, null);
+        AppCompatTextView descriptionView = (AppCompatTextView) createDialog$default.getCustomView().findViewById(C3295R.C3298id.text_alert_description);
         Intrinsics.checkNotNullExpressionValue(descriptionView, "descriptionView");
         dialogApplyAction.invoke(descriptionView, createDialog$default);
         return createDialog$default;
@@ -264,7 +264,7 @@ public final class DialogsFactoryKt {
 
     public static /* synthetic */ BottomSheet createDiagramDialog$default(BaseFragment baseFragment, StatisticDiagramModel statisticDiagramModel, CharSequence charSequence, Function0 function0, int i, Object obj) {
         if ((i & 2) != 0) {
-            charSequence = LocaleController.getInternalString(C3290R.string.common_close);
+            charSequence = LocaleController.getInternalString(C3295R.string.common_close);
             Intrinsics.checkNotNullExpressionValue(charSequence, "getInternalString(R.string.common_close)");
         }
         if ((i & 4) != 0) {
@@ -459,7 +459,7 @@ public final class DialogsFactoryKt {
         Intrinsics.checkNotNullParameter(baseFragment, "<this>");
         Activity parentActivity = baseFragment.getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
-        return DialogUtils.createDialog$default(parentActivity, new DialogModel(LocaleController.getInternalString(C3290R.string.wallet_app_update_dialog_title), LocaleController.getInternalString(C3290R.string.app_update_dialog_description), LocaleController.getInternalString(C3290R.string.common_cancel), LocaleController.getInternalString(C3290R.string.wallet_app_update_dialog_action_btn)), new Callbacks$Callback() { // from class: com.iMe.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda7
+        return DialogUtils.createDialog$default(parentActivity, new DialogModel(LocaleController.getInternalString(C3295R.string.wallet_app_update_dialog_title), LocaleController.getInternalString(C3295R.string.app_update_dialog_description), LocaleController.getInternalString(C3295R.string.common_cancel), LocaleController.getInternalString(C3295R.string.wallet_app_update_dialog_action_btn)), new Callbacks$Callback() { // from class: com.iMe.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda7
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 DialogsFactoryKt.createUpdateAppDialog$lambda$27(BaseFragment.this);
@@ -485,7 +485,7 @@ public final class DialogsFactoryKt {
         Intrinsics.checkNotNullParameter(currentNetworkType, "currentNetworkType");
         Intrinsics.checkNotNullParameter(listener, "listener");
         final AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle(LocaleController.getInternalString(C3290R.string.wallet_network_type_dialog_title));
+        builder.setTitle(LocaleController.getInternalString(C3295R.string.wallet_network_type_dialog_title));
         LinearLayout linearLayout = new LinearLayout(context);
         linearLayout.setOrientation(1);
         for (final NetworkType networkType : availableNetworks) {
@@ -504,7 +504,7 @@ public final class DialogsFactoryKt {
             linearLayout.addView(radioColorCell);
         }
         builder.setView(linearLayout);
-        builder.setPositiveButton(LocaleController.getString("Cancel", C3290R.string.Cancel), null);
+        builder.setPositiveButton(LocaleController.getString("Cancel", C3295R.string.Cancel), null);
         AlertDialog create = builder.create();
         Intrinsics.checkNotNullExpressionValue(create, "Builder(context).apply {…Cancel), null)\n}.create()");
         return create;
@@ -526,7 +526,7 @@ public final class DialogsFactoryKt {
         Intrinsics.checkNotNullParameter(baseFragment, "<this>");
         Activity parentActivity = baseFragment.getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
-        return DialogUtils.createDialog$default(parentActivity, new DialogModel(LocaleController.getInternalString(C3290R.string.binance_not_verified_dialog_title), LocaleController.getInternalString(C3290R.string.binance_not_verified_dialog_description), LocaleController.getInternalString(C3290R.string.common_cancel), LocaleController.getInternalString(C3290R.string.binance_not_verified_dialog_positive_btn)), new Callbacks$Callback() { // from class: com.iMe.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda8
+        return DialogUtils.createDialog$default(parentActivity, new DialogModel(LocaleController.getInternalString(C3295R.string.binance_not_verified_dialog_title), LocaleController.getInternalString(C3295R.string.binance_not_verified_dialog_description), LocaleController.getInternalString(C3295R.string.common_cancel), LocaleController.getInternalString(C3295R.string.binance_not_verified_dialog_positive_btn)), new Callbacks$Callback() { // from class: com.iMe.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda8
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 DialogsFactoryKt.createBinanceVerificationRequiredDialog$lambda$33(BaseFragment.this);
@@ -536,7 +536,7 @@ public final class DialogsFactoryKt {
 
     public static final void createBinanceVerificationRequiredDialog$lambda$33(BaseFragment this_createBinanceVerificationRequiredDialog) {
         Intrinsics.checkNotNullParameter(this_createBinanceVerificationRequiredDialog, "$this_createBinanceVerificationRequiredDialog");
-        Browser.openUrl(this_createBinanceVerificationRequiredDialog.getParentActivity(), LocaleController.getInternalString(C3290R.string.wallet_binance_verify_profile_website));
+        Browser.openUrl(this_createBinanceVerificationRequiredDialog.getParentActivity(), LocaleController.getInternalString(C3295R.string.wallet_binance_verify_profile_website));
     }
 
     public static final AlertDialog createWalletCreatedRequiredDialog(BaseFragment baseFragment, Callbacks$Callback positiveAction) {
@@ -552,11 +552,11 @@ public final class DialogsFactoryKt {
         Activity parentActivity = baseFragment.getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         if (blockchainType != null) {
-            internalString = blockchainType.name() + ' ' + LocaleController.getInternalString(C3290R.string.wallet_crypto_wallet_not_created_dialog_title);
+            internalString = blockchainType.name() + ' ' + LocaleController.getInternalString(C3295R.string.wallet_crypto_wallet_not_created_dialog_title);
         } else {
-            internalString = LocaleController.getInternalString(C3290R.string.wallet_crypto_wallet_not_created_dialog_title);
+            internalString = LocaleController.getInternalString(C3295R.string.wallet_crypto_wallet_not_created_dialog_title);
         }
-        return DialogUtils.createDialog$default(parentActivity, new DialogModel(internalString, LocaleController.getInternalString(C3290R.string.wallet_crypto_wallet_not_created_dialog_description), LocaleController.getInternalString(C3290R.string.common_cancel), LocaleController.getInternalString(C3290R.string.common_ok)), positiveAction, null, 8, null);
+        return DialogUtils.createDialog$default(parentActivity, new DialogModel(internalString, LocaleController.getInternalString(C3295R.string.wallet_crypto_wallet_not_created_dialog_description), LocaleController.getInternalString(C3295R.string.common_cancel), LocaleController.getInternalString(C3295R.string.common_ok)), positiveAction, null, 8, null);
     }
 
     public static final AlertDialog createSelectTokensOrderTypeDialog(BaseFragment baseFragment, ResourceManager resourceManager, TokenOrderType selectedType, final Callbacks$Callback1<TokenOrderType> onSelected) {
@@ -565,7 +565,7 @@ public final class DialogsFactoryKt {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         Intrinsics.checkNotNullParameter(selectedType, "selectedType");
         Intrinsics.checkNotNullParameter(onSelected, "onSelected");
-        DialogModel dialogModel = new DialogModel(resourceManager.getString(C3290R.string.choose_tokens_order_type_dialog_title), null, null, resourceManager.getString(C3290R.string.common_ok), 6, null);
+        DialogModel dialogModel = new DialogModel(resourceManager.getString(C3295R.string.choose_tokens_order_type_dialog_title), null, null, resourceManager.getString(C3295R.string.common_ok), 6, null);
         List<String> titles = TokenOrderType.Companion.getTitles(resourceManager);
         indexOf = ArraysKt___ArraysKt.indexOf(TokenOrderType.values(), selectedType);
         return createSingleChooserDialog$default(baseFragment, dialogModel, null, null, titles, indexOf, new Callbacks$Callback1() { // from class: com.iMe.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda4
@@ -589,7 +589,7 @@ public final class DialogsFactoryKt {
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         Intrinsics.checkNotNullParameter(selectedType, "selectedType");
         Intrinsics.checkNotNullParameter(onSelected, "onSelected");
-        DialogModel dialogModel = new DialogModel(resourceManager.getString(C3290R.string.choose_tokens_order_type_dialog_title), null, resourceManager.getString(C3290R.string.common_cancel), null, 10, null);
+        DialogModel dialogModel = new DialogModel(resourceManager.getString(C3295R.string.choose_tokens_order_type_dialog_title), null, resourceManager.getString(C3295R.string.common_cancel), null, 10, null);
         List<String> titles = StakingOrderType.Companion.getTitles(resourceManager);
         indexOf = ArraysKt___ArraysKt.indexOf(StakingOrderType.values(), selectedType);
         baseFragment.showDialog(createSingleChooserDialog$default(baseFragment, dialogModel, null, null, titles, indexOf, new Callbacks$Callback1() { // from class: com.iMe.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda5
@@ -612,8 +612,8 @@ public final class DialogsFactoryKt {
         Intrinsics.checkNotNullParameter(onItemSelectedAction, "onItemSelectedAction");
         Context context = baseFragment.getContext();
         Intrinsics.checkNotNullExpressionValue(context, "context");
-        String internalString = LocaleController.getInternalString(C3290R.string.settings_tools_chat_profile_id_telegram);
-        String internalString2 = LocaleController.getInternalString(C3290R.string.settings_tools_chat_profile_id_telegram_description);
+        String internalString = LocaleController.getInternalString(C3295R.string.settings_tools_chat_profile_id_telegram);
+        String internalString2 = LocaleController.getInternalString(C3295R.string.settings_tools_chat_profile_id_telegram_description);
         ChatProfileTelegramIdMode[] values = ChatProfileTelegramIdMode.values();
         ArrayList arrayList = new ArrayList(values.length);
         int length = values.length;
@@ -621,7 +621,7 @@ public final class DialogsFactoryKt {
             ChatProfileTelegramIdMode chatProfileTelegramIdMode = values[i];
             arrayList.add(TuplesKt.m85to(LocaleController.getInternalString(chatProfileTelegramIdMode.getTextResId()), Boolean.valueOf(SharedConfig.selectedChatProfileTelegramIdMode == chatProfileTelegramIdMode)));
         }
-        baseFragment.showDialog(DialogUtils.createDialogWithRadioCellsList$default(context, new RadioCellsListDialogModel(internalString, internalString2, arrayList, LocaleController.getString("Cancel", C3290R.string.Cancel)), new Callbacks$Callback1() { // from class: com.iMe.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda6
+        baseFragment.showDialog(DialogUtils.createDialogWithRadioCellsList$default(context, new RadioCellsListDialogModel(internalString, internalString2, arrayList, LocaleController.getString("Cancel", C3295R.string.Cancel)), new Callbacks$Callback1() { // from class: com.iMe.utils.dialogs.DialogsFactoryKt$$ExternalSyntheticLambda6
             @Override // com.iMe.fork.utils.Callbacks$Callback1
             public final void invoke(Object obj) {
                 DialogsFactoryKt.showChatProfileTelegramIdDialog$lambda$37(Callbacks$Callback.this, (Integer) obj);
@@ -639,7 +639,7 @@ public final class DialogsFactoryKt {
 
     public static /* synthetic */ BottomSheet createInfoBottomSheetDialog$default(BaseFragment baseFragment, String str, String str2, String str3, Callbacks$Callback callbacks$Callback, int i, Object obj) {
         if ((i & 1) != 0) {
-            str = LocaleController.getInternalString(C3290R.string.wallet_crypto_buy_information_dialog_title);
+            str = LocaleController.getInternalString(C3295R.string.wallet_crypto_buy_information_dialog_title);
             Intrinsics.checkNotNullExpressionValue(str, "getInternalString(R.stri…information_dialog_title)");
         }
         if ((i & 8) != 0) {
@@ -681,7 +681,7 @@ public final class DialogsFactoryKt {
         textView3.setGravity(17);
         textView3.setAllCaps(true);
         textView3.setText(buttonText);
-        ViewExtKt.safeThrottledClick$default(textView3, 0L, new C2426x81b1e32c(callbacks$Callback, create), 1, null);
+        ViewExtKt.safeThrottledClick$default(textView3, 0L, new C2431x81b1e32c(callbacks$Callback, create), 1, null);
         linearLayout.addView(textView3, LayoutHelper.createLinear(-1, -2));
         create.setCustomView(linearLayout);
         Intrinsics.checkNotNullExpressionValue(create, "bottomSheet.apply {\n    …mView(customLayout)\n    }");
@@ -695,6 +695,6 @@ public final class DialogsFactoryKt {
         Intrinsics.checkNotNullParameter(onReplenishClickAction, "onReplenishClickAction");
         Context context = baseFragment.getContext();
         Intrinsics.checkNotNullExpressionValue(context, "context");
-        baseFragment.showDialog(DialogUtils.createDialog$default(context, new DialogModel(resourceManager.getString(C3290R.string.staking_programme_level_required_title), resourceManager.getString(C3290R.string.staking_programme_level_required_description, minimalRank.name(), resourceManager.getString(minimalRank.getDescriptionResId())), LocaleController.getString("Cancel", C3290R.string.Cancel), resourceManager.getString(C3290R.string.wallet_common_error_not_enough_money_btn_txt)), onReplenishClickAction, null, 8, null));
+        baseFragment.showDialog(DialogUtils.createDialog$default(context, new DialogModel(resourceManager.getString(C3295R.string.staking_programme_level_required_title), resourceManager.getString(C3295R.string.staking_programme_level_required_description, minimalRank.name(), resourceManager.getString(minimalRank.getDescriptionResId())), LocaleController.getString("Cancel", C3295R.string.Cancel), resourceManager.getString(C3295R.string.wallet_common_error_not_enough_money_btn_txt)), onReplenishClickAction, null, 8, null));
     }
 }

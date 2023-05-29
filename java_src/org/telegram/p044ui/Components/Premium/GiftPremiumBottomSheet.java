@@ -31,7 +31,7 @@ import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -266,11 +266,11 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView {
             z = false;
         }
         if (!BuildVars.useInvoiceBilling() && (!BillingController.getInstance().isReady() || this.giftTiers.get(this.selectedTierIndex).googlePlayProductDetails == null)) {
-            this.premiumButtonView.setButton(LocaleController.getString(C3290R.string.Loading), GiftPremiumBottomSheet$$ExternalSyntheticLambda1.INSTANCE, !LocaleController.isRTL);
+            this.premiumButtonView.setButton(LocaleController.getString(C3295R.string.Loading), GiftPremiumBottomSheet$$ExternalSyntheticLambda1.INSTANCE, !LocaleController.isRTL);
             this.premiumButtonView.setFlickerDisabled(true);
             return;
         }
-        this.premiumButtonView.setButton(LocaleController.formatString(C3290R.string.GiftSubscriptionFor, this.giftTiers.get(this.selectedTierIndex).getFormattedPrice()), new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.GiftPremiumBottomSheet$$ExternalSyntheticLambda0
+        this.premiumButtonView.setButton(LocaleController.formatString(C3295R.string.GiftSubscriptionFor, this.giftTiers.get(this.selectedTierIndex).getFormattedPrice()), new View.OnClickListener() { // from class: org.telegram.ui.Components.Premium.GiftPremiumBottomSheet$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 GiftPremiumBottomSheet.this.lambda$updateButtonText$5(view);
@@ -432,14 +432,14 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView {
 
     @Override // org.telegram.p044ui.Components.BottomSheetWithRecyclerListView
     protected CharSequence getTitle() {
-        return LocaleController.getString(C3290R.string.GiftTelegramPremiumTitle);
+        return LocaleController.getString(C3295R.string.GiftTelegramPremiumTitle);
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Premium.GiftPremiumBottomSheet$1 */
     /* loaded from: classes6.dex */
-    public class C49321 extends RecyclerListView.SelectionAdapter {
-        C49321() {
+    public class C49371 extends RecyclerListView.SelectionAdapter {
+        C49371() {
         }
 
         @Override // org.telegram.p044ui.Components.RecyclerListView.SelectionAdapter
@@ -479,14 +479,14 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView {
                     @Override // org.telegram.messenger.GenericProvider
                     public final Object provide(Object obj) {
                         Paint lambda$onCreateViewHolder$0;
-                        lambda$onCreateViewHolder$0 = GiftPremiumBottomSheet.C49321.this.lambda$onCreateViewHolder$0(premiumGiftTierCell2, (Void) obj);
+                        lambda$onCreateViewHolder$0 = GiftPremiumBottomSheet.C49371.this.lambda$onCreateViewHolder$0(premiumGiftTierCell2, (Void) obj);
                         return lambda$onCreateViewHolder$0;
                     }
                 });
                 premiumGiftTierCell2.setProgressDelegate(new CheckBoxBase.ProgressDelegate() { // from class: org.telegram.ui.Components.Premium.GiftPremiumBottomSheet$1$$ExternalSyntheticLambda1
                     @Override // org.telegram.p044ui.Components.CheckBoxBase.ProgressDelegate
                     public final void setProgress(float f) {
-                        GiftPremiumBottomSheet.C49321.lambda$onCreateViewHolder$1(atomicReference, premiumGiftTierCell2, f);
+                        GiftPremiumBottomSheet.C49371.lambda$onCreateViewHolder$1(atomicReference, premiumGiftTierCell2, f);
                     }
                 });
                 premiumGiftTierCell = premiumGiftTierCell2;
@@ -494,7 +494,7 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView {
                 TextInfoPrivacyCell textInfoPrivacyCell = new TextInfoPrivacyCell(GiftPremiumBottomSheet.this.getContext());
                 textInfoPrivacyCell.setTopPadding(28);
                 textInfoPrivacyCell.getTextView().setGravity(1);
-                String string = LocaleController.getString(C3290R.string.GiftPremiumListFeaturesAndTerms);
+                String string = LocaleController.getString(C3295R.string.GiftPremiumListFeaturesAndTerms);
                 int indexOf = string.indexOf(42);
                 int lastIndexOf = string.lastIndexOf(42);
                 if (indexOf != -1 && lastIndexOf != -1) {
@@ -569,7 +569,7 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView {
 
     @Override // org.telegram.p044ui.Components.BottomSheetWithRecyclerListView
     protected RecyclerListView.SelectionAdapter createAdapter() {
-        return new C49321();
+        return new C49371();
     }
 
     /* renamed from: org.telegram.ui.Components.Premium.GiftPremiumBottomSheet$LinkSpan */
@@ -578,7 +578,7 @@ public class GiftPremiumBottomSheet extends BottomSheetWithRecyclerListView {
         private LinkSpan() {
         }
 
-        /* synthetic */ LinkSpan(GiftPremiumBottomSheet giftPremiumBottomSheet, C49321 c49321) {
+        /* synthetic */ LinkSpan(GiftPremiumBottomSheet giftPremiumBottomSheet, C49371 c49371) {
             this();
         }
 

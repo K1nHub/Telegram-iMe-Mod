@@ -213,6 +213,7 @@
     <color name="wallet_holo_blue_light">#ff33b5e5</color>
     <color name="wallet_link_text_light">#ff0000ee</color>
     <color name="wallet_network_type_bep20">#ffffce1f</color>
+    <color name="wallet_network_type_bitcoin">#fff7931a</color>
     <color name="wallet_network_type_erc20">#ffbbbbbb</color>
     <color name="wallet_network_type_fantom">#ff1969ff</color>
     <color name="wallet_network_type_polygon">#ff8247e5</color>

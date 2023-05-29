@@ -10,7 +10,7 @@ import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.fxn.BubbleTabBar;
 import com.github.mmin18.widget.RealtimeBlurView;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 /* loaded from: classes4.dex */
 public final class ForkFragmentCatalogGlobalBinding implements ViewBinding {
     public final BubbleTabBar bottomNavigationCatalog;
@@ -37,7 +37,7 @@ public final class ForkFragmentCatalogGlobalBinding implements ViewBinding {
     }
 
     public static ForkFragmentCatalogGlobalBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3290R.layout.fork_fragment_catalog_global, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3295R.layout.fork_fragment_catalog_global, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -45,16 +45,16 @@ public final class ForkFragmentCatalogGlobalBinding implements ViewBinding {
     }
 
     public static ForkFragmentCatalogGlobalBinding bind(View view) {
-        int i = C3290R.C3293id.bottom_navigation_catalog;
+        int i = C3295R.C3298id.bottom_navigation_catalog;
         BubbleTabBar bubbleTabBar = (BubbleTabBar) ViewBindings.findChildViewById(view, i);
         if (bubbleTabBar != null) {
-            i = C3290R.C3293id.card_bottom_navigation_wrapper;
+            i = C3295R.C3298id.card_bottom_navigation_wrapper;
             CardView cardView = (CardView) ViewBindings.findChildViewById(view, i);
             if (cardView != null) {
-                i = C3290R.C3293id.frame_fragment_container;
+                i = C3295R.C3298id.frame_fragment_container;
                 FrameLayout frameLayout = (FrameLayout) ViewBindings.findChildViewById(view, i);
                 if (frameLayout != null) {
-                    i = C3290R.C3293id.realtime_blur;
+                    i = C3295R.C3298id.realtime_blur;
                     RealtimeBlurView realtimeBlurView = (RealtimeBlurView) ViewBindings.findChildViewById(view, i);
                     if (realtimeBlurView != null) {
                         return new ForkFragmentCatalogGlobalBinding((ConstraintLayout) view, bubbleTabBar, cardView, frameLayout, realtimeBlurView);

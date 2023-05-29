@@ -14,7 +14,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.EmojiData;
 import org.telegram.messenger.FileLog;
@@ -374,7 +374,7 @@ public class EmojiAnimationsOverlay implements NotificationCenter.NotificationCe
                 }
                 StickerSetBulletinLayout stickerSetBulletinLayout = new StickerSetBulletinLayout(chatActivity.getParentActivity(), null, -1, emojiAnimatedSticker, chatActivity.getResourceProvider());
                 stickerSetBulletinLayout.subtitleTextView.setVisibility(8);
-                stickerSetBulletinLayout.titleTextView.setText(Emoji.replaceEmoji(AndroidUtilities.replaceTags(LocaleController.formatString("EmojiInteractionTapHint", C3290R.string.EmojiInteractionTapHint, chatActivity.currentUser.first_name)), stickerSetBulletinLayout.titleTextView.getPaint().getFontMetricsInt(), false));
+                stickerSetBulletinLayout.titleTextView.setText(Emoji.replaceEmoji(AndroidUtilities.replaceTags(LocaleController.formatString("EmojiInteractionTapHint", C3295R.string.EmojiInteractionTapHint, chatActivity.currentUser.first_name)), stickerSetBulletinLayout.titleTextView.getPaint().getFontMetricsInt(), false));
                 stickerSetBulletinLayout.titleTextView.setTypeface(null);
                 stickerSetBulletinLayout.titleTextView.setMaxLines(3);
                 stickerSetBulletinLayout.titleTextView.setSingleLine(false);
@@ -729,7 +729,7 @@ public class EmojiAnimationsOverlay implements NotificationCenter.NotificationCe
         }
         StickerSetBulletinLayout stickerSetBulletinLayout = new StickerSetBulletinLayout(this.contentLayout.getContext(), null, -1, messageObject.getDocument(), this.chatActivity.getResourceProvider());
         stickerSetBulletinLayout.titleTextView.setText(tLRPC$TL_messages_stickerSet.set.title);
-        stickerSetBulletinLayout.subtitleTextView.setText(LocaleController.getString("PremiumStickerTooltip", C3290R.string.PremiumStickerTooltip));
+        stickerSetBulletinLayout.subtitleTextView.setText(LocaleController.getString("PremiumStickerTooltip", C3295R.string.PremiumStickerTooltip));
         Bulletin.UndoButton undoButton = new Bulletin.UndoButton(this.chatActivity.getParentActivity(), true, this.chatActivity.getResourceProvider());
         stickerSetBulletinLayout.setButton(undoButton);
         undoButton.setUndoAction(new Runnable() { // from class: org.telegram.ui.EmojiAnimationsOverlay$$ExternalSyntheticLambda1
@@ -738,7 +738,7 @@ public class EmojiAnimationsOverlay implements NotificationCenter.NotificationCe
                 EmojiAnimationsOverlay.this.lambda$showStickerSetBulletin$3(messageObject);
             }
         });
-        undoButton.setText(LocaleController.getString("ViewAction", C3290R.string.ViewAction));
+        undoButton.setText(LocaleController.getString("ViewAction", C3295R.string.ViewAction));
         Bulletin make = Bulletin.make(this.chatActivity, stickerSetBulletinLayout, 2750);
         make.hash = messageObject.getId();
         make.show();

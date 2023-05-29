@@ -2,10 +2,10 @@ package p034j$.time;
 
 import java.io.Serializable;
 import java.util.Objects;
-import p034j$.time.chrono.C2607c;
-import p034j$.time.format.C2623p;
-import p034j$.time.format.EnumC2627t;
-import p034j$.time.temporal.EnumC2629a;
+import p034j$.time.chrono.C2612c;
+import p034j$.time.format.C2628p;
+import p034j$.time.format.EnumC2632t;
+import p034j$.time.temporal.EnumC2634a;
 /* renamed from: j$.time.YearMonth */
 /* loaded from: classes2.dex */
 public final class YearMonth implements Comparable<YearMonth>, Serializable {
@@ -17,9 +17,9 @@ public final class YearMonth implements Comparable<YearMonth>, Serializable {
     private final int f485b;
 
     static {
-        C2623p m652l = new C2623p().m652l(EnumC2629a.YEAR, 4, 10, EnumC2627t.EXCEEDS_PAD);
+        C2628p m652l = new C2628p().m652l(EnumC2634a.YEAR, 4, 10, EnumC2632t.EXCEEDS_PAD);
         m652l.m659e('-');
-        m652l.m653k(EnumC2629a.MONTH_OF_YEAR, 2);
+        m652l.m653k(EnumC2634a.MONTH_OF_YEAR, 2);
         m652l.m645s();
     }
 
@@ -30,8 +30,8 @@ public final class YearMonth implements Comparable<YearMonth>, Serializable {
 
     /* renamed from: of */
     public static YearMonth m671of(int i, int i2) {
-        EnumC2629a.YEAR.m641b(i);
-        EnumC2629a.MONTH_OF_YEAR.m641b(i2);
+        EnumC2634a.YEAR.m641b(i);
+        EnumC2634a.MONTH_OF_YEAR.m641b(i2);
         return new YearMonth(i, i2);
     }
 
@@ -58,12 +58,12 @@ public final class YearMonth implements Comparable<YearMonth>, Serializable {
     }
 
     public int lengthOfMonth() {
-        EnumC2604c m670a = EnumC2604c.m670a(this.f485b);
-        C2607c c2607c = C2607c.f489a;
+        EnumC2609c m670a = EnumC2609c.m670a(this.f485b);
+        C2612c c2612c = C2612c.f489a;
         long j = this.f484a;
         boolean z = (3 & j) == 0 && (j % 100 != 0 || j % 400 == 0);
         Objects.requireNonNull(m670a);
-        int i = AbstractC2603b.f486a[m670a.ordinal()];
+        int i = AbstractC2608b.f486a[m670a.ordinal()];
         return i != 1 ? (i == 2 || i == 3 || i == 4 || i == 5) ? 30 : 31 : z ? 29 : 28;
     }
 

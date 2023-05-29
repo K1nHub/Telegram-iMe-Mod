@@ -5,7 +5,7 @@ import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.LayoutHelper;
@@ -21,7 +21,7 @@ public class StickerSetGroupInfoCell extends LinearLayout {
         TextView textView = new TextView(context);
         textView.setTextColor(Theme.getColor(Theme.key_chat_emojiPanelTrendingDescription));
         textView.setTextSize(1, 14.0f);
-        textView.setText(LocaleController.getString("GroupStickersInfo", C3290R.string.GroupStickersInfo));
+        textView.setText(LocaleController.getString("GroupStickersInfo", C3295R.string.GroupStickersInfo));
         addView(textView, LayoutHelper.createLinear(-1, -2, 51, 17, 4, 17, 0));
         TextView textView2 = new TextView(context);
         this.addButton = textView2;
@@ -31,7 +31,7 @@ public class StickerSetGroupInfoCell extends LinearLayout {
         this.addButton.setTextSize(1, 14.0f);
         this.addButton.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.addButton.setBackground(Theme.AdaptiveRipple.filledRectByKey(Theme.key_featuredStickers_addButton, 4.0f));
-        this.addButton.setText(LocaleController.getString("ChooseStickerSet", C3290R.string.ChooseStickerSet).toUpperCase());
+        this.addButton.setText(LocaleController.getString("ChooseStickerSet", C3295R.string.ChooseStickerSet).toUpperCase());
         addView(this.addButton, LayoutHelper.createLinear(-2, 28, 51, 17, 10, 14, 8));
     }
 

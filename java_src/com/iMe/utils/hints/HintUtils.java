@@ -4,7 +4,7 @@ import com.iMe.common.IdFabric$Menu;
 import com.iMe.model.hint.HintModel;
 import com.iMe.p031ui.custom.NetworkTypeView;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p044ui.ActionBar.INavigationLayout;
@@ -21,7 +21,7 @@ public final class HintUtils {
         }
         if (networkTypeView.getVisibility() == 0) {
             HintFactory hintFactory = this.hintFactory;
-            String internalString = LocaleController.getInternalString(C3290R.string.wallet_network_type_hint);
+            String internalString = LocaleController.getInternalString(C3295R.string.wallet_network_type_hint);
             Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…wallet_network_type_hint)");
             hintFactory.showHint(parentLayout, networkTypeView, new HintModel(internalString, 0, false, false, 14, null));
         }
@@ -35,7 +35,7 @@ public final class HintUtils {
         }
         if (actionBarMenuItem.getVisibility() == 0) {
             HintFactory hintFactory = this.hintFactory;
-            String internalString = LocaleController.getInternalString(C3290R.string.staking_info_hint);
+            String internalString = LocaleController.getInternalString(C3295R.string.staking_info_hint);
             Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.string.staking_info_hint)");
             hintFactory.showHint(parentLayout, actionBarMenuItem, new HintModel(internalString, 0, false, false, 14, null));
         }

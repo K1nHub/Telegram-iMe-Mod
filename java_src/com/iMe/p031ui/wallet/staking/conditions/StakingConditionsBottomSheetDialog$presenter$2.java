@@ -27,11 +27,11 @@ final class StakingConditionsBottomSheetDialog$presenter$2 extends Lambda implem
     /* compiled from: StakingConditionsBottomSheetDialog.kt */
     /* renamed from: com.iMe.ui.wallet.staking.conditions.StakingConditionsBottomSheetDialog$presenter$2$1 */
     /* loaded from: classes4.dex */
-    public static final class C23411 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C23461 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ StakingDetailsItem $stakingDetails;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C23411(StakingDetailsItem stakingDetailsItem) {
+        C23461(StakingDetailsItem stakingDetailsItem) {
             super(0);
             this.$stakingDetails = stakingDetailsItem;
         }
@@ -46,7 +46,7 @@ final class StakingConditionsBottomSheetDialog$presenter$2 extends Lambda implem
     @Override // kotlin.jvm.functions.Function0
     public final StakingConditionsPresenter invoke() {
         Lazy lazy;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2339x8466ed51(this.this$0, null, new C23411(this.$stakingDetails)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2344x8466ed51(this.this$0, null, new C23461(this.$stakingDetails)));
         return (StakingConditionsPresenter) lazy.getValue();
     }
 }

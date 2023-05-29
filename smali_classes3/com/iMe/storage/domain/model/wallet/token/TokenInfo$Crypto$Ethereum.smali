@@ -20,6 +20,7 @@
         Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$BCUG;,
         Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$BNB;,
         Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$BOSON;,
+        Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$BTC;,
         Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$BTCMT;,
         Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$BUSD;,
         Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Crypto$Ethereum$CEEK;,

@@ -1,10 +1,10 @@
 package com.iMe.model.wallet.home;
 
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 /* compiled from: WalletDashboardOperation.kt */
 /* loaded from: classes3.dex */
 public enum WalletDashboardOperation {
-    EARN(C3290R.C3292drawable.fork_ic_operation_earn, C3290R.string.wallet_operation_earn);
+    EARN(C3295R.C3297drawable.fork_ic_operation_earn, C3295R.string.wallet_operation_earn);
     
     private int icon;
     private int title;

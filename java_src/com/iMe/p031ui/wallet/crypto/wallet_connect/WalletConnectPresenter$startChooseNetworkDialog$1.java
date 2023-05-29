@@ -11,7 +11,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletConnectPresenter.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectPresenter$startChooseNetworkDialog$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletConnectPresenter$startChooseNetworkDialog$1 extends Lambda implements Function1<NetworkType, Unit> {
     final /* synthetic */ WalletConnectPresenter this$0;
 

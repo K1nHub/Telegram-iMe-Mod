@@ -48,7 +48,7 @@ final class TranslationRepositoryImpl$translate$1 extends Lambda implements Func
             str2 = TtmlNode.TEXT_EMPHASIS_AUTO;
         }
         Observable<ArrayList<Object>> translate = googleTranslationApi.translate(str, str2, this.$targetLanguage, blockText.toString());
-        final C19221 c19221 = C19221.INSTANCE;
+        final C19271 c19271 = C19271.INSTANCE;
         Observable<R> map = translate.map(new Function() { // from class: com.iMe.storage.data.repository.translate.TranslationRepositoryImpl$translate$1$$ExternalSyntheticLambda1
             @Override // io.reactivex.functions.Function
             public final Object apply(Object obj) {
@@ -57,7 +57,7 @@ final class TranslationRepositoryImpl$translate$1 extends Lambda implements Func
                 return invoke$lambda$0;
             }
         });
-        final C19232 c19232 = new C19232(this.$blocks);
+        final C19282 c19282 = new C19282(this.$blocks);
         return map.compose(new ObservableTransformer() { // from class: com.iMe.storage.data.repository.translate.TranslationRepositoryImpl$translate$1$$ExternalSyntheticLambda0
             @Override // io.reactivex.ObservableTransformer
             public final ObservableSource apply(Observable observable) {
@@ -72,10 +72,10 @@ final class TranslationRepositoryImpl$translate$1 extends Lambda implements Func
     /* compiled from: TranslationRepositoryImpl.kt */
     /* renamed from: com.iMe.storage.data.repository.translate.TranslationRepositoryImpl$translate$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C19221 extends Lambda implements Function1<ArrayList<Object>, Translation> {
-        public static final C19221 INSTANCE = new C19221();
+    public static final class C19271 extends Lambda implements Function1<ArrayList<Object>, Translation> {
+        public static final C19271 INSTANCE = new C19271();
 
-        C19221() {
+        C19271() {
             super(1);
         }
 
@@ -96,12 +96,12 @@ final class TranslationRepositoryImpl$translate$1 extends Lambda implements Func
     /* compiled from: TranslationRepositoryImpl.kt */
     /* renamed from: com.iMe.storage.data.repository.translate.TranslationRepositoryImpl$translate$1$2 */
     /* loaded from: classes3.dex */
-    public static final class C19232 extends Lambda implements Function1<Observable<Translation>, ObservableSource<Translation>> {
+    public static final class C19282 extends Lambda implements Function1<Observable<Translation>, ObservableSource<Translation>> {
         final /* synthetic */ List<CharSequence> $blocks;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         /* JADX WARN: Multi-variable type inference failed */
-        C19232(List<? extends CharSequence> list) {
+        C19282(List<? extends CharSequence> list) {
             super(1);
             this.$blocks = list;
         }

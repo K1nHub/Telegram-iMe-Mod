@@ -4,11 +4,12 @@ import kotlin.jvm.internal.Intrinsics;
 /* compiled from: AccountInfoResponse.kt */
 /* loaded from: classes3.dex */
 public final class AccountInfoResponse {
+    private final AccountWalletAddressResponse bitcoinWalletAddress;
     private final AccountWalletAddressResponse etherWalletAddress;
     private final AccountWalletAddressResponse tonWalletAddress;
     private final AccountWalletAddressResponse tronWalletAddress;
 
-    public static /* synthetic */ AccountInfoResponse copy$default(AccountInfoResponse accountInfoResponse, AccountWalletAddressResponse accountWalletAddressResponse, AccountWalletAddressResponse accountWalletAddressResponse2, AccountWalletAddressResponse accountWalletAddressResponse3, int i, Object obj) {
+    public static /* synthetic */ AccountInfoResponse copy$default(AccountInfoResponse accountInfoResponse, AccountWalletAddressResponse accountWalletAddressResponse, AccountWalletAddressResponse accountWalletAddressResponse2, AccountWalletAddressResponse accountWalletAddressResponse3, AccountWalletAddressResponse accountWalletAddressResponse4, int i, Object obj) {
         if ((i & 1) != 0) {
             accountWalletAddressResponse = accountInfoResponse.etherWalletAddress;
         }
@@ -18,7 +19,10 @@ public final class AccountInfoResponse {
         if ((i & 4) != 0) {
             accountWalletAddressResponse3 = accountInfoResponse.tronWalletAddress;
         }
-        return accountInfoResponse.copy(accountWalletAddressResponse, accountWalletAddressResponse2, accountWalletAddressResponse3);
+        if ((i & 8) != 0) {
+            accountWalletAddressResponse4 = accountInfoResponse.bitcoinWalletAddress;
+        }
+        return accountInfoResponse.copy(accountWalletAddressResponse, accountWalletAddressResponse2, accountWalletAddressResponse3, accountWalletAddressResponse4);
     }
 
     public final AccountWalletAddressResponse component1() {
@@ -33,11 +37,16 @@ public final class AccountInfoResponse {
         return this.tronWalletAddress;
     }
 
-    public final AccountInfoResponse copy(AccountWalletAddressResponse etherWalletAddress, AccountWalletAddressResponse tonWalletAddress, AccountWalletAddressResponse tronWalletAddress) {
+    public final AccountWalletAddressResponse component4() {
+        return this.bitcoinWalletAddress;
+    }
+
+    public final AccountInfoResponse copy(AccountWalletAddressResponse etherWalletAddress, AccountWalletAddressResponse tonWalletAddress, AccountWalletAddressResponse tronWalletAddress, AccountWalletAddressResponse bitcoinWalletAddress) {
         Intrinsics.checkNotNullParameter(etherWalletAddress, "etherWalletAddress");
         Intrinsics.checkNotNullParameter(tonWalletAddress, "tonWalletAddress");
         Intrinsics.checkNotNullParameter(tronWalletAddress, "tronWalletAddress");
-        return new AccountInfoResponse(etherWalletAddress, tonWalletAddress, tronWalletAddress);
+        Intrinsics.checkNotNullParameter(bitcoinWalletAddress, "bitcoinWalletAddress");
+        return new AccountInfoResponse(etherWalletAddress, tonWalletAddress, tronWalletAddress, bitcoinWalletAddress);
     }
 
     public boolean equals(Object obj) {
@@ -46,26 +55,28 @@ public final class AccountInfoResponse {
         }
         if (obj instanceof AccountInfoResponse) {
             AccountInfoResponse accountInfoResponse = (AccountInfoResponse) obj;
-            return Intrinsics.areEqual(this.etherWalletAddress, accountInfoResponse.etherWalletAddress) && Intrinsics.areEqual(this.tonWalletAddress, accountInfoResponse.tonWalletAddress) && Intrinsics.areEqual(this.tronWalletAddress, accountInfoResponse.tronWalletAddress);
+            return Intrinsics.areEqual(this.etherWalletAddress, accountInfoResponse.etherWalletAddress) && Intrinsics.areEqual(this.tonWalletAddress, accountInfoResponse.tonWalletAddress) && Intrinsics.areEqual(this.tronWalletAddress, accountInfoResponse.tronWalletAddress) && Intrinsics.areEqual(this.bitcoinWalletAddress, accountInfoResponse.bitcoinWalletAddress);
         }
         return false;
     }
 
     public int hashCode() {
-        return (((this.etherWalletAddress.hashCode() * 31) + this.tonWalletAddress.hashCode()) * 31) + this.tronWalletAddress.hashCode();
+        return (((((this.etherWalletAddress.hashCode() * 31) + this.tonWalletAddress.hashCode()) * 31) + this.tronWalletAddress.hashCode()) * 31) + this.bitcoinWalletAddress.hashCode();
     }
 
     public String toString() {
-        return "AccountInfoResponse(etherWalletAddress=" + this.etherWalletAddress + ", tonWalletAddress=" + this.tonWalletAddress + ", tronWalletAddress=" + this.tronWalletAddress + ')';
+        return "AccountInfoResponse(etherWalletAddress=" + this.etherWalletAddress + ", tonWalletAddress=" + this.tonWalletAddress + ", tronWalletAddress=" + this.tronWalletAddress + ", bitcoinWalletAddress=" + this.bitcoinWalletAddress + ')';
     }
 
-    public AccountInfoResponse(AccountWalletAddressResponse etherWalletAddress, AccountWalletAddressResponse tonWalletAddress, AccountWalletAddressResponse tronWalletAddress) {
+    public AccountInfoResponse(AccountWalletAddressResponse etherWalletAddress, AccountWalletAddressResponse tonWalletAddress, AccountWalletAddressResponse tronWalletAddress, AccountWalletAddressResponse bitcoinWalletAddress) {
         Intrinsics.checkNotNullParameter(etherWalletAddress, "etherWalletAddress");
         Intrinsics.checkNotNullParameter(tonWalletAddress, "tonWalletAddress");
         Intrinsics.checkNotNullParameter(tronWalletAddress, "tronWalletAddress");
+        Intrinsics.checkNotNullParameter(bitcoinWalletAddress, "bitcoinWalletAddress");
         this.etherWalletAddress = etherWalletAddress;
         this.tonWalletAddress = tonWalletAddress;
         this.tronWalletAddress = tronWalletAddress;
+        this.bitcoinWalletAddress = bitcoinWalletAddress;
     }
 
     public final AccountWalletAddressResponse getEtherWalletAddress() {
@@ -78,5 +89,9 @@ public final class AccountInfoResponse {
 
     public final AccountWalletAddressResponse getTronWalletAddress() {
         return this.tronWalletAddress;
+    }
+
+    public final AccountWalletAddressResponse getBitcoinWalletAddress() {
+        return this.bitcoinWalletAddress;
     }
 }

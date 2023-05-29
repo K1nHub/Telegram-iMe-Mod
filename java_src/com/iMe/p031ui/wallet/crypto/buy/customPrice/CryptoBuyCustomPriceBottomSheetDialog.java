@@ -32,7 +32,7 @@ import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.databinding.ForkContentWalletCryptoBuyCustomPriceLayoutBinding;
 import org.telegram.p044ui.ActionBar.BaseFragment;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -235,7 +235,7 @@ public final class CryptoBuyCustomPriceBottomSheetDialog extends MvpBottomSheet 
     public void resetInputError() {
         AppCompatTextView appCompatTextView = getBinding().textAction;
         appCompatTextView.setTextColor(Theme.getColor(Theme.key_chats_actionBackground));
-        appCompatTextView.setText(getResourceManager().getString(C3290R.string.wallet_crypto_buy_custom_price_dialog_action));
+        appCompatTextView.setText(getResourceManager().getString(C3295R.string.wallet_crypto_buy_custom_price_dialog_action));
     }
 
     private final void setupStyles() {
@@ -282,8 +282,8 @@ public final class CryptoBuyCustomPriceBottomSheetDialog extends MvpBottomSheet 
 
     private final void setupActionBar() {
         ForkContentWalletCryptoBuyCustomPriceLayoutBinding binding = getBinding();
-        binding.imageBack.setImageResource(C3290R.C3292drawable.ic_ab_back);
-        binding.textTitle.setText(getResourceManager().getString(C3290R.string.wallet_crypto_buy_custom_price_dialog_toolbar_title));
+        binding.imageBack.setImageResource(C3295R.C3297drawable.ic_ab_back);
+        binding.textTitle.setText(getResourceManager().getString(C3295R.string.wallet_crypto_buy_custom_price_dialog_toolbar_title));
     }
 
     private final void setupListeners() {

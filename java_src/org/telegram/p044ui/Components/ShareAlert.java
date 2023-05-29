@@ -66,7 +66,7 @@ import java.util.concurrent.atomic.AtomicReference;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
@@ -90,7 +90,7 @@ import org.telegram.p044ui.ActionBar.AdjustPanLayoutHelper;
 import org.telegram.p044ui.ActionBar.AlertDialog;
 import org.telegram.p044ui.ActionBar.BaseFragment;
 import org.telegram.p044ui.ActionBar.BottomSheet;
-import org.telegram.p044ui.ActionBar.C3356ActionBar;
+import org.telegram.p044ui.ActionBar.C3361ActionBar;
 import org.telegram.p044ui.ActionBar.INavigationLayout;
 import org.telegram.p044ui.ActionBar.SimpleTextView;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -190,7 +190,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
     private ValueAnimator topBackgroundAnimator;
     private int topBeforeSwitch;
     private SpringAnimation topicsAnimation;
-    C3356ActionBar topicsBackActionBar;
+    C3361ActionBar topicsBackActionBar;
     private RecyclerListView topicsGridView;
     private GridLayoutManager topicsLayoutManager;
     private boolean updateSearchAdapter;
@@ -305,7 +305,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             this.forwardingParams = forwardingMessagesParams;
             forwardingMessagesParams.isFromShareAlert = true;
         }
-        this.forwardingPreviewView = new C50961(getContext(), this.forwardingParams, null, null, this.currentAccount, null, editText);
+        this.forwardingPreviewView = new C51011(getContext(), this.forwardingParams, null, null, this.currentAccount, null, editText);
         getContainer().addView(this.forwardingPreviewView, LayoutHelper.createFrame(-2, -2));
         if (editText != null) {
             AndroidUtilities.hideKeyboard(editText);
@@ -314,11 +314,11 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
 
     /* renamed from: org.telegram.ui.Components.ShareAlert$1 */
     /* loaded from: classes6.dex */
-    public class C50961 extends ForwardingPreviewView {
+    public class C51011 extends ForwardingPreviewView {
         final /* synthetic */ EditText val$focusedEditText;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C50961(Context context, ForwardingMessagesParams forwardingMessagesParams, TLRPC$User tLRPC$User, TLRPC$Chat tLRPC$Chat, int i, ForwardingPreviewView.ResourcesDelegate resourcesDelegate, EditText editText) {
+        C51011(Context context, ForwardingMessagesParams forwardingMessagesParams, TLRPC$User tLRPC$User, TLRPC$Chat tLRPC$Chat, int i, ForwardingPreviewView.ResourcesDelegate resourcesDelegate, EditText editText) {
             super(context, forwardingMessagesParams, tLRPC$User, tLRPC$Chat, i, resourcesDelegate);
             ShareAlert.this = r8;
             this.val$focusedEditText = editText;
@@ -334,7 +334,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ShareAlert$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ShareAlert.C50961.lambda$onDismiss$0(editText);
+                    ShareAlert.C51011.lambda$onDismiss$0(editText);
                 }
             }, 50L);
         }
@@ -422,8 +422,8 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             int i = Theme.key_voipgroup_nameText;
             simpleTextView.setTextColor(shareAlert.getThemedColor(i));
             this.leftTab.setTextSize(13);
-            this.leftTab.setLeftDrawable(C3290R.C3292drawable.msg_tabs_mic1);
-            this.leftTab.setText(LocaleController.getString("VoipGroupInviteCanSpeak", C3290R.string.VoipGroupInviteCanSpeak));
+            this.leftTab.setLeftDrawable(C3295R.C3297drawable.msg_tabs_mic1);
+            this.leftTab.setText(LocaleController.getString("VoipGroupInviteCanSpeak", C3295R.string.VoipGroupInviteCanSpeak));
             this.leftTab.setGravity(17);
             addView(this.leftTab, LayoutHelper.createFrame(-1, -1, 51, 14, 0, 0, 0));
             this.leftTab.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ShareAlert$SwitchView$$ExternalSyntheticLambda1
@@ -436,8 +436,8 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             this.rightTab = simpleTextView2;
             simpleTextView2.setTextColor(shareAlert.getThemedColor(i));
             this.rightTab.setTextSize(13);
-            this.rightTab.setLeftDrawable(C3290R.C3292drawable.msg_tabs_mic2);
-            this.rightTab.setText(LocaleController.getString("VoipGroupInviteListenOnly", C3290R.string.VoipGroupInviteListenOnly));
+            this.rightTab.setLeftDrawable(C3295R.C3297drawable.msg_tabs_mic2);
+            this.rightTab.setText(LocaleController.getString("VoipGroupInviteListenOnly", C3295R.string.VoipGroupInviteListenOnly));
             this.rightTab.setGravity(17);
             addView(this.rightTab, LayoutHelper.createFrame(-1, -1, 51, 0, 0, 14, 0));
             this.rightTab.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ShareAlert$SwitchView$$ExternalSyntheticLambda0
@@ -528,7 +528,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             ImageView imageView = new ImageView(context);
             this.searchIconImageView = imageView;
             imageView.setScaleType(ImageView.ScaleType.CENTER);
-            this.searchIconImageView.setImageResource(C3290R.C3292drawable.smiles_inputsearch);
+            this.searchIconImageView.setImageResource(C3295R.C3297drawable.smiles_inputsearch);
             this.searchIconImageView.setColorFilter(new PorterDuffColorFilter(r9.getThemedColor(r9.darkTheme ? Theme.key_voipgroup_mutedIcon : Theme.key_dialogSearchIcon), PorterDuff.Mode.MULTIPLY));
             addView(this.searchIconImageView, LayoutHelper.createFrame(36, 36, 51, 16, 11, 0, 0));
             ImageView imageView2 = new ImageView(context);
@@ -570,7 +570,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             this.searchEditText.setLines(1);
             this.searchEditText.setSingleLine(true);
             this.searchEditText.setImeOptions(268435459);
-            this.searchEditText.setHint(LocaleController.getString("ShareSendTo", C3290R.string.ShareSendTo));
+            this.searchEditText.setHint(LocaleController.getString("ShareSendTo", C3295R.string.ShareSendTo));
             this.searchEditText.setCursorColor(r9.getThemedColor(r9.darkTheme ? Theme.key_voipgroup_searchText : Theme.key_featuredStickers_addedIcon));
             this.searchEditText.setCursorSize(AndroidUtilities.m54dp(20));
             this.searchEditText.setCursorWidth(1.5f);
@@ -607,11 +607,11 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                         String obj = SearchField.this.searchEditText.getText().toString();
                         if (obj.length() != 0) {
                             if (ShareAlert.this.searchEmptyView != null) {
-                                ShareAlert.this.searchEmptyView.title.setText(LocaleController.getString("NoResult", C3290R.string.NoResult));
+                                ShareAlert.this.searchEmptyView.title.setText(LocaleController.getString("NoResult", C3295R.string.NoResult));
                             }
                         } else if (ShareAlert.this.gridView.getAdapter() != ShareAlert.this.listAdapter) {
                             int currentTop = ShareAlert.this.getCurrentTop();
-                            ShareAlert.this.searchEmptyView.title.setText(LocaleController.getString("NoResult", C3290R.string.NoResult));
+                            ShareAlert.this.searchEmptyView.title.setText(LocaleController.getString("NoResult", C3295R.string.NoResult));
                             ShareAlert.this.searchEmptyView.showProgress(false, true);
                             ShareAlert.this.checkCurrentList(false);
                             ShareAlert.this.listAdapter.notifyDataSetChanged();
@@ -703,7 +703,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         }
         this.darkTheme = z3;
         this.parentFragment = chatActivity;
-        this.shadowDrawable = context.getResources().getDrawable(C3290R.C3292drawable.sheet_shadow_round).mutate();
+        this.shadowDrawable = context.getResources().getDrawable(C3295R.C3297drawable.sheet_shadow_round).mutate();
         int i = this.darkTheme ? Theme.key_voipgroup_inviteMembersBackground : Theme.key_dialogBackground;
         this.behindKeyboardColorKey = i;
         int themedColor = getThemedColor(i);
@@ -773,38 +773,38 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 ShareAlert.this = this;
                 this.adjustPanLayoutHelper = new AdjustPanLayoutHelper(this) { // from class: org.telegram.ui.Components.ShareAlert.3.1
                     {
-                        C51163.this = this;
+                        C51213.this = this;
                     }
 
                     @Override // org.telegram.p044ui.ActionBar.AdjustPanLayoutHelper
                     public void onTransitionStart(boolean z4, int i4) {
                         super.onTransitionStart(z4, i4);
                         if (ShareAlert.this.previousScrollOffsetY == ShareAlert.this.scrollOffsetY) {
-                            C51163.this.fromScrollY = -1;
+                            C51213.this.fromScrollY = -1;
                         } else {
-                            C51163 c51163 = C51163.this;
-                            c51163.fromScrollY = ShareAlert.this.previousScrollOffsetY;
-                            C51163 c511632 = C51163.this;
-                            c511632.toScrollY = ShareAlert.this.scrollOffsetY;
+                            C51213 c51213 = C51213.this;
+                            c51213.fromScrollY = ShareAlert.this.previousScrollOffsetY;
+                            C51213 c512132 = C51213.this;
+                            c512132.toScrollY = ShareAlert.this.scrollOffsetY;
                             ShareAlert.this.panTranslationMoveLayout = true;
-                            C51163 c511633 = C51163.this;
-                            ShareAlert.this.scrollOffsetY = c511633.fromScrollY;
+                            C51213 c512133 = C51213.this;
+                            ShareAlert.this.scrollOffsetY = c512133.fromScrollY;
                         }
-                        if (C51163.this.topOffset != C51163.this.previousTopOffset) {
-                            C51163.this.fromOffsetTop = 0;
-                            C51163.this.toOffsetTop = 0;
+                        if (C51213.this.topOffset != C51213.this.previousTopOffset) {
+                            C51213.this.fromOffsetTop = 0;
+                            C51213.this.toOffsetTop = 0;
                             ShareAlert.this.panTranslationMoveLayout = true;
                             if (!z4) {
-                                C51163 c511634 = C51163.this;
-                                C51163.access$3520(c511634, c511634.topOffset - C51163.this.previousTopOffset);
+                                C51213 c512134 = C51213.this;
+                                C51213.access$3520(c512134, c512134.topOffset - C51213.this.previousTopOffset);
                             } else {
-                                C51163 c511635 = C51163.this;
-                                C51163.access$3512(c511635, c511635.topOffset - C51163.this.previousTopOffset);
+                                C51213 c512135 = C51213.this;
+                                C51213.access$3512(c512135, c512135.topOffset - C51213.this.previousTopOffset);
                             }
-                            C51163 c511636 = C51163.this;
-                            ShareAlert.this.scrollOffsetY = z4 ? c511636.fromScrollY : c511636.toScrollY;
+                            C51213 c512136 = C51213.this;
+                            ShareAlert.this.scrollOffsetY = z4 ? c512136.fromScrollY : c512136.toScrollY;
                         } else {
-                            C51163.this.fromOffsetTop = -1;
+                            C51213.this.fromOffsetTop = -1;
                         }
                         ShareAlert.this.gridView.setTopGlowOffset((int) (ShareAlert.this.currentPanTranslationY + ShareAlert.this.scrollOffsetY));
                         ShareAlert.this.frameLayout.setTranslationY(ShareAlert.this.currentPanTranslationY + ShareAlert.this.scrollOffsetY);
@@ -834,28 +834,28 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                             }
                         }
                         ShareAlert.this.currentPanTranslationY = f;
-                        if (C51163.this.fromScrollY == -1) {
-                            if (C51163.this.fromOffsetTop != -1) {
-                                C51163 c51163 = C51163.this;
+                        if (C51213.this.fromScrollY == -1) {
+                            if (C51213.this.fromOffsetTop != -1) {
+                                C51213 c51213 = C51213.this;
                                 float f3 = 1.0f - f2;
-                                ShareAlert.this.scrollOffsetY = (int) ((c51163.fromOffsetTop * f3) + (C51163.this.toOffsetTop * f2));
+                                ShareAlert.this.scrollOffsetY = (int) ((c51213.fromOffsetTop * f3) + (C51213.this.toOffsetTop * f2));
                                 if (!z4) {
                                     f3 = f2;
                                 }
                                 if (z4) {
-                                    ShareAlert.this.gridView.setTranslationY(ShareAlert.this.currentPanTranslationY - ((C51163.this.fromOffsetTop - C51163.this.toOffsetTop) * f2));
+                                    ShareAlert.this.gridView.setTranslationY(ShareAlert.this.currentPanTranslationY - ((C51213.this.fromOffsetTop - C51213.this.toOffsetTop) * f2));
                                 } else {
-                                    ShareAlert.this.gridView.setTranslationY(ShareAlert.this.currentPanTranslationY + ((C51163.this.toOffsetTop - C51163.this.fromOffsetTop) * f3));
+                                    ShareAlert.this.gridView.setTranslationY(ShareAlert.this.currentPanTranslationY + ((C51213.this.toOffsetTop - C51213.this.fromOffsetTop) * f3));
                                 }
                             }
                         } else {
                             if (!z4) {
                                 f2 = 1.0f - f2;
                             }
-                            C51163 c511632 = C51163.this;
+                            C51213 c512132 = C51213.this;
                             float f4 = 1.0f - f2;
-                            ShareAlert.this.scrollOffsetY = (int) ((c511632.fromScrollY * f4) + (C51163.this.toScrollY * f2));
-                            float f5 = ShareAlert.this.currentPanTranslationY + ((C51163.this.fromScrollY - C51163.this.toScrollY) * f4);
+                            ShareAlert.this.scrollOffsetY = (int) ((c512132.fromScrollY * f4) + (C51213.this.toScrollY * f2));
+                            float f5 = ShareAlert.this.currentPanTranslationY + ((C51213.this.fromScrollY - C51213.this.toScrollY) * f4);
                             ShareAlert.this.gridView.setTranslationY(f5);
                             if (z4) {
                                 ShareAlert.this.searchGridView.setTranslationY(f5);
@@ -883,15 +883,15 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 this.lightStatusBar = AndroidUtilities.computePerceivedBrightness(this.getThemedColor(this.darkTheme ? Theme.key_voipgroup_inviteMembersBackground : Theme.key_dialogBackground)) > 0.721f;
             }
 
-            static /* synthetic */ int access$3512(C51163 c51163, int i4) {
-                int i5 = c51163.toOffsetTop + i4;
-                c51163.toOffsetTop = i5;
+            static /* synthetic */ int access$3512(C51213 c51213, int i4) {
+                int i5 = c51213.toOffsetTop + i4;
+                c51213.toOffsetTop = i5;
                 return i5;
             }
 
-            static /* synthetic */ int access$3520(C51163 c51163, int i4) {
-                int i5 = c51163.toOffsetTop - i4;
-                c51163.toOffsetTop = i5;
+            static /* synthetic */ int access$3520(C51213 c51213, int i4) {
+                int i5 = c51213.toOffsetTop - i4;
+                c51213.toOffsetTop = i5;
                 return i5;
             }
 
@@ -1026,7 +1026,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                     Method dump skipped, instructions count: 248
                     To view this dump add '--comments-level debug' option
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Components.ShareAlert.C51163.onLayout(boolean, int, int, int, int):void");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Components.ShareAlert.C51213.onLayout(boolean, int, int, int, int):void");
             }
 
             @Override // android.view.ViewGroup
@@ -1070,7 +1070,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                     Method dump skipped, instructions count: 419
                     To view this dump add '--comments-level debug' option
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Components.ShareAlert.C51163.onDraw(android.graphics.Canvas):void");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Components.ShareAlert.C51213.onDraw(android.graphics.Canvas):void");
             }
 
             @Override // org.telegram.p044ui.Components.SizeNotifierFrameLayout, android.view.ViewGroup, android.view.View
@@ -1103,9 +1103,9 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                         return;
                     }
                     if (i5 == 0) {
-                        ShareAlert.this.pickerBottomLayout.setText(LocaleController.getString("VoipGroupCopySpeakerLink", C3290R.string.VoipGroupCopySpeakerLink).toUpperCase());
+                        ShareAlert.this.pickerBottomLayout.setText(LocaleController.getString("VoipGroupCopySpeakerLink", C3295R.string.VoipGroupCopySpeakerLink).toUpperCase());
                     } else {
-                        ShareAlert.this.pickerBottomLayout.setText(LocaleController.getString("VoipGroupCopyListenLink", C3290R.string.VoipGroupCopyListenLink).toUpperCase());
+                        ShareAlert.this.pickerBottomLayout.setText(LocaleController.getString("VoipGroupCopyListenLink", C3295R.string.VoipGroupCopyListenLink).toUpperCase());
                     }
                 }
             };
@@ -1115,20 +1115,20 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         SearchField searchField = new SearchField(context);
         this.searchView = searchField;
         this.frameLayout.addView(searchField, LayoutHelper.createFrame(-1, 58, 83));
-        C3356ActionBar c3356ActionBar = new C3356ActionBar(context);
-        this.topicsBackActionBar = c3356ActionBar;
-        c3356ActionBar.setOccupyStatusBar(false);
-        this.topicsBackActionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        C3361ActionBar c3361ActionBar = new C3361ActionBar(context);
+        this.topicsBackActionBar = c3361ActionBar;
+        c3361ActionBar.setOccupyStatusBar(false);
+        this.topicsBackActionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
         this.topicsBackActionBar.setTitleColor(getThemedColor(Theme.key_dialogTextBlack));
         this.topicsBackActionBar.setSubtitleColor(getThemedColor(Theme.key_dialogTextGray2));
         this.topicsBackActionBar.setItemsColor(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2), false);
         this.topicsBackActionBar.setItemsBackgroundColor(Theme.getColor(Theme.key_actionBarWhiteSelector), false);
-        this.topicsBackActionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Components.ShareAlert.5
+        this.topicsBackActionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Components.ShareAlert.5
             {
                 ShareAlert.this = this;
             }
 
-            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
+            @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i5) {
                 ShareAlert.this.onBackPressed();
             }
@@ -1380,7 +1380,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         if (this.darkTheme) {
             this.searchEmptyView.title.setTextColor(getThemedColor(Theme.key_voipgroup_nameText));
         }
-        this.searchEmptyView.title.setText(LocaleController.getString("NoResult", C3290R.string.NoResult));
+        this.searchEmptyView.title.setText(LocaleController.getString("NoResult", C3295R.string.NoResult));
         this.searchGridView.setEmptyView(this.searchEmptyView);
         this.searchGridView.setHideIfEmpty(false);
         this.searchGridView.setAnimateEmptyView(true, 0);
@@ -1411,9 +1411,9 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             this.pickerBottomLayout.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             this.pickerBottomLayout.setGravity(17);
             if (this.darkTheme && this.linkToCopy[1] != null) {
-                this.pickerBottomLayout.setText(LocaleController.getString("VoipGroupCopySpeakerLink", C3290R.string.VoipGroupCopySpeakerLink).toUpperCase());
+                this.pickerBottomLayout.setText(LocaleController.getString("VoipGroupCopySpeakerLink", C3295R.string.VoipGroupCopySpeakerLink).toUpperCase());
             } else {
-                this.pickerBottomLayout.setText(LocaleController.getString("CopyLink", C3290R.string.CopyLink).toUpperCase());
+                this.pickerBottomLayout.setText(LocaleController.getString("CopyLink", C3295R.string.CopyLink).toUpperCase());
             }
             this.pickerBottomLayout.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda5
                 @Override // android.view.View.OnClickListener
@@ -1439,7 +1439,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                         }
                     });
                     ImageView imageView = new ImageView(context);
-                    imageView.setImageResource(C3290R.C3292drawable.share_arrow);
+                    imageView.setImageResource(C3295R.C3297drawable.share_arrow);
                     imageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(this.darkTheme ? Theme.key_voipgroup_listeningText : Theme.key_dialogTextBlue2), PorterDuff.Mode.MULTIPLY));
                     this.sharesCountLayout.addView(imageView, LayoutHelper.createLinear(-2, -1, 16, 20, 0, 0, 0));
                     TextView textView2 = new TextView(context);
@@ -1454,23 +1454,23 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         } else {
             this.shadow[1].setAlpha(BitmapDescriptorFactory.HUE_RED);
         }
-        C510417 c510417 = new C510417(context);
-        this.frameLayout2 = c510417;
-        c510417.setWillNotDraw(false);
+        C510917 c510917 = new C510917(context);
+        this.frameLayout2 = c510917;
+        c510917.setWillNotDraw(false);
         this.frameLayout2.setAlpha(BitmapDescriptorFactory.HUE_RED);
         this.frameLayout2.setVisibility(4);
         this.containerView.addView(this.frameLayout2, LayoutHelper.createFrame(-1, -2, 83));
         this.frameLayout2.setOnTouchListener(ShareAlert$$ExternalSyntheticLambda8.INSTANCE);
-        C510518 c510518 = new C510518(context, this.sizeNotifierFrameLayout, null, 1, true, resourcesProvider);
-        this.commentTextView = c510518;
+        C511018 c511018 = new C511018(context, this.sizeNotifierFrameLayout, null, 1, true, resourcesProvider);
+        this.commentTextView = c511018;
         if (this.darkTheme) {
-            EditTextCaption editText = c510518.getEditText();
+            EditTextCaption editText = c511018.getEditText();
             int i6 = Theme.key_voipgroup_nameText;
             editText.setTextColor(getThemedColor(i6));
             this.commentTextView.getEditText().setCursorColor(getThemedColor(i6));
         }
         this.commentTextView.setBackgroundColor(themedColor);
-        this.commentTextView.setHint(LocaleController.getString("ShareComment", C3290R.string.ShareComment));
+        this.commentTextView.setHint(LocaleController.getString("ShareComment", C3295R.string.ShareComment));
         this.commentTextView.onResume();
         this.commentTextView.setPadding(0, 0, AndroidUtilities.m54dp(84), 0);
         this.frameLayout2.addView(this.commentTextView, LayoutHelper.createFrame(-1, -2, 51));
@@ -1506,14 +1506,14 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         int i8 = Build.VERSION.SDK_INT;
         Drawable createSimpleSelectorCircleDrawable = Theme.createSimpleSelectorCircleDrawable(m54dp, themedColor2, getThemedColor(i8 >= 21 ? Theme.key_dialogFloatingButtonPressed : i7));
         if (i8 < 21) {
-            Drawable mutate = context.getResources().getDrawable(C3290R.C3292drawable.floating_shadow_profile).mutate();
+            Drawable mutate = context.getResources().getDrawable(C3295R.C3297drawable.floating_shadow_profile).mutate();
             mutate.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
             CombinedDrawable combinedDrawable = new CombinedDrawable(mutate, createSimpleSelectorCircleDrawable, 0, 0);
             combinedDrawable.setIconSize(AndroidUtilities.m54dp(56), AndroidUtilities.m54dp(56));
             createSimpleSelectorCircleDrawable = combinedDrawable;
         }
         imageView2.setBackgroundDrawable(createSimpleSelectorCircleDrawable);
-        imageView2.setImageResource(C3290R.C3292drawable.attach_send);
+        imageView2.setImageResource(C3295R.C3297drawable.attach_send);
         imageView2.setImportantForAccessibility(2);
         int i9 = Theme.key_dialogFloatingIcon;
         imageView2.setColorFilter(new PorterDuffColorFilter(getThemedColor(i9), PorterDuff.Mode.MULTIPLY));
@@ -1561,7 +1561,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                     outline.setOval(0, 0, i14, i14);
                 }
             });
-            this.forwardingOptionsButton.setImageResource(C3290R.C3292drawable.fork_settings_filled);
+            this.forwardingOptionsButton.setImageResource(C3295R.C3297drawable.fork_settings_filled);
             this.forwardingOptionsButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i9), PorterDuff.Mode.MULTIPLY));
             this.forwardingOptionsButton.setScaleType(ImageView.ScaleType.CENTER);
             this.forwardingOptionsButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda3
@@ -1722,7 +1722,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 dismiss();
                 if (this.linkToCopy[0] == null && this.loadingLink) {
                     this.copyLinkOnEnd = true;
-                    Toast.makeText(getContext(), LocaleController.getString("Loading", C3290R.string.Loading), 0).show();
+                    Toast.makeText(getContext(), LocaleController.getString("Loading", C3295R.string.Loading), 0).show();
                     return;
                 }
                 copyLink(getContext());
@@ -1736,9 +1736,9 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
 
     /* renamed from: org.telegram.ui.Components.ShareAlert$17 */
     /* loaded from: classes6.dex */
-    public class C510417 extends FrameLayout {
+    public class C510917 extends FrameLayout {
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C510417(Context context) {
+        C510917(Context context) {
             super(context);
             ShareAlert.this = r1;
             new Paint();
@@ -1771,7 +1771,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 ShareAlert.this.topBackgroundAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ShareAlert$17$$ExternalSyntheticLambda0
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                        ShareAlert.C510417.this.lambda$onDraw$0(valueAnimator);
+                        ShareAlert.C510917.this.lambda$onDraw$0(valueAnimator);
                     }
                 });
                 ShareAlert.this.topBackgroundAnimator.setInterpolator(CubicBezierInterpolator.DEFAULT);
@@ -1799,14 +1799,14 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
 
     /* renamed from: org.telegram.ui.Components.ShareAlert$18 */
     /* loaded from: classes6.dex */
-    public class C510518 extends EditTextEmoji {
+    public class C511018 extends EditTextEmoji {
         private ValueAnimator messageEditTextAnimator;
         private int messageEditTextPredrawHeigth;
         private int messageEditTextPredrawScrollY;
         private boolean shouldAnimateEditTextWithBounds;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C510518(Context context, SizeNotifierFrameLayout sizeNotifierFrameLayout, BaseFragment baseFragment, int i, boolean z, Theme.ResourcesProvider resourcesProvider) {
+        C511018(Context context, SizeNotifierFrameLayout sizeNotifierFrameLayout, BaseFragment baseFragment, int i, boolean z, Theme.ResourcesProvider resourcesProvider) {
             super(context, sizeNotifierFrameLayout, baseFragment, i, z, resourcesProvider);
             ShareAlert.this = r8;
         }
@@ -1820,7 +1820,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.ShareAlert$18$$ExternalSyntheticLambda0
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                        ShareAlert.C510518.lambda$dispatchDraw$0(EditTextCaption.this, valueAnimator);
+                        ShareAlert.C511018.lambda$dispatchDraw$0(EditTextCaption.this, valueAnimator);
                     }
                 });
                 ValueAnimator valueAnimator = this.messageEditTextAnimator;
@@ -1865,7 +1865,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 AndroidUtilities.setNavigationBarColor(ShareAlert.this.getWindow(), ShareAlert.this.getThemedColor(Theme.key_windowBackgroundGray), true, new AndroidUtilities.IntColorCallback() { // from class: org.telegram.ui.Components.ShareAlert$18$$ExternalSyntheticLambda1
                     @Override // org.telegram.messenger.AndroidUtilities.IntColorCallback
                     public final void run(int i2) {
-                        ShareAlert.C510518.this.lambda$showPopup$1(i2);
+                        ShareAlert.C511018.this.lambda$showPopup$1(i2);
                     }
                 });
             }
@@ -1884,7 +1884,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 AndroidUtilities.setNavigationBarColor(ShareAlert.this.getWindow(), ShareAlert.this.getThemedColor(Theme.key_voipgroup_inviteMembersBackground), true, new AndroidUtilities.IntColorCallback() { // from class: org.telegram.ui.Components.ShareAlert$18$$ExternalSyntheticLambda2
                     @Override // org.telegram.messenger.AndroidUtilities.IntColorCallback
                     public final void run(int i) {
-                        ShareAlert.C510518.this.lambda$hidePopup$2(i);
+                        ShareAlert.C511018.this.lambda$hidePopup$2(i);
                     }
                 });
             }
@@ -1925,31 +1925,31 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             TLRPC$Chat chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-tLRPC$Dialog.f1439id));
             if (ChatObject.isChannel(chat) && !chat.megagroup && (!ChatObject.isCanWriteToChannel(-tLRPC$Dialog.f1439id, this.currentAccount) || this.hasPoll == 2)) {
                 AlertDialog.Builder builder = new AlertDialog.Builder(this.parentActivity);
-                builder.setTitle(LocaleController.getString("SendMessageTitle", C3290R.string.SendMessageTitle));
+                builder.setTitle(LocaleController.getString("SendMessageTitle", C3295R.string.SendMessageTitle));
                 if (this.hasPoll == 2) {
                     if (this.isChannel) {
-                        builder.setMessage(LocaleController.getString("PublicPollCantForward", C3290R.string.PublicPollCantForward));
+                        builder.setMessage(LocaleController.getString("PublicPollCantForward", C3295R.string.PublicPollCantForward));
                     } else if (ChatObject.isActionBannedByDefault(chat, 10)) {
-                        builder.setMessage(LocaleController.getString("ErrorSendRestrictedPollsAll", C3290R.string.ErrorSendRestrictedPollsAll));
+                        builder.setMessage(LocaleController.getString("ErrorSendRestrictedPollsAll", C3295R.string.ErrorSendRestrictedPollsAll));
                     } else {
-                        builder.setMessage(LocaleController.getString("ErrorSendRestrictedPolls", C3290R.string.ErrorSendRestrictedPolls));
+                        builder.setMessage(LocaleController.getString("ErrorSendRestrictedPolls", C3295R.string.ErrorSendRestrictedPolls));
                     }
                 } else {
-                    builder.setMessage(LocaleController.getString("ChannelCantSendMessage", C3290R.string.ChannelCantSendMessage));
+                    builder.setMessage(LocaleController.getString("ChannelCantSendMessage", C3295R.string.ChannelCantSendMessage));
                 }
-                builder.setNegativeButton(LocaleController.getString("OK", C3290R.string.OK), null);
+                builder.setNegativeButton(LocaleController.getString("OK", C3295R.string.OK), null);
                 builder.show();
                 return;
             }
         } else if (DialogObject.isEncryptedDialog(tLRPC$Dialog.f1439id) && this.hasPoll != 0) {
             AlertDialog.Builder builder2 = new AlertDialog.Builder(this.parentActivity);
-            builder2.setTitle(LocaleController.getString("SendMessageTitle", C3290R.string.SendMessageTitle));
+            builder2.setTitle(LocaleController.getString("SendMessageTitle", C3295R.string.SendMessageTitle));
             if (this.hasPoll != 0) {
-                builder2.setMessage(LocaleController.getString("PollCantForwardSecretChat", C3290R.string.PollCantForwardSecretChat));
+                builder2.setMessage(LocaleController.getString("PollCantForwardSecretChat", C3295R.string.PollCantForwardSecretChat));
             } else {
-                builder2.setMessage(LocaleController.getString("InvoiceCantForwardSecretChat", C3290R.string.InvoiceCantForwardSecretChat));
+                builder2.setMessage(LocaleController.getString("InvoiceCantForwardSecretChat", C3295R.string.InvoiceCantForwardSecretChat));
             }
-            builder2.setNegativeButton(LocaleController.getString("OK", C3290R.string.OK), null);
+            builder2.setNegativeButton(LocaleController.getString("OK", C3295R.string.OK), null);
             builder2.show();
             return;
         }
@@ -1964,16 +1964,16 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             this.selectedTopicDialog = tLRPC$Dialog;
             this.topicsLayoutManager.scrollToPositionWithOffset(0, this.scrollOffsetY - this.topicsGridView.getPaddingTop());
             final AtomicReference atomicReference = new AtomicReference();
-            final C511224 c511224 = new C511224(tLRPC$Dialog, atomicReference, shareDialogCell);
+            final C511724 c511724 = new C511724(tLRPC$Dialog, atomicReference, shareDialogCell);
             atomicReference.set(new Runnable() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda12
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ShareAlert.this.lambda$selectDialog$12(atomicReference, c511224, tLRPC$Dialog);
+                    ShareAlert.this.lambda$selectDialog$12(atomicReference, c511724, tLRPC$Dialog);
                 }
             });
-            NotificationCenter.getInstance(this.currentAccount).addObserver(c511224, NotificationCenter.topicsDidLoaded);
+            NotificationCenter.getInstance(this.currentAccount).addObserver(c511724, NotificationCenter.topicsDidLoaded);
             if (MessagesController.getInstance(this.currentAccount).getTopicsController().getTopics(-tLRPC$Dialog.f1439id) != null) {
-                c511224.didReceivedNotification(NotificationCenter.topicsDidLoaded, this.currentAccount, Long.valueOf(-tLRPC$Dialog.f1439id));
+                c511724.didReceivedNotification(NotificationCenter.topicsDidLoaded, this.currentAccount, Long.valueOf(-tLRPC$Dialog.f1439id));
                 return;
             }
             MessagesController.getInstance(this.currentAccount).getTopicsController().loadTopics(-tLRPC$Dialog.f1439id);
@@ -2013,12 +2013,12 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
 
     /* renamed from: org.telegram.ui.Components.ShareAlert$24 */
     /* loaded from: classes6.dex */
-    public class C511224 implements NotificationCenter.NotificationCenterDelegate {
+    public class C511724 implements NotificationCenter.NotificationCenterDelegate {
         final /* synthetic */ ShareDialogCell val$cell;
         final /* synthetic */ TLRPC$Dialog val$dialog;
         final /* synthetic */ AtomicReference val$timeoutRef;
 
-        C511224(TLRPC$Dialog tLRPC$Dialog, AtomicReference atomicReference, ShareDialogCell shareDialogCell) {
+        C511724(TLRPC$Dialog tLRPC$Dialog, AtomicReference atomicReference, ShareDialogCell shareDialogCell) {
             ShareAlert.this = r1;
             this.val$dialog = tLRPC$Dialog;
             this.val$timeoutRef = atomicReference;
@@ -2043,7 +2043,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                     ShareAlert.this.topicsBackActionBar.setAlpha(BitmapDescriptorFactory.HUE_RED);
                     ShareAlert shareAlert = ShareAlert.this;
                     shareAlert.topicsBackActionBar.setTitle(MessagesController.getInstance(((BottomSheet) shareAlert).currentAccount).getChat(Long.valueOf(-this.val$dialog.f1439id)).title);
-                    ShareAlert.this.topicsBackActionBar.setSubtitle(LocaleController.getString(C3290R.string.SelectTopic));
+                    ShareAlert.this.topicsBackActionBar.setSubtitle(LocaleController.getString(C3295R.string.SelectTopic));
                     ShareAlert shareAlert2 = ShareAlert.this;
                     shareAlert2.searchWasVisibleBeforeTopics = shareAlert2.searchIsVisible;
                     if (ShareAlert.this.topicsAnimation != null) {
@@ -2056,13 +2056,13 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                     springAnimation.addUpdateListener(new DynamicAnimation.OnAnimationUpdateListener() { // from class: org.telegram.ui.Components.ShareAlert$24$$ExternalSyntheticLambda1
                         @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationUpdateListener
                         public final void onAnimationUpdate(DynamicAnimation dynamicAnimation, float f, float f2) {
-                            ShareAlert.C511224.this.lambda$didReceivedNotification$0(shareDialogCell, iArr, dynamicAnimation, f, f2);
+                            ShareAlert.C511724.this.lambda$didReceivedNotification$0(shareDialogCell, iArr, dynamicAnimation, f, f2);
                         }
                     });
                     ShareAlert.this.topicsAnimation.addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Components.ShareAlert$24$$ExternalSyntheticLambda0
                         @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
                         public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z2, float f, float f2) {
-                            ShareAlert.C511224.this.lambda$didReceivedNotification$1(dynamicAnimation, z2, f, f2);
+                            ShareAlert.C511724.this.lambda$didReceivedNotification$1(dynamicAnimation, z2, f, f2);
                         }
                     });
                     ShareAlert.this.topicsAnimation.start();
@@ -2256,9 +2256,9 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             actionBarMenuSubItem.setIconColor(getThemedColor(Theme.key_windowBackgroundWhiteHintText));
         }
         if (ToolsController.getInstance(this.currentAccount).isSilentSendingEnabled()) {
-            actionBarMenuSubItem.setTextAndIcon(LocaleController.getInternalString(C3290R.string.send_with_sound), C3290R.C3292drawable.input_notify_on);
+            actionBarMenuSubItem.setTextAndIcon(LocaleController.getInternalString(C3295R.string.send_with_sound), C3295R.C3297drawable.input_notify_on);
         } else {
-            actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("SendWithoutSound", C3290R.string.SendWithoutSound), C3290R.C3292drawable.input_notify_off);
+            actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("SendWithoutSound", C3295R.string.SendWithoutSound), C3295R.C3297drawable.input_notify_off);
         }
         actionBarMenuSubItem.setMinimumWidth(AndroidUtilities.m54dp(196));
         actionBarPopupWindowLayout.addView((View) actionBarMenuSubItem, LayoutHelper.createLinear(-1, 48));
@@ -2273,7 +2273,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
             actionBarMenuSubItem2.setTextColor(getThemedColor(Theme.key_voipgroup_nameText));
             actionBarMenuSubItem2.setIconColor(getThemedColor(Theme.key_windowBackgroundWhiteHintText));
         }
-        actionBarMenuSubItem2.setTextAndIcon(LocaleController.getString("SendMessage", C3290R.string.SendMessage), C3290R.C3292drawable.msg_send);
+        actionBarMenuSubItem2.setTextAndIcon(LocaleController.getString("SendMessage", C3295R.string.SendMessage), C3295R.C3297drawable.msg_send);
         actionBarMenuSubItem2.setMinimumWidth(AndroidUtilities.m54dp(196));
         actionBarPopupWindowLayout.addView((View) actionBarMenuSubItem2, LayoutHelper.createLinear(-1, 48));
         actionBarMenuSubItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ShareAlert$$ExternalSyntheticLambda0
@@ -2287,7 +2287,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
         ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(linearLayout, -2, -2);
         this.sendPopupWindow = actionBarPopupWindow;
         actionBarPopupWindow.setAnimationEnabled(false);
-        this.sendPopupWindow.setAnimationStyle(C3290R.style.PopupContextAnimation2);
+        this.sendPopupWindow.setAnimationStyle(C3295R.style.PopupContextAnimation2);
         this.sendPopupWindow.setOutsideTouchable(true);
         this.sendPopupWindow.setClippingEnabled(true);
         this.sendPopupWindow.setInputMethodMode(2);
@@ -3040,7 +3040,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 shareTopicCell.setLayoutParams(new RecyclerView.LayoutParams(-1, AndroidUtilities.m54dp(100)));
             } else {
                 shareTopicCell = new View(this.context);
-                shareTopicCell.setLayoutParams(new RecyclerView.LayoutParams(-1, C3356ActionBar.getCurrentActionBarHeight()));
+                shareTopicCell.setLayoutParams(new RecyclerView.LayoutParams(-1, C3361ActionBar.getCurrentActionBarHeight()));
             }
             return new RecyclerListView.Holder(shareTopicCell);
         }
@@ -3467,7 +3467,7 @@ public class ShareAlert extends BottomSheet implements NotificationCenter.Notifi
                 graySectionCell.setTextColor(ShareAlert.this.darkTheme ? Theme.key_voipgroup_nameText : Theme.key_graySectionText);
                 ShareAlert shareAlert = ShareAlert.this;
                 graySectionCell.setBackgroundColor(shareAlert.getThemedColor(shareAlert.darkTheme ? Theme.key_voipgroup_searchBackground : Theme.key_graySection));
-                graySectionCell.setText(LocaleController.getString("Recent", C3290R.string.Recent));
+                graySectionCell.setText(LocaleController.getString("Recent", C3295R.string.Recent));
                 shareDialogCell = graySectionCell;
             } else if (i != 4) {
                 ?? view = new View(this.context);

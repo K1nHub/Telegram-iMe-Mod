@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nNetworkType.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetworkType.kt\ncom/iMe/storage/domain/model/crypto/NetworkType$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,153:1\n1#2:154\n3792#3:155\n4307#3,2:156\n3792#3:158\n4307#3,2:159\n3792#3:161\n4307#3,2:162\n*S KotlinDebug\n*F\n+ 1 NetworkType.kt\ncom/iMe/storage/domain/model/crypto/NetworkType$Companion\n*L\n136#1:155\n136#1:156,2\n139#1:158\n139#1:159,2\n142#1:161\n142#1:162,2\n*E\n"
+    value = "SMAP\nNetworkType.kt\nKotlin\n*S Kotlin\n*F\n+ 1 NetworkType.kt\ncom/iMe/storage/domain/model/crypto/NetworkType$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n+ 3 _Arrays.kt\nkotlin/collections/ArraysKt___ArraysKt\n*L\n1#1,173:1\n1#2:174\n3792#3:175\n4307#3,2:176\n3792#3:178\n4307#3,2:179\n3792#3:181\n4307#3,2:182\n*S KotlinDebug\n*F\n+ 1 NetworkType.kt\ncom/iMe/storage/domain/model/crypto/NetworkType$Companion\n*L\n153#1:175\n153#1:176,2\n156#1:178\n156#1:179,2\n159#1:181\n159#1:182,2\n*E\n"
 .end annotation
 
 
@@ -22,7 +22,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 127
+    .line 144
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -41,14 +41,14 @@
 .method public final fromChainId(J)Lcom/iMe/storage/domain/model/crypto/NetworkType;
     .locals 1
 
-    .line 145
+    .line 165
     sget-object v0, Lcom/iMe/storage/domain/model/crypto/Chain;->Companion:Lcom/iMe/storage/domain/model/crypto/Chain$Companion;
 
     invoke-virtual {v0, p1, p2}, Lcom/iMe/storage/domain/model/crypto/Chain$Companion;->getChainById(J)Lcom/iMe/storage/domain/model/crypto/Chain;
 
     move-result-object p1
 
-    .line 146
+    .line 166
     instance-of p2, p1, Lcom/iMe/storage/domain/model/crypto/Chain$Ethereum$Main;
 
     const/4 v0, 0x1
@@ -69,7 +69,7 @@
 
     goto :goto_4
 
-    .line 147
+    .line 167
     :cond_1
     instance-of p2, p1, Lcom/iMe/storage/domain/model/crypto/Chain$BSC$Main;
 
@@ -89,7 +89,7 @@
 
     goto :goto_4
 
-    .line 148
+    .line 168
     :cond_3
     instance-of p2, p1, Lcom/iMe/storage/domain/model/crypto/Chain$Polygon$Main;
 
@@ -109,7 +109,7 @@
 
     goto :goto_4
 
-    .line 149
+    .line 169
     :cond_5
     instance-of p2, p1, Lcom/iMe/storage/domain/model/crypto/Chain$Fantom$Main;
 
@@ -127,7 +127,7 @@
 
     goto :goto_4
 
-    .line 150
+    .line 170
     :cond_7
     sget-object p1, Lcom/iMe/storage/domain/model/crypto/NetworkType;->ETHEREUM:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
@@ -146,12 +146,43 @@
         }
     .end annotation
 
-    .line 133
+    .line 150
     invoke-static {}, Lcom/iMe/storage/domain/model/crypto/NetworkType;->values()[Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     move-result-object v0
 
     invoke-static {v0}, Lkotlin/collections/ArraysKt;->toList([Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+
+.method public final getBinanceSupportedNetworks()Ljava/util/List;
+    .locals 2
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "()",
+            "Ljava/util/List<",
+            "Lcom/iMe/storage/domain/model/crypto/NetworkType;",
+            ">;"
+        }
+    .end annotation
+
+    .line 162
+    invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/NetworkType$Companion;->getEVMNetworks()Ljava/util/List;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/iMe/storage/domain/model/crypto/NetworkType;->TRON:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+
+    invoke-static {v0, v1}, Lkotlin/collections/CollectionsKt;->plus(Ljava/util/Collection;Ljava/lang/Object;)Ljava/util/List;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/iMe/storage/domain/model/crypto/NetworkType;->BITCOIN:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+
+    invoke-static {v0, v1}, Lkotlin/collections/CollectionsKt;->plus(Ljava/util/Collection;Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0
 
@@ -169,7 +200,7 @@
         }
     .end annotation
 
-    .line 142
+    .line 159
     invoke-static {}, Lcom/iMe/storage/domain/model/crypto/NetworkType;->values()[Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     move-result-object v0
@@ -189,7 +220,7 @@
 
     aget-object v4, v0, v3
 
-    .line 142
+    .line 159
     invoke-virtual {v4}, Lcom/iMe/storage/domain/model/crypto/NetworkType;->isEVM()Z
 
     move-result v5
@@ -225,7 +256,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 136
+    .line 153
     invoke-static {}, Lcom/iMe/storage/domain/model/crypto/NetworkType;->values()[Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     move-result-object v0
@@ -247,7 +278,7 @@
 
     aget-object v5, v0, v4
 
-    .line 136
+    .line 153
     invoke-virtual {v5}, Lcom/iMe/storage/domain/model/crypto/NetworkType;->getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     move-result-object v6
@@ -295,7 +326,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 139
+    .line 156
     invoke-static {}, Lcom/iMe/storage/domain/model/crypto/NetworkType;->values()[Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     move-result-object v0
@@ -315,7 +346,7 @@
 
     aget-object v4, v0, v3
 
-    .line 139
+    .line 156
     invoke-virtual {v4}, Lcom/iMe/storage/domain/model/crypto/NetworkType;->getBlockchainType()Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     move-result-object v5
@@ -345,7 +376,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 131
+    .line 148
     invoke-static {}, Lcom/iMe/storage/domain/model/crypto/NetworkType;->values()[Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     move-result-object v0

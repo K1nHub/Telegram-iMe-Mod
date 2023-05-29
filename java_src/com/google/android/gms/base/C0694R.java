@@ -58,8 +58,8 @@ public final class C0694R {
         public static final int common_google_signin_btn_text_light_focused = 2131231003;
         public static final int common_google_signin_btn_text_light_normal = 2131231004;
         public static final int common_google_signin_btn_text_light_normal_background = 2131231005;
-        public static final int googleg_disabled_color_18 = 2131231588;
-        public static final int googleg_standard_color_18 = 2131231589;
+        public static final int googleg_disabled_color_18 = 2131231591;
+        public static final int googleg_standard_color_18 = 2131231592;
 
         private C0696drawable() {
         }

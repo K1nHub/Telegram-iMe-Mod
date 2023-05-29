@@ -24,9 +24,13 @@
 
 .field public static final enum BINANCE_SMART_CHAIN:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
 
+.field public static final enum BITCOIN:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
+
 .field public static final Companion:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType$Companion;
 
 .field public static final enum ETHEREUM:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
+
+.field public static final enum FANTOM:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
 
 .field public static final enum ONEINCH:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
 
@@ -39,6 +43,8 @@
 .field public static final enum SYMBIOSIS:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
 
 .field public static final enum THE_OPEN_NETWORK:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
+
+.field public static final enum TRON:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
 
 .field public static final enum UNISWAP_V2:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
 
@@ -55,7 +61,7 @@
 .method private static final synthetic $values()[Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
     .locals 3
 
-    const/16 v0, 0xb
+    const/16 v0, 0xe
 
     new-array v0, v0, [Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
 
@@ -119,9 +125,27 @@
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;->UNKNOWN:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
+    sget-object v1, Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;->FANTOM:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
 
     const/16 v2, 0xa
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;->TRON:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
+
+    const/16 v2, 0xb
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;->BITCOIN:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
+
+    const/16 v2, 0xc
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;->UNKNOWN:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
+
+    const/16 v2, 0xd
 
     aput-object v1, v0, v2
 
@@ -264,11 +288,50 @@
     .line 17
     new-instance v0, Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
 
+    sget v1, Lcom/iMe/storage/R$string;->wallet_network_type_fantom:I
+
+    const-string v2, "FANTOM"
+
+    const/16 v3, 0xa
+
+    invoke-direct {v0, v2, v3, v1}, Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;->FANTOM:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
+
+    .line 18
+    new-instance v0, Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
+
+    sget v1, Lcom/iMe/storage/R$string;->wallet_network_type_tron:I
+
+    const-string v2, "TRON"
+
+    const/16 v3, 0xb
+
+    invoke-direct {v0, v2, v3, v1}, Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;->TRON:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
+
+    .line 19
+    new-instance v0, Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
+
+    sget v1, Lcom/iMe/storage/R$string;->wallet_network_type_bitcoin:I
+
+    const-string v2, "BITCOIN"
+
+    const/16 v3, 0xc
+
+    invoke-direct {v0, v2, v3, v1}, Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;-><init>(Ljava/lang/String;II)V
+
+    sput-object v0, Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;->BITCOIN:Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
+
+    .line 20
+    new-instance v0, Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;
+
     sget v1, Lcom/iMe/storage/R$string;->processing_type_unknown:I
 
     const-string v2, "UNKNOWN"
 
-    const/16 v3, 0xa
+    const/16 v3, 0xd
 
     invoke-direct {v0, v2, v3, v1}, Lcom/iMe/storage/domain/model/wallet/transaction/TransactionProcessingType;-><init>(Ljava/lang/String;II)V
 

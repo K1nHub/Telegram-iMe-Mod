@@ -60,7 +60,7 @@
 .method public bridge synthetic invoke()Ljava/lang/Object;
     .locals 1
 
-    .line 85
+    .line 89
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/common/EnvironmentInformation$Companion$availableEnvironments$2;->invoke()Ljava/util/List;
 
     move-result-object v0
@@ -83,28 +83,28 @@
 
     new-array v0, v0, [Lcom/iMe/storage/domain/model/common/EnvironmentInformation;
 
-    .line 87
+    .line 91
     sget-object v1, Lcom/iMe/storage/domain/model/common/EnvironmentInformation$Production;->INSTANCE:Lcom/iMe/storage/domain/model/common/EnvironmentInformation$Production;
 
     const/4 v2, 0x0
 
     aput-object v1, v0, v2
 
-    .line 88
+    .line 92
     sget-object v1, Lcom/iMe/storage/domain/model/common/EnvironmentInformation$Stage;->INSTANCE:Lcom/iMe/storage/domain/model/common/EnvironmentInformation$Stage;
 
     const/4 v2, 0x1
 
     aput-object v1, v0, v2
 
-    .line 89
+    .line 93
     sget-object v1, Lcom/iMe/storage/domain/model/common/EnvironmentInformation$Development;->INSTANCE:Lcom/iMe/storage/domain/model/common/EnvironmentInformation$Development;
 
     const/4 v2, 0x2
 
     aput-object v1, v0, v2
 
-    .line 86
+    .line 90
     invoke-static {v0}, Lkotlin/collections/CollectionsKt;->listOfNotNull([Ljava/lang/Object;)Ljava/util/List;
 
     move-result-object v0

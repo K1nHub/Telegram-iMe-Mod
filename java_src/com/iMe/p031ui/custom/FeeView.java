@@ -28,7 +28,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.databinding.ForkContentFeeBinding;
 import org.telegram.p044ui.ActionBar.AlertDialog;
 import org.telegram.p044ui.ActionBar.BaseFragment;
@@ -173,11 +173,11 @@ public final class FeeView extends FrameLayout implements KoinComponent {
         ForkContentFeeBinding forkContentFeeBinding = this.binding;
         AppCompatTextView appCompatTextView = forkContentFeeBinding.textFeeValue;
         ResourceManager resourceManager = getResourceManager();
-        int i = C3290R.string.wallet_swap_process_fee_price_value;
+        int i = C3295R.string.wallet_swap_process_fee_price_value;
         Float valueOf = Float.valueOf(gasPriceItem.getInfo().getFeeInDollars());
         TokenInfo.Fiat.USD usd = TokenInfo.Fiat.USD.INSTANCE;
         appCompatTextView.setText(resourceManager.getString(i, BalanceFormatter.formatBalance(Double.valueOf(gasPriceItem.getInfo().getFee()), gasPriceItem.getFeeTokenInfo().getDecimals()), getResourceManager().getString(gasPriceItem.getFeeTokenInfo().getShortName()), BalanceFormatter.formatBalance(valueOf, usd.getDecimals()), getResourceManager().getString(usd.getShortName())));
-        forkContentFeeBinding.textTimeValue.setText(getResourceManager().getString(C3290R.string.wallet_swap_process_fee_duration_value, Integer.valueOf(gasPriceItem.getInfo().getDuration())));
+        forkContentFeeBinding.textTimeValue.setText(getResourceManager().getString(C3295R.string.wallet_swap_process_fee_duration_value, Integer.valueOf(gasPriceItem.getInfo().getDuration())));
     }
 
     private final void showFeeDialog(DialogModel dialogModel, List<GasPriceItem> list, int i, Function1<? super GasPriceItem, Unit> function1) {
@@ -201,8 +201,8 @@ public final class FeeView extends FrameLayout implements KoinComponent {
 
     private final void setupTexts() {
         ForkContentFeeBinding forkContentFeeBinding = this.binding;
-        forkContentFeeBinding.textFeeTitle.setText(getResourceManager().getString(C3290R.string.wallet_swap_process_fee_price));
-        forkContentFeeBinding.textTimeTitle.setText(getResourceManager().getString(C3290R.string.wallet_swap_process_fee_duration));
+        forkContentFeeBinding.textFeeTitle.setText(getResourceManager().getString(C3295R.string.wallet_swap_process_fee_price));
+        forkContentFeeBinding.textTimeTitle.setText(getResourceManager().getString(C3295R.string.wallet_swap_process_fee_duration));
     }
 
     /* compiled from: FeeView.kt */

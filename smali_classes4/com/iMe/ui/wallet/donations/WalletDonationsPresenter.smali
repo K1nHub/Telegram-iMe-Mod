@@ -902,7 +902,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->getAddress()Ljava/lang/String;
 
     move-result-object v0
 
@@ -1310,7 +1310,7 @@
 
     if-eqz v0, :cond_0
 
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->getAddress()Ljava/lang/String;
 
     move-result-object v0
 

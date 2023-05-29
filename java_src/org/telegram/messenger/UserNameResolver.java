@@ -92,7 +92,7 @@ public class UserNameResolver {
             if (str2 == null || !str2.contains("FLOOD_WAIT") || (lastFragment = LaunchActivity.getLastFragment()) == null) {
                 return;
             }
-            BulletinFactory.m29of(lastFragment).createErrorBulletin(LocaleController.getString("FloodWait", C3290R.string.FloodWait)).show();
+            BulletinFactory.m29of(lastFragment).createErrorBulletin(LocaleController.getString("FloodWait", C3295R.string.FloodWait)).show();
             return;
         }
         TLRPC$TL_contacts_resolvedPeer tLRPC$TL_contacts_resolvedPeer = (TLRPC$TL_contacts_resolvedPeer) tLObject;

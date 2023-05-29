@@ -3,9 +3,8 @@ package com.google.android.gms.internal.clearcut;
 import java.util.AbstractList;
 import java.util.ArrayList;
 import java.util.List;
-/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
-public final class zzeb<E> extends zzav<E> {
+final class zzeb<E> extends zzav<E> {
     private static final zzeb<Object> zznf;
     private final List<E> zzls;
 

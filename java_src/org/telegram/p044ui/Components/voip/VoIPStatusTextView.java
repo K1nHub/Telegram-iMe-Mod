@@ -12,7 +12,7 @@ import android.widget.FrameLayout;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.Components.CubicBezierInterpolator;
 import org.telegram.p044ui.Components.EllipsizeSpanAnimator;
@@ -49,7 +49,7 @@ public class VoIPStatusTextView extends FrameLayout {
         this.reconnectTextView.setGravity(1);
         addView(this.reconnectTextView, LayoutHelper.createFrame(-1, -2, 0, 0, 22, 0, 0));
         this.ellipsizeAnimator = new EllipsizeSpanAnimator(this);
-        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString("VoipReconnecting", C3290R.string.VoipReconnecting));
+        SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(LocaleController.getString("VoipReconnecting", C3295R.string.VoipReconnecting));
         SpannableString spannableString = new SpannableString("...");
         this.ellipsizeAnimator.wrap(spannableString, 0);
         spannableStringBuilder.append((CharSequence) spannableString);
@@ -158,7 +158,7 @@ public class VoIPStatusTextView extends FrameLayout {
                 VoIPStatusTextView.lambda$replaceViews$1(view2, view, valueAnimator);
             }
         });
-        this.animator.addListener(new C54251(view, view2, runnable));
+        this.animator.addListener(new C54301(view, view2, runnable));
         this.animator.setDuration(250L).setInterpolator(CubicBezierInterpolator.DEFAULT);
         this.animator.start();
     }
@@ -182,12 +182,12 @@ public class VoIPStatusTextView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.voip.VoIPStatusTextView$1 */
     /* loaded from: classes6.dex */
-    public class C54251 extends AnimatorListenerAdapter {
+    public class C54301 extends AnimatorListenerAdapter {
         final /* synthetic */ View val$in;
         final /* synthetic */ Runnable val$onEnd;
         final /* synthetic */ View val$out;
 
-        C54251(View view, View view2, Runnable runnable) {
+        C54301(View view, View view2, Runnable runnable) {
             this.val$out = view;
             this.val$in = view2;
             this.val$onEnd = runnable;
@@ -223,7 +223,7 @@ public class VoIPStatusTextView extends FrameLayout {
                     voIPStatusTextView3.replaceViews(textViewArr[0], textViewArr[1], new Runnable() { // from class: org.telegram.ui.Components.voip.VoIPStatusTextView$1$$ExternalSyntheticLambda0
                         @Override // java.lang.Runnable
                         public final void run() {
-                            VoIPStatusTextView.C54251.this.lambda$onAnimationEnd$0();
+                            VoIPStatusTextView.C54301.this.lambda$onAnimationEnd$0();
                         }
                     });
                 }

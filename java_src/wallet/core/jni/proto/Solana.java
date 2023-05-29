@@ -519,7 +519,7 @@ public final class Solana {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Transfer, Builder> implements TransferOrBuilder {
-            /* synthetic */ Builder(C68421 c68421) {
+            /* synthetic */ Builder(C68471 c68471) {
                 this();
             }
 
@@ -653,7 +653,7 @@ public final class Solana {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68421.f1822xa1df5c61[method.ordinal()]) {
+            switch (C68471.f1822xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Transfer();
                 case 2:
@@ -700,7 +700,7 @@ public final class Solana {
 
     /* renamed from: wallet.core.jni.proto.Solana$1 */
     /* loaded from: classes6.dex */
-    static /* synthetic */ class C68421 {
+    static /* synthetic */ class C68471 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f1822xa1df5c61;
@@ -880,7 +880,7 @@ public final class Solana {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<DelegateStake, Builder> implements DelegateStakeOrBuilder {
-            /* synthetic */ Builder(C68421 c68421) {
+            /* synthetic */ Builder(C68471 c68471) {
                 this();
             }
 
@@ -964,7 +964,7 @@ public final class Solana {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68421.f1822xa1df5c61[method.ordinal()]) {
+            switch (C68471.f1822xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new DelegateStake();
                 case 2:
@@ -1104,7 +1104,7 @@ public final class Solana {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<DeactivateStake, Builder> implements DeactivateStakeOrBuilder {
-            /* synthetic */ Builder(C68421 c68421) {
+            /* synthetic */ Builder(C68471 c68471) {
                 this();
             }
 
@@ -1143,7 +1143,7 @@ public final class Solana {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68421.f1822xa1df5c61[method.ordinal()]) {
+            switch (C68471.f1822xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new DeactivateStake();
                 case 2:
@@ -1316,7 +1316,7 @@ public final class Solana {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<DeactivateAllStake, Builder> implements DeactivateAllStakeOrBuilder {
-            /* synthetic */ Builder(C68421 c68421) {
+            /* synthetic */ Builder(C68471 c68471) {
                 this();
             }
 
@@ -1377,7 +1377,7 @@ public final class Solana {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68421.f1822xa1df5c61[method.ordinal()]) {
+            switch (C68471.f1822xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new DeactivateAllStake();
                 case 2:
@@ -1534,7 +1534,7 @@ public final class Solana {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<WithdrawStake, Builder> implements WithdrawStakeOrBuilder {
-            /* synthetic */ Builder(C68421 c68421) {
+            /* synthetic */ Builder(C68471 c68471) {
                 this();
             }
 
@@ -1590,7 +1590,7 @@ public final class Solana {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68421.f1822xa1df5c61[method.ordinal()]) {
+            switch (C68471.f1822xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new WithdrawStake();
                 case 2:
@@ -1747,7 +1747,7 @@ public final class Solana {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<StakeAccountValue, Builder> implements StakeAccountValueOrBuilder {
-            /* synthetic */ Builder(C68421 c68421) {
+            /* synthetic */ Builder(C68471 c68471) {
                 this();
             }
 
@@ -1803,7 +1803,7 @@ public final class Solana {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68421.f1822xa1df5c61[method.ordinal()]) {
+            switch (C68471.f1822xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new StakeAccountValue();
                 case 2:
@@ -1985,7 +1985,7 @@ public final class Solana {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<WithdrawAllStake, Builder> implements WithdrawAllStakeOrBuilder {
-            /* synthetic */ Builder(C68421 c68421) {
+            /* synthetic */ Builder(C68471 c68471) {
                 this();
             }
 
@@ -2065,7 +2065,7 @@ public final class Solana {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68421.f1822xa1df5c61[method.ordinal()]) {
+            switch (C68471.f1822xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new WithdrawAllStake();
                 case 2:
@@ -2263,7 +2263,7 @@ public final class Solana {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<CreateTokenAccount, Builder> implements CreateTokenAccountOrBuilder {
-            /* synthetic */ Builder(C68421 c68421) {
+            /* synthetic */ Builder(C68471 c68471) {
                 this();
             }
 
@@ -2358,7 +2358,7 @@ public final class Solana {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68421.f1822xa1df5c61[method.ordinal()]) {
+            switch (C68471.f1822xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new CreateTokenAccount();
                 case 2:
@@ -2681,7 +2681,7 @@ public final class Solana {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TokenTransfer, Builder> implements TokenTransferOrBuilder {
-            /* synthetic */ Builder(C68421 c68421) {
+            /* synthetic */ Builder(C68471 c68471) {
                 this();
             }
 
@@ -2888,7 +2888,7 @@ public final class Solana {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68421.f1822xa1df5c61[method.ordinal()]) {
+            switch (C68471.f1822xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TokenTransfer();
                 case 2:
@@ -3240,7 +3240,7 @@ public final class Solana {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<CreateAndTransferToken, Builder> implements CreateAndTransferTokenOrBuilder {
-            /* synthetic */ Builder(C68421 c68421) {
+            /* synthetic */ Builder(C68471 c68471) {
                 this();
             }
 
@@ -3475,7 +3475,7 @@ public final class Solana {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68421.f1822xa1df5c61[method.ordinal()]) {
+            switch (C68471.f1822xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new CreateAndTransferToken();
                 case 2:
@@ -4080,7 +4080,7 @@ public final class Solana {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C68421 c68421) {
+            /* synthetic */ Builder(C68471 c68471) {
                 this();
             }
 
@@ -4470,7 +4470,7 @@ public final class Solana {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68421.f1822xa1df5c61[method.ordinal()]) {
+            switch (C68471.f1822xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -4639,7 +4639,7 @@ public final class Solana {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C68421 c68421) {
+            /* synthetic */ Builder(C68471 c68471) {
                 this();
             }
 
@@ -4706,7 +4706,7 @@ public final class Solana {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68421.f1822xa1df5c61[method.ordinal()]) {
+            switch (C68471.f1822xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

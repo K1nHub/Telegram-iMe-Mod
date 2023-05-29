@@ -369,7 +369,7 @@ public class AvatarsDrawable {
     /* JADX WARN: Removed duplicated region for block: B:224:0x04ed  */
     /* JADX WARN: Removed duplicated region for block: B:226:0x04f2  */
     /* JADX WARN: Removed duplicated region for block: B:242:0x04f5 A[SYNTHETIC] */
-    /* JADX WARN: Type inference failed for: r9v2, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r9v2, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r9v35 */
     /* JADX WARN: Type inference failed for: r9v36 */
     /*

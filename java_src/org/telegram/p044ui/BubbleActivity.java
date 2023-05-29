@@ -11,7 +11,7 @@ import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
@@ -81,11 +81,11 @@ public class BubbleActivity extends BasePermissionsActivity implements INavigati
         ApplicationLoader.postInitApplication();
         requestWindowFeature(1);
         if (!SharedConfig.isVibrationEnabled) {
-            setTheme(C3290R.style.Theme_TMessages_NoHapticFeedback);
+            setTheme(C3295R.style.Theme_TMessages_NoHapticFeedback);
         } else {
-            setTheme(C3290R.style.Theme_TMessages);
+            setTheme(C3295R.style.Theme_TMessages);
         }
-        getWindow().setBackgroundDrawableResource(C3290R.C3292drawable.transparent);
+        getWindow().setBackgroundDrawableResource(C3295R.C3297drawable.transparent);
         if (SharedConfig.passcodeHash.length() > 0 && !SharedConfig.allowScreenCapture) {
             try {
                 getWindow().setFlags(8192, 8192);

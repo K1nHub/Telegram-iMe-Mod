@@ -19,7 +19,7 @@ import java.io.File;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.ImageLoader;
 import org.telegram.messenger.LocaleController;
@@ -29,7 +29,7 @@ import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.p044ui.ActionBar.AlertDialog;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3356ActionBar;
+import org.telegram.p044ui.ActionBar.C3361ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Cells.HeaderCell;
@@ -110,7 +110,7 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
         if (alertDialog != null) {
             alertDialog.dismiss();
         }
-        BulletinFactory.m29of(this).createSimpleBulletin(C3290R.raw.info, AndroidUtilities.replaceTags(LocaleController.getInternalString(C3290R.string.cloud_albums_undo_forward_cloud))).show();
+        BulletinFactory.m29of(this).createSimpleBulletin(C3295R.raw.info, AndroidUtilities.replaceTags(LocaleController.getInternalString(C3295R.string.cloud_albums_undo_forward_cloud))).show();
     }
 
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
@@ -348,14 +348,14 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
 
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public View createView(final Context context) {
-        this.actionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
-        this.actionBar.setTitle(LocaleController.getString("DataSettings", C3290R.string.DataSettings));
+        this.actionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
+        this.actionBar.setTitle(LocaleController.getString("DataSettings", C3295R.string.DataSettings));
         if (AndroidUtilities.isTablet()) {
             this.actionBar.setOccupyStatusBar(false);
         }
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.DataSettingsActivity.1
-            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.DataSettingsActivity.1
+            @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     DataSettingsActivity.this.finishFragment();
@@ -493,16 +493,16 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
         }
         if (!z) {
             AlertDialog.Builder builder2 = new AlertDialog.Builder(getContext());
-            builder2.setTitle(LocaleController.getString("DecreaseSpeed", C3290R.string.DecreaseSpeed));
-            builder2.setMessage(LocaleController.getString("SdCardAlert", C3290R.string.SdCardAlert));
-            builder2.setPositiveButton(LocaleController.getString("Proceed", C3290R.string.Proceed), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.DataSettingsActivity.3
+            builder2.setTitle(LocaleController.getString("DecreaseSpeed", C3295R.string.DecreaseSpeed));
+            builder2.setMessage(LocaleController.getString("SdCardAlert", C3295R.string.SdCardAlert));
+            builder2.setPositiveButton(LocaleController.getString("Proceed", C3295R.string.Proceed), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.DataSettingsActivity.3
                 @Override // android.content.DialogInterface.OnClickListener
                 public void onClick(DialogInterface dialogInterface, int i) {
                     DataSettingsActivity.this.setStorageDirectory(str);
                     builder.getDismissRunnable().run();
                 }
             });
-            builder2.setNegativeButton(LocaleController.getString("Back", C3290R.string.Back), null);
+            builder2.setNegativeButton(LocaleController.getString("Back", C3295R.string.Back), null);
             builder2.show();
             return;
         }
@@ -659,7 +659,7 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
                 shadowSectionCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
             } else if (i == 4) {
                 shadowSectionCell = new TextInfoPrivacyCell(this.mContext);
-                shadowSectionCell.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3290R.C3292drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                shadowSectionCell.setBackgroundDrawable(Theme.getThemedDrawableByKey(this.mContext, C3295R.C3297drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
             } else if (i == 5) {
                 shadowSectionCell = new NotificationsCheckCell(this.mContext);
                 shadowSectionCell.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
@@ -697,10 +697,10 @@ public class DataSettingsActivity extends BaseFragment implements NotificationCe
         ArrayList<ThemeDescription> arrayList = new ArrayList<>();
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextSettingsCell.class, TextCheckCell.class, HeaderCell.class, NotificationsCheckCell.class}, null, null, null, Theme.key_windowBackgroundWhite));
         arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray));
-        C3356ActionBar c3356ActionBar = this.actionBar;
+        C3361ActionBar c3361ActionBar = this.actionBar;
         int i = ThemeDescription.FLAG_BACKGROUND;
         int i2 = Theme.key_actionBarDefault;
-        arrayList.add(new ThemeDescription(c3356ActionBar, i, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(c3361ActionBar, i, null, null, null, null, i2));
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));

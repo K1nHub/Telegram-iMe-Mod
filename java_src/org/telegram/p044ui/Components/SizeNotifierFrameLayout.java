@@ -29,7 +29,7 @@ import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.p044ui.ActionBar.AdjustPanLayoutHelper;
-import org.telegram.p044ui.ActionBar.C3356ActionBar;
+import org.telegram.p044ui.ActionBar.C3361ActionBar;
 import org.telegram.p044ui.ActionBar.INavigationLayout;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.BlurSettingsBottomSheet;
@@ -229,7 +229,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
                     if (drawable2 instanceof MotionBackgroundDrawable) {
                         MotionBackgroundDrawable motionBackgroundDrawable = (MotionBackgroundDrawable) drawable2;
                         if (motionBackgroundDrawable.hasPattern()) {
-                            int currentActionBarHeight = (SizeNotifierFrameLayout.this.isActionBarVisible() ? C3356ActionBar.getCurrentActionBarHeight() : 0) + ((Build.VERSION.SDK_INT < 21 || !SizeNotifierFrameLayout.this.occupyStatusBar) ? 0 : AndroidUtilities.statusBarHeight);
+                            int currentActionBarHeight = (SizeNotifierFrameLayout.this.isActionBarVisible() ? C3361ActionBar.getCurrentActionBarHeight() : 0) + ((Build.VERSION.SDK_INT < 21 || !SizeNotifierFrameLayout.this.occupyStatusBar) ? 0 : AndroidUtilities.statusBarHeight);
                             int measuredHeight = getRootView().getMeasuredHeight() - currentActionBarHeight;
                             float max = Math.max(getMeasuredWidth() / drawable2.getIntrinsicWidth(), measuredHeight / drawable2.getIntrinsicHeight());
                             int ceil = (int) Math.ceil(drawable2.getIntrinsicWidth() * max * f);
@@ -300,7 +300,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
                             canvas.restore();
                         }
                     } else if (((BitmapDrawable) drawable2).getTileModeX() != Shader.TileMode.REPEAT) {
-                        int currentActionBarHeight2 = (SizeNotifierFrameLayout.this.isActionBarVisible() ? C3356ActionBar.getCurrentActionBarHeight() : 0) + ((Build.VERSION.SDK_INT < 21 || !SizeNotifierFrameLayout.this.occupyStatusBar) ? 0 : AndroidUtilities.statusBarHeight);
+                        int currentActionBarHeight2 = (SizeNotifierFrameLayout.this.isActionBarVisible() ? C3361ActionBar.getCurrentActionBarHeight() : 0) + ((Build.VERSION.SDK_INT < 21 || !SizeNotifierFrameLayout.this.occupyStatusBar) ? 0 : AndroidUtilities.statusBarHeight);
                         int measuredHeight3 = getRootView().getMeasuredHeight() - currentActionBarHeight2;
                         float max2 = Math.max(getMeasuredWidth() / drawable2.getIntrinsicWidth(), measuredHeight3 / drawable2.getIntrinsicHeight());
                         int ceil3 = (int) Math.ceil(drawable2.getIntrinsicWidth() * max2 * f);
@@ -584,7 +584,7 @@ public class SizeNotifierFrameLayout extends FrameLayout {
         BlurBitmap blurBitmap;
         if (this.blurIsRunning && !this.blurGeneratingTuskIsRunning && this.invalidateBlur && SharedConfig.chatBlurEnabled() && Color.alpha(Theme.getColor(Theme.key_chat_BlurAlpha)) != 255) {
             int measuredWidth = getMeasuredWidth();
-            int currentActionBarHeight = C3356ActionBar.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight + AndroidUtilities.m54dp(100);
+            int currentActionBarHeight = C3361ActionBar.getCurrentActionBarHeight() + AndroidUtilities.statusBarHeight + AndroidUtilities.m54dp(100);
             if (measuredWidth == 0 || currentActionBarHeight == 0) {
                 return;
             }

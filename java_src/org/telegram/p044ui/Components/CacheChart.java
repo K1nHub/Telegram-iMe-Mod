@@ -24,7 +24,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.zxing.common.detector.MathUtils;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LiteMode;
 import org.telegram.messenger.SvgHelper;
@@ -94,9 +94,9 @@ public class CacheChart extends View {
     }
 
     static {
-        int i = C3290R.raw.cache_videos;
-        int i2 = C3290R.raw.cache_other;
-        DEFAULT_PARTICLES = new int[]{C3290R.raw.cache_photos, i, C3290R.raw.cache_documents, C3290R.raw.cache_music, i, C3290R.raw.cache_stickers, C3290R.raw.cache_profile_photos, i2, i2};
+        int i = C3295R.raw.cache_videos;
+        int i2 = C3295R.raw.cache_other;
+        DEFAULT_PARTICLES = new int[]{C3295R.raw.cache_photos, i, C3295R.raw.cache_documents, C3295R.raw.cache_music, i, C3295R.raw.cache_stickers, C3295R.raw.cache_profile_photos, i2, i2};
         particlesStart = -1L;
     }
 

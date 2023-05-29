@@ -37,7 +37,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.XiaomiUtilities;
 import org.telegram.p044ui.ActionBar.FloatingActionMode;
@@ -374,7 +374,7 @@ public class EditTextBoldCursor extends EditTextEffects {
                 }
                 Field field = mCursorDrawableResField;
                 if (field != null) {
-                    field.set(this, Integer.valueOf(C3290R.C3292drawable.field_carret_empty));
+                    field.set(this, Integer.valueOf(C3295R.C3297drawable.field_carret_empty));
                 }
             } catch (Throwable unused5) {
             }
@@ -459,7 +459,7 @@ public class EditTextBoldCursor extends EditTextEffects {
 
     public void setLineColors(int i, int i2, int i3) {
         this.lineVisible = true;
-        getContext().getResources().getDrawable(C3290R.C3292drawable.search_dark).getPadding(this.padding);
+        getContext().getResources().getDrawable(C3295R.C3297drawable.search_dark).getPadding(this.padding);
         Rect rect = this.padding;
         setPadding(rect.left, rect.top, rect.right, rect.bottom);
         this.lineColor = i;

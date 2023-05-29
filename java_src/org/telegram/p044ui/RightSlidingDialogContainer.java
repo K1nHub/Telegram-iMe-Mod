@@ -23,7 +23,7 @@ import org.telegram.messenger.UserConfig;
 import org.telegram.messenger.Utilities;
 import org.telegram.p044ui.ActionBar.ActionBarLayout;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3356ActionBar;
+import org.telegram.p044ui.ActionBar.C3361ActionBar;
 import org.telegram.p044ui.ActionBar.INavigationLayout;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.CubicBezierInterpolator;
@@ -32,7 +32,7 @@ import org.telegram.p044ui.Components.CubicBezierInterpolator;
 public abstract class RightSlidingDialogContainer extends FrameLayout {
     public static long fragmentDialogId;
     private Paint actionModePaint;
-    C3356ActionBar currentActionBarView;
+    C3361ActionBar currentActionBarView;
     BaseFragment currentFragment;
     View currentFragmentFullscreenView;
     View currentFragmentView;
@@ -110,7 +110,7 @@ public abstract class RightSlidingDialogContainer extends FrameLayout {
                 fragmentDialogId = -((TopicsFragment) baseFragment).chatId;
             }
             if (baseFragment.getActionBar() != null) {
-                C3356ActionBar actionBar = baseFragment.getActionBar();
+                C3361ActionBar actionBar = baseFragment.getActionBar();
                 this.currentActionBarView = actionBar;
                 addView(actionBar);
                 this.currentActionBarView.listenToBackgroundUpdate(new Runnable() { // from class: org.telegram.ui.RightSlidingDialogContainer$$ExternalSyntheticLambda5
@@ -273,7 +273,7 @@ public abstract class RightSlidingDialogContainer extends FrameLayout {
     }
 
     protected void updateOpenAnimationProgress() {
-        C3356ActionBar c3356ActionBar;
+        C3361ActionBar c3361ActionBar;
         if (this.replaceAnimationInProgress || !hasFragment()) {
             return;
         }
@@ -283,8 +283,8 @@ public abstract class RightSlidingDialogContainer extends FrameLayout {
             view.setTranslationX((getMeasuredWidth() - AndroidUtilities.m54dp(getRightPaddingSize())) * (1.0f - this.openedProgress));
         }
         BaseFragment baseFragment = this.parentFragment;
-        if ((!(baseFragment instanceof DialogsActivity) || (((DialogsActivity) baseFragment).isMainNoFolderDialogList() && !SharedConfig.isMainActionBarMenuEnabled)) && (c3356ActionBar = this.currentActionBarView) != null) {
-            c3356ActionBar.setTranslationX(AndroidUtilities.m54dp(48) * (1.0f - this.openedProgress));
+        if ((!(baseFragment instanceof DialogsActivity) || (((DialogsActivity) baseFragment).isMainNoFolderDialogList() && !SharedConfig.isMainActionBarMenuEnabled)) && (c3361ActionBar = this.currentActionBarView) != null) {
+            c3361ActionBar.setTranslationX(AndroidUtilities.m54dp(48) * (1.0f - this.openedProgress));
         }
         BaseFragment baseFragment2 = this.currentFragment;
         if (baseFragment2 != null) {
@@ -300,11 +300,11 @@ public abstract class RightSlidingDialogContainer extends FrameLayout {
         if (view != null) {
             FrameLayout.LayoutParams layoutParams = (FrameLayout.LayoutParams) view.getLayoutParams();
             layoutParams.leftMargin = AndroidUtilities.m54dp(getRightPaddingSize());
-            layoutParams.topMargin = C3356ActionBar.getCurrentActionBarHeight() + i3 + this.fragmentViewPadding;
+            layoutParams.topMargin = C3361ActionBar.getCurrentActionBarHeight() + i3 + this.fragmentViewPadding;
         }
-        C3356ActionBar c3356ActionBar = this.currentActionBarView;
-        if (c3356ActionBar != null) {
-            ((FrameLayout.LayoutParams) c3356ActionBar.getLayoutParams()).topMargin = i3;
+        C3361ActionBar c3361ActionBar = this.currentActionBarView;
+        if (c3361ActionBar != null) {
+            ((FrameLayout.LayoutParams) c3361ActionBar.getLayoutParams()).topMargin = i3;
         }
         super.onMeasure(i, i2);
         int measuredHeight = (getMeasuredHeight() + getMeasuredWidth()) << 16;
@@ -536,8 +536,8 @@ public abstract class RightSlidingDialogContainer extends FrameLayout {
 
     @Override // android.view.ViewGroup
     protected boolean drawChild(Canvas canvas, View view, long j) {
-        C3356ActionBar c3356ActionBar = this.currentActionBarView;
-        if (view == c3356ActionBar && c3356ActionBar.getActionMode() != null && this.currentActionBarView.getActionMode().getAlpha() == 1.0f) {
+        C3361ActionBar c3361ActionBar = this.currentActionBarView;
+        if (view == c3361ActionBar && c3361ActionBar.getActionMode() != null && this.currentActionBarView.getActionMode().getAlpha() == 1.0f) {
             return true;
         }
         return super.drawChild(canvas, view, j);
@@ -551,10 +551,10 @@ public abstract class RightSlidingDialogContainer extends FrameLayout {
         }
         super.dispatchDraw(canvas);
         float f = this.openedProgress;
-        C3356ActionBar c3356ActionBar = this.currentActionBarView;
-        float alpha = (c3356ActionBar == null || c3356ActionBar.getActionMode() == null) ? 0.0f : this.currentActionBarView.getActionMode().getAlpha();
-        C3356ActionBar c3356ActionBar2 = this.currentActionBarView;
-        float max = f * Math.max(alpha, c3356ActionBar2 == null ? 0.0f : c3356ActionBar2.searchFieldVisibleAlpha);
+        C3361ActionBar c3361ActionBar = this.currentActionBarView;
+        float alpha = (c3361ActionBar == null || c3361ActionBar.getActionMode() == null) ? 0.0f : this.currentActionBarView.getActionMode().getAlpha();
+        C3361ActionBar c3361ActionBar2 = this.currentActionBarView;
+        float max = f * Math.max(alpha, c3361ActionBar2 == null ? 0.0f : c3361ActionBar2.searchFieldVisibleAlpha);
         if (this.currentFragment == null || this.currentActionBarView == null || max <= BitmapDescriptorFactory.HUE_RED) {
             return;
         }

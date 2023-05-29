@@ -58,7 +58,7 @@ import org.koin.core.parameter.ParametersHolderKt;
 import org.koin.java.KoinJavaComponent;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -71,7 +71,7 @@ import org.telegram.p044ui.ActionBar.ActionBarMenuSubItem;
 import org.telegram.p044ui.ActionBar.AlertDialog;
 import org.telegram.p044ui.ActionBar.BaseFragment;
 import org.telegram.p044ui.ActionBar.BottomSheet;
-import org.telegram.p044ui.ActionBar.C3356ActionBar;
+import org.telegram.p044ui.ActionBar.C3361ActionBar;
 import org.telegram.p044ui.ActionBar.INavigationLayout;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
@@ -346,7 +346,7 @@ public class PasscodeActivity extends JavaWalletAuthFragment implements CreateWa
 
     private void showForgotPasswordOptionsDialog() {
         BottomSheet.Builder builder = new BottomSheet.Builder(getParentActivity());
-        builder.setItems(new CharSequence[]{LocaleController.getInternalString(C3290R.string.wallet_enter_eth_password_forgot_option_restore), LocaleController.getInternalString(C3290R.string.wallet_enter_eth_password_forgot_option_delete)}, new int[]{C3290R.C3292drawable.fork_ic_wallet_restore, C3290R.C3292drawable.msg_delete}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda3
+        builder.setItems(new CharSequence[]{LocaleController.getInternalString(C3295R.string.wallet_enter_eth_password_forgot_option_restore), LocaleController.getInternalString(C3295R.string.wallet_enter_eth_password_forgot_option_delete)}, new int[]{C3295R.C3297drawable.fork_ic_wallet_restore, C3295R.C3297drawable.msg_delete}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda3
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 PasscodeActivity.this.lambda$showForgotPasswordOptionsDialog$4(dialogInterface, i);
@@ -489,7 +489,7 @@ public class PasscodeActivity extends JavaWalletAuthFragment implements CreateWa
     public /* synthetic */ void lambda$createView$11(View view, final int i) {
         if (view.isEnabled()) {
             if (i == this.disablePasscodeRow) {
-                AlertDialog create = new AlertDialog.Builder(getParentActivity()).setTitle(LocaleController.getString(C3290R.string.DisablePasscode)).setMessage(LocaleController.getString(C3290R.string.DisablePasscodeConfirmMessage)).setNegativeButton(LocaleController.getString(C3290R.string.Cancel), null).setPositiveButton(LocaleController.getString(C3290R.string.DisablePasscodeTurnOff), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda2
+                AlertDialog create = new AlertDialog.Builder(getParentActivity()).setTitle(LocaleController.getString(C3295R.string.DisablePasscode)).setMessage(LocaleController.getString(C3295R.string.DisablePasscodeConfirmMessage)).setNegativeButton(LocaleController.getString(C3295R.string.Cancel), null).setPositiveButton(LocaleController.getString(C3295R.string.DisablePasscodeTurnOff), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda2
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i2) {
                         PasscodeActivity.this.lambda$createView$8(dialogInterface, i2);
@@ -508,7 +508,7 @@ public class PasscodeActivity extends JavaWalletAuthFragment implements CreateWa
                     return;
                 }
                 AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-                builder.setTitle(LocaleController.getString("AutoLock", C3290R.string.AutoLock));
+                builder.setTitle(LocaleController.getString("AutoLock", C3295R.string.AutoLock));
                 final NumberPicker numberPicker = new NumberPicker(getParentActivity());
                 numberPicker.setMinValue(0);
                 numberPicker.setMaxValue(4);
@@ -527,7 +527,7 @@ public class PasscodeActivity extends JavaWalletAuthFragment implements CreateWa
                 }
                 numberPicker.setFormatter(PasscodeActivity$$ExternalSyntheticLambda30.INSTANCE);
                 builder.setView(numberPicker);
-                builder.setNegativeButton(LocaleController.getString("Done", C3290R.string.Done), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda4
+                builder.setNegativeButton(LocaleController.getString("Done", C3295R.string.Done), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.PasscodeActivity$$ExternalSyntheticLambda4
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i2) {
                         PasscodeActivity.this.lambda$createView$10(numberPicker, i, dialogInterface, i2);
@@ -563,7 +563,7 @@ public class PasscodeActivity extends JavaWalletAuthFragment implements CreateWa
                 if (SharedConfig.allowScreenCapture) {
                     return;
                 }
-                AlertsCreator.showSimpleAlert(this, LocaleController.getString("ScreenCaptureAlert", C3290R.string.ScreenCaptureAlert));
+                AlertsCreator.showSimpleAlert(this, LocaleController.getString("ScreenCaptureAlert", C3295R.string.ScreenCaptureAlert));
             }
         }
     }
@@ -610,9 +610,9 @@ public class PasscodeActivity extends JavaWalletAuthFragment implements CreateWa
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ String lambda$createView$9(int i) {
         if (i == 0) {
-            return LocaleController.getString("AutoLockDisabled", C3290R.string.AutoLockDisabled);
+            return LocaleController.getString("AutoLockDisabled", C3295R.string.AutoLockDisabled);
         }
-        return i == 1 ? LocaleController.formatString("AutoLockInTime", C3290R.string.AutoLockInTime, LocaleController.formatPluralString("Minutes", 1, new Object[0])) : i == 2 ? LocaleController.formatString("AutoLockInTime", C3290R.string.AutoLockInTime, LocaleController.formatPluralString("Minutes", 5, new Object[0])) : i == 3 ? LocaleController.formatString("AutoLockInTime", C3290R.string.AutoLockInTime, LocaleController.formatPluralString("Hours", 1, new Object[0])) : i == 4 ? LocaleController.formatString("AutoLockInTime", C3290R.string.AutoLockInTime, LocaleController.formatPluralString("Hours", 5, new Object[0])) : "";
+        return i == 1 ? LocaleController.formatString("AutoLockInTime", C3295R.string.AutoLockInTime, LocaleController.formatPluralString("Minutes", 1, new Object[0])) : i == 2 ? LocaleController.formatString("AutoLockInTime", C3295R.string.AutoLockInTime, LocaleController.formatPluralString("Minutes", 5, new Object[0])) : i == 3 ? LocaleController.formatString("AutoLockInTime", C3295R.string.AutoLockInTime, LocaleController.formatPluralString("Hours", 1, new Object[0])) : i == 4 ? LocaleController.formatString("AutoLockInTime", C3295R.string.AutoLockInTime, LocaleController.formatPluralString("Hours", 5, new Object[0])) : "";
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -644,14 +644,14 @@ public class PasscodeActivity extends JavaWalletAuthFragment implements CreateWa
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.PasscodeActivity$5 */
     /* loaded from: classes5.dex */
-    public class C60595 extends C3356ActionBar.ActionBarMenuOnItemClick {
+    public class C60645 extends C3361ActionBar.ActionBarMenuOnItemClick {
         final /* synthetic */ ActionBarMenuSubItem val$switchItem;
 
-        C60595(ActionBarMenuSubItem actionBarMenuSubItem) {
+        C60645(ActionBarMenuSubItem actionBarMenuSubItem) {
             this.val$switchItem = actionBarMenuSubItem;
         }
 
-        @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
+        @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
         public void onItemClick(int i) {
             if (i == -1) {
                 PasscodeActivity.this.finishFragment();
@@ -664,7 +664,7 @@ public class PasscodeActivity extends JavaWalletAuthFragment implements CreateWa
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.PasscodeActivity$5$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        PasscodeActivity.C60595.this.lambda$onItemClick$0(actionBarMenuSubItem);
+                        PasscodeActivity.C60645.this.lambda$onItemClick$0(actionBarMenuSubItem);
                     }
                 }, 150L);
                 PasscodeActivity.this.passwordEditText.setText("");
@@ -677,8 +677,8 @@ public class PasscodeActivity extends JavaWalletAuthFragment implements CreateWa
 
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$onItemClick$0(ActionBarMenuSubItem actionBarMenuSubItem) {
-            actionBarMenuSubItem.setText(LocaleController.getString(PasscodeActivity.this.currentPasswordType == 0 ? C3290R.string.PasscodeSwitchToPassword : C3290R.string.PasscodeSwitchToPIN));
-            actionBarMenuSubItem.setIcon(PasscodeActivity.this.currentPasswordType == 0 ? C3290R.C3292drawable.msg_permissions : C3290R.C3292drawable.msg_pin_code);
+            actionBarMenuSubItem.setText(LocaleController.getString(PasscodeActivity.this.currentPasswordType == 0 ? C3295R.string.PasscodeSwitchToPassword : C3295R.string.PasscodeSwitchToPIN));
+            actionBarMenuSubItem.setIcon(PasscodeActivity.this.currentPasswordType == 0 ? C3295R.C3297drawable.msg_permissions : C3295R.C3297drawable.msg_pin_code);
             PasscodeActivity.this.showKeyboard();
             if (PasscodeActivity.this.isPinCode()) {
                 PasscodeActivity.this.passwordEditText.setInputType(524417);
@@ -743,8 +743,8 @@ public class PasscodeActivity extends JavaWalletAuthFragment implements CreateWa
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.PasscodeActivity$9 */
     /* loaded from: classes5.dex */
-    public class C60639 extends CodeFieldContainer {
-        C60639(Context context) {
+    public class C60689 extends CodeFieldContainer {
+        C60689(Context context) {
             super(context);
         }
 
@@ -762,7 +762,7 @@ public class PasscodeActivity extends JavaWalletAuthFragment implements CreateWa
             postDelayed(new Runnable() { // from class: org.telegram.ui.PasscodeActivity$9$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PasscodeActivity.C60639.this.lambda$processNextPressed$0();
+                    PasscodeActivity.C60689.this.lambda$processNextPressed$0();
                 }
             }, 260L);
         }
@@ -1116,29 +1116,29 @@ public class PasscodeActivity extends JavaWalletAuthFragment implements CreateWa
         String charSequence;
         final boolean z = true;
         if (this.type == 2) {
-            charSequence = LocaleController.getString(C3290R.string.EnterYourPasscodeInfo);
+            charSequence = LocaleController.getString(C3295R.string.EnterYourPasscodeInfo);
         } else if (this.passcodeSetStep == 0) {
             int i = this.screenType;
             if (i == 1) {
-                charSequence = LocaleController.getInternalString(C3290R.string.wallet_create_eth_password_description);
+                charSequence = LocaleController.getInternalString(C3295R.string.wallet_create_eth_password_description);
             } else if (i == 0) {
-                charSequence = LocaleController.getInternalString(C3290R.string.wallet_create_eth_pin_code_description);
+                charSequence = LocaleController.getInternalString(C3295R.string.wallet_create_eth_pin_code_description);
             } else if (i == 3) {
-                charSequence = LocaleController.getInternalString(C3290R.string.wallet_enter_eth_password_description);
+                charSequence = LocaleController.getInternalString(C3295R.string.wallet_enter_eth_password_description);
             } else {
-                charSequence = LocaleController.getString(this.currentPasswordType == 0 ? C3290R.string.CreatePasscodeInfoPIN : C3290R.string.CreatePasscodeInfoPassword);
+                charSequence = LocaleController.getString(this.currentPasswordType == 0 ? C3295R.string.CreatePasscodeInfoPIN : C3295R.string.CreatePasscodeInfoPassword);
             }
         } else {
             charSequence = this.descriptionTextSwitcher.getCurrentView().getText().toString();
         }
         final boolean z2 = (this.descriptionTextSwitcher.getCurrentView().getText().equals(charSequence) || TextUtils.isEmpty(this.descriptionTextSwitcher.getCurrentView().getText())) ? false : true;
         if (this.type == 2) {
-            this.descriptionTextSwitcher.setText(LocaleController.getString(C3290R.string.EnterYourPasscodeInfo), z2);
+            this.descriptionTextSwitcher.setText(LocaleController.getString(C3295R.string.EnterYourPasscodeInfo), z2);
         } else if (this.passcodeSetStep == 0) {
             if (isWalletScreen()) {
                 this.descriptionTextSwitcher.setText(charSequence, z2);
             } else {
-                this.descriptionTextSwitcher.setText(LocaleController.getString(this.currentPasswordType == 0 ? C3290R.string.CreatePasscodeInfoPIN : C3290R.string.CreatePasscodeInfoPassword), z2);
+                this.descriptionTextSwitcher.setText(LocaleController.getString(this.currentPasswordType == 0 ? C3295R.string.CreatePasscodeInfoPIN : C3295R.string.CreatePasscodeInfoPassword), z2);
             }
         }
         if (isPinCode()) {
@@ -1208,19 +1208,19 @@ public class PasscodeActivity extends JavaWalletAuthFragment implements CreateWa
         }
         int i2 = this.screenType;
         if (i2 == 1) {
-            this.titleTextView.setText(LocaleController.getInternalString(C3290R.string.wallet_confirm_eth_password_title));
+            this.titleTextView.setText(LocaleController.getInternalString(C3295R.string.wallet_confirm_eth_password_title));
         } else if (i2 == 0) {
-            this.titleTextView.setText(LocaleController.getInternalString(C3290R.string.wallet_confirm_eth_pin_code_title));
+            this.titleTextView.setText(LocaleController.getInternalString(C3295R.string.wallet_confirm_eth_pin_code_title));
         } else {
-            this.titleTextView.setText(LocaleController.getString("ConfirmCreatePasscode", C3290R.string.ConfirmCreatePasscode));
+            this.titleTextView.setText(LocaleController.getString("ConfirmCreatePasscode", C3295R.string.ConfirmCreatePasscode));
         }
         int i3 = this.screenType;
         if (i3 == 1) {
-            this.descriptionTextSwitcher.setText(LocaleController.getInternalString(C3290R.string.wallet_confirm_eth_password_description));
+            this.descriptionTextSwitcher.setText(LocaleController.getInternalString(C3295R.string.wallet_confirm_eth_password_description));
         } else if (i3 == 0) {
-            this.descriptionTextSwitcher.setText(LocaleController.getInternalString(C3290R.string.wallet_confirm_eth_pin_code_description));
+            this.descriptionTextSwitcher.setText(LocaleController.getInternalString(C3295R.string.wallet_confirm_eth_pin_code_description));
         } else {
-            this.descriptionTextSwitcher.setText(AndroidUtilities.replaceTags(LocaleController.getString("PasscodeReinstallNotice", C3290R.string.PasscodeReinstallNotice)));
+            this.descriptionTextSwitcher.setText(AndroidUtilities.replaceTags(LocaleController.getString("PasscodeReinstallNotice", C3295R.string.PasscodeReinstallNotice)));
         }
         this.firstPassword = isPinCode() ? this.codeFieldContainer.getCode() : this.passwordEditText.getText().toString();
         this.passwordEditText.setText("");
@@ -1265,7 +1265,7 @@ public class PasscodeActivity extends JavaWalletAuthFragment implements CreateWa
         if (i != 1) {
             if (i == 2) {
                 if ((SharedConfig.passcodeRetryInMs > 0 && this.sectionPasscodeData == null) || ((sectionPasscodeData = this.sectionPasscodeData) != null && sectionPasscodeData.getPasscodeRetryInMs() > 0)) {
-                    Toast.makeText(getParentActivity(), LocaleController.formatString("TooManyTries", C3290R.string.TooManyTries, LocaleController.formatPluralString("Seconds", Math.max(1, (int) Math.ceil((this.sectionPasscodeData != null ? sectionPasscodeData2.getPasscodeRetryInMs() : SharedConfig.passcodeRetryInMs) / 1000.0d)), new Object[0])), 0).show();
+                    Toast.makeText(getParentActivity(), LocaleController.formatString("TooManyTries", C3295R.string.TooManyTries, LocaleController.formatPluralString("Seconds", Math.max(1, (int) Math.ceil((this.sectionPasscodeData != null ? sectionPasscodeData2.getPasscodeRetryInMs() : SharedConfig.passcodeRetryInMs) / 1000.0d)), new Object[0])), 0).show();
                     updateRetryTime();
                     for (CodeNumberField codeNumberField : this.codeFieldContainer.codeField) {
                         codeNumberField.setText("");
@@ -1514,14 +1514,14 @@ public class PasscodeActivity extends JavaWalletAuthFragment implements CreateWa
                 TextCheckCell textCheckCell = (TextCheckCell) viewHolder.itemView;
                 if (i == PasscodeActivity.this.fingerprintRow) {
                     if (PasscodeActivity.this.sectionPasscodeData != null) {
-                        textCheckCell.setTextAndCheck(LocaleController.getString("UnlockFingerprint", C3290R.string.UnlockFingerprint), PasscodeActivity.this.sectionPasscodeData.isUseFingerprint(), true);
+                        textCheckCell.setTextAndCheck(LocaleController.getString("UnlockFingerprint", C3295R.string.UnlockFingerprint), PasscodeActivity.this.sectionPasscodeData.isUseFingerprint(), true);
                     } else if (PasscodeActivity.this.screenType == 2) {
-                        textCheckCell.setTextAndCheck(LocaleController.getString("UnlockFingerprint", C3290R.string.UnlockFingerprint), PasscodeActivity.this.getWalletFingerprintController().isWalletFingerprintUnlockEnabled(), true);
+                        textCheckCell.setTextAndCheck(LocaleController.getString("UnlockFingerprint", C3295R.string.UnlockFingerprint), PasscodeActivity.this.getWalletFingerprintController().isWalletFingerprintUnlockEnabled(), true);
                     } else {
-                        textCheckCell.setTextAndCheck(LocaleController.getString("UnlockFingerprint", C3290R.string.UnlockFingerprint), SharedConfig.useFingerprint, true);
+                        textCheckCell.setTextAndCheck(LocaleController.getString("UnlockFingerprint", C3295R.string.UnlockFingerprint), SharedConfig.useFingerprint, true);
                     }
                 } else if (i == PasscodeActivity.this.captureRow) {
-                    textCheckCell.setTextAndCheck(LocaleController.getString(C3290R.string.ScreenCaptureShowContent), SharedConfig.allowScreenCapture, false);
+                    textCheckCell.setTextAndCheck(LocaleController.getString(C3295R.string.ScreenCaptureShowContent), SharedConfig.allowScreenCapture, false);
                 }
             } else if (itemViewType != 1) {
                 if (itemViewType != 2) {
@@ -1530,14 +1530,14 @@ public class PasscodeActivity extends JavaWalletAuthFragment implements CreateWa
                             return;
                         }
                         RLottieImageHolderView rLottieImageHolderView = (RLottieImageHolderView) viewHolder.itemView;
-                        rLottieImageHolderView.imageView.setAnimation(C3290R.raw.utyan_passcode, 100, 100);
+                        rLottieImageHolderView.imageView.setAnimation(C3295R.raw.utyan_passcode, 100, 100);
                         rLottieImageHolderView.imageView.playAnimation();
                         return;
                     }
                     HeaderCell headerCell = (HeaderCell) viewHolder.itemView;
                     headerCell.setHeight(46);
                     if (i == PasscodeActivity.this.captureHeaderRow) {
-                        headerCell.setText(LocaleController.getString(C3290R.string.ScreenCaptureHeader));
+                        headerCell.setText(LocaleController.getString(C3295R.string.ScreenCaptureHeader));
                         return;
                     }
                     return;
@@ -1546,25 +1546,25 @@ public class PasscodeActivity extends JavaWalletAuthFragment implements CreateWa
                 if (i != PasscodeActivity.this.hintRow || PasscodeActivity.this.screenType == 2) {
                     if (i != PasscodeActivity.this.autoLockDetailRow) {
                         if (i == PasscodeActivity.this.captureDetailRow) {
-                            textInfoPrivacyCell.setText(LocaleController.getString(C3290R.string.ScreenCaptureInfo));
-                            textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(this.mContext, C3290R.C3292drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
+                            textInfoPrivacyCell.setText(LocaleController.getString(C3295R.string.ScreenCaptureInfo));
+                            textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(this.mContext, C3295R.C3297drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
                             textInfoPrivacyCell.getTextView().setGravity(LocaleController.isRTL ? 5 : 3);
                             return;
                         }
                         return;
                     }
-                    textInfoPrivacyCell.setText(LocaleController.getString(C3290R.string.AutoLockInfo));
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(this.mContext, C3290R.C3292drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                    textInfoPrivacyCell.setText(LocaleController.getString(C3295R.string.AutoLockInfo));
+                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(this.mContext, C3295R.C3297drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                     textInfoPrivacyCell.getTextView().setGravity(LocaleController.isRTL ? 5 : 3);
                     return;
                 }
-                textInfoPrivacyCell.setText(LocaleController.getString(C3290R.string.PasscodeScreenHint));
+                textInfoPrivacyCell.setText(LocaleController.getString(C3295R.string.PasscodeScreenHint));
                 textInfoPrivacyCell.setBackground(null);
                 textInfoPrivacyCell.getTextView().setGravity(1);
             } else {
                 TextSettingsCell textSettingsCell = (TextSettingsCell) viewHolder.itemView;
                 if (i == PasscodeActivity.this.changePasscodeRow) {
-                    textSettingsCell.setText(PasscodeActivity.this.screenType == 2 ? LocaleController.getInternalString(C3290R.string.wallet_settings_pin_code_change) : LocaleController.getString("ChangePasscode", C3290R.string.ChangePasscode), true);
+                    textSettingsCell.setText(PasscodeActivity.this.screenType == 2 ? LocaleController.getInternalString(C3295R.string.wallet_settings_pin_code_change) : LocaleController.getString("ChangePasscode", C3295R.string.ChangePasscode), true);
                     if (PasscodeActivity.this.screenType != 2 && ((SharedConfig.passcodeHash.length() == 0 && PasscodeActivity.this.sectionPasscodeData == null) || (PasscodeActivity.this.sectionPasscodeData != null && PasscodeActivity.this.sectionPasscodeData.getPasscodeHash().length() == 0))) {
                         int i2 = Theme.key_windowBackgroundWhiteGrayText7;
                         textSettingsCell.setTag(Integer.valueOf(i2));
@@ -1577,20 +1577,20 @@ public class PasscodeActivity extends JavaWalletAuthFragment implements CreateWa
                 } else if (i == PasscodeActivity.this.autoLockRow) {
                     int timeout = PasscodeActivity.this.sectionPasscodeData != null ? PasscodeActivity.this.sectionPasscodeData.getTimeout() : SharedConfig.autoLockIn;
                     if (timeout == 0) {
-                        formatString = LocaleController.formatString("AutoLockDisabled", C3290R.string.AutoLockDisabled, new Object[0]);
+                        formatString = LocaleController.formatString("AutoLockDisabled", C3295R.string.AutoLockDisabled, new Object[0]);
                     } else if (timeout < 3600) {
-                        formatString = LocaleController.formatString("AutoLockInTime", C3290R.string.AutoLockInTime, LocaleController.formatPluralString("Minutes", timeout / 60, new Object[0]));
+                        formatString = LocaleController.formatString("AutoLockInTime", C3295R.string.AutoLockInTime, LocaleController.formatPluralString("Minutes", timeout / 60, new Object[0]));
                     } else if (timeout < 86400) {
-                        formatString = LocaleController.formatString("AutoLockInTime", C3290R.string.AutoLockInTime, LocaleController.formatPluralString("Hours", (int) Math.ceil((timeout / 60.0f) / 60.0f), new Object[0]));
+                        formatString = LocaleController.formatString("AutoLockInTime", C3295R.string.AutoLockInTime, LocaleController.formatPluralString("Hours", (int) Math.ceil((timeout / 60.0f) / 60.0f), new Object[0]));
                     } else {
-                        formatString = LocaleController.formatString("AutoLockInTime", C3290R.string.AutoLockInTime, LocaleController.formatPluralString("Days", (int) Math.ceil(((timeout / 60.0f) / 60.0f) / 24.0f), new Object[0]));
+                        formatString = LocaleController.formatString("AutoLockInTime", C3295R.string.AutoLockInTime, LocaleController.formatPluralString("Days", (int) Math.ceil(((timeout / 60.0f) / 60.0f) / 24.0f), new Object[0]));
                     }
-                    textSettingsCell.setTextAndValue(LocaleController.getString("AutoLock", C3290R.string.AutoLock), formatString, true);
+                    textSettingsCell.setTextAndValue(LocaleController.getString("AutoLock", C3295R.string.AutoLock), formatString, true);
                     int i4 = Theme.key_windowBackgroundWhiteBlackText;
                     textSettingsCell.setTag(Integer.valueOf(i4));
                     textSettingsCell.setTextColor(Theme.getColor(i4));
                 } else if (i == PasscodeActivity.this.disablePasscodeRow) {
-                    textSettingsCell.setText(LocaleController.getString(C3290R.string.DisablePasscode), false);
+                    textSettingsCell.setText(LocaleController.getString(C3295R.string.DisablePasscode), false);
                     int i5 = Theme.key_text_RedBold;
                     textSettingsCell.setTag(Integer.valueOf(i5));
                     textSettingsCell.setTextColor(Theme.getColor(i5));
@@ -1623,10 +1623,10 @@ public class PasscodeActivity extends JavaWalletAuthFragment implements CreateWa
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{TextCheckCell.class, TextSettingsCell.class}, null, null, null, i));
         arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND | ThemeDescription.FLAG_CHECKTAG, null, null, null, null, i));
         arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_CHECKTAG | ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray));
-        C3356ActionBar c3356ActionBar = this.actionBar;
+        C3361ActionBar c3361ActionBar = this.actionBar;
         int i2 = ThemeDescription.FLAG_BACKGROUND;
         int i3 = Theme.key_actionBarDefault;
-        arrayList.add(new ThemeDescription(c3356ActionBar, i2, null, null, null, null, i3));
+        arrayList.add(new ThemeDescription(c3361ActionBar, i2, null, null, null, null, i3));
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i3));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));

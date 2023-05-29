@@ -36,7 +36,7 @@ import org.telegram.messenger.MediaController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
-import org.telegram.p044ui.ActionBar.C3356ActionBar;
+import org.telegram.p044ui.ActionBar.C3361ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.PipRoundVideoView */
 /* loaded from: classes6.dex */
@@ -276,7 +276,7 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
             i3 = AndroidUtilities.displaySize.x;
         } else {
             i3 = AndroidUtilities.displaySize.y - i2;
-            i2 = C3356ActionBar.getCurrentActionBarHeight();
+            i2 = C3361ActionBar.getCurrentActionBarHeight();
         }
         int i4 = i3 - i2;
         if (i == 0) {
@@ -286,7 +286,7 @@ public class PipRoundVideoView implements NotificationCenter.NotificationCenterD
         } else {
             round = Math.round((i4 - AndroidUtilities.m54dp(20)) * f) + AndroidUtilities.m54dp(10);
         }
-        return !z ? round + C3356ActionBar.getCurrentActionBarHeight() : round;
+        return !z ? round + C3361ActionBar.getCurrentActionBarHeight() : round;
     }
 
     @Override // org.telegram.messenger.NotificationCenter.NotificationCenterDelegate

@@ -11,6 +11,6 @@ public final /* synthetic */ class ChatActivityEnterView$15$$ExternalSyntheticLa
 
     @Override // java.lang.Runnable
     public final void run() {
-        ChatActivityEnterView.C418215.lambda$onTouchEvent$1();
+        ChatActivityEnterView.C418715.lambda$onTouchEvent$1();
     }
 }

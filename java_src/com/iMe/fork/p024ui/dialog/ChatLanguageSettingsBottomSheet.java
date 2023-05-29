@@ -23,7 +23,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.BottomSheet;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -208,12 +208,12 @@ public final class ChatLanguageSettingsBottomSheet extends BottomSheet {
         textView.setGravity(17);
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         if (z) {
-            String string = LocaleController.getString("Cancel", C3290R.string.Cancel);
+            String string = LocaleController.getString("Cancel", C3295R.string.Cancel);
             Intrinsics.checkNotNullExpressionValue(string, "getString(\"Cancel\", R.string.Cancel)");
             upperCase = string.toUpperCase(Locale.ROOT);
             Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
         } else {
-            String string2 = LocaleController.getString("Save", C3290R.string.Save);
+            String string2 = LocaleController.getString("Save", C3295R.string.Save);
             Intrinsics.checkNotNullExpressionValue(string2, "getString(\"Save\", R.string.Save)");
             upperCase = string2.toUpperCase(Locale.ROOT);
             Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");
@@ -243,7 +243,7 @@ public final class ChatLanguageSettingsBottomSheet extends BottomSheet {
         List mutableList;
         mutableList = CollectionsKt___CollectionsKt.toMutableList((Collection) this.textTranslateLanguages);
         if (i != this.textOut) {
-            String internalString = LocaleController.getInternalString(C3290R.string.language_settings_app_language);
+            String internalString = LocaleController.getInternalString(C3295R.string.language_settings_app_language);
             Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…ge_settings_app_language)");
             mutableList.add(0, new TranslationLanguageUiModel(null, internalString));
         }
@@ -347,19 +347,19 @@ public final class ChatLanguageSettingsBottomSheet extends BottomSheet {
             View view = holder.itemView;
             Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
             if (itemViewType == IdFabric$ViewTypes.HEADER_CELL && (view instanceof HeaderCell)) {
-                ((HeaderCell) view).setText(LocaleController.getInternalString(C3290R.string.language_settings_text_messages));
+                ((HeaderCell) view).setText(LocaleController.getInternalString(C3295R.string.language_settings_text_messages));
                 return;
             }
             boolean z = false;
             if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK_CELL && (view instanceof TextCheckCell)) {
-                ((TextCheckCell) view).setTextAndCheck(LocaleController.getString("ShowTranslateChatButton", C3290R.string.ShowTranslateChatButton), ChatLanguageSettingsBottomSheet.this.isAutoTranslateEnabled, false);
+                ((TextCheckCell) view).setTextAndCheck(LocaleController.getString("ShowTranslateChatButton", C3295R.string.ShowTranslateChatButton), ChatLanguageSettingsBottomSheet.this.isAutoTranslateEnabled, false);
             } else if (itemViewType == IdFabric$ViewTypes.NOTIFICATIONS_CHECK_CELL && (view instanceof NotificationsCheckCell)) {
                 String langCode = ChatLanguageSettingsBottomSheet.this.getLangCode(i);
-                String internalString = LocaleController.getInternalString(i == ChatLanguageSettingsBottomSheet.this.textIn ? C3290R.string.language_settings_in_text_translate : C3290R.string.language_settings_out_text_translate);
+                String internalString = LocaleController.getInternalString(i == ChatLanguageSettingsBottomSheet.this.textIn ? C3295R.string.language_settings_in_text_translate : C3295R.string.language_settings_out_text_translate);
                 if (langCode == null) {
-                    formatStringInternal = LocaleController.getInternalString(C3290R.string.language_settings_app_language);
+                    formatStringInternal = LocaleController.getInternalString(C3295R.string.language_settings_app_language);
                 } else {
-                    int i2 = C3290R.string.language_settings_selected_language;
+                    int i2 = C3295R.string.language_settings_selected_language;
                     Object[] objArr = new Object[1];
                     Iterator<T> it = ChatLanguageSettingsBottomSheet.this.getTextTranslateLanguages().iterator();
                     while (true) {

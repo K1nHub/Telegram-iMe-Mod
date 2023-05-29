@@ -7,7 +7,7 @@ import android.widget.FrameLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 /* loaded from: classes4.dex */
 public final class ForkFragmentWalletHomeServicesBinding implements ViewBinding {
     public final RecyclerView recycleWalletHomeServicesDashboard;
@@ -28,7 +28,7 @@ public final class ForkFragmentWalletHomeServicesBinding implements ViewBinding 
     }
 
     public static ForkFragmentWalletHomeServicesBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3290R.layout.fork_fragment_wallet_home_services, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3295R.layout.fork_fragment_wallet_home_services, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -36,7 +36,7 @@ public final class ForkFragmentWalletHomeServicesBinding implements ViewBinding 
     }
 
     public static ForkFragmentWalletHomeServicesBinding bind(View view) {
-        int i = C3290R.C3293id.recycle_wallet_home_services_dashboard;
+        int i = C3295R.C3298id.recycle_wallet_home_services_dashboard;
         RecyclerView recyclerView = (RecyclerView) ViewBindings.findChildViewById(view, i);
         if (recyclerView != null) {
             return new ForkFragmentWalletHomeServicesBinding((FrameLayout) view, recyclerView);

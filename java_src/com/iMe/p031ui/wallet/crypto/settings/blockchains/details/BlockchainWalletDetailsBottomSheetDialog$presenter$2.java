@@ -26,11 +26,11 @@ public final class BlockchainWalletDetailsBottomSheetDialog$presenter$2 extends 
     /* compiled from: BlockchainWalletDetailsBottomSheetDialog.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.settings.blockchains.details.BlockchainWalletDetailsBottomSheetDialog$presenter$2$1 */
     /* loaded from: classes3.dex */
-    public static final class C21811 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C21861 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ BlockchainWalletDetailsBottomSheetDialog this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C21811(BlockchainWalletDetailsBottomSheetDialog blockchainWalletDetailsBottomSheetDialog) {
+        C21861(BlockchainWalletDetailsBottomSheetDialog blockchainWalletDetailsBottomSheetDialog) {
             super(0);
             this.this$0 = blockchainWalletDetailsBottomSheetDialog;
         }
@@ -48,7 +48,7 @@ public final class BlockchainWalletDetailsBottomSheetDialog$presenter$2 extends 
     public final BlockchainWalletDetailsPresenter invoke() {
         Lazy lazy;
         BlockchainWalletDetailsBottomSheetDialog blockchainWalletDetailsBottomSheetDialog = this.this$0;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2179xac57dd17(blockchainWalletDetailsBottomSheetDialog, null, new C21811(blockchainWalletDetailsBottomSheetDialog)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2184xac57dd17(blockchainWalletDetailsBottomSheetDialog, null, new C21861(blockchainWalletDetailsBottomSheetDialog)));
         return (BlockchainWalletDetailsPresenter) lazy.getValue();
     }
 }

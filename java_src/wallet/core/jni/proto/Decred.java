@@ -392,7 +392,7 @@ public final class Decred {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Transaction, Builder> implements TransactionOrBuilder {
-            /* synthetic */ Builder(C68161 c68161) {
+            /* synthetic */ Builder(C68211 c68211) {
                 this();
             }
 
@@ -609,7 +609,7 @@ public final class Decred {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68161.f1794xa1df5c61[method.ordinal()]) {
+            switch (C68211.f1794xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Transaction();
                 case 2:
@@ -656,7 +656,7 @@ public final class Decred {
 
     /* renamed from: wallet.core.jni.proto.Decred$1 */
     /* loaded from: classes6.dex */
-    static /* synthetic */ class C68161 {
+    static /* synthetic */ class C68211 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f1794xa1df5c61;
@@ -882,7 +882,7 @@ public final class Decred {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TransactionInput, Builder> implements TransactionInputOrBuilder {
-            /* synthetic */ Builder(C68161 c68161) {
+            /* synthetic */ Builder(C68211 c68211) {
                 this();
             }
 
@@ -1012,7 +1012,7 @@ public final class Decred {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68161.f1794xa1df5c61[method.ordinal()]) {
+            switch (C68211.f1794xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TransactionInput();
                 case 2:
@@ -1175,7 +1175,7 @@ public final class Decred {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TransactionOutput, Builder> implements TransactionOutputOrBuilder {
-            /* synthetic */ Builder(C68161 c68161) {
+            /* synthetic */ Builder(C68211 c68211) {
                 this();
             }
 
@@ -1237,7 +1237,7 @@ public final class Decred {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68161.f1794xa1df5c61[method.ordinal()]) {
+            switch (C68211.f1794xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TransactionOutput();
                 case 2:
@@ -1458,7 +1458,7 @@ public final class Decred {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C68161 c68161) {
+            /* synthetic */ Builder(C68211 c68211) {
                 this();
             }
 
@@ -1576,7 +1576,7 @@ public final class Decred {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68161.f1794xa1df5c61[method.ordinal()]) {
+            switch (C68211.f1794xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

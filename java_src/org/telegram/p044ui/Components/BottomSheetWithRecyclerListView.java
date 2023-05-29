@@ -13,17 +13,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.Utilities;
 import org.telegram.p044ui.ActionBar.BaseFragment;
 import org.telegram.p044ui.ActionBar.BottomSheet;
-import org.telegram.p044ui.ActionBar.C3356ActionBar;
+import org.telegram.p044ui.ActionBar.C3361ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.RecyclerListView;
 /* renamed from: org.telegram.ui.Components.BottomSheetWithRecyclerListView */
 /* loaded from: classes6.dex */
 public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
-    protected C3356ActionBar actionBar;
+    protected C3361ActionBar actionBar;
     private BaseFragment baseFragment;
     protected boolean clipToActionBar;
     protected int contentHeight;
@@ -68,7 +68,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
         this.baseFragment = baseFragment;
         this.hasFixedSize = z2;
         final Activity parentActivity = baseFragment.getParentActivity();
-        this.headerShadowDrawable = ContextCompat.getDrawable(parentActivity, C3290R.C3292drawable.header_shadow).mutate();
+        this.headerShadowDrawable = ContextCompat.getDrawable(parentActivity, C3295R.C3297drawable.header_shadow).mutate();
         if (z3) {
             NestedSizeNotifierLayout nestedSizeNotifierLayout = new NestedSizeNotifierLayout(parentActivity) { // from class: org.telegram.ui.Components.BottomSheetWithRecyclerListView.1
                 @Override // org.telegram.p044ui.Components.NestedSizeNotifierLayout, android.widget.FrameLayout, android.view.View
@@ -214,7 +214,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
                 }
             });
             this.containerView = frameLayout;
-            C3356ActionBar c3356ActionBar = new C3356ActionBar(parentActivity) { // from class: org.telegram.ui.Components.BottomSheetWithRecyclerListView.4
+            C3361ActionBar c3361ActionBar = new C3361ActionBar(parentActivity) { // from class: org.telegram.ui.Components.BottomSheetWithRecyclerListView.4
                 @Override // android.view.View
                 public void setAlpha(float f) {
                     if (getAlpha() != f) {
@@ -229,16 +229,16 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
                     BottomSheetWithRecyclerListView.this.updateStatusBar();
                 }
             };
-            this.actionBar = c3356ActionBar;
-            c3356ActionBar.setBackgroundColor(getThemedColor(Theme.key_dialogBackground));
+            this.actionBar = c3361ActionBar;
+            c3361ActionBar.setBackgroundColor(getThemedColor(Theme.key_dialogBackground));
             this.actionBar.setTitleColor(getThemedColor(Theme.key_windowBackgroundWhiteBlackText));
             this.actionBar.setItemsBackgroundColor(getThemedColor(Theme.key_actionBarActionModeDefaultSelector), false);
             this.actionBar.setItemsColor(getThemedColor(Theme.key_actionBarActionModeDefaultIcon), false);
             this.actionBar.setCastShadows(true);
-            this.actionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+            this.actionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
             this.actionBar.setTitle(getTitle());
-            this.actionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Components.BottomSheetWithRecyclerListView.5
-                @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
+            this.actionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.Components.BottomSheetWithRecyclerListView.5
+                @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
                 public void onItemClick(int i) {
                     if (i == -1) {
                         BottomSheetWithRecyclerListView.this.dismiss();
@@ -261,7 +261,7 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void postDrawInternal(Canvas canvas, View view) {
-        C3356ActionBar c3356ActionBar;
+        C3361ActionBar c3361ActionBar;
         boolean z = this.showShadow;
         if (z) {
             float f = this.shadowAlpha;
@@ -269,8 +269,8 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
                 this.shadowAlpha = f + 0.10666667f;
                 view.invalidate();
                 this.shadowAlpha = Utilities.clamp(this.shadowAlpha, 1.0f, (float) BitmapDescriptorFactory.HUE_RED);
-                c3356ActionBar = this.actionBar;
-                if (c3356ActionBar != null && c3356ActionBar.getVisibility() == 0 && this.actionBar.getAlpha() != BitmapDescriptorFactory.HUE_RED && this.shadowAlpha != BitmapDescriptorFactory.HUE_RED) {
+                c3361ActionBar = this.actionBar;
+                if (c3361ActionBar != null && c3361ActionBar.getVisibility() == 0 && this.actionBar.getAlpha() != BitmapDescriptorFactory.HUE_RED && this.shadowAlpha != BitmapDescriptorFactory.HUE_RED) {
                     this.headerShadowDrawable.setBounds(0, this.actionBar.getBottom(), view.getMeasuredWidth(), this.actionBar.getBottom() + this.headerShadowDrawable.getIntrinsicHeight());
                     this.headerShadowDrawable.setAlpha((int) (this.actionBar.getAlpha() * 255.0f * this.shadowAlpha));
                     this.headerShadowDrawable.draw(canvas);
@@ -286,8 +286,8 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
             }
         }
         this.shadowAlpha = Utilities.clamp(this.shadowAlpha, 1.0f, (float) BitmapDescriptorFactory.HUE_RED);
-        c3356ActionBar = this.actionBar;
-        if (c3356ActionBar != null) {
+        c3361ActionBar = this.actionBar;
+        if (c3361ActionBar != null) {
             this.headerShadowDrawable.setBounds(0, this.actionBar.getBottom(), view.getMeasuredWidth(), this.actionBar.getBottom() + this.headerShadowDrawable.getIntrinsicHeight());
             this.headerShadowDrawable.setAlpha((int) (this.actionBar.getAlpha() * 255.0f * this.shadowAlpha));
             this.headerShadowDrawable.draw(canvas);
@@ -329,8 +329,8 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
 
     /* JADX INFO: Access modifiers changed from: private */
     public void updateStatusBar() {
-        C3356ActionBar c3356ActionBar = this.actionBar;
-        if (c3356ActionBar != null && c3356ActionBar.getTag() != null) {
+        C3361ActionBar c3361ActionBar = this.actionBar;
+        if (c3361ActionBar != null && c3361ActionBar.getTag() != null) {
             AndroidUtilities.setLightStatusBar(getWindow(), isLightStatusBar());
         } else if (this.baseFragment != null) {
             AndroidUtilities.setLightStatusBar(getWindow(), this.baseFragment.isLightStatusBar());
@@ -338,9 +338,9 @@ public abstract class BottomSheetWithRecyclerListView extends BottomSheet {
     }
 
     public void updateTitle() {
-        C3356ActionBar c3356ActionBar = this.actionBar;
-        if (c3356ActionBar != null) {
-            c3356ActionBar.setTitle(getTitle());
+        C3361ActionBar c3361ActionBar = this.actionBar;
+        if (c3361ActionBar != null) {
+            c3361ActionBar.setTitle(getTitle());
         }
     }
 

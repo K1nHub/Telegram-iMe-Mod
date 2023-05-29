@@ -42,7 +42,7 @@ import java.util.List;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.GestureDetectorFixDoubleTap;
 import org.telegram.p044ui.Components.PipVideoOverlay;
@@ -503,14 +503,14 @@ public class PipVideoOverlay {
         AndroidUtilities.cancelRunOnUIThread(this.progressRunnable);
         if (!isPlaying) {
             if (this.isVideoCompleted) {
-                this.playPauseButton.setImageResource(C3290R.C3292drawable.pip_replay_large);
+                this.playPauseButton.setImageResource(C3295R.C3297drawable.pip_replay_large);
                 return;
             } else {
-                this.playPauseButton.setImageResource(C3290R.C3292drawable.pip_play_large);
+                this.playPauseButton.setImageResource(C3295R.C3297drawable.pip_play_large);
                 return;
             }
         }
-        this.playPauseButton.setImageResource(C3290R.C3292drawable.pip_pause_large);
+        this.playPauseButton.setImageResource(C3295R.C3297drawable.pip_pause_large);
         AndroidUtilities.runOnUIThread(this.progressRunnable, 500L);
     }
 
@@ -638,7 +638,7 @@ public class PipVideoOverlay {
         });
         Context context = ApplicationLoader.applicationContext;
         int scaledTouchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
-        ScaleGestureDetector scaleGestureDetector = new ScaleGestureDetector(context, new ScaleGestureDetector$OnScaleGestureListenerC49003());
+        ScaleGestureDetector scaleGestureDetector = new ScaleGestureDetector(context, new ScaleGestureDetector$OnScaleGestureListenerC49053());
         this.scaleGestureDetector = scaleGestureDetector;
         int i4 = Build.VERSION.SDK_INT;
         if (i4 >= 19) {
@@ -647,7 +647,7 @@ public class PipVideoOverlay {
         if (i4 >= 23) {
             this.scaleGestureDetector.setStylusScaleEnabled(false);
         }
-        this.gestureDetector = new GestureDetectorFixDoubleTap(context, new C49024(scaledTouchSlop));
+        this.gestureDetector = new GestureDetectorFixDoubleTap(context, new C49074(scaledTouchSlop));
         this.contentFrameLayout = new FrameLayout(context) { // from class: org.telegram.ui.Components.PipVideoOverlay.5
             private Path path = new Path();
 
@@ -818,7 +818,7 @@ public class PipVideoOverlay {
         this.controlsView.addView(view2, LayoutHelper.createFrame(-1, -1));
         int m54dp = AndroidUtilities.m54dp(8);
         ImageView imageView = new ImageView(context);
-        imageView.setImageResource(C3290R.C3292drawable.pip_video_close);
+        imageView.setImageResource(C3295R.C3297drawable.pip_video_close);
         int i5 = Theme.key_voipgroup_actionBarItems;
         imageView.setColorFilter(Theme.getColor(i5), PorterDuff.Mode.MULTIPLY);
         int i6 = Theme.key_listSelector;
@@ -827,7 +827,7 @@ public class PipVideoOverlay {
         imageView.setOnClickListener(PipVideoOverlay$$ExternalSyntheticLambda3.INSTANCE);
         this.controlsView.addView(imageView, LayoutHelper.createFrame(38, 38, 5, 0, 4, 4, 0));
         ImageView imageView2 = new ImageView(context);
-        imageView2.setImageResource(C3290R.C3292drawable.pip_video_expand);
+        imageView2.setImageResource(C3295R.C3297drawable.pip_video_expand);
         imageView2.setColorFilter(Theme.getColor(i5), PorterDuff.Mode.MULTIPLY);
         imageView2.setBackground(Theme.createSelectorDrawable(Theme.getColor(i6)));
         imageView2.setPadding(m54dp, m54dp, m54dp, m54dp);
@@ -915,8 +915,8 @@ public class PipVideoOverlay {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.PipVideoOverlay$3 */
     /* loaded from: classes6.dex */
-    public class ScaleGestureDetector$OnScaleGestureListenerC49003 implements ScaleGestureDetector.OnScaleGestureListener {
-        ScaleGestureDetector$OnScaleGestureListenerC49003() {
+    public class ScaleGestureDetector$OnScaleGestureListenerC49053 implements ScaleGestureDetector.OnScaleGestureListener {
+        ScaleGestureDetector$OnScaleGestureListenerC49053() {
         }
 
         @Override // android.view.ScaleGestureDetector.OnScaleGestureListener
@@ -930,7 +930,7 @@ public class PipVideoOverlay {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.PipVideoOverlay$3$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    PipVideoOverlay.ScaleGestureDetector$OnScaleGestureListenerC49003.this.lambda$onScale$0();
+                    PipVideoOverlay.ScaleGestureDetector$OnScaleGestureListenerC49053.this.lambda$onScale$0();
                 }
             });
             float focusX = scaleGestureDetector.getFocusX();
@@ -983,7 +983,7 @@ public class PipVideoOverlay {
                         dynamicAnimation.removeEndListener(this);
                         arrayList.add((SpringAnimation) dynamicAnimation);
                         if (arrayList.size() == 2) {
-                            ScaleGestureDetector$OnScaleGestureListenerC49003.this.updateLayout();
+                            ScaleGestureDetector$OnScaleGestureListenerC49053.this.updateLayout();
                         }
                     }
                 };
@@ -1025,12 +1025,12 @@ public class PipVideoOverlay {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.PipVideoOverlay$4 */
     /* loaded from: classes6.dex */
-    public class C49024 extends GestureDetectorFixDoubleTap.OnGestureListener {
+    public class C49074 extends GestureDetectorFixDoubleTap.OnGestureListener {
         private float startPipX;
         private float startPipY;
         final /* synthetic */ int val$touchSlop;
 
-        C49024(int i) {
+        C49074(int i) {
             this.val$touchSlop = i;
         }
 
@@ -1181,7 +1181,7 @@ public class PipVideoOverlay {
                         PipVideoOverlay.this.pipXSpring.addEndListener(new DynamicAnimation.OnAnimationEndListener() { // from class: org.telegram.ui.Components.PipVideoOverlay$4$$ExternalSyntheticLambda0
                             @Override // androidx.dynamicanimation.animation.DynamicAnimation.OnAnimationEndListener
                             public final void onAnimationEnd(DynamicAnimation dynamicAnimation, boolean z, float f5, float f6) {
-                                PipVideoOverlay.C49024.this.lambda$onScroll$0(rawX, dynamicAnimation, z, f5, f6);
+                                PipVideoOverlay.C49074.this.lambda$onScroll$0(rawX, dynamicAnimation, z, f5, f6);
                             }
                         });
                         PipVideoOverlay.this.pipXSpring.setStartValue(f3).getSpring().setFinalPosition(rawX);

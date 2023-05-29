@@ -16,6 +16,9 @@ public enum TransactionProcessingType {
     BINANCE_SMART_CHAIN(R$string.processing_type_bsc),
     POLYGON(R$string.processing_type_polygon),
     THE_OPEN_NETWORK(R$string.processing_type_ton),
+    FANTOM(R$string.wallet_network_type_fantom),
+    TRON(R$string.wallet_network_type_tron),
+    BITCOIN(R$string.wallet_network_type_bitcoin),
     UNKNOWN(R$string.processing_type_unknown);
     
     public static final Companion Companion = new Companion(null);

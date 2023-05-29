@@ -10,7 +10,7 @@ import android.widget.LinearLayout;
 import android.widget.ScrollView;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -23,23 +23,23 @@ public class SponsoredMessageInfoView extends FrameLayout {
         LinearLayout linearLayout = new LinearLayout(activity);
         linearLayout.setOrientation(1);
         TextView textView = new TextView(activity);
-        textView.setText(LocaleController.getString("SponsoredMessageInfo", C3290R.string.SponsoredMessageInfo));
+        textView.setText(LocaleController.getString("SponsoredMessageInfo", C3295R.string.SponsoredMessageInfo));
         textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         int i = Theme.key_windowBackgroundWhiteBlackText;
         textView.setTextColor(Theme.getColor(i, resourcesProvider));
         textView.setTextSize(1, 20.0f);
         TextView textView2 = new TextView(activity);
-        textView2.setText(LocaleController.getString("SponsoredMessageInfoDescription1", C3290R.string.SponsoredMessageInfoDescription1));
+        textView2.setText(LocaleController.getString("SponsoredMessageInfoDescription1", C3295R.string.SponsoredMessageInfoDescription1));
         textView2.setTextColor(Theme.getColor(i, resourcesProvider));
         textView2.setTextSize(1, 14.0f);
         textView2.setLineSpacing(AndroidUtilities.m54dp(2), 1.0f);
         TextView textView3 = new TextView(activity);
-        textView3.setText(LocaleController.getString("SponsoredMessageInfoDescription2", C3290R.string.SponsoredMessageInfoDescription2));
+        textView3.setText(LocaleController.getString("SponsoredMessageInfoDescription2", C3295R.string.SponsoredMessageInfoDescription2));
         textView3.setTextColor(Theme.getColor(i, resourcesProvider));
         textView3.setTextSize(1, 14.0f);
         textView3.setLineSpacing(AndroidUtilities.m54dp(2), 1.0f);
         TextView textView4 = new TextView(activity);
-        textView4.setText(LocaleController.getString("SponsoredMessageInfoDescription3", C3290R.string.SponsoredMessageInfoDescription3));
+        textView4.setText(LocaleController.getString("SponsoredMessageInfoDescription3", C3295R.string.SponsoredMessageInfoDescription3));
         textView4.setTextColor(Theme.getColor(i, resourcesProvider));
         textView4.setTextSize(1, 14.0f);
         textView4.setLineSpacing(AndroidUtilities.m54dp(2), 1.0f);
@@ -60,17 +60,17 @@ public class SponsoredMessageInfoView extends FrameLayout {
         textView5.setOnClickListener(new View.OnClickListener(this) { // from class: org.telegram.ui.SponsoredMessageInfoView.2
             @Override // android.view.View.OnClickListener
             public void onClick(View view) {
-                Browser.openUrl(activity, LocaleController.getString("SponsoredMessageAlertLearnMoreUrl", C3290R.string.SponsoredMessageAlertLearnMoreUrl));
+                Browser.openUrl(activity, LocaleController.getString("SponsoredMessageAlertLearnMoreUrl", C3295R.string.SponsoredMessageAlertLearnMoreUrl));
             }
         });
         textView5.setPadding(AndroidUtilities.m54dp(12), 0, AndroidUtilities.m54dp(12), 0);
-        textView5.setText(LocaleController.getString("SponsoredMessageAlertLearnMoreUrl", C3290R.string.SponsoredMessageAlertLearnMoreUrl));
+        textView5.setText(LocaleController.getString("SponsoredMessageAlertLearnMoreUrl", C3295R.string.SponsoredMessageAlertLearnMoreUrl));
         textView5.setTextColor(Theme.getColor(i2, resourcesProvider));
         textView5.setBackground(Theme.AdaptiveRipple.filledRect(Theme.getColor(Theme.key_dialogBackground, resourcesProvider), 4.0f));
         textView5.setTextSize(1, 14.0f);
         textView5.setGravity(16);
         TextView textView6 = new TextView(activity);
-        textView6.setText(LocaleController.getString("SponsoredMessageInfoDescription4", C3290R.string.SponsoredMessageInfoDescription4));
+        textView6.setText(LocaleController.getString("SponsoredMessageInfoDescription4", C3295R.string.SponsoredMessageInfoDescription4));
         textView6.setLineSpacing(AndroidUtilities.m54dp(2), 1.0f);
         textView6.setTextColor(Theme.getColor(i, resourcesProvider));
         textView6.setTextSize(1, 14.0f);

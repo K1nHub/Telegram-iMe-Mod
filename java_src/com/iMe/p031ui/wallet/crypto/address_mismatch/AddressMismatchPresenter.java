@@ -15,7 +15,7 @@ import io.reactivex.functions.Consumer;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 /* compiled from: AddressMismatchPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.crypto.address_mismatch.AddressMismatchPresenter */
@@ -41,7 +41,7 @@ public final class AddressMismatchPresenter extends BasePresenter<AddressMismatc
     }
 
     public final DialogModel getDeleteWalletDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3290R.string.wallet_enter_eth_password_delete_wallet_dialog_title), this.resourceManager.getString(C3290R.string.wallet_enter_eth_password_delete_wallet_dialog_description), this.resourceManager.getString(C3290R.string.common_cancel), this.resourceManager.getString(C3290R.string.wallet_enter_eth_password_delete_wallet_dialog_submit_btn));
+        return new DialogModel(this.resourceManager.getString(C3295R.string.wallet_enter_eth_password_delete_wallet_dialog_title), this.resourceManager.getString(C3295R.string.wallet_enter_eth_password_delete_wallet_dialog_description), this.resourceManager.getString(C3295R.string.common_cancel), this.resourceManager.getString(C3295R.string.wallet_enter_eth_password_delete_wallet_dialog_submit_btn));
     }
 
     public static /* synthetic */ void deleteActiveWallet$default(AddressMismatchPresenter addressMismatchPresenter, long j, int i, Object obj) {
@@ -93,6 +93,6 @@ public final class AddressMismatchPresenter extends BasePresenter<AddressMismatc
         RxEventBus rxEventBus = this.rxEventBus;
         Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2115x4b3c3661(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2116x4b3c3662(null))), "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2120x4b3c3661(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2121x4b3c3662(null))), "viewState: BaseView? = n…  onError.invoke()\n    })");
     }
 }

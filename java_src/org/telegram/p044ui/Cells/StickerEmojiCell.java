@@ -9,7 +9,7 @@ import android.view.animation.AccelerateInterpolator;
 import android.widget.FrameLayout;
 import android.widget.TextView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLoader;
@@ -308,7 +308,7 @@ public class StickerEmojiCell extends FrameLayout implements NotificationCenter.
     @Override // android.view.View
     public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
         super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-        String string = LocaleController.getString("AttachSticker", C3290R.string.AttachSticker);
+        String string = LocaleController.getString("AttachSticker", C3295R.string.AttachSticker);
         if (this.sticker != null) {
             int i = 0;
             while (true) {

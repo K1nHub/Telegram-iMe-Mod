@@ -57,7 +57,7 @@ import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.databinding.ForkFragmentWalletHomeBinancePayBinding;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p044ui.ActionBar.AlertDialog;
@@ -380,7 +380,7 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
         Intrinsics.checkNotNullParameter(view, "<anonymous parameter 1>");
         BaseNode baseNode = (BaseNode) this$0.getBinancePayRecycleAdapter().getItem(i);
         if (baseNode instanceof CardButtonItem) {
-            if (((CardButtonItem) baseNode).getId() == C3290R.C3293id.binance_pay_link) {
+            if (((CardButtonItem) baseNode).getId() == C3295R.C3298id.binance_pay_link) {
                 this$0.getPresenter().startBinancePayLoginFlow();
             }
         } else if (baseNode instanceof BinanceBalanceItem) {
@@ -395,20 +395,20 @@ public final class WalletHomeBinancePayFragment extends WalletHomeTabFragment im
         Intrinsics.checkNotNullParameter(view, "view");
         BaseNode baseNode = (BaseNode) this$0.getBinancePayRecycleAdapter().getItem(i);
         int id = view.getId();
-        if (id == C3290R.C3293id.image_copy) {
+        if (id == C3295R.C3298id.image_copy) {
             if (baseNode instanceof BinanceAccountItem) {
                 ContextExtKt.copyToClipboard$default(((BinanceAccountItem) baseNode).getInfo().getId(), null, 2, null);
             }
-        } else if (id == C3290R.C3293id.image_wallet_crypto_tokens_settings) {
+        } else if (id == C3295R.C3298id.image_wallet_crypto_tokens_settings) {
             this$0.presentFragment(WalletHomeCryptoTokensSettingsFragment.Companion.newInstance(new WalletHomeCryptoTokensSettingsFragment.ScreenType.Binance(SelectableMappingKt.mapToSelectableBinanceTokenBalanceInfo(this$0.getPresenter().getBalances()))));
-        } else if (id == C3290R.C3293id.image_wallet_order_tokens) {
+        } else if (id == C3295R.C3298id.image_wallet_order_tokens) {
             this$0.showDialog(DialogsFactoryKt.createSelectTokensOrderTypeDialog(this$0, this$0.getResourceManager(), this$0.getPresenter().getSelectedTokensOrderType(), new Callbacks$Callback1() { // from class: com.iMe.ui.wallet.home.v2.tabs.binancepay.WalletHomeBinancePayFragment$$ExternalSyntheticLambda4
                 @Override // com.iMe.fork.utils.Callbacks$Callback1
                 public final void invoke(Object obj) {
                     WalletHomeBinancePayFragment.setupListeners$lambda$14$lambda$13$lambda$12(WalletHomeBinancePayFragment.this, (TokenOrderType) obj);
                 }
             }));
-        } else if (id == C3290R.C3293id.image_wallet_crypto_eye) {
+        } else if (id == C3295R.C3298id.image_wallet_crypto_eye) {
             this$0.getPresenter().switchHiddenBalance();
         }
     }

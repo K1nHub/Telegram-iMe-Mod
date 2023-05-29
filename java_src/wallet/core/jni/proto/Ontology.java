@@ -360,7 +360,7 @@ public final class Ontology {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C68381 c68381) {
+            /* synthetic */ Builder(C68431 c68431) {
                 this();
             }
 
@@ -585,7 +585,7 @@ public final class Ontology {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68381.f1819xa1df5c61[method.ordinal()]) {
+            switch (C68431.f1819xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -632,7 +632,7 @@ public final class Ontology {
 
     /* renamed from: wallet.core.jni.proto.Ontology$1 */
     /* loaded from: classes6.dex */
-    static /* synthetic */ class C68381 {
+    static /* synthetic */ class C68431 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f1819xa1df5c61;
@@ -755,7 +755,7 @@ public final class Ontology {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C68381 c68381) {
+            /* synthetic */ Builder(C68431 c68431) {
                 this();
             }
 
@@ -783,7 +783,7 @@ public final class Ontology {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68381.f1819xa1df5c61[method.ordinal()]) {
+            switch (C68431.f1819xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

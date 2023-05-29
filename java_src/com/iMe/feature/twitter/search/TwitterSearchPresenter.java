@@ -41,7 +41,7 @@ import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringNumberConversionsKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC$User;
 /* compiled from: TwitterSearchPresenter.kt */
@@ -141,7 +141,7 @@ public final class TwitterSearchPresenter extends BasePresenter<TwitterSearchVie
 
     public final void onInviteClick(TwitterInviteItem twitterInviteItem) {
         Intrinsics.checkNotNullParameter(twitterInviteItem, "twitterInviteItem");
-        ((TwitterSearchView) getViewState()).showInviteConfirmationDialog(new DialogModel(this.resourceManager.getString(C3290R.string.twitter_search_invite_confirmation_title), this.resourceManager.getString(C3290R.string.twitter_search_invite_confirmation_description, twitterInviteItem.getNickname()), LocaleController.getString("Cancel", C3290R.string.Cancel), LocaleController.getString("Send", C3290R.string.Send)), twitterInviteItem.getId());
+        ((TwitterSearchView) getViewState()).showInviteConfirmationDialog(new DialogModel(this.resourceManager.getString(C3295R.string.twitter_search_invite_confirmation_title), this.resourceManager.getString(C3295R.string.twitter_search_invite_confirmation_description, twitterInviteItem.getNickname()), LocaleController.getString("Cancel", C3295R.string.Cancel), LocaleController.getString("Send", C3295R.string.Send)), twitterInviteItem.getId());
     }
 
     public final void sendInvite(long j) {

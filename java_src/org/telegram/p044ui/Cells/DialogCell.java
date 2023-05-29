@@ -37,7 +37,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Stack;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.ChatThemeController;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
@@ -924,7 +924,7 @@ public class DialogCell extends BaseCell {
                 } else if (tLRPC$User == null) {
                     continue;
                 } else if (UserObject.isDeleted(tLRPC$User)) {
-                    replace = LocaleController.getString("HiddenName", C3290R.string.HiddenName);
+                    replace = LocaleController.getString("HiddenName", C3295R.string.HiddenName);
                 } else {
                     replace = ContactsController.formatName(tLRPC$User.first_name, tLRPC$User.last_name).replace('\n', ' ');
                 }
@@ -1194,7 +1194,7 @@ public class DialogCell extends BaseCell {
                 return "no created topics";
             } else {
                 MessagesController.getInstance(this.currentAccount).getTopicsController().preloadTopics(this.chat.f1433id);
-                return LocaleController.getString("Loading", C3290R.string.Loading);
+                return LocaleController.getString("Loading", C3295R.string.Loading);
             }
         }
         return null;
@@ -1844,7 +1844,7 @@ public class DialogCell extends BaseCell {
     @Override // android.view.View
     public boolean performAccessibilityAction(int i, Bundle bundle) {
         DialogsActivity dialogsActivity;
-        if (i == C3290R.C3293id.acc_action_chat_preview && (dialogsActivity = this.parentFragment) != null) {
+        if (i == C3295R.C3298id.acc_action_chat_preview && (dialogsActivity = this.parentFragment) != null) {
             dialogsActivity.showChatPreview(this);
             return true;
         }
@@ -1860,7 +1860,7 @@ public class DialogCell extends BaseCell {
             accessibilityNodeInfo.addAction(16);
             accessibilityNodeInfo.addAction(32);
             if (!isFolderCell() && this.parentFragment != null && Build.VERSION.SDK_INT >= 21) {
-                accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(C3290R.C3293id.acc_action_chat_preview, LocaleController.getString("AccActionChatPreview", C3290R.string.AccActionChatPreview)));
+                accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(C3295R.C3298id.acc_action_chat_preview, LocaleController.getString("AccActionChatPreview", C3295R.string.AccActionChatPreview)));
             }
         }
         CheckBox2 checkBox2 = this.checkBox;
@@ -1880,15 +1880,15 @@ public class DialogCell extends BaseCell {
         StringBuilder sb = new StringBuilder();
         int i = this.currentDialogFolderId;
         if (i == 1 || i == 2) {
-            sb.append(i == 2 ? LocaleController.getInternalString(C3290R.string.hidden_chats_title) : LocaleController.getString("ArchivedChats", C3290R.string.ArchivedChats));
+            sb.append(i == 2 ? LocaleController.getInternalString(C3295R.string.hidden_chats_title) : LocaleController.getString("ArchivedChats", C3295R.string.ArchivedChats));
             sb.append(". ");
         } else {
             if (this.encryptedChat != null) {
-                sb.append(LocaleController.getString("AccDescrSecretChat", C3290R.string.AccDescrSecretChat));
+                sb.append(LocaleController.getString("AccDescrSecretChat", C3295R.string.AccDescrSecretChat));
                 sb.append(". ");
             }
             if (this.isTopic && this.forumTopic != null) {
-                sb.append(LocaleController.getString("AccDescrTopic", C3290R.string.AccDescrTopic));
+                sb.append(LocaleController.getString("AccDescrTopic", C3295R.string.AccDescrTopic));
                 sb.append(". ");
                 sb.append(this.forumTopic.title);
                 sb.append(". ");
@@ -1896,15 +1896,15 @@ public class DialogCell extends BaseCell {
                 TLRPC$User tLRPC$User = this.user;
                 if (tLRPC$User != null) {
                     if (UserObject.isReplyUser(tLRPC$User)) {
-                        sb.append(LocaleController.getString("RepliesTitle", C3290R.string.RepliesTitle));
+                        sb.append(LocaleController.getString("RepliesTitle", C3295R.string.RepliesTitle));
                     } else {
                         if (this.user.bot) {
-                            sb.append(LocaleController.getString("Bot", C3290R.string.Bot));
+                            sb.append(LocaleController.getString("Bot", C3295R.string.Bot));
                             sb.append(". ");
                         }
                         TLRPC$User tLRPC$User2 = this.user;
                         if (tLRPC$User2.self) {
-                            sb.append(LocaleController.getString("SavedMessages", C3290R.string.SavedMessages));
+                            sb.append(LocaleController.getString("SavedMessages", C3295R.string.SavedMessages));
                         } else {
                             sb.append(ContactsController.formatName(tLRPC$User2.first_name, tLRPC$User2.last_name));
                         }
@@ -1914,9 +1914,9 @@ public class DialogCell extends BaseCell {
                     TLRPC$Chat tLRPC$Chat = this.chat;
                     if (tLRPC$Chat != null) {
                         if (tLRPC$Chat.broadcast) {
-                            sb.append(LocaleController.getString("AccDescrChannel", C3290R.string.AccDescrChannel));
+                            sb.append(LocaleController.getString("AccDescrChannel", C3295R.string.AccDescrChannel));
                         } else {
-                            sb.append(LocaleController.getString("AccDescrGroup", C3290R.string.AccDescrGroup));
+                            sb.append(LocaleController.getString("AccDescrGroup", C3295R.string.AccDescrGroup));
                         }
                         sb.append(". ");
                         sb.append(this.chat.title);
@@ -1926,15 +1926,15 @@ public class DialogCell extends BaseCell {
             }
         }
         if (this.drawVerified) {
-            sb.append(LocaleController.getString("AccDescrVerified", C3290R.string.AccDescrVerified));
+            sb.append(LocaleController.getString("AccDescrVerified", C3295R.string.AccDescrVerified));
             sb.append(". ");
         }
         if (this.dialogMuted) {
-            sb.append(LocaleController.getString("AccDescrNotificationsMuted", C3290R.string.AccDescrNotificationsMuted));
+            sb.append(LocaleController.getString("AccDescrNotificationsMuted", C3295R.string.AccDescrNotificationsMuted));
             sb.append(". ");
         }
         if (isOnline()) {
-            sb.append(LocaleController.getString("AccDescrUserOnline", C3290R.string.AccDescrUserOnline));
+            sb.append(LocaleController.getString("AccDescrUserOnline", C3295R.string.AccDescrUserOnline));
             sb.append(". ");
         }
         int i2 = this.unreadCount;
@@ -1948,7 +1948,7 @@ public class DialogCell extends BaseCell {
             sb.append(". ");
         }
         if (this.reactionMentionCount > 0) {
-            sb.append(LocaleController.getString("AccDescrMentionReaction", C3290R.string.AccDescrMentionReaction));
+            sb.append(LocaleController.getString("AccDescrMentionReaction", C3295R.string.AccDescrMentionReaction));
             sb.append(". ");
         }
         MessageObject messageObject = this.message;
@@ -1963,9 +1963,9 @@ public class DialogCell extends BaseCell {
         }
         String formatDateAudio = LocaleController.formatDateAudio(i4, true);
         if (this.message.isOut()) {
-            sb.append(LocaleController.formatString("AccDescrSentDate", C3290R.string.AccDescrSentDate, formatDateAudio));
+            sb.append(LocaleController.formatString("AccDescrSentDate", C3295R.string.AccDescrSentDate, formatDateAudio));
         } else {
-            sb.append(LocaleController.formatString("AccDescrReceivedDate", C3290R.string.AccDescrReceivedDate, formatDateAudio));
+            sb.append(LocaleController.formatString("AccDescrReceivedDate", C3295R.string.AccDescrReceivedDate, formatDateAudio));
         }
         sb.append(". ");
         if (this.chat != null && !this.message.isOut() && this.message.isFromUser() && this.message.messageOwner.action == null && (user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.message.messageOwner.from_id.user_id))) != null) {
@@ -2125,7 +2125,7 @@ public class DialogCell extends BaseCell {
             chat = MessagesController.getInstance(this.currentAccount).getChat(Long.valueOf(-fromChatId));
         }
         if (this.message.isOutOwner()) {
-            return LocaleController.getString("FromYou", C3290R.string.FromYou);
+            return LocaleController.getString("FromYou", C3295R.string.FromYou);
         }
         MessageObject messageObject2 = this.message;
         if (messageObject2 != null && (tLRPC$Message2 = messageObject2.messageOwner) != null && (tLRPC$Message2.from_id instanceof TLRPC$TL_peerUser) && (user = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(this.message.messageOwner.from_id.user_id))) != null) {
@@ -2137,7 +2137,7 @@ public class DialogCell extends BaseCell {
                 return (chat == null || (str = chat.title) == null) ? "DELETED" : str.replace("\n", "");
             } else if (this.useForceThreeLines || SharedConfig.useThreeLinesLayout) {
                 if (UserObject.isDeleted(tLRPC$User)) {
-                    return LocaleController.getString("HiddenName", C3290R.string.HiddenName);
+                    return LocaleController.getString("HiddenName", C3295R.string.HiddenName);
                 }
                 return ContactsController.formatName(tLRPC$User.first_name, tLRPC$User.last_name).replace("\n", "");
             } else {

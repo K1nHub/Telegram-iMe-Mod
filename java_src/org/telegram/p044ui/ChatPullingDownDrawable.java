@@ -20,10 +20,10 @@ import com.iMe.fork.controller.ToolsController;
 import com.iMe.fork.enums.DialogType;
 import com.iMe.fork.enums.SortingFilter;
 import java.util.ArrayList;
-import org.telegram.PhoneFormat.C3207PhoneFormat;
+import org.telegram.PhoneFormat.C3212PhoneFormat;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.ImageLocation;
@@ -166,12 +166,12 @@ public class ChatPullingDownDrawable implements NotificationCenter.NotificationC
             this.circleRadius = AndroidUtilities.m54dp(56) / 2.0f;
             this.lastWidth = i;
             TLRPC$Chat tLRPC$Chat = this.nextChat;
-            String string3 = tLRPC$Chat != null ? tLRPC$Chat.title : LocaleController.getString("SwipeToGoNextChannelEnd", C3290R.string.SwipeToGoNextChannelEnd);
+            String string3 = tLRPC$Chat != null ? tLRPC$Chat.title : LocaleController.getString("SwipeToGoNextChannelEnd", C3295R.string.SwipeToGoNextChannelEnd);
             if (this.nextUser != null) {
                 ContactsController contactsController = ContactsController.getInstance(this.currentAccount);
                 if (contactsController.contactsDict.get(Long.valueOf(this.nextUser.f1574id)) == null && ((contactsController.contactsDict.size() != 0 || !contactsController.isLoadingContacts()) && !TextUtils.isEmpty(this.nextUser.phone))) {
-                    C3207PhoneFormat c3207PhoneFormat = C3207PhoneFormat.getInstance();
-                    string3 = c3207PhoneFormat.format("+" + this.nextUser.phone);
+                    C3212PhoneFormat c3212PhoneFormat = C3212PhoneFormat.getInstance();
+                    string3 = c3212PhoneFormat.format("+" + this.nextUser.phone);
                 } else {
                     string3 = UserObject.getUserName(this.nextUser);
                 }
@@ -185,19 +185,19 @@ public class ChatPullingDownDrawable implements NotificationCenter.NotificationC
             this.chatNameLayout = new StaticLayout(str, this.textPaint, this.chatNameWidth, Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
             boolean z = this.drawFolderBackground;
             if (z && (i2 = this.dialogFolderId) != this.folderId && i2 != 0) {
-                string = LocaleController.getString("SwipeToGoNextArchive", C3290R.string.SwipeToGoNextArchive);
-                string2 = LocaleController.getString("ReleaseToGoNextArchive", C3290R.string.ReleaseToGoNextArchive);
+                string = LocaleController.getString("SwipeToGoNextArchive", C3295R.string.SwipeToGoNextArchive);
+                string2 = LocaleController.getString("ReleaseToGoNextArchive", C3295R.string.ReleaseToGoNextArchive);
                 DialogType dialogType2 = this.currentDialogType;
                 if (dialogType2 != DialogType.CHANNEL) {
                     string = LocaleController.getInternalString(dialogType2.getPullToGoToUnreadArchivedDialogsResId());
                     string2 = LocaleController.getInternalString(this.currentDialogType.getReleaseToGoToUnreadArchivedDialogsResId());
                 }
             } else if (z) {
-                string = LocaleController.getString("SwipeToGoNextFolder", C3290R.string.SwipeToGoNextFolder);
-                string2 = LocaleController.getString("ReleaseToGoNextFolder", C3290R.string.ReleaseToGoNextFolder);
+                string = LocaleController.getString("SwipeToGoNextFolder", C3295R.string.SwipeToGoNextFolder);
+                string2 = LocaleController.getString("ReleaseToGoNextFolder", C3295R.string.ReleaseToGoNextFolder);
             } else {
-                string = LocaleController.getString("SwipeToGoNextChannel", C3290R.string.SwipeToGoNextChannel);
-                string2 = LocaleController.getString("ReleaseToGoNextChannel", C3290R.string.ReleaseToGoNextChannel);
+                string = LocaleController.getString("SwipeToGoNextChannel", C3295R.string.SwipeToGoNextChannel);
+                string2 = LocaleController.getString("ReleaseToGoNextChannel", C3295R.string.ReleaseToGoNextChannel);
                 DialogType dialogType3 = this.currentDialogType;
                 if (dialogType3 != DialogType.CHANNEL) {
                     string = LocaleController.getInternalString(dialogType3.getPullToGoToNextUnreadDialogResId());

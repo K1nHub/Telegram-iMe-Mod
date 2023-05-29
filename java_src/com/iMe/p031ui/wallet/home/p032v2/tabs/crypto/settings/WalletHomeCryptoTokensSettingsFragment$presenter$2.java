@@ -24,11 +24,11 @@ final class WalletHomeCryptoTokensSettingsFragment$presenter$2 extends Lambda im
     /* compiled from: WalletHomeCryptoTokensSettingsFragment.kt */
     /* renamed from: com.iMe.ui.wallet.home.v2.tabs.crypto.settings.WalletHomeCryptoTokensSettingsFragment$presenter$2$1 */
     /* loaded from: classes4.dex */
-    public static final class C23031 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C23081 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ WalletHomeCryptoTokensSettingsFragment this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C23031(WalletHomeCryptoTokensSettingsFragment walletHomeCryptoTokensSettingsFragment) {
+        C23081(WalletHomeCryptoTokensSettingsFragment walletHomeCryptoTokensSettingsFragment) {
             super(0);
             this.this$0 = walletHomeCryptoTokensSettingsFragment;
         }
@@ -44,7 +44,7 @@ final class WalletHomeCryptoTokensSettingsFragment$presenter$2 extends Lambda im
     public final WalletHomeCryptoTokensSettingsPresenter invoke() {
         Lazy lazy;
         WalletHomeCryptoTokensSettingsFragment walletHomeCryptoTokensSettingsFragment = this.this$0;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2302x3f87ce38(walletHomeCryptoTokensSettingsFragment, null, new C23031(walletHomeCryptoTokensSettingsFragment)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2307x3f87ce38(walletHomeCryptoTokensSettingsFragment, null, new C23081(walletHomeCryptoTokensSettingsFragment)));
         return (WalletHomeCryptoTokensSettingsPresenter) lazy.getValue();
     }
 }

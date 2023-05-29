@@ -39,21 +39,21 @@ public final class GlTexture implements GlBindable {
         if (num != null) {
             intValue = num.intValue();
         } else {
-            int[] m1579constructorimpl = UIntArray.m1579constructorimpl(1);
-            int m1582getSizeimpl = UIntArray.m1582getSizeimpl(m1579constructorimpl);
-            int[] iArr = new int[m1582getSizeimpl];
-            for (int i3 = 0; i3 < m1582getSizeimpl; i3++) {
-                iArr[i3] = UIntArray.m1581getpVg5ArA(m1579constructorimpl, i3);
+            int[] m1581constructorimpl = UIntArray.m1581constructorimpl(1);
+            int m1584getSizeimpl = UIntArray.m1584getSizeimpl(m1581constructorimpl);
+            int[] iArr = new int[m1584getSizeimpl];
+            for (int i3 = 0; i3 < m1584getSizeimpl; i3++) {
+                iArr[i3] = UIntArray.m1583getpVg5ArA(m1581constructorimpl, i3);
             }
             GLES20.glGenTextures(1, iArr, 0);
             Unit unit = Unit.INSTANCE;
-            UIntArray.m1583setVXSXFK8(m1579constructorimpl, 0, UInt.m1578constructorimpl(iArr[0]));
+            UIntArray.m1585setVXSXFK8(m1581constructorimpl, 0, UInt.m1580constructorimpl(iArr[0]));
             Egloo.checkGlError("glGenTextures");
-            intValue = UIntArray.m1581getpVg5ArA(m1579constructorimpl, 0);
+            intValue = UIntArray.m1583getpVg5ArA(m1581constructorimpl, 0);
         }
         this.f386id = intValue;
         if (num == null) {
-            GlBindableKt.use(this, new C24461(num5));
+            GlBindableKt.use(this, new C24511(num5));
         }
     }
 
@@ -92,11 +92,11 @@ public final class GlTexture implements GlBindable {
     /* compiled from: GlTexture.kt */
     /* renamed from: com.otaliastudios.opengl.texture.GlTexture$1 */
     /* loaded from: classes4.dex */
-    static final class C24461 extends Lambda implements Function0<Unit> {
+    static final class C24511 extends Lambda implements Function0<Unit> {
         final /* synthetic */ Integer $internalFormat;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C24461(Integer num) {
+        C24511(Integer num) {
             super(0);
             this.$internalFormat = num;
         }
@@ -110,39 +110,39 @@ public final class GlTexture implements GlBindable {
         /* renamed from: invoke  reason: avoid collision after fix types in other method */
         public final void invoke2() {
             if (GlTexture.this.getWidth() != null && GlTexture.this.getHeight() != null && GlTexture.this.getFormat() != null && this.$internalFormat != null && GlTexture.this.getType() != null) {
-                GLES20.glTexImage2D(UInt.m1578constructorimpl(GlTexture.this.getTarget()), 0, this.$internalFormat.intValue(), GlTexture.this.getWidth().intValue(), GlTexture.this.getHeight().intValue(), 0, UInt.m1578constructorimpl(GlTexture.this.getFormat().intValue()), UInt.m1578constructorimpl(GlTexture.this.getType().intValue()), null);
+                GLES20.glTexImage2D(UInt.m1580constructorimpl(GlTexture.this.getTarget()), 0, this.$internalFormat.intValue(), GlTexture.this.getWidth().intValue(), GlTexture.this.getHeight().intValue(), 0, UInt.m1580constructorimpl(GlTexture.this.getFormat().intValue()), UInt.m1580constructorimpl(GlTexture.this.getType().intValue()), null);
             }
-            GLES20.glTexParameterf(UInt.m1578constructorimpl(GlTexture.this.getTarget()), GlKt.getGL_TEXTURE_MIN_FILTER(), GlKt.getGL_NEAREST());
-            GLES20.glTexParameterf(UInt.m1578constructorimpl(GlTexture.this.getTarget()), GlKt.getGL_TEXTURE_MAG_FILTER(), GlKt.getGL_LINEAR());
-            GLES20.glTexParameteri(UInt.m1578constructorimpl(GlTexture.this.getTarget()), GlKt.getGL_TEXTURE_WRAP_S(), GlKt.getGL_CLAMP_TO_EDGE());
-            GLES20.glTexParameteri(UInt.m1578constructorimpl(GlTexture.this.getTarget()), GlKt.getGL_TEXTURE_WRAP_T(), GlKt.getGL_CLAMP_TO_EDGE());
+            GLES20.glTexParameterf(UInt.m1580constructorimpl(GlTexture.this.getTarget()), GlKt.getGL_TEXTURE_MIN_FILTER(), GlKt.getGL_NEAREST());
+            GLES20.glTexParameterf(UInt.m1580constructorimpl(GlTexture.this.getTarget()), GlKt.getGL_TEXTURE_MAG_FILTER(), GlKt.getGL_LINEAR());
+            GLES20.glTexParameteri(UInt.m1580constructorimpl(GlTexture.this.getTarget()), GlKt.getGL_TEXTURE_WRAP_S(), GlKt.getGL_CLAMP_TO_EDGE());
+            GLES20.glTexParameteri(UInt.m1580constructorimpl(GlTexture.this.getTarget()), GlKt.getGL_TEXTURE_WRAP_T(), GlKt.getGL_CLAMP_TO_EDGE());
             Egloo.checkGlError("glTexParameter");
         }
     }
 
     @Override // com.otaliastudios.opengl.core.GlBindable
     public void bind() {
-        GLES20.glActiveTexture(UInt.m1578constructorimpl(this.unit));
-        GLES20.glBindTexture(UInt.m1578constructorimpl(this.target), UInt.m1578constructorimpl(this.f386id));
+        GLES20.glActiveTexture(UInt.m1580constructorimpl(this.unit));
+        GLES20.glBindTexture(UInt.m1580constructorimpl(this.target), UInt.m1580constructorimpl(this.f386id));
         Egloo.checkGlError("bind");
     }
 
     @Override // com.otaliastudios.opengl.core.GlBindable
     public void unbind() {
-        GLES20.glBindTexture(UInt.m1578constructorimpl(this.target), UInt.m1578constructorimpl(0));
+        GLES20.glBindTexture(UInt.m1580constructorimpl(this.target), UInt.m1580constructorimpl(0));
         GLES20.glActiveTexture(GlKt.getGL_TEXTURE0());
         Egloo.checkGlError("unbind");
     }
 
     public final void release() {
-        int[] iArr = {UInt.m1578constructorimpl(this.f386id)};
-        int m1582getSizeimpl = UIntArray.m1582getSizeimpl(iArr);
-        int[] iArr2 = new int[m1582getSizeimpl];
-        for (int i = 0; i < m1582getSizeimpl; i++) {
-            iArr2[i] = UIntArray.m1581getpVg5ArA(iArr, i);
+        int[] iArr = {UInt.m1580constructorimpl(this.f386id)};
+        int m1584getSizeimpl = UIntArray.m1584getSizeimpl(iArr);
+        int[] iArr2 = new int[m1584getSizeimpl];
+        for (int i = 0; i < m1584getSizeimpl; i++) {
+            iArr2[i] = UIntArray.m1583getpVg5ArA(iArr, i);
         }
         GLES20.glDeleteTextures(1, iArr2, 0);
         Unit unit = Unit.INSTANCE;
-        UIntArray.m1583setVXSXFK8(iArr, 0, UInt.m1578constructorimpl(iArr2[0]));
+        UIntArray.m1585setVXSXFK8(iArr, 0, UInt.m1580constructorimpl(iArr2[0]));
     }
 }

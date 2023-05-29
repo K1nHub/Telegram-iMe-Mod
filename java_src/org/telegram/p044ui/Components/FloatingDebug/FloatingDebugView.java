@@ -39,7 +39,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.SharedConfig;
@@ -218,7 +218,7 @@ public class FloatingDebugView extends FrameLayout implements NotificationCenter
             }
         };
         ImageView imageView = new ImageView(context);
-        imageView.setImageResource(C3290R.C3292drawable.device_phone_android);
+        imageView.setImageResource(C3295R.C3297drawable.device_phone_android);
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_actionIcon), PorterDuff.Mode.SRC_IN));
         this.floatingButtonContainer.addView(imageView);
         this.floatingButtonContainer.setVisibility(8);
@@ -230,7 +230,7 @@ public class FloatingDebugView extends FrameLayout implements NotificationCenter
         TextView textView = new TextView(context);
         this.titleView = textView;
         textView.setTextSize(1, 20.0f);
-        this.titleView.setText(LocaleController.getString(C3290R.string.DebugMenu));
+        this.titleView.setText(LocaleController.getString(C3295R.string.DebugMenu));
         this.titleView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.titleView.setPadding(AndroidUtilities.m54dp(24), AndroidUtilities.m54dp(19), AndroidUtilities.m54dp(24), AndroidUtilities.m54dp(19));
         this.bigLayout.addView(this.titleView, LayoutHelper.createLinear(-1, -2));
@@ -246,7 +246,7 @@ public class FloatingDebugView extends FrameLayout implements NotificationCenter
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter
             public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
                 View headerCell;
-                int i2 = C46234.f1658xe4e639ed[FloatingDebugController.DebugItemType.values()[i].ordinal()];
+                int i2 = C46284.f1658xe4e639ed[FloatingDebugController.DebugItemType.values()[i].ordinal()];
                 if (i2 == 2) {
                     headerCell = new HeaderCell(context);
                 } else if (i2 != 3) {
@@ -261,7 +261,7 @@ public class FloatingDebugView extends FrameLayout implements NotificationCenter
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter
             public void onBindViewHolder(RecyclerView.ViewHolder viewHolder, int i) {
                 FloatingDebugController.DebugItem debugItem = (FloatingDebugController.DebugItem) FloatingDebugView.this.debugItems.get(i);
-                int i2 = C46234.f1658xe4e639ed[debugItem.type.ordinal()];
+                int i2 = C46284.f1658xe4e639ed[debugItem.type.ordinal()];
                 if (i2 == 1) {
                     AlertDialog.AlertDialogCell alertDialogCell = (AlertDialog.AlertDialogCell) viewHolder.itemView;
                     alertDialogCell.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
@@ -307,7 +307,7 @@ public class FloatingDebugView extends FrameLayout implements NotificationCenter
 
     /* renamed from: org.telegram.ui.Components.FloatingDebug.FloatingDebugView$4 */
     /* loaded from: classes6.dex */
-    static /* synthetic */ class C46234 {
+    static /* synthetic */ class C46284 {
 
         /* renamed from: $SwitchMap$org$telegram$ui$Components$FloatingDebug$FloatingDebugController$DebugItemType */
         static final /* synthetic */ int[] f1658xe4e639ed;
@@ -362,12 +362,12 @@ public class FloatingDebugView extends FrameLayout implements NotificationCenter
 
     private void updateDrawables() {
         Drawable createSimpleSelectorCircleDrawable = Theme.createSimpleSelectorCircleDrawable(AndroidUtilities.m54dp(56), Theme.getColor(Theme.key_chats_actionBackground), Theme.getColor(Theme.key_chats_actionPressedBackground));
-        Drawable mutate = getResources().getDrawable(C3290R.C3292drawable.floating_shadow).mutate();
+        Drawable mutate = getResources().getDrawable(C3295R.C3297drawable.floating_shadow).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(-16777216, PorterDuff.Mode.MULTIPLY));
         CombinedDrawable combinedDrawable = new CombinedDrawable(mutate, createSimpleSelectorCircleDrawable, 0, 0);
         combinedDrawable.setIconSize(AndroidUtilities.m54dp(56), AndroidUtilities.m54dp(56));
         this.floatingButtonBackground = combinedDrawable;
-        Drawable drawable = getResources().getDrawable(C3290R.C3292drawable.popup_fixed_alert3);
+        Drawable drawable = getResources().getDrawable(C3295R.C3297drawable.popup_fixed_alert3);
         drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_dialogBackground), PorterDuff.Mode.MULTIPLY));
         this.bigLayout.setBackground(drawable);
         this.titleView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
@@ -509,9 +509,9 @@ public class FloatingDebugView extends FrameLayout implements NotificationCenter
 
     private List<FloatingDebugController.DebugItem> getBuiltInDebugItems() {
         ArrayList arrayList = new ArrayList();
-        arrayList.add(new FloatingDebugController.DebugItem(LocaleController.getString(C3290R.string.DebugGeneral)));
+        arrayList.add(new FloatingDebugController.DebugItem(LocaleController.getString(C3295R.string.DebugGeneral)));
         if (Build.VERSION.SDK_INT >= 19) {
-            arrayList.add(new FloatingDebugController.DebugItem(LocaleController.getString(SharedConfig.debugWebView ? C3290R.string.DebugMenuDisableWebViewDebug : C3290R.string.DebugMenuEnableWebViewDebug), new Runnable() { // from class: org.telegram.ui.Components.FloatingDebug.FloatingDebugView$$ExternalSyntheticLambda6
+            arrayList.add(new FloatingDebugController.DebugItem(LocaleController.getString(SharedConfig.debugWebView ? C3295R.string.DebugMenuDisableWebViewDebug : C3295R.string.DebugMenuEnableWebViewDebug), new Runnable() { // from class: org.telegram.ui.Components.FloatingDebug.FloatingDebugView$$ExternalSyntheticLambda6
                 @Override // java.lang.Runnable
                 public final void run() {
                     FloatingDebugView.this.lambda$getBuiltInDebugItems$4();
@@ -519,7 +519,7 @@ public class FloatingDebugView extends FrameLayout implements NotificationCenter
             }));
         }
         arrayList.add(new FloatingDebugController.DebugItem(Theme.isCurrentThemeDark() ? "Switch to day theme" : "Switch to dark theme", FloatingDebugView$$ExternalSyntheticLambda7.INSTANCE));
-        arrayList.add(new FloatingDebugController.DebugItem(LocaleController.getString(C3290R.string.DebugSendLogs), new Runnable() { // from class: org.telegram.ui.Components.FloatingDebug.FloatingDebugView$$ExternalSyntheticLambda5
+        arrayList.add(new FloatingDebugController.DebugItem(LocaleController.getString(C3295R.string.DebugSendLogs), new Runnable() { // from class: org.telegram.ui.Components.FloatingDebug.FloatingDebugView$$ExternalSyntheticLambda5
             @Override // java.lang.Runnable
             public final void run() {
                 FloatingDebugView.this.lambda$getBuiltInDebugItems$7();
@@ -531,7 +531,7 @@ public class FloatingDebugView extends FrameLayout implements NotificationCenter
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$getBuiltInDebugItems$4() {
         SharedConfig.toggleDebugWebView();
-        Toast.makeText(getContext(), LocaleController.getString(SharedConfig.debugWebView ? C3290R.string.DebugMenuWebViewDebugEnabled : C3290R.string.DebugMenuWebViewDebugDisabled), 0).show();
+        Toast.makeText(getContext(), LocaleController.getString(SharedConfig.debugWebView ? C3295R.string.DebugMenuWebViewDebugEnabled : C3295R.string.DebugMenuWebViewDebugDisabled), 0).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */

@@ -40,7 +40,7 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
     }
 
     /* renamed from: onCancelIdempotentList-w-w6eGU  reason: not valid java name */
-    protected void mo1585onCancelIdempotentListww6eGU(Object obj, Closed<?> closed) {
+    protected void mo1587onCancelIdempotentListww6eGU(Object obj, Closed<?> closed) {
         if (obj == null) {
             return;
         }
@@ -83,10 +83,10 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
                     Closed closed = (Closed) pollInternal;
                     if (closed.closeCause == null) {
                         Result.Companion companion = Result.Companion;
-                        orCreateCancellableContinuation.resumeWith(Result.m1574constructorimpl(Boxing.boxBoolean(false)));
+                        orCreateCancellableContinuation.resumeWith(Result.m1576constructorimpl(Boxing.boxBoolean(false)));
                     } else {
                         Result.Companion companion2 = Result.Companion;
-                        orCreateCancellableContinuation.resumeWith(Result.m1574constructorimpl(ResultKt.createFailure(closed.getReceiveException())));
+                        orCreateCancellableContinuation.resumeWith(Result.m1576constructorimpl(ResultKt.createFailure(closed.getReceiveException())));
                     }
                 } else if (pollInternal != AbstractChannelKt.POLL_FAILED) {
                     Boolean boxBoolean = Boxing.boxBoolean(true);
@@ -269,7 +269,7 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
         Code decompiled incorrectly, please refer to instructions dump.
         To view partially-correct add '--show-bad-code' argument
     */
-    public final java.lang.Object mo1586receiveCatchingJP2dKIU(kotlin.coroutines.Continuation<? super kotlinx.coroutines.channels.ChannelResult<? extends E>> r5) {
+    public final java.lang.Object mo1588receiveCatchingJP2dKIU(kotlin.coroutines.Continuation<? super kotlinx.coroutines.channels.ChannelResult<? extends E>> r5) {
         /*
             r4 = this;
             boolean r0 = r5 instanceof kotlinx.coroutines.channels.AbstractChannel$receiveCatching$1
@@ -310,11 +310,11 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
             kotlinx.coroutines.channels.ChannelResult$Companion r0 = kotlinx.coroutines.channels.ChannelResult.Companion
             kotlinx.coroutines.channels.Closed r5 = (kotlinx.coroutines.channels.Closed) r5
             java.lang.Throwable r5 = r5.closeCause
-            java.lang.Object r5 = r0.m1597closedJP2dKIU(r5)
+            java.lang.Object r5 = r0.m1599closedJP2dKIU(r5)
             goto L51
         L4b:
             kotlinx.coroutines.channels.ChannelResult$Companion r0 = kotlinx.coroutines.channels.ChannelResult.Companion
-            java.lang.Object r5 = r0.m1599successJP2dKIU(r5)
+            java.lang.Object r5 = r0.m1601successJP2dKIU(r5)
         L51:
             return r5
         L52:
@@ -324,10 +324,10 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
             return r1
         L5b:
             kotlinx.coroutines.channels.ChannelResult r5 = (kotlinx.coroutines.channels.ChannelResult) r5
-            java.lang.Object r5 = r5.m1596unboximpl()
+            java.lang.Object r5 = r5.m1598unboximpl()
             return r5
         */
-        throw new UnsupportedOperationException("Method not decompiled: kotlinx.coroutines.channels.AbstractChannel.mo1586receiveCatchingJP2dKIU(kotlin.coroutines.Continuation):java.lang.Object");
+        throw new UnsupportedOperationException("Method not decompiled: kotlinx.coroutines.channels.AbstractChannel.mo1588receiveCatchingJP2dKIU(kotlin.coroutines.Continuation):java.lang.Object");
     }
 
     @Override // kotlinx.coroutines.channels.ReceiveChannel
@@ -353,20 +353,20 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
         if (closedForSend == null) {
             throw new IllegalStateException("Cannot happen".toString());
         }
-        Object m1601constructorimpl$default = InlineList.m1601constructorimpl$default(null, 1, null);
+        Object m1603constructorimpl$default = InlineList.m1603constructorimpl$default(null, 1, null);
         while (true) {
             LockFreeLinkedListNode prevNode = closedForSend.getPrevNode();
             if (!(prevNode instanceof LockFreeLinkedListHead)) {
                 if (DebugKt.getASSERTIONS_ENABLED() && !(prevNode instanceof Send)) {
                     throw new AssertionError();
                 }
-                if (!prevNode.mo1603remove()) {
+                if (!prevNode.mo1605remove()) {
                     prevNode.helpRemove();
                 } else {
-                    m1601constructorimpl$default = InlineList.m1602plusFjFbRPM(m1601constructorimpl$default, (Send) prevNode);
+                    m1603constructorimpl$default = InlineList.m1604plusFjFbRPM(m1603constructorimpl$default, (Send) prevNode);
                 }
             } else {
-                mo1585onCancelIdempotentListww6eGU(m1601constructorimpl$default, closedForSend);
+                mo1587onCancelIdempotentListww6eGU(m1603constructorimpl$default, closedForSend);
                 return;
             }
         }
@@ -411,7 +411,7 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
         @Override // kotlinx.coroutines.CancelHandlerBase
         /* renamed from: invoke  reason: avoid collision after fix types in other method */
         public void invoke2(Throwable th) {
-            if (this.receive.mo1603remove()) {
+            if (this.receive.mo1605remove()) {
                 AbstractChannel.this.onReceiveDequeued();
             }
         }
@@ -434,7 +434,7 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
         }
 
         public final Object resumeValue(E e) {
-            return this.receiveMode == 1 ? ChannelResult.m1588boximpl(ChannelResult.Companion.m1599successJP2dKIU(e)) : e;
+            return this.receiveMode == 1 ? ChannelResult.m1590boximpl(ChannelResult.Companion.m1601successJP2dKIU(e)) : e;
         }
 
         @Override // kotlinx.coroutines.channels.ReceiveOrClosed
@@ -461,13 +461,13 @@ public abstract class AbstractChannel<E> extends AbstractSendChannel<E> implemen
             if (this.receiveMode != 1) {
                 CancellableContinuation<Object> cancellableContinuation = this.cont;
                 Result.Companion companion = Result.Companion;
-                cancellableContinuation.resumeWith(Result.m1574constructorimpl(ResultKt.createFailure(closed.getReceiveException())));
+                cancellableContinuation.resumeWith(Result.m1576constructorimpl(ResultKt.createFailure(closed.getReceiveException())));
                 return;
             }
             CancellableContinuation<Object> cancellableContinuation2 = this.cont;
-            ChannelResult m1588boximpl = ChannelResult.m1588boximpl(ChannelResult.Companion.m1597closedJP2dKIU(closed.closeCause));
+            ChannelResult m1590boximpl = ChannelResult.m1590boximpl(ChannelResult.Companion.m1599closedJP2dKIU(closed.closeCause));
             Result.Companion companion2 = Result.Companion;
-            cancellableContinuation2.resumeWith(Result.m1574constructorimpl(m1588boximpl));
+            cancellableContinuation2.resumeWith(Result.m1576constructorimpl(m1590boximpl));
         }
 
         @Override // kotlinx.coroutines.internal.LockFreeLinkedListNode

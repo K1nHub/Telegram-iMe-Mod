@@ -6,7 +6,7 @@ import androidx.navigation.NavDirections;
 import com.iMe.feature.socialMedias.SocialAuthDomain;
 import java.io.Serializable;
 import java.util.HashMap;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 /* loaded from: classes3.dex */
 public class AuthScreenDirections {
     public static ToSocialAuth toSocialAuth(SocialAuthDomain socialAuthDomain) {
@@ -44,7 +44,7 @@ public class AuthScreenDirections {
 
         @Override // androidx.navigation.NavDirections
         public int getActionId() {
-            return C3290R.C3293id.toSocialAuth;
+            return C3295R.C3298id.toSocialAuth;
         }
 
         public SocialAuthDomain getSocialAuthDomain() {

@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/iMe/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$BTC;,
         Lcom/iMe/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;,
         Lcom/iMe/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$TRON;
     }

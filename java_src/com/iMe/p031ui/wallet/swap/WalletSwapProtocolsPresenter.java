@@ -25,7 +25,7 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.SpreadBuilder;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 /* compiled from: WalletSwapProtocolsPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.swap.WalletSwapProtocolsPresenter */
@@ -129,11 +129,11 @@ public final class WalletSwapProtocolsPresenter extends BasePresenter<WalletSwap
             arrayList3.add(new CexProtocolItem(centralizedExchangesInfo, true));
         }
         SpreadBuilder spreadBuilder = new SpreadBuilder(6);
-        spreadBuilder.add(new HeaderItem(this.resourceManager.getString(C3290R.string.wallet_swap_protocols_header_title)));
+        spreadBuilder.add(new HeaderItem(this.resourceManager.getString(C3295R.string.wallet_swap_protocols_header_title)));
         spreadBuilder.addSpread(dexProtocolItemArr);
-        spreadBuilder.add(new HeaderItem(this.resourceManager.getString(C3290R.string.wallet_swap_protocols_cross_chain_header_title)));
+        spreadBuilder.add(new HeaderItem(this.resourceManager.getString(C3295R.string.wallet_swap_protocols_cross_chain_header_title)));
         spreadBuilder.addSpread(dexProtocolItemArr2);
-        spreadBuilder.add(new HeaderItem(this.resourceManager.getString(C3290R.string.wallet_swap_centralized_exchanges_header_title)));
+        spreadBuilder.add(new HeaderItem(this.resourceManager.getString(C3295R.string.wallet_swap_centralized_exchanges_header_title)));
         spreadBuilder.addSpread((CexProtocolItem[]) arrayList3.toArray(new CexProtocolItem[0]));
         listOf = CollectionsKt__CollectionsKt.listOf((Object[]) spreadBuilder.toArray(new NoChildNode[spreadBuilder.size()]));
         ((WalletSwapProtocolsView) getViewState()).showExchangesProviders(listOf);

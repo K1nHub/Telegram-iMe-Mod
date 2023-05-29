@@ -214,7 +214,7 @@ public class ContactsController extends BaseController {
         if (z) {
             return;
         }
-        callbacks$Callback12.invoke(LocaleController.getInternalString(C3290R.string.dialogs_tel_search_user_not_found));
+        callbacks$Callback12.invoke(LocaleController.getInternalString(C3295R.string.dialogs_tel_search_user_not_found));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -227,7 +227,7 @@ public class ContactsController extends BaseController {
     public /* synthetic */ void lambda$searchAccountByTel$3(int i, AlertDialog alertDialog, Callbacks$Callback1 callbacks$Callback1) {
         getConnectionsManager().cancelRequest(i, true);
         alertDialog.dismiss();
-        callbacks$Callback1.invoke(LocaleController.getInternalString(C3290R.string.dialogs_tel_search_user_error));
+        callbacks$Callback1.invoke(LocaleController.getInternalString(C3295R.string.dialogs_tel_search_user_error));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -529,7 +529,7 @@ public class ContactsController extends BaseController {
     }
 
     public String getInviteText(int i) {
-        return LocaleController.formatString("InviteText2", C3290R.string.InviteText2, "https://imem.app/dl");
+        return LocaleController.formatString("InviteText2", C3295R.string.InviteText2, "https://imem.app/dl");
     }
 
     public void checkAppAccount() {
@@ -2170,7 +2170,7 @@ public class ContactsController extends BaseController {
         newInsert3.withValue("mimetype", "vnd.android.cursor.item/vnd.org.telegram.messenger.android.profile".replace(BuildConfig.LIBRARY_PACKAGE_NAME, ApplicationLoader.getApplicationId()));
         newInsert3.withValue("data1", Long.valueOf(tLRPC$User.f1574id));
         newInsert3.withValue("data2", "Telegram Profile".replace("Telegram", "iMe"));
-        newInsert3.withValue("data3", LocaleController.formatString("ContactShortcutMessage", C3290R.string.ContactShortcutMessage, str));
+        newInsert3.withValue("data3", LocaleController.formatString("ContactShortcutMessage", C3295R.string.ContactShortcutMessage, str));
         newInsert3.withValue("data4", Long.valueOf(tLRPC$User.f1574id));
         arrayList.add(newInsert3.build());
         ContentProviderOperation.Builder newInsert4 = ContentProviderOperation.newInsert(ContactsContract.Data.CONTENT_URI);
@@ -2178,7 +2178,7 @@ public class ContactsController extends BaseController {
         newInsert4.withValue("mimetype", "vnd.android.cursor.item/vnd.org.telegram.messenger.android.call".replace(BuildConfig.LIBRARY_PACKAGE_NAME, ApplicationLoader.getApplicationId()));
         newInsert4.withValue("data1", Long.valueOf(tLRPC$User.f1574id));
         newInsert4.withValue("data2", "Telegram Voice Call".replace("Telegram", "iMe"));
-        newInsert4.withValue("data3", LocaleController.formatString("ContactShortcutVoiceCall", C3290R.string.ContactShortcutVoiceCall, str));
+        newInsert4.withValue("data3", LocaleController.formatString("ContactShortcutVoiceCall", C3295R.string.ContactShortcutVoiceCall, str));
         newInsert4.withValue("data4", Long.valueOf(tLRPC$User.f1574id));
         arrayList.add(newInsert4.build());
         ContentProviderOperation.Builder newInsert5 = ContentProviderOperation.newInsert(ContactsContract.Data.CONTENT_URI);
@@ -2186,7 +2186,7 @@ public class ContactsController extends BaseController {
         newInsert5.withValue("mimetype", "vnd.android.cursor.item/vnd.org.telegram.messenger.android.call.video".replace(BuildConfig.LIBRARY_PACKAGE_NAME, ApplicationLoader.getApplicationId()));
         newInsert5.withValue("data1", Long.valueOf(tLRPC$User.f1574id));
         newInsert5.withValue("data2", "Telegram Video Call".replace("Telegram", "iMe"));
-        newInsert5.withValue("data3", LocaleController.formatString("ContactShortcutVideoCall", C3290R.string.ContactShortcutVideoCall, str));
+        newInsert5.withValue("data3", LocaleController.formatString("ContactShortcutVideoCall", C3295R.string.ContactShortcutVideoCall, str));
         newInsert5.withValue("data4", Long.valueOf(tLRPC$User.f1574id));
         arrayList.add(newInsert5.build());
     }
@@ -2414,7 +2414,7 @@ public class ContactsController extends BaseController {
         getNotificationCenter().postNotificationName(NotificationCenter.updateInterfaces, Integer.valueOf(MessagesController.UPDATE_MASK_NAME));
         getNotificationCenter().postNotificationName(NotificationCenter.contactsDidLoad, new Object[0]);
         if (z) {
-            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 1, LocaleController.formatString("DeletedFromYourContacts", C3290R.string.DeletedFromYourContacts, str));
+            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 1, LocaleController.formatString("DeletedFromYourContacts", C3295R.string.DeletedFromYourContacts, str));
         }
         if (callbacks$Callback1 != null) {
             callbacks$Callback1.invoke(null);

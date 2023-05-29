@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;",
+        "Lcom/iMe/storage/domain/manager/crypto/CryptoWalletsManager;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nManagerModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ManagerModule.kt\ncom/iMe/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$6\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,70:1\n129#2,5:71\n*S KotlinDebug\n*F\n+ 1 ManagerModule.kt\ncom/iMe/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$6\n*L\n50#1:71,5\n*E\n"
+    value = "SMAP\nManagerModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ManagerModule.kt\ncom/iMe/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$6\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,80:1\n129#2,5:81\n129#2,5:86\n129#2,5:91\n129#2,5:96\n*S KotlinDebug\n*F\n+ 1 ManagerModule.kt\ncom/iMe/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$6\n*L\n53#1:81,5\n54#1:86,5\n55#1:91,5\n56#1:96,5\n*E\n"
 .end annotation
 
 
@@ -61,49 +61,90 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
-    .locals 3
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/domain/manager/crypto/CryptoWalletsManager;
+    .locals 6
 
-    const-string v0, "$this$single"
+    const-class v0, Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
 
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v1, "$this$single"
 
-    const-string v0, "it"
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+    const-string v1, "it"
 
-    .line 50
-    new-instance p2, Lcom/iMe/storage/data/manager/crypto/CryptoAccessManagerImpl;
+    invoke-static {p2, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 52
+    new-instance p2, Lcom/iMe/storage/data/manager/crypto/CryptoWalletsManagerImpl;
+
+    .line 53
+    invoke-static {}, Lcom/iMe/storage/data/di/module/ManagerModuleKt;->getEVM_BLOCKCHAIN_CRYPTO_WALLET_MANAGER()Lorg/koin/core/qualifier/StringQualifier;
+
+    move-result-object v1
 
     .line 133
-    const-class v0, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
+    move-result-object v2
+
+    const/4 v3, 0x0
+
+    invoke-virtual {p1, v2, v1, v3}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object v1
+
+    check-cast v1, Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
+
+    .line 54
+    invoke-static {}, Lcom/iMe/storage/data/di/module/ManagerModuleKt;->getTON_BLOCKCHAIN_CRYPTO_WALLET_MANAGER()Lorg/koin/core/qualifier/StringQualifier;
+
+    move-result-object v2
+
+    .line 133
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v4
+
+    invoke-virtual {p1, v4, v2, v3}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object v2
+
+    check-cast v2, Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
+
+    .line 55
+    invoke-static {}, Lcom/iMe/storage/data/di/module/ManagerModuleKt;->getTRON_BLOCKCHAIN_CRYPTO_WALLET_MANAGER()Lorg/koin/core/qualifier/StringQualifier;
+
+    move-result-object v4
+
+    .line 133
+    invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
+
+    move-result-object v5
+
+    invoke-virtual {p1, v5, v4, v3}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+
+    move-result-object v4
+
+    check-cast v4, Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
+
+    .line 56
+    invoke-static {}, Lcom/iMe/storage/data/di/module/ManagerModuleKt;->getBTC_BLOCKCHAIN_CRYPTO_WALLET_MANAGER()Lorg/koin/core/qualifier/StringQualifier;
+
+    move-result-object v5
+
+    .line 133
     invoke-static {v0}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
     move-result-object v0
 
-    const/4 v1, 0x0
-
-    invoke-virtual {p1, v0, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
-
-    move-result-object v0
-
-    check-cast v0, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
-
-    const-class v2, Lcom/iMe/storage/domain/manager/crypto/CryptoWalletsManager;
-
-    invoke-static {v2}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
-
-    move-result-object v2
-
-    invoke-virtual {p1, v2, v1, v1}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
+    invoke-virtual {p1, v0, v5, v3}, Lorg/koin/core/scope/Scope;->get(Lkotlin/reflect/KClass;Lorg/koin/core/qualifier/Qualifier;Lkotlin/jvm/functions/Function0;)Ljava/lang/Object;
 
     move-result-object p1
 
-    check-cast p1, Lcom/iMe/storage/domain/manager/crypto/CryptoWalletsManager;
+    check-cast p1, Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;
 
-    .line 50
-    invoke-direct {p2, v0, p1}, Lcom/iMe/storage/data/manager/crypto/CryptoAccessManagerImpl;-><init>(Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/manager/crypto/CryptoWalletsManager;)V
+    .line 52
+    invoke-direct {p2, v1, v2, v4, p1}, Lcom/iMe/storage/data/manager/crypto/CryptoWalletsManagerImpl;-><init>(Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;Lcom/iMe/storage/domain/manager/crypto/BlockchainCryptoWalletManager;)V
 
     return-object p2
 .end method
@@ -111,12 +152,12 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 50
+    .line 51
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$6;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$6;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/domain/manager/crypto/CryptoWalletsManager;
 
     move-result-object p1
 

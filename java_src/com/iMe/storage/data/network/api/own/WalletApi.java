@@ -23,6 +23,9 @@ public interface WalletApi {
     @POST("auth/issueTokens")
     Observable<ApiBaseResponse<SessionTokensResponse>> getAuthTokensByTelegramLoginData(@Body SessionTokensRequest sessionTokensRequest);
 
+    @POST("bitcoin/getParamsForCryptoTransfer")
+    Observable<ApiBaseResponse<CryptoTransferDataResponse.BTC>> getBTCCryptoTransferData(@Body GetDataForCryptoTransferRequest getDataForCryptoTransferRequest);
+
     @POST("getParamsForCryptoTransfer")
     Observable<ApiBaseResponse<CryptoTransferDataResponse.EVM>> getEVMCryptoTransferData(@Body GetDataForCryptoTransferRequest getDataForCryptoTransferRequest);
 

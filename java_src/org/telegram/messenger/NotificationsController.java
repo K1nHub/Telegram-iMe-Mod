@@ -1412,13 +1412,13 @@ public class NotificationsController extends BaseController {
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionSetSameChatWallPaper) == false) goto L137;
      */
     /* JADX WARN: Code restructure failed: missing block: B:164:0x0288, code lost:
-        return org.telegram.messenger.LocaleController.getString("WallpaperSameNotification", org.telegram.messenger.C3290R.string.WallpaperSameNotification);
+        return org.telegram.messenger.LocaleController.getString("WallpaperSameNotification", org.telegram.messenger.C3295R.string.WallpaperSameNotification);
      */
     /* JADX WARN: Code restructure failed: missing block: B:166:0x028b, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionSetChatWallPaper) == false) goto L141;
      */
     /* JADX WARN: Code restructure failed: missing block: B:168:0x0295, code lost:
-        return org.telegram.messenger.LocaleController.getString("WallpaperNotification", org.telegram.messenger.C3290R.string.WallpaperNotification);
+        return org.telegram.messenger.LocaleController.getString("WallpaperNotification", org.telegram.messenger.C3295R.string.WallpaperNotification);
      */
     /* JADX WARN: Code restructure failed: missing block: B:170:0x0298, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionGeoProximityReached) == false) goto L145;
@@ -1436,14 +1436,14 @@ public class NotificationsController extends BaseController {
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionUserUpdatedPhoto) == false) goto L153;
      */
     /* JADX WARN: Code restructure failed: missing block: B:181:0x02bd, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationContactNewPhoto", org.telegram.messenger.C3290R.string.NotificationContactNewPhoto, r1);
+        return org.telegram.messenger.LocaleController.formatString("NotificationContactNewPhoto", org.telegram.messenger.C3295R.string.NotificationContactNewPhoto, r1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:183:0x02c1, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionLoginUnknownLocation) == false) goto L157;
      */
     /* JADX WARN: Code restructure failed: missing block: B:184:0x02c3, code lost:
-        r1 = org.telegram.messenger.LocaleController.formatString("formatDateAtTime", org.telegram.messenger.C3290R.string.formatDateAtTime, org.telegram.messenger.LocaleController.getInstance().formatterYear.format(r26.messageOwner.date * 1000), org.telegram.messenger.LocaleController.getInstance().formatterDay.format(r26.messageOwner.date * 1000));
-        r2 = org.telegram.messenger.C3290R.string.NotificationUnrecognizedDevice;
+        r1 = org.telegram.messenger.LocaleController.formatString("formatDateAtTime", org.telegram.messenger.C3295R.string.formatDateAtTime, org.telegram.messenger.LocaleController.getInstance().formatterYear.format(r26.messageOwner.date * 1000), org.telegram.messenger.LocaleController.getInstance().formatterDay.format(r26.messageOwner.date * 1000));
+        r2 = org.telegram.messenger.C3295R.string.NotificationUnrecognizedDevice;
         r0 = r26.messageOwner.action;
      */
     /* JADX WARN: Code restructure failed: missing block: B:185:0x031d, code lost:
@@ -1462,10 +1462,10 @@ public class NotificationsController extends BaseController {
         if (r6.video == false) goto L167;
      */
     /* JADX WARN: Code restructure failed: missing block: B:196:0x0338, code lost:
-        return org.telegram.messenger.LocaleController.getString("CallMessageVideoIncomingMissed", org.telegram.messenger.C3290R.string.CallMessageVideoIncomingMissed);
+        return org.telegram.messenger.LocaleController.getString("CallMessageVideoIncomingMissed", org.telegram.messenger.C3295R.string.CallMessageVideoIncomingMissed);
      */
     /* JADX WARN: Code restructure failed: missing block: B:198:0x0341, code lost:
-        return org.telegram.messenger.LocaleController.getString("CallMessageIncomingMissed", org.telegram.messenger.C3290R.string.CallMessageIncomingMissed);
+        return org.telegram.messenger.LocaleController.getString("CallMessageIncomingMissed", org.telegram.messenger.C3295R.string.CallMessageIncomingMissed);
      */
     /* JADX WARN: Code restructure failed: missing block: B:200:0x0344, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatAddUser) == false) goto L216;
@@ -1492,13 +1492,13 @@ public class NotificationsController extends BaseController {
         if (r5.megagroup != false) goto L184;
      */
     /* JADX WARN: Code restructure failed: missing block: B:213:0x038f, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChannelAddedByNotification", org.telegram.messenger.C3290R.string.ChannelAddedByNotification, r1, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("ChannelAddedByNotification", org.telegram.messenger.C3295R.string.ChannelAddedByNotification, r1, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:215:0x0392, code lost:
         if (r2 != r19) goto L188;
      */
     /* JADX WARN: Code restructure failed: missing block: B:217:0x03a7, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationInvitedToGroup", org.telegram.messenger.C3290R.string.NotificationInvitedToGroup, r1, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationInvitedToGroup", org.telegram.messenger.C3295R.string.NotificationInvitedToGroup, r1, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:218:0x03a8, code lost:
         r0 = getMessagesController().getUser(java.lang.Long.valueOf(r2));
@@ -1516,13 +1516,13 @@ public class NotificationsController extends BaseController {
         if (r5.megagroup == false) goto L197;
      */
     /* JADX WARN: Code restructure failed: missing block: B:226:0x03d4, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationGroupAddSelfMega", org.telegram.messenger.C3290R.string.NotificationGroupAddSelfMega, r1, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationGroupAddSelfMega", org.telegram.messenger.C3295R.string.NotificationGroupAddSelfMega, r1, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:228:0x03e8, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationGroupAddSelf", org.telegram.messenger.C3290R.string.NotificationGroupAddSelf, r1, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationGroupAddSelf", org.telegram.messenger.C3295R.string.NotificationGroupAddSelf, r1, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:230:0x0402, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationGroupAddMember", org.telegram.messenger.C3290R.string.NotificationGroupAddMember, r1, r5.title, org.telegram.messenger.UserObject.getUserName(r0));
+        return org.telegram.messenger.LocaleController.formatString("NotificationGroupAddMember", org.telegram.messenger.C3295R.string.NotificationGroupAddMember, r1, r5.title, org.telegram.messenger.UserObject.getUserName(r0));
      */
     /* JADX WARN: Code restructure failed: missing block: B:231:0x0403, code lost:
         r2 = new java.lang.StringBuilder();
@@ -1553,13 +1553,13 @@ public class NotificationsController extends BaseController {
         r3 = r3 + 1;
      */
     /* JADX WARN: Code restructure failed: missing block: B:242:0x0459, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationGroupAddMember", org.telegram.messenger.C3290R.string.NotificationGroupAddMember, r1, r5.title, r2.toString());
+        return org.telegram.messenger.LocaleController.formatString("NotificationGroupAddMember", org.telegram.messenger.C3295R.string.NotificationGroupAddMember, r1, r5.title, r2.toString());
      */
     /* JADX WARN: Code restructure failed: missing block: B:244:0x045d, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionGroupCall) == false) goto L220;
      */
     /* JADX WARN: Code restructure failed: missing block: B:246:0x0471, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationGroupCreatedCall", org.telegram.messenger.C3290R.string.NotificationGroupCreatedCall, r1, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationGroupCreatedCall", org.telegram.messenger.C3295R.string.NotificationGroupCreatedCall, r1, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:248:0x0474, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionGroupCallScheduled) == false) goto L224;
@@ -1589,7 +1589,7 @@ public class NotificationsController extends BaseController {
         if (r2 != r19) goto L237;
      */
     /* JADX WARN: Code restructure failed: missing block: B:263:0x04c0, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationGroupInvitedYouToCall", org.telegram.messenger.C3290R.string.NotificationGroupInvitedYouToCall, r1, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationGroupInvitedYouToCall", org.telegram.messenger.C3295R.string.NotificationGroupInvitedYouToCall, r1, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:264:0x04c1, code lost:
         r0 = getMessagesController().getUser(java.lang.Long.valueOf(r2));
@@ -1601,7 +1601,7 @@ public class NotificationsController extends BaseController {
         return null;
      */
     /* JADX WARN: Code restructure failed: missing block: B:268:0x04e9, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationGroupInvitedToCall", org.telegram.messenger.C3290R.string.NotificationGroupInvitedToCall, r1, r5.title, org.telegram.messenger.UserObject.getUserName(r0));
+        return org.telegram.messenger.LocaleController.formatString("NotificationGroupInvitedToCall", org.telegram.messenger.C3295R.string.NotificationGroupInvitedToCall, r1, r5.title, org.telegram.messenger.UserObject.getUserName(r0));
      */
     /* JADX WARN: Code restructure failed: missing block: B:269:0x04ea, code lost:
         r2 = new java.lang.StringBuilder();
@@ -1632,19 +1632,19 @@ public class NotificationsController extends BaseController {
         r3 = r3 + 1;
      */
     /* JADX WARN: Code restructure failed: missing block: B:280:0x0540, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationGroupInvitedToCall", org.telegram.messenger.C3290R.string.NotificationGroupInvitedToCall, r1, r5.title, r2.toString());
+        return org.telegram.messenger.LocaleController.formatString("NotificationGroupInvitedToCall", org.telegram.messenger.C3295R.string.NotificationGroupInvitedToCall, r1, r5.title, r2.toString());
      */
     /* JADX WARN: Code restructure failed: missing block: B:282:0x0544, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatJoinedByLink) == false) goto L261;
      */
     /* JADX WARN: Code restructure failed: missing block: B:284:0x0559, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationInvitedToGroupByLink", org.telegram.messenger.C3290R.string.NotificationInvitedToGroupByLink, r1, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationInvitedToGroupByLink", org.telegram.messenger.C3295R.string.NotificationInvitedToGroupByLink, r1, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:286:0x055f, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatEditTitle) == false) goto L265;
      */
     /* JADX WARN: Code restructure failed: missing block: B:288:0x0571, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationEditedGroupName", org.telegram.messenger.C3290R.string.NotificationEditedGroupName, r1, r6.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationEditedGroupName", org.telegram.messenger.C3295R.string.NotificationEditedGroupName, r1, r6.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:290:0x0574, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatEditPhoto) != false) goto L647;
@@ -1662,13 +1662,13 @@ public class NotificationsController extends BaseController {
         if (r2 != r19) goto L275;
      */
     /* JADX WARN: Code restructure failed: missing block: B:299:0x0599, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationGroupKickYou", org.telegram.messenger.C3290R.string.NotificationGroupKickYou, r1, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationGroupKickYou", org.telegram.messenger.C3295R.string.NotificationGroupKickYou, r1, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:301:0x059f, code lost:
         if (r2 != r9) goto L279;
      */
     /* JADX WARN: Code restructure failed: missing block: B:303:0x05b1, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationGroupLeftMember", org.telegram.messenger.C3290R.string.NotificationGroupLeftMember, r1, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationGroupLeftMember", org.telegram.messenger.C3295R.string.NotificationGroupLeftMember, r1, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:304:0x05b2, code lost:
         r0 = getMessagesController().getUser(java.lang.Long.valueOf(r26.messageOwner.action.user_id));
@@ -1680,7 +1680,7 @@ public class NotificationsController extends BaseController {
         return null;
      */
     /* JADX WARN: Code restructure failed: missing block: B:308:0x05e1, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationGroupKickMember", org.telegram.messenger.C3290R.string.NotificationGroupKickMember, r1, r5.title, org.telegram.messenger.UserObject.getUserName(r0));
+        return org.telegram.messenger.LocaleController.formatString("NotificationGroupKickMember", org.telegram.messenger.C3295R.string.NotificationGroupKickMember, r1, r5.title, org.telegram.messenger.UserObject.getUserName(r0));
      */
     /* JADX WARN: Code restructure failed: missing block: B:310:0x05e4, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatCreate) == false) goto L288;
@@ -1698,13 +1698,13 @@ public class NotificationsController extends BaseController {
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatMigrateTo) == false) goto L296;
      */
     /* JADX WARN: Code restructure failed: missing block: B:320:0x060c, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ActionMigrateFromGroupNotify", org.telegram.messenger.C3290R.string.ActionMigrateFromGroupNotify, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("ActionMigrateFromGroupNotify", org.telegram.messenger.C3295R.string.ActionMigrateFromGroupNotify, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:322:0x0611, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChannelMigrateFrom) == false) goto L300;
      */
     /* JADX WARN: Code restructure failed: missing block: B:324:0x0621, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ActionMigrateFromGroupNotify", org.telegram.messenger.C3290R.string.ActionMigrateFromGroupNotify, r6.title);
+        return org.telegram.messenger.LocaleController.formatString("ActionMigrateFromGroupNotify", org.telegram.messenger.C3295R.string.ActionMigrateFromGroupNotify, r6.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:326:0x0624, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionScreenshotTaken) == false) goto L304;
@@ -1731,13 +1731,13 @@ public class NotificationsController extends BaseController {
         if (r0 != null) goto L316;
      */
     /* JADX WARN: Code restructure failed: missing block: B:340:0x0658, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoText", org.telegram.messenger.C3290R.string.NotificationActionPinnedNoText, r1, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoText", org.telegram.messenger.C3295R.string.NotificationActionPinnedNoText, r1, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:342:0x0660, code lost:
         if (r0.isMusic() == false) goto L320;
      */
     /* JADX WARN: Code restructure failed: missing block: B:344:0x0672, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedMusic", org.telegram.messenger.C3290R.string.NotificationActionPinnedMusic, r1, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedMusic", org.telegram.messenger.C3295R.string.NotificationActionPinnedMusic, r1, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:346:0x0679, code lost:
         if (r0.isVideo() == false) goto L330;
@@ -1749,10 +1749,10 @@ public class NotificationsController extends BaseController {
         if (android.text.TextUtils.isEmpty(r0.messageOwner.message) != false) goto L328;
      */
     /* JADX WARN: Code restructure failed: missing block: B:352:0x06b2, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedText", org.telegram.messenger.C3290R.string.NotificationActionPinnedText, r1, "📹 " + r0.messageOwner.message, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedText", org.telegram.messenger.C3295R.string.NotificationActionPinnedText, r1, "📹 " + r0.messageOwner.message, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:354:0x06c6, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVideo", org.telegram.messenger.C3290R.string.NotificationActionPinnedVideo, r1, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVideo", org.telegram.messenger.C3295R.string.NotificationActionPinnedVideo, r1, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:356:0x06cb, code lost:
         if (r0.isGif() == false) goto L340;
@@ -1764,22 +1764,22 @@ public class NotificationsController extends BaseController {
         if (android.text.TextUtils.isEmpty(r0.messageOwner.message) != false) goto L338;
      */
     /* JADX WARN: Code restructure failed: missing block: B:362:0x0704, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedText", org.telegram.messenger.C3290R.string.NotificationActionPinnedText, r1, "🎬 " + r0.messageOwner.message, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedText", org.telegram.messenger.C3295R.string.NotificationActionPinnedText, r1, "🎬 " + r0.messageOwner.message, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:364:0x0718, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGif", org.telegram.messenger.C3290R.string.NotificationActionPinnedGif, r1, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGif", org.telegram.messenger.C3295R.string.NotificationActionPinnedGif, r1, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:366:0x0720, code lost:
         if (r0.isVoice() == false) goto L344;
      */
     /* JADX WARN: Code restructure failed: missing block: B:368:0x0732, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVoice", org.telegram.messenger.C3290R.string.NotificationActionPinnedVoice, r1, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVoice", org.telegram.messenger.C3295R.string.NotificationActionPinnedVoice, r1, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:370:0x0737, code lost:
         if (r0.isRoundVideo() == false) goto L348;
      */
     /* JADX WARN: Code restructure failed: missing block: B:372:0x0749, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedRound", org.telegram.messenger.C3290R.string.NotificationActionPinnedRound, r1, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedRound", org.telegram.messenger.C3295R.string.NotificationActionPinnedRound, r1, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:374:0x074e, code lost:
         if (r0.isSticker() != false) goto L410;
@@ -1801,10 +1801,10 @@ public class NotificationsController extends BaseController {
         if (android.text.TextUtils.isEmpty(r4.message) != false) goto L360;
      */
     /* JADX WARN: Code restructure failed: missing block: B:385:0x0795, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedText", org.telegram.messenger.C3290R.string.NotificationActionPinnedText, r1, "📎 " + r0.messageOwner.message, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedText", org.telegram.messenger.C3295R.string.NotificationActionPinnedText, r1, "📎 " + r0.messageOwner.message, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:387:0x07a9, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedFile", org.telegram.messenger.C3290R.string.NotificationActionPinnedFile, r1, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedFile", org.telegram.messenger.C3295R.string.NotificationActionPinnedFile, r1, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:389:0x07ac, code lost:
         if ((r7 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeo) != false) goto L408;
@@ -1816,7 +1816,7 @@ public class NotificationsController extends BaseController {
         if ((r7 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeoLive) == false) goto L370;
      */
     /* JADX WARN: Code restructure failed: missing block: B:396:0x07cb, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeoLive", org.telegram.messenger.C3290R.string.NotificationActionPinnedGeoLive, r1, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeoLive", org.telegram.messenger.C3295R.string.NotificationActionPinnedGeoLive, r1, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:398:0x07d0, code lost:
         if ((r7 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaContact) == false) goto L374;
@@ -1825,7 +1825,7 @@ public class NotificationsController extends BaseController {
         r7 = (org.telegram.tgnet.TLRPC$TL_messageMediaContact) r7;
      */
     /* JADX WARN: Code restructure failed: missing block: B:400:0x07f0, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedContact2", org.telegram.messenger.C3290R.string.NotificationActionPinnedContact2, r1, r5.title, org.telegram.messenger.ContactsController.formatName(r7.first_name, r7.last_name));
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedContact2", org.telegram.messenger.C3295R.string.NotificationActionPinnedContact2, r1, r5.title, org.telegram.messenger.ContactsController.formatName(r7.first_name, r7.last_name));
      */
     /* JADX WARN: Code restructure failed: missing block: B:402:0x07f3, code lost:
         if ((r7 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaPoll) == false) goto L382;
@@ -1837,10 +1837,10 @@ public class NotificationsController extends BaseController {
         if (r0.quiz == false) goto L380;
      */
     /* JADX WARN: Code restructure failed: missing block: B:406:0x0815, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedQuiz2", org.telegram.messenger.C3290R.string.NotificationActionPinnedQuiz2, r1, r5.title, r0.question);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedQuiz2", org.telegram.messenger.C3295R.string.NotificationActionPinnedQuiz2, r1, r5.title, r0.question);
      */
     /* JADX WARN: Code restructure failed: missing block: B:408:0x082e, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPoll2", org.telegram.messenger.C3290R.string.NotificationActionPinnedPoll2, r1, r5.title, r0.question);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPoll2", org.telegram.messenger.C3295R.string.NotificationActionPinnedPoll2, r1, r5.title, r0.question);
      */
     /* JADX WARN: Code restructure failed: missing block: B:410:0x0831, code lost:
         if ((r7 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaPhoto) == false) goto L392;
@@ -1852,16 +1852,16 @@ public class NotificationsController extends BaseController {
         if (android.text.TextUtils.isEmpty(r4.message) != false) goto L390;
      */
     /* JADX WARN: Code restructure failed: missing block: B:416:0x0868, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedText", org.telegram.messenger.C3290R.string.NotificationActionPinnedText, r1, "🖼 " + r0.messageOwner.message, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedText", org.telegram.messenger.C3295R.string.NotificationActionPinnedText, r1, "🖼 " + r0.messageOwner.message, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:418:0x087c, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPhoto", org.telegram.messenger.C3290R.string.NotificationActionPinnedPhoto, r1, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPhoto", org.telegram.messenger.C3295R.string.NotificationActionPinnedPhoto, r1, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:420:0x0882, code lost:
         if ((r7 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGame) == false) goto L396;
      */
     /* JADX WARN: Code restructure failed: missing block: B:422:0x0894, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGame", org.telegram.messenger.C3290R.string.NotificationActionPinnedGame, r1, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGame", org.telegram.messenger.C3295R.string.NotificationActionPinnedGame, r1, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:423:0x0895, code lost:
         r4 = r0.messageText;
@@ -1890,7 +1890,7 @@ public class NotificationsController extends BaseController {
         r0 = r0;
      */
     /* JADX WARN: Code restructure failed: missing block: B:431:0x08bd, code lost:
-        r2 = org.telegram.messenger.C3290R.string.NotificationActionPinnedText;
+        r2 = org.telegram.messenger.C3295R.string.NotificationActionPinnedText;
         r3 = new java.lang.Object[3];
         r3[r7] = r1;
         r3[1] = r0;
@@ -1900,10 +1900,10 @@ public class NotificationsController extends BaseController {
         return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedText", r2, r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:434:0x08e4, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoText", org.telegram.messenger.C3290R.string.NotificationActionPinnedNoText, r1, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoText", org.telegram.messenger.C3295R.string.NotificationActionPinnedNoText, r1, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:436:0x08f8, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeo", org.telegram.messenger.C3290R.string.NotificationActionPinnedGeo, r1, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeo", org.telegram.messenger.C3295R.string.NotificationActionPinnedGeo, r1, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:437:0x08f9, code lost:
         r0 = r0.getStickerEmoji();
@@ -1912,10 +1912,10 @@ public class NotificationsController extends BaseController {
         if (r0 == null) goto L414;
      */
     /* JADX WARN: Code restructure failed: missing block: B:440:0x0915, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedStickerEmoji", org.telegram.messenger.C3290R.string.NotificationActionPinnedStickerEmoji, r1, r5.title, r0);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedStickerEmoji", org.telegram.messenger.C3295R.string.NotificationActionPinnedStickerEmoji, r1, r5.title, r0);
      */
     /* JADX WARN: Code restructure failed: missing block: B:442:0x0927, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedSticker", org.telegram.messenger.C3290R.string.NotificationActionPinnedSticker, r1, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedSticker", org.telegram.messenger.C3295R.string.NotificationActionPinnedSticker, r1, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:444:0x0929, code lost:
         if (r5 == null) goto L522;
@@ -1927,13 +1927,13 @@ public class NotificationsController extends BaseController {
         if (r0 != null) goto L422;
      */
     /* JADX WARN: Code restructure failed: missing block: B:448:0x093e, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoTextChannel", org.telegram.messenger.C3290R.string.NotificationActionPinnedNoTextChannel, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoTextChannel", org.telegram.messenger.C3295R.string.NotificationActionPinnedNoTextChannel, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:450:0x0944, code lost:
         if (r0.isMusic() == false) goto L426;
      */
     /* JADX WARN: Code restructure failed: missing block: B:452:0x0954, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedMusicChannel", org.telegram.messenger.C3290R.string.NotificationActionPinnedMusicChannel, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedMusicChannel", org.telegram.messenger.C3295R.string.NotificationActionPinnedMusicChannel, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:454:0x095b, code lost:
         if (r0.isVideo() == false) goto L436;
@@ -1948,10 +1948,10 @@ public class NotificationsController extends BaseController {
         if (r12.getBoolean("EnablePreviewGroup", true) != false) goto L44;
      */
     /* JADX WARN: Code restructure failed: missing block: B:460:0x0991, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextChannel", org.telegram.messenger.C3290R.string.NotificationActionPinnedTextChannel, r5.title, "📹 " + r0.messageOwner.message);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextChannel", org.telegram.messenger.C3295R.string.NotificationActionPinnedTextChannel, r5.title, "📹 " + r0.messageOwner.message);
      */
     /* JADX WARN: Code restructure failed: missing block: B:462:0x09a2, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVideoChannel", org.telegram.messenger.C3290R.string.NotificationActionPinnedVideoChannel, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVideoChannel", org.telegram.messenger.C3295R.string.NotificationActionPinnedVideoChannel, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:464:0x09a7, code lost:
         if (r0.isGif() == false) goto L446;
@@ -1963,22 +1963,22 @@ public class NotificationsController extends BaseController {
         if (android.text.TextUtils.isEmpty(r0.messageOwner.message) != false) goto L444;
      */
     /* JADX WARN: Code restructure failed: missing block: B:470:0x09dd, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextChannel", org.telegram.messenger.C3290R.string.NotificationActionPinnedTextChannel, r5.title, "🎬 " + r0.messageOwner.message);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextChannel", org.telegram.messenger.C3295R.string.NotificationActionPinnedTextChannel, r5.title, "🎬 " + r0.messageOwner.message);
      */
     /* JADX WARN: Code restructure failed: missing block: B:472:0x09ee, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGifChannel", org.telegram.messenger.C3290R.string.NotificationActionPinnedGifChannel, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGifChannel", org.telegram.messenger.C3295R.string.NotificationActionPinnedGifChannel, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:474:0x09f5, code lost:
         if (r0.isVoice() == false) goto L450;
      */
     /* JADX WARN: Code restructure failed: missing block: B:476:0x0a05, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVoiceChannel", org.telegram.messenger.C3290R.string.NotificationActionPinnedVoiceChannel, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVoiceChannel", org.telegram.messenger.C3295R.string.NotificationActionPinnedVoiceChannel, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:478:0x0a0a, code lost:
         if (r0.isRoundVideo() == false) goto L454;
      */
     /* JADX WARN: Code restructure failed: missing block: B:480:0x0a1a, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedRoundChannel", org.telegram.messenger.C3290R.string.NotificationActionPinnedRoundChannel, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedRoundChannel", org.telegram.messenger.C3295R.string.NotificationActionPinnedRoundChannel, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:482:0x0a1f, code lost:
         if (r0.isSticker() != false) goto L516;
@@ -2000,10 +2000,10 @@ public class NotificationsController extends BaseController {
         if (android.text.TextUtils.isEmpty(r1.message) != false) goto L466;
      */
     /* JADX WARN: Code restructure failed: missing block: B:493:0x0a63, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextChannel", org.telegram.messenger.C3290R.string.NotificationActionPinnedTextChannel, r5.title, "📎 " + r0.messageOwner.message);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextChannel", org.telegram.messenger.C3295R.string.NotificationActionPinnedTextChannel, r5.title, "📎 " + r0.messageOwner.message);
      */
     /* JADX WARN: Code restructure failed: missing block: B:495:0x0a74, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedFileChannel", org.telegram.messenger.C3290R.string.NotificationActionPinnedFileChannel, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedFileChannel", org.telegram.messenger.C3295R.string.NotificationActionPinnedFileChannel, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:497:0x0a77, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeo) != false) goto L514;
@@ -2015,7 +2015,7 @@ public class NotificationsController extends BaseController {
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeoLive) == false) goto L476;
      */
     /* JADX WARN: Code restructure failed: missing block: B:504:0x0a93, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeoLiveChannel", org.telegram.messenger.C3290R.string.NotificationActionPinnedGeoLiveChannel, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeoLiveChannel", org.telegram.messenger.C3295R.string.NotificationActionPinnedGeoLiveChannel, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:506:0x0a97, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaContact) == false) goto L480;
@@ -2024,7 +2024,7 @@ public class NotificationsController extends BaseController {
         r6 = (org.telegram.tgnet.TLRPC$TL_messageMediaContact) r6;
      */
     /* JADX WARN: Code restructure failed: missing block: B:508:0x0ab5, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedContactChannel2", org.telegram.messenger.C3290R.string.NotificationActionPinnedContactChannel2, r5.title, org.telegram.messenger.ContactsController.formatName(r6.first_name, r6.last_name));
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedContactChannel2", org.telegram.messenger.C3295R.string.NotificationActionPinnedContactChannel2, r5.title, org.telegram.messenger.ContactsController.formatName(r6.first_name, r6.last_name));
      */
     /* JADX WARN: Code restructure failed: missing block: B:510:0x0ab8, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaPoll) == false) goto L488;
@@ -2036,10 +2036,10 @@ public class NotificationsController extends BaseController {
         if (r0.quiz == false) goto L486;
      */
     /* JADX WARN: Code restructure failed: missing block: B:514:0x0ad7, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedQuizChannel2", org.telegram.messenger.C3290R.string.NotificationActionPinnedQuizChannel2, r5.title, r0.question);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedQuizChannel2", org.telegram.messenger.C3295R.string.NotificationActionPinnedQuizChannel2, r5.title, r0.question);
      */
     /* JADX WARN: Code restructure failed: missing block: B:516:0x0aed, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPollChannel2", org.telegram.messenger.C3290R.string.NotificationActionPinnedPollChannel2, r5.title, r0.question);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPollChannel2", org.telegram.messenger.C3295R.string.NotificationActionPinnedPollChannel2, r5.title, r0.question);
      */
     /* JADX WARN: Code restructure failed: missing block: B:518:0x0af0, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaPhoto) == false) goto L498;
@@ -2054,16 +2054,16 @@ public class NotificationsController extends BaseController {
         if (android.text.TextUtils.isEmpty(r1.message) != false) goto L496;
      */
     /* JADX WARN: Code restructure failed: missing block: B:524:0x0b24, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextChannel", org.telegram.messenger.C3290R.string.NotificationActionPinnedTextChannel, r5.title, "🖼 " + r0.messageOwner.message);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextChannel", org.telegram.messenger.C3295R.string.NotificationActionPinnedTextChannel, r5.title, "🖼 " + r0.messageOwner.message);
      */
     /* JADX WARN: Code restructure failed: missing block: B:526:0x0b35, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPhotoChannel", org.telegram.messenger.C3290R.string.NotificationActionPinnedPhotoChannel, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPhotoChannel", org.telegram.messenger.C3295R.string.NotificationActionPinnedPhotoChannel, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:528:0x0b3a, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGame) == false) goto L502;
      */
     /* JADX WARN: Code restructure failed: missing block: B:530:0x0b4a, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGameChannel", org.telegram.messenger.C3290R.string.NotificationActionPinnedGameChannel, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGameChannel", org.telegram.messenger.C3295R.string.NotificationActionPinnedGameChannel, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:531:0x0b4b, code lost:
         r1 = r0.messageText;
@@ -2092,7 +2092,7 @@ public class NotificationsController extends BaseController {
         r0 = r0;
      */
     /* JADX WARN: Code restructure failed: missing block: B:539:0x0b73, code lost:
-        r1 = org.telegram.messenger.C3290R.string.NotificationActionPinnedTextChannel;
+        r1 = org.telegram.messenger.C3295R.string.NotificationActionPinnedTextChannel;
         r2 = new java.lang.Object[2];
         r2[r6] = r5.title;
         r2[1] = r0;
@@ -2101,10 +2101,10 @@ public class NotificationsController extends BaseController {
         return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextChannel", r1, r2);
      */
     /* JADX WARN: Code restructure failed: missing block: B:542:0x0b94, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoTextChannel", org.telegram.messenger.C3290R.string.NotificationActionPinnedNoTextChannel, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoTextChannel", org.telegram.messenger.C3295R.string.NotificationActionPinnedNoTextChannel, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:544:0x0ba5, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeoChannel", org.telegram.messenger.C3290R.string.NotificationActionPinnedGeoChannel, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeoChannel", org.telegram.messenger.C3295R.string.NotificationActionPinnedGeoChannel, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:545:0x0ba6, code lost:
         r0 = r0.getStickerEmoji();
@@ -2113,10 +2113,10 @@ public class NotificationsController extends BaseController {
         if (r0 == null) goto L520;
      */
     /* JADX WARN: Code restructure failed: missing block: B:548:0x0bbf, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedStickerEmojiChannel", org.telegram.messenger.C3290R.string.NotificationActionPinnedStickerEmojiChannel, r5.title, r0);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedStickerEmojiChannel", org.telegram.messenger.C3295R.string.NotificationActionPinnedStickerEmojiChannel, r5.title, r0);
      */
     /* JADX WARN: Code restructure failed: missing block: B:550:0x0bcf, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedStickerChannel", org.telegram.messenger.C3290R.string.NotificationActionPinnedStickerChannel, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedStickerChannel", org.telegram.messenger.C3295R.string.NotificationActionPinnedStickerChannel, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:551:0x0bd0, code lost:
         r0 = r26.replyMessageObject;
@@ -2125,13 +2125,13 @@ public class NotificationsController extends BaseController {
         if (r0 != null) goto L526;
      */
     /* JADX WARN: Code restructure failed: missing block: B:554:0x0be1, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoTextUser", org.telegram.messenger.C3290R.string.NotificationActionPinnedNoTextUser, r1);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoTextUser", org.telegram.messenger.C3295R.string.NotificationActionPinnedNoTextUser, r1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:556:0x0be6, code lost:
         if (r0.isMusic() == false) goto L530;
      */
     /* JADX WARN: Code restructure failed: missing block: B:558:0x0bf4, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedMusicUser", org.telegram.messenger.C3290R.string.NotificationActionPinnedMusicUser, r1);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedMusicUser", org.telegram.messenger.C3295R.string.NotificationActionPinnedMusicUser, r1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:560:0x0bfb, code lost:
         if (r0.isVideo() == false) goto L540;
@@ -2143,10 +2143,10 @@ public class NotificationsController extends BaseController {
         if (android.text.TextUtils.isEmpty(r0.messageOwner.message) != false) goto L538;
      */
     /* JADX WARN: Code restructure failed: missing block: B:566:0x0c2f, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextUser", org.telegram.messenger.C3290R.string.NotificationActionPinnedTextUser, r1, "📹 " + r0.messageOwner.message);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextUser", org.telegram.messenger.C3295R.string.NotificationActionPinnedTextUser, r1, "📹 " + r0.messageOwner.message);
      */
     /* JADX WARN: Code restructure failed: missing block: B:568:0x0c3e, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVideoUser", org.telegram.messenger.C3290R.string.NotificationActionPinnedVideoUser, r1);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVideoUser", org.telegram.messenger.C3295R.string.NotificationActionPinnedVideoUser, r1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:570:0x0c43, code lost:
         if (r0.isGif() == false) goto L550;
@@ -2158,22 +2158,22 @@ public class NotificationsController extends BaseController {
         if (android.text.TextUtils.isEmpty(r0.messageOwner.message) != false) goto L548;
      */
     /* JADX WARN: Code restructure failed: missing block: B:576:0x0c77, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextUser", org.telegram.messenger.C3290R.string.NotificationActionPinnedTextUser, r1, "🎬 " + r0.messageOwner.message);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextUser", org.telegram.messenger.C3295R.string.NotificationActionPinnedTextUser, r1, "🎬 " + r0.messageOwner.message);
      */
     /* JADX WARN: Code restructure failed: missing block: B:578:0x0c86, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGifUser", org.telegram.messenger.C3290R.string.NotificationActionPinnedGifUser, r1);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGifUser", org.telegram.messenger.C3295R.string.NotificationActionPinnedGifUser, r1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:580:0x0c8d, code lost:
         if (r0.isVoice() == false) goto L554;
      */
     /* JADX WARN: Code restructure failed: missing block: B:582:0x0c9b, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVoiceUser", org.telegram.messenger.C3290R.string.NotificationActionPinnedVoiceUser, r1);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedVoiceUser", org.telegram.messenger.C3295R.string.NotificationActionPinnedVoiceUser, r1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:584:0x0ca0, code lost:
         if (r0.isRoundVideo() == false) goto L558;
      */
     /* JADX WARN: Code restructure failed: missing block: B:586:0x0cae, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedRoundUser", org.telegram.messenger.C3290R.string.NotificationActionPinnedRoundUser, r1);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedRoundUser", org.telegram.messenger.C3295R.string.NotificationActionPinnedRoundUser, r1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:588:0x0cb3, code lost:
         if (r0.isSticker() != false) goto L620;
@@ -2195,10 +2195,10 @@ public class NotificationsController extends BaseController {
         if (android.text.TextUtils.isEmpty(r4.message) != false) goto L570;
      */
     /* JADX WARN: Code restructure failed: missing block: B:599:0x0cf5, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextUser", org.telegram.messenger.C3290R.string.NotificationActionPinnedTextUser, r1, "📎 " + r0.messageOwner.message);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextUser", org.telegram.messenger.C3295R.string.NotificationActionPinnedTextUser, r1, "📎 " + r0.messageOwner.message);
      */
     /* JADX WARN: Code restructure failed: missing block: B:601:0x0d04, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedFileUser", org.telegram.messenger.C3290R.string.NotificationActionPinnedFileUser, r1);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedFileUser", org.telegram.messenger.C3295R.string.NotificationActionPinnedFileUser, r1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:603:0x0d07, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeo) != false) goto L618;
@@ -2210,7 +2210,7 @@ public class NotificationsController extends BaseController {
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeoLive) == false) goto L580;
      */
     /* JADX WARN: Code restructure failed: missing block: B:610:0x0d21, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeoLiveUser", org.telegram.messenger.C3290R.string.NotificationActionPinnedGeoLiveUser, r1);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeoLiveUser", org.telegram.messenger.C3295R.string.NotificationActionPinnedGeoLiveUser, r1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:612:0x0d25, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaContact) == false) goto L584;
@@ -2219,7 +2219,7 @@ public class NotificationsController extends BaseController {
         r6 = (org.telegram.tgnet.TLRPC$TL_messageMediaContact) r6;
      */
     /* JADX WARN: Code restructure failed: missing block: B:614:0x0d41, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedContactUser", org.telegram.messenger.C3290R.string.NotificationActionPinnedContactUser, r1, org.telegram.messenger.ContactsController.formatName(r6.first_name, r6.last_name));
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedContactUser", org.telegram.messenger.C3295R.string.NotificationActionPinnedContactUser, r1, org.telegram.messenger.ContactsController.formatName(r6.first_name, r6.last_name));
      */
     /* JADX WARN: Code restructure failed: missing block: B:616:0x0d44, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaPoll) == false) goto L592;
@@ -2231,10 +2231,10 @@ public class NotificationsController extends BaseController {
         if (r0.quiz == false) goto L590;
      */
     /* JADX WARN: Code restructure failed: missing block: B:620:0x0d61, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedQuizUser", org.telegram.messenger.C3290R.string.NotificationActionPinnedQuizUser, r1, r0.question);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedQuizUser", org.telegram.messenger.C3295R.string.NotificationActionPinnedQuizUser, r1, r0.question);
      */
     /* JADX WARN: Code restructure failed: missing block: B:622:0x0d75, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPollUser", org.telegram.messenger.C3290R.string.NotificationActionPinnedPollUser, r1, r0.question);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPollUser", org.telegram.messenger.C3295R.string.NotificationActionPinnedPollUser, r1, r0.question);
      */
     /* JADX WARN: Code restructure failed: missing block: B:624:0x0d78, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaPhoto) == false) goto L602;
@@ -2246,16 +2246,16 @@ public class NotificationsController extends BaseController {
         if (android.text.TextUtils.isEmpty(r4.message) != false) goto L600;
      */
     /* JADX WARN: Code restructure failed: missing block: B:630:0x0daa, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextUser", org.telegram.messenger.C3290R.string.NotificationActionPinnedTextUser, r1, "🖼 " + r0.messageOwner.message);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextUser", org.telegram.messenger.C3295R.string.NotificationActionPinnedTextUser, r1, "🖼 " + r0.messageOwner.message);
      */
     /* JADX WARN: Code restructure failed: missing block: B:632:0x0db9, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPhotoUser", org.telegram.messenger.C3290R.string.NotificationActionPinnedPhotoUser, r1);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedPhotoUser", org.telegram.messenger.C3295R.string.NotificationActionPinnedPhotoUser, r1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:634:0x0dbe, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGame) == false) goto L606;
      */
     /* JADX WARN: Code restructure failed: missing block: B:636:0x0dcc, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGameUser", org.telegram.messenger.C3290R.string.NotificationActionPinnedGameUser, r1);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGameUser", org.telegram.messenger.C3295R.string.NotificationActionPinnedGameUser, r1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:637:0x0dcd, code lost:
         r4 = r0.messageText;
@@ -2284,7 +2284,7 @@ public class NotificationsController extends BaseController {
         r0 = r0;
      */
     /* JADX WARN: Code restructure failed: missing block: B:645:0x0df5, code lost:
-        r2 = org.telegram.messenger.C3290R.string.NotificationActionPinnedTextUser;
+        r2 = org.telegram.messenger.C3295R.string.NotificationActionPinnedTextUser;
         r3 = new java.lang.Object[2];
         r3[r6] = r1;
         r3[1] = r0;
@@ -2293,10 +2293,10 @@ public class NotificationsController extends BaseController {
         return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedTextUser", r2, r3);
      */
     /* JADX WARN: Code restructure failed: missing block: B:648:0x0e12, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoTextUser", org.telegram.messenger.C3290R.string.NotificationActionPinnedNoTextUser, r1);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedNoTextUser", org.telegram.messenger.C3295R.string.NotificationActionPinnedNoTextUser, r1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:650:0x0e21, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeoUser", org.telegram.messenger.C3290R.string.NotificationActionPinnedGeoUser, r1);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedGeoUser", org.telegram.messenger.C3295R.string.NotificationActionPinnedGeoUser, r1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:651:0x0e22, code lost:
         r0 = r0.getStickerEmoji();
@@ -2305,10 +2305,10 @@ public class NotificationsController extends BaseController {
         if (r0 == null) goto L624;
      */
     /* JADX WARN: Code restructure failed: missing block: B:654:0x0e39, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedStickerEmojiUser", org.telegram.messenger.C3290R.string.NotificationActionPinnedStickerEmojiUser, r1, r0);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedStickerEmojiUser", org.telegram.messenger.C3295R.string.NotificationActionPinnedStickerEmojiUser, r1, r0);
      */
     /* JADX WARN: Code restructure failed: missing block: B:656:0x0e46, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedStickerUser", org.telegram.messenger.C3290R.string.NotificationActionPinnedStickerUser, r1);
+        return org.telegram.messenger.LocaleController.formatString("NotificationActionPinnedStickerUser", org.telegram.messenger.C3295R.string.NotificationActionPinnedStickerUser, r1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:658:0x0e49, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionSetChatTheme) == false) goto L642;
@@ -2326,7 +2326,7 @@ public class NotificationsController extends BaseController {
         if (r3 != r19) goto L640;
      */
     /* JADX WARN: Code restructure failed: missing block: B:669:0x0e99, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChangedChatThemeTo", org.telegram.messenger.C3290R.string.ChatThemeChangedTo, r1, r0);
+        return org.telegram.messenger.LocaleController.formatString("ChangedChatThemeTo", org.telegram.messenger.C3295R.string.ChatThemeChangedTo, r1, r0);
      */
     /* JADX WARN: Code restructure failed: missing block: B:671:0x0e9c, code lost:
         if ((r6 instanceof org.telegram.tgnet.TLRPC$TL_messageActionChatJoinedByRequest) == false) goto L646;
@@ -2347,25 +2347,25 @@ public class NotificationsController extends BaseController {
         if (r26.isVideoAvatar() == false) goto L655;
      */
     /* JADX WARN: Code restructure failed: missing block: B:682:0x0eca, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChannelVideoEditNotification", org.telegram.messenger.C3290R.string.ChannelVideoEditNotification, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("ChannelVideoEditNotification", org.telegram.messenger.C3295R.string.ChannelVideoEditNotification, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:684:0x0edb, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChannelPhotoEditNotification", org.telegram.messenger.C3290R.string.ChannelPhotoEditNotification, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("ChannelPhotoEditNotification", org.telegram.messenger.C3295R.string.ChannelPhotoEditNotification, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:686:0x0ee1, code lost:
         if (r26.isVideoAvatar() == false) goto L661;
      */
     /* JADX WARN: Code restructure failed: missing block: B:688:0x0ef5, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationEditedGroupVideo", org.telegram.messenger.C3290R.string.NotificationEditedGroupVideo, r1, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationEditedGroupVideo", org.telegram.messenger.C3295R.string.NotificationEditedGroupVideo, r1, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:690:0x0f08, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationEditedGroupPhoto", org.telegram.messenger.C3290R.string.NotificationEditedGroupPhoto, r1, r5.title);
+        return org.telegram.messenger.LocaleController.formatString("NotificationEditedGroupPhoto", org.telegram.messenger.C3295R.string.NotificationEditedGroupPhoto, r1, r5.title);
      */
     /* JADX WARN: Code restructure failed: missing block: B:692:0x0f0f, code lost:
         return r26.messageText.toString();
      */
     /* JADX WARN: Code restructure failed: missing block: B:694:0x0f1e, code lost:
-        return org.telegram.messenger.LocaleController.formatString("NotificationContactJoined", org.telegram.messenger.C3290R.string.NotificationContactJoined, r1);
+        return org.telegram.messenger.LocaleController.formatString("NotificationContactJoined", org.telegram.messenger.C3295R.string.NotificationContactJoined, r1);
      */
     /* JADX WARN: Code restructure failed: missing block: B:696:0x0f23, code lost:
         if (r26.isMediaEmpty() == false) goto L675;
@@ -2377,7 +2377,7 @@ public class NotificationsController extends BaseController {
         return replaceSpoilers(r26);
      */
     /* JADX WARN: Code restructure failed: missing block: B:702:0x0f3c, code lost:
-        return org.telegram.messenger.LocaleController.getString(r22, org.telegram.messenger.C3290R.string.Message);
+        return org.telegram.messenger.LocaleController.getString(r22, org.telegram.messenger.C3295R.string.Message);
      */
     /* JADX WARN: Code restructure failed: missing block: B:703:0x0f3d, code lost:
         r1 = r22;
@@ -2399,10 +2399,10 @@ public class NotificationsController extends BaseController {
         if (r26.messageOwner.media.ttl_seconds == 0) goto L687;
      */
     /* JADX WARN: Code restructure failed: missing block: B:714:0x0f79, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachDestructingPhoto", org.telegram.messenger.C3290R.string.AttachDestructingPhoto);
+        return org.telegram.messenger.LocaleController.getString("AttachDestructingPhoto", org.telegram.messenger.C3295R.string.AttachDestructingPhoto);
      */
     /* JADX WARN: Code restructure failed: missing block: B:716:0x0f82, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachPhoto", org.telegram.messenger.C3290R.string.AttachPhoto);
+        return org.telegram.messenger.LocaleController.getString("AttachPhoto", org.telegram.messenger.C3295R.string.AttachPhoto);
      */
     /* JADX WARN: Code restructure failed: missing block: B:718:0x0f87, code lost:
         if (r26.isVideo() == false) goto L703;
@@ -2420,34 +2420,34 @@ public class NotificationsController extends BaseController {
         if (r26.messageOwner.media.ttl_seconds == 0) goto L701;
      */
     /* JADX WARN: Code restructure failed: missing block: B:728:0x0fbd, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachDestructingVideo", org.telegram.messenger.C3290R.string.AttachDestructingVideo);
+        return org.telegram.messenger.LocaleController.getString("AttachDestructingVideo", org.telegram.messenger.C3295R.string.AttachDestructingVideo);
      */
     /* JADX WARN: Code restructure failed: missing block: B:730:0x0fc6, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachVideo", org.telegram.messenger.C3290R.string.AttachVideo);
+        return org.telegram.messenger.LocaleController.getString("AttachVideo", org.telegram.messenger.C3295R.string.AttachVideo);
      */
     /* JADX WARN: Code restructure failed: missing block: B:732:0x0fcb, code lost:
         if (r26.isGame() == false) goto L707;
      */
     /* JADX WARN: Code restructure failed: missing block: B:734:0x0fd5, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachGame", org.telegram.messenger.C3290R.string.AttachGame);
+        return org.telegram.messenger.LocaleController.getString("AttachGame", org.telegram.messenger.C3295R.string.AttachGame);
      */
     /* JADX WARN: Code restructure failed: missing block: B:736:0x0fda, code lost:
         if (r26.isVoice() == false) goto L711;
      */
     /* JADX WARN: Code restructure failed: missing block: B:738:0x0fe4, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachAudio", org.telegram.messenger.C3290R.string.AttachAudio);
+        return org.telegram.messenger.LocaleController.getString("AttachAudio", org.telegram.messenger.C3295R.string.AttachAudio);
      */
     /* JADX WARN: Code restructure failed: missing block: B:740:0x0fe9, code lost:
         if (r26.isRoundVideo() == false) goto L715;
      */
     /* JADX WARN: Code restructure failed: missing block: B:742:0x0ff3, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachRound", org.telegram.messenger.C3290R.string.AttachRound);
+        return org.telegram.messenger.LocaleController.getString("AttachRound", org.telegram.messenger.C3295R.string.AttachRound);
      */
     /* JADX WARN: Code restructure failed: missing block: B:744:0x0ff8, code lost:
         if (r26.isMusic() == false) goto L719;
      */
     /* JADX WARN: Code restructure failed: missing block: B:746:0x1002, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachMusic", org.telegram.messenger.C3290R.string.AttachMusic);
+        return org.telegram.messenger.LocaleController.getString("AttachMusic", org.telegram.messenger.C3295R.string.AttachMusic);
      */
     /* JADX WARN: Code restructure failed: missing block: B:747:0x1003, code lost:
         r2 = r26.messageOwner.media;
@@ -2456,7 +2456,7 @@ public class NotificationsController extends BaseController {
         if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaContact) == false) goto L723;
      */
     /* JADX WARN: Code restructure failed: missing block: B:750:0x1013, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachContact", org.telegram.messenger.C3290R.string.AttachContact);
+        return org.telegram.messenger.LocaleController.getString("AttachContact", org.telegram.messenger.C3295R.string.AttachContact);
      */
     /* JADX WARN: Code restructure failed: missing block: B:752:0x1016, code lost:
         if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaPoll) == false) goto L731;
@@ -2465,10 +2465,10 @@ public class NotificationsController extends BaseController {
         if (((org.telegram.tgnet.TLRPC$TL_messageMediaPoll) r2).poll.quiz == false) goto L729;
      */
     /* JADX WARN: Code restructure failed: missing block: B:756:0x1028, code lost:
-        return org.telegram.messenger.LocaleController.getString("QuizPoll", org.telegram.messenger.C3290R.string.QuizPoll);
+        return org.telegram.messenger.LocaleController.getString("QuizPoll", org.telegram.messenger.C3295R.string.QuizPoll);
      */
     /* JADX WARN: Code restructure failed: missing block: B:758:0x1031, code lost:
-        return org.telegram.messenger.LocaleController.getString("Poll", org.telegram.messenger.C3290R.string.Poll);
+        return org.telegram.messenger.LocaleController.getString("Poll", org.telegram.messenger.C3295R.string.Poll);
      */
     /* JADX WARN: Code restructure failed: missing block: B:760:0x1034, code lost:
         if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeo) != false) goto L775;
@@ -2480,7 +2480,7 @@ public class NotificationsController extends BaseController {
         if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaGeoLive) == false) goto L739;
      */
     /* JADX WARN: Code restructure failed: missing block: B:767:0x1048, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachLiveLocation", org.telegram.messenger.C3290R.string.AttachLiveLocation);
+        return org.telegram.messenger.LocaleController.getString("AttachLiveLocation", org.telegram.messenger.C3295R.string.AttachLiveLocation);
      */
     /* JADX WARN: Code restructure failed: missing block: B:769:0x104b, code lost:
         if ((r2 instanceof org.telegram.tgnet.TLRPC$TL_messageMediaDocument) == false) goto L769;
@@ -2504,7 +2504,7 @@ public class NotificationsController extends BaseController {
         return "🎬 " + replaceSpoilers(r26);
      */
     /* JADX WARN: Code restructure failed: missing block: B:784:0x108c, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachGif", org.telegram.messenger.C3290R.string.AttachGif);
+        return org.telegram.messenger.LocaleController.getString("AttachGif", org.telegram.messenger.C3295R.string.AttachGif);
      */
     /* JADX WARN: Code restructure failed: missing block: B:786:0x1091, code lost:
         if (android.os.Build.VERSION.SDK_INT < 19) goto L761;
@@ -2516,7 +2516,7 @@ public class NotificationsController extends BaseController {
         return "📎 " + replaceSpoilers(r26);
      */
     /* JADX WARN: Code restructure failed: missing block: B:792:0x10b9, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachDocument", org.telegram.messenger.C3290R.string.AttachDocument);
+        return org.telegram.messenger.LocaleController.getString("AttachDocument", org.telegram.messenger.C3295R.string.AttachDocument);
      */
     /* JADX WARN: Code restructure failed: missing block: B:793:0x10ba, code lost:
         r0 = r26.getStickerEmoji();
@@ -2525,10 +2525,10 @@ public class NotificationsController extends BaseController {
         if (r0 == null) goto L767;
      */
     /* JADX WARN: Code restructure failed: missing block: B:796:0x10dc, code lost:
-        return r0 + " " + org.telegram.messenger.LocaleController.getString("AttachSticker", org.telegram.messenger.C3290R.string.AttachSticker);
+        return r0 + " " + org.telegram.messenger.LocaleController.getString("AttachSticker", org.telegram.messenger.C3295R.string.AttachSticker);
      */
     /* JADX WARN: Code restructure failed: missing block: B:798:0x10e5, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachSticker", org.telegram.messenger.C3290R.string.AttachSticker);
+        return org.telegram.messenger.LocaleController.getString("AttachSticker", org.telegram.messenger.C3295R.string.AttachSticker);
      */
     /* JADX WARN: Code restructure failed: missing block: B:800:0x10ec, code lost:
         if (android.text.TextUtils.isEmpty(r26.messageText) != false) goto L773;
@@ -2537,19 +2537,19 @@ public class NotificationsController extends BaseController {
         return replaceSpoilers(r26);
      */
     /* JADX WARN: Code restructure failed: missing block: B:804:0x10f9, code lost:
-        return org.telegram.messenger.LocaleController.getString(r1, org.telegram.messenger.C3290R.string.Message);
+        return org.telegram.messenger.LocaleController.getString(r1, org.telegram.messenger.C3295R.string.Message);
      */
     /* JADX WARN: Code restructure failed: missing block: B:806:0x1102, code lost:
-        return org.telegram.messenger.LocaleController.getString("AttachLocation", org.telegram.messenger.C3290R.string.AttachLocation);
+        return org.telegram.messenger.LocaleController.getString("AttachLocation", org.telegram.messenger.C3295R.string.AttachLocation);
      */
     /* JADX WARN: Code restructure failed: missing block: B:820:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChatThemeDisabledYou", org.telegram.messenger.C3290R.string.ChatThemeDisabledYou, new java.lang.Object[0]);
+        return org.telegram.messenger.LocaleController.formatString("ChatThemeDisabledYou", org.telegram.messenger.C3295R.string.ChatThemeDisabledYou, new java.lang.Object[0]);
      */
     /* JADX WARN: Code restructure failed: missing block: B:821:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChatThemeDisabled", org.telegram.messenger.C3290R.string.ChatThemeDisabled, r1, r0);
+        return org.telegram.messenger.LocaleController.formatString("ChatThemeDisabled", org.telegram.messenger.C3295R.string.ChatThemeDisabled, r1, r0);
      */
     /* JADX WARN: Code restructure failed: missing block: B:822:?, code lost:
-        return org.telegram.messenger.LocaleController.formatString("ChangedChatThemeYou", org.telegram.messenger.C3290R.string.ChatThemeChangedYou, r0);
+        return org.telegram.messenger.LocaleController.formatString("ChangedChatThemeYou", org.telegram.messenger.C3295R.string.ChatThemeChangedYou, r0);
      */
     /*
         Code decompiled incorrectly, please refer to instructions dump.
@@ -2596,7 +2596,7 @@ public class NotificationsController extends BaseController {
         boolean z3;
         boolean z4;
         if (AndroidUtilities.needShowPasscode() || SharedConfig.isWaitingForPasscodeEnter) {
-            return LocaleController.getString("YouHaveNewMessage", C3290R.string.YouHaveNewMessage);
+            return LocaleController.getString("YouHaveNewMessage", C3295R.string.YouHaveNewMessage);
         }
         TLRPC$Message tLRPC$Message = messageObject.messageOwner;
         long j = tLRPC$Message.dialog_id;
@@ -2628,7 +2628,7 @@ public class NotificationsController extends BaseController {
                     if (zArr2 != null) {
                         zArr2[0] = false;
                     }
-                    return (messageObject.messageOwner.peer_id.channel_id == 0 || messageObject.isSupergroup()) ? LocaleController.formatString("NotificationMessageGroupNoText", C3290R.string.NotificationMessageGroupNoText, messageObject.localUserName, messageObject.localName) : LocaleController.formatString("ChannelMessageNoText", C3290R.string.ChannelMessageNoText, messageObject.localName);
+                    return (messageObject.messageOwner.peer_id.channel_id == 0 || messageObject.isSupergroup()) ? LocaleController.formatString("NotificationMessageGroupNoText", C3295R.string.NotificationMessageGroupNoText, messageObject.localUserName, messageObject.localName) : LocaleController.formatString("ChannelMessageNoText", C3295R.string.ChannelMessageNoText, messageObject.localName);
                 }
             } else {
                 z3 = true;
@@ -2636,7 +2636,7 @@ public class NotificationsController extends BaseController {
                     if (zArr2 != null) {
                         zArr2[0] = false;
                     }
-                    return LocaleController.formatString("NotificationMessageNoText", C3290R.string.NotificationMessageNoText, messageObject.localName);
+                    return LocaleController.formatString("NotificationMessageNoText", C3295R.string.NotificationMessageNoText, messageObject.localName);
                 }
             }
             z4 = z3;
@@ -2667,10 +2667,10 @@ public class NotificationsController extends BaseController {
                 str3 = user != null ? UserObject.getUserName(user) : null;
             } else if (j == clientUserId) {
                 str = "NotificationMessageGroupNoText";
-                str3 = LocaleController.getString("MessageScheduledReminderNotification", C3290R.string.MessageScheduledReminderNotification);
+                str3 = LocaleController.getString("MessageScheduledReminderNotification", C3295R.string.MessageScheduledReminderNotification);
             } else {
                 str = "NotificationMessageGroupNoText";
-                str3 = LocaleController.getString("NotificationMessageScheduledName", C3290R.string.NotificationMessageScheduledName);
+                str3 = LocaleController.getString("NotificationMessageScheduledName", C3295R.string.NotificationMessageScheduledName);
             }
             str2 = "NotificationMessageNoText";
         } else {
@@ -2692,7 +2692,7 @@ public class NotificationsController extends BaseController {
             tLRPC$Chat = null;
         }
         if (DialogObject.isEncryptedDialog(j)) {
-            return LocaleController.getString("YouHaveNewMessage", C3290R.string.YouHaveNewMessage);
+            return LocaleController.getString("YouHaveNewMessage", C3295R.string.YouHaveNewMessage);
         }
         long j4 = j3;
         if (i3 == 0 && i2 != 0) {
@@ -2701,29 +2701,29 @@ public class NotificationsController extends BaseController {
                 if (zArr2 != null) {
                     zArr2[0] = false;
                 }
-                return LocaleController.formatString(str4, C3290R.string.NotificationMessageNoText, str3);
+                return LocaleController.formatString(str4, C3295R.string.NotificationMessageNoText, str3);
             } else {
                 TLRPC$Message tLRPC$Message2 = messageObject.messageOwner;
                 if (tLRPC$Message2 instanceof TLRPC$TL_messageService) {
                     TLRPC$MessageAction tLRPC$MessageAction = tLRPC$Message2.action;
                     if (tLRPC$MessageAction instanceof TLRPC$TL_messageActionSetSameChatWallPaper) {
-                        return LocaleController.getString("WallpaperSameNotification", C3290R.string.WallpaperSameNotification);
+                        return LocaleController.getString("WallpaperSameNotification", C3295R.string.WallpaperSameNotification);
                     }
                     if (tLRPC$MessageAction instanceof TLRPC$TL_messageActionSetChatWallPaper) {
-                        return LocaleController.getString("WallpaperNotification", C3290R.string.WallpaperNotification);
+                        return LocaleController.getString("WallpaperNotification", C3295R.string.WallpaperNotification);
                     }
                     if (tLRPC$MessageAction instanceof TLRPC$TL_messageActionGeoProximityReached) {
                         return messageObject.messageText.toString();
                     }
                     if ((tLRPC$MessageAction instanceof TLRPC$TL_messageActionUserJoined) || (tLRPC$MessageAction instanceof TLRPC$TL_messageActionContactSignUp)) {
-                        return LocaleController.formatString("NotificationContactJoined", C3290R.string.NotificationContactJoined, str3);
+                        return LocaleController.formatString("NotificationContactJoined", C3295R.string.NotificationContactJoined, str3);
                     }
                     if (tLRPC$MessageAction instanceof TLRPC$TL_messageActionUserUpdatedPhoto) {
-                        return LocaleController.formatString("NotificationContactNewPhoto", C3290R.string.NotificationContactNewPhoto, str3);
+                        return LocaleController.formatString("NotificationContactNewPhoto", C3295R.string.NotificationContactNewPhoto, str3);
                     }
                     if (tLRPC$MessageAction instanceof TLRPC$TL_messageActionLoginUnknownLocation) {
-                        String formatString3 = LocaleController.formatString("formatDateAtTime", C3290R.string.formatDateAtTime, LocaleController.getInstance().formatterYear.format(messageObject.messageOwner.date * 1000), LocaleController.getInstance().formatterDay.format(messageObject.messageOwner.date * 1000));
-                        int i4 = C3290R.string.NotificationUnrecognizedDevice;
+                        String formatString3 = LocaleController.formatString("formatDateAtTime", C3295R.string.formatDateAtTime, LocaleController.getInstance().formatterYear.format(messageObject.messageOwner.date * 1000), LocaleController.getInstance().formatterDay.format(messageObject.messageOwner.date * 1000));
+                        int i4 = C3295R.string.NotificationUnrecognizedDevice;
                         TLRPC$MessageAction tLRPC$MessageAction2 = messageObject.messageOwner.action;
                         return LocaleController.formatString("NotificationUnrecognizedDevice", i4, getUserConfig().getCurrentUser().first_name, formatString3, tLRPC$MessageAction2.title, tLRPC$MessageAction2.address);
                     } else if ((tLRPC$MessageAction instanceof TLRPC$TL_messageActionGameScore) || (tLRPC$MessageAction instanceof TLRPC$TL_messageActionPaymentSent)) {
@@ -2731,27 +2731,27 @@ public class NotificationsController extends BaseController {
                     } else {
                         if (tLRPC$MessageAction instanceof TLRPC$TL_messageActionPhoneCall) {
                             if (tLRPC$MessageAction.video) {
-                                return LocaleController.getString("CallMessageVideoIncomingMissed", C3290R.string.CallMessageVideoIncomingMissed);
+                                return LocaleController.getString("CallMessageVideoIncomingMissed", C3295R.string.CallMessageVideoIncomingMissed);
                             }
-                            return LocaleController.getString("CallMessageIncomingMissed", C3290R.string.CallMessageIncomingMissed);
+                            return LocaleController.getString("CallMessageIncomingMissed", C3295R.string.CallMessageIncomingMissed);
                         } else if (tLRPC$MessageAction instanceof TLRPC$TL_messageActionSetChatTheme) {
                             String str5 = ((TLRPC$TL_messageActionSetChatTheme) tLRPC$MessageAction).emoticon;
                             if (!TextUtils.isEmpty(str5)) {
                                 c3 = 0;
                                 z2 = true;
                                 if (j == clientUserId) {
-                                    formatString2 = LocaleController.formatString("ChangedChatThemeYou", C3290R.string.ChatThemeChangedYou, str5);
+                                    formatString2 = LocaleController.formatString("ChangedChatThemeYou", C3295R.string.ChatThemeChangedYou, str5);
                                 } else {
-                                    formatString2 = LocaleController.formatString("ChangedChatThemeTo", C3290R.string.ChatThemeChangedTo, str3, str5);
+                                    formatString2 = LocaleController.formatString("ChangedChatThemeTo", C3295R.string.ChatThemeChangedTo, str3, str5);
                                 }
                             } else if (j == clientUserId) {
                                 c3 = 0;
-                                formatString2 = LocaleController.formatString("ChatThemeDisabledYou", C3290R.string.ChatThemeDisabledYou, new Object[0]);
+                                formatString2 = LocaleController.formatString("ChatThemeDisabledYou", C3295R.string.ChatThemeDisabledYou, new Object[0]);
                                 z2 = true;
                             } else {
                                 c3 = 0;
                                 z2 = true;
-                                formatString2 = LocaleController.formatString("ChatThemeDisabled", C3290R.string.ChatThemeDisabled, str3, str5);
+                                formatString2 = LocaleController.formatString("ChatThemeDisabled", C3295R.string.ChatThemeDisabled, str3, str5);
                             }
                             String str6 = formatString2;
                             zArr[c3] = z2;
@@ -2762,83 +2762,83 @@ public class NotificationsController extends BaseController {
                     }
                 } else if (messageObject.isMediaEmpty()) {
                     if (!z && !TextUtils.isEmpty(messageObject.messageOwner.message)) {
-                        String formatString4 = LocaleController.formatString("NotificationMessageText", C3290R.string.NotificationMessageText, str3, messageObject.messageOwner.message);
+                        String formatString4 = LocaleController.formatString("NotificationMessageText", C3295R.string.NotificationMessageText, str3, messageObject.messageOwner.message);
                         zArr[0] = true;
                         return formatString4;
                     }
-                    return LocaleController.formatString(str2, C3290R.string.NotificationMessageNoText, str3);
+                    return LocaleController.formatString(str2, C3295R.string.NotificationMessageNoText, str3);
                 } else {
                     String str7 = str2;
                     TLRPC$Message tLRPC$Message3 = messageObject.messageOwner;
                     if (tLRPC$Message3.media instanceof TLRPC$TL_messageMediaPhoto) {
                         if (z || Build.VERSION.SDK_INT < 19 || TextUtils.isEmpty(tLRPC$Message3.message)) {
-                            return messageObject.messageOwner.media.ttl_seconds != 0 ? LocaleController.formatString("NotificationMessageSDPhoto", C3290R.string.NotificationMessageSDPhoto, str3) : LocaleController.formatString("NotificationMessagePhoto", C3290R.string.NotificationMessagePhoto, str3);
+                            return messageObject.messageOwner.media.ttl_seconds != 0 ? LocaleController.formatString("NotificationMessageSDPhoto", C3295R.string.NotificationMessageSDPhoto, str3) : LocaleController.formatString("NotificationMessagePhoto", C3295R.string.NotificationMessagePhoto, str3);
                         }
-                        String formatString5 = LocaleController.formatString("NotificationMessageText", C3290R.string.NotificationMessageText, str3, "🖼 " + messageObject.messageOwner.message);
+                        String formatString5 = LocaleController.formatString("NotificationMessageText", C3295R.string.NotificationMessageText, str3, "🖼 " + messageObject.messageOwner.message);
                         zArr[0] = true;
                         return formatString5;
                     } else if (messageObject.isVideo()) {
                         if (z || Build.VERSION.SDK_INT < 19 || TextUtils.isEmpty(messageObject.messageOwner.message)) {
-                            return messageObject.messageOwner.media.ttl_seconds != 0 ? LocaleController.formatString("NotificationMessageSDVideo", C3290R.string.NotificationMessageSDVideo, str3) : LocaleController.formatString("NotificationMessageVideo", C3290R.string.NotificationMessageVideo, str3);
+                            return messageObject.messageOwner.media.ttl_seconds != 0 ? LocaleController.formatString("NotificationMessageSDVideo", C3295R.string.NotificationMessageSDVideo, str3) : LocaleController.formatString("NotificationMessageVideo", C3295R.string.NotificationMessageVideo, str3);
                         }
-                        String formatString6 = LocaleController.formatString("NotificationMessageText", C3290R.string.NotificationMessageText, str3, "📹 " + messageObject.messageOwner.message);
+                        String formatString6 = LocaleController.formatString("NotificationMessageText", C3295R.string.NotificationMessageText, str3, "📹 " + messageObject.messageOwner.message);
                         zArr[0] = true;
                         return formatString6;
                     } else if (messageObject.isGame()) {
-                        return LocaleController.formatString("NotificationMessageGame", C3290R.string.NotificationMessageGame, str3, messageObject.messageOwner.media.game.title);
+                        return LocaleController.formatString("NotificationMessageGame", C3295R.string.NotificationMessageGame, str3, messageObject.messageOwner.media.game.title);
                     } else {
                         if (messageObject.isVoice()) {
-                            return LocaleController.formatString("NotificationMessageAudio", C3290R.string.NotificationMessageAudio, str3);
+                            return LocaleController.formatString("NotificationMessageAudio", C3295R.string.NotificationMessageAudio, str3);
                         }
                         if (messageObject.isRoundVideo()) {
-                            return LocaleController.formatString("NotificationMessageRound", C3290R.string.NotificationMessageRound, str3);
+                            return LocaleController.formatString("NotificationMessageRound", C3295R.string.NotificationMessageRound, str3);
                         }
                         if (messageObject.isMusic()) {
-                            return LocaleController.formatString("NotificationMessageMusic", C3290R.string.NotificationMessageMusic, str3);
+                            return LocaleController.formatString("NotificationMessageMusic", C3295R.string.NotificationMessageMusic, str3);
                         }
                         TLRPC$MessageMedia tLRPC$MessageMedia = messageObject.messageOwner.media;
                         if (tLRPC$MessageMedia instanceof TLRPC$TL_messageMediaContact) {
                             TLRPC$TL_messageMediaContact tLRPC$TL_messageMediaContact = (TLRPC$TL_messageMediaContact) tLRPC$MessageMedia;
-                            return LocaleController.formatString("NotificationMessageContact2", C3290R.string.NotificationMessageContact2, str3, ContactsController.formatName(tLRPC$TL_messageMediaContact.first_name, tLRPC$TL_messageMediaContact.last_name));
+                            return LocaleController.formatString("NotificationMessageContact2", C3295R.string.NotificationMessageContact2, str3, ContactsController.formatName(tLRPC$TL_messageMediaContact.first_name, tLRPC$TL_messageMediaContact.last_name));
                         } else if (tLRPC$MessageMedia instanceof TLRPC$TL_messageMediaPoll) {
                             TLRPC$Poll tLRPC$Poll = ((TLRPC$TL_messageMediaPoll) tLRPC$MessageMedia).poll;
                             if (tLRPC$Poll.quiz) {
-                                formatString = LocaleController.formatString("NotificationMessageQuiz2", C3290R.string.NotificationMessageQuiz2, str3, tLRPC$Poll.question);
+                                formatString = LocaleController.formatString("NotificationMessageQuiz2", C3295R.string.NotificationMessageQuiz2, str3, tLRPC$Poll.question);
                             } else {
-                                formatString = LocaleController.formatString("NotificationMessagePoll2", C3290R.string.NotificationMessagePoll2, str3, tLRPC$Poll.question);
+                                formatString = LocaleController.formatString("NotificationMessagePoll2", C3295R.string.NotificationMessagePoll2, str3, tLRPC$Poll.question);
                             }
                         } else if ((tLRPC$MessageMedia instanceof TLRPC$TL_messageMediaGeo) || (tLRPC$MessageMedia instanceof TLRPC$TL_messageMediaVenue)) {
-                            return LocaleController.formatString("NotificationMessageMap", C3290R.string.NotificationMessageMap, str3);
+                            return LocaleController.formatString("NotificationMessageMap", C3295R.string.NotificationMessageMap, str3);
                         } else {
                             if (tLRPC$MessageMedia instanceof TLRPC$TL_messageMediaGeoLive) {
-                                return LocaleController.formatString("NotificationMessageLiveLocation", C3290R.string.NotificationMessageLiveLocation, str3);
+                                return LocaleController.formatString("NotificationMessageLiveLocation", C3295R.string.NotificationMessageLiveLocation, str3);
                             }
                             if (tLRPC$MessageMedia instanceof TLRPC$TL_messageMediaDocument) {
                                 if (messageObject.isSticker() || messageObject.isAnimatedSticker()) {
                                     String stickerEmoji = messageObject.getStickerEmoji();
                                     if (stickerEmoji != null) {
-                                        formatString = LocaleController.formatString("NotificationMessageStickerEmoji", C3290R.string.NotificationMessageStickerEmoji, str3, stickerEmoji);
+                                        formatString = LocaleController.formatString("NotificationMessageStickerEmoji", C3295R.string.NotificationMessageStickerEmoji, str3, stickerEmoji);
                                     } else {
-                                        formatString = LocaleController.formatString("NotificationMessageSticker", C3290R.string.NotificationMessageSticker, str3);
+                                        formatString = LocaleController.formatString("NotificationMessageSticker", C3295R.string.NotificationMessageSticker, str3);
                                     }
                                 } else if (messageObject.isGif()) {
                                     if (z || Build.VERSION.SDK_INT < 19 || TextUtils.isEmpty(messageObject.messageOwner.message)) {
-                                        return LocaleController.formatString("NotificationMessageGif", C3290R.string.NotificationMessageGif, str3);
+                                        return LocaleController.formatString("NotificationMessageGif", C3295R.string.NotificationMessageGif, str3);
                                     }
-                                    String formatString7 = LocaleController.formatString("NotificationMessageText", C3290R.string.NotificationMessageText, str3, "🎬 " + messageObject.messageOwner.message);
+                                    String formatString7 = LocaleController.formatString("NotificationMessageText", C3295R.string.NotificationMessageText, str3, "🎬 " + messageObject.messageOwner.message);
                                     zArr[0] = true;
                                     return formatString7;
                                 } else if (z || Build.VERSION.SDK_INT < 19 || TextUtils.isEmpty(messageObject.messageOwner.message)) {
-                                    return LocaleController.formatString("NotificationMessageDocument", C3290R.string.NotificationMessageDocument, str3);
+                                    return LocaleController.formatString("NotificationMessageDocument", C3295R.string.NotificationMessageDocument, str3);
                                 } else {
-                                    String formatString8 = LocaleController.formatString("NotificationMessageText", C3290R.string.NotificationMessageText, str3, "📎 " + messageObject.messageOwner.message);
+                                    String formatString8 = LocaleController.formatString("NotificationMessageText", C3295R.string.NotificationMessageText, str3, "📎 " + messageObject.messageOwner.message);
                                     zArr[0] = true;
                                     return formatString8;
                                 }
                             } else if (z || TextUtils.isEmpty(messageObject.messageText)) {
-                                return LocaleController.formatString(str7, C3290R.string.NotificationMessageNoText, str3);
+                                return LocaleController.formatString(str7, C3295R.string.NotificationMessageNoText, str3);
                             } else {
-                                String formatString9 = LocaleController.formatString("NotificationMessageText", C3290R.string.NotificationMessageText, str3, messageObject.messageText);
+                                String formatString9 = LocaleController.formatString("NotificationMessageText", C3295R.string.NotificationMessageText, str3, messageObject.messageText);
                                 zArr[0] = true;
                                 return formatString9;
                             }
@@ -2856,7 +2856,7 @@ public class NotificationsController extends BaseController {
                 if (zArr2 != null) {
                     zArr2[0] = false;
                 }
-                return (!ChatObject.isChannel(tLRPC$Chat) || tLRPC$Chat.megagroup) ? LocaleController.formatString(str8, C3290R.string.NotificationMessageGroupNoText, str3, tLRPC$Chat.title) : LocaleController.formatString("ChannelMessageNoText", C3290R.string.ChannelMessageNoText, str3);
+                return (!ChatObject.isChannel(tLRPC$Chat) || tLRPC$Chat.megagroup) ? LocaleController.formatString(str8, C3295R.string.NotificationMessageGroupNoText, str3, tLRPC$Chat.title) : LocaleController.formatString("ChannelMessageNoText", C3295R.string.ChannelMessageNoText, str3);
             }
             TLRPC$Message tLRPC$Message4 = messageObject.messageOwner;
             if (tLRPC$Message4 instanceof TLRPC$TL_messageService) {
@@ -2868,9 +2868,9 @@ public class NotificationsController extends BaseController {
                     }
                     if (j5 != 0) {
                         if (messageObject.messageOwner.peer_id.channel_id != 0 && !tLRPC$Chat.megagroup) {
-                            formatString = LocaleController.formatString("ChannelAddedByNotification", C3290R.string.ChannelAddedByNotification, str3, tLRPC$Chat.title);
+                            formatString = LocaleController.formatString("ChannelAddedByNotification", C3295R.string.ChannelAddedByNotification, str3, tLRPC$Chat.title);
                         } else if (j5 == clientUserId) {
-                            formatString = LocaleController.formatString("NotificationInvitedToGroup", C3290R.string.NotificationInvitedToGroup, str3, tLRPC$Chat.title);
+                            formatString = LocaleController.formatString("NotificationInvitedToGroup", C3295R.string.NotificationInvitedToGroup, str3, tLRPC$Chat.title);
                         } else {
                             TLRPC$User user2 = getMessagesController().getUser(Long.valueOf(j5));
                             if (user2 == null) {
@@ -2878,12 +2878,12 @@ public class NotificationsController extends BaseController {
                             }
                             if (j4 == user2.f1574id) {
                                 if (tLRPC$Chat.megagroup) {
-                                    formatString = LocaleController.formatString("NotificationGroupAddSelfMega", C3290R.string.NotificationGroupAddSelfMega, str3, tLRPC$Chat.title);
+                                    formatString = LocaleController.formatString("NotificationGroupAddSelfMega", C3295R.string.NotificationGroupAddSelfMega, str3, tLRPC$Chat.title);
                                 } else {
-                                    formatString = LocaleController.formatString("NotificationGroupAddSelf", C3290R.string.NotificationGroupAddSelf, str3, tLRPC$Chat.title);
+                                    formatString = LocaleController.formatString("NotificationGroupAddSelf", C3295R.string.NotificationGroupAddSelf, str3, tLRPC$Chat.title);
                                 }
                             } else {
-                                formatString = LocaleController.formatString("NotificationGroupAddMember", C3290R.string.NotificationGroupAddMember, str3, tLRPC$Chat.title, UserObject.getUserName(user2));
+                                formatString = LocaleController.formatString("NotificationGroupAddMember", C3295R.string.NotificationGroupAddMember, str3, tLRPC$Chat.title, UserObject.getUserName(user2));
                             }
                         }
                     } else {
@@ -2898,10 +2898,10 @@ public class NotificationsController extends BaseController {
                                 sb.append(userName);
                             }
                         }
-                        formatString = LocaleController.formatString("NotificationGroupAddMember", C3290R.string.NotificationGroupAddMember, str3, tLRPC$Chat.title, sb.toString());
+                        formatString = LocaleController.formatString("NotificationGroupAddMember", C3295R.string.NotificationGroupAddMember, str3, tLRPC$Chat.title, sb.toString());
                     }
                 } else if (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionGroupCall) {
-                    return LocaleController.formatString("NotificationGroupCreatedCall", C3290R.string.NotificationGroupCreatedCall, str3, tLRPC$Chat.title);
+                    return LocaleController.formatString("NotificationGroupCreatedCall", C3295R.string.NotificationGroupCreatedCall, str3, tLRPC$Chat.title);
                 } else {
                     if (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionGroupCallScheduled) {
                         return messageObject.messageText.toString();
@@ -2923,37 +2923,37 @@ public class NotificationsController extends BaseController {
                                     sb2.append(userName2);
                                 }
                             }
-                            formatString = LocaleController.formatString("NotificationGroupInvitedToCall", C3290R.string.NotificationGroupInvitedToCall, str3, tLRPC$Chat.title, sb2.toString());
+                            formatString = LocaleController.formatString("NotificationGroupInvitedToCall", C3295R.string.NotificationGroupInvitedToCall, str3, tLRPC$Chat.title, sb2.toString());
                         } else if (j6 == clientUserId) {
-                            formatString = LocaleController.formatString("NotificationGroupInvitedYouToCall", C3290R.string.NotificationGroupInvitedYouToCall, str3, tLRPC$Chat.title);
+                            formatString = LocaleController.formatString("NotificationGroupInvitedYouToCall", C3295R.string.NotificationGroupInvitedYouToCall, str3, tLRPC$Chat.title);
                         } else {
                             TLRPC$User user5 = getMessagesController().getUser(Long.valueOf(j6));
                             if (user5 == null) {
                                 return null;
                             }
-                            formatString = LocaleController.formatString("NotificationGroupInvitedToCall", C3290R.string.NotificationGroupInvitedToCall, str3, tLRPC$Chat.title, UserObject.getUserName(user5));
+                            formatString = LocaleController.formatString("NotificationGroupInvitedToCall", C3295R.string.NotificationGroupInvitedToCall, str3, tLRPC$Chat.title, UserObject.getUserName(user5));
                         }
                     } else if (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionChatJoinedByLink) {
-                        return LocaleController.formatString("NotificationInvitedToGroupByLink", C3290R.string.NotificationInvitedToGroupByLink, str3, tLRPC$Chat.title);
+                        return LocaleController.formatString("NotificationInvitedToGroupByLink", C3295R.string.NotificationInvitedToGroupByLink, str3, tLRPC$Chat.title);
                     } else {
                         if (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionChatEditTitle) {
-                            return LocaleController.formatString("NotificationEditedGroupName", C3290R.string.NotificationEditedGroupName, str3, tLRPC$MessageAction3.title);
+                            return LocaleController.formatString("NotificationEditedGroupName", C3295R.string.NotificationEditedGroupName, str3, tLRPC$MessageAction3.title);
                         }
                         if ((tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionChatEditPhoto) || (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionChatDeletePhoto)) {
-                            return (tLRPC$Message4.peer_id.channel_id == 0 || tLRPC$Chat.megagroup) ? messageObject.isVideoAvatar() ? LocaleController.formatString("NotificationEditedGroupVideo", C3290R.string.NotificationEditedGroupVideo, str3, tLRPC$Chat.title) : LocaleController.formatString("NotificationEditedGroupPhoto", C3290R.string.NotificationEditedGroupPhoto, str3, tLRPC$Chat.title) : messageObject.isVideoAvatar() ? LocaleController.formatString("ChannelVideoEditNotification", C3290R.string.ChannelVideoEditNotification, tLRPC$Chat.title) : LocaleController.formatString("ChannelPhotoEditNotification", C3290R.string.ChannelPhotoEditNotification, tLRPC$Chat.title);
+                            return (tLRPC$Message4.peer_id.channel_id == 0 || tLRPC$Chat.megagroup) ? messageObject.isVideoAvatar() ? LocaleController.formatString("NotificationEditedGroupVideo", C3295R.string.NotificationEditedGroupVideo, str3, tLRPC$Chat.title) : LocaleController.formatString("NotificationEditedGroupPhoto", C3295R.string.NotificationEditedGroupPhoto, str3, tLRPC$Chat.title) : messageObject.isVideoAvatar() ? LocaleController.formatString("ChannelVideoEditNotification", C3295R.string.ChannelVideoEditNotification, tLRPC$Chat.title) : LocaleController.formatString("ChannelPhotoEditNotification", C3295R.string.ChannelPhotoEditNotification, tLRPC$Chat.title);
                         } else if (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionChatDeleteUser) {
                             long j7 = tLRPC$MessageAction3.user_id;
                             if (j7 == clientUserId) {
-                                return LocaleController.formatString("NotificationGroupKickYou", C3290R.string.NotificationGroupKickYou, str3, tLRPC$Chat.title);
+                                return LocaleController.formatString("NotificationGroupKickYou", C3295R.string.NotificationGroupKickYou, str3, tLRPC$Chat.title);
                             }
                             if (j7 == j4) {
-                                return LocaleController.formatString("NotificationGroupLeftMember", C3290R.string.NotificationGroupLeftMember, str3, tLRPC$Chat.title);
+                                return LocaleController.formatString("NotificationGroupLeftMember", C3295R.string.NotificationGroupLeftMember, str3, tLRPC$Chat.title);
                             }
                             TLRPC$User user6 = getMessagesController().getUser(Long.valueOf(messageObject.messageOwner.action.user_id));
                             if (user6 == null) {
                                 return null;
                             }
-                            return LocaleController.formatString("NotificationGroupKickMember", C3290R.string.NotificationGroupKickMember, str3, tLRPC$Chat.title, UserObject.getUserName(user6));
+                            return LocaleController.formatString("NotificationGroupKickMember", C3295R.string.NotificationGroupKickMember, str3, tLRPC$Chat.title, UserObject.getUserName(user6));
                         } else if (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionChatCreate) {
                             return messageObject.messageText.toString();
                         } else {
@@ -2961,10 +2961,10 @@ public class NotificationsController extends BaseController {
                                 return messageObject.messageText.toString();
                             }
                             if (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionChatMigrateTo) {
-                                return LocaleController.formatString("ActionMigrateFromGroupNotify", C3290R.string.ActionMigrateFromGroupNotify, tLRPC$Chat.title);
+                                return LocaleController.formatString("ActionMigrateFromGroupNotify", C3295R.string.ActionMigrateFromGroupNotify, tLRPC$Chat.title);
                             }
                             if (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionChannelMigrateFrom) {
-                                return LocaleController.formatString("ActionMigrateFromGroupNotify", C3290R.string.ActionMigrateFromGroupNotify, tLRPC$MessageAction3.title);
+                                return LocaleController.formatString("ActionMigrateFromGroupNotify", C3295R.string.ActionMigrateFromGroupNotify, tLRPC$MessageAction3.title);
                             }
                             if (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionScreenshotTaken) {
                                 return messageObject.messageText.toString();
@@ -2973,64 +2973,64 @@ public class NotificationsController extends BaseController {
                                 if (!ChatObject.isChannel(tLRPC$Chat) || tLRPC$Chat.megagroup) {
                                     MessageObject messageObject2 = messageObject.replyMessageObject;
                                     if (messageObject2 == null) {
-                                        return LocaleController.formatString("NotificationActionPinnedNoText", C3290R.string.NotificationActionPinnedNoText, str3, tLRPC$Chat.title);
+                                        return LocaleController.formatString("NotificationActionPinnedNoText", C3295R.string.NotificationActionPinnedNoText, str3, tLRPC$Chat.title);
                                     }
                                     if (messageObject2.isMusic()) {
-                                        formatString = LocaleController.formatString("NotificationActionPinnedMusic", C3290R.string.NotificationActionPinnedMusic, str3, tLRPC$Chat.title);
+                                        formatString = LocaleController.formatString("NotificationActionPinnedMusic", C3295R.string.NotificationActionPinnedMusic, str3, tLRPC$Chat.title);
                                     } else if (messageObject2.isVideo()) {
                                         if (Build.VERSION.SDK_INT >= 19 && !TextUtils.isEmpty(messageObject2.messageOwner.message)) {
-                                            formatString = LocaleController.formatString("NotificationActionPinnedText", C3290R.string.NotificationActionPinnedText, str3, "📹 " + messageObject2.messageOwner.message, tLRPC$Chat.title);
+                                            formatString = LocaleController.formatString("NotificationActionPinnedText", C3295R.string.NotificationActionPinnedText, str3, "📹 " + messageObject2.messageOwner.message, tLRPC$Chat.title);
                                         } else {
-                                            formatString = LocaleController.formatString("NotificationActionPinnedVideo", C3290R.string.NotificationActionPinnedVideo, str3, tLRPC$Chat.title);
+                                            formatString = LocaleController.formatString("NotificationActionPinnedVideo", C3295R.string.NotificationActionPinnedVideo, str3, tLRPC$Chat.title);
                                         }
                                     } else if (messageObject2.isGif()) {
                                         if (Build.VERSION.SDK_INT >= 19 && !TextUtils.isEmpty(messageObject2.messageOwner.message)) {
-                                            formatString = LocaleController.formatString("NotificationActionPinnedText", C3290R.string.NotificationActionPinnedText, str3, "🎬 " + messageObject2.messageOwner.message, tLRPC$Chat.title);
+                                            formatString = LocaleController.formatString("NotificationActionPinnedText", C3295R.string.NotificationActionPinnedText, str3, "🎬 " + messageObject2.messageOwner.message, tLRPC$Chat.title);
                                         } else {
-                                            formatString = LocaleController.formatString("NotificationActionPinnedGif", C3290R.string.NotificationActionPinnedGif, str3, tLRPC$Chat.title);
+                                            formatString = LocaleController.formatString("NotificationActionPinnedGif", C3295R.string.NotificationActionPinnedGif, str3, tLRPC$Chat.title);
                                         }
                                     } else if (messageObject2.isVoice()) {
-                                        formatString = LocaleController.formatString("NotificationActionPinnedVoice", C3290R.string.NotificationActionPinnedVoice, str3, tLRPC$Chat.title);
+                                        formatString = LocaleController.formatString("NotificationActionPinnedVoice", C3295R.string.NotificationActionPinnedVoice, str3, tLRPC$Chat.title);
                                     } else if (messageObject2.isRoundVideo()) {
-                                        formatString = LocaleController.formatString("NotificationActionPinnedRound", C3290R.string.NotificationActionPinnedRound, str3, tLRPC$Chat.title);
+                                        formatString = LocaleController.formatString("NotificationActionPinnedRound", C3295R.string.NotificationActionPinnedRound, str3, tLRPC$Chat.title);
                                     } else if (messageObject2.isSticker() || messageObject2.isAnimatedSticker()) {
                                         String stickerEmoji2 = messageObject2.getStickerEmoji();
                                         if (stickerEmoji2 != null) {
-                                            formatString = LocaleController.formatString("NotificationActionPinnedStickerEmoji", C3290R.string.NotificationActionPinnedStickerEmoji, str3, tLRPC$Chat.title, stickerEmoji2);
+                                            formatString = LocaleController.formatString("NotificationActionPinnedStickerEmoji", C3295R.string.NotificationActionPinnedStickerEmoji, str3, tLRPC$Chat.title, stickerEmoji2);
                                         } else {
-                                            formatString = LocaleController.formatString("NotificationActionPinnedSticker", C3290R.string.NotificationActionPinnedSticker, str3, tLRPC$Chat.title);
+                                            formatString = LocaleController.formatString("NotificationActionPinnedSticker", C3295R.string.NotificationActionPinnedSticker, str3, tLRPC$Chat.title);
                                         }
                                     } else {
                                         TLRPC$Message tLRPC$Message5 = messageObject2.messageOwner;
                                         TLRPC$MessageMedia tLRPC$MessageMedia2 = tLRPC$Message5.media;
                                         if (tLRPC$MessageMedia2 instanceof TLRPC$TL_messageMediaDocument) {
                                             if (Build.VERSION.SDK_INT >= 19 && !TextUtils.isEmpty(tLRPC$Message5.message)) {
-                                                formatString = LocaleController.formatString("NotificationActionPinnedText", C3290R.string.NotificationActionPinnedText, str3, "📎 " + messageObject2.messageOwner.message, tLRPC$Chat.title);
+                                                formatString = LocaleController.formatString("NotificationActionPinnedText", C3295R.string.NotificationActionPinnedText, str3, "📎 " + messageObject2.messageOwner.message, tLRPC$Chat.title);
                                             } else {
-                                                formatString = LocaleController.formatString("NotificationActionPinnedFile", C3290R.string.NotificationActionPinnedFile, str3, tLRPC$Chat.title);
+                                                formatString = LocaleController.formatString("NotificationActionPinnedFile", C3295R.string.NotificationActionPinnedFile, str3, tLRPC$Chat.title);
                                             }
                                         } else if ((tLRPC$MessageMedia2 instanceof TLRPC$TL_messageMediaGeo) || (tLRPC$MessageMedia2 instanceof TLRPC$TL_messageMediaVenue)) {
-                                            formatString = LocaleController.formatString("NotificationActionPinnedGeo", C3290R.string.NotificationActionPinnedGeo, str3, tLRPC$Chat.title);
+                                            formatString = LocaleController.formatString("NotificationActionPinnedGeo", C3295R.string.NotificationActionPinnedGeo, str3, tLRPC$Chat.title);
                                         } else if (tLRPC$MessageMedia2 instanceof TLRPC$TL_messageMediaGeoLive) {
-                                            formatString = LocaleController.formatString("NotificationActionPinnedGeoLive", C3290R.string.NotificationActionPinnedGeoLive, str3, tLRPC$Chat.title);
+                                            formatString = LocaleController.formatString("NotificationActionPinnedGeoLive", C3295R.string.NotificationActionPinnedGeoLive, str3, tLRPC$Chat.title);
                                         } else if (tLRPC$MessageMedia2 instanceof TLRPC$TL_messageMediaContact) {
                                             TLRPC$TL_messageMediaContact tLRPC$TL_messageMediaContact2 = (TLRPC$TL_messageMediaContact) messageObject.messageOwner.media;
-                                            formatString = LocaleController.formatString("NotificationActionPinnedContact2", C3290R.string.NotificationActionPinnedContact2, str3, tLRPC$Chat.title, ContactsController.formatName(tLRPC$TL_messageMediaContact2.first_name, tLRPC$TL_messageMediaContact2.last_name));
+                                            formatString = LocaleController.formatString("NotificationActionPinnedContact2", C3295R.string.NotificationActionPinnedContact2, str3, tLRPC$Chat.title, ContactsController.formatName(tLRPC$TL_messageMediaContact2.first_name, tLRPC$TL_messageMediaContact2.last_name));
                                         } else if (tLRPC$MessageMedia2 instanceof TLRPC$TL_messageMediaPoll) {
                                             TLRPC$Poll tLRPC$Poll2 = ((TLRPC$TL_messageMediaPoll) tLRPC$MessageMedia2).poll;
                                             if (tLRPC$Poll2.quiz) {
-                                                formatString = LocaleController.formatString("NotificationActionPinnedQuiz2", C3290R.string.NotificationActionPinnedQuiz2, str3, tLRPC$Chat.title, tLRPC$Poll2.question);
+                                                formatString = LocaleController.formatString("NotificationActionPinnedQuiz2", C3295R.string.NotificationActionPinnedQuiz2, str3, tLRPC$Chat.title, tLRPC$Poll2.question);
                                             } else {
-                                                formatString = LocaleController.formatString("NotificationActionPinnedPoll2", C3290R.string.NotificationActionPinnedPoll2, str3, tLRPC$Chat.title, tLRPC$Poll2.question);
+                                                formatString = LocaleController.formatString("NotificationActionPinnedPoll2", C3295R.string.NotificationActionPinnedPoll2, str3, tLRPC$Chat.title, tLRPC$Poll2.question);
                                             }
                                         } else if (tLRPC$MessageMedia2 instanceof TLRPC$TL_messageMediaPhoto) {
                                             if (Build.VERSION.SDK_INT >= 19 && !TextUtils.isEmpty(tLRPC$Message5.message)) {
-                                                formatString = LocaleController.formatString("NotificationActionPinnedText", C3290R.string.NotificationActionPinnedText, str3, "🖼 " + messageObject2.messageOwner.message, tLRPC$Chat.title);
+                                                formatString = LocaleController.formatString("NotificationActionPinnedText", C3295R.string.NotificationActionPinnedText, str3, "🖼 " + messageObject2.messageOwner.message, tLRPC$Chat.title);
                                             } else {
-                                                formatString = LocaleController.formatString("NotificationActionPinnedPhoto", C3290R.string.NotificationActionPinnedPhoto, str3, tLRPC$Chat.title);
+                                                formatString = LocaleController.formatString("NotificationActionPinnedPhoto", C3295R.string.NotificationActionPinnedPhoto, str3, tLRPC$Chat.title);
                                             }
                                         } else if (tLRPC$MessageMedia2 instanceof TLRPC$TL_messageMediaGame) {
-                                            formatString = LocaleController.formatString("NotificationActionPinnedGame", C3290R.string.NotificationActionPinnedGame, str3, tLRPC$Chat.title);
+                                            formatString = LocaleController.formatString("NotificationActionPinnedGame", C3295R.string.NotificationActionPinnedGame, str3, tLRPC$Chat.title);
                                         } else {
                                             CharSequence charSequence = messageObject2.messageText;
                                             if (charSequence != null && charSequence.length() > 0) {
@@ -3044,78 +3044,78 @@ public class NotificationsController extends BaseController {
                                                 } else {
                                                     c = 0;
                                                 }
-                                                int i7 = C3290R.string.NotificationActionPinnedText;
+                                                int i7 = C3295R.string.NotificationActionPinnedText;
                                                 Object[] objArr = new Object[3];
                                                 objArr[c] = str3;
                                                 objArr[1] = charSequence2;
                                                 objArr[2] = tLRPC$Chat.title;
                                                 formatString = LocaleController.formatString("NotificationActionPinnedText", i7, objArr);
                                             } else {
-                                                formatString = LocaleController.formatString("NotificationActionPinnedNoText", C3290R.string.NotificationActionPinnedNoText, str3, tLRPC$Chat.title);
+                                                formatString = LocaleController.formatString("NotificationActionPinnedNoText", C3295R.string.NotificationActionPinnedNoText, str3, tLRPC$Chat.title);
                                             }
                                         }
                                     }
                                 } else {
                                     MessageObject messageObject3 = messageObject.replyMessageObject;
                                     if (messageObject3 == null) {
-                                        return LocaleController.formatString("NotificationActionPinnedNoTextChannel", C3290R.string.NotificationActionPinnedNoTextChannel, tLRPC$Chat.title);
+                                        return LocaleController.formatString("NotificationActionPinnedNoTextChannel", C3295R.string.NotificationActionPinnedNoTextChannel, tLRPC$Chat.title);
                                     }
                                     if (messageObject3.isMusic()) {
-                                        formatString = LocaleController.formatString("NotificationActionPinnedMusicChannel", C3290R.string.NotificationActionPinnedMusicChannel, tLRPC$Chat.title);
+                                        formatString = LocaleController.formatString("NotificationActionPinnedMusicChannel", C3295R.string.NotificationActionPinnedMusicChannel, tLRPC$Chat.title);
                                     } else if (messageObject3.isVideo()) {
                                         if (Build.VERSION.SDK_INT >= 19 && !TextUtils.isEmpty(messageObject3.messageOwner.message)) {
-                                            formatString = LocaleController.formatString("NotificationActionPinnedTextChannel", C3290R.string.NotificationActionPinnedTextChannel, tLRPC$Chat.title, "📹 " + messageObject3.messageOwner.message);
+                                            formatString = LocaleController.formatString("NotificationActionPinnedTextChannel", C3295R.string.NotificationActionPinnedTextChannel, tLRPC$Chat.title, "📹 " + messageObject3.messageOwner.message);
                                         } else {
-                                            formatString = LocaleController.formatString("NotificationActionPinnedVideoChannel", C3290R.string.NotificationActionPinnedVideoChannel, tLRPC$Chat.title);
+                                            formatString = LocaleController.formatString("NotificationActionPinnedVideoChannel", C3295R.string.NotificationActionPinnedVideoChannel, tLRPC$Chat.title);
                                         }
                                     } else if (messageObject3.isGif()) {
                                         if (Build.VERSION.SDK_INT >= 19 && !TextUtils.isEmpty(messageObject3.messageOwner.message)) {
-                                            formatString = LocaleController.formatString("NotificationActionPinnedTextChannel", C3290R.string.NotificationActionPinnedTextChannel, tLRPC$Chat.title, "🎬 " + messageObject3.messageOwner.message);
+                                            formatString = LocaleController.formatString("NotificationActionPinnedTextChannel", C3295R.string.NotificationActionPinnedTextChannel, tLRPC$Chat.title, "🎬 " + messageObject3.messageOwner.message);
                                         } else {
-                                            formatString = LocaleController.formatString("NotificationActionPinnedGifChannel", C3290R.string.NotificationActionPinnedGifChannel, tLRPC$Chat.title);
+                                            formatString = LocaleController.formatString("NotificationActionPinnedGifChannel", C3295R.string.NotificationActionPinnedGifChannel, tLRPC$Chat.title);
                                         }
                                     } else if (messageObject3.isVoice()) {
-                                        formatString = LocaleController.formatString("NotificationActionPinnedVoiceChannel", C3290R.string.NotificationActionPinnedVoiceChannel, tLRPC$Chat.title);
+                                        formatString = LocaleController.formatString("NotificationActionPinnedVoiceChannel", C3295R.string.NotificationActionPinnedVoiceChannel, tLRPC$Chat.title);
                                     } else if (messageObject3.isRoundVideo()) {
-                                        formatString = LocaleController.formatString("NotificationActionPinnedRoundChannel", C3290R.string.NotificationActionPinnedRoundChannel, tLRPC$Chat.title);
+                                        formatString = LocaleController.formatString("NotificationActionPinnedRoundChannel", C3295R.string.NotificationActionPinnedRoundChannel, tLRPC$Chat.title);
                                     } else if (messageObject3.isSticker() || messageObject3.isAnimatedSticker()) {
                                         String stickerEmoji3 = messageObject3.getStickerEmoji();
                                         if (stickerEmoji3 != null) {
-                                            formatString = LocaleController.formatString("NotificationActionPinnedStickerEmojiChannel", C3290R.string.NotificationActionPinnedStickerEmojiChannel, tLRPC$Chat.title, stickerEmoji3);
+                                            formatString = LocaleController.formatString("NotificationActionPinnedStickerEmojiChannel", C3295R.string.NotificationActionPinnedStickerEmojiChannel, tLRPC$Chat.title, stickerEmoji3);
                                         } else {
-                                            formatString = LocaleController.formatString("NotificationActionPinnedStickerChannel", C3290R.string.NotificationActionPinnedStickerChannel, tLRPC$Chat.title);
+                                            formatString = LocaleController.formatString("NotificationActionPinnedStickerChannel", C3295R.string.NotificationActionPinnedStickerChannel, tLRPC$Chat.title);
                                         }
                                     } else {
                                         TLRPC$Message tLRPC$Message6 = messageObject3.messageOwner;
                                         TLRPC$MessageMedia tLRPC$MessageMedia3 = tLRPC$Message6.media;
                                         if (tLRPC$MessageMedia3 instanceof TLRPC$TL_messageMediaDocument) {
                                             if (Build.VERSION.SDK_INT >= 19 && !TextUtils.isEmpty(tLRPC$Message6.message)) {
-                                                formatString = LocaleController.formatString("NotificationActionPinnedTextChannel", C3290R.string.NotificationActionPinnedTextChannel, tLRPC$Chat.title, "📎 " + messageObject3.messageOwner.message);
+                                                formatString = LocaleController.formatString("NotificationActionPinnedTextChannel", C3295R.string.NotificationActionPinnedTextChannel, tLRPC$Chat.title, "📎 " + messageObject3.messageOwner.message);
                                             } else {
-                                                formatString = LocaleController.formatString("NotificationActionPinnedFileChannel", C3290R.string.NotificationActionPinnedFileChannel, tLRPC$Chat.title);
+                                                formatString = LocaleController.formatString("NotificationActionPinnedFileChannel", C3295R.string.NotificationActionPinnedFileChannel, tLRPC$Chat.title);
                                             }
                                         } else if ((tLRPC$MessageMedia3 instanceof TLRPC$TL_messageMediaGeo) || (tLRPC$MessageMedia3 instanceof TLRPC$TL_messageMediaVenue)) {
-                                            formatString = LocaleController.formatString("NotificationActionPinnedGeoChannel", C3290R.string.NotificationActionPinnedGeoChannel, tLRPC$Chat.title);
+                                            formatString = LocaleController.formatString("NotificationActionPinnedGeoChannel", C3295R.string.NotificationActionPinnedGeoChannel, tLRPC$Chat.title);
                                         } else if (tLRPC$MessageMedia3 instanceof TLRPC$TL_messageMediaGeoLive) {
-                                            formatString = LocaleController.formatString("NotificationActionPinnedGeoLiveChannel", C3290R.string.NotificationActionPinnedGeoLiveChannel, tLRPC$Chat.title);
+                                            formatString = LocaleController.formatString("NotificationActionPinnedGeoLiveChannel", C3295R.string.NotificationActionPinnedGeoLiveChannel, tLRPC$Chat.title);
                                         } else if (tLRPC$MessageMedia3 instanceof TLRPC$TL_messageMediaContact) {
                                             TLRPC$TL_messageMediaContact tLRPC$TL_messageMediaContact3 = (TLRPC$TL_messageMediaContact) messageObject.messageOwner.media;
-                                            formatString = LocaleController.formatString("NotificationActionPinnedContactChannel2", C3290R.string.NotificationActionPinnedContactChannel2, tLRPC$Chat.title, ContactsController.formatName(tLRPC$TL_messageMediaContact3.first_name, tLRPC$TL_messageMediaContact3.last_name));
+                                            formatString = LocaleController.formatString("NotificationActionPinnedContactChannel2", C3295R.string.NotificationActionPinnedContactChannel2, tLRPC$Chat.title, ContactsController.formatName(tLRPC$TL_messageMediaContact3.first_name, tLRPC$TL_messageMediaContact3.last_name));
                                         } else if (tLRPC$MessageMedia3 instanceof TLRPC$TL_messageMediaPoll) {
                                             TLRPC$Poll tLRPC$Poll3 = ((TLRPC$TL_messageMediaPoll) tLRPC$MessageMedia3).poll;
                                             if (tLRPC$Poll3.quiz) {
-                                                formatString = LocaleController.formatString("NotificationActionPinnedQuizChannel2", C3290R.string.NotificationActionPinnedQuizChannel2, tLRPC$Chat.title, tLRPC$Poll3.question);
+                                                formatString = LocaleController.formatString("NotificationActionPinnedQuizChannel2", C3295R.string.NotificationActionPinnedQuizChannel2, tLRPC$Chat.title, tLRPC$Poll3.question);
                                             } else {
-                                                formatString = LocaleController.formatString("NotificationActionPinnedPollChannel2", C3290R.string.NotificationActionPinnedPollChannel2, tLRPC$Chat.title, tLRPC$Poll3.question);
+                                                formatString = LocaleController.formatString("NotificationActionPinnedPollChannel2", C3295R.string.NotificationActionPinnedPollChannel2, tLRPC$Chat.title, tLRPC$Poll3.question);
                                             }
                                         } else if (tLRPC$MessageMedia3 instanceof TLRPC$TL_messageMediaPhoto) {
                                             if (Build.VERSION.SDK_INT >= 19 && !TextUtils.isEmpty(tLRPC$Message6.message)) {
-                                                formatString = LocaleController.formatString("NotificationActionPinnedTextChannel", C3290R.string.NotificationActionPinnedTextChannel, tLRPC$Chat.title, "🖼 " + messageObject3.messageOwner.message);
+                                                formatString = LocaleController.formatString("NotificationActionPinnedTextChannel", C3295R.string.NotificationActionPinnedTextChannel, tLRPC$Chat.title, "🖼 " + messageObject3.messageOwner.message);
                                             } else {
-                                                formatString = LocaleController.formatString("NotificationActionPinnedPhotoChannel", C3290R.string.NotificationActionPinnedPhotoChannel, tLRPC$Chat.title);
+                                                formatString = LocaleController.formatString("NotificationActionPinnedPhotoChannel", C3295R.string.NotificationActionPinnedPhotoChannel, tLRPC$Chat.title);
                                             }
                                         } else if (tLRPC$MessageMedia3 instanceof TLRPC$TL_messageMediaGame) {
-                                            formatString = LocaleController.formatString("NotificationActionPinnedGameChannel", C3290R.string.NotificationActionPinnedGameChannel, tLRPC$Chat.title);
+                                            formatString = LocaleController.formatString("NotificationActionPinnedGameChannel", C3295R.string.NotificationActionPinnedGameChannel, tLRPC$Chat.title);
                                         } else {
                                             CharSequence charSequence3 = messageObject3.messageText;
                                             if (charSequence3 != null && charSequence3.length() > 0) {
@@ -3129,13 +3129,13 @@ public class NotificationsController extends BaseController {
                                                 } else {
                                                     c2 = 0;
                                                 }
-                                                int i8 = C3290R.string.NotificationActionPinnedTextChannel;
+                                                int i8 = C3295R.string.NotificationActionPinnedTextChannel;
                                                 Object[] objArr2 = new Object[2];
                                                 objArr2[c2] = tLRPC$Chat.title;
                                                 objArr2[1] = charSequence4;
                                                 formatString = LocaleController.formatString("NotificationActionPinnedTextChannel", i8, objArr2);
                                             } else {
-                                                formatString = LocaleController.formatString("NotificationActionPinnedNoTextChannel", C3290R.string.NotificationActionPinnedNoTextChannel, tLRPC$Chat.title);
+                                                formatString = LocaleController.formatString("NotificationActionPinnedNoTextChannel", C3295R.string.NotificationActionPinnedNoTextChannel, tLRPC$Chat.title);
                                             }
                                         }
                                     }
@@ -3147,14 +3147,14 @@ public class NotificationsController extends BaseController {
                                     String str9 = ((TLRPC$TL_messageActionSetChatTheme) tLRPC$MessageAction3).emoticon;
                                     if (TextUtils.isEmpty(str9)) {
                                         if (j == clientUserId) {
-                                            formatString = LocaleController.formatString("ChatThemeDisabledYou", C3290R.string.ChatThemeDisabledYou, new Object[0]);
+                                            formatString = LocaleController.formatString("ChatThemeDisabledYou", C3295R.string.ChatThemeDisabledYou, new Object[0]);
                                         } else {
-                                            formatString = LocaleController.formatString("ChatThemeDisabled", C3290R.string.ChatThemeDisabled, str3, str9);
+                                            formatString = LocaleController.formatString("ChatThemeDisabled", C3295R.string.ChatThemeDisabled, str3, str9);
                                         }
                                     } else if (j == clientUserId) {
-                                        formatString = LocaleController.formatString("ChangedChatThemeYou", C3290R.string.ChatThemeChangedYou, str9);
+                                        formatString = LocaleController.formatString("ChangedChatThemeYou", C3295R.string.ChatThemeChangedYou, str9);
                                     } else {
-                                        formatString = LocaleController.formatString("ChangedChatThemeTo", C3290R.string.ChatThemeChangedTo, str3, str9);
+                                        formatString = LocaleController.formatString("ChangedChatThemeTo", C3295R.string.ChatThemeChangedTo, str3, str9);
                                     }
                                 } else if (tLRPC$MessageAction3 instanceof TLRPC$TL_messageActionChatJoinedByRequest) {
                                     return messageObject.messageText.toString();
@@ -3168,146 +3168,146 @@ public class NotificationsController extends BaseController {
             } else if (ChatObject.isChannel(tLRPC$Chat) && !tLRPC$Chat.megagroup) {
                 if (messageObject.isMediaEmpty()) {
                     if (z || TextUtils.isEmpty(messageObject.messageOwner.message)) {
-                        return LocaleController.formatString("ChannelMessageNoText", C3290R.string.ChannelMessageNoText, str3);
+                        return LocaleController.formatString("ChannelMessageNoText", C3295R.string.ChannelMessageNoText, str3);
                     }
-                    String formatString10 = LocaleController.formatString("NotificationMessageText", C3290R.string.NotificationMessageText, str3, messageObject.messageOwner.message);
+                    String formatString10 = LocaleController.formatString("NotificationMessageText", C3295R.string.NotificationMessageText, str3, messageObject.messageOwner.message);
                     zArr[0] = true;
                     return formatString10;
                 }
                 TLRPC$Message tLRPC$Message7 = messageObject.messageOwner;
                 if (tLRPC$Message7.media instanceof TLRPC$TL_messageMediaPhoto) {
                     if (z || Build.VERSION.SDK_INT < 19 || TextUtils.isEmpty(tLRPC$Message7.message)) {
-                        return LocaleController.formatString("ChannelMessagePhoto", C3290R.string.ChannelMessagePhoto, str3);
+                        return LocaleController.formatString("ChannelMessagePhoto", C3295R.string.ChannelMessagePhoto, str3);
                     }
-                    String formatString11 = LocaleController.formatString("NotificationMessageText", C3290R.string.NotificationMessageText, str3, "🖼 " + messageObject.messageOwner.message);
+                    String formatString11 = LocaleController.formatString("NotificationMessageText", C3295R.string.NotificationMessageText, str3, "🖼 " + messageObject.messageOwner.message);
                     zArr[0] = true;
                     return formatString11;
                 } else if (messageObject.isVideo()) {
                     if (z || Build.VERSION.SDK_INT < 19 || TextUtils.isEmpty(messageObject.messageOwner.message)) {
-                        return LocaleController.formatString("ChannelMessageVideo", C3290R.string.ChannelMessageVideo, str3);
+                        return LocaleController.formatString("ChannelMessageVideo", C3295R.string.ChannelMessageVideo, str3);
                     }
-                    String formatString12 = LocaleController.formatString("NotificationMessageText", C3290R.string.NotificationMessageText, str3, "📹 " + messageObject.messageOwner.message);
+                    String formatString12 = LocaleController.formatString("NotificationMessageText", C3295R.string.NotificationMessageText, str3, "📹 " + messageObject.messageOwner.message);
                     zArr[0] = true;
                     return formatString12;
                 } else if (messageObject.isVoice()) {
-                    return LocaleController.formatString("ChannelMessageAudio", C3290R.string.ChannelMessageAudio, str3);
+                    return LocaleController.formatString("ChannelMessageAudio", C3295R.string.ChannelMessageAudio, str3);
                 } else {
                     if (messageObject.isRoundVideo()) {
-                        return LocaleController.formatString("ChannelMessageRound", C3290R.string.ChannelMessageRound, str3);
+                        return LocaleController.formatString("ChannelMessageRound", C3295R.string.ChannelMessageRound, str3);
                     }
                     if (messageObject.isMusic()) {
-                        return LocaleController.formatString("ChannelMessageMusic", C3290R.string.ChannelMessageMusic, str3);
+                        return LocaleController.formatString("ChannelMessageMusic", C3295R.string.ChannelMessageMusic, str3);
                     }
                     TLRPC$MessageMedia tLRPC$MessageMedia4 = messageObject.messageOwner.media;
                     if (tLRPC$MessageMedia4 instanceof TLRPC$TL_messageMediaContact) {
                         TLRPC$TL_messageMediaContact tLRPC$TL_messageMediaContact4 = (TLRPC$TL_messageMediaContact) tLRPC$MessageMedia4;
-                        return LocaleController.formatString("ChannelMessageContact2", C3290R.string.ChannelMessageContact2, str3, ContactsController.formatName(tLRPC$TL_messageMediaContact4.first_name, tLRPC$TL_messageMediaContact4.last_name));
+                        return LocaleController.formatString("ChannelMessageContact2", C3295R.string.ChannelMessageContact2, str3, ContactsController.formatName(tLRPC$TL_messageMediaContact4.first_name, tLRPC$TL_messageMediaContact4.last_name));
                     } else if (tLRPC$MessageMedia4 instanceof TLRPC$TL_messageMediaPoll) {
                         TLRPC$Poll tLRPC$Poll4 = ((TLRPC$TL_messageMediaPoll) tLRPC$MessageMedia4).poll;
                         if (tLRPC$Poll4.quiz) {
-                            formatString = LocaleController.formatString("ChannelMessageQuiz2", C3290R.string.ChannelMessageQuiz2, str3, tLRPC$Poll4.question);
+                            formatString = LocaleController.formatString("ChannelMessageQuiz2", C3295R.string.ChannelMessageQuiz2, str3, tLRPC$Poll4.question);
                         } else {
-                            formatString = LocaleController.formatString("ChannelMessagePoll2", C3290R.string.ChannelMessagePoll2, str3, tLRPC$Poll4.question);
+                            formatString = LocaleController.formatString("ChannelMessagePoll2", C3295R.string.ChannelMessagePoll2, str3, tLRPC$Poll4.question);
                         }
                     } else if ((tLRPC$MessageMedia4 instanceof TLRPC$TL_messageMediaGeo) || (tLRPC$MessageMedia4 instanceof TLRPC$TL_messageMediaVenue)) {
-                        return LocaleController.formatString("ChannelMessageMap", C3290R.string.ChannelMessageMap, str3);
+                        return LocaleController.formatString("ChannelMessageMap", C3295R.string.ChannelMessageMap, str3);
                     } else {
                         if (tLRPC$MessageMedia4 instanceof TLRPC$TL_messageMediaGeoLive) {
-                            return LocaleController.formatString("ChannelMessageLiveLocation", C3290R.string.ChannelMessageLiveLocation, str3);
+                            return LocaleController.formatString("ChannelMessageLiveLocation", C3295R.string.ChannelMessageLiveLocation, str3);
                         }
                         if (tLRPC$MessageMedia4 instanceof TLRPC$TL_messageMediaDocument) {
                             if (messageObject.isSticker() || messageObject.isAnimatedSticker()) {
                                 String stickerEmoji4 = messageObject.getStickerEmoji();
                                 if (stickerEmoji4 != null) {
-                                    formatString = LocaleController.formatString("ChannelMessageStickerEmoji", C3290R.string.ChannelMessageStickerEmoji, str3, stickerEmoji4);
+                                    formatString = LocaleController.formatString("ChannelMessageStickerEmoji", C3295R.string.ChannelMessageStickerEmoji, str3, stickerEmoji4);
                                 } else {
-                                    formatString = LocaleController.formatString("ChannelMessageSticker", C3290R.string.ChannelMessageSticker, str3);
+                                    formatString = LocaleController.formatString("ChannelMessageSticker", C3295R.string.ChannelMessageSticker, str3);
                                 }
                             } else if (messageObject.isGif()) {
                                 if (z || Build.VERSION.SDK_INT < 19 || TextUtils.isEmpty(messageObject.messageOwner.message)) {
-                                    return LocaleController.formatString("ChannelMessageGIF", C3290R.string.ChannelMessageGIF, str3);
+                                    return LocaleController.formatString("ChannelMessageGIF", C3295R.string.ChannelMessageGIF, str3);
                                 }
-                                String formatString13 = LocaleController.formatString("NotificationMessageText", C3290R.string.NotificationMessageText, str3, "🎬 " + messageObject.messageOwner.message);
+                                String formatString13 = LocaleController.formatString("NotificationMessageText", C3295R.string.NotificationMessageText, str3, "🎬 " + messageObject.messageOwner.message);
                                 zArr[0] = true;
                                 return formatString13;
                             } else if (z || Build.VERSION.SDK_INT < 19 || TextUtils.isEmpty(messageObject.messageOwner.message)) {
-                                return LocaleController.formatString("ChannelMessageDocument", C3290R.string.ChannelMessageDocument, str3);
+                                return LocaleController.formatString("ChannelMessageDocument", C3295R.string.ChannelMessageDocument, str3);
                             } else {
-                                String formatString14 = LocaleController.formatString("NotificationMessageText", C3290R.string.NotificationMessageText, str3, "📎 " + messageObject.messageOwner.message);
+                                String formatString14 = LocaleController.formatString("NotificationMessageText", C3295R.string.NotificationMessageText, str3, "📎 " + messageObject.messageOwner.message);
                                 zArr[0] = true;
                                 return formatString14;
                             }
                         } else if (z || TextUtils.isEmpty(messageObject.messageText)) {
-                            return LocaleController.formatString("ChannelMessageNoText", C3290R.string.ChannelMessageNoText, str3);
+                            return LocaleController.formatString("ChannelMessageNoText", C3295R.string.ChannelMessageNoText, str3);
                         } else {
-                            String formatString15 = LocaleController.formatString("NotificationMessageText", C3290R.string.NotificationMessageText, str3, messageObject.messageText);
+                            String formatString15 = LocaleController.formatString("NotificationMessageText", C3295R.string.NotificationMessageText, str3, messageObject.messageText);
                             zArr[0] = true;
                             return formatString15;
                         }
                     }
                 }
             } else if (messageObject.isMediaEmpty()) {
-                return (z || TextUtils.isEmpty(messageObject.messageOwner.message)) ? LocaleController.formatString(str, C3290R.string.NotificationMessageGroupNoText, str3, tLRPC$Chat.title) : LocaleController.formatString("NotificationMessageGroupText", C3290R.string.NotificationMessageGroupText, str3, tLRPC$Chat.title, messageObject.messageOwner.message);
+                return (z || TextUtils.isEmpty(messageObject.messageOwner.message)) ? LocaleController.formatString(str, C3295R.string.NotificationMessageGroupNoText, str3, tLRPC$Chat.title) : LocaleController.formatString("NotificationMessageGroupText", C3295R.string.NotificationMessageGroupText, str3, tLRPC$Chat.title, messageObject.messageOwner.message);
             } else {
                 String str10 = str;
                 TLRPC$Message tLRPC$Message8 = messageObject.messageOwner;
                 if (tLRPC$Message8.media instanceof TLRPC$TL_messageMediaPhoto) {
                     if (z || Build.VERSION.SDK_INT < 19 || TextUtils.isEmpty(tLRPC$Message8.message)) {
-                        return LocaleController.formatString("NotificationMessageGroupPhoto", C3290R.string.NotificationMessageGroupPhoto, str3, tLRPC$Chat.title);
+                        return LocaleController.formatString("NotificationMessageGroupPhoto", C3295R.string.NotificationMessageGroupPhoto, str3, tLRPC$Chat.title);
                     }
-                    return LocaleController.formatString("NotificationMessageGroupText", C3290R.string.NotificationMessageGroupText, str3, tLRPC$Chat.title, "🖼 " + messageObject.messageOwner.message);
+                    return LocaleController.formatString("NotificationMessageGroupText", C3295R.string.NotificationMessageGroupText, str3, tLRPC$Chat.title, "🖼 " + messageObject.messageOwner.message);
                 } else if (messageObject.isVideo()) {
                     if (z || Build.VERSION.SDK_INT < 19 || TextUtils.isEmpty(messageObject.messageOwner.message)) {
-                        return LocaleController.formatString(" ", C3290R.string.NotificationMessageGroupVideo, str3, tLRPC$Chat.title);
+                        return LocaleController.formatString(" ", C3295R.string.NotificationMessageGroupVideo, str3, tLRPC$Chat.title);
                     }
-                    return LocaleController.formatString("NotificationMessageGroupText", C3290R.string.NotificationMessageGroupText, str3, tLRPC$Chat.title, "📹 " + messageObject.messageOwner.message);
+                    return LocaleController.formatString("NotificationMessageGroupText", C3295R.string.NotificationMessageGroupText, str3, tLRPC$Chat.title, "📹 " + messageObject.messageOwner.message);
                 } else if (messageObject.isVoice()) {
-                    return LocaleController.formatString("NotificationMessageGroupAudio", C3290R.string.NotificationMessageGroupAudio, str3, tLRPC$Chat.title);
+                    return LocaleController.formatString("NotificationMessageGroupAudio", C3295R.string.NotificationMessageGroupAudio, str3, tLRPC$Chat.title);
                 } else {
                     if (messageObject.isRoundVideo()) {
-                        return LocaleController.formatString("NotificationMessageGroupRound", C3290R.string.NotificationMessageGroupRound, str3, tLRPC$Chat.title);
+                        return LocaleController.formatString("NotificationMessageGroupRound", C3295R.string.NotificationMessageGroupRound, str3, tLRPC$Chat.title);
                     }
                     if (messageObject.isMusic()) {
-                        return LocaleController.formatString("NotificationMessageGroupMusic", C3290R.string.NotificationMessageGroupMusic, str3, tLRPC$Chat.title);
+                        return LocaleController.formatString("NotificationMessageGroupMusic", C3295R.string.NotificationMessageGroupMusic, str3, tLRPC$Chat.title);
                     }
                     TLRPC$MessageMedia tLRPC$MessageMedia5 = messageObject.messageOwner.media;
                     if (tLRPC$MessageMedia5 instanceof TLRPC$TL_messageMediaContact) {
                         TLRPC$TL_messageMediaContact tLRPC$TL_messageMediaContact5 = (TLRPC$TL_messageMediaContact) tLRPC$MessageMedia5;
-                        return LocaleController.formatString("NotificationMessageGroupContact2", C3290R.string.NotificationMessageGroupContact2, str3, tLRPC$Chat.title, ContactsController.formatName(tLRPC$TL_messageMediaContact5.first_name, tLRPC$TL_messageMediaContact5.last_name));
+                        return LocaleController.formatString("NotificationMessageGroupContact2", C3295R.string.NotificationMessageGroupContact2, str3, tLRPC$Chat.title, ContactsController.formatName(tLRPC$TL_messageMediaContact5.first_name, tLRPC$TL_messageMediaContact5.last_name));
                     } else if (tLRPC$MessageMedia5 instanceof TLRPC$TL_messageMediaPoll) {
                         TLRPC$Poll tLRPC$Poll5 = ((TLRPC$TL_messageMediaPoll) tLRPC$MessageMedia5).poll;
                         if (tLRPC$Poll5.quiz) {
-                            formatString = LocaleController.formatString("NotificationMessageGroupQuiz2", C3290R.string.NotificationMessageGroupQuiz2, str3, tLRPC$Chat.title, tLRPC$Poll5.question);
+                            formatString = LocaleController.formatString("NotificationMessageGroupQuiz2", C3295R.string.NotificationMessageGroupQuiz2, str3, tLRPC$Chat.title, tLRPC$Poll5.question);
                         } else {
-                            formatString = LocaleController.formatString("NotificationMessageGroupPoll2", C3290R.string.NotificationMessageGroupPoll2, str3, tLRPC$Chat.title, tLRPC$Poll5.question);
+                            formatString = LocaleController.formatString("NotificationMessageGroupPoll2", C3295R.string.NotificationMessageGroupPoll2, str3, tLRPC$Chat.title, tLRPC$Poll5.question);
                         }
                     } else if (tLRPC$MessageMedia5 instanceof TLRPC$TL_messageMediaGame) {
-                        return LocaleController.formatString("NotificationMessageGroupGame", C3290R.string.NotificationMessageGroupGame, str3, tLRPC$Chat.title, tLRPC$MessageMedia5.game.title);
+                        return LocaleController.formatString("NotificationMessageGroupGame", C3295R.string.NotificationMessageGroupGame, str3, tLRPC$Chat.title, tLRPC$MessageMedia5.game.title);
                     } else {
                         if ((tLRPC$MessageMedia5 instanceof TLRPC$TL_messageMediaGeo) || (tLRPC$MessageMedia5 instanceof TLRPC$TL_messageMediaVenue)) {
-                            return LocaleController.formatString("NotificationMessageGroupMap", C3290R.string.NotificationMessageGroupMap, str3, tLRPC$Chat.title);
+                            return LocaleController.formatString("NotificationMessageGroupMap", C3295R.string.NotificationMessageGroupMap, str3, tLRPC$Chat.title);
                         }
                         if (tLRPC$MessageMedia5 instanceof TLRPC$TL_messageMediaGeoLive) {
-                            return LocaleController.formatString("NotificationMessageGroupLiveLocation", C3290R.string.NotificationMessageGroupLiveLocation, str3, tLRPC$Chat.title);
+                            return LocaleController.formatString("NotificationMessageGroupLiveLocation", C3295R.string.NotificationMessageGroupLiveLocation, str3, tLRPC$Chat.title);
                         }
                         if (!(tLRPC$MessageMedia5 instanceof TLRPC$TL_messageMediaDocument)) {
-                            return (z || TextUtils.isEmpty(messageObject.messageText)) ? LocaleController.formatString(str10, C3290R.string.NotificationMessageGroupNoText, str3, tLRPC$Chat.title) : LocaleController.formatString("NotificationMessageGroupText", C3290R.string.NotificationMessageGroupText, str3, tLRPC$Chat.title, messageObject.messageText);
+                            return (z || TextUtils.isEmpty(messageObject.messageText)) ? LocaleController.formatString(str10, C3295R.string.NotificationMessageGroupNoText, str3, tLRPC$Chat.title) : LocaleController.formatString("NotificationMessageGroupText", C3295R.string.NotificationMessageGroupText, str3, tLRPC$Chat.title, messageObject.messageText);
                         } else if (messageObject.isSticker() || messageObject.isAnimatedSticker()) {
                             String stickerEmoji5 = messageObject.getStickerEmoji();
                             if (stickerEmoji5 != null) {
-                                formatString = LocaleController.formatString("NotificationMessageGroupStickerEmoji", C3290R.string.NotificationMessageGroupStickerEmoji, str3, tLRPC$Chat.title, stickerEmoji5);
+                                formatString = LocaleController.formatString("NotificationMessageGroupStickerEmoji", C3295R.string.NotificationMessageGroupStickerEmoji, str3, tLRPC$Chat.title, stickerEmoji5);
                             } else {
-                                formatString = LocaleController.formatString("NotificationMessageGroupSticker", C3290R.string.NotificationMessageGroupSticker, str3, tLRPC$Chat.title);
+                                formatString = LocaleController.formatString("NotificationMessageGroupSticker", C3295R.string.NotificationMessageGroupSticker, str3, tLRPC$Chat.title);
                             }
                         } else if (messageObject.isGif()) {
                             if (z || Build.VERSION.SDK_INT < 19 || TextUtils.isEmpty(messageObject.messageOwner.message)) {
-                                return LocaleController.formatString("NotificationMessageGroupGif", C3290R.string.NotificationMessageGroupGif, str3, tLRPC$Chat.title);
+                                return LocaleController.formatString("NotificationMessageGroupGif", C3295R.string.NotificationMessageGroupGif, str3, tLRPC$Chat.title);
                             }
-                            return LocaleController.formatString("NotificationMessageGroupText", C3290R.string.NotificationMessageGroupText, str3, tLRPC$Chat.title, "🎬 " + messageObject.messageOwner.message);
+                            return LocaleController.formatString("NotificationMessageGroupText", C3295R.string.NotificationMessageGroupText, str3, tLRPC$Chat.title, "🎬 " + messageObject.messageOwner.message);
                         } else if (z || Build.VERSION.SDK_INT < 19 || TextUtils.isEmpty(messageObject.messageOwner.message)) {
-                            return LocaleController.formatString("NotificationMessageGroupDocument", C3290R.string.NotificationMessageGroupDocument, str3, tLRPC$Chat.title);
+                            return LocaleController.formatString("NotificationMessageGroupDocument", C3295R.string.NotificationMessageGroupDocument, str3, tLRPC$Chat.title);
                         } else {
-                            return LocaleController.formatString("NotificationMessageGroupText", C3290R.string.NotificationMessageGroupText, str3, tLRPC$Chat.title, "📎 " + messageObject.messageOwner.message);
+                            return LocaleController.formatString("NotificationMessageGroupText", C3295R.string.NotificationMessageGroupText, str3, tLRPC$Chat.title, "📎 " + messageObject.messageOwner.message);
                         }
                     }
                 }
@@ -3442,7 +3442,7 @@ public class NotificationsController extends BaseController {
             }
             if (this.soundIn == 0 && !this.soundInLoaded) {
                 this.soundInLoaded = true;
-                this.soundIn = this.soundPool.load(ApplicationLoader.applicationContext, C3290R.raw.sound_in, 1);
+                this.soundIn = this.soundPool.load(ApplicationLoader.applicationContext, C3295R.raw.sound_in, 1);
             }
             int i = this.soundIn;
             if (i != 0) {
@@ -3788,16 +3788,16 @@ public class NotificationsController extends BaseController {
             String str6 = user != null ? " (" + ContactsController.formatName(user.first_name, user.last_name) + ")" : "";
             ArrayList arrayList = new ArrayList();
             if (str2 != null) {
-                arrayList.add(new NotificationChannelGroup(str2, LocaleController.getString("NotificationsChannels", C3290R.string.NotificationsChannels) + str6));
+                arrayList.add(new NotificationChannelGroup(str2, LocaleController.getString("NotificationsChannels", C3295R.string.NotificationsChannels) + str6));
             }
             if (str3 != null) {
-                arrayList.add(new NotificationChannelGroup(str3, LocaleController.getString("NotificationsGroups", C3290R.string.NotificationsGroups) + str6));
+                arrayList.add(new NotificationChannelGroup(str3, LocaleController.getString("NotificationsGroups", C3295R.string.NotificationsGroups) + str6));
             }
             if (str5 != null) {
-                arrayList.add(new NotificationChannelGroup(str5, LocaleController.getString("NotificationsPrivateChats", C3290R.string.NotificationsPrivateChats) + str6));
+                arrayList.add(new NotificationChannelGroup(str5, LocaleController.getString("NotificationsPrivateChats", C3295R.string.NotificationsPrivateChats) + str6));
             }
             if (str4 != null) {
-                arrayList.add(new NotificationChannelGroup(str4, LocaleController.getString("NotificationsOther", C3290R.string.NotificationsOther) + str6));
+                arrayList.add(new NotificationChannelGroup(str4, LocaleController.getString("NotificationsOther", C3295R.string.NotificationsOther) + str6));
             }
             systemNotificationManager.createNotificationChannelGroups(arrayList);
         }
@@ -3826,10 +3826,10 @@ public class NotificationsController extends BaseController {
         if (r20 == 0) goto L469;
      */
     /* JADX WARN: Code restructure failed: missing block: B:90:0x0174, code lost:
-        r3 = org.telegram.messenger.LocaleController.getString("NotificationHiddenChatName", org.telegram.messenger.C3290R.string.NotificationHiddenChatName);
+        r3 = org.telegram.messenger.LocaleController.getString("NotificationHiddenChatName", org.telegram.messenger.C3295R.string.NotificationHiddenChatName);
      */
     /* JADX WARN: Code restructure failed: missing block: B:91:0x017d, code lost:
-        r3 = org.telegram.messenger.LocaleController.getString("NotificationHiddenName", org.telegram.messenger.C3290R.string.NotificationHiddenName);
+        r3 = org.telegram.messenger.LocaleController.getString("NotificationHiddenName", org.telegram.messenger.C3295R.string.NotificationHiddenName);
      */
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Removed duplicated region for block: B:101:0x01ce  */
@@ -3908,7 +3908,7 @@ public class NotificationsController extends BaseController {
         }
         SharedPreferences.Editor edit = getAccountInstance().getNotificationsSettings().edit();
         String uri3 = uri2.toString();
-        String string = LocaleController.getString("DefaultRingtone", C3290R.string.DefaultRingtone);
+        String string = LocaleController.getString("DefaultRingtone", C3295R.string.DefaultRingtone);
         if (z) {
             if (i4 == 2) {
                 edit.putString("ChannelSound", string);
@@ -4134,7 +4134,7 @@ public class NotificationsController extends BaseController {
             }
             if (this.soundOut == 0 && !this.soundOutLoaded) {
                 this.soundOutLoaded = true;
-                this.soundOut = this.soundPool.load(ApplicationLoader.applicationContext, C3290R.raw.sound_out, 1);
+                this.soundOut = this.soundPool.load(ApplicationLoader.applicationContext, C3295R.raw.sound_out, 1);
             }
             int i = this.soundOut;
             if (i != 0) {

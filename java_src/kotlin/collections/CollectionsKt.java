@@ -81,6 +81,10 @@ public final class CollectionsKt extends CollectionsKt___CollectionsKt {
         return CollectionsKt___CollectionsKt.plus((Collection) collection, (Iterable) iterable);
     }
 
+    public static /* bridge */ /* synthetic */ <T> List<T> plus(Collection<? extends T> collection, T t) {
+        return CollectionsKt___CollectionsKt.plus(collection, t);
+    }
+
     public static /* bridge */ /* synthetic */ <T> T random(Collection<? extends T> collection, Random random) {
         return (T) CollectionsKt___CollectionsKt.random(collection, random);
     }

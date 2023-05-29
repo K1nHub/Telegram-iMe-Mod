@@ -45,7 +45,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.NotificationCenter;
@@ -282,16 +282,16 @@ public final class FloatingToolbar {
             this.mFastOutSlowInInterpolator = AnimationUtils.loadInterpolator(context, 17563661);
             this.mLinearOutSlowInInterpolator = AnimationUtils.loadInterpolator(context, 17563662);
             this.mFastOutLinearInInterpolator = AnimationUtils.loadInterpolator(context, 17563663);
-            Drawable mutate = context.getDrawable(C3290R.C3292drawable.ft_avd_tooverflow).mutate();
+            Drawable mutate = context.getDrawable(C3295R.C3297drawable.ft_avd_tooverflow).mutate();
             this.mArrow = mutate;
             mutate.setAutoMirrored(true);
-            Drawable mutate2 = context.getDrawable(C3290R.C3292drawable.ft_avd_toarrow).mutate();
+            Drawable mutate2 = context.getDrawable(C3295R.C3297drawable.ft_avd_toarrow).mutate();
             this.mOverflow = mutate2;
             mutate2.setAutoMirrored(true);
-            AnimatedVectorDrawable animatedVectorDrawable = (AnimatedVectorDrawable) context.getDrawable(C3290R.C3292drawable.ft_avd_toarrow_animation).mutate();
+            AnimatedVectorDrawable animatedVectorDrawable = (AnimatedVectorDrawable) context.getDrawable(C3295R.C3297drawable.ft_avd_toarrow_animation).mutate();
             this.mToArrow = animatedVectorDrawable;
             animatedVectorDrawable.setAutoMirrored(true);
-            AnimatedVectorDrawable animatedVectorDrawable2 = (AnimatedVectorDrawable) context.getDrawable(C3290R.C3292drawable.ft_avd_tooverflow_animation).mutate();
+            AnimatedVectorDrawable animatedVectorDrawable2 = (AnimatedVectorDrawable) context.getDrawable(C3295R.C3297drawable.ft_avd_tooverflow_animation).mutate();
             this.mToOverflow = animatedVectorDrawable2;
             animatedVectorDrawable2.setAutoMirrored(true);
             ImageButton createOverflowButton = createOverflowButton();
@@ -308,15 +308,15 @@ public final class FloatingToolbar {
             this.mCloseOverflowAnimation = animationSet2;
             animationSet2.setAnimationListener(createOverflowAnimationListener);
             this.mShowAnimation = FloatingToolbar.createEnterAnimation(createContentContainer);
-            this.mDismissAnimation = FloatingToolbar.createExitAnimation(createContentContainer, ImageReceiver.DEFAULT_CROSSFADE_DURATION, new C34363(FloatingToolbar.this));
-            this.mHideAnimation = FloatingToolbar.createExitAnimation(createContentContainer, 0, new C34374(FloatingToolbar.this));
+            this.mDismissAnimation = FloatingToolbar.createExitAnimation(createContentContainer, ImageReceiver.DEFAULT_CROSSFADE_DURATION, new C34413(FloatingToolbar.this));
+            this.mHideAnimation = FloatingToolbar.createExitAnimation(createContentContainer, 0, new C34424(FloatingToolbar.this));
         }
 
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.ActionBar.FloatingToolbar$FloatingToolbarPopup$3 */
         /* loaded from: classes5.dex */
-        public class C34363 extends AnimatorListenerAdapter {
-            C34363(FloatingToolbar floatingToolbar) {
+        public class C34413 extends AnimatorListenerAdapter {
+            C34413(FloatingToolbar floatingToolbar) {
             }
 
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -324,7 +324,7 @@ public final class FloatingToolbar {
                 NotificationCenter.getInstance(UserConfig.selectedAccount).doOnIdle(new Runnable() { // from class: org.telegram.ui.ActionBar.FloatingToolbar$FloatingToolbarPopup$3$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FloatingToolbar.FloatingToolbarPopup.C34363.this.lambda$onAnimationEnd$0();
+                        FloatingToolbar.FloatingToolbarPopup.C34413.this.lambda$onAnimationEnd$0();
                     }
                 });
             }
@@ -339,8 +339,8 @@ public final class FloatingToolbar {
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.ActionBar.FloatingToolbar$FloatingToolbarPopup$4 */
         /* loaded from: classes5.dex */
-        public class C34374 extends AnimatorListenerAdapter {
-            C34374(FloatingToolbar floatingToolbar) {
+        public class C34424 extends AnimatorListenerAdapter {
+            C34424(FloatingToolbar floatingToolbar) {
             }
 
             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
@@ -348,7 +348,7 @@ public final class FloatingToolbar {
                 NotificationCenter.getInstance(UserConfig.selectedAccount).doOnIdle(new Runnable() { // from class: org.telegram.ui.ActionBar.FloatingToolbar$FloatingToolbarPopup$4$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FloatingToolbar.FloatingToolbarPopup.C34374.this.lambda$onAnimationEnd$0();
+                        FloatingToolbar.FloatingToolbarPopup.C34424.this.lambda$onAnimationEnd$0();
                     }
                 });
             }
@@ -634,7 +634,7 @@ public final class FloatingToolbar {
                 this.mOverflowPanel.setAlpha(1.0f);
                 this.mOverflowPanel.setVisibility(0);
                 this.mOverflowButton.setImageDrawable(this.mArrow);
-                this.mOverflowButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3290R.string.AccDescrMoreOptions));
+                this.mOverflowButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3295R.string.AccDescrMoreOptions));
                 if (isInRTLMode()) {
                     this.mContentContainer.setX(this.mMarginHorizontal);
                     this.mMainPanel.setX(BitmapDescriptorFactory.HUE_RED);
@@ -666,7 +666,7 @@ public final class FloatingToolbar {
             this.mOverflowPanel.setAlpha(BitmapDescriptorFactory.HUE_RED);
             this.mOverflowPanel.setVisibility(4);
             this.mOverflowButton.setImageDrawable(this.mOverflow);
-            this.mOverflowButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3290R.string.AccDescrMoreOptions));
+            this.mOverflowButton.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3295R.string.AccDescrMoreOptions));
             if (hasOverflow()) {
                 if (isInRTLMode()) {
                     this.mContentContainer.setX(this.mMarginHorizontal);
@@ -1003,12 +1003,12 @@ public final class FloatingToolbar {
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.ActionBar.FloatingToolbar$FloatingToolbarPopup$13  reason: invalid class name */
         /* loaded from: classes5.dex */
-        public class animationAnimation$AnimationListenerC343413 implements Animation.AnimationListener {
+        public class animationAnimation$AnimationListenerC343913 implements Animation.AnimationListener {
             @Override // android.view.animation.Animation.AnimationListener
             public void onAnimationRepeat(Animation animation) {
             }
 
-            animationAnimation$AnimationListenerC343413() {
+            animationAnimation$AnimationListenerC343913() {
             }
 
             @Override // android.view.animation.Animation.AnimationListener
@@ -1023,7 +1023,7 @@ public final class FloatingToolbar {
                 FloatingToolbarPopup.this.mContentContainer.post(new Runnable() { // from class: org.telegram.ui.ActionBar.FloatingToolbar$FloatingToolbarPopup$13$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FloatingToolbar.FloatingToolbarPopup.animationAnimation$AnimationListenerC343413.this.lambda$onAnimationEnd$0();
+                        FloatingToolbar.FloatingToolbarPopup.animationAnimation$AnimationListenerC343913.this.lambda$onAnimationEnd$0();
                     }
                 });
             }
@@ -1036,7 +1036,7 @@ public final class FloatingToolbar {
         }
 
         private Animation.AnimationListener createOverflowAnimationListener() {
-            return new animationAnimation$AnimationListenerC343413();
+            return new animationAnimation$AnimationListenerC343913();
         }
 
         private Size measure(View view) {

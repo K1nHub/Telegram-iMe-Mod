@@ -48,7 +48,7 @@ public final class TwitterInteractor$handleTokenError$$inlined$flatMapError$1 ex
                 schedulersProvider = this.this$0.schedulersProvider;
                 Observable<Result<TwitterRefreshTokenData>> subscribeOn = refreshToken.subscribeOn(schedulersProvider.mo699io());
                 Intrinsics.checkNotNullExpressionValue(subscribeOn, "twitterRepository\n      …(schedulersProvider.io())");
-                ObservableSource flatMap = subscribeOn.flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1972x14100eb1(this.$onSuccessObservable$inlined, this.this$0, this.$profileId$inlined)));
+                ObservableSource flatMap = subscribeOn.flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1977x14100eb1(this.$onSuccessObservable$inlined, this.this$0, this.$profileId$inlined)));
                 Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
                 return flatMap;
             }

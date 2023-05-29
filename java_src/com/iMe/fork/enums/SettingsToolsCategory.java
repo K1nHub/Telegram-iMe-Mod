@@ -2,21 +2,21 @@ package com.iMe.fork.enums;
 
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: SettingsToolsCategory.kt */
 /* loaded from: classes3.dex */
 public enum SettingsToolsCategory {
-    SETTINGS_CUSTOMIZATION(C3290R.C3292drawable.msg_customize),
-    SETTINGS_SIDE_MENU(C3290R.C3292drawable.fork_settings_menu),
-    SETTINGS_BASIC_TOOLBAR(C3290R.C3292drawable.fork_interface_settings),
-    SETTINGS_CHAT_PROFILE(C3290R.C3292drawable.msg_openprofile),
-    SETTINGS_CLOUD(C3290R.C3292drawable.fork_drawer_cloud),
-    SETTINGS_CHAT_LIST_VIEW(C3290R.C3292drawable.fork_ic_chats_list),
-    SETTINGS_CHATS(C3290R.C3292drawable.msg_msgbubble3),
-    SETTINGS_MESSAGES(C3290R.C3292drawable.fork_settings_chat),
-    SETTINGS_REACTIONS_BUTTON(C3290R.C3292drawable.fork_filter_icon_heart),
-    SETTINGS_CONFIRMATION(C3290R.C3292drawable.msg_block2);
+    SETTINGS_CUSTOMIZATION(C3295R.C3297drawable.msg_customize),
+    SETTINGS_SIDE_MENU(C3295R.C3297drawable.fork_settings_menu),
+    SETTINGS_BASIC_TOOLBAR(C3295R.C3297drawable.fork_interface_settings),
+    SETTINGS_CHAT_PROFILE(C3295R.C3297drawable.msg_openprofile),
+    SETTINGS_CLOUD(C3295R.C3297drawable.fork_drawer_cloud),
+    SETTINGS_CHAT_LIST_VIEW(C3295R.C3297drawable.fork_ic_chats_list),
+    SETTINGS_CHATS(C3295R.C3297drawable.msg_msgbubble3),
+    SETTINGS_MESSAGES(C3295R.C3297drawable.fork_settings_chat),
+    SETTINGS_REACTIONS_BUTTON(C3295R.C3297drawable.fork_filter_icon_heart),
+    SETTINGS_CONFIRMATION(C3295R.C3297drawable.msg_block2);
     
     private final int iconResId;
 
@@ -82,43 +82,43 @@ public enum SettingsToolsCategory {
     public final String getTitle() {
         switch (WhenMappings.$EnumSwitchMapping$0[ordinal()]) {
             case 1:
-                String internalString = LocaleController.getInternalString(C3290R.string.settings_tools_customization);
+                String internalString = LocaleController.getInternalString(C3295R.string.settings_tools_customization);
                 Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…ings_tools_customization)");
                 return internalString;
             case 2:
-                String internalString2 = LocaleController.getInternalString(C3290R.string.settings_interface_drawer_header);
+                String internalString2 = LocaleController.getInternalString(C3295R.string.settings_interface_drawer_header);
                 Intrinsics.checkNotNullExpressionValue(internalString2, "getInternalString(R.stri…_interface_drawer_header)");
                 return internalString2;
             case 3:
-                String internalString3 = LocaleController.getInternalString(C3290R.string.settings_tools_base_toolbar);
+                String internalString3 = LocaleController.getInternalString(C3295R.string.settings_tools_base_toolbar);
                 Intrinsics.checkNotNullExpressionValue(internalString3, "getInternalString(R.stri…tings_tools_base_toolbar)");
                 return internalString3;
             case 4:
-                String internalString4 = LocaleController.getInternalString(C3290R.string.settings_tools_chat_profile);
+                String internalString4 = LocaleController.getInternalString(C3295R.string.settings_tools_chat_profile);
                 Intrinsics.checkNotNullExpressionValue(internalString4, "getInternalString(R.stri…tings_tools_chat_profile)");
                 return internalString4;
             case 5:
-                String internalString5 = LocaleController.getInternalString(C3290R.string.folder_fab_settings_fab_cloud);
+                String internalString5 = LocaleController.getInternalString(C3295R.string.folder_fab_settings_fab_cloud);
                 Intrinsics.checkNotNullExpressionValue(internalString5, "getInternalString(R.stri…r_fab_settings_fab_cloud)");
                 return internalString5;
             case 6:
-                String string = LocaleController.getString("ChatList", C3290R.string.ChatList);
+                String string = LocaleController.getString("ChatList", C3295R.string.ChatList);
                 Intrinsics.checkNotNullExpressionValue(string, "getString(\"ChatList\", R.string.ChatList)");
                 return string;
             case 7:
-                String internalString6 = LocaleController.getInternalString(C3290R.string.settings_interface_chat_header);
+                String internalString6 = LocaleController.getInternalString(C3295R.string.settings_interface_chat_header);
                 Intrinsics.checkNotNullExpressionValue(internalString6, "getInternalString(R.stri…gs_interface_chat_header)");
                 return internalString6;
             case 8:
-                String internalString7 = LocaleController.getInternalString(C3290R.string.settings_interface_message_header);
+                String internalString7 = LocaleController.getInternalString(C3295R.string.settings_interface_message_header);
                 Intrinsics.checkNotNullExpressionValue(internalString7, "getInternalString(R.stri…interface_message_header)");
                 return internalString7;
             case 9:
-                String internalString8 = LocaleController.getInternalString(C3290R.string.settings_tools_reactions);
+                String internalString8 = LocaleController.getInternalString(C3295R.string.settings_tools_reactions);
                 Intrinsics.checkNotNullExpressionValue(internalString8, "getInternalString(R.stri…settings_tools_reactions)");
                 return internalString8;
             case 10:
-                String internalString9 = LocaleController.getInternalString(C3290R.string.settings_interface_confirmation_header);
+                String internalString9 = LocaleController.getInternalString(C3295R.string.settings_interface_confirmation_header);
                 Intrinsics.checkNotNullExpressionValue(internalString9, "getInternalString(R.stri…face_confirmation_header)");
                 return internalString9;
             default:

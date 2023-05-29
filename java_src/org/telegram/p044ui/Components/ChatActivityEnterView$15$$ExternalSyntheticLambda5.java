@@ -13,7 +13,7 @@ public final /* synthetic */ class ChatActivityEnterView$15$$ExternalSyntheticLa
 
     @Override // org.telegram.p044ui.Components.AlertsCreator.ScheduleDatePickerDelegate
     public final void didSelectDate(boolean z, int i, String str) {
-        ChatActivityEnterView.C418215.lambda$onTouchEvent$3(z, i, str);
+        ChatActivityEnterView.C418715.lambda$onTouchEvent$3(z, i, str);
     }
 
     @Override // org.telegram.p044ui.Components.AlertsCreator.ScheduleDatePickerDelegate

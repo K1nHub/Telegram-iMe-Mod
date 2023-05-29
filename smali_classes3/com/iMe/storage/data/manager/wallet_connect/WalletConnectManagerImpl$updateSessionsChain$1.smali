@@ -101,7 +101,7 @@
 
     if-eqz v3, :cond_0
 
-    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
+    invoke-virtual {v3}, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->getAddress()Ljava/lang/String;
 
     move-result-object v3
 

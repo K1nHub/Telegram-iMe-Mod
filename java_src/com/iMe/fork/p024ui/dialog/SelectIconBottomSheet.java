@@ -26,7 +26,7 @@ import kotlin.collections.ArraysKt___ArraysKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.BottomSheet;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -113,7 +113,7 @@ public final class SelectIconBottomSheet extends BottomSheet {
         this.listView$delegate = lazy3;
         lazy4 = LazyKt__LazyJVMKt.lazy(new SelectIconBottomSheet$deleteButton$2(this));
         this.deleteButton$delegate = lazy4;
-        setTitle(LocaleController.getInternalString(C3290R.string.select_icon), true);
+        setTitle(LocaleController.getInternalString(C3295R.string.select_icon), true);
         setCustomView(getRootView());
         setupListeners();
     }
@@ -183,7 +183,7 @@ public final class SelectIconBottomSheet extends BottomSheet {
                 SelectIconBottomSheet.initDeleteButton$lambda$3$lambda$2(SelectIconBottomSheet.this, view);
             }
         });
-        bottomSheetCell.setText(LocaleController.getString("Delete", C3290R.string.Delete));
+        bottomSheetCell.setText(LocaleController.getString("Delete", C3295R.string.Delete));
         return bottomSheetCell;
     }
 

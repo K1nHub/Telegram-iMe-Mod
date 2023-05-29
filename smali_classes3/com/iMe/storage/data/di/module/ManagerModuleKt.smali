@@ -4,6 +4,8 @@
 
 
 # static fields
+.field private static final BTC_BLOCKCHAIN_CRYPTO_WALLET_MANAGER:Lorg/koin/core/qualifier/StringQualifier;
+
 .field private static final EVM_BLOCKCHAIN_CRYPTO_WALLET_MANAGER:Lorg/koin/core/qualifier/StringQualifier;
 
 .field private static final TON_BLOCKCHAIN_CRYPTO_WALLET_MANAGER:Lorg/koin/core/qualifier/StringQualifier;
@@ -19,7 +21,7 @@
 
     const-string v0, "EVM_BLOCKCHAIN_CRYPTO_WALLET_MANAGER"
 
-    .line 21
+    .line 26
     invoke-static {v0}, Lorg/koin/core/qualifier/QualifierKt;->named(Ljava/lang/String;)Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v0
@@ -28,7 +30,7 @@
 
     const-string v0, "TON_BLOCKCHAIN_CRYPTO_WALLET_MANAGER"
 
-    .line 22
+    .line 27
     invoke-static {v0}, Lorg/koin/core/qualifier/QualifierKt;->named(Ljava/lang/String;)Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v0
@@ -37,14 +39,23 @@
 
     const-string v0, "TRON_BLOCKCHAIN_CRYPTO_WALLET_MANAGER"
 
-    .line 23
+    .line 28
     invoke-static {v0}, Lorg/koin/core/qualifier/QualifierKt;->named(Ljava/lang/String;)Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v0
 
     sput-object v0, Lcom/iMe/storage/data/di/module/ManagerModuleKt;->TRON_BLOCKCHAIN_CRYPTO_WALLET_MANAGER:Lorg/koin/core/qualifier/StringQualifier;
 
-    .line 25
+    const-string v0, "BTC_BLOCKCHAIN_CRYPTO_WALLET_MANAGER"
+
+    .line 29
+    invoke-static {v0}, Lorg/koin/core/qualifier/QualifierKt;->named(Ljava/lang/String;)Lorg/koin/core/qualifier/StringQualifier;
+
+    move-result-object v0
+
+    sput-object v0, Lcom/iMe/storage/data/di/module/ManagerModuleKt;->BTC_BLOCKCHAIN_CRYPTO_WALLET_MANAGER:Lorg/koin/core/qualifier/StringQualifier;
+
+    .line 31
     sget-object v0, Lcom/iMe/storage/data/di/module/ManagerModuleKt$dataManagerModule$1;->INSTANCE:Lcom/iMe/storage/data/di/module/ManagerModuleKt$dataManagerModule$1;
 
     const/4 v1, 0x0
@@ -62,10 +73,19 @@
     return-void
 .end method
 
+.method public static final getBTC_BLOCKCHAIN_CRYPTO_WALLET_MANAGER()Lorg/koin/core/qualifier/StringQualifier;
+    .locals 1
+
+    .line 29
+    sget-object v0, Lcom/iMe/storage/data/di/module/ManagerModuleKt;->BTC_BLOCKCHAIN_CRYPTO_WALLET_MANAGER:Lorg/koin/core/qualifier/StringQualifier;
+
+    return-object v0
+.end method
+
 .method public static final getDataManagerModule()Lorg/koin/core/module/Module;
     .locals 1
 
-    .line 25
+    .line 31
     sget-object v0, Lcom/iMe/storage/data/di/module/ManagerModuleKt;->dataManagerModule:Lorg/koin/core/module/Module;
 
     return-object v0
@@ -74,7 +94,7 @@
 .method public static final getEVM_BLOCKCHAIN_CRYPTO_WALLET_MANAGER()Lorg/koin/core/qualifier/StringQualifier;
     .locals 1
 
-    .line 21
+    .line 26
     sget-object v0, Lcom/iMe/storage/data/di/module/ManagerModuleKt;->EVM_BLOCKCHAIN_CRYPTO_WALLET_MANAGER:Lorg/koin/core/qualifier/StringQualifier;
 
     return-object v0
@@ -83,7 +103,7 @@
 .method public static final getTON_BLOCKCHAIN_CRYPTO_WALLET_MANAGER()Lorg/koin/core/qualifier/StringQualifier;
     .locals 1
 
-    .line 22
+    .line 27
     sget-object v0, Lcom/iMe/storage/data/di/module/ManagerModuleKt;->TON_BLOCKCHAIN_CRYPTO_WALLET_MANAGER:Lorg/koin/core/qualifier/StringQualifier;
 
     return-object v0
@@ -92,7 +112,7 @@
 .method public static final getTRON_BLOCKCHAIN_CRYPTO_WALLET_MANAGER()Lorg/koin/core/qualifier/StringQualifier;
     .locals 1
 
-    .line 23
+    .line 28
     sget-object v0, Lcom/iMe/storage/data/di/module/ManagerModuleKt;->TRON_BLOCKCHAIN_CRYPTO_WALLET_MANAGER:Lorg/koin/core/qualifier/StringQualifier;
 
     return-object v0

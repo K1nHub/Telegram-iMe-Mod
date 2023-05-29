@@ -187,7 +187,7 @@ public class PhotoFilterBlurControl extends FrameLayout {
         } else {
             int i3 = this.type;
             if (i3 == 0) {
-                int i4 = C48751.f1692xcde84254[this.activeControl.ordinal()];
+                int i4 = C48801.f1692xcde84254[this.activeControl.ordinal()];
                 if (i4 == 1) {
                     float f9 = x - this.pointerStartX;
                     float f10 = y - this.pointerStartY;
@@ -224,7 +224,7 @@ public class PhotoFilterBlurControl extends FrameLayout {
                     this.pointerStartY = y;
                 }
             } else if (i3 == 1) {
-                int i5 = C48751.f1692xcde84254[this.activeControl.ordinal()];
+                int i5 = C48801.f1692xcde84254[this.activeControl.ordinal()];
                 if (i5 == 1) {
                     float f18 = x - this.pointerStartX;
                     float f19 = y - this.pointerStartY;
@@ -260,7 +260,7 @@ public class PhotoFilterBlurControl extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.PhotoFilterBlurControl$1 */
     /* loaded from: classes6.dex */
-    public static /* synthetic */ class C48751 {
+    public static /* synthetic */ class C48801 {
 
         /* renamed from: $SwitchMap$org$telegram$ui$Components$PhotoFilterBlurControl$BlurViewActiveControl */
         static final /* synthetic */ int[] f1692xcde84254;

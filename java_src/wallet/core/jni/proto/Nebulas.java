@@ -412,7 +412,7 @@ public final class Nebulas {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C68341 c68341) {
+            /* synthetic */ Builder(C68391 c68391) {
                 this();
             }
 
@@ -626,7 +626,7 @@ public final class Nebulas {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68341.f1815xa1df5c61[method.ordinal()]) {
+            switch (C68391.f1815xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -673,7 +673,7 @@ public final class Nebulas {
 
     /* renamed from: wallet.core.jni.proto.Nebulas$1 */
     /* loaded from: classes6.dex */
-    static /* synthetic */ class C68341 {
+    static /* synthetic */ class C68391 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f1815xa1df5c61;
@@ -842,7 +842,7 @@ public final class Nebulas {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C68341 c68341) {
+            /* synthetic */ Builder(C68391 c68391) {
                 this();
             }
 
@@ -915,7 +915,7 @@ public final class Nebulas {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68341.f1815xa1df5c61[method.ordinal()]) {
+            switch (C68391.f1815xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:
@@ -1073,7 +1073,7 @@ public final class Nebulas {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Data, Builder> implements DataOrBuilder {
-            /* synthetic */ Builder(C68341 c68341) {
+            /* synthetic */ Builder(C68391 c68391) {
                 this();
             }
 
@@ -1129,7 +1129,7 @@ public final class Nebulas {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68341.f1815xa1df5c61[method.ordinal()]) {
+            switch (C68391.f1815xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Data();
                 case 2:
@@ -1477,7 +1477,7 @@ public final class Nebulas {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<RawTransaction, Builder> implements RawTransactionOrBuilder {
-            /* synthetic */ Builder(C68341 c68341) {
+            /* synthetic */ Builder(C68391 c68391) {
                 this();
             }
 
@@ -1709,7 +1709,7 @@ public final class Nebulas {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68341.f1815xa1df5c61[method.ordinal()]) {
+            switch (C68391.f1815xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new RawTransaction();
                 case 2:

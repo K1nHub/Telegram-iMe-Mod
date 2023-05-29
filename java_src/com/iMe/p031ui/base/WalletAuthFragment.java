@@ -108,7 +108,7 @@ public abstract class WalletAuthFragment extends MvpFragment {
         RxEventBus rxEventBus = getRxEventBus();
         Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1990x905d501f(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1991x905d5020(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1995x905d501f(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1996x905d5020(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         autoDispose(subscribe);
     }

@@ -31,11 +31,11 @@ public final class CreateWalletFragment$setupViewsContents$1$2 extends Lambda im
     /* compiled from: CreateWalletFragment.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$setupViewsContents$1$2$1 */
     /* loaded from: classes3.dex */
-    public static final class C21401 extends Lambda implements Function1<Integer, Unit> {
+    public static final class C21451 extends Lambda implements Function1<Integer, Unit> {
         final /* synthetic */ CreateWalletFragment this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C21401(CreateWalletFragment createWalletFragment) {
+        C21451(CreateWalletFragment createWalletFragment) {
             super(1);
             this.this$0 = createWalletFragment;
         }
@@ -57,6 +57,6 @@ public final class CreateWalletFragment$setupViewsContents$1$2 extends Lambda im
         SecretWordsCountBottomSheetDialog.Companion companion = SecretWordsCountBottomSheetDialog.Companion;
         Activity parentActivity = createWalletFragment.getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
-        createWalletFragment.showDialog(companion.newInstance(parentActivity, new C21401(this.this$0)));
+        createWalletFragment.showDialog(companion.newInstance(parentActivity, new C21451(this.this$0)));
     }
 }

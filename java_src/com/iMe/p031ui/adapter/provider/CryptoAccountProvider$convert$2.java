@@ -5,7 +5,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.AvatarDrawable;
 import org.telegram.p044ui.Components.BackupImageView;
@@ -32,7 +32,7 @@ final class CryptoAccountProvider$convert$2 extends Lambda implements Function1<
     /* renamed from: invoke  reason: avoid collision after fix types in other method */
     public final void invoke2(BackupImageView applyForView) {
         Intrinsics.checkNotNullParameter(applyForView, "$this$applyForView");
-        applyForView.getImageReceiver().setRoundRadius(applyForView.getResources().getDimensionPixelSize(C3290R.dimen.telegram_avatar_size_medium) / 2);
+        applyForView.getImageReceiver().setRoundRadius(applyForView.getResources().getDimensionPixelSize(C3295R.dimen.telegram_avatar_size_medium) / 2);
         TLRPC$User user = this.$item.getUser();
         AvatarDrawable avatarDrawable = new AvatarDrawable(this.$item.getUser());
         avatarDrawable.setColor(Theme.getColor(Theme.key_avatar_backgroundInProfileBlue));

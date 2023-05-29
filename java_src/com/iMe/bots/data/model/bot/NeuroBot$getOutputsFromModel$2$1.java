@@ -30,6 +30,6 @@ final class NeuroBot$getOutputsFromModel$2$1 extends Lambda implements Function1
         Intrinsics.checkNotNullParameter(result, "result");
         Continuation<Object> continuation = this.$continuation;
         Result.Companion companion = Result.Companion;
-        continuation.resumeWith(Result.m1574constructorimpl(result.getOutput(0)));
+        continuation.resumeWith(Result.m1576constructorimpl(result.getOutput(0)));
     }
 }

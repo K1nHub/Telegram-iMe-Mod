@@ -117,7 +117,7 @@ public class ChatSelectionReactionMenuOverlay extends FrameLayout {
             };
             this.reactionsContainerLayout = reactionsContainerLayout;
             reactionsContainerLayout.setPadding(AndroidUtilities.m54dp(4) + (LocaleController.isRTL ? 0 : this.mSidePadding), AndroidUtilities.m54dp(4), AndroidUtilities.m54dp(4) + (LocaleController.isRTL ? this.mSidePadding : 0), AndroidUtilities.m54dp(this.mPadding));
-            this.reactionsContainerLayout.setDelegate(new C50063());
+            this.reactionsContainerLayout.setDelegate(new C50113());
             this.reactionsContainerLayout.setClipChildren(false);
             this.reactionsContainerLayout.setClipToPadding(false);
             addView(this.reactionsContainerLayout, LayoutHelper.createFrame(-2, this.mPadding + 70, 5));
@@ -127,8 +127,8 @@ public class ChatSelectionReactionMenuOverlay extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.Reactions.ChatSelectionReactionMenuOverlay$3 */
     /* loaded from: classes6.dex */
-    public class C50063 implements ReactionsContainerLayout.ReactionsContainerDelegate {
-        C50063() {
+    public class C50113 implements ReactionsContainerLayout.ReactionsContainerDelegate {
+        C50113() {
         }
 
         @Override // org.telegram.p044ui.Components.ReactionsContainerLayout.ReactionsContainerDelegate
@@ -137,7 +137,7 @@ public class ChatSelectionReactionMenuOverlay extends FrameLayout {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.Reactions.ChatSelectionReactionMenuOverlay$3$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ChatSelectionReactionMenuOverlay.C50063.this.lambda$onReactionClicked$0();
+                    ChatSelectionReactionMenuOverlay.C50113.this.lambda$onReactionClicked$0();
                 }
             });
         }

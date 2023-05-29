@@ -22,13 +22,13 @@
         "Lkotlin/jvm/functions/Function2<",
         "Lorg/koin/core/scope/Scope;",
         "Lorg/koin/core/parameter/ParametersHolder;",
-        "Lcom/iMe/storage/data/datasource/cancel/WalletCancelDataSource;",
+        "Lcom/iMe/storage/data/datasource/approve/WalletApproveDataSource;",
         ">;"
     }
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$11\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,105:1\n129#2,5:106\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$11\n*L\n97#1:106,5\n*E\n"
+    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$11\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,114:1\n129#2,5:115\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$11\n*L\n103#1:115,5\n*E\n"
 .end annotation
 
 
@@ -61,7 +61,7 @@
 
 
 # virtual methods
-.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/datasource/cancel/WalletCancelDataSource;
+.method public final invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/datasource/approve/WalletApproveDataSource;
     .locals 3
 
     const-string v0, "$this$single"
@@ -85,11 +85,11 @@
 
     move-result-object p2
 
-    .line 97
+    .line 103
     check-cast p2, Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     .line 133
-    const-class v1, Lcom/iMe/storage/data/network/api/own/CancelApi;
+    const-class v1, Lcom/iMe/storage/data/network/api/own/SwapApi;
 
     invoke-static {v1}, Lkotlin/jvm/internal/Reflection;->getOrCreateKotlinClass(Ljava/lang/Class;)Lkotlin/reflect/KClass;
 
@@ -99,8 +99,8 @@
 
     move-result-object v1
 
-    .line 97
-    check-cast v1, Lcom/iMe/storage/data/network/api/own/CancelApi;
+    .line 103
+    check-cast v1, Lcom/iMe/storage/data/network/api/own/SwapApi;
 
     .line 133
     const-class v2, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
@@ -113,12 +113,12 @@
 
     move-result-object p1
 
-    .line 97
+    .line 103
     check-cast p1, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
-    new-instance v0, Lcom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl;
+    new-instance v0, Lcom/iMe/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl;
 
-    invoke-direct {v0, v1, p1, p2}, Lcom/iMe/storage/data/datasource/cancel/impl/EthWalletCancelDataSourceImpl;-><init>(Lcom/iMe/storage/data/network/api/own/CancelApi;Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
+    invoke-direct {v0, v1, p1, p2}, Lcom/iMe/storage/data/datasource/approve/impl/EthWalletApproveDataSourceImpl;-><init>(Lcom/iMe/storage/data/network/api/own/SwapApi;Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;)V
 
     return-object v0
 .end method
@@ -126,12 +126,12 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 96
+    .line 102
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;
 
-    invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$11;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/datasource/cancel/WalletCancelDataSource;
+    invoke-virtual {p0, p1, p2}, Lcom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$11;->invoke(Lorg/koin/core/scope/Scope;Lorg/koin/core/parameter/ParametersHolder;)Lcom/iMe/storage/data/datasource/approve/WalletApproveDataSource;
 
     move-result-object p1
 

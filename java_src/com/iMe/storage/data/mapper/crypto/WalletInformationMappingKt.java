@@ -18,13 +18,15 @@ public final class WalletInformationMappingKt {
         String str2 = tonWalletAddress == null ? "" : tonWalletAddress;
         String tronWalletAddress = cryptoWalletInfoResponse.getTronWalletAddress();
         String str3 = tronWalletAddress == null ? "" : tronWalletAddress;
+        String bitcoinWalletAddress = cryptoWalletInfoResponse.getBitcoinWalletAddress();
+        String str4 = bitcoinWalletAddress == null ? "" : bitcoinWalletAddress;
         boolean isEtherWalletAddressOpened = cryptoWalletInfoResponse.isEtherWalletAddressOpened();
         List<String> usersWithAccessToEtherWalletAddress = cryptoWalletInfoResponse.getUsersWithAccessToEtherWalletAddress();
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(usersWithAccessToEtherWalletAddress, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
-        for (String str4 : usersWithAccessToEtherWalletAddress) {
-            arrayList.add(Long.valueOf(Long.parseLong(str4)));
+        for (String str5 : usersWithAccessToEtherWalletAddress) {
+            arrayList.add(Long.valueOf(Long.parseLong(str5)));
         }
-        return new CryptoWalletInfo(str, str2, str3, isEtherWalletAddressOpened, arrayList);
+        return new CryptoWalletInfo(str, str2, str3, str4, isEtherWalletAddressOpened, arrayList);
     }
 }

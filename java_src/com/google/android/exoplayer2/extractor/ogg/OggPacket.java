@@ -6,8 +6,9 @@ import com.google.android.exoplayer2.util.Assertions;
 import com.google.android.exoplayer2.util.ParsableByteArray;
 import java.io.IOException;
 import java.util.Arrays;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes.dex */
-final class OggPacket {
+public final class OggPacket {
     private boolean populated;
     private int segmentCount;
     private final OggPageHeader pageHeader = new OggPageHeader();

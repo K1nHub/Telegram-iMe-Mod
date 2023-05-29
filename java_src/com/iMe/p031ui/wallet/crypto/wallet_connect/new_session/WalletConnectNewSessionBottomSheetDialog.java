@@ -20,7 +20,7 @@ import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.databinding.ForkContentWalletConnectNewSessionBinding;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p044ui.ActionBar.BaseFragment;
@@ -132,9 +132,9 @@ public final class WalletConnectNewSessionBottomSheetDialog extends MvpBottomShe
         Intrinsics.checkNotNullParameter(address, "address");
         Intrinsics.checkNotNullParameter(network, "network");
         ForkContentWalletConnectNewSessionBinding binding = getBinding();
-        binding.viewHeader.setupViewData(iconUrl, getResourceManager().getString(C3290R.string.wallet_connect_new_session_title, name), url);
-        binding.viewWalletCell.setupViewData(getResourceManager().getString(C3290R.string.wallet_connect_new_session_wallet), address, C3290R.C3292drawable.fork_ic_nav_wallet_24, true);
-        binding.viewNetworkCell.setupViewData(getResourceManager().getString(C3290R.string.wallet_connect_session_details_network), network, C3290R.C3292drawable.msg_language, true);
+        binding.viewHeader.setupViewData(iconUrl, getResourceManager().getString(C3295R.string.wallet_connect_new_session_title, name), url);
+        binding.viewWalletCell.setupViewData(getResourceManager().getString(C3295R.string.wallet_connect_new_session_wallet), address, C3295R.C3297drawable.fork_ic_nav_wallet_24, true);
+        binding.viewNetworkCell.setupViewData(getResourceManager().getString(C3295R.string.wallet_connect_session_details_network), network, C3295R.C3297drawable.msg_language, true);
     }
 
     @Override // android.app.Dialog
@@ -167,12 +167,12 @@ public final class WalletConnectNewSessionBottomSheetDialog extends MvpBottomShe
 
     private final void setupViews() {
         ForkContentWalletConnectNewSessionBinding binding = getBinding();
-        binding.textViewBalance.setText(getResourceManager().getString(C3290R.string.wallet_connect_new_session_view_balance));
-        binding.textTransactionsApproval.setText(getResourceManager().getString(C3290R.string.wallet_connect_new_transactions_approval));
-        binding.buttonConnect.setText(getResourceManager().getString(C3290R.string.wallet_connect_new_connection));
+        binding.textViewBalance.setText(getResourceManager().getString(C3295R.string.wallet_connect_new_session_view_balance));
+        binding.textTransactionsApproval.setText(getResourceManager().getString(C3295R.string.wallet_connect_new_transactions_approval));
+        binding.buttonConnect.setText(getResourceManager().getString(C3295R.string.wallet_connect_new_connection));
         ActionBarMenuItem actionBarMenuItem = getBinding().buttonClose;
         actionBarMenuItem.setLongClickEnabled(false);
-        actionBarMenuItem.setIcon(C3290R.C3292drawable.ic_close_white);
+        actionBarMenuItem.setIcon(C3295R.C3297drawable.ic_close_white);
     }
 
     private final void setupListeners() {

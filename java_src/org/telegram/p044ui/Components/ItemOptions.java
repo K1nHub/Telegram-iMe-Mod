@@ -18,7 +18,7 @@ import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.p044ui.ActionBar.ActionBarMenuSubItem;
 import org.telegram.p044ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.p044ui.ActionBar.BaseFragment;
@@ -311,7 +311,7 @@ public class ItemOptions {
                             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                             public void onAnimationEnd(Animator animator) {
                                 if (view3.getParent() != null) {
-                                    C47372 c47372 = C47372.this;
+                                    C47422 c47422 = C47422.this;
                                     viewGroup.removeView(view3);
                                 }
                                 viewGroup.getViewTreeObserver().removeOnPreDrawListener(onPreDrawListener);
@@ -322,7 +322,7 @@ public class ItemOptions {
                 this.actionBarPopupWindow.setOutsideTouchable(true);
                 this.actionBarPopupWindow.setFocusable(true);
                 this.actionBarPopupWindow.setBackgroundDrawable(new ColorDrawable(0));
-                this.actionBarPopupWindow.setAnimationStyle(C3290R.style.PopupContextAnimation);
+                this.actionBarPopupWindow.setAnimationStyle(C3295R.style.PopupContextAnimation);
                 this.actionBarPopupWindow.setInputMethodMode(2);
                 this.actionBarPopupWindow.setSoftInputMode(0);
                 this.layout.setDispatchKeyEventListener(new ActionBarPopupWindow.OnDispatchKeyEventListener() { // from class: org.telegram.ui.Components.ItemOptions$$ExternalSyntheticLambda2

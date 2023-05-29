@@ -75,9 +75,9 @@ public final class CryptoWalletRepositoryImpl implements CryptoWalletRepository 
 
     @Override // com.iMe.storage.domain.repository.crypto.CryptoWalletRepository
     public Observable<Result<CryptoWalletInfo>> getLinkedCryptoWalletInfo() {
-        Observable<R> map = this.cryptoWalletApi.getCryptoWalletInfo().map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1864x1fe7c804(this.firebaseErrorHandler)));
+        Observable<R> map = this.cryptoWalletApi.getCryptoWalletInfo().map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1869x1fe7c804(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<CryptoWalletInfo>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1863xc018f11d(this.errorHandler)));
+        Observable<Result<CryptoWalletInfo>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1868xc018f11d(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -106,7 +106,7 @@ public final class CryptoWalletRepositoryImpl implements CryptoWalletRepository 
         Intrinsics.checkNotNullExpressionValue(just, "just(this)");
         Observable andThen2 = andThen.andThen(just);
         Intrinsics.checkNotNullExpressionValue(andThen2, "walletTokenBalanceDao\n  …Success().toObservable())");
-        Observable<Result<Boolean>> onErrorReturn = andThen2.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1862x72fefc63(this.errorHandler)));
+        Observable<Result<Boolean>> onErrorReturn = andThen2.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1867x72fefc63(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }

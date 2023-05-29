@@ -14,6 +14,6 @@ public final /* synthetic */ class TopicCreateFragment$1$$ExternalSyntheticLambd
 
     @Override // org.telegram.tgnet.RequestDelegate
     public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-        TopicCreateFragment.C66111.lambda$onItemClick$3(tLObject, tLRPC$TL_error);
+        TopicCreateFragment.C66161.lambda$onItemClick$3(tLObject, tLRPC$TL_error);
     }
 }

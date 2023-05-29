@@ -9,12 +9,12 @@ import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.AlertDialog;
 import org.telegram.p044ui.ActionBar.BaseFragment;
 import org.telegram.p044ui.ActionBar.BottomSheet;
-import org.telegram.p044ui.ActionBar.C3356ActionBar;
+import org.telegram.p044ui.ActionBar.C3361ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.CacheControlActivity;
 import org.telegram.p044ui.CachedMediaLayout;
@@ -58,7 +58,7 @@ public class DilogCacheBottomSheet extends BottomSheetWithRecyclerListView {
     @Override // org.telegram.p044ui.Components.BottomSheetWithRecyclerListView
     protected CharSequence getTitle() {
         if (this.isArchive) {
-            return LocaleController.getString("ArchivedChats", C3290R.string.ArchivedChats);
+            return LocaleController.getString("ArchivedChats", C3295R.string.ArchivedChats);
         }
         return getBaseFragment().getMessagesController().getFullName(this.dialogId);
     }
@@ -94,7 +94,7 @@ public class DilogCacheBottomSheet extends BottomSheetWithRecyclerListView {
                 } else {
                     TextInfoPrivacyCell textInfoPrivacyCell = new TextInfoPrivacyCell(viewGroup.getContext());
                     textInfoPrivacyCell.setFixedSize(12);
-                    CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(viewGroup.getContext(), C3290R.C3292drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
+                    CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(viewGroup.getContext(), C3295R.C3297drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
                     combinedDrawable.setFullsize(true);
                     textInfoPrivacyCell.setBackgroundDrawable(combinedDrawable);
                     view = textInfoPrivacyCell;
@@ -145,25 +145,25 @@ public class DilogCacheBottomSheet extends BottomSheetWithRecyclerListView {
         CheckBoxCell checkBoxCell = null;
         for (int i2 = 0; i2 < 7; i2++) {
             if (i2 == 0) {
-                string = LocaleController.getString("LocalPhotoCache", C3290R.string.LocalPhotoCache);
+                string = LocaleController.getString("LocalPhotoCache", C3295R.string.LocalPhotoCache);
                 i = Theme.key_statisticChartLine_lightblue;
             } else if (i2 == 1) {
-                string = LocaleController.getString("LocalVideoCache", C3290R.string.LocalVideoCache);
+                string = LocaleController.getString("LocalVideoCache", C3295R.string.LocalVideoCache);
                 i = Theme.key_statisticChartLine_blue;
             } else if (i2 == 2) {
-                string = LocaleController.getString("LocalDocumentCache", C3290R.string.LocalDocumentCache);
+                string = LocaleController.getString("LocalDocumentCache", C3295R.string.LocalDocumentCache);
                 i = Theme.key_statisticChartLine_green;
             } else if (i2 == 3) {
-                string = LocaleController.getString("LocalMusicCache", C3290R.string.LocalMusicCache);
+                string = LocaleController.getString("LocalMusicCache", C3295R.string.LocalMusicCache);
                 i = Theme.key_statisticChartLine_red;
             } else if (i2 == 4) {
-                string = LocaleController.getString("LocalAudioCache", C3290R.string.LocalAudioCache);
+                string = LocaleController.getString("LocalAudioCache", C3295R.string.LocalAudioCache);
                 i = Theme.key_statisticChartLine_lightgreen;
             } else if (i2 == 5) {
-                string = LocaleController.getString("LocalStickersCache", C3290R.string.LocalStickersCache);
+                string = LocaleController.getString("LocalStickersCache", C3295R.string.LocalStickersCache);
                 i = Theme.key_statisticChartLine_orange;
             } else {
-                string = LocaleController.getString("LocalMiscellaneousCache", C3290R.string.LocalMiscellaneousCache);
+                string = LocaleController.getString("LocalMiscellaneousCache", C3295R.string.LocalMiscellaneousCache);
                 i = Theme.key_statisticChartLine_purple;
             }
             CacheControlActivity.FileEntities fileEntities = dialogFileEntities.entitiesByType.get(i2);
@@ -206,7 +206,7 @@ public class DilogCacheBottomSheet extends BottomSheetWithRecyclerListView {
             /* JADX INFO: Access modifiers changed from: protected */
             @Override // org.telegram.p044ui.CachedMediaLayout, android.widget.FrameLayout, android.view.View
             public void onMeasure(int i3, int i4) {
-                super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec((((BottomSheetWithRecyclerListView) DilogCacheBottomSheet.this).contentHeight - C3356ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight, 1073741824));
+                super.onMeasure(i3, View.MeasureSpec.makeMeasureSpec((((BottomSheetWithRecyclerListView) DilogCacheBottomSheet.this).contentHeight - C3361ActionBar.getCurrentActionBarHeight()) - AndroidUtilities.statusBarHeight, 1073741824));
             }
         };
         this.cachedMediaLayout = cachedMediaLayout;
@@ -356,15 +356,15 @@ public class DilogCacheBottomSheet extends BottomSheetWithRecyclerListView {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createButton$3(View view) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle(LocaleController.getString("ClearCache", C3290R.string.ClearCache));
-        builder.setMessage(LocaleController.getString("ClearCacheForChat", C3290R.string.ClearCacheForChat));
-        builder.setNegativeButton(LocaleController.getString("Cancel", C3290R.string.Cancel), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.DilogCacheBottomSheet$$ExternalSyntheticLambda0
+        builder.setTitle(LocaleController.getString("ClearCache", C3295R.string.ClearCache));
+        builder.setMessage(LocaleController.getString("ClearCacheForChat", C3295R.string.ClearCacheForChat));
+        builder.setNegativeButton(LocaleController.getString("Cancel", C3295R.string.Cancel), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.DilogCacheBottomSheet$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 DilogCacheBottomSheet.this.lambda$createButton$1(dialogInterface, i);
             }
         });
-        builder.setPositiveButton(LocaleController.getString("Clear", C3290R.string.Clear), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.DilogCacheBottomSheet$$ExternalSyntheticLambda1
+        builder.setPositiveButton(LocaleController.getString("Clear", C3295R.string.Clear), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.DilogCacheBottomSheet$$ExternalSyntheticLambda1
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 DilogCacheBottomSheet.this.lambda$createButton$2(dialogInterface, i);

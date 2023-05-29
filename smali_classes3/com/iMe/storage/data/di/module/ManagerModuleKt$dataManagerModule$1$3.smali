@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nManagerModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ManagerModule.kt\ncom/iMe/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$3\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,70:1\n129#2,5:71\n*S KotlinDebug\n*F\n+ 1 ManagerModule.kt\ncom/iMe/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$3\n*L\n37#1:71,5\n*E\n"
+    value = "SMAP\nManagerModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 ManagerModule.kt\ncom/iMe/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$3\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,80:1\n129#2,5:81\n*S KotlinDebug\n*F\n+ 1 ManagerModule.kt\ncom/iMe/storage/data/di/module/ManagerModuleKt$dataManagerModule$1$3\n*L\n43#1:81,5\n*E\n"
 .end annotation
 
 
@@ -72,8 +72,8 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 37
-    new-instance p2, Lcom/iMe/storage/data/manager/crypto/TONBlockchainCryptoWalletManagerImpl;
+    .line 43
+    new-instance p2, Lcom/iMe/storage/data/manager/crypto/blockchains/TONBlockchainCryptoWalletManagerImpl;
 
     .line 133
     const-class v0, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
@@ -114,8 +114,8 @@
 
     check-cast p1, Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;
 
-    .line 37
-    invoke-direct {p2, v0, v2, p1}, Lcom/iMe/storage/data/manager/crypto/TONBlockchainCryptoWalletManagerImpl;-><init>(Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/manager/ton/TonController;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;)V
+    .line 43
+    invoke-direct {p2, v0, v2, p1}, Lcom/iMe/storage/data/manager/crypto/blockchains/TONBlockchainCryptoWalletManagerImpl;-><init>(Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;Lcom/iMe/storage/domain/manager/ton/TonController;Lcom/iMe/storage/domain/utils/rx/SchedulersProvider;)V
 
     return-object p2
 .end method
@@ -123,7 +123,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 36
+    .line 42
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

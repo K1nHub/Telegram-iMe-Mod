@@ -67,7 +67,7 @@ public final class TranslationPresenter extends BasePresenter<TranslationView> {
     public final void loadLanguages(boolean z) {
         Observable<Result<List<TranslationLanguage>>> observeOn = this.translationInteractor.languages().observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "translationInteractor\n  …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2072xba424fcb(this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2073xba424fcc((BaseView) getViewState())));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2077xba424fcb(this, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2078xba424fcc((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -94,7 +94,7 @@ public final class TranslationPresenter extends BasePresenter<TranslationView> {
             Intrinsics.checkNotNull(languageCode);
             Observable<Result<Translation>> observeOn = translationInteractor.translate(text, languageCode, this.sourceLanguage.getLanguageCode()).observeOn(this.schedulersProvider.mo698ui());
             Intrinsics.checkNotNullExpressionValue(observeOn, "translationInteractor\n  …(schedulersProvider.ui())");
-            Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2074xa655ab44(this, text, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2075xa655ab45((BaseView) getViewState())));
+            Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2079xa655ab44(this, text, z)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2080xa655ab45((BaseView) getViewState())));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
             return;
@@ -123,7 +123,7 @@ public final class TranslationPresenter extends BasePresenter<TranslationView> {
         Intrinsics.checkNotNull(languageCode);
         Observable<Result<Translation>> observeOn = translationInteractor.translate(text, languageCode, this.outLanguage.getLanguageCode()).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "translationInteractor\n  …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2076x31d12e3f(this, text)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2077x31d12e40((BaseView) getViewState())));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2081x31d12e3f(this, text)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2082x31d12e40((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

@@ -61,7 +61,7 @@ public final class CategoryWithCampaignsProvider$convert$1 extends Lambda implem
         map = categoryWithCampaignsProvider.channelsRecyclersScrollStates;
         RecycleViewExtKt.restoreScrollState(linearLayoutManager, (Parcelable) map.get(Integer.valueOf(baseViewHolder.getAdapterPosition())));
         applyForView.setLayoutManager(linearLayoutManager);
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C1985x81d5b2c4(this.this$0, null, null));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C1990x81d5b2c4(this.this$0, null, null));
         CatalogAllChannelsRecycleAdapter invoke$lambda$1 = invoke$lambda$1(lazy);
         final CategoryWithCampaignsItem categoryWithCampaignsItem = this.$item;
         final CategoryWithCampaignsProvider categoryWithCampaignsProvider2 = this.this$0;

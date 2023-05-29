@@ -33,7 +33,7 @@ import java.util.HashMap;
 import java.util.concurrent.atomic.AtomicInteger;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.FileLog;
@@ -48,7 +48,7 @@ import org.telegram.p044ui.ActionBar.ActionBarMenu;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p044ui.ActionBar.AlertDialog;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3356ActionBar;
+import org.telegram.p044ui.ActionBar.C3361ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Adapters.SearchAdapterHelper;
@@ -363,33 +363,33 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         TLRPC$Chat tLRPC$Chat;
         int i;
         this.searching = false;
-        this.actionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         int i2 = this.type;
         if (i2 == 3) {
-            this.actionBar.setTitle(LocaleController.getString("ChannelPermissions", C3290R.string.ChannelPermissions));
+            this.actionBar.setTitle(LocaleController.getString("ChannelPermissions", C3295R.string.ChannelPermissions));
         } else if (i2 == 0) {
-            this.actionBar.setTitle(LocaleController.getString("ChannelBlacklist", C3290R.string.ChannelBlacklist));
+            this.actionBar.setTitle(LocaleController.getString("ChannelBlacklist", C3295R.string.ChannelBlacklist));
         } else if (i2 == 1) {
-            this.actionBar.setTitle(LocaleController.getString("ChannelAdministrators", C3290R.string.ChannelAdministrators));
+            this.actionBar.setTitle(LocaleController.getString("ChannelAdministrators", C3295R.string.ChannelAdministrators));
         } else if (i2 == 2) {
             int i3 = this.selectType;
             if (i3 == 0) {
                 if (this.isChannel) {
-                    this.actionBar.setTitle(LocaleController.getString("ChannelSubscribers", C3290R.string.ChannelSubscribers));
+                    this.actionBar.setTitle(LocaleController.getString("ChannelSubscribers", C3295R.string.ChannelSubscribers));
                 } else {
-                    this.actionBar.setTitle(LocaleController.getString("ChannelMembers", C3290R.string.ChannelMembers));
+                    this.actionBar.setTitle(LocaleController.getString("ChannelMembers", C3295R.string.ChannelMembers));
                 }
             } else if (i3 == 1) {
-                this.actionBar.setTitle(LocaleController.getString("ChannelAddAdmin", C3290R.string.ChannelAddAdmin));
+                this.actionBar.setTitle(LocaleController.getString("ChannelAddAdmin", C3295R.string.ChannelAddAdmin));
             } else if (i3 == 2) {
-                this.actionBar.setTitle(LocaleController.getString("ChannelBlockUser", C3290R.string.ChannelBlockUser));
+                this.actionBar.setTitle(LocaleController.getString("ChannelBlockUser", C3295R.string.ChannelBlockUser));
             } else if (i3 == 3) {
-                this.actionBar.setTitle(LocaleController.getString("ChannelAddException", C3290R.string.ChannelAddException));
+                this.actionBar.setTitle(LocaleController.getString("ChannelAddException", C3295R.string.ChannelAddException));
             }
         }
-        this.actionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ChatUsersActivity.1
-            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.ChatUsersActivity.1
+            @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i4) {
                 if (i4 == -1) {
                     if (ChatUsersActivity.this.checkDiscard()) {
@@ -403,7 +403,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         if (this.selectType != 0 || (i = this.type) == 2 || i == 0 || i == 3) {
             this.searchListViewAdapter = new SearchAdapter(context);
             ActionBarMenu createMenu = this.actionBar.createMenu();
-            ActionBarMenuItem actionBarMenuItemSearchListener = createMenu.addItem(0, C3290R.C3292drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.ChatUsersActivity.2
+            ActionBarMenuItem actionBarMenuItemSearchListener = createMenu.addItem(0, C3295R.C3297drawable.ic_ab_search).setIsSearchField(true).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.ChatUsersActivity.2
                 @Override // org.telegram.p044ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
                 public void onSearchExpand() {
                     ChatUsersActivity.this.searching = true;
@@ -450,15 +450,15 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                 actionBarMenuItemSearchListener.setVisibility(8);
             }
             if (this.type == 3) {
-                this.searchItem.setSearchFieldHint(LocaleController.getString("ChannelSearchException", C3290R.string.ChannelSearchException));
+                this.searchItem.setSearchFieldHint(LocaleController.getString("ChannelSearchException", C3295R.string.ChannelSearchException));
             } else {
-                this.searchItem.setSearchFieldHint(LocaleController.getString("Search", C3290R.string.Search));
+                this.searchItem.setSearchFieldHint(LocaleController.getString("Search", C3295R.string.Search));
             }
             if (!ChatObject.isChannel(this.currentChat) && ((tLRPC$Chat = this.currentChat) == null || !tLRPC$Chat.creator)) {
                 this.searchItem.setVisibility(8);
             }
             if (this.type == 3) {
-                this.doneItem = createMenu.addItemWithWidth(1, C3290R.C3292drawable.ic_ab_done, AndroidUtilities.m54dp(56), LocaleController.getString("Done", C3290R.string.Done));
+                this.doneItem = createMenu.addItemWithWidth(1, C3295R.C3297drawable.ic_ab_done, AndroidUtilities.m54dp(56), LocaleController.getString("Done", C3295R.string.Done));
             }
         }
         FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.ChatUsersActivity.3
@@ -484,8 +484,8 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         this.progressBar.setVisibility(8);
         StickerEmptyView stickerEmptyView = new StickerEmptyView(context, frameLayout3, 1);
         this.emptyView = stickerEmptyView;
-        stickerEmptyView.title.setText(LocaleController.getString("NoResult", C3290R.string.NoResult));
-        this.emptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3290R.string.SearchEmptyViewFilteredSubtitle2));
+        stickerEmptyView.title.setText(LocaleController.getString("NoResult", C3295R.string.NoResult));
+        this.emptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3295R.string.SearchEmptyViewFilteredSubtitle2));
         this.emptyView.setVisibility(8);
         this.emptyView.setAnimateLayoutChange(true);
         this.emptyView.showProgress(true, false);
@@ -639,13 +639,13 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.ChatUsersActivity$8 */
     /* loaded from: classes5.dex */
-    public class C39838 implements ChatUsersActivityDelegate {
+    public class C39888 implements ChatUsersActivityDelegate {
         @Override // org.telegram.p044ui.ChatUsersActivity.ChatUsersActivityDelegate
         public /* synthetic */ void didKickParticipant(long j) {
             ChatUsersActivityDelegate.CC.$default$didKickParticipant(this, j);
         }
 
-        C39838() {
+        C39888() {
         }
 
         @Override // org.telegram.p044ui.ChatUsersActivity.ChatUsersActivityDelegate
@@ -673,7 +673,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.ChatUsersActivity$8$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ChatUsersActivity.C39838.this.lambda$didSelectUser$0(user);
+                        ChatUsersActivity.C39888.this.lambda$didSelectUser$0(user);
                     }
                 }, 200L);
             }
@@ -704,14 +704,14 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.ChatUsersActivity$9 */
     /* loaded from: classes5.dex */
-    public class C39849 implements GroupCreateActivity.ContactsAddActivityDelegate {
+    public class C39899 implements GroupCreateActivity.ContactsAddActivityDelegate {
         final /* synthetic */ GroupCreateActivity val$fragment;
 
         /* JADX INFO: Access modifiers changed from: private */
         public static /* synthetic */ void lambda$didSelectUsers$1(TLRPC$User tLRPC$User) {
         }
 
-        C39849(GroupCreateActivity groupCreateActivity) {
+        C39899(GroupCreateActivity groupCreateActivity) {
             this.val$fragment = groupCreateActivity;
         }
 
@@ -723,7 +723,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             ChatUsersActivity.this.getMessagesController().addUsersToChat(ChatUsersActivity.this.currentChat, ChatUsersActivity.this, arrayList, i, new Consumer() { // from class: org.telegram.ui.ChatUsersActivity$9$$ExternalSyntheticLambda0
                 @Override // androidx.core.util.Consumer
                 public final void accept(Object obj) {
-                    ChatUsersActivity.C39849.this.lambda$didSelectUsers$0((TLRPC$User) obj);
+                    ChatUsersActivity.C39899.this.lambda$didSelectUsers$0((TLRPC$User) obj);
                 }
             }, ChatUsersActivity$9$$ExternalSyntheticLambda1.INSTANCE, null);
         }
@@ -789,8 +789,8 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         }
         this.info.antispam = z;
         textCell.setChecked(z);
-        textCell.getCheckBox().setIcon((!ChatObject.canUserDoAdminAction(this.currentChat, 13) || ((tLRPC$ChatFull = this.info) != null && tLRPC$ChatFull.antispam && getParticipantsCount() < getMessagesController().telegramAntispamGroupSizeMin)) ? C3290R.C3292drawable.permission_locked : 0);
-        BulletinFactory.m29of(this).createSimpleBulletin(C3290R.raw.error, LocaleController.getString("UnknownError", C3290R.string.UnknownError)).show();
+        textCell.getCheckBox().setIcon((!ChatObject.canUserDoAdminAction(this.currentChat, 13) || ((tLRPC$ChatFull = this.info) != null && tLRPC$ChatFull.antispam && getParticipantsCount() < getMessagesController().telegramAntispamGroupSizeMin)) ? C3295R.C3297drawable.permission_locked : 0);
+        BulletinFactory.m29of(this).createSimpleBulletin(C3295R.raw.error, LocaleController.getString("UnknownError", C3295R.string.UnknownError)).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -818,19 +818,19 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         }
         this.info.participants_hidden = z;
         textCell.setChecked(z);
-        textCell.getCheckBox().setIcon((!ChatObject.canUserDoAdminAction(this.currentChat, 2) || ((tLRPC$ChatFull = this.info) != null && tLRPC$ChatFull.participants_hidden && getParticipantsCount() < getMessagesController().hiddenMembersGroupSizeMin)) ? C3290R.C3292drawable.permission_locked : 0);
-        BulletinFactory.m29of(this).createSimpleBulletin(C3290R.raw.error, LocaleController.getString("UnknownError", C3290R.string.UnknownError)).show();
+        textCell.getCheckBox().setIcon((!ChatObject.canUserDoAdminAction(this.currentChat, 2) || ((tLRPC$ChatFull = this.info) != null && tLRPC$ChatFull.participants_hidden && getParticipantsCount() < getMessagesController().hiddenMembersGroupSizeMin)) ? C3295R.C3297drawable.permission_locked : 0);
+        BulletinFactory.m29of(this).createSimpleBulletin(C3295R.raw.error, LocaleController.getString("UnknownError", C3295R.string.UnknownError)).show();
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.ChatUsersActivity$10 */
     /* loaded from: classes5.dex */
-    public class DialogC396710 extends GigagroupConvertAlert {
+    public class DialogC397210 extends GigagroupConvertAlert {
         @Override // org.telegram.p044ui.Components.GigagroupConvertAlert
         protected void onCancel() {
         }
 
-        DialogC396710(Context context, BaseFragment baseFragment) {
+        DialogC397210(Context context, BaseFragment baseFragment) {
             super(context, baseFragment);
         }
 
@@ -839,7 +839,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             ChatUsersActivity.this.getMessagesController().convertToGigaGroup(ChatUsersActivity.this.getParentActivity(), ChatUsersActivity.this.currentChat, ChatUsersActivity.this, new MessagesStorage.BooleanCallback() { // from class: org.telegram.ui.ChatUsersActivity$10$$ExternalSyntheticLambda0
                 @Override // org.telegram.messenger.MessagesStorage.BooleanCallback
                 public final void run(boolean z) {
-                    ChatUsersActivity.DialogC396710.this.lambda$onCovert$0(z);
+                    ChatUsersActivity.DialogC397210.this.lambda$onCovert$0(z);
                 }
             });
         }
@@ -1402,24 +1402,24 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                     ChatUsersActivity.this.lambda$createMenuForParticipant$9(j3, i, tLObject, tLRPC$TL_chatAdminRights, tLRPC$TL_chatBannedRights, str, z11, (Integer) obj);
                 }
             };
-            ItemOptions addIf = ItemOptions.makeOptions(this, view).setScrimViewBackground(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundWhite))).addIf(z8, C3290R.C3292drawable.msg_admins, z6 ? LocaleController.getString("EditAdminRights", C3290R.string.EditAdminRights) : LocaleController.getString("SetAsAdmin", C3290R.string.SetAsAdmin), new Runnable() { // from class: org.telegram.ui.ChatUsersActivity$$ExternalSyntheticLambda4
+            ItemOptions addIf = ItemOptions.makeOptions(this, view).setScrimViewBackground(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundWhite))).addIf(z8, C3295R.C3297drawable.msg_admins, z6 ? LocaleController.getString("EditAdminRights", C3295R.string.EditAdminRights) : LocaleController.getString("SetAsAdmin", C3295R.string.SetAsAdmin), new Runnable() { // from class: org.telegram.ui.ChatUsersActivity$$ExternalSyntheticLambda4
                 @Override // java.lang.Runnable
                 public final void run() {
                     ChatUsersActivity.lambda$createMenuForParticipant$10(Utilities.Callback.this);
                 }
-            }).addIf(z10, C3290R.C3292drawable.msg_permissions, LocaleController.getString("ChangePermissions", C3290R.string.ChangePermissions), new Runnable() { // from class: org.telegram.ui.ChatUsersActivity$$ExternalSyntheticLambda14
+            }).addIf(z10, C3295R.C3297drawable.msg_permissions, LocaleController.getString("ChangePermissions", C3295R.string.ChangePermissions), new Runnable() { // from class: org.telegram.ui.ChatUsersActivity$$ExternalSyntheticLambda14
                 @Override // java.lang.Runnable
                 public final void run() {
                     ChatUsersActivity.this.lambda$createMenuForParticipant$12(tLObject, user, callback);
                 }
             });
             boolean z12 = ChatObject.canBlockUsers(this.currentChat) && z5;
-            int i6 = C3290R.C3292drawable.msg_remove;
+            int i6 = C3295R.C3297drawable.msg_remove;
             if (this.isChannel) {
-                i3 = C3290R.string.ChannelRemoveUser;
+                i3 = C3295R.string.ChannelRemoveUser;
                 str3 = "ChannelRemoveUser";
             } else {
-                i3 = C3290R.string.KickFromGroup;
+                i3 = C3295R.string.KickFromGroup;
                 str3 = "KickFromGroup";
             }
             addIf.addIf(z12, i6, (CharSequence) LocaleController.getString(str3, i3), true, new Runnable() { // from class: org.telegram.ui.ChatUsersActivity$$ExternalSyntheticLambda16
@@ -1435,13 +1435,13 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         if (this.type == 3 && ChatObject.canBlockUsers(this.currentChat)) {
             final TLRPC$TL_chatBannedRights tLRPC$TL_chatBannedRights3 = tLRPC$TL_chatBannedRights;
             final String str4 = str;
-            makeOptions.add(C3290R.C3292drawable.msg_permissions, LocaleController.getString("ChannelEditPermissions", C3290R.string.ChannelEditPermissions), new Runnable() { // from class: org.telegram.ui.ChatUsersActivity$$ExternalSyntheticLambda12
+            makeOptions.add(C3295R.C3297drawable.msg_permissions, LocaleController.getString("ChannelEditPermissions", C3295R.string.ChannelEditPermissions), new Runnable() { // from class: org.telegram.ui.ChatUsersActivity$$ExternalSyntheticLambda12
                 @Override // java.lang.Runnable
                 public final void run() {
                     ChatUsersActivity.this.lambda$createMenuForParticipant$14(j5, tLRPC$TL_chatBannedRights3, str4, tLObject);
                 }
             });
-            makeOptions.add(C3290R.C3292drawable.msg_delete, LocaleController.getString("ChannelDeleteFromList", C3290R.string.ChannelDeleteFromList), true, new Runnable() { // from class: org.telegram.ui.ChatUsersActivity$$ExternalSyntheticLambda8
+            makeOptions.add(C3295R.C3297drawable.msg_delete, LocaleController.getString("ChannelDeleteFromList", C3295R.string.ChannelDeleteFromList), true, new Runnable() { // from class: org.telegram.ui.ChatUsersActivity$$ExternalSyntheticLambda8
                 @Override // java.lang.Runnable
                 public final void run() {
                     ChatUsersActivity.this.lambda$createMenuForParticipant$15(j5);
@@ -1449,12 +1449,12 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             });
         } else if (this.type == 0 && ChatObject.canBlockUsers(this.currentChat)) {
             if (ChatObject.canAddUsers(this.currentChat) && i5 > 0) {
-                int i7 = C3290R.C3292drawable.msg_contact_add;
+                int i7 = C3295R.C3297drawable.msg_contact_add;
                 if (this.isChannel) {
-                    i2 = C3290R.string.ChannelAddToChannel;
+                    i2 = C3295R.string.ChannelAddToChannel;
                     str2 = "ChannelAddToChannel";
                 } else {
-                    i2 = C3290R.string.ChannelAddToGroup;
+                    i2 = C3295R.string.ChannelAddToGroup;
                     str2 = "ChannelAddToGroup";
                 }
                 makeOptions.add(i7, LocaleController.getString(str2, i2), new Runnable() { // from class: org.telegram.ui.ChatUsersActivity$$ExternalSyntheticLambda10
@@ -1464,7 +1464,7 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                     }
                 });
             }
-            makeOptions.add(C3290R.C3292drawable.msg_delete, LocaleController.getString("ChannelDeleteFromList", C3290R.string.ChannelDeleteFromList), true, new Runnable() { // from class: org.telegram.ui.ChatUsersActivity$$ExternalSyntheticLambda9
+            makeOptions.add(C3295R.C3297drawable.msg_delete, LocaleController.getString("ChannelDeleteFromList", C3295R.string.ChannelDeleteFromList), true, new Runnable() { // from class: org.telegram.ui.ChatUsersActivity$$ExternalSyntheticLambda9
                 @Override // java.lang.Runnable
                 public final void run() {
                     ChatUsersActivity.this.lambda$createMenuForParticipant$17(j5);
@@ -1474,14 +1474,14 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             if (this.currentChat.creator || !(tLObject instanceof TLRPC$TL_channelParticipantCreator)) {
                 final TLRPC$TL_chatAdminRights tLRPC$TL_chatAdminRights3 = tLRPC$TL_chatAdminRights;
                 final String str5 = str;
-                makeOptions.add(C3290R.C3292drawable.msg_admins, LocaleController.getString("EditAdminRights", C3290R.string.EditAdminRights), new Runnable() { // from class: org.telegram.ui.ChatUsersActivity$$ExternalSyntheticLambda11
+                makeOptions.add(C3295R.C3297drawable.msg_admins, LocaleController.getString("EditAdminRights", C3295R.string.EditAdminRights), new Runnable() { // from class: org.telegram.ui.ChatUsersActivity$$ExternalSyntheticLambda11
                     @Override // java.lang.Runnable
                     public final void run() {
                         ChatUsersActivity.this.lambda$createMenuForParticipant$18(j5, tLRPC$TL_chatAdminRights3, str5, tLObject);
                     }
                 });
             }
-            makeOptions.add(C3290R.C3292drawable.msg_remove, LocaleController.getString("ChannelRemoveUserAdmin", C3290R.string.ChannelRemoveUserAdmin), true, new Runnable() { // from class: org.telegram.ui.ChatUsersActivity$$ExternalSyntheticLambda7
+            makeOptions.add(C3295R.C3297drawable.msg_remove, LocaleController.getString("ChannelRemoveUserAdmin", C3295R.string.ChannelRemoveUserAdmin), true, new Runnable() { // from class: org.telegram.ui.ChatUsersActivity$$ExternalSyntheticLambda7
                 @Override // java.lang.Runnable
                 public final void run() {
                     ChatUsersActivity.this.lambda$createMenuForParticipant$19(j5);
@@ -1511,12 +1511,12 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$createMenuForParticipant$12(TLObject tLObject, TLRPC$User tLRPC$User, final Utilities.Callback callback) {
         if ((tLObject instanceof TLRPC$TL_channelParticipantAdmin) || (tLObject instanceof TLRPC$TL_chatParticipantAdmin)) {
-            showDialog(new AlertDialog.Builder(getParentActivity()).setTitle(LocaleController.getString("AppName", C3290R.string.AppName)).setMessage(LocaleController.formatString("AdminWillBeRemoved", C3290R.string.AdminWillBeRemoved, UserObject.getUserName(tLRPC$User))).setPositiveButton(LocaleController.getString("OK", C3290R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ChatUsersActivity$$ExternalSyntheticLambda0
+            showDialog(new AlertDialog.Builder(getParentActivity()).setTitle(LocaleController.getString("AppName", C3295R.string.AppName)).setMessage(LocaleController.formatString("AdminWillBeRemoved", C3295R.string.AdminWillBeRemoved, UserObject.getUserName(tLRPC$User))).setPositiveButton(LocaleController.getString("OK", C3295R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ChatUsersActivity$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     ChatUsersActivity.lambda$createMenuForParticipant$11(Utilities.Callback.this, dialogInterface, i);
                 }
-            }).setNegativeButton(LocaleController.getString("Cancel", C3290R.string.Cancel), null).create());
+            }).setNegativeButton(LocaleController.getString("Cancel", C3295R.string.Cancel), null).create());
         } else {
             callback.run(1);
         }
@@ -1714,19 +1714,19 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             return true;
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-        builder.setTitle(LocaleController.getString("UserRestrictionsApplyChanges", C3290R.string.UserRestrictionsApplyChanges));
+        builder.setTitle(LocaleController.getString("UserRestrictionsApplyChanges", C3295R.string.UserRestrictionsApplyChanges));
         if (this.isChannel) {
-            builder.setMessage(LocaleController.getString("ChannelSettingsChangedAlert", C3290R.string.ChannelSettingsChangedAlert));
+            builder.setMessage(LocaleController.getString("ChannelSettingsChangedAlert", C3295R.string.ChannelSettingsChangedAlert));
         } else {
-            builder.setMessage(LocaleController.getString("GroupSettingsChangedAlert", C3290R.string.GroupSettingsChangedAlert));
+            builder.setMessage(LocaleController.getString("GroupSettingsChangedAlert", C3295R.string.GroupSettingsChangedAlert));
         }
-        builder.setPositiveButton(LocaleController.getString("ApplyTheme", C3290R.string.ApplyTheme), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ChatUsersActivity$$ExternalSyntheticLambda1
+        builder.setPositiveButton(LocaleController.getString("ApplyTheme", C3295R.string.ApplyTheme), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ChatUsersActivity$$ExternalSyntheticLambda1
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 ChatUsersActivity.this.lambda$checkDiscard$23(dialogInterface, i);
             }
         });
-        builder.setNegativeButton(LocaleController.getString("PassportDiscard", C3290R.string.PassportDiscard), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ChatUsersActivity$$ExternalSyntheticLambda2
+        builder.setNegativeButton(LocaleController.getString("PassportDiscard", C3295R.string.PassportDiscard), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.ChatUsersActivity$$ExternalSyntheticLambda2
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 ChatUsersActivity.this.lambda$checkDiscard$24(dialogInterface, i);
@@ -1758,62 +1758,62 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         StringBuilder sb = new StringBuilder();
         boolean z = tLRPC$TL_chatBannedRights.view_messages;
         if (z && this.defaultBannedRights.view_messages != z) {
-            sb.append(LocaleController.getString("UserRestrictionsNoRead", C3290R.string.UserRestrictionsNoRead));
+            sb.append(LocaleController.getString("UserRestrictionsNoRead", C3295R.string.UserRestrictionsNoRead));
         }
         if (tLRPC$TL_chatBannedRights.send_messages && this.defaultBannedRights.send_plain != tLRPC$TL_chatBannedRights.send_plain) {
             if (sb.length() != 0) {
                 sb.append(", ");
             }
-            sb.append(LocaleController.getString("UserRestrictionsNoSendText", C3290R.string.UserRestrictionsNoSendText));
+            sb.append(LocaleController.getString("UserRestrictionsNoSendText", C3295R.string.UserRestrictionsNoSendText));
         }
         boolean z2 = tLRPC$TL_chatBannedRights.send_media;
         if (z2 && this.defaultBannedRights.send_media != z2) {
             if (sb.length() != 0) {
                 sb.append(", ");
             }
-            sb.append(LocaleController.getString("UserRestrictionsNoSendMedia", C3290R.string.UserRestrictionsNoSendMedia));
+            sb.append(LocaleController.getString("UserRestrictionsNoSendMedia", C3295R.string.UserRestrictionsNoSendMedia));
         } else {
             boolean z3 = tLRPC$TL_chatBannedRights.send_photos;
             if (z3 && this.defaultBannedRights.send_photos != z3) {
                 if (sb.length() != 0) {
                     sb.append(", ");
                 }
-                sb.append(LocaleController.getString("UserRestrictionsNoSendPhotos", C3290R.string.UserRestrictionsNoSendPhotos));
+                sb.append(LocaleController.getString("UserRestrictionsNoSendPhotos", C3295R.string.UserRestrictionsNoSendPhotos));
             }
             boolean z4 = tLRPC$TL_chatBannedRights.send_videos;
             if (z4 && this.defaultBannedRights.send_videos != z4) {
                 if (sb.length() != 0) {
                     sb.append(", ");
                 }
-                sb.append(LocaleController.getString("UserRestrictionsNoSendVideos", C3290R.string.UserRestrictionsNoSendVideos));
+                sb.append(LocaleController.getString("UserRestrictionsNoSendVideos", C3295R.string.UserRestrictionsNoSendVideos));
             }
             boolean z5 = tLRPC$TL_chatBannedRights.send_audios;
             if (z5 && this.defaultBannedRights.send_audios != z5) {
                 if (sb.length() != 0) {
                     sb.append(", ");
                 }
-                sb.append(LocaleController.getString("UserRestrictionsNoSendMusic", C3290R.string.UserRestrictionsNoSendMusic));
+                sb.append(LocaleController.getString("UserRestrictionsNoSendMusic", C3295R.string.UserRestrictionsNoSendMusic));
             }
             boolean z6 = tLRPC$TL_chatBannedRights.send_docs;
             if (z6 && this.defaultBannedRights.send_docs != z6) {
                 if (sb.length() != 0) {
                     sb.append(", ");
                 }
-                sb.append(LocaleController.getString("UserRestrictionsNoSendDocs", C3290R.string.UserRestrictionsNoSendDocs));
+                sb.append(LocaleController.getString("UserRestrictionsNoSendDocs", C3295R.string.UserRestrictionsNoSendDocs));
             }
             boolean z7 = tLRPC$TL_chatBannedRights.send_voices;
             if (z7 && this.defaultBannedRights.send_voices != z7) {
                 if (sb.length() != 0) {
                     sb.append(", ");
                 }
-                sb.append(LocaleController.getString("UserRestrictionsNoSendVoice", C3290R.string.UserRestrictionsNoSendVoice));
+                sb.append(LocaleController.getString("UserRestrictionsNoSendVoice", C3295R.string.UserRestrictionsNoSendVoice));
             }
             boolean z8 = tLRPC$TL_chatBannedRights.send_roundvideos;
             if (z8 && this.defaultBannedRights.send_roundvideos != z8) {
                 if (sb.length() != 0) {
                     sb.append(", ");
                 }
-                sb.append(LocaleController.getString("UserRestrictionsNoSendRound", C3290R.string.UserRestrictionsNoSendRound));
+                sb.append(LocaleController.getString("UserRestrictionsNoSendRound", C3295R.string.UserRestrictionsNoSendRound));
             }
         }
         boolean z9 = tLRPC$TL_chatBannedRights.send_stickers;
@@ -1821,42 +1821,42 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
             if (sb.length() != 0) {
                 sb.append(", ");
             }
-            sb.append(LocaleController.getString("UserRestrictionsNoSendStickers", C3290R.string.UserRestrictionsNoSendStickers));
+            sb.append(LocaleController.getString("UserRestrictionsNoSendStickers", C3295R.string.UserRestrictionsNoSendStickers));
         }
         boolean z10 = tLRPC$TL_chatBannedRights.send_polls;
         if (z10 && this.defaultBannedRights.send_polls != z10) {
             if (sb.length() != 0) {
                 sb.append(", ");
             }
-            sb.append(LocaleController.getString("UserRestrictionsNoSendPolls", C3290R.string.UserRestrictionsNoSendPolls));
+            sb.append(LocaleController.getString("UserRestrictionsNoSendPolls", C3295R.string.UserRestrictionsNoSendPolls));
         }
         boolean z11 = tLRPC$TL_chatBannedRights.embed_links;
         if (z11 && !tLRPC$TL_chatBannedRights.send_plain && this.defaultBannedRights.embed_links != z11) {
             if (sb.length() != 0) {
                 sb.append(", ");
             }
-            sb.append(LocaleController.getString("UserRestrictionsNoEmbedLinks", C3290R.string.UserRestrictionsNoEmbedLinks));
+            sb.append(LocaleController.getString("UserRestrictionsNoEmbedLinks", C3295R.string.UserRestrictionsNoEmbedLinks));
         }
         boolean z12 = tLRPC$TL_chatBannedRights.invite_users;
         if (z12 && this.defaultBannedRights.invite_users != z12) {
             if (sb.length() != 0) {
                 sb.append(", ");
             }
-            sb.append(LocaleController.getString("UserRestrictionsNoInviteUsers", C3290R.string.UserRestrictionsNoInviteUsers));
+            sb.append(LocaleController.getString("UserRestrictionsNoInviteUsers", C3295R.string.UserRestrictionsNoInviteUsers));
         }
         boolean z13 = tLRPC$TL_chatBannedRights.pin_messages;
         if (z13 && this.defaultBannedRights.pin_messages != z13) {
             if (sb.length() != 0) {
                 sb.append(", ");
             }
-            sb.append(LocaleController.getString("UserRestrictionsNoPinMessages", C3290R.string.UserRestrictionsNoPinMessages));
+            sb.append(LocaleController.getString("UserRestrictionsNoPinMessages", C3295R.string.UserRestrictionsNoPinMessages));
         }
         boolean z14 = tLRPC$TL_chatBannedRights.change_info;
         if (z14 && this.defaultBannedRights.change_info != z14) {
             if (sb.length() != 0) {
                 sb.append(", ");
             }
-            sb.append(LocaleController.getString("UserRestrictionsNoChangeInfo", C3290R.string.UserRestrictionsNoChangeInfo));
+            sb.append(LocaleController.getString("UserRestrictionsNoChangeInfo", C3295R.string.UserRestrictionsNoChangeInfo));
         }
         if (sb.length() != 0) {
             sb.replace(0, 1, sb.substring(0, 1).toUpperCase());
@@ -2755,11 +2755,11 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                 case 4:
                     TextInfoPrivacyCell textInfoPrivacyCell = new TextInfoPrivacyCell(this.mContext);
                     if (ChatUsersActivity.this.isChannel) {
-                        textInfoPrivacyCell.setText(LocaleController.getString(C3290R.string.NoBlockedChannel2));
+                        textInfoPrivacyCell.setText(LocaleController.getString(C3295R.string.NoBlockedChannel2));
                     } else {
-                        textInfoPrivacyCell.setText(LocaleController.getString(C3290R.string.NoBlockedGroup2));
+                        textInfoPrivacyCell.setText(LocaleController.getString(C3295R.string.NoBlockedGroup2));
                     }
-                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(this.mContext, C3290R.C3292drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
+                    textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(this.mContext, C3295R.C3297drawable.greydivider_bottom, Theme.key_windowBackgroundGrayShadow));
                     slideChooseView = textInfoPrivacyCell;
                     break;
                 case 5:
@@ -2789,9 +2789,9 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
                     SlideChooseView slideChooseView2 = new SlideChooseView(this.mContext);
                     slideChooseView2.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
                     int i4 = ChatUsersActivity.this.selectedSlowmode;
-                    int i5 = C3290R.string.SlowmodeSeconds;
-                    int i6 = C3290R.string.SlowmodeMinutes;
-                    slideChooseView2.setOptions(i4, LocaleController.getString("SlowmodeOff", C3290R.string.SlowmodeOff), LocaleController.formatString("SlowmodeSeconds", i5, 10), LocaleController.formatString("SlowmodeSeconds", i5, 30), LocaleController.formatString("SlowmodeMinutes", i6, 1), LocaleController.formatString("SlowmodeMinutes", i6, 5), LocaleController.formatString("SlowmodeMinutes", i6, 15), LocaleController.formatString("SlowmodeHours", C3290R.string.SlowmodeHours, 1));
+                    int i5 = C3295R.string.SlowmodeSeconds;
+                    int i6 = C3295R.string.SlowmodeMinutes;
+                    slideChooseView2.setOptions(i4, LocaleController.getString("SlowmodeOff", C3295R.string.SlowmodeOff), LocaleController.formatString("SlowmodeSeconds", i5, 10), LocaleController.formatString("SlowmodeSeconds", i5, 30), LocaleController.formatString("SlowmodeMinutes", i6, 1), LocaleController.formatString("SlowmodeMinutes", i6, 5), LocaleController.formatString("SlowmodeMinutes", i6, 15), LocaleController.formatString("SlowmodeHours", C3295R.string.SlowmodeHours, 1));
                     slideChooseView2.setCallback(new SlideChooseView.Callback() { // from class: org.telegram.ui.ChatUsersActivity$ListAdapter$$ExternalSyntheticLambda1
                         @Override // org.telegram.p044ui.Components.SlideChooseView.Callback
                         public final void onOptionSelected(int i7) {
@@ -3178,10 +3178,10 @@ public class ChatUsersActivity extends BaseFragment implements NotificationCente
         };
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_CELLBACKGROUNDCOLOR, new Class[]{HeaderCell.class, ManageChatUserCell.class, ManageChatTextCell.class, TextCheckCell2.class, TextSettingsCell.class, SlideChooseView.class}, null, null, null, Theme.key_windowBackgroundWhite));
         arrayList.add(new ThemeDescription(this.fragmentView, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_windowBackgroundGray));
-        C3356ActionBar c3356ActionBar = this.actionBar;
+        C3361ActionBar c3361ActionBar = this.actionBar;
         int i = ThemeDescription.FLAG_BACKGROUND;
         int i2 = Theme.key_actionBarDefault;
-        arrayList.add(new ThemeDescription(c3356ActionBar, i, null, null, null, null, i2));
+        arrayList.add(new ThemeDescription(c3361ActionBar, i, null, null, null, null, i2));
         arrayList.add(new ThemeDescription(this.listView, ThemeDescription.FLAG_LISTGLOWCOLOR, null, null, null, null, i2));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon));
         arrayList.add(new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle));

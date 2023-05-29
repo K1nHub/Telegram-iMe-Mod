@@ -26,9 +26,9 @@ import java.util.HashMap;
 import moxy.MvpDelegate;
 import org.koin.core.Koin;
 import org.koin.java.KoinJavaComponent;
-import org.telegram.PhoneFormat.C3207PhoneFormat;
+import org.telegram.PhoneFormat.C3212PhoneFormat;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.DispatchQueue;
 import org.telegram.messenger.Emoji;
@@ -198,7 +198,7 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
             TLRPC$User tLRPC$User = this.currentUser;
             if (tLRPC$User != null) {
                 if (TextUtils.isEmpty(tLRPC$User.phone)) {
-                    this.statusTextView.setText(LocaleController.getString("NumberUnknown", C3290R.string.NumberUnknown));
+                    this.statusTextView.setText(LocaleController.getString("NumberUnknown", C3295R.string.NumberUnknown));
                 } else if (this.formattedPhoneNumberUser != this.currentUser && (charSequence2 = this.formattedPhoneNumber) != null) {
                     this.statusTextView.setText(charSequence2);
                 } else {
@@ -216,8 +216,8 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
         /* JADX INFO: Access modifiers changed from: private */
         public /* synthetic */ void lambda$setStatus$3() {
             if (this.currentUser != null) {
-                C3207PhoneFormat c3207PhoneFormat = C3207PhoneFormat.getInstance();
-                this.formattedPhoneNumber = c3207PhoneFormat.format("+" + this.currentUser.phone);
+                C3212PhoneFormat c3212PhoneFormat = C3212PhoneFormat.getInstance();
+                this.formattedPhoneNumber = c3212PhoneFormat.format("+" + this.currentUser.phone);
                 this.formattedPhoneNumberUser = this.currentUser;
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout$UserCell$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
@@ -276,11 +276,11 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
             public void onTextChange(String str) {
                 if (str.length() != 0) {
                     if (ChatAttachAlertContactsLayout.this.emptyView != null) {
-                        ChatAttachAlertContactsLayout.this.emptyView.setText(LocaleController.getString("NoResult", C3290R.string.NoResult));
+                        ChatAttachAlertContactsLayout.this.emptyView.setText(LocaleController.getString("NoResult", C3295R.string.NoResult));
                     }
                 } else if (ChatAttachAlertContactsLayout.this.listView.getAdapter() != ChatAttachAlertContactsLayout.this.listAdapter) {
                     int currentTop = ChatAttachAlertContactsLayout.this.getCurrentTop();
-                    ChatAttachAlertContactsLayout.this.emptyView.setText(LocaleController.getString("NoContacts", C3290R.string.NoContacts));
+                    ChatAttachAlertContactsLayout.this.emptyView.setText(LocaleController.getString("NoContacts", C3295R.string.NoContacts));
                     ChatAttachAlertContactsLayout.this.emptyView.showTextView();
                     ChatAttachAlertContactsLayout.this.listView.setAdapter(ChatAttachAlertContactsLayout.this.listAdapter);
                     ChatAttachAlertContactsLayout.this.listAdapter.notifyDataSetChanged();
@@ -313,12 +313,12 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
             }
         };
         this.searchField = searchField;
-        searchField.setHint(LocaleController.getString("SearchFriends", C3290R.string.SearchFriends));
+        searchField.setHint(LocaleController.getString("SearchFriends", C3295R.string.SearchFriends));
         this.frameLayout.addView(this.searchField, LayoutHelper.createFrame(-1, -1, 51));
         EmptyTextProgressView emptyTextProgressView = new EmptyTextProgressView(context, null, resourcesProvider);
         this.emptyView = emptyTextProgressView;
         emptyTextProgressView.showTextView();
-        this.emptyView.setText(LocaleController.getString("NoContacts", C3290R.string.NoContacts));
+        this.emptyView.setText(LocaleController.getString("NoContacts", C3295R.string.NoContacts));
         addView(this.emptyView, LayoutHelper.createFrame(-1, -1, 51, 0, 52, 0, 0));
         RecyclerListView recyclerListView = new RecyclerListView(context, resourcesProvider) { // from class: org.telegram.ui.Components.ChatAttachAlertContactsLayout.2
             @Override // org.telegram.p044ui.Components.RecyclerListView
@@ -750,13 +750,13 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
 
         /* JADX INFO: Access modifiers changed from: private */
         public static /* synthetic */ CharSequence lambda$onBindViewHolder$0(ContactsController.Contact contact) {
-            return contact.phones.isEmpty() ? "" : C3207PhoneFormat.getInstance().format(contact.phones.get(0));
+            return contact.phones.isEmpty() ? "" : C3212PhoneFormat.getInstance().format(contact.phones.get(0));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public static /* synthetic */ CharSequence lambda$onBindViewHolder$1(TLRPC$User tLRPC$User) {
-            C3207PhoneFormat c3207PhoneFormat = C3207PhoneFormat.getInstance();
-            return c3207PhoneFormat.format("+" + tLRPC$User.phone);
+            C3212PhoneFormat c3212PhoneFormat = C3212PhoneFormat.getInstance();
+            return c3212PhoneFormat.format("+" + tLRPC$User.phone);
         }
 
         @Override // org.telegram.p044ui.Components.RecyclerListView.SectionsAdapter
@@ -957,13 +957,13 @@ public class ChatAttachAlertContactsLayout extends ChatAttachAlert.AttachAlertLa
 
         /* JADX INFO: Access modifiers changed from: private */
         public static /* synthetic */ CharSequence lambda$onBindViewHolder$4(ContactsController.Contact contact) {
-            return contact.phones.isEmpty() ? "" : C3207PhoneFormat.getInstance().format(contact.phones.get(0));
+            return contact.phones.isEmpty() ? "" : C3212PhoneFormat.getInstance().format(contact.phones.get(0));
         }
 
         /* JADX INFO: Access modifiers changed from: private */
         public static /* synthetic */ CharSequence lambda$onBindViewHolder$5(TLRPC$User tLRPC$User) {
-            C3207PhoneFormat c3207PhoneFormat = C3207PhoneFormat.getInstance();
-            return c3207PhoneFormat.format("+" + tLRPC$User.phone);
+            C3212PhoneFormat c3212PhoneFormat = C3212PhoneFormat.getInstance();
+            return c3212PhoneFormat.format("+" + tLRPC$User.phone);
         }
 
         @Override // org.telegram.p044ui.Components.RecyclerListView.SelectionAdapter

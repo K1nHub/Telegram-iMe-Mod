@@ -10,7 +10,7 @@ import java.math.BigDecimal;
 import java.util.Arrays;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: PushNotificationModel.kt */
 /* loaded from: classes3.dex */
@@ -124,7 +124,7 @@ public abstract class PushNotificationModel {
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         public String getMessage() {
-            return getString$TMessagesProj_release(C3290R.string.push_notification_wallet_unsupported, new Object[0]);
+            return getString$TMessagesProj_release(C3295R.string.push_notification_wallet_unsupported, new Object[0]);
         }
     }
 
@@ -264,7 +264,7 @@ public abstract class PushNotificationModel {
         public String getMessage() {
             FiatCode fiatCode = new FiatCode(this.spentCurrency, 0, 2, null);
             TokenInfo map = TokenInfo.Companion.map(this.cryptoCode);
-            return getString$TMessagesProj_release(C3290R.string.push_notification_wallet_simplex_payment, BalanceFormatter.formatBalance(new BigDecimal(this.amountToSpent), fiatCode.getDecimals()), fiatCode.getShortName(), BalanceFormatter.formatBalance(new BigDecimal(this.amount), map.getDecimals()), getString$TMessagesProj_release(map.getShortName(), new Object[0]), getString$TMessagesProj_release(Status.Companion.map(this.status).getTitle(), new Object[0]));
+            return getString$TMessagesProj_release(C3295R.string.push_notification_wallet_simplex_payment, BalanceFormatter.formatBalance(new BigDecimal(this.amountToSpent), fiatCode.getDecimals()), fiatCode.getShortName(), BalanceFormatter.formatBalance(new BigDecimal(this.amount), map.getDecimals()), getString$TMessagesProj_release(map.getShortName(), new Object[0]), getString$TMessagesProj_release(Status.Companion.map(this.status).getTitle(), new Object[0]));
         }
     }
 
@@ -404,7 +404,7 @@ public abstract class PushNotificationModel {
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         public String getMessage() {
-            return getString$TMessagesProj_release(C3290R.string.push_notification_wallet_binance_pay_request_created_description, BalanceFormatter.formatBalance(Double.valueOf(Double.parseDouble(this.amount)), TokenInfo.Crypto.Ethereum.BNB.INSTANCE.getDecimals()), this.assetCode, mo1289getUserId());
+            return getString$TMessagesProj_release(C3295R.string.push_notification_wallet_binance_pay_request_created_description, BalanceFormatter.formatBalance(Double.valueOf(Double.parseDouble(this.amount)), TokenInfo.Crypto.Ethereum.BNB.INSTANCE.getDecimals()), this.assetCode, mo1289getUserId());
         }
     }
 
@@ -560,7 +560,7 @@ public abstract class PushNotificationModel {
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         public String getMessage() {
-            return getString$TMessagesProj_release(C3290R.string.push_notification_wallet_binance_pay_request_status_updated_description, BalanceFormatter.formatBalance(Double.valueOf(Double.parseDouble(this.amount)), TokenInfo.Crypto.Ethereum.BNB.INSTANCE.getDecimals()), this.assetCode, this.payerUserId);
+            return getString$TMessagesProj_release(C3295R.string.push_notification_wallet_binance_pay_request_status_updated_description, BalanceFormatter.formatBalance(Double.valueOf(Double.parseDouble(this.amount)), TokenInfo.Crypto.Ethereum.BNB.INSTANCE.getDecimals()), this.assetCode, this.payerUserId);
         }
     }
 
@@ -698,7 +698,7 @@ public abstract class PushNotificationModel {
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         public String getMessage() {
-            return getString$TMessagesProj_release(C3290R.string.push_notification_staking_safe_withdrawal_started, StringExtKt.formatISODate$default(this.shouldFinishAt, null, 1, null));
+            return getString$TMessagesProj_release(C3295R.string.push_notification_staking_safe_withdrawal_started, StringExtKt.formatISODate$default(this.shouldFinishAt, null, 1, null));
         }
     }
 
@@ -854,7 +854,7 @@ public abstract class PushNotificationModel {
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         public String getMessage() {
-            return getString$TMessagesProj_release(C3290R.string.push_notification_staking_safe_withdrawal_finished, this.stakingToken, BalanceFormatter.formatBalance(new BigDecimal(this.amount), TokenInfo.Companion.map(this.stakingToken).getDecimals()), this.stakingToken);
+            return getString$TMessagesProj_release(C3295R.string.push_notification_staking_safe_withdrawal_finished, this.stakingToken, BalanceFormatter.formatBalance(new BigDecimal(this.amount), TokenInfo.Companion.map(this.stakingToken).getDecimals()), this.stakingToken);
         }
     }
 
@@ -1028,7 +1028,7 @@ public abstract class PushNotificationModel {
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         public String getMessage() {
-            return getString$TMessagesProj_release(C3290R.string.push_notification_staking_started, this.stakingName);
+            return getString$TMessagesProj_release(C3295R.string.push_notification_staking_started, this.stakingName);
         }
     }
 
@@ -1190,7 +1190,7 @@ public abstract class PushNotificationModel {
 
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         public String getMessage() {
-            return getString$TMessagesProj_release(C3290R.string.push_notification_staking_finished, this.stakingName, this.stakingToken);
+            return getString$TMessagesProj_release(C3295R.string.push_notification_staking_finished, this.stakingName, this.stakingToken);
         }
     }
 
@@ -1316,7 +1316,7 @@ public abstract class PushNotificationModel {
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         public String getMessage() {
             int i = WhenMappings.$EnumSwitchMapping$0[Status.Companion.map(this.status).ordinal()];
-            return i != 1 ? i != 2 ? "" : getString$TMessagesProj_release(C3290R.string.push_notification_wallet_cancelled_failed_description, this.txHash) : getString$TMessagesProj_release(C3290R.string.push_notification_wallet_cancelled_success_description, this.txHash);
+            return i != 1 ? i != 2 ? "" : getString$TMessagesProj_release(C3295R.string.push_notification_wallet_cancelled_failed_description, this.txHash) : getString$TMessagesProj_release(C3295R.string.push_notification_wallet_cancelled_success_description, this.txHash);
         }
     }
 
@@ -1460,7 +1460,7 @@ public abstract class PushNotificationModel {
         @Override // com.iMe.model.wallet.notification.PushNotificationModel
         public String getMessage() {
             int i = WhenMappings.$EnumSwitchMapping$0[Status.Companion.map(this.status).ordinal()];
-            return i != 1 ? i != 2 ? "" : getString$TMessagesProj_release(C3290R.string.push_notification_wallet_approve_failed_description, getString$TMessagesProj_release(TokenInfo.Companion.map(this.cryptoCode).getShortName(), new Object[0])) : getString$TMessagesProj_release(C3290R.string.push_notification_wallet_approve_success_description, getString$TMessagesProj_release(TokenInfo.Companion.map(this.cryptoCode).getShortName(), new Object[0]));
+            return i != 1 ? i != 2 ? "" : getString$TMessagesProj_release(C3295R.string.push_notification_wallet_approve_failed_description, getString$TMessagesProj_release(TokenInfo.Companion.map(this.cryptoCode).getShortName(), new Object[0])) : getString$TMessagesProj_release(C3295R.string.push_notification_wallet_approve_success_description, getString$TMessagesProj_release(TokenInfo.Companion.map(this.cryptoCode).getShortName(), new Object[0]));
         }
     }
 
@@ -1628,7 +1628,7 @@ public abstract class PushNotificationModel {
 
             @Override // com.iMe.model.wallet.notification.PushNotificationModel
             public String getMessage() {
-                int i = C3290R.string.push_notification_wallet_crypto_transfer_in_description;
+                int i = C3295R.string.push_notification_wallet_crypto_transfer_in_description;
                 BigDecimal bigDecimal = new BigDecimal(this.amount);
                 TokenInfo.Companion companion = TokenInfo.Companion;
                 return getString$TMessagesProj_release(i, BalanceFormatter.formatBalance(bigDecimal, companion.map(this.cryptoCode).getDecimals()), getString$TMessagesProj_release(companion.map(this.cryptoCode).getShortName(), new Object[0]), this.fromWalletAddress);
@@ -1811,14 +1811,14 @@ public abstract class PushNotificationModel {
                     if (i != 2) {
                         return "";
                     }
-                    int i2 = C3290R.string.push_notification_wallet_crypto_transfer_out_failed_description;
+                    int i2 = C3295R.string.push_notification_wallet_crypto_transfer_out_failed_description;
                     BigDecimal bigDecimal = new BigDecimal(this.amount);
                     TokenInfo.Companion companion = TokenInfo.Companion;
                     return getString$TMessagesProj_release(i2, BalanceFormatter.formatBalance(bigDecimal, companion.map(this.cryptoCode).getDecimals()), getString$TMessagesProj_release(companion.map(this.cryptoCode).getShortName(), new Object[0]), this.toWalletAddress);
                 }
                 TokenInfo.Companion companion2 = TokenInfo.Companion;
                 TokenInfo map = companion2.map(this.cryptoCode);
-                int i3 = C3290R.string.push_notification_wallet_crypto_transfer_out_success_description;
+                int i3 = C3295R.string.push_notification_wallet_crypto_transfer_out_success_description;
                 Object[] objArr = new Object[3];
                 objArr[0] = BalanceFormatter.formatBalance(new BigDecimal(this.amount), companion2.map(this.cryptoCode).getDecimals());
                 objArr[1] = map.isUnknown() ? this.cryptoCode : getString$TMessagesProj_release(map.getShortName(), new Object[0]);
@@ -1992,7 +1992,7 @@ public abstract class PushNotificationModel {
 
             @Override // com.iMe.model.wallet.notification.PushNotificationModel
             public String getMessage() {
-                int i = C3290R.string.push_notification_wallet_crypto_transfer_in_description;
+                int i = C3295R.string.push_notification_wallet_crypto_transfer_in_description;
                 BigDecimal bigDecimal = new BigDecimal(this.amount);
                 TokenInfo.Companion companion = TokenInfo.Companion;
                 return getString$TMessagesProj_release(i, BalanceFormatter.formatBalance(bigDecimal, companion.map(this.cryptoCode).getDecimals()), getString$TMessagesProj_release(companion.map(this.cryptoCode).getShortName(), new Object[0]), this.fromWalletAddress);
@@ -2172,14 +2172,14 @@ public abstract class PushNotificationModel {
             public String getMessage() {
                 int i = WhenMappings.$EnumSwitchMapping$0[Status.Companion.map(this.status).ordinal()];
                 if (i == 1) {
-                    int i2 = C3290R.string.push_notification_wallet_crypto_transfer_out_success_description;
+                    int i2 = C3295R.string.push_notification_wallet_crypto_transfer_out_success_description;
                     BigDecimal bigDecimal = new BigDecimal(this.amount);
                     TokenInfo.Companion companion = TokenInfo.Companion;
                     return getString$TMessagesProj_release(i2, BalanceFormatter.formatBalance(bigDecimal, companion.map(this.cryptoCode).getDecimals()), getString$TMessagesProj_release(companion.map(this.cryptoCode).getShortName(), new Object[0]), this.toWalletAddress);
                 } else if (i != 2) {
                     return "";
                 } else {
-                    int i3 = C3290R.string.push_notification_wallet_crypto_transfer_out_failed_description;
+                    int i3 = C3295R.string.push_notification_wallet_crypto_transfer_out_failed_description;
                     BigDecimal bigDecimal2 = new BigDecimal(this.amount);
                     TokenInfo.Companion companion2 = TokenInfo.Companion;
                     return getString$TMessagesProj_release(i3, BalanceFormatter.formatBalance(bigDecimal2, companion2.map(this.cryptoCode).getDecimals()), getString$TMessagesProj_release(companion2.map(this.cryptoCode).getShortName(), new Object[0]), this.toWalletAddress);

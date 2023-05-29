@@ -31,7 +31,7 @@ import com.iMe.fork.utils.Callbacks$Callback;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.FileLog;
@@ -40,7 +40,7 @@ import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.p044ui.ActionBar.ActionBarMenuSubItem;
-import org.telegram.p044ui.ActionBar.C3356ActionBar;
+import org.telegram.p044ui.ActionBar.C3361ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Cells.ChatMessageCell;
 import org.telegram.p044ui.Cells.TextSelectionHelper;
@@ -56,7 +56,7 @@ import org.telegram.tgnet.TLRPC$User;
 /* renamed from: org.telegram.ui.Components.ForwardingPreviewView */
 /* loaded from: classes6.dex */
 public class ForwardingPreviewView extends FrameLayout {
-    C3356ActionBar actionBar;
+    C3361ActionBar actionBar;
     ArrayList<ActionBarMenuSubItem> actionItems;
     Adapter adapter;
     LinearLayout buttonsLayout;
@@ -156,9 +156,9 @@ public class ForwardingPreviewView extends FrameLayout {
         } else {
             this.openEditorView.setVisibility(0);
             if (arrayList.size() == 1) {
-                this.openEditorView.setTextAndIcon(LocaleController.getString("EditMessage", C3290R.string.EditMessage), C3290R.C3292drawable.msg_edit);
+                this.openEditorView.setTextAndIcon(LocaleController.getString("EditMessage", C3295R.string.EditMessage), C3295R.C3297drawable.msg_edit);
             } else {
-                this.openEditorView.setTextAndIcon(LocaleController.getString("EventLogPromotedEditMessages", C3290R.string.EventLogPromotedEditMessages), C3290R.C3292drawable.msg_edit);
+                this.openEditorView.setTextAndIcon(LocaleController.getString("EventLogPromotedEditMessages", C3295R.string.EventLogPromotedEditMessages), C3295R.C3297drawable.msg_edit);
             }
         }
         if (visibility != this.openEditorView.getVisibility()) {
@@ -232,9 +232,9 @@ public class ForwardingPreviewView extends FrameLayout {
             this.chatPreviewContainer.setClipToOutline(true);
             this.chatPreviewContainer.setElevation(AndroidUtilities.m54dp(4));
         }
-        C3356ActionBar c3356ActionBar = new C3356ActionBar(context, resourcesDelegate);
-        this.actionBar = c3356ActionBar;
-        c3356ActionBar.setBackgroundColor(getThemedColor(Theme.key_actionBarDefault));
+        C3361ActionBar c3361ActionBar = new C3361ActionBar(context, resourcesDelegate);
+        this.actionBar = c3361ActionBar;
+        c3361ActionBar.setBackgroundColor(getThemedColor(Theme.key_actionBarDefault));
         this.actionBar.setOccupyStatusBar(false);
         RecyclerListView recyclerListView = new RecyclerListView(context, resourcesDelegate) { // from class: org.telegram.ui.Components.ForwardingPreviewView.4
             @Override // androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
@@ -426,9 +426,9 @@ public class ForwardingPreviewView extends FrameLayout {
             }
         };
         this.chatListView = recyclerListView;
-        C46395 c46395 = new C46395(null, this.chatListView, resourcesDelegate, i);
-        this.itemAnimator = c46395;
-        recyclerListView.setItemAnimator(c46395);
+        C46445 c46445 = new C46445(null, this.chatListView, resourcesDelegate, i);
+        this.itemAnimator = c46445;
+        recyclerListView.setItemAnimator(c46445);
         this.chatListView.setOnScrollListener(new RecyclerView.OnScrollListener() { // from class: org.telegram.ui.Components.ForwardingPreviewView.6
             @Override // androidx.recyclerview.widget.RecyclerView.OnScrollListener
             public void onScrolled(RecyclerView recyclerView, int i8, int i9) {
@@ -463,9 +463,9 @@ public class ForwardingPreviewView extends FrameLayout {
         this.adapter = adapter;
         recyclerListView2.setAdapter(adapter);
         this.chatListView.setPadding(0, AndroidUtilities.m54dp(4), 0, AndroidUtilities.m54dp(4));
-        C46428 c46428 = new C46428(context, 1000, 1, true, forwardingMessagesParams);
-        this.chatLayoutManager = c46428;
-        c46428.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: org.telegram.ui.Components.ForwardingPreviewView.9
+        C46478 c46478 = new C46478(context, 1000, 1, true, forwardingMessagesParams);
+        this.chatLayoutManager = c46478;
+        c46478.setSpanSizeLookup(new GridLayoutManager.SpanSizeLookup() { // from class: org.telegram.ui.Components.ForwardingPreviewView.9
             @Override // androidx.recyclerview.widget.GridLayoutManager.SpanSizeLookup
             public int getSpanSize(int i8) {
                 if (i8 < 0 || i8 >= forwardingMessagesParams.previewMessages.size()) {
@@ -537,7 +537,7 @@ public class ForwardingPreviewView extends FrameLayout {
         this.buttonsLayout = linearLayout2;
         linearLayout2.setOrientation(1);
         Resources resources = getContext().getResources();
-        int i8 = C3290R.C3292drawable.popup_fixed_alert;
+        int i8 = C3295R.C3297drawable.popup_fixed_alert;
         Drawable mutate = resources.getDrawable(i8).mutate();
         int i9 = Theme.key_dialogBackground;
         mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor(i9), PorterDuff.Mode.MULTIPLY));
@@ -549,10 +549,10 @@ public class ForwardingPreviewView extends FrameLayout {
         }
         ActionBarMenuSubItem actionBarMenuSubItem = this.showSendersNameView;
         if (this.forwardingMessagesParams.multiplyUsers) {
-            i2 = C3290R.string.ShowSenderNames;
+            i2 = C3295R.string.ShowSenderNames;
             str = "ShowSenderNames";
         } else {
-            i2 = C3290R.string.ShowSendersName;
+            i2 = C3295R.string.ShowSendersName;
             str = "ShowSendersName";
         }
         actionBarMenuSubItem.setTextAndIcon(LocaleController.getString(str, i2), 0);
@@ -564,7 +564,7 @@ public class ForwardingPreviewView extends FrameLayout {
         int i12 = Theme.key_checkboxCheck;
         checkView.setColor(i10, i11, i12);
         this.showSendersNameView.getCheckView().setDrawBackgroundAsArc(10);
-        this.showSendersNameView.setText(LocaleController.getInternalString(C3290R.string.custom_forward_option_author));
+        this.showSendersNameView.setText(LocaleController.getInternalString(C3295R.string.custom_forward_option_author));
         if (forwardingMessagesParams.needForceHideForwardAuthor) {
             this.showSendersNameView.setEnabled(false);
             this.showSendersNameView.setAlpha(0.5f);
@@ -572,10 +572,10 @@ public class ForwardingPreviewView extends FrameLayout {
         ActionBarMenuSubItem actionBarMenuSubItem2 = new ActionBarMenuSubItem(context, true, false, !forwardingMessagesParams.hasCaption, (Theme.ResourcesProvider) resourcesDelegate);
         this.hideSendersNameView = actionBarMenuSubItem2;
         if (this.forwardingMessagesParams.multiplyUsers) {
-            i3 = C3290R.string.HideSenderNames;
+            i3 = C3295R.string.HideSenderNames;
             str2 = "HideSenderNames";
         } else {
-            i3 = C3290R.string.HideSendersName;
+            i3 = C3295R.string.HideSendersName;
             str2 = "HideSendersName";
         }
         actionBarMenuSubItem2.setTextAndIcon(LocaleController.getString(str2, i3), 0);
@@ -593,16 +593,16 @@ public class ForwardingPreviewView extends FrameLayout {
             ActionBarMenuSubItem actionBarMenuSubItem3 = new ActionBarMenuSubItem(context, true, false, false, (Theme.ResourcesProvider) resourcesDelegate, 21);
             this.showCaptionView = actionBarMenuSubItem3;
             this.buttonsLayout.addView(actionBarMenuSubItem3, LayoutHelper.createFrame(-1, 48));
-            this.showCaptionView.setTextAndIcon(LocaleController.getString("ShowCaption", C3290R.string.ShowCaption), 0);
+            this.showCaptionView.setTextAndIcon(LocaleController.getString("ShowCaption", C3295R.string.ShowCaption), 0);
             this.showCaptionView.setChecked(true);
             this.showCaptionView.getCheckView().setDrawUnchecked(true);
             i4 = i10;
             this.showCaptionView.getCheckView().setColor(i4, i11, i12);
             this.showCaptionView.getCheckView().setDrawBackgroundAsArc(10);
-            this.showCaptionView.setText(LocaleController.getInternalString(C3290R.string.custom_forward_option_text));
+            this.showCaptionView.setText(LocaleController.getInternalString(C3295R.string.custom_forward_option_text));
             ActionBarMenuSubItem actionBarMenuSubItem4 = new ActionBarMenuSubItem(context, true, false, true, (Theme.ResourcesProvider) resourcesDelegate);
             this.hideCaptionView = actionBarMenuSubItem4;
-            actionBarMenuSubItem4.setTextAndIcon(LocaleController.getString("HideCaption", C3290R.string.HideCaption), 0);
+            actionBarMenuSubItem4.setTextAndIcon(LocaleController.getString("HideCaption", C3295R.string.HideCaption), 0);
             this.hideCaptionView.setChecked(false);
             View view2 = new View(this, context) { // from class: org.telegram.ui.Components.ForwardingPreviewView.12
                 @Override // android.view.View
@@ -616,7 +616,7 @@ public class ForwardingPreviewView extends FrameLayout {
             ActionBarMenuSubItem actionBarMenuSubItem5 = new ActionBarMenuSubItem(context, true, false, false, (Theme.ResourcesProvider) resourcesDelegate, 21);
             this.showMediaView = actionBarMenuSubItem5;
             this.buttonsLayout.addView(actionBarMenuSubItem5, LayoutHelper.createFrame(-1, 48));
-            this.showMediaView.setTextAndIcon(LocaleController.getInternalString(C3290R.string.custom_forward_option_media), 0);
+            this.showMediaView.setTextAndIcon(LocaleController.getInternalString(C3295R.string.custom_forward_option_media), 0);
             this.showMediaView.setChecked(true);
             this.showMediaView.getCheckView().setDrawUnchecked(true);
             i5 = i12;
@@ -639,7 +639,7 @@ public class ForwardingPreviewView extends FrameLayout {
             ActionBarMenuSubItem actionBarMenuSubItem6 = new ActionBarMenuSubItem(context, true, false, false, (Theme.ResourcesProvider) resourcesDelegate, 21);
             this.showPreviewView = actionBarMenuSubItem6;
             this.buttonsLayout.addView(actionBarMenuSubItem6, LayoutHelper.createFrame(-1, 48));
-            this.showPreviewView.setTextAndIcon(LocaleController.getInternalString(C3290R.string.custom_forward_option_link_preview), 0);
+            this.showPreviewView.setTextAndIcon(LocaleController.getInternalString(C3295R.string.custom_forward_option_link_preview), 0);
             this.showPreviewView.setChecked(true);
             this.showPreviewView.getCheckView().setDrawUnchecked(true);
             this.showPreviewView.getCheckView().setColor(i4, i6, i5);
@@ -647,8 +647,8 @@ public class ForwardingPreviewView extends FrameLayout {
         }
         if (this.forwardingMessagesParams.isTemplatePreview()) {
             ActionBarMenuSubItem actionBarMenuSubItem7 = new ActionBarMenuSubItem(context, true, false, (Theme.ResourcesProvider) resourcesDelegate);
-            String string = LocaleController.getString("Edit", C3290R.string.Edit);
-            int i14 = C3290R.C3292drawable.msg_edit;
+            String string = LocaleController.getString("Edit", C3295R.string.Edit);
+            int i14 = C3295R.C3297drawable.msg_edit;
             actionBarMenuSubItem7.setTextAndIcon(string, i14);
             actionBarMenuSubItem7.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ForwardingPreviewView$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
@@ -659,7 +659,7 @@ public class ForwardingPreviewView extends FrameLayout {
             this.buttonsLayout.addView(actionBarMenuSubItem7, LayoutHelper.createFrame(-1, 48));
             this.actionItems.add(actionBarMenuSubItem7);
             ActionBarMenuSubItem actionBarMenuSubItem8 = new ActionBarMenuSubItem(context, false, false, (Theme.ResourcesProvider) resourcesDelegate);
-            actionBarMenuSubItem8.setTextAndIcon(LocaleController.getString("EditName", C3290R.string.EditName), i14);
+            actionBarMenuSubItem8.setTextAndIcon(LocaleController.getString("EditName", C3295R.string.EditName), i14);
             actionBarMenuSubItem8.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ForwardingPreviewView$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view4) {
@@ -669,7 +669,7 @@ public class ForwardingPreviewView extends FrameLayout {
             this.buttonsLayout.addView(actionBarMenuSubItem8, LayoutHelper.createFrame(-1, 48));
             this.actionItems.add(actionBarMenuSubItem8);
             ActionBarMenuSubItem actionBarMenuSubItem9 = new ActionBarMenuSubItem(context, false, true, (Theme.ResourcesProvider) resourcesDelegate);
-            actionBarMenuSubItem9.setTextAndIcon(LocaleController.getString("Delete", C3290R.string.Delete), C3290R.C3292drawable.msg_delete);
+            actionBarMenuSubItem9.setTextAndIcon(LocaleController.getString("Delete", C3295R.string.Delete), C3295R.C3297drawable.msg_delete);
             actionBarMenuSubItem9.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ForwardingPreviewView$$ExternalSyntheticLambda7
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view4) {
@@ -699,19 +699,19 @@ public class ForwardingPreviewView extends FrameLayout {
         if (z) {
             this.buttonsLayout2.addView(this.changeRecipientView, LayoutHelper.createFrame(-1, 48));
         }
-        this.changeRecipientView.setTextAndIcon(LocaleController.getString("ChangeRecipient", C3290R.string.ChangeRecipient), C3290R.C3292drawable.msg_forward_replace);
+        this.changeRecipientView.setTextAndIcon(LocaleController.getString("ChangeRecipient", C3295R.string.ChangeRecipient), C3295R.C3297drawable.msg_forward_replace);
         ActionBarMenuSubItem actionBarMenuSubItem11 = new ActionBarMenuSubItem(context, false, true, (Theme.ResourcesProvider) resourcesDelegate);
         this.sendMessagesView = actionBarMenuSubItem11;
         this.buttonsLayout2.addView(actionBarMenuSubItem11, LayoutHelper.createFrame(-1, 48));
         ActionBarMenuSubItem actionBarMenuSubItem12 = this.sendMessagesView;
         if (this.forwardingMessagesParams.isTemplatePreview()) {
-            i7 = C3290R.string.Send;
+            i7 = C3295R.string.Send;
             str3 = "Send";
         } else {
-            i7 = C3290R.string.ForwardSendMessages;
+            i7 = C3295R.string.ForwardSendMessages;
             str3 = "ForwardSendMessages";
         }
-        actionBarMenuSubItem12.setTextAndIcon(LocaleController.getString(str3, i7), C3290R.C3292drawable.msg_send);
+        actionBarMenuSubItem12.setTextAndIcon(LocaleController.getString(str3, i7), C3295R.C3297drawable.msg_send);
         if (this.forwardingMessagesParams.hasSenders) {
             this.actionItems.add(this.showSendersNameView);
             forwardingMessagesParams2 = forwardingMessagesParams;
@@ -841,13 +841,13 @@ public class ForwardingPreviewView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.ForwardingPreviewView$5 */
     /* loaded from: classes6.dex */
-    public class C46395 extends ChatListItemAnimator {
+    public class C46445 extends ChatListItemAnimator {
         Runnable finishRunnable;
         int scrollAnimationIndex;
         final /* synthetic */ int val$currentAccount;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C46395(ChatActivity chatActivity, RecyclerListView recyclerListView, Theme.ResourcesProvider resourcesProvider, int i) {
+        C46445(ChatActivity chatActivity, RecyclerListView recyclerListView, Theme.ResourcesProvider resourcesProvider, int i) {
             super(chatActivity, recyclerListView, resourcesProvider);
             this.val$currentAccount = i;
             this.scrollAnimationIndex = -1;
@@ -880,7 +880,7 @@ public class ForwardingPreviewView extends FrameLayout {
             Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Components.ForwardingPreviewView$5$$ExternalSyntheticLambda2
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ForwardingPreviewView.C46395.this.lambda$onAllAnimationsDone$0(i);
+                    ForwardingPreviewView.C46445.this.lambda$onAllAnimationsDone$0(i);
                 }
             };
             this.finishRunnable = runnable2;
@@ -891,7 +891,7 @@ public class ForwardingPreviewView extends FrameLayout {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ForwardingPreviewView$5$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ForwardingPreviewView.C46395.this.lambda$onAllAnimationsDone$1();
+                        ForwardingPreviewView.C46445.this.lambda$onAllAnimationsDone$1();
                     }
                 });
             }
@@ -921,7 +921,7 @@ public class ForwardingPreviewView extends FrameLayout {
             Runnable runnable2 = new Runnable() { // from class: org.telegram.ui.Components.ForwardingPreviewView$5$$ExternalSyntheticLambda1
                 @Override // java.lang.Runnable
                 public final void run() {
-                    ForwardingPreviewView.C46395.this.lambda$endAnimations$2(i);
+                    ForwardingPreviewView.C46445.this.lambda$endAnimations$2(i);
                 }
             };
             this.finishRunnable = runnable2;
@@ -940,7 +940,7 @@ public class ForwardingPreviewView extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.ForwardingPreviewView$8 */
     /* loaded from: classes6.dex */
-    public class C46428 extends GridLayoutManagerFixed {
+    public class C46478 extends GridLayoutManagerFixed {
         final /* synthetic */ ForwardingMessagesParams val$params;
 
         @Override // androidx.recyclerview.widget.GridLayoutManagerFixed
@@ -949,7 +949,7 @@ public class ForwardingPreviewView extends FrameLayout {
         }
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C46428(Context context, int i, int i2, boolean z, ForwardingMessagesParams forwardingMessagesParams) {
+        C46478(Context context, int i, int i2, boolean z, ForwardingMessagesParams forwardingMessagesParams) {
             super(context, i, i2, z);
             this.val$params = forwardingMessagesParams;
         }
@@ -991,7 +991,7 @@ public class ForwardingPreviewView extends FrameLayout {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Components.ForwardingPreviewView$8$$ExternalSyntheticLambda0
                     @Override // java.lang.Runnable
                     public final void run() {
-                        ForwardingPreviewView.C46428.this.lambda$onLayoutChildren$0();
+                        ForwardingPreviewView.C46478.this.lambda$onLayoutChildren$0();
                     }
                 });
             }
@@ -1230,33 +1230,33 @@ public class ForwardingPreviewView extends FrameLayout {
         if (!forwardingMessagesParams.hasSenders) {
             if (forwardingMessagesParams.willSeeSenders) {
                 if (tLRPC$User != null) {
-                    this.actionBar.setSubtitle(LocaleController.formatString("ForwardPreviewSendersNameVisible", C3290R.string.ForwardPreviewSendersNameVisible, ContactsController.formatName(tLRPC$User.first_name, tLRPC$User.last_name)));
+                    this.actionBar.setSubtitle(LocaleController.formatString("ForwardPreviewSendersNameVisible", C3295R.string.ForwardPreviewSendersNameVisible, ContactsController.formatName(tLRPC$User.first_name, tLRPC$User.last_name)));
                 } else if (ChatObject.isChannel(this.currentChat) && !this.currentChat.megagroup) {
-                    this.actionBar.setSubtitle(LocaleController.getString("ForwardPreviewSendersNameVisibleChannel", C3290R.string.ForwardPreviewSendersNameVisibleChannel));
+                    this.actionBar.setSubtitle(LocaleController.getString("ForwardPreviewSendersNameVisibleChannel", C3295R.string.ForwardPreviewSendersNameVisibleChannel));
                 } else {
-                    this.actionBar.setSubtitle(LocaleController.getString("ForwardPreviewSendersNameVisibleGroup", C3290R.string.ForwardPreviewSendersNameVisibleGroup));
+                    this.actionBar.setSubtitle(LocaleController.getString("ForwardPreviewSendersNameVisibleGroup", C3295R.string.ForwardPreviewSendersNameVisibleGroup));
                 }
             } else if (tLRPC$User != null) {
-                this.actionBar.setSubtitle(LocaleController.formatString("ForwardPreviewSendersNameVisible", C3290R.string.ForwardPreviewSendersNameVisible, ContactsController.formatName(tLRPC$User.first_name, tLRPC$User.last_name)));
+                this.actionBar.setSubtitle(LocaleController.formatString("ForwardPreviewSendersNameVisible", C3295R.string.ForwardPreviewSendersNameVisible, ContactsController.formatName(tLRPC$User.first_name, tLRPC$User.last_name)));
             } else if (ChatObject.isChannel(this.currentChat) && !this.currentChat.megagroup) {
-                this.actionBar.setSubtitle(LocaleController.getString("ForwardPreviewSendersNameHiddenChannel", C3290R.string.ForwardPreviewSendersNameHiddenChannel));
+                this.actionBar.setSubtitle(LocaleController.getString("ForwardPreviewSendersNameHiddenChannel", C3295R.string.ForwardPreviewSendersNameHiddenChannel));
             } else {
-                this.actionBar.setSubtitle(LocaleController.getString("ForwardPreviewSendersNameHiddenGroup", C3290R.string.ForwardPreviewSendersNameHiddenGroup));
+                this.actionBar.setSubtitle(LocaleController.getString("ForwardPreviewSendersNameHiddenGroup", C3295R.string.ForwardPreviewSendersNameHiddenGroup));
             }
         } else if (forwardingMessagesParams.hideForwardSendersName) {
             if (tLRPC$User != null) {
-                this.actionBar.setSubtitle(LocaleController.formatString("ForwardPreviewSendersNameHidden", C3290R.string.ForwardPreviewSendersNameHidden, ContactsController.formatName(tLRPC$User.first_name, tLRPC$User.last_name)));
+                this.actionBar.setSubtitle(LocaleController.formatString("ForwardPreviewSendersNameHidden", C3295R.string.ForwardPreviewSendersNameHidden, ContactsController.formatName(tLRPC$User.first_name, tLRPC$User.last_name)));
             } else if (ChatObject.isChannel(this.currentChat) && !this.currentChat.megagroup) {
-                this.actionBar.setSubtitle(LocaleController.getString("ForwardPreviewSendersNameHiddenChannel", C3290R.string.ForwardPreviewSendersNameHiddenChannel));
+                this.actionBar.setSubtitle(LocaleController.getString("ForwardPreviewSendersNameHiddenChannel", C3295R.string.ForwardPreviewSendersNameHiddenChannel));
             } else {
-                this.actionBar.setSubtitle(LocaleController.getString("ForwardPreviewSendersNameHiddenGroup", C3290R.string.ForwardPreviewSendersNameHiddenGroup));
+                this.actionBar.setSubtitle(LocaleController.getString("ForwardPreviewSendersNameHiddenGroup", C3295R.string.ForwardPreviewSendersNameHiddenGroup));
             }
         } else if (tLRPC$User != null) {
-            this.actionBar.setSubtitle(LocaleController.formatString("ForwardPreviewSendersNameVisible", C3290R.string.ForwardPreviewSendersNameVisible, ContactsController.formatName(tLRPC$User.first_name, tLRPC$User.last_name)));
+            this.actionBar.setSubtitle(LocaleController.formatString("ForwardPreviewSendersNameVisible", C3295R.string.ForwardPreviewSendersNameVisible, ContactsController.formatName(tLRPC$User.first_name, tLRPC$User.last_name)));
         } else if (ChatObject.isChannel(this.currentChat) && !this.currentChat.megagroup) {
-            this.actionBar.setSubtitle(LocaleController.getString("ForwardPreviewSendersNameVisibleChannel", C3290R.string.ForwardPreviewSendersNameVisibleChannel));
+            this.actionBar.setSubtitle(LocaleController.getString("ForwardPreviewSendersNameVisibleChannel", C3295R.string.ForwardPreviewSendersNameVisibleChannel));
         } else {
-            this.actionBar.setSubtitle(LocaleController.getString("ForwardPreviewSendersNameVisibleGroup", C3290R.string.ForwardPreviewSendersNameVisibleGroup));
+            this.actionBar.setSubtitle(LocaleController.getString("ForwardPreviewSendersNameVisibleGroup", C3295R.string.ForwardPreviewSendersNameVisibleGroup));
         }
     }
 
@@ -1324,7 +1324,7 @@ public class ForwardingPreviewView extends FrameLayout {
         this.buttonsLayout2.getLayoutParams().width = i5;
         this.buttonsLayout.measure(i, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), 0));
         this.buttonsLayout2.measure(i, View.MeasureSpec.makeMeasureSpec(View.MeasureSpec.getSize(i2), 0));
-        ((ViewGroup.MarginLayoutParams) this.chatListView.getLayoutParams()).topMargin = C3356ActionBar.getCurrentActionBarHeight();
+        ((ViewGroup.MarginLayoutParams) this.chatListView.getLayoutParams()).topMargin = C3361ActionBar.getCurrentActionBarHeight();
         if (this.isLandscapeMode) {
             this.chatPreviewContainer.getLayoutParams().height = -1;
             ((ViewGroup.MarginLayoutParams) this.chatPreviewContainer.getLayoutParams()).topMargin = AndroidUtilities.m54dp(8);

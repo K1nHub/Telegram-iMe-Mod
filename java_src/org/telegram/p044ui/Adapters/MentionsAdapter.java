@@ -13,7 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.FileLoader;
@@ -599,16 +599,16 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
                 if (!notificationsSettings.getBoolean("inlinegeo_" + this.foundContextBot.f1574id, false) && (chatActivity = this.parentFragment) != null && chatActivity.getParentActivity() != null) {
                     final TLRPC$User tLRPC$User2 = this.foundContextBot;
                     AlertDialog.Builder builder = new AlertDialog.Builder(this.parentFragment.getParentActivity());
-                    builder.setTitle(LocaleController.getString("ShareYouLocationTitle", C3290R.string.ShareYouLocationTitle));
-                    builder.setMessage(LocaleController.getString("ShareYouLocationInline", C3290R.string.ShareYouLocationInline));
+                    builder.setTitle(LocaleController.getString("ShareYouLocationTitle", C3295R.string.ShareYouLocationTitle));
+                    builder.setMessage(LocaleController.getString("ShareYouLocationInline", C3295R.string.ShareYouLocationInline));
                     final boolean[] zArr = new boolean[1];
-                    builder.setPositiveButton(LocaleController.getString("OK", C3290R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Adapters.MentionsAdapter$$ExternalSyntheticLambda1
+                    builder.setPositiveButton(LocaleController.getString("OK", C3295R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Adapters.MentionsAdapter$$ExternalSyntheticLambda1
                         @Override // android.content.DialogInterface.OnClickListener
                         public final void onClick(DialogInterface dialogInterface, int i) {
                             MentionsAdapter.this.lambda$processFoundUser$2(zArr, tLRPC$User2, dialogInterface, i);
                         }
                     });
-                    builder.setNegativeButton(LocaleController.getString("Cancel", C3290R.string.Cancel), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Adapters.MentionsAdapter$$ExternalSyntheticLambda0
+                    builder.setNegativeButton(LocaleController.getString("Cancel", C3295R.string.Cancel), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Adapters.MentionsAdapter$$ExternalSyntheticLambda0
                         @Override // android.content.DialogInterface.OnClickListener
                         public final void onClick(DialogInterface dialogInterface, int i) {
                             MentionsAdapter.this.lambda$processFoundUser$3(zArr, dialogInterface, i);
@@ -728,22 +728,22 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
             MessagesController messagesController = MessagesController.getInstance(this.currentAccount);
             MessagesStorage messagesStorage = MessagesStorage.getInstance(this.currentAccount);
             this.searchingContextQuery = str2;
-            RunnableC34854 runnableC34854 = new RunnableC34854(str2, str, messagesController, messagesStorage);
-            this.contextQueryRunnable = runnableC34854;
-            AndroidUtilities.runOnUIThread(runnableC34854, 400L);
+            RunnableC34904 runnableC34904 = new RunnableC34904(str2, str, messagesController, messagesStorage);
+            this.contextQueryRunnable = runnableC34904;
+            AndroidUtilities.runOnUIThread(runnableC34904, 400L);
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Adapters.MentionsAdapter$4 */
     /* loaded from: classes5.dex */
-    public class RunnableC34854 implements Runnable {
+    public class RunnableC34904 implements Runnable {
         final /* synthetic */ MessagesController val$messagesController;
         final /* synthetic */ MessagesStorage val$messagesStorage;
         final /* synthetic */ String val$query;
         final /* synthetic */ String val$username;
 
-        RunnableC34854(String str, String str2, MessagesController messagesController, MessagesStorage messagesStorage) {
+        RunnableC34904(String str, String str2, MessagesController messagesController, MessagesStorage messagesStorage) {
             this.val$query = str;
             this.val$username = str2;
             this.val$messagesController = messagesController;
@@ -780,7 +780,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
             mentionsAdapter2.contextUsernameReqid = connectionsManager.sendRequest(tLRPC$TL_contacts_resolveUsername, new RequestDelegate() { // from class: org.telegram.ui.Adapters.MentionsAdapter$4$$ExternalSyntheticLambda1
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-                    MentionsAdapter.RunnableC34854.this.lambda$run$1(str, messagesController, messagesStorage, tLObject, tLRPC$TL_error);
+                    MentionsAdapter.RunnableC34904.this.lambda$run$1(str, messagesController, messagesStorage, tLObject, tLRPC$TL_error);
                 }
             });
         }
@@ -790,7 +790,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.MentionsAdapter$4$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MentionsAdapter.RunnableC34854.this.lambda$run$0(str, tLRPC$TL_error, tLObject, messagesController, messagesStorage);
+                    MentionsAdapter.RunnableC34904.this.lambda$run$0(str, tLRPC$TL_error, tLObject, messagesController, messagesStorage);
                 }
             });
         }
@@ -857,7 +857,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
         if (str == null || !str.equals("gif")) {
             return null;
         }
-        return LocaleController.getString("SearchGifsTitle", C3290R.string.SearchGifsTitle);
+        return LocaleController.getString("SearchGifsTitle", C3295R.string.SearchGifsTitle);
     }
 
     public void searchForContextBotForNextOffset() {
@@ -1068,7 +1068,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Adapters.MentionsAdapter$7 */
     /* loaded from: classes5.dex */
-    public class RunnableC34887 implements Runnable {
+    public class RunnableC34937 implements Runnable {
         final /* synthetic */ TLRPC$Chat val$chat;
         final /* synthetic */ MessagesController val$messagesController;
         final /* synthetic */ LongSparseArray val$newMap;
@@ -1076,7 +1076,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
         final /* synthetic */ int val$threadId;
         final /* synthetic */ String val$usernameString;
 
-        RunnableC34887(TLRPC$Chat tLRPC$Chat, String str, int i, ArrayList arrayList, LongSparseArray longSparseArray, MessagesController messagesController) {
+        RunnableC34937(TLRPC$Chat tLRPC$Chat, String str, int i, ArrayList arrayList, LongSparseArray longSparseArray, MessagesController messagesController) {
             this.val$chat = tLRPC$Chat;
             this.val$usernameString = str;
             this.val$threadId = i;
@@ -1113,7 +1113,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
             mentionsAdapter.channelReqId = connectionsManager.sendRequest(tLRPC$TL_channels_getParticipants, new RequestDelegate() { // from class: org.telegram.ui.Adapters.MentionsAdapter$7$$ExternalSyntheticLambda1
                 @Override // org.telegram.tgnet.RequestDelegate
                 public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-                    MentionsAdapter.RunnableC34887.this.lambda$run$1(access$1704, arrayList, longSparseArray, messagesController, tLObject, tLRPC$TL_error);
+                    MentionsAdapter.RunnableC34937.this.lambda$run$1(access$1704, arrayList, longSparseArray, messagesController, tLObject, tLRPC$TL_error);
                 }
             });
         }
@@ -1123,7 +1123,7 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.MentionsAdapter$7$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    MentionsAdapter.RunnableC34887.this.lambda$run$0(i, arrayList, longSparseArray, tLRPC$TL_error, tLObject, messagesController);
+                    MentionsAdapter.RunnableC34937.this.lambda$run$0(i, arrayList, longSparseArray, tLRPC$TL_error, tLObject, messagesController);
                 }
             });
         }
@@ -1451,11 +1451,11 @@ public class MentionsAdapter extends RecyclerListView.SelectionAdapter implement
             TLRPC$Chat currentChat = this.parentFragment.getCurrentChat();
             if (currentChat != null) {
                 if (!ChatObject.hasAdminRights(currentChat) && (tLRPC$TL_chatBannedRights = currentChat.default_banned_rights) != null && tLRPC$TL_chatBannedRights.send_inline) {
-                    textView.setText(LocaleController.getString("GlobalAttachInlineRestricted", C3290R.string.GlobalAttachInlineRestricted));
+                    textView.setText(LocaleController.getString("GlobalAttachInlineRestricted", C3295R.string.GlobalAttachInlineRestricted));
                 } else if (AndroidUtilities.isBannedForever(currentChat.banned_rights)) {
-                    textView.setText(LocaleController.getString("AttachInlineRestrictedForever", C3290R.string.AttachInlineRestrictedForever));
+                    textView.setText(LocaleController.getString("AttachInlineRestrictedForever", C3295R.string.AttachInlineRestrictedForever));
                 } else {
-                    textView.setText(LocaleController.formatString("AttachInlineRestricted", C3290R.string.AttachInlineRestricted, LocaleController.formatDateForBan(currentChat.banned_rights.until_date)));
+                    textView.setText(LocaleController.formatString("AttachInlineRestricted", C3295R.string.AttachInlineRestricted, LocaleController.formatDateForBan(currentChat.banned_rights.until_date)));
                 }
             }
         } else if (this.searchResultBotContext != null) {

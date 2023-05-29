@@ -35,7 +35,7 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
     public final void loadKiklikoTags() {
         Observable<Result<List<TagResponse>>> observeOn = this.kiklikoInteractor.getTags().observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "kiklikoInteractor.getTag…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2039x8b56867d(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2040x8b56867e(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2044x8b56867d(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2045x8b56867e(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -49,7 +49,7 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
         }
         Observable<Result<SearchResponse>> observeOn = this.kiklikoInteractor.searchByKeyword(keyword, page).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "kiklikoInteractor.search…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2047xae9d3566(this, keyword, page)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2048xae9d3567(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2052xae9d3566(this, keyword, page)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2053xae9d3567(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         this.lastSearchDisposable = subscribe;
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
@@ -64,7 +64,7 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
         }
         Observable<Result<SearchResponse>> observeOn = this.kiklikoInteractor.searchByTag(tag, page).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "kiklikoInteractor.search…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2049xbea5fe97(this, tag, page)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2050xbea5fe98(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2054xbea5fe97(this, tag, page)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2055xbea5fe98(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         this.lastSearchDisposable = subscribe;
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
@@ -74,7 +74,7 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
         Intrinsics.checkNotNullParameter(page, "page");
         Observable<Result<SearchResponse>> observeOn = this.kiklikoInteractor.getTrending(page).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "kiklikoInteractor.getTre…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2037x46f36637(this, page)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2038x46f36638(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2042x46f36637(this, page)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2043x46f36638(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         this.lastSearchDisposable = subscribe;
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
@@ -84,7 +84,7 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
         Intrinsics.checkNotNullParameter(slug, "slug");
         Observable<Result<Boolean>> observeOn = this.kiklikoInteractor.share(slug).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "kiklikoInteractor.share(…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2043x605e6f86()), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2044x605e6f87(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2048x605e6f86()), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2049x605e6f87(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -93,7 +93,7 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
         Intrinsics.checkNotNullParameter(slug, "slug");
         Observable<Result<Boolean>> observeOn = this.kiklikoInteractor.view(slug).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "kiklikoInteractor.view(s…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2041x1baa1388()), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2042x1baa1389(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2046x1baa1388()), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2047x1baa1389(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -103,7 +103,7 @@ public final class EmojiViewPresenter extends BasePresenter<EmojiViewView> {
         Intrinsics.checkNotNullParameter(reason, "reason");
         Observable<Result<Boolean>> observeOn = this.kiklikoInteractor.report(slug, reason).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "kiklikoInteractor.report…(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2045xb31cfe()), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2046xb31cff(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2050xb31cfe()), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2051xb31cff(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

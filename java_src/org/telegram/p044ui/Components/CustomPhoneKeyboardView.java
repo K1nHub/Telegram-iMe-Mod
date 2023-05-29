@@ -17,7 +17,7 @@ import android.widget.ImageView;
 import androidx.core.graphics.ColorUtils;
 import androidx.core.view.GestureDetectorCompat;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.p044ui.ActionBar.Theme;
 /* renamed from: org.telegram.ui.Components.CustomPhoneKeyboardView */
 /* loaded from: classes6.dex */
@@ -144,7 +144,7 @@ public class CustomPhoneKeyboardView extends ViewGroup {
             }
         };
         this.backButton = imageView;
-        imageView.setImageResource(C3290R.C3292drawable.msg_clear_input);
+        imageView.setImageResource(C3295R.C3297drawable.msg_clear_input);
         this.backButton.setColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteBlackText));
         this.backButton.setBackground(getButtonDrawable());
         int m54dp = AndroidUtilities.m54dp(11);

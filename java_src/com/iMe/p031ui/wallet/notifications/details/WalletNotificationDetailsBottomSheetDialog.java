@@ -27,7 +27,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.databinding.ForkContentWalletNotificationDetailsLayoutBinding;
 import org.telegram.p044ui.ActionBar.AlertDialog;
 import org.telegram.p044ui.ActionBar.BaseFragment;
@@ -232,7 +232,7 @@ public final class WalletNotificationDetailsBottomSheetDialog extends MvpBottomS
     }
 
     private final void setupTexts() {
-        getBinding().textActionCancel.setText(getResourceManager().getString(C3290R.string.common_ok));
+        getBinding().textActionCancel.setText(getResourceManager().getString(C3295R.string.common_ok));
     }
 
     private final void setupListeners() {

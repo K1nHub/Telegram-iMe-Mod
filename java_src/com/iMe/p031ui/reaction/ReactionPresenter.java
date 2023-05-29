@@ -25,7 +25,7 @@ import kotlin.TuplesKt;
 import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC$messages_BotResults;
@@ -78,13 +78,13 @@ public final class ReactionPresenter extends BasePresenter<ReactionView> {
         } else {
             reactionRequestData = new ReactionRequestData(ReactionMessageTypes.TEXT, null, messageText, emojiList, buttonList, i);
         }
-        Observable<R> flatMap = this.interactor.prepareLikeMessage(reactionRequestData).flatMap(new C2055x5210a4c3(new ReactionPresenter$prepareTextMessage$$inlined$flatMapSuccess$1(this)));
+        Observable<R> flatMap = this.interactor.prepareLikeMessage(reactionRequestData).flatMap(new C2060x5210a4c3(new ReactionPresenter$prepareTextMessage$$inlined$flatMapSuccess$1(this)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         Observable observeOn = flatMap.observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "interactor\n             …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2051x7bf70dbb(this, messageObject)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2052x7bf70dbc((BaseView) getViewState())));
+        Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2056x7bf70dbb(this, messageObject)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2057x7bf70dbc((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -98,7 +98,7 @@ public final class ReactionPresenter extends BasePresenter<ReactionView> {
         if (Patterns.WEB_URL.matcher(url).matches()) {
             ((ReactionView) getViewState()).onUrlValid(i, url);
         } else {
-            ((ReactionView) getViewState()).showToast(this.resourceManager.getString(C3290R.string.chat_reaction_url_validation_error));
+            ((ReactionView) getViewState()).showToast(this.resourceManager.getString(C3295R.string.chat_reaction_url_validation_error));
         }
     }
 

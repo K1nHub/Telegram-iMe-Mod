@@ -36,7 +36,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.SpreadBuilder;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 /* compiled from: BuyCryptoProductPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductPresenter */
@@ -71,7 +71,7 @@ public final class BuyCryptoProductPresenter extends BasePresenter<BuyCryptoProd
         this.tokenCode$delegate = lazy;
         lazy2 = LazyKt__LazyJVMKt.lazy(new BuyCryptoProductPresenter$tokenInfo$2(this));
         this.tokenInfo$delegate = lazy2;
-        this.lastUsedOrderId = resourceManager.getString(C3290R.string.common_dash);
+        this.lastUsedOrderId = resourceManager.getString(C3295R.string.common_dash);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -85,7 +85,7 @@ public final class BuyCryptoProductPresenter extends BasePresenter<BuyCryptoProd
     }
 
     public final DialogModel getInformationDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3290R.string.wallet_crypto_buy_information_dialog_title), this.resourceManager.getString(C3290R.string.wallet_crypto_buy_information_dialog_description), null, this.resourceManager.getString(C3290R.string.common_ok), 4, null);
+        return new DialogModel(this.resourceManager.getString(C3295R.string.wallet_crypto_buy_information_dialog_title), this.resourceManager.getString(C3295R.string.wallet_crypto_buy_information_dialog_description), null, this.resourceManager.getString(C3295R.string.common_ok), 4, null);
     }
 
     public final void loadAvailableProducts() {
@@ -103,7 +103,7 @@ public final class BuyCryptoProductPresenter extends BasePresenter<BuyCryptoProd
             }
         });
         Intrinsics.checkNotNullExpressionValue(doFinally, "fun loadAvailableProduct…     .autoDispose()\n    }");
-        Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2120xb529d506(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2121xb529d507((BaseView) getViewState())));
+        Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2125xb529d506(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2126xb529d507((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -126,7 +126,7 @@ public final class BuyCryptoProductPresenter extends BasePresenter<BuyCryptoProd
         Intrinsics.checkNotNullExpressionValue(observeOn, "simplexInteractor\n      …(schedulersProvider.ui())");
         T viewState = getViewState();
         Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-        Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2123x875d3708(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2124x875d3709((BaseView) getViewState())));
+        Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2128x875d3708(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2129x875d3709((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -139,7 +139,7 @@ public final class BuyCryptoProductPresenter extends BasePresenter<BuyCryptoProd
             Intrinsics.checkNotNullExpressionValue(observeOn, "simplexInteractor\n      …(schedulersProvider.ui())");
             T viewState = getViewState();
             Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-            Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2125x4f19875b(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2126x4f19875c((BaseView) getViewState())));
+            Disposable subscribe = RxExtKt.withLoadingDialog$default(observeOn, (BaseView) viewState, false, 2, (Object) null).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2130x4f19875b(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2131x4f19875c((BaseView) getViewState())));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
         }
@@ -182,7 +182,7 @@ public final class BuyCryptoProductPresenter extends BasePresenter<BuyCryptoProd
     }
 
     private final DialogModel getConfirmationDialogModel(CryptoBuyItem cryptoBuyItem) {
-        return new DialogModel(this.resourceManager.getString(C3290R.string.wallet_crypto_buy_confirm_dialog_title), this.resourceManager.getString(C3290R.string.wallet_crypto_buy_confirm_dialog_description, getBuyingAmount(cryptoBuyItem), this.resourceManager.getString(getTokenInfo().getShortName())), this.resourceManager.getString(C3290R.string.common_cancel), this.resourceManager.getString(C3290R.string.wallet_crypto_buy_confirm_dialog_action_txt));
+        return new DialogModel(this.resourceManager.getString(C3295R.string.wallet_crypto_buy_confirm_dialog_title), this.resourceManager.getString(C3295R.string.wallet_crypto_buy_confirm_dialog_description, getBuyingAmount(cryptoBuyItem), this.resourceManager.getString(getTokenInfo().getShortName())), this.resourceManager.getString(C3295R.string.common_cancel), this.resourceManager.getString(C3295R.string.wallet_crypto_buy_confirm_dialog_action_txt));
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -190,13 +190,13 @@ public final class BuyCryptoProductPresenter extends BasePresenter<BuyCryptoProd
         List<BaseNode> mutableListOf;
         SpreadBuilder spreadBuilder = new SpreadBuilder(2);
         spreadBuilder.addSpread(cryptoBuyItemArr);
-        spreadBuilder.add(new CryptoBuyFooterItem(C3290R.string.wallet_crypto_buy_footer_title, C3290R.string.wallet_crypto_buy_footer_description));
+        spreadBuilder.add(new CryptoBuyFooterItem(C3295R.string.wallet_crypto_buy_footer_title, C3295R.string.wallet_crypto_buy_footer_description));
         mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(spreadBuilder.toArray(new BaseNode[spreadBuilder.size()]));
         ((BuyCryptoProductView) getViewState()).showUiItems(mutableListOf);
     }
 
     private final String getBuyingAmount(CryptoBuyItem cryptoBuyItem) {
-        return cryptoBuyItem.getQuote() != null ? BalanceFormatter.formatBalance(Float.valueOf(cryptoBuyItem.getQuote().getCryptoMoneyAmount()), getTokenInfo().getDecimals()) : this.resourceManager.getString(C3290R.string.common_dash);
+        return cryptoBuyItem.getQuote() != null ? BalanceFormatter.formatBalance(Float.valueOf(cryptoBuyItem.getQuote().getCryptoMoneyAmount()), getTokenInfo().getDecimals()) : this.resourceManager.getString(C3295R.string.common_dash);
     }
 
     private final CryptoBuyItem[] getDefaultProducts() {
@@ -209,6 +209,6 @@ public final class BuyCryptoProductPresenter extends BasePresenter<BuyCryptoProd
     }
 
     private final void resetOrderIdToDefault() {
-        this.lastUsedOrderId = this.resourceManager.getString(C3290R.string.common_dash);
+        this.lastUsedOrderId = this.resourceManager.getString(C3295R.string.common_dash);
     }
 }

@@ -32,7 +32,7 @@ import java.util.Stack;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.DownloadController;
 import org.telegram.messenger.FileLoader;
@@ -413,9 +413,9 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
         if (!z) {
             formatDateChat = LocaleController.formatDateChat(i);
         } else if (i == 2147483646) {
-            formatDateChat = LocaleController.getString("MessageScheduledUntilOnline", C3290R.string.MessageScheduledUntilOnline);
+            formatDateChat = LocaleController.getString("MessageScheduledUntilOnline", C3295R.string.MessageScheduledUntilOnline);
         } else {
-            formatDateChat = LocaleController.formatString("MessageScheduledOn", C3290R.string.MessageScheduledOn, LocaleController.formatDateChat(i));
+            formatDateChat = LocaleController.formatString("MessageScheduledOn", C3295R.string.MessageScheduledOn, LocaleController.formatDateChat(i));
         }
         this.customDate = i;
         CharSequence charSequence = this.customText;
@@ -917,9 +917,9 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                 TLRPC$Message tLRPC$Message = messageObject.messageOwner;
                 if (tLRPC$Message != null && (tLRPC$MessageMedia = tLRPC$Message.media) != null && tLRPC$MessageMedia.ttl_seconds != 0) {
                     if (tLRPC$MessageMedia.photo instanceof TLRPC$TL_photoEmpty) {
-                        charSequence = LocaleController.getString("AttachPhotoExpired", C3290R.string.AttachPhotoExpired);
+                        charSequence = LocaleController.getString("AttachPhotoExpired", C3295R.string.AttachPhotoExpired);
                     } else if (tLRPC$MessageMedia.document instanceof TLRPC$TL_documentEmpty) {
-                        charSequence = LocaleController.getString("AttachVideoExpired", C3290R.string.AttachVideoExpired);
+                        charSequence = LocaleController.getString("AttachVideoExpired", C3295R.string.AttachVideoExpired);
                     } else {
                         charSequence = AnimatedEmojiSpan.cloneSpans(messageObject.messageText);
                     }
@@ -937,7 +937,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                 int i2 = AndroidUtilities.roundMessageSize;
                 this.imageReceiver.setImageCoords((this.previousWidth - AndroidUtilities.roundMessageSize) / 2.0f, this.textHeight + AndroidUtilities.m54dp(19), i2, i2);
             } else if (i == 18) {
-                createGiftPremiumLayouts(LocaleController.getString(C3290R.string.ActionGiftPremiumTitle), LocaleController.formatString(C3290R.string.ActionGiftPremiumSubtitle, LocaleController.formatPluralString("Months", messageObject.messageOwner.action.months, new Object[0])), LocaleController.getString(C3290R.string.ActionGiftPremiumView), this.giftRectSize);
+                createGiftPremiumLayouts(LocaleController.getString(C3295R.string.ActionGiftPremiumTitle), LocaleController.formatString(C3295R.string.ActionGiftPremiumSubtitle, LocaleController.formatPluralString("Months", messageObject.messageOwner.action.months, new Object[0])), LocaleController.getString(C3295R.string.ActionGiftPremiumView), this.giftRectSize);
             } else {
                 if (i != 21) {
                     if (i == 22) {
@@ -946,7 +946,7 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                             string = null;
                         } else {
                             charSequence2 = messageObject.messageText;
-                            string = LocaleController.getString("ViewWallpaperAction", C3290R.string.ViewWallpaperAction);
+                            string = LocaleController.getString("ViewWallpaperAction", C3295R.string.ViewWallpaperAction);
                         }
                         createGiftPremiumLayouts(null, charSequence2, string, this.giftRectSize);
                         this.textLayout = null;
@@ -962,19 +962,19 @@ public class ChatActionCell extends BaseCell implements DownloadController.FileD
                 if (user.f1574id == UserConfig.getInstance(this.currentAccount).clientUserId) {
                     TLRPC$User user2 = MessagesController.getInstance(this.currentAccount).getUser(Long.valueOf(messageObject.getDialogId()));
                     if (z) {
-                        formatString = LocaleController.formatString("ActionSuggestVideoFromYouDescription", C3290R.string.ActionSuggestVideoFromYouDescription, user2.first_name);
+                        formatString = LocaleController.formatString("ActionSuggestVideoFromYouDescription", C3295R.string.ActionSuggestVideoFromYouDescription, user2.first_name);
                     } else {
-                        formatString = LocaleController.formatString("ActionSuggestPhotoFromYouDescription", C3290R.string.ActionSuggestPhotoFromYouDescription, user2.first_name);
+                        formatString = LocaleController.formatString("ActionSuggestPhotoFromYouDescription", C3295R.string.ActionSuggestPhotoFromYouDescription, user2.first_name);
                     }
                 } else if (z) {
-                    formatString = LocaleController.formatString("ActionSuggestVideoToYouDescription", C3290R.string.ActionSuggestVideoToYouDescription, user.first_name);
+                    formatString = LocaleController.formatString("ActionSuggestVideoToYouDescription", C3295R.string.ActionSuggestVideoToYouDescription, user.first_name);
                 } else {
-                    formatString = LocaleController.formatString("ActionSuggestPhotoToYouDescription", C3290R.string.ActionSuggestPhotoToYouDescription, user.first_name);
+                    formatString = LocaleController.formatString("ActionSuggestPhotoToYouDescription", C3295R.string.ActionSuggestPhotoToYouDescription, user.first_name);
                 }
                 if (tLRPC$TL_messageActionSuggestProfilePhoto.video || ((arrayList = tLRPC$TL_messageActionSuggestProfilePhoto.photo.video_sizes) != null && !arrayList.isEmpty())) {
-                    string2 = LocaleController.getString("ViewVideoAction", C3290R.string.ViewVideoAction);
+                    string2 = LocaleController.getString("ViewVideoAction", C3295R.string.ViewVideoAction);
                 } else {
-                    string2 = LocaleController.getString("ViewPhotoAction", C3290R.string.ViewPhotoAction);
+                    string2 = LocaleController.getString("ViewPhotoAction", C3295R.string.ViewPhotoAction);
                 }
                 createGiftPremiumLayouts(null, formatString, string2, this.giftRectSize);
                 this.textLayout = null;

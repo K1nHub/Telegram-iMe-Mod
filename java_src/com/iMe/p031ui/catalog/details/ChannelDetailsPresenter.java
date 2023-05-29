@@ -17,7 +17,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringBuilderKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC$Chat;
@@ -66,7 +66,7 @@ public final class ChannelDetailsPresenter extends BasePresenter<ChannelDetailsV
             }
         });
         Intrinsics.checkNotNullExpressionValue(flatMap, "fun onSubscribeClick() {…     .autoDispose()\n    }");
-        Disposable subscribe = flatMap.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C1999x14036c9b(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2000x14036c9c(null)));
+        Disposable subscribe = flatMap.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2004x14036c9b(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2005x14036c9c(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -96,7 +96,7 @@ public final class ChannelDetailsPresenter extends BasePresenter<ChannelDetailsV
     }
 
     public final void copyChannelLink() {
-        String string = LocaleController.getString("LinkCopied", C3290R.string.LinkCopied);
+        String string = LocaleController.getString("LinkCopied", C3295R.string.LinkCopied);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"LinkCopied\", R.string.LinkCopied)");
         ContextExtKt.copyToClipboard("https://" + TelegramControllersGateway.CC.getMessagesController$default(this.telegramControllersGateway, 0, 1, null).linkPrefix + '/' + this.campaign.getShortname(), string);
     }

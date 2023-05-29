@@ -15,13 +15,13 @@ import java.util.List;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3356ActionBar;
+import org.telegram.p044ui.ActionBar.C3361ActionBar;
 import org.telegram.p044ui.Components.SizeNotifierFrameLayout;
 import org.telegram.tgnet.TLRPC$User;
 /* compiled from: LanguagesActivity.kt */
@@ -40,24 +40,24 @@ public final class LanguagesActivity extends BaseFragment implements LanguagesAd
     public View createView(Context context) {
         this.rootContainer = new SizeNotifierFrameLayout(context);
         LayoutInflater from = LayoutInflater.from(context);
-        int i = C3290R.layout.fork_fragment_languages;
+        int i = C3295R.layout.fork_fragment_languages;
         SizeNotifierFrameLayout sizeNotifierFrameLayout = this.rootContainer;
         SizeNotifierFrameLayout fragmentView = null;
         if (sizeNotifierFrameLayout == null) {
             Intrinsics.throwUninitializedPropertyAccessException("rootContainer");
             sizeNotifierFrameLayout = null;
         }
-        RecyclerView recyclerView = (RecyclerView) from.inflate(i, (ViewGroup) sizeNotifierFrameLayout, true).findViewById(C3290R.C3293id.recyclerLanguages);
+        RecyclerView recyclerView = (RecyclerView) from.inflate(i, (ViewGroup) sizeNotifierFrameLayout, true).findViewById(C3295R.C3298id.recyclerLanguages);
         this.recyclerLanguages = recyclerView;
         if (recyclerView != null) {
             recyclerView.setLayoutManager(new LinearLayoutManager(context));
             recyclerView.setAdapter(this.languagesAdapter);
         }
-        this.actionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
-        this.actionBar.setTitle(LocaleController.getInternalString(C3290R.string.neurobots_store_languages_screen_title));
+        this.actionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
+        this.actionBar.setTitle(LocaleController.getInternalString(C3295R.string.neurobots_store_languages_screen_title));
         this.actionBar.setAllowOverlayTitle(true);
-        this.actionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.languages.LanguagesActivity$createView$2
-            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.languages.LanguagesActivity$createView$2
+            @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == -1) {
                     LanguagesActivity.this.finishFragment();
@@ -105,9 +105,9 @@ public final class LanguagesActivity extends BaseFragment implements LanguagesAd
         String langCode = LocaleController.getInstance().getCurrentLocaleInfo().getLangCode();
         Intrinsics.checkNotNullExpressionValue(langCode, "getInstance().currentLocaleInfo.langCode");
         String currentBotLanguage = companion2.getCurrentBotLanguage(str, langCode);
-        String internalString = LocaleController.getInternalString(C3290R.string.neurobots_store_language_ru);
+        String internalString = LocaleController.getInternalString(C3295R.string.neurobots_store_language_ru);
         Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…robots_store_language_ru)");
-        String internalString2 = LocaleController.getInternalString(C3290R.string.neurobots_store_language_en);
+        String internalString2 = LocaleController.getInternalString(C3295R.string.neurobots_store_language_en);
         Intrinsics.checkNotNullExpressionValue(internalString2, "getInternalString(R.stri…robots_store_language_en)");
         listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new LanguageViewModel[]{new LanguageViewModel("ru", internalString, false, 4, null), new LanguageViewModel("eng", internalString2, false, 4, null)});
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(listOf, 10);

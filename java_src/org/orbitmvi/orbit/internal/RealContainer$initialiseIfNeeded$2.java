@@ -156,14 +156,14 @@ public final class RealContainer$initialiseIfNeeded$2 extends SuspendLambda impl
     @DebugMetadata(m84c = "org.orbitmvi.orbit.internal.RealContainer$initialiseIfNeeded$2$1", m83f = "RealContainer.kt", m82l = {99}, m81m = "invokeSuspend")
     /* renamed from: org.orbitmvi.orbit.internal.RealContainer$initialiseIfNeeded$2$1 */
     /* loaded from: classes4.dex */
-    public static final class C31801 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
+    public static final class C31851 extends SuspendLambda implements Function2<CoroutineScope, Continuation<? super Unit>, Object> {
         final /* synthetic */ Function2<ContainerContext<STATE, SIDE_EFFECT>, Continuation<? super Unit>, Object> $msg;
         int label;
         final /* synthetic */ RealContainer<STATE, SIDE_EFFECT> this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         /* JADX WARN: Multi-variable type inference failed */
-        C31801(Function2<? super ContainerContext<STATE, SIDE_EFFECT>, ? super Continuation<? super Unit>, ? extends Object> function2, RealContainer<STATE, SIDE_EFFECT> realContainer, Continuation<? super C31801> continuation) {
+        C31851(Function2<? super ContainerContext<STATE, SIDE_EFFECT>, ? super Continuation<? super Unit>, ? extends Object> function2, RealContainer<STATE, SIDE_EFFECT> realContainer, Continuation<? super C31851> continuation) {
             super(2, continuation);
             this.$msg = function2;
             this.this$0 = realContainer;
@@ -171,12 +171,12 @@ public final class RealContainer$initialiseIfNeeded$2 extends SuspendLambda impl
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl
         public final Continuation<Unit> create(Object obj, Continuation<?> continuation) {
-            return new C31801(this.$msg, this.this$0, continuation);
+            return new C31851(this.$msg, this.this$0, continuation);
         }
 
         @Override // kotlin.jvm.functions.Function2
         public final Object invoke(CoroutineScope coroutineScope, Continuation<? super Unit> continuation) {
-            return ((C31801) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
+            return ((C31851) create(coroutineScope, continuation)).invokeSuspend(Unit.INSTANCE);
         }
 
         @Override // kotlin.coroutines.jvm.internal.BaseContinuationImpl

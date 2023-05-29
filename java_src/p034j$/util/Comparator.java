@@ -47,22 +47,22 @@ public interface Comparator<T> {
         public static java.util.Comparator $default$thenComparing(java.util.Comparator comparator, Function function, java.util.Comparator comparator2) {
             Objects.requireNonNull(function);
             Objects.requireNonNull(comparator2);
-            return EL.m632a(comparator, new C2656c(comparator2, function));
+            return EL.m632a(comparator, new C2661c(comparator2, function));
         }
 
         /* renamed from: a */
         public static java.util.Comparator m633a() {
-            return EnumC2687e.INSTANCE;
+            return EnumC2692e.INSTANCE;
         }
 
         public static <T, U extends Comparable<? super U>> java.util.Comparator<T> comparing(Function<? super T, ? extends U> function) {
             Objects.requireNonNull(function);
-            return new C2686d(function);
+            return new C2691d(function);
         }
 
         public static <T> java.util.Comparator<T> comparingInt(ToIntFunction<? super T> toIntFunction) {
             Objects.requireNonNull(toIntFunction);
-            return new C2686d(toIntFunction);
+            return new C2691d(toIntFunction);
         }
 
         public static <T extends Comparable<? super T>> java.util.Comparator<T> reverseOrder() {
@@ -71,7 +71,7 @@ public interface Comparator<T> {
 
         public static java.util.Comparator $default$thenComparing(java.util.Comparator comparator, java.util.Comparator comparator2) {
             Objects.requireNonNull(comparator2);
-            return new C2656c(comparator, comparator2);
+            return new C2661c(comparator, comparator2);
         }
     }
 }

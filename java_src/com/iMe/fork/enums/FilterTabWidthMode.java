@@ -2,13 +2,13 @@ package com.iMe.fork.enums;
 
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 /* compiled from: FilterTabWidthMode.kt */
 /* loaded from: classes3.dex */
 public enum FilterTabWidthMode {
-    DEFAULT(C3290R.string.folder_tabs_width_mode_value_default),
-    MEDIUM(C3290R.string.folder_tabs_width_mode_value_medium),
-    MINIMUM(C3290R.string.folder_tabs_width_mode_value_minimum);
+    DEFAULT(C3295R.string.folder_tabs_width_mode_value_default),
+    MEDIUM(C3295R.string.folder_tabs_width_mode_value_medium),
+    MINIMUM(C3295R.string.folder_tabs_width_mode_value_minimum);
     
     public static final Companion Companion = new Companion(null);
     private final int titleResId;

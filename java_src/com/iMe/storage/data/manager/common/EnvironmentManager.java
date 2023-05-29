@@ -115,6 +115,10 @@ public final class EnvironmentManager implements KoinComponent {
         applicationHandler.postDelayed(exitRunnable, ExoPlayer.DEFAULT_DETACH_SURFACE_TIMEOUT_MS);
     }
 
+    public boolean isProductionActive() {
+        return getEnvironment() == Environment.PRODUCTION;
+    }
+
     static {
         EnvironmentManager environmentManager = new EnvironmentManager();
         INSTANCE = environmentManager;

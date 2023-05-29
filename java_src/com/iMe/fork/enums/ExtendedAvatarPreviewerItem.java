@@ -8,22 +8,22 @@ import kotlin.collections.CollectionsKt__IterablesKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: ExtendedAvatarPreviewerItem.kt */
 /* loaded from: classes3.dex */
 public enum ExtendedAvatarPreviewerItem {
-    MENTION_BY_NAME(null, C3290R.string.chat_avatar_previewer_mention_by_name, C3290R.C3292drawable.fork_avatar_previewer_mention_by_name),
-    MENTION("Mention", C3290R.string.Mention, C3290R.C3292drawable.msg_mention),
-    COPY_ID(null, C3290R.string.wallet_user_id_dialog_copy_id_action, C3290R.C3292drawable.fork_avatar_previewer_copy_id),
-    COPY_USERNAME(null, C3290R.string.wallet_channel_name_dialog_copy_id_action, C3290R.C3292drawable.fork_avatar_previewer_copy_username),
-    OPEN_PROFILE("OpenProfile", C3290R.string.OpenProfile, C3290R.C3292drawable.msg_openprofile),
-    SEND_MESSAGE("SendMessage", C3290R.string.SendMessage, C3290R.C3292drawable.msg_discussion),
-    USER_MESSAGES(null, C3290R.string.chat_avatar_previewer_user_messages, C3290R.C3292drawable.fork_filter_icon_bubbles),
-    TRANSFER(null, C3290R.string.wallet_user_id_dialog_transfer_action, C3290R.C3292drawable.fork_avatar_previewer_transfer),
-    ADD_TO_CONTACTS("AddContact", C3290R.string.AddContact, C3290R.C3292drawable.msg_addcontact),
-    REMOVE_CONTACT("DeleteContact", C3290R.string.DeleteContact, C3290R.C3292drawable.msg_delete),
-    REMOVE_FROM_GROUP("KickFromGroup", C3290R.string.KickFromGroup, C3290R.C3292drawable.msg_remove);
+    MENTION_BY_NAME(null, C3295R.string.chat_avatar_previewer_mention_by_name, C3295R.C3297drawable.fork_avatar_previewer_mention_by_name),
+    MENTION("Mention", C3295R.string.Mention, C3295R.C3297drawable.msg_mention),
+    COPY_ID(null, C3295R.string.wallet_user_id_dialog_copy_id_action, C3295R.C3297drawable.fork_avatar_previewer_copy_id),
+    COPY_USERNAME(null, C3295R.string.wallet_channel_name_dialog_copy_id_action, C3295R.C3297drawable.fork_avatar_previewer_copy_username),
+    OPEN_PROFILE("OpenProfile", C3295R.string.OpenProfile, C3295R.C3297drawable.msg_openprofile),
+    SEND_MESSAGE("SendMessage", C3295R.string.SendMessage, C3295R.C3297drawable.msg_discussion),
+    USER_MESSAGES(null, C3295R.string.chat_avatar_previewer_user_messages, C3295R.C3297drawable.fork_filter_icon_bubbles),
+    TRANSFER(null, C3295R.string.wallet_user_id_dialog_transfer_action, C3295R.C3297drawable.fork_avatar_previewer_transfer),
+    ADD_TO_CONTACTS("AddContact", C3295R.string.AddContact, C3295R.C3297drawable.msg_addcontact),
+    REMOVE_CONTACT("DeleteContact", C3295R.string.DeleteContact, C3295R.C3297drawable.msg_delete),
+    REMOVE_FROM_GROUP("KickFromGroup", C3295R.string.KickFromGroup, C3295R.C3297drawable.msg_remove);
     
     public static final Companion Companion = new Companion(null);
     private final int iconResId;

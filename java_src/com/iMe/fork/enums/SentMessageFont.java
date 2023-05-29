@@ -3,7 +3,7 @@ package com.iMe.fork.enums;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.tgnet.TLRPC$MessageEntity;
 import org.telegram.tgnet.TLRPC$TL_messageEntityBold;
@@ -86,31 +86,31 @@ public enum SentMessageFont {
     public final String getTitle() {
         switch (WhenMappings.$EnumSwitchMapping$0[ordinal()]) {
             case 1:
-                String string = LocaleController.getString("Regular", C3290R.string.Regular);
+                String string = LocaleController.getString("Regular", C3295R.string.Regular);
                 Intrinsics.checkNotNullExpressionValue(string, "getString(\"Regular\", R.string.Regular)");
                 return string;
             case 2:
-                String string2 = LocaleController.getString("Bold", C3290R.string.Bold);
+                String string2 = LocaleController.getString("Bold", C3295R.string.Bold);
                 Intrinsics.checkNotNullExpressionValue(string2, "getString(\"Bold\", R.string.Bold)");
                 return string2;
             case 3:
-                String string3 = LocaleController.getString("Italic", C3290R.string.Italic);
+                String string3 = LocaleController.getString("Italic", C3295R.string.Italic);
                 Intrinsics.checkNotNullExpressionValue(string3, "getString(\"Italic\", R.string.Italic)");
                 return string3;
             case 4:
-                String string4 = LocaleController.getString("Underline", C3290R.string.Underline);
+                String string4 = LocaleController.getString("Underline", C3295R.string.Underline);
                 Intrinsics.checkNotNullExpressionValue(string4, "getString(\"Underline\", R.string.Underline)");
                 return string4;
             case 5:
-                String string5 = LocaleController.getString("Strike", C3290R.string.Strike);
+                String string5 = LocaleController.getString("Strike", C3295R.string.Strike);
                 Intrinsics.checkNotNullExpressionValue(string5, "getString(\"Strike\", R.string.Strike)");
                 return string5;
             case 6:
-                String string6 = LocaleController.getString("Mono", C3290R.string.Mono);
+                String string6 = LocaleController.getString("Mono", C3295R.string.Mono);
                 Intrinsics.checkNotNullExpressionValue(string6, "getString(\"Mono\", R.string.Mono)");
                 return string6;
             case 7:
-                String string7 = LocaleController.getString("Spoiler", C3290R.string.Spoiler);
+                String string7 = LocaleController.getString("Spoiler", C3295R.string.Spoiler);
                 Intrinsics.checkNotNullExpressionValue(string7, "getString(\"Spoiler\", R.string.Spoiler)");
                 return string7;
             default:
