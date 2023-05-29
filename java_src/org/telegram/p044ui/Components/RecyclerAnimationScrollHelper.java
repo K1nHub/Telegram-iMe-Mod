@@ -107,20 +107,20 @@ public class RecyclerAnimationScrollHelper {
             if (animatableAdapter != null) {
                 animatableAdapter.onAnimationStart();
             }
-            this.recyclerView.addOnLayoutChangeListener(new View$OnLayoutChangeListenerC50391(adapter, arrayList, z3, animatableAdapter));
+            this.recyclerView.addOnLayoutChangeListener(new View$OnLayoutChangeListenerC50441(adapter, arrayList, z3, animatableAdapter));
         }
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.RecyclerAnimationScrollHelper$1 */
     /* loaded from: classes6.dex */
-    public class View$OnLayoutChangeListenerC50391 implements View.OnLayoutChangeListener {
+    public class View$OnLayoutChangeListenerC50441 implements View.OnLayoutChangeListener {
         final /* synthetic */ RecyclerView.Adapter val$adapter;
         final /* synthetic */ AnimatableAdapter val$finalAnimatableAdapter;
         final /* synthetic */ ArrayList val$oldViews;
         final /* synthetic */ boolean val$scrollDown;
 
-        View$OnLayoutChangeListenerC50391(RecyclerView.Adapter adapter, ArrayList arrayList, boolean z, AnimatableAdapter animatableAdapter) {
+        View$OnLayoutChangeListenerC50441(RecyclerView.Adapter adapter, ArrayList arrayList, boolean z, AnimatableAdapter animatableAdapter) {
             this.val$adapter = adapter;
             this.val$oldViews = arrayList;
             this.val$scrollDown = z;
@@ -219,7 +219,7 @@ public class RecyclerAnimationScrollHelper {
             valueAnimator.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.RecyclerAnimationScrollHelper$1$$ExternalSyntheticLambda0
                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                 public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                    RecyclerAnimationScrollHelper.View$OnLayoutChangeListenerC50391.this.lambda$onLayoutChange$0(arrayList2, z2, i16, arrayList, valueAnimator2);
+                    RecyclerAnimationScrollHelper.View$OnLayoutChangeListenerC50441.this.lambda$onLayoutChange$0(arrayList2, z2, i16, arrayList, valueAnimator2);
                 }
             });
             RecyclerAnimationScrollHelper.this.animator.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.RecyclerAnimationScrollHelper.1.1
@@ -229,7 +229,7 @@ public class RecyclerAnimationScrollHelper {
                         return;
                     }
                     RecyclerAnimationScrollHelper.this.recyclerView.fastScrollAnimationRunning = false;
-                    Iterator it2 = View$OnLayoutChangeListenerC50391.this.val$oldViews.iterator();
+                    Iterator it2 = View$OnLayoutChangeListenerC50441.this.val$oldViews.iterator();
                     while (it2.hasNext()) {
                         View view4 = (View) it2.next();
                         if (view4 instanceof ChatMessageCell) {
@@ -270,7 +270,7 @@ public class RecyclerAnimationScrollHelper {
                         }
                         view5.setTranslationY(BitmapDescriptorFactory.HUE_RED);
                     }
-                    AnimatableAdapter animatableAdapter = View$OnLayoutChangeListenerC50391.this.val$finalAnimatableAdapter;
+                    AnimatableAdapter animatableAdapter = View$OnLayoutChangeListenerC50441.this.val$finalAnimatableAdapter;
                     if (animatableAdapter != null) {
                         animatableAdapter.onAnimationEnd();
                     }

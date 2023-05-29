@@ -494,6 +494,7 @@
     <string name="enter_archive_passcode">Введіть свій пароль до архіву</string>
     <string name="enter_cloud_passcode">Введіть свій пароль до Хмари</string>
     <string name="erasing_period">Період очищення</string>
+    <string name="error_block_failed_to_load_media">Не вдалося завантажити медіа</string>
     <string name="error_icon_content_description">Помилка</string>
     <string name="error_while_image_recognition">Зображення не розпізнається</string>
     <string name="error_while_text_recognition">Текст не розпізнається</string>
@@ -554,12 +555,18 @@
     <string name="hidden_chats_empty">Ніяких прихованих чатів</string>
     <string name="hidden_chats_empty_title">У вас немає прихованих чатів</string>
     <string name="hidden_chats_hide_chats">Приховати</string>
+    <string name="hidden_chats_info_search_chats">Приховані чати відправляються до субархіву з вимкненими сповіщеннями. Потягніть вниз список чатів в Архіві, щоб отримати доступ до прихованого розділу.</string>
+    <string name="hidden_chats_info_unhide">Ви можете повернути чат назад до списку чатів.</string>
     <string name="hidden_chats_pinned">Приховані чати закріплені</string>
     <string name="hidden_chats_release_for_hidden_chats">Проведіть вниз, щоб переглянути приховані чати</string>
     <string name="hidden_chats_swipe_for_hidden_chats">Проведіть вниз, щоб переглянути приховані чати</string>
     <string name="hidden_chats_title">Приховані чати</string>
     <string name="hidden_chats_undo_chat_hidden">Чат приховано.</string>
+    <string name="hidden_chats_undo_chat_unhidden_subtitle">Сповіщення в чаті будуть вимкнені при поверненні з прихованих чатів.</string>
+    <string name="hidden_chats_undo_chat_unhidden_title">Чати не приховані</string>
     <string name="hidden_chats_undo_chats_hidden">Чати приховані.</string>
+    <string name="hidden_chats_undo_chats_unhidden_subtitle">Сповіщення в чаті будуть вимкнені при поверненні з прихованих чатів.</string>
+    <string name="hidden_chats_undo_chats_unhidden_title">Чати не приховані</string>
     <string name="hidden_chats_unhide_chats">Відобразити</string>
     <string name="hidden_chats_unpinned">Приховані чати не закріплені</string>
     <string name="icon_content_description">Значок вікна</string>
@@ -853,6 +860,7 @@
     <string name="release_to_go_to_unread_archived_bots">Відпустіть, щоб перейти до ботів в архіві</string>
     <string name="release_to_go_to_unread_archived_groups">Відпустіть, щоб перейти до груп в архіві</string>
     <string name="release_to_go_to_unread_archived_personal_chats">Відпустіть, щоб перейти до особистих чатів в архіві</string>
+    <string name="remember_choice">"Запам'ятайте вибір"</string>
     <string name="search_menu_title">Пошук</string>
     <string name="section_is_locked">Розділ заблокований, попередній перегляд недоступний</string>
     <string name="section_passcode">Пароль</string>
@@ -958,6 +966,7 @@
     <string name="settings_neurobots_item_title">Налаштування нейроботів</string>
     <string name="settings_proxy_button_in_toolbar">Кнопка проксі</string>
     <string name="settings_reactions_enable_hint">Увімкніть цей параметр, щоб відображати функції реакцій у чатах</string>
+    <string name="settings_revoke_by_default">Видалити з іншого боку</string>
     <string name="settings_section_passcode_archive">Пароль Архіву</string>
     <string name="settings_section_passcode_cloud">Пароль Хмари</string>
     <string name="settings_speed_mega_fast">Мегашвидко</string>
@@ -979,6 +988,8 @@
     <string name="settings_tools_combine_messages_hint">"Якщо ви часто надсилаєте повідомлення поспіль, ви можете дратувати інших користувачів.
 
 Увімкніть цю опцію, щоб повідомлення, надіслані протягом 30 секунд, були об'єднані в одне повідомлення."</string>
+    <string name="settings_tools_custom_sharing">Спільний доступ</string>
+    <string name="settings_tools_custom_sharing_hint">Відображення вкладок сортування основного та архівного списку чату під час обміну ззовні. Наприклад, коли ви ділитеся фотографією з галереї пристрою в iMe.</string>
     <string name="settings_tools_customization">Кастомізація</string>
     <string name="settings_tools_design_icon">Дизайн іконок</string>
     <string name="settings_tools_message_popup_reactions">У контекстному меню</string>
@@ -1001,6 +1012,28 @@
     <string name="short_number_k"> тис.</string>
     <string name="short_number_m"> млн.</string>
     <string name="short_number_t"> трлн.</string>
+    <string name="social_access_error">Помилка доступу</string>
+    <string name="social_cell_add_button">Додати</string>
+    <string name="social_cell_not_connected">Не підключено</string>
+    <string name="social_cell_social_networks">Соціальні мережі</string>
+    <string name="social_clear_cache_menu_item">Очистити кеш</string>
+    <string name="social_connect_account_message">Ви хочете скасувати авторизацію?</string>
+    <string name="social_connect_account_negative_button">Ні</string>
+    <string name="social_connect_account_positive_button">Скасувати</string>
+    <string name="social_connect_account_title">Підключити обліковий запис %1$s</string>
+    <string name="social_dialog_select_social_networks">Виберіть соціальну мережу</string>
+    <string name="social_exit_confirmation_message">Ви впевнені, що хочете вийти з %1$s?</string>
+    <string name="social_exit_confirmation_title">Підтвердження виходу</string>
+    <string name="social_refresh_page_menu_item">Оновити сторінку</string>
+    <string name="social_reset_account_message">"Ви впевнені, що хочете скинути свій акаунт %1$s? Після скидання ви зможете прив'язати новий акаунт."</string>
+    <string name="social_reset_account_negative_button">Відмінити</string>
+    <string name="social_reset_account_positive_button">Скинути</string>
+    <string name="social_reset_account_title">Скинути обліковий запис %1$s</string>
+    <string name="social_reset_menu_item">Скинути</string>
+    <string name="social_social_open_in_menu_item">Відкрити через %1$s</string>
+    <string name="social_unable_to_load_page">Не вдається завантажити сторінку</string>
+    <string name="social_web_cancel_button">Залишитись</string>
+    <string name="social_web_exit_button">Вийти</string>
     <string name="sort_by_usage">Нещодавно використані</string>
     <string name="sorting_enable_alert_message">"Бажаєте увімкнути автоматичне сортування чатів?
 
@@ -1288,6 +1321,9 @@
     <string name="twitter_search_subtitle">"Введіть ім'я користувача Twitter одержувача в поле пошуку"</string>
     <string name="twitter_search_title">Пошук у Твіттері</string>
     <string name="twitter_title">Твіти</string>
+    <string name="undo_all_chats_tab_disabled">"Вкладка **Всі чати** вимкнена.
+Кнопка доступу до архіву знаходиться в бічному меню"</string>
+    <string name="undo_recent_chats_disabled">Нещодавні чати вимкнено</string>
     <string name="unlock_premium_transcription_hint">Для розшифровки голосу тривалістю понад 1 хвилину потрібен Telegram Premium.</string>
     <string name="user_restrictions_send_games">Ігр</string>
     <string name="user_restrictions_send_gifs">ГІФ</string>
@@ -1440,7 +1476,7 @@
     <string name="wallet_binance_pay_action_convert">Обмін</string>
     <string name="wallet_binance_pay_action_history">Історія</string>
     <string name="wallet_binance_pay_action_pay">Cплатити</string>
-    <string name="wallet_binance_pay_action_receive">Запитати</string>
+    <string name="wallet_binance_pay_action_receive">Запросити</string>
     <string name="wallet_binance_pay_balances_header">Баланси</string>
     <string name="wallet_binance_pay_confirm_pay_dialog_description">ID користувача %s надіслав вам запит на перенесення. Ви хочете здійснити оплату?</string>
     <string name="wallet_binance_pay_id">ID користувача: %s</string>
@@ -1573,6 +1609,8 @@
     <string name="wallet_create_eth_pin_code_title">Придумати ПІН-код</string>
     <string name="wallet_create_eth_pin_code_toolbar_title">ПІН-код</string>
     <string name="wallet_crypto_blockchains_active_wallets">Активні гаманці</string>
+    <string name="wallet_crypto_blockchains_bitcoin_subtitle">Bitcoin</string>
+    <string name="wallet_crypto_blockchains_bitcoin_title">Bitcoin</string>
     <string name="wallet_crypto_blockchains_description">Cписок блокчейнів, які активовані на вашому криптоаккаунті.</string>
     <string name="wallet_crypto_blockchains_evm_subtitle">Ethereum, BNB Chain, Polygon, Fantom</string>
     <string name="wallet_crypto_blockchains_evm_title">EVM</string>
@@ -1676,6 +1714,8 @@ iMe Wallet."</string>
 
 Щоб використовувати раніше зв’язану адресу Ethereum, відновіть свій аккаунт за допомогою кодової фрази."</string>
     <string name="wallet_details_created">Підключений</string>
+    <string name="wallet_details_info_bitcoin_description">Це ваш активний обліковий запис у блокчейні Bitcoin.</string>
+    <string name="wallet_details_info_bitcoin_title">Bitcoin</string>
     <string name="wallet_details_info_evm_description">Це ваш активний обліковий запис EVM-сумісних блокчейнів, таких як Ethereum, BNB Chain, Polygon i Fantom.</string>
     <string name="wallet_details_info_evm_title">EVM</string>
     <string name="wallet_details_info_ton_description">Це ваш активний обліковий запис блокчейна The Open Network (TON).</string>
@@ -1873,7 +1913,7 @@ iMe Wallet."</string>
     <string name="wallet_token_details_action_copy_address">Скопіюйте Адресу Акаунту</string>
     <string name="wallet_token_details_action_copy_order_id">Копіювати ID покупки</string>
     <string name="wallet_token_details_action_exchange">Обміняти</string>
-    <string name="wallet_token_details_action_receive">Запросити переказ</string>
+    <string name="wallet_token_details_action_receive">Запросити</string>
     <string name="wallet_token_details_action_referral">Реферальне посилання</string>
     <string name="wallet_token_details_action_simplex_support">Підтримка Simplex</string>
     <string name="wallet_token_details_binance_website">https://binance.com/ru</string>

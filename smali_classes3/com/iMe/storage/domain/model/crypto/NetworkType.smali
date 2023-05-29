@@ -25,6 +25,8 @@
 
 .field public static final enum BINANCE_SMART_CHAIN:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
+.field public static final enum BITCOIN:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+
 .field public static final Companion:Lcom/iMe/storage/domain/model/crypto/NetworkType$Companion;
 
 .field public static final enum ETHEREUM:Lcom/iMe/storage/domain/model/crypto/NetworkType;
@@ -64,7 +66,7 @@
 .method private static final synthetic $values()[Lcom/iMe/storage/domain/model/crypto/NetworkType;
     .locals 3
 
-    const/4 v0, 0x6
+    const/4 v0, 0x7
 
     new-array v0, v0, [Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
@@ -98,9 +100,15 @@
 
     aput-object v1, v0, v2
 
-    sget-object v1, Lcom/iMe/storage/domain/model/crypto/NetworkType;->THE_OPEN_NETWORK:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+    sget-object v1, Lcom/iMe/storage/domain/model/crypto/NetworkType;->BITCOIN:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     const/4 v2, 0x5
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/iMe/storage/domain/model/crypto/NetworkType;->THE_OPEN_NETWORK:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+
+    const/4 v2, 0x6
 
     aput-object v1, v0, v2
 
@@ -323,33 +331,33 @@
     new-instance v0, Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     .line 90
-    sget v17, Lcom/iMe/storage/R$drawable;->fork_ic_ton_logo:I
+    sget v17, Lcom/iMe/storage/R$drawable;->fork_ic_bitcoin_logo:I
 
     .line 91
-    sget v18, Lcom/iMe/storage/R$drawable;->fork_ic_ton_small_logo:I
+    sget v18, Lcom/iMe/storage/R$drawable;->fork_ic_bitcoin_small_logo:I
 
     .line 92
-    sget v19, Lcom/iMe/storage/R$string;->wallet_network_type_ton:I
+    sget v19, Lcom/iMe/storage/R$string;->wallet_network_type_bitcoin:I
 
     .line 93
-    sget v20, Lcom/iMe/storage/R$string;->wallet_network_type_ton_short_name:I
+    sget v20, Lcom/iMe/storage/R$string;->wallet_network_type_bitcoin_short_name:I
 
     .line 94
-    sget v21, Lcom/iMe/storage/R$string;->wallet_network_scanner_ton:I
+    sget v21, Lcom/iMe/storage/R$string;->wallet_network_scanner_bitcoin:I
 
     .line 95
-    sget v22, Lcom/iMe/storage/R$drawable;->fork_ic_tonscan:I
+    sget v22, Lcom/iMe/storage/R$drawable;->fork_ic_btcscan:I
 
     .line 96
-    sget v23, Lcom/iMe/storage/R$color;->wallet_network_type_ton:I
+    sget v23, Lcom/iMe/storage/R$color;->wallet_network_type_bitcoin:I
 
     .line 98
-    sget-object v25, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->TON:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+    sget-object v25, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->BTC:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
     .line 99
-    sget-object v26, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->TON:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+    sget-object v26, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->BITCOIN:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
-    const-string v15, "THE_OPEN_NETWORK"
+    const-string v15, "BITCOIN"
 
     const/16 v16, 0x5
 
@@ -359,6 +367,47 @@
 
     .line 89
     invoke-direct/range {v14 .. v26}, Lcom/iMe/storage/domain/model/crypto/NetworkType;-><init>(Ljava/lang/String;IIIIIIIIILcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
+
+    sput-object v0, Lcom/iMe/storage/domain/model/crypto/NetworkType;->BITCOIN:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+
+    .line 102
+    new-instance v0, Lcom/iMe/storage/domain/model/crypto/NetworkType;
+
+    .line 103
+    sget v4, Lcom/iMe/storage/R$drawable;->fork_ic_ton_logo:I
+
+    .line 104
+    sget v5, Lcom/iMe/storage/R$drawable;->fork_ic_ton_small_logo:I
+
+    .line 105
+    sget v6, Lcom/iMe/storage/R$string;->wallet_network_type_ton:I
+
+    .line 106
+    sget v7, Lcom/iMe/storage/R$string;->wallet_network_type_ton_short_name:I
+
+    .line 107
+    sget v8, Lcom/iMe/storage/R$string;->wallet_network_scanner_ton:I
+
+    .line 108
+    sget v9, Lcom/iMe/storage/R$drawable;->fork_ic_tonscan:I
+
+    .line 109
+    sget v10, Lcom/iMe/storage/R$color;->wallet_network_type_ton:I
+
+    .line 111
+    sget-object v12, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->TON:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+
+    .line 112
+    sget-object v13, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->TON:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+
+    const-string v2, "THE_OPEN_NETWORK"
+
+    const/4 v3, 0x6
+
+    move-object v1, v0
+
+    .line 102
+    invoke-direct/range {v1 .. v13}, Lcom/iMe/storage/domain/model/crypto/NetworkType;-><init>(Ljava/lang/String;IIIIIIIIILcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/crypto/BlockchainType;)V
 
     sput-object v0, Lcom/iMe/storage/domain/model/crypto/NetworkType;->THE_OPEN_NETWORK:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
@@ -489,7 +538,7 @@
 .method public final getChainId()J
     .locals 5
 
-    .line 109
+    .line 122
     sget-object v0, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->INSTANCE:Lcom/iMe/storage/data/manager/common/EnvironmentManager;
 
     invoke-virtual {v0}, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->getEnvironmentInformation()Lcom/iMe/storage/domain/model/common/EnvironmentInformation;
@@ -498,7 +547,7 @@
 
     instance-of v0, v0, Lcom/iMe/storage/domain/model/common/EnvironmentInformation$Production;
 
-    .line 110
+    .line 123
     sget-object v1, Lcom/iMe/storage/domain/model/crypto/NetworkType$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p0}, Ljava/lang/Enum;->ordinal()I
@@ -523,7 +572,7 @@
 
     if-eq v1, v3, :cond_0
 
-    .line 123
+    .line 140
     new-instance v0, Lcom/iMe/storage/domain/model/crypto/Chain$Unknown;
 
     const-wide/16 v3, 0x0
@@ -537,12 +586,12 @@
     :cond_0
     if-eqz v0, :cond_1
 
-    .line 121
+    .line 137
     sget-object v0, Lcom/iMe/storage/domain/model/crypto/Chain$Fantom$Main;->INSTANCE:Lcom/iMe/storage/domain/model/crypto/Chain$Fantom$Main;
 
     goto :goto_0
 
-    .line 122
+    .line 138
     :cond_1
     sget-object v0, Lcom/iMe/storage/domain/model/crypto/Chain$Fantom$Testnet;->INSTANCE:Lcom/iMe/storage/domain/model/crypto/Chain$Fantom$Testnet;
 
@@ -551,12 +600,12 @@
     :cond_2
     if-eqz v0, :cond_3
 
-    .line 118
+    .line 133
     sget-object v0, Lcom/iMe/storage/domain/model/crypto/Chain$Polygon$Main;->INSTANCE:Lcom/iMe/storage/domain/model/crypto/Chain$Polygon$Main;
 
     goto :goto_0
 
-    .line 119
+    .line 134
     :cond_3
     sget-object v0, Lcom/iMe/storage/domain/model/crypto/Chain$Polygon$Testnet;->INSTANCE:Lcom/iMe/storage/domain/model/crypto/Chain$Polygon$Testnet;
 
@@ -565,12 +614,12 @@
     :cond_4
     if-eqz v0, :cond_5
 
-    .line 115
+    .line 129
     sget-object v0, Lcom/iMe/storage/domain/model/crypto/Chain$BSC$Main;->INSTANCE:Lcom/iMe/storage/domain/model/crypto/Chain$BSC$Main;
 
     goto :goto_0
 
-    .line 116
+    .line 130
     :cond_5
     sget-object v0, Lcom/iMe/storage/domain/model/crypto/Chain$BSC$Testnet;->INSTANCE:Lcom/iMe/storage/domain/model/crypto/Chain$BSC$Testnet;
 
@@ -579,16 +628,16 @@
     :cond_6
     if-eqz v0, :cond_7
 
-    .line 112
+    .line 125
     sget-object v0, Lcom/iMe/storage/domain/model/crypto/Chain$Ethereum$Main;->INSTANCE:Lcom/iMe/storage/domain/model/crypto/Chain$Ethereum$Main;
 
     goto :goto_0
 
-    .line 113
+    .line 126
     :cond_7
     sget-object v0, Lcom/iMe/storage/domain/model/crypto/Chain$Ethereum$Ropsten;->INSTANCE:Lcom/iMe/storage/domain/model/crypto/Chain$Ethereum$Ropsten;
 
-    .line 124
+    .line 141
     :goto_0
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Chain;->getId()J
 
@@ -672,7 +721,7 @@
 .method public final isBSC()Z
     .locals 1
 
-    .line 103
+    .line 116
     sget-object v0, Lcom/iMe/storage/domain/model/crypto/NetworkType;->BINANCE_SMART_CHAIN:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     if-ne p0, v0, :cond_0
@@ -691,7 +740,7 @@
 .method public final isEVM()Z
     .locals 2
 
-    .line 106
+    .line 119
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/NetworkType;->blockchainType:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     sget-object v1, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->EVM:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
@@ -712,7 +761,7 @@
 .method public final isEthereum()Z
     .locals 1
 
-    .line 102
+    .line 115
     sget-object v0, Lcom/iMe/storage/domain/model/crypto/NetworkType;->ETHEREUM:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     if-ne p0, v0, :cond_0
@@ -731,7 +780,7 @@
 .method public final isPolygon()Z
     .locals 1
 
-    .line 104
+    .line 117
     sget-object v0, Lcom/iMe/storage/domain/model/crypto/NetworkType;->POLYGON:Lcom/iMe/storage/domain/model/crypto/NetworkType;
 
     if-ne p0, v0, :cond_0

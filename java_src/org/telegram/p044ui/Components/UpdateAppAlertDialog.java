@@ -21,7 +21,7 @@ import androidx.core.widget.NestedScrollView;
 import com.google.android.exoplayer2.extractor.p015ts.TsExtractor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
@@ -127,7 +127,7 @@ public class UpdateAppAlertDialog extends BottomSheet {
         setCanceledOnTouchOutside(false);
         setApplyTopPadding(false);
         setApplyBottomPadding(false);
-        Drawable mutate = context.getResources().getDrawable(C3290R.C3292drawable.sheet_shadow_round).mutate();
+        Drawable mutate = context.getResources().getDrawable(C3295R.C3297drawable.sheet_shadow_round).mutate();
         this.shadowDrawable = mutate;
         mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_dialogBackground), PorterDuff.Mode.MULTIPLY));
         FrameLayout frameLayout = new FrameLayout(context) { // from class: org.telegram.ui.Components.UpdateAppAlertDialog.1
@@ -233,7 +233,7 @@ public class UpdateAppAlertDialog extends BottomSheet {
         textView.setTextColor(Theme.getColor(i2));
         textView.setSingleLine(true);
         textView.setEllipsize(TextUtils.TruncateAt.END);
-        textView.setText(LocaleController.getString("AppUpdate", C3290R.string.AppUpdate));
+        textView.setText(LocaleController.getString("AppUpdate", C3295R.string.AppUpdate));
         this.linearLayout.addView(textView, LayoutHelper.createLinear(-2, -2, 49, 23, 16, 23, 0));
         TextView textView2 = new TextView(getContext());
         textView2.setTextColor(Theme.getColor(Theme.key_dialogTextGray3));
@@ -241,7 +241,7 @@ public class UpdateAppAlertDialog extends BottomSheet {
         textView2.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
         int i3 = Theme.key_dialogTextLink;
         textView2.setLinkTextColor(Theme.getColor(i3));
-        int i4 = C3290R.string.AppUpdateVersionAndSize;
+        int i4 = C3295R.string.AppUpdateVersionAndSize;
         TLRPC$TL_help_appUpdate tLRPC$TL_help_appUpdate2 = this.appUpdate;
         textView2.setText(LocaleController.formatString("AppUpdateVersionAndSize", i4, tLRPC$TL_help_appUpdate2.version, AndroidUtilities.formatFileSize(tLRPC$TL_help_appUpdate2.document.size)));
         textView2.setGravity(49);
@@ -252,7 +252,7 @@ public class UpdateAppAlertDialog extends BottomSheet {
         textView3.setMovementMethod(new AndroidUtilities.LinkMovementMethodMy());
         textView3.setLinkTextColor(Theme.getColor(i3));
         if (TextUtils.isEmpty(this.appUpdate.text)) {
-            textView3.setText(AndroidUtilities.replaceTags(LocaleController.getString("AppUpdateChangelogEmpty", C3290R.string.AppUpdateChangelogEmpty)));
+            textView3.setText(AndroidUtilities.replaceTags(LocaleController.getString("AppUpdateChangelogEmpty", C3295R.string.AppUpdateChangelogEmpty)));
         } else {
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder(this.appUpdate.text);
             MessageObject.addEntitiesToText(spannableStringBuilder, tLRPC$TL_help_appUpdate.entities, false, false, false, false);
@@ -269,7 +269,7 @@ public class UpdateAppAlertDialog extends BottomSheet {
         this.shadow.setTag(1);
         frameLayout.addView(this.shadow, layoutParams);
         BottomSheetCell bottomSheetCell = new BottomSheetCell(context, false);
-        bottomSheetCell.setText(LocaleController.formatString("AppUpdateDownloadNow", C3290R.string.AppUpdateDownloadNow, new Object[0]), false);
+        bottomSheetCell.setText(LocaleController.formatString("AppUpdateDownloadNow", C3295R.string.AppUpdateDownloadNow, new Object[0]), false);
         bottomSheetCell.background.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.UpdateAppAlertDialog$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
@@ -278,7 +278,7 @@ public class UpdateAppAlertDialog extends BottomSheet {
         });
         frameLayout.addView(bottomSheetCell, LayoutHelper.createFrame(-1, 50, 83, 0, 0, 0, 50));
         BottomSheetCell bottomSheetCell2 = new BottomSheetCell(context, true);
-        bottomSheetCell2.setText(LocaleController.getString("AppUpdateRemindMeLater", C3290R.string.AppUpdateRemindMeLater), false);
+        bottomSheetCell2.setText(LocaleController.getString("AppUpdateRemindMeLater", C3295R.string.AppUpdateRemindMeLater), false);
         bottomSheetCell2.background.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.UpdateAppAlertDialog$$ExternalSyntheticLambda1
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {

@@ -42,10 +42,10 @@ import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.databinding.ForkFragmentBlockchainsManagementBinding;
 import org.telegram.p044ui.ActionBar.AlertDialog;
-import org.telegram.p044ui.ActionBar.C3356ActionBar;
+import org.telegram.p044ui.ActionBar.C3361ActionBar;
 import org.telegram.p044ui.ActionBar.INavigationLayout;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
@@ -176,13 +176,13 @@ public final class BlockchainsManagementFragment extends WalletAuthFragment impl
     }
 
     private final void setupActionBar() {
-        C3356ActionBar c3356ActionBar = this.actionBar;
-        c3356ActionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
-        c3356ActionBar.setTitle(getResourceManager().getString(C3290R.string.wallet_crypto_blockchains_title));
-        c3356ActionBar.setAllowOverlayTitle(true);
-        c3356ActionBar.createMenu();
-        c3356ActionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementFragment$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
+        C3361ActionBar c3361ActionBar = this.actionBar;
+        c3361ActionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
+        c3361ActionBar.setTitle(getResourceManager().getString(C3295R.string.wallet_crypto_blockchains_title));
+        c3361ActionBar.setAllowOverlayTitle(true);
+        c3361ActionBar.createMenu();
+        c3361ActionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.settings.blockchains.BlockchainsManagementFragment$setupActionBar$1$1
+            @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     BlockchainsManagementFragment.this.finishFragment();
@@ -248,7 +248,7 @@ public final class BlockchainsManagementFragment extends WalletAuthFragment impl
         Intrinsics.checkNotNullParameter(this_with, "$this_with");
         Intrinsics.checkNotNullParameter(baseQuickAdapter, "<anonymous parameter 0>");
         Intrinsics.checkNotNullParameter(view, "view");
-        if (view.getId() == C3290R.C3293id.image_info) {
+        if (view.getId() == C3295R.C3298id.image_info) {
             this$0.getPresenter().showInfoDialog(this_with.getItem(i));
         }
     }
@@ -273,12 +273,12 @@ public final class BlockchainsManagementFragment extends WalletAuthFragment impl
         ForkFragmentBlockchainsManagementBinding binding = getBinding();
         RLottieImageView rLottieImageView = binding.imageHeader;
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3290R.raw.fork_multi_networking, 300, 170);
+        rLottieImageView.setAnimation(C3295R.raw.fork_multi_networking, 300, 170);
         rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
         rLottieImageView.playAnimation();
-        binding.textWalletsTitle.setText(getResourceManager().getString(C3290R.string.wallet_crypto_blockchains_active_wallets));
-        binding.textDescription.setText(getResourceManager().getString(C3290R.string.wallet_crypto_blockchains_description));
-        binding.buttonResetAll.setTextAndIcon(getResourceManager().getString(C3290R.string.wallet_reset_all_title), C3290R.C3292drawable.msg_block2, false);
+        binding.textWalletsTitle.setText(getResourceManager().getString(C3295R.string.wallet_crypto_blockchains_active_wallets));
+        binding.textDescription.setText(getResourceManager().getString(C3295R.string.wallet_crypto_blockchains_description));
+        binding.buttonResetAll.setTextAndIcon(getResourceManager().getString(C3295R.string.wallet_reset_all_title), C3295R.C3297drawable.msg_block2, false);
     }
 
     /* compiled from: BlockchainsManagementFragment.kt */

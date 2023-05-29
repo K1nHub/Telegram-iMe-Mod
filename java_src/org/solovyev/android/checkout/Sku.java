@@ -7,14 +7,14 @@ import org.json.JSONObject;
 public final class Sku {
 
     /* renamed from: id */
-    public final C3204Id f1356id;
+    public final C3209Id f1356id;
     private String mDisplayTitle;
     public final String price;
     public final String title;
 
     Sku(String str, String str2) throws JSONException {
         JSONObject jSONObject = new JSONObject(str);
-        this.f1356id = new C3204Id(str2, jSONObject.getString("productId"));
+        this.f1356id = new C3209Id(str2, jSONObject.getString("productId"));
         this.price = jSONObject.getString("price");
         Price.regularPriceFromJson(jSONObject);
         this.title = jSONObject.getString("title");
@@ -80,11 +80,11 @@ public final class Sku {
 
     /* renamed from: org.solovyev.android.checkout.Sku$Id */
     /* loaded from: classes4.dex */
-    public static final class C3204Id {
+    public static final class C3209Id {
         public final String code;
         public final String product;
 
-        public C3204Id(String str, String str2) {
+        public C3209Id(String str, String str2) {
             this.product = str;
             this.code = str2;
         }
@@ -97,12 +97,12 @@ public final class Sku {
             if (this == obj) {
                 return true;
             }
-            if (obj == null || C3204Id.class != obj.getClass()) {
+            if (obj == null || C3209Id.class != obj.getClass()) {
                 return false;
             }
-            C3204Id c3204Id = (C3204Id) obj;
-            if (this.product.equals(c3204Id.product)) {
-                return this.code.equals(c3204Id.code);
+            C3209Id c3209Id = (C3209Id) obj;
+            if (this.product.equals(c3209Id.product)) {
+                return this.code.equals(c3209Id.code);
             }
             return false;
         }

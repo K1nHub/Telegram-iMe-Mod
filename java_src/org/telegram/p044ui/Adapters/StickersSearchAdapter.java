@@ -18,7 +18,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.UserConfig;
@@ -73,7 +73,7 @@ public class StickersSearchAdapter extends RecyclerListView.SelectionAdapter {
     private HashMap<ArrayList<TLRPC$Document>, String> emojiStickers = new HashMap<>();
     private ArrayList<ArrayList<TLRPC$Document>> emojiArrays = new ArrayList<>();
     private SparseArray<TLRPC$StickerSetCovered> positionsToSets = new SparseArray<>();
-    private Runnable searchRunnable = new RunnableC34941();
+    private Runnable searchRunnable = new RunnableC34991();
 
     /* renamed from: org.telegram.ui.Adapters.StickersSearchAdapter$Delegate */
     /* loaded from: classes5.dex */
@@ -109,8 +109,8 @@ public class StickersSearchAdapter extends RecyclerListView.SelectionAdapter {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Adapters.StickersSearchAdapter$1 */
     /* loaded from: classes5.dex */
-    public class RunnableC34941 implements Runnable {
-        RunnableC34941() {
+    public class RunnableC34991 implements Runnable {
+        RunnableC34991() {
         }
 
         private void clear() {
@@ -143,7 +143,7 @@ public class StickersSearchAdapter extends RecyclerListView.SelectionAdapter {
                 Method dump skipped, instructions count: 789
                 To view this dump add '--comments-level debug' option
             */
-            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Adapters.StickersSearchAdapter.RunnableC34941.run():void");
+            throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Adapters.StickersSearchAdapter.RunnableC34991.run():void");
         }
 
         /* JADX INFO: Access modifiers changed from: private */
@@ -176,7 +176,7 @@ public class StickersSearchAdapter extends RecyclerListView.SelectionAdapter {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.StickersSearchAdapter$1$$ExternalSyntheticLambda1
                     @Override // java.lang.Runnable
                     public final void run() {
-                        StickersSearchAdapter.RunnableC34941.this.lambda$run$1(tLRPC$TL_messages_searchStickerSets, tLObject);
+                        StickersSearchAdapter.RunnableC34991.this.lambda$run$1(tLRPC$TL_messages_searchStickerSets, tLObject);
                     }
                 });
             }
@@ -199,7 +199,7 @@ public class StickersSearchAdapter extends RecyclerListView.SelectionAdapter {
             AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.Adapters.StickersSearchAdapter$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    StickersSearchAdapter.RunnableC34941.this.lambda$run$3(tLRPC$TL_messages_getStickers, tLObject, arrayList, longSparseArray);
+                    StickersSearchAdapter.RunnableC34991.this.lambda$run$3(tLRPC$TL_messages_getStickers, tLObject, arrayList, longSparseArray);
                 }
             });
         }
@@ -338,7 +338,7 @@ public class StickersSearchAdapter extends RecyclerListView.SelectionAdapter {
                 ImageView imageView = new ImageView(this.context);
                 this.emptyImageView = imageView;
                 imageView.setScaleType(ImageView.ScaleType.CENTER);
-                this.emptyImageView.setImageResource(C3290R.C3292drawable.stickers_empty);
+                this.emptyImageView.setImageResource(C3295R.C3297drawable.stickers_empty);
                 ImageView imageView2 = this.emptyImageView;
                 int i2 = Theme.key_chat_emojiPanelEmptyText;
                 imageView2.setColorFilter(new PorterDuffColorFilter(getThemedColor(i2), PorterDuff.Mode.MULTIPLY));
@@ -346,7 +346,7 @@ public class StickersSearchAdapter extends RecyclerListView.SelectionAdapter {
                 linearLayout2.addView(new Space(this.context), LayoutHelper.createLinear(-1, 15));
                 TextView textView = new TextView(this.context);
                 this.emptyTextView = textView;
-                textView.setText(LocaleController.getString("NoStickersFound", C3290R.string.NoStickersFound));
+                textView.setText(LocaleController.getString("NoStickersFound", C3295R.string.NoStickersFound));
                 this.emptyTextView.setTextSize(1, 16.0f);
                 this.emptyTextView.setTextColor(getThemedColor(i2));
                 linearLayout2.addView(this.emptyTextView, LayoutHelper.createLinear(-2, -2));

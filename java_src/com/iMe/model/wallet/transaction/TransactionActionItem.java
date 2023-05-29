@@ -4,7 +4,7 @@ import com.iMe.model.wallet.ActionItem;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 /* compiled from: TransactionActionItem.kt */
 /* loaded from: classes3.dex */
 public abstract class TransactionActionItem implements ActionItem {
@@ -52,7 +52,7 @@ public abstract class TransactionActionItem implements ActionItem {
         public static final Send INSTANCE = new Send();
 
         private Send() {
-            super(C3290R.string.wallet_token_details_details_action_send, C3290R.C3292drawable.msg_send, null, 4, null);
+            super(C3295R.string.wallet_token_details_details_action_send, C3295R.C3297drawable.msg_send, null, 4, null);
         }
     }
 
@@ -62,7 +62,7 @@ public abstract class TransactionActionItem implements ActionItem {
         public static final Support INSTANCE = new Support();
 
         private Support() {
-            super(C3290R.string.wallet_token_details_action_simplex_support, C3290R.C3292drawable.msg_help, null, 4, null);
+            super(C3295R.string.wallet_token_details_action_simplex_support, C3295R.C3297drawable.msg_help, null, 4, null);
         }
     }
 
@@ -72,7 +72,7 @@ public abstract class TransactionActionItem implements ActionItem {
         public static final Profile INSTANCE = new Profile();
 
         private Profile() {
-            super(C3290R.string.wallet_transaction_details_action_open_profile, C3290R.C3292drawable.msg_openprofile, null, 4, null);
+            super(C3295R.string.wallet_transaction_details_action_open_profile, C3295R.C3297drawable.msg_openprofile, null, 4, null);
         }
     }
 
@@ -82,7 +82,7 @@ public abstract class TransactionActionItem implements ActionItem {
         private final int title;
 
         public Copy(int i) {
-            super(i, C3290R.C3292drawable.fork_ic_id_28, null, 4, null);
+            super(i, C3295R.C3297drawable.fork_ic_id_28, null, 4, null);
             this.title = i;
         }
 
@@ -123,7 +123,7 @@ public abstract class TransactionActionItem implements ActionItem {
         public static final Cancel INSTANCE = new Cancel();
 
         private Cancel() {
-            super(C3290R.string.wallet_transaction_details_action_cancel, C3290R.C3292drawable.fork_cancel_transaction, null, 4, null);
+            super(C3295R.string.wallet_transaction_details_action_cancel, C3295R.C3297drawable.fork_cancel_transaction, null, 4, null);
         }
     }
 
@@ -133,7 +133,7 @@ public abstract class TransactionActionItem implements ActionItem {
         public static final Boost INSTANCE = new Boost();
 
         private Boost() {
-            super(C3290R.string.wallet_transaction_details_action_boost, C3290R.C3292drawable.fork_ic_speed_up_transaction, null, 4, null);
+            super(C3295R.string.wallet_transaction_details_action_boost, C3295R.C3297drawable.fork_ic_speed_up_transaction, null, 4, null);
         }
     }
 }

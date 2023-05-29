@@ -1598,9 +1598,9 @@ public class SecretChatHelper extends BaseController {
             FileLog.m49e(e);
         }
         AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle(LocaleController.getString("AppName", C3290R.string.AppName));
-        builder.setMessage(LocaleController.getString("CreateEncryptedChatError", C3290R.string.CreateEncryptedChatError));
-        builder.setPositiveButton(LocaleController.getString("OK", C3290R.string.OK), null);
+        builder.setTitle(LocaleController.getString("AppName", C3295R.string.AppName));
+        builder.setMessage(LocaleController.getString("CreateEncryptedChatError", C3295R.string.CreateEncryptedChatError));
+        builder.setPositiveButton(LocaleController.getString("OK", C3295R.string.OK), null);
         builder.show().setCanceledOnTouchOutside(true);
     }
 

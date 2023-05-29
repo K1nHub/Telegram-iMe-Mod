@@ -33,7 +33,7 @@ import com.iMe.p031ui.adapter.provider.TotalBalanceProvider;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 /* compiled from: BalancesRecycleAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.home.v2.adapter.BalancesRecycleAdapter */
 /* loaded from: classes4.dex */
@@ -75,7 +75,7 @@ public final class BalancesRecycleAdapter extends BaseNodeAdapter<BaseNode> {
         this.cryptoAccountProvider = cryptoAccountProvider;
         this.headerWithNetworkSwitcherProvider = headerWithNetworkSwitcherProvider;
         this.nftTokenProvider = nftTokenProvider;
-        addChildClickViewIds(C3290R.C3293id.image_wallet_crypto_eye, C3290R.C3293id.image_wallet_crypto_tokens_settings, C3290R.C3293id.image_wallet_order_tokens, C3290R.C3293id.frame_network_type, C3290R.C3293id.image_copy);
+        addChildClickViewIds(C3295R.C3298id.image_wallet_crypto_eye, C3295R.C3298id.image_wallet_crypto_tokens_settings, C3295R.C3298id.image_wallet_order_tokens, C3295R.C3298id.frame_network_type, C3295R.C3298id.image_copy);
         addFullSpanNodeProvider(BaseQuickAdapterExtKt.asNode(bannerProvider));
         addFullSpanNodeProvider(BaseQuickAdapterExtKt.asNode(cryptoAccountProvider));
         addFullSpanNodeProvider(BaseQuickAdapterExtKt.asNode(createAccountProvider));

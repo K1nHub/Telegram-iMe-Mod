@@ -10,7 +10,7 @@ import java.util.List;
 import kotlin.collections.CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.RLottieImageView;
 /* compiled from: BannersRecycleAdapter.kt */
@@ -31,7 +31,7 @@ public final class BannersRecycleAdapter extends BaseQuickAdapter<SlideItem, Bas
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public BannersRecycleAdapter(ResourceManager resourceManager) {
-        super(C3290R.layout.fork_recycle_item_wallet_banner_slide, null, 2, null);
+        super(C3295R.layout.fork_recycle_item_wallet_banner_slide, null, 2, null);
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
     }
@@ -47,7 +47,7 @@ public final class BannersRecycleAdapter extends BaseQuickAdapter<SlideItem, Bas
     }
 
     public final void pauseAnimation() {
-        View viewByPosition = getViewByPosition(this.currentAnimatedBanner, C3290R.C3293id.image_banner_image);
+        View viewByPosition = getViewByPosition(this.currentAnimatedBanner, C3295R.C3298id.image_banner_image);
         if (viewByPosition == null || !(viewByPosition instanceof RLottieImageView)) {
             return;
         }
@@ -55,7 +55,7 @@ public final class BannersRecycleAdapter extends BaseQuickAdapter<SlideItem, Bas
     }
 
     public final void resumeAnimation() {
-        View viewByPosition = getViewByPosition(this.currentAnimatedBanner, C3290R.C3293id.image_banner_image);
+        View viewByPosition = getViewByPosition(this.currentAnimatedBanner, C3295R.C3298id.image_banner_image);
         if (viewByPosition == null || !(viewByPosition instanceof RLottieImageView)) {
             return;
         }
@@ -69,7 +69,7 @@ public final class BannersRecycleAdapter extends BaseQuickAdapter<SlideItem, Bas
         Intrinsics.checkNotNullParameter(payloads, "payloads");
         Object firstOrNull = CollectionsKt.firstOrNull(payloads);
         if (firstOrNull instanceof Boolean) {
-            BaseQuickAdapterExtKt.applyForView(holder, C3290R.C3293id.image_banner_image, new BannersRecycleAdapter$convert$1$1(firstOrNull));
+            BaseQuickAdapterExtKt.applyForView(holder, C3295R.C3298id.image_banner_image, new BannersRecycleAdapter$convert$1$1(firstOrNull));
         }
     }
 
@@ -78,13 +78,13 @@ public final class BannersRecycleAdapter extends BaseQuickAdapter<SlideItem, Bas
     public void convert(BaseViewHolder holder, SlideItem item) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3290R.C3293id.card_banner_slide;
+        int i = C3295R.C3298id.card_banner_slide;
         BaseViewHolder themedCardBackground = BaseQuickAdapterExtKt.setThemedCardBackground(BaseQuickAdapterExtKt.setRippleForeground(holder, i, false), i, Theme.key_windowBackgroundWhite);
-        int i2 = C3290R.C3293id.text_banner_title;
+        int i2 = C3295R.C3298id.text_banner_title;
         int i3 = Theme.key_chat_messagePanelText;
         BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(themedCardBackground, i2, i3);
-        int i4 = C3290R.C3293id.text_banner_description;
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i4, i3), i2).setText(i2, this.resourceManager.getString(item.getSlide().getTitle())).setText(i4, this.resourceManager.getString(item.getSlide().getShortDescription())), C3290R.C3293id.image_banner_image, new BannersRecycleAdapter$convert$2(item, holder, this));
+        int i4 = C3295R.C3298id.text_banner_description;
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i4, i3), i2).setText(i2, this.resourceManager.getString(item.getSlide().getTitle())).setText(i4, this.resourceManager.getString(item.getSlide().getShortDescription())), C3295R.C3298id.image_banner_image, new BannersRecycleAdapter$convert$2(item, holder, this));
     }
 
     /* compiled from: BannersRecycleAdapter.kt */

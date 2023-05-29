@@ -8,7 +8,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -38,14 +38,14 @@ public final class BinanceAccountProvider$convert$1 extends Lambda implements Fu
         Intrinsics.checkNotNullParameter(applyForView, "$this$applyForView");
         applyForView.setLongClickEnabled(false);
         applyForView.setSubMenuOpenSide(2);
-        applyForView.setIcon(C3290R.C3292drawable.ic_ab_other);
+        applyForView.setIcon(C3295R.C3297drawable.ic_ab_other);
         ViewExtKt.setCircleRippleBackground(applyForView);
         applyForView.removeAllSubItems();
         int i = IdFabric$Menu.RECEIVE;
-        int i2 = C3290R.C3292drawable.fork_ic_ask_transfer_24;
+        int i2 = C3295R.C3297drawable.fork_ic_ask_transfer_24;
         resourceManager = this.this$0.resourceManager;
-        applyForView.addSubItem(i, i2, resourceManager.getString(C3290R.string.wallet_binance_pay_action_receive));
-        applyForView.addSubItem(IdFabric$Menu.LOGOUT, C3290R.C3292drawable.msg_leave, LocaleController.getString("LogOut", C3290R.string.LogOut));
+        applyForView.addSubItem(i, i2, resourceManager.getString(C3295R.string.wallet_binance_pay_action_receive));
+        applyForView.addSubItem(IdFabric$Menu.LOGOUT, C3295R.C3297drawable.msg_leave, LocaleController.getString("LogOut", C3295R.string.LogOut));
         applyForView.redrawPopup(Theme.getColor(Theme.key_actionBarDefaultSubmenuBackground));
         applyForView.setPopupItemsColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem), false);
         applyForView.setPopupItemsColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuItemIcon), true);
@@ -57,7 +57,7 @@ public final class BinanceAccountProvider$convert$1 extends Lambda implements Fu
             }
         });
         applyForView.setDelegate(this.this$0.getActionBarMenuItemDelegate());
-        applyForView.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3290R.string.AccDescrMoreOptions));
+        applyForView.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3295R.string.AccDescrMoreOptions));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

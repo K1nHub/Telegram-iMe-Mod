@@ -32,14 +32,14 @@
 .end method
 
 .method private constructor <init>()V
-    .locals 20
+    .locals 21
 
     move-object/from16 v0, p0
 
-    .line 46
+    .line 48
     sget-object v1, Lcom/iMe/storage/domain/model/common/Environment;->STAGE:Lcom/iMe/storage/domain/model/common/Environment;
 
-    .line 47
+    .line 49
     sget-object v2, Lcom/iMe/storage/common/AppConfiguration$Common;->INSTANCE:Lcom/iMe/storage/common/AppConfiguration$Common;
 
     invoke-virtual {v2}, Lcom/iMe/storage/common/AppConfiguration$Common;->getStageGoogleServices()Lcom/google/firebase/FirebaseOptions;
@@ -64,20 +64,22 @@
 
     const-string v12, "https://tonscan.org/"
 
-    const-string v13, "iMeLikeStageBot"
+    const-string v13, "https://blockchair.com/bitcoin/testnet/"
 
-    const-wide/32 v14, 0x4fc3ad03
+    const-string v14, "iMeLikeStageBot"
 
-    const-string v16, "https://binance.pay.stage.imem.app/"
+    const-wide/32 v15, 0x4fc3ad03
 
-    const-string v17, "testnet-global.config.json"
+    const-string v17, "https://binance.pay.stage.imem.app/"
 
-    const v18, 0x7fffffff
+    const-string v18, "testnet-global.config.json"
 
-    const/16 v19, 0x0
+    const v19, 0x7fffffff
 
-    .line 45
-    invoke-direct/range {v0 .. v19}, Lcom/iMe/storage/domain/model/common/EnvironmentInformation;-><init>(Lcom/iMe/storage/domain/model/common/Environment;Lcom/google/firebase/FirebaseOptions;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+    const/16 v20, 0x0
+
+    .line 47
+    invoke-direct/range {v0 .. v20}, Lcom/iMe/storage/domain/model/common/EnvironmentInformation;-><init>(Lcom/iMe/storage/domain/model/common/Environment;Lcom/google/firebase/FirebaseOptions;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;JLjava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     return-void
 .end method

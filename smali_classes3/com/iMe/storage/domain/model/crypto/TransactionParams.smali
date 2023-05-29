@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/iMe/storage/domain/model/crypto/TransactionParams$Bitcoin;,
         Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;,
         Lcom/iMe/storage/domain/model/crypto/TransactionParams$Tron;,
         Lcom/iMe/storage/domain/model/crypto/TransactionParams$WhenMappings;
@@ -25,16 +26,16 @@
 .method private constructor <init>(Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;)V
     .locals 0
 
-    .line 7
+    .line 8
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 8
+    .line 9
     iput-object p1, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams;->fastest:Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
-    .line 9
+    .line 10
     iput-object p2, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams;->medium:Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
-    .line 10
+    .line 11
     iput-object p3, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams;->low:Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
     return-void
@@ -58,7 +59,7 @@
 
     move-object p3, v0
 
-    .line 7
+    .line 8
     :cond_1
     invoke-direct {p0, p1, p2, p3, v0}, Lcom/iMe/storage/domain/model/crypto/TransactionParams;-><init>(Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
@@ -78,7 +79,7 @@
 .method public getFastest()Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
     .locals 1
 
-    .line 8
+    .line 9
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams;->fastest:Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
     return-object v0
@@ -91,7 +92,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 34
+    .line 47
     instance-of v0, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;
 
     if-eqz v0, :cond_3
@@ -116,7 +117,7 @@
 
     if-ne p1, v0, :cond_0
 
-    .line 37
+    .line 50
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/TransactionParams;->getFastest()Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
     move-result-object p1
@@ -136,7 +137,7 @@
 
     throw p1
 
-    .line 36
+    .line 49
     :cond_1
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/TransactionParams;->getMedium()Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
@@ -144,7 +145,7 @@
 
     goto :goto_0
 
-    .line 35
+    .line 48
     :cond_2
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/TransactionParams;->getLow()Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
@@ -158,7 +159,7 @@
 
     goto :goto_0
 
-    .line 39
+    .line 52
     :cond_3
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/TransactionParams;->getMedium()Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
@@ -180,7 +181,7 @@
         }
     .end annotation
 
-    .line 44
+    .line 57
     instance-of v0, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;
 
     if-eqz v0, :cond_0
@@ -219,7 +220,7 @@
 
     goto :goto_0
 
-    .line 45
+    .line 58
     :cond_0
     invoke-virtual {p0}, Lcom/iMe/storage/domain/model/crypto/TransactionParams;->getMedium()Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
@@ -236,7 +237,7 @@
 .method public getLow()Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
     .locals 1
 
-    .line 10
+    .line 11
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams;->low:Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
     return-object v0
@@ -245,7 +246,7 @@
 .method public getMedium()Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
     .locals 1
 
-    .line 9
+    .line 10
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams;->medium:Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
     return-object v0

@@ -21,7 +21,7 @@ import androidx.core.graphics.ColorUtils;
 import com.google.android.exoplayer2.source.rtsp.RtspHeaders;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.AlertDialog;
 import org.telegram.p044ui.ActionBar.BaseFragment;
@@ -90,7 +90,7 @@ public class SessionBottomSheet extends BottomSheet {
         textView2.setGravity(17);
         linearLayout.addView(textView2, LayoutHelper.createLinear(-1, -2, 1, 21, 4, 21, 21));
         if ((tLRPC$TL_authorization.flags & 1) != 0) {
-            formatDateTime = LocaleController.getString("Online", C3290R.string.Online);
+            formatDateTime = LocaleController.getString("Online", C3295R.string.Online);
         } else {
             formatDateTime = LocaleController.formatDateTime(tLRPC$TL_authorization.date_active);
         }
@@ -118,19 +118,19 @@ public class SessionBottomSheet extends BottomSheet {
         sb2.append(" ");
         sb2.append(tLRPC$TL_authorization.app_version);
         itemView.valueText.setText(sb2);
-        Drawable mutate = ContextCompat.getDrawable(parentActivity, C3290R.C3292drawable.menu_devices).mutate();
+        Drawable mutate = ContextCompat.getDrawable(parentActivity, C3295R.C3297drawable.menu_devices).mutate();
         int i = Theme.key_windowBackgroundWhiteGrayIcon;
         mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.SRC_IN));
         itemView.iconView.setImageDrawable(mutate);
-        itemView.descriptionText.setText(LocaleController.getString("Application", C3290R.string.Application));
+        itemView.descriptionText.setText(LocaleController.getString("Application", C3295R.string.Application));
         linearLayout.addView(itemView);
         if (tLRPC$TL_authorization.country.length() != 0) {
             ItemView itemView2 = new ItemView(parentActivity, false);
             itemView2.valueText.setText(tLRPC$TL_authorization.country);
-            Drawable mutate2 = ContextCompat.getDrawable(parentActivity, C3290R.C3292drawable.msg_location).mutate();
+            Drawable mutate2 = ContextCompat.getDrawable(parentActivity, C3295R.C3297drawable.msg_location).mutate();
             mutate2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.SRC_IN));
             itemView2.iconView.setImageDrawable(mutate2);
-            itemView2.descriptionText.setText(LocaleController.getString(RtspHeaders.LOCATION, C3290R.string.Location));
+            itemView2.descriptionText.setText(LocaleController.getString(RtspHeaders.LOCATION, C3295R.string.Location));
             itemView2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.SessionBottomSheet.2
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
@@ -152,10 +152,10 @@ public class SessionBottomSheet extends BottomSheet {
         if (tLRPC$TL_authorization.f1468ip.length() != 0) {
             ItemView itemView3 = new ItemView(parentActivity, false);
             itemView3.valueText.setText(tLRPC$TL_authorization.f1468ip);
-            Drawable mutate3 = ContextCompat.getDrawable(parentActivity, C3290R.C3292drawable.msg_language).mutate();
+            Drawable mutate3 = ContextCompat.getDrawable(parentActivity, C3295R.C3297drawable.msg_language).mutate();
             mutate3.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.SRC_IN));
             itemView3.iconView.setImageDrawable(mutate3);
-            itemView3.descriptionText.setText(LocaleController.getString("IpAddress", C3290R.string.IpAddress));
+            itemView3.descriptionText.setText(LocaleController.getString("IpAddress", C3295R.string.IpAddress));
             itemView3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.SessionBottomSheet.4
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view) {
@@ -176,8 +176,8 @@ public class SessionBottomSheet extends BottomSheet {
         }
         if (secretChatsEnabled(tLRPC$TL_authorization)) {
             final ItemView itemView4 = new ItemView(parentActivity, true);
-            itemView4.valueText.setText(LocaleController.getString("AcceptSecretChats", C3290R.string.AcceptSecretChats));
-            Drawable mutate4 = ContextCompat.getDrawable(parentActivity, C3290R.C3292drawable.msg_secret).mutate();
+            itemView4.valueText.setText(LocaleController.getString("AcceptSecretChats", C3295R.string.AcceptSecretChats));
+            Drawable mutate4 = ContextCompat.getDrawable(parentActivity, C3295R.C3297drawable.msg_secret).mutate();
             mutate4.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.SRC_IN));
             itemView4.iconView.setImageDrawable(mutate4);
             itemView4.switchView.setChecked(!tLRPC$TL_authorization.encrypted_requests_disabled, false);
@@ -192,13 +192,13 @@ public class SessionBottomSheet extends BottomSheet {
                 }
             });
             itemView.needDivider = true;
-            itemView4.descriptionText.setText(LocaleController.getString("AcceptSecretChatsDescription", C3290R.string.AcceptSecretChatsDescription));
+            itemView4.descriptionText.setText(LocaleController.getString("AcceptSecretChatsDescription", C3295R.string.AcceptSecretChatsDescription));
             linearLayout.addView(itemView4);
             itemView = itemView4;
         }
         final ItemView itemView5 = new ItemView(parentActivity, true);
-        itemView5.valueText.setText(LocaleController.getString("AcceptCalls", C3290R.string.AcceptCalls));
-        Drawable mutate5 = ContextCompat.getDrawable(parentActivity, C3290R.C3292drawable.msg_calls).mutate();
+        itemView5.valueText.setText(LocaleController.getString("AcceptCalls", C3295R.string.AcceptCalls));
+        Drawable mutate5 = ContextCompat.getDrawable(parentActivity, C3295R.C3297drawable.msg_calls).mutate();
         mutate5.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.SRC_IN));
         itemView5.iconView.setImageDrawable(mutate5);
         itemView5.switchView.setChecked(!tLRPC$TL_authorization.call_requests_disabled, false);
@@ -213,7 +213,7 @@ public class SessionBottomSheet extends BottomSheet {
             }
         });
         itemView.needDivider = true;
-        itemView5.descriptionText.setText(LocaleController.getString("AcceptCallsChatsDescription", C3290R.string.AcceptCallsChatsDescription));
+        itemView5.descriptionText.setText(LocaleController.getString("AcceptCallsChatsDescription", C3295R.string.AcceptCallsChatsDescription));
         linearLayout.addView(itemView5);
         if (!z) {
             TextView textView3 = new TextView(parentActivity);
@@ -221,11 +221,11 @@ public class SessionBottomSheet extends BottomSheet {
             textView3.setGravity(17);
             textView3.setTextSize(1, 14.0f);
             textView3.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-            textView3.setText(LocaleController.getString("TerminateSession", C3290R.string.TerminateSession));
+            textView3.setText(LocaleController.getString("TerminateSession", C3295R.string.TerminateSession));
             textView3.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
             textView3.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(6), Theme.getColor(Theme.key_chat_attachAudioBackground), ColorUtils.setAlphaComponent(Theme.getColor(Theme.key_windowBackgroundWhite), 120)));
             linearLayout.addView(textView3, LayoutHelper.createFrame(-1, 48, 0, 16, 15, 16, 16));
-            textView3.setOnClickListener(new View$OnClickListenerC64978(callback, tLRPC$TL_authorization, baseFragment));
+            textView3.setOnClickListener(new View$OnClickListenerC65028(callback, tLRPC$TL_authorization, baseFragment));
         }
         ScrollView scrollView = new ScrollView(parentActivity);
         scrollView.addView(linearLayout);
@@ -235,12 +235,12 @@ public class SessionBottomSheet extends BottomSheet {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.SessionBottomSheet$8 */
     /* loaded from: classes5.dex */
-    public class View$OnClickListenerC64978 implements View.OnClickListener {
+    public class View$OnClickListenerC65028 implements View.OnClickListener {
         final /* synthetic */ Callback val$callback;
         final /* synthetic */ BaseFragment val$fragment;
         final /* synthetic */ TLRPC$TL_authorization val$session;
 
-        View$OnClickListenerC64978(Callback callback, TLRPC$TL_authorization tLRPC$TL_authorization, BaseFragment baseFragment) {
+        View$OnClickListenerC65028(Callback callback, TLRPC$TL_authorization tLRPC$TL_authorization, BaseFragment baseFragment) {
             this.val$callback = callback;
             this.val$session = tLRPC$TL_authorization;
             this.val$fragment = baseFragment;
@@ -249,18 +249,18 @@ public class SessionBottomSheet extends BottomSheet {
         @Override // android.view.View.OnClickListener
         public void onClick(View view) {
             AlertDialog.Builder builder = new AlertDialog.Builder(SessionBottomSheet.this.parentFragment.getParentActivity());
-            builder.setMessage(LocaleController.getString("TerminateSessionText", C3290R.string.TerminateSessionText));
-            builder.setTitle(LocaleController.getString("AreYouSureSessionTitle", C3290R.string.AreYouSureSessionTitle));
-            String string = LocaleController.getString("Terminate", C3290R.string.Terminate);
+            builder.setMessage(LocaleController.getString("TerminateSessionText", C3295R.string.TerminateSessionText));
+            builder.setTitle(LocaleController.getString("AreYouSureSessionTitle", C3295R.string.AreYouSureSessionTitle));
+            String string = LocaleController.getString("Terminate", C3295R.string.Terminate);
             final Callback callback = this.val$callback;
             final TLRPC$TL_authorization tLRPC$TL_authorization = this.val$session;
             builder.setPositiveButton(string, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.SessionBottomSheet$8$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
-                    SessionBottomSheet.View$OnClickListenerC64978.this.lambda$onClick$0(callback, tLRPC$TL_authorization, dialogInterface, i);
+                    SessionBottomSheet.View$OnClickListenerC65028.this.lambda$onClick$0(callback, tLRPC$TL_authorization, dialogInterface, i);
                 }
             });
-            builder.setNegativeButton(LocaleController.getString("Cancel", C3290R.string.Cancel), null);
+            builder.setNegativeButton(LocaleController.getString("Cancel", C3295R.string.Cancel), null);
             AlertDialog create = builder.create();
             this.val$fragment.showDialog(create);
             TextView textView = (TextView) create.getButton(-1);
@@ -295,7 +295,7 @@ public class SessionBottomSheet extends BottomSheet {
     /* JADX INFO: Access modifiers changed from: private */
     public void copyText(final String str) {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setItems(new CharSequence[]{LocaleController.getString("Copy", C3290R.string.Copy)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.SessionBottomSheet$$ExternalSyntheticLambda0
+        builder.setItems(new CharSequence[]{LocaleController.getString("Copy", C3295R.string.Copy)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.SessionBottomSheet$$ExternalSyntheticLambda0
             @Override // android.content.DialogInterface.OnClickListener
             public final void onClick(DialogInterface dialogInterface, int i) {
                 SessionBottomSheet.this.lambda$copyText$1(str, dialogInterface, i);
@@ -307,7 +307,7 @@ public class SessionBottomSheet extends BottomSheet {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$copyText$1(String str, DialogInterface dialogInterface, int i) {
         ((ClipboardManager) ApplicationLoader.applicationContext.getSystemService("clipboard")).setPrimaryClip(ClipData.newPlainText("label", str));
-        BulletinFactory.m30of(getContainer(), null).createCopyBulletin(LocaleController.getString("TextCopied", C3290R.string.TextCopied)).show();
+        BulletinFactory.m30of(getContainer(), null).createCopyBulletin(LocaleController.getString("TextCopied", C3295R.string.TextCopied)).show();
     }
 
     /* JADX WARN: Removed duplicated region for block: B:55:0x0105  */
@@ -387,10 +387,10 @@ public class SessionBottomSheet extends BottomSheet {
                 sb.append((Object) this.descriptionText.getText());
                 sb.append("\n");
                 if (this.switchView.isChecked()) {
-                    i = C3290R.string.NotificationsOn;
+                    i = C3295R.string.NotificationsOn;
                     str = "NotificationsOn";
                 } else {
-                    i = C3290R.string.NotificationsOff;
+                    i = C3295R.string.NotificationsOff;
                     str = "NotificationsOff";
                 }
                 sb.append(LocaleController.getString(str, i));

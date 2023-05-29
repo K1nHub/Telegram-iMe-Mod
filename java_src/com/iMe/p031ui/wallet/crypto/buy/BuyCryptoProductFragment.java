@@ -42,10 +42,10 @@ import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.databinding.ForkFragmentWalletCryptoBuyBinding;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3356ActionBar;
+import org.telegram.p044ui.ActionBar.C3361ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 /* compiled from: BuyCryptoProductFragment.kt */
@@ -119,7 +119,7 @@ public final class BuyCryptoProductFragment extends WalletAuthFragment implement
 
     @Override // com.iMe.p031ui.wallet.crypto.buy.BuyCryptoProductView
     public void showSuccessPurchase() {
-        DialogsFactoryKt.showSuccessAlert$default(this, getResourceManager().getString(C3290R.string.wallet_crypto_buy_success_dialog_title), getResourceManager().getString(C3290R.string.wallet_crypto_buy_success_dialog_description), null, new Callbacks$Callback() { // from class: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductFragment$$ExternalSyntheticLambda2
+        DialogsFactoryKt.showSuccessAlert$default(this, getResourceManager().getString(C3295R.string.wallet_crypto_buy_success_dialog_title), getResourceManager().getString(C3295R.string.wallet_crypto_buy_success_dialog_description), null, new Callbacks$Callback() { // from class: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductFragment$$ExternalSyntheticLambda2
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 BuyCryptoProductFragment.showSuccessPurchase$lambda$0(BuyCryptoProductFragment.this);
@@ -136,7 +136,7 @@ public final class BuyCryptoProductFragment extends WalletAuthFragment implement
     @Override // com.iMe.p031ui.wallet.crypto.buy.BuyCryptoProductView
     public void showErrorPurchase(String orderId) {
         Intrinsics.checkNotNullParameter(orderId, "orderId");
-        DialogsFactoryKt.showErrorAlert$default(this, getResourceManager().getString(C3290R.string.common_unexpected_error_title), getResourceManager().getString(C3290R.string.wallet_crypto_buy_error_dialog_description, orderId), null, new BuyCryptoProductFragment$showErrorPurchase$1(orderId), null, 20, null);
+        DialogsFactoryKt.showErrorAlert$default(this, getResourceManager().getString(C3295R.string.common_unexpected_error_title), getResourceManager().getString(C3295R.string.wallet_crypto_buy_error_dialog_description, orderId), null, new BuyCryptoProductFragment$showErrorPurchase$1(orderId), null, 20, null);
     }
 
     @Override // com.iMe.p031ui.wallet.crypto.buy.BuyCryptoProductView
@@ -197,13 +197,13 @@ public final class BuyCryptoProductFragment extends WalletAuthFragment implement
     }
 
     private final void setupActionBar() {
-        C3356ActionBar c3356ActionBar = this.actionBar;
-        c3356ActionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
-        c3356ActionBar.setTitle(getResourceManager().getString(C3290R.string.wallet_buy_toolbar_title));
-        c3356ActionBar.setAllowOverlayTitle(true);
-        c3356ActionBar.createMenu();
-        c3356ActionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductFragment$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
+        C3361ActionBar c3361ActionBar = this.actionBar;
+        c3361ActionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
+        c3361ActionBar.setTitle(getResourceManager().getString(C3295R.string.wallet_buy_toolbar_title));
+        c3361ActionBar.setAllowOverlayTitle(true);
+        c3361ActionBar.createMenu();
+        c3361ActionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.buy.BuyCryptoProductFragment$setupActionBar$1$1
+            @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     BuyCryptoProductFragment.this.finishFragment();

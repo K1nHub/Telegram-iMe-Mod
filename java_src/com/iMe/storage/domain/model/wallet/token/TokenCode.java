@@ -87,6 +87,7 @@ public enum TokenCode {
     TUSD,
     HT,
     BTCMT,
+    BTC,
     INTERNAL,
     USD,
     UNKNOWN;
@@ -141,8 +142,12 @@ public enum TokenCode {
         return Companion.getTonCodes().contains(this);
     }
 
+    public final boolean isBitcoinTokens() {
+        return Companion.getBitcoinCodes().contains(this);
+    }
+
     public final boolean isCryptoTokens() {
-        return isBscTokens() || isEthAndTokens() || isPolygonTokens() || isFantomTokens() || isTronTokens() || isTonTokens();
+        return isBscTokens() || isEthAndTokens() || isPolygonTokens() || isFantomTokens() || isTronTokens() || isTonTokens() || isBitcoinTokens();
     }
 
     /* compiled from: TokenCode.kt */
@@ -180,6 +185,10 @@ public enum TokenCode {
                     iArr[NetworkType.THE_OPEN_NETWORK.ordinal()] = 6;
                 } catch (NoSuchFieldError unused6) {
                 }
+                try {
+                    iArr[NetworkType.BITCOIN.ordinal()] = 7;
+                } catch (NoSuchFieldError unused7) {
+                }
                 $EnumSwitchMapping$0 = iArr;
             }
         }
@@ -189,6 +198,26 @@ public enum TokenCode {
         }
 
         private Companion() {
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public final List<TokenCode> getFantomCodes() {
+            return CollectionsKt.listOf(TokenCode.FTM);
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public final List<TokenCode> getTronCodes() {
+            return CollectionsKt.listOf((Object[]) new TokenCode[]{TokenCode.TRX, TokenCode.USDT, TokenCode.ETHER, TokenCode.USDC, TokenCode.TUSD, TokenCode.HT});
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public final List<TokenCode> getTonCodes() {
+            return CollectionsKt.listOf(TokenCode.TON);
+        }
+
+        /* JADX INFO: Access modifiers changed from: private */
+        public final List<TokenCode> getBitcoinCodes() {
+            return CollectionsKt.listOf(TokenCode.BTC);
         }
 
         public final TokenCode map(String code) {
@@ -223,18 +252,6 @@ public enum TokenCode {
             return CollectionsKt.listOf((Object[]) new TokenCode[]{TokenCode.MATIC, TokenCode.USDT, TokenCode.USDC, TokenCode.WBTC, TokenCode.SAND, TokenCode.DAI, TokenCode.QUICK, TokenCode.AAVE, TokenCode.GNS, TokenCode.MANA, TokenCode.LINK, TokenCode.GHST, TokenCode.UNI, TokenCode.LIME, TokenCode.INF, TokenCode.KOM});
         }
 
-        public final List<TokenCode> getFantomCodes() {
-            return CollectionsKt.listOf(TokenCode.FTM);
-        }
-
-        public final List<TokenCode> getTronCodes() {
-            return CollectionsKt.listOf((Object[]) new TokenCode[]{TokenCode.TRX, TokenCode.USDT, TokenCode.ETHER, TokenCode.USDC, TokenCode.TUSD, TokenCode.HT});
-        }
-
-        public final List<TokenCode> getTonCodes() {
-            return CollectionsKt.listOf(TokenCode.TON);
-        }
-
         public final List<TokenCode> getTokensByNetwork(NetworkType networkType) {
             Intrinsics.checkNotNullParameter(networkType, "networkType");
             switch (WhenMappings.$EnumSwitchMapping$0[networkType.ordinal()]) {
@@ -250,6 +267,8 @@ public enum TokenCode {
                     return getTronCodes();
                 case 6:
                     return getTonCodes();
+                case 7:
+                    return getBitcoinCodes();
                 default:
                     throw new NoWhenBranchMatchedException();
             }

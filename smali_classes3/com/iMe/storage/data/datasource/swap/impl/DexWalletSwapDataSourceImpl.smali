@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDexWalletSwapDataSourceImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DexWalletSwapDataSourceImpl.kt\ncom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl\n+ 2 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 4 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,79:1\n14#2:80\n11#3:81\n18#4:82\n*S KotlinDebug\n*F\n+ 1 DexWalletSwapDataSourceImpl.kt\ncom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl\n*L\n31#1:80\n73#1:81\n73#1:82\n*E\n"
+    value = "SMAP\nDexWalletSwapDataSourceImpl.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DexWalletSwapDataSourceImpl.kt\ncom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl\n+ 2 ObservableExt.kt\ncom/iMe/storage/domain/utils/extentions/ObservableExtKt\n+ 3 ResultExt.kt\ncom/iMe/storage/domain/utils/extentions/ResultExtKt\n+ 4 RxExt.kt\ncom/iMe/storage/data/utils/extentions/RxExtKt\n*L\n1#1,83:1\n14#2:84\n7#3:85\n11#3:87\n18#4:86\n18#4:88\n*S KotlinDebug\n*F\n+ 1 DexWalletSwapDataSourceImpl.kt\ncom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl\n*L\n34#1:84\n55#1:85\n77#1:87\n55#1:86\n77#1:88\n*E\n"
 .end annotation
 
 
@@ -42,16 +42,16 @@
 
     invoke-static {p3, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 20
+    .line 23
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 21
+    .line 24
     iput-object p1, p0, Lcom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl;->swapApi:Lcom/iMe/storage/data/network/api/own/SwapApi;
 
-    .line 22
+    .line 25
     iput-object p2, p0, Lcom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
-    .line 23
+    .line 26
     iput-object p3, p0, Lcom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     return-void
@@ -60,7 +60,7 @@
 .method public static final synthetic access$getFirebaseErrorHandler$p(Lcom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl;)Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
     .locals 0
 
-    .line 20
+    .line 23
     iget-object p0, p0, Lcom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl;->firebaseErrorHandler:Lcom/iMe/storage/data/network/handlers/impl/FirebaseFunctionsErrorHandler;
 
     return-object p0
@@ -69,7 +69,7 @@
 .method public static final synthetic access$getSwapApi$p(Lcom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl;)Lcom/iMe/storage/data/network/api/own/SwapApi;
     .locals 0
 
-    .line 20
+    .line 23
     iget-object p0, p0, Lcom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl;->swapApi:Lcom/iMe/storage/data/network/api/own/SwapApi;
 
     return-object p0
@@ -95,133 +95,140 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 49
+    .line 52
     instance-of v0, p1, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;
 
-    if-eqz v0, :cond_5
+    if-eqz v0, :cond_2
 
-    .line 51
+    .line 54
     iget-object v0, p0, Lcom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl;->cryptoAccessManager:Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/manager/crypto/CryptoAccessManager;->getEVMWallet()Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;
 
     move-result-object v0
 
-    if-eqz v0, :cond_0
+    const-string v1, "just(this)"
 
-    .line 52
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->getPrivateKeyBytes()[B
-
-    move-result-object v1
-
-    if-nez v1, :cond_1
-
-    :cond_0
-    const/4 v1, 0x0
-
-    new-array v1, v1, [B
-
-    :cond_1
-    move-object v10, v1
-
-    .line 54
-    check-cast p1, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;
+    if-nez v0, :cond_0
 
     .line 55
+    new-instance p1, Lcom/iMe/storage/data/network/model/error/ErrorModel;
+
+    const/4 v0, 0x3
+
+    const/4 v2, 0x0
+
+    invoke-direct {p1, v2, v2, v0, v2}, Lcom/iMe/storage/data/network/model/error/ErrorModel;-><init>(Lcom/iMe/storage/data/network/model/error/IErrorStatus;Ljava/lang/Throwable;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    .line 7
+    sget-object v0, Lcom/iMe/storage/domain/model/Result;->Companion:Lcom/iMe/storage/domain/model/Result$Companion;
+
+    const/4 v3, 0x2
+
+    invoke-static {v0, p1, v2, v3, v2}, Lcom/iMe/storage/domain/model/Result$Companion;->error$default(Lcom/iMe/storage/domain/model/Result$Companion;Lcom/iMe/storage/data/network/model/error/ErrorModel;Ljava/lang/Object;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/Result;
+
+    move-result-object p1
+
+    .line 18
+    invoke-static {p1}, Lio/reactivex/Observable;->just(Ljava/lang/Object;)Lio/reactivex/Observable;
+
+    move-result-object p1
+
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+
+    return-object p1
+
+    .line 56
+    :cond_0
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->getPrivateKeyBytes()[B
+
+    move-result-object v10
+
+    .line 58
+    check-cast p1, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;
+
+    .line 59
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->getSwapMethod()Lcom/iMe/storage/domain/model/wallet/swap/SwapMethod;
 
-    move-result-object v1
+    move-result-object v2
 
-    if-eqz v0, :cond_2
-
-    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet;->getAddress()Ljava/lang/String;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/Wallet$EVM;->getAddress()Ljava/lang/String;
 
     move-result-object v0
+
+    invoke-virtual {v2, p1, v0}, Lcom/iMe/storage/domain/model/wallet/swap/SwapMethod;->createSmartFunctionParams(Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;Ljava/lang/String;)Lcom/google/protobuf/ByteString;
+
+    move-result-object v0
+
+    .line 60
+    invoke-static {}, Lwallet/core/jni/proto/Ethereum$Transaction;->newBuilder()Lwallet/core/jni/proto/Ethereum$Transaction$Builder;
+
+    move-result-object v2
+
+    .line 62
+    invoke-static {}, Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric;->newBuilder()Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric$Builder;
+
+    move-result-object v3
+
+    .line 63
+    invoke-virtual {v3, v0}, Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric$Builder;->setData(Lcom/google/protobuf/ByteString;)Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric$Builder;
+
+    move-result-object v0
+
+    .line 65
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->getSwapMethod()Lcom/iMe/storage/domain/model/wallet/swap/SwapMethod;
+
+    move-result-object v3
+
+    sget-object v4, Lcom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl$WhenMappings;->$EnumSwitchMapping$0:[I
+
+    invoke-virtual {v3}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v3
+
+    aget v3, v4, v3
+
+    const/4 v4, 0x1
+
+    if-ne v3, v4, :cond_1
+
+    .line 66
+    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->getConvertedAmount()Ljava/math/BigInteger;
+
+    move-result-object v3
 
     goto :goto_0
 
-    :cond_2
-    const/4 v0, 0x0
-
-    :goto_0
-    if-nez v0, :cond_3
-
-    const-string v0, ""
-
-    :cond_3
-    invoke-virtual {v1, p1, v0}, Lcom/iMe/storage/domain/model/wallet/swap/SwapMethod;->createSmartFunctionParams(Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;Ljava/lang/String;)Lcom/google/protobuf/ByteString;
-
-    move-result-object v0
-
-    .line 56
-    invoke-static {}, Lwallet/core/jni/proto/Ethereum$Transaction;->newBuilder()Lwallet/core/jni/proto/Ethereum$Transaction$Builder;
-
-    move-result-object v1
-
-    .line 58
-    invoke-static {}, Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric;->newBuilder()Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric$Builder;
-
-    move-result-object v2
-
-    .line 59
-    invoke-virtual {v2, v0}, Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric$Builder;->setData(Lcom/google/protobuf/ByteString;)Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric$Builder;
-
-    move-result-object v0
-
-    .line 61
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->getSwapMethod()Lcom/iMe/storage/domain/model/wallet/swap/SwapMethod;
-
-    move-result-object v2
-
-    sget-object v3, Lcom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl$WhenMappings;->$EnumSwitchMapping$0:[I
-
-    invoke-virtual {v2}, Ljava/lang/Enum;->ordinal()I
-
-    move-result v2
-
-    aget v2, v3, v2
-
-    const/4 v3, 0x1
-
-    if-ne v2, v3, :cond_4
-
-    .line 62
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->getConvertedAmount()Ljava/math/BigInteger;
-
-    move-result-object v2
-
-    goto :goto_1
-
-    .line 63
-    :cond_4
+    .line 67
+    :cond_1
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->getValue()Ljava/math/BigInteger;
 
-    move-result-object v2
+    move-result-object v3
+
+    .line 68
+    :goto_0
+    invoke-static {v3}, Lcom/iMe/storage/domain/utils/extentions/CryptoExtKt;->toByteString(Ljava/math/BigInteger;)Lcom/google/protobuf/ByteString;
+
+    move-result-object v3
 
     .line 64
-    :goto_1
-    invoke-static {v2}, Lcom/iMe/storage/domain/utils/extentions/CryptoExtKt;->toByteString(Ljava/math/BigInteger;)Lcom/google/protobuf/ByteString;
-
-    move-result-object v2
-
-    .line 60
-    invoke-virtual {v0, v2}, Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric$Builder;->setAmount(Lcom/google/protobuf/ByteString;)Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric$Builder;
+    invoke-virtual {v0, v3}, Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric$Builder;->setAmount(Lcom/google/protobuf/ByteString;)Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric$Builder;
 
     move-result-object v0
 
-    .line 66
+    .line 70
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
 
     move-result-object v0
 
     check-cast v0, Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric;
 
-    .line 57
-    invoke-virtual {v1, v0}, Lwallet/core/jni/proto/Ethereum$Transaction$Builder;->setContractGeneric(Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric;)Lwallet/core/jni/proto/Ethereum$Transaction$Builder;
+    .line 61
+    invoke-virtual {v2, v0}, Lwallet/core/jni/proto/Ethereum$Transaction$Builder;->setContractGeneric(Lwallet/core/jni/proto/Ethereum$Transaction$ContractGeneric;)Lwallet/core/jni/proto/Ethereum$Transaction$Builder;
 
     move-result-object v0
 
-    .line 67
+    .line 71
     invoke-virtual {v0}, Lcom/google/protobuf/GeneratedMessageLite$Builder;->build()Lcom/google/protobuf/GeneratedMessageLite;
 
     move-result-object v0
@@ -230,10 +237,10 @@
 
     check-cast v9, Lwallet/core/jni/proto/Ethereum$Transaction;
 
-    .line 69
+    .line 73
     sget-object v2, Lcom/iMe/storage/data/utils/crypto/EthTransactionSigner;->INSTANCE:Lcom/iMe/storage/data/utils/crypto/EthTransactionSigner;
 
-    .line 70
+    .line 74
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->getChainId()J
 
     move-result-wide v3
@@ -246,7 +253,7 @@
 
     move-result-object v6
 
-    .line 71
+    .line 75
     invoke-virtual {p1}, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;->getNonce()Ljava/math/BigInteger;
 
     move-result-object v7
@@ -259,7 +266,7 @@
 
     invoke-static {v9, p1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 69
+    .line 73
     invoke-virtual/range {v2 .. v10}, Lcom/iMe/storage/data/utils/crypto/EthTransactionSigner;->sign(JLjava/math/BigInteger;Ljava/math/BigInteger;Ljava/math/BigInteger;Ljava/lang/String;Lwallet/core/jni/proto/Ethereum$Transaction;[B)Ljava/lang/String;
 
     move-result-object p1
@@ -276,14 +283,12 @@
 
     move-result-object p1
 
-    const-string v0, "just(this)"
-
-    invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
+    invoke-static {p1, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
     return-object p1
 
-    .line 49
-    :cond_5
+    .line 52
+    :cond_2
     new-instance p1, Ljava/lang/IllegalStateException;
 
     const-string v0, "Incorrect swap args passed"
@@ -296,7 +301,7 @@
 .method public bridge synthetic sign(Ljava/lang/Object;)Lio/reactivex/Observable;
     .locals 0
 
-    .line 20
+    .line 23
     check-cast p1, Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;
 
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl;->sign(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
@@ -324,12 +329,12 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 29
+    .line 32
     instance-of v0, p1, Lcom/iMe/storage/domain/model/crypto/swap/SwapArgs$Dex;
 
     if-eqz v0, :cond_0
 
-    .line 31
+    .line 34
     invoke-virtual {p0, p1}, Lcom/iMe/storage/data/datasource/swap/impl/DexWalletSwapDataSourceImpl;->sign(Lcom/iMe/storage/domain/model/crypto/send/TransactionArgs;)Lio/reactivex/Observable;
 
     move-result-object v0
@@ -353,7 +358,7 @@
 
     return-object p1
 
-    .line 29
+    .line 32
     :cond_0
     new-instance p1, Ljava/lang/IllegalStateException;
 

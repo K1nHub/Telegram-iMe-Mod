@@ -13,7 +13,7 @@ import moxy.InjectViewState;
 /* compiled from: WalletConnectSwitchNetworkPresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.network_change.WalletConnectSwitchNetworkPresenter */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletConnectSwitchNetworkPresenter extends BasePresenter<WalletConnectSwitchNetworkView> {
     private final CryptoPreferenceHelper cryptoPreferenceHelper;
     private final NetworkType networkType;

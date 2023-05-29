@@ -183,7 +183,7 @@ public class TonApi {
 
     /* renamed from: drinkless.org.ton.TonApi$Ok */
     /* loaded from: classes4.dex */
-    public static class C2458Ok extends Object {
+    public static class C2463Ok extends Object {
         public static final int CONSTRUCTOR = -722616727;
 
         @Override // drinkless.org.ton.TonApi.Object

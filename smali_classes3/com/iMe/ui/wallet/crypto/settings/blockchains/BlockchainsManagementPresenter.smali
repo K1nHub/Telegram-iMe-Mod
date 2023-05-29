@@ -19,7 +19,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nBlockchainsManagementPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BlockchainsManagementPresenter.kt\ncom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n*L\n1#1,140:1\n1549#2:141\n1620#2,3:142\n39#3,8:145\n*S KotlinDebug\n*F\n+ 1 BlockchainsManagementPresenter.kt\ncom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter\n*L\n84#1:141\n84#1:142,3\n101#1:145,8\n*E\n"
+    value = "SMAP\nBlockchainsManagementPresenter.kt\nKotlin\n*S Kotlin\n*F\n+ 1 BlockchainsManagementPresenter.kt\ncom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter\n+ 2 _Collections.kt\nkotlin/collections/CollectionsKt___CollectionsKt\n+ 3 RxExt.kt\ncom/iMe/utils/extentions/rx/RxExtKt\n*L\n1#1,145:1\n1549#2:146\n1620#2,3:147\n39#3,8:150\n*S KotlinDebug\n*F\n+ 1 BlockchainsManagementPresenter.kt\ncom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter\n*L\n84#1:146\n84#1:147,3\n101#1:150,8\n*E\n"
 .end annotation
 
 .annotation runtime Lmoxy/InjectViewState;
@@ -119,32 +119,36 @@
 
     const-string v3, "OK"
 
-    if-eq v1, v2, :cond_2
+    if-eq v1, v2, :cond_3
 
     const/4 v2, 0x2
 
-    if-eq v1, v2, :cond_1
+    if-eq v1, v2, :cond_2
 
     const/4 v2, 0x3
 
+    if-eq v1, v2, :cond_1
+
+    const/4 v2, 0x4
+
     if-ne v1, v2, :cond_0
 
-    .line 126
+    .line 131
     new-instance v1, Lcom/iMe/model/dialog/DialogModel;
 
-    .line 127
+    .line 132
     iget-object v2, v0, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    sget v4, Lorg/telegram/messenger/R$string;->wallet_details_info_tron_title:I
+    sget v4, Lorg/telegram/messenger/R$string;->wallet_details_info_bitcoin_title:I
 
     invoke-interface {v2, v4}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v5
 
-    .line 128
+    .line 133
     iget-object v2, v0, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    sget v4, Lorg/telegram/messenger/R$string;->wallet_details_info_tron_description:I
+    sget v4, Lorg/telegram/messenger/R$string;->wallet_details_info_bitcoin_description:I
 
     invoke-interface {v2, v4}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
@@ -152,7 +156,7 @@
 
     const/4 v7, 0x0
 
-    .line 129
+    .line 134
     sget v2, Lorg/telegram/messenger/R$string;->OK:I
 
     invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -165,10 +169,10 @@
 
     move-object v4, v1
 
-    .line 126
+    .line 131
     invoke-direct/range {v4 .. v10}, Lcom/iMe/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    goto :goto_0
+    goto/16 :goto_0
 
     :cond_0
     new-instance v1, Lkotlin/NoWhenBranchMatchedException;
@@ -177,23 +181,23 @@
 
     throw v1
 
-    .line 121
+    .line 126
     :cond_1
     new-instance v1, Lcom/iMe/model/dialog/DialogModel;
 
-    .line 122
+    .line 127
     iget-object v2, v0, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    sget v4, Lorg/telegram/messenger/R$string;->wallet_details_info_ton_title:I
+    sget v4, Lorg/telegram/messenger/R$string;->wallet_details_info_tron_title:I
 
     invoke-interface {v2, v4}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v4
 
-    .line 123
+    .line 128
     iget-object v2, v0, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    sget v5, Lorg/telegram/messenger/R$string;->wallet_details_info_ton_description:I
+    sget v5, Lorg/telegram/messenger/R$string;->wallet_details_info_tron_description:I
 
     invoke-interface {v2, v5}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
@@ -201,7 +205,7 @@
 
     const/4 v6, 0x0
 
-    .line 124
+    .line 129
     sget v2, Lorg/telegram/messenger/R$string;->OK:I
 
     invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -226,28 +230,28 @@
 
     move-object v8, v9
 
-    .line 121
+    .line 126
     invoke-direct/range {v2 .. v8}, Lcom/iMe/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     goto :goto_0
 
-    .line 116
+    .line 121
     :cond_2
     new-instance v1, Lcom/iMe/model/dialog/DialogModel;
 
-    .line 117
+    .line 122
     iget-object v2, v0, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    sget v4, Lorg/telegram/messenger/R$string;->wallet_details_info_evm_title:I
+    sget v4, Lorg/telegram/messenger/R$string;->wallet_details_info_ton_title:I
 
     invoke-interface {v2, v4}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
     move-result-object v11
 
-    .line 118
+    .line 123
     iget-object v2, v0, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
 
-    sget v4, Lorg/telegram/messenger/R$string;->wallet_details_info_evm_description:I
+    sget v4, Lorg/telegram/messenger/R$string;->wallet_details_info_ton_description:I
 
     invoke-interface {v2, v4}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
 
@@ -255,7 +259,7 @@
 
     const/4 v13, 0x0
 
-    .line 119
+    .line 124
     sget v2, Lorg/telegram/messenger/R$string;->OK:I
 
     invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
@@ -268,8 +272,62 @@
 
     move-object v10, v1
 
-    .line 116
+    .line 121
     invoke-direct/range {v10 .. v16}, Lcom/iMe/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
+
+    goto :goto_0
+
+    .line 116
+    :cond_3
+    new-instance v1, Lcom/iMe/model/dialog/DialogModel;
+
+    .line 117
+    iget-object v2, v0, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    sget v4, Lorg/telegram/messenger/R$string;->wallet_details_info_evm_title:I
+
+    invoke-interface {v2, v4}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v4
+
+    .line 118
+    iget-object v2, v0, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->resourceManager:Lcom/iMe/storage/domain/utils/system/ResourceManager;
+
+    sget v5, Lorg/telegram/messenger/R$string;->wallet_details_info_evm_description:I
+
+    invoke-interface {v2, v5}, Lcom/iMe/storage/domain/utils/system/ResourceManager;->getString(I)Ljava/lang/String;
+
+    move-result-object v5
+
+    const/4 v6, 0x0
+
+    .line 119
+    sget v2, Lorg/telegram/messenger/R$string;->OK:I
+
+    invoke-static {v3, v2}, Lorg/telegram/messenger/LocaleController;->getString(Ljava/lang/String;I)Ljava/lang/String;
+
+    move-result-object v7
+
+    const/4 v8, 0x4
+
+    const/4 v9, 0x0
+
+    move-object v2, v1
+
+    move-object v3, v4
+
+    move-object v4, v5
+
+    move-object v5, v6
+
+    move-object v6, v7
+
+    move v7, v8
+
+    move-object v8, v9
+
+    .line 116
+    invoke-direct/range {v2 .. v8}, Lcom/iMe/model/dialog/DialogModel;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
     :goto_0
     return-object v1
@@ -278,7 +336,7 @@
 .method private final getWalletCreationDateText(Lcom/iMe/storage/domain/model/crypto/BlockchainType;)Ljava/lang/String;
     .locals 5
 
-    .line 134
+    .line 139
     iget-object v0, p0, Lcom/iMe/ui/wallet/crypto/settings/blockchains/BlockchainsManagementPresenter;->cryptoPreferenceHelper:Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;
 
     invoke-interface {v0}, Lcom/iMe/storage/domain/storage/CryptoPreferenceHelper;->getWalletCreationDates()Lcom/iMe/storage/domain/model/PreferenceBlockchainMappedData;
@@ -304,7 +362,7 @@
     :cond_0
     move-object p1, v0
 
-    .line 135
+    .line 140
     :goto_0
     sget-object v1, Lcom/iMe/utils/formatter/DateFormatter$DateType;->DATE_AND_TIME:Lcom/iMe/utils/formatter/DateFormatter$DateType;
 

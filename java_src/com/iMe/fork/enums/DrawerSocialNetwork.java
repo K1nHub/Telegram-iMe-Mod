@@ -3,17 +3,17 @@ package com.iMe.fork.enums;
 import kotlin.NoWhenBranchMatchedException;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: DrawerSocialNetwork.kt */
 /* loaded from: classes3.dex */
 public enum DrawerSocialNetwork {
-    TELEGRAM(C3290R.C3292drawable.fork_drawer_social_telegram, C3290R.string.drawer_social_network_telegram),
-    TWITTER(C3290R.C3292drawable.fork_drawer_social_twitter, C3290R.string.drawer_social_network_twitter),
-    YOUTUBE(C3290R.C3292drawable.fork_drawer_social_youtube, C3290R.string.drawer_social_network_youtube),
-    APP_STORE(C3290R.C3292drawable.fork_drawer_social_app_store, C3290R.string.drawer_social_network_app_store),
-    GOOGLE_PLAY(C3290R.C3292drawable.fork_drawer_social_google_play, C3290R.string.drawer_social_network_google_play),
-    SITE(C3290R.C3292drawable.fork_drawer_social_site, C3290R.string.drawer_social_network_site);
+    TELEGRAM(C3295R.C3297drawable.fork_drawer_social_telegram, C3295R.string.drawer_social_network_telegram),
+    TWITTER(C3295R.C3297drawable.fork_drawer_social_twitter, C3295R.string.drawer_social_network_twitter),
+    YOUTUBE(C3295R.C3297drawable.fork_drawer_social_youtube, C3295R.string.drawer_social_network_youtube),
+    APP_STORE(C3295R.C3297drawable.fork_drawer_social_app_store, C3295R.string.drawer_social_network_app_store),
+    GOOGLE_PLAY(C3295R.C3297drawable.fork_drawer_social_google_play, C3295R.string.drawer_social_network_google_play),
+    SITE(C3295R.C3297drawable.fork_drawer_social_site, C3295R.string.drawer_social_network_site);
     
     private final int iconResId;
     private final int titleResId;
@@ -69,7 +69,7 @@ public enum DrawerSocialNetwork {
     public final String url() {
         switch (WhenMappings.$EnumSwitchMapping$0[ordinal()]) {
             case 1:
-                String internalString = LocaleController.getInternalString(C3290R.string.settings_help_alert_channel_username);
+                String internalString = LocaleController.getInternalString(C3295R.string.settings_help_alert_channel_username);
                 Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…p_alert_channel_username)");
                 return internalString;
             case 2:

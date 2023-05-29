@@ -46,7 +46,7 @@ import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
 import org.koin.p043mp.KoinPlatformTools;
 import org.orbitmvi.orbit.viewmodel.ContainerHostExtensionsKt;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkToolbarBinding;
 import org.telegram.messenger.databinding.ForkWebScreenBinding;
@@ -62,7 +62,7 @@ public final class SocialWebScreen extends Fragment implements KoinComponent {
     private final Lazy viewModel$delegate;
 
     public SocialWebScreen() {
-        super(C3290R.layout.fork_web_screen);
+        super(C3295R.layout.fork_web_screen);
         Lazy lazy;
         Lazy lazy2;
         this.binding$delegate = new FragmentViewBindingDelegate(ForkWebScreenBinding.class, this);
@@ -141,7 +141,7 @@ public final class SocialWebScreen extends Fragment implements KoinComponent {
         } else if (Intrinsics.areEqual(socialSideEffects, SocialSideEffects.FinishAuth.INSTANCE)) {
             requireActivity().finish();
         } else if (Intrinsics.areEqual(socialSideEffects, SocialSideEffects.ShowError.INSTANCE)) {
-            ContextExtKt.toast(getResource().getString(C3290R.string.social_unable_to_load_page));
+            ContextExtKt.toast(getResource().getString(C3295R.string.social_unable_to_load_page));
         } else if (socialSideEffects instanceof SocialSideEffects.ShowResetAlert) {
             showResetDialog(((SocialSideEffects.ShowResetAlert) socialSideEffects).getNetworkName());
         } else if (Intrinsics.areEqual(socialSideEffects, SocialSideEffects.RemoveCookies.INSTANCE)) {
@@ -187,10 +187,10 @@ public final class SocialWebScreen extends Fragment implements KoinComponent {
     private final void showImageMenu(SocialNetwork socialNetwork) {
         List mutableListOf;
         String socialName = socialNetwork.getSocialName();
-        String string = getResource().getString(C3290R.string.social_reset_menu_item);
-        int i = C3290R.C3292drawable.msg_delete;
+        String string = getResource().getString(C3295R.string.social_reset_menu_item);
+        int i = C3295R.C3297drawable.msg_delete;
         int i2 = Theme.key_color_red;
-        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new MenuItem(getResource().getString(C3290R.string.social_social_open_in_menu_item, socialName), C3290R.C3292drawable.msg_openin, 0, 0, new SocialWebScreen$showImageMenu$menuItems$1(getViewModel()), 12, null), new MenuItem(string, i, Theme.getColor(i2), Theme.getColor(i2), new SocialWebScreen$showImageMenu$menuItems$2(getViewModel())));
+        mutableListOf = CollectionsKt__CollectionsKt.mutableListOf(new MenuItem(getResource().getString(C3295R.string.social_social_open_in_menu_item, socialName), C3295R.C3297drawable.msg_openin, 0, 0, new SocialWebScreen$showImageMenu$menuItems$1(getViewModel()), 12, null), new MenuItem(string, i, Theme.getColor(i2), Theme.getColor(i2), new SocialWebScreen$showImageMenu$menuItems$2(getViewModel())));
         if (!socialNetwork.getHasEditAccess()) {
             CollectionsKt.removeLast(mutableListOf);
         }
@@ -204,7 +204,7 @@ public final class SocialWebScreen extends Fragment implements KoinComponent {
         String capitalizeOnlyFirstSymbol = StringExtKt.capitalizeOnlyFirstSymbol(getArgs().getSocialNetwork().getSocial().name());
         Context requireContext = requireContext();
         Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        AlertDialog createDialog$default = DialogUtils.createDialog$default(requireContext, new DialogModel(getResource().getString(C3290R.string.social_exit_confirmation_title), getResource().getString(C3290R.string.social_exit_confirmation_message, capitalizeOnlyFirstSymbol), getResource().getString(C3290R.string.social_web_cancel_button), getResource().getString(C3290R.string.social_web_exit_button)), new Callbacks$Callback() { // from class: com.iMe.feature.socialMedias.webScreen.SocialWebScreen$$ExternalSyntheticLambda0
+        AlertDialog createDialog$default = DialogUtils.createDialog$default(requireContext, new DialogModel(getResource().getString(C3295R.string.social_exit_confirmation_title), getResource().getString(C3295R.string.social_exit_confirmation_message, capitalizeOnlyFirstSymbol), getResource().getString(C3295R.string.social_web_cancel_button), getResource().getString(C3295R.string.social_web_exit_button)), new Callbacks$Callback() { // from class: com.iMe.feature.socialMedias.webScreen.SocialWebScreen$$ExternalSyntheticLambda0
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 SocialWebScreen.showCloseDialog$lambda$5(SocialWebScreen.this);
@@ -222,11 +222,11 @@ public final class SocialWebScreen extends Fragment implements KoinComponent {
     }
 
     private final void showResetDialog(String str) {
-        String string = getResource().getString(C3290R.string.social_reset_account_title, str);
-        String string2 = getResource().getString(C3290R.string.social_reset_account_message, str);
+        String string = getResource().getString(C3295R.string.social_reset_account_title, str);
+        String string2 = getResource().getString(C3295R.string.social_reset_account_message, str);
         Context requireContext = requireContext();
         Intrinsics.checkNotNullExpressionValue(requireContext, "requireContext()");
-        DialogModel dialogModel = new DialogModel(string, string2, getResource().getString(C3290R.string.social_reset_account_negative_button), getResource().getString(C3290R.string.social_reset_account_positive_button));
+        DialogModel dialogModel = new DialogModel(string, string2, getResource().getString(C3295R.string.social_reset_account_negative_button), getResource().getString(C3295R.string.social_reset_account_positive_button));
         final SocialWebViewModel viewModel = getViewModel();
         AlertDialog createDialog$default = DialogUtils.createDialog$default(requireContext, dialogModel, new Callbacks$Callback() { // from class: com.iMe.feature.socialMedias.webScreen.SocialWebScreen$$ExternalSyntheticLambda1
             @Override // com.iMe.fork.utils.Callbacks$Callback

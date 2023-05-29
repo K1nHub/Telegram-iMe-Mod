@@ -27,7 +27,7 @@ import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
@@ -53,7 +53,7 @@ public class FiltersView extends RecyclerListView {
     LinearLayoutManager layoutManager;
     private ArrayList<MediaFilterData> oldItems;
     private ArrayList<MediaFilterData> usersFilters;
-    public static final MediaFilterData[] filters = {new MediaFilterData(C3290R.C3292drawable.search_media_filled, C3290R.string.SharedMediaTab2, new TLRPC$TL_inputMessagesFilterPhotoVideo(), 0), new MediaFilterData(C3290R.C3292drawable.search_links_filled, C3290R.string.SharedLinksTab2, new TLRPC$TL_inputMessagesFilterUrl(), 2), new MediaFilterData(C3290R.C3292drawable.search_files_filled, C3290R.string.SharedFilesTab2, new TLRPC$TL_inputMessagesFilterDocument(), 1), new MediaFilterData(C3290R.C3292drawable.search_music_filled, C3290R.string.SharedMusicTab2, new TLRPC$TL_inputMessagesFilterMusic(), 3), new MediaFilterData(C3290R.C3292drawable.search_voice_filled, C3290R.string.SharedVoiceTab2, new TLRPC$TL_inputMessagesFilterRoundVoice(), 5)};
+    public static final MediaFilterData[] filters = {new MediaFilterData(C3295R.C3297drawable.search_media_filled, C3295R.string.SharedMediaTab2, new TLRPC$TL_inputMessagesFilterPhotoVideo(), 0), new MediaFilterData(C3295R.C3297drawable.search_links_filled, C3295R.string.SharedLinksTab2, new TLRPC$TL_inputMessagesFilterUrl(), 2), new MediaFilterData(C3295R.C3297drawable.search_files_filled, C3295R.string.SharedFilesTab2, new TLRPC$TL_inputMessagesFilterDocument(), 1), new MediaFilterData(C3295R.C3297drawable.search_music_filled, C3295R.string.SharedMusicTab2, new TLRPC$TL_inputMessagesFilterMusic(), 3), new MediaFilterData(C3295R.C3297drawable.search_voice_filled, C3295R.string.SharedVoiceTab2, new TLRPC$TL_inputMessagesFilterRoundVoice(), 5)};
     private static final Pattern yearPatter = Pattern.compile("20[0-9]{1,2}");
     private static final Pattern monthYearOrDayPatter = Pattern.compile("(\\w{3,}) ([0-9]{0,4})");
     private static final Pattern yearOrDayAndMonthPatter = Pattern.compile("([0-9]{0,4}) (\\w{2,})");
@@ -194,7 +194,7 @@ public class FiltersView extends RecyclerListView {
                     public void onAnimationEnd(Animator animator) {
                         animate.setListener(null);
                         dispatchAddFinished(viewHolder);
-                        ((DefaultItemAnimator) C34783.this).mAddAnimations.remove(viewHolder);
+                        ((DefaultItemAnimator) C34833.this).mAddAnimations.remove(viewHolder);
                         dispatchFinishedWhenDone();
                     }
                 }).start();
@@ -220,7 +220,7 @@ public class FiltersView extends RecyclerListView {
                         view.setScaleX(1.0f);
                         view.setScaleY(1.0f);
                         dispatchRemoveFinished(viewHolder);
-                        ((DefaultItemAnimator) C34783.this).mRemoveAnimations.remove(viewHolder);
+                        ((DefaultItemAnimator) C34833.this).mRemoveAnimations.remove(viewHolder);
                         dispatchFinishedWhenDone();
                     }
                 }).start();
@@ -256,11 +256,11 @@ public class FiltersView extends RecyclerListView {
                 if (obj instanceof TLRPC$User) {
                     TLRPC$User tLRPC$User = (TLRPC$User) obj;
                     if (UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser().f1574id == tLRPC$User.f1574id) {
-                        formatName = LocaleController.getString("SavedMessages", C3290R.string.SavedMessages);
+                        formatName = LocaleController.getString("SavedMessages", C3295R.string.SavedMessages);
                     } else {
                         formatName = ContactsController.formatName(tLRPC$User.first_name, tLRPC$User.last_name, 10);
                     }
-                    MediaFilterData mediaFilterData = new MediaFilterData(C3290R.C3292drawable.search_users_filled, formatName, (TLRPC$MessagesFilter) null, 4);
+                    MediaFilterData mediaFilterData = new MediaFilterData(C3295R.C3297drawable.search_users_filled, formatName, (TLRPC$MessagesFilter) null, 4);
                     mediaFilterData.setUser(tLRPC$User);
                     this.usersFilters.add(mediaFilterData);
                 } else if (obj instanceof TLRPC$Chat) {
@@ -269,7 +269,7 @@ public class FiltersView extends RecyclerListView {
                     if (str.length() > 12) {
                         str = String.format("%s...", str.substring(0, 10));
                     }
-                    MediaFilterData mediaFilterData2 = new MediaFilterData(C3290R.C3292drawable.search_users_filled, str, (TLRPC$MessagesFilter) null, 4);
+                    MediaFilterData mediaFilterData2 = new MediaFilterData(C3295R.C3297drawable.search_users_filled, str, (TLRPC$MessagesFilter) null, 4);
                     mediaFilterData2.setUser(tLRPC$Chat);
                     this.usersFilters.add(mediaFilterData2);
                 }
@@ -278,13 +278,13 @@ public class FiltersView extends RecyclerListView {
         if (arrayList2 != null) {
             for (int i2 = 0; i2 < arrayList2.size(); i2++) {
                 DateData dateData = arrayList2.get(i2);
-                MediaFilterData mediaFilterData3 = new MediaFilterData(C3290R.C3292drawable.search_date_filled, dateData.title, (TLRPC$MessagesFilter) null, 6);
+                MediaFilterData mediaFilterData3 = new MediaFilterData(C3295R.C3297drawable.search_date_filled, dateData.title, (TLRPC$MessagesFilter) null, 6);
                 mediaFilterData3.setDate(dateData);
                 this.usersFilters.add(mediaFilterData3);
             }
         }
         if (z) {
-            this.usersFilters.add(new MediaFilterData(C3290R.C3292drawable.chats_archive, C3290R.string.ArchiveSearchFilter, (TLRPC$MessagesFilter) null, 7));
+            this.usersFilters.add(new MediaFilterData(C3295R.C3297drawable.chats_archive, C3295R.string.ArchiveSearchFilter, (TLRPC$MessagesFilter) null, 7));
         }
         if (getAdapter() != null) {
             UpdateCallback updateCallback = new UpdateCallback(getAdapter());
@@ -305,7 +305,7 @@ public class FiltersView extends RecyclerListView {
         if (trim.length() < 3) {
             return;
         }
-        int i = C3290R.string.SearchTipToday;
+        int i = C3295R.string.SearchTipToday;
         if (LocaleController.getString("SearchTipToday", i).toLowerCase().startsWith(trim) || "today".startsWith(trim)) {
             Calendar calendar = Calendar.getInstance();
             int i2 = calendar.get(1);
@@ -317,7 +317,7 @@ public class FiltersView extends RecyclerListView {
             arrayList.add(new DateData(LocaleController.getString("SearchTipToday", i), timeInMillis, calendar.getTimeInMillis() - 1));
             return;
         }
-        int i5 = C3290R.string.SearchTipYesterday;
+        int i5 = C3295R.string.SearchTipYesterday;
         if (LocaleController.getString("SearchTipYesterday", i5).toLowerCase().startsWith(trim) || "yesterday".startsWith(trim)) {
             Calendar calendar2 = Calendar.getInstance();
             int i6 = calendar2.get(1);
@@ -532,7 +532,7 @@ public class FiltersView extends RecyclerListView {
     }
 
     public static int getMonth(String str) {
-        String[] strArr = {LocaleController.getString("January", C3290R.string.January).toLowerCase(), LocaleController.getString("February", C3290R.string.February).toLowerCase(), LocaleController.getString("March", C3290R.string.March).toLowerCase(), LocaleController.getString("April", C3290R.string.April).toLowerCase(), LocaleController.getString("May", C3290R.string.May).toLowerCase(), LocaleController.getString("June", C3290R.string.June).toLowerCase(), LocaleController.getString("July", C3290R.string.July).toLowerCase(), LocaleController.getString("August", C3290R.string.August).toLowerCase(), LocaleController.getString("September", C3290R.string.September).toLowerCase(), LocaleController.getString("October", C3290R.string.October).toLowerCase(), LocaleController.getString("November", C3290R.string.November).toLowerCase(), LocaleController.getString("December", C3290R.string.December).toLowerCase()};
+        String[] strArr = {LocaleController.getString("January", C3295R.string.January).toLowerCase(), LocaleController.getString("February", C3295R.string.February).toLowerCase(), LocaleController.getString("March", C3295R.string.March).toLowerCase(), LocaleController.getString("April", C3295R.string.April).toLowerCase(), LocaleController.getString("May", C3295R.string.May).toLowerCase(), LocaleController.getString("June", C3295R.string.June).toLowerCase(), LocaleController.getString("July", C3295R.string.July).toLowerCase(), LocaleController.getString("August", C3295R.string.August).toLowerCase(), LocaleController.getString("September", C3295R.string.September).toLowerCase(), LocaleController.getString("October", C3295R.string.October).toLowerCase(), LocaleController.getString("November", C3295R.string.November).toLowerCase(), LocaleController.getString("December", C3295R.string.December).toLowerCase()};
         String[] strArr2 = new String[12];
         Calendar calendar = Calendar.getInstance();
         for (int i = 1; i <= 12; i++) {
@@ -650,7 +650,7 @@ public class FiltersView extends RecyclerListView {
             this.data = mediaFilterData;
             this.avatarImageView.getImageReceiver().clearImage();
             if (mediaFilterData.filterType == 7) {
-                CombinedDrawable createCircleDrawableWithIcon = Theme.createCircleDrawableWithIcon(AndroidUtilities.m54dp(32), C3290R.C3292drawable.chats_archive);
+                CombinedDrawable createCircleDrawableWithIcon = Theme.createCircleDrawableWithIcon(AndroidUtilities.m54dp(32), C3295R.C3297drawable.chats_archive);
                 this.thumbDrawable = createCircleDrawableWithIcon;
                 createCircleDrawableWithIcon.setIconSize(AndroidUtilities.m54dp(16), AndroidUtilities.m54dp(16));
                 Theme.setCombinedDrawableColor(this.thumbDrawable, getThemedColor(Theme.key_avatar_backgroundArchived), false);
@@ -670,7 +670,7 @@ public class FiltersView extends RecyclerListView {
                 if (tLObject instanceof TLRPC$User) {
                     TLRPC$User tLRPC$User = (TLRPC$User) tLObject;
                     if (UserConfig.getInstance(UserConfig.selectedAccount).getCurrentUser().f1574id == tLRPC$User.f1574id) {
-                        CombinedDrawable createCircleDrawableWithIcon3 = Theme.createCircleDrawableWithIcon(AndroidUtilities.m54dp(32), C3290R.C3292drawable.chats_saved);
+                        CombinedDrawable createCircleDrawableWithIcon3 = Theme.createCircleDrawableWithIcon(AndroidUtilities.m54dp(32), C3295R.C3297drawable.chats_saved);
                         createCircleDrawableWithIcon3.setIconSize(AndroidUtilities.m54dp(16), AndroidUtilities.m54dp(16));
                         Theme.setCombinedDrawableColor(createCircleDrawableWithIcon3, getThemedColor(Theme.key_avatar_backgroundSaved), false);
                         Theme.setCombinedDrawableColor(createCircleDrawableWithIcon3, getThemedColor(i), true);

@@ -22,7 +22,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
@@ -479,10 +479,10 @@ public class ReactedUsersListView extends FrameLayout {
         SimpleTextView titleView;
 
         static {
-            int i = C3290R.C3292drawable.msg_mini_checks;
+            int i = C3295R.C3297drawable.msg_mini_checks;
             int i2 = Theme.key_windowBackgroundWhiteGrayText;
             seenDrawable = new MessageSeenCheckDrawable(i, i2);
-            reactDrawable = new MessageSeenCheckDrawable(C3290R.C3292drawable.msg_reactions, i2, 16, 16, 5.66f);
+            reactDrawable = new MessageSeenCheckDrawable(C3295R.C3297drawable.msg_reactions, i2, 16, 16, 5.66f);
         }
 
         ReactedUserHolderView(int i, Context context) {

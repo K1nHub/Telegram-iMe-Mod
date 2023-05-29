@@ -4,9 +4,10 @@ import java.lang.ref.PhantomReference;
 import java.lang.ref.ReferenceQueue;
 import java.util.HashSet;
 import java.util.Set;
+/* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: PrivateKey.java */
 /* loaded from: classes6.dex */
-class PrivateKeyPhantomReference extends PhantomReference<PrivateKey> {
+public class PrivateKeyPhantomReference extends PhantomReference<PrivateKey> {
     private long nativeHandle;
     private static Set<PrivateKeyPhantomReference> references = new HashSet();
     private static ReferenceQueue<PrivateKey> queue = new ReferenceQueue<>();

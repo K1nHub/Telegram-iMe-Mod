@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.ActionButton;
 import com.iMe.p031ui.custom.WrapContentViewPager;
 import com.tbuonomo.viewpagerdotsindicator.DotsIndicator;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 /* loaded from: classes4.dex */
 public final class ForkFragmentWalletEthTutorialBinding implements ViewBinding {
     public final ActionButton buttonAction;
@@ -34,7 +34,7 @@ public final class ForkFragmentWalletEthTutorialBinding implements ViewBinding {
     }
 
     public static ForkFragmentWalletEthTutorialBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3290R.layout.fork_fragment_wallet_eth_tutorial, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3295R.layout.fork_fragment_wallet_eth_tutorial, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -42,13 +42,13 @@ public final class ForkFragmentWalletEthTutorialBinding implements ViewBinding {
     }
 
     public static ForkFragmentWalletEthTutorialBinding bind(View view) {
-        int i = C3290R.C3293id.button_action;
+        int i = C3295R.C3298id.button_action;
         ActionButton actionButton = (ActionButton) ViewBindings.findChildViewById(view, i);
         if (actionButton != null) {
-            i = C3290R.C3293id.dots_indicator_tutorial;
+            i = C3295R.C3298id.dots_indicator_tutorial;
             DotsIndicator dotsIndicator = (DotsIndicator) ViewBindings.findChildViewById(view, i);
             if (dotsIndicator != null) {
-                i = C3290R.C3293id.view_pager_tutorial;
+                i = C3295R.C3298id.view_pager_tutorial;
                 WrapContentViewPager wrapContentViewPager = (WrapContentViewPager) ViewBindings.findChildViewById(view, i);
                 if (wrapContentViewPager != null) {
                     return new ForkFragmentWalletEthTutorialBinding((RelativeLayout) view, actionButton, dotsIndicator, wrapContentViewPager);

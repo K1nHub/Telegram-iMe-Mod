@@ -20,7 +20,7 @@ import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ImageLocation;
 import org.telegram.messenger.LocaleController;
@@ -243,9 +243,9 @@ public class GroupCallUserCell extends FrameLayout {
         public VerifiedDrawable(Context context) {
             Drawable[] drawableArr = new Drawable[2];
             this.drawables = drawableArr;
-            drawableArr[0] = context.getResources().getDrawable(C3290R.C3292drawable.verified_area).mutate();
+            drawableArr[0] = context.getResources().getDrawable(C3295R.C3297drawable.verified_area).mutate();
             this.drawables[0].setColorFilter(new PorterDuffColorFilter(-9063442, PorterDuff.Mode.MULTIPLY));
-            this.drawables[1] = context.getResources().getDrawable(C3290R.C3292drawable.verified_check).mutate();
+            this.drawables[1] = context.getResources().getDrawable(C3295R.C3297drawable.verified_check).mutate();
         }
 
         @Override // android.graphics.drawable.Drawable
@@ -370,7 +370,7 @@ public class GroupCallUserCell extends FrameLayout {
         boolean z3 = LocaleController.isRTL;
         addView(simpleTextView2, LayoutHelper.createFrame(-1, 20, (z3 ? 5 : 3) | 48, z3 ? 54 : 67, 10, z3 ? 67 : 54, 0));
         this.rightDrawable = new AnimatedEmojiDrawable.SwapAnimatedEmojiDrawable(this.nameTextView, AndroidUtilities.m54dp(20), 9);
-        Drawable drawable = context.getResources().getDrawable(C3290R.C3292drawable.voice_volume_mini);
+        Drawable drawable = context.getResources().getDrawable(C3295R.C3297drawable.voice_volume_mini);
         this.speakingDrawable = drawable;
         drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_voipgroup_speakingText), PorterDuff.Mode.MULTIPLY));
         final int i = 0;
@@ -433,17 +433,17 @@ public class GroupCallUserCell extends FrameLayout {
             } else {
                 if (i == 0) {
                     this.statusTextView[i].setTextColor(Theme.getColor(Theme.key_voipgroup_listeningText));
-                    this.statusTextView[i].setText(LocaleController.getString("Listening", C3290R.string.Listening));
+                    this.statusTextView[i].setText(LocaleController.getString("Listening", C3295R.string.Listening));
                 } else if (i == 1) {
                     this.statusTextView[i].setTextColor(Theme.getColor(Theme.key_voipgroup_speakingText));
-                    this.statusTextView[i].setText(LocaleController.getString("Speaking", C3290R.string.Speaking));
+                    this.statusTextView[i].setText(LocaleController.getString("Speaking", C3295R.string.Speaking));
                     this.statusTextView[i].setDrawablePadding(AndroidUtilities.m54dp(2));
                 } else if (i == 2) {
                     this.statusTextView[i].setTextColor(Theme.getColor(Theme.key_voipgroup_mutedByAdminIcon));
-                    this.statusTextView[i].setText(LocaleController.getString("VoipGroupMutedForMe", C3290R.string.VoipGroupMutedForMe));
+                    this.statusTextView[i].setText(LocaleController.getString("VoipGroupMutedForMe", C3295R.string.VoipGroupMutedForMe));
                 } else if (i == 3) {
                     this.statusTextView[i].setTextColor(Theme.getColor(Theme.key_voipgroup_listeningText));
-                    this.statusTextView[i].setText(LocaleController.getString("WantsToSpeak", C3290R.string.WantsToSpeak));
+                    this.statusTextView[i].setText(LocaleController.getString("WantsToSpeak", C3295R.string.WantsToSpeak));
                 }
                 SimpleTextView simpleTextView4 = this.statusTextView[i];
                 boolean z5 = LocaleController.isRTL;
@@ -458,9 +458,9 @@ public class GroupCallUserCell extends FrameLayout {
         this.fullAboutTextView.setTextColor(Theme.getColor(Theme.key_voipgroup_mutedIcon));
         this.fullAboutTextView.setVisibility(8);
         addView(this.fullAboutTextView, LayoutHelper.createFrame(-1, 60, (LocaleController.isRTL ? 5 : 3) | 48, 14, 32, 14, 0));
-        int i2 = C3290R.raw.voice_outlined2;
+        int i2 = C3295R.raw.voice_outlined2;
         this.muteDrawable = new RLottieDrawable(i2, "" + i2, AndroidUtilities.m54dp(34), AndroidUtilities.m54dp(32), true, null);
-        int i3 = C3290R.raw.hand_1;
+        int i3 = C3295R.raw.hand_1;
         this.shakeHandDrawable = new RLottieDrawable(i3, "" + i3, AndroidUtilities.m54dp(34), AndroidUtilities.m54dp(32), true, null);
         RLottieImageView rLottieImageView = new RLottieImageView(context);
         this.muteButton = rLottieImageView;
@@ -571,7 +571,7 @@ public class GroupCallUserCell extends FrameLayout {
                 }
                 if (isShowPremiumBadgeEnabled && (tLRPC$User = this.currentUser) != null && tLRPC$User.premium) {
                     if (this.premiumDrawable == null) {
-                        this.premiumDrawable = getContext().getResources().getDrawable(C3290R.C3292drawable.msg_premium_liststar).mutate();
+                        this.premiumDrawable = getContext().getResources().getDrawable(C3295R.C3297drawable.msg_premium_liststar).mutate();
                         this.premiumDrawable = new AnimatedEmojiDrawable.WrapSizeDrawable(this, this.premiumDrawable, AndroidUtilities.m54dp(14), AndroidUtilities.m54dp(14)) { // from class: org.telegram.ui.Cells.GroupCallUserCell.3
                             @Override // org.telegram.p044ui.Components.AnimatedEmojiDrawable.WrapSizeDrawable, android.graphics.drawable.Drawable
                             public void draw(Canvas canvas) {
@@ -1055,10 +1055,10 @@ public class GroupCallUserCell extends FrameLayout {
         }
         TLRPC$TL_groupCallParticipant tLRPC$TL_groupCallParticipant = this.participant;
         if (!tLRPC$TL_groupCallParticipant.muted || tLRPC$TL_groupCallParticipant.can_self_unmute) {
-            i = C3290R.string.VoipMute;
+            i = C3295R.string.VoipMute;
             str = "VoipMute";
         } else {
-            i = C3290R.string.VoipUnmute;
+            i = C3295R.string.VoipUnmute;
             str = "VoipUnmute";
         }
         accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(16, LocaleController.getString(str, i)));

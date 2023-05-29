@@ -47,7 +47,7 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Objects;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.LocaleController;
@@ -597,7 +597,7 @@ public class RecyclerListView extends RecyclerView {
                 Paint paint = this.paint2;
                 int i2 = Theme.key_windowBackgroundWhite;
                 paint.setColor(Theme.getColor(i2));
-                Drawable mutate = ContextCompat.getDrawable(context, C3290R.C3292drawable.calendar_date).mutate();
+                Drawable mutate = ContextCompat.getDrawable(context, C3295R.C3297drawable.calendar_date).mutate();
                 this.fastScrollBackgroundDrawable = mutate;
                 mutate.setColorFilter(new PorterDuffColorFilter(ColorUtils.blendARGB(Theme.getColor(i2), -1, 0.1f), PorterDuff.Mode.MULTIPLY));
             }
@@ -608,7 +608,7 @@ public class RecyclerListView extends RecyclerView {
             updateColors();
             setFocusableInTouchMode(true);
             this.touchSlop = ViewConfiguration.get(context).getScaledTouchSlop();
-            this.fastScrollShadowDrawable = ContextCompat.getDrawable(context, C3290R.C3292drawable.fast_scroll_shadow);
+            this.fastScrollShadowDrawable = ContextCompat.getDrawable(context, C3295R.C3297drawable.fast_scroll_shadow);
         }
 
         /* JADX INFO: Access modifiers changed from: private */

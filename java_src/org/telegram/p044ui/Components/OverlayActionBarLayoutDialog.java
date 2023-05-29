@@ -15,7 +15,7 @@ import androidx.core.graphics.ColorUtils;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.p044ui.ActionBar.BaseFragment;
 import org.telegram.p044ui.ActionBar.INavigationLayout;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -60,7 +60,7 @@ public class OverlayActionBarLayoutDialog extends Dialog implements INavigationL
     }
 
     public OverlayActionBarLayoutDialog(Context context, Theme.ResourcesProvider resourcesProvider) {
-        super(context, C3290R.style.TransparentDialog);
+        super(context, C3295R.style.TransparentDialog);
         this.resourcesProvider = resourcesProvider;
         INavigationLayout newLayout = INavigationLayout.CC.newLayout(context);
         this.actionBarLayout = newLayout;
@@ -136,7 +136,7 @@ public class OverlayActionBarLayoutDialog extends Dialog implements INavigationL
         } else if (i >= 21) {
             window.addFlags(-2147417856);
         }
-        window.setWindowAnimations(C3290R.style.DialogNoAnimation);
+        window.setWindowAnimations(C3295R.style.DialogNoAnimation);
         WindowManager.LayoutParams attributes = window.getAttributes();
         attributes.width = -1;
         attributes.gravity = 51;

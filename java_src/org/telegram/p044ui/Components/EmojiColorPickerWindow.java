@@ -14,7 +14,7 @@ import android.widget.PopupWindow;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.lang.reflect.Field;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.CompoundEmoji;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
@@ -170,8 +170,8 @@ public class EmojiColorPickerWindow extends PopupWindow {
             this.touchY = -1;
             this.both = true;
             this.resourcesProvider = resourcesProvider;
-            this.backgroundDrawable = getResources().getDrawable(C3290R.C3292drawable.stickers_back_all);
-            this.arrowDrawable = getResources().getDrawable(C3290R.C3292drawable.stickers_back_arrow);
+            this.backgroundDrawable = getResources().getDrawable(C3295R.C3297drawable.stickers_back_all);
+            this.arrowDrawable = getResources().getDrawable(C3295R.C3297drawable.stickers_back_arrow);
             updateColors();
         }
 

@@ -8,7 +8,7 @@ import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
 import org.telegram.messenger.UserConfig;
@@ -144,7 +144,7 @@ public class AvatarConstructorPreviewCell extends FrameLayout {
         this.textView.setTextColor(Theme.getColor(Theme.key_avatar_text));
         this.textView.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
         this.textView.setGravity(17);
-        this.textView.setText(LocaleController.getString("UseEmoji", C3290R.string.UseEmoji));
+        this.textView.setText(LocaleController.getString("UseEmoji", C3295R.string.UseEmoji));
         addView(this.textView, LayoutHelper.createFrame(-1, 28, 80, 10, 10, 10, 10));
     }
 

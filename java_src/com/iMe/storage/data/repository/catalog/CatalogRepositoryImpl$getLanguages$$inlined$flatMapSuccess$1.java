@@ -36,10 +36,10 @@ public final class CatalogRepositoryImpl$getLanguages$$inlined$flatMapSuccess$1 
     /* compiled from: FirebaseExt.kt */
     /* renamed from: com.iMe.storage.data.repository.catalog.CatalogRepositoryImpl$getLanguages$$inlined$flatMapSuccess$1$1 */
     /* loaded from: classes3.dex */
-    public static final class C18551 extends Lambda implements Function1<List<? extends CatalogLanguage>, Result<? extends List<? extends CatalogLanguage>>> {
-        public static final C18551 INSTANCE = new C18551();
+    public static final class C18601 extends Lambda implements Function1<List<? extends CatalogLanguage>, Result<? extends List<? extends CatalogLanguage>>> {
+        public static final C18601 INSTANCE = new C18601();
 
-        public C18551() {
+        public C18601() {
             super(1);
         }
 
@@ -84,6 +84,6 @@ public final class CatalogRepositoryImpl$getLanguages$$inlined$flatMapSuccess$1 
         schedulersProvider = this.this$0.schedulersProvider;
         Observable subscribeOn = andThen.subscribeOn(schedulersProvider.mo699io());
         Intrinsics.checkNotNullExpressionValue(subscribeOn, "catalogLanguageDao\n     …(schedulersProvider.io())");
-        return subscribeOn.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(C18551.INSTANCE));
+        return subscribeOn.map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(C18601.INSTANCE));
     }
 }

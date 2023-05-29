@@ -23,10 +23,12 @@
 
 .field private final mnemonic:Ljava/lang/String;
 
+.field private final privateKeyBytes:[B
+
 
 # direct methods
 .method public constructor <init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ldrinkless/org/ton/TonApi$InputKeyRegular;)V
-    .locals 7
+    .locals 2
 
     const-string v0, "guid"
 
@@ -44,33 +46,32 @@
 
     invoke-static {p4, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 47
-    sget-object v5, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->TON:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+    .line 59
+    sget-object v0, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->TON:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
-    const/4 v6, 0x0
+    const/4 v1, 0x0
 
-    move-object v1, p0
+    .line 56
+    invoke-direct {p0, p1, p2, v0, v1}, Lcom/iMe/storage/domain/model/crypto/Wallet;-><init>(Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    move-object v2, p1
-
-    move-object v3, p2
-
-    move-object v4, p3
-
-    .line 43
-    invoke-direct/range {v1 .. v6}, Lcom/iMe/storage/domain/model/crypto/Wallet;-><init>(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Lcom/iMe/storage/domain/model/crypto/BlockchainType;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
-
-    .line 39
+    .line 52
     iput-object p1, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$TON;->guid:Ljava/lang/String;
 
-    .line 40
+    .line 53
     iput-object p2, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$TON;->mnemonic:Ljava/lang/String;
 
-    .line 41
+    .line 54
     iput-object p3, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$TON;->address:Ljava/lang/String;
 
-    .line 42
+    .line 55
     iput-object p4, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$TON;->inputKey:Ldrinkless/org/ton/TonApi$InputKeyRegular;
+
+    const/4 p1, 0x0
+
+    new-array p1, p1, [B
+
+    .line 62
+    iput-object p1, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$TON;->privateKeyBytes:[B
 
     return-void
 .end method
@@ -276,7 +277,7 @@
 .method public getAddress()Ljava/lang/String;
     .locals 1
 
-    .line 41
+    .line 54
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$TON;->address:Ljava/lang/String;
 
     return-object v0
@@ -285,7 +286,7 @@
 .method public getGuid()Ljava/lang/String;
     .locals 1
 
-    .line 39
+    .line 52
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$TON;->guid:Ljava/lang/String;
 
     return-object v0
@@ -294,7 +295,7 @@
 .method public final getInputKey()Ldrinkless/org/ton/TonApi$InputKeyRegular;
     .locals 1
 
-    .line 42
+    .line 55
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$TON;->inputKey:Ldrinkless/org/ton/TonApi$InputKeyRegular;
 
     return-object v0
@@ -303,8 +304,17 @@
 .method public getMnemonic()Ljava/lang/String;
     .locals 1
 
-    .line 40
+    .line 53
     iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$TON;->mnemonic:Ljava/lang/String;
+
+    return-object v0
+.end method
+
+.method public getPrivateKeyBytes()[B
+    .locals 1
+
+    .line 62
+    iget-object v0, p0, Lcom/iMe/storage/domain/model/crypto/Wallet$TON;->privateKeyBytes:[B
 
     return-object v0
 .end method

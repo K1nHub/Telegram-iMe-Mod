@@ -48,7 +48,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 71
+    .line 74
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -91,7 +91,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 65
+    .line 68
     sget-object v0, Lcom/iMe/storage/domain/provider/crypto/SmartContractProvider;->INSTANCE:Lcom/iMe/storage/domain/provider/crypto/SmartContractProvider;
 
     invoke-virtual {v0, p1, p0}, Lcom/iMe/storage/domain/provider/crypto/SmartContractProvider;->getContract(Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Lcom/iMe/storage/domain/model/crypto/NetworkType;)Ljava/lang/String;
@@ -102,7 +102,7 @@
 
     const-string p1, ""
 
-    .line 66
+    .line 69
     :cond_0
     new-instance v0, Ljava/lang/StringBuilder;
 
@@ -130,7 +130,7 @@
 .method private final getScanAddressUrlMainPart(Lcom/iMe/storage/domain/model/crypto/NetworkType;)Ljava/lang/String;
     .locals 1
 
-    .line 84
+    .line 90
     sget-object v0, Lcom/iMe/storage/common/AppConfiguration$Crypto$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
@@ -157,7 +157,7 @@
 .method private final getScanTxUrlMainPart(Lcom/iMe/storage/domain/model/crypto/NetworkType;)Ljava/lang/String;
     .locals 1
 
-    .line 90
+    .line 96
     sget-object v0, Lcom/iMe/storage/common/AppConfiguration$Crypto$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
@@ -168,34 +168,50 @@
 
     const/4 v0, 0x5
 
-    if-ne p1, v0, :cond_0
+    if-eq p1, v0, :cond_1
 
-    const-string p1, "#/transaction/"
+    const/4 v0, 0x7
+
+    if-eq p1, v0, :cond_0
+
+    const-string p1, "tx/"
 
     goto :goto_0
 
     :cond_0
-    const-string p1, "tx/"
+    const-string p1, "transaction/"
+
+    goto :goto_0
+
+    :cond_1
+    const-string p1, "#/transaction/"
 
     :goto_0
     return-object p1
 .end method
 
 .method private final getScanUrlByToken(Lcom/iMe/storage/domain/model/crypto/NetworkType;)Ljava/lang/String;
-    .locals 1
+    .locals 2
 
-    .line 74
-    sget-object v0, Lcom/iMe/storage/common/AppConfiguration$Crypto$WhenMappings;->$EnumSwitchMapping$0:[I
+    .line 77
+    sget-object v0, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->INSTANCE:Lcom/iMe/storage/data/manager/common/EnvironmentManager;
+
+    invoke-virtual {v0}, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->getEnvironmentInformation()Lcom/iMe/storage/domain/model/common/EnvironmentInformation;
+
+    move-result-object v0
+
+    .line 78
+    sget-object v1, Lcom/iMe/storage/common/AppConfiguration$Crypto$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
 
     move-result p1
 
-    aget p1, v0, p1
+    aget p1, v1, p1
 
     packed-switch p1, :pswitch_data_0
 
-    .line 80
+    .line 85
     new-instance p1, Lkotlin/NoWhenBranchMatchedException;
 
     invoke-direct {p1}, Lkotlin/NoWhenBranchMatchedException;-><init>()V
@@ -203,93 +219,64 @@
     throw p1
 
     :pswitch_0
-    sget-object p1, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->INSTANCE:Lcom/iMe/storage/data/manager/common/EnvironmentManager;
-
-    invoke-virtual {p1}, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->getEnvironmentInformation()Lcom/iMe/storage/domain/model/common/EnvironmentInformation;
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/common/EnvironmentInformation;->getBitcoinScanUrl()Ljava/lang/String;
 
     move-result-object p1
 
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/common/EnvironmentInformation;->getTonScanUrl()Ljava/lang/String;
+    goto :goto_0
+
+    .line 84
+    :pswitch_1
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/common/EnvironmentInformation;->getTonScanUrl()Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    .line 83
+    :pswitch_2
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/common/EnvironmentInformation;->getTronScanUrl()Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    .line 82
+    :pswitch_3
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/common/EnvironmentInformation;->getFantomScanUrl()Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    .line 81
+    :pswitch_4
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/common/EnvironmentInformation;->getPolygonScanUrl()Ljava/lang/String;
+
+    move-result-object p1
+
+    goto :goto_0
+
+    .line 80
+    :pswitch_5
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/common/EnvironmentInformation;->getBscScanUrl()Ljava/lang/String;
 
     move-result-object p1
 
     goto :goto_0
 
     .line 79
-    :pswitch_1
-    sget-object p1, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->INSTANCE:Lcom/iMe/storage/data/manager/common/EnvironmentManager;
-
-    invoke-virtual {p1}, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->getEnvironmentInformation()Lcom/iMe/storage/domain/model/common/EnvironmentInformation;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/common/EnvironmentInformation;->getTronScanUrl()Ljava/lang/String;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    .line 78
-    :pswitch_2
-    sget-object p1, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->INSTANCE:Lcom/iMe/storage/data/manager/common/EnvironmentManager;
-
-    invoke-virtual {p1}, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->getEnvironmentInformation()Lcom/iMe/storage/domain/model/common/EnvironmentInformation;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/common/EnvironmentInformation;->getFantomScanUrl()Ljava/lang/String;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    .line 77
-    :pswitch_3
-    sget-object p1, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->INSTANCE:Lcom/iMe/storage/data/manager/common/EnvironmentManager;
-
-    invoke-virtual {p1}, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->getEnvironmentInformation()Lcom/iMe/storage/domain/model/common/EnvironmentInformation;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/common/EnvironmentInformation;->getPolygonScanUrl()Ljava/lang/String;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    .line 76
-    :pswitch_4
-    sget-object p1, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->INSTANCE:Lcom/iMe/storage/data/manager/common/EnvironmentManager;
-
-    invoke-virtual {p1}, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->getEnvironmentInformation()Lcom/iMe/storage/domain/model/common/EnvironmentInformation;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/common/EnvironmentInformation;->getBscScanUrl()Ljava/lang/String;
-
-    move-result-object p1
-
-    goto :goto_0
-
-    .line 75
-    :pswitch_5
-    sget-object p1, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->INSTANCE:Lcom/iMe/storage/data/manager/common/EnvironmentManager;
-
-    invoke-virtual {p1}, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->getEnvironmentInformation()Lcom/iMe/storage/domain/model/common/EnvironmentInformation;
-
-    move-result-object p1
-
-    invoke-virtual {p1}, Lcom/iMe/storage/domain/model/common/EnvironmentInformation;->getEtherScanUrl()Ljava/lang/String;
+    :pswitch_6
+    invoke-virtual {v0}, Lcom/iMe/storage/domain/model/common/EnvironmentInformation;->getEtherScanUrl()Ljava/lang/String;
 
     move-result-object p1
 
     :goto_0
     return-object p1
 
-    nop
-
     :pswitch_data_0
     .packed-switch 0x1
+        :pswitch_6
         :pswitch_5
         :pswitch_4
         :pswitch_3
@@ -302,7 +289,7 @@
 .method private final getTokenUrlMainPart(Lcom/iMe/storage/domain/model/crypto/NetworkType;)Ljava/lang/String;
     .locals 1
 
-    .line 96
+    .line 103
     sget-object v0, Lcom/iMe/storage/common/AppConfiguration$Crypto$WhenMappings;->$EnumSwitchMapping$0:[I
 
     invoke-virtual {p1}, Ljava/lang/Enum;->ordinal()I
@@ -339,7 +326,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 61
+    .line 64
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
@@ -376,7 +363,7 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 58
+    .line 61
     new-instance v0, Ljava/lang/StringBuilder;
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V

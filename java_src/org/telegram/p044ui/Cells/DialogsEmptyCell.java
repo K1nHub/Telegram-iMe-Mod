@@ -15,10 +15,10 @@ import androidx.core.util.Consumer;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.iMe.p031ui.dialogs.EmptyCellType;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
-import org.telegram.p044ui.ActionBar.C3356ActionBar;
+import org.telegram.p044ui.ActionBar.C3361ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.BlurredRecyclerView;
 import org.telegram.p044ui.Components.Easings;
@@ -78,8 +78,8 @@ public class DialogsEmptyCell extends LinearLayout {
                 return lambda$new$2;
             }
         });
-        this.subtitleView.setInAnimation(context, C3290R.anim.alpha_in);
-        this.subtitleView.setOutAnimation(context, C3290R.anim.alpha_out);
+        this.subtitleView.setInAnimation(context, C3295R.anim.alpha_in);
+        this.subtitleView.setOutAnimation(context, C3295R.anim.alpha_out);
         addView(this.subtitleView, LayoutHelper.createFrame(-1, -2, 51, 52, 7, 52, 0));
     }
 
@@ -123,32 +123,32 @@ public class DialogsEmptyCell extends LinearLayout {
             string = LocaleController.getInternalString(emptyCellType.getSubtitleResId());
             this.titleView.setText(LocaleController.getInternalString(emptyCellType.getTitleResId()));
         } else if (i == 0 || i == 1) {
-            i2 = C3290R.raw.utyan_newborn;
-            string = LocaleController.getString("NoChatsHelp", C3290R.string.NoChatsHelp);
-            this.titleView.setText(LocaleController.getString("NoChats", C3290R.string.NoChats));
+            i2 = C3295R.raw.utyan_newborn;
+            string = LocaleController.getString("NoChatsHelp", C3295R.string.NoChatsHelp);
+            this.titleView.setText(LocaleController.getString("NoChats", C3295R.string.NoChats));
         } else if (i == 2) {
             this.imageView.setAutoRepeat(false);
-            int i3 = C3290R.raw.filter_no_chats;
+            int i3 = C3295R.raw.filter_no_chats;
             if (z) {
-                this.titleView.setText(LocaleController.getString("FilterNoChatsToForward", C3290R.string.FilterNoChatsToForward));
-                string = LocaleController.getString("FilterNoChatsToForwardInfo", C3290R.string.FilterNoChatsToForwardInfo);
+                this.titleView.setText(LocaleController.getString("FilterNoChatsToForward", C3295R.string.FilterNoChatsToForward));
+                string = LocaleController.getString("FilterNoChatsToForwardInfo", C3295R.string.FilterNoChatsToForwardInfo);
             } else {
-                this.titleView.setText(LocaleController.getString("FilterNoChatsToDisplay", C3290R.string.FilterNoChatsToDisplay));
-                string = LocaleController.getString("FilterNoChatsToDisplayInfo", C3290R.string.FilterNoChatsToDisplayInfo);
+                this.titleView.setText(LocaleController.getString("FilterNoChatsToDisplay", C3295R.string.FilterNoChatsToDisplay));
+                string = LocaleController.getString("FilterNoChatsToDisplayInfo", C3295R.string.FilterNoChatsToDisplayInfo);
             }
             i2 = i3;
         } else {
             this.imageView.setAutoRepeat(true);
-            i2 = C3290R.raw.filter_new;
-            string = LocaleController.getString("FilterAddingChatsInfo", C3290R.string.FilterAddingChatsInfo);
-            this.titleView.setText(LocaleController.getString("FilterAddingChats", C3290R.string.FilterAddingChats));
+            i2 = C3295R.raw.filter_new;
+            string = LocaleController.getString("FilterAddingChatsInfo", C3295R.string.FilterAddingChatsInfo);
+            this.titleView.setText(LocaleController.getString("FilterAddingChats", C3295R.string.FilterAddingChats));
         }
         if (i2 != 0) {
             this.imageView.setVisibility(0);
             if (this.currentType == 1) {
                 if (isUtyanAnimationTriggered()) {
                     this.utyanCollapseProgress = 1.0f;
-                    String string2 = LocaleController.getString("NoChatsContactsHelp", C3290R.string.NoChatsContactsHelp);
+                    String string2 = LocaleController.getString("NoChatsContactsHelp", C3295R.string.NoChatsContactsHelp);
                     if (AndroidUtilities.isTablet() && !AndroidUtilities.isSmallTablet()) {
                         string2 = string2.replace('\n', ' ');
                     }
@@ -222,7 +222,7 @@ public class DialogsEmptyCell extends LinearLayout {
         }
         this.utyanAnimationTriggered = true;
         if (z) {
-            String string = LocaleController.getString("NoChatsContactsHelp", C3290R.string.NoChatsContactsHelp);
+            String string = LocaleController.getString("NoChatsContactsHelp", C3295R.string.NoChatsContactsHelp);
             if (AndroidUtilities.isTablet() && !AndroidUtilities.isSmallTablet()) {
                 string = string.replace('\n', ' ');
             }
@@ -274,7 +274,7 @@ public class DialogsEmptyCell extends LinearLayout {
     }
 
     public void updateLayout() {
-        float currentActionBarHeight = (int) (0 - (((int) (C3356ActionBar.getCurrentActionBarHeight() / 2.0f)) * (1.0f - this.utyanCollapseProgress)));
+        float currentActionBarHeight = (int) (0 - (((int) (C3361ActionBar.getCurrentActionBarHeight() / 2.0f)) * (1.0f - this.utyanCollapseProgress)));
         this.imageView.setTranslationY(currentActionBarHeight);
         this.titleView.setTranslationY(currentActionBarHeight);
         this.subtitleView.setTranslationY(currentActionBarHeight);
@@ -293,7 +293,7 @@ public class DialogsEmptyCell extends LinearLayout {
         }
         if (size == 0) {
             int i2 = AndroidUtilities.displaySize.y;
-            C3356ActionBar.getCurrentActionBarHeight();
+            C3361ActionBar.getCurrentActionBarHeight();
             if (Build.VERSION.SDK_INT >= 21) {
                 int i3 = AndroidUtilities.statusBarHeight;
             }

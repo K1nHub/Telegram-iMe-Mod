@@ -3,7 +3,7 @@ package p034j$.time.temporal;
 import p034j$.time.Duration;
 /* renamed from: j$.time.temporal.ChronoUnit */
 /* loaded from: classes2.dex */
-public enum ChronoUnit implements InterfaceC2640l {
+public enum ChronoUnit implements InterfaceC2645l {
     NANOS("Nanos", Duration.m674b(1)),
     MICROS("Micros", Duration.m674b(1000)),
     MILLIS("Millis", Duration.m674b(1000000)),

@@ -43,8 +43,8 @@ public final class C0718R {
         public static final int wallet_hint_foreground_holo_light = 2131099954;
         public static final int wallet_holo_blue_light = 2131099955;
         public static final int wallet_link_text_light = 2131099956;
-        public static final int wallet_primary_text_holo_light = 2131099963;
-        public static final int wallet_secondary_text_holo_dark = 2131099964;
+        public static final int wallet_primary_text_holo_light = 2131099964;
+        public static final int wallet_secondary_text_holo_dark = 2131099965;
 
         private C0719color() {
         }
@@ -103,7 +103,7 @@ public final class C0718R {
     /* renamed from: com.google.android.gms.wallet.R$string */
     /* loaded from: classes3.dex */
     public static final class string {
-        public static final int wallet_buy_button_place_holder = 2131829059;
+        public static final int wallet_buy_button_place_holder = 2131829062;
 
         private string() {
         }

@@ -6,7 +6,7 @@ import kotlin.jvm.internal.Lambda;
 import org.telegram.messenger.databinding.ForkFragmentWalletConnectBinding;
 /* compiled from: WalletConnectFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment$binding$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class WalletConnectFragment$binding$2 extends Lambda implements Function0<ForkFragmentWalletConnectBinding> {
     final /* synthetic */ WalletConnectFragment this$0;
 

@@ -11,7 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Components.LayoutHelper;
@@ -40,7 +40,7 @@ public class ThemeTypeCell extends FrameLayout {
         ImageView imageView = new ImageView(context);
         this.checkImage = imageView;
         imageView.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_featuredStickers_addedIcon), PorterDuff.Mode.MULTIPLY));
-        this.checkImage.setImageResource(C3290R.C3292drawable.sticker_added);
+        this.checkImage.setImageResource(C3295R.C3297drawable.sticker_added);
         addView(this.checkImage, LayoutHelper.createFrame(19, 14, (LocaleController.isRTL ? 3 : 5) | 16, 23, 0, 23, 0));
     }
 

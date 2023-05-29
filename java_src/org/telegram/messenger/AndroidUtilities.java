@@ -143,7 +143,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicReference;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
-import org.telegram.PhoneFormat.C3207PhoneFormat;
+import org.telegram.PhoneFormat.C3212PhoneFormat;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
@@ -351,7 +351,7 @@ public class AndroidUtilities {
             return Long.toString(j);
         } else {
             TreeMap treeMap = new TreeMap();
-            String[] stringArray = ApplicationLoader.applicationContext.getResources().getStringArray(C3290R.array.short_numbers);
+            String[] stringArray = ApplicationLoader.applicationContext.getResources().getStringArray(C3295R.array.short_numbers);
             boolean z = false;
             treeMap.put(1000L, stringArray[0]);
             treeMap.put(1000000L, stringArray[1]);
@@ -424,10 +424,10 @@ public class AndroidUtilities {
         UndoView undoView = baseFragment instanceof ChatActivity ? ((ChatActivity) baseFragment).getUndoView() : null;
         if (!pathToMessage.exists()) {
             if (undoView != null) {
-                undoView.showError(LocaleController.getString("ErrorOccurred", C3290R.string.ErrorOccurred));
+                undoView.showError(LocaleController.getString("ErrorOccurred", C3295R.string.ErrorOccurred));
                 return;
             } else {
-                BulletinFactory.m30of(baseFragment.getLayoutContainer(), baseFragment.getResourceProvider()).createSimpleBulletin(C3290R.raw.error, LocaleController.getString("ErrorOccurred", C3290R.string.ErrorOccurred)).show();
+                BulletinFactory.m30of(baseFragment.getLayoutContainer(), baseFragment.getResourceProvider()).createSimpleBulletin(C3295R.raw.error, LocaleController.getString("ErrorOccurred", C3295R.string.ErrorOccurred)).show();
                 return;
             }
         }
@@ -436,7 +436,7 @@ public class AndroidUtilities {
         if (undoView != null) {
             undoView.showWithAction(0L, IdFabric$CustomType.UNDO_IMAGE_COPIED, (Runnable) null);
         } else {
-            BulletinFactory.m30of(baseFragment.getLayoutContainer(), baseFragment.getResourceProvider()).createCopyBulletin(LocaleController.getInternalString(C3290R.string.photo_viewer_image_copied)).show();
+            BulletinFactory.m30of(baseFragment.getLayoutContainer(), baseFragment.getResourceProvider()).createCopyBulletin(LocaleController.getInternalString(C3295R.string.photo_viewer_image_copied)).show();
         }
     }
 
@@ -455,8 +455,8 @@ public class AndroidUtilities {
         }
         leftBaseline = isTablet() ? 80 : 72;
         checkDisplaySize(ApplicationLoader.applicationContext, null);
-        documentIcons = new int[]{C3290R.C3292drawable.media_doc_blue, C3290R.C3292drawable.media_doc_green, C3290R.C3292drawable.media_doc_red, C3290R.C3292drawable.media_doc_yellow};
-        documentMediaIcons = new int[]{C3290R.C3292drawable.media_doc_blue_b, C3290R.C3292drawable.media_doc_green_b, C3290R.C3292drawable.media_doc_red_b, C3290R.C3292drawable.media_doc_yellow_b};
+        documentIcons = new int[]{C3295R.C3297drawable.media_doc_blue, C3295R.C3297drawable.media_doc_green, C3295R.C3297drawable.media_doc_red, C3295R.C3297drawable.media_doc_yellow};
+        documentMediaIcons = new int[]{C3295R.C3297drawable.media_doc_blue_b, C3295R.C3297drawable.media_doc_green_b, C3295R.C3297drawable.media_doc_red_b, C3295R.C3297drawable.media_doc_yellow_b};
         sUrlMatchFilter = AndroidUtilities$$ExternalSyntheticLambda4.INSTANCE;
         hasCallPermissions = Build.VERSION.SDK_INT >= 23;
         numbersSignatureArray = new String[]{"", "K", "M", "G", "T", "P"};
@@ -1326,13 +1326,13 @@ public class AndroidUtilities {
             }
             AlertDialog.Builder builder = new AlertDialog.Builder(baseFragment.getParentActivity());
             builder.setMessage(LocaleController.getString(ApplicationLoader.getMapsProvider().getInstallMapsString()));
-            builder.setPositiveButton(LocaleController.getString("OK", C3290R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda3
+            builder.setPositiveButton(LocaleController.getString("OK", C3295R.string.OK), new DialogInterface.OnClickListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda3
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     AndroidUtilities.lambda$isMapsInstalled$5(mapsAppPackageName, baseFragment, dialogInterface, i);
                 }
             });
-            builder.setNegativeButton(LocaleController.getString("Cancel", C3290R.string.Cancel), null);
+            builder.setNegativeButton(LocaleController.getString("Cancel", C3295R.string.Cancel), null);
             baseFragment.showDialog(builder.create());
             return false;
         }
@@ -1577,7 +1577,7 @@ public class AndroidUtilities {
             if (z) {
                 int i2 = this.type;
                 if (i2 == 0) {
-                    return C3207PhoneFormat.getInstance().format(sb.toString());
+                    return C3212PhoneFormat.getInstance().format(sb.toString());
                 }
                 if (i2 == 5) {
                     String[] split3 = sb.toString().split("T");
@@ -1654,7 +1654,7 @@ public class AndroidUtilities {
         VcardItem vcardItem;
         ArrayList<VcardItem> arrayList2 = arrayList;
         ArrayList<TLRPC$User> arrayList3 = null;
-        C32081 c32081 = 0;
+        C32131 c32131 = 0;
         if (z) {
             try {
                 createInputStream = ApplicationLoader.applicationContext.getContentResolver().openAssetFileDescriptor(uri, "r").createInputStream();
@@ -1719,7 +1719,7 @@ public class AndroidUtilities {
                                                     vcardItem = new VcardItem();
                                                     vcardItem.type = 20;
                                                 }
-                                                vcardItem2 = c32081;
+                                                vcardItem2 = c32131;
                                                 if (vcardItem2 != null && vcardItem2.type >= 0) {
                                                     arrayList2.add(vcardItem2);
                                                 }
@@ -1739,7 +1739,7 @@ public class AndroidUtilities {
                             }
                             i3 = i2;
                         }
-                        vcardItem2 = c32081;
+                        vcardItem2 = c32131;
                         i3 = i2;
                     }
                     if (i3 == 0 && vcardData != null) {
@@ -1759,7 +1759,7 @@ public class AndroidUtilities {
                     String str4 = "=";
                     if (readLine.contains("=QUOTED-PRINTABLE") && readLine.endsWith("=")) {
                         str3 = readLine.substring(i2, readLine.length() - 1);
-                        c32081 = 0;
+                        c32131 = 0;
                     } else {
                         if (i3 == 0 && vcardData != null && vcardItem2 != null) {
                             vcardItem2.fullData = readLine;
@@ -1813,13 +1813,13 @@ public class AndroidUtilities {
                             }
                             arrayList2 = arrayList;
                             str3 = str2;
-                            c32081 = 0;
+                            c32131 = 0;
                             i2 = 0;
                         }
                         str2 = str3;
                         arrayList2 = arrayList;
                         str3 = str2;
-                        c32081 = 0;
+                        c32131 = 0;
                         i2 = 0;
                     }
                 }
@@ -2356,7 +2356,7 @@ public class AndroidUtilities {
     }
 
     public static boolean isTabletForce() {
-        return ApplicationLoader.applicationContext != null && ApplicationLoader.applicationContext.getResources().getBoolean(C3290R.bool.isTablet);
+        return ApplicationLoader.applicationContext != null && ApplicationLoader.applicationContext.getResources().getBoolean(C3295R.bool.isTablet);
     }
 
     public static boolean isTabletInternal() {
@@ -2470,7 +2470,7 @@ public class AndroidUtilities {
     public static boolean checkPhonePattern(String str, String str2) {
         if (!TextUtils.isEmpty(str) && !str.equals("*")) {
             String[] split = str.split("\\*");
-            String stripExceptNumbers = C3207PhoneFormat.stripExceptNumbers(str2);
+            String stripExceptNumbers = C3212PhoneFormat.stripExceptNumbers(str2);
             int i = 0;
             for (String str3 : split) {
                 if (!TextUtils.isEmpty(str3)) {
@@ -2811,7 +2811,7 @@ public class AndroidUtilities {
         if (view == null) {
             return;
         }
-        int i = C3290R.C3293id.shake_animation;
+        int i = C3295R.C3298id.shake_animation;
         Object tag = view.getTag(i);
         if (tag instanceof ValueAnimator) {
             ((ValueAnimator) tag).cancel();
@@ -2854,11 +2854,11 @@ public class AndroidUtilities {
 
     public static void shakeViewSpring(final View view, float f, final Runnable runnable) {
         int m55dp = m55dp(f);
-        int i = C3290R.C3293id.spring_tag;
+        int i = C3295R.C3298id.spring_tag;
         if (view.getTag(i) != null) {
             ((SpringAnimation) view.getTag(i)).cancel();
         }
-        int i2 = C3290R.C3293id.spring_was_translation_x_tag;
+        int i2 = C3295R.C3298id.spring_was_translation_x_tag;
         Float f2 = (Float) view.getTag(i2);
         if (f2 != null) {
             view.setTranslationX(f2.floatValue());
@@ -2881,8 +2881,8 @@ public class AndroidUtilities {
             runnable.run();
         }
         view.setTranslationX(f);
-        view.setTag(C3290R.C3293id.spring_tag, null);
-        view.setTag(C3290R.C3293id.spring_was_translation_x_tag, null);
+        view.setTag(C3295R.C3298id.spring_tag, null);
+        view.setTag(C3295R.C3298id.spring_was_translation_x_tag, null);
     }
 
     public static void appCenterLog(Throwable th) {
@@ -3373,10 +3373,10 @@ public class AndroidUtilities {
             int i = Theme.key_dialogTopBackground;
             hashMap.put("info1.**", Integer.valueOf(baseFragment.getThemedColor(i)));
             hashMap.put("info2.**", Integer.valueOf(baseFragment.getThemedColor(i)));
-            builder.setTopAnimation(C3290R.raw.not_available, 52, false, baseFragment.getThemedColor(i), hashMap);
+            builder.setTopAnimation(C3295R.raw.not_available, 52, false, baseFragment.getThemedColor(i), hashMap);
             builder.setTopAnimationIsNew(true);
-            builder.setMessage(LocaleController.getString("IncorrectTheme", C3290R.string.IncorrectTheme));
-            builder.setPositiveButton(LocaleController.getString("OK", C3290R.string.OK), null);
+            builder.setMessage(LocaleController.getString("IncorrectTheme", C3295R.string.IncorrectTheme));
+            builder.setPositiveButton(LocaleController.getString("OK", C3295R.string.OK), null);
             baseFragment.showDialog(builder.create());
             return;
         }
@@ -3417,10 +3417,10 @@ public class AndroidUtilities {
             int i2 = Theme.key_dialogTopBackground;
             hashMap2.put("info1.**", Integer.valueOf(baseFragment.getThemedColor(i2)));
             hashMap2.put("info2.**", Integer.valueOf(baseFragment.getThemedColor(i2)));
-            builder2.setTopAnimation(C3290R.raw.not_available, 52, false, baseFragment.getThemedColor(i2), hashMap2);
+            builder2.setTopAnimation(C3295R.raw.not_available, 52, false, baseFragment.getThemedColor(i2), hashMap2);
             builder2.setTopAnimationIsNew(true);
-            builder2.setPositiveButton(LocaleController.getString("OK", C3290R.string.OK), null);
-            builder2.setMessage(LocaleController.formatString("NoHandleAppInstalled", C3290R.string.NoHandleAppInstalled, messageObject.getDocument().mime_type));
+            builder2.setPositiveButton(LocaleController.getString("OK", C3295R.string.OK), null);
+            builder2.setMessage(LocaleController.formatString("NoHandleAppInstalled", C3295R.string.NoHandleAppInstalled, messageObject.getDocument().mime_type));
             baseFragment.showDialog(builder2.create());
         }
     }
@@ -3902,7 +3902,7 @@ public class AndroidUtilities {
         int i3 = 5;
         if (!TextUtils.isEmpty(str5)) {
             TextView textView = new TextView(activity);
-            textView.setText(LocaleController.getString("UseProxyTelegramInfo2", C3290R.string.UseProxyTelegramInfo2));
+            textView.setText(LocaleController.getString("UseProxyTelegramInfo2", C3295R.string.UseProxyTelegramInfo2));
             textView.setTextColor(Theme.getColor(Theme.key_dialogTextGray4));
             textView.setTextSize(1, 14.0f);
             textView.setGravity(49);
@@ -3915,23 +3915,23 @@ public class AndroidUtilities {
         while (i4 < 6) {
             CharSequence charSequence2 = null;
             if (i4 == 0) {
-                charSequence = LocaleController.getString("UseProxyAddress", C3290R.string.UseProxyAddress);
+                charSequence = LocaleController.getString("UseProxyAddress", C3295R.string.UseProxyAddress);
                 charSequence2 = str;
             } else if (i4 == 1) {
                 charSequence2 = "" + str2;
-                charSequence = LocaleController.getString("UseProxyPort", C3290R.string.UseProxyPort);
+                charSequence = LocaleController.getString("UseProxyPort", C3295R.string.UseProxyPort);
             } else if (i4 == 2) {
-                charSequence = LocaleController.getString("UseProxySecret", C3290R.string.UseProxySecret);
+                charSequence = LocaleController.getString("UseProxySecret", C3295R.string.UseProxySecret);
                 charSequence2 = str5;
             } else if (i4 == i2) {
-                charSequence = LocaleController.getString("UseProxyUsername", C3290R.string.UseProxyUsername);
+                charSequence = LocaleController.getString("UseProxyUsername", C3295R.string.UseProxyUsername);
                 charSequence2 = str3;
             } else if (i4 == 4) {
-                charSequence = LocaleController.getString("UseProxyPassword", C3290R.string.UseProxyPassword);
+                charSequence = LocaleController.getString("UseProxyPassword", C3295R.string.UseProxyPassword);
                 charSequence2 = str4;
             } else if (i4 == i3) {
-                charSequence2 = LocaleController.getString(C3290R.string.ProxyBottomSheetChecking);
-                charSequence = LocaleController.getString(C3290R.string.ProxyStatus);
+                charSequence2 = LocaleController.getString(C3295R.string.ProxyBottomSheetChecking);
+                charSequence = LocaleController.getString(C3295R.string.ProxyStatus);
             } else {
                 charSequence = null;
             }
@@ -3981,7 +3981,7 @@ public class AndroidUtilities {
                             }
                         });
                     } catch (NumberFormatException unused) {
-                        textDetailSettingsCell.getTextView().setText(LocaleController.getString(C3290R.string.Unavailable));
+                        textDetailSettingsCell.getTextView().setText(LocaleController.getString(C3295R.string.Unavailable));
                         textDetailSettingsCell.getTextView().setTextColor(Theme.getColor(Theme.key_text_RedRegular));
                     }
                 }
@@ -3997,7 +3997,7 @@ public class AndroidUtilities {
         TextView textView2 = pickerBottomLayout.cancelButton;
         int i5 = Theme.key_dialogTextBlue2;
         textView2.setTextColor(Theme.getColor(i5));
-        pickerBottomLayout.cancelButton.setText(LocaleController.getString("Cancel", C3290R.string.Cancel).toUpperCase());
+        pickerBottomLayout.cancelButton.setText(LocaleController.getString("Cancel", C3295R.string.Cancel).toUpperCase());
         pickerBottomLayout.cancelButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
@@ -4007,7 +4007,7 @@ public class AndroidUtilities {
         pickerBottomLayout.doneButtonTextView.setTextColor(Theme.getColor(i5));
         pickerBottomLayout.doneButton.setPadding(m54dp(18), 0, m54dp(18), 0);
         pickerBottomLayout.doneButtonBadgeTextView.setVisibility(8);
-        pickerBottomLayout.doneButtonTextView.setText(LocaleController.getString("ConnectingConnectProxy", C3290R.string.ConnectingConnectProxy).toUpperCase());
+        pickerBottomLayout.doneButtonTextView.setText(LocaleController.getString("ConnectingConnectProxy", C3295R.string.ConnectingConnectProxy).toUpperCase());
         pickerBottomLayout.doneButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.messenger.AndroidUtilities$$ExternalSyntheticLambda6
             @Override // android.view.View.OnClickListener
             public final void onClick(View view2) {
@@ -4030,12 +4030,12 @@ public class AndroidUtilities {
     /* JADX INFO: Access modifiers changed from: private */
     public static /* synthetic */ void lambda$showProxyAlert$11(long j, TextDetailSettingsCell textDetailSettingsCell) {
         if (j == -1) {
-            textDetailSettingsCell.getTextView().setText(LocaleController.getString(C3290R.string.Unavailable));
+            textDetailSettingsCell.getTextView().setText(LocaleController.getString(C3295R.string.Unavailable));
             textDetailSettingsCell.getTextView().setTextColor(Theme.getColor(Theme.key_text_RedRegular));
             return;
         }
         TextView textView = textDetailSettingsCell.getTextView();
-        textView.setText(LocaleController.getString(C3290R.string.Available) + ", " + LocaleController.formatString(C3290R.string.Ping, Long.valueOf(j)));
+        textView.setText(LocaleController.getString(C3295R.string.Available) + ", " + LocaleController.formatString(C3295R.string.Ping, Long.valueOf(j)));
         textDetailSettingsCell.getTextView().setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteGreenText));
     }
 
@@ -4081,10 +4081,10 @@ public class AndroidUtilities {
                 z = true;
             }
             if (!z) {
-                NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 6, LocaleController.getString(C3290R.string.ProxyAddedSuccess));
+                NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 6, LocaleController.getString(C3295R.string.ProxyAddedSuccess));
             }
         } else {
-            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 6, LocaleController.getString(C3290R.string.ProxyAddedSuccess));
+            NotificationCenter.getGlobalInstance().postNotificationName(NotificationCenter.showBulletin, 6, LocaleController.getString(C3295R.string.ProxyAddedSuccess));
         }
         runnable.run();
     }

@@ -11,10 +11,10 @@
 
     invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 27
+    .line 34
     new-instance v0, Lcom/iMe/storage/domain/model/crypto/send/CryptoTransferMetadata;
 
-    .line 29
+    .line 36
     invoke-virtual {p0}, Lcom/iMe/storage/data/network/model/response/crypto/ton/ParamsForTonCryptoTransferResponse;->getTransactionParams()Lcom/iMe/storage/data/network/model/response/crypto/ton/TonTransactionParamsResponse;
 
     move-result-object v1
@@ -33,20 +33,20 @@
 
     invoke-static {v7, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 31
+    .line 38
     new-instance v4, Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;
 
-    .line 32
+    .line 39
     sget-object v10, Ljava/math/BigInteger;->ZERO:Ljava/math/BigInteger;
 
     const-string v1, "ZERO"
 
     invoke-static {v10, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 33
+    .line 40
     invoke-static {v10, v1}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullExpressionValue(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 34
+    .line 41
     invoke-virtual {p0}, Lcom/iMe/storage/data/network/model/response/crypto/ton/ParamsForTonCryptoTransferResponse;->getEstimateFees()Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;
 
     move-result-object v1
@@ -57,7 +57,7 @@
 
     float-to-int v11, v1
 
-    .line 35
+    .line 42
     invoke-virtual {p0}, Lcom/iMe/storage/data/network/model/response/crypto/ton/ParamsForTonCryptoTransferResponse;->getEstimateFees()Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;
 
     move-result-object v1
@@ -66,7 +66,7 @@
 
     move-result-wide v12
 
-    .line 36
+    .line 43
     invoke-virtual {p0}, Lcom/iMe/storage/data/network/model/response/crypto/ton/ParamsForTonCryptoTransferResponse;->getEstimateFees()Lcom/iMe/storage/data/network/model/response/crypto/ton/TonFeesResponse;
 
     move-result-object p0
@@ -79,10 +79,10 @@
 
     move-object v9, v10
 
-    .line 31
+    .line 38
     invoke-direct/range {v8 .. v14}, Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;-><init>(Ljava/math/BigInteger;Ljava/math/BigInteger;IDF)V
 
-    .line 39
+    .line 46
     new-instance v8, Lcom/iMe/storage/domain/model/crypto/Chain$Unknown;
 
     const-wide/16 v1, 0x0
@@ -93,7 +93,7 @@
 
     invoke-direct {v8, v1, v2, p0, v9}, Lcom/iMe/storage/domain/model/crypto/Chain$Unknown;-><init>(JILkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 28
+    .line 35
     new-instance p0, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;
 
     const/4 v5, 0x0
@@ -104,11 +104,41 @@
 
     invoke-direct/range {v3 .. v8}, Lcom/iMe/storage/domain/model/crypto/TransactionParams$Ether;-><init>(Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Lcom/iMe/storage/domain/model/crypto/send/GasPriceInfo;Ljava/math/BigInteger;Lcom/iMe/storage/domain/model/crypto/Chain;)V
 
-    .line 41
+    .line 48
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->TON:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
 
-    .line 27
+    .line 34
     invoke-direct {v0, p0, v1, v9}, Lcom/iMe/storage/domain/model/crypto/send/CryptoTransferMetadata;-><init>(Lcom/iMe/storage/domain/model/crypto/TransactionParams;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;)V
+
+    return-object v0
+.end method
+
+.method public static final mapToDomain(Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$BTC;)Lcom/iMe/storage/domain/model/crypto/send/CryptoTransferMetadata;
+    .locals 3
+
+    const-string v0, "<this>"
+
+    invoke-static {p0, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
+
+    .line 27
+    new-instance v0, Lcom/iMe/storage/domain/model/crypto/send/CryptoTransferMetadata;
+
+    .line 28
+    invoke-virtual {p0}, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$BTC;->getTransactionParams()Lcom/iMe/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$BTC;
+
+    move-result-object p0
+
+    invoke-static {p0}, Lcom/iMe/storage/data/mapper/crypto/CryptoWalletMappingKt;->mapToDomain(Lcom/iMe/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$BTC;)Lcom/iMe/storage/domain/model/crypto/TransactionParams$Bitcoin;
+
+    move-result-object p0
+
+    .line 29
+    sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenCode;->BTC:Lcom/iMe/storage/domain/model/wallet/token/TokenCode;
+
+    const/4 v2, 0x0
+
+    .line 27
+    invoke-direct {v0, p0, v1, v2}, Lcom/iMe/storage/domain/model/crypto/send/CryptoTransferMetadata;-><init>(Lcom/iMe/storage/domain/model/crypto/TransactionParams;Lcom/iMe/storage/domain/model/wallet/token/TokenCode;Ljava/lang/String;)V
 
     return-object v0
 .end method

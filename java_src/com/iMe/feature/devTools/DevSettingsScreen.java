@@ -16,7 +16,7 @@ import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import org.orbitmvi.orbit.viewmodel.ContainerHostExtensionsKt;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.databinding.ForkDevSettingsScreenBinding;
 import timber.log.Timber;
 /* compiled from: DevSettingsScreen.kt */
@@ -27,7 +27,7 @@ public final class DevSettingsScreen extends Fragment {
     private final Lazy viewModel$delegate;
 
     public DevSettingsScreen() {
-        super(C3290R.layout.fork_dev_settings_screen);
+        super(C3295R.layout.fork_dev_settings_screen);
         Lazy lazy;
         this.binding$delegate = new FragmentViewBindingDelegate(ForkDevSettingsScreenBinding.class, this);
         lazy = LazyKt__LazyJVMKt.lazy(LazyThreadSafetyMode.NONE, new DevSettingsScreen$special$$inlined$viewModel$default$2(this, null, new DevSettingsScreen$special$$inlined$viewModel$default$1(this), null, null));

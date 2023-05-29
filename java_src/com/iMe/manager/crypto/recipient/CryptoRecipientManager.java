@@ -24,7 +24,7 @@ import kotlin.collections.MapsKt__MapsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Ref$LongRef;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 /* compiled from: CryptoRecipientManager.kt */
 /* loaded from: classes3.dex */
 public final class CryptoRecipientManager {
@@ -55,6 +55,10 @@ public final class CryptoRecipientManager {
             try {
                 iArr[BlockchainType.TON.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
+            }
+            try {
+                iArr[BlockchainType.BITCOIN.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
             }
             $EnumSwitchMapping$0 = iArr;
         }
@@ -131,7 +135,7 @@ public final class CryptoRecipientManager {
 
     /* JADX INFO: Access modifiers changed from: private */
     public final DialogModel getRequestPermissionDialogModel() {
-        return new DialogModel(this.resourceManager.getString(C3290R.string.wallet_recipient_request_permission_dialog_title), this.resourceManager.getString(C3290R.string.wallet_recipient_request_permission_dialog_description), this.resourceManager.getString(C3290R.string.common_cancel), this.resourceManager.getString(C3290R.string.wallet_recipient_request_permission_dialog_action_btn_text));
+        return new DialogModel(this.resourceManager.getString(C3295R.string.wallet_recipient_request_permission_dialog_title), this.resourceManager.getString(C3295R.string.wallet_recipient_request_permission_dialog_description), this.resourceManager.getString(C3295R.string.common_cancel), this.resourceManager.getString(C3295R.string.wallet_recipient_request_permission_dialog_action_btn_text));
     }
 
     private final void autoDispose(Disposable disposable) {

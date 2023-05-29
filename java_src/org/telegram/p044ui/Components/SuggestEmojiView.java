@@ -28,7 +28,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.Arrays;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MediaDataController;
@@ -91,7 +91,7 @@ public class SuggestEmojiView extends FrameLayout implements NotificationCenter.
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.SuggestEmojiView$1 */
     /* loaded from: classes6.dex */
-    public class C52601 implements ContentPreviewViewer.ContentPreviewViewerDelegate {
+    public class C52651 implements ContentPreviewViewer.ContentPreviewViewerDelegate {
         @Override // org.telegram.p044ui.ContentPreviewViewer.ContentPreviewViewerDelegate
         public boolean can() {
             return true;
@@ -191,7 +191,7 @@ public class SuggestEmojiView extends FrameLayout implements NotificationCenter.
             ContentPreviewViewer.ContentPreviewViewerDelegate.CC.$default$setKiklikoAvatar(this, str);
         }
 
-        C52601() {
+        C52651() {
         }
 
         @Override // org.telegram.p044ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -224,7 +224,7 @@ public class SuggestEmojiView extends FrameLayout implements NotificationCenter.
             if (!AndroidUtilities.addToClipboard(valueOf) || SuggestEmojiView.this.enterView == null) {
                 return;
             }
-            BulletinFactory.m29of(SuggestEmojiView.this.enterView.getParentFragment()).createCopyBulletin(LocaleController.getString("EmojiCopied", C3290R.string.EmojiCopied)).show();
+            BulletinFactory.m29of(SuggestEmojiView.this.enterView.getParentFragment()).createCopyBulletin(LocaleController.getString("EmojiCopied", C3295R.string.EmojiCopied)).show();
         }
 
         @Override // org.telegram.p044ui.ContentPreviewViewer.ContentPreviewViewerDelegate
@@ -258,22 +258,22 @@ public class SuggestEmojiView extends FrameLayout implements NotificationCenter.
             Runnable runnable = new Runnable() { // from class: org.telegram.ui.Components.SuggestEmojiView$1$$ExternalSyntheticLambda0
                 @Override // java.lang.Runnable
                 public final void run() {
-                    SuggestEmojiView.C52601.this.lambda$setAsEmojiStatus$0(tLRPC$TL_emojiStatusEmpty);
+                    SuggestEmojiView.C52651.this.lambda$setAsEmojiStatus$0(tLRPC$TL_emojiStatusEmpty);
                 }
             };
             ChatActivity parentFragment = SuggestEmojiView.this.enterView == null ? null : SuggestEmojiView.this.enterView.getParentFragment();
             if (parentFragment != null) {
                 if (tLRPC$Document == null) {
                     Bulletin.SimpleLayout simpleLayout = new Bulletin.SimpleLayout(SuggestEmojiView.this.getContext(), SuggestEmojiView.this.resourcesProvider);
-                    simpleLayout.textView.setText(LocaleController.getString("RemoveStatusInfo", C3290R.string.RemoveStatusInfo));
-                    simpleLayout.imageView.setImageResource(C3290R.C3292drawable.msg_settings_premium);
+                    simpleLayout.textView.setText(LocaleController.getString("RemoveStatusInfo", C3295R.string.RemoveStatusInfo));
+                    simpleLayout.imageView.setImageResource(C3295R.C3297drawable.msg_settings_premium);
                     Bulletin.UndoButton undoButton = new Bulletin.UndoButton(SuggestEmojiView.this.getContext(), true, SuggestEmojiView.this.resourcesProvider);
                     undoButton.setUndoAction(runnable);
                     simpleLayout.setButton(undoButton);
                     Bulletin.make(parentFragment, simpleLayout, (int) ConnectionResult.DRIVE_EXTERNAL_STORAGE_REQUIRED).show();
                     return;
                 }
-                BulletinFactory.m29of(parentFragment).createEmojiBulletin(tLRPC$Document, LocaleController.getString("SetAsEmojiStatusInfo", C3290R.string.SetAsEmojiStatusInfo), LocaleController.getString("Undo", C3290R.string.Undo), runnable).show();
+                BulletinFactory.m29of(parentFragment).createEmojiBulletin(tLRPC$Document, LocaleController.getString("SetAsEmojiStatusInfo", C3295R.string.SetAsEmojiStatusInfo), LocaleController.getString("Undo", C3295R.string.Undo), runnable).show();
             }
         }
 
@@ -294,7 +294,7 @@ public class SuggestEmojiView extends FrameLayout implements NotificationCenter.
     /* JADX INFO: Access modifiers changed from: private */
     public ContentPreviewViewer.ContentPreviewViewerDelegate getPreviewDelegate() {
         if (this.previewDelegate == null) {
-            this.previewDelegate = new C52601();
+            this.previewDelegate = new C52651();
         }
         return this.previewDelegate;
     }

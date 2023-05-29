@@ -6,7 +6,7 @@ import com.iMe.model.wallet.ActionItem;
 import com.iMe.storage.domain.utils.system.ResourceManager;
 import com.iMe.utils.extentions.common.BaseQuickAdapterExtKt;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.p044ui.ActionBar.Theme;
 /* compiled from: WalletActionAdapter.kt */
 /* renamed from: com.iMe.ui.wallet.transaction.details.adapter.WalletActionAdapter */
@@ -16,7 +16,7 @@ public final class WalletActionAdapter extends BaseQuickAdapter<ActionItem, Base
 
     /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
     public WalletActionAdapter(ResourceManager resourceManager) {
-        super(C3290R.layout.fork_recycle_item_wallet_action, null, 2, null);
+        super(C3295R.layout.fork_recycle_item_wallet_action, null, 2, null);
         Intrinsics.checkNotNullParameter(resourceManager, "resourceManager");
         this.resourceManager = resourceManager;
     }
@@ -26,11 +26,11 @@ public final class WalletActionAdapter extends BaseQuickAdapter<ActionItem, Base
     public void convert(BaseViewHolder holder, ActionItem item) {
         Intrinsics.checkNotNullParameter(holder, "holder");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3290R.C3293id.linear_root;
+        int i = C3295R.C3298id.linear_root;
         BaseViewHolder themedBackgroundColor = BaseQuickAdapterExtKt.setThemedBackgroundColor(BaseQuickAdapterExtKt.setRippleForeground(holder, i, false), i, Theme.key_windowBackgroundWhite);
-        int i2 = C3290R.C3293id.image_action;
+        int i2 = C3295R.C3298id.image_action;
         BaseViewHolder themedImageColor = BaseQuickAdapterExtKt.setThemedImageColor(themedBackgroundColor, i2, Theme.key_dialogIcon);
-        int i3 = C3290R.C3293id.text_action;
+        int i3 = C3295R.C3298id.text_action;
         BaseQuickAdapterExtKt.setThemedTextColor(themedImageColor, i3, Theme.key_dialogTextBlack).setImageResource(i2, item.getIcon()).setText(i3, item.getTitle(this.resourceManager));
     }
 }

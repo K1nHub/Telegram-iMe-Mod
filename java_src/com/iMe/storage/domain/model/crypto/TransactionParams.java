@@ -1,5 +1,6 @@
 package com.iMe.storage.domain.model.crypto;
 
+import com.iMe.storage.domain.model.crypto.send.BitcoinUnspentOutput;
 import com.iMe.storage.domain.model.crypto.send.GasPriceInfo;
 import com.iMe.storage.domain.model.crypto.send.TransactionSpeedLevel;
 import java.math.BigInteger;
@@ -244,6 +245,121 @@ public abstract class TransactionParams {
             Intrinsics.checkNotNullParameter(blockHeader, "blockHeader");
             this.medium = medium;
             this.blockHeader = blockHeader;
+        }
+    }
+
+    /* compiled from: TransactionParams.kt */
+    /* loaded from: classes3.dex */
+    public static final class Bitcoin extends TransactionParams {
+        private final String changeAddress;
+        private final GasPriceInfo fastest;
+        private final GasPriceInfo low;
+        private final GasPriceInfo medium;
+        private final List<BitcoinUnspentOutput> utxos;
+
+        public static /* synthetic */ Bitcoin copy$default(Bitcoin bitcoin, GasPriceInfo gasPriceInfo, GasPriceInfo gasPriceInfo2, GasPriceInfo gasPriceInfo3, List list, String str, int i, Object obj) {
+            if ((i & 1) != 0) {
+                gasPriceInfo = bitcoin.getMedium();
+            }
+            if ((i & 2) != 0) {
+                gasPriceInfo2 = bitcoin.getFastest();
+            }
+            GasPriceInfo gasPriceInfo4 = gasPriceInfo2;
+            if ((i & 4) != 0) {
+                gasPriceInfo3 = bitcoin.getLow();
+            }
+            GasPriceInfo gasPriceInfo5 = gasPriceInfo3;
+            List<BitcoinUnspentOutput> list2 = list;
+            if ((i & 8) != 0) {
+                list2 = bitcoin.utxos;
+            }
+            List list3 = list2;
+            if ((i & 16) != 0) {
+                str = bitcoin.changeAddress;
+            }
+            return bitcoin.copy(gasPriceInfo, gasPriceInfo4, gasPriceInfo5, list3, str);
+        }
+
+        public final GasPriceInfo component1() {
+            return getMedium();
+        }
+
+        public final GasPriceInfo component2() {
+            return getFastest();
+        }
+
+        public final GasPriceInfo component3() {
+            return getLow();
+        }
+
+        public final List<BitcoinUnspentOutput> component4() {
+            return this.utxos;
+        }
+
+        public final String component5() {
+            return this.changeAddress;
+        }
+
+        public final Bitcoin copy(GasPriceInfo medium, GasPriceInfo gasPriceInfo, GasPriceInfo gasPriceInfo2, List<BitcoinUnspentOutput> utxos, String changeAddress) {
+            Intrinsics.checkNotNullParameter(medium, "medium");
+            Intrinsics.checkNotNullParameter(utxos, "utxos");
+            Intrinsics.checkNotNullParameter(changeAddress, "changeAddress");
+            return new Bitcoin(medium, gasPriceInfo, gasPriceInfo2, utxos, changeAddress);
+        }
+
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            if (obj instanceof Bitcoin) {
+                Bitcoin bitcoin = (Bitcoin) obj;
+                return Intrinsics.areEqual(getMedium(), bitcoin.getMedium()) && Intrinsics.areEqual(getFastest(), bitcoin.getFastest()) && Intrinsics.areEqual(getLow(), bitcoin.getLow()) && Intrinsics.areEqual(this.utxos, bitcoin.utxos) && Intrinsics.areEqual(this.changeAddress, bitcoin.changeAddress);
+            }
+            return false;
+        }
+
+        public int hashCode() {
+            return (((((((getMedium().hashCode() * 31) + (getFastest() == null ? 0 : getFastest().hashCode())) * 31) + (getLow() != null ? getLow().hashCode() : 0)) * 31) + this.utxos.hashCode()) * 31) + this.changeAddress.hashCode();
+        }
+
+        public String toString() {
+            return "Bitcoin(medium=" + getMedium() + ", fastest=" + getFastest() + ", low=" + getLow() + ", utxos=" + this.utxos + ", changeAddress=" + this.changeAddress + ')';
+        }
+
+        @Override // com.iMe.storage.domain.model.crypto.TransactionParams
+        public GasPriceInfo getMedium() {
+            return this.medium;
+        }
+
+        @Override // com.iMe.storage.domain.model.crypto.TransactionParams
+        public GasPriceInfo getFastest() {
+            return this.fastest;
+        }
+
+        @Override // com.iMe.storage.domain.model.crypto.TransactionParams
+        public GasPriceInfo getLow() {
+            return this.low;
+        }
+
+        public final List<BitcoinUnspentOutput> getUtxos() {
+            return this.utxos;
+        }
+
+        public final String getChangeAddress() {
+            return this.changeAddress;
+        }
+
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        public Bitcoin(GasPriceInfo medium, GasPriceInfo gasPriceInfo, GasPriceInfo gasPriceInfo2, List<BitcoinUnspentOutput> utxos, String changeAddress) {
+            super(gasPriceInfo, medium, gasPriceInfo2, null);
+            Intrinsics.checkNotNullParameter(medium, "medium");
+            Intrinsics.checkNotNullParameter(utxos, "utxos");
+            Intrinsics.checkNotNullParameter(changeAddress, "changeAddress");
+            this.medium = medium;
+            this.fastest = gasPriceInfo;
+            this.low = gasPriceInfo2;
+            this.utxos = utxos;
+            this.changeAddress = changeAddress;
         }
     }
 

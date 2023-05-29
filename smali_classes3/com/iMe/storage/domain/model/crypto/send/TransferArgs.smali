@@ -9,6 +9,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$BTC;,
         Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$EVM;,
         Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TON;,
         Lcom/iMe/storage/domain/model/crypto/send/TransferArgs$TRON;

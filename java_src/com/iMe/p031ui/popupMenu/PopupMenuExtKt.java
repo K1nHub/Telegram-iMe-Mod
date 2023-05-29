@@ -8,7 +8,7 @@ import android.widget.ListPopupWindow;
 import com.iMe.utils.extentions.common.ViewExtKt;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.p044ui.ActionBar.Theme;
 /* compiled from: PopupMenuExt.kt */
 /* renamed from: com.iMe.ui.popupMenu.PopupMenuExtKt */
@@ -26,7 +26,7 @@ public final class PopupMenuExtKt {
         listPopupWindow.setAnchorView(view);
         listPopupWindow.setVerticalOffset((-view.getHeight()) / 2);
         listPopupWindow.setHorizontalOffset((-listPopupWindow.getWidth()) + (view.getHeight() / 2));
-        listPopupWindow.setAnimationStyle(C3290R.style.DropDownFromTopAnimation);
+        listPopupWindow.setAnimationStyle(C3295R.style.DropDownFromTopAnimation);
         listPopupWindow.setAdapter(menuAdapter);
         listPopupWindow.setBackgroundDrawable(createRoundedBackground(Theme.getColor(Theme.key_actionBarDefaultSubmenuBackground), 16.0f));
         listPopupWindow.setOnItemClickListener(new AdapterView.OnItemClickListener() { // from class: com.iMe.ui.popupMenu.PopupMenuExtKt$$ExternalSyntheticLambda0

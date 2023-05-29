@@ -1704,6 +1704,8 @@
     <string name="wallet_create_eth_pin_code_title">Придумайте ПИН-код</string>
     <string name="wallet_create_eth_pin_code_toolbar_title">ПИН-код</string>
     <string name="wallet_crypto_blockchains_active_wallets">Активные кошельки</string>
+    <string name="wallet_crypto_blockchains_bitcoin_subtitle">Bitcoin</string>
+    <string name="wallet_crypto_blockchains_bitcoin_title">Bitcoin</string>
     <string name="wallet_crypto_blockchains_description">Список блокчейнов, которые активированы на вашем криптоаккаунте.</string>
     <string name="wallet_crypto_blockchains_evm_subtitle">Ethereum, BNB Chain, Polygon, Fantom</string>
     <string name="wallet_crypto_blockchains_evm_title">EVM</string>
@@ -1807,6 +1809,8 @@ iMe Wallet."</string>
 
 Для использования ранее привязанного адреса криптокошелька, войдите в свою учетную запись через восстановление с помощью кодовой фразы."</string>
     <string name="wallet_details_created">Подключен</string>
+    <string name="wallet_details_info_bitcoin_description">Это ваш активный аккаунт блокчейна Bitcoin.</string>
+    <string name="wallet_details_info_bitcoin_title">Bitcoin</string>
     <string name="wallet_details_info_evm_description">Это ваш активный аккаунт EVM-совместимых блокчейнов, таких как Ethereum, BNB Chain, Polygon и Fantom.</string>
     <string name="wallet_details_info_evm_title">EVM</string>
     <string name="wallet_details_info_ton_description">Это ваш активный аккаунт блокчейна The Open Network (TON).</string>

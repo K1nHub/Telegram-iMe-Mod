@@ -25,11 +25,11 @@ public final class CreateWalletFragment$presenter$2 extends Lambda implements Fu
     /* compiled from: CreateWalletFragment.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.create.CreateWalletFragment$presenter$2$1 */
     /* loaded from: classes3.dex */
-    public static final class C21391 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C21441 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ CreateWalletFragment this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C21391(CreateWalletFragment createWalletFragment) {
+        C21441(CreateWalletFragment createWalletFragment) {
             super(0);
             this.this$0 = createWalletFragment;
         }
@@ -45,7 +45,7 @@ public final class CreateWalletFragment$presenter$2 extends Lambda implements Fu
     public final CreateWalletPresenter invoke() {
         Lazy lazy;
         CreateWalletFragment createWalletFragment = this.this$0;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2136x4f1f4719(createWalletFragment, null, new C21391(createWalletFragment)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2141x4f1f4719(createWalletFragment, null, new C21441(createWalletFragment)));
         return (CreateWalletPresenter) lazy.getValue();
     }
 }

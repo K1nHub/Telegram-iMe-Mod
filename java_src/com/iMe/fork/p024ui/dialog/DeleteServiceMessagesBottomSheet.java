@@ -40,7 +40,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringsJVMKt;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.AlertDialog;
 import org.telegram.p044ui.ActionBar.BottomSheet;
@@ -237,7 +237,7 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
         ViewExtKt.singleLine(textView);
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity(16);
-        textView.setText(LocaleController.getInternalString(C3290R.string.service_messages));
+        textView.setText(LocaleController.getInternalString(C3295R.string.service_messages));
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
         textView.setTextSize(1, 20.0f);
         textView.setLinkTextColor(Theme.getColor(Theme.key_dialogTextLink));
@@ -462,7 +462,7 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
     /* JADX INFO: Access modifiers changed from: private */
     public final void showPeriodSelectionDialog() {
         AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
-        builder.setTitle(LocaleController.getInternalString(C3290R.string.erasing_period));
+        builder.setTitle(LocaleController.getInternalString(C3295R.string.erasing_period));
         ErasingPeriod[] values = ErasingPeriod.values();
         ArrayList arrayList = new ArrayList(values.length);
         for (ErasingPeriod erasingPeriod : values) {
@@ -474,7 +474,7 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
                 DeleteServiceMessagesBottomSheet.showPeriodSelectionDialog$lambda$10(DeleteServiceMessagesBottomSheet.this, dialogInterface, i);
             }
         });
-        builder.setNegativeButton(LocaleController.getString("Cancel", C3290R.string.Cancel), null);
+        builder.setNegativeButton(LocaleController.getString("Cancel", C3295R.string.Cancel), null);
         builder.create().show();
     }
 
@@ -523,9 +523,9 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
             appCompatTextView.setSingleLine(true);
             appCompatTextView.setBackground(Theme.getRoundRectSelectorDrawable(color));
             if (i == 0) {
-                string = LocaleController.getString("Cancel", C3290R.string.Cancel);
+                string = LocaleController.getString("Cancel", C3295R.string.Cancel);
             } else {
-                string = LocaleController.getString("Delete", C3290R.string.Delete);
+                string = LocaleController.getString("Delete", C3295R.string.Delete);
             }
             Intrinsics.checkNotNullExpressionValue(string, "when (i) {\n             …Delete)\n                }");
             Locale locale = Locale.getDefault();
@@ -554,7 +554,7 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(v, "v");
         if (AndroidUtilities.isServiceRunning(ServiceMessagesRemovingService.class)) {
-            String internalString = LocaleController.getInternalString(C3290R.string.already_removing);
+            String internalString = LocaleController.getInternalString(C3295R.string.already_removing);
             Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.string.already_removing)");
             ContextExtKt.toast(internalString);
             return;
@@ -574,79 +574,79 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
         String text;
         switch (WhenMappings.$EnumSwitchMapping$0[ServiceMessageType.Companion.getByCode(i, this.isChannel).ordinal()]) {
             case 1:
-                string = LocaleController.getString("ActionCreateGroup", C3290R.string.ActionCreateGroup);
+                string = LocaleController.getString("ActionCreateGroup", C3295R.string.ActionCreateGroup);
                 break;
             case 2:
                 if (this.isChannel) {
-                    string = LocaleController.getString("ActionChannelChangedTitle", C3290R.string.ActionChannelChangedTitle);
+                    string = LocaleController.getString("ActionChannelChangedTitle", C3295R.string.ActionChannelChangedTitle);
                     break;
                 } else {
-                    string = LocaleController.getString("ActionChangedTitle", C3290R.string.ActionChangedTitle);
+                    string = LocaleController.getString("ActionChangedTitle", C3295R.string.ActionChangedTitle);
                     break;
                 }
             case 3:
                 if (this.isChannel) {
-                    string = LocaleController.getString("ActionChannelChangedPhoto", C3290R.string.ActionChannelChangedPhoto);
+                    string = LocaleController.getString("ActionChannelChangedPhoto", C3295R.string.ActionChannelChangedPhoto);
                     break;
                 } else {
-                    string = LocaleController.getString("ActionChangedPhoto", C3290R.string.ActionChangedPhoto);
+                    string = LocaleController.getString("ActionChangedPhoto", C3295R.string.ActionChangedPhoto);
                     break;
                 }
             case 4:
                 if (this.isChannel) {
-                    string = LocaleController.getString("ActionChannelRemovedPhoto", C3290R.string.ActionChannelRemovedPhoto);
+                    string = LocaleController.getString("ActionChannelRemovedPhoto", C3295R.string.ActionChannelRemovedPhoto);
                     break;
                 } else {
-                    string = LocaleController.getString("ActionRemovedPhoto", C3290R.string.ActionRemovedPhoto);
+                    string = LocaleController.getString("ActionRemovedPhoto", C3295R.string.ActionRemovedPhoto);
                     break;
                 }
             case 5:
-                string = LocaleController.formatStringInternal(C3290R.string.service_messages_variants, LocaleController.getString("ActionAddUserSelfMega", C3290R.string.ActionAddUserSelfMega), LocaleController.getString("ActionAddUser", C3290R.string.ActionAddUser));
+                string = LocaleController.formatStringInternal(C3295R.string.service_messages_variants, LocaleController.getString("ActionAddUserSelfMega", C3295R.string.ActionAddUserSelfMega), LocaleController.getString("ActionAddUser", C3295R.string.ActionAddUser));
                 break;
             case 6:
-                string = LocaleController.getString("ActionLeftUser", C3290R.string.ActionLeftUser);
+                string = LocaleController.getString("ActionLeftUser", C3295R.string.ActionLeftUser);
                 break;
             case 7:
-                string = LocaleController.getString("ActionInviteUser", C3290R.string.ActionInviteUser);
+                string = LocaleController.getString("ActionInviteUser", C3295R.string.ActionInviteUser);
                 break;
             case 8:
-                string = LocaleController.getString("ActionPinnedNoText", C3290R.string.ActionPinnedNoText);
+                string = LocaleController.getString("ActionPinnedNoText", C3295R.string.ActionPinnedNoText);
                 break;
             case 9:
-                string = LocaleController.formatString("ActionUserScored", C3290R.string.ActionUserScored, "...");
+                string = LocaleController.formatString("ActionUserScored", C3295R.string.ActionUserScored, "...");
                 break;
             case 10:
-                string = LocaleController.formatString("PaymentSuccessfullyPaid", C3290R.string.PaymentSuccessfullyPaid, "...", "...", "...");
+                string = LocaleController.formatString("PaymentSuccessfullyPaid", C3295R.string.PaymentSuccessfullyPaid, "...", "...", "...");
                 break;
             case 11:
-                string = LocaleController.getString("ActionTakeScreenshoot", C3290R.string.ActionTakeScreenshoot);
+                string = LocaleController.getString("ActionTakeScreenshoot", C3295R.string.ActionTakeScreenshoot);
                 break;
             case 12:
-                string = LocaleController.formatString("ActionUserWithinRadius", C3290R.string.ActionUserWithinRadius, "...");
+                string = LocaleController.formatString("ActionUserWithinRadius", C3295R.string.ActionUserWithinRadius, "...");
                 break;
             case 13:
                 if (this.isChannel) {
-                    string = LocaleController.formatStringInternal(C3290R.string.service_messages_variants, LocaleController.getString("ActionGroupCallJustStarted", C3290R.string.ActionGroupCallStarted), LocaleController.formatString("ActionChannelCallEnded", C3290R.string.ActionChannelCallEnded, "..."));
+                    string = LocaleController.formatStringInternal(C3295R.string.service_messages_variants, LocaleController.getString("ActionGroupCallJustStarted", C3295R.string.ActionGroupCallStarted), LocaleController.formatString("ActionChannelCallEnded", C3295R.string.ActionChannelCallEnded, "..."));
                     break;
                 } else {
-                    string = LocaleController.formatStringInternal(C3290R.string.service_messages_variants, LocaleController.getString("ActionGroupCallStarted", C3290R.string.ActionGroupCallStarted), LocaleController.formatString("ActionGroupCallEndedBy", C3290R.string.ActionGroupCallEndedBy, "..."));
+                    string = LocaleController.formatStringInternal(C3295R.string.service_messages_variants, LocaleController.getString("ActionGroupCallStarted", C3295R.string.ActionGroupCallStarted), LocaleController.formatString("ActionGroupCallEndedBy", C3295R.string.ActionGroupCallEndedBy, "..."));
                     break;
                 }
             case 14:
-                string = LocaleController.formatString("ActionGroupCallScheduled", C3290R.string.ActionGroupCallScheduled, "...");
+                string = LocaleController.formatString("ActionGroupCallScheduled", C3295R.string.ActionGroupCallScheduled, "...");
                 break;
             case 15:
-                string = LocaleController.getString("ActionGroupCallInvited", C3290R.string.ActionGroupCallInvited);
+                string = LocaleController.getString("ActionGroupCallInvited", C3295R.string.ActionGroupCallInvited);
                 break;
             case 16:
-                string = LocaleController.formatString("MessageLifetimeChanged", C3290R.string.MessageLifetimeChanged, "...", "...");
+                string = LocaleController.formatString("MessageLifetimeChanged", C3295R.string.MessageLifetimeChanged, "...", "...");
                 break;
             case 17:
                 if (this.isChannel) {
-                    string = LocaleController.getString("ActionTTLChannelChanged", C3290R.string.ActionTTLChannelChanged);
+                    string = LocaleController.getString("ActionTTLChannelChanged", C3295R.string.ActionTTLChannelChanged);
                     break;
                 } else {
-                    string = LocaleController.formatString("ActionTTLChanged", C3290R.string.ActionTTLChanged, "...");
+                    string = LocaleController.formatString("ActionTTLChanged", C3295R.string.ActionTTLChanged, "...");
                     break;
                 }
             default:
@@ -728,7 +728,7 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
         private final int code;
         private final int period;
         private final int stringRes;
-        public static final ErasingPeriod ALL_TIME = new ErasingPeriod("ALL_TIME", 4, 4, 0, C3290R.string.period_all_time);
+        public static final ErasingPeriod ALL_TIME = new ErasingPeriod("ALL_TIME", 4, 4, 0, C3295R.string.period_all_time);
         private static final /* synthetic */ ErasingPeriod[] $VALUES = $values();
         public static final Companion Companion = new Companion(null);
 
@@ -760,10 +760,10 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
 
         static {
             long j = 1000;
-            DAY = new ErasingPeriod("DAY", 0, 0, (int) (ChronoUnit.DAYS.getDuration().toMillis() / j), C3290R.string.period_last_day);
-            WEEK = new ErasingPeriod("WEEK", 1, 1, (int) (ChronoUnit.WEEKS.getDuration().toMillis() / j), C3290R.string.period_last_week);
-            MONTH = new ErasingPeriod("MONTH", 2, 2, (int) (ChronoUnit.MONTHS.getDuration().toMillis() / j), C3290R.string.period_last_month);
-            YEAR = new ErasingPeriod("YEAR", 3, 3, (int) (ChronoUnit.YEARS.getDuration().toMillis() / j), C3290R.string.period_last_year);
+            DAY = new ErasingPeriod("DAY", 0, 0, (int) (ChronoUnit.DAYS.getDuration().toMillis() / j), C3295R.string.period_last_day);
+            WEEK = new ErasingPeriod("WEEK", 1, 1, (int) (ChronoUnit.WEEKS.getDuration().toMillis() / j), C3295R.string.period_last_week);
+            MONTH = new ErasingPeriod("MONTH", 2, 2, (int) (ChronoUnit.MONTHS.getDuration().toMillis() / j), C3295R.string.period_last_month);
+            YEAR = new ErasingPeriod("YEAR", 3, 3, (int) (ChronoUnit.YEARS.getDuration().toMillis() / j), C3295R.string.period_last_year);
         }
 
         /* compiled from: DeleteServiceMessagesBottomSheet.kt */
@@ -861,7 +861,7 @@ public final class DeleteServiceMessagesBottomSheet extends BottomSheet {
             View view = holder.itemView;
             Intrinsics.checkNotNullExpressionValue(view, "holder.itemView");
             if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK_CELL && (view instanceof TextCheckCell)) {
-                ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3290R.string.service_messages_all), this.this$0.selectedFiltersCodes.contains(Integer.valueOf(ServiceMessageType.ALL.getCode(this.this$0.isChannel))), true);
+                ((TextCheckCell) view).setTextAndCheck(LocaleController.getInternalString(C3295R.string.service_messages_all), this.this$0.selectedFiltersCodes.contains(Integer.valueOf(ServiceMessageType.ALL.getCode(this.this$0.isChannel))), true);
             } else if (itemViewType == IdFabric$ViewTypes.TEXT_CHECK_BOX_CELL && (view instanceof TextCheckBoxCell)) {
                 TextCheckBoxCell textCheckBoxCell = (TextCheckBoxCell) view;
                 int i2 = i - 1;

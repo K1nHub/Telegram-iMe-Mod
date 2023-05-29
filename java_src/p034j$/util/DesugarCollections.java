@@ -15,17 +15,17 @@ import java.util.Map;
 import java.util.Objects;
 import java.util.Set;
 import java.util.concurrent.ConcurrentMap;
-import p034j$.lang.AbstractC2600d;
+import p034j$.lang.AbstractC2605d;
 import p034j$.util.Map;
-import p034j$.util.concurrent.C2682a;
-import p034j$.util.concurrent.InterfaceC2683b;
+import p034j$.util.concurrent.C2687a;
+import p034j$.util.concurrent.InterfaceC2688b;
 import p034j$.util.function.BiConsumer;
 import p034j$.util.function.BiFunction;
 import p034j$.util.function.Function;
 import p034j$.util.function.Predicate;
-import p034j$.wrappers.C3063L;
-import p034j$.wrappers.C3113q;
-import p034j$.wrappers.C3117s;
+import p034j$.wrappers.C3068L;
+import p034j$.wrappers.C3118q;
+import p034j$.wrappers.C3122s;
 /* renamed from: j$.util.DesugarCollections */
 /* loaded from: classes2.dex */
 public class DesugarCollections {
@@ -121,7 +121,7 @@ public class DesugarCollections {
         Field field = f540c;
         if (field == null) {
             try {
-                AbstractC2654a.m589v((List) f541d.get(list), comparator);
+                AbstractC2659a.m589v((List) f541d.get(list), comparator);
                 return;
             } catch (IllegalAccessException e) {
                 throw new Error("Runtime illegal access in synchronized collection sort fall-back.", e);
@@ -129,7 +129,7 @@ public class DesugarCollections {
         }
         try {
             synchronized (field.get(list)) {
-                AbstractC2654a.m589v((List) f541d.get(list), comparator);
+                AbstractC2659a.m589v((List) f541d.get(list), comparator);
             }
         } catch (IllegalAccessException e2) {
             throw new Error("Runtime illegal access in synchronized list sort.", e2);
@@ -137,13 +137,13 @@ public class DesugarCollections {
     }
 
     public static <K, V> Map<K, V> synchronizedMap(Map<K, V> map) {
-        return new C2646a(map);
+        return new C2651a(map);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
     /* renamed from: j$.util.DesugarCollections$a */
     /* loaded from: classes2.dex */
-    public static class C2646a implements Map, Serializable, Map {
+    public static class C2651a implements Map, Serializable, Map {
 
         /* renamed from: a */
         private final Map f544a;
@@ -160,7 +160,7 @@ public class DesugarCollections {
         /* renamed from: e */
         private transient Collection f548e;
 
-        C2646a(Map map) {
+        C2651a(Map map) {
             Objects.requireNonNull(map);
             this.f544a = map;
             this.f545b = this;
@@ -233,7 +233,7 @@ public class DesugarCollections {
 
         @Override // java.util.Map
         public /* synthetic */ Object compute(Object obj, java.util.function.BiFunction biFunction) {
-            return compute(obj, C3117s.m102a(biFunction));
+            return compute(obj, C3122s.m102a(biFunction));
         }
 
         @Override // p034j$.util.Map
@@ -242,7 +242,7 @@ public class DesugarCollections {
             synchronized (this.f545b) {
                 try {
                     java.util.Map map = this.f544a;
-                    computeIfAbsent = map instanceof Map ? ((Map) map).computeIfAbsent(obj, function) : map instanceof ConcurrentMap ? AbstractC2600d.m678a((ConcurrentMap) map, obj, function) : Map.CC.$default$computeIfAbsent(map, obj, function);
+                    computeIfAbsent = map instanceof Map ? ((Map) map).computeIfAbsent(obj, function) : map instanceof ConcurrentMap ? AbstractC2605d.m678a((ConcurrentMap) map, obj, function) : Map.CC.$default$computeIfAbsent(map, obj, function);
                 } catch (Throwable th) {
                     throw th;
                 }
@@ -252,7 +252,7 @@ public class DesugarCollections {
 
         @Override // java.util.Map
         public /* synthetic */ Object computeIfAbsent(Object obj, java.util.function.Function function) {
-            return computeIfAbsent(obj, C3063L.m189a(function));
+            return computeIfAbsent(obj, C3068L.m189a(function));
         }
 
         @Override // p034j$.util.Map
@@ -295,7 +295,7 @@ public class DesugarCollections {
 
         @Override // java.util.Map
         public /* synthetic */ Object computeIfPresent(Object obj, java.util.function.BiFunction biFunction) {
-            return computeIfPresent(obj, C3117s.m102a(biFunction));
+            return computeIfPresent(obj, C3122s.m102a(biFunction));
         }
 
         @Override // java.util.Map, p034j$.util.Map
@@ -348,7 +348,7 @@ public class DesugarCollections {
                     if (map instanceof Map) {
                         ((Map) map).forEach(biConsumer);
                     } else if (map instanceof ConcurrentMap) {
-                        AbstractC2600d.m677b((ConcurrentMap) map, biConsumer);
+                        AbstractC2605d.m677b((ConcurrentMap) map, biConsumer);
                     } else {
                         Map.CC.$default$forEach(map, biConsumer);
                     }
@@ -360,7 +360,7 @@ public class DesugarCollections {
 
         @Override // java.util.Map
         public /* synthetic */ void forEach(java.util.function.BiConsumer biConsumer) {
-            forEach(C3113q.m107a(biConsumer));
+            forEach(C3118q.m107a(biConsumer));
         }
 
         @Override // java.util.Map, p034j$.util.Map
@@ -484,12 +484,12 @@ public class DesugarCollections {
                 monitor-exit(r0)     // Catch: java.lang.Throwable -> L30
                 throw r5
             */
-            throw new UnsupportedOperationException("Method not decompiled: p034j$.util.DesugarCollections.C2646a.merge(java.lang.Object, java.lang.Object, j$.util.function.BiFunction):java.lang.Object");
+            throw new UnsupportedOperationException("Method not decompiled: p034j$.util.DesugarCollections.C2651a.merge(java.lang.Object, java.lang.Object, j$.util.function.BiFunction):java.lang.Object");
         }
 
         @Override // java.util.Map
         public /* synthetic */ Object merge(Object obj, Object obj2, java.util.function.BiFunction biFunction) {
-            return merge(obj, obj2, C3117s.m102a(biFunction));
+            return merge(obj, obj2, C3122s.m102a(biFunction));
         }
 
         @Override // java.util.Map, p034j$.util.Map
@@ -564,11 +564,11 @@ public class DesugarCollections {
                     } else if (map instanceof ConcurrentMap) {
                         ConcurrentMap concurrentMap = (ConcurrentMap) map;
                         Objects.requireNonNull(biFunction);
-                        C2682a c2682a = new C2682a(concurrentMap, biFunction);
-                        if (concurrentMap instanceof InterfaceC2683b) {
-                            ((InterfaceC2683b) concurrentMap).forEach(c2682a);
+                        C2687a c2687a = new C2687a(concurrentMap, biFunction);
+                        if (concurrentMap instanceof InterfaceC2688b) {
+                            ((InterfaceC2688b) concurrentMap).forEach(c2687a);
                         } else {
-                            AbstractC2600d.m677b(concurrentMap, c2682a);
+                            AbstractC2605d.m677b(concurrentMap, c2687a);
                         }
                     } else {
                         Map.CC.$default$replaceAll(map, biFunction);
@@ -581,7 +581,7 @@ public class DesugarCollections {
 
         @Override // java.util.Map
         public /* synthetic */ void replaceAll(java.util.function.BiFunction biFunction) {
-            replaceAll(C3117s.m102a(biFunction));
+            replaceAll(C3122s.m102a(biFunction));
         }
 
         @Override // java.util.Map, p034j$.util.Map

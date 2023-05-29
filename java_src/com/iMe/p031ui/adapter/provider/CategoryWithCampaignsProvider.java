@@ -17,7 +17,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import org.koin.core.Koin;
 import org.koin.core.component.KoinComponent;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.p044ui.ActionBar.Theme;
 /* compiled from: CategoryWithCampaignsProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.CategoryWithCampaignsProvider */
@@ -26,7 +26,7 @@ public final class CategoryWithCampaignsProvider extends BaseNodeProvider<Catego
     private Function1<? super CampaignItem, Unit> onChannelItemClick = CategoryWithCampaignsProvider$onChannelItemClick$1.INSTANCE;
     private Function1<? super Long, Unit> onLoadMoreChannels = CategoryWithCampaignsProvider$onLoadMoreChannels$1.INSTANCE;
     private final int itemViewType = IdFabric$ViewTypes.CATALOG_CATEGORY_WITH_CAMPAIGNS;
-    private final int layoutId = C3290R.layout.fork_recycle_item_catalog_category_preview;
+    private final int layoutId = C3295R.layout.fork_recycle_item_catalog_category_preview;
     private final ChannelsDiffCallback channelsDiffCallback = new ChannelsDiffCallback();
     private Map<Integer, Parcelable> channelsRecyclersScrollStates = new LinkedHashMap();
     private final Map<Long, CatalogAllChannelsRecycleAdapter> channelsAdapters = new LinkedHashMap();
@@ -69,7 +69,7 @@ public final class CategoryWithCampaignsProvider extends BaseNodeProvider<Catego
         if (BaseQuickAdapterExtKt.isViewType(holder, getItemViewType())) {
             Map<Integer, Parcelable> map = this.channelsRecyclersScrollStates;
             Integer valueOf = Integer.valueOf(holder.getAdapterPosition());
-            RecyclerView.LayoutManager layoutManager = ((RecyclerView) holder.getView(C3290R.C3293id.recycle_channels)).getLayoutManager();
+            RecyclerView.LayoutManager layoutManager = ((RecyclerView) holder.getView(C3295R.C3298id.recycle_channels)).getLayoutManager();
             map.put(valueOf, layoutManager != null ? layoutManager.onSaveInstanceState() : null);
         }
     }
@@ -86,7 +86,7 @@ public final class CategoryWithCampaignsProvider extends BaseNodeProvider<Catego
     public void convert(BaseViewHolder helper, CategoryWithCampaignsItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3290R.C3293id.text_title;
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(helper, i, Theme.key_windowBackgroundWhiteGrayText2).setText(i, item.getCategory().getTitle()), i), C3290R.C3293id.recycle_channels, new CategoryWithCampaignsProvider$convert$1(this, helper, item));
+        int i = C3295R.C3298id.text_title;
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(helper, i, Theme.key_windowBackgroundWhiteGrayText2).setText(i, item.getCategory().getTitle()), i), C3295R.C3298id.recycle_channels, new CategoryWithCampaignsProvider$convert$1(this, helper, item));
     }
 }

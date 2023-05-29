@@ -211,7 +211,7 @@ public final class Scope {
             if (logger.isAt(level)) {
                 logger.display(level, "| >> parameters " + invoke + ' ');
             }
-            KoinPlatformTools.INSTANCE.m1612synchronized(this, new Scope$resolveInstance$2(this, invoke));
+            KoinPlatformTools.INSTANCE.m1614synchronized(this, new Scope$resolveInstance$2(this, invoke));
         }
         T t = (T) resolveValue(qualifier, kClass, new InstanceContext(this._koin.getLogger(), this, invoke), function0);
         if (invoke != null) {
@@ -220,7 +220,7 @@ public final class Scope {
             if (logger2.isAt(level2)) {
                 logger2.display(level2, "| << parameters");
             }
-            KoinPlatformTools.INSTANCE.m1612synchronized(this, new Scope$resolveInstance$3(this));
+            KoinPlatformTools.INSTANCE.m1614synchronized(this, new Scope$resolveInstance$3(this));
         }
         return t;
     }
@@ -259,7 +259,7 @@ public final class Scope {
                     }
                     t = (T) findInOtherScope(kClass, qualifier, function0);
                     if (t == null) {
-                        KoinPlatformTools.INSTANCE.m1612synchronized(this, new Scope$resolveValue$4$1(this));
+                        KoinPlatformTools.INSTANCE.m1614synchronized(this, new Scope$resolveValue$4$1(this));
                         Logger logger4 = this._koin.getLogger();
                         if (logger4.isAt(level)) {
                             logger4.display(level, "|- << parameters");
@@ -324,7 +324,7 @@ public final class Scope {
     }
 
     public final void close() {
-        KoinPlatformTools.INSTANCE.m1612synchronized(this, new Scope$close$1(this));
+        KoinPlatformTools.INSTANCE.m1614synchronized(this, new Scope$close$1(this));
     }
 
     public String toString() {

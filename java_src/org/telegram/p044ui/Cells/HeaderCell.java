@@ -17,7 +17,7 @@ import androidx.core.view.ViewCompat;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.SimpleTextView;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -110,7 +110,7 @@ public class HeaderCell extends FrameLayout {
         this.resourcesProvider = resourcesProvider;
         ImageView imageView = new ImageView(context);
         this.expandImageView = imageView;
-        imageView.setImageResource(C3290R.C3292drawable.arrow_more);
+        imageView.setImageResource(C3295R.C3297drawable.arrow_more);
         imageView.setColorFilter(new PorterDuffColorFilter(getThemedColor(i), PorterDuff.Mode.MULTIPLY));
         imageView.setVisibility(8);
         addView(imageView, LayoutHelper.createFrame(-2, -2, 51, i2 - 4, i3, 0, 0));

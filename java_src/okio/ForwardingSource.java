@@ -37,7 +37,7 @@ public abstract class ForwardingSource implements Source {
     }
 
     /* renamed from: -deprecated_delegate  reason: not valid java name */
-    public final Source m1610deprecated_delegate() {
+    public final Source m1612deprecated_delegate() {
         return this.delegate;
     }
 }

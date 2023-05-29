@@ -25,8 +25,8 @@ public final class AbstractChannel$receiveCatching$1 extends ContinuationImpl {
         Object coroutine_suspended;
         this.result = obj;
         this.label |= Integer.MIN_VALUE;
-        Object mo1586receiveCatchingJP2dKIU = this.this$0.mo1586receiveCatchingJP2dKIU(this);
+        Object mo1588receiveCatchingJP2dKIU = this.this$0.mo1588receiveCatchingJP2dKIU(this);
         coroutine_suspended = IntrinsicsKt__IntrinsicsKt.getCOROUTINE_SUSPENDED();
-        return mo1586receiveCatchingJP2dKIU == coroutine_suspended ? mo1586receiveCatchingJP2dKIU : ChannelResult.m1588boximpl(mo1586receiveCatchingJP2dKIU);
+        return mo1588receiveCatchingJP2dKIU == coroutine_suspended ? mo1588receiveCatchingJP2dKIU : ChannelResult.m1590boximpl(mo1588receiveCatchingJP2dKIU);
     }
 }

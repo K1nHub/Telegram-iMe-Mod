@@ -15,7 +15,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 /* compiled from: RxExt.kt */
 /* renamed from: com.iMe.manager.crypto.recipient.CryptoRecipientManager$loadAddressInfoById$$inlined$subscribeWithErrorHandle$default$1 */
 /* loaded from: classes3.dex */
@@ -63,10 +63,12 @@ public final class C1571x4c48b562 extends Lambda implements Function1<Result<? e
                 ethAddress = accountInfo.getEthAddress();
             } else if (i == 2) {
                 ethAddress = accountInfo.getTronAddress();
-            } else if (i != 3) {
+            } else if (i == 3) {
+                ethAddress = accountInfo.getTonAddress();
+            } else if (i != 4) {
                 throw new NoWhenBranchMatchedException();
             } else {
-                ethAddress = accountInfo.getTonAddress();
+                ethAddress = accountInfo.getBitcoinAddress();
             }
             AddressAccessState mapToUI = AddressUiMappingKt.mapToUI(ethAddress);
             if (mapToUI instanceof AddressAccessState.Granted) {
@@ -87,22 +89,22 @@ public final class C1571x4c48b562 extends Lambda implements Function1<Result<? e
             } else if (mapToUI instanceof AddressAccessState.NotAvailable) {
                 viewState3 = this.this$0.getViewState();
                 resourceManager5 = this.this$0.resourceManager;
-                String string = resourceManager5.getString(C3290R.string.wallet_amount_error_invalid_user_title);
+                String string = resourceManager5.getString(C3295R.string.wallet_amount_error_invalid_user_title);
                 resourceManager6 = this.this$0.resourceManager;
-                String string2 = resourceManager6.getString(C3290R.string.wallet_recipient_error_dialog_no_eth_address_description);
+                String string2 = resourceManager6.getString(C3295R.string.wallet_recipient_error_dialog_no_eth_address_description);
                 resourceManager7 = this.this$0.resourceManager;
-                viewState3.showErrorDialog(string, string2, resourceManager7.getString(C3290R.string.wallet_amount_error_invalid_user_btn_txt));
+                viewState3.showErrorDialog(string, string2, resourceManager7.getString(C3295R.string.wallet_amount_error_invalid_user_btn_txt));
             }
         } else if (result instanceof Result.Error) {
             Result.Error error = (Result.Error) result;
             if (error.getError().getStatus() == FirebaseFunctionsErrorHandler.ErrorStatus.USER_NOT_FOUND) {
                 viewState2 = this.this$0.getViewState();
                 resourceManager2 = this.this$0.resourceManager;
-                String string3 = resourceManager2.getString(C3290R.string.wallet_amount_error_invalid_user_title);
+                String string3 = resourceManager2.getString(C3295R.string.wallet_amount_error_invalid_user_title);
                 resourceManager3 = this.this$0.resourceManager;
-                String string4 = resourceManager3.getString(C3290R.string.wallet_amount_error_user_wallet_not_activated_description);
+                String string4 = resourceManager3.getString(C3295R.string.wallet_amount_error_user_wallet_not_activated_description);
                 resourceManager4 = this.this$0.resourceManager;
-                viewState2.showErrorDialog(string3, string4, resourceManager4.getString(C3290R.string.wallet_amount_error_invalid_user_btn_txt));
+                viewState2.showErrorDialog(string3, string4, resourceManager4.getString(C3295R.string.wallet_amount_error_invalid_user_btn_txt));
                 return;
             }
             viewState = this.this$0.getViewState();

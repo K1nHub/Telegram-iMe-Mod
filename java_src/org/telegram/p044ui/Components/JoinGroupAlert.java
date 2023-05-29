@@ -14,7 +14,7 @@ import androidx.core.widget.NestedScrollView;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
@@ -76,7 +76,7 @@ public class JoinGroupAlert extends BottomSheet {
         ImageView imageView = new ImageView(context);
         imageView.setBackground(Theme.createSelectorDrawable(getThemedColor(Theme.key_listSelector)));
         imageView.setColorFilter(getThemedColor(Theme.key_sheet_other));
-        imageView.setImageResource(C3290R.C3292drawable.ic_layer_close);
+        imageView.setImageResource(C3295R.C3297drawable.ic_layer_close);
         imageView.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.JoinGroupAlert$$ExternalSyntheticLambda2
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -180,7 +180,7 @@ public class JoinGroupAlert extends BottomSheet {
                 TextView textView4 = pickerBottomLayout.cancelButton;
                 int i5 = Theme.key_dialogTextBlue2;
                 textView4.setTextColor(getThemedColor(i5));
-                pickerBottomLayout.cancelButton.setText(LocaleController.getString("Cancel", C3290R.string.Cancel).toUpperCase());
+                pickerBottomLayout.cancelButton.setText(LocaleController.getString("Cancel", C3295R.string.Cancel).toUpperCase());
                 pickerBottomLayout.cancelButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.JoinGroupAlert$$ExternalSyntheticLambda3
                     @Override // android.view.View.OnClickListener
                     public final void onClick(View view2) {
@@ -193,9 +193,9 @@ public class JoinGroupAlert extends BottomSheet {
                 pickerBottomLayout.doneButtonTextView.setTextColor(getThemedColor(i5));
                 TLRPC$ChatInvite tLRPC$ChatInvite6 = this.chatInvite;
                 if ((tLRPC$ChatInvite6.channel && !tLRPC$ChatInvite6.megagroup) || (ChatObject.isChannel(tLRPC$ChatInvite6.chat) && !this.chatInvite.chat.megagroup)) {
-                    pickerBottomLayout.doneButtonTextView.setText(LocaleController.getString("ProfileJoinChannel", C3290R.string.ProfileJoinChannel).toUpperCase());
+                    pickerBottomLayout.doneButtonTextView.setText(LocaleController.getString("ProfileJoinChannel", C3295R.string.ProfileJoinChannel).toUpperCase());
                 } else {
-                    pickerBottomLayout.doneButtonTextView.setText(LocaleController.getString("JoinGroup", C3290R.string.JoinGroup));
+                    pickerBottomLayout.doneButtonTextView.setText(LocaleController.getString("JoinGroup", C3295R.string.JoinGroup));
                 }
                 pickerBottomLayout.doneButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.JoinGroupAlert$$ExternalSyntheticLambda4
                     @Override // android.view.View.OnClickListener
@@ -224,10 +224,10 @@ public class JoinGroupAlert extends BottomSheet {
         this.requestTextView.setSingleLine(true);
         TextView textView6 = this.requestTextView;
         if (z) {
-            i2 = C3290R.string.RequestToJoinChannel;
+            i2 = C3295R.string.RequestToJoinChannel;
             str3 = "RequestToJoinChannel";
         } else {
-            i2 = C3290R.string.RequestToJoinGroup;
+            i2 = C3295R.string.RequestToJoinGroup;
             str3 = "RequestToJoinGroup";
         }
         textView6.setText(LocaleController.getString(str3, i2));
@@ -245,10 +245,10 @@ public class JoinGroupAlert extends BottomSheet {
         textView7.setGravity(17);
         textView7.setTextSize(1, 14.0f);
         if (z) {
-            i3 = C3290R.string.RequestToJoinChannelDescription;
+            i3 = C3295R.string.RequestToJoinChannelDescription;
             str4 = "RequestToJoinChannelDescription";
         } else {
-            i3 = C3290R.string.RequestToJoinGroupDescription;
+            i3 = C3295R.string.RequestToJoinGroupDescription;
             str4 = "RequestToJoinGroupDescription";
         }
         textView7.setText(LocaleController.getString(str4, i3));
@@ -429,12 +429,12 @@ public class JoinGroupAlert extends BottomSheet {
             return;
         }
         Bulletin.TwoLineLottieLayout twoLineLottieLayout = new Bulletin.TwoLineLottieLayout(context, baseFragment.getResourceProvider());
-        twoLineLottieLayout.imageView.setAnimation(C3290R.raw.timer_3, 28, 28);
-        twoLineLottieLayout.titleTextView.setText(LocaleController.getString("RequestToJoinSent", C3290R.string.RequestToJoinSent));
+        twoLineLottieLayout.imageView.setAnimation(C3295R.raw.timer_3, 28, 28);
+        twoLineLottieLayout.titleTextView.setText(LocaleController.getString("RequestToJoinSent", C3295R.string.RequestToJoinSent));
         if (z) {
-            string = LocaleController.getString("RequestToJoinChannelSentDescription", C3290R.string.RequestToJoinChannelSentDescription);
+            string = LocaleController.getString("RequestToJoinChannelSentDescription", C3295R.string.RequestToJoinChannelSentDescription);
         } else {
-            string = LocaleController.getString("RequestToJoinGroupSentDescription", C3290R.string.RequestToJoinGroupSentDescription);
+            string = LocaleController.getString("RequestToJoinGroupSentDescription", C3295R.string.RequestToJoinGroupSentDescription);
         }
         twoLineLottieLayout.subtitleTextView.setText(string);
         Bulletin.make(baseFragment, twoLineLottieLayout, 2750).show();

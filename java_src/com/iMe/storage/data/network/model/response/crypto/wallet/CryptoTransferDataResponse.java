@@ -6,18 +6,11 @@ import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoTransferDataResponse.kt */
 /* loaded from: classes3.dex */
 public abstract class CryptoTransferDataResponse {
-    private final transient String contractAddress;
-
-    public /* synthetic */ CryptoTransferDataResponse(String str, DefaultConstructorMarker defaultConstructorMarker) {
-        this(str);
+    public /* synthetic */ CryptoTransferDataResponse(DefaultConstructorMarker defaultConstructorMarker) {
+        this();
     }
 
-    private CryptoTransferDataResponse(String str) {
-        this.contractAddress = str;
-    }
-
-    public String getContractAddress() {
-        return this.contractAddress;
+    private CryptoTransferDataResponse() {
     }
 
     /* compiled from: CryptoTransferDataResponse.kt */
@@ -29,7 +22,7 @@ public abstract class CryptoTransferDataResponse {
 
         public static /* synthetic */ EVM copy$default(EVM evm, String str, TransactionParamsResponse.EVM evm2, String str2, int i, Object obj) {
             if ((i & 1) != 0) {
-                str = evm.getContractAddress();
+                str = evm.contractAddress;
             }
             if ((i & 2) != 0) {
                 evm2 = evm.transactionParams;
@@ -41,7 +34,7 @@ public abstract class CryptoTransferDataResponse {
         }
 
         public final String component1() {
-            return getContractAddress();
+            return this.contractAddress;
         }
 
         public final TransactionParamsResponse.EVM component2() {
@@ -64,21 +57,21 @@ public abstract class CryptoTransferDataResponse {
             }
             if (obj instanceof EVM) {
                 EVM evm = (EVM) obj;
-                return Intrinsics.areEqual(getContractAddress(), evm.getContractAddress()) && Intrinsics.areEqual(this.transactionParams, evm.transactionParams) && Intrinsics.areEqual(this.feeTokenCode, evm.feeTokenCode);
+                return Intrinsics.areEqual(this.contractAddress, evm.contractAddress) && Intrinsics.areEqual(this.transactionParams, evm.transactionParams) && Intrinsics.areEqual(this.feeTokenCode, evm.feeTokenCode);
             }
             return false;
         }
 
         public int hashCode() {
-            return ((((getContractAddress() == null ? 0 : getContractAddress().hashCode()) * 31) + this.transactionParams.hashCode()) * 31) + this.feeTokenCode.hashCode();
+            String str = this.contractAddress;
+            return ((((str == null ? 0 : str.hashCode()) * 31) + this.transactionParams.hashCode()) * 31) + this.feeTokenCode.hashCode();
         }
 
         public String toString() {
-            return "EVM(contractAddress=" + getContractAddress() + ", transactionParams=" + this.transactionParams + ", feeTokenCode=" + this.feeTokenCode + ')';
+            return "EVM(contractAddress=" + this.contractAddress + ", transactionParams=" + this.transactionParams + ", feeTokenCode=" + this.feeTokenCode + ')';
         }
 
-        @Override // com.iMe.storage.data.network.model.response.crypto.wallet.CryptoTransferDataResponse
-        public String getContractAddress() {
+        public final String getContractAddress() {
             return this.contractAddress;
         }
 
@@ -92,7 +85,7 @@ public abstract class CryptoTransferDataResponse {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public EVM(String str, TransactionParamsResponse.EVM transactionParams, String feeTokenCode) {
-            super(str, null);
+            super(null);
             Intrinsics.checkNotNullParameter(transactionParams, "transactionParams");
             Intrinsics.checkNotNullParameter(feeTokenCode, "feeTokenCode");
             this.contractAddress = str;
@@ -110,7 +103,7 @@ public abstract class CryptoTransferDataResponse {
 
         public static /* synthetic */ TRON copy$default(TRON tron, String str, TransactionParamsResponse.TRON tron2, GasPriceResponse gasPriceResponse, int i, Object obj) {
             if ((i & 1) != 0) {
-                str = tron.getContractAddress();
+                str = tron.contractAddress;
             }
             if ((i & 2) != 0) {
                 tron2 = tron.transactionParams;
@@ -122,7 +115,7 @@ public abstract class CryptoTransferDataResponse {
         }
 
         public final String component1() {
-            return getContractAddress();
+            return this.contractAddress;
         }
 
         public final TransactionParamsResponse.TRON component2() {
@@ -145,21 +138,21 @@ public abstract class CryptoTransferDataResponse {
             }
             if (obj instanceof TRON) {
                 TRON tron = (TRON) obj;
-                return Intrinsics.areEqual(getContractAddress(), tron.getContractAddress()) && Intrinsics.areEqual(this.transactionParams, tron.transactionParams) && Intrinsics.areEqual(this.estimateFees, tron.estimateFees);
+                return Intrinsics.areEqual(this.contractAddress, tron.contractAddress) && Intrinsics.areEqual(this.transactionParams, tron.transactionParams) && Intrinsics.areEqual(this.estimateFees, tron.estimateFees);
             }
             return false;
         }
 
         public int hashCode() {
-            return ((((getContractAddress() == null ? 0 : getContractAddress().hashCode()) * 31) + this.transactionParams.hashCode()) * 31) + this.estimateFees.hashCode();
+            String str = this.contractAddress;
+            return ((((str == null ? 0 : str.hashCode()) * 31) + this.transactionParams.hashCode()) * 31) + this.estimateFees.hashCode();
         }
 
         public String toString() {
-            return "TRON(contractAddress=" + getContractAddress() + ", transactionParams=" + this.transactionParams + ", estimateFees=" + this.estimateFees + ')';
+            return "TRON(contractAddress=" + this.contractAddress + ", transactionParams=" + this.transactionParams + ", estimateFees=" + this.estimateFees + ')';
         }
 
-        @Override // com.iMe.storage.data.network.model.response.crypto.wallet.CryptoTransferDataResponse
-        public String getContractAddress() {
+        public final String getContractAddress() {
             return this.contractAddress;
         }
 
@@ -173,12 +166,60 @@ public abstract class CryptoTransferDataResponse {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public TRON(String str, TransactionParamsResponse.TRON transactionParams, GasPriceResponse estimateFees) {
-            super(str, null);
+            super(null);
             Intrinsics.checkNotNullParameter(transactionParams, "transactionParams");
             Intrinsics.checkNotNullParameter(estimateFees, "estimateFees");
             this.contractAddress = str;
             this.transactionParams = transactionParams;
             this.estimateFees = estimateFees;
+        }
+    }
+
+    /* compiled from: CryptoTransferDataResponse.kt */
+    /* loaded from: classes3.dex */
+    public static final class BTC extends CryptoTransferDataResponse {
+        private final TransactionParamsResponse.BTC transactionParams;
+
+        public static /* synthetic */ BTC copy$default(BTC btc, TransactionParamsResponse.BTC btc2, int i, Object obj) {
+            if ((i & 1) != 0) {
+                btc2 = btc.transactionParams;
+            }
+            return btc.copy(btc2);
+        }
+
+        public final TransactionParamsResponse.BTC component1() {
+            return this.transactionParams;
+        }
+
+        public final BTC copy(TransactionParamsResponse.BTC transactionParams) {
+            Intrinsics.checkNotNullParameter(transactionParams, "transactionParams");
+            return new BTC(transactionParams);
+        }
+
+        public boolean equals(Object obj) {
+            if (this == obj) {
+                return true;
+            }
+            return (obj instanceof BTC) && Intrinsics.areEqual(this.transactionParams, ((BTC) obj).transactionParams);
+        }
+
+        public int hashCode() {
+            return this.transactionParams.hashCode();
+        }
+
+        public String toString() {
+            return "BTC(transactionParams=" + this.transactionParams + ')';
+        }
+
+        public final TransactionParamsResponse.BTC getTransactionParams() {
+            return this.transactionParams;
+        }
+
+        /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
+        public BTC(TransactionParamsResponse.BTC transactionParams) {
+            super(null);
+            Intrinsics.checkNotNullParameter(transactionParams, "transactionParams");
+            this.transactionParams = transactionParams;
         }
     }
 }

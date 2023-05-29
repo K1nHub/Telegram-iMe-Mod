@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Lambda;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* compiled from: WalletConnectFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment$onSessionItemClick$1 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletConnectFragment$onSessionItemClick$1 extends Lambda implements Function0<Unit> {
     final /* synthetic */ WalletConnectSessionItem $sessionItem;
     final /* synthetic */ WalletConnectFragment this$0;

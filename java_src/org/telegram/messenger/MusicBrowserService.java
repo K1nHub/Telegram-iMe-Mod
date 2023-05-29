@@ -110,7 +110,7 @@ public class MusicBrowserService extends MediaBrowserService implements Notifica
     @Override // android.service.media.MediaBrowserService
     public void onLoadChildren(final String str, final MediaBrowserService.Result<List<MediaBrowser.MediaItem>> result) {
         if (passcode()) {
-            Toast.makeText(getApplicationContext(), LocaleController.getString(C3290R.string.EnterYourTelegramPasscode), 1).show();
+            Toast.makeText(getApplicationContext(), LocaleController.getString(C3295R.string.EnterYourTelegramPasscode), 1).show();
             stopSelf();
             result.detach();
         } else if (!this.chatsLoaded) {

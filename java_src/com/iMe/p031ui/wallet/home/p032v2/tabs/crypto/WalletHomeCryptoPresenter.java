@@ -73,7 +73,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.ranges.RangesKt___RangesKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.tgnet.TLRPC$User;
 /* compiled from: WalletHomeCryptoPresenter.kt */
 @InjectViewState
@@ -270,11 +270,11 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
     }
 
     private final void loadAccountInformation() {
-        Observable<R> map = this.cryptoWalletInteractor.getLinkedCryptoWalletAddress(getCurrentNetworkType().getBlockchainType()).map(new C2297x21775993(new C2292x3703ab47(this)));
+        Observable<R> map = this.cryptoWalletInteractor.getLinkedCryptoWalletAddress(getCurrentNetworkType().getBlockchainType()).map(new C2302x21775993(new C2297x3703ab47(this)));
         Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
         Observable observeOn = map.observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "cryptoWalletInteractor\n …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2293xa8abeb1d(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2294xa8abeb1e((BaseView) getViewState())));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2298xa8abeb1d(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2299xa8abeb1e((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         autoDispose(subscribe, this.mainScreenSubscriptions);
     }
@@ -301,7 +301,7 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
         }
         Observable<Result<List<NftToken>>> delay = walletBalance$default.distinctUntilChanged().delay(j, TimeUnit.MILLISECONDS);
         Intrinsics.checkNotNullExpressionValue(delay, "observable\n             …y, TimeUnit.MILLISECONDS)");
-        Observable<R> map = delay.map(new C2297x21775993(new WalletHomeCryptoPresenter$loadTokens$$inlined$mapSuccess$1(this)));
+        Observable<R> map = delay.map(new C2302x21775993(new WalletHomeCryptoPresenter$loadTokens$$inlined$mapSuccess$1(this)));
         Intrinsics.checkNotNullExpressionValue(map, "crossinline body: (T) ->…ult as? R\n        }\n    }");
         Observable observeOn = map.observeOn(this.schedulersProvider.mo698ui());
         final WalletHomeCryptoPresenter$loadTokens$2 walletHomeCryptoPresenter$loadTokens$2 = new WalletHomeCryptoPresenter$loadTokens$2(this);
@@ -317,7 +317,7 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
             }
         });
         Intrinsics.checkNotNullExpressionValue(doFinally, "private fun loadTokens(f…creenSubscriptions)\n    }");
-        Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2295xe9f7ff8(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2296xe9f7ff9((BaseView) getViewState())));
+        Disposable subscribe = doFinally.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2300xe9f7ff8(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2301xe9f7ff9((BaseView) getViewState())));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         autoDispose(subscribe, this.mainScreenSubscriptions);
     }
@@ -350,7 +350,7 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
         RxEventBus rxEventBus = this.rxEventBus;
         Observable observeOn = rxEventBus.getPublisher().ofType(RxEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2290x69225658(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2291x69225659(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2295x69225658(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2296x69225659(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }
@@ -374,9 +374,9 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
 
     private final void configureTokensHeader(List<BaseNode> list) {
         int collectionSizeOrDefault;
-        int i = C3290R.C3293id.selectable_token_header;
+        int i = C3295R.C3298id.selectable_token_header;
         int category = this.selectedTokenType.getCategory();
-        int i2 = C3290R.C3292drawable.fork_ic_arrow_down_16;
+        int i2 = C3295R.C3297drawable.fork_ic_arrow_down_16;
         List<TokenType> availableTypes = TokenType.Companion.getAvailableTypes();
         collectionSizeOrDefault = CollectionsKt__IterablesKt.collectionSizeOrDefault(availableTypes, 10);
         ArrayList arrayList = new ArrayList(collectionSizeOrDefault);
@@ -397,7 +397,7 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
     }
 
     private final void configureCryptoAccountHeader(List<BaseNode> list) {
-        list.add(new HeaderItemWithNetworkSwitcher(this.resourceManager.getString(C3290R.string.wallet_home_crypto_account), this.cryptoPreferenceHelper.getNetworkType(), false, 4, null));
+        list.add(new HeaderItemWithNetworkSwitcher(this.resourceManager.getString(C3295R.string.wallet_home_crypto_account), this.cryptoPreferenceHelper.getNetworkType(), false, 4, null));
     }
 
     private final List<BaseNode> configureCryptoAccount(List<BaseNode> list) {
@@ -585,7 +585,7 @@ public final class WalletHomeCryptoPresenter extends BasePresenter<WalletHomeCry
 
     private final List<HorizontalActionButtonItem> resolveActions() {
         List<HorizontalActionButtonItem> listOf;
-        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new HorizontalActionButtonItem[]{new HorizontalActionButtonItem(C3290R.C3292drawable.msg_send, this.resourceManager.getString(C3290R.string.wallet_token_details_details_action_send), this.selectedTokenType.isCrypto(), new WalletHomeCryptoPresenter$resolveActions$1(this)), new HorizontalActionButtonItem(C3290R.C3292drawable.fork_ic_ask_transfer, this.resourceManager.getString(C3290R.string.wallet_binance_pay_action_receive), false, new WalletHomeCryptoPresenter$resolveActions$2(this), 4, null), new HorizontalActionButtonItem(C3290R.C3292drawable.fork_ic_transactions_28, this.resourceManager.getString(C3290R.string.wallet_binance_pay_action_history), this.selectedTokenType.isCrypto(), new WalletHomeCryptoPresenter$resolveActions$3(this))});
+        listOf = CollectionsKt__CollectionsKt.listOf((Object[]) new HorizontalActionButtonItem[]{new HorizontalActionButtonItem(C3295R.C3297drawable.msg_send, this.resourceManager.getString(C3295R.string.wallet_token_details_details_action_send), this.selectedTokenType.isCrypto(), new WalletHomeCryptoPresenter$resolveActions$1(this)), new HorizontalActionButtonItem(C3295R.C3297drawable.fork_ic_ask_transfer, this.resourceManager.getString(C3295R.string.wallet_binance_pay_action_receive), false, new WalletHomeCryptoPresenter$resolveActions$2(this), 4, null), new HorizontalActionButtonItem(C3295R.C3297drawable.fork_ic_transactions_28, this.resourceManager.getString(C3295R.string.wallet_binance_pay_action_history), this.selectedTokenType.isCrypto(), new WalletHomeCryptoPresenter$resolveActions$3(this))});
         return listOf;
     }
 

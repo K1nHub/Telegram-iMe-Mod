@@ -5,18 +5,18 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 /* JADX INFO: Access modifiers changed from: package-private */
 /* loaded from: classes4.dex */
-public final class ThreadLocalContextStorage extends Context.AbstractC2463Storage {
+public final class ThreadLocalContextStorage extends Context.AbstractC2468Storage {
     private static final Logger log = Logger.getLogger(ThreadLocalContextStorage.class.getName());
     static final ThreadLocal<Context> localContext = new ThreadLocal<>();
 
-    @Override // io.grpc.Context.AbstractC2463Storage
+    @Override // io.grpc.Context.AbstractC2468Storage
     public Context doAttach(Context context) {
         Context current = current();
         localContext.set(context);
         return current;
     }
 
-    @Override // io.grpc.Context.AbstractC2463Storage
+    @Override // io.grpc.Context.AbstractC2468Storage
     public void detach(Context context, Context context2) {
         if (current() != context) {
             log.log(Level.SEVERE, "Context was not attached when detaching", new Throwable().fillInStackTrace());
@@ -28,7 +28,7 @@ public final class ThreadLocalContextStorage extends Context.AbstractC2463Storag
         }
     }
 
-    @Override // io.grpc.Context.AbstractC2463Storage
+    @Override // io.grpc.Context.AbstractC2468Storage
     public Context current() {
         Context context = localContext.get();
         return context == null ? Context.ROOT : context;

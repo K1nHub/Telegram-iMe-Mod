@@ -547,7 +547,7 @@ public final class Harmony {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C68251 c68251) {
+            /* synthetic */ Builder(C68301 c68301) {
                 this();
             }
 
@@ -671,7 +671,7 @@ public final class Harmony {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68251.f1803xa1df5c61[method.ordinal()]) {
+            switch (C68301.f1803xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -718,7 +718,7 @@ public final class Harmony {
 
     /* renamed from: wallet.core.jni.proto.Harmony$1 */
     /* loaded from: classes6.dex */
-    static /* synthetic */ class C68251 {
+    static /* synthetic */ class C68301 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f1803xa1df5c61;
@@ -906,7 +906,7 @@ public final class Harmony {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C68251 c68251) {
+            /* synthetic */ Builder(C68301 c68301) {
                 this();
             }
 
@@ -985,7 +985,7 @@ public final class Harmony {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68251.f1803xa1df5c61[method.ordinal()]) {
+            switch (C68301.f1803xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:
@@ -1260,7 +1260,7 @@ public final class Harmony {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TransactionMessage, Builder> implements TransactionMessageOrBuilder {
-            /* synthetic */ Builder(C68251 c68251) {
+            /* synthetic */ Builder(C68301 c68301) {
                 this();
             }
 
@@ -1418,7 +1418,7 @@ public final class Harmony {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68251.f1803xa1df5c61[method.ordinal()]) {
+            switch (C68301.f1803xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TransactionMessage();
                 case 2:
@@ -1847,7 +1847,7 @@ public final class Harmony {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<StakingMessage, Builder> implements StakingMessageOrBuilder {
-            /* synthetic */ Builder(C68251 c68251) {
+            /* synthetic */ Builder(C68301 c68301) {
                 this();
             }
 
@@ -2090,7 +2090,7 @@ public final class Harmony {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68251.f1803xa1df5c61[method.ordinal()]) {
+            switch (C68301.f1803xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new StakingMessage();
                 case 2:
@@ -2346,7 +2346,7 @@ public final class Harmony {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Description, Builder> implements DescriptionOrBuilder {
-            /* synthetic */ Builder(C68251 c68251) {
+            /* synthetic */ Builder(C68301 c68301) {
                 this();
             }
 
@@ -2497,7 +2497,7 @@ public final class Harmony {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68251.f1803xa1df5c61[method.ordinal()]) {
+            switch (C68301.f1803xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Description();
                 case 2:
@@ -2647,7 +2647,7 @@ public final class Harmony {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<Decimal, Builder> implements DecimalOrBuilder {
-            /* synthetic */ Builder(C68251 c68251) {
+            /* synthetic */ Builder(C68301 c68301) {
                 this();
             }
 
@@ -2692,7 +2692,7 @@ public final class Harmony {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68251.f1803xa1df5c61[method.ordinal()]) {
+            switch (C68301.f1803xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new Decimal();
                 case 2:
@@ -2908,7 +2908,7 @@ public final class Harmony {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<CommissionRate, Builder> implements CommissionRateOrBuilder {
-            /* synthetic */ Builder(C68251 c68251) {
+            /* synthetic */ Builder(C68301 c68301) {
                 this();
             }
 
@@ -3021,7 +3021,7 @@ public final class Harmony {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68251.f1803xa1df5c61[method.ordinal()]) {
+            switch (C68301.f1803xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new CommissionRate();
                 case 2:
@@ -3391,7 +3391,7 @@ public final class Harmony {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<DirectiveCreateValidator, Builder> implements DirectiveCreateValidatorOrBuilder {
-            /* synthetic */ Builder(C68251 c68251) {
+            /* synthetic */ Builder(C68301 c68301) {
                 this();
             }
 
@@ -3627,7 +3627,7 @@ public final class Harmony {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68251.f1803xa1df5c61[method.ordinal()]) {
+            switch (C68301.f1803xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new DirectiveCreateValidator();
                 case 2:
@@ -3952,7 +3952,7 @@ public final class Harmony {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<DirectiveEditValidator, Builder> implements DirectiveEditValidatorOrBuilder {
-            /* synthetic */ Builder(C68251 c68251) {
+            /* synthetic */ Builder(C68301 c68301) {
                 this();
             }
 
@@ -4161,7 +4161,7 @@ public final class Harmony {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68251.f1803xa1df5c61[method.ordinal()]) {
+            switch (C68301.f1803xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new DirectiveEditValidator();
                 case 2:
@@ -4348,7 +4348,7 @@ public final class Harmony {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<DirectiveDelegate, Builder> implements DirectiveDelegateOrBuilder {
-            /* synthetic */ Builder(C68251 c68251) {
+            /* synthetic */ Builder(C68301 c68301) {
                 this();
             }
 
@@ -4432,7 +4432,7 @@ public final class Harmony {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68251.f1803xa1df5c61[method.ordinal()]) {
+            switch (C68301.f1803xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new DirectiveDelegate();
                 case 2:
@@ -4619,7 +4619,7 @@ public final class Harmony {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<DirectiveUndelegate, Builder> implements DirectiveUndelegateOrBuilder {
-            /* synthetic */ Builder(C68251 c68251) {
+            /* synthetic */ Builder(C68301 c68301) {
                 this();
             }
 
@@ -4703,7 +4703,7 @@ public final class Harmony {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68251.f1803xa1df5c61[method.ordinal()]) {
+            switch (C68301.f1803xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new DirectiveUndelegate();
                 case 2:
@@ -4843,7 +4843,7 @@ public final class Harmony {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<DirectiveCollectRewards, Builder> implements DirectiveCollectRewardsOrBuilder {
-            /* synthetic */ Builder(C68251 c68251) {
+            /* synthetic */ Builder(C68301 c68301) {
                 this();
             }
 
@@ -4882,7 +4882,7 @@ public final class Harmony {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68251.f1803xa1df5c61[method.ordinal()]) {
+            switch (C68301.f1803xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new DirectiveCollectRewards();
                 case 2:

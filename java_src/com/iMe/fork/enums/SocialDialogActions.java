@@ -8,7 +8,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 /* JADX WARN: Enum visitor error
 jadx.core.utils.exceptions.JadxRuntimeException: Init of enum OPEN uses external variables
@@ -64,16 +64,16 @@ public final class SocialDialogActions {
     }
 
     static {
-        int i = C3290R.C3292drawable.msg_openin;
-        String string = LocaleController.getString("Open", C3290R.string.Open);
+        int i = C3295R.C3297drawable.msg_openin;
+        String string = LocaleController.getString("Open", C3295R.string.Open);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Open\", R.string.Open)");
         OPEN = new SocialDialogActions("OPEN", 0, i, string);
-        int i2 = C3290R.C3292drawable.msg_copy;
-        String string2 = LocaleController.getString("Copy", C3290R.string.Copy);
+        int i2 = C3295R.C3297drawable.msg_copy;
+        String string2 = LocaleController.getString("Copy", C3295R.string.Copy);
         Intrinsics.checkNotNullExpressionValue(string2, "getString(\"Copy\", R.string.Copy)");
         COPY = new SocialDialogActions("COPY", 1, i2, string2);
-        int i3 = C3290R.C3292drawable.msg_delete;
-        String string3 = LocaleController.getString("Reset", C3290R.string.Reset);
+        int i3 = C3295R.C3297drawable.msg_delete;
+        String string3 = LocaleController.getString("Reset", C3295R.string.Reset);
         Intrinsics.checkNotNullExpressionValue(string3, "getString(\"Reset\", R.string.Reset)");
         RESET = new SocialDialogActions("RESET", 2, i3, string3);
         $VALUES = $values();

@@ -29,7 +29,7 @@ import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AccountInstance;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessageObject;
 import org.telegram.messenger.MessagesController;
@@ -167,7 +167,7 @@ public final class ServiceMessagesRemovingService extends Service implements Not
             Intrinsics.checkNotNull(obj7, "null cannot be cast to non-null type kotlin.Int");
             int intValue2 = ((Integer) obj7).intValue();
             if (this.isLoadingMessages && intValue2 == this.classGuid) {
-                stopServiceWithToast(C3290R.string.loading_messages_error);
+                stopServiceWithToast(C3295R.string.loading_messages_error);
             }
         } else if (i == NotificationCenter.didUpdateConnectionState) {
             onConnectionStateChanged();
@@ -233,7 +233,7 @@ public final class ServiceMessagesRemovingService extends Service implements Not
 
     private final void buildNotification() {
         if (this.builder == null) {
-            this.builder = ServiceNotificationsUtils.INSTANCE.createCancellableNotification("iMe_ServiceMessagesRemovingChannel", C3290R.C3292drawable.msg_delete_filled, StopServiceMessagesRemovingReceiver.class);
+            this.builder = ServiceNotificationsUtils.INSTANCE.createCancellableNotification("iMe_ServiceMessagesRemovingChannel", C3295R.C3297drawable.msg_delete_filled, StopServiceMessagesRemovingReceiver.class);
         }
     }
 
@@ -372,7 +372,7 @@ public final class ServiceMessagesRemovingService extends Service implements Not
         if (list2 == null || list2.isEmpty()) {
             List<Integer> list3 = this.serviceMessagesIdsByChatsIds.get(Long.valueOf(this.migratedChatId));
             if ((list3 == null || list3.isEmpty()) ? true : true) {
-                stopServiceWithToast(C3290R.string.no_service_messages);
+                stopServiceWithToast(C3295R.string.no_service_messages);
                 return;
             }
         }
@@ -382,7 +382,7 @@ public final class ServiceMessagesRemovingService extends Service implements Not
     private final void deleteNextServiceMessagesPart() {
         updateNotification(true, State.DELETING);
         if (deleteChatMessagesPartIfExist(this.chatId) && deleteChatMessagesPartIfExist(this.migratedChatId)) {
-            stopServiceWithToast(C3290R.string.deleting_messages_success);
+            stopServiceWithToast(C3295R.string.deleting_messages_success);
         }
     }
 
@@ -452,11 +452,11 @@ public final class ServiceMessagesRemovingService extends Service implements Not
         }
         int i = WhenMappings.$EnumSwitchMapping$0[state.ordinal()];
         if (i == 1) {
-            formatStringInternal = LocaleController.formatStringInternal(C3290R.string.loading_messages, Integer.valueOf(this.messages.size()));
+            formatStringInternal = LocaleController.formatStringInternal(C3295R.string.loading_messages, Integer.valueOf(this.messages.size()));
         } else if (i == 2) {
-            formatStringInternal = LocaleController.formatStringInternal(C3290R.string.deleting_messages, Integer.valueOf(this.deletedMessagesCount), Integer.valueOf(this.serviceMessagesCount));
+            formatStringInternal = LocaleController.formatStringInternal(C3295R.string.deleting_messages, Integer.valueOf(this.deletedMessagesCount), Integer.valueOf(this.serviceMessagesCount));
         } else {
-            formatStringInternal = LocaleController.getString("WaitingForNetwork", C3290R.string.WaitingForNetwork);
+            formatStringInternal = LocaleController.getString("WaitingForNetwork", C3295R.string.WaitingForNetwork);
         }
         NotificationCompat.Builder builder = this.builder;
         if (builder != null) {

@@ -9,7 +9,7 @@ import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.BigActionButton;
 import com.iMe.p031ui.custom.DetailsIconCellView;
 import com.iMe.p031ui.custom.ImageHeaderView;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 /* loaded from: classes4.dex */
 public final class ForkContentStakingConditionsBinding implements ViewBinding {
     public final BigActionButton buttonOk;
@@ -46,7 +46,7 @@ public final class ForkContentStakingConditionsBinding implements ViewBinding {
     }
 
     public static ForkContentStakingConditionsBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3290R.layout.fork_content_staking_conditions, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3295R.layout.fork_content_staking_conditions, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -54,31 +54,31 @@ public final class ForkContentStakingConditionsBinding implements ViewBinding {
     }
 
     public static ForkContentStakingConditionsBinding bind(View view) {
-        int i = C3290R.C3293id.button_ok;
+        int i = C3295R.C3298id.button_ok;
         BigActionButton bigActionButton = (BigActionButton) ViewBindings.findChildViewById(view, i);
         if (bigActionButton != null) {
-            i = C3290R.C3293id.view_annual_percentage_cell;
+            i = C3295R.C3298id.view_annual_percentage_cell;
             DetailsIconCellView detailsIconCellView = (DetailsIconCellView) ViewBindings.findChildViewById(view, i);
             if (detailsIconCellView != null) {
-                i = C3290R.C3293id.view_completion_date_cell;
+                i = C3295R.C3298id.view_completion_date_cell;
                 DetailsIconCellView detailsIconCellView2 = (DetailsIconCellView) ViewBindings.findChildViewById(view, i);
                 if (detailsIconCellView2 != null) {
-                    i = C3290R.C3293id.view_finished_fee_cell;
+                    i = C3295R.C3298id.view_finished_fee_cell;
                     DetailsIconCellView detailsIconCellView3 = (DetailsIconCellView) ViewBindings.findChildViewById(view, i);
                     if (detailsIconCellView3 != null) {
-                        i = C3290R.C3293id.view_header;
+                        i = C3295R.C3298id.view_header;
                         ImageHeaderView imageHeaderView = (ImageHeaderView) ViewBindings.findChildViewById(view, i);
                         if (imageHeaderView != null) {
-                            i = C3290R.C3293id.view_immediate_withdrawal_fee_cell;
+                            i = C3295R.C3298id.view_immediate_withdrawal_fee_cell;
                             DetailsIconCellView detailsIconCellView4 = (DetailsIconCellView) ViewBindings.findChildViewById(view, i);
                             if (detailsIconCellView4 != null) {
-                                i = C3290R.C3293id.view_planned_withdrawal_fee_cell;
+                                i = C3295R.C3298id.view_planned_withdrawal_fee_cell;
                                 DetailsIconCellView detailsIconCellView5 = (DetailsIconCellView) ViewBindings.findChildViewById(view, i);
                                 if (detailsIconCellView5 != null) {
-                                    i = C3290R.C3293id.view_start_date_cell;
+                                    i = C3295R.C3298id.view_start_date_cell;
                                     DetailsIconCellView detailsIconCellView6 = (DetailsIconCellView) ViewBindings.findChildViewById(view, i);
                                     if (detailsIconCellView6 != null) {
-                                        i = C3290R.C3293id.view_threshold_cell;
+                                        i = C3295R.C3298id.view_threshold_cell;
                                         DetailsIconCellView detailsIconCellView7 = (DetailsIconCellView) ViewBindings.findChildViewById(view, i);
                                         if (detailsIconCellView7 != null) {
                                             return new ForkContentStakingConditionsBinding((NestedScrollView) view, bigActionButton, detailsIconCellView, detailsIconCellView2, detailsIconCellView3, imageHeaderView, detailsIconCellView4, detailsIconCellView5, detailsIconCellView6, detailsIconCellView7);

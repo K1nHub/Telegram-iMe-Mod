@@ -61,7 +61,7 @@ import java.util.Map;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.AnimationNotificationsLocker;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.DispatchQueue;
@@ -86,7 +86,7 @@ import org.telegram.p044ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.p044ui.ActionBar.BackDrawable;
 import org.telegram.p044ui.ActionBar.BaseFragment;
 import org.telegram.p044ui.ActionBar.BottomSheet;
-import org.telegram.p044ui.ActionBar.C3356ActionBar;
+import org.telegram.p044ui.ActionBar.C3361ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Adapters.SearchAdapterHelper;
@@ -160,7 +160,7 @@ import org.telegram.tgnet.TLRPC$messages_Messages;
 /* renamed from: org.telegram.ui.Components.SharedMediaLayout */
 /* loaded from: classes6.dex */
 public class SharedMediaLayout extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
-    private C3356ActionBar actionBar;
+    private C3361ActionBar actionBar;
     private AnimatorSet actionModeAnimation;
     private LinearLayout actionModeLayout;
     private ArrayList<View> actionModeViews;
@@ -392,7 +392,7 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
         if (z) {
             Context context = getContext();
             GroupMembersFilter groupMembersFilter2 = GroupMembersFilter.BLOCKED;
-            Drawable mutate = ContextCompat.getDrawable(context, groupMembersFilter == groupMembersFilter2 ? C3290R.C3292drawable.ic_ab_other : C3290R.C3292drawable.msg_delete).mutate();
+            Drawable mutate = ContextCompat.getDrawable(context, groupMembersFilter == groupMembersFilter2 ? C3295R.C3297drawable.ic_ab_other : C3295R.C3297drawable.msg_delete).mutate();
             mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_windowBackgroundWhiteGrayText2), groupMembersFilter == groupMembersFilter2 ? PorterDuff.Mode.MULTIPLY : PorterDuff.Mode.SRC_IN));
             this.membersMenuItem.setImageDrawable(mutate);
             this.searchItem.setAlpha(BitmapDescriptorFactory.HUE_RED);
@@ -1050,7 +1050,7 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
 
     /* JADX WARN: Multi-variable type inference failed */
     /* JADX WARN: Type inference failed for: r12v6 */
-    /* JADX WARN: Type inference failed for: r12v7, types: [int, boolean] */
+    /* JADX WARN: Type inference failed for: r12v7, types: [boolean, int] */
     /* JADX WARN: Type inference failed for: r12v8 */
     /* JADX WARN: Type inference failed for: r4v1 */
     /* JADX WARN: Type inference failed for: r4v2, types: [boolean] */
@@ -1094,13 +1094,13 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
                     Method dump skipped, instructions count: 663
                     To view this dump add '--comments-level debug' option
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Components.SharedMediaLayout.C51331.getPlaceForPhoto(org.telegram.messenger.MessageObject, org.telegram.tgnet.TLRPC$FileLocation, int, boolean):org.telegram.ui.PhotoViewer$PlaceProviderObject");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Components.SharedMediaLayout.C51381.getPlaceForPhoto(org.telegram.messenger.MessageObject, org.telegram.tgnet.TLRPC$FileLocation, int, boolean):org.telegram.ui.PhotoViewer$PlaceProviderObject");
             }
         };
         this.sharedMediaData = new SharedMediaData[6];
         this.notificationsLocker = new AnimationNotificationsLocker();
         this.messageAlphaEnter = new SparseArray<>();
-        this.sharedLinkCellDelegate = new C515931();
+        this.sharedLinkCellDelegate = new C516431();
         if (sharedMediaPreloader.isMusicType()) {
             TLRPC$Chat chat = baseFragment.getMessagesController().getChat(Long.valueOf(-j));
             c = 6;
@@ -1209,7 +1209,7 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
         this.maximumVelocity = ViewConfiguration.get(context).getScaledMaximumFlingVelocity();
         this.searching = z2;
         this.searchWas = z2;
-        Drawable drawable = context.getResources().getDrawable(C3290R.C3292drawable.photos_header_shadow);
+        Drawable drawable = context.getResources().getDrawable(C3295R.C3297drawable.photos_header_shadow);
         this.pinnedHeaderShadowDrawable = drawable;
         drawable.setColorFilter(new PorterDuffColorFilter(getThemedColor(Theme.key_windowBackgroundGrayShadow), PorterDuff.Mode.MULTIPLY));
         ScrollSlidingTextTabStripInner scrollSlidingTextTabStripInner = this.scrollSlidingTextTabStrip;
@@ -1234,7 +1234,7 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
                 SharedMediaLayout.this.searchItem.setTranslationX(((View) SharedMediaLayout.this.searchItem.getParent()).getMeasuredWidth() - SharedMediaLayout.this.searchItem.getRight());
             }
         });
-        ActionBarMenuItem actionBarMenuItemSearchListener = createMenu.addItem(z2 ? 1 : 0, C3290R.C3292drawable.ic_ab_search).setIsSearchField(r4).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.Components.SharedMediaLayout.4
+        ActionBarMenuItem actionBarMenuItemSearchListener = createMenu.addItem(z2 ? 1 : 0, C3295R.C3297drawable.ic_ab_search).setIsSearchField(r4).setActionBarMenuItemSearchListener(new ActionBarMenuItem.ActionBarMenuItemSearchListener() { // from class: org.telegram.ui.Components.SharedMediaLayout.4
             @Override // org.telegram.p044ui.ActionBar.ActionBarMenuItem.ActionBarMenuItemSearchListener
             public void onSearchExpand() {
                 SharedMediaLayout.this.searching = true;
@@ -1308,7 +1308,7 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
         this.searchItem = actionBarMenuItemSearchListener;
         actionBarMenuItemSearchListener.setTranslationY(AndroidUtilities.m54dp(10));
         ActionBarMenuItem actionBarMenuItem = this.searchItem;
-        int i8 = C3290R.string.Search;
+        int i8 = C3295R.string.Search;
         actionBarMenuItem.setSearchFieldHint(LocaleController.getString("Search", i8));
         this.searchItem.setContentDescription(LocaleController.getString("Search", i8));
         this.searchItem.setVisibility(4);
@@ -1329,7 +1329,7 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
         imageView.setTranslationY(AndroidUtilities.m54dp(10));
         this.membersFilterItem.setVisibility(4);
         this.membersFilterItem.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
-        Drawable mutate = ContextCompat.getDrawable(context, C3290R.C3292drawable.fork_filter_members).mutate();
+        Drawable mutate = ContextCompat.getDrawable(context, C3295R.C3297drawable.fork_filter_members).mutate();
         int i9 = Theme.key_windowBackgroundWhiteGrayText2;
         mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i9), PorterDuff.Mode.SRC_IN));
         this.membersFilterItem.setImageDrawable(mutate);
@@ -1354,16 +1354,16 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
         this.actionBar.addView(this.membersMenuItem, LayoutHelper.createFrame(48, 56, 85));
         ImageView imageView3 = new ImageView(context);
         this.photoVideoOptionsItem = imageView3;
-        imageView3.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3290R.string.AccDescrMoreOptions));
+        imageView3.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3295R.string.AccDescrMoreOptions));
         this.photoVideoOptionsItem.setTranslationY(AndroidUtilities.m54dp(10));
         this.photoVideoOptionsItem.setVisibility(4);
-        Drawable mutate2 = ContextCompat.getDrawable(context, C3290R.C3292drawable.ic_ab_other).mutate();
+        Drawable mutate2 = ContextCompat.getDrawable(context, C3295R.C3297drawable.ic_ab_other).mutate();
         int i10 = Theme.key_actionBarActionModeDefaultIcon;
         mutate2.setColorFilter(new PorterDuffColorFilter(getThemedColor(i10), PorterDuff.Mode.MULTIPLY));
         this.photoVideoOptionsItem.setImageDrawable(mutate2);
         this.photoVideoOptionsItem.setScaleType(ImageView.ScaleType.CENTER_INSIDE);
         this.actionBar.addView(this.photoVideoOptionsItem, LayoutHelper.createFrame(48, 56, 85));
-        this.photoVideoOptionsItem.setOnClickListener(new View$OnClickListenerC51626(context));
+        this.photoVideoOptionsItem.setOnClickListener(new View$OnClickListenerC51676(context));
         EditTextBoldCursor searchField = this.searchItem.getSearchField();
         int i11 = Theme.key_windowBackgroundWhiteBlackText;
         searchField.setTextColor(getThemedColor(i11));
@@ -1388,7 +1388,7 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
         ImageView imageView6 = this.closeButton;
         int i12 = Theme.key_actionBarActionModeDefaultSelector;
         imageView6.setBackground(Theme.createSelectorDrawable(getThemedColor(i12), 1));
-        this.closeButton.setContentDescription(LocaleController.getString("Close", C3290R.string.Close));
+        this.closeButton.setContentDescription(LocaleController.getString("Close", C3295R.string.Close));
         this.actionModeLayout.addView(this.closeButton, new LinearLayout.LayoutParams(AndroidUtilities.m54dp(54), -1));
         this.actionModeViews.add(this.closeButton);
         this.closeButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.SharedMediaLayout$$ExternalSyntheticLambda5
@@ -1408,7 +1408,7 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
             r12 = 0;
             ActionBarMenuItem actionBarMenuItem2 = new ActionBarMenuItem(context, (ActionBarMenu) null, Theme.getColor(i12), Theme.getColor(i9), false);
             this.addToPlaylistItem = actionBarMenuItem2;
-            actionBarMenuItem2.setIcon(C3290R.C3292drawable.msg_tone_add);
+            actionBarMenuItem2.setIcon(C3295R.C3297drawable.msg_tone_add);
             this.addToPlaylistItem.setDuplicateParentStateEnabled(false);
             this.addToPlaylistItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.SharedMediaLayout$$ExternalSyntheticLambda3
                 @Override // android.view.View.OnClickListener
@@ -1424,8 +1424,8 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
         if (!DialogObject.isEncryptedDialog(this.dialog_id)) {
             ActionBarMenuItem actionBarMenuItem3 = new ActionBarMenuItem(context, (ActionBarMenu) null, getThemedColor(i12), getThemedColor(i10), false);
             this.gotoItem = actionBarMenuItem3;
-            actionBarMenuItem3.setIcon(C3290R.C3292drawable.msg_message);
-            this.gotoItem.setContentDescription(LocaleController.getString("AccDescrGoToMessage", C3290R.string.AccDescrGoToMessage));
+            actionBarMenuItem3.setIcon(C3295R.C3297drawable.msg_message);
+            this.gotoItem.setContentDescription(LocaleController.getString("AccDescrGoToMessage", C3295R.string.AccDescrGoToMessage));
             this.gotoItem.setDuplicateParentStateEnabled(r12);
             this.actionModeLayout.addView(this.gotoItem, new LinearLayout.LayoutParams(AndroidUtilities.m54dp(54), -1));
             this.actionModeViews.add(this.gotoItem);
@@ -1437,8 +1437,8 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
             });
             ActionBarMenuItem actionBarMenuItem4 = new ActionBarMenuItem(context, (ActionBarMenu) null, getThemedColor(i12), getThemedColor(i9), false);
             this.forwardCloudItem = actionBarMenuItem4;
-            actionBarMenuItem4.setIcon(C3290R.C3292drawable.fork_forward_cloud);
-            this.forwardCloudItem.setContentDescription(LocaleController.getInternalString(C3290R.string.chat_message_popup_option_forward_cloud));
+            actionBarMenuItem4.setIcon(C3295R.C3297drawable.fork_forward_cloud);
+            this.forwardCloudItem.setContentDescription(LocaleController.getInternalString(C3295R.string.chat_message_popup_option_forward_cloud));
             this.forwardCloudItem.setDuplicateParentStateEnabled(r12);
             this.forwardCloudItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.SharedMediaLayout$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
@@ -1450,8 +1450,8 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
             this.actionModeViews.add(this.forwardCloudItem);
             ActionBarMenuItem actionBarMenuItem5 = new ActionBarMenuItem(context, (ActionBarMenu) null, getThemedColor(i12), getThemedColor(i10), false);
             this.forwardItem = actionBarMenuItem5;
-            actionBarMenuItem5.setIcon(C3290R.C3292drawable.msg_forward);
-            this.forwardItem.setContentDescription(LocaleController.getString("Forward", C3290R.string.Forward));
+            actionBarMenuItem5.setIcon(C3295R.C3297drawable.msg_forward);
+            this.forwardItem.setContentDescription(LocaleController.getString("Forward", C3295R.string.Forward));
             this.forwardItem.setDuplicateParentStateEnabled(r12);
             this.actionModeLayout.addView(this.forwardItem, new LinearLayout.LayoutParams(AndroidUtilities.m54dp(54), -1));
             this.actionModeViews.add(this.forwardItem);
@@ -1465,8 +1465,8 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
         }
         ActionBarMenuItem actionBarMenuItem6 = new ActionBarMenuItem(context, (ActionBarMenu) null, getThemedColor(i12), getThemedColor(i10), false);
         this.deleteItem = actionBarMenuItem6;
-        actionBarMenuItem6.setIcon(C3290R.C3292drawable.msg_delete);
-        this.deleteItem.setContentDescription(LocaleController.getString("Delete", C3290R.string.Delete));
+        actionBarMenuItem6.setIcon(C3295R.C3297drawable.msg_delete);
+        this.deleteItem.setContentDescription(LocaleController.getString("Delete", C3295R.string.Delete));
         this.deleteItem.setDuplicateParentStateEnabled(r12);
         this.actionModeLayout.addView(this.deleteItem, new LinearLayout.LayoutParams(AndroidUtilities.m54dp(54), -1));
         this.actionModeViews.add(this.deleteItem);
@@ -1539,7 +1539,7 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
                         Method dump skipped, instructions count: 341
                         To view this dump add '--comments-level debug' option
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Components.SharedMediaLayout.C51698.setTranslationX(float):void");
+                    throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Components.SharedMediaLayout.C51748.setTranslationX(float):void");
                 }
             };
             addView(mediaPage, LayoutHelper.createFrame(-1, -1, 51, 0, 48, 0, 0));
@@ -1668,7 +1668,7 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
                         Method dump skipped, instructions count: 2017
                         To view this dump add '--comments-level debug' option
                     */
-                    throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Components.SharedMediaLayout.C513511.dispatchDraw(android.graphics.Canvas):void");
+                    throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Components.SharedMediaLayout.C514011.dispatchDraw(android.graphics.Canvas):void");
                 }
 
                 @Override // org.telegram.p044ui.Components.BlurredRecyclerView, androidx.recyclerview.widget.RecyclerView, android.view.ViewGroup
@@ -1838,8 +1838,8 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
             mediaPageArr6[i16].addView(mediaPageArr6[i16].emptyView, LayoutHelper.createFrame(-1, -1));
             this.mediaPages[i16].emptyView.setOnTouchListener(SharedMediaLayout$$ExternalSyntheticLambda8.INSTANCE);
             this.mediaPages[i16].emptyView.showProgress(true, r12);
-            this.mediaPages[i16].emptyView.title.setText(LocaleController.getString("NoResult", C3290R.string.NoResult));
-            this.mediaPages[i16].emptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3290R.string.SearchEmptyViewFilteredSubtitle2));
+            this.mediaPages[i16].emptyView.title.setText(LocaleController.getString("NoResult", C3295R.string.NoResult));
+            this.mediaPages[i16].emptyView.subtitle.setText(LocaleController.getString("SearchEmptyViewFilteredSubtitle2", C3295R.string.SearchEmptyViewFilteredSubtitle2));
             this.mediaPages[i16].emptyView.addView(this.mediaPages[i16].progressView, LayoutHelper.createFrame(-1, -1));
             this.mediaPages[i16].listView.setEmptyView(this.mediaPages[i16].emptyView);
             this.mediaPages[i16].listView.setAnimateEmptyView(true, r12);
@@ -1892,10 +1892,10 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.SharedMediaLayout$6 */
     /* loaded from: classes6.dex */
-    public class View$OnClickListenerC51626 implements View.OnClickListener {
+    public class View$OnClickListenerC51676 implements View.OnClickListener {
         final /* synthetic */ Context val$context;
 
-        View$OnClickListenerC51626(Context context) {
+        View$OnClickListenerC51676(Context context) {
             this.val$context = context;
         }
 
@@ -1920,15 +1920,15 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
             boolean z = true;
             final ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem(this.val$context, true, false);
             final ActionBarMenuSubItem actionBarMenuSubItem2 = new ActionBarMenuSubItem(this.val$context, false, false);
-            actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("MediaZoomIn", C3290R.string.MediaZoomIn), C3290R.C3292drawable.msg_zoomin);
+            actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("MediaZoomIn", C3295R.string.MediaZoomIn), C3295R.C3297drawable.msg_zoomin);
             actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.SharedMediaLayout$6$$ExternalSyntheticLambda0
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view2) {
-                    SharedMediaLayout.View$OnClickListenerC51626.this.lambda$onClick$0(actionBarMenuSubItem, actionBarMenuSubItem2, view2);
+                    SharedMediaLayout.View$OnClickListenerC51676.this.lambda$onClick$0(actionBarMenuSubItem, actionBarMenuSubItem2, view2);
                 }
             });
             actionBarPopupWindowLayout.addView(actionBarMenuSubItem);
-            actionBarMenuSubItem2.setTextAndIcon(LocaleController.getString("MediaZoomOut", C3290R.string.MediaZoomOut), C3290R.C3292drawable.msg_zoomout);
+            actionBarMenuSubItem2.setTextAndIcon(LocaleController.getString("MediaZoomOut", C3295R.string.MediaZoomOut), C3295R.C3297drawable.msg_zoomout);
             actionBarMenuSubItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.SharedMediaLayout.6.2
                 @Override // android.view.View.OnClickListener
                 public void onClick(View view2) {
@@ -1964,7 +1964,7 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
             boolean z2 = ((!SharedMediaLayout.this.sharedMediaData[0].hasPhotos || !SharedMediaLayout.this.sharedMediaData[0].hasVideos) && SharedMediaLayout.this.sharedMediaData[0].endReached[0] && SharedMediaLayout.this.sharedMediaData[0].endReached[1] && SharedMediaLayout.this.sharedMediaData[0].startReached) ? false : true;
             if (!DialogObject.isEncryptedDialog(SharedMediaLayout.this.dialog_id)) {
                 ActionBarMenuSubItem actionBarMenuSubItem3 = new ActionBarMenuSubItem(this.val$context, false, false);
-                actionBarMenuSubItem3.setTextAndIcon(LocaleController.getString("Calendar", C3290R.string.Calendar), C3290R.C3292drawable.msg_calendar2);
+                actionBarMenuSubItem3.setTextAndIcon(LocaleController.getString("Calendar", C3295R.string.Calendar), C3295R.C3297drawable.msg_calendar2);
                 actionBarPopupWindowLayout.addView(actionBarMenuSubItem3);
                 actionBarMenuSubItem3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.SharedMediaLayout.6.3
                     @Override // android.view.View.OnClickListener
@@ -1980,7 +1980,7 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
                     actionBarPopupWindowLayout.addView(dividerCell);
                     final ActionBarMenuSubItem actionBarMenuSubItem4 = new ActionBarMenuSubItem(this.val$context, true, false, false);
                     final ActionBarMenuSubItem actionBarMenuSubItem5 = new ActionBarMenuSubItem(this.val$context, true, false, true);
-                    actionBarMenuSubItem4.setTextAndIcon(LocaleController.getString("MediaShowPhotos", C3290R.string.MediaShowPhotos), 0);
+                    actionBarMenuSubItem4.setTextAndIcon(LocaleController.getString("MediaShowPhotos", C3295R.string.MediaShowPhotos), 0);
                     actionBarMenuSubItem4.setChecked(SharedMediaLayout.this.sharedMediaData[0].filterType == 0 || SharedMediaLayout.this.sharedMediaData[0].filterType == 1);
                     actionBarMenuSubItem4.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.SharedMediaLayout.6.4
                         @Override // android.view.View.OnClickListener
@@ -2001,7 +2001,7 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
                         }
                     });
                     actionBarPopupWindowLayout.addView(actionBarMenuSubItem4);
-                    actionBarMenuSubItem5.setTextAndIcon(LocaleController.getString("MediaShowVideos", C3290R.string.MediaShowVideos), 0);
+                    actionBarMenuSubItem5.setTextAndIcon(LocaleController.getString("MediaShowVideos", C3295R.string.MediaShowVideos), 0);
                     if (SharedMediaLayout.this.sharedMediaData[0].filterType != 0 && SharedMediaLayout.this.sharedMediaData[0].filterType != 2) {
                         z = false;
                     }
@@ -2737,7 +2737,7 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
                     Method dump skipped, instructions count: 512
                     To view this dump add '--comments-level debug' option
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Components.SharedMediaLayout.C514823.onPageScrolled(float):void");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Components.SharedMediaLayout.C515323.onPageScrolled(float):void");
             }
         });
         return scrollSlidingTextTabStripInner;
@@ -3279,7 +3279,7 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
                 if (this.profileActivity.getMessagesController().isChatNoForwards(chat2)) {
                     HintView hintView = this.fwdRestrictedHint;
                     if (hintView != null) {
-                        hintView.setText((!ChatObject.isChannel(chat2) || chat2.megagroup) ? LocaleController.getString("ForwardsRestrictedInfoGroup", C3290R.string.ForwardsRestrictedInfoGroup) : LocaleController.getString("ForwardsRestrictedInfoChannel", C3290R.string.ForwardsRestrictedInfoChannel));
+                        hintView.setText((!ChatObject.isChannel(chat2) || chat2.megagroup) ? LocaleController.getString("ForwardsRestrictedInfoGroup", C3295R.string.ForwardsRestrictedInfoGroup) : LocaleController.getString("ForwardsRestrictedInfoChannel", C3295R.string.ForwardsRestrictedInfoChannel));
                         this.fwdRestrictedHint.showForView(view, true);
                         return;
                     }
@@ -3289,7 +3289,7 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
             if (hasNoforwardsMessage()) {
                 HintView hintView2 = this.fwdRestrictedHint;
                 if (hintView2 != null) {
-                    hintView2.setText(LocaleController.getString("ForwardsRestrictedInfoBot", C3290R.string.ForwardsRestrictedInfoBot));
+                    hintView2.setText(LocaleController.getString("ForwardsRestrictedInfoBot", C3295R.string.ForwardsRestrictedInfoBot));
                     this.fwdRestrictedHint.showForView(view, true);
                 }
             } else if (i == IdFabric$Menu.MESSAGE_FORWARD_CLOUD) {
@@ -3736,19 +3736,19 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
         if (view != null) {
             recyclerListView.removeView(view);
         }
-        getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver$OnPreDrawListenerC515328(recyclerListView, sparseBooleanArray, view, i));
+        getViewTreeObserver().addOnPreDrawListener(new ViewTreeObserver$OnPreDrawListenerC515828(recyclerListView, sparseBooleanArray, view, i));
     }
 
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.SharedMediaLayout$28 */
     /* loaded from: classes6.dex */
-    public class ViewTreeObserver$OnPreDrawListenerC515328 implements ViewTreeObserver.OnPreDrawListener {
+    public class ViewTreeObserver$OnPreDrawListenerC515828 implements ViewTreeObserver.OnPreDrawListener {
         final /* synthetic */ SparseBooleanArray val$addedMesages;
         final /* synthetic */ RecyclerListView val$finalListView;
         final /* synthetic */ View val$finalProgressView;
         final /* synthetic */ int val$oldItemCount;
 
-        ViewTreeObserver$OnPreDrawListenerC515328(RecyclerListView recyclerListView, SparseBooleanArray sparseBooleanArray, View view, int i) {
+        ViewTreeObserver$OnPreDrawListenerC515828(RecyclerListView recyclerListView, SparseBooleanArray sparseBooleanArray, View view, int i) {
             this.val$finalListView = recyclerListView;
             this.val$addedMesages = sparseBooleanArray;
             this.val$finalProgressView = view;
@@ -3772,14 +3772,14 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
                             ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.SharedMediaLayout$28$$ExternalSyntheticLambda0
                                 @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                                 public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                                    SharedMediaLayout.ViewTreeObserver$OnPreDrawListenerC515328.this.lambda$onPreDraw$0(messageId, recyclerListView, valueAnimator);
+                                    SharedMediaLayout.ViewTreeObserver$OnPreDrawListenerC515828.this.lambda$onPreDraw$0(messageId, recyclerListView, valueAnimator);
                                 }
                             });
                             ofFloat.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.SharedMediaLayout.28.1
                                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                                 public void onAnimationEnd(Animator animator) {
                                     SharedMediaLayout.this.messageAlphaEnter.remove(messageId);
-                                    ViewTreeObserver$OnPreDrawListenerC515328.this.val$finalListView.invalidate();
+                                    ViewTreeObserver$OnPreDrawListenerC515828.this.val$finalListView.invalidate();
                                 }
                             });
                             ofFloat.setStartDelay((int) ((Math.min(this.val$finalListView.getMeasuredHeight(), Math.max(0, childAt.getTop())) / this.val$finalListView.getMeasuredHeight()) * 100.0f));
@@ -3812,10 +3812,10 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
                             ofFloat3.addListener(new AnimatorListenerAdapter() { // from class: org.telegram.ui.Components.SharedMediaLayout.28.2
                                 @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                                 public void onAnimationEnd(Animator animator) {
-                                    ViewTreeObserver$OnPreDrawListenerC515328.this.val$finalProgressView.setAlpha(1.0f);
-                                    layoutManager.stopIgnoringView(ViewTreeObserver$OnPreDrawListenerC515328.this.val$finalProgressView);
-                                    ViewTreeObserver$OnPreDrawListenerC515328 viewTreeObserver$OnPreDrawListenerC515328 = ViewTreeObserver$OnPreDrawListenerC515328.this;
-                                    viewTreeObserver$OnPreDrawListenerC515328.val$finalListView.removeView(viewTreeObserver$OnPreDrawListenerC515328.val$finalProgressView);
+                                    ViewTreeObserver$OnPreDrawListenerC515828.this.val$finalProgressView.setAlpha(1.0f);
+                                    layoutManager.stopIgnoringView(ViewTreeObserver$OnPreDrawListenerC515828.this.val$finalProgressView);
+                                    ViewTreeObserver$OnPreDrawListenerC515828 viewTreeObserver$OnPreDrawListenerC515828 = ViewTreeObserver$OnPreDrawListenerC515828.this;
+                                    viewTreeObserver$OnPreDrawListenerC515828.val$finalListView.removeView(viewTreeObserver$OnPreDrawListenerC515828.val$finalProgressView);
                                 }
                             });
                             ofFloat3.start();
@@ -4062,7 +4062,7 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
                 } else {
                     this.cantRemoveFromPlaylistCount++;
                 }
-                this.addToPlaylistItem.setIcon(this.cantAddToPlaylistCount == 0 ? C3290R.C3292drawable.msg_tone_add : C3290R.C3292drawable.msg_tone_off);
+                this.addToPlaylistItem.setIcon(this.cantAddToPlaylistCount == 0 ? C3295R.C3297drawable.msg_tone_add : C3295R.C3297drawable.msg_tone_off);
                 this.addToPlaylistItem.setVisibility((this.cantAddToPlaylistCount == 0 || this.cantRemoveFromPlaylistCount == 0) ? 0 : 8);
             }
         }
@@ -4148,7 +4148,7 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
                         actionBarMenuItem.setVisibility(8);
                     } else {
                         actionBarMenuItem.setVisibility((this.cantAddToPlaylistCount == 0 || this.cantRemoveFromPlaylistCount == 0) ? 0 : 8);
-                        this.addToPlaylistItem.setIcon(this.cantAddToPlaylistCount == 0 ? C3290R.C3292drawable.msg_tone_add : C3290R.C3292drawable.msg_tone_off);
+                        this.addToPlaylistItem.setIcon(this.cantAddToPlaylistCount == 0 ? C3295R.C3297drawable.msg_tone_add : C3295R.C3297drawable.msg_tone_off);
                     }
                 }
                 this.selectedMessagesCountTextView.setNumber(this.selectedFiles[0].size() + this.selectedFiles[1].size(), true);
@@ -4298,8 +4298,8 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.SharedMediaLayout$31 */
     /* loaded from: classes6.dex */
-    public class C515931 implements SharedLinkCell.SharedLinkCellDelegate {
-        C515931() {
+    public class C516431 implements SharedLinkCell.SharedLinkCellDelegate {
+        C516431() {
         }
 
         @Override // org.telegram.p044ui.Cells.SharedLinkCell.SharedLinkCellDelegate
@@ -4320,10 +4320,10 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
             }
             BottomSheet.Builder builder = new BottomSheet.Builder(SharedMediaLayout.this.profileActivity.getParentActivity());
             builder.setTitle(str);
-            builder.setItems(new CharSequence[]{LocaleController.getString("Open", C3290R.string.Open), LocaleController.getString("Copy", C3290R.string.Copy)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.SharedMediaLayout$31$$ExternalSyntheticLambda0
+            builder.setItems(new CharSequence[]{LocaleController.getString("Open", C3295R.string.Open), LocaleController.getString("Copy", C3295R.string.Copy)}, new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.SharedMediaLayout$31$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
-                    SharedMediaLayout.C515931.this.lambda$onLinkPress$0(str, dialogInterface, i);
+                    SharedMediaLayout.C516431.this.lambda$onLinkPress$0(str, dialogInterface, i);
                 }
             });
             SharedMediaLayout.this.profileActivity.showDialog(builder.create());
@@ -4706,50 +4706,50 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
         EmptyStubView emptyStubView = new EmptyStubView(context, resourcesProvider);
         if (i == 0) {
             if (DialogObject.isEncryptedDialog(j)) {
-                emptyStubView.emptyTextView.setText(LocaleController.getString("NoMediaSecret", C3290R.string.NoMediaSecret));
+                emptyStubView.emptyTextView.setText(LocaleController.getString("NoMediaSecret", C3295R.string.NoMediaSecret));
             } else {
-                emptyStubView.emptyTextView.setText(LocaleController.getString("NoMedia", C3290R.string.NoMedia));
+                emptyStubView.emptyTextView.setText(LocaleController.getString("NoMedia", C3295R.string.NoMedia));
             }
         } else if (i == 1) {
             if (DialogObject.isEncryptedDialog(j)) {
-                emptyStubView.emptyTextView.setText(LocaleController.getString("NoSharedFilesSecret", C3290R.string.NoSharedFilesSecret));
+                emptyStubView.emptyTextView.setText(LocaleController.getString("NoSharedFilesSecret", C3295R.string.NoSharedFilesSecret));
             } else {
-                emptyStubView.emptyTextView.setText(LocaleController.getString("NoSharedFiles", C3290R.string.NoSharedFiles));
+                emptyStubView.emptyTextView.setText(LocaleController.getString("NoSharedFiles", C3295R.string.NoSharedFiles));
             }
         } else if (i == 2) {
             if (DialogObject.isEncryptedDialog(j)) {
-                emptyStubView.emptyTextView.setText(LocaleController.getString("NoSharedVoiceSecret", C3290R.string.NoSharedVoiceSecret));
+                emptyStubView.emptyTextView.setText(LocaleController.getString("NoSharedVoiceSecret", C3295R.string.NoSharedVoiceSecret));
             } else {
-                emptyStubView.emptyTextView.setText(LocaleController.getString("NoSharedVoice", C3290R.string.NoSharedVoice));
+                emptyStubView.emptyTextView.setText(LocaleController.getString("NoSharedVoice", C3295R.string.NoSharedVoice));
             }
         } else if (i == 3) {
             if (DialogObject.isEncryptedDialog(j)) {
-                emptyStubView.emptyTextView.setText(LocaleController.getString("NoSharedLinksSecret", C3290R.string.NoSharedLinksSecret));
+                emptyStubView.emptyTextView.setText(LocaleController.getString("NoSharedLinksSecret", C3295R.string.NoSharedLinksSecret));
             } else {
-                emptyStubView.emptyTextView.setText(LocaleController.getString("NoSharedLinks", C3290R.string.NoSharedLinks));
+                emptyStubView.emptyTextView.setText(LocaleController.getString("NoSharedLinks", C3295R.string.NoSharedLinks));
             }
         } else if (i == 4 || i == IdFabric$CustomType.MEDIA_TAB_PLAYLIST) {
             if (DialogObject.isEncryptedDialog(j)) {
-                emptyStubView.emptyTextView.setText(LocaleController.getString("NoSharedAudioSecret", C3290R.string.NoSharedAudioSecret));
+                emptyStubView.emptyTextView.setText(LocaleController.getString("NoSharedAudioSecret", C3295R.string.NoSharedAudioSecret));
             } else if (i == IdFabric$CustomType.MEDIA_TAB_PLAYLIST) {
-                emptyStubView.emptyTextView.setText(LocaleController.getInternalString(C3290R.string.music_playlist_empty_title));
+                emptyStubView.emptyTextView.setText(LocaleController.getInternalString(C3295R.string.music_playlist_empty_title));
             } else {
-                emptyStubView.emptyTextView.setText(LocaleController.getString("NoSharedAudio", C3290R.string.NoSharedAudio));
+                emptyStubView.emptyTextView.setText(LocaleController.getString("NoSharedAudio", C3295R.string.NoSharedAudio));
             }
         } else if (i == 5) {
             if (DialogObject.isEncryptedDialog(j)) {
-                emptyStubView.emptyTextView.setText(LocaleController.getString("NoSharedGifSecret", C3290R.string.NoSharedGifSecret));
+                emptyStubView.emptyTextView.setText(LocaleController.getString("NoSharedGifSecret", C3295R.string.NoSharedGifSecret));
             } else {
-                emptyStubView.emptyTextView.setText(LocaleController.getString("NoGIFs", C3290R.string.NoGIFs));
+                emptyStubView.emptyTextView.setText(LocaleController.getString("NoGIFs", C3295R.string.NoGIFs));
             }
         } else if (i == 6) {
             emptyStubView.emptyImageView.setImageDrawable(null);
-            emptyStubView.emptyTextView.setText(LocaleController.getString("NoGroupsInCommon", C3290R.string.NoGroupsInCommon));
+            emptyStubView.emptyTextView.setText(LocaleController.getString("NoGroupsInCommon", C3295R.string.NoGroupsInCommon));
         } else if (i == 7) {
             emptyStubView.emptyImageView.setImageDrawable(null);
             emptyStubView.emptyTextView.setText("");
-            emptyStubView.emptyImageView.setImageResource(C3290R.C3292drawable.fork_members_tip);
-            emptyStubView.emptyTextView.setText(LocaleController.getInternalString(C3290R.string.common_empty_state_title));
+            emptyStubView.emptyImageView.setImageResource(C3295R.C3297drawable.fork_members_tip);
+            emptyStubView.emptyTextView.setText(LocaleController.getInternalString(C3295R.string.common_empty_state_title));
         }
         return emptyStubView;
     }
@@ -5160,7 +5160,7 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
                     for (int i2 = 0; i2 < SharedMediaLayout.this.mediaPages.length; i2++) {
                         if (SharedMediaLayout.this.mediaPages[i2].selectedType == this.currentType) {
                             if (this.searchesInProgress == 0 && itemCount2 == 0) {
-                                SharedMediaLayout.this.mediaPages[i2].emptyView.title.setText(LocaleController.formatString("NoResultFoundFor", C3290R.string.NoResultFoundFor, str));
+                                SharedMediaLayout.this.mediaPages[i2].emptyView.title.setText(LocaleController.formatString("NoResultFoundFor", C3295R.string.NoResultFoundFor, str));
                                 SharedMediaLayout.this.mediaPages[i2].emptyView.showProgress(false, true);
                             } else if (itemCount == 0) {
                                 SharedMediaLayout sharedMediaLayout = SharedMediaLayout.this;
@@ -5330,7 +5330,7 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
                 for (int i = 0; i < SharedMediaLayout.this.mediaPages.length; i++) {
                     if (SharedMediaLayout.this.mediaPages[i].selectedType == this.currentType) {
                         if (this.searchesInProgress == 0 && itemCount2 == 0) {
-                            SharedMediaLayout.this.mediaPages[i].emptyView.title.setText(LocaleController.getString("NoResult", C3290R.string.NoResult));
+                            SharedMediaLayout.this.mediaPages[i].emptyView.title.setText(LocaleController.getString("NoResult", C3295R.string.NoResult));
                             SharedMediaLayout.this.mediaPages[i].emptyView.showProgress(false, true);
                         } else if (itemCount == 0) {
                             SharedMediaLayout sharedMediaLayout = SharedMediaLayout.this;
@@ -5703,15 +5703,15 @@ public class SharedMediaLayout extends FrameLayout implements NotificationCenter
                         if (!TextUtils.isEmpty(tLRPC$ChannelParticipant.rank)) {
                             string = tLRPC$ChannelParticipant.rank;
                         } else if (tLRPC$ChannelParticipant instanceof TLRPC$TL_channelParticipantCreator) {
-                            string = LocaleController.getString("ChannelCreator", C3290R.string.ChannelCreator);
+                            string = LocaleController.getString("ChannelCreator", C3295R.string.ChannelCreator);
                         } else if (tLRPC$ChannelParticipant instanceof TLRPC$TL_channelParticipantAdmin) {
-                            string = LocaleController.getString("ChannelAdmin", C3290R.string.ChannelAdmin);
+                            string = LocaleController.getString("ChannelAdmin", C3295R.string.ChannelAdmin);
                         }
                         str = string;
                     } else if (tLRPC$ChatParticipant instanceof TLRPC$TL_chatParticipantCreator) {
-                        str = LocaleController.getString("ChannelCreator", C3290R.string.ChannelCreator);
+                        str = LocaleController.getString("ChannelCreator", C3295R.string.ChannelCreator);
                     } else if (tLRPC$ChatParticipant instanceof TLRPC$TL_chatParticipantAdmin) {
-                        str = LocaleController.getString("ChannelAdmin", C3290R.string.ChannelAdmin);
+                        str = LocaleController.getString("ChannelAdmin", C3295R.string.ChannelAdmin);
                     }
                     userCell.setAdminRole(str);
                     userCell.setData(SharedMediaLayout.this.profileActivity.getMessagesController().getUser(Long.valueOf(tLRPC$ChatParticipant.user_id)), null, null, 0, i != this.chatInfo.participants.participants.size() - 1);

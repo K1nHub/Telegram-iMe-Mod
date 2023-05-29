@@ -16,7 +16,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.LocaleController;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -192,15 +192,15 @@ public class PremiumGiftTierCell extends ViewGroup {
             if (giftTier.getDiscount() <= 0) {
                 this.discountView.setVisibility(8);
             } else {
-                this.discountView.setText(LocaleController.formatString(C3290R.string.GiftPremiumOptionDiscount, Integer.valueOf(giftTier.getDiscount())));
+                this.discountView.setText(LocaleController.formatString(C3295R.string.GiftPremiumOptionDiscount, Integer.valueOf(giftTier.getDiscount())));
                 this.discountView.setVisibility(0);
             }
-            this.pricePerMonthView.setText(LocaleController.formatString(C3290R.string.PricePerMonth, giftTier.getFormattedPricePerMonth()));
+            this.pricePerMonthView.setText(LocaleController.formatString(C3295R.string.PricePerMonth, giftTier.getFormattedPricePerMonth()));
             this.priceTotalView.setText(giftTier.getFormattedPrice());
         } else {
-            this.discountView.setText(LocaleController.formatString(C3290R.string.GiftPremiumOptionDiscount, 10));
+            this.discountView.setText(LocaleController.formatString(C3295R.string.GiftPremiumOptionDiscount, 10));
             this.discountView.setVisibility(0);
-            this.pricePerMonthView.setText(LocaleController.formatString(C3290R.string.PricePerMonth, 100));
+            this.pricePerMonthView.setText(LocaleController.formatString(C3295R.string.PricePerMonth, 100));
             this.priceTotalView.setText("USD00,00");
         }
         requestLayout();

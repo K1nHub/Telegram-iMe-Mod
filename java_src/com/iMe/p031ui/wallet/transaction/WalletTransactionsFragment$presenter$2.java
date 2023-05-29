@@ -27,11 +27,11 @@ public final class WalletTransactionsFragment$presenter$2 extends Lambda impleme
     /* compiled from: WalletTransactionsFragment.kt */
     /* renamed from: com.iMe.ui.wallet.transaction.WalletTransactionsFragment$presenter$2$1 */
     /* loaded from: classes4.dex */
-    public static final class C24031 extends Lambda implements Function0<ParametersHolder> {
+    public static final class C24081 extends Lambda implements Function0<ParametersHolder> {
         final /* synthetic */ WalletTransactionsFragment this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C24031(WalletTransactionsFragment walletTransactionsFragment) {
+        C24081(WalletTransactionsFragment walletTransactionsFragment) {
             super(0);
             this.this$0 = walletTransactionsFragment;
         }
@@ -51,7 +51,7 @@ public final class WalletTransactionsFragment$presenter$2 extends Lambda impleme
     public final WalletTransactionsPresenter invoke() {
         Lazy lazy;
         WalletTransactionsFragment walletTransactionsFragment = this.this$0;
-        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2402xe8acc4e0(walletTransactionsFragment, null, new C24031(walletTransactionsFragment)));
+        lazy = LazyKt__LazyJVMKt.lazy(KoinPlatformTools.INSTANCE.defaultLazyMode(), new C2407xe8acc4e0(walletTransactionsFragment, null, new C24081(walletTransactionsFragment)));
         return (WalletTransactionsPresenter) lazy.getValue();
     }
 }

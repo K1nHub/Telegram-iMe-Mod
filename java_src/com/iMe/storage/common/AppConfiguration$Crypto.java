@@ -1,6 +1,7 @@
 package com.iMe.storage.common;
 
 import com.iMe.storage.data.manager.common.EnvironmentManager;
+import com.iMe.storage.domain.model.common.EnvironmentInformation;
 import com.iMe.storage.domain.model.crypto.NetworkType;
 import com.iMe.storage.domain.model.wallet.token.TokenCode;
 import com.iMe.storage.domain.provider.crypto.SmartContractProvider;
@@ -41,6 +42,10 @@ public final class AppConfiguration$Crypto {
             try {
                 iArr[NetworkType.THE_OPEN_NETWORK.ordinal()] = 6;
             } catch (NoSuchFieldError unused6) {
+            }
+            try {
+                iArr[NetworkType.BITCOIN.ordinal()] = 7;
+            } catch (NoSuchFieldError unused7) {
             }
             $EnumSwitchMapping$0 = iArr;
         }
@@ -84,19 +89,22 @@ public final class AppConfiguration$Crypto {
     }
 
     private final String getScanUrlByToken(NetworkType networkType) {
+        EnvironmentInformation environmentInformation = EnvironmentManager.INSTANCE.getEnvironmentInformation();
         switch (WhenMappings.$EnumSwitchMapping$0[networkType.ordinal()]) {
             case 1:
-                return EnvironmentManager.INSTANCE.getEnvironmentInformation().getEtherScanUrl();
+                return environmentInformation.getEtherScanUrl();
             case 2:
-                return EnvironmentManager.INSTANCE.getEnvironmentInformation().getBscScanUrl();
+                return environmentInformation.getBscScanUrl();
             case 3:
-                return EnvironmentManager.INSTANCE.getEnvironmentInformation().getPolygonScanUrl();
+                return environmentInformation.getPolygonScanUrl();
             case 4:
-                return EnvironmentManager.INSTANCE.getEnvironmentInformation().getFantomScanUrl();
+                return environmentInformation.getFantomScanUrl();
             case 5:
-                return EnvironmentManager.INSTANCE.getEnvironmentInformation().getTronScanUrl();
+                return environmentInformation.getTronScanUrl();
             case 6:
-                return EnvironmentManager.INSTANCE.getEnvironmentInformation().getTonScanUrl();
+                return environmentInformation.getTonScanUrl();
+            case 7:
+                return environmentInformation.getBitcoinScanUrl();
             default:
                 throw new NoWhenBranchMatchedException();
         }
@@ -107,7 +115,8 @@ public final class AppConfiguration$Crypto {
     }
 
     private final String getScanTxUrlMainPart(NetworkType networkType) {
-        return WhenMappings.$EnumSwitchMapping$0[networkType.ordinal()] == 5 ? "#/transaction/" : "tx/";
+        int i = WhenMappings.$EnumSwitchMapping$0[networkType.ordinal()];
+        return i != 5 ? i != 7 ? "tx/" : "transaction/" : "#/transaction/";
     }
 
     private final String getTokenUrlMainPart(NetworkType networkType) {

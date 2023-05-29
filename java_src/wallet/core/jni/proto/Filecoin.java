@@ -266,7 +266,7 @@ public final class Filecoin {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C68241 c68241) {
+            /* synthetic */ Builder(C68291 c68291) {
                 this();
             }
 
@@ -407,7 +407,7 @@ public final class Filecoin {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68241.f1802xa1df5c61[method.ordinal()]) {
+            switch (C68291.f1802xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -454,7 +454,7 @@ public final class Filecoin {
 
     /* renamed from: wallet.core.jni.proto.Filecoin$1 */
     /* loaded from: classes6.dex */
-    static /* synthetic */ class C68241 {
+    static /* synthetic */ class C68291 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f1802xa1df5c61;
@@ -588,7 +588,7 @@ public final class Filecoin {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C68241 c68241) {
+            /* synthetic */ Builder(C68291 c68291) {
                 this();
             }
 
@@ -627,7 +627,7 @@ public final class Filecoin {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68241.f1802xa1df5c61[method.ordinal()]) {
+            switch (C68291.f1802xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

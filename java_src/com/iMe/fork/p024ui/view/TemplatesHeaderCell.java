@@ -12,7 +12,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.SharedConfig;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
@@ -68,7 +68,7 @@ public final class TemplatesHeaderCell extends LinearLayout {
     public final void bind(int i, final BotCommandsMenuView.BotCommandsAdapter.TemplatesDelegate templatesDelegate) {
         Intrinsics.checkNotNullParameter(templatesDelegate, "templatesDelegate");
         TextView headerTextView = getHeaderTextView();
-        headerTextView.setText(LocaleController.getInternalString(i > 0 ? C3290R.string.chat_templates : C3290R.string.chat_templates_list_header));
+        headerTextView.setText(LocaleController.getInternalString(i > 0 ? C3295R.string.chat_templates : C3295R.string.chat_templates_list_header));
         int i2 = Theme.key_windowBackgroundWhiteBlackText;
         headerTextView.setTextColor(Theme.getColor(i2));
         ActionBarMenuItem sortButton = getSortButton();
@@ -146,7 +146,7 @@ public final class TemplatesHeaderCell extends LinearLayout {
         TextView textView = new TextView(getContext());
         ViewExtKt.withMediumTypeface(textView);
         ViewExtKt.setHorizontalPadding(textView, 16);
-        String string = LocaleController.getString("Create", C3290R.string.Create);
+        String string = LocaleController.getString("Create", C3295R.string.Create);
         Intrinsics.checkNotNullExpressionValue(string, "getString(\"Create\", R.string.Create)");
         String upperCase = string.toUpperCase(Locale.ROOT);
         Intrinsics.checkNotNullExpressionValue(upperCase, "this as java.lang.String).toUpperCase(Locale.ROOT)");

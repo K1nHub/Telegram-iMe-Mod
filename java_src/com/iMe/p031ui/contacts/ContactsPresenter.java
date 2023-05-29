@@ -40,7 +40,7 @@ public final class ContactsPresenter extends BasePresenter<ContactsView> {
             public final void run() {
                 ContactsPresenter.this.deleteAction();
             }
-        }, new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2034x3873914f((BaseView) getViewState(), this)));
+        }, new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2039x3873914f((BaseView) getViewState(), this)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
     }

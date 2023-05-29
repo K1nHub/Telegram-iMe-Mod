@@ -327,7 +327,7 @@ public final class Waves {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<TransferMessage, Builder> implements TransferMessageOrBuilder {
-            /* synthetic */ Builder(C68581 c68581) {
+            /* synthetic */ Builder(C68631 c68631) {
                 this();
             }
 
@@ -473,7 +473,7 @@ public final class Waves {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68581.f1833xa1df5c61[method.ordinal()]) {
+            switch (C68631.f1833xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new TransferMessage();
                 case 2:
@@ -520,7 +520,7 @@ public final class Waves {
 
     /* renamed from: wallet.core.jni.proto.Waves$1 */
     /* loaded from: classes6.dex */
-    static /* synthetic */ class C68581 {
+    static /* synthetic */ class C68631 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f1833xa1df5c61;
@@ -688,7 +688,7 @@ public final class Waves {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<LeaseMessage, Builder> implements LeaseMessageOrBuilder {
-            /* synthetic */ Builder(C68581 c68581) {
+            /* synthetic */ Builder(C68631 c68631) {
                 this();
             }
 
@@ -761,7 +761,7 @@ public final class Waves {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68581.f1833xa1df5c61[method.ordinal()]) {
+            switch (C68631.f1833xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new LeaseMessage();
                 case 2:
@@ -918,7 +918,7 @@ public final class Waves {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<CancelLeaseMessage, Builder> implements CancelLeaseMessageOrBuilder {
-            /* synthetic */ Builder(C68581 c68581) {
+            /* synthetic */ Builder(C68631 c68631) {
                 this();
             }
 
@@ -974,7 +974,7 @@ public final class Waves {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68581.f1833xa1df5c61[method.ordinal()]) {
+            switch (C68631.f1833xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new CancelLeaseMessage();
                 case 2:
@@ -1292,7 +1292,7 @@ public final class Waves {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C68581 c68581) {
+            /* synthetic */ Builder(C68631 c68631) {
                 this();
             }
 
@@ -1450,7 +1450,7 @@ public final class Waves {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68581.f1833xa1df5c61[method.ordinal()]) {
+            switch (C68631.f1833xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -1608,7 +1608,7 @@ public final class Waves {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C68581 c68581) {
+            /* synthetic */ Builder(C68631 c68631) {
                 this();
             }
 
@@ -1664,7 +1664,7 @@ public final class Waves {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68581.f1833xa1df5c61[method.ordinal()]) {
+            switch (C68631.f1833xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

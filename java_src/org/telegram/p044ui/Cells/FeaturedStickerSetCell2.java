@@ -20,7 +20,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.DocumentObject;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.ImageLocation;
@@ -103,7 +103,7 @@ public class FeaturedStickerSetCell2 extends FrameLayout implements Notification
         addView(backupImageView, LayoutHelper.createFrame(48, 48, (z3 ? 5 : 3) | 48, z3 ? 0 : 12, 8, z3 ? 12 : 0, 0));
         ProgressButton progressButton = new ProgressButton(context);
         this.addButton = progressButton;
-        progressButton.setText(LocaleController.getString("Add", C3290R.string.Add));
+        progressButton.setText(LocaleController.getString("Add", C3295R.string.Add));
         progressButton.setTextColor(Theme.getColor(Theme.key_featuredStickers_buttonText));
         addView(progressButton, LayoutHelper.createFrameRelatively(-2.0f, 28.0f, 8388661, BitmapDescriptorFactory.HUE_RED, 18.0f, 14.0f, BitmapDescriptorFactory.HUE_RED));
         TextView textView3 = new TextView(context);
@@ -112,12 +112,12 @@ public class FeaturedStickerSetCell2 extends FrameLayout implements Notification
         textView3.setTextColor(Theme.getColor(Theme.key_featuredStickers_removeButtonText));
         textView3.setTextSize(1, 14.0f);
         textView3.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-        textView3.setText(LocaleController.getString("StickersRemove", C3290R.string.StickersRemove));
+        textView3.setText(LocaleController.getString("StickersRemove", C3295R.string.StickersRemove));
         addView(textView3, LayoutHelper.createFrameRelatively(-2.0f, 28.0f, 8388661, BitmapDescriptorFactory.HUE_RED, 16.0f, 14.0f, BitmapDescriptorFactory.HUE_RED));
         PremiumButtonView premiumButtonView = new PremiumButtonView(context, AndroidUtilities.m54dp(4), false);
         this.unlockButton = premiumButtonView;
-        premiumButtonView.setIcon(C3290R.raw.unlock_icon);
-        premiumButtonView.setButton(LocaleController.getString("Unlock", C3290R.string.Unlock), new View.OnClickListener() { // from class: org.telegram.ui.Cells.FeaturedStickerSetCell2$$ExternalSyntheticLambda0
+        premiumButtonView.setIcon(C3295R.raw.unlock_icon);
+        premiumButtonView.setButton(LocaleController.getString("Unlock", C3295R.string.Unlock), new View.OnClickListener() { // from class: org.telegram.ui.Cells.FeaturedStickerSetCell2$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 FeaturedStickerSetCell2.this.lambda$new$0(view);

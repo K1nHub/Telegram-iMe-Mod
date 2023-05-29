@@ -70,7 +70,7 @@ public final class DonationsRepositoryImpl implements DonationsRepository {
     public Observable<Result<Boolean>> isDonationsEnabled(long j) {
         Observable<R> map = this.donationsApi.isDonationsEnable(new GetDonationInfoRequest(String.valueOf(j))).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new DonationsRepositoryImpl$isDonationsEnabled$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1875x2b7073f1(this.errorHandler)));
+        Observable<Result<Boolean>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1880x2b7073f1(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -79,7 +79,7 @@ public final class DonationsRepositoryImpl implements DonationsRepository {
     public Observable<Result<String>> getDonationAddress(long j) {
         Observable<R> map = this.donationsApi.getChatInfo(new GetDonationInfoRequest(String.valueOf(j))).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new DonationsRepositoryImpl$getDonationAddress$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<String>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1869x8512a60f(this.errorHandler)));
+        Observable<Result<String>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1874x8512a60f(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -87,9 +87,9 @@ public final class DonationsRepositoryImpl implements DonationsRepository {
     @Override // com.iMe.storage.domain.repository.crypto.donations.DonationsRepository
     public Observable<Result<TokenBalance>> getDonationWalletBalance(long j, NetworkType networkType) {
         Intrinsics.checkNotNullParameter(networkType, "networkType");
-        Observable<R> map = this.donationsApi.getDonationWalletBalance(new GetDonationWalletBalanceRequest(String.valueOf(j), networkType.name())).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1873x958a7381(this.firebaseErrorHandler)));
+        Observable<R> map = this.donationsApi.getDonationWalletBalance(new GetDonationWalletBalanceRequest(String.valueOf(j), networkType.name())).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1878x958a7381(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<TokenBalance>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1872xfecbb540(this.errorHandler)));
+        Observable<Result<TokenBalance>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1877xfecbb540(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -97,9 +97,9 @@ public final class DonationsRepositoryImpl implements DonationsRepository {
     @Override // com.iMe.storage.domain.repository.crypto.donations.DonationsRepository
     public Observable<Result<List<Transaction>>> getDonationTransactionHistory(long j, String str, int i, NetworkType networkType) {
         Intrinsics.checkNotNullParameter(networkType, "networkType");
-        Observable<R> map = this.donationsApi.getDonationTransactions(new GetDonationTransactionsRequest(str, i, networkType.name(), String.valueOf(j))).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1871xde86f9b2(this.firebaseErrorHandler)));
+        Observable<R> map = this.donationsApi.getDonationTransactions(new GetDonationTransactionsRequest(str, i, networkType.name(), String.valueOf(j))).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new C1876xde86f9b2(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<List<Transaction>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1870xd55ff52f(this.errorHandler)));
+        Observable<Result<List<Transaction>>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1875xd55ff52f(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }
@@ -135,7 +135,7 @@ public final class DonationsRepositoryImpl implements DonationsRepository {
         Intrinsics.checkNotNullParameter(networkType, "networkType");
         Observable<R> map = this.donationsApi.getDataForDonationTransaction(new GetDataForDonationTransactionRequest(value, String.valueOf(j), networkType.name())).map(new FirebaseExtKt$sam$i$io_reactivex_functions_Function$0(new DonationsRepositoryImpl$getDataForDonation$$inlined$mapSuccess$1(this.firebaseErrorHandler)));
         Intrinsics.checkNotNullExpressionValue(map, "errorHandler: FirebaseFu…response).toError()\n    }");
-        Observable<Result<DonationTransferMetadata>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1868xb40a93c0(this.errorHandler)));
+        Observable<Result<DonationTransferMetadata>> onErrorReturn = map.onErrorReturn(new RxExtKt$sam$i$io_reactivex_functions_Function$0(new C1873xb40a93c0(this.errorHandler)));
         Intrinsics.checkNotNullExpressionValue(onErrorReturn, "errorHandler: ErrorHandl…ndleError(it).toError() }");
         return onErrorReturn;
     }

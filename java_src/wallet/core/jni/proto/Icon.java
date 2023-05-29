@@ -302,7 +302,7 @@ public final class Icon {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningInput, Builder> implements SigningInputOrBuilder {
-            /* synthetic */ Builder(C68271 c68271) {
+            /* synthetic */ Builder(C68321 c68321) {
                 this();
             }
 
@@ -471,7 +471,7 @@ public final class Icon {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68271.f1808xa1df5c61[method.ordinal()]) {
+            switch (C68321.f1808xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningInput();
                 case 2:
@@ -518,7 +518,7 @@ public final class Icon {
 
     /* renamed from: wallet.core.jni.proto.Icon$1 */
     /* loaded from: classes6.dex */
-    static /* synthetic */ class C68271 {
+    static /* synthetic */ class C68321 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f1808xa1df5c61;
@@ -670,7 +670,7 @@ public final class Icon {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<SigningOutput, Builder> implements SigningOutputOrBuilder {
-            /* synthetic */ Builder(C68271 c68271) {
+            /* synthetic */ Builder(C68321 c68321) {
                 this();
             }
 
@@ -726,7 +726,7 @@ public final class Icon {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68271.f1808xa1df5c61[method.ordinal()]) {
+            switch (C68321.f1808xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new SigningOutput();
                 case 2:

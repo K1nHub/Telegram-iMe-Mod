@@ -61,7 +61,7 @@ public final class WalletConnectManagerImpl$setupClientListeners$1$1 extends Lam
                     WalletConnectManagerImpl$setupClientListeners$1$1.invoke$lambda$0(WalletConnectManagerImpl.this, wCSessionStoreItem);
                 }
             };
-            final C18262 c18262 = new C18262(this.this$0);
+            final C18312 c18312 = new C18312(this.this$0);
             Disposable subscribe = observeOn.subscribe(action, new Consumer() { // from class: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$setupClientListeners$1$1$$ExternalSyntheticLambda1
                 @Override // io.reactivex.functions.Consumer
                 public final void accept(Object obj) {
@@ -78,11 +78,11 @@ public final class WalletConnectManagerImpl$setupClientListeners$1$1 extends Lam
     /* compiled from: WalletConnectManagerImpl.kt */
     /* renamed from: com.iMe.storage.data.manager.wallet_connect.WalletConnectManagerImpl$setupClientListeners$1$1$2 */
     /* loaded from: classes3.dex */
-    public static final class C18262 extends Lambda implements Function1<Throwable, Unit> {
+    public static final class C18312 extends Lambda implements Function1<Throwable, Unit> {
         final /* synthetic */ WalletConnectManagerImpl this$0;
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
-        C18262(WalletConnectManagerImpl walletConnectManagerImpl) {
+        C18312(WalletConnectManagerImpl walletConnectManagerImpl) {
             super(1);
             this.this$0 = walletConnectManagerImpl;
         }

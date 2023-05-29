@@ -28,7 +28,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$2\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,105:1\n129#2,5:106\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$2\n*L\n49#1:106,5\n*E\n"
+    value = "SMAP\nDataSourceModule.kt\nKotlin\n*S Kotlin\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$2\n+ 2 Scope.kt\norg/koin/core/scope/Scope\n*L\n1#1,114:1\n129#2,5:115\n*S KotlinDebug\n*F\n+ 1 DataSourceModule.kt\ncom/iMe/storage/data/di/module/DataSourceModuleKt$dataSourceModule$1$2\n*L\n52#1:115,5\n*E\n"
 .end annotation
 
 
@@ -72,10 +72,10 @@
 
     invoke-static {p2, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 48
+    .line 51
     new-instance p2, Lcom/iMe/storage/data/datasource/swap/WalletSwapDataSourceFactory;
 
-    .line 49
+    .line 52
     invoke-static {}, Lcom/iMe/storage/data/di/module/DataSourceModuleKt;->getDEX_SWAP_DATA_SOURCE()Lorg/koin/core/qualifier/StringQualifier;
 
     move-result-object v0
@@ -95,7 +95,7 @@
 
     check-cast p1, Lcom/iMe/storage/data/datasource/swap/WalletSwapDataSource;
 
-    .line 48
+    .line 51
     invoke-direct {p2, p1}, Lcom/iMe/storage/data/datasource/swap/WalletSwapDataSourceFactory;-><init>(Lcom/iMe/storage/data/datasource/swap/WalletSwapDataSource;)V
 
     return-object p2
@@ -104,7 +104,7 @@
 .method public bridge synthetic invoke(Ljava/lang/Object;Ljava/lang/Object;)Ljava/lang/Object;
     .locals 0
 
-    .line 47
+    .line 50
     check-cast p1, Lorg/koin/core/scope/Scope;
 
     check-cast p2, Lorg/koin/core/parameter/ParametersHolder;

@@ -36,7 +36,7 @@ import com.iMe.common.IdFabric$Menu;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.ApplicationLoader;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
@@ -691,7 +691,7 @@ public abstract class TextSelectionHelper<Cell extends SelectableView> {
                 ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(this.textSelectionOverlay.getContext());
                 this.popupLayout = actionBarPopupWindowLayout;
                 actionBarPopupWindowLayout.setPadding(AndroidUtilities.m54dp(1), AndroidUtilities.m54dp(1), AndroidUtilities.m54dp(1), AndroidUtilities.m54dp(1));
-                this.popupLayout.setBackgroundDrawable(this.textSelectionOverlay.getContext().getResources().getDrawable(C3290R.C3292drawable.menu_copy));
+                this.popupLayout.setBackgroundDrawable(this.textSelectionOverlay.getContext().getResources().getDrawable(C3295R.C3297drawable.menu_copy));
                 this.popupLayout.setAnimationEnabled(false);
                 this.popupLayout.setOnTouchListener(new View.OnTouchListener() { // from class: org.telegram.ui.Cells.TextSelectionHelper$$ExternalSyntheticLambda3
                     @Override // android.view.View.OnTouchListener
@@ -730,7 +730,7 @@ public abstract class TextSelectionHelper<Cell extends SelectableView> {
                 this.popupTranslateButton.setPadding(AndroidUtilities.m54dp(20), 0, AndroidUtilities.m54dp(20), 0);
                 this.popupTranslateButton.setTextSize(1, 15.0f);
                 this.popupTranslateButton.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
-                this.popupTranslateButton.setText(LocaleController.getInternalString(C3290R.string.sending_settings_translation_enable_item_title));
+                this.popupTranslateButton.setText(LocaleController.getInternalString(C3295R.string.sending_settings_translation_enable_item_title));
                 this.popupTranslateButton.setTextColor(Theme.getColor(i2));
                 this.popupTranslateButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Cells.TextSelectionHelper$$ExternalSyntheticLambda2
                     @Override // android.view.View.OnClickListener
@@ -743,7 +743,7 @@ public abstract class TextSelectionHelper<Cell extends SelectableView> {
                 ActionBarPopupWindow actionBarPopupWindow = new ActionBarPopupWindow(this.popupLayout, -2, -2);
                 this.popupWindow = actionBarPopupWindow;
                 actionBarPopupWindow.setAnimationEnabled(false);
-                this.popupWindow.setAnimationStyle(C3290R.style.PopupContextAnimation);
+                this.popupWindow.setAnimationStyle(C3295R.style.PopupContextAnimation);
                 this.popupWindow.setOutsideTouchable(true);
                 ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout2 = this.popupLayout;
                 if (actionBarPopupWindowLayout2 != null) {
@@ -1171,18 +1171,18 @@ public abstract class TextSelectionHelper<Cell extends SelectableView> {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Cells.TextSelectionHelper$4 */
     /* loaded from: classes5.dex */
-    public class ActionMode$CallbackC37024 implements ActionMode.Callback {
+    public class ActionMode$CallbackC37074 implements ActionMode.Callback {
         private String translateFromLanguage = null;
 
-        ActionMode$CallbackC37024() {
+        ActionMode$CallbackC37074() {
         }
 
         @Override // android.view.ActionMode.Callback
         public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
             menu.add(0, 16908321, 0, 17039361);
             menu.add(0, 16908319, 1, 17039373);
-            menu.add(0, 3, 2, LocaleController.getString("TranslateMessage", C3290R.string.TranslateMessage));
-            menu.add(0, IdFabric$Menu.QUOTE, 3, LocaleController.getInternalString(C3290R.string.chat_menu_quote));
+            menu.add(0, 3, 2, LocaleController.getString("TranslateMessage", C3295R.string.TranslateMessage));
+            menu.add(0, IdFabric$Menu.QUOTE, 3, LocaleController.getInternalString(C3295R.string.chat_menu_quote));
             return true;
         }
 
@@ -1209,12 +1209,12 @@ public abstract class TextSelectionHelper<Cell extends SelectableView> {
                 LanguageDetector.detectLanguage(TextSelectionHelper.this.getSelectedText().toString(), new LanguageDetector.StringCallback() { // from class: org.telegram.ui.Cells.TextSelectionHelper$4$$ExternalSyntheticLambda2
                     @Override // org.telegram.messenger.LanguageDetector.StringCallback
                     public final void run(String str) {
-                        TextSelectionHelper.ActionMode$CallbackC37024.this.lambda$onPrepareActionMode$0(menu, str);
+                        TextSelectionHelper.ActionMode$CallbackC37074.this.lambda$onPrepareActionMode$0(menu, str);
                     }
                 }, new LanguageDetector.ExceptionCallback() { // from class: org.telegram.ui.Cells.TextSelectionHelper$4$$ExternalSyntheticLambda1
                     @Override // org.telegram.messenger.LanguageDetector.ExceptionCallback
                     public final void run(Exception exc) {
-                        TextSelectionHelper.ActionMode$CallbackC37024.this.lambda$onPrepareActionMode$1(menu, exc);
+                        TextSelectionHelper.ActionMode$CallbackC37074.this.lambda$onPrepareActionMode$1(menu, exc);
                     }
                 });
             } else {
@@ -1260,7 +1260,7 @@ public abstract class TextSelectionHelper<Cell extends SelectableView> {
                         TextSelectionHelper.this.onTranslateListener.run(TextSelectionHelper.this.getSelectedText(), this.translateFromLanguage, LocaleController.getInstance().getCurrentLocale().getLanguage(), new Runnable() { // from class: org.telegram.ui.Cells.TextSelectionHelper$4$$ExternalSyntheticLambda0
                             @Override // java.lang.Runnable
                             public final void run() {
-                                TextSelectionHelper.ActionMode$CallbackC37024.this.lambda$onActionItemClicked$2();
+                                TextSelectionHelper.ActionMode$CallbackC37074.this.lambda$onActionItemClicked$2();
                             }
                         });
                     }
@@ -1305,26 +1305,26 @@ public abstract class TextSelectionHelper<Cell extends SelectableView> {
     }
 
     private ActionMode.Callback createActionCallback() {
-        final ActionMode$CallbackC37024 actionMode$CallbackC37024 = new ActionMode$CallbackC37024();
+        final ActionMode$CallbackC37074 actionMode$CallbackC37074 = new ActionMode$CallbackC37074();
         return Build.VERSION.SDK_INT >= 23 ? new ActionMode.Callback2() { // from class: org.telegram.ui.Cells.TextSelectionHelper.5
             @Override // android.view.ActionMode.Callback
             public boolean onCreateActionMode(ActionMode actionMode, Menu menu) {
-                return actionMode$CallbackC37024.onCreateActionMode(actionMode, menu);
+                return actionMode$CallbackC37074.onCreateActionMode(actionMode, menu);
             }
 
             @Override // android.view.ActionMode.Callback
             public boolean onPrepareActionMode(ActionMode actionMode, Menu menu) {
-                return actionMode$CallbackC37024.onPrepareActionMode(actionMode, menu);
+                return actionMode$CallbackC37074.onPrepareActionMode(actionMode, menu);
             }
 
             @Override // android.view.ActionMode.Callback
             public boolean onActionItemClicked(ActionMode actionMode, MenuItem menuItem) {
-                return actionMode$CallbackC37024.onActionItemClicked(actionMode, menuItem);
+                return actionMode$CallbackC37074.onActionItemClicked(actionMode, menuItem);
             }
 
             @Override // android.view.ActionMode.Callback
             public void onDestroyActionMode(ActionMode actionMode) {
-                actionMode$CallbackC37024.onDestroyActionMode(actionMode);
+                actionMode$CallbackC37074.onDestroyActionMode(actionMode);
             }
 
             @Override // android.view.ActionMode.Callback2
@@ -1356,7 +1356,7 @@ public abstract class TextSelectionHelper<Cell extends SelectableView> {
                     rect.set(Math.min(i, width), i2, Math.max(i, width), i2 + 1);
                 }
             }
-        } : actionMode$CallbackC37024;
+        } : actionMode$CallbackC37074;
     }
 
     /* JADX INFO: Access modifiers changed from: private */

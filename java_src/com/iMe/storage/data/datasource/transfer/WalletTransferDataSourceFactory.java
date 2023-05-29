@@ -9,6 +9,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* compiled from: WalletTransferDataSourceFactory.kt */
 /* loaded from: classes3.dex */
 public final class WalletTransferDataSourceFactory implements DataSourceFactory<Pair<? extends TokenCode, ? extends BlockchainType>, WalletTransferDataSource> {
+    private final WalletTransferDataSource btcWalletTransferDataSource;
     private final WalletTransferDataSource evmWalletTransferDataSource;
     private final WalletTransferDataSource tonWalletTransferDataSource;
     private final WalletTransferDataSource tronWalletTransferDataSource;
@@ -32,17 +33,23 @@ public final class WalletTransferDataSourceFactory implements DataSourceFactory<
                 iArr[BlockchainType.TRON.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
+            try {
+                iArr[BlockchainType.BITCOIN.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
 
-    public WalletTransferDataSourceFactory(WalletTransferDataSource evmWalletTransferDataSource, WalletTransferDataSource tonWalletTransferDataSource, WalletTransferDataSource tronWalletTransferDataSource) {
+    public WalletTransferDataSourceFactory(WalletTransferDataSource evmWalletTransferDataSource, WalletTransferDataSource tonWalletTransferDataSource, WalletTransferDataSource tronWalletTransferDataSource, WalletTransferDataSource btcWalletTransferDataSource) {
         Intrinsics.checkNotNullParameter(evmWalletTransferDataSource, "evmWalletTransferDataSource");
         Intrinsics.checkNotNullParameter(tonWalletTransferDataSource, "tonWalletTransferDataSource");
         Intrinsics.checkNotNullParameter(tronWalletTransferDataSource, "tronWalletTransferDataSource");
+        Intrinsics.checkNotNullParameter(btcWalletTransferDataSource, "btcWalletTransferDataSource");
         this.evmWalletTransferDataSource = evmWalletTransferDataSource;
         this.tonWalletTransferDataSource = tonWalletTransferDataSource;
         this.tronWalletTransferDataSource = tronWalletTransferDataSource;
+        this.btcWalletTransferDataSource = btcWalletTransferDataSource;
     }
 
     public WalletTransferDataSource getDataSource(Pair<? extends TokenCode, ? extends BlockchainType> arg) {
@@ -52,10 +59,13 @@ public final class WalletTransferDataSourceFactory implements DataSourceFactory<
             int i = WhenMappings.$EnumSwitchMapping$0[arg.getSecond().ordinal()];
             if (i != 1) {
                 if (i != 2) {
-                    if (i == 3) {
-                        return this.tronWalletTransferDataSource;
+                    if (i != 3) {
+                        if (i == 4) {
+                            return this.btcWalletTransferDataSource;
+                        }
+                        throw new NoWhenBranchMatchedException();
                     }
-                    throw new NoWhenBranchMatchedException();
+                    return this.tronWalletTransferDataSource;
                 }
                 return this.tonWalletTransferDataSource;
             }

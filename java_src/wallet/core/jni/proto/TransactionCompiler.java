@@ -206,7 +206,7 @@ public final class TransactionCompiler {
 
         /* loaded from: classes6.dex */
         public static final class Builder extends GeneratedMessageLite.Builder<PreSigningOutput, Builder> implements PreSigningOutputOrBuilder {
-            /* synthetic */ Builder(C68551 c68551) {
+            /* synthetic */ Builder(C68601 c68601) {
                 this();
             }
 
@@ -307,7 +307,7 @@ public final class TransactionCompiler {
 
         @Override // com.google.protobuf.GeneratedMessageLite
         protected final Object dynamicMethod(GeneratedMessageLite.MethodToInvoke method, Object arg0, Object arg1) {
-            switch (C68551.f1830xa1df5c61[method.ordinal()]) {
+            switch (C68601.f1830xa1df5c61[method.ordinal()]) {
                 case 1:
                     return new PreSigningOutput();
                 case 2:
@@ -354,7 +354,7 @@ public final class TransactionCompiler {
 
     /* renamed from: wallet.core.jni.proto.TransactionCompiler$1 */
     /* loaded from: classes6.dex */
-    static /* synthetic */ class C68551 {
+    static /* synthetic */ class C68601 {
 
         /* renamed from: $SwitchMap$com$google$protobuf$GeneratedMessageLite$MethodToInvoke */
         static final /* synthetic */ int[] f1830xa1df5c61;

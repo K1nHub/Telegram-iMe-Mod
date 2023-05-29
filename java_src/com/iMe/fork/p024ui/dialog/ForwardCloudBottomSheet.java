@@ -32,7 +32,7 @@ import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -143,7 +143,7 @@ public final class ForwardCloudBottomSheet extends BottomSheet {
         textView.setHighlightColor(Theme.getColor(Theme.key_dialogLinkSelection));
         textView.setEllipsize(TextUtils.TruncateAt.END);
         textView.setGravity(16);
-        textView.setText(LocaleController.getInternalString(C3290R.string.cloud_albums_bottom_sheet_title));
+        textView.setText(LocaleController.getInternalString(C3295R.string.cloud_albums_bottom_sheet_title));
         textView.setTextColor(Theme.getColor(Theme.key_dialogTextBlack));
         textView.setTextSize(1, 20.0f);
         textView.setLinkTextColor(Theme.getColor(Theme.key_dialogTextLink));
@@ -378,15 +378,15 @@ public final class ForwardCloudBottomSheet extends BottomSheet {
                 Intrinsics.checkNotNull(view, "null cannot be cast to non-null type org.telegram.ui.ActionBar.BottomSheet.BottomSheetCell");
                 BottomSheet.BottomSheetCell bottomSheetCell = (BottomSheet.BottomSheetCell) view;
                 bottomSheetCell.getImageView().setColorFilter((ColorFilter) null);
-                Drawable drawable = AppCompatResources.getDrawable(this.context, C3290R.C3292drawable.poll_add_circle);
-                Drawable drawable2 = AppCompatResources.getDrawable(this.context, C3290R.C3292drawable.poll_add_plus);
+                Drawable drawable = AppCompatResources.getDrawable(this.context, C3295R.C3297drawable.poll_add_circle);
+                Drawable drawable2 = AppCompatResources.getDrawable(this.context, C3295R.C3297drawable.poll_add_plus);
                 if (drawable != null && drawable2 != null) {
                     drawable.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_switchTrackChecked), PorterDuff.Mode.MULTIPLY));
                     drawable2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_checkboxCheck), PorterDuff.Mode.MULTIPLY));
                 }
                 CombinedDrawable combinedDrawable = new CombinedDrawable(drawable, drawable2);
                 bottomSheetCell.setTextColor(Theme.getColor(Theme.key_windowBackgroundWhiteBlueText4));
-                bottomSheetCell.setTextAndIcon(LocaleController.getInternalString(C3290R.string.cloud_albums_bottom_sheet_create_new_album), combinedDrawable);
+                bottomSheetCell.setTextAndIcon(LocaleController.getInternalString(C3295R.string.cloud_albums_bottom_sheet_create_new_album), combinedDrawable);
                 bottomSheetCell.getImageView().setPadding(AndroidUtilities.m54dp(11), 0, 0, 0);
                 return;
             }

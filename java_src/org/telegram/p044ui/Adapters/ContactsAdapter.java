@@ -23,14 +23,14 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.messenger.NotificationCenter;
 import org.telegram.messenger.UserConfig;
-import org.telegram.p044ui.ActionBar.C3356ActionBar;
+import org.telegram.p044ui.ActionBar.C3361ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Cells.DividerCell;
 import org.telegram.p044ui.Cells.EditTextSettingsCell;
@@ -127,7 +127,7 @@ public class ContactsAdapter extends RecyclerListView.SectionsAdapter {
     }
 
     private String getHintByType(NetworkType networkType) {
-        return LocaleController.formatStringInternal(C3290R.string.wallet_recipient_address_hint, LocaleController.getInternalString(networkType.getShortName()));
+        return LocaleController.formatStringInternal(C3295R.string.wallet_recipient_address_hint, LocaleController.getInternalString(networkType.getShortName()));
     }
 
     private boolean isFilterRow(int i) {
@@ -145,7 +145,7 @@ public class ContactsAdapter extends RecyclerListView.SectionsAdapter {
             z = true;
         }
         textCellWithRightImage.setRightIconVisible(z);
-        textCellWithRightImage.setRightIcon(contactsFilter == ContactsFilter.BLOCKED ? C3290R.C3292drawable.msg_actions : C3290R.C3292drawable.msg_delete, Theme.getColor(Theme.key_windowBackgroundWhiteGrayIcon));
+        textCellWithRightImage.setRightIcon(contactsFilter == ContactsFilter.BLOCKED ? C3295R.C3297drawable.msg_actions : C3295R.C3297drawable.msg_delete, Theme.getColor(Theme.key_windowBackgroundWhiteGrayIcon));
         textCellWithRightImage.setRightActionClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Adapters.ContactsAdapter$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
@@ -162,7 +162,7 @@ public class ContactsAdapter extends RecyclerListView.SectionsAdapter {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Adapters.ContactsAdapter$3 */
     /* loaded from: classes5.dex */
-    public static /* synthetic */ class C34653 {
+    public static /* synthetic */ class C34703 {
         static final /* synthetic */ int[] $SwitchMap$com$iMe$model$contacts$ContactsFilter;
 
         static {
@@ -195,7 +195,7 @@ public class ContactsAdapter extends RecyclerListView.SectionsAdapter {
         HashMap<String, ArrayList<TLRPC$TL_contact>> hashMap;
         ArrayList<String> arrayList;
         if (this.needPhonebook) {
-            int i = C34653.$SwitchMap$com$iMe$model$contacts$ContactsFilter[this.filterRowModel.ordinal()];
+            int i = C34703.$SwitchMap$com$iMe$model$contacts$ContactsFilter[this.filterRowModel.ordinal()];
             if (i == 1) {
                 hashMap = this.filteredContactsDelegate.getOnlineContactsDictionary();
                 arrayList = this.filteredContactsDelegate.getOnlineContactsArr();
@@ -607,7 +607,7 @@ public class ContactsAdapter extends RecyclerListView.SectionsAdapter {
                         size = viewGroup.getMeasuredHeight();
                     }
                     if (size == 0) {
-                        size = (AndroidUtilities.displaySize.y - C3356ActionBar.getCurrentActionBarHeight()) - (Build.VERSION.SDK_INT >= 21 ? AndroidUtilities.statusBarHeight : 0);
+                        size = (AndroidUtilities.displaySize.y - C3361ActionBar.getCurrentActionBarHeight()) - (Build.VERSION.SDK_INT >= 21 ? AndroidUtilities.statusBarHeight : 0);
                     }
                     int m54dp = AndroidUtilities.m54dp(50);
                     int m54dp2 = ContactsAdapter.this.onlyUsers != 0 ? 0 : AndroidUtilities.m54dp(30) + m54dp;
@@ -624,7 +624,7 @@ public class ContactsAdapter extends RecyclerListView.SectionsAdapter {
             editTextSettingsCell = frameLayout;
         } else {
             View shadowSectionCell = new ShadowSectionCell(this.mContext);
-            CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.mContext, C3290R.C3292drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+            CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(Theme.key_windowBackgroundGray)), Theme.getThemedDrawableByKey(this.mContext, C3295R.C3297drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
             combinedDrawable.setFullsize(true);
             shadowSectionCell.setBackgroundDrawable(combinedDrawable);
             editTextSettingsCell = shadowSectionCell;
@@ -645,7 +645,7 @@ public class ContactsAdapter extends RecyclerListView.SectionsAdapter {
         }
         if (viewHolder.getItemViewType() == IdFabric$ViewTypes.CONTACTS_INPUT_ADDRESS) {
             EditTextSettingsCell editTextSettingsCell = (EditTextSettingsCell) viewHolder.itemView;
-            editTextSettingsCell.getTextView().setCompoundDrawablesWithIntrinsicBounds(0, 0, C3290R.C3292drawable.msg_qrcode, 0);
+            editTextSettingsCell.getTextView().setCompoundDrawablesWithIntrinsicBounds(0, 0, C3295R.C3297drawable.msg_qrcode, 0);
             editTextSettingsCell.getTextView().setCompoundDrawablePadding(8);
             ViewExtKt.setCompoundDrawablesColor(editTextSettingsCell.getTextView(), Theme.getColor(Theme.key_chats_actionBackground));
             ViewExtKt.setRightDrawableOnClickListener(editTextSettingsCell.getTextView(), new Runnable() { // from class: org.telegram.ui.Adapters.ContactsAdapter$$ExternalSyntheticLambda1
@@ -694,40 +694,40 @@ public class ContactsAdapter extends RecyclerListView.SectionsAdapter {
             }
             GraySectionCell graySectionCell = (GraySectionCell) viewHolder.itemView;
             if (this.isChooseWalletTransferRecipient) {
-                graySectionCell.setText(LocaleController.getInternalString(C3290R.string.wallet_recipient_or_choose_title));
+                graySectionCell.setText(LocaleController.getInternalString(C3295R.string.wallet_recipient_or_choose_title));
                 return;
             }
             int i3 = this.sortType;
             if (i3 == 0) {
-                graySectionCell.setText(LocaleController.getString("Contacts", C3290R.string.Contacts));
+                graySectionCell.setText(LocaleController.getString("Contacts", C3295R.string.Contacts));
             } else if (i3 == 1) {
-                graySectionCell.setText(LocaleController.getString("SortedByName", C3290R.string.SortedByName));
+                graySectionCell.setText(LocaleController.getString("SortedByName", C3295R.string.SortedByName));
             } else {
-                graySectionCell.setText(LocaleController.getString("SortedByLastSeen", C3290R.string.SortedByLastSeen));
+                graySectionCell.setText(LocaleController.getString("SortedByLastSeen", C3295R.string.SortedByLastSeen));
             }
         } else {
             TextCell textCell = (TextCell) viewHolder.itemView;
             if (i == 0) {
                 if (this.needPhonebook) {
                     if (i2 == 0) {
-                        textCell.setTextAndIcon(LocaleController.getString("InviteFriends", C3290R.string.InviteFriends), C3290R.C3292drawable.msg_invite, false);
+                        textCell.setTextAndIcon(LocaleController.getString("InviteFriends", C3295R.string.InviteFriends), C3295R.C3297drawable.msg_invite, false);
                         textCell.showDivider(!this.hasGps);
                     } else if (i2 == 1) {
-                        textCell.setTextAndIcon(LocaleController.getString("AddPeopleNearby", C3290R.string.AddPeopleNearby), C3290R.C3292drawable.msg_location, false);
+                        textCell.setTextAndIcon(LocaleController.getString("AddPeopleNearby", C3295R.string.AddPeopleNearby), C3295R.C3297drawable.msg_location, false);
                         textCell.showDivider(this.hasGps);
                     }
                 } else if (this.isAdmin) {
                     if (this.isChannel) {
-                        textCell.setTextAndIcon(LocaleController.getString("ChannelInviteViaLink", C3290R.string.ChannelInviteViaLink), C3290R.C3292drawable.msg_link2, false);
+                        textCell.setTextAndIcon(LocaleController.getString("ChannelInviteViaLink", C3295R.string.ChannelInviteViaLink), C3295R.C3297drawable.msg_link2, false);
                     } else {
-                        textCell.setTextAndIcon(LocaleController.getString("InviteToGroupByLink", C3290R.string.InviteToGroupByLink), C3290R.C3292drawable.msg_link2, false);
+                        textCell.setTextAndIcon(LocaleController.getString("InviteToGroupByLink", C3295R.string.InviteToGroupByLink), C3295R.C3297drawable.msg_link2, false);
                     }
                 } else if (i2 == 0) {
-                    textCell.setTextAndIcon(LocaleController.getString("NewGroup", C3290R.string.NewGroup), C3290R.C3292drawable.msg_groups, false);
+                    textCell.setTextAndIcon(LocaleController.getString("NewGroup", C3295R.string.NewGroup), C3295R.C3297drawable.msg_groups, false);
                 } else if (i2 == 1) {
-                    textCell.setTextAndIcon(LocaleController.getString("NewSecretChat", C3290R.string.NewSecretChat), C3290R.C3292drawable.msg_secret, false);
+                    textCell.setTextAndIcon(LocaleController.getString("NewSecretChat", C3295R.string.NewSecretChat), C3295R.C3297drawable.msg_secret, false);
                 } else if (i2 == 2) {
-                    textCell.setTextAndIcon(LocaleController.getString("NewChannel", C3290R.string.NewChannel), C3290R.C3292drawable.msg_channel, false);
+                    textCell.setTextAndIcon(LocaleController.getString("NewChannel", C3295R.string.NewChannel), C3295R.C3297drawable.msg_channel, false);
                 }
             } else if (ContactsController.getInstance(this.currentAccount).phoneBookContacts.size() <= i2) {
             } else {

@@ -114,6 +114,20 @@
     .catch Ljava/lang/NoSuchFieldError; {:try_start_5 .. :try_end_5} :catch_5
 
     :catch_5
+    :try_start_6
+    sget-object v1, Lcom/iMe/storage/domain/model/crypto/NetworkType;->BITCOIN:Lcom/iMe/storage/domain/model/crypto/NetworkType;
+
+    invoke-virtual {v1}, Ljava/lang/Enum;->ordinal()I
+
+    move-result v1
+
+    const/4 v2, 0x7
+
+    aput v2, v0, v1
+    :try_end_6
+    .catch Ljava/lang/NoSuchFieldError; {:try_start_6 .. :try_end_6} :catch_6
+
+    :catch_6
     sput-object v0, Lcom/iMe/storage/common/AppConfiguration$Crypto$WhenMappings;->$EnumSwitchMapping$0:[I
 
     return-void

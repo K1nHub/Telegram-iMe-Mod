@@ -18,7 +18,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function0;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import timber.log.Timber;
 /* compiled from: ImageViewExt.kt */
 /* loaded from: classes4.dex */
@@ -99,7 +99,7 @@ public final class ImageViewExtKt {
         } else {
             GradientDrawable gradientDrawable2 = new GradientDrawable();
             gradientDrawable2.setShape(1);
-            gradientDrawable2.setColor(ColorStateList.valueOf(ContextCompat.getColor(context, C3290R.C3291color.placeholder_color)));
+            gradientDrawable2.setColor(ColorStateList.valueOf(ContextCompat.getColor(context, C3295R.C3296color.placeholder_color)));
             gradientDrawable = gradientDrawable2;
         }
         loadFrom(imageView, url, context, gradientDrawable, z);

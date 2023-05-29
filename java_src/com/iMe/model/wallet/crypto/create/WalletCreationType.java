@@ -7,7 +7,7 @@ import kotlin.collections.CollectionsKt;
 import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 /* compiled from: WalletCreationType.kt */
 /* loaded from: classes3.dex */
 public abstract class WalletCreationType {
@@ -78,7 +78,7 @@ public abstract class WalletCreationType {
             public static final Create INSTANCE = new Create();
 
             private Create() {
-                super(C3290R.C3292drawable.fork_ic_wallet_create, C3290R.string.wallet_dashboard_create_eth_wallet, 0, null);
+                super(C3295R.C3297drawable.fork_ic_wallet_create, C3295R.string.wallet_dashboard_create_eth_wallet, 0, null);
             }
         }
 
@@ -88,7 +88,7 @@ public abstract class WalletCreationType {
             public static final Import INSTANCE = new Import();
 
             private Import() {
-                super(C3290R.C3292drawable.fork_ic_wallet_import, C3290R.string.wallet_dashboard_import_eth_wallet, 1, null);
+                super(C3295R.C3297drawable.fork_ic_wallet_import, C3295R.string.wallet_dashboard_import_eth_wallet, 1, null);
             }
         }
 
@@ -98,7 +98,7 @@ public abstract class WalletCreationType {
             public static final Restore INSTANCE = new Restore();
 
             private Restore() {
-                super(C3290R.C3292drawable.fork_ic_wallet_restore, C3290R.string.wallet_dashboard_restore_eth_wallet, 2, null);
+                super(C3295R.C3297drawable.fork_ic_wallet_restore, C3295R.string.wallet_dashboard_restore_eth_wallet, 2, null);
             }
         }
 
@@ -136,7 +136,7 @@ public abstract class WalletCreationType {
 
         /* JADX WARN: 'super' call moved to the top of the method (can break code semantics) */
         public Activate(BlockchainType blockchainType) {
-            super(C3290R.C3292drawable.fork_ic_wallet_create, C3290R.string.wallet_dashboard_activate_wallet, null);
+            super(C3295R.C3297drawable.fork_ic_wallet_create, C3295R.string.wallet_dashboard_activate_wallet, null);
             Intrinsics.checkNotNullParameter(blockchainType, "blockchainType");
             this.blockchainType = blockchainType;
         }

@@ -11,7 +11,7 @@ import kotlin.Lazy;
 import kotlin.LazyKt__LazyJVMKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.databinding.ForkContentStakingTransactionActionsBinding;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -88,8 +88,8 @@ public final class StakingTransactionActionButtonsView extends FrameLayout {
         setupColors();
         ForkContentStakingTransactionActionsBinding forkContentStakingTransactionActionsBinding = this.binding;
         forkContentStakingTransactionActionsBinding.buttonAction.setForcedCustomHeight(36);
-        forkContentStakingTransactionActionsBinding.buttonConditions.setText(LocaleController.getInternalString(C3290R.string.staking_deposit_conditions));
-        forkContentStakingTransactionActionsBinding.buttonApproveInfo.setText(LocaleController.getInternalString(C3290R.string.wallet_swap_process_what_is_approve));
+        forkContentStakingTransactionActionsBinding.buttonConditions.setText(LocaleController.getInternalString(C3295R.string.staking_deposit_conditions));
+        forkContentStakingTransactionActionsBinding.buttonApproveInfo.setText(LocaleController.getInternalString(C3295R.string.wallet_swap_process_what_is_approve));
         addView(this.binding.getRoot());
     }
 }

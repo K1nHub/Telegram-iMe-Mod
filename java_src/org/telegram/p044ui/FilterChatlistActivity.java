@@ -40,7 +40,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.FileLog;
@@ -54,7 +54,7 @@ import org.telegram.p044ui.ActionBar.ActionBarMenuSubItem;
 import org.telegram.p044ui.ActionBar.ActionBarPopupWindow;
 import org.telegram.p044ui.ActionBar.AlertDialog;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3356ActionBar;
+import org.telegram.p044ui.ActionBar.C3361ActionBar;
 import org.telegram.p044ui.ActionBar.SimpleTextView;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.Cells.DialogCell;
@@ -140,7 +140,7 @@ public class FilterChatlistActivity extends BaseFragment {
     /* JADX INFO: Access modifiers changed from: private */
     public void updateActionBarTitle(boolean z) {
         TLRPC$TL_exportedChatlistInvite tLRPC$TL_exportedChatlistInvite = this.invite;
-        String string = TextUtils.isEmpty(tLRPC$TL_exportedChatlistInvite == null ? null : tLRPC$TL_exportedChatlistInvite.title) ? LocaleController.getString("FilterShare", C3290R.string.FilterShare) : this.invite.title;
+        String string = TextUtils.isEmpty(tLRPC$TL_exportedChatlistInvite == null ? null : tLRPC$TL_exportedChatlistInvite.title) ? LocaleController.getString("FilterShare", C3295R.string.FilterShare) : this.invite.title;
         if (z) {
             this.actionBar.setTitleAnimated(string, false, 220L);
         } else {
@@ -150,11 +150,11 @@ public class FilterChatlistActivity extends BaseFragment {
 
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public View createView(Context context) {
-        this.actionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
+        this.actionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
         this.actionBar.setAllowOverlayTitle(true);
         updateActionBarTitle(false);
-        this.actionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.FilterChatlistActivity.1
-            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.FilterChatlistActivity.1
+            @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     if (FilterChatlistActivity.this.checkDiscard()) {
@@ -170,12 +170,12 @@ public class FilterChatlistActivity extends BaseFragment {
             }
         });
         ActionBarMenu createMenu = this.actionBar.createMenu();
-        Drawable mutate = context.getResources().getDrawable(C3290R.C3292drawable.ic_ab_done).mutate();
+        Drawable mutate = context.getResources().getDrawable(C3295R.C3297drawable.ic_ab_done).mutate();
         int i = Theme.key_actionBarDefaultIcon;
         mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.MULTIPLY));
         CrossfadeDrawable crossfadeDrawable = new CrossfadeDrawable(mutate, new CircularProgressDrawable(Theme.getColor(i)));
         this.doneButtonDrawable = crossfadeDrawable;
-        this.doneButton = createMenu.addItemWithWidth(1, crossfadeDrawable, AndroidUtilities.m54dp(56), LocaleController.getString("Done", C3290R.string.Done));
+        this.doneButton = createMenu.addItemWithWidth(1, crossfadeDrawable, AndroidUtilities.m54dp(56), LocaleController.getString("Done", C3295R.string.Done));
         checkDoneButton();
         FrameLayout frameLayout = new FrameLayout(context);
         this.fragmentView = frameLayout;
@@ -265,22 +265,22 @@ public class FilterChatlistActivity extends BaseFragment {
                     arrayList.add(getMessagesController().getUser(Long.valueOf(longValue)));
                     TLRPC$User user = getMessagesController().getUser(Long.valueOf(longValue));
                     if (user != null && user.bot) {
-                        str = LocaleController.getString("FilterInviteBotToast", C3290R.string.FilterInviteBotToast);
+                        str = LocaleController.getString("FilterInviteBotToast", C3295R.string.FilterInviteBotToast);
                     } else {
-                        str = LocaleController.getString("FilterInviteUserToast", C3290R.string.FilterInviteUserToast);
+                        str = LocaleController.getString("FilterInviteUserToast", C3295R.string.FilterInviteUserToast);
                     }
                 } else {
                     TLRPC$Chat chat = getMessagesController().getChat(Long.valueOf(-longValue));
                     if (ChatObject.isChannelAndNotMegaGroup(chat)) {
                         if (ChatObject.isPublic(chat)) {
-                            string = LocaleController.getString("FilterInviteChannelToast", C3290R.string.FilterInviteChannelToast);
+                            string = LocaleController.getString("FilterInviteChannelToast", C3295R.string.FilterInviteChannelToast);
                         } else {
-                            string = LocaleController.getString("FilterInvitePrivateChannelToast", C3290R.string.FilterInvitePrivateChannelToast);
+                            string = LocaleController.getString("FilterInvitePrivateChannelToast", C3295R.string.FilterInvitePrivateChannelToast);
                         }
                     } else if (ChatObject.isPublic(chat)) {
-                        string = LocaleController.getString("FilterInviteGroupToast", C3290R.string.FilterInviteGroupToast);
+                        string = LocaleController.getString("FilterInviteGroupToast", C3295R.string.FilterInviteGroupToast);
                     } else {
-                        string = LocaleController.getString("FilterInvitePrivateGroupToast", C3290R.string.FilterInvitePrivateGroupToast);
+                        string = LocaleController.getString("FilterInvitePrivateGroupToast", C3295R.string.FilterInvitePrivateGroupToast);
                     }
                     arrayList.add(chat);
                     str = string;
@@ -430,7 +430,7 @@ public class FilterChatlistActivity extends BaseFragment {
     public /* synthetic */ void lambda$saveTitle$3(TLRPC$TL_error tLRPC$TL_error) {
         this.savingTitleReqId = 0;
         if (tLRPC$TL_error == null) {
-            BulletinFactory.m29of(this).createSimpleBulletin(C3290R.raw.contact_check, LocaleController.getString("FilterInviteNameEdited", C3290R.string.FilterInviteNameEdited)).show();
+            BulletinFactory.m29of(this).createSimpleBulletin(C3295R.raw.contact_check, LocaleController.getString("FilterInviteNameEdited", C3295R.string.FilterInviteNameEdited)).show();
         }
     }
 
@@ -450,7 +450,7 @@ public class FilterChatlistActivity extends BaseFragment {
             return;
         }
         if (this.invite == null) {
-            hintInnerCell.setText(LocaleController.getString("FilterInviteHeaderNo", C3290R.string.FilterInviteHeaderNo), z);
+            hintInnerCell.setText(LocaleController.getString("FilterInviteHeaderNo", C3295R.string.FilterInviteHeaderNo), z);
         } else {
             hintInnerCell.setText(AndroidUtilities.replaceTags(LocaleController.formatPluralString("FilterInviteHeader", this.selectedPeers.size(), this.filter.name)), z);
         }
@@ -465,7 +465,7 @@ public class FilterChatlistActivity extends BaseFragment {
         headerCell.setText(this.selectedPeers.size() <= 0 ? LocaleController.getString("FilterInviteHeaderChatsEmpty") : LocaleController.formatPluralString("FilterInviteHeaderChats", this.selectedPeers.size(), new Object[0]), z);
         if (this.allowedPeers.size() > 1) {
             final boolean z2 = this.selectedPeers.size() >= Math.min(getMaxChats(), this.allowedPeers.size());
-            this.headerCountCell.setAction(LocaleController.getString(!z2 ? C3290R.string.SelectAll : C3290R.string.DeselectAll), new Runnable() { // from class: org.telegram.ui.FilterChatlistActivity$$ExternalSyntheticLambda7
+            this.headerCountCell.setAction(LocaleController.getString(!z2 ? C3295R.string.SelectAll : C3295R.string.DeselectAll), new Runnable() { // from class: org.telegram.ui.FilterChatlistActivity$$ExternalSyntheticLambda7
                 @Override // java.lang.Runnable
                 public final void run() {
                     FilterChatlistActivity.this.lambda$updateHeaderCell$5(z2);
@@ -549,11 +549,11 @@ public class FilterChatlistActivity extends BaseFragment {
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
             FrameLayout frameLayout;
             if (i == 0) {
-                frameLayout = new HintInnerCell(FilterChatlistActivity.this.getContext(), C3290R.raw.folder_share);
+                frameLayout = new HintInnerCell(FilterChatlistActivity.this.getContext(), C3295R.raw.folder_share);
             } else if (i == 2) {
                 frameLayout = new TextInfoPrivacyCell(FilterChatlistActivity.this.getContext());
             } else if (i == 3) {
-                frameLayout = new C56051(FilterChatlistActivity.this.getContext(), FilterChatlistActivity.this);
+                frameLayout = new C56101(FilterChatlistActivity.this.getContext(), FilterChatlistActivity.this);
                 frameLayout.setLayoutParams(new RecyclerView.LayoutParams(-1, -2));
                 frameLayout.setBackgroundColor(Theme.getColor(Theme.key_windowBackgroundWhite));
             } else if (i == 4) {
@@ -571,8 +571,8 @@ public class FilterChatlistActivity extends BaseFragment {
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.FilterChatlistActivity$ListAdapter$1 */
         /* loaded from: classes5.dex */
-        public class C56051 extends InviteLinkCell {
-            C56051(Context context, BaseFragment baseFragment) {
+        public class C56101 extends InviteLinkCell {
+            C56101(Context context, BaseFragment baseFragment) {
                 super(context, baseFragment);
             }
 
@@ -589,7 +589,7 @@ public class FilterChatlistActivity extends BaseFragment {
                 FilterChatlistActivity.this.getConnectionsManager().sendRequest(tLRPC$TL_chatlists_deleteExportedInvite, new RequestDelegate() { // from class: org.telegram.ui.FilterChatlistActivity$ListAdapter$1$$ExternalSyntheticLambda7
                     @Override // org.telegram.tgnet.RequestDelegate
                     public final void run(TLObject tLObject, TLRPC$TL_error tLRPC$TL_error) {
-                        FilterChatlistActivity.ListAdapter.C56051.this.lambda$deleteLink$3(alertDialog, tLObject, tLRPC$TL_error);
+                        FilterChatlistActivity.ListAdapter.C56101.this.lambda$deleteLink$3(alertDialog, tLObject, tLRPC$TL_error);
                     }
                 });
             }
@@ -599,7 +599,7 @@ public class FilterChatlistActivity extends BaseFragment {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.FilterChatlistActivity$ListAdapter$1$$ExternalSyntheticLambda6
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FilterChatlistActivity.ListAdapter.C56051.this.lambda$deleteLink$2(alertDialog);
+                        FilterChatlistActivity.ListAdapter.C56101.this.lambda$deleteLink$2(alertDialog);
                     }
                 });
             }
@@ -623,8 +623,8 @@ public class FilterChatlistActivity extends BaseFragment {
                 editTextBoldCursor.setBackgroundDrawable(Theme.createEditTextDrawable(getContext(), true));
                 final AlertDialog.Builder builder = new AlertDialog.Builder(getContext());
                 builder.setDialogButtonColorKey(Theme.key_dialogButton);
-                builder.setTitle(LocaleController.getString("FilterInviteEditName", C3290R.string.FilterInviteEditName));
-                builder.setNegativeButton(LocaleController.getString("Cancel", C3290R.string.Cancel), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.FilterChatlistActivity$ListAdapter$1$$ExternalSyntheticLambda0
+                builder.setTitle(LocaleController.getString("FilterInviteEditName", C3295R.string.FilterInviteEditName));
+                builder.setNegativeButton(LocaleController.getString("Cancel", C3295R.string.Cancel), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.FilterChatlistActivity$ListAdapter$1$$ExternalSyntheticLambda0
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i) {
                         AndroidUtilities.hideKeyboard(EditTextBoldCursor.this);
@@ -653,7 +653,7 @@ public class FilterChatlistActivity extends BaseFragment {
                     @Override // android.widget.TextView.OnEditorActionListener
                     public final boolean onEditorAction(TextView textView, int i2, KeyEvent keyEvent) {
                         boolean lambda$editname$5;
-                        lambda$editname$5 = FilterChatlistActivity.ListAdapter.C56051.lambda$editname$5(AlertDialog.Builder.this, textView, i2, keyEvent);
+                        lambda$editname$5 = FilterChatlistActivity.ListAdapter.C56101.lambda$editname$5(AlertDialog.Builder.this, textView, i2, keyEvent);
                         return lambda$editname$5;
                     }
                 });
@@ -683,17 +683,17 @@ public class FilterChatlistActivity extends BaseFragment {
                     editTextBoldCursor.setText(FilterChatlistActivity.this.invite.title);
                     editTextBoldCursor.setSelection(editTextBoldCursor.length());
                 }
-                builder.setPositiveButton(LocaleController.getString("Save", C3290R.string.Save), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.FilterChatlistActivity$ListAdapter$1$$ExternalSyntheticLambda1
+                builder.setPositiveButton(LocaleController.getString("Save", C3295R.string.Save), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.FilterChatlistActivity$ListAdapter$1$$ExternalSyntheticLambda1
                     @Override // android.content.DialogInterface.OnClickListener
                     public final void onClick(DialogInterface dialogInterface, int i2) {
-                        FilterChatlistActivity.ListAdapter.C56051.this.lambda$editname$6(editTextBoldCursor, builder, dialogInterface, i2);
+                        FilterChatlistActivity.ListAdapter.C56101.this.lambda$editname$6(editTextBoldCursor, builder, dialogInterface, i2);
                     }
                 });
                 AlertDialog create = builder.create();
                 create.setOnShowListener(new DialogInterface.OnShowListener() { // from class: org.telegram.ui.FilterChatlistActivity$ListAdapter$1$$ExternalSyntheticLambda3
                     @Override // android.content.DialogInterface.OnShowListener
                     public final void onShow(DialogInterface dialogInterface) {
-                        FilterChatlistActivity.ListAdapter.C56051.lambda$editname$8(EditTextBoldCursor.this, dialogInterface);
+                        FilterChatlistActivity.ListAdapter.C56101.lambda$editname$8(EditTextBoldCursor.this, dialogInterface);
                     }
                 });
                 create.setOnDismissListener(new DialogInterface.OnDismissListener() { // from class: org.telegram.ui.FilterChatlistActivity$ListAdapter$1$$ExternalSyntheticLambda2
@@ -729,7 +729,7 @@ public class FilterChatlistActivity extends BaseFragment {
                 AndroidUtilities.runOnUIThread(new Runnable() { // from class: org.telegram.ui.FilterChatlistActivity$ListAdapter$1$$ExternalSyntheticLambda5
                     @Override // java.lang.Runnable
                     public final void run() {
-                        FilterChatlistActivity.ListAdapter.C56051.lambda$editname$7(EditTextBoldCursor.this);
+                        FilterChatlistActivity.ListAdapter.C56101.lambda$editname$7(EditTextBoldCursor.this);
                     }
                 });
             }
@@ -752,15 +752,15 @@ public class FilterChatlistActivity extends BaseFragment {
                 FilterChatlistActivity.this.updateHintCell(false);
             } else if (itemViewType == 2) {
                 TextInfoPrivacyCell textInfoPrivacyCell = (TextInfoPrivacyCell) viewHolder.itemView;
-                textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(FilterChatlistActivity.this.getContext(), i == FilterChatlistActivity.this.chatsSectionRow ? C3290R.C3292drawable.greydivider_bottom : C3290R.C3292drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
+                textInfoPrivacyCell.setBackground(Theme.getThemedDrawableByKey(FilterChatlistActivity.this.getContext(), i == FilterChatlistActivity.this.chatsSectionRow ? C3295R.C3297drawable.greydivider_bottom : C3295R.C3297drawable.greydivider, Theme.key_windowBackgroundGrayShadow));
                 if (i == FilterChatlistActivity.this.chatsSectionRow) {
                     textInfoPrivacyCell.setFixedSize(0);
                     FilterChatlistActivity filterChatlistActivity = FilterChatlistActivity.this;
                     if (filterChatlistActivity.invite == null || filterChatlistActivity.allowedPeers.isEmpty()) {
-                        textInfoPrivacyCell.setText(LocaleController.getString("FilterInviteHintNo", C3290R.string.FilterInviteHintNo));
+                        textInfoPrivacyCell.setText(LocaleController.getString("FilterInviteHintNo", C3295R.string.FilterInviteHintNo));
                         return;
                     } else {
-                        textInfoPrivacyCell.setText(LocaleController.getString("FilterInviteHint", C3290R.string.FilterInviteHint));
+                        textInfoPrivacyCell.setText(LocaleController.getString("FilterInviteHint", C3295R.string.FilterInviteHint));
                         return;
                     }
                 }
@@ -783,11 +783,11 @@ public class FilterChatlistActivity extends BaseFragment {
                                 FilterChatlistActivity.this.updateHeaderCell(false);
                                 return;
                             }
-                            headerCell.setText(LocaleController.getString("FilterInviteHeaderChatsNo", C3290R.string.FilterInviteHeaderChatsNo), false);
+                            headerCell.setText(LocaleController.getString("FilterInviteHeaderChatsNo", C3295R.string.FilterInviteHeaderChatsNo), false);
                             headerCell.setAction("", null);
                             return;
                         }
-                        headerCell.setText(LocaleController.getString("InviteLink", C3290R.string.InviteLink), false);
+                        headerCell.setText(LocaleController.getString("InviteLink", C3295R.string.InviteLink), false);
                         headerCell.setAction("", null);
                     }
                 } else {
@@ -833,15 +833,15 @@ public class FilterChatlistActivity extends BaseFragment {
                         groupCreateUserCell.setChecked(false, false);
                         if (tLRPC$User instanceof TLRPC$User) {
                             if (((TLRPC$User) tLRPC$User).bot) {
-                                r3 = LocaleController.getString("FilterInviteBot", C3290R.string.FilterInviteBot);
+                                r3 = LocaleController.getString("FilterInviteBot", C3295R.string.FilterInviteBot);
                             } else {
-                                r3 = LocaleController.getString("FilterInviteUser", C3290R.string.FilterInviteUser);
+                                r3 = LocaleController.getString("FilterInviteUser", C3295R.string.FilterInviteUser);
                             }
                         } else if (tLRPC$User instanceof TLRPC$Chat) {
                             if (ChatObject.isChannelAndNotMegaGroup(tLRPC$User)) {
-                                r3 = LocaleController.getString("FilterInviteChannel", C3290R.string.FilterInviteChannel);
+                                r3 = LocaleController.getString("FilterInviteChannel", C3295R.string.FilterInviteChannel);
                             } else {
-                                r3 = LocaleController.getString("FilterInviteGroup", C3290R.string.FilterInviteGroup);
+                                r3 = LocaleController.getString("FilterInviteGroup", C3295R.string.FilterInviteGroup);
                             }
                         }
                     }
@@ -888,7 +888,7 @@ public class FilterChatlistActivity extends BaseFragment {
         if (!z) {
             this.selectedPeers.addAll(this.allowedPeers.subList(0, Math.min(getMaxChats(), this.allowedPeers.size())));
         }
-        headerCell.setAction(LocaleController.getString(!(this.selectedPeers.size() >= Math.min(getMaxChats(), this.allowedPeers.size())) ? C3290R.string.SelectAll : C3290R.string.DeselectAll), new Runnable() { // from class: org.telegram.ui.FilterChatlistActivity$$ExternalSyntheticLambda6
+        headerCell.setAction(LocaleController.getString(!(this.selectedPeers.size() >= Math.min(getMaxChats(), this.allowedPeers.size())) ? C3295R.string.SelectAll : C3295R.string.DeselectAll), new Runnable() { // from class: org.telegram.ui.FilterChatlistActivity$$ExternalSyntheticLambda6
             @Override // java.lang.Runnable
             public final void run() {
                 FilterChatlistActivity.this.lambda$deselectAll$6(headerCell, z);
@@ -1018,15 +1018,15 @@ public class FilterChatlistActivity extends BaseFragment {
     public boolean checkDiscard() {
         if (!this.selectedPeers.isEmpty() && this.peersChanged) {
             AlertDialog.Builder builder = new AlertDialog.Builder(getParentActivity());
-            builder.setTitle(LocaleController.getString("UnsavedChanges", C3290R.string.UnsavedChanges));
-            builder.setMessage(LocaleController.getString("UnsavedChangesMessage", C3290R.string.UnsavedChangesMessage));
-            builder.setPositiveButton(LocaleController.getString("ApplyTheme", C3290R.string.ApplyTheme), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.FilterChatlistActivity$$ExternalSyntheticLambda2
+            builder.setTitle(LocaleController.getString("UnsavedChanges", C3295R.string.UnsavedChanges));
+            builder.setMessage(LocaleController.getString("UnsavedChangesMessage", C3295R.string.UnsavedChangesMessage));
+            builder.setPositiveButton(LocaleController.getString("ApplyTheme", C3295R.string.ApplyTheme), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.FilterChatlistActivity$$ExternalSyntheticLambda2
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     FilterChatlistActivity.this.lambda$checkDiscard$9(dialogInterface, i);
                 }
             });
-            builder.setNegativeButton(LocaleController.getString("PassportDiscard", C3290R.string.PassportDiscard), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.FilterChatlistActivity$$ExternalSyntheticLambda1
+            builder.setNegativeButton(LocaleController.getString("PassportDiscard", C3295R.string.PassportDiscard), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.FilterChatlistActivity$$ExternalSyntheticLambda1
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i) {
                     FilterChatlistActivity.this.lambda$checkDiscard$10(dialogInterface, i);
@@ -1168,12 +1168,12 @@ public class FilterChatlistActivity extends BaseFragment {
             this.linkBox.addView(this.textView, LayoutHelper.createFrame(-1, -2, 23, 20, 0, 40, 0));
             ImageView imageView = new ImageView(context);
             this.optionsIcon = imageView;
-            imageView.setImageDrawable(getContext().getResources().getDrawable(C3290R.C3292drawable.ic_ab_other));
+            imageView.setImageDrawable(getContext().getResources().getDrawable(C3295R.C3297drawable.ic_ab_other));
             this.optionsIcon.setScaleType(ImageView.ScaleType.CENTER);
             this.optionsIcon.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_dialogTextGray3), PorterDuff.Mode.SRC_IN));
             this.optionsIcon.setAlpha(BitmapDescriptorFactory.HUE_RED);
             this.optionsIcon.setVisibility(8);
-            this.optionsIcon.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3290R.string.AccDescrMoreOptions));
+            this.optionsIcon.setContentDescription(LocaleController.getString("AccDescrMoreOptions", C3295R.string.AccDescrMoreOptions));
             this.optionsIcon.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.FilterChatlistActivity$InviteLinkCell$$ExternalSyntheticLambda4
                 @Override // android.view.View.OnClickListener
                 public final void onClick(View view) {
@@ -1199,9 +1199,9 @@ public class FilterChatlistActivity extends BaseFragment {
             this.copyButton.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             this.copyButton.setTextSize(14.0f);
             SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
-            spannableStringBuilder.append((CharSequence) "..").setSpan(new ColoredImageSpan(ContextCompat.getDrawable(context, C3290R.C3292drawable.msg_copy_filled)), 0, 1, 0);
+            spannableStringBuilder.append((CharSequence) "..").setSpan(new ColoredImageSpan(ContextCompat.getDrawable(context, C3295R.C3297drawable.msg_copy_filled)), 0, 1, 0);
             spannableStringBuilder.setSpan(new DialogCell.FixedWidthSpan(AndroidUtilities.m54dp(8)), 1, 2, 0);
-            spannableStringBuilder.append((CharSequence) LocaleController.getString("LinkActionCopy", C3290R.string.LinkActionCopy));
+            spannableStringBuilder.append((CharSequence) LocaleController.getString("LinkActionCopy", C3295R.string.LinkActionCopy));
             spannableStringBuilder.append((CharSequence) ".").setSpan(new DialogCell.FixedWidthSpan(AndroidUtilities.m54dp(5)), spannableStringBuilder.length() - 1, spannableStringBuilder.length(), 0);
             this.copyButton.setText(spannableStringBuilder);
             this.copyButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.FilterChatlistActivity$InviteLinkCell$$ExternalSyntheticLambda1
@@ -1226,9 +1226,9 @@ public class FilterChatlistActivity extends BaseFragment {
             this.shareButton.setTypeface(AndroidUtilities.getTypeface(AndroidUtilities.TYPEFACE_ROBOTO_MEDIUM));
             this.shareButton.setTextSize(14.0f);
             SpannableStringBuilder spannableStringBuilder2 = new SpannableStringBuilder();
-            spannableStringBuilder2.append((CharSequence) "..").setSpan(new ColoredImageSpan(ContextCompat.getDrawable(context, C3290R.C3292drawable.msg_share_filled)), 0, 1, 0);
+            spannableStringBuilder2.append((CharSequence) "..").setSpan(new ColoredImageSpan(ContextCompat.getDrawable(context, C3295R.C3297drawable.msg_share_filled)), 0, 1, 0);
             spannableStringBuilder2.setSpan(new DialogCell.FixedWidthSpan(AndroidUtilities.m54dp(8)), 1, 2, 0);
-            spannableStringBuilder2.append((CharSequence) LocaleController.getString("LinkActionShare", C3290R.string.LinkActionShare));
+            spannableStringBuilder2.append((CharSequence) LocaleController.getString("LinkActionShare", C3295R.string.LinkActionShare));
             spannableStringBuilder2.append((CharSequence) ".").setSpan(new DialogCell.FixedWidthSpan(AndroidUtilities.m54dp(5)), spannableStringBuilder2.length() - 1, spannableStringBuilder2.length(), 0);
             this.shareButton.setText(spannableStringBuilder2);
             this.shareButton.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.FilterChatlistActivity$InviteLinkCell$$ExternalSyntheticLambda2
@@ -1395,7 +1395,7 @@ public class FilterChatlistActivity extends BaseFragment {
             }
             ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(getContext());
             ActionBarMenuSubItem actionBarMenuSubItem = new ActionBarMenuSubItem(getContext(), true, false);
-            actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("EditName", C3290R.string.EditName), C3290R.C3292drawable.msg_edit);
+            actionBarMenuSubItem.setTextAndIcon(LocaleController.getString("EditName", C3295R.string.EditName), C3295R.C3297drawable.msg_edit);
             actionBarPopupWindowLayout.addView((View) actionBarMenuSubItem, LayoutHelper.createLinear(-1, 48));
             actionBarMenuSubItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.FilterChatlistActivity$InviteLinkCell$$ExternalSyntheticLambda6
                 @Override // android.view.View.OnClickListener
@@ -1404,7 +1404,7 @@ public class FilterChatlistActivity extends BaseFragment {
                 }
             });
             ActionBarMenuSubItem actionBarMenuSubItem2 = new ActionBarMenuSubItem(getContext(), false, false);
-            actionBarMenuSubItem2.setTextAndIcon(LocaleController.getString("GetQRCode", C3290R.string.GetQRCode), C3290R.C3292drawable.msg_qrcode);
+            actionBarMenuSubItem2.setTextAndIcon(LocaleController.getString("GetQRCode", C3295R.string.GetQRCode), C3295R.C3297drawable.msg_qrcode);
             actionBarPopupWindowLayout.addView((View) actionBarMenuSubItem2, LayoutHelper.createLinear(-1, 48));
             actionBarMenuSubItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.FilterChatlistActivity$InviteLinkCell$$ExternalSyntheticLambda7
                 @Override // android.view.View.OnClickListener
@@ -1413,7 +1413,7 @@ public class FilterChatlistActivity extends BaseFragment {
                 }
             });
             ActionBarMenuSubItem actionBarMenuSubItem3 = new ActionBarMenuSubItem(getContext(), false, true);
-            actionBarMenuSubItem3.setTextAndIcon(LocaleController.getString("DeleteLink", C3290R.string.DeleteLink), C3290R.C3292drawable.msg_delete);
+            actionBarMenuSubItem3.setTextAndIcon(LocaleController.getString("DeleteLink", C3295R.string.DeleteLink), C3295R.C3297drawable.msg_delete);
             int i = Theme.key_text_RedRegular;
             actionBarMenuSubItem3.setColors(Theme.getColor(i), Theme.getColor(i));
             actionBarMenuSubItem3.setSelectorColor(Theme.multAlpha(Theme.getColor(i), 0.12f));
@@ -1468,7 +1468,7 @@ public class FilterChatlistActivity extends BaseFragment {
                             @Override // android.animation.AnimatorListenerAdapter, android.animation.Animator.AnimatorListener
                             public void onAnimationEnd(Animator animator) {
                                 if (view.getParent() != null) {
-                                    C56036 c56036 = C56036.this;
+                                    C56086 c56086 = C56086.this;
                                     overlayContainerView.removeView(view);
                                 }
                                 overlayContainerView.getViewTreeObserver().removeOnPreDrawListener(onPreDrawListener);
@@ -1479,7 +1479,7 @@ public class FilterChatlistActivity extends BaseFragment {
                 this.actionBarPopupWindow.setOutsideTouchable(true);
                 this.actionBarPopupWindow.setFocusable(true);
                 this.actionBarPopupWindow.setBackgroundDrawable(new ColorDrawable(0));
-                this.actionBarPopupWindow.setAnimationStyle(C3290R.style.PopupContextAnimation);
+                this.actionBarPopupWindow.setAnimationStyle(C3295R.style.PopupContextAnimation);
                 this.actionBarPopupWindow.setInputMethodMode(2);
                 this.actionBarPopupWindow.setSoftInputMode(0);
                 actionBarPopupWindowLayout.setDispatchKeyEventListener(new ActionBarPopupWindow.OnDispatchKeyEventListener() { // from class: org.telegram.ui.FilterChatlistActivity$InviteLinkCell$$ExternalSyntheticLambda10
@@ -1536,7 +1536,7 @@ public class FilterChatlistActivity extends BaseFragment {
                 return;
             }
             AndroidUtilities.addToClipboard(str);
-            BulletinFactory.m29of(this.parentFragment).createCopyBulletin(LocaleController.getString("LinkCopied", C3290R.string.LinkCopied)).show();
+            BulletinFactory.m29of(this.parentFragment).createCopyBulletin(LocaleController.getString("LinkCopied", C3295R.string.LinkCopied)).show();
         }
 
         protected void share() {
@@ -1547,7 +1547,7 @@ public class FilterChatlistActivity extends BaseFragment {
                 Intent intent = new Intent("android.intent.action.SEND");
                 intent.setType("text/plain");
                 intent.putExtra("android.intent.extra.TEXT", this.lastUrl);
-                this.parentFragment.startActivityForResult(Intent.createChooser(intent, LocaleController.getString("InviteToGroupByLink", C3290R.string.InviteToGroupByLink)), 500);
+                this.parentFragment.startActivityForResult(Intent.createChooser(intent, LocaleController.getString("InviteToGroupByLink", C3295R.string.InviteToGroupByLink)), 500);
             } catch (Exception e) {
                 FileLog.m49e(e);
             }
@@ -1557,8 +1557,8 @@ public class FilterChatlistActivity extends BaseFragment {
             if (this.lastUrl == null) {
                 return;
             }
-            QRCodeBottomSheet qRCodeBottomSheet = new QRCodeBottomSheet(getContext(), LocaleController.getString("InviteByQRCode", C3290R.string.InviteByQRCode), this.lastUrl, LocaleController.getString("QRCodeLinkHelpFolder", C3290R.string.QRCodeLinkHelpFolder), false);
-            qRCodeBottomSheet.setCenterAnimation(C3290R.raw.qr_code_logo);
+            QRCodeBottomSheet qRCodeBottomSheet = new QRCodeBottomSheet(getContext(), LocaleController.getString("InviteByQRCode", C3295R.string.InviteByQRCode), this.lastUrl, LocaleController.getString("QRCodeLinkHelpFolder", C3295R.string.QRCodeLinkHelpFolder), false);
+            qRCodeBottomSheet.setCenterAnimation(C3295R.raw.qr_code_logo);
             qRCodeBottomSheet.show();
         }
 

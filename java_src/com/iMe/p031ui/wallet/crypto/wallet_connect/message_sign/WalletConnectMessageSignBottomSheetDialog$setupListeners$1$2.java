@@ -7,7 +7,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 /* compiled from: WalletConnectMessageSignBottomSheetDialog.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.message_sign.WalletConnectMessageSignBottomSheetDialog$setupListeners$1$2 */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 final class WalletConnectMessageSignBottomSheetDialog$setupListeners$1$2 extends Lambda implements Function1<View, Unit> {
     final /* synthetic */ WalletConnectMessageSignBottomSheetDialog this$0;
 

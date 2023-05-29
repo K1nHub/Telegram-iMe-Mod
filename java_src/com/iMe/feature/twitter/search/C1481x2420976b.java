@@ -7,7 +7,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 /* compiled from: RxExt.kt */
 /* renamed from: com.iMe.feature.twitter.search.TwitterSearchPresenter$sendInvite$$inlined$subscribeWithErrorHandle$default$1 */
 /* loaded from: classes3.dex */
@@ -35,12 +35,12 @@ public final class C1481x2420976b extends Lambda implements Function1<Result<? e
         Result<? extends Boolean> result = it;
         if (result instanceof Result.Success) {
             resourceManager3 = this.this$0.resourceManager;
-            ((TwitterSearchView) this.this$0.getViewState()).showToast(resourceManager3.getString(C3290R.string.twitter_search_invite_success));
+            ((TwitterSearchView) this.this$0.getViewState()).showToast(resourceManager3.getString(C3295R.string.twitter_search_invite_success));
         } else if (result instanceof Result.Error) {
             Result.Error error = (Result.Error) result;
             if (error.getError().getStatus() == FirebaseFunctionsErrorHandler.TwitterErrorStatus.TWITTER_USER_DISABLED_DIRECT_MESSAGES) {
                 resourceManager2 = this.this$0.resourceManager;
-                ((TwitterSearchView) this.this$0.getViewState()).showToast(resourceManager2.getString(C3290R.string.twitter_search_invite_direct_messages_error));
+                ((TwitterSearchView) this.this$0.getViewState()).showToast(resourceManager2.getString(C3295R.string.twitter_search_invite_direct_messages_error));
                 return;
             }
             resourceManager = this.this$0.resourceManager;

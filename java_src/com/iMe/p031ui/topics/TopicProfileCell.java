@@ -20,7 +20,7 @@ import kotlin.collections.CollectionsKt__CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.UserConfig;
 import org.telegram.p044ui.ActionBar.SimpleTextView;
@@ -149,7 +149,7 @@ public final class TopicProfileCell extends FrameLayout {
     /* JADX INFO: Access modifiers changed from: private */
     public final SimpleTextView initSelectTopicTextView() {
         SimpleTextView simpleTextView = new SimpleTextView(getContext());
-        simpleTextView.setText(LocaleController.getInternalString(C3290R.string.topics_select));
+        simpleTextView.setText(LocaleController.getInternalString(C3295R.string.topics_select));
         simpleTextView.setTextSize(16);
         return simpleTextView;
     }
@@ -158,7 +158,7 @@ public final class TopicProfileCell extends FrameLayout {
     public final ImageView initDeleteImageView() {
         ImageView imageView = new ImageView(getContext());
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        imageView.setImageResource(C3290R.C3292drawable.msg_add);
+        imageView.setImageResource(C3295R.C3297drawable.msg_add);
         return imageView;
     }
 

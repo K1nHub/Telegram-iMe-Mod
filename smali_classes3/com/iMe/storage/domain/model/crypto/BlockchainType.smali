@@ -22,6 +22,8 @@
 # static fields
 .field private static final synthetic $VALUES:[Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
+.field public static final enum BITCOIN:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+
 .field public static final Companion:Lcom/iMe/storage/domain/model/crypto/BlockchainType$Companion;
 
 .field public static final enum EVM:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
@@ -45,7 +47,7 @@
 .method private static final synthetic $values()[Lcom/iMe/storage/domain/model/crypto/BlockchainType;
     .locals 3
 
-    const/4 v0, 0x3
+    const/4 v0, 0x4
 
     new-array v0, v0, [Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
@@ -64,6 +66,12 @@
     sget-object v1, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->TON:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     const/4 v2, 0x2
+
+    aput-object v1, v0, v2
+
+    sget-object v1, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->BITCOIN:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+
+    const/4 v2, 0x3
 
     aput-object v1, v0, v2
 
@@ -147,6 +155,31 @@
     invoke-direct/range {v1 .. v7}, Lcom/iMe/storage/domain/model/crypto/BlockchainType;-><init>(Ljava/lang/String;ILjava/lang/String;III)V
 
     sput-object v0, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->TON:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+
+    .line 31
+    new-instance v0, Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+
+    .line 33
+    sget v12, Lcom/iMe/storage/R$drawable;->fork_ic_bitcoin_logo:I
+
+    .line 34
+    sget v13, Lcom/iMe/storage/R$string;->wallet_crypto_blockchains_bitcoin_title:I
+
+    .line 35
+    sget v14, Lcom/iMe/storage/R$string;->wallet_crypto_blockchains_bitcoin_subtitle:I
+
+    const-string v9, "BITCOIN"
+
+    const/4 v10, 0x3
+
+    const-string v11, "BITCOIN"
+
+    move-object v8, v0
+
+    .line 31
+    invoke-direct/range {v8 .. v14}, Lcom/iMe/storage/domain/model/crypto/BlockchainType;-><init>(Ljava/lang/String;ILjava/lang/String;III)V
+
+    sput-object v0, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->BITCOIN:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
     invoke-static {}, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->$values()[Lcom/iMe/storage/domain/model/crypto/BlockchainType;
 
@@ -274,7 +307,7 @@
 .method public final isBip39PhraseBased()Z
     .locals 1
 
-    .line 32
+    .line 38
     sget-object v0, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->Companion:Lcom/iMe/storage/domain/model/crypto/BlockchainType$Companion;
 
     invoke-virtual {v0}, Lcom/iMe/storage/domain/model/crypto/BlockchainType$Companion;->getBip39PhraseBasedBlockchains()Ljava/util/List;

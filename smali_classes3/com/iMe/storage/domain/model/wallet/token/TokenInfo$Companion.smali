@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nTokenInfo.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TokenInfo.kt\ncom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1168:1\n1#2:1169\n*E\n"
+    value = "SMAP\nTokenInfo.kt\nKotlin\n*S Kotlin\n*F\n+ 1 TokenInfo.kt\ncom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion\n+ 2 fake.kt\nkotlin/jvm/internal/FakeKt\n*L\n1#1,1181:1\n1#2:1182\n*E\n"
 .end annotation
 
 
@@ -22,7 +22,7 @@
 .method private constructor <init>()V
     .locals 0
 
-    .line 1125
+    .line 1138
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
     return-void
@@ -47,7 +47,7 @@
         }
     .end annotation
 
-    .line 1127
+    .line 1140
     invoke-static {}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo;->access$getSupportedTokens$delegate$cp()Lkotlin/Lazy;
 
     move-result-object v0
@@ -70,7 +70,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1164
+    .line 1177
     invoke-direct {p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;->getSupportedTokens()Ljava/util/List;
 
     move-result-object v0
@@ -120,7 +120,7 @@
 
     if-nez v1, :cond_3
 
-    .line 1165
+    .line 1178
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Basic$UNKNOWN;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Basic$UNKNOWN;
 
     :cond_3
@@ -134,7 +134,7 @@
 
     invoke-static {p1, v0}, Lkotlin/jvm/internal/Intrinsics;->checkNotNullParameter(Ljava/lang/Object;Ljava/lang/String;)V
 
-    .line 1160
+    .line 1173
     invoke-direct {p0}, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Companion;->getSupportedTokens()Ljava/util/List;
 
     move-result-object v0
@@ -182,7 +182,7 @@
 
     if-nez v1, :cond_2
 
-    .line 1161
+    .line 1174
     sget-object v1, Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Basic$UNKNOWN;->INSTANCE:Lcom/iMe/storage/domain/model/wallet/token/TokenInfo$Basic$UNKNOWN;
 
     :cond_2

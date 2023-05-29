@@ -9,7 +9,7 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
 import com.iMe.p031ui.custom.DividerView;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 /* loaded from: classes4.dex */
 public final class ForkContentDetailsIconCellBinding implements ViewBinding {
     public final DividerView divider;
@@ -36,7 +36,7 @@ public final class ForkContentDetailsIconCellBinding implements ViewBinding {
     }
 
     public static ForkContentDetailsIconCellBinding inflate(LayoutInflater layoutInflater, ViewGroup viewGroup, boolean z) {
-        View inflate = layoutInflater.inflate(C3290R.layout.fork_content_details_icon_cell, viewGroup, false);
+        View inflate = layoutInflater.inflate(C3295R.layout.fork_content_details_icon_cell, viewGroup, false);
         if (z) {
             viewGroup.addView(inflate);
         }
@@ -44,16 +44,16 @@ public final class ForkContentDetailsIconCellBinding implements ViewBinding {
     }
 
     public static ForkContentDetailsIconCellBinding bind(View view) {
-        int i = C3290R.C3293id.divider;
+        int i = C3295R.C3298id.divider;
         DividerView dividerView = (DividerView) ViewBindings.findChildViewById(view, i);
         if (dividerView != null) {
-            i = C3290R.C3293id.image_icon;
+            i = C3295R.C3298id.image_icon;
             AppCompatImageView appCompatImageView = (AppCompatImageView) ViewBindings.findChildViewById(view, i);
             if (appCompatImageView != null) {
-                i = C3290R.C3293id.text_title;
+                i = C3295R.C3298id.text_title;
                 AppCompatTextView appCompatTextView = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                 if (appCompatTextView != null) {
-                    i = C3290R.C3293id.text_value;
+                    i = C3295R.C3298id.text_value;
                     AppCompatTextView appCompatTextView2 = (AppCompatTextView) ViewBindings.findChildViewById(view, i);
                     if (appCompatTextView2 != null) {
                         return new ForkContentDetailsIconCellBinding((ConstraintLayout) view, dividerView, appCompatImageView, appCompatTextView, appCompatTextView2);

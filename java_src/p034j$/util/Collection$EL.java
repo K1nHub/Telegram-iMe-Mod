@@ -13,40 +13,40 @@ import p034j$.util.function.Predicate;
 public final /* synthetic */ class Collection$EL {
     /* renamed from: a */
     public static /* synthetic */ void m635a(Collection collection, Consumer consumer) {
-        if (collection instanceof InterfaceC2655b) {
-            ((InterfaceC2655b) collection).forEach(consumer);
+        if (collection instanceof InterfaceC2660b) {
+            ((InterfaceC2660b) collection).forEach(consumer);
         } else {
-            AbstractC2654a.m610a(collection, consumer);
+            AbstractC2659a.m610a(collection, consumer);
         }
     }
 
     /* renamed from: b */
-    public static InterfaceC2727s m634b(Collection collection) {
-        if (collection instanceof InterfaceC2655b) {
-            return ((InterfaceC2655b) collection).spliterator();
+    public static InterfaceC2732s m634b(Collection collection) {
+        if (collection instanceof InterfaceC2660b) {
+            return ((InterfaceC2660b) collection).spliterator();
         }
         if (collection instanceof LinkedHashSet) {
             LinkedHashSet linkedHashSet = (LinkedHashSet) collection;
             Objects.requireNonNull(linkedHashSet);
-            return new C2649G(linkedHashSet, 17);
+            return new C2654G(linkedHashSet, 17);
         } else if (collection instanceof SortedSet) {
             SortedSet sortedSet = (SortedSet) collection;
-            return new C2726r(sortedSet, sortedSet, 21);
+            return new C2731r(sortedSet, sortedSet, 21);
         } else if (collection instanceof Set) {
             Set set = (Set) collection;
             Objects.requireNonNull(set);
-            return new C2649G(set, 1);
+            return new C2654G(set, 1);
         } else if (collection instanceof List) {
             List list = (List) collection;
             Objects.requireNonNull(list);
-            return new C2649G(list, 16);
+            return new C2654G(list, 16);
         } else {
             Objects.requireNonNull(collection);
-            return new C2649G(collection, 0);
+            return new C2654G(collection, 0);
         }
     }
 
     public static /* synthetic */ boolean removeIf(Collection collection, Predicate predicate) {
-        return collection instanceof InterfaceC2655b ? ((InterfaceC2655b) collection).mo556k(predicate) : AbstractC2654a.m603h(collection, predicate);
+        return collection instanceof InterfaceC2660b ? ((InterfaceC2660b) collection).mo556k(predicate) : AbstractC2659a.m603h(collection, predicate);
     }
 }

@@ -4,6 +4,8 @@ import com.google.protobuf.ByteString;
 import com.iMe.storage.data.datasource.swap.WalletSwapDataSource;
 import com.iMe.storage.data.network.api.own.SwapApi;
 import com.iMe.storage.data.network.handlers.impl.FirebaseFunctionsErrorHandler;
+import com.iMe.storage.data.network.model.error.ErrorModel;
+import com.iMe.storage.data.network.model.error.IErrorStatus;
 import com.iMe.storage.data.utils.crypto.EthTransactionSigner;
 import com.iMe.storage.domain.manager.crypto.CryptoAccessManager;
 import com.iMe.storage.domain.model.Result;
@@ -15,6 +17,7 @@ import com.iMe.storage.domain.utils.extentions.CryptoExtKt;
 import com.iMe.storage.domain.utils.extentions.ObservableExtKt$sam$i$io_reactivex_functions_Function$0;
 import io.reactivex.Observable;
 import java.math.BigInteger;
+import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import wallet.core.jni.proto.Ethereum;
 /* compiled from: DexWalletSwapDataSourceImpl.kt */
@@ -61,24 +64,20 @@ public final class DexWalletSwapDataSourceImpl implements WalletSwapDataSource {
 
     @Override // com.iMe.storage.data.datasource.base.SignTransactionDatasource
     public Observable<Result<String>> sign(TransactionArgs args) {
-        byte[] bArr;
         BigInteger value;
         Intrinsics.checkNotNullParameter(args, "args");
         if (!(args instanceof SwapArgs.Dex)) {
             throw new IllegalStateException("Incorrect swap args passed");
         }
         Wallet.EVM eVMWallet = this.cryptoAccessManager.getEVMWallet();
-        if (eVMWallet == null || (bArr = eVMWallet.getPrivateKeyBytes()) == null) {
-            bArr = new byte[0];
+        if (eVMWallet == null) {
+            Observable<Result<String>> just = Observable.just(Result.Companion.error$default(Result.Companion, new ErrorModel((IErrorStatus) null, (Throwable) null, 3, (DefaultConstructorMarker) null), null, 2, null));
+            Intrinsics.checkNotNullExpressionValue(just, "just(this)");
+            return just;
         }
-        byte[] bArr2 = bArr;
+        byte[] privateKeyBytes = eVMWallet.getPrivateKeyBytes();
         SwapArgs.Dex dex = (SwapArgs.Dex) args;
-        SwapMethod swapMethod = dex.getSwapMethod();
-        String address = eVMWallet != null ? eVMWallet.getAddress() : null;
-        if (address == null) {
-            address = "";
-        }
-        ByteString createSmartFunctionParams = swapMethod.createSmartFunctionParams(dex, address);
+        ByteString createSmartFunctionParams = dex.getSwapMethod().createSmartFunctionParams(dex, eVMWallet.getAddress());
         Ethereum.Transaction.Builder newBuilder = Ethereum.Transaction.newBuilder();
         Ethereum.Transaction.ContractGeneric.Builder data = Ethereum.Transaction.ContractGeneric.newBuilder().setData(createSmartFunctionParams);
         if (WhenMappings.$EnumSwitchMapping$0[dex.getSwapMethod().ordinal()] == 1) {
@@ -94,8 +93,8 @@ public final class DexWalletSwapDataSourceImpl implements WalletSwapDataSource {
         BigInteger nonce = dex.getNonce();
         String contractAddress = dex.getContractAddress();
         Intrinsics.checkNotNullExpressionValue(transaction, "transaction");
-        Observable<Result<String>> just = Observable.just(Result.Companion.success(ethTransactionSigner.sign(chainId, gasPrice, gasLimit, nonce, contractAddress, transaction, bArr2)));
-        Intrinsics.checkNotNullExpressionValue(just, "just(this)");
-        return just;
+        Observable<Result<String>> just2 = Observable.just(Result.Companion.success(ethTransactionSigner.sign(chainId, gasPrice, gasLimit, nonce, contractAddress, transaction, privateKeyBytes)));
+        Intrinsics.checkNotNullExpressionValue(just2, "just(this)");
+        return just2;
     }
 }

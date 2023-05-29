@@ -22,9 +22,9 @@ import com.iMe.fork.models.DrawerHeaderSettings;
 import com.iMe.p031ui.drawer.DrawerAccountData;
 import java.util.ArrayList;
 import java.util.Iterator;
-import org.telegram.PhoneFormat.C3207PhoneFormat;
+import org.telegram.PhoneFormat.C3212PhoneFormat;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.FileLog;
 import org.telegram.messenger.ImageLocation;
@@ -148,9 +148,9 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
                     str2 = charSequence2;
                 } else if (drawerAccountData3 == DrawerAccountData.USERNAME) {
                     if (TextUtils.isEmpty(this.currentUser.username)) {
-                        str2 = LocaleController.getInternalString(C3290R.string.drawer_profile_cell_alert_username);
+                        str2 = LocaleController.getInternalString(C3295R.string.drawer_profile_cell_alert_username);
                     } else {
-                        str2 = LocaleController.formatStringInternal(C3290R.string.common_username, this.currentUser.username);
+                        str2 = LocaleController.formatStringInternal(C3295R.string.common_username, this.currentUser.username);
                     }
                     drawerAccountData = title;
                     drawerAccountData2 = subtitle;
@@ -161,7 +161,7 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
                 } else if (drawerAccountData3 == DrawerAccountData.USER_ID) {
                     drawerAccountData = title;
                     drawerAccountData2 = subtitle;
-                    str2 = LocaleController.formatStringInternal(C3290R.string.common_id, Long.valueOf(this.currentUser.f1574id));
+                    str2 = LocaleController.formatStringInternal(C3295R.string.common_id, Long.valueOf(this.currentUser.f1574id));
                 } else {
                     drawerAccountData = title;
                     drawerAccountData2 = subtitle;
@@ -201,7 +201,7 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
         ImageView imageView = new ImageView(context);
         this.editButton = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        this.editButton.setImageResource(C3290R.C3292drawable.fork_filter_icon_eye);
+        this.editButton.setImageResource(C3295R.C3297drawable.fork_filter_icon_eye);
         this.editButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_menuName), PorterDuff.Mode.SRC_IN));
         addView(this.editButton, LayoutHelper.createFrame(59, 59, 8388693, 0, 0, 59, 0));
     }
@@ -210,7 +210,7 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
         ImageView imageView = new ImageView(context);
         this.archiveButton = imageView;
         imageView.setScaleType(ImageView.ScaleType.CENTER);
-        this.archiveButton.setImageResource(C3290R.C3292drawable.msg_archive);
+        this.archiveButton.setImageResource(C3295R.C3297drawable.msg_archive);
         this.archiveButton.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_menuName), PorterDuff.Mode.MULTIPLY));
         addView(this.archiveButton, LayoutHelper.createFrame(48, 48, 8388693, 0, 0, 64, 90));
     }
@@ -230,7 +230,7 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
         this.shadowView = imageView;
         imageView.setVisibility(4);
         this.shadowView.setScaleType(ImageView.ScaleType.FIT_XY);
-        this.shadowView.setImageResource(C3290R.C3292drawable.bottom_shadow);
+        this.shadowView.setImageResource(C3295R.C3297drawable.bottom_shadow);
         addView(this.shadowView, LayoutHelper.createFrame(-1, 70, 83));
         BackupImageView backupImageView = new BackupImageView(context);
         this.avatarImageView = backupImageView;
@@ -276,12 +276,12 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
         int i = Theme.key_chats_menuName;
         imageView2.setColorFilter(new PorterDuffColorFilter(Theme.getColor(i), PorterDuff.Mode.MULTIPLY));
         this.arrowView.setScaleType(ImageView.ScaleType.CENTER);
-        this.arrowView.setImageResource(C3290R.C3292drawable.msg_expand);
+        this.arrowView.setImageResource(C3295R.C3297drawable.msg_expand);
         addView(this.arrowView, LayoutHelper.createFrame(59, 59, 85));
         setArrowState(false);
         boolean z2 = sunDrawable == null;
         if (z2) {
-            int i2 = C3290R.raw.sun;
+            int i2 = C3295R.raw.sun;
             RLottieDrawable rLottieDrawable = new RLottieDrawable(i2, "" + i2, AndroidUtilities.m54dp(28), AndroidUtilities.m54dp(28), true, null);
             sunDrawable = rLottieDrawable;
             rLottieDrawable.setPlayInDirectionOfCustomEndFrame(true);
@@ -298,9 +298,9 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
             public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
                 super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
                 if (Theme.isCurrentThemeDark()) {
-                    accessibilityNodeInfo.setText(LocaleController.getString("AccDescrSwitchToDayTheme", C3290R.string.AccDescrSwitchToDayTheme));
+                    accessibilityNodeInfo.setText(LocaleController.getString("AccDescrSwitchToDayTheme", C3295R.string.AccDescrSwitchToDayTheme));
                 } else {
-                    accessibilityNodeInfo.setText(LocaleController.getString("AccDescrSwitchToNightTheme", C3290R.string.AccDescrSwitchToNightTheme));
+                    accessibilityNodeInfo.setText(LocaleController.getString("AccDescrSwitchToNightTheme", C3295R.string.AccDescrSwitchToNightTheme));
                 }
             }
         };
@@ -810,7 +810,7 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
             }
             this.nameTextView.setDrawablePadding(AndroidUtilities.m54dp(4));
             if (this.premiumStar == null) {
-                this.premiumStar = getResources().getDrawable(C3290R.C3292drawable.msg_premium_liststar).mutate();
+                this.premiumStar = getResources().getDrawable(C3295R.C3297drawable.msg_premium_liststar).mutate();
             }
             this.premiumStar.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_chats_menuPhoneCats), PorterDuff.Mode.MULTIPLY));
             this.status.set(this.premiumStar, !this.previewMode);
@@ -826,8 +826,8 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
         this.animatedStatus.setColor(Theme.getColor(Theme.isCurrentThemeDark() ? Theme.key_chats_verifiedBackground : Theme.key_chats_menuPhoneCats));
         this.status.setColor(Integer.valueOf(Theme.getColor(Theme.isCurrentThemeDark() ? Theme.key_chats_verifiedBackground : Theme.key_chats_menuPhoneCats)));
         TextView textView = this.phoneTextView;
-        C3207PhoneFormat c3207PhoneFormat = C3207PhoneFormat.getInstance();
-        textView.setText(c3207PhoneFormat.format("+" + tLRPC$User.phone));
+        C3212PhoneFormat c3212PhoneFormat = C3212PhoneFormat.getInstance();
+        textView.setText(c3212PhoneFormat.format("+" + tLRPC$User.phone));
         AvatarDrawable avatarDrawable = new AvatarDrawable(tLRPC$User);
         avatarDrawable.setColor(Theme.getColor(Theme.key_avatar_backgroundInProfileBlue));
         this.avatarImageView.setForUserOrChat(tLRPC$User, avatarDrawable);
@@ -876,10 +876,10 @@ public class DrawerProfileCell extends FrameLayout implements NotificationCenter
         }
         ImageView imageView = this.arrowView;
         if (this.accountsShown) {
-            i = C3290R.string.AccDescrHideAccounts;
+            i = C3295R.string.AccDescrHideAccounts;
             str = "AccDescrHideAccounts";
         } else {
-            i = C3290R.string.AccDescrShowAccounts;
+            i = C3295R.string.AccDescrShowAccounts;
             str = "AccDescrShowAccounts";
         }
         imageView.setContentDescription(LocaleController.getString(str, i));

@@ -20,7 +20,7 @@ import io.reactivex.disposables.Disposable;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.FingerprintController;
 /* compiled from: CreateWalletPinPresenter.kt */
 @InjectViewState
@@ -105,12 +105,12 @@ public final class CreateWalletPinPresenter extends BasePresenter<CreateWalletPi
             Intrinsics.checkNotNullExpressionValue(observeOn, "getCreateWalletObservabl…(schedulersProvider.ui())");
             T viewState = getViewState();
             Intrinsics.checkNotNullExpressionValue(viewState, "viewState");
-            Disposable subscribe = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) viewState, false).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2154xe4b01fa6(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2155xe4b01fa7((BaseView) getViewState())));
+            Disposable subscribe = RxExtKt.withLoadingDialog((Observable) observeOn, (BaseView) viewState, false).subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2159xe4b01fa6(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2160xe4b01fa7((BaseView) getViewState())));
             Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
             BasePresenter.autoDispose$default(this, subscribe, null, 1, null);
             return;
         }
-        onPinError(this.resourceManager.getString(C3290R.string.wallet_confirm_eth_pin_code_validation_not_match_error));
+        onPinError(this.resourceManager.getString(C3295R.string.wallet_confirm_eth_pin_code_validation_not_match_error));
     }
 
     private final Observable<Result<Wallet>> getCreateWalletObservable() {

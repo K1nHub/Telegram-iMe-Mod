@@ -39,7 +39,7 @@ import java.util.ArrayList;
 import java.util.List;
 import kotlin.collections.ArraysKt___ArraysKt;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.Emoji;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
@@ -631,7 +631,7 @@ public class FilterTabsView extends BlurredFrameLayout {
             accessibilityNodeInfo.setSelected((this.currentTab == null || FilterTabsView.this.selectedTabId == -1 || this.currentTab.f1649id != FilterTabsView.this.selectedTabId) ? false : true);
             accessibilityNodeInfo.addAction(16);
             if (Build.VERSION.SDK_INT >= 21) {
-                accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString("AccDescrOpenMenu2", C3290R.string.AccDescrOpenMenu2)));
+                accessibilityNodeInfo.addAction(new AccessibilityNodeInfo.AccessibilityAction(32, LocaleController.getString("AccDescrOpenMenu2", C3295R.string.AccDescrOpenMenu2)));
             } else {
                 accessibilityNodeInfo.addAction(32);
             }
@@ -817,9 +817,9 @@ public class FilterTabsView extends BlurredFrameLayout {
         };
         this.listView = recyclerListView;
         recyclerListView.setClipChildren(false);
-        C46074 c46074 = new C46074();
-        this.itemAnimator = c46074;
-        c46074.setDelayAnimations(false);
+        C46124 c46124 = new C46124();
+        this.itemAnimator = c46124;
+        c46124.setDelayAnimations(false);
         this.listView.setItemAnimator(this.itemAnimator);
         this.listView.setSelectorType(8);
         this.listView.setSelectorRadius(6);
@@ -907,8 +907,8 @@ public class FilterTabsView extends BlurredFrameLayout {
     /* JADX INFO: Access modifiers changed from: package-private */
     /* renamed from: org.telegram.ui.Components.FilterTabsView$4 */
     /* loaded from: classes6.dex */
-    public class C46074 extends DefaultItemAnimator {
-        C46074() {
+    public class C46124 extends DefaultItemAnimator {
+        C46124() {
         }
 
         @Override // androidx.recyclerview.widget.DefaultItemAnimator, androidx.recyclerview.widget.RecyclerView.ItemAnimator
@@ -922,7 +922,7 @@ public class FilterTabsView extends BlurredFrameLayout {
                 ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.FilterTabsView$4$$ExternalSyntheticLambda0
                     @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                     public final void onAnimationUpdate(ValueAnimator valueAnimator) {
-                        FilterTabsView.C46074.this.lambda$runPendingAnimations$0(valueAnimator);
+                        FilterTabsView.C46124.this.lambda$runPendingAnimations$0(valueAnimator);
                     }
                 });
                 ofFloat.setDuration(getMoveDuration());
@@ -987,7 +987,7 @@ public class FilterTabsView extends BlurredFrameLayout {
                     ofFloat.addUpdateListener(new ValueAnimator.AnimatorUpdateListener() { // from class: org.telegram.ui.Components.FilterTabsView$4$$ExternalSyntheticLambda1
                         @Override // android.animation.ValueAnimator.AnimatorUpdateListener
                         public final void onAnimationUpdate(ValueAnimator valueAnimator2) {
-                            FilterTabsView.C46074.lambda$animateMoveImpl$1(FilterTabsView.TabView.this, valueAnimator2);
+                            FilterTabsView.C46124.lambda$animateMoveImpl$1(FilterTabsView.TabView.this, valueAnimator2);
                         }
                     });
                     ofFloat.addListener(new AnimatorListenerAdapter(this) { // from class: org.telegram.ui.Components.FilterTabsView.4.1
@@ -1311,12 +1311,12 @@ public class FilterTabsView extends BlurredFrameLayout {
                 super.onMeasure(i, i2);
                 return;
             }
-            int i3 = C3290R.string.FilterAllChats;
+            int i3 = C3295R.string.FilterAllChats;
             String str = "FilterAllChats";
             findDefaultTab.setTitle(LocaleController.getString("FilterAllChats", i3));
             int width = findDefaultTab.getWidth(false);
             if (this.allTabsWidth > size) {
-                i3 = C3290R.string.FilterAllChatsShort;
+                i3 = C3295R.string.FilterAllChatsShort;
                 str = "FilterAllChatsShort";
             }
             findDefaultTab.setTitle(LocaleController.getString(str, i3));
@@ -1507,7 +1507,7 @@ public class FilterTabsView extends BlurredFrameLayout {
             org.telegram.ui.Components.FilterTabsView$Tab r2 = r9.findDefaultTab()
             if (r2 == 0) goto L5a
             org.telegram.ui.Components.FilterTabsView$Tab r2 = r9.findDefaultTab()
-            int r3 = org.telegram.messenger.C3290R.string.FilterAllChats
+            int r3 = org.telegram.messenger.C3295R.string.FilterAllChats
             java.lang.String r5 = "FilterAllChats"
             java.lang.String r3 = org.telegram.messenger.LocaleController.getString(r5, r3)
             r2.setTitle(r3)
@@ -1574,7 +1574,7 @@ public class FilterTabsView extends BlurredFrameLayout {
             this.adapter.notifyDataSetChanged();
             this.allTabsWidth = 0;
             if (findDefaultTab() != null) {
-                findDefaultTab().setTitle(LocaleController.getString("FilterAllChats", C3290R.string.FilterAllChats));
+                findDefaultTab().setTitle(LocaleController.getString("FilterAllChats", C3295R.string.FilterAllChats));
             }
             int size = this.tabs.size();
             for (int i3 = 0; i3 < size; i3++) {

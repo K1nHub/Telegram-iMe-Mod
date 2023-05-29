@@ -85,7 +85,7 @@ public final class C1573xd1623ac9 extends Lambda implements Function1<Result<? e
             com.iMe.storage.data.network.model.error.ErrorModel r10 = new com.iMe.storage.data.network.model.error.ErrorModel
             com.iMe.manager.crypto.recipient.CryptoRecipientManager r0 = r9.this$0
             com.iMe.storage.domain.utils.system.ResourceManager r0 = com.iMe.manager.crypto.recipient.CryptoRecipientManager.access$getResourceManager$p(r0)
-            int r3 = org.telegram.messenger.C3290R.string.wallet_recipient_validation_chat_with_user_first_error
+            int r3 = org.telegram.messenger.C3295R.string.wallet_recipient_validation_chat_with_user_first_error
             java.lang.String r4 = r0.getString(r3)
             com.iMe.storage.data.network.handlers.impl.ApiErrorHandler$ErrorStatus r5 = com.iMe.storage.data.network.handlers.impl.ApiErrorHandler.ErrorStatus.BAD_RESPONSE
             r6 = 0

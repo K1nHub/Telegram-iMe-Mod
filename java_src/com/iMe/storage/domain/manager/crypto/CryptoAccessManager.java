@@ -12,6 +12,8 @@ public interface CryptoAccessManager {
 
     List<Wallet> getAllWallets();
 
+    Wallet.BTC getBTCWallet();
+
     List<BlockchainType> getCreatedWalletsBlockchains();
 
     Wallet.EVM getEVMWallet();

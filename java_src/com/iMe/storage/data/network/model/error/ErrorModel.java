@@ -52,14 +52,14 @@ public final class ErrorModel {
         return this.originThrowable;
     }
 
+    public /* synthetic */ ErrorModel(IErrorStatus iErrorStatus, Throwable th, int i, DefaultConstructorMarker defaultConstructorMarker) {
+        this((i & 1) != 0 ? ApiErrorHandler.ErrorStatus.NOT_DEFINED : iErrorStatus, (i & 2) != 0 ? null : th);
+    }
+
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */
     public ErrorModel(IErrorStatus status, Throwable th) {
         this((String) null, (Integer) null, status, th);
         Intrinsics.checkNotNullParameter(status, "status");
-    }
-
-    public /* synthetic */ ErrorModel(IErrorStatus iErrorStatus, Throwable th, int i, DefaultConstructorMarker defaultConstructorMarker) {
-        this(iErrorStatus, (i & 2) != 0 ? null : th);
     }
 
     /* JADX WARN: 'this' call moved to the top of the method (can break code semantics) */

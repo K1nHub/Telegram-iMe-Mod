@@ -4975,9 +4975,11 @@
 
     move-result-object v2
 
-    sget-object v3, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->EVM:Lcom/iMe/storage/domain/model/crypto/BlockchainType;
+    invoke-virtual {v2}, Lcom/iMe/storage/domain/model/crypto/BlockchainType;->isBip39PhraseBased()Z
 
-    if-ne v2, v3, :cond_3
+    move-result v2
+
+    if-eqz v2, :cond_3
 
     new-array v2, v4, [Ljava/lang/CharSequence;
 

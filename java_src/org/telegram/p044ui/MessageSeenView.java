@@ -20,7 +20,7 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import java.util.ArrayList;
 import java.util.HashMap;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ContactsController;
 import org.telegram.messenger.ImageLocation;
@@ -102,7 +102,7 @@ public class MessageSeenView extends FrameLayout {
         ImageView imageView = new ImageView(context);
         this.iconView = imageView;
         addView(imageView, LayoutHelper.createFrame(24, 24, 19, 11, 0, 0, 0));
-        Drawable mutate = ContextCompat.getDrawable(context, this.isVoice ? C3290R.C3292drawable.msg_played : C3290R.C3292drawable.msg_seen).mutate();
+        Drawable mutate = ContextCompat.getDrawable(context, this.isVoice ? C3295R.C3297drawable.msg_played : C3295R.C3297drawable.msg_seen).mutate();
         mutate.setColorFilter(new PorterDuffColorFilter(Theme.getColor(Theme.key_actionBarDefaultSubmenuItemIcon), PorterDuff.Mode.MULTIPLY));
         this.iconView.setImageDrawable(mutate);
         this.avatarsImageView.setAlpha(BitmapDescriptorFactory.HUE_RED);
@@ -304,7 +304,7 @@ public class MessageSeenView extends FrameLayout {
         if (this.peerIds.size() == 1 && this.users.get(0) != null) {
             this.titleView.setText(ContactsController.formatName(this.users.get(0).first_name, this.users.get(0).last_name));
         } else if (this.peerIds.size() == 0) {
-            this.titleView.setText(LocaleController.getString("NobodyViewed", C3290R.string.NobodyViewed));
+            this.titleView.setText(LocaleController.getString("NobodyViewed", C3295R.string.NobodyViewed));
         } else {
             this.titleView.setText(LocaleController.formatPluralString(this.isVoice ? "MessagePlayed" : "MessageSeen", this.peerIds.size(), new Object[0]));
         }
@@ -373,7 +373,7 @@ public class MessageSeenView extends FrameLayout {
     /* renamed from: org.telegram.ui.MessageSeenView$UserCell */
     /* loaded from: classes5.dex */
     private static class UserCell extends FrameLayout implements NotificationCenter.NotificationCenterDelegate {
-        private static MessageSeenCheckDrawable seenDrawable = new MessageSeenCheckDrawable(C3290R.C3292drawable.msg_mini_checks, Theme.key_windowBackgroundWhiteGrayText);
+        private static MessageSeenCheckDrawable seenDrawable = new MessageSeenCheckDrawable(C3295R.C3297drawable.msg_mini_checks, Theme.key_windowBackgroundWhiteGrayText);
         AvatarDrawable avatarDrawable;
         BackupImageView avatarImageView;
         private int currentAccount;
@@ -443,7 +443,7 @@ public class MessageSeenView extends FrameLayout {
         @Override // android.view.View
         public void onInitializeAccessibilityNodeInfo(AccessibilityNodeInfo accessibilityNodeInfo) {
             super.onInitializeAccessibilityNodeInfo(accessibilityNodeInfo);
-            String formatString = LocaleController.formatString("AccDescrPersonHasSeen", C3290R.string.AccDescrPersonHasSeen, this.nameView.getText());
+            String formatString = LocaleController.formatString("AccDescrPersonHasSeen", C3295R.string.AccDescrPersonHasSeen, this.nameView.getText());
             if (this.readView.getVisibility() == 0) {
                 formatString = formatString + " " + ((Object) this.readView.getText());
             }

@@ -6,7 +6,7 @@ import android.widget.ImageView;
 import android.widget.ProgressBar;
 import androidx.viewbinding.ViewBinding;
 import androidx.viewbinding.ViewBindings;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 /* loaded from: classes4.dex */
 public final class ForkRecylcerImageItemBinding implements ViewBinding {
     public final ForkRecylcerErrorBlockBinding errorBlock;
@@ -27,14 +27,14 @@ public final class ForkRecylcerImageItemBinding implements ViewBinding {
     }
 
     public static ForkRecylcerImageItemBinding bind(View view) {
-        int i = C3290R.C3293id.errorBlock;
+        int i = C3295R.C3298id.errorBlock;
         View findChildViewById = ViewBindings.findChildViewById(view, i);
         if (findChildViewById != null) {
             ForkRecylcerErrorBlockBinding bind = ForkRecylcerErrorBlockBinding.bind(findChildViewById);
-            int i2 = C3290R.C3293id.imageView;
+            int i2 = C3295R.C3298id.imageView;
             ImageView imageView = (ImageView) ViewBindings.findChildViewById(view, i2);
             if (imageView != null) {
-                i2 = C3290R.C3293id.progressBar;
+                i2 = C3295R.C3298id.progressBar;
                 ProgressBar progressBar = (ProgressBar) ViewBindings.findChildViewById(view, i2);
                 if (progressBar != null) {
                     return new ForkRecylcerImageItemBinding((FrameLayout) view, bind, imageView, progressBar);

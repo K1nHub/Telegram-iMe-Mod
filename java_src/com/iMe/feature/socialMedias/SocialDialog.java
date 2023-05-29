@@ -18,7 +18,7 @@ import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.databinding.ForkDialogSocialNetworksBinding;
 import org.telegram.messenger.databinding.ForkDialogSocialNetworksItemBinding;
 import org.telegram.p044ui.ActionBar.Theme;
@@ -54,7 +54,7 @@ public final class SocialDialog extends MvpBottomSheet {
     @Override // com.iMe.p031ui.base.mvp.MvpBottomSheet
     public View onCreateView(Bundle bundle) {
         this.binding.text.setTextColor(this.textColor);
-        this.binding.text.setText(getResource().getString(C3290R.string.social_cell_social_networks));
+        this.binding.text.setText(getResource().getString(C3295R.string.social_cell_social_networks));
         ConstraintLayout root = this.binding.getRoot();
         Intrinsics.checkNotNullExpressionValue(root, "binding.root");
         return root;

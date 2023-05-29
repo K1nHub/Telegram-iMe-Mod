@@ -9,7 +9,7 @@ import kotlin.Unit;
 import kotlin.jvm.functions.Function1;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 /* compiled from: RxExt.kt */
 /* renamed from: com.iMe.feature.twitter.search.TwitterSearchPresenter$onUserClick$$inlined$subscribeWithErrorHandle$default$1 */
 /* loaded from: classes3.dex */
@@ -40,7 +40,7 @@ public final class C1477x18d788a extends Lambda implements Function1<Result<? ex
         if (result instanceof Result.Success) {
             if (((TwitterProfileInfo) ((Result.Success) result).getData()).getTelegramUserId() != this.$twitterUserItem$inlined.getUser().f1574id) {
                 resourceManager2 = this.this$0.resourceManager;
-                ((TwitterSearchView) this.this$0.getViewState()).showToast(resourceManager2.getString(C3290R.string.common_error_unexpected));
+                ((TwitterSearchView) this.this$0.getViewState()).showToast(resourceManager2.getString(C3295R.string.common_error_unexpected));
                 return;
             }
             TwitterSearchPresenter twitterSearchPresenter = this.this$0;

@@ -67,7 +67,7 @@
 
 # virtual methods
 .method public final invoke(Lcom/iMe/storage/data/network/model/response/base/ApiBaseResponse;)Lcom/iMe/storage/domain/model/Result;
-    .locals 10
+    .locals 11
     .annotation system Ldalvik/annotation/Signature;
         value = {
             "(",
@@ -116,18 +116,20 @@
 
     const/4 v5, 0x0
 
+    const/4 v6, 0x0
+
     .line 88
-    iget-boolean v6, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl$managePermissionSettings$$inlined$mapSuccess$1;->$isAllowForEveryone$inlined:Z
+    iget-boolean v7, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl$managePermissionSettings$$inlined$mapSuccess$1;->$isAllowForEveryone$inlined:Z
 
     .line 89
-    iget-object v7, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl$managePermissionSettings$$inlined$mapSuccess$1;->$whitelistUsers$inlined:Ljava/util/List;
+    iget-object v8, p0, Lcom/iMe/storage/data/repository/crypto/permission/CryptoPermissionRepositoryImpl$managePermissionSettings$$inlined$mapSuccess$1;->$whitelistUsers$inlined:Ljava/util/List;
 
-    const/4 v8, 0x7
+    const/16 v9, 0xf
 
-    const/4 v9, 0x0
+    const/4 v10, 0x0
 
     .line 87
-    invoke-static/range {v2 .. v9}, Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;->copy$default(Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/util/List;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;
+    invoke-static/range {v2 .. v10}, Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;->copy$default(Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ZLjava/util/List;ILjava/lang/Object;)Lcom/iMe/storage/domain/model/crypto/CryptoWalletInfo;
 
     move-result-object v1
 

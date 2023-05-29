@@ -183,7 +183,7 @@
 
     const-string v1, "1"
 
-    const-string v2, "setSequenceParameterSets"
+    const-string/jumbo v2, "setSequenceParameterSets"
 
     const-string v3, "com.mp4parser.iso14496.part15.AvcConfigurationBox"
 
@@ -443,7 +443,7 @@
 
     const-string v1, "1"
 
-    const-string v2, "setSequenceParameterSetExts"
+    const-string/jumbo v2, "setSequenceParameterSetExts"
 
     const-string v3, "com.mp4parser.iso14496.part15.AvcConfigurationBox"
 

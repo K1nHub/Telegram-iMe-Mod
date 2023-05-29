@@ -51,7 +51,7 @@ import java.util.Locale;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BillingController;
 import org.telegram.messenger.BuildVars;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.FileLoader;
 import org.telegram.messenger.GenericProvider;
 import org.telegram.messenger.LocaleController;
@@ -63,7 +63,7 @@ import org.telegram.messenger.Utilities;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3356ActionBar;
+import org.telegram.p044ui.ActionBar.C3361ActionBar;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
 import org.telegram.p044ui.Cells.ShadowSectionCell;
@@ -425,7 +425,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         this.premiumFeatures.clear();
         fillPremiumFeaturesList(this.premiumFeatures, this.currentAccount);
         final Rect rect = new Rect();
-        Drawable mutate = context.getResources().getDrawable(C3290R.C3292drawable.sheet_shadow_round).mutate();
+        Drawable mutate = context.getResources().getDrawable(C3295R.C3297drawable.sheet_shadow_round).mutate();
         this.shadowDrawable = mutate;
         int i = Theme.key_dialogBackground;
         mutate.setColorFilter(new PorterDuffColorFilter(getThemedColor(i), PorterDuff.Mode.MULTIPLY));
@@ -680,9 +680,9 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         this.fragmentView = this.contentView;
         this.actionBar.setBackground(null);
         this.actionBar.setCastShadows(false);
-        this.actionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
-        this.actionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.PremiumPreviewFragment.5
-            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
+        this.actionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
+        this.actionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: org.telegram.ui.PremiumPreviewFragment.5
+            @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i2) {
                 if (i2 == IdFabric$Menu.SETTINGS) {
                     PremiumPreviewFragment.this.setSettingsMode(true);
@@ -696,7 +696,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
             }
         });
         this.actionBar.setForceSkipTouches(true);
-        this.settingsItem = this.actionBar.createMenu().addItem(IdFabric$Menu.SETTINGS, C3290R.C3292drawable.fork_settings_filled);
+        this.settingsItem = this.actionBar.createMenu().addItem(IdFabric$Menu.SETTINGS, C3295R.C3297drawable.fork_settings_filled);
         updateSettingsItemVisibility();
         updateColors();
         updateRows();
@@ -756,38 +756,38 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         boolean isPremium = UserConfig.getInstance(i).isPremium();
         int i2 = 0;
         if (!z) {
-            arrayList.add(new PremiumFeatureData(0, C3290R.C3292drawable.msg_premium_limits, LocaleController.getString("PremiumPreviewLimits", C3290R.string.PremiumPreviewLimits), LocaleController.formatString("PremiumPreviewLimitsDescription", C3290R.string.PremiumPreviewLimitsDescription, Integer.valueOf(messagesController.channelsLimitPremium), Integer.valueOf(messagesController.dialogFiltersLimitPremium), Integer.valueOf(messagesController.dialogFiltersPinnedLimitPremium), Integer.valueOf(messagesController.publicLinksLimitPremium), 4)));
+            arrayList.add(new PremiumFeatureData(0, C3295R.C3297drawable.msg_premium_limits, LocaleController.getString("PremiumPreviewLimits", C3295R.string.PremiumPreviewLimits), LocaleController.formatString("PremiumPreviewLimitsDescription", C3295R.string.PremiumPreviewLimitsDescription, Integer.valueOf(messagesController.channelsLimitPremium), Integer.valueOf(messagesController.dialogFiltersLimitPremium), Integer.valueOf(messagesController.dialogFiltersPinnedLimitPremium), Integer.valueOf(messagesController.publicLinksLimitPremium), 4)));
         }
         if (!z) {
-            arrayList.add(new PremiumFeatureData(1, C3290R.C3292drawable.msg_premium_uploads, LocaleController.getString("PremiumPreviewUploads", C3290R.string.PremiumPreviewUploads), LocaleController.getString("PremiumPreviewUploadsDescription", C3290R.string.PremiumPreviewUploadsDescription)));
+            arrayList.add(new PremiumFeatureData(1, C3295R.C3297drawable.msg_premium_uploads, LocaleController.getString("PremiumPreviewUploads", C3295R.string.PremiumPreviewUploads), LocaleController.getString("PremiumPreviewUploadsDescription", C3295R.string.PremiumPreviewUploadsDescription)));
         }
         if (!z) {
-            arrayList.add(new PremiumFeatureData(2, C3290R.C3292drawable.msg_premium_speed, LocaleController.getString("PremiumPreviewDownloadSpeed", C3290R.string.PremiumPreviewDownloadSpeed), LocaleController.getString("PremiumPreviewDownloadSpeedDescription", C3290R.string.PremiumPreviewDownloadSpeedDescription)));
+            arrayList.add(new PremiumFeatureData(2, C3295R.C3297drawable.msg_premium_speed, LocaleController.getString("PremiumPreviewDownloadSpeed", C3295R.string.PremiumPreviewDownloadSpeed), LocaleController.getString("PremiumPreviewDownloadSpeedDescription", C3295R.string.PremiumPreviewDownloadSpeedDescription)));
         }
         if (!z) {
-            arrayList.add(new PremiumFeatureData(8, C3290R.C3292drawable.msg_premium_voice, LocaleController.getString("PremiumPreviewVoiceToText", C3290R.string.PremiumPreviewVoiceToText), LocaleController.getString("PremiumPreviewVoiceToTextDescription", C3290R.string.PremiumPreviewVoiceToTextDescription)));
+            arrayList.add(new PremiumFeatureData(8, C3295R.C3297drawable.msg_premium_voice, LocaleController.getString("PremiumPreviewVoiceToText", C3295R.string.PremiumPreviewVoiceToText), LocaleController.getString("PremiumPreviewVoiceToTextDescription", C3295R.string.PremiumPreviewVoiceToTextDescription)));
         }
         if (!z) {
-            arrayList.add(new PremiumFeatureData(3, C3290R.C3292drawable.msg_premium_ads, LocaleController.getString("PremiumPreviewNoAds", C3290R.string.PremiumPreviewNoAds), LocaleController.getString("PremiumPreviewNoAdsDescription", C3290R.string.PremiumPreviewNoAdsDescription)));
+            arrayList.add(new PremiumFeatureData(3, C3295R.C3297drawable.msg_premium_ads, LocaleController.getString("PremiumPreviewNoAds", C3295R.string.PremiumPreviewNoAds), LocaleController.getString("PremiumPreviewNoAdsDescription", C3295R.string.PremiumPreviewNoAdsDescription)));
         }
         if (!z) {
-            arrayList.add(new PremiumFeatureData(4, C3290R.C3292drawable.msg_premium_reactions, LocaleController.getString("PremiumPreviewReactions2", C3290R.string.PremiumPreviewReactions2), LocaleController.getString("PremiumPreviewReactions2Description", C3290R.string.PremiumPreviewReactions2Description)));
+            arrayList.add(new PremiumFeatureData(4, C3295R.C3297drawable.msg_premium_reactions, LocaleController.getString("PremiumPreviewReactions2", C3295R.string.PremiumPreviewReactions2), LocaleController.getString("PremiumPreviewReactions2Description", C3295R.string.PremiumPreviewReactions2Description)));
         }
-        arrayList.add(new PremiumFeatureData(5, C3290R.C3292drawable.msg_premium_stickers, LocaleController.getString("PremiumPreviewStickers", C3290R.string.PremiumPreviewStickers), z ? LocaleController.getInternalString(C3290R.string.premium_settings_animate_stickers) : LocaleController.getString("PremiumPreviewStickersDescription", C3290R.string.PremiumPreviewStickersDescription)));
+        arrayList.add(new PremiumFeatureData(5, C3295R.C3297drawable.msg_premium_stickers, LocaleController.getString("PremiumPreviewStickers", C3295R.string.PremiumPreviewStickers), z ? LocaleController.getInternalString(C3295R.string.premium_settings_animate_stickers) : LocaleController.getString("PremiumPreviewStickersDescription", C3295R.string.PremiumPreviewStickersDescription)));
         if (!z) {
-            arrayList.add(new PremiumFeatureData(11, C3290R.C3292drawable.msg_premium_emoji, LocaleController.getString("PremiumPreviewEmoji", C3290R.string.PremiumPreviewEmoji), LocaleController.getString("PremiumPreviewEmojiDescription", C3290R.string.PremiumPreviewEmojiDescription)));
+            arrayList.add(new PremiumFeatureData(11, C3295R.C3297drawable.msg_premium_emoji, LocaleController.getString("PremiumPreviewEmoji", C3295R.string.PremiumPreviewEmoji), LocaleController.getString("PremiumPreviewEmojiDescription", C3295R.string.PremiumPreviewEmojiDescription)));
         }
         if (!z) {
-            arrayList.add(new PremiumFeatureData(9, C3290R.C3292drawable.msg_premium_tools, LocaleController.getString("PremiumPreviewAdvancedChatManagement", C3290R.string.PremiumPreviewAdvancedChatManagement), LocaleController.getString("PremiumPreviewAdvancedChatManagementDescription", C3290R.string.PremiumPreviewAdvancedChatManagementDescription)));
+            arrayList.add(new PremiumFeatureData(9, C3295R.C3297drawable.msg_premium_tools, LocaleController.getString("PremiumPreviewAdvancedChatManagement", C3295R.string.PremiumPreviewAdvancedChatManagement), LocaleController.getString("PremiumPreviewAdvancedChatManagementDescription", C3295R.string.PremiumPreviewAdvancedChatManagementDescription)));
         }
-        arrayList.add(new PremiumFeatureData(6, C3290R.C3292drawable.msg_premium_badge, LocaleController.getString("PremiumPreviewProfileBadge", C3290R.string.PremiumPreviewProfileBadge), (!z || isPremium) ? LocaleController.getString("PremiumPreviewProfileBadgeDescription", C3290R.string.PremiumPreviewProfileBadgeDescription) : LocaleController.getInternalString(C3290R.string.premium_settings_not_premium_show_badge)));
-        arrayList.add(new PremiumFeatureData(7, C3290R.C3292drawable.msg_premium_avatar, LocaleController.getString("PremiumPreviewAnimatedProfiles", C3290R.string.PremiumPreviewAnimatedProfiles), (!z || isPremium) ? LocaleController.getString("PremiumPreviewAnimatedProfilesDescription", C3290R.string.PremiumPreviewAnimatedProfilesDescription) : LocaleController.getInternalString(C3290R.string.premium_settings_not_premium_animate_avatars)));
+        arrayList.add(new PremiumFeatureData(6, C3295R.C3297drawable.msg_premium_badge, LocaleController.getString("PremiumPreviewProfileBadge", C3295R.string.PremiumPreviewProfileBadge), (!z || isPremium) ? LocaleController.getString("PremiumPreviewProfileBadgeDescription", C3295R.string.PremiumPreviewProfileBadgeDescription) : LocaleController.getInternalString(C3295R.string.premium_settings_not_premium_show_badge)));
+        arrayList.add(new PremiumFeatureData(7, C3295R.C3297drawable.msg_premium_avatar, LocaleController.getString("PremiumPreviewAnimatedProfiles", C3295R.string.PremiumPreviewAnimatedProfiles), (!z || isPremium) ? LocaleController.getString("PremiumPreviewAnimatedProfilesDescription", C3295R.string.PremiumPreviewAnimatedProfilesDescription) : LocaleController.getInternalString(C3295R.string.premium_settings_not_premium_animate_avatars)));
         if (!z) {
-            arrayList.add(new PremiumFeatureData(10, C3290R.C3292drawable.msg_premium_icons, LocaleController.getString("PremiumPreviewAppIcon", C3290R.string.PremiumPreviewAppIcon), LocaleController.getString("PremiumPreviewAppIconDescription", C3290R.string.PremiumPreviewAppIconDescription)));
+            arrayList.add(new PremiumFeatureData(10, C3295R.C3297drawable.msg_premium_icons, LocaleController.getString("PremiumPreviewAppIcon", C3295R.string.PremiumPreviewAppIcon), LocaleController.getString("PremiumPreviewAppIconDescription", C3295R.string.PremiumPreviewAppIconDescription)));
         }
-        arrayList.add(new PremiumFeatureData(12, C3290R.C3292drawable.msg_premium_status, LocaleController.getString("PremiumPreviewEmojiStatus", C3290R.string.PremiumPreviewEmojiStatus), LocaleController.getString("PremiumPreviewEmojiStatusDescription", C3290R.string.PremiumPreviewEmojiStatusDescription)));
+        arrayList.add(new PremiumFeatureData(12, C3295R.C3297drawable.msg_premium_status, LocaleController.getString("PremiumPreviewEmojiStatus", C3295R.string.PremiumPreviewEmojiStatus), LocaleController.getString("PremiumPreviewEmojiStatusDescription", C3295R.string.PremiumPreviewEmojiStatusDescription)));
         if (!z) {
-            arrayList.add(new PremiumFeatureData(13, C3290R.C3292drawable.msg_premium_translate, LocaleController.getString("PremiumPreviewTranslations", C3290R.string.PremiumPreviewTranslations), LocaleController.getString("PremiumPreviewTranslationsDescription", C3290R.string.PremiumPreviewTranslationsDescription)));
+            arrayList.add(new PremiumFeatureData(13, C3295R.C3297drawable.msg_premium_translate, LocaleController.getString("PremiumPreviewTranslations", C3295R.string.PremiumPreviewTranslations), LocaleController.getString("PremiumPreviewTranslationsDescription", C3295R.string.PremiumPreviewTranslationsDescription)));
         }
         if (messagesController.premiumFeaturesTypesToPosition.size() > 0) {
             while (i2 < arrayList.size()) {
@@ -1050,7 +1050,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
     }
 
     public static String getPremiumButtonText(int i, SubscriptionTier subscriptionTier) {
-        return LocaleController.getString("Next", C3290R.string.Next);
+        return LocaleController.getString("Next", C3295R.string.Next);
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -1167,7 +1167,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
             } else if (i == 2) {
                 int i2 = Theme.key_windowBackgroundGray;
                 view = new ShadowSectionCell(context, 12, Theme.getColor(i2));
-                CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(i2)), Theme.getThemedDrawable(context, C3290R.C3292drawable.greydivider_bottom, Theme.getColor(Theme.key_windowBackgroundGrayShadow)), 0, 0);
+                CombinedDrawable combinedDrawable = new CombinedDrawable(new ColorDrawable(Theme.getColor(i2)), Theme.getThemedDrawable(context, C3295R.C3297drawable.greydivider_bottom, Theme.getColor(Theme.key_windowBackgroundGrayShadow)), 0, 0);
                 combinedDrawable.setFullsize(true);
                 view.setBackgroundDrawable(combinedDrawable);
             } else if (i == 4) {
@@ -1353,7 +1353,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
             this.tierListView = recyclerListView;
             recyclerListView.setOverScrollMode(2);
             this.tierListView.setLayoutManager(new LinearLayoutManager(context));
-            this.tierListView.setAdapter(new C63093(PremiumPreviewFragment.this, context));
+            this.tierListView.setAdapter(new C63143(PremiumPreviewFragment.this, context));
             this.tierListView.setOnItemClickListener(new RecyclerListView.OnItemClickListener() { // from class: org.telegram.ui.PremiumPreviewFragment$BackgroundView$$ExternalSyntheticLambda2
                 @Override // org.telegram.p044ui.Components.RecyclerListView.OnItemClickListener
                 public final void onItemClick(View view, int i) {
@@ -1376,10 +1376,10 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
         /* JADX INFO: Access modifiers changed from: package-private */
         /* renamed from: org.telegram.ui.PremiumPreviewFragment$BackgroundView$3 */
         /* loaded from: classes5.dex */
-        public class C63093 extends RecyclerListView.SelectionAdapter {
+        public class C63143 extends RecyclerListView.SelectionAdapter {
             final /* synthetic */ Context val$context;
 
-            C63093(PremiumPreviewFragment premiumPreviewFragment, Context context) {
+            C63143(PremiumPreviewFragment premiumPreviewFragment, Context context) {
                 this.val$context = context;
             }
 
@@ -1401,7 +1401,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                     @Override // org.telegram.messenger.GenericProvider
                     public final Object provide(Object obj) {
                         Paint lambda$onCreateViewHolder$0;
-                        lambda$onCreateViewHolder$0 = PremiumPreviewFragment.BackgroundView.C63093.this.lambda$onCreateViewHolder$0(premiumTierCell, (Void) obj);
+                        lambda$onCreateViewHolder$0 = PremiumPreviewFragment.BackgroundView.C63143.this.lambda$onCreateViewHolder$0(premiumTierCell, (Void) obj);
                         return lambda$onCreateViewHolder$0;
                     }
                 });
@@ -1619,11 +1619,11 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
 
         public void updateText() {
             if (PremiumPreviewFragment.this.isSettingsMode) {
-                this.titleView.setText(LocaleController.getString("Settings", C3290R.string.Settings));
+                this.titleView.setText(LocaleController.getString("Settings", C3295R.string.Settings));
             } else {
-                this.titleView.setText(LocaleController.getString(PremiumPreviewFragment.this.forcePremium ? C3290R.string.TelegramPremiumSubscribedTitle : C3290R.string.TelegramPremium));
+                this.titleView.setText(LocaleController.getString(PremiumPreviewFragment.this.forcePremium ? C3295R.string.TelegramPremiumSubscribedTitle : C3295R.string.TelegramPremium));
             }
-            this.subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.getString((PremiumPreviewFragment.this.getUserConfig().isPremium() || PremiumPreviewFragment.this.forcePremium) ? C3290R.string.TelegramPremiumSubscribedSubtitle : C3290R.string.TelegramPremiumSubtitle)));
+            this.subtitleView.setText(AndroidUtilities.replaceTags(LocaleController.getString((PremiumPreviewFragment.this.getUserConfig().isPremium() || PremiumPreviewFragment.this.forcePremium) ? C3295R.string.TelegramPremiumSubscribedSubtitle : C3295R.string.TelegramPremiumSubtitle)));
             boolean z = PremiumPreviewFragment.this.forcePremium || BuildVars.IS_BILLING_UNAVAILABLE || PremiumPreviewFragment.this.subscriptionTiers.size() <= 1;
             if (!this.setTierListViewVisibility || !z) {
                 this.tierListView.setVisibility(z ? 8 : 0);
@@ -1692,7 +1692,7 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
                         }
                     }, z);
                 } else if (!BuildVars.useInvoiceBilling() && (!BillingController.getInstance().isReady() || this.subscriptionTiers.isEmpty() || this.selectedTierIndex >= this.subscriptionTiers.size() || this.subscriptionTiers.get(this.selectedTierIndex).googlePlayProductDetails == null)) {
-                    this.premiumButtonView.setButton(LocaleController.getString(C3290R.string.Loading), PremiumPreviewFragment$$ExternalSyntheticLambda2.INSTANCE, z);
+                    this.premiumButtonView.setButton(LocaleController.getString(C3295R.string.Loading), PremiumPreviewFragment$$ExternalSyntheticLambda2.INSTANCE, z);
                     this.premiumButtonView.setFlickerDisabled(true);
                 } else if (this.subscriptionTiers.isEmpty()) {
                 } else {
@@ -1758,12 +1758,12 @@ public class PremiumPreviewFragment extends BaseFragment implements Notification
 
     /* JADX INFO: Access modifiers changed from: private */
     public void updateColors() {
-        C3356ActionBar c3356ActionBar;
-        if (this.backgroundView == null || (c3356ActionBar = this.actionBar) == null) {
+        C3361ActionBar c3361ActionBar;
+        if (this.backgroundView == null || (c3361ActionBar = this.actionBar) == null) {
             return;
         }
         int i = Theme.key_premiumGradientBackgroundOverlay;
-        c3356ActionBar.setItemsColor(Theme.getColor(i), false);
+        c3361ActionBar.setItemsColor(Theme.getColor(i), false);
         this.actionBar.setItemsBackgroundColor(ColorUtils.setAlphaComponent(Theme.getColor(i), 60), false);
         this.backgroundView.titleView.setTextColor(Theme.getColor(i));
         this.backgroundView.subtitleView.setTextColor(Theme.getColor(i));

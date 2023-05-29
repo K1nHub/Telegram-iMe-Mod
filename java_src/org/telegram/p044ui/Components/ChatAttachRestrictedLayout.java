@@ -9,7 +9,7 @@ import moxy.MvpDelegate;
 import org.koin.core.Koin;
 import org.koin.java.KoinJavaComponent;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.ImageReceiver;
 import org.telegram.messenger.LocaleController;
@@ -48,11 +48,11 @@ public class ChatAttachRestrictedLayout extends ChatAttachAlert.AttachAlertLayou
         this.f1629id = i;
         EmptyTextProgressView emptyTextProgressView = new EmptyTextProgressView(context, null, resourcesProvider);
         this.progressView = emptyTextProgressView;
-        emptyTextProgressView.setText(LocaleController.getString("NoPhotos", C3290R.string.NoPhotos));
+        emptyTextProgressView.setText(LocaleController.getString("NoPhotos", C3295R.string.NoPhotos));
         emptyTextProgressView.setOnTouchListener(null);
         emptyTextProgressView.setTextSize(16);
         addView(emptyTextProgressView, LayoutHelper.createFrame(-1, -2));
-        emptyTextProgressView.setLottie(C3290R.raw.media_forbidden, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
+        emptyTextProgressView.setLottie(C3295R.raw.media_forbidden, ImageReceiver.DEFAULT_CROSSFADE_DURATION, ImageReceiver.DEFAULT_CROSSFADE_DURATION);
         TLRPC$Chat currentChat = ((ChatActivity) this.parentAlert.baseFragment).getCurrentChat();
         if (i == 1) {
             emptyTextProgressView.setText(ChatObject.getRestrictedErrorText(currentChat, 7));
@@ -150,7 +150,7 @@ public class ChatAttachRestrictedLayout extends ChatAttachAlert.AttachAlertLayou
         /*
             r3 = this;
             super.onPreMeasure(r4, r5)
-            int r4 = org.telegram.p044ui.ActionBar.C3356ActionBar.getCurrentActionBarHeight()
+            int r4 = org.telegram.p044ui.ActionBar.C3361ActionBar.getCurrentActionBarHeight()
             int r4 = r5 - r4
             r0 = 0
             int r4 = java.lang.Math.max(r0, r4)

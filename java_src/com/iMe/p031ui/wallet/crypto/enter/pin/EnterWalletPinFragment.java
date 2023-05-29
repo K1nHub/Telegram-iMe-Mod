@@ -36,7 +36,7 @@ import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.databinding.ForkFragmentWalletEthEnterPinBinding;
 import org.telegram.p044ui.ActionBar.BaseFragment;
 import org.telegram.p044ui.ActionBar.INavigationLayout;
@@ -221,7 +221,7 @@ public final class EnterWalletPinFragment extends WalletAuthFragment implements 
         ViewGroup.MarginLayoutParams marginLayoutParams = layoutParams3 instanceof ViewGroup.MarginLayoutParams ? (ViewGroup.MarginLayoutParams) layoutParams3 : null;
         layoutParams2.setMargins(((ViewGroup.MarginLayoutParams) layoutParams2).leftMargin, (marginLayoutParams != null ? marginLayoutParams.topMargin : 0) + AndroidUtilities.statusBarHeight, ((ViewGroup.MarginLayoutParams) layoutParams2).rightMargin, ((ViewGroup.MarginLayoutParams) layoutParams2).bottomMargin);
         setupActionBar$lambda$1.setLayoutParams(layoutParams2);
-        setupActionBar$lambda$1.setImageResource(C3290R.C3292drawable.ic_ab_back);
+        setupActionBar$lambda$1.setImageResource(C3295R.C3297drawable.ic_ab_back);
         ViewExtKt.setCircleRippleBackground(setupActionBar$lambda$1);
         ViewExtKt.setImageColor(setupActionBar$lambda$1, Theme.getColor(Theme.key_actionBarDefaultTitle));
         ViewExtKt.safeThrottledClick$default(setupActionBar$lambda$1, 0L, new EnterWalletPinFragment$setupActionBar$1$2(this), 1, null);
@@ -259,7 +259,7 @@ public final class EnterWalletPinFragment extends WalletAuthFragment implements 
         RxEventBus rxEventBus = getRxEventBus();
         Observable observeOn = rxEventBus.getPublisher().ofType(DomainRxEvents.CryptoEvent.class).observeOn(rxEventBus.getSchedulersProvider().mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "publisher\n              …(schedulersProvider.ui())");
-        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2165x64e4ff35(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2166x64e4ff36(null)));
+        Disposable subscribe = observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2170x64e4ff35(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2171x64e4ff36(null)));
         Intrinsics.checkNotNullExpressionValue(subscribe, "viewState: BaseView? = n…  onError.invoke()\n    })");
         autoDispose(subscribe);
     }

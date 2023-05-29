@@ -36,16 +36,16 @@
 
     const/4 v0, 0x0
 
-    .line 11
-    invoke-direct {p0, p1, v0}, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse;-><init>(Ljava/lang/String;Lkotlin/jvm/internal/DefaultConstructorMarker;)V
+    .line 9
+    invoke-direct {p0, v0}, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse;-><init>(Lkotlin/jvm/internal/DefaultConstructorMarker;)V
 
-    .line 8
+    .line 6
     iput-object p1, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$EVM;->contractAddress:Ljava/lang/String;
 
-    .line 9
+    .line 7
     iput-object p2, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$EVM;->transactionParams:Lcom/iMe/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
 
-    .line 10
+    .line 8
     iput-object p3, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$EVM;->feeTokenCode:Ljava/lang/String;
 
     return-void
@@ -58,9 +58,7 @@
 
     if-eqz p5, :cond_0
 
-    invoke-virtual {p0}, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$EVM;->getContractAddress()Ljava/lang/String;
-
-    move-result-object p1
+    iget-object p1, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$EVM;->contractAddress:Ljava/lang/String;
 
     :cond_0
     and-int/lit8 p5, p4, 0x2
@@ -89,9 +87,7 @@
 .method public final component1()Ljava/lang/String;
     .locals 1
 
-    invoke-virtual {p0}, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$EVM;->getContractAddress()Ljava/lang/String;
-
-    move-result-object v0
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$EVM;->contractAddress:Ljava/lang/String;
 
     return-object v0
 .end method
@@ -151,13 +147,9 @@
     :cond_1
     check-cast p1, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$EVM;
 
-    invoke-virtual {p0}, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$EVM;->getContractAddress()Ljava/lang/String;
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$EVM;->contractAddress:Ljava/lang/String;
 
-    move-result-object v1
-
-    invoke-virtual {p1}, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$EVM;->getContractAddress()Ljava/lang/String;
-
-    move-result-object v3
+    iget-object v3, p1, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$EVM;->contractAddress:Ljava/lang/String;
 
     invoke-static {v1, v3}, Lkotlin/jvm/internal/Intrinsics;->areEqual(Ljava/lang/Object;Ljava/lang/Object;)Z
 
@@ -197,10 +189,10 @@
     return v0
 .end method
 
-.method public getContractAddress()Ljava/lang/String;
+.method public final getContractAddress()Ljava/lang/String;
     .locals 1
 
-    .line 8
+    .line 6
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$EVM;->contractAddress:Ljava/lang/String;
 
     return-object v0
@@ -209,7 +201,7 @@
 .method public final getFeeTokenCode()Ljava/lang/String;
     .locals 1
 
-    .line 10
+    .line 8
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$EVM;->feeTokenCode:Ljava/lang/String;
 
     return-object v0
@@ -218,7 +210,7 @@
 .method public final getTransactionParams()Lcom/iMe/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
     .locals 1
 
-    .line 9
+    .line 7
     iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$EVM;->transactionParams:Lcom/iMe/storage/data/network/model/response/crypto/wallet/TransactionParamsResponse$EVM;
 
     return-object v0
@@ -227,9 +219,7 @@
 .method public hashCode()I
     .locals 2
 
-    invoke-virtual {p0}, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$EVM;->getContractAddress()Ljava/lang/String;
-
-    move-result-object v0
+    iget-object v0, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$EVM;->contractAddress:Ljava/lang/String;
 
     if-nez v0, :cond_0
 
@@ -238,10 +228,6 @@
     goto :goto_0
 
     :cond_0
-    invoke-virtual {p0}, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$EVM;->getContractAddress()Ljava/lang/String;
-
-    move-result-object v0
-
     invoke-virtual {v0}, Ljava/lang/String;->hashCode()I
 
     move-result v0
@@ -281,9 +267,7 @@
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
-    invoke-virtual {p0}, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$EVM;->getContractAddress()Ljava/lang/String;
-
-    move-result-object v1
+    iget-object v1, p0, Lcom/iMe/storage/data/network/model/response/crypto/wallet/CryptoTransferDataResponse$EVM;->contractAddress:Ljava/lang/String;
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

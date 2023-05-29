@@ -22,7 +22,7 @@ import kotlin.jvm.internal.PropertyReference1Impl;
 import kotlin.jvm.internal.Reflection;
 import kotlin.reflect.KProperty;
 import moxy.ktx.MoxyKtxDelegate;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.databinding.ForkContentWalletConnectTransactionBinding;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p044ui.ActionBar.BaseFragment;
@@ -149,10 +149,10 @@ public final class WalletConnectTransactionBottomSheetDialog extends MvpBottomSh
         Intrinsics.checkNotNullParameter(to, "to");
         Intrinsics.checkNotNullParameter(peerUrl, "peerUrl");
         ForkContentWalletConnectTransactionBinding binding = getBinding();
-        binding.textNetwork.setTextAndValue(getResourceManager().getString(C3290R.string.wallet_connect_session_details_network), network, true);
-        binding.textFrom.setTextAndValue(getResourceManager().getString(C3290R.string.wallet_connect_transaction_from), from, true);
-        binding.textTo.setTextAndValue(getResourceManager().getString(C3290R.string.wallet_connect_transaction_to), to, true);
-        binding.textPeerUrl.setTextAndValue(getResourceManager().getString(C3290R.string.wallet_connect_transaction_dapp), peerUrl, true);
+        binding.textNetwork.setTextAndValue(getResourceManager().getString(C3295R.string.wallet_connect_session_details_network), network, true);
+        binding.textFrom.setTextAndValue(getResourceManager().getString(C3295R.string.wallet_connect_transaction_from), from, true);
+        binding.textTo.setTextAndValue(getResourceManager().getString(C3295R.string.wallet_connect_transaction_to), to, true);
+        binding.textPeerUrl.setTextAndValue(getResourceManager().getString(C3295R.string.wallet_connect_transaction_dapp), peerUrl, true);
         binding.textTransactionAmount.setText(transactionAmount);
     }
 
@@ -167,7 +167,7 @@ public final class WalletConnectTransactionBottomSheetDialog extends MvpBottomSh
 
     @Override // com.iMe.p031ui.wallet.crypto.wallet_connect.transaction.WalletConnectTransactionView
     public void onTransactionSuccess() {
-        showToast(getResourceManager().getString(C3290R.string.wallet_connect_transaction_success));
+        showToast(getResourceManager().getString(C3295R.string.wallet_connect_transaction_success));
         dismiss();
     }
 
@@ -196,11 +196,11 @@ public final class WalletConnectTransactionBottomSheetDialog extends MvpBottomSh
 
     private final void setupViews() {
         ForkContentWalletConnectTransactionBinding binding = getBinding();
-        binding.textTitle.setText(getResourceManager().getString(C3290R.string.wallet_connect_transaction_title));
+        binding.textTitle.setText(getResourceManager().getString(C3295R.string.wallet_connect_transaction_title));
         binding.buttonProcess.setText(getResourceManager().getString(this.screenType.getButtonTextResId()));
         ActionBarMenuItem actionBarMenuItem = getBinding().buttonClose;
         actionBarMenuItem.setLongClickEnabled(false);
-        actionBarMenuItem.setIcon(C3290R.C3292drawable.ic_close_white);
+        actionBarMenuItem.setIcon(C3295R.C3297drawable.ic_close_white);
     }
 
     private final void setupListeners() {

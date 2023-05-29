@@ -1275,7 +1275,7 @@ Quyida **%d**, **%d** va **%d** soʻzlarini kiriting:"</string>
     <string name="wallet_banner_slide_binance_pay_operation_without_fee_long_description">"Endi keraksiz to'lovlar va komissiyalar yo'q. Kripto to'lash, yuborish va qabul qilish — bu komissiyalarsiz."</string>
     <string name="wallet_banner_slide_binance_pay_operation_without_fee_title">KOMISSIYASIZ</string>
     <string name="wallet_banner_slide_crypto_transfers_description">Chatlar orqali, Telegram ID, manzil, QR kod</string>
-    <string name="wallet_banner_slide_crypto_transfers_long_description">"QR kod yoki ochiq manzillardan foydalanib, Telegram ID orqali, Twitter, chatda kriptovalyuta o'tkazmalarini amalga oshiring."</string>
+    <string name="wallet_banner_slide_crypto_transfers_long_description">"QR kodi yoki ommaviy manzillar yordamida Telegram ID, Twitter ID orqali kriptovalyuta o'tkazmalarini chatlarda amalga oshiring."</string>
     <string name="wallet_banner_slide_crypto_transfers_title">"KRIPTO O'TKAZMALAR"</string>
     <string name="wallet_banner_slide_faq_description">Umumiy funktsional tavsif</string>
     <string name="wallet_banner_slide_faq_long_description">"Iltimos, iMe funksional tavsifini o'qing, siz savollaringizga juda ko'p javob topasiz."</string>

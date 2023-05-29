@@ -52,14 +52,14 @@ import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p043mp.KoinPlatformTools;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.MrzRecognizer;
 import org.telegram.messenger.databinding.ForkFragmentWalletConnectBinding;
 import org.telegram.p044ui.ActionBar.ActionBarMenu;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
 import org.telegram.p044ui.ActionBar.AlertDialog;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3356ActionBar;
+import org.telegram.p044ui.ActionBar.C3361ActionBar;
 import org.telegram.p044ui.ActionBar.INavigationLayout;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
@@ -71,7 +71,7 @@ import org.telegram.p044ui.Components.LayoutHelper;
 import org.telegram.p044ui.Components.RLottieImageView;
 /* compiled from: WalletConnectFragment.kt */
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public final class WalletConnectFragment extends WalletAuthFragment implements WalletConnectView {
     static final /* synthetic */ KProperty<Object>[] $$delegatedProperties = {Reflection.property1(new PropertyReference1Impl(WalletConnectFragment.class, "presenter", "getPresenter()Lcom/iMe/ui/wallet/crypto/wallet_connect/WalletConnectPresenter;", 0)), Reflection.property1(new PropertyReference1Impl(WalletConnectFragment.class, "binding", "getBinding()Lorg/telegram/messenger/databinding/ForkFragmentWalletConnectBinding;", 0))};
     public static final Companion Companion = new Companion(null);
@@ -225,13 +225,13 @@ public final class WalletConnectFragment extends WalletAuthFragment implements W
     }
 
     private final void setupActionBar() {
-        C3356ActionBar c3356ActionBar = this.actionBar;
-        c3356ActionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
-        c3356ActionBar.setTitle(getResourceManager().getString(C3290R.string.wallet_connect_title));
-        c3356ActionBar.setAllowOverlayTitle(true);
-        c3356ActionBar.createMenu();
-        c3356ActionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
+        C3361ActionBar c3361ActionBar = this.actionBar;
+        c3361ActionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
+        c3361ActionBar.setTitle(getResourceManager().getString(C3295R.string.wallet_connect_title));
+        c3361ActionBar.setAllowOverlayTitle(true);
+        c3361ActionBar.createMenu();
+        c3361ActionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment$setupActionBar$1$1
+            @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 WalletConnectPresenter presenter;
                 if (i == -1) {
@@ -242,7 +242,7 @@ public final class WalletConnectFragment extends WalletAuthFragment implements W
                 }
             }
         });
-        ActionBarMenu createMenu = c3356ActionBar.createMenu();
+        ActionBarMenu createMenu = c3361ActionBar.createMenu();
         Activity parentActivity = getParentActivity();
         Intrinsics.checkNotNullExpressionValue(parentActivity, "parentActivity");
         this.networkTypeView = new NetworkTypeView(parentActivity, null, 0, 6, null);
@@ -345,22 +345,22 @@ public final class WalletConnectFragment extends WalletAuthFragment implements W
         SpannableStringBuilder spannableStringBuilder = new SpannableStringBuilder();
         repeat = StringsKt__StringsJVMKt.repeat(" ", 2);
         spannableStringBuilder.append((CharSequence) repeat);
-        Drawable drawable = ContextCompat.getDrawable(getParentActivity(), C3290R.C3292drawable.msg_mini_qr);
+        Drawable drawable = ContextCompat.getDrawable(getParentActivity(), C3295R.C3297drawable.msg_mini_qr);
         Intrinsics.checkNotNull(drawable);
         spannableStringBuilder.setSpan(new ColoredImageSpan(drawable), 0, 1, 0);
         spannableStringBuilder.setSpan(new DialogCell.FixedWidthSpan(AndroidUtilities.m54dp(8)), 1, 2, 0);
-        spannableStringBuilder.append((CharSequence) getResourceManager().getString(C3290R.string.wallet_connect_new_connection));
+        spannableStringBuilder.append((CharSequence) getResourceManager().getString(C3295R.string.wallet_connect_new_connection));
         bigActionButton.setText(spannableStringBuilder);
         bigActionButton.setBackground(Theme.createSimpleSelectorRoundRectDrawable(AndroidUtilities.m54dp(6), Theme.getColor(Theme.key_featuredStickers_addButton), Theme.getColor(Theme.key_featuredStickers_addButtonPressed)));
         RLottieImageView rLottieImageView = binding.imageHeader;
         updateAnimationColors();
         rLottieImageView.setAutoRepeat(true);
-        rLottieImageView.setAnimation(C3290R.raw.fork_wallet_connect, 300, 170, this.colors);
+        rLottieImageView.setAnimation(C3295R.raw.fork_wallet_connect, 300, 170, this.colors);
         rLottieImageView.setScaleType(ImageView.ScaleType.CENTER);
         rLottieImageView.playAnimation();
-        binding.textSessionsTitle.setText(getResourceManager().getString(C3290R.string.wallet_connect_active_sessions));
-        binding.textDescription.setText(getResourceManager().getString(C3290R.string.wallet_connect_description));
-        binding.buttonDisconnectAll.setTextAndIcon(getResourceManager().getString(C3290R.string.wallet_connect_terminate_all), C3290R.C3292drawable.msg_block2, false);
+        binding.textSessionsTitle.setText(getResourceManager().getString(C3295R.string.wallet_connect_active_sessions));
+        binding.textDescription.setText(getResourceManager().getString(C3295R.string.wallet_connect_description));
+        binding.buttonDisconnectAll.setTextAndIcon(getResourceManager().getString(C3295R.string.wallet_connect_terminate_all), C3295R.C3297drawable.msg_block2, false);
     }
 
     private final void openQRScan() {
@@ -413,7 +413,7 @@ public final class WalletConnectFragment extends WalletAuthFragment implements W
 
     /* compiled from: WalletConnectFragment.kt */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.WalletConnectFragment$Companion */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public static final class Companion {
         public /* synthetic */ Companion(DefaultConstructorMarker defaultConstructorMarker) {
             this();

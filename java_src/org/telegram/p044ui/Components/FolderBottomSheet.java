@@ -38,7 +38,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.telegram.messenger.AndroidUtilities;
 import org.telegram.messenger.BotWebViewVibrationEffect;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.ChatObject;
 import org.telegram.messenger.DialogObject;
 import org.telegram.messenger.LocaleController;
@@ -137,12 +137,12 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
             }
         };
         if (dialogFilter != null && dialogFilter.isMyChatlist()) {
-            AlertDialog create = new AlertDialog.Builder(baseFragment.getContext()).setTitle(LocaleController.getString("FilterDelete", C3290R.string.FilterDelete)).setMessage(LocaleController.getString("FilterDeleteAlertLinks", C3290R.string.FilterDeleteAlertLinks)).setNegativeButton(LocaleController.getString("Cancel", C3290R.string.Cancel), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda1
+            AlertDialog create = new AlertDialog.Builder(baseFragment.getContext()).setTitle(LocaleController.getString("FilterDelete", C3295R.string.FilterDelete)).setMessage(LocaleController.getString("FilterDeleteAlertLinks", C3295R.string.FilterDeleteAlertLinks)).setNegativeButton(LocaleController.getString("Cancel", C3295R.string.Cancel), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda1
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i3) {
                     FolderBottomSheet.lambda$showForDeletion$3(Utilities.Callback.this, dialogInterface, i3);
                 }
-            }).setPositiveButton(LocaleController.getString("Delete", C3290R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda0
+            }).setPositiveButton(LocaleController.getString("Delete", C3295R.string.Delete), new DialogInterface.OnClickListener() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda0
                 @Override // android.content.DialogInterface.OnClickListener
                 public final void onClick(DialogInterface dialogInterface, int i3) {
                     runnable.run();
@@ -609,7 +609,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
     /* JADX INFO: Access modifiers changed from: private */
     public /* synthetic */ void lambda$onJoinButtonClicked$6(BaseFragment baseFragment, ArrayList arrayList) {
         this.reqId = -1;
-        BulletinFactory.m29of(baseFragment).createSimpleBulletin(C3290R.raw.ic_delete, LocaleController.formatString("FolderLinkDeletedTitle", C3290R.string.FolderLinkDeletedTitle, this.title), LocaleController.formatPluralString("FolderLinkDeletedSubtitle", arrayList.size(), new Object[0])).setDuration(DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS).show();
+        BulletinFactory.m29of(baseFragment).createSimpleBulletin(C3295R.raw.ic_delete, LocaleController.formatString("FolderLinkDeletedTitle", C3295R.string.FolderLinkDeletedTitle, this.title), LocaleController.formatPluralString("FolderLinkDeletedSubtitle", arrayList.size(), new Object[0])).setDuration(DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS).show();
         this.success = true;
         dismiss();
         getBaseFragment().getMessagesController().invalidateChatlistFolderUpdate(this.filterId);
@@ -646,8 +646,8 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
         String formatPluralString;
         if (this.updates != null || (this.invite instanceof TLRPC$TL_chatlists_chatlistInviteAlready)) {
             BulletinFactory m29of = BulletinFactory.m29of(baseFragment);
-            int i = C3290R.raw.folder_in;
-            SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("FolderLinkUpdatedTitle", C3290R.string.FolderLinkUpdatedTitle, this.escapedTitle));
+            int i = C3295R.raw.folder_in;
+            SpannableStringBuilder replaceTags = AndroidUtilities.replaceTags(LocaleController.formatString("FolderLinkUpdatedTitle", C3295R.string.FolderLinkUpdatedTitle, this.escapedTitle));
             if (arrayList.size() <= 0) {
                 formatPluralString = LocaleController.formatPluralString("FolderLinkUpdatedSubtitle", this.alreadyJoined.size(), new Object[0]);
             } else {
@@ -656,7 +656,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
             m29of.createSimpleBulletin(i, replaceTags, formatPluralString).setDuration(DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS).show();
             return;
         }
-        BulletinFactory.m29of(baseFragment).createSimpleBulletin(C3290R.raw.contact_check, AndroidUtilities.replaceTags(LocaleController.formatString("FolderLinkAddedTitle", C3290R.string.FolderLinkAddedTitle, this.escapedTitle)), LocaleController.formatPluralString("FolderLinkAddedSubtitle", arrayList.size(), new Object[0])).setDuration(DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS).show();
+        BulletinFactory.m29of(baseFragment).createSimpleBulletin(C3295R.raw.contact_check, AndroidUtilities.replaceTags(LocaleController.formatString("FolderLinkAddedTitle", C3295R.string.FolderLinkAddedTitle, this.escapedTitle)), LocaleController.formatPluralString("FolderLinkAddedSubtitle", arrayList.size(), new Object[0])).setDuration(DefaultLoadControl.DEFAULT_BUFFER_FOR_PLAYBACK_AFTER_REBUFFER_MS).show();
     }
 
     /* JADX INFO: Access modifiers changed from: private */
@@ -822,9 +822,9 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                 } else {
                     TLRPC$Chat chat = getBaseFragment().getMessagesController().getChat(Long.valueOf(-peerDialogId));
                     if (ChatObject.isChannelAndNotMegaGroup(chat)) {
-                        string = LocaleController.getString("FolderLinkAlreadySubscribed", C3290R.string.FolderLinkAlreadySubscribed);
+                        string = LocaleController.getString("FolderLinkAlreadySubscribed", C3295R.string.FolderLinkAlreadySubscribed);
                     } else {
-                        string = LocaleController.getString("FolderLinkAlreadyJoined", C3290R.string.FolderLinkAlreadyJoined);
+                        string = LocaleController.getString("FolderLinkAlreadyJoined", C3295R.string.FolderLinkAlreadyJoined);
                     }
                     arrayList.add(chat);
                     str = string;
@@ -856,21 +856,21 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
         if (button != null) {
             if (this.deleting) {
                 if (size > 0) {
-                    i = C3290R.string.FolderLinkButtonRemoveChats;
+                    i = C3295R.string.FolderLinkButtonRemoveChats;
                     str = "FolderLinkButtonRemoveChats";
                 } else {
-                    i = C3290R.string.FolderLinkButtonRemove;
+                    i = C3295R.string.FolderLinkButtonRemove;
                     str = "FolderLinkButtonRemove";
                 }
                 button.setText(LocaleController.getString(str, i), z);
             } else {
                 ArrayList<TLRPC$Peer> arrayList = this.peers;
                 if (arrayList == null || arrayList.isEmpty()) {
-                    this.button.setText(LocaleController.getString("OK", C3290R.string.OK), z);
+                    this.button.setText(LocaleController.getString("OK", C3295R.string.OK), z);
                 } else if (this.invite instanceof TLRPC$TL_chatlists_chatlistInvite) {
-                    this.button.setText(LocaleController.formatString("FolderLinkButtonAdd", C3290R.string.FolderLinkButtonAdd, this.title), z);
+                    this.button.setText(LocaleController.formatString("FolderLinkButtonAdd", C3295R.string.FolderLinkButtonAdd, this.title), z);
                 } else {
-                    this.button.setText(size > 0 ? LocaleController.formatPluralString("FolderLinkButtonJoinPlural", size, new Object[0]) : LocaleController.getString("FolderLinkButtonNone", C3290R.string.FolderLinkButtonNone), z);
+                    this.button.setText(size > 0 ? LocaleController.formatPluralString("FolderLinkButtonJoinPlural", size, new Object[0]) : LocaleController.getString("FolderLinkButtonNone", C3295R.string.FolderLinkButtonNone), z);
                 }
             }
             this.button.setCount(size, z);
@@ -1159,16 +1159,16 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
     @Override // org.telegram.p044ui.Components.BottomSheetWithRecyclerListView
     protected CharSequence getTitle() {
         if (this.deleting) {
-            return LocaleController.getString("FolderLinkTitleRemove", C3290R.string.FolderLinkTitleRemove);
+            return LocaleController.getString("FolderLinkTitleRemove", C3295R.string.FolderLinkTitleRemove);
         }
         if (this.invite instanceof TLRPC$TL_chatlists_chatlistInvite) {
-            return LocaleController.getString("FolderLinkTitleAdd", C3290R.string.FolderLinkTitleAdd);
+            return LocaleController.getString("FolderLinkTitleAdd", C3295R.string.FolderLinkTitleAdd);
         }
         ArrayList<TLRPC$Peer> arrayList = this.peers;
         if (arrayList == null || arrayList.isEmpty()) {
-            return LocaleController.getString("FolderLinkTitleAlready", C3290R.string.FolderLinkTitleAlready);
+            return LocaleController.getString("FolderLinkTitleAlready", C3295R.string.FolderLinkTitleAlready);
         }
-        return LocaleController.getString("FolderLinkTitleAddChats", C3290R.string.FolderLinkTitleAddChats);
+        return LocaleController.getString("FolderLinkTitleAddChats", C3295R.string.FolderLinkTitleAddChats);
     }
 
     @Override // org.telegram.p044ui.Components.BottomSheetWithRecyclerListView
@@ -1222,7 +1222,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
                     Method dump skipped, instructions count: 512
                     To view this dump add '--comments-level debug' option
                 */
-                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Components.FolderBottomSheet.C46251.onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder, int):void");
+                throw new UnsupportedOperationException("Method not decompiled: org.telegram.p044ui.Components.FolderBottomSheet.C46301.onBindViewHolder(androidx.recyclerview.widget.RecyclerView$ViewHolder, int):void");
             }
 
             @Override // androidx.recyclerview.widget.RecyclerView.Adapter
@@ -1346,18 +1346,18 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
 
         public void setSelectedCount(int i, boolean z) {
             if (FolderBottomSheet.this.deleting) {
-                this.subtitleTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("FolderLinkSubtitleRemove", C3290R.string.FolderLinkSubtitleRemove, this.title)));
+                this.subtitleTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("FolderLinkSubtitleRemove", C3295R.string.FolderLinkSubtitleRemove, this.title)));
             } else if (this.already) {
                 this.preview.setCount(FolderBottomSheet.this.peers != null ? FolderBottomSheet.this.peers.size() : 0, false);
                 if (FolderBottomSheet.this.peers == null || FolderBottomSheet.this.peers.isEmpty()) {
-                    this.subtitleTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("FolderLinkSubtitleAlready", C3290R.string.FolderLinkSubtitleAlready, this.title)));
+                    this.subtitleTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("FolderLinkSubtitleAlready", C3295R.string.FolderLinkSubtitleAlready, this.title)));
                 } else {
                     this.subtitleTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatPluralString("FolderLinkSubtitleChats", FolderBottomSheet.this.peers != null ? FolderBottomSheet.this.peers.size() : 0, this.title)));
                 }
             } else if (FolderBottomSheet.this.peers == null || FolderBottomSheet.this.peers.isEmpty()) {
-                this.subtitleTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("FolderLinkSubtitleAlready", C3290R.string.FolderLinkSubtitleAlready, this.title)));
+                this.subtitleTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("FolderLinkSubtitleAlready", C3295R.string.FolderLinkSubtitleAlready, this.title)));
             } else {
-                this.subtitleTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("FolderLinkSubtitle", C3290R.string.FolderLinkSubtitle, this.title)));
+                this.subtitleTextView.setText(AndroidUtilities.replaceTags(LocaleController.formatString("FolderLinkSubtitle", C3295R.string.FolderLinkSubtitle, this.title)));
             }
         }
 
@@ -1466,7 +1466,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
 
             private StaticLayout makeLayout(CharSequence charSequence, boolean z) {
                 if (charSequence == null || "ALL_CHATS".equals(charSequence.toString())) {
-                    charSequence = LocaleController.getString("FilterAllChats", C3290R.string.FilterAllChats);
+                    charSequence = LocaleController.getString("FilterAllChats", C3295R.string.FilterAllChats);
                 }
                 return new StaticLayout(charSequence, z ? this.selectedTextPaint : this.paint, AndroidUtilities.displaySize.x, Layout.Alignment.ALIGN_NORMAL, 1.0f, BitmapDescriptorFactory.HUE_RED, false);
             }
@@ -1592,7 +1592,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
         ArrayList<TLRPC$Peer> arrayList = this.peers;
         if (arrayList != null && arrayList.size() - this.alreadyJoined.size() > 1) {
             final boolean z2 = this.selectedPeers.size() >= this.peers.size() - this.alreadyJoined.size();
-            this.headerCell.setAction(LocaleController.getString(z2 ? C3290R.string.DeselectAll : C3290R.string.SelectAll), new Runnable() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda11
+            this.headerCell.setAction(LocaleController.getString(z2 ? C3295R.string.DeselectAll : C3295R.string.SelectAll), new Runnable() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda11
                 @Override // java.lang.Runnable
                 public final void run() {
                     FolderBottomSheet.this.lambda$updateHeaderCell$20(z2);
@@ -1633,7 +1633,7 @@ public class FolderBottomSheet extends BottomSheetWithRecyclerListView {
             }
         }
         updateCount(true);
-        headerCell.setAction(LocaleController.getString(z ? C3290R.string.SelectAll : C3290R.string.DeselectAll), new Runnable() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda10
+        headerCell.setAction(LocaleController.getString(z ? C3295R.string.SelectAll : C3295R.string.DeselectAll), new Runnable() { // from class: org.telegram.ui.Components.FolderBottomSheet$$ExternalSyntheticLambda10
             @Override // java.lang.Runnable
             public final void run() {
                 FolderBottomSheet.this.lambda$deselectAll$21(headerCell, z);

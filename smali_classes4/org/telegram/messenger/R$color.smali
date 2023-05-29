@@ -634,35 +634,37 @@
 
 .field public static final wallet_network_type_bep20:I = 0x7f060135
 
-.field public static final wallet_network_type_erc20:I = 0x7f060136
+.field public static final wallet_network_type_bitcoin:I = 0x7f060136
 
-.field public static final wallet_network_type_fantom:I = 0x7f060137
+.field public static final wallet_network_type_erc20:I = 0x7f060137
 
-.field public static final wallet_network_type_polygon:I = 0x7f060138
+.field public static final wallet_network_type_fantom:I = 0x7f060138
 
-.field public static final wallet_network_type_ton:I = 0x7f060139
+.field public static final wallet_network_type_polygon:I = 0x7f060139
 
-.field public static final wallet_network_type_tron:I = 0x7f06013a
+.field public static final wallet_network_type_ton:I = 0x7f06013a
 
-.field public static final wallet_primary_text_holo_light:I = 0x7f06013b
+.field public static final wallet_network_type_tron:I = 0x7f06013b
 
-.field public static final wallet_secondary_text_holo_dark:I = 0x7f06013c
+.field public static final wallet_primary_text_holo_light:I = 0x7f06013c
 
-.field public static final white:I = 0x7f06013d
+.field public static final wallet_secondary_text_holo_dark:I = 0x7f06013d
 
-.field public static final widget_action_text:I = 0x7f06013e
+.field public static final white:I = 0x7f06013e
 
-.field public static final widget_badge:I = 0x7f06013f
+.field public static final widget_action_text:I = 0x7f06013f
 
-.field public static final widget_divider:I = 0x7f060140
+.field public static final widget_badge:I = 0x7f060140
 
-.field public static final widget_edit_text:I = 0x7f060141
+.field public static final widget_divider:I = 0x7f060141
 
-.field public static final widget_name:I = 0x7f060142
+.field public static final widget_edit_text:I = 0x7f060142
 
-.field public static final widget_text:I = 0x7f060143
+.field public static final widget_name:I = 0x7f060143
 
-.field public static final widget_time:I = 0x7f060144
+.field public static final widget_text:I = 0x7f060144
+
+.field public static final widget_time:I = 0x7f060145
 
 
 # direct methods

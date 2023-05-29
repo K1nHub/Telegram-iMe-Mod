@@ -82,6 +82,6 @@ public final class WalletSendRecipientPresenter extends BasePresenter<WalletSend
         }
         Observable<Result<String>> observeOn = CryptoHelper.extractAddress(str, getCurrentNetworkType().getBlockchainType(), this.cryptoWalletInteractor).observeOn(this.schedulersProvider.mo698ui());
         Intrinsics.checkNotNullExpressionValue(observeOn, "extractAddress(\n        …(schedulersProvider.ui())");
-        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2096xbc0d2688(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2097xbc0d2689(null))), "viewState: BaseView? = n…  onError.invoke()\n    })");
+        Intrinsics.checkNotNullExpressionValue(observeOn.subscribe(new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2101xbc0d2688(this)), new RxExtKt$sam$i$io_reactivex_functions_Consumer$0(new C2102xbc0d2689(null))), "viewState: BaseView? = n…  onError.invoke()\n    })");
     }
 }

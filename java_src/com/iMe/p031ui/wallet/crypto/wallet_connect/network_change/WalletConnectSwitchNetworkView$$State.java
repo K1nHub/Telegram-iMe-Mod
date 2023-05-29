@@ -9,7 +9,7 @@ import moxy.viewstate.ViewCommand;
 import moxy.viewstate.strategy.AddToEndSingleStrategy;
 import moxy.viewstate.strategy.OneExecutionStateStrategy;
 /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.network_change.WalletConnectSwitchNetworkView$$State */
-/* loaded from: classes3.dex */
+/* loaded from: classes4.dex */
 public class WalletConnectSwitchNetworkView$$State extends MvpViewState<WalletConnectSwitchNetworkView> implements WalletConnectSwitchNetworkView {
     @Override // com.iMe.p031ui.base.mvp.base.BaseView
     public /* synthetic */ void finishScreen() {
@@ -70,7 +70,7 @@ public class WalletConnectSwitchNetworkView$$State extends MvpViewState<WalletCo
 
     /* compiled from: WalletConnectSwitchNetworkView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.network_change.WalletConnectSwitchNetworkView$$State$SetupScreenWithDataCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class SetupScreenWithDataCommand extends ViewCommand<WalletConnectSwitchNetworkView> {
         public final String iconUrl;
         public final String name;
@@ -95,7 +95,7 @@ public class WalletConnectSwitchNetworkView$$State extends MvpViewState<WalletCo
 
     /* compiled from: WalletConnectSwitchNetworkView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.network_change.WalletConnectSwitchNetworkView$$State$ShowToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowToastCommand extends ViewCommand<WalletConnectSwitchNetworkView> {
         public final String text;
 
@@ -112,7 +112,7 @@ public class WalletConnectSwitchNetworkView$$State extends MvpViewState<WalletCo
 
     /* compiled from: WalletConnectSwitchNetworkView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.network_change.WalletConnectSwitchNetworkView$$State$ShowLoadingDialogCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowLoadingDialogCommand extends ViewCommand<WalletConnectSwitchNetworkView> {
         public final Disposable actionToCancel;
         public final boolean cancellable;
@@ -133,7 +133,7 @@ public class WalletConnectSwitchNetworkView$$State extends MvpViewState<WalletCo
 
     /* compiled from: WalletConnectSwitchNetworkView$$State.java */
     /* renamed from: com.iMe.ui.wallet.crypto.wallet_connect.network_change.WalletConnectSwitchNetworkView$$State$ShowErrorToastCommand */
-    /* loaded from: classes3.dex */
+    /* loaded from: classes4.dex */
     public class ShowErrorToastCommand<T> extends ViewCommand<WalletConnectSwitchNetworkView> {
         public final ResourceManager resourceManager;
         public final Result.Error<? extends T> result;

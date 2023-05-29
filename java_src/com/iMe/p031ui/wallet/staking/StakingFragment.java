@@ -44,11 +44,11 @@ import kotlin.reflect.KProperty;
 import moxy.MvpDelegate;
 import moxy.ktx.MoxyKtxDelegate;
 import org.koin.p043mp.KoinPlatformTools;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.browser.Browser;
 import org.telegram.messenger.databinding.ForkFragmentStakingBinding;
 import org.telegram.p044ui.ActionBar.BaseFragment;
-import org.telegram.p044ui.ActionBar.C3356ActionBar;
+import org.telegram.p044ui.ActionBar.C3361ActionBar;
 import org.telegram.p044ui.ActionBar.INavigationLayout;
 import org.telegram.p044ui.ActionBar.Theme;
 import org.telegram.p044ui.ActionBar.ThemeDescription;
@@ -269,7 +269,7 @@ public final class StakingFragment extends WalletAuthFragment implements Staking
     @Override // org.telegram.p044ui.ActionBar.BaseFragment
     public ArrayList<ThemeDescription> getThemeDescriptions() {
         ArrayList<ThemeDescription> arrayListOf;
-        C3356ActionBar c3356ActionBar = this.actionBar;
+        C3361ActionBar c3361ActionBar = this.actionBar;
         int i = ThemeDescription.FLAG_AB_SELECTORCOLOR;
         int i2 = Theme.key_actionBarDefaultSelector;
         arrayListOf = CollectionsKt__CollectionsKt.arrayListOf(new ThemeDescription(getBinding().getRoot(), ThemeDescription.FLAG_BACKGROUND, null, null, null, new ThemeDescription.ThemeDescriptionDelegate() { // from class: com.iMe.ui.wallet.staking.StakingFragment$$ExternalSyntheticLambda4
@@ -282,7 +282,7 @@ public final class StakingFragment extends WalletAuthFragment implements Staking
             public /* synthetic */ void onAnimationProgress(float f) {
                 ThemeDescription.ThemeDescriptionDelegate.CC.$default$onAnimationProgress(this, f);
             }
-        }, Theme.key_windowBackgroundGray), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(c3356ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, i2));
+        }, Theme.key_windowBackgroundGray), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_BACKGROUND, null, null, null, null, Theme.key_actionBarDefault), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_ITEMSCOLOR, null, null, null, null, Theme.key_actionBarDefaultIcon), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_TITLECOLOR, null, null, null, null, Theme.key_actionBarDefaultTitle), new ThemeDescription(c3361ActionBar, i, null, null, null, null, i2), new ThemeDescription(this.actionBar, ThemeDescription.FLAG_AB_SELECTORCOLOR, null, null, null, null, i2));
         arrayListOf.addAll(getBinding().stakingPager.getThemeDescription());
         for (MvpFragment mvpFragment : getNavigationRouter().getScreenStack()) {
             arrayListOf.addAll(mvpFragment.getThemeDescriptions());
@@ -308,14 +308,14 @@ public final class StakingFragment extends WalletAuthFragment implements Staking
     }
 
     private final void setupActionBar() {
-        C3356ActionBar c3356ActionBar = this.actionBar;
-        c3356ActionBar.setCastShadows(false);
-        c3356ActionBar.setBackButtonImage(C3290R.C3292drawable.ic_ab_back);
-        c3356ActionBar.setTitle(getResourceManager().getString(C3290R.string.staking_title));
-        c3356ActionBar.setAllowOverlayTitle(true);
-        c3356ActionBar.createMenu().addItem(IdFabric$Menu.STAKING_HELP, C3290R.C3292drawable.msg_help);
-        c3356ActionBar.setActionBarMenuOnItemClick(new C3356ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.staking.StakingFragment$setupActionBar$1$1
-            @Override // org.telegram.p044ui.ActionBar.C3356ActionBar.ActionBarMenuOnItemClick
+        C3361ActionBar c3361ActionBar = this.actionBar;
+        c3361ActionBar.setCastShadows(false);
+        c3361ActionBar.setBackButtonImage(C3295R.C3297drawable.ic_ab_back);
+        c3361ActionBar.setTitle(getResourceManager().getString(C3295R.string.staking_title));
+        c3361ActionBar.setAllowOverlayTitle(true);
+        c3361ActionBar.createMenu().addItem(IdFabric$Menu.STAKING_HELP, C3295R.C3297drawable.msg_help);
+        c3361ActionBar.setActionBarMenuOnItemClick(new C3361ActionBar.ActionBarMenuOnItemClick() { // from class: com.iMe.ui.wallet.staking.StakingFragment$setupActionBar$1$1
+            @Override // org.telegram.p044ui.ActionBar.C3361ActionBar.ActionBarMenuOnItemClick
             public void onItemClick(int i) {
                 if (i == -1) {
                     StakingFragment.this.finishFragment();
@@ -328,7 +328,7 @@ public final class StakingFragment extends WalletAuthFragment implements Staking
 
     /* JADX INFO: Access modifiers changed from: private */
     public final void showInfoDialog() {
-        showDialog(DialogsFactoryKt.createInfoBottomSheetDialog$default(this, null, getResourceManager().getString(C3290R.string.staking_info_description), getResourceManager().getString(C3290R.string.staking_info_more), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.staking.StakingFragment$$ExternalSyntheticLambda3
+        showDialog(DialogsFactoryKt.createInfoBottomSheetDialog$default(this, null, getResourceManager().getString(C3295R.string.staking_info_description), getResourceManager().getString(C3295R.string.staking_info_more), new Callbacks$Callback() { // from class: com.iMe.ui.wallet.staking.StakingFragment$$ExternalSyntheticLambda3
             @Override // com.iMe.fork.utils.Callbacks$Callback
             public final void invoke() {
                 StakingFragment.showInfoDialog$lambda$12(StakingFragment.this);
@@ -339,7 +339,7 @@ public final class StakingFragment extends WalletAuthFragment implements Staking
     /* JADX INFO: Access modifiers changed from: private */
     public static final void showInfoDialog$lambda$12(StakingFragment this$0) {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
-        Browser.openUrl(this$0.getParentActivity(), this$0.getResourceManager().getString(C3290R.string.staking_info_site_url));
+        Browser.openUrl(this$0.getParentActivity(), this$0.getResourceManager().getString(C3295R.string.staking_info_site_url));
     }
 
     /* JADX INFO: Access modifiers changed from: private */

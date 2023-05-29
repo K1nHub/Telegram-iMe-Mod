@@ -14,7 +14,7 @@
 .end annotation
 
 .annotation system Ldalvik/annotation/SourceDebugExtension;
-    value = "SMAP\nEnvironmentManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 EnvironmentManager.kt\ncom/iMe/storage/data/manager/common/EnvironmentManager\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,55:1\n56#2,6:56\n56#2,6:62\n56#2,6:68\n56#2,6:74\n56#2,6:80\n*S KotlinDebug\n*F\n+ 1 EnvironmentManager.kt\ncom/iMe/storage/data/manager/common/EnvironmentManager\n*L\n19#1:56,6\n20#1:62,6\n21#1:68,6\n22#1:74,6\n23#1:80,6\n*E\n"
+    value = "SMAP\nEnvironmentManager.kt\nKotlin\n*S Kotlin\n*F\n+ 1 EnvironmentManager.kt\ncom/iMe/storage/data/manager/common/EnvironmentManager\n+ 2 KoinComponent.kt\norg/koin/core/component/KoinComponentKt\n*L\n1#1,57:1\n56#2,6:58\n56#2,6:64\n56#2,6:70\n56#2,6:76\n56#2,6:82\n*S KotlinDebug\n*F\n+ 1 EnvironmentManager.kt\ncom/iMe/storage/data/manager/common/EnvironmentManager\n*L\n19#1:58,6\n20#1:64,6\n21#1:70,6\n22#1:76,6\n23#1:82,6\n*E\n"
 .end annotation
 
 
@@ -351,6 +351,29 @@
     move-result-object v0
 
     return-object v0
+.end method
+
+.method public isProductionActive()Z
+    .locals 2
+
+    .line 53
+    invoke-virtual {p0}, Lcom/iMe/storage/data/manager/common/EnvironmentManager;->getEnvironment()Lcom/iMe/storage/domain/model/common/Environment;
+
+    move-result-object v0
+
+    sget-object v1, Lcom/iMe/storage/domain/model/common/Environment;->PRODUCTION:Lcom/iMe/storage/domain/model/common/Environment;
+
+    if-ne v0, v1, :cond_0
+
+    const/4 v0, 0x1
+
+    goto :goto_0
+
+    :cond_0
+    const/4 v0, 0x0
+
+    :goto_0
+    return v0
 .end method
 
 .method public switchEnvironmentTo(Lcom/iMe/storage/domain/model/common/Environment;)V

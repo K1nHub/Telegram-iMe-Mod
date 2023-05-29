@@ -11,7 +11,7 @@ import android.widget.TextView;
 import java.util.ArrayList;
 import java.util.HashSet;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 import org.telegram.messenger.MessagesController;
 import org.telegram.p044ui.ActionBar.ActionBarMenuItem;
@@ -70,7 +70,7 @@ public class ChatNotificationsPopupWrapper {
     public ChatNotificationsPopupWrapper(final Context context, final int i, final PopupSwipeBackLayout popupSwipeBackLayout, boolean z, boolean z2, final Callback callback, final Theme.ResourcesProvider resourcesProvider) {
         this.currentAccount = i;
         this.callback = callback;
-        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(this, context, z ? C3290R.C3292drawable.popup_fixed_alert : 0, resourcesProvider) { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper.1
+        ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout = new ActionBarPopupWindow.ActionBarPopupWindowLayout(this, context, z ? C3295R.C3297drawable.popup_fixed_alert : 0, resourcesProvider) { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper.1
             Path path = new Path();
 
             @Override // android.view.ViewGroup
@@ -89,7 +89,7 @@ public class ChatNotificationsPopupWrapper {
         this.windowLayout = actionBarPopupWindowLayout;
         actionBarPopupWindowLayout.setFitItems(true);
         if (popupSwipeBackLayout != null) {
-            ActionBarMenuSubItem addItem = ActionBarMenuItem.addItem(this.windowLayout, C3290R.C3292drawable.msg_arrow_back, LocaleController.getString("Back", C3290R.string.Back), false, resourcesProvider);
+            ActionBarMenuSubItem addItem = ActionBarMenuItem.addItem(this.windowLayout, C3295R.C3297drawable.msg_arrow_back, LocaleController.getString("Back", C3295R.string.Back), false, resourcesProvider);
             this.backItem = addItem;
             addItem.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda7
                 @Override // android.view.View.OnClickListener
@@ -98,7 +98,7 @@ public class ChatNotificationsPopupWrapper {
                 }
             });
         }
-        ActionBarMenuSubItem addItem2 = ActionBarMenuItem.addItem(this.windowLayout, C3290R.C3292drawable.msg_tone_on, LocaleController.getString("SoundOn", C3290R.string.SoundOn), false, resourcesProvider);
+        ActionBarMenuSubItem addItem2 = ActionBarMenuItem.addItem(this.windowLayout, C3295R.C3297drawable.msg_tone_on, LocaleController.getString("SoundOn", C3295R.string.SoundOn), false, resourcesProvider);
         this.soundToggle = addItem2;
         addItem2.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda5
             @Override // android.view.View.OnClickListener
@@ -107,8 +107,8 @@ public class ChatNotificationsPopupWrapper {
             }
         });
         ActionBarPopupWindow.ActionBarPopupWindowLayout actionBarPopupWindowLayout2 = this.windowLayout;
-        int i2 = C3290R.C3292drawable.msg_mute_1h;
-        int i3 = C3290R.string.MuteFor1h;
+        int i2 = C3295R.C3297drawable.msg_mute_1h;
+        int i3 = C3295R.string.MuteFor1h;
         ActionBarMenuSubItem addItem3 = ActionBarMenuItem.addItem(actionBarPopupWindowLayout2, i2, LocaleController.getString("MuteFor1h", i3), false, resourcesProvider);
         this.muteForLastSelected = addItem3;
         addItem3.setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda6
@@ -125,13 +125,13 @@ public class ChatNotificationsPopupWrapper {
                 ChatNotificationsPopupWrapper.this.lambda$new$3(callback, view);
             }
         });
-        ActionBarMenuItem.addItem(this.windowLayout, C3290R.C3292drawable.msg_mute_period, LocaleController.getString("MuteForPopup", C3290R.string.MuteForPopup), false, resourcesProvider).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda0
+        ActionBarMenuItem.addItem(this.windowLayout, C3295R.C3297drawable.msg_mute_period, LocaleController.getString("MuteForPopup", C3295R.string.MuteForPopup), false, resourcesProvider).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda0
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ChatNotificationsPopupWrapper.this.lambda$new$6(context, resourcesProvider, i, callback, view);
             }
         });
-        ActionBarMenuItem.addItem(this.windowLayout, C3290R.C3292drawable.msg_customize, LocaleController.getString("NotificationsCustomize", C3290R.string.NotificationsCustomize), false, resourcesProvider).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda3
+        ActionBarMenuItem.addItem(this.windowLayout, C3295R.C3297drawable.msg_customize, LocaleController.getString("NotificationsCustomize", C3295R.string.NotificationsCustomize), false, resourcesProvider).setOnClickListener(new View.OnClickListener() { // from class: org.telegram.ui.Components.ChatNotificationsPopupWrapper$$ExternalSyntheticLambda3
             @Override // android.view.View.OnClickListener
             public final void onClick(View view) {
                 ChatNotificationsPopupWrapper.this.lambda$new$7(callback, view);
@@ -154,7 +154,7 @@ public class ChatNotificationsPopupWrapper {
         textView.setPadding(AndroidUtilities.m54dp(13), AndroidUtilities.m54dp(8), AndroidUtilities.m54dp(13), AndroidUtilities.m54dp(8));
         textView.setTextSize(1, 13.0f);
         textView.setTextColor(Theme.getColor(Theme.key_actionBarDefaultSubmenuItem, resourcesProvider));
-        int i4 = C3290R.C3293id.fit_width_tag;
+        int i4 = C3295R.C3298id.fit_width_tag;
         frameLayout.setTag(i4, 1);
         textView.setTag(i4, 1);
         this.windowLayout.addView((View) textView, LayoutHelper.createLinear(-2, -2));
@@ -262,17 +262,17 @@ public class ChatNotificationsPopupWrapper {
         }
         boolean isDialogMuted = MessagesController.getInstance(this.currentAccount).isDialogMuted(j, i);
         if (isDialogMuted) {
-            this.muteUnmuteButton.setTextAndIcon(LocaleController.getString("UnmuteNotifications", C3290R.string.UnmuteNotifications), C3290R.C3292drawable.msg_unmute);
+            this.muteUnmuteButton.setTextAndIcon(LocaleController.getString("UnmuteNotifications", C3295R.string.UnmuteNotifications), C3295R.C3297drawable.msg_unmute);
             i2 = Theme.getColor(Theme.key_windowBackgroundWhiteGreenText2);
             this.soundToggle.setVisibility(8);
         } else {
-            this.muteUnmuteButton.setTextAndIcon(LocaleController.getString("MuteNotifications", C3290R.string.MuteNotifications), C3290R.C3292drawable.msg_mute);
+            this.muteUnmuteButton.setTextAndIcon(LocaleController.getString("MuteNotifications", C3295R.string.MuteNotifications), C3295R.C3297drawable.msg_mute);
             int color = Theme.getColor(Theme.key_text_RedBold);
             this.soundToggle.setVisibility(0);
             if (MessagesController.getInstance(this.currentAccount).isDialogNotificationsSoundEnabled(j, i)) {
-                this.soundToggle.setTextAndIcon(LocaleController.getString("SoundOff", C3290R.string.SoundOff), C3290R.C3292drawable.msg_tone_off);
+                this.soundToggle.setTextAndIcon(LocaleController.getString("SoundOff", C3295R.string.SoundOff), C3295R.C3297drawable.msg_tone_off);
             } else {
-                this.soundToggle.setTextAndIcon(LocaleController.getString("SoundOn", C3290R.string.SoundOn), C3290R.C3292drawable.msg_tone_on);
+                this.soundToggle.setTextAndIcon(LocaleController.getString("SoundOn", C3295R.string.SoundOn), C3295R.C3297drawable.msg_tone_on);
             }
             i2 = color;
         }
@@ -323,23 +323,23 @@ public class ChatNotificationsPopupWrapper {
         int i5 = (i3 - (i4 * 3600)) / 60;
         if (i2 != 0) {
             sb.append(i2);
-            sb.append(LocaleController.getString("SecretChatTimerDays", C3290R.string.SecretChatTimerDays));
+            sb.append(LocaleController.getString("SecretChatTimerDays", C3295R.string.SecretChatTimerDays));
         }
         if (i4 != 0) {
             if (sb.length() > 0) {
                 sb.append(" ");
             }
             sb.append(i4);
-            sb.append(LocaleController.getString("SecretChatTimerHours", C3290R.string.SecretChatTimerHours));
+            sb.append(LocaleController.getString("SecretChatTimerHours", C3295R.string.SecretChatTimerHours));
         }
         if (i5 != 0) {
             if (sb.length() > 0) {
                 sb.append(" ");
             }
             sb.append(i5);
-            sb.append(LocaleController.getString("SecretChatTimerMinutes", C3290R.string.SecretChatTimerMinutes));
+            sb.append(LocaleController.getString("SecretChatTimerMinutes", C3295R.string.SecretChatTimerMinutes));
         }
-        return LocaleController.formatString("MuteForButton", C3290R.string.MuteForButton, sb.toString());
+        return LocaleController.formatString("MuteForButton", C3295R.string.MuteForButton, sb.toString());
     }
 
     public void showAsOptions(BaseFragment baseFragment, View view, float f, float f2) {
@@ -352,7 +352,7 @@ public class ChatNotificationsPopupWrapper {
         this.popupWindow.setDismissAnimationDuration(220);
         this.popupWindow.setOutsideTouchable(true);
         this.popupWindow.setClippingEnabled(true);
-        this.popupWindow.setAnimationStyle(C3290R.style.PopupContextAnimation);
+        this.popupWindow.setAnimationStyle(C3295R.style.PopupContextAnimation);
         this.popupWindow.setFocusable(true);
         this.windowLayout.measure(View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(1000), Integer.MIN_VALUE), View.MeasureSpec.makeMeasureSpec(AndroidUtilities.m54dp(1000), Integer.MIN_VALUE));
         this.popupWindow.setInputMethodMode(2);

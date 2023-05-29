@@ -39,7 +39,7 @@ public final class BoostInteractor$boostEthTransaction$$inlined$flatMapSuccess$1
         TransactionArgs data = result.getData();
         Intrinsics.checkNotNull(data);
         boostRepository = this.this$0.boostRepository;
-        Observable<R> flatMap = boostRepository.signBoostTransaction(data).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1968x5d896fde(this.this$0, this.$txHash$inlined)));
+        Observable<R> flatMap = boostRepository.signBoostTransaction(data).flatMap(new ObservableExtKt$sam$i$io_reactivex_functions_Function$0(new C1973x5d896fde(this.this$0, this.$txHash$inlined)));
         Intrinsics.checkNotNullExpressionValue(flatMap, "crossinline body: (T) ->…e.empty()\n        }\n    }");
         schedulersProvider = this.this$0.schedulersProvider;
         Observable subscribeOn = flatMap.subscribeOn(schedulersProvider.mo699io());

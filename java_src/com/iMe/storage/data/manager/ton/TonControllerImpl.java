@@ -236,7 +236,7 @@ public final class TonControllerImpl implements TonController {
         Intrinsics.checkNotNullParameter(this$0, "this$0");
         Intrinsics.checkNotNullParameter(signResult, "$signResult");
         Intrinsics.checkNotNullParameter(sendResult, "sendResult");
-        if (sendResult instanceof TonApi.C2458Ok) {
+        if (sendResult instanceof TonApi.C2463Ok) {
             return Result.Companion.success(Boolean.TRUE);
         }
         return this$0.getTonApiErrorResult(signResult);

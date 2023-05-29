@@ -12,7 +12,7 @@ import com.iMe.utils.formatter.MaskFormatter;
 import com.iMe.utils.helper.binancepay.BinancePayHelper;
 import java.util.List;
 import kotlin.jvm.internal.Intrinsics;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.p044ui.ActionBar.Theme;
 /* compiled from: BinanceTokenBalanceProvider.kt */
 /* renamed from: com.iMe.ui.adapter.provider.BinanceTokenBalanceProvider */
@@ -34,7 +34,7 @@ public final class BinanceTokenBalanceProvider extends BaseNodeProvider<BinanceB
         this.resourceManager = resourceManager;
         this.cryptoPreferenceHelper = cryptoPreferenceHelper;
         this.itemViewType = IdFabric$ViewTypes.TOKEN_BALANCE;
-        this.layoutId = C3290R.layout.fork_recycle_item_wallet_dashboard_account_balance;
+        this.layoutId = C3295R.layout.fork_recycle_item_wallet_dashboard_account_balance;
     }
 
     @Override // com.chad.library.adapter.base.provider.BaseItemProvider
@@ -51,30 +51,30 @@ public final class BinanceTokenBalanceProvider extends BaseNodeProvider<BinanceB
     public void convert(BaseViewHolder helper, BinanceBalanceItem item) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
-        int i = C3290R.C3293id.card_account_balance;
+        int i = C3295R.C3298id.card_account_balance;
         BaseViewHolder themedCardBackground = BaseQuickAdapterExtKt.setThemedCardBackground(BaseQuickAdapterExtKt.setRippleForeground(helper, i, false), i, Theme.key_windowBackgroundWhite);
-        int i2 = C3290R.C3293id.text_account_title;
+        int i2 = C3295R.C3298id.text_account_title;
         BaseViewHolder themedTextColor = BaseQuickAdapterExtKt.setThemedTextColor(themedCardBackground, i2, Theme.key_chats_actionBackground);
-        int i3 = C3290R.C3293id.text_trade_pair;
+        int i3 = C3295R.C3298id.text_trade_pair;
         int i4 = Theme.key_windowBackgroundWhiteGrayText2;
         BaseViewHolder themedTextColor2 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor, i3, i4);
-        int i5 = C3290R.C3293id.text_trade_price;
+        int i5 = C3295R.C3298id.text_trade_price;
         BaseViewHolder themedTextColor3 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor2, i5, i4);
-        int i6 = C3290R.C3293id.text_account_balance_in_dollars;
+        int i6 = C3295R.C3298id.text_account_balance_in_dollars;
         BaseViewHolder themedTextColor4 = BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor3, i6, i4);
-        int i7 = C3290R.C3293id.text_account_balance;
-        BaseViewHolder text = BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor4, i7, Theme.key_chat_messagePanelText), i7, i3, C3290R.C3293id.text_trade_percent, i5, i6).setText(i2, item.getBalanceInfo().getAssetName());
+        int i7 = C3295R.C3298id.text_account_balance;
+        BaseViewHolder text = BaseQuickAdapterExtKt.setMediumTypeface(BaseQuickAdapterExtKt.setThemedTextColor(themedTextColor4, i7, Theme.key_chat_messagePanelText), i7, i3, C3295R.C3298id.text_trade_percent, i5, i6).setText(i2, item.getBalanceInfo().getAssetName());
         MaskFormatter maskFormatter = MaskFormatter.INSTANCE;
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.loadImage(text.setText(i7, maskFormatter.textOrMask(this.cryptoPreferenceHelper.getCryptoHiddenBalance(), BinanceTokenBalanceExtKt.getTotalBalanceText(item.getBalanceInfo()))).setText(i6, maskFormatter.textOrMask(this.cryptoPreferenceHelper.getCryptoHiddenBalance(), BinanceTokenBalanceExtKt.getDollarsBalanceText(item.getBalanceInfo(), this.resourceManager))).setGone(C3290R.C3293id.constraint_trade_info, true), C3290R.C3293id.image_coin_icon, item.getBalanceInfo().getLogoUrl(), BinancePayHelper.INSTANCE.getRefererHeader()), C3290R.C3293id.text_coin_ticker, new BinanceTokenBalanceProvider$convert$1(item));
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.loadImage(text.setText(i7, maskFormatter.textOrMask(this.cryptoPreferenceHelper.getCryptoHiddenBalance(), BinanceTokenBalanceExtKt.getTotalBalanceText(item.getBalanceInfo()))).setText(i6, maskFormatter.textOrMask(this.cryptoPreferenceHelper.getCryptoHiddenBalance(), BinanceTokenBalanceExtKt.getDollarsBalanceText(item.getBalanceInfo(), this.resourceManager))).setGone(C3295R.C3298id.constraint_trade_info, true), C3295R.C3298id.image_coin_icon, item.getBalanceInfo().getLogoUrl(), BinancePayHelper.INSTANCE.getRefererHeader()), C3295R.C3298id.text_coin_ticker, new BinanceTokenBalanceProvider$convert$1(item));
     }
 
     public void convert(BaseViewHolder helper, BinanceBalanceItem item, List<? extends Object> payloads) {
         Intrinsics.checkNotNullParameter(helper, "helper");
         Intrinsics.checkNotNullParameter(item, "item");
         Intrinsics.checkNotNullParameter(payloads, "payloads");
-        BaseViewHolder text = helper.setText(C3290R.C3293id.text_account_title, item.getBalanceInfo().getAssetName());
-        int i = C3290R.C3293id.text_account_balance;
+        BaseViewHolder text = helper.setText(C3295R.C3298id.text_account_title, item.getBalanceInfo().getAssetName());
+        int i = C3295R.C3298id.text_account_balance;
         MaskFormatter maskFormatter = MaskFormatter.INSTANCE;
-        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.loadImage(text.setText(i, maskFormatter.textOrMask(this.cryptoPreferenceHelper.getCryptoHiddenBalance(), BinanceTokenBalanceExtKt.getTotalBalanceText(item.getBalanceInfo()))).setText(C3290R.C3293id.text_account_balance_in_dollars, maskFormatter.textOrMask(this.cryptoPreferenceHelper.getCryptoHiddenBalance(), BinanceTokenBalanceExtKt.getDollarsBalanceText(item.getBalanceInfo(), this.resourceManager))).setGone(C3290R.C3293id.constraint_trade_info, true), C3290R.C3293id.image_coin_icon, item.getBalanceInfo().getLogoUrl(), BinancePayHelper.INSTANCE.getRefererHeader()), C3290R.C3293id.text_coin_ticker, new BinanceTokenBalanceProvider$convert$2(item));
+        BaseQuickAdapterExtKt.applyForView(BaseQuickAdapterExtKt.loadImage(text.setText(i, maskFormatter.textOrMask(this.cryptoPreferenceHelper.getCryptoHiddenBalance(), BinanceTokenBalanceExtKt.getTotalBalanceText(item.getBalanceInfo()))).setText(C3295R.C3298id.text_account_balance_in_dollars, maskFormatter.textOrMask(this.cryptoPreferenceHelper.getCryptoHiddenBalance(), BinanceTokenBalanceExtKt.getDollarsBalanceText(item.getBalanceInfo(), this.resourceManager))).setGone(C3295R.C3298id.constraint_trade_info, true), C3295R.C3298id.image_coin_icon, item.getBalanceInfo().getLogoUrl(), BinancePayHelper.INSTANCE.getRefererHeader()), C3295R.C3298id.text_coin_ticker, new BinanceTokenBalanceProvider$convert$2(item));
     }
 }

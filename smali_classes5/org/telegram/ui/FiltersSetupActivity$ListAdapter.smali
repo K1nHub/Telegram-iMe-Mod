@@ -2540,6 +2540,8 @@
 
     sub-int/2addr p1, v3
 
+    add-int/2addr p1, v4
+
     iget-object v1, v1, Lorg/telegram/ui/FiltersSetupActivity$ItemInner;->filter:Lorg/telegram/messenger/MessagesController$DialogFilter;
 
     invoke-virtual {v2, p1, v1}, Ljava/util/ArrayList;->set(ILjava/lang/Object;)Ljava/lang/Object;
@@ -2552,6 +2554,8 @@
     move-result p1
 
     sub-int/2addr p2, p1
+
+    add-int/2addr p2, v4
 
     iget-object p1, v0, Lorg/telegram/ui/FiltersSetupActivity$ItemInner;->filter:Lorg/telegram/messenger/MessagesController$DialogFilter;
 

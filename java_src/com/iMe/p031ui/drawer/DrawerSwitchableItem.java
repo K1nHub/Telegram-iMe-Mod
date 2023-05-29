@@ -9,7 +9,7 @@ import kotlin.collections.CollectionsKt___CollectionsKt;
 import kotlin.jvm.internal.DefaultConstructorMarker;
 import kotlin.jvm.internal.Intrinsics;
 import org.telegram.messenger.AndroidUtilities;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.LocaleController;
 /* compiled from: DrawerSwitchableItem.kt */
 /* renamed from: com.iMe.ui.drawer.DrawerSwitchableItem */
@@ -94,39 +94,39 @@ public enum DrawerSwitchableItem {
     public final String title() {
         switch (WhenMappings.$EnumSwitchMapping$0[ordinal()]) {
             case 1:
-                String internalString = LocaleController.getInternalString(C3290R.string.drawer_wallet_item_title);
+                String internalString = LocaleController.getInternalString(C3295R.string.drawer_wallet_item_title);
                 Intrinsics.checkNotNullExpressionValue(internalString, "getInternalString(R.stri…drawer_wallet_item_title)");
                 return internalString;
             case 2:
-                String internalString2 = LocaleController.getInternalString(C3290R.string.drawer_catalog_item_title);
+                String internalString2 = LocaleController.getInternalString(C3295R.string.drawer_catalog_item_title);
                 Intrinsics.checkNotNullExpressionValue(internalString2, "getInternalString(R.stri…rawer_catalog_item_title)");
                 return internalString2;
             case 3:
-                String internalString3 = LocaleController.getInternalString(C3290R.string.management);
+                String internalString3 = LocaleController.getInternalString(C3295R.string.management);
                 Intrinsics.checkNotNullExpressionValue(internalString3, "getInternalString(R.string.management)");
                 return internalString3;
             case 4:
-                String string = LocaleController.getString("AttachMusic", C3290R.string.AttachMusic);
+                String string = LocaleController.getString("AttachMusic", C3295R.string.AttachMusic);
                 Intrinsics.checkNotNullExpressionValue(string, "getString(\"AttachMusic\", R.string.AttachMusic)");
                 return string;
             case 5:
-                String string2 = LocaleController.getString("Contacts", C3290R.string.Contacts);
+                String string2 = LocaleController.getString("Contacts", C3295R.string.Contacts);
                 Intrinsics.checkNotNullExpressionValue(string2, "getString(\"Contacts\", R.string.Contacts)");
                 return string2;
             case 6:
-                String string3 = LocaleController.getString("Calls", C3290R.string.Calls);
+                String string3 = LocaleController.getString("Calls", C3295R.string.Calls);
                 Intrinsics.checkNotNullExpressionValue(string3, "getString(\"Calls\", R.string.Calls)");
                 return string3;
             case 7:
-                String string4 = LocaleController.getString("PeopleNearby", C3290R.string.PeopleNearby);
+                String string4 = LocaleController.getString("PeopleNearby", C3295R.string.PeopleNearby);
                 Intrinsics.checkNotNullExpressionValue(string4, "getString(\"PeopleNearby\", R.string.PeopleNearby)");
                 return string4;
             case 8:
-                String string5 = LocaleController.getString("SavedMessages", C3290R.string.SavedMessages);
+                String string5 = LocaleController.getString("SavedMessages", C3295R.string.SavedMessages);
                 Intrinsics.checkNotNullExpressionValue(string5, "getString(\"SavedMessages\", R.string.SavedMessages)");
                 return string5;
             case 9:
-                String internalString4 = LocaleController.getInternalString(C3290R.string.cloud_albums_toolbar_title);
+                String internalString4 = LocaleController.getInternalString(C3295R.string.cloud_albums_toolbar_title);
                 Intrinsics.checkNotNullExpressionValue(internalString4, "getInternalString(R.stri…oud_albums_toolbar_title)");
                 return internalString4;
             default:

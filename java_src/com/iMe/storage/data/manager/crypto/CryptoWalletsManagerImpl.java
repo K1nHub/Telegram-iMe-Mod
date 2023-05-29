@@ -11,6 +11,7 @@ import kotlin.jvm.internal.Intrinsics;
 /* compiled from: CryptoWalletsManagerImpl.kt */
 /* loaded from: classes3.dex */
 public final class CryptoWalletsManagerImpl implements CryptoWalletsManager {
+    private final BlockchainCryptoWalletManager btcBlockchainCryptoWalletManagerImpl;
     private final BlockchainCryptoWalletManager evmBlockchainCryptoWalletManager;
     private final BlockchainCryptoWalletManager tonBlockchainCryptoWalletManager;
     private final BlockchainCryptoWalletManager tronBlockchainCryptoWalletManager;
@@ -34,17 +35,23 @@ public final class CryptoWalletsManagerImpl implements CryptoWalletsManager {
                 iArr[BlockchainType.TRON.ordinal()] = 3;
             } catch (NoSuchFieldError unused3) {
             }
+            try {
+                iArr[BlockchainType.BITCOIN.ordinal()] = 4;
+            } catch (NoSuchFieldError unused4) {
+            }
             $EnumSwitchMapping$0 = iArr;
         }
     }
 
-    public CryptoWalletsManagerImpl(BlockchainCryptoWalletManager evmBlockchainCryptoWalletManager, BlockchainCryptoWalletManager tonBlockchainCryptoWalletManager, BlockchainCryptoWalletManager tronBlockchainCryptoWalletManager) {
+    public CryptoWalletsManagerImpl(BlockchainCryptoWalletManager evmBlockchainCryptoWalletManager, BlockchainCryptoWalletManager tonBlockchainCryptoWalletManager, BlockchainCryptoWalletManager tronBlockchainCryptoWalletManager, BlockchainCryptoWalletManager btcBlockchainCryptoWalletManagerImpl) {
         Intrinsics.checkNotNullParameter(evmBlockchainCryptoWalletManager, "evmBlockchainCryptoWalletManager");
         Intrinsics.checkNotNullParameter(tonBlockchainCryptoWalletManager, "tonBlockchainCryptoWalletManager");
         Intrinsics.checkNotNullParameter(tronBlockchainCryptoWalletManager, "tronBlockchainCryptoWalletManager");
+        Intrinsics.checkNotNullParameter(btcBlockchainCryptoWalletManagerImpl, "btcBlockchainCryptoWalletManagerImpl");
         this.evmBlockchainCryptoWalletManager = evmBlockchainCryptoWalletManager;
         this.tonBlockchainCryptoWalletManager = tonBlockchainCryptoWalletManager;
         this.tronBlockchainCryptoWalletManager = tronBlockchainCryptoWalletManager;
+        this.btcBlockchainCryptoWalletManagerImpl = btcBlockchainCryptoWalletManagerImpl;
     }
 
     @Override // com.iMe.storage.domain.manager.crypto.CryptoWalletsManager
@@ -97,10 +104,13 @@ public final class CryptoWalletsManagerImpl implements CryptoWalletsManager {
         int i = WhenMappings.$EnumSwitchMapping$0[blockchainType.ordinal()];
         if (i != 1) {
             if (i != 2) {
-                if (i == 3) {
-                    return this.tronBlockchainCryptoWalletManager;
+                if (i != 3) {
+                    if (i == 4) {
+                        return this.btcBlockchainCryptoWalletManagerImpl;
+                    }
+                    throw new NoWhenBranchMatchedException();
                 }
-                throw new NoWhenBranchMatchedException();
+                return this.tronBlockchainCryptoWalletManager;
             }
             return this.tonBlockchainCryptoWalletManager;
         }

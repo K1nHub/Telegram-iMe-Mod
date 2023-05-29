@@ -14,7 +14,7 @@ import kotlin.jvm.internal.Intrinsics;
 import kotlin.jvm.internal.Lambda;
 import kotlin.jvm.internal.Ref$LongRef;
 import org.telegram.messenger.AccountInstance;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 import org.telegram.messenger.SendMessagesHelper;
 import org.telegram.tgnet.TLRPC$BotInlineResult;
 import org.telegram.tgnet.TLRPC$messages_BotResults;
@@ -67,9 +67,9 @@ public final class C1574x2b67fdc6 extends Lambda implements Function1<Result<? e
             SendMessagesHelper.prepareSendingBotContextResult(null, accountInstance, tLRPC$BotInlineResult, formatBotRequestParams, this.$chatId$inlined.element, null, null, true, 0, null);
             viewState2 = this.this$0.getViewState();
             resourceManager2 = this.this$0.resourceManager;
-            String string = resourceManager2.getString(C3290R.string.wallet_recipient_request_permission_success_dialog_title);
+            String string = resourceManager2.getString(C3295R.string.wallet_recipient_request_permission_success_dialog_title);
             resourceManager3 = this.this$0.resourceManager;
-            String string2 = resourceManager3.getString(C3290R.string.wallet_recipient_request_permission_success_dialog_description, this.$recipient$inlined);
+            String string2 = resourceManager3.getString(C3295R.string.wallet_recipient_request_permission_success_dialog_description, this.$recipient$inlined);
             final CryptoRecipientManager cryptoRecipientManager2 = this.this$0;
             final Ref$LongRef ref$LongRef = this.$chatId$inlined;
             viewState2.showRequestPermissionSuccessDialog(string, string2, new Callbacks$Callback() { // from class: com.iMe.manager.crypto.recipient.CryptoRecipientManager$requestAddressPermission$2$1

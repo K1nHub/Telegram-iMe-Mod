@@ -16,7 +16,7 @@ import com.iMe.utils.validator.wallet.CustomPriceValidator;
 import kotlin.jvm.internal.Intrinsics;
 import kotlin.text.StringsKt__StringNumberConversionsJVMKt;
 import moxy.InjectViewState;
-import org.telegram.messenger.C3290R;
+import org.telegram.messenger.C3295R;
 /* compiled from: CryptoBuyCustomPricePresenter.kt */
 @InjectViewState
 /* renamed from: com.iMe.ui.wallet.crypto.buy.customPrice.CryptoBuyCustomPricePresenter */
@@ -118,7 +118,7 @@ public final class CryptoBuyCustomPricePresenter extends BasePresenter<CryptoBuy
     }
 
     private final DialogModel getConfirmationDialogModel(float f) {
-        return new DialogModel(this.resourceManager.getString(C3290R.string.wallet_crypto_buy_confirm_dialog_title), this.resourceManager.getString(C3290R.string.wallet_crypto_buy_confirm_dialog_description, BalanceFormatter.formatBalance(Float.valueOf(f), this.minItem.getTokenInfo().getDecimals()), this.resourceManager.getString(this.minItem.getTokenInfo().getShortName())), this.resourceManager.getString(C3290R.string.common_cancel), this.resourceManager.getString(C3290R.string.wallet_crypto_buy_confirm_dialog_action_txt));
+        return new DialogModel(this.resourceManager.getString(C3295R.string.wallet_crypto_buy_confirm_dialog_title), this.resourceManager.getString(C3295R.string.wallet_crypto_buy_confirm_dialog_description, BalanceFormatter.formatBalance(Float.valueOf(f), this.minItem.getTokenInfo().getDecimals()), this.resourceManager.getString(this.minItem.getTokenInfo().getShortName())), this.resourceManager.getString(C3295R.string.common_cancel), this.resourceManager.getString(C3295R.string.wallet_crypto_buy_confirm_dialog_action_txt));
     }
 
     private final boolean isValidInput(Currency currency, Float f) {
